@@ -1,1 +1,0 @@
-ALTER TABLE ci_workflow DROP COLUMN parent_ci_workflow_id ;

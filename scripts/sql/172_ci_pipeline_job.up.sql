@@ -1,1 +1,0 @@
-ALTER TABLE ci_pipeline ADD COLUMN ci_pipeline_type VARCHAR(75);

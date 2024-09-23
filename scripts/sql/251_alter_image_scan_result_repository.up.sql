@@ -1,1 +1,0 @@
-ALTER TABLE "image_scan_execution_result" ADD COLUMN "package" text;

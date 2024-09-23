@@ -1,1 +1,0 @@
-delete from plugin_parent_metadata where identifier='copy-container-image';

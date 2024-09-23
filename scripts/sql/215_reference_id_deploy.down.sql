@@ -1,1 +1,0 @@
-ALTER TABLE cd_workflow_runner DROP COLUMN IF EXISTS "reference_id";

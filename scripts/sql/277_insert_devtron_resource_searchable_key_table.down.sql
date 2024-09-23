@@ -1,1 +1,0 @@
-DELETE from devtron_resource_searchable_key ds where ds."name" in ('CHART_NAME');

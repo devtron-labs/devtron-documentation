@@ -1,1 +1,0 @@
-ALTER TABLE api_token ADD COLUMN version int NOT NULL DEFAULT 1;
