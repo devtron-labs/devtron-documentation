@@ -140,57 +140,73 @@ Users need to have [Build and deploy permission](../user-guide/global-configurat
 
 ## Additional Features
 
-### Clone Pipeline Configuration [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+### Clone Pipelines [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Only superadmins can clone pipeline configuration.
+Only superadmins can clone pipelines.
 {% endhint %}
 
-This feature aims at helping the user clone existing CI/CD pipelines for new target environments in multiple applications. The configurations present in a given CI/CD pipeline also get copied in the cloned pipelines including the following:
+This feature aims at helping the user clone existing CI/CD pipelines for new target environments in multiple applications. The configurations present in the given CI/CD pipeline also get copied to the cloned pipelines (refer the below table).
 
-* Scripts/Plugins from Pre-CI, Post-CI, Pre-CD, Post-CD 
-* Environment Config (Deployment Template, ConfigMap, Secret)
-<br />...and many more
+| Configuration Item              | Cloning Behavior                                             |
+|----------------------------------|--------------------------------------------------------------|
+| [**CI Workflow**](../user-guide/creating-application/workflow/ci-pipeline.md)                  | Clones the source’s workflow CI as it is                    |
+| [**Pipeline Configuration**](../user-guide/creating-application/workflow/ci-build-pre-post-plugins.md)       | Cloned, including Pre-CD and Post-CD scripts/plugins        |
+| [**Environment Configuration**](../user-guide/creating-application/README.md#app-configuration)    | Cloned, including Deployment Template (DT), ConfigMap (CM), and Secret |
+| [**GitOps Configuration**](../user-guide/creating-application/gitops-config.md)         | Not cloned              |
+| [**Environment Policies**](../user-guide/creating-application/environment-overrides.md)         | Cloned if at pipeline level; ignored if global              |
+| [**CD Filter**](../user-guide/global-configurations/filter-condition.md)                    | Not cloned (handled globally)                              |
+| [**Protect Configurations**](../user-guide/creating-application/config-approval.md)       | Cloned (handled at pipeline level)                         |
+| [**Deployment Approvals**](../user-guide/creating-application/workflow/cd-pipeline.md#manual-approval-for-deployment)         | Cloned                                                     |
+| [**Lock Configurations**](../user-guide/global-configurations/lock-deployment-config.md)          | Not cloned                                                 |
+| **Mandatory Plugin**             | Not cloned                                                 |
+| [**Image Digest Policy**](../user-guide/global-configurations/pull-image-digest.md)          | Cloned at pipeline level; ignored if global                |
+| [**Promotion Policy**](../user-guide/global-configurations/image-promotion-policy.md)             | Not cloned                                                 |
+| [**Deployment Window**](../user-guide/global-configurations/deployment-window.md)            | Not cloned                                                 |
+| [**Security Policy**](../user-guide/security-features/security-policies.md)              | Not cloned                                                 |
+| [**Permissions**](../user-guide/global-configurations/authorization/user-access.md)                  | Not cloned                                                 |
 
-**Use Case**: Let's say you had 'n' number of apps deployed to a testing environment named `qa-env1`. Your team size doubled, thus necessitating the addition of another testing environment (`qa-env2`) with those apps deployed. Manually creating pipelines and configuring it for `qa-env2` environment in each app might be impractical. 
+
+**Use Case**: Let's say you have 'n' number of apps deployed to a development environment named `dev-env`. Later, a few testers joined your team, thus necessitating the addition of a testing environment (`test-env`) with those same apps deployed. Manually creating the pipelines and configuring them for `test-env` environment in each app might be impractical. Therefore, we recommend you to use the cloning feature. 
 
 #### Methods of Cloning
 
 This feature gives you two methods of cloning:
-1. **New Workflow**: Creates a new workflow and clones the source CI and CD pipeline. Gives you the flexibility to tweak the cloned CI (e.g., changing code branch for build).
 
-    ![Figure 18: New Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/new-workflow.jpg)
+1. **New Workflow**: Creates a new workflow and clones the source CI and CD pipeline. Gives you the flexibility to tweak the cloned CI (e.g., changing code branch for build) too.
 
-2. **Source Workflow**: Uses the same workflow but clones only its existing CD pipeline. Allows you to utilize the original CI source available for source environment.
+    ![Figure 18: New Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/new-workflow-v2.jpg)
 
-    ![Figure 19: Source Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/source-workflow.jpg)
+2. **Source Workflow**: Uses the same workflow and clones only the source CD pipeline, thus keeping the original CI pipeline unchanged.
+
+    ![Figure 19: Source Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/source-workflow-v2.jpg)
 
 #### Steps to Clone Pipelines
 
 1. Go to **Application Groups** and click the source environment from the list.
 
-    ![Figure 20: Source Environment Selection](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/source-env-selection.jpg)
+    ![Figure 20: Source Environment Selection](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/source-env-selection-v2.jpg)
 
 2. Select the applications whose pipelines you wish to clone and click **Clone Pipeline Config**.
 
-    ![Figure 21: Choosing Applications](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/pipeline-clone.gif)
+    ![Figure 21: Choosing Applications](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/pipeline-clone-v2.gif)
 
 3. From the dropdown, select the target environment for which pipelines should be created for selected applications.
 
-    ![Figure 22: Selecting Target Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/target-env.jpg)
+    ![Figure 22: Selecting Target Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/target-env-v2.gif)
 
 4. Select the workflow where you wish to create deployment pipeline: **New Workflow** or **Workflow as source environment**. Refer [Methods of Cloning](#methods-of-cloning) to know which option will fulfill your requirement.
 
-    ![Figure 23: Creating CD Pipeline in Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/clone-type.jpg)
+    ![Figure 23: Creating CD Pipeline in Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/clone-type-v2.jpg)
 
 5. Click **Clone in new workflow** or **Clone in source workflow** (depending on the option you selected in the previous step).
 
-    ![Figure 24: Initiating Clone](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/clone-progress.gif)
+    ![Figure 24: Initiating Clone](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/clone-progress-v2.gif)
 
 {% hint style="warning" %}
 ### Note
-The cloning process will skip if a CD pipeline (for the target environment) already exists within a given application's workflow. You can view this in the clone status generated after following the above process.
+The cloning process will skip if a CD pipeline (for the target environment) already exists in the chosen application's workflow. You can view this in the clone status generated after the above process.
 {% endhint %}
 
 
@@ -209,15 +225,15 @@ In other words, you can hibernate running applications or unhibernate hibernated
 
 1. In the `Overview` page of your application group, use the checkboxes to choose the applications you wish to hibernate, and click the **Hibernate** button.
 
-    ![Figure 18a: Selecting Apps to Hibernate](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/hibernate-apps-v1.jpg)
+    ![Figure 25: Selecting Apps to Hibernate](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/hibernate-apps-v1.jpg)
 
 2. Confirm the hibernation.
 
-    ![Figure 18b: Confirming Hibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/confirm-hibernation-v1.jpg)
+    ![Figure 26: Confirming Hibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/confirm-hibernation-v1.jpg)
 
 3. Hibernation will initiate as shown below. You may close the window. 
 
-    ![Figure 18c: Initiation Status of Hibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/initiated-hibernation.jpg)
+    ![Figure 27: Initiation Status of Hibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/initiated-hibernation.jpg)
 
 Your applications pods would be scaled down and would stop incurring costs.
 
@@ -225,15 +241,15 @@ Your applications pods would be scaled down and would stop incurring costs.
 
 1. In the same `Overview` page, you can use the checkboxes to choose the hibernated applications you wish to unhibernate, and click the **Unhibernate** button.
 
-    ![Figure 25a: Selecting Hibernated Apps to Unhibernate](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/unhibernate-apps-v1.jpg)
+    ![Figure 28: Selecting Hibernated Apps to Unhibernate](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/unhibernate-apps-v1.jpg)
 
 2. Confirm the unhibernation.
 
-    ![Figure 25b: Confirming Unhibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/confirm-unhibernation-v1.jpg)
+    ![Figure 29: Confirming Unhibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/confirm-unhibernation-v1.jpg)
 
 3. Unhibernation will initiate as shown below. You may close the window. 
 
-    ![Figure 25c: Initiation Status of Unhibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/initiated-unhibernation.jpg)
+    ![Figure 30: Initiation Status of Unhibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/initiated-unhibernation.jpg)
 
 Your applications would be up and running in some time.
 
@@ -250,19 +266,19 @@ Using application group, you can select the workloads (i.e., Pod, Deployment, Re
 
 1. Use the checkboxes to choose the applications whose workloads you wish to restart, and click the **Restart Workload** button.
 
-    ![Figure 26a: Selecting Apps to Restart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/restart-workloads-v1.jpg)
+    ![Figure 31: Selecting Apps to Restart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/restart-workloads-v1.jpg)
 
 2. Next to the application, click the workload dropdown to view all the individual workloads of an application. Choose only the ones you wish to restart.
 
-    ![Figure 26b: Choosing Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/choose-workload.jpg)
+    ![Figure 32: Choosing Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/choose-workload.jpg)
 
     Moreover, you can easily select, deselect, or choose multiple workloads as shown below.
 
-    ![Figure 26c: Selecting and Unselecting Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/bulk-restart.gif)
+    ![Figure 33: Selecting and Unselecting Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/bulk-restart.gif)
 
 3. Click **Restart Workloads**.
 
-    ![Figure 26d: Restarting Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-workloads.jpg)
+    ![Figure 34: Restarting Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-workloads.jpg)
 
 Restarting workloads might take time depending on the number of applications.
 
@@ -272,27 +288,27 @@ Assume you have multiple applications (maybe 10, 50, 100, or more) showing up in
 
 1. Click the filter next to the application group as shown below.
 
-    ![Figure 21: Filter Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/app-filter-1.jpg)
+    ![Figure 35: Filter Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/app-filter-1.jpg)
 
 2. The filter will show all the applications present in the group. Click to select the relevant ones.
 
-    ![Figure 22: All Apps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/app-filter-2.jpg)
+    ![Figure 36: All Apps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/app-filter-2.jpg)
 
 3. The filter narrows down the list of applications as shown below.
 
-    ![Figure 23: Filtered Apps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/app-filter-3.jpg)
+    ![Figure 37: Filtered Apps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/app-filter-3.jpg)
 
 4. (Optional) If required, you can save the filter for future use by clicking **Save selection as filter**.
 
-    ![Figure 24: Saving a Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/save-filter.jpg)
+    ![Figure 38: Saving a Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/save-filter.jpg)
 
 5. Add a name and description to the filter to help you know its purpose, and click **Save**.
 
-    ![Figure 25: Naming a Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/save-filter-2.jpg)
+    ![Figure 39: Naming a Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/save-filter-2.jpg)
 
 Now when you access the application group, your saved filter will be visible on top.
 
-![Figure 26: Saved Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/save-filter-3.jpg)
+![Figure 40: Saved Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/save-filter-3.jpg)
 
 {% hint style="info" %}
 
@@ -336,8 +352,8 @@ Assume you have a few applications whose [build pipelines](../reference/glossary
 
 1. In the **Build & Deploy** tab of your application group, select the intended applications and click the **Change Branch** button present at the bottom.
 
-    ![Figure 27: Changing Branch](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/change-branch.jpg)
+    ![Figure 41: Changing Branch](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/change-branch.jpg)
 
 2. Enter the new branch name. If your build pipeline has `Branch Regex` as the Source Type, you must ensure your new branch name matches the regex (regular expression) provided in that build pipeline. Once done, click **Update Branch**.
 
-    ![Figure 28: Updating Branch Name](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/update-branch.jpg)
+    ![Figure 42: Updating Branch Name](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/update-branch.jpg)
