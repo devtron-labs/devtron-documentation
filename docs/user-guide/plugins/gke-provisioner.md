@@ -47,7 +47,7 @@ e.g., `The GKE Provisioner plugin is integrated for provisioning of GKE cluster.
 |   GkeRegion                           | STRING       | GCP region for cluster provisioning (default: us-central1).| us-central1  |
 |   GkeMachineType                      | STRING       |  Machine type for GKE nodes (default: n1-standard-4).| e2-medium |
 |   GkeImageType                        | STRING       | OS image for GKE nodes (default: COS_CONTAINERD).| COS_CONTAINERD  |
-|   GcpProjectId                        | STRING       | GCP project ID where the GKE cluster will be created.| gepton-393706 |
+|   GcpProjectId                        | STRING       | GCP project ID where the GKE cluster will be created.| gcp-68493 |
 |   GkeClusterVersion                   | STRING       | Kubernetes version for the GKE cluster.               | 1.30.2-gke.1587003 |
 
 ### Trigger/Skip Condition
