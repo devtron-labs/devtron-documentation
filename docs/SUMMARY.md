@@ -138,6 +138,7 @@
     * [Copy Container Image](user-guide/plugins/copy-container-image.md)
     * [Cosign](user-guide/plugins/cosign.md)
     * [CraneCopy](user-guide/plugins/crane-copy.md)
+    * [GKE Provisioner](user-guide/plugins/gke-provisioner.md)
     * [Dependency track - Maven & Gradle](user-guide/plugins/dependency-track-maven-gradle.md)
     * [Dependency track - NodeJS](user-guide/plugins/dependency-track-nodejs.md)
     * [Dependency track - Python](user-guide/plugins/dependency-track-python.md)
