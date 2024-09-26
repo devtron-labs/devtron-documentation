@@ -40,7 +40,9 @@ helm create my-custom-chart
 
 ### 2. Create an Image Descriptor Template File
 
-* In the root directory of your chart, create a file named `.image_descriptor_template.json`. You may use the following command:
+The Image Descriptor Template file is a GO template that produces a valid JSON file upon processing. It allows Devtron to dynamically inject values from the CD pipeline into your Helm chart during deployment. Therefore, details like image repository, tag, and environment are automatically populated at the placeholders specified in `.image_descriptor_template.json`.
+
+* In the root directory of your chart, create a file named `.image_descriptor_template.json` using the following command:
 
     ```bash
     touch .image_descriptor_template.json
@@ -69,10 +71,7 @@ helm create my-custom-chart
     }
     ```
 
-    The above code is a GO template file that produces a valid JSON file upon rendering. The values from the CD deployment pipeline are injected at the placeholders specified in `.image_descriptor_template.json`.
-
-
-    All the placeholders are optional. Let's say you wish to create a template file that allows Devtron to render only the repository name and the tag from the CI/CD pipeline you created, edit the `.image_descriptor_template.json` file as follows:
+    You can customize this template to include only the values your deployment needs. For instance, if you only require the image repository and tag, your template would look like:
 
     ```bash
     {
@@ -101,17 +100,32 @@ If your code editor highlights a syntax error (property or EOF error) in the abo
 
 ### 3. Add app-values.yaml
 
-In the root directory of your chart, Devtron expects an `app-values.yaml` file and validates whether the content of `values.yaml` file is present in `app-values.yaml` file or not. 
+In the root directory of your chart, Devtron expects an `app-values.yaml` file. This file is simply a subset of the `values.yaml` file.
 
-You may use the following command:
+Here, you can insert specific entries from `values.yaml` that you wish to display on the [base deployment template](../../reference/glossary.md#base-deployment-template) screen (depending on your team's requirements).
+
+However, if you upload the chart without an `app-values.yaml` or with an empty one, your base deployment template will appear blank (as shown below).
+
+![Figure 3: Blank Chart Values](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/empty-values.jpg)
+
+{% hint style="info" %}
+### Tip
+In case you are unfamiliar with configuring an `app-values.yaml` file, you can copy and display all available chart values by running:
 
 ```bash
 cp values.yaml app-values.yaml
 ```
+{% endhint %}
+
 
 ### 4. Add release-values.yaml
 
-In the root directory of your chart create a file named `release-values.yaml`. You may use the following command:
+The `release-values.yaml` file contains essential values needed for deployment that aren’t covered by [app-values.yaml](#3-add-app-valuesyaml). For example:
+
+* Some dynamic values, like `IMAGE_TAG` and `IMAGE_REPO` from the image descriptor JSON, are populated here because they are needed for deployment.
+* You can use `autoPromotionSeconds` to decide how long to keep old pods running once the latest pods of new release are available.
+
+In the root directory of your chart, create a file named `release-values.yaml` with the following command:
 
 ```bash
 touch release-values.yaml
@@ -188,7 +202,6 @@ The system initiates the validation of your uploaded chart. You may also click *
 In the uploading process, your file will be validated against the following criteria:
 
 - Supported archive template should be in `*.tgz` format.
-- ConfigMap/Secret template should be the same as that of our [reference chart](https://github.com/devtron-labs/devtron/tree/main/scripts/devtron-reference-helm-charts/reference-chart_4-14-0).
 - `Chart.yaml` must include the name and the version number.
 - `.image_descriptor_template.json` file should be present.
 
