@@ -61,6 +61,21 @@
   * [0.3.x-0.3.x](setup/upgrade/devtron-upgrade-0.3.x-0.3.x.md)
   * [0.2.x-0.3.x](setup/upgrade/devtron-upgrade-0.2.x-0.3.x.md)
 
+## Devtron Dashboard
+
+* [Introduction to Dashboard](setup/install/install-devtron.md)
+* [Installation]()
+* [Resource Browser]()
+  * [Overview Page]()
+  * [Discover Resources]()
+  * [Nodes and Operations]()
+  * [Pods and Operations]()
+  * [Cluster Terminal]()
+* [Manage Helm Apps]()
+* [Argo CD App Listing]()
+* [Flux CD App Listing]()
+* [RBAC]()
+
 ## Usage
 
 * [Applications](user-guide/applications.md)
