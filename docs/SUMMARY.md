@@ -63,18 +63,18 @@
 
 ## Devtron Dashboard
 
-* [Introduction to Dashboard](setup/install/install-devtron.md)
-* [Installation]()
-* [Resource Browser]()
-  * [Overview Page]()
-  * [Discover Resources]()
-  * [Nodes and Operations]()
-  * [Pods and Operations]()
-  * [Cluster Terminal]()
-* [Manage Helm Apps]()
-* [Argo CD App Listing]()
-* [Flux CD App Listing]()
-* [RBAC]()
+* [Introduction to Dashboard](user-guide/dashboard/README.md)
+* [Installation](user-guide/dashboard/installation.md)
+* [Resource Browser](user-guide/dashboard/resource-browser/README.md)
+  * [Overview Page](user-guide/dashboard/resource-browser/overview.md)
+  * [Discover and Manage Resources](user-guide/dashboard/resource-browser/manage-resources.md)
+  * [Nodes and Operations](user-guide/dashboard/resource-browser/nodes.md)
+  * [Pods and Operations](user-guide/dashboard/resource-browser/pods.md)
+  * [Cluster Terminal](user-guide/dashboard/resource-browser/terminal.md)
+* [Manage Helm Apps](user-guide/dashboard/helm/README.md)
+* [Argo CD App Listing](user-guide/dashboard/argocd-listing.md)
+* [Flux CD App Listing](user-guide/dashboard/fluxcd-listing.md)
+* [Manage Authorization](user-guide/dashboard/authorization)
 
 ## Usage
 
@@ -184,3 +184,7 @@
 * [Telemetry Overview](user-guide/telemetry.md)
 * [Devtron on Graviton](reference/graviton.md)
 * [Release Notes](https://github.com/devtron-labs/devtron/releases)
+
+## Tasks
+
+* [Running Kubectl Commands Locally](user-guide/tasks/kubectl-local.md)
