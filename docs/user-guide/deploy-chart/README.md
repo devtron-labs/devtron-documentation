@@ -1,14 +1,10 @@
-# Deploy Chart
+# Chart Store
 
-Welcome! This is the documentation for Deploying Charts.
+Charts can be [deployed individually](./deployment-of-charts.md) or by creating a [group of charts](./chart-group.md)
 
-**Parts of Documentation**
+* [Create, Update, Upgrade, Deploy, and Delete Chart](deployment-of-charts.md)
 
-[Overview of Charts](overview-of-charts.md)
+* [Create Chart Group and Deploy](chart-group.md)
 
-[Charts Create, Update, Upgrade, Deploy, Delete](deployment-of-charts.md)
-
-[Chart Group Create Edit And Deploy](chart-group.md)
-
-[Examples](examples/README.md)
+* [Examples](examples/README.md)
 

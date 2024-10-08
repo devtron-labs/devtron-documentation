@@ -1,80 +1,105 @@
-# Chart Operations 
+# Deploy a Chart 
 
 ## Introduction
 
-Discover, Create, Deploy, Update, Upgrade, Delete charts.
+Discover, Configure, Deploy, Update, Upgrade, Delete charts.
 
-## 1. Discover the chart from the Chart Store
+---
+
+## 1. Discover Chart from Chart Store
 
 Select the `Charts` section from the left pane, you will be landed to the `Chart Store` page. 
 Search `nginx` or any other charts in search filter.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/charts-1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/search-chart.jpg)
 
 Click on chart and it will redirect you to `Chart Details` page where you can see a number of instances deployed by using the same chart.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/charts-2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/chart-details.jpg)
+
+---
 
 ## 2. Configure the Chart
 
-After selecting the version and values, click on `Deploy`
+You may refer the `README.md` attached to the chart to know more about the chart configurations.
 
-Enter the following details, to deploy chart:
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/overview-of-charts/overview-of-charts-2.jpg)
+
+Click **Configure & Deploy** and enter the following details:
 
 | Key | Description |
 | :--- | :--- |
-| `App Name` | Name of the Chart Unique|
-| `Project` |  Project in which you want to deploy the chart |
-| `Environment` | Environment in which you want to deploy the chart |
-| `Chart Version` | Chart version |
-| `Chart Value` | Latest default value or create a custom value |
+| **App Name** | Unique name of the chart|
+| **Project** |  Select the project of the application |
+| **Deploy to Environment** | Environment in which you want to deploy the chart |
+| **Chart Version** | Shows all available versions of the chart. Select the version of the chart to be used. |
+| **Chart Value** | Shows the latest default value or you may [create a custom value](#create-a-custom-value) |
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/charts-3.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/values-field.jpg)
 
-you can choose any chart version, values and update it on values.yaml
+You can choose your preferred chart version, chart value, and update the values.yaml using the editor on the right.
 
-Click on `Deploy` to deploy the Chart
+Click **Deploy** to deploy the chart.
 
-## 3. Status of Deployment 
+---
 
-After clicking on `Deploy` you will land on a page that shows the status of the deployment of the Chart.
+## 3. Check Deployment Status
+
+After clicking the **Deploy** button, you will land on the **App Details** page that shows the status of the chart deployment.
 
 The status of the chart should be `Healthy`. It might take a few seconds after initiating the deployment of the chart.
-In case the status of the deployment is `Degraded` or takes a long time to get deployed, click on `Details` in `Application Status` section on the same page or check the logs of the pods to debug the issue.
+In case the status of the deployment shows `Degraded` or if takes a long time to get deployed, click **Details** in `Application Status` section on the same page or check the logs of the pods to debug the issue.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/charts-4-2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/chart-app-details.jpg)
 
 1. Shows status of deployed chart.
 
 2. Shows the controller service accounts being used.
 
-3. Clicking on `values` will land you on the page where you can update, upgrade or delete chart.
+3. In the **Configure** tab, you can update, upgrade, or delete your chart instance.
 
-4. Clicking on `View Chart` will land you to the page where you can see all the running instances of this chart.
+4. From the `Chart used` section you can go to the charts page where you can see all the running instances of this chart.
 
-To see deployment history of Helm application, click on `Deployment history` from `App details` page.
+5. Click the **Deployment history** tab to view the deployment history of Helm application and values.yaml corresponding to the deployment.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/hyperion/user-guide/deploy-charts/overview-of-charts/overview-of-charts-9.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/chart-deployment-history.jpg)
 
+---
 
 ## 4. Update or Upgrade Chart
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/charts-5-2.jpg)
+For update, you can change its `Chart Version` or `values.yaml` and then click **Update And Deploy**.
 
-For update you can change its `chart version` or `values.yaml` and then click on `Update And Deploy`.
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/update-chart.jpg)
 
-For upgrade click on `Repo/Chart` field and search any chart name like `nginx-ingress` and change values corresponding to that chart and Click on `Update And Deploy`.
+For upgrade, click on `Helm Chart` field, search a chart name, change its values corresponding, and click **Update And Deploy**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/charts-6-2.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/upgrade-chart.jpg)
 
+After an update or upgrade, you will land on the **App Details** page where you can check the pods and service name.
 
-After an update or upgrade you again will land on `App Detail` page, where you can check pods and service name.
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/charts-status.jpg)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/charts-7-2.jpg)
+---
 
 ## 5. Chart Details and Delete Charts
 
-By clicking on `View Chart` in `Chart Used` section on `App Details` page, it will redirect you to `Chart Details` page where you can see number of instances installed by this chart and also you can delete the chart instance from here.
+Clicking on `View Chart` in `Chart Used` section in the **App Details** page will redirect you to the `Chart Details` page where you can see the number of instances installed by that chart along with an option to delete those chart instances too.
 
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/delete-chart-instance.jpg)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/charts-8-2.jpg)
+---
+
+## Extras
+
+### Create a Custom Value
+
+You can use the default values or create custom value by clicking on `Create Custom`.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/overview-of-charts/overview-of-charts-7.jpg)
+
+You can name your Custom Value, select the Chart Version and change the configurations in YAML file.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/overview-of-charts/overview-of-charts-8-2.jpg)
+
+Click on `Save Template` to save the configurations.

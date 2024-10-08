@@ -1,11 +1,16 @@
 # Container/OCI Registry
 
+## Introduction
+
 While [container registries](../../reference/glossary.md#container-registry) are typically used for storing [images](../../reference/glossary.md#image) built by the CI Pipeline, an OCI registry can store container images as well as other artifacts such as [helm charts](../../reference/glossary.md#helm-charts-packages). In other words, all container registries are OCI registries, but not all OCI registries are container registries.
 
 You can configure a container registry using any registry provider of your choice. It allows you to build, deploy, and manage your container images or charts with easy-to-use UI. 
 
+---
 
 ## Add Container Registry
+
+### Steps
 
 1. From the left sidebar, go to **Global Configurations** → **Container/OCI Registry**.
 
@@ -29,12 +34,27 @@ You can configure a container registry using any registry provider of your choic
     | **Registry URL** | Provide the URL of your registry in case it doesn't come prefilled (do not include `oci://`, `http://`, or `/https://` in the URL) |
     | **Authentication Type** | The credential input fields may differ depending on the registry provider, check [Registry Providers](#supported-registry-providers) |
     | **Push container images** | Tick this checkbox if you wish to use the repository to push container images. This comes selected by default and you may untick it if you don't intend to push container images after a CI build. If you wish to to use the same repository to pull container images too, read [Registry Credential Access](#registry-credential-access). |
-    | **Push helm packages** | Tick this checkbox if you wish to push helm charts to your registry |
-    | **Use as chart repository** | Tick this checkbox if you want Devtron to pull helm charts from your registry and display them on its chart store. Also, you will have to provide a list of repositories (present within your registry) for Devtron to successfully pull the helm charts. |
+    | **Push helm packages** | Tick this checkbox if you wish to [push helm charts to your registry](#push-helm-packages) |
+    | **Use as chart repository** | Tick this checkbox if you want Devtron to [pull helm charts from your registry and display them on chart store](#use-as-chart-repository). Also, you will have to provide a list of repositories (present within your registry) for Devtron to successfully pull the helm charts. |
     | **Set as default registry** | Tick this checkbox to set your registry as the default registry hub for your images or artifacts |
 
 6. Click **Save**.
 
+### Push Helm Packages
+
+Devtron supports the pushing of helm charts to your OCI registry.  
+
+This is possible through isolated clusters that facilitate virtual deployments. In other words, it generates a helm package that you can use to deploy in air-gapped clusters not connected to Devtron.
+
+{% hint style="info" %}
+Devtron doesn't support pushing helm packages to [chart repositories](../global-configurations/chart-repo.md)
+{% endhint %}
+
+
+
+### Use as Chart Repository
+
+---
 
 ## Supported Registry Providers
 
@@ -125,6 +145,7 @@ Provide below information if you select the registry type as `Other`.
 You can use any registry which can be authenticated using `docker login -u <username> -p <password> <registry-url>`. However these registries might provide a more secured way for authentication, which we will support later.
 {% endhint %}
 
+---
 
 ## Registry Credential Access
 
@@ -182,25 +203,3 @@ Typing secrets on the command line may store them in your shell history unprotec
 {% endhint %}
 
 Enter the Secret name in the field and click **Save**.
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
