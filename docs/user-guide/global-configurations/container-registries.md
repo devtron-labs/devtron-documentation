@@ -42,17 +42,41 @@ You can configure a container registry using any registry provider of your choic
 
 ### Push Helm Packages
 
+{% hint style="info" %}
+### Prerequisite
+OCI registry with `Push helm packages` option enabled. 
+{% endhint %}
+
 Devtron supports the pushing of helm charts to your OCI registry.  
 
-This is possible through isolated clusters that facilitate virtual deployments. In other words, it generates a helm package that you can use to deploy in air-gapped clusters not connected to Devtron.
+This is possible through [isolated clusters](../global-configurations/cluster-and-environments.md#add-isolated-cluster) that facilitate virtual deployments. In other words, it generates a helm package that you can use to deploy in air-gapped clusters not connected to Devtron.
 
-{% hint style="info" %}
+If you have [configured your CD pipeline](../creating-application/workflow/cd-pipeline.md#deploying-to-an-isolated-environment) to push the helm package to your OCI registry, you can view the pushed helm package in your registry as shown below:
+
+![Figure 3a: OCI Registry Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/pushed-artifacts.jpg)
+
+![Figure 3b: Pushed Helm Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/helm-chart.jpg)
+
+{% hint style="warning" %}
 Devtron doesn't support pushing helm packages to [chart repositories](../global-configurations/chart-repo.md)
 {% endhint %}
 
-
-
 ### Use as Chart Repository
+
+{% hint style="info" %}
+### Prerequisite
+OCI registry with `Use as chart repository` option enabled. 
+{% endhint %}
+
+Unlike Helm repos, OCI registries do not have an index file to discover all the charts. Devtron supports the pulling of helm charts from your OCI registry and display them on your [chart store](../deploy-chart/README.md).
+
+{% embed url="https://www.youtube.com/watch?v=9imC5MMz9gs" caption="Pulling Charts from an OCI Registry to Devtron" %}
+
+Search your OCI registry in the list, and click it. 
+
+In the **List of repositories**, add your chart repo(s). The format should be `username/chartname`. You can find the username from your registry provider account.
+
+![Figure 4: Adding Chart Repos](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/container-config.jpg)
 
 ---
 
@@ -173,14 +197,14 @@ If you select **Use Registry Credentials**, the clusters will be auto-injected w
 
 Click **Save**.
 
-![Figure 3: Using Registry Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/use-registry-credentials-1.jpg)
+![Figure 5: Using Registry Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/use-registry-credentials-1.jpg)
 
 
 ### Specify Image Pull Secret
 
 You can create a Secret by providing credentials on the command line.
 
-![Figure 4: Using Image Pull Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/specify-image-pull-secret-1.jpg)
+![Figure 6: Using Image Pull Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/specify-image-pull-secret-1.jpg)
 
 Create this Secret and name it `regcred` (let's say):
 

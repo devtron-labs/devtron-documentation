@@ -29,6 +29,15 @@ This section expects four inputs from you:
 | Trigger     | When to execute the deployment pipeline                   | **Automatic**: Deployment triggers automatically when a new image completes the previous stage (build pipeline or another deployment pipeline) <br /> **Manual**: Deployment is not initiated automatically. You can trigger deployment with a desired image. |
 | Deployment Approach | How to deploy the application | **Helm** or **GitOps** <br /> Refer [GitOps](../../global-configurations/gitops.md)  |
 
+{% hint style="info" %}
+### Deploying to an Isolated Environment?
+In case you choose an [isolated cluster environment](../../global-configurations/cluster-and-environments.md#add-isolated-cluster) for deployment, you get additional options to choose from ([check snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/create-cd2.jpg)):
+  * **Do not push** - A link to download the helm package will be available when you trigger a deployment. However, it will not push the helm package to the OCI registry.
+  * **Push to registry** - This will generate and [push the helm package to the OCI registry](../../global-configurations/container-registries.md#push-helm-packages). Upon selecting this option, you will get two more fields:
+      * **Registry** - Choose the OCI registry to which the helm chart package must be pushed. Only those registries that have `Push helm packages` enabled will be shown in the dropdown.
+      * **Repository** - Write the repository name in the format `username/repo-name`. You can find the username from your registry provider account.
+{% endhint %}
+
 ### Deployment Strategy
 
 Devtron supports multiple deployment strategies depending on the [deployment chart type](../../creating-application/deployment-template.md#select-chart-from-default-charts). 

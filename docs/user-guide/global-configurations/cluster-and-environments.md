@@ -25,7 +25,7 @@ Use this option to add a managed or on-premise Kubernetes cluster.
 
 3. Click **Add Kubernetes Cluster**. 
 
-  ![Figure 3: Adding a Kubernetes Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-clusters.jpg)
+  ![Figure 3: Adding a Kubernetes Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-kubernetes-cluster.jpg)
 
 You can choose to add your Kubernetes cluster using either of the following:
   * [Server URL & Bearer Token](#add-clusters-using-server-url--bearer-token)

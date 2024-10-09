@@ -92,5 +92,3 @@ To delete a chart group, click it and use the **Delete** button.
 
 ![Figure 11: Deleting a Chart Group](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/chart-group/delete-chart-group.gif)
 
-### Checking Running Instances of Chart
-
