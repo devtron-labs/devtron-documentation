@@ -129,3 +129,4 @@ redirects:
     global-configurations/authorization/sso-login/okta: user-guide/global-configurations/authorization/sso/okta.md
     usage/applications/creating-application/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/ci-build-pre-post-plugins.md
     global-configurations/custom-charts: user-guide/global-configurations/deployment-charts.md
+    usage/deploy-chart/overview-of-charts: user-guide/deploy-chart/README.md
