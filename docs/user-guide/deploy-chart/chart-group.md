@@ -22,11 +22,9 @@ Once you create a group, you can now select and add charts to it.
 
 ## 2. Add Charts to the Group 
 
-1. To add a chart to the group, click the `+` sign next to the chart you wish to add. 
+1. To add a chart to the group, click the `+` sign next to the chart you wish to add. You also can add multiple copies of the same chart in the chart group as per your requirements.
 
     ![Figure 3: Adding Charts](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/chart-group/add-chart.jpg)
-
-    You also can add multiple copies of the same chart in the chart group as your requirements.
 
 2. Once you have finalized the charts for your group, click **Save**.
 

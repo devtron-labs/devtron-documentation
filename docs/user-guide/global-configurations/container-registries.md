@@ -34,7 +34,7 @@ You can configure a container registry using any registry provider of your choic
     | **Registry URL** | Provide the URL of your registry in case it doesn't come prefilled (do not include `oci://`, `http://`, or `/https://` in the URL) |
     | **Authentication Type** | The credential input fields may differ depending on the registry provider, check [Registry Providers](#supported-registry-providers) |
     | **Push container images** | Tick this checkbox if you wish to use the repository to push container images. This comes selected by default and you may untick it if you don't intend to push container images after a CI build. If you wish to to use the same repository to pull container images too, read [Registry Credential Access](#registry-credential-access). |
-    | **Push helm packages** | Tick this checkbox if you wish to [push helm charts to your registry](#push-helm-packages) |
+    | **Push helm packages** | Tick this checkbox if you wish to [push helm charts to your OCI registry](#push-helm-packages) |
     | **Use as chart repository** | Tick this checkbox if you want Devtron to [pull helm charts from your registry and display them on chart store](#use-as-chart-repository). Also, you will have to provide a list of repositories (present within your registry) for Devtron to successfully pull the helm charts. |
     | **Set as default registry** | Tick this checkbox to set your registry as the default registry hub for your images or artifacts |
 
@@ -42,14 +42,9 @@ You can configure a container registry using any registry provider of your choic
 
 ### Push Helm Packages
 
-{% hint style="info" %}
-### Prerequisite
-OCI registry with `Push helm packages` option enabled. 
-{% endhint %}
+Upon enabling this option, Devtron supports the pushing of helm charts to your OCI registry.  
 
-Devtron supports the pushing of helm charts to your OCI registry.  
-
-This is possible through [isolated clusters](../global-configurations/cluster-and-environments.md#add-isolated-cluster) that facilitate virtual deployments. In other words, it generates a helm package that you can use to deploy in air-gapped clusters not connected to Devtron.
+This is possible through [isolated clusters](../global-configurations/cluster-and-environments.md#add-isolated-cluster) that facilitate virtual deployments. In other words, it generates a helm package that you can use to [deploy your application in air-gapped clusters](../use-cases/airgapped-app-deployment.md).
 
 If you have [configured your CD pipeline](../creating-application/workflow/cd-pipeline.md#deploying-to-an-isolated-environment) to push the helm package to your OCI registry, you can view the pushed helm package in your registry as shown below:
 
@@ -68,13 +63,19 @@ Devtron doesn't support pushing helm packages to [chart repositories](../global-
 OCI registry with `Use as chart repository` option enabled. 
 {% endhint %}
 
-Unlike Helm repos, OCI registries do not have an index file to discover all the charts. Devtron supports the pulling of helm charts from your OCI registry and display them on your [chart store](../deploy-chart/README.md).
+Unlike Helm repos, OCI registries do not have an index file to discover all the charts. If you have helm packages pushed to your OCI registry, you can that registry as a chart repository. 
+
+Upon enabling this option, Devtron can use your OCI registry as the chart source and pull the helm charts to display them on your [Chart Store](../deploy-chart/README.md) for easy deployment.
+
+#### Tutorial
 
 {% embed url="https://www.youtube.com/watch?v=9imC5MMz9gs" caption="Pulling Charts from an OCI Registry to Devtron" %}
 
-Search your OCI registry in the list, and click it. 
+#### Steps
 
-In the **List of repositories**, add your chart repo(s). The format should be `username/chartname`. You can find the username from your registry provider account.
+Search your OCI registry in the list and click it. 
+
+In the **List of repositories** field, add your chart repo(s). The format should be `username/chartname`. You can [find the username](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/find-username.jpg) from your registry provider account.
 
 ![Figure 4: Adding Chart Repos](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/container-config.jpg)
 

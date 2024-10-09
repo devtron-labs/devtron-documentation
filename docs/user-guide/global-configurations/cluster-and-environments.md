@@ -112,7 +112,7 @@ A new window pops up displaying all the details about the Devtron agent.
 
 ## Add Isolated Cluster
 
-Deploying to an isolated environment will generate and push the helm package to your chart repository (if need be). Further, this package can be used to deploy to an air-gapped cluster via third party tools or manually.
+Deploying to an isolated environment will generate and [push the helm package](../global-configurations/container-registries.md#push-helm-packages) to your OCI registry (if need be). Further, this package can be used to [deploy to an air-gapped environment](../use-cases/airgapped-app-deployment.md) via Internet or non-Internet mediums.
 
 1. Go to **Global Configurations** → **Clusters & Environments**.
 
