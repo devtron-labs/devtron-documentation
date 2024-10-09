@@ -52,9 +52,9 @@ Before deploying your chart group, you may click **Advanced Options** to edit th
 
 ![Figure 8: Using Advanced Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/chart-group/advanced-options.jpg)
 
-{% hint style="warning" %}
+<!-- {% hint style="warning" %}
 If you selected specific charts for deployment, and then if you use **Advanced Options**, you may have to select the charts again and deselect the ones you don't wish to deploy.
-{% endhint %}
+{% endhint %} -->
 
 ![Figure 9: Editing Individual Chart Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/chart-group/advanced-options-2.jpg)
 
