@@ -4,7 +4,7 @@ In this section, we describe on how you can install Helm Dashboard by Devtron wi
 
 If you want to install Devtron on Minikube, Microk8s, K3s, Kind, refer this [section](./Install-devtron-on-Minikube-Microk8s-K3s-Kind.md).
 
-## Before you begin
+## Prerequisite
 
 Install [Helm](https://helm.sh/docs/intro/install/) if you have not installed it.
 
@@ -20,8 +20,6 @@ helm repo update devtron
 ```
 
 ## Install Helm Dashboard by Devtron
-
-**Note**: This installation command will not install CI/CD integration. For CI/CD, refer [install Devtron with CI/CD](../install/install-devtron-with-cicd.md) section.
 
 Run the following command to install Helm Dashboard by Devtron:
 
