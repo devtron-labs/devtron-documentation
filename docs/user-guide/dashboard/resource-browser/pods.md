@@ -35,7 +35,7 @@ In case any of your pod restarts, you can view its details from the pod listing 
 * Container log before restart
 * Node status and events  
 
-![Figure 16: Checking Restart Pod Log](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/restart-pod-log.gif)
+![Figure 1: Checking Restart Pod Log](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/restart-pod-log.gif)
 
 ---
 
@@ -62,7 +62,7 @@ This is a part of [Pod Terminal](#pod-terminal). It is especially useful when `k
     You get 2 tabs:
     1. **Basic** - It provides the bare minimum configurations required to launch an ephemeral container.
 
-    ![Figure 17: Basic Tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/basic.jpg)
+    ![Figure 2: Basic Tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/basic.jpg)
 
     It contains 3 mandatory fields:
 

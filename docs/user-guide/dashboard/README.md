@@ -14,31 +14,31 @@ Discover how Devtron’s Kubernetes Dashboard simplifies operations by managing 
 
 View and manage the resource kinds available across all your clusters.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/app-details-argo.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/resource-browser-showcase.jpg)
 
 ### Helm Release Management
 
 Easily view, manage, and deploy your Helm releases. 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/app-details-argo.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/helm-apps-showcase.jpg)
 
 ### ArgoCD & FluxCD Listing
 
 Visualize your Argo CD and Flux CD apps on a single pane.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/app-details-argo.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/argo-flux.gif)
 
-### Fine-Grained RBAC Control
+### Fine-Grained Access Control
 
-Manage access with Single Sign-On (SSO) and Role-Based Access Control (RBAC) for enhanced security.
+User management with Single Sign-On (SSO) and Role-Based Access Control (RBAC) for enhanced security.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/app-details-argo.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/user-manage-showcase.jpg)
 
 ### OCI Registry Support
 
-Support to add your OCI registry for build image and chart storage.
+Support to add your OCI registry for uploading and downloading helm charts, and also for facilitating air-gapped deployment.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/app-details-argo.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/oci-registry-showcase.jpg)
 
 ---
 

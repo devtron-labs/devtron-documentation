@@ -13,7 +13,7 @@ With Devtron, you get an entire Argo CD app listing in one place. This listing i
 * Apps deployed using [GitOps](../reference/glossary.md#gitops) on Devtron
 * Other Argo CD apps present in your cluster
 
-![Figure 2: ArgoCD App List](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/app-details-argo.gif)
+![Figure 1: ArgoCD App List](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/app-details-argo.gif)
 
 ---
 

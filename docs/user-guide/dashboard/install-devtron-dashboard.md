@@ -81,8 +81,6 @@ After the initial login, we recommend you set up any SSO service like Google, Gi
 
 The section below will help you understand the process of getting the administrator credentials.
 
-### For Devtron version v0.6.0 and higher
-
 **Username**: `admin` <br>
 **Password**: Run the following command to get the admin password:
 
@@ -90,23 +88,7 @@ The section below will help you understand the process of getting the administra
 kubectl -n devtroncd get secret devtron-secret \
 -o jsonpath='{.data.ADMIN_PASSWORD}' | base64 -d
 ```
- 
-<details>
-<summary>For Devtron version less than v0.6.0</summary>
 
-**Username**: `admin` <br>
-**Password**: Run the following command to get the admin password:
-
-```bash
-kubectl -n devtroncd get secret devtron-secret \
--o jsonpath='{.data.ACD_PASSWORD}' | base64 -d
-```
-</details>
-
-
-**Note**: If you want to uninstall Devtron or clean Devtron helm installer, refer our [uninstall Devtron](../install/uninstall-devtron.md).
-
-
-## Upgrade
-
-To use the CI/CD capabilities with Devtron, you can Install the [Devtron with CI/CD](../install/install-devtron-with-cicd.md) or [Devtron with CI/CD along with GitOps (Argo CD)](../install/install-devtron-with-cicd-with-gitops.md).
+{% hint style="info" %}
+If you want to uninstall Devtron or clean Devtron helm installer, refer [uninstall Devtron](../install/uninstall-devtron.md).
+{% endhint %}

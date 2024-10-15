@@ -64,17 +64,32 @@
 ## Devtron Dashboard
 
 * [Introduction to Dashboard](user-guide/dashboard/README.md)
-* [Installation](user-guide/dashboard/installation.md)
+* [Install Devtron Dashboard](user-guide/dashboard/install-devtron-dashboard.md)
 * [Resource Browser](user-guide/dashboard/resource-browser/README.md)
   * [Overview Page](user-guide/dashboard/resource-browser/overview.md)
   * [Discover and Manage Resources](user-guide/dashboard/resource-browser/manage-resources.md)
   * [Nodes and Operations](user-guide/dashboard/resource-browser/nodes.md)
   * [Pod Management and Debugging](user-guide/dashboard/resource-browser/pods.md)
   * [Cluster Terminal](user-guide/dashboard/resource-browser/terminal.md)
-* [Manage Helm Apps](user-guide/dashboard/helm/README.md)
-* [Argo CD App Listing](user-guide/dashboard/argocd-listing.md)
-* [Flux CD App Listing](user-guide/dashboard/fluxcd-listing.md)
-* [Manage Authorization](user-guide/dashboard/authorization)
+* [Types of Apps](user-guide/dashboard/app-types.md)
+  * [Manage Helm Apps](user-guide/dashboard/helm-apps.md)
+  * [Argo CD App Listing](user-guide/dashboard/argocd-listing.md)
+  * [Flux CD App Listing](user-guide/dashboard/fluxcd-listing.md)
+* [User Management](user-guide/global-configurations/authorization/README.md)
+  * [SSO Login Services](user-guide/global-configurations/sso-login.md)
+    * [Google](user-guide/global-configurations/authorization/sso/google.md)
+    * [GitHub](user-guide/global-configurations/authorization/sso/github.md)
+    * [GitLab](user-guide/global-configurations/authorization/sso/gitlab.md)
+    * [Microsoft](user-guide/global-configurations/authorization/sso/microsoft.md)
+    * [LDAP](user-guide/global-configurations/authorization/sso/ldap.md)
+    * [OIDC](user-guide/global-configurations/authorization/sso/oidc.md)
+      * [Keycloak](user-guide/global-configurations/authorization/sso/keycloak.md)
+      * [Okta](user-guide/global-configurations/authorization/sso/okta.md)
+    * [OpenShift](user-guide/global-configurations/authorization/sso/openshift.md)
+  * [User Permissions](user-guide/global-configurations/authorization/user-access.md)
+  * [Permission Groups](user-guide/global-configurations/authorization/permission-groups.md)
+  * [API Tokens](user-guide/global-configurations/authorization/api-tokens.md)
+
 
 ## Usage
 

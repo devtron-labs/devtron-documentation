@@ -4,11 +4,11 @@ User with [super-admin](./global-configurations/authorization/user-access.md#ass
 
 To troubleshoot a cluster or a specific node in a cluster, click the terminal icon on the right side.
 
-![Figure 19: Terminal Icon](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cluster-terminal.gif)
+![Figure 1: Terminal Icon](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cluster-terminal.gif)
 
 * You will see the user-defined name for the cluster in Devtron. E.g. `default-cluster`.
 * Select the node you wish to troubleshoot from the `Node` drop-down. E.g. `demo-new`.
-* Select the namespace from the drop-down list which you have added in the [Environment](./global-configurations/cluster-and-environments.md#add-environment) section.
+* Select the namespace from the drop-down list which you have added in the [Environment](../../global-configurations/cluster-and-environments.md#add-environment) section.
 * Select the image from the drop-down list which includes all CLI utilities or you can use a custom image, which is publicly available.
 * Select the terminal shell from the drop-down list (e.g. `sh`, `bash`) to troubleshoot a node.
 

@@ -6,7 +6,7 @@ The components on a typical node include the `kubelet`, a `container runtime`, a
 
 If you have multiple nodes, you can search a node by name or label in the search bar. The search result will display the following information about the node. To display a parameter of a node, use `Columns` on the right side, select the parameter to display from the drop-down list, and click **Apply**.
 
-![Figure 8: Searching and Filtering Nodes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cluster-nodes.jpg)
+![Figure 1: Searching and Filtering Nodes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cluster-nodes.jpg)
 
 | Fields | Description |
 | --- | --- |
@@ -28,7 +28,7 @@ Clicking on a node shows you a number of details such as:
 * Labels, Annotations, and Taints
 * Node IP
 
-![Figure 9: Checking Node Summary](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/node-summary.jpg)
+![Figure 2: Checking Node Summary](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/node-summary.jpg)
 
 Further using the Devtron UI, you will be able to:
 * [Debug a Node](#debug-a-node)
@@ -54,11 +54,11 @@ You can debug a node via [Cluster Terminal](#cluster-terminal) by selecting your
 
 * Click **Debug**.
 
-  ![Figure 10a: Debugging a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/debug.jpg)
+  ![Figure 3a: Debugging a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/debug.jpg)
 
 * Debug a node by selecting the terminal shell, i.e., `bash` or `sh`.
 
-  ![Figure 10b: Debug Terminal](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/debug-terminal.jpg)
+  ![Figure 3b: Debug Terminal](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/debug-terminal.jpg)
 
 ---
 
@@ -66,15 +66,15 @@ You can debug a node via [Cluster Terminal](#cluster-terminal) by selecting your
 
 Cordoning a node means making the node unschedulable. After [cordoning a node](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_cordon/), new pods cannot be scheduled on this node.
 
-![Figure 11a: Visual Representation - Cordoning a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon-visual.jpg)
+![Figure 4a: Visual Representation - Cordoning a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon-visual.jpg)
 
 * Click **Cordon**.
 
-  ![Figure 11b: Cordoning a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon.jpg)
+  ![Figure 4b: Cordoning a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon.jpg)
 
 * A confirmation dialog box will appear, click **Cordon Node** to proceed.
 
-  ![Figure 11c: Cordon Confirmation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon-dialog.jpg)
+  ![Figure 4c: Cordon Confirmation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon-dialog.jpg)
 
 The status of the node shows `SchedulingDisabled` with `Unschedulable` parameter set as `true`.
 
@@ -86,17 +86,17 @@ Similarly, you can uncordon a node by clicking `Uncordon`. After a node is uncor
 
 Before performing maintenance on a node, [draining a node](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/) evicts all of your pods safely from a node. Safe evictions allow the pod’s containers to gracefully terminate and honour the `PodDisruptionBudgets` you have specified (if relevant).
 
-![Figure 12a: Visual Representation - Draining a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain-visual.jpg)
+![Figure 5a: Visual Representation - Draining a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain-visual.jpg)
 
 After the node is drained, all pods (including those managed by DaemonSets) in the node will be automatically drained to other nodes in the cluster, and the drained node will be set to cordoned status.
 
 * Click **Drain**.
 
-  ![Figure 12b: Draining a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain.jpg)
+  ![Figure 5b: Draining a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain.jpg)
 
 * A confirmation dialog box will appear, click **Drain Node** to proceed.
 
-  ![Figure 12c: Drain Confirmation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain-dialog.jpg)
+  ![Figure 5c: Drain Confirmation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain-dialog.jpg)
 
 You can also select from the following conditions before draining a node:
 
@@ -114,17 +114,17 @@ You can also select from the following conditions before draining a node:
 
 Taints are `key:value` pairs associated with effect. After you add taints to nodes, you can set tolerations on a pod to allow the pod to be scheduled to nodes with certain taints. When you taint a node, it will repel all the pods except those that have a toleration for that taint. A node can have one or many taints associated with it.
 
-![Figure 13a: Visual Representation - Tainting a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/taint-visual.jpg)
+![Figure 6a: Visual Representation - Tainting a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/taint-visual.jpg)
 
 **Note**: Make sure to check taint validations before you add a taint.
 
 * Click **Edit taints**.
 
-  ![Figure 13b: Tainting a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-taints.jpg)
+  ![Figure 6b: Tainting a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-taints.jpg)
 
 * Enter the `key:value` pairs and select the [taint effect](#taint-effects) from the drop-down list.
 
-  ![Figure 13c: Adding Taints](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/taint-dialog.jpg)
+  ![Figure 6c: Adding Taints](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/taint-dialog.jpg)
 
 * Click **Save**.
 
@@ -141,7 +141,7 @@ You can also add more taints using **+ Add taint button**, or delete the existin
 
 This allows you to directly edit any node. It will open the editor which contains all the configuration settings in which the default format is YAML. You can edit multiple objects, although changes are applied one at a time.
 
-![Figure 14: Editing Node Config](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-config.gif)
+![Figure 7: Editing Node Config](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-config.gif)
 
 * Go to the `YAML` tab and click **Edit YAML**.
 * Make the changes using the editor.
@@ -154,9 +154,9 @@ This allows you to directly edit any node. It will open the editor which contain
 
 You can also delete a node by clicking the **Delete** button present on the right-hand side.
 
-![Figure 15a: Deleting a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/delete-node.jpg)
+![Figure 8a: Deleting a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/delete-node.jpg)
 
-![Figure 15b: Delete Confirmation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/delete-dialog.jpg)
+![Figure 8b: Delete Confirmation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/delete-dialog.jpg)
 
 The node will be deleted from the cluster.
 

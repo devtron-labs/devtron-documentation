@@ -1,6 +1,6 @@
 # Overview
 
-![Figure 3: Resource Browser - Overview Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/rb-overview.jpg)
+![Figure 1: Resource Browser - Overview Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/rb-overview.jpg)
 
 ## Resource Utilization
 
@@ -30,7 +30,7 @@ This shows errors in the cluster. If no error is present in the cluster, Resourc
 Users need to have super-admin permission to edit the catalog framework.
 {% endhint %}
 
-Based on the schema provided in the catalog framework, you can add relevant details for each cluster. Refer [Catalog Framework](./global-configurations/catalog-framework.md) for more details. 
+Based on the schema provided in the catalog framework, you can add relevant details for each cluster. Refer [Catalog Framework](../../global-configurations/catalog-framework.md) for more details. 
 
 ---
 
