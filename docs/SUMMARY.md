@@ -69,7 +69,7 @@
   * [Overview Page](user-guide/dashboard/resource-browser/overview.md)
   * [Discover and Manage Resources](user-guide/dashboard/resource-browser/manage-resources.md)
   * [Nodes and Operations](user-guide/dashboard/resource-browser/nodes.md)
-  * [Pods and Operations](user-guide/dashboard/resource-browser/pods.md)
+  * [Pod Management and Debugging](user-guide/dashboard/resource-browser/pods.md)
   * [Cluster Terminal](user-guide/dashboard/resource-browser/terminal.md)
 * [Manage Helm Apps](user-guide/dashboard/helm/README.md)
 * [Argo CD App Listing](user-guide/dashboard/argocd-listing.md)

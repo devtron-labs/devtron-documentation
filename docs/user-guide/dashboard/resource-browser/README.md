@@ -19,22 +19,3 @@ You can easily connect more clusters by clicking the **Add Cluster** button loca
 You may click a cluster to view and manage all its resources as shown below.
 
 ![Figure 2: Resources within Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-list.jpg)
-
----
-
-
-
----
-
-
-
----
-
-
-
-
-
----
-
-
-
