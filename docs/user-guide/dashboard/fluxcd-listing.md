@@ -7,7 +7,7 @@ Users need super-admin permission to view/enable/disable the FluxCD listing.
 
 ## Preface
 
-Flux CD doesn't have any official dashboard; however, Devtron supports the listing of your [Flux CD](https://fluxcd.io/) apps in one dashboard. Here, the [advantages](#advantages) are same as those of [ArgoCD app listing](#view-argocd-app-listing).
+Flux CD doesn't have any official dashboard; however, Devtron supports the listing of your [Flux CD](https://fluxcd.io/) apps in one dashboard.
 
 ![Figure 1: FluxCD App List and Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-listing.jpg)
 
@@ -17,7 +17,7 @@ Flux CD doesn't have any official dashboard; however, Devtron supports the listi
 
 Devtron also bridges the gap for Flux CD users by providing additional features as follows:
 
-* **Resource Scanning**: You can scan for vulnerabilities using Devtron's [resource scanning](../user-guide/security-features.md#from-app-details) feature. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+* **Resource Scanning**: You can scan for vulnerabilities using Devtron's [resource scanning](../../user-guide/security-features.md#from-app-details) feature. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 * **Single-pane View**: All Flux CD apps will show details such as their app status, environment, cluster, and namespace together in one dashboard. 
 

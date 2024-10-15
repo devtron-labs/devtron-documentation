@@ -1,6 +1,6 @@
 # Cluster Terminal
 
-User with [super-admin](./global-configurations/authorization/user-access.md#assign-super-admin-permission) access can now troubleshoot cluster issues by accessing the cluster terminal from Devtron. You can select an image from the list that has all CLI utilities like kubectl, helm, netshoot etc. or can use a custom image, which is publicly available.
+User with [super-admin](../../global-configurations/authorization/user-access.md#assign-super-admin-permission) access can now troubleshoot cluster issues by accessing the cluster terminal from Devtron. You can select an image from the list that has all CLI utilities like kubectl, helm, netshoot etc. or can use a custom image, which is publicly available.
 
 To troubleshoot a cluster or a specific node in a cluster, click the terminal icon on the right side.
 

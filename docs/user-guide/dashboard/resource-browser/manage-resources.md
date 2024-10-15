@@ -2,7 +2,7 @@
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [access to the cluster](../..//global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to discover resources.
+Users need to have [access to the cluster](../../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to discover resources.
 {% endhint %}
 
 ## Search a Resource
@@ -81,7 +81,7 @@ You can delete an unwanted resource if it is orphaned and no longer required by 
 User needs to be an [admin of the Kubernetes resources](../../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to create resources.
 {% endhint %}
 
-You can create one or more [Kubernetes objects](../reference/glossary.md#objects) in your cluster using YAML. In case you wish to create multiple objects, separate each resource definition by three dashes (---).
+You can create one or more [Kubernetes objects](../../../reference/glossary.md#objects) in your cluster using YAML. In case you wish to create multiple objects, separate each resource definition by three dashes (---).
 
 Once you select a cluster in Resource Browser, click **+ Create Resource**, and add the resource definition.  
 
