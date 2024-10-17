@@ -135,6 +135,7 @@
     * [Codacy](user-guide/plugins/codacy.md)
     * [Code-Scan](user-guide/plugins/code-scan.md)
     * [Copacetic](user-guide/plugins/copacetic.md)
+    * [Container Image Exporter](user-guide/plugins/container-image-exporter.md)
     * [Copy Container Image](user-guide/plugins/copy-container-image.md)
     * [Cosign](user-guide/plugins/cosign.md)
     * [CraneCopy](user-guide/plugins/crane-copy.md)
