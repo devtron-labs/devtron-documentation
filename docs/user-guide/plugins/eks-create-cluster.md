@@ -42,7 +42,7 @@ e.g., `The EKS Create Cluster plugin is integrated for provisioning of EKS clust
 |   MinNodes               | STRING       | Minimum number of nodes in the EKS NodeGroup.          |      1        |
 |   MaxNodes               | STRING       | Maximum number of nodes in the EKS NodeGroup.          |      1        |
 |   UseEKSConfigFile       | BOOL         | Flag to use a config file for EKS cluster creation (true/false).    |      false        |
-|   EKSConfigFilePath      | STRING       | Path to the EKS cluster configuration file (required if `UseEKSConfigFile` flag is true).|      ~/.kube/config        |
+|   EKSConfigFilePath      | STRING       | Path to the EKS cluster configuration file (required if `UseEKSConfigFile` flag is true).|      eksctl-configs/eks-arm-config.yaml        |
 |   EnablePlugin           | BOOL         | Flag to enable the **EKS Create Cluster** plugin.      |      true        |
 |   AutomatedName          | BOOL         | Flag to enable naming for the cluster (true/false).                  |    false          |
 |   UseIAMNodeRole         | BOOL         | Flag to use IAM Node Role for EKS cluster creation.    |    false          |
