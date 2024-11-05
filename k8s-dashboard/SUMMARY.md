@@ -1,17 +1,54 @@
 # Table of contents
 
-## Modern Kubernetes Dashboard
+## Getting Started
 
 * [Overview of Dashboard](db-docs/README.md)
-* [Setting Up the Dashboard](db-docs/install-devtron-dashboard.md)
+* [Requirements](db-docs/requirements.md)
+* [Install Modern Kubernetes Dashboard](db-docs/install-devtron-dashboard.md)
+
+## User Guide
+
 * [Explore Kubernetes Resources](db-docs/resource-browser/README.md)
   * [Overview Page](db-docs/resource-browser/overview.md)
   * [Discover and Manage Resources](db-docs/resource-browser/manage-resources.md)
   * [Nodes and Operations](db-docs/resource-browser/nodes.md)
   * [Pod Management and Debugging](db-docs/resource-browser/pods.md)
   * [Cluster Terminal](db-docs/resource-browser/terminal.md)
-* [Manage Your Helm Apps](db-docs/helm-apps.md)
-* [View Your Argo CD Apps](db-docs/argocd-listing.md)
-* [View Your Flux CD Apps](db-docs/fluxcd-listing.md)
-* [User Management](db-docs/user-management.md)
 
+* [Helm Apps](db-docs/apps/helm-apps/README.md)
+  * [Create Helm App](db-docs/apps/helm-apps/create-helm-app.md)
+  * [Configure Helm App](db-docs/apps/helm-apps/configure-helm-app.md)
+  * [Deploy Helm App](db-docs/apps/helm-apps/deploy-helm-app.md)
+  * [Delete Helm App](db-docs/apps/helm-apps/delete-helm-app.md)
+
+* [Argo CD Apps](db-docs/apps/argocd-apps.md)
+* [Flux CD Apps](db-docs/apps/fluxcd-apps.md)
+
+* [Chart Store](db-docs/chart-store/README.md)
+  * [Charts](db-docs/chart-store/charts/README.md)
+    * [View Chart](db-docs/chart-store/charts/view-charts)
+    * [Upload Chart](db-docs/chart-store/charts/upload-chart)
+    * [Delete Chart](db-docs/chart-store/charts/delete-chart)
+  * [Chart Groups](db-docs/chart-store/chart-groups/README.md)
+    * [View Chart Group](db-docs/chart-store/chart-groups/view-chart-group)
+    * [Add Chart Group](db-docs/chart-store/chart-groups/add-chart-group)
+    * [Delete Chart Group](db-docs/chart-store/chart-groups/delete-chart-group)
+
+## Operator Guide
+
+* [Projects](db-docs/projects.md)
+* [Clusters & Environments](db-docs/cluster-environments.md)
+* [OCI Registry](db-docs/oci-registry.md)
+* [Chart Repositories](db-docs/chart-repo.md)
+* [Manage Authorization (RBAC)](db-docs/authorization/README.md)
+  * [SSO Login Services](db-docs/authorization/sso-login-services.md)
+  * [User Permissions](db-docs/authorization/user-permissions.md)
+  * [Permission Groups](db-docs/authorization/permission-groups.md)
+  * [API Tokens](db-docs/authorization/api-tokens.md)
+* [External Links](db-docs/external-links.md)
+* [Catalog Framework](db-docs/catalog-framework.md)
+
+## Resources
+
+* [Glossary](db-docs/resources/glossary.md)
+* [FAQ](db-docs/resources/faq.md)
