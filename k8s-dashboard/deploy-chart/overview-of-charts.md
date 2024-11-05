@@ -1,4 +1,6 @@
-# Deploy Helm App
+# Overview Of Charts
+
+## Deploying Charts
 
 Charts can be deployed individually or by creating a group of Charts. Both methods are mentioned here.
 

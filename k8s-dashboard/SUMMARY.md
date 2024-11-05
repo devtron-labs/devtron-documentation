@@ -14,6 +14,7 @@
   * [Nodes and Operations](db-docs/resource-browser/nodes.md)
   * [Pod Management and Debugging](db-docs/resource-browser/pods.md)
   * [Cluster Terminal](db-docs/resource-browser/terminal.md)
+  * [Run Kubectl Commands Locally](db-docs/resource-browser/kubectl-local.md)
 
 * [Helm Apps](db-docs/apps/helm-apps/README.md)
   * [Create Helm App](db-docs/apps/helm-apps/create-helm-app.md)
@@ -24,20 +25,8 @@
 * [Argo CD Apps](db-docs/apps/argocd-apps.md)
 * [Flux CD Apps](db-docs/apps/fluxcd-apps.md)
 
-* [Chart Store](db-docs/chart-store/README.md)
-  * [Charts](db-docs/chart-store/charts/README.md)
-    * [View Chart](db-docs/chart-store/charts/view-charts)
-    * [Upload Chart](db-docs/chart-store/charts/upload-chart)
-    * [Delete Chart](db-docs/chart-store/charts/delete-chart)
-  * [Chart Groups](db-docs/chart-store/chart-groups/README.md)
-    * [View Chart Group](db-docs/chart-store/chart-groups/view-chart-group)
-    * [Add Chart Group](db-docs/chart-store/chart-groups/add-chart-group)
-    * [Delete Chart Group](db-docs/chart-store/chart-groups/delete-chart-group)
-
 ## Operator Guide
 
-* [Enable Argo CD App Listing](db-docs/enable-argocd-listing.md)
-* [Enable Flux CD App Listing](db-docs/enable-fluxcd-listing.md)
 * [Projects](db-docs/projects.md)
 * [Clusters & Environments](db-docs/cluster-environments.md)
 * [OCI Registry](db-docs/oci-registry.md)
@@ -58,6 +47,14 @@
   * [API Tokens](db-docs/authorization/api-tokens.md)
 * [External Links](db-docs/external-links.md)
 * [Catalog Framework](db-docs/catalog-framework.md)
+* [List of Operations](db-docs/operations/README.md))
+  * [Enable Argo CD App Listing](db-docs/enable-argocd-listing.md)
+  * [Enable Flux CD App Listing](db-docs/enable-fluxcd-listing.md)
+  * [Upload Chart](db-docs/chart-store/charts/upload-chart)
+  * [Delete Chart](db-docs/chart-store/charts/delete-chart)
+  * [View Chart Group](db-docs/chart-store/chart-groups/view-chart-group)
+  * [Add Chart Group](db-docs/chart-store/chart-groups/add-chart-group)
+  * [Delete Chart Group](db-docs/chart-store/chart-groups/delete-chart-group)
 
 ## Resources
 
