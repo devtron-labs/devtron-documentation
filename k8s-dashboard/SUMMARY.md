@@ -3,7 +3,7 @@
 ## Getting Started
 
 * [Overview of Dashboard](db-docs/README.md)
-* [Requirements](db-docs/requirements.md)
+* [Prerequisites](db-docs/requirements.md)
 * [Install Modern Kubernetes Dashboard](db-docs/install-devtron-dashboard.md)
 
 ## User Guide
@@ -36,12 +36,23 @@
 
 ## Operator Guide
 
+* [Enable Argo CD App Listing](db-docs/enable-argocd-listing.md)
+* [Enable Flux CD App Listing](db-docs/enable-fluxcd-listing.md)
 * [Projects](db-docs/projects.md)
 * [Clusters & Environments](db-docs/cluster-environments.md)
 * [OCI Registry](db-docs/oci-registry.md)
 * [Chart Repositories](db-docs/chart-repo.md)
 * [Manage Authorization (RBAC)](db-docs/authorization/README.md)
-  * [SSO Login Services](db-docs/authorization/sso-login-services.md)
+  * [SSO Login Services](db-docs/authorization/sso-login-services/README.md)
+      * [Google](db-docs/authorization/sso-login-services/google.md)
+      * [GitHub](db-docs/authorization/sso-login-services/github.md)
+      * [GitLab](db-docs/authorization/sso-login-services/gitlab.md)
+      * [Microsoft](db-docs/authorization/sso-login-services/microsoft.md)
+      * [LDAP](db-docs/authorization/sso-login-services/ldap.md)
+      * [OIDC](db-docs/authorization/sso-login-services/oidc.md)
+        * [Keycloak](db-docs/authorization/sso-login-services/keycloak.md)
+        * [Okta](db-docs/authorization/sso-login-services/okta.md)
+      * [OpenShift](db-docs/authorization/sso-login-services/openshift.md)
   * [User Permissions](db-docs/authorization/user-permissions.md)
   * [Permission Groups](db-docs/authorization/permission-groups.md)
   * [API Tokens](db-docs/authorization/api-tokens.md)

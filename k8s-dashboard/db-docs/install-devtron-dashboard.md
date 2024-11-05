@@ -1,11 +1,15 @@
 # Install Dashboard
 
-## Prerequisite
+{% hint style="warning" %}
+### Prerequisites
+Make sure to meet [all the requirements](./requirements.md) for installing Modern Kubernetes Dashboard.
+{% endhint %}
 
-* Create a [Kubernetes cluster, preferably K8s version 1.16 or higher](../tasks/create-cluster.md)
-* Install [Helm](https://helm.sh/docs/intro/install/) if you have not installed it.
+---
 
 ## Commands
+
+Use the terminal or CLI to run the following commands:
 
 ### Add Helm Repo
 
@@ -14,6 +18,7 @@ helm repo add devtron https://helm.devtron.ai
 ```
 
 ### Update Helm Repo
+
 ```bash
 helm repo update devtron
 ```
@@ -69,7 +74,7 @@ kubectl -n devtroncd get secret devtron-secret \
 ### Recommended Action
 When you install Devtron for the first time, it creates a default admin user and password (with unrestricted access to Devtron). You can use it to log in as an administrator. 
 
-After the initial login, we recommend you set up any SSO service like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (let's say, GitHub) to log in to Devtron's dashboard.
+After the initial login, we recommend you set up any SSO service like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (let's say, GitHub) to log in to the Dashboard.
 {% endhint %}
 
 
