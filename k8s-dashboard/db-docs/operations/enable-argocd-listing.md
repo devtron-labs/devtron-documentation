@@ -1,11 +1,11 @@
-# Enable Argo CD App Listing
+# Show/Hide Argo CD App Listing
 
 ## Prerequisite
 The cluster in which Argo CD apps exist should be added in **Global Configurations** → **Clusters and Environments**
 
 ---
 
-## Steps to Enable
+## Steps
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?

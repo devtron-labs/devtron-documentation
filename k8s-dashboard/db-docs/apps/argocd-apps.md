@@ -12,7 +12,12 @@ With Devtron, you get an entire Argo CD app listing in one place. This listing i
 
 ## View ArgoCD App Listing
 
-In the **Argo CD Apps** tab, select the cluster(s) from the dropdown to view the Argo CD apps available in the chosen cluster(s).
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need super-admin permission to view ArgoCD App listing.
+{% endhint %}
+
+In the **ArgoCD Apps** tab, select the cluster(s) from the dropdown to view the Argo CD apps available in the chosen cluster(s).
 
 ![Figure 1: ArgoCD App List](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/app-details-argo.gif)
 

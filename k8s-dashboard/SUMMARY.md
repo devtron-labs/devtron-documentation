@@ -16,12 +16,7 @@
   * [Cluster Terminal](db-docs/resource-browser/terminal.md)
   * [Run Kubectl Commands Locally](db-docs/resource-browser/kubectl-local.md)
 
-* [Helm Apps](db-docs/apps/helm-apps/README.md)
-  * [Create Helm App](db-docs/apps/helm-apps/create-helm-app.md)
-  * [Configure Helm App](db-docs/apps/helm-apps/configure-helm-app.md)
-  * [Deploy Helm App](db-docs/apps/helm-apps/deploy-helm-app.md)
-  * [Delete Helm App](db-docs/apps/helm-apps/delete-helm-app.md)
-
+* [Helm Apps](db-docs/apps/helm-apps.md)
 * [Argo CD Apps](db-docs/apps/argocd-apps.md)
 * [Flux CD Apps](db-docs/apps/fluxcd-apps.md)
 
@@ -47,11 +42,9 @@
   * [API Tokens](db-docs/authorization/api-tokens.md)
 * [External Links](db-docs/external-links.md)
 * [Catalog Framework](db-docs/catalog-framework.md)
-* [List of Operations](db-docs/operations/README.md))
-  * [Enable Argo CD App Listing](db-docs/operations/enable-argocd-listing.md)
-  * [Enable Flux CD App Listing](db-docs/operations/enable-fluxcd-listing.md)
-  * [Upload Chart](db-docs/chart-store/charts/upload-chart)
-  * [Delete Chart](db-docs/chart-store/charts/delete-chart)
+* [Show/Hide Argo CD App Listing](db-docs/operations/enable-argocd-listing.md)
+* [Show/Hide Flux CD App Listing](db-docs/operations/enable-fluxcd-listing.md)
+* [Chart Store](db-docs/chart-store/charts/upload-chart)
 
 ## Resources
 

@@ -17,7 +17,12 @@ With Devtron, you get an entire Flux CD app listing in one place. This listing i
 
 ## View FluxCD App Listing
 
-In the **Flux CD Apps** tab, select the cluster(s) from the dropdown to view the Flux CD apps available in the chosen cluster(s).
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need super-admin permission to view FluxCD App listing.
+{% endhint %}
+
+In the **FluxCD Apps** tab, select the cluster(s) from the dropdown to view the Flux CD apps available in the chosen cluster(s).
 
 ![Figure 1: Selecting Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/cluster-selection.jpg)
 
