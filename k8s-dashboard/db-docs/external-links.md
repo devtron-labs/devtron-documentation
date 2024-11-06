@@ -15,13 +15,15 @@ Some of the third-party applications which are pre-defined on `Devtron` Dashboar
 * Swagger 
 * Jira etc.
 
-
+---
 
 ## Use Case for Monitoring Tool
 
 To monitor/debug an application using a specific Monitoring Tool (such as Grafana, Kibana, etc.), you may need to navigate to the tool's page, then to the respective app/resource page.
 
 `External Links` can take you directly to the tool's page, which includes the context of the application, environment, pod, and container.
+
+---
 
 ## Prerequisites
 
@@ -31,6 +33,8 @@ Before you begin, configure an application in the Devtron dashboard.
 - Monitoring tool URL
 
 **Note**: External links can only be added/managed by a super admin, but non-super admin users can [access the configured external links](././../creating-application/app-details.md) on the `App Configuration` page.
+
+---
 
 ## Add an External Link
 
@@ -116,11 +120,15 @@ The following fields are provided on the **Add Link** page:
 
 Click **Save**.
 
+---
+
 ## Access an external link
 
 The users (admin and others) can access the configured external link on the [App Details](././../creating-application/app-details.md) page. 
 
 **Note**: If you enable `App admins can edit` on the `External Links` page, then only non-super admin users can view the selected links on the `App Details` page. 
+
+---
 
 ## Manage External links
 

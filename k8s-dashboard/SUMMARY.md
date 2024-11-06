@@ -48,13 +48,10 @@
 * [External Links](db-docs/external-links.md)
 * [Catalog Framework](db-docs/catalog-framework.md)
 * [List of Operations](db-docs/operations/README.md))
-  * [Enable Argo CD App Listing](db-docs/enable-argocd-listing.md)
-  * [Enable Flux CD App Listing](db-docs/enable-fluxcd-listing.md)
+  * [Enable Argo CD App Listing](db-docs/operations/enable-argocd-listing.md)
+  * [Enable Flux CD App Listing](db-docs/operations/enable-fluxcd-listing.md)
   * [Upload Chart](db-docs/chart-store/charts/upload-chart)
   * [Delete Chart](db-docs/chart-store/charts/delete-chart)
-  * [View Chart Group](db-docs/chart-store/chart-groups/view-chart-group)
-  * [Add Chart Group](db-docs/chart-store/chart-groups/add-chart-group)
-  * [Delete Chart Group](db-docs/chart-store/chart-groups/delete-chart-group)
 
 ## Resources
 

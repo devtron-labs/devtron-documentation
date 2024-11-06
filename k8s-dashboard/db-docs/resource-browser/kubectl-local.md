@@ -34,6 +34,21 @@ If you are not a super-admin and can't generate a token yourself, you can find t
 
 ![Figure 22: Using Session Token](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/argocd-token-v1.gif)
 
+There are 2 methods of getting kubeconfig in your system:
+* [Quick Method](#quick-method)
+* [Manual Method](#manual-method)
+
+### Quick Method
+
+1. In Resource Browser, hover on the cluster name and click the `Get kubeconfig` icon. 
+
+  ![Figure 23: Get Kubeconfig](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/getkubeconfig.gif)
+
+2. Copy the commands and run them on your terminal.
+
+
+### Manual Method
+
 1. Go to `~/.kube` folder on your local machine and open the `config` file. Or you may create one with the following content:
 
   {% code title="kubeconfig" overflow="wrap" lineNumbers="true" %}

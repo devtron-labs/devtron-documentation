@@ -11,6 +11,3 @@ Refer [user access](https://github.com/devtron-labs/devtron/blob/main/docs/user-
 3. Provide a project name in the field and click `Save`.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/projects/global-configs-projects.png)
-
-
-
