@@ -50,10 +50,6 @@ helm install devtron devtron/devtron-operator \
 To install on **Minikube/MicroK8s/Kind/** cluster, run the following command:
 
 ```bash
-helm repo add devtron https://helm.devtron.ai
-
-helm repo update devtron
-
 helm install devtron devtron/devtron-operator \
 --create-namespace --namespace devtroncd \
 --set components.devtron.service.type=NodePort 
@@ -66,10 +62,6 @@ To install on **k3s** cluster, run the following command:
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
-
-helm repo add devtron https://helm.devtron.ai
-
-helm repo update devtron
 
 helm install devtron devtron/devtron-operator \
 --create-namespace --namespace devtroncd \
@@ -99,10 +91,6 @@ source .bashrc
 #### Run the Installation Commands
 
 ```bash
-helm repo add devtron https://helm.devtron.ai
-
-helm repo update devtron
-
 helm install devtron devtron/devtron-operator \
 --create-namespace --namespace devtroncd \
 --set components.devtron.service.type=NodePort 
@@ -110,7 +98,7 @@ helm install devtron devtron/devtron-operator \
 
 
 
-### 4. Get Dashboard URL
+## 4. Get Dashboard URL
 
 ### For Amazon EKS, Azure AKS, Google GKE Users
 

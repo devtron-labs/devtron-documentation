@@ -1,6 +1,6 @@
 # OCI Registry
 
-If you have [helm charts](../../reference/glossary.md#helm-charts-packages) stored in your [OCI registry](../../reference/glossary.md#container-registry), you can add the OCI registry to Devtron's Modern Kubernetes Dashboard and pull those [helm charts](../../reference/glossary.md#helm-charts-packages) to Devtron's [Chart Store].
+If you have [helm charts](../../reference/glossary.md#helm-charts-packages) stored in your [OCI registry](./resources/glossary.md#container-registry), you can add the OCI registry to Devtron's Modern Kubernetes Dashboard and pull those [helm charts](./resources/glossary.md#helm-charts-packages) to Devtron's [Chart Store].
 
 You can configure an OCI registry using any registry provider of your choice, including:
 * ECR

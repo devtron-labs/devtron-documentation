@@ -10,8 +10,8 @@ To achieve this, Devtron supports a feature known as **Catalog Framework**. Usin
 
 Currently, Modern Kubernetes Dashboard supports catalog framework for the following resource types (a.k.a. resource kind):
 
-* [Helm applications](../../reference/glossary.md#helm-apps)
-* [Clusters](../../reference/glossary.md#cluster)
+* [Helm applications](./resources/glossary.md#helm-apps)
+* [Clusters](./resources/glossary.md#cluster)
 
 There are two parts involved in the creation of a desirable resource catalog:
 

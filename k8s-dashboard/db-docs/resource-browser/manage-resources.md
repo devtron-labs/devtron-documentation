@@ -47,7 +47,7 @@ Further resources in the cluster are grouped under the following categories:
 User needs to be an [admin of the Kubernetes resource](../../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to edit its manifest.
 {% endhint %}
 
-You can edit the [manifest](../../../reference/glossary.md#manifest) of a Kubernetes object. This can be for fixing errors, scaling resources, or changing configuration.
+You can edit the [manifest](../resources/glossary.md#manifest) of a Kubernetes object. This can be for fixing errors, scaling resources, or changing configuration.
 
 ![Figure 3: Editing a Live Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest.gif)
 
@@ -81,7 +81,7 @@ You can delete an unwanted resource if it is orphaned and no longer required by 
 User needs to be an [admin of the Kubernetes resources](../../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to create resources.
 {% endhint %}
 
-You can create one or more [Kubernetes objects](../../../reference/glossary.md#objects) in your cluster using YAML. In case you wish to create multiple objects, separate each resource definition by three dashes (---).
+You can create one or more [Kubernetes objects](../resources/glossary.md#objects) in your cluster using YAML. In case you wish to create multiple objects, separate each resource definition by three dashes (---).
 
 Once you select a cluster in Resource Browser, click **+ Create Resource**, and add the resource definition.  
 

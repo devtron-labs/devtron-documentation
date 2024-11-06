@@ -7,7 +7,7 @@ Users need to have [access to the cluster](../../global-configurations/authoriza
 
 ## Manifest
 
-Shows you the [configuration](../../../reference/glossary.md#manifest) of the selected pod and allows you to edit it. Refer [Edit Manifest](#edit-manifest) to learn more.
+Shows you the [configuration](../resources/glossary.md#manifest) of the selected pod and allows you to edit it. Refer [Edit Manifest](#edit-manifest) to learn more.
 
 ---
 
