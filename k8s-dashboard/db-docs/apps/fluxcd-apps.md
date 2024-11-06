@@ -1,4 +1,4 @@
-# View FluxCD App Listing
+# FluxCD App Listing
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
@@ -9,7 +9,23 @@ Users need super-admin permission to view/enable/disable the FluxCD listing.
 
 Flux CD doesn't have any official dashboard; however, Devtron supports the listing of your [Flux CD](https://fluxcd.io/) apps in one dashboard.
 
-![Figure 1: FluxCD App List and Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-listing.jpg)
+With Devtron, you get an entire Flux CD app listing in one place. This listing includes:
+* Flux CD apps present in the cluster where Devtron is installed
+* Flux CD apps present in other clusters you added to Devtron
+
+---
+
+## View FluxCD App Listing
+
+In the **Flux CD Apps** tab, select the cluster(s) from the dropdown to view the Flux CD apps available in the chosen cluster(s).
+
+![Figure 1: Selecting Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/cluster-selection.jpg)
+
+(Optional) Once you choose cluster(s), you may use the **Template Type** dropdown to further filter your Flux CD app listing based on its type, i.e., [Kustomization](https://fluxcd.io/flux/components/kustomize/kustomizations/) or [Helmrelease](https://fluxcd.io/flux/components/helm/helmreleases/).
+
+Click any Flux CD app to view its details as shown below.
+
+![Figure 2: Flux App Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/app-details-flux.gif)
 
 ---
 

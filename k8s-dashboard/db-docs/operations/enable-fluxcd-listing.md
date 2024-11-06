@@ -8,6 +8,11 @@ The cluster in which Flux CD apps exist should be added in **Global Configuratio
 
 ## Steps to Enable
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need super-admin permission to view/enable/disable the FluxCD listing.
+{% endhint %}
+
 1. Go to the **Resource Browser** of Devtron.
 
 2. Select the cluster (in which your Argo CD app exists).

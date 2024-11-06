@@ -7,6 +7,11 @@ The cluster in which Argo CD apps exist should be added in **Global Configuratio
 
 ## Steps to Enable
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need super-admin permission to view/enable/disable the ArgoCD listing.
+{% endhint %}
+
 {% embed url="https://www.youtube.com/watch?v=4KyYnsAEpqo" caption="Enabling External ArgoCD Listing" %}
 
 1. Go to the **Resource Browser** of Devtron.
