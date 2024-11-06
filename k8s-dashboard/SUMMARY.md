@@ -20,6 +20,12 @@
 * [Argo CD Apps](db-docs/apps/argocd-apps.md)
 * [Flux CD Apps](db-docs/apps/fluxcd-apps.md)
 
+* [Chart Store](db-docs/deploy-chart/README.md)
+  * [Deploy a Chart](db-docs/deploy-chart/deployment-of-charts.md)
+  * [Examples](db-docs/deploy-chart/examples/README.md)
+    * [Deploying MySQL Helm Chart](db-docs/deploy-chart/examples/deploying-mysql-helm-chart.md)
+    * [Deploying MongoDB Helm Chart](db-docs/deploy-chart/examples/deploying-mongodb-helm-chart.md)
+
 ## Operator Guide
 
 * [Projects](db-docs/projects.md)
@@ -44,7 +50,7 @@
 * [Catalog Framework](db-docs/catalog-framework.md)
 * [Show/Hide Argo CD App Listing](db-docs/operations/enable-argocd-listing.md)
 * [Show/Hide Flux CD App Listing](db-docs/operations/enable-fluxcd-listing.md)
-* [Chart Store](db-docs/chart-store/charts/upload-chart)
+* [Charts and Chart Store](db-docs/charts.md)
 
 ## Resources
 

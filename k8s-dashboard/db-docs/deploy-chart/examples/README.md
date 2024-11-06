@@ -1,6 +1,6 @@
 # Examples
 
-This Documentation guides you to Deploy different Helm Charts available on Devtron.
+This documentation helps you deploy a few Helm Charts available on Devtron.
 
 **Parts of Documentation**
 

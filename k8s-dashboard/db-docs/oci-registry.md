@@ -34,9 +34,33 @@ You can configure an OCI registry using any registry provider of your choice, in
     | **Name** | Provide a name to your registry, this name will appear in the **Container Registry** drop-down list available within the [Build Configuration](../creating-application/docker-build-configuration.md) section of your application|
     | **Registry URL** | Provide the URL of your registry in case it doesn't come prefilled. Do not include `oci://`, `http://`, or `/https://` in the URL. |
     | **Authentication Type** | The credential input fields may differ depending on the registry provider, check [Registry Providers](#supported-registry-providers) |
-    | **Use as chart repository** | Tick this checkbox if you want Devtron to pull helm charts from your registry and display them on its chart store. Also, you will have to provide a list of repositories (present within your registry) for Devtron to successfully pull the helm charts. |
+    | **Use as chart repository** | Tick this checkbox if you want Devtron to [pull helm charts from your registry and display them on chart store](#use-as-chart-repository). Also, you will have to provide a list of repositories (present within your registry) for Devtron to successfully pull the helm charts. |
 
 6. Click **Save**.
+
+### Use as Chart Repository
+
+{% hint style="info" %}
+### Prerequisite
+OCI registry with `Use as chart repository` option enabled. 
+{% endhint %}
+
+Unlike Helm repos, OCI registries do not have an index file to discover all the charts. If you have helm charts pushed to your OCI registry, you can use that registry as a chart repository. 
+
+Upon enabling this option, Devtron can use your OCI registry as the chart source and pull the helm charts to display them on your [Chart Store](../deploy-chart/README.md) for easy deployment.
+
+#### Tutorial
+
+{% embed url="https://www.youtube.com/watch?v=9imC5MMz9gs" caption="Pulling Charts from an OCI Registry to Devtron" %}
+
+#### Steps
+
+Search your OCI registry in the list and click it. 
+
+In the **List of repositories** field, add your chart repo(s). The format should be `username/chartname`. You can [find the username](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/find-username.jpg) from your registry provider account.
+
+![Figure 3: Adding Chart Repos](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/container-config.jpg)
+
 
 ---
 
