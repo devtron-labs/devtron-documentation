@@ -4,6 +4,8 @@
 
 The **Kubernetes Dashboard** by Devtron provides a unified interface for managing and observing all Kubernetes resources across your clusters. It simplifies resource management by offering visualizations, RBAC controls, multi-cluster support, thus making it intuitive for you to view and manage your microservices.
 
+{% embed url="https://www.youtube.com/watch?v=oqCAB9b-SGQ" caption="Modern Kubernetes Dashboard" %}
+
 ---
 
 ## Key Offerings

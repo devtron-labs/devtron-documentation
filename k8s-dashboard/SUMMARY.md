@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-* [Overview of Dashboard](db-docs/README.md)
+* [Overview of Dashboard](README.md)
 * [Prerequisites](db-docs/requirements.md)
 * [Install Modern Kubernetes Dashboard](db-docs/install-devtron-dashboard.md)
 

@@ -161,5 +161,5 @@ You can also delete a node by clicking the **Delete** button present on the righ
 The node will be deleted from the cluster.
 
 {% hint style="info" %}
-You can also access [Cluster Terminal](#cluster-terminal) from your node.
+You can also access [Cluster Terminal](../resource-browser/terminal.md) from your node.
 {% endhint %}
