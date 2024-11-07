@@ -4,6 +4,8 @@
 
 The **Kubernetes Dashboard** by Devtron provides a unified interface for managing and observing all Kubernetes resources across your clusters. It simplifies resource management by offering visualizations, RBAC controls, multi-cluster support, thus making it intuitive for you to view and manage your microservices.
 
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/dashboard-overview.gif)
+
 ---
 
 ## Key Offerings
@@ -20,13 +22,19 @@ View and manage the resource kinds available across all your clusters.
 
 Easily view, manage, and deploy your Helm releases. 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/helm-apps-showcase.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/helm-applist.jpg)
 
-### ArgoCD & FluxCD Listing
+### Argo CD App Listing
 
-Visualize your Argo CD and Flux CD apps on a single pane.
+Visualize your Argo CD apps across all your clusters on a single pane.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/argo-flux.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/argocd-applist.jpg)
+
+### Flux CD App Listing
+
+Visualize your Flux CD apps across all your clusters on a single pane.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/fluxcd-applist.jpg)
 
 ### Fine-Grained Access Control
 
