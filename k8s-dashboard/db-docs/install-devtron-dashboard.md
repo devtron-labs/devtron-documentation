@@ -31,7 +31,7 @@ helm repo update devtron
 
 {% hint style="info" %}
 ### Having a Multi-Arch Cluster? 
-If you wish to install Devtron on clusters with multi-architecture nodes (ARM and AMD), append the Devtron installation command with `--set installer.arch=multi-arch`.
+If you wish to install Devtron on clusters with multi-architecture nodes (ARM and AMD), append the below Devtron installation command with `--set installer.arch=multi-arch`.
 {% endhint %}
 
 ### For EKS, AKS, GKE Users
