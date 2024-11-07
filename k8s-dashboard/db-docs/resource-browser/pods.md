@@ -2,7 +2,7 @@
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [access to the cluster](../../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to view its pods and its data.
+Users need to have [access to the cluster](../authorization/user-permissions.md#kubernetes-resources-permissions) to view its pods and its data.
 {% endhint %}
 
 ## Manifest

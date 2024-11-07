@@ -192,7 +192,7 @@ In Devtron, you can view nodes by going to Resource Browser → (choose a cluste
 
 Kubernetes objects are the building blocks that define and manage your applications running on the platform. They are also known as 'Resources' or 'Kinds'. This includes nodes, pods, deployment, cronjob, configmap, and many more. 
 
-Devtron's [Resource Browser](../user-guide/resource-browser.md) helps you manage all such objects present in your clusters.
+Devtron's [Resource Browser](../resource-browser/README.md) helps you manage all such objects present in your clusters.
 
 ### Pod
 

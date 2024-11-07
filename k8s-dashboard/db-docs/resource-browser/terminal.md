@@ -1,6 +1,6 @@
 # Cluster Terminal
 
-User with [super-admin](../../global-configurations/authorization/user-access.md#assign-super-admin-permission) access can now troubleshoot cluster issues by accessing the cluster terminal from Devtron. You can select an image from the list that has all CLI utilities like kubectl, helm, netshoot etc. or can use a custom image, which is publicly available.
+User with [super-admin](../authorization/user-permissions.md#assign-super-admin-permission) access can now troubleshoot cluster issues by accessing the cluster terminal from Devtron. You can select an image from the list that has all CLI utilities like kubectl, helm, netshoot etc. or can use a custom image, which is publicly available.
 
 To troubleshoot a cluster or a specific node in a cluster, click the terminal icon on the right side.
 
@@ -8,7 +8,7 @@ To troubleshoot a cluster or a specific node in a cluster, click the terminal ic
 
 * You will see the user-defined name for the cluster in Devtron. E.g. `default-cluster`.
 * Select the node you wish to troubleshoot from the `Node` drop-down. E.g. `demo-new`.
-* Select the namespace from the drop-down list which you have added in the [Environment](../../global-configurations/cluster-and-environments.md#add-environment) section.
+* Select the namespace from the drop-down list which you have added in the [Environment](../cluster-environments.md#add-environment) section.
 * Select the image from the drop-down list which includes all CLI utilities or you can use a custom image, which is publicly available.
 * Select the terminal shell from the drop-down list (e.g. `sh`, `bash`) to troubleshoot a node.
 

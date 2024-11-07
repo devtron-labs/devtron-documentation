@@ -65,7 +65,7 @@ You can monitor activities like creation, deletion, updation, scaling, or errors
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-User needs to be an [admin of the Kubernetes resource](../../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to delete it.
+User needs to be an [admin of the Kubernetes resource](../authorization/user-permissions.md#kubernetes-resources-permissions) to delete it.
 {% endhint %}
 
 You can delete an unwanted resource if it is orphaned and no longer required by your applications.
@@ -78,7 +78,7 @@ You can delete an unwanted resource if it is orphaned and no longer required by 
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-User needs to be an [admin of the Kubernetes resources](../../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to create resources.
+User needs to be an [admin of the Kubernetes resources](../authorization/user-permissions.md#kubernetes-resources-permissions) to create resources.
 {% endhint %}
 
 You can create one or more [Kubernetes objects](../resources/glossary.md#objects) in your cluster using YAML. In case you wish to create multiple objects, separate each resource definition by three dashes (---).

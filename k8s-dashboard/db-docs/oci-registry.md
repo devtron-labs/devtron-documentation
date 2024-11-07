@@ -47,7 +47,7 @@ OCI registry with `Use as chart repository` option enabled.
 
 Unlike Helm repos, OCI registries do not have an index file to discover all the charts. If you have helm charts pushed to your OCI registry, you can use that registry as a chart repository. 
 
-Upon enabling this option, Devtron can use your OCI registry as the chart source and pull the helm charts to display them on your [Chart Store](../deploy-chart/README.md) for easy deployment.
+Upon enabling this option, Devtron can use your OCI registry as the chart source and pull the helm charts to display them on your [Chart Store](./chart-store/README.md) for easy deployment.
 
 #### Tutorial
 

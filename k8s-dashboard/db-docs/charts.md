@@ -3,8 +3,8 @@
 ## Introduction
 
 Devtron makes it easier for you to populate your charts from multiple sources to the [chart store](./resources/glossary.md#chart-store). These sources are: 
-* [Chart Repository](../global-configurations/chart-repo.md)
-* [OCI Registry](../global-configurations/container-registries.md#use-as-chart-repository)
+* [Chart Repository](./chart-repo.md)
+* [OCI Registry](./oci-registry.md#use-as-chart-repository)
 
 ![Figure 1: Chart Store](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/overview-of-charts/chart-store-main.jpg)
 
@@ -12,14 +12,14 @@ Devtron makes it easier for you to populate your charts from multiple sources to
 
 * Helm Chart(s)
 * Chart Repository added to Devtron
-* OCI-Compliant Registry (e.g. Docker Hub and [many more](../global-configurations/container-registries.md#supported-registry-providers)) 
+* OCI-Compliant Registry (e.g. Docker Hub and [many more](./oci-registry.md#supported-registry-providers)) 
 
 
 ## Removing your Charts from the Chart Store
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-You cannot remove a chart from the Chart Store if the source was a [chart repository](../global-configurations/chart-repo.md). Removal is possible only if the charts [come from OCI registry](../global-configurations/container-registries.md#push-helm-packages).
+You cannot remove a chart from the Chart Store if the source was a [chart repository](./chart-repo.md). Removal is possible only if the charts [come from OCI registry](./oci-registry.md#push-helm-packages).
 {% endhint %}
 
 1. Go to your OCI registry settings in Devtron.

@@ -1,6 +1,6 @@
 # Manage Helm Apps
 
-The Devtron Dashboard displays the helm applications deployed to your cluster and lets you deploy your own helm charts or third-party charts (e.g. postgresql) using the [Chart Store](../deploy-chart/README.md).
+The Devtron Dashboard displays the helm applications deployed to your cluster and lets you deploy your own helm charts or third-party charts (e.g. postgresql) using the [Chart Store](../chart-store/README.md).
 
 ## View Helm Apps
 

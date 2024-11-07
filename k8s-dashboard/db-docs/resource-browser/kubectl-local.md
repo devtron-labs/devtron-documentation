@@ -22,13 +22,13 @@ Kubeconfig becomes painstakingly difficult to maintain especially when it comes 
 
 Devtron helps in reducing the challenges and simplifying the maintenance of kubeconfig file through:
 * **Devtron's Proxy URL for Cluster** - A standardized URL that you can use in place of your Kubernetes cluster URL.
-* **Devtron's Access Token** - A kubectl-compatible token which can be generated and centrally maintained from [Global Configurations → Authorization → API tokens](./global-configurations/authorization/api-tokens.md).
+* **Devtron's Access Token** - A kubectl-compatible token which can be generated and centrally maintained from [Global Configurations → Authorization → API tokens](../authorization/api-tokens.md).
 
 ---
 
 ## Steps
 
-**Prerequisite**: An [API token with necessary permissions](./global-configurations/authorization/api-tokens.md) for the user(s) to access the cluster. 
+**Prerequisite**: An [API token with necessary permissions](../authorization/api-tokens.md) for the user(s) to access the cluster. 
 
 If you are not a super-admin and can't generate a token yourself, you can find the session token (argocd.token) using the Developer Tools available in your web browser as shown below.
 

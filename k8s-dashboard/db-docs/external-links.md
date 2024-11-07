@@ -32,7 +32,7 @@ Before you begin, configure an application in the Devtron dashboard.
 - Super admin access
 - Monitoring tool URL
 
-**Note**: External links can only be added/managed by a super admin, but non-super admin users can [access the configured external links](././../creating-application/app-details.md) on the `App Configuration` page.
+**Note**: External links can only be added/managed by a super admin, but non-super admin users can access the configured external links on the `App Configuration` page of Helm App.
 
 ---
 
@@ -108,7 +108,7 @@ The following fields are provided on the **Add Link** page:
                 <li>{envId}</li>
                 <li>{namespace}</li>
                 <li>{podName}: If used, the link will only be visible at the pod level on the <a href="../creating-application/app-details.md"> App details </a> page.
-                <li>{containerName}: If used, the link will only be visible at the container level on the <a href="../creating-application/app-details.md">App details</a> page. </li>
+                <li>{containerName}: If used, the link will only be visible at the container level on the App details page. </li>
             </ul>
             <b>Note: The env variables will be dynamically replaced by the values that you used to configure the link.           
         </td>
@@ -124,7 +124,7 @@ Click **Save**.
 
 ## Access an external link
 
-The users (admin and others) can access the configured external link on the [App Details](././../creating-application/app-details.md) page. 
+The users (admin and others) can access the configured external link on the App Details page. 
 
 **Note**: If you enable `App admins can edit` on the `External Links` page, then only non-super admin users can view the selected links on the `App Details` page. 
 

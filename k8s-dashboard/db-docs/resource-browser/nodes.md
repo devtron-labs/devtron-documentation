@@ -50,7 +50,7 @@ Users need to have super-admin permission to perform node operations.
 
 ## Debug a Node
 
-You can debug a node via [Cluster Terminal](#cluster-terminal) by selecting your namespace and image from the list that has all CLI utilities like kubectl, helm, netshoot etc. or can use a custom image, which is publicly available.
+You can debug a node via [Cluster Terminal](./terminal.md) by selecting your namespace and image from the list that has all CLI utilities like kubectl, helm, netshoot etc. or can use a custom image, which is publicly available.
 
 * Click **Debug**.
 
@@ -161,5 +161,5 @@ You can also delete a node by clicking the **Delete** button present on the righ
 The node will be deleted from the cluster.
 
 {% hint style="info" %}
-You can also access [Cluster Terminal](../resource-browser/terminal.md) from your node.
+You can also access [Cluster Terminal](./terminal.md) from your node.
 {% endhint %}

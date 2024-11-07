@@ -2,7 +2,7 @@
 
 ## Introduction
 
-You can add your existing Kubernetes clusters and environments on the `Clusters and Environments` section. You must have a [super admin](./authorization/user-access.md#assign-super-admin-permissions) access to add a cluster.
+You can add your existing Kubernetes clusters and environments on the `Clusters and Environments` section. You must have a [super admin](./authorization/user-permissions.md#assign-super-admin-permissions) access to add a cluster.
 
 ![Figure 1: Clusters and Environments in Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-and-environments.jpg)
 

@@ -5,7 +5,7 @@ Using the `Permission groups`, you can assign a user to a particular group and a
 The advantage of the `Permission groups` is to define a set of privileges like create, edit, or delete for the given set of resources that can be shared among the users within the group.
 
 {% hint style="info" %}
-The [User permissions](../../global-configurations/authorization/user-access.md) section for `Specific permissions` contains a drop-down list of all existing groups for which a user has an access. This is an optional field and more than one groups can be selected for a user.
+The [User permissions](./user-permissions.md) section for `Specific permissions` contains a drop-down list of all existing groups for which a user has an access. This is an optional field and more than one groups can be selected for a user.
 {% endhint %}
 
 ## Add Group
@@ -18,37 +18,10 @@ Enter the `Group Name` and `Description`.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-2.png)
 
-You can either grant [super-admin](../../global-configurations/authorization/user-access.md#role-based-access-levels) permission to a user group or specific permissions to manage access for:
+You can either grant [super-admin](./user-permissions.md#role-based-access-levels) permission to a user group or specific permissions to manage access for:
 
-   * [Devtron Apps](#devtron-apps-permissions)
    * [Helm Apps](#helm-apps-permissions)
-   * [Jobs](#jobs)
    * [Kubernetes Resources](#kubernetes-resources-permissions)
-   * [Chart Groups](#chart-group-permissions)
-
-### Devtron Apps Permissions
-
-In `Devtron Apps` option, you can provide access to a group to manage permission for custom apps created using Devtron.
-
-{% hint style="info" %}
-The `Devtron Apps` option will be available only if you install [CI/CD integration](../../integrations/build-and-deploy-ci-cd.md).
-{% endhint %}
-
-Provide the information in the following fields:
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-devtron-apps-v2.jpg)
-
-
-| Dropdown | Description |
-| --- | --- |
-| **Project** | Select a project from the drop-down list to which you want to give permission to the group. You can select only one project at a time.<br>Note: If you want to select more than one project, then click `Add row`.</br> |
-| **Environment** | Select the specific environment or all environments from the drop-down list.<br>Note: If you select `All environments` option, then a user gets access to all the current environments including any new environment which gets associated with the application later.</br> |
-| **Application**  | Select the specific applications or all applications from the drop-down list corresponding to your selected Environments.<br>Note: If you select `All applications` option, then a user gets access to all the current applications including any new application which gets associated with the project later</br>.  |
-| **Role**  | Select one of the [roles](#role-based-access-levels) to which you want to give permission to the user:<ul><li>`View only`</li></ul> <ul><li>`Build and Deploy`</li></ul><ul><li>`Admin`</li></ul><ul><li>`Manager`</li></ul>  |
-
-You can add multiple rows for `Devtron Apps` permission.
-
-Once you have finished assigning the appropriate permissions for the groups, Click **Save**.
 
 ### Helm Apps Permissions
 
@@ -69,30 +42,9 @@ You can add multiple rows for Devtron app permission.
 
 Once you have finished assigning the appropriate permissions for the groups, Click **Save**.
 
-### Jobs
-
-In `Jobs` option, you can provide access to a group to manage permission for jobs created using Devtron.
-
-Provide the information in the following fields:
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-groups-jobs-v2.jpg)
-
-| Dropdown | Description |
-| --- | --- |
-| **Project** | Select a project from the drop-down list to which you want to give permission to the group. You can select only one project at a time.<br>Note: If you want to select more than one project, then click `Add row`.</br> |
-| **Job Name** | Select the specific job name or all jobs from the drop-down list.<br>Note: If you select `All Jobs` option, then the user gets access to all the current jobs including any new job which gets associated with the project later.</br>  |
-| **Workflow**  | Select the specific workflow or all workflows from the drop-down list.<br>Note: If you select `All Workflows` option, then the user gets access to all the current workflows including any new workflow which gets associated with the project later.</br> |
-| **Environment** | Select the specific environment or all environments from the drop-down list.<br>Note: If you select `All environments` option, then the user gets access to all the current environments including any new environment which gets associated with the project later.</br> |
-| **Role**  | Select one of the [roles](#role-based-access-levels) to which you want to give permission to the user:<ul><li>`View only`</li></ul> <ul><li>`Run job`</li></ul><ul><li>`Admin`</li></ul>  |
-
-You can add multiple rows for `Jobs` permission.
-
-Once you have finished assigning the appropriate permissions for the groups, Click **Save**.
-
-
 ### Kubernetes Resources Permissions
 
-In `Kubernetes Resources` option, you can provide permission to view, inspect, manage, and delete resources in your clusters from [Kubernetes Resource Browser](../../../user-guide/resource-browser.md) page in Devtron. You can also create resources from the `Kubernetes Resource Browser` page.
+In `Kubernetes Resources` option, you can provide permission to view, inspect, manage, and delete resources in your clusters from [Resource Browser](../resource-browser/README.md) in Devtron. You can also create resources from Resource Browser.
 
 {% hint style="info" %}
 Only super admin users will be able to see `Kubernetes Resources` tab and provide permission to other users to access `Resource Browser`.
@@ -103,7 +55,6 @@ To provide Kubernetes resource permission, click `Add permission`.
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/kubernetes-resources-permission-group-v2.jpg)
 
 On the `Kubernetes resource permission`, provide the information in the following fields:
-
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/user-permission/kubernetes-resources-permission-page-v2.jpg)
 
@@ -119,29 +70,6 @@ On the `Kubernetes resource permission`, provide the information in the followin
 You can add multiple rows for Kubernetes resource permission.
 
 Once you have finished assigning the appropriate permissions for the groups, Click **Save**.
-
-### Chart Group Permissions
-
-In `Chart group permission` option, you can manage the access of groups for Chart Groups in your project.
-
-{% hint style="info" %}
-The `Chart group permission` option will be available only if you install [CI/CD integration](../../integrations/build-and-deploy-ci-cd.md).
-{% endhint %}
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-chart-v2.jpg)
-
-{% hint style="info" %}
-You can only give users the ability to `create` or `edit`, not both.
-{% endhint %}
-
-| Action | Permissions |
-| :---   | :---         |
-| View  | Enable `View` to view chart groups only. |
-| Create | Enable `Create` if you want the users to create, view, edit or delete the chart groups. |
-| Edit | <ul><li>**Deny**: Select `Deny` option from the drop-down list to restrict the users to edit the chart groups.</li><li>**Specific chart groups**: Select the `Specific Charts Groups` option from the drop-down list and then select the chart group for which you want to allow users to edit.</li></ul> |
-
-Click **Save** once you have configured all the required permissions for the groups.
-
 
 ### Edit Permissions Groups
 
