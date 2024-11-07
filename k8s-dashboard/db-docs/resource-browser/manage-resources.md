@@ -44,7 +44,7 @@ Further resources in the cluster are grouped under the following categories:
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-User needs to be an [admin of the Kubernetes resource](../../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to edit its manifest.
+User needs to be an [admin of the Kubernetes resource](../authorization/user-permissions.md#kubernetes-resources-permissions) to edit its manifest.
 {% endhint %}
 
 You can edit the [manifest](../resources/glossary.md#manifest) of a Kubernetes object. This can be for fixing errors, scaling resources, or changing configuration.

@@ -43,7 +43,7 @@ In case any of your pod restarts, you can view its details from the pod listing 
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-User needs to be an [admin of the Kubernetes resource](../../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to access pod terminal.
+User needs to be an [admin of the Kubernetes resource](../authorization/user-permissions.md#kubernetes-resources-permissions) to access pod terminal.
 {% endhint %}
 
 You can access the terminal within a running container of a pod to view its logs, troubleshoot issues, or execute commands directly. This is different from the [cluster terminal](#cluster-terminal) you get at node level. 
