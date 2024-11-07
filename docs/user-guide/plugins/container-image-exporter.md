@@ -42,17 +42,17 @@ e.g., `The Container Image Exporter plugin is integrated to generate a tarball a
 | ------------------------ | ------------ | ----------- | ------------ |
 |   Platform               | STRING       | Specify the CPU architecture for the exported images (arm64 or amd64)            |   amd64           |
 |  AwsRegion               | STRING       | Enter the AWS region where your S3 bucket is located                             |     ap-south-1         |
-|   FilePrefix             | STRING       | Add an prefix to your exported image file name  |  temp_            |
-|   AwsAccessKey           | STRING       | Provide your AWS Access Key ID for authentication         |  VtbXliYXNlNjR2YWx1            |
-|   AwsSecretKey           | STRING       | Enter your AWS Secret Access Key for authentication        | VtudqygefuyqgjR29283bcq            |
-|   AzureAccountKey        | STRING       | Provide the Account Key for your Azure Storage account     |   abc123def567ghi           |
-|   AzureAccountName       | STRING       | Enter the Account Name of your Azure Storage account  |  	prod-us            |
-|   Expiry                 | STRING       | Set the expiration time for the S3 bucket (in minutes, whole number between 1 and 720)|     10         |  
-|   BucketName             | STRING       | Enter the name of the storage container where you want to upload the exported image file|   tarrball-store           |
+|   FilePrefix             | STRING       | Add a prefix to your exported image file name  |  temp_            |
+|   AwsAccessKey           | STRING       | Provide your AWS Access Key ID for authentication if using AWS as a cloud provider       |  VtbXliYXNlNjR2YWx1            |
+|   AwsSecretKey           | STRING       | Enter your AWS Secret Access Key if using AWS as a cloud provider       | VtudqygefuyqgjR29283bcq            |
+|   AzureAccountKey        | STRING       | Provide the Account Key for your Azure Storage account, if using Azure as a cloud provider      |   abc123def567ghi           |
+|   AzureAccountName       | STRING       | Enter the Account Name of your Azure Storage account, if using Azure as a cloud provider  |  	prod-us            |
+|   Expiry                 | STRING       | Set the expiration time for the S3 bucket (in minutes, a whole number between 1 and 720)|     10         |  
+|   BucketName             | STRING       | Enter the name of the storage container where you want to upload the exported image file|   tarball-store           |
 |   ContainerImage         | STRING       | Provide the name of the system variable containing the image to be exported  |   DOCKER_IMAGE           |  
-|   GcpServiceAccountJson  | STRING       | Enter your Google Cloud service account JSON credentials in base64 format (use scoped variables for security)|  wogICJ0eXBlIjogInNlcnZpY2VfYWNjb3VudCIsCiAgInByb2plY3RfaWQiOiAiZHV            |
-|   GcpProjectName         | STRING       | Specify the Google Cloud project name associated with your service account     |    project-12345          |
-|   CloudProvider          | STRING       | Choose your preferred cloud storage provider (aws for Amazon S3, azure for Azure Blob Storage, or gcp for Google Cloud Storage)|    aws           |
+|   GcpServiceAccountJson  | STRING       | Enter your Google Cloud service account JSON credentials in base64 format (use scoped variables for security), if using GCP as a cloud provider|  wogICJ0eXBlIjogInNlcnZpY2VfYWNjb3VudCIsCiAgInByb2plY3RfaWQiOiAiZHV            |
+|   GcpProjectName         | STRING       | Specify the Google Cloud project name associated with your service account, if using GCP as a cloud provider     |    project-12345          |
+|   CloudProvider          | STRING       | Choose your preferred cloud storage provider (aws for Amazon S3, Azure for azure Blob Storage, or gcp for Google Cloud Storage)|    aws           |
 
 ### Trigger/Skip Condition
 Here you can set conditions to execute or skip the task. You can select `Set trigger conditions` for the execution of a task or `Set skip conditions` to skip the task.
