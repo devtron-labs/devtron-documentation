@@ -10,11 +10,11 @@ The Devtron Resource Browser provides you a central interface to view and manage
 * [Why you should use Devtron's Resource Browser](https://devtron.ai/blog/what-is-the-kubernetes-resource-browser-in-devtron)
 {% endhint %}
 
-First, the Resource Browser shows you a list of clusters added to your Devtron setup. By default, it displays a cluster named '*default_cluster*' after the [initial setup](../setup/install/README.md) is successful.
+First, the Resource Browser shows you a list of clusters added to your Devtron setup. By default, it displays a cluster named '*default_cluster*' after the [initial setup](../install-devtron-dashboard.md) is successful.
 
 ![Figure 1: Devtron Resource Browser - List of Clusters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-browser.jpg)
 
-You can easily connect more clusters by clicking the **Add Cluster** button located at the top of the browser. This will take you to the [Cluster & Environments](../../global-configurations/cluster-and-environments.md) configuration within [Global Configurations](../../global-configurations/README.md).
+If you are a superadmin, you can connect more clusters by clicking the **Add Cluster** button located at the top of the browser. This will take you to the [Clusters](../cluster-environments.md) page within **Global Configurations**.
 
 You may click a cluster to view and manage all its resources as shown below.
 
