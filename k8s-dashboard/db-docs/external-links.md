@@ -107,7 +107,7 @@ The following fields are provided on the **Add Link** page:
                 <li>{appId}</li>
                 <li>{envId}</li>
                 <li>{namespace}</li>
-                <li>{podName}: If used, the link will only be visible at the pod level on the <a href="../creating-application/app-details.md"> App details </a> page.
+                <li>{podName}: If used, the link will only be visible at the pod level on the App details page.
                 <li>{containerName}: If used, the link will only be visible at the container level on the App details page. </li>
             </ul>
             <b>Note: The env variables will be dynamically replaced by the values that you used to configure the link.           

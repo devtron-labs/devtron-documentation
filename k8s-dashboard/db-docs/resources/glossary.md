@@ -14,7 +14,7 @@ An immutable blob of data generated as an output after the execution of a job, b
 
 ArgoCD Apps are the micro-services deployed using a [GitOps](#gitops) deployment tool named [Argo CD](https://argo-cd.readthedocs.io/en/stable/). 
 
-If ArgoCD applications are present in your cluster, they will appear in the [ArgoCD Apps listing](../user-guide/applications.md#enabling-argocd-app-listing). 
+If ArgoCD applications are present in your cluster, they will appear in the [ArgoCD Apps listing](../operations/enable-argocd-listing.md). 
 
 ### Base Deployment Template
 
@@ -122,7 +122,7 @@ You can add external links related to the application. For e.g., you can add Pro
 
 FluxCD Apps are the micro-services deployed using a [GitOps](#gitops) deployment tool named [Flux CD](https://fluxcd.io/). 
 
-If FluxCD applications are present in your cluster, they will appear in the [FluxCD Apps listing](../user-guide/applications.md#view-fluxcd-app-listing). 
+If FluxCD applications are present in your cluster, they will appear in the [FluxCD Apps listing](../operations/enable-fluxcd-listing.md). 
 
 ### GitOps
 

@@ -109,7 +109,7 @@ Once you have finished assigning the appropriate permissions for the users, Clic
 ## Edit User Permissions
 
 {% hint style="warning" %}
-Direct user permissions cannot be edited if you're using [LDAP](../authorization/sso/ldap.md)/[Microsoft](../authorization/sso/microsoft.md) for SSO and 'auto-assign permission' is enabled. Permissions can only be [managed via permission groups](./permission-groups.md#edit-permissions-groups) in such a scenario.
+Direct user permissions cannot be edited if you're using [LDAP](./sso-login-services/ldap.md)/[Microsoft](./sso-login-services/microsoft.md) for SSO and 'auto-assign permission' is enabled. Permissions can only be [managed via permission groups](./permission-groups.md#edit-permissions-groups) in such a scenario.
 {% endhint %}
 
 You can edit the user permissions by clicking on the `downward arrow`.
