@@ -38,7 +38,7 @@ Click any Flux CD app to view its details as shown below.
 
 Devtron also bridges the gap for Flux CD users by providing additional features as follows:
 
-* **Resource Scanning**: You can scan for vulnerabilities using Devtron's [resource scanning](../../user-guide/security-features.md#from-app-details) feature. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+<!-- * **Resource Scanning**: You can scan for vulnerabilities using Devtron's [resource scanning](../../user-guide/security-features.md#from-app-details) feature. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) -->
 
 * **Single-pane View**: All Flux CD apps will show details such as their app status, environment, cluster, and namespace together in one dashboard. 
 
