@@ -34,7 +34,7 @@ helm repo update devtron
 If you wish to install Devtron on clusters with multi-architecture nodes (ARM and AMD), append the Devtron installation command with `--set installer.arch=multi-arch`.
 {% endhint %}
 
-### For Amazon EKS, Azure AKS, Google GKE Users
+### For EKS, AKS, GKE Users
 
 ```bash
 helm install devtron devtron/devtron-operator \
@@ -100,7 +100,7 @@ helm install devtron devtron/devtron-operator \
 
 ## 4. Get Dashboard URL
 
-### For Amazon EKS, Azure AKS, Google GKE Users
+### For EKS, AKS, GKE Users
 
 Run the following command to get the dashboard URL:
 
