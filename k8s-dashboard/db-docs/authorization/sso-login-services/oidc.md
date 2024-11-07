@@ -32,9 +32,9 @@ Devtron provides a sample configuration out of the box. There are some values th
 
 * [View Okta Documentation](https://developer.okta.com/docs/guides/find-your-app-credentials/main/)
 
-* [Configure Keycloak SSO](../sso/keycloak.md)
+* [Configure Keycloak SSO](./keycloak.md)
 
-* [Configure Okta SSO](../sso/okta.md)
+* [Configure Okta SSO](./okta.md)
 
 * [View Dex IdP Documentation](https://dexidp.io/docs/connectors/oidc/)
 

@@ -9,7 +9,7 @@ You can add your existing Kubernetes clusters and environments on the `Clusters 
 Refer the following:
 
 * [Add Kubernetes Cluster](#add-kubernetes-cluster)
-* [Add Isolated Cluster](#add-isolated-cluster)
+<!-- * [Add Isolated Cluster](#add-isolated-cluster) -->
 
 ---
 
@@ -110,7 +110,7 @@ A new window pops up displaying all the details about the Devtron agent.
 
 ---
 
-## Add Isolated Cluster
+<!-- ## Add Isolated Cluster
 
 Deploying to an isolated environment will generate and [push the helm package](../global-configurations/container-registries.md#push-helm-packages) to your OCI registry (if need be). Further, this package can be used to [deploy to an air-gapped environment](../use-cases/airgapped-app-deployment.md) via Internet or non-Internet mediums.
 
@@ -134,9 +134,8 @@ Deploying to an isolated environment will generate and [push the helm package](.
 
 You have successfully configured an isolated cluster.
 
-![Figure 14: Isolated Cluster Successfully Created](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/added-env.jpg)
+![Figure 14: Isolated Cluster Successfully Created](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/added-env.jpg) -->
 
----
 
 ## Add Environment
 
@@ -153,7 +152,7 @@ A new environment window pops up.
 Click **Save** and your environment will be created. 
 
 
-![Figure 15: Adding an Environment in Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/gc-cluster-add-environment.jpg)
+![Figure 11: Adding an Environment in Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/gc-cluster-add-environment.jpg)
 
 ---
 
@@ -200,7 +199,7 @@ devtroncd
 {% endtab %}
 {% endtabs %}
 
-![Figure 16: Generating Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/generate-cluster-credentials.png)
+![Figure 12: Generating Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/generate-cluster-credentials.png)
 
 ### Benefits of Self-hosted URL
 

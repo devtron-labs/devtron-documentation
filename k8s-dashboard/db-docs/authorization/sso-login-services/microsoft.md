@@ -51,7 +51,7 @@ Since Microsoft supports <a href="https://learn.microsoft.com/en-us/windows-serv
 
 ![Enabling Permission Auto-assignment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/secret/auto-grant.jpg)
 
-If you've defined groups in your Active Directory, you can create corresponding permission groups in Devtron with the same names. When members of those Active Directory groups first log in to Devtron, they'll automatically inherit the permissions from their Devtron permission group. This means you can't manually adjust or add [individual permissions for users](../user-access.md) mapped to a permission group.
+If you've defined groups in your Active Directory, you can create corresponding permission groups in Devtron with the same names. When members of those Active Directory groups first log in to Devtron, they'll automatically inherit the permissions from their Devtron permission group. This means you can't manually adjust or add [individual permissions for users](../user-permissions.md) mapped to a permission group.
 
 {% hint style="warning" %}
 SSO login requires exact matching between Devtron permission group names and AD groups. Any discrepancies or missing groups will prevent successful login.

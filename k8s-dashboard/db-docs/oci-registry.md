@@ -1,6 +1,6 @@
 # OCI Registry
 
-If you have [helm charts](../../reference/glossary.md#helm-charts-packages) stored in your [OCI registry](./resources/glossary.md#container-registry), you can add the OCI registry to Devtron's Modern Kubernetes Dashboard and pull those [helm charts](./resources/glossary.md#helm-charts-packages) to Devtron's [Chart Store].
+If you have [helm charts](./resources/glossary.md#helm-charts-packages) stored in your [OCI registry](./resources/glossary.md#container-registry), you can add the OCI registry to Devtron's Modern Kubernetes Dashboard and pull those [helm charts](./resources/glossary.md#helm-charts-packages) to Devtron's [Chart Store].
 
 You can configure an OCI registry using any registry provider of your choice, including:
 * ECR
@@ -31,7 +31,7 @@ You can configure an OCI registry using any registry provider of your choice, in
 
     | Fields | Description |
     | --- | --- |
-    | **Name** | Provide a name to your registry, this name will appear in the **Container Registry** drop-down list available within the [Build Configuration](../creating-application/docker-build-configuration.md) section of your application|
+    | **Name** | Provide a name to your registry |
     | **Registry URL** | Provide the URL of your registry in case it doesn't come prefilled. Do not include `oci://`, `http://`, or `/https://` in the URL. |
     | **Authentication Type** | The credential input fields may differ depending on the registry provider, check [Registry Providers](#supported-registry-providers) |
     | **Use as chart repository** | Tick this checkbox if you want Devtron to [pull helm charts from your registry and display them on chart store](#use-as-chart-repository). Also, you will have to provide a list of repositories (present within your registry) for Devtron to successfully pull the helm charts. |

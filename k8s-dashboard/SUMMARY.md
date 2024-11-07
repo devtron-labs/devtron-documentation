@@ -28,7 +28,7 @@
 ## Operator Guide
 
 * [Projects](db-docs/projects.md)
-* [Clusters & Environments](db-docs/cluster-environments.md)
+* [Clusters](db-docs/cluster-environments.md)
 * [OCI Registry](db-docs/oci-registry.md)
 * [Chart Repositories](db-docs/chart-repo.md)
 * [Manage Authorization (RBAC)](db-docs/authorization/README.md)
