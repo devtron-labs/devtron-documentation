@@ -23,16 +23,16 @@ Users need super-admin permission to view/enable/disable the FluxCD listing.
 
 5. Click **Edit Live Manifest**.
 
-6. Add the feature flag **`FEATURE_EXTERNAL_FLUX_CD_ENABLE: "true"`** in the Dashboard ConfigMap as shown below.
+6. Set the feature flag accordingly:
+    * **`FEATURE_EXTERNAL_FLUX_CD_ENABLE: "true"`** - Use this to show the Flux CD App Listing
+    * **`FEATURE_EXTERNAL_FLUX_CD_ENABLE: "false"`** - Use this to hide the Flux CD App Listing
 
     ![Figure 2: Editing Dashboard ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/flux-feature-flag.jpg)
 
-7. After successfully executing all the steps, a new tab named **FluxCD Apps** will be visible. Select the cluster(s) from the dropdown to view the Flux CD apps available in the chosen cluster(s).
+7. Click **Apply Changes**.
 
-    ![Figure 3: Selecting Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/cluster-selection.jpg)
+8. Go back to the 'Jump to Kind' field and type `Pod`.
 
-    (Optional) Once you choose cluster(s), you may use the **Template Type** dropdown to further filter your Flux CD app listing based on its type, i.e., [Kustomization](https://fluxcd.io/flux/components/kustomize/kustomizations/) or [Helmrelease](https://fluxcd.io/flux/components/helm/helmreleases/).
+9. Search for `dashboard` pod and use the kebab menu (3 vertical dots) to delete the pod.
 
-8.  Click any Flux CD app to view its details as shown below.
-
-    ![Figure 4: Flux App Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/app-details-flux.gif)
+10. Go to **Applications** and refresh the page (the **FluxCD Apps** tab will be visible if you enabled it in step 6).

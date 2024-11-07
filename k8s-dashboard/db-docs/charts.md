@@ -3,7 +3,7 @@
 ## Introduction
 
 Devtron makes it easier for you to populate your charts from multiple sources to the [chart store](./resources/glossary.md#chart-store). These sources are: 
-* [Chart Respository](../global-configurations/chart-repo.md)
+* [Chart Repository](../global-configurations/chart-repo.md)
 * [OCI Registry](../global-configurations/container-registries.md#use-as-chart-repository)
 
 ![Figure 1: Chart Store](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/overview-of-charts/chart-store-main.jpg)

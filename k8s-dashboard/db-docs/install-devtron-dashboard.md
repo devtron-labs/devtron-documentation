@@ -76,7 +76,7 @@ helm install devtron devtron/devtron-operator \
 
 It is recommended to use Cloud VM with 2vCPU+, 4GB+ free memory, 20GB+ storage, Compute Optimized VM type, and Ubuntu Flavoured OS.
 
-Fist, create a MicroK8s Cluster:
+First, create a MicroK8s Cluster:
 
 ```bash
 sudo snap install microk8s --classic --channel=1.22
@@ -187,8 +187,8 @@ kubectl -n devtroncd get secret devtron-secret \
 ```
 
 {% hint style="info" %}
-### Recommended Action
+### Next Recommended Action
 When you install Devtron for the first time, it creates a default admin user and password (with unrestricted access to Devtron). You can use it to log in as an administrator. 
 
-After the initial login, we recommend you set up any Single Sign-On (SSO) service like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (let's say, GitHub) to log in to the Dashboard.
+After the initial login, we recommend you set up any [Single Sign-On (SSO) service](./authorization/sso-login-services/README.md) like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (let's say, GitHub) to log in to the Dashboard.
 {% endhint %}

@@ -24,7 +24,9 @@ Users need super-admin permission to view/enable/disable the ArgoCD listing.
 
 5. Click **Edit Live Manifest**.
 
-6. Set the feature flag **`ENABLE_EXTERNAL_ARGO_CD: "true"`**
+6. Set the feature flag accordingly:
+    * **`ENABLE_EXTERNAL_ARGO_CD: "true"`** - Use this to show the Argo CD App Listing
+    * **`ENABLE_EXTERNAL_ARGO_CD: "false"`** - Use this to hide the Argo CD App Listing
 
 7. Click **Apply Changes**.
 
@@ -32,8 +34,4 @@ Users need super-admin permission to view/enable/disable the ArgoCD listing.
 
 9. Search for `dashboard` pod and use the kebab menu (3 vertical dots) to delete the pod.
 
-10. Go to **Applications** and refresh the page. A new tab named **ArgoCD Apps** will be visible.
-
-11. Select the cluster(s) from the dropdown to view the Argo CD apps available in the chosen cluster(s).
-
-    ![Figure 3: Cluster Selection for Argo CD Listing](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/argo-cluster-selection.jpg)
+10. Go to **Applications** and refresh the page (the **ArgoCD Apps** tab will be visible if you enabled it in step 6).

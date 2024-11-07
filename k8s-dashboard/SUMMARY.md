@@ -16,15 +16,14 @@
   * [Cluster Terminal](db-docs/resource-browser/terminal.md)
   * [Run Kubectl Commands Locally](db-docs/resource-browser/kubectl-local.md)
 
-* [Helm Apps](db-docs/apps/helm-apps.md)
-* [Argo CD Apps](db-docs/apps/argocd-apps.md)
-* [Flux CD Apps](db-docs/apps/fluxcd-apps.md)
+* [Manage Helm Apps](db-docs/apps/helm-apps.md)
+* [Manage Argo CD Apps](db-docs/apps/argocd-apps.md)
+* [Manage Flux CD Apps](db-docs/apps/fluxcd-apps.md)
 
-* [Chart Store](db-docs/deploy-chart/README.md)
-  * [Deploy a Chart](db-docs/deploy-chart/deployment-of-charts.md)
-  * [Examples](db-docs/deploy-chart/examples/README.md)
-    * [Deploying MySQL Helm Chart](db-docs/deploy-chart/examples/deploying-mysql-helm-chart.md)
-    * [Deploying MongoDB Helm Chart](db-docs/deploy-chart/examples/deploying-mongodb-helm-chart.md)
+* [Chart Store](db-docs/chart-store/README.md)
+  * [Examples](db-docs/chart-store/examples/README.md)
+    * [Deploying MySQL Helm Chart](db-docs/chart-store/examples/deploying-mysql-helm-chart.md)
+    * [Deploying MongoDB Helm Chart](db-docs/chart-store/examples/deploying-mongodb-helm-chart.md)
 
 ## Operator Guide
 
