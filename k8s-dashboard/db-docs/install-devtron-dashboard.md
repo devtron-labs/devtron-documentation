@@ -34,7 +34,7 @@ helm repo update devtron
 If you wish to install Devtron on clusters with multi-architecture nodes (ARM and AMD), append the Devtron installation command with `--set installer.arch=multi-arch`.
 {% endhint %}
 
-**For Amazon EKS, Azure AKS, Google GKE Users**
+<!-- **For Amazon EKS, Azure AKS, Google GKE Users**
 
 ```bash
 helm install devtron devtron/devtron-operator \
@@ -95,7 +95,45 @@ Then use these commands after setting up MicroK8s:
 helm install devtron devtron/devtron-operator \
 --create-namespace --namespace devtroncd \
 --set components.devtron.service.type=NodePort 
-```
+``` -->
+
+| **User Type**                          | **Description**                                                          | **Installation Commands**                                                                                                                                                                 |
+|----------------------------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Amazon EKS, Azure AKS, Google GKE**  | Standard cloud-managed Kubernetes clusters                               | ```bash                                                                                                                                            |
+|                                        |                                                                          | helm install devtron devtron/devtron-operator \                                                                                                    |
+|                                        |                                                                          | --create-namespace --namespace devtroncd                                                                                                          |
+|                                        |                                                                          | ```                                                                                                                                                 |
+| **Minikube, MicroK8s, Kind**           | For local Kubernetes clusters                                            | **Minikube/MicroK8s/Kind:**                                                                                                                        |
+|                                        |                                                                          | ```bash                                                                                                                                            |
+|                                        |                                                                          | helm install devtron devtron/devtron-operator \                                                                                                    |
+|                                        |                                                                          | --create-namespace --namespace devtroncd \                                                                                                        |
+|                                        |                                                                          | --set components.devtron.service.type=NodePort                                                                                                    |
+|                                        |                                                                          | ```                                                                                                                                                 |
+|                                        |                                                                          | **K3s:**                                                                                                                                           |
+|                                        |                                                                          | ```bash                                                                                                                                            |
+|                                        |                                                                          | kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml                           |
+|                                        |                                                                          | helm install devtron devtron/devtron-operator \                                                                                                    |
+|                                        |                                                                          | --create-namespace --namespace devtroncd \                                                                                                        |
+|                                        |                                                                          | --set components.devtron.service.type=NodePort                                                                                                    |
+|                                        |                                                                          | ```                                                                                                                                                 |
+| **Cloud VM (AWS EC2, Azure VM, GCP VM)** | For cloud VMs (recommended 2vCPU+, 4GB+ memory, Ubuntu)                  | **Step 1: Setup MicroK8s**                                                                                                                         |
+|                                        |                                                                          | ```bash                                                                                                                                            |
+|                                        |                                                                          | sudo snap install microk8s --classic --channel=1.22                                                                                                |
+|                                        |                                                                          | sudo usermod -a -G microk8s $USER                                                                                                                 |
+|                                        |                                                                          | sudo chown -f -R $USER ~/.kube                                                                                                                    |
+|                                        |                                                                          | newgrp microk8s                                                                                                                                    |
+|                                        |                                                                          | microk8s enable dns storage helm3                                                                                                                 |
+|                                        |                                                                          | echo "alias kubectl='microk8s kubectl '" >> .bashrc                                                                                               |
+|                                        |                                                                          | echo "alias helm='microk8s helm3 '" >> .bashrc                                                                                                    |
+|                                        |                                                                          | source .bashrc                                                                                                                                     |
+|                                        |                                                                          | ```                                                                                                                                                 |
+|                                        |                                                                          | **Step 2: Install Devtron**                                                                                                                       |
+|                                        |                                                                          | ```bash                                                                                                                                            |
+|                                        |                                                                          | helm install devtron devtron/devtron-operator \                                                                                                    |
+|                                        |                                                                          | --create-namespace --namespace devtroncd \                                                                                                        |
+|                                        |                                                                          | --set components.devtron.service.type=NodePort                                                                                                    |
+|                                        |                                                                          | ```                                                                                                                                                 |
+
 
 
 ## 4. Get Dashboard URL
