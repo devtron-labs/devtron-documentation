@@ -36,7 +36,7 @@ User management with Single Sign-On (SSO) and Role-Based Access Control (RBAC) f
 
 ### OCI Registry Support
 
-Support to add your OCI registry for uploading and downloading helm charts, and also for facilitating air-gapped deployment.
+Support to add your OCI registry for uploading and downloading helm charts.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/oci-registry-showcase.jpg)
 

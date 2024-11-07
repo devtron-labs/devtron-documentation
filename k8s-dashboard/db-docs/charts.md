@@ -12,7 +12,7 @@ Devtron makes it easier for you to populate your charts from multiple sources to
 
 * Helm Chart(s)
 * Chart Repository added to Devtron
-* OCI-Compliant Registry (e.g. Docker Hub and [many more](../global-configurations/container-registries.md#supported-registry-providers)) with 
+* OCI-Compliant Registry (e.g. Docker Hub and [many more](../global-configurations/container-registries.md#supported-registry-providers)) 
 
 
 ## Removing your Charts from the Chart Store
