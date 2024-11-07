@@ -135,7 +135,7 @@ Here, we will add the user we created in the Keycloak Admin Console. If this ste
 
     ![Figure 14: Entering User Data and Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/add-email.jpg)
 
-4. Assign necessary permissions to this new user. Refer [user permissions](../user-access.md) to know more.
+4. Assign necessary permissions to this new user. Refer [user permissions](../user-permissions.md) to know more.
 
 5. Click **Save**.
 

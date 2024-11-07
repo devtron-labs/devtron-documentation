@@ -4,7 +4,7 @@
 
 Ideally, all resources such as microservices, clusters, jobs, pods, etc. should contain detailed information so that its users know what each of those resources do, how to use them, as well as all their technical specs. Access to such data makes it easier for engineers to quickly discover and understand the relevant resources.
 
-To achieve this, Devtron supports a feature known as **Catalog Framework**. Using this, you as a [super-admin](../global-configurations/authorization/user-access.md#role-based-access-levels) can decide the data you expect from the managers of different resource types. In other words, you can create a custom <a href="https://json-schema.org/understanding-json-schema/reference" target="_blank">JSON schema</a> that would ultimately render a form for the resource owners to fill. Once the form is filled, a GUI output will appear as shown below.
+To achieve this, Devtron supports a feature known as **Catalog Framework**. Using this, you as a [super-admin](./authorization/user-permissions.md#role-based-access-levels) can decide the data you expect from the managers of different resource types. In other words, you can create a custom <a href="https://json-schema.org/understanding-json-schema/reference" target="_blank">JSON schema</a> that would ultimately render a form for the resource owners to fill. Once the form is filled, a GUI output will appear as shown below.
 
 ![Sample Catalog Data for an App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/catalog-framework/sample-app-catalog.jpg)
 

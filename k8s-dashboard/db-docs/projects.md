@@ -2,7 +2,7 @@
 
 Projects are the logical grouping of your applications so that you can manage and control the access level of users. 
 
-Refer [user access](https://github.com/devtron-labs/devtron/blob/main/docs/user-guide/global-configurations/user-access.md) for more detail.
+Refer [user permissions](./authorization/user-permissions.md) for more detail.
 
 ## Add Project
 
