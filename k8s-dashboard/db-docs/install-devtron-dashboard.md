@@ -175,8 +175,9 @@ Moreover, you can also do a CNAME entry corresponding to your domain/subdomain t
 | :--- | :--- | :--- |
 | devtron.yourdomain.com | CNAME | aaff16e9760594a92afa0140dbfd99f7-305259315.us-east-1.elb.amazonaws.com | -->
 
+---
 
-### 5. Get Admin Login credentials
+## 5. Get Admin Login credentials
 
 By default, the username will be `admin`. Run the below command to get the admin password.
 
