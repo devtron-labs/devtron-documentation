@@ -2,7 +2,7 @@
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [access to the cluster](../../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to discover resources.
+Users need to have [access to the cluster](../authorization/user-permissions.md#kubernetes-resources-permissions) to discover resources.
 {% endhint %}
 
 ## Search a Resource
