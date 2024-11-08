@@ -34,7 +34,7 @@ You can see the Helm Apps available in your cluster. If you have connected more 
 
 * You may refer the `README.md` attached to the chart to know more about the chart configurations.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/overview-of-charts/overview-of-charts-2.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/chart-readme.gif)
 
 * Click **Configure & Deploy** and enter the following details:
 
@@ -44,23 +44,23 @@ You can see the Helm Apps available in your cluster. If you have connected more 
     | **Project** |  Select the project of the application |
     | **Deploy to Environment** | Environment in which you want to deploy the chart |
     | **Chart Version** | Shows all available versions of the chart. Select the version of the chart to be used. |
-    | **Chart Value** | Shows the latest default value or you may [create a custom value](#create-a-custom-value) |
+    | **Chart Value** | Shows the latest default value or you may [create a custom value](#create-a-preset-value) |
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/values-field-db.jpg)
 
 * Once you choose a preferred chart version, chart value, and update the values.yaml using the editor, click **Deploy** to deploy the chart.
 
-#### Create a Custom Value
+#### Create a Preset Value
 
-* You can use the default values or create custom value by clicking on `Create Custom`.
+* You can use the default values or create preset value by clicking on `Create preset value`.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/overview-of-charts/overview-of-charts-7.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/preset-value.jpg)
 
-* You can name your Custom Value, select the Chart Version and change the configurations in YAML file.
+* You can name your preset value, select a chart version, and change the configurations in the YAML file using the editor.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/overview-of-charts/overview-of-charts-8-2.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/preset-value-db.gif)
 
-* Click on `Save Template` to save the configurations.
+* Click on `Save Value` to save the template, and go back and choose your template from the dropdown for deployment.
 
 
 ---
