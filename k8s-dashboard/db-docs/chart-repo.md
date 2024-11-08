@@ -26,7 +26,7 @@ You can add more chart repositories to Devtron. Once added, they will be availab
     | **Username**  | For private repositories, provide the username required for access.       |
     | **Password**  | Enter the password associated with the username.     |
 
-5. Check this box **Allow Insecure Connection** if you want to allow insecure connections, such as HTTP connections, which may not verify SSL certificates.
+5. Check this box '**Allow Insecure Connection**' if you want to allow insecure connections, such as HTTP connections, which may not verify SSL certificates.
 
 ## Update Chart Repository
 

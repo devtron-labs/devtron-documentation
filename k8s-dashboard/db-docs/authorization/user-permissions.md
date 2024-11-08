@@ -4,7 +4,7 @@
 
 To add a user, go to the `Authorization > User Permissions` section of `Global Configurations`. Click **Add user**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/user-permission/user-permissions-add-user.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/add-user-db.jpg)
 
 There are two types of permissions in Devtron:
 
@@ -17,7 +17,7 @@ There are two types of permissions in Devtron:
 
 To assign a super admin access, go to the `Authorization > User Permissions` section of `Global Configurations`. 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/user-permission/super-admin-user-permission.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/superadmin-permission-db.jpg)
 
 * Click **Add user**.
 * Provide the email address of a user. You can add more than one email address. Please note that email address must be same as that in the `email` field in the JWT token returned by OIDC provider.
@@ -49,7 +49,7 @@ In `Helm Apps` option, you can provide access to a user to manage permission for
 
 Provide the information in the following fields:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/user-permission/specific-permissions-helm-apps.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/helmapp-permissions-db.jpg)
 
 | Registry Type | Credentials |
 | --- | --- |
@@ -71,11 +71,11 @@ In `Kubernetes Resources` option, you can provide permission to view, inspect, m
 
 To provide Kubernetes resource permission, click `Add permission`.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/user-permission/kubernetes-resource-specific-permission.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/resource-permissions1.jpg)
 
 On the `Kubernetes resource permission`, provide the information in the following fields:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/user-permission/kubernetes-resource-permission-page-latest.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/resource-permissions2.jpg)
 
 | Registry Type | Credentials |
 | --- | --- |
@@ -112,9 +112,9 @@ Once you have finished assigning the appropriate permissions for the users, Clic
 Direct user permissions cannot be edited if you're using [LDAP](./sso-login-services/ldap.md)/[Microsoft](./sso-login-services/microsoft.md) for SSO and 'auto-assign permission' is enabled. Permissions can only be [managed via permission groups](./permission-groups.md#edit-permissions-groups) in such a scenario.
 {% endhint %}
 
-You can edit the user permissions by clicking on the `downward arrow`.
+You can edit the user permissions by clicking the edit icon.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/edit+user+permission_dropdown_1.JPG)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/edit-user-db.jpg)
 
 Edit the user permissions.
 

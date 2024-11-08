@@ -8,15 +8,17 @@ The advantage of the `Permission groups` is to define a set of privileges like c
 The [User permissions](./user-permissions.md) section for `Specific permissions` contains a drop-down list of all existing groups for which a user has an access. This is an optional field and more than one groups can be selected for a user.
 {% endhint %}
 
+---
+
 ## Add Group
 
 Go to **Global Configurations** → **Authorization** → **Permissions groups** → **Add group**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-1.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/add-group-db.jpg)
 
 Enter the `Group Name` and `Description`.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-2.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/create-group-db.jpg)
 
 You can either grant [super-admin](./user-permissions.md#role-based-access-levels) permission to a user group or specific permissions to manage access for:
 
@@ -29,7 +31,7 @@ In `Helm Apps` option, you can provide access to a group to manage permission fo
 
 Provide the information in the following fields:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-groups-helm-apps-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/group-helmapp-permdb.jpg)
 
 | Dropdown | Description |
 | --- | --- |
@@ -52,11 +54,11 @@ Only super admin users will be able to see `Kubernetes Resources` tab and provid
 
 To provide Kubernetes resource permission, click `Add permission`.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/kubernetes-resources-permission-group-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/group-resource-permdb1.jpg)
 
 On the `Kubernetes resource permission`, provide the information in the following fields:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/user-permission/kubernetes-resources-permission-page-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/user-permission/group-resource-permdb2.jpg)
 
 | Dropdown | Description |
 | --- | --- |
@@ -71,18 +73,26 @@ You can add multiple rows for Kubernetes resource permission.
 
 Once you have finished assigning the appropriate permissions for the groups, Click **Save**.
 
-### Edit Permissions Groups
+---
+
+## Edit Permissions Group
 
 You can edit the permission groups by clicking the `downward arrow.`
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/edit-permission-group.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/edit-group-db.jpg)
 
 Edit the permission group.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/save-permission-group.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/edit-perm-group.jpg)
 
 Once you are done editing the permission group, click **Save**.
 
-If you want to delete the groups with particular permission group, click **Delete**.
+---
+
+## Delete Permissions Group
+
+If you want to delete a particular permission group, click the delete icon.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/delete-group-db.jpg)
 
 
