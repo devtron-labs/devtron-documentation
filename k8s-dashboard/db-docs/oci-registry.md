@@ -15,13 +15,15 @@ You can configure an OCI registry using any registry provider of your choice, in
 
 1. From the left sidebar, go to **Global Configurations** → **OCI Registry**.
 
-    ![Figure 1: OCI Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/add-registry.jpg)
+    ![Figure 1: OCI Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/add-registry-db.jpg)
 
 2. Click **Add Registry**.
 
-    ![Figure 2: Add a Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/add-container-registry-1.jpg)
+    ![Figure 2: Add a Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/add-ociregistry-db.jpg)
 
 3. Choose a provider from the **Registry provider** dropdown. View the [Supported Registry Providers](#supported-registry-providers).
+
+    ![Figure 3: Choose a Provider](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/choose-provider-db.jpg)
 
 4. Under **Registry type**, you get the following options:
     * **Private Registry**: Choose this if your artifacts are hosted or should be hosted on a private registry restricted to authenticated users of that registry. Selecting this option requires you to enter your registry credentials (username and password/token).
@@ -59,7 +61,7 @@ Search your OCI registry in the list and click it.
 
 In the **List of repositories** field, add your chart repo(s). The format should be `username/chartname`. You can [find the username](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/find-username.jpg) from your registry provider account.
 
-![Figure 3: Adding Chart Repos](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/container-config.jpg)
+![Figure 3: Adding Chart Repos](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/registry-config-db.jpg)
 
 
 ---
