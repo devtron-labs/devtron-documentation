@@ -6,7 +6,7 @@ Devtron makes it easier for you to populate your charts from multiple sources to
 * [Chart Repository](./chart-repo.md)
 * [OCI Registry](./oci-registry.md#use-as-chart-repository)
 
-![Figure 1: Chart Store](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/overview-of-charts/chart-store-main.jpg)
+![Figure 1: Chart Store](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/charts-store-page.jpg)
 
 ### Prerequisites 
 
@@ -26,7 +26,7 @@ You cannot remove a chart from the Chart Store if the source was a [chart reposi
 
 2. In the **List of repositories** field, remove the unwanted chart repo.
 
-    ![Figure 6: Removing a Chart Repo](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/remove-chart-repo.jpg)
+    ![Figure 6: Removing a Chart Repo](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/remove-chart-repo.gif)
 
 3. Click **Update**.
 
@@ -38,4 +38,4 @@ Deleting a chart repo from your OCI registry will not lead to the removal of cha
 
 A light alternative is to disable the chart source as shown below, but this doesn't imply the removal of a chart.
 
-![Figure 7: Disabling a Chart Source](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/overview-of-charts/disable-chart-source.jpg)
+![Figure 7: Disabling a Chart Source](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/overview-of-charts/disable-chart-source-db.jpg)
