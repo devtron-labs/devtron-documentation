@@ -67,15 +67,15 @@ Once a catalog schema exists for a resource type, its corresponding form would b
 
 1. Since we defined a schema for Helm applications in the above example, go to the **Overview** tab of your application (any Helm application). Click the **Edit** button within the `About` section.
 
-    ![Figure 5: Unfilled Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/catalog-framework/app-overview-db.jpg)
+    ![Figure 5: Unfilled Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/app-overview-db.jpg)
 
 2. The schema created for Helm applications would render into an empty form as shown below.
 
-    ![Figure 6: Rendered Empty Form](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/catalog-framework/edit-catalog-db.jpg)
+    ![Figure 6: Rendered Empty Form](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/edit-catalog-db.jpg)
 
 3. Fill as many details as an application owner to the best of your knowledge and click **Save**.
 
-    ![Figure 7: Filled Form](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/catalog-framework/filled-catalog-db.jpg)
+    ![Figure 7: Filled Form](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/filled-catalog-db.jpg)
 
 4. Your saved data would be visible in a GUI format (and also in JSON format) as shown below.
 
