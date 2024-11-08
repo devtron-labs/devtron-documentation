@@ -6,7 +6,9 @@ Ideally, all resources such as microservices, clusters, jobs, pods, etc. should 
 
 To achieve this, Devtron supports a feature known as **Catalog Framework**. Using this, you as a [super-admin](./authorization/user-permissions.md#role-based-access-levels) can decide the data you expect from the managers of different resource types. In other words, you can create a custom <a href="https://json-schema.org/understanding-json-schema/reference" target="_blank">JSON schema</a> that would ultimately render a form for the resource owners to fill. Once the form is filled, a GUI output will appear as shown below.
 
-![Sample Catalog Data for an App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/catalog-framework/sample-app-catalog.jpg)
+![Sample Catalog Data for a Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/rb-overview-db.jpg)
+
+![Sample Catalog Data for a Helm App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/helm-app-cframework.jpg)
 
 Currently, **Modern Kubernetes Dashboard** supports catalog framework for the following resource types (a.k.a. resource kind):
 
@@ -65,19 +67,19 @@ Once a catalog schema exists for a resource type, its corresponding form would b
 
 1. Since we defined a schema for Helm applications in the above example, go to the **Overview** tab of your application (any Helm application). Click the **Edit** button within the `About` section.
 
-    ![Figure 5: Unfilled Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/catalog-framework/app-overview.jpg)
+    ![Figure 5: Unfilled Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/catalog-framework/app-overview-db.jpg)
 
 2. The schema created for Helm applications would render into an empty form as shown below.
 
-    ![Figure 6: Rendered Empty Form](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/catalog-framework/edit-catalog.jpg)
+    ![Figure 6: Rendered Empty Form](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/catalog-framework/edit-catalog-db.jpg)
 
 3. Fill as many details as an application owner to the best of your knowledge and click **Save**.
 
-    ![Figure 7: Filled Form](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/catalog-framework/filled-catalog.jpg)
+    ![Figure 7: Filled Form](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/catalog-framework/filled-catalog-db.jpg)
 
 4. Your saved data would be visible in a GUI format (and also in JSON format) as shown below.
 
-    ![Figure 8: App Catalog Data](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/catalog-framework/gui-app-catalog.jpg)
+    ![Figure 8: App Catalog Data](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/helm-app-cframework.jpg)
 
 This catalog data would be visible to all the users who have access to the application, but its data can be edited only by the resource owners (in this case, application admin/managers).
 
