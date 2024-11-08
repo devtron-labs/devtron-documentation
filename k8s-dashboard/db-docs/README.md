@@ -1,8 +1,8 @@
-# Kubernetes Dashboard by Devtron
+# Modern Kubernetes Dashboard by Devtron
 
 ## Introduction
 
-The **Kubernetes Dashboard** by Devtron provides a unified interface for managing and observing all Kubernetes resources across your clusters. It simplifies resource management by offering visualizations, RBAC controls, multi-cluster support, thus making it intuitive for you to view and manage your microservices.
+The **Modern Kubernetes Dashboard** by Devtron provides a unified interface for managing and observing all Kubernetes resources across your clusters. It simplifies resource management by offering visualizations, RBAC controls, multi-cluster support, thus making it intuitive for you to view and manage your microservices.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/dashboard-overview.gif)
 
@@ -10,7 +10,7 @@ The **Kubernetes Dashboard** by Devtron provides a unified interface for managin
 
 ## Key Offerings
 
-Discover how Devtron’s Kubernetes Dashboard simplifies operations by managing all your clusters with the Resource Browser. Visualize Helm releases and ArgoCD/FluxCD apps easily, with fine-tuned RBAC controls and OCI registry support. The intuitive interface removes the complexity of Kubernetes, so you can focus on delivering great software and services.
+Discover how Devtron’s Modern Kubernetes Dashboard simplifies operations by managing all your clusters with the Resource Browser. Visualize Helm releases and ArgoCD/FluxCD apps easily, with fine-tuned RBAC controls and OCI registry support. The intuitive interface removes the complexity of Kubernetes, so you can focus on delivering great software and services.
 
 ### Resource Browser
 
