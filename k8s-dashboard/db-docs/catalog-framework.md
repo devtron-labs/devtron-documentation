@@ -8,7 +8,7 @@ To achieve this, Devtron supports a feature known as **Catalog Framework**. Usin
 
 ![Sample Catalog Data for an App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/catalog-framework/sample-app-catalog.jpg)
 
-Currently, Modern Kubernetes Dashboard supports catalog framework for the following resource types (a.k.a. resource kind):
+Currently, **Modern Kubernetes Dashboard** supports catalog framework for the following resource types (a.k.a. resource kind):
 
 * [Helm applications](./resources/glossary.md#helm-apps)
 * [Clusters](./resources/glossary.md#cluster)

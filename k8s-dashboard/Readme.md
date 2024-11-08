@@ -16,7 +16,7 @@ Discover how Devtron’s Kubernetes Dashboard simplifies operations by managing 
 
 View and manage the resource kinds available across all your clusters.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/resource-browser-showcase.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/resource-browser-showcase-db.jpg)
 
 ### Helm Release Management
 

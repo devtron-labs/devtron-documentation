@@ -21,7 +21,11 @@ You can create a cluster using one of the following cloud providers as per your 
 | **Azure Kubernetes Service (AKS)** | Create a cluster using [AKS](https://learn.microsoft.com/en-us/azure/aks/). | 
 | **k3s - Lightweight Kubernetes** | Create a cluster using [k3s - Lightweight Kubernetes](https://devtron.ai/blog/deploy-your-applications-over-k3s-lightweight-kubernetes-in-no-time/). | 
 
-The above is not an exhaustive list. You may create a cluster using a platform of your choice, such as [Minikube](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary+download), [MicroK8s](https://microk8s.io/docs), [Kind](https://kind.sigs.k8s.io/docs/user/quick-start) on your local machine.
+
+{% hint style="info" %}
+### Note
+The above is not an exhaustive list. You may create a cluster using a platform of your choice, such as [Minikube](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary+download), [MicroK8s](https://microk8s.io/docs), [Kind](https://kind.sigs.k8s.io/docs/user/quick-start) on your local machine or cloud.
+{% endhint %}
 
 
 ### Recommended Resources
@@ -30,8 +34,8 @@ The minimum cluster resource requirements for installing **Modern Kubernetes Das
 
 | Resource Type              | CPU | Memory |
 |----------------------------|-----|--------|
-| **Small (≤5 apps)**        | 1   | 1 GB   |
-| **Medium/Large (>5 apps)** | 2   | 3 GB   |
+| **For configuring small resources (≤5 apps)**        | 1   | 1 GB   |
+| **For configuring medium/large resources (>5 apps)** | 2   | 3 GB   |
 
 ---
 
