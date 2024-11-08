@@ -4,12 +4,12 @@
 
 You can add your existing Kubernetes clusters and environments on the `Clusters and Environments` section. You must have a [super admin](./authorization/user-permissions.md#assign-super-admin-permissions) access to add a cluster.
 
-![Figure 1: Clusters and Environments in Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-and-environments.jpg)
+![Figure 1: Clusters and Environments in Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-db.jpg)
 
-Refer the following:
+<!-- Refer the following:
 
 * [Add Kubernetes Cluster](#add-kubernetes-cluster)
-<!-- * [Add Isolated Cluster](#add-isolated-cluster) -->
+* [Add Isolated Cluster](#add-isolated-cluster) -->
 
 ---
 
@@ -21,15 +21,14 @@ Use this option to add a managed or on-premise Kubernetes cluster.
 
 2. Click the **Add Cluster** button on the top-right corner. 
 
-  ![Figure 2: Adding a Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-clusters.jpg)
+  ![Figure 2: Adding a Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-clusters-db.jpg)
 
-3. Click **Add Kubernetes Cluster**. 
-
-  ![Figure 3: Adding a Kubernetes Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-kubernetes-cluster.jpg)
-
-You can choose to add your Kubernetes cluster using either of the following:
+3. You can choose to add your Kubernetes cluster using either of the following methods:
   * [Server URL & Bearer Token](#add-clusters-using-server-url--bearer-token)
   * [Kubeconfig](#add-clusters-using-kubeconfig)
+
+  ![Figure 3: Adding a Kubernetes Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-kubernetes-cluster-db.jpg)
+
 
 ### Add Clusters Using Server URL & Bearer Token
 
@@ -46,7 +45,7 @@ To add a Kubernetes cluster on Devtron using a Server URL and bearer token, prov
 | `Server URL` |  Server URL of a cluster.<br>Note: We recommended to use a [self-hosted URL](#benefits-of-self-hosted-url) instead of cloud hosted URL.</br>  |
 | `Bearer Token` | Bearer token of a cluster |
 
-![Figure 4: Entering Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-cluster-cred-v2.jpg)
+![Figure 4: Entering Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-cluster-cred-db.jpg)
 
 ### Add Clusters Using Kubeconfig
 
@@ -60,7 +59,7 @@ To add clusters using kubeconfig, follow these steps:
 
 4. Afterward, click on the `Get cluster` button. This action will display the cluster details alongside the kubeconfig. 
 
-  ![Figure 5: Using Kubeconfig](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-cluster-kubeconfig.jpg)
+  ![Figure 5: Using Kubeconfig](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-cluster-kubeconfig-db.jpg)
 
 5. Select the desired cluster and click on `Save` to successfully add the cluster to Devtron.
 
@@ -71,8 +70,10 @@ To add clusters using kubeconfig, follow these steps:
 Please ensure that the kubeconfig file you use has `admin permissions`. It is crucial for Devtron to have the necessary administrative privileges; otherwise, it may encounter failures or disruptions during deployments and other operations. Admin permission is essential to ensure the smooth functioning of Devtron and to prevent any potential issues that may arise due to insufficient privileges.
 {% endhint %}
 
+---
 
-### Configure Prometheus (Enable Applications Metrics)
+
+<!-- ### Configure Prometheus (Enable Applications Metrics)
 
 If you want to see application metrics against the applications deployed in the  cluster, Prometheus must be deployed in the cluster. Prometheus is a powerful tool to provide graphical insight into your application behavior.
 
@@ -90,9 +91,9 @@ Enable the application metrics to configure prometheus and provide the informati
 | :--- | :--- |
 | `Prometheus endpoint` | Provide the URL of your prometheus. |
 | `Authentication Type` | Prometheus supports two authentication types:<ul><li>**Basic:** If you select the `Basic` authentication type, then you must provide the `Username` and `Password` of prometheus for authentication.</li></ul> <ul><li>**Anonymous:** If you select the `Anonymous` authentication type, then you do not need to provide the `Username` and `Password`.<br>Note: The fields `Username` and `Password` will not be available by default.</li></ul> |
-| `TLS Key` & `TLS Certificate` | `TLS Key` and `TLS Certificate` are optional, these options are used when you use a customized URL. |
+| `TLS Key` & `TLS Certificate` | `TLS Key` and `TLS Certificate` are optional, these options are used when you use a customized URL. | -->
 
-Now, click `Save Cluster` to save your cluster on Devtron.
+<!-- Now, click `Save Cluster` to save your cluster on Devtron.
 
 ### Installing Devtron Agent
 
@@ -106,7 +107,7 @@ When the Devtron agent starts installing, click `Details` to check the installat
 
 A new window pops up displaying all the details about the Devtron agent.
 
-![Figure 10: Agent Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster_gc5.jpg)
+![Figure 10: Agent Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster_gc5.jpg) -->
 
 ---
 
@@ -152,7 +153,7 @@ A new environment window pops up.
 Click **Save** and your environment will be created. 
 
 
-![Figure 11: Adding an Environment in Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/gc-cluster-add-environment.jpg)
+![Figure 11: Adding an Environment in Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-environment-db.jpg)
 
 ---
 
