@@ -39,17 +39,18 @@ Before you begin, configure an application in the Devtron dashboard.
 ## Add an External Link
 
 1. On the Devtron dashboard, go to the `Global Configurations` from the left navigation pane.
+
 2. Select `External links`.
    
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/external-tools/external-links-welcome.png)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/external-link-db.jpg)
 
 3. Select **Add Link**.
+
 4. On the `Add Link` page, select the external link (e.g. Grafana) which you want to link to your application from Webpage.
 
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/empty-link-fields.jpg)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/external-add-link.png)
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/external-link-specific-applications.png)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/add-link-db.jpg)
 
 The following fields are provided on the **Add Link** page:
 
@@ -89,7 +90,7 @@ The following fields are provided on the **Add Link** page:
             Choose the application for which you want to configure the selected external link with.
             <ul>
                 <li>Select one or more than one application to enable the link on the specified application.</li>
-                <li>Select All applications to enable the link on all the applications.<br>Note: If you enable `App admins can edit`, then you can view the selected links on the App-Details page. </li>                
+                <li>Select All applications to enable the link on all the applications.</li>              
             </ul>
         </td>
     </tr>
@@ -120,13 +121,19 @@ The following fields are provided on the **Add Link** page:
 
 Click **Save**.
 
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/created-link-db.jpg)
+
+
 ---
 
 ## Access an external link
 
 The users (admin and others) can access the configured external link on the App Details page. 
 
-**Note**: If you enable `App admins can edit` on the `External Links` page, then only non-super admin users can view the selected links on the `App Details` page. 
+<!-- **Note**: If you enable `App admins can edit` on the `External Links` page, then only non-super admin users can view the selected links on the `App Details` page.  -->
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/displayed-link-db.jpg)
+
 
 ---
 
@@ -136,7 +143,7 @@ On the `External Links` page, the configured external links can be filtered/sear
 
 Select `Global Configurations > External links`.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/manage-external-links.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/manage-external-links-db.jpg)
 
 * Filter and search the links based on the link's name or a user-defined name.
 * Edit a link by selecting the edit icon next to an external link.
