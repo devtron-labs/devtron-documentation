@@ -19,7 +19,7 @@ Users need super-admin permission to view ArgoCD App listing.
 
 In the **ArgoCD Apps** tab, select the cluster(s) from the dropdown to view the Argo CD apps available in the chosen cluster(s).
 
-![Figure 1: ArgoCD App List](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/app-details-argo.gif)
+![Figure 1: ArgoCD App List](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/app-details-argo-db.gif)
 
 ---
 

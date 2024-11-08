@@ -1,6 +1,6 @@
 # Overview
 
-![Figure 1: Resource Browser - Overview Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/rb-overview.jpg)
+![Figure 1: Resource Browser - Overview Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/rb-overview-db.jpg)
 
 ## Resource Utilization
 

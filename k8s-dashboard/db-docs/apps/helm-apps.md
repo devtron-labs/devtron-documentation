@@ -8,7 +8,7 @@ The Devtron Dashboard displays the helm applications deployed to your cluster an
 
 2. Click the **Helm Apps** tab. 
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/helm-app-list.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/helm-app-list-db.jpg)
 
 You can see the Helm Apps available in your cluster. If you have connected more than one cluster to Devtron, you can use the **Cluster** selection dropdown to view the respective Helm Apps in your other clusters.
 
@@ -22,11 +22,11 @@ You can see the Helm Apps available in your cluster. If you have connected more 
 
 * Search `nginx` or any other charts in search filter.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/search-chart.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/search-chart-db.jpg)
 
 * Click on chart and it will redirect you to `Chart Details` page where you can see a number of instances deployed by using the same chart.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/chart-details.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/chart-details-db.jpg)
 
 ---
 
@@ -46,7 +46,7 @@ You can see the Helm Apps available in your cluster. If you have connected more 
     | **Chart Version** | Shows all available versions of the chart. Select the version of the chart to be used. |
     | **Chart Value** | Shows the latest default value or you may [create a custom value](#create-a-custom-value) |
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/values-field.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/values-field-db.jpg)
 
 * Once you choose a preferred chart version, chart value, and update the values.yaml using the editor, click **Deploy** to deploy the chart.
 
@@ -72,7 +72,7 @@ After clicking the **Deploy** button, you will land on the **App Details** page 
 The status of the chart should be `Healthy`. It might take a few seconds after initiating the deployment of the chart.
 In case the status of the deployment shows `Degraded` or if takes a long time to get deployed, click **Details** in `Application Status` section on the same page or check the logs of the pods to debug the issue.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/chart-app-details.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/chart-app-details-db.jpg)
 
 1. Shows status of deployed chart.
 
@@ -84,7 +84,7 @@ In case the status of the deployment shows `Degraded` or if takes a long time to
 
 5. Click the **Deployment history** tab to view the deployment history of Helm application and values.yaml corresponding to the deployment.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/chart-deployment-history.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/chart-deployment-history-db.jpg)
 
 ---
 
@@ -92,15 +92,15 @@ In case the status of the deployment shows `Degraded` or if takes a long time to
 
 * For update, you can change its `Chart Version` or `values.yaml` and then click **Update And Deploy**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/update-chart.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/update-chart-db.jpg)
 
 * For upgrade, click on `Helm Chart` field, search a chart name, change its values corresponding, and click **Update And Deploy**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/upgrade-chart.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/upgrade-chart-db.jpg)
 
 * After an update or upgrade, you will land on the **App Details** page where you can check the pods and service name.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/charts-status.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/charts-status-db.jpg)
 
 ---
 
@@ -108,4 +108,4 @@ In case the status of the deployment shows `Degraded` or if takes a long time to
 
 Clicking on `View Chart` in `Chart Used` section in the **App Details** page will redirect you to the `Chart Details` page where you can see the number of instances installed by that chart along with an option to delete those chart instances too.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/delete-chart-instance.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-of-charts/delete-chart-instance-db.jpg)

@@ -24,13 +24,13 @@ Users need super-admin permission to view FluxCD App listing.
 
 In the **FluxCD Apps** tab, select the cluster(s) from the dropdown to view the Flux CD apps available in the chosen cluster(s).
 
-![Figure 1: Selecting Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/cluster-selection.jpg)
+![Figure 1: Selecting Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/cluster-selection-db.jpg)
 
 (Optional) Once you choose cluster(s), you may use the **Template Type** dropdown to further filter your Flux CD app listing based on its type, i.e., [Kustomization](https://fluxcd.io/flux/components/kustomize/kustomizations/) or [Helmrelease](https://fluxcd.io/flux/components/helm/helmreleases/).
 
 Click any Flux CD app to view its details as shown below.
 
-![Figure 2: Flux App Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/app-details-flux.gif)
+![Figure 2: Flux App Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/app-details-flux-db.gif)
 
 ---
 
