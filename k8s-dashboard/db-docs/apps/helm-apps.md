@@ -8,7 +8,7 @@ The Devtron Dashboard displays the helm applications deployed to your cluster an
 
 2. Click the **Helm Apps** tab. 
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/helm-app-list-db.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/helm-applist.jpg)
 
 You can see the Helm Apps available in your cluster. If you have connected more than one cluster to Devtron, you can use the **Cluster** selection dropdown to view the respective Helm Apps in your other clusters.
 
