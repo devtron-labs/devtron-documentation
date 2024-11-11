@@ -40,7 +40,7 @@ Visualize your Flux CD apps across all your clusters on a single pane.
 
 User management with Single Sign-On (SSO) and Role-Based Access Control (RBAC) for enhanced security.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/user-manage-showcase.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/access-control.gif)
 
 ### OCI Registry Support
 
