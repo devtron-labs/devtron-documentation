@@ -23,7 +23,7 @@ This page allows you to create a watcher to track events and trigger a webhook. 
 
 1. Click **+ Create Watcher**. 
 
-    ![Figure 1: Watchers - Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/watchers-page.jpg)
+    ![Figure 1: Watchers - Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/watchers-page-db.jpg)
 
 2. Creating a watcher consists of 4 parts, fill all the sections one by one:
     * [Basic Details](#basic-details)
