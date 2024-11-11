@@ -16,6 +16,8 @@
   * [Cluster Terminal](db-docs/resource-browser/terminal.md)
   * [Run Kubectl Commands Locally](db-docs/resource-browser/kubectl-local.md)
 
+* [Use Resource Watcher](db-docs/resource-watcher.md)
+
 * [Manage Helm Apps](db-docs/apps/helm-apps.md)
 * [Manage Argo CD Apps](db-docs/apps/argocd-apps.md)
 * [Manage Flux CD Apps](db-docs/apps/fluxcd-apps.md)

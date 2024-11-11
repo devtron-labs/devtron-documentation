@@ -54,6 +54,7 @@ Support to add your OCI registry for uploading and downloading helm charts.
 
 For your advanced and challenging use-cases, Devtron offers enterprise-grade features too:
 
+- **Resource Watcher**: Trigger webhook to notify about any intercepting changes to your resources.
 - **Advanced CEL Filtering**: Filter Kubernetes resources with advanced CEL-based queries.
 - **Cluster & Helm Apps Catalog**: Manage and browse the data of clusters and Helm apps using Catalog Framework.
 - **Simplified Kubeconfig Sharing**: Get Kubeconfig file for gaining cluster access through your local machine.
