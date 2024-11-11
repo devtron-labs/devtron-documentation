@@ -98,9 +98,7 @@ Here, you can set up a webhook to receive notifications when specified changes i
 
     The above keys return values as stringified JSON
 
-* Click **Create Watcher**. 
-
-Your watcher is now ready to intercept the changes to the selected resources. 
+Click **Create Watcher**. Your watcher is now ready to intercept the changes to the selected resources. 
 
 ---
 
