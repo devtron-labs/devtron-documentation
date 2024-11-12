@@ -19,11 +19,13 @@ This shows the combined CPU and memory consumption of all running pods in the cl
 
 ---
 
-## Errors
+## Errors in Cluster
 
 This shows errors in the cluster. If no error is present in the cluster, Resource Browser will not display this section.
 
-### Catalog Framework [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+---
+
+## Catalog Framework [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
@@ -42,3 +44,17 @@ Users need to have super-admin permission to edit the readme file.
 {% endhint %}
 
 You can also include additional information about your cluster using the Markdown editor.
+
+---
+
+## Check Compatibility before Cluster Upgrade
+
+Whenever you upgrade your Kubernetes version, the API versions change and your workloads/resources may not be compatible with those API versions. Therefore, the resources need to be upgraded first. This could mean changing the API version of the resources itself or changing their outdated spec.
+
+The **Check Compatibility** feature within Resource Browser scans your cluster and automatically identifies all such resources/workloads that need manual intervention before proceeding with an actual cluster upgrade.
+
+![Figure 2: Checking Compatibility](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/check-compatibility.jpg)
+
+### Walkthrough
+
+{% embed url="https://www.youtube.com/watch?v=mJsTN1x1fr0" caption="Check Compatibility before Cluster Upgrade" %}
