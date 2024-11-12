@@ -47,9 +47,21 @@ Further resources in the cluster are grouped under the following categories:
 User needs to be an [admin of the Kubernetes resource](../authorization/user-permissions.md#kubernetes-resources-permissions) to edit its manifest.
 {% endhint %}
 
-You can edit the [manifest](../resources/glossary.md#manifest) of a Kubernetes object. This can be for fixing errors, scaling resources, or changing configuration.
+You can edit the [manifest](../resources/glossary.md#manifest) of a Kubernetes object. This can be for fixing errors, scaling resources, or changing configuration. Moreover, you can edit a manifest [using YAML](#edit-using-yaml) or [GUI](#edit-using-gui), as per your convenience.
 
-![Figure 3: Editing a Live Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest.gif)
+
+### Edit using YAML
+
+![Figure 3a: Editing Manifest (Using YAML)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest-yaml.gif)
+
+### Edit using GUI
+
+![Figure 3b: Editing Manifest (Using GUI)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest-gui.gif)
+
+{% hint style="info" %}
+### Note
+The fields displayed in GUI mode will be as per the [GUI schema configured by the operator](../operations/edit-manifest-schema.md) for that resource kind.
+{% endhint %}
 
 ---
 
