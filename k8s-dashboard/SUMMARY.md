@@ -53,7 +53,7 @@
 * [Charts and Chart Store](db-docs/charts.md)
 * [Show/Hide Argo CD App Listing](db-docs/operations/enable-argocd-listing.md)
 * [Show/Hide Flux CD App Listing](db-docs/operations/enable-fluxcd-listing.md)
-* [Configure GUI Schema](db-docs/operations/edit-manifest-schema.md)
+* [Configure GUI Schema](db-docs/operations/edit-gui-schema.md)
 * [Configure Lock Schema](db-docs/operations/edit-lock-schema.md)
 
 
