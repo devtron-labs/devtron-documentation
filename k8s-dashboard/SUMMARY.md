@@ -15,7 +15,7 @@
   * [Pod Management and Debugging](db-docs/resource-browser/pods.md)
   * [Cluster Terminal](db-docs/resource-browser/terminal.md)
   * [Run Kubectl Commands Locally](db-docs/resource-browser/kubectl-local.md)
-  * [Add Monitoring Graphs/Dashboards](db-docs/resource-browser/monitoring-graphs.md)
+  * [Add Monitoring Dashboards/Graphs](db-docs/resource-browser/monitoring-graphs.md)
 
 * [Use Resource Watcher](db-docs/resource-watcher.md)
 
