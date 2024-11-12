@@ -15,6 +15,7 @@
   * [Pod Management and Debugging](db-docs/resource-browser/pods.md)
   * [Cluster Terminal](db-docs/resource-browser/terminal.md)
   * [Run Kubectl Commands Locally](db-docs/resource-browser/kubectl-local.md)
+  * [Add Monitoring Graphs/Dashboards](db-docs/resource-browser/monitoring-graphs.md)
 
 * [Use Resource Watcher](db-docs/resource-watcher.md)
 
@@ -52,7 +53,8 @@
 * [Charts and Chart Store](db-docs/charts.md)
 * [Show/Hide Argo CD App Listing](db-docs/operations/enable-argocd-listing.md)
 * [Show/Hide Flux CD App Listing](db-docs/operations/enable-fluxcd-listing.md)
-* [Configure GUI Schema for K8s Manifests](db-docs/operations/edit-manifest-schema.md)
+* [Configure GUI Schema](db-docs/operations/edit-manifest-schema.md)
+* [Configure Lock Schema](db-docs/operations/edit-lock-schema.md)
 
 
 ## Resources

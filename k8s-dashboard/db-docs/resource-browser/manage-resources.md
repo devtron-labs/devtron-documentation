@@ -44,11 +44,10 @@ Further resources in the cluster are grouped under the following categories:
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-User needs to be an [admin of the Kubernetes resource](../authorization/user-permissions.md#kubernetes-resources-permissions) to edit its manifest.
+User needs to be an [admin of the Kubernetes resource](../authorization/user-permissions.md#kubernetes-resources-permissions) to edit its manifest. The [fields/paths locked by superadmins](../operations/edit-lock-schema.md) in the manifest cannot be edited by non-superadmins.
 {% endhint %}
 
 You can edit the [manifest](../resources/glossary.md#manifest) of a Kubernetes object. This can be for fixing errors, scaling resources, or changing configuration. Moreover, you can edit a manifest [using YAML](#edit-using-yaml) or [GUI](#edit-using-gui), as per your convenience.
-
 
 ### Edit using YAML
 
@@ -69,7 +68,13 @@ The fields displayed in GUI mode will be as per the [GUI schema configured by th
 
 You can monitor activities like creation, deletion, updation, scaling, or errors in the resources involved. Refer [Events](https://kubernetes.io/docs/reference/kubernetes-api/cluster-resources/event-v1/) to learn more.
 
-![Figure 4: Viewing All Events](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/events.gif)
+![Figure 4a: Viewing All Events](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/events.gif)
+
+### AI-assistance on Events
+
+For events with warnings, you can take the assistance of AI. Clicking the **Explain** button will help you identify the root cause of the issue along with suggestions to fix those.
+
+![Figure 4b: AI-assistance](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/ai-assist-eventfix.gif)
 
 ---
 
@@ -128,3 +133,22 @@ spec:
          - containerPort: 80
 ```
 {% endcode %}
+
+---
+
+## Bulk Actions on Resources
+
+You can use the checkbox to select the resources/workloads you wish to delete or restart.
+
+### Bulk Delete
+
+![Figure 7a: Deleting Resources in Bulk](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/bulk-delete-resources.gif)
+
+### Bulk Restart
+
+![Figure 7b: Restarting Workloads in Bulk](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/bulk-restart-resources.gif)
+
+{% hint style="info" %}
+### Note
+You can only restart certain workloads such as Deployment, DaemonSet, StatefulSet, etc. and not all resource types.
+{% endhint %}

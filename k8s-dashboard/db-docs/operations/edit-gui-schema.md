@@ -8,19 +8,19 @@ In Devtron, you can create [CRDs](../resources/glossary.md#crd) for defining the
 
 2. Use the searchbox labelled 'Jump to Kind' and search for `Guischema`.
 
-    ![Figure 1: Searching GUI Schema](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/search-gui-schema.gif)
+    ![Figure 1: Searching GUI Schema](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/search-gui-schema.gif)
 
 3. Click the GUI schema you wish to edit. In case no GUI schema exists, you may [create a GUI schema](#create-your-own-gui-schema) for your resource kind.
 
-    ![Figure 2: Click GUI Schema](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/click-schema.gif)
+    ![Figure 2: Click GUI Schema](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/click-schema.gif)
 
 4. Click **Edit Live Manifest** to modify the YAML.
 
-    ![Figure 3: Edit Live Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/edit-live-manifest.gif)
+    ![Figure 3: Edit Live Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest.gif)
 
 5. Locate the `schema` object and customize it according to your requirements.
 
-    ![Figure 4: Modifying Schema](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/dashboard/locate-schema.gif)
+    ![Figure 4: Modifying Schema](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/locate-schema.gif)
 
 6. Click **Apply Changes**.
 
@@ -34,7 +34,7 @@ In Devtron, you can create [CRDs](../resources/glossary.md#crd) for defining the
 
 3. Use the following template and define your schema in the `schema` object, also specify the resource kinds in `applyTo`. Once done, click **Apply**.
 
-    {% code title="kubeconfig" overflow="wrap" lineNumbers="true" %}
+    {% code title="GUI Schema for Deployment Manifest" overflow="wrap" lineNumbers="true" %}
     ```yml
     apiVersion: crd.devtron.ai/alpha1
     kind: GuiSchema
