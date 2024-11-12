@@ -24,7 +24,7 @@ It works similarly to a 'Single Pane of Glass (SPOG)' that displays data coming 
 
     ![Adding Monitoring](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/add-graph1.jpg)
 
-3. Give a name to the monitoring dashboard and add the `iframe` code supplied by your graph/dashboard provider.
+3. Give a name to the monitoring dashboard and add the `iframe` code supplied by your graph/dashboard tool.
 
     ![Adding Monitoring](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/fields-filled.jpg)
 

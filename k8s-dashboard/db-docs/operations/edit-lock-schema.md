@@ -12,7 +12,7 @@ In Devtron, you can create [CRDs](../resources/glossary.md#crd) for defining loc
 
     ![Figure 1: Searching Lock Schema](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/search-lock-schema.gif)
 
-3. Click the Lock Schema you wish to edit. In case no Lock Schema exists, you may [create a Lock schema](#create-your-own-lock-schema) for your resource kind.
+3. Click the Lock Schema you wish to edit. In case no Lock Schema exists, you may [create a Lock Schema](#create-your-own-lock-schema) for your resource kind.
 
     ![Figure 2: Click Lock Schema](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/click-lock-schema.gif)
 
