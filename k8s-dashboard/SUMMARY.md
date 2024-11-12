@@ -49,9 +49,11 @@
   * [API Tokens](db-docs/authorization/api-tokens.md)
 * [External Links](db-docs/external-links.md)
 * [Catalog Framework](db-docs/catalog-framework.md)
+* [Charts and Chart Store](db-docs/charts.md)
 * [Show/Hide Argo CD App Listing](db-docs/operations/enable-argocd-listing.md)
 * [Show/Hide Flux CD App Listing](db-docs/operations/enable-fluxcd-listing.md)
-* [Charts and Chart Store](db-docs/charts.md)
+* [Configure GUI Schema for K8s Manifests](db-docs/operations/edit-manifest-schema.md)
+
 
 ## Resources
 
