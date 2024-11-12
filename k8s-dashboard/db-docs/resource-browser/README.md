@@ -16,10 +16,6 @@ First, the Resource Browser shows you a list of clusters added to your Devtron s
 
 In the image above, you can see a visual display of the health status for all clusters connected to Devtron. If any node within a cluster encounters an issue and is not ready, it will be highlighted in red, allowing you to quickly address the problem.
 
----
-
-## Connect Cluster
-
 If you are a superadmin, you can connect more clusters by clicking the **Add Cluster** button located at the top of the browser. This will take you to the [Clusters](../cluster-environments.md) page within **Global Configurations**.
 
 You may click a cluster to view and manage all its resources as shown below.
