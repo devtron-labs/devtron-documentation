@@ -39,199 +39,80 @@ In Devtron, you can create [CRDs](../resources/glossary.md#crd) for defining the
     apiVersion: crd.devtron.ai/alpha1
     kind: GuiSchema
     metadata:
-    name: devtron-deployment-gui
+    creationTimestamp: 2024-11-08T13:01:00Z
+    generation: 1
+    name: devtron-pod-gui
+    resourceVersion: "216257"
+    uid: 70e91158-288e-4c4a-8448-012e820148ca
     spec:
     applyTo:
-        - group: apps
-        kind: Deployment
+        - group: ""
+        kind: Pod
         version: v1
     schema: |
         {
-        "title": "Deployment Configuration",
-        "description": "A form to create a Kubernetes deployment manifest",
+        "title": "Pod Configuration",
+        "description": "A form to create a Kubernetes pod manifest",
         "type": "object",
-        "required": ["metadata", "spec"],
+        "required": [
+            "metadata",
+            "spec"
+        ],
         "properties": {
             "metadata": {
             "type": "object",
-            "required": ["name"],
             "properties": {
                 "name": {
                 "type": "string",
-                "title": "Deployment Name",
-                "default": "my-app",
+                "title": "Pod Name",
+                "default": "my-pod",
                 "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
                 "description": "Lower case letters, numbers, and hyphens only"
-                },
-                "namespace": {
-                "type": "string",
-                "title": "Namespace",
-                "default": "default",
-                "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
-                "description": "Kubernetes namespace for this deployment"
-                },
-                "labels": {
-                "type": "object",
-                "title": "Labels",
-                "additionalProperties": {
-                    "type": "string"
-                },
-                "default": {
-                    "app": "my-app"
-                }
                 }
             }
             },
             "spec": {
             "type": "object",
-            "required": ["replicas", "selector", "template"],
+            "required": [
+                "containers"
+            ],
             "properties": {
-                "replicas": {
-                "type": "integer",
-                "title": "Number of Replicas",
-                "default": 1,
-                "minimum": 0,
-                "maximum": 100
-                },
-                "selector": {
-                "type": "object",
-                "required": ["matchLabels"],
-                "properties": {
-                    "matchLabels": {
+                "containers": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
                     "type": "object",
-                    "title": "Selector Labels",
-                    "additionalProperties": {
-                        "type": "string"
-                    },
-                    "default": {
-                        "app": "my-app"
-                    }
-                    }
-                }
-                },
-                "template": {
-                "type": "object",
-                "required": ["metadata", "spec"],
-                "properties": {
-                    "metadata": {
-                    "type": "object",
-                    "required": ["labels"],
+                    "required": [
+                    "name",
+                    "image"
+                    ],
                     "properties": {
-                        "labels": {
-                        "type": "object",
-                        "title": "Pod Labels",
-                        "additionalProperties": {
-                            "type": "string"
-                        },
-                        "default": {
-                            "app": "my-app"
-                        }
-                        }
-                    }
+                    "name": {
+                        "type": "string",
+                        "title": "Container Name",
+                        "default": "container-1",
+                        "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
+                        "description": "Lower case letters, numbers, and hyphens only"
                     },
-                    "spec": {
-                    "type": "object",
-                    "required": ["containers"],
-                    "properties": {
-                        "containers": {
+                    "image": {
+                        "type": "string",
+                        "title": "Container Image",
+                        "description": "Docker image name with optional tag (e.g., nginx:1.14.2)"
+                    },
+                    "ports": {
                         "type": "array",
-                        "minItems": 1,
-                        "maxItems": 1,
+                        "title": "Container Ports",
                         "items": {
-                            "type": "object",
-                            "required": ["name", "image"],
-                            "properties": {
-                            "name": {
-                                "type": "string",
-                                "title": "Container Name",
-                                "default": "app",
-                                "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$"
-                            },
-                            "image": {
-                                "type": "string",
-                                "title": "Container Image",
-                                "default": "nginx:latest",
-                                "description": "Docker image name and tag (e.g., nginx:1.19)"
-                            },
-                            "ports": {
-                                "type": "array",
-                                "title": "Container Ports",
-                                "items": {
-                                "type": "object",
-                                "required": ["containerPort"],
-                                "properties": {
-                                    "containerPort": {
-                                    "type": "integer",
-                                    "title": "Port",
-                                    "default": 80,
-                                    "minimum": 1,
-                                    "maximum": 65535
-                                    }
-                                }
-                                }
-                            },
-                            "env": {
-                                "type": "array",
-                                "title": "Environment Variables",
-                                "items": {
-                                "type": "object",
-                                "required": ["name", "value"],
-                                "properties": {
-                                    "name": {
-                                    "type": "string",
-                                    "title": "Name"
-                                    },
-                                    "value": {
-                                    "type": "string",
-                                    "title": "Value"
-                                    }
-                                }
-                                }
-                            },
-                            "resources": {
-                                "type": "object",
-                                "title": "Resource Limits",
-                                "properties": {
-                                "limits": {
-                                    "type": "object",
-                                    "properties": {
-                                    "cpu": {
-                                        "type": "string",
-                                        "title": "CPU Limit",
-                                        "default": "500m",
-                                        "pattern": "^[0-9]+(m|\\.[0-9]+)?$",
-                                        "description": "CPU units (e.g., 100m, 0.1, 1)"
-                                    },
-                                    "memory": {
-                                        "type": "string",
-                                        "title": "Memory Limit",
-                                        "default": "512Mi",
-                                        "pattern": "^[0-9]+(Ki|Mi|Gi|Ti|Pi|Ei|[KMGTPE]i?)?$",
-                                        "description": "Memory units (e.g., 128Mi, 1Gi)"
-                                    }
-                                    }
-                                },
-                                "requests": {
-                                    "type": "object",
-                                    "properties": {
-                                    "cpu": {
-                                        "type": "string",
-                                        "title": "CPU Request",
-                                        "default": "200m",
-                                        "pattern": "^[0-9]+(m|\\.[0-9]+)?$",
-                                        "description": "CPU units (e.g., 100m, 0.1, 1)"
-                                    },
-                                    "memory": {
-                                        "type": "string",
-                                        "title": "Memory Request",
-                                        "default": "256Mi",
-                                        "pattern": "^[0-9]+(Ki|Mi|Gi|Ti|Pi|Ei|[KMGTPE]i?)?$",
-                                        "description": "Memory units (e.g., 128Mi, 1Gi)"
-                                    }
-                                    }
-                                }
-                                }
-                            }
+                        "type": "object",
+                        "required": [
+                            "containerPort"
+                        ],
+                        "properties": {
+                            "containerPort": {
+                            "type": "integer",
+                            "title": "Port Number",
+                            "minimum": 1,
+                            "maximum": 65535
                             }
                         }
                         }
@@ -243,6 +124,5 @@ In Devtron, you can create [CRDs](../resources/glossary.md#crd) for defining the
             }
         }
         }
-
     ```
     {% endcode %}
