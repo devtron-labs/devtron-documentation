@@ -53,7 +53,7 @@ You can edit the [manifest](../resources/glossary.md#manifest) of a Kubernetes o
 
 ![Figure 3a: Editing Manifest (Using YAML)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest-yaml.gif)
 
-### Edit using GUI
+### Edit using GUI [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 ![Figure 3b: Editing Manifest (Using GUI)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest-gui.gif)
 
@@ -70,7 +70,7 @@ You can monitor activities like creation, deletion, updation, scaling, or errors
 
 ![Figure 4a: Viewing All Events](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/events.gif)
 
-### AI-assistance on Events
+### AI-assistance on Events [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 For events with warnings, you can take the assistance of AI. Clicking the **Explain** button will help you identify the root cause of the issue along with suggestions to fix those.
 
@@ -136,7 +136,7 @@ spec:
 
 ---
 
-## Bulk Actions on Resources
+## Bulk Actions on Resources [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 You can use the checkbox to select the resources/workloads you wish to delete or restart.
 

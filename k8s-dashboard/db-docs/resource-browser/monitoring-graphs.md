@@ -1,5 +1,7 @@
 # Add Monitoring Graphs or Dashboards
 
+## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
 The Resource Browser allows you to integrate monitoring graphs and dashboards from tools like Grafana, Kibana, Prometheus, and many more tools, with each cluster. This centralizes all monitoring visuals for your clusters in one place within Devtron, streamlining troubleshooting and significantly reducing manual effort.
 
 ![Adding Monitoring Visualizations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/monitoring-graphs.gif)

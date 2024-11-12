@@ -47,7 +47,7 @@ You can also include additional information about your cluster using the Markdow
 
 ---
 
-## Check Compatibility before Cluster Upgrade
+## Check Compatibility before Cluster Upgrade [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 Whenever you upgrade your Kubernetes version, the API versions change and your workloads/resources may not be compatible with those API versions. Therefore, the resources need to be upgraded first. This could mean changing the API version of the resources itself or changing their outdated spec.
 
