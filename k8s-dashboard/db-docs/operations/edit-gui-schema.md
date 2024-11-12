@@ -34,7 +34,7 @@ In Devtron, you can create [CRDs](../resources/glossary.md#crd) for defining the
 
 3. Use the following template and define your schema in the `schema` object, also specify the resource kinds in `applyTo`. Once done, click **Apply**.
 
-    {% code title="GUI Schema for Deployment Manifest" overflow="wrap" lineNumbers="true" %}
+    {% code title="GUI Schema for Pod Manifest" overflow="wrap" lineNumbers="true" %}
     ```yml
     apiVersion: crd.devtron.ai/alpha1
     kind: GuiSchema
