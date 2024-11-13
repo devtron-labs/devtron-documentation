@@ -1,7 +1,7 @@
 # GCS Create Bucket
 
 ## Introduction
-The **GCS Create Bucket** plugin of Devtron enables automated creation of Google Cloud Storage (GCS) buckets directly within CI/CD workflows. By integrating the GCS Create Bucket teams can simplify cloud storage provisioning and can efficiently manage and store application logs, deployment artifacts, backup data, and other critical application assets in a centralized cloud storage solution.
+The **GCS Create Bucket** plugin of Devtron enables automated creation of Google Cloud Storage (GCS) buckets directly within CI/CD workflows. By integrating the **GCS Create Bucke** plugin teams can simplify cloud storage provisioning and can efficiently manage and store application logs, deployment artifacts, backup data, and other critical application assets in a centralized cloud storage solution.
 
 ### Prerequisites
 Before integrating the **GCS Create Bucket** plugin, ensure you have a Google Cloud Platform (GCP) account and GCP Project with appropriate permissions.
