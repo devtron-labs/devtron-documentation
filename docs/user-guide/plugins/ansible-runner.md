@@ -1,7 +1,7 @@
 # Ansible Runner
 
 ## Introduction
-The **Ansible Runner** plugin by Devtron enables seamless execution of Ansible Playbooks within your Devtron workflows using the ansible-runner tool. For example, user can use this plugin to trigger the Ansible Plabooks which can automate task like configuring cluster add-ons, managing node configurations, and network configurations.
+The **Ansible Runner** plugin by Devtron enables seamless execution of Ansible Playbooks within your Devtron workflows using the Ansible Runner tool. For example, users can use this plugin to trigger the Ansible Playbooks which can automate tasks like configuring cluster add-ons managing node configurations, and network configurations.
 
 ### Prerequisites
 Before integrating the **Ansible Runner** plugin make sure that you have properly configured Ansible playbooks.
