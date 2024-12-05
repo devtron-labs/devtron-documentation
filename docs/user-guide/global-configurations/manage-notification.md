@@ -1,6 +1,6 @@
 # Manage Notification
 
-## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Introduction
 
 With the `Manage Notification` feature, you can manage the notifications for your build and deployment pipelines. You can receive the notifications on Slack or via e-mail.
 
