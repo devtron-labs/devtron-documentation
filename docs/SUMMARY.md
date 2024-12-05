@@ -146,6 +146,7 @@
     * [Devtron CI Trigger](user-guide/plugins/devtron-ci-trigger.md)
     * [Devtron Job Trigger](user-guide/plugins/devtron-job-trigger.md)
     * [DockerSlim](user-guide/plugins/docker-slim.md)
+    * [GCS Create Bucket](user-guide/plugins/gcs-create-bucket.md)
     * [GoLang-migrate](user-guide/plugins/golang-migrate.md)
     * [Jenkins](user-guide/plugins/jenkins.md)
     * [Jira Issue Validator](user-guide/plugins/jira-validator.md)
