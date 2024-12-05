@@ -1,4 +1,6 @@
-# Tags Policy
+# Tags
+
+## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 Devtron's `Tags Policy` feature enables you to assign tags to your applications. Devtron also offers the option to propagate the tags assigned to an application as labels within the associated Kubernetes resources. 
 

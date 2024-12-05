@@ -1,5 +1,7 @@
 # Manage Notification
 
+## Introduction
+
 With the `Manage Notification` feature, you can manage the notifications for your build and deployment pipelines. You can receive the notifications on Slack or via e-mail.
 
 Go to the `Global Configurations` -&gt; `Notifications`
