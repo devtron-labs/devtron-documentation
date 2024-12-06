@@ -9,19 +9,19 @@ Before integrating the **GCS Create Bucket** plugin, ensure you have a Google Cl
 ---
 
 ## Steps
-1. Go to **Applications** → **Devtron Apps**.
-2. Click your application.
-3. Go to **App Configuration** → **Workflow Editor**.
-4. Click **New Workflow** and navigate to the **Build and Deploy from Source Code**.
-5. Fill the required fields in the **Create build pipeline** window and navigate to the **Pre-build stage**.
-
-{% hint style="warning" %}
-If you have already configured workflow, edit the build pipeline, and navigate to **Pre-build stage**.
-{% endhint %}
-
-6. Under 'TASKS', click the **+ Add task** button.
-7. Click the **GCS Create Bucket** plugin.
-8. Enter the following [user inputs](#user-inputs) with appropriate values.
+1. Navigate to the **Jobs** section, click **Create**, and choose **Job**.
+2. In the 'Create job' window, enter **Job Name** and choose a target project.
+3. Click **Create Job**.
+4. In the 'Configurations' tab, fill the required fields under the 'Source code' section and click **Save**.
+5. In Workflow Editor, click **+ Job Pipeline**.
+6. Give a name to the workflow and click **Create Workflow**.
+7. Click **Add job pipeline to this workflow**.
+8. Fill the required fields in ‘Basic configuration’ tab.
+9. Go to the ‘Tasks to be executed’ tab.
+10. Under ‘Tasks’, click the **+ Add task** button.
+11. Select the **GCS Create Bucket** plugin.
+12. Enter the following [user inputs](#user-inputs) with appropriate values.
+    
 ---
 
 ## User Inputs
