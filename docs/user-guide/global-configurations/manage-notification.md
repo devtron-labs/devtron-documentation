@@ -21,6 +21,11 @@ Go to **Global Configurations** → **Notifications** to access this feature in 
 
 ## Configurations
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Only superadmins can manage configurations.
+{% endhint %}
+
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/configurations-tab.jpg)
 
 Here you can add and manage the following configurations:
@@ -161,6 +166,11 @@ Refer [Create Notifications](#create-notifications).
 ---
 
 ## Notifications
+
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Only superadmins can manage notifications.
+{% endhint %}
 
 After completing the [configurations](#configurations), you can create notifications.
 
