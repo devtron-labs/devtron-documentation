@@ -11,7 +11,7 @@ A CI Workflow can be created in one of the following ways:
 * [Build and Deploy from Source Code](#id-1.-build-and-deploy-from-source-code)
 * [Linked Build Pipeline](#id-2.-linked-build-pipeline)
 * [Deploy Image from External Service](#id-3.-deploy-image-from-external-service)
-* Sync with Environment
+* Sync with Environment [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 * Create a Job
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-1.jpg)
@@ -143,7 +143,7 @@ Select **Create Pipeline**.
 The total timeout for the execution of the CI pipeline is by default set as 3600 seconds. This default timeout is configurable according to the use case (refer [Build Infra](../../global-configurations/build-infra.md)).
 {% endhint %}
 
-##### Scan for Vulnerabilities
+##### Scan for Vulnerabilities 
 
 {% hint style="info" %}
 ### Prerequisite

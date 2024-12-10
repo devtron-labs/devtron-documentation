@@ -7,8 +7,8 @@ Devtron provides [DevSecOps](https://devtron.ai/product/devsecops) capabilities 
 One of the key components of DevSecOps is the detection of security risks. Currently, Devtron supports the following types of scanning:
 
 * Image Scan
-* Code Scan 
-* Kubernetes Manifest Scan
+* Code Scan [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+* Kubernetes Manifest Scan [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 ![Figure 1: Security Scan Results](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/security-scan.jpg)
 
@@ -87,7 +87,7 @@ Results of Pre-CD scan will be visible under `Image Scan` and `Kubernetes Manife
 
 ![Figure 8: Pre-CD Scan Results](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/manifest-scan.gif)
 
-### During Helm App Deployment
+### During Helm App Deployment [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 When you [deploy a helm chart](../user-guide/deploy-chart/deployment-of-charts.md), Devtron will scan the image associated with that helm chart and also the manifests, but unlike Devtron Apps, there is no code scan involved.
 

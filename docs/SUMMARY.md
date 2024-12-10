@@ -46,7 +46,7 @@
   * [Catalog Framework](user-guide/global-configurations/catalog-framework.md)
   * [Scoped Variables](user-guide/global-configurations/scoped-variables.md)
   * [Pull Image Digest](user-guide/global-configurations/pull-image-digest.md)
-  * [Tags Policy](user-guide/global-configurations/tags-policy.md)
+  * [Tags](user-guide/global-configurations/tags-policy.md)
   * [Filter Condition](user-guide/global-configurations/filter-condition.md)
   * [Lock Deployment Configuration](user-guide/global-configurations/lock-deployment-config.md)
   * [Image Promotion Policy](user-guide/global-configurations/image-promotion-policy.md)  

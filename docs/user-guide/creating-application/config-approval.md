@@ -1,6 +1,6 @@
 # Protect Configuration
 
-## Introduction
+## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 Since resources are created according to the configurations you enter, it's essential to restrict such configurations from direct modifications. For critical environments like production, it becomes necessary to introduce an approval flow for any edits made to the configuration files.
 
