@@ -132,7 +132,7 @@
 * [Pipeline Plugins](user-guide/plugins/README.md)
   * [Create Your Plugin](user-guide/plugins/create-plugin.md)
   * [Our Plugins](user-guide/plugins/plugin-list.md)
-    * [BitBucket Runner Trigger](user-guide/plugins/bitbucket-runner-trigger.md)
+    * [Bitbucket Runner Trigger](user-guide/plugins/bitbucket-runner-trigger.md)
     * [Codacy](user-guide/plugins/codacy.md)
     * [Code-Scan](user-guide/plugins/code-scan.md)
     * [Copacetic](user-guide/plugins/copacetic.md)
