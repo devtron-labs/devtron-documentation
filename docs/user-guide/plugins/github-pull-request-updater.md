@@ -1,10 +1,10 @@
 # GitHub Pull Request Updater
 
 ## Introduction
-The **GitHub Pull Request Updater** plugin automatically adds pipeline status and deployment information as comments on your GitHub pull requests. Every time your Devtron CI pipeline runs, you get instant visibility onto the specific pull request on GitHub. This seamless integration eliminates the need to switch between multiple tools or platforms to track your deployment, Development teams also saves their time by avoiding manual status updates and reducing the back-and-forth communication about deployment states. 
+The **GitHub Pull Request Updater** plugin automatically adds pipeline status and deployment information as comments on your GitHub pull requests. Every time your Devtron CI pipeline runs, you get instant visibility onto the specific pull request on GitHub. This seamless integration eliminates the need to switch between multiple tools or platforms to track your deployment. Development teams also save time by avoiding manual status updates and reducing the back-and-forth communication about deployment states. 
 
 ### Prerequisites
-Before integrating the **GitHub Pull Request Updater** plugin, ensure you have an GitHub Personal Access Token (PAT) with appropriate permissions to access the your GitHub repository.
+Before integrating the **GitHub Pull Request Updater** plugin, ensure you have a GitHub Personal Access Token (PAT) with appropriate permissions to access your GitHub repository.
 
 ---
 
@@ -41,7 +41,7 @@ e.g., `A plugin to update GitHub pull request`
 | Variable                 | Format       | Description | Sample Value |
 | ------------------------ | ------------ | ----------- | ------------ |
 |   AccessToken             | STRING      | GitHub Personal Access Token (PAT) with appropriate permissions, used for authentication.  | ghp_1234abcd5678efgh9012ijkl3456mnop            |
-|   UpdateWithDockerImageI  | BOOL       | When set to true, the plugin will include Docker image information in PR comments. Default: True        |  true |
+|   UpdateWithDockerImageId  | BOOL       | When set to true, the plugin will include Docker image information in PR comments. Default: True        |  true |
 |   UpdateWithBuildStatus   | BOOL       | When set to true, the plugin will update PR comments with pipeline build status including success/failure state. Default: True       |   true    |
 
 
@@ -49,7 +49,7 @@ e.g., `A plugin to update GitHub pull request`
 Here you can set conditions to execute or skip the task. You can select `Set trigger conditions` for the execution of a task or `Set skip conditions` to skip the task.
 
 ### Output Variables
-GitHub Pull Request Updater plugin will not be generating an output variable.
+The GitHub Pull Request Updater plugin will not be generating an output variable.
 
 
 Click **Update Pipeline**.
