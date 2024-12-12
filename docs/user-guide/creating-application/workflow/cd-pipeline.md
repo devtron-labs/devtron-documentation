@@ -53,7 +53,7 @@ Now, the window will have 3 distinct tabs, and you will see the following additi
 * [Pre-Deployment stage (tab)](#pre-deployment-stage)
 * [Deployment stage (tab)](#deployment-stage)
   * [Pipeline Name (input field)](#pipeline-name)
-  * [Manual approval for deployment (toggle button)](#manual-approval-for-deployment)
+  * [Manual approval for deployment (toggle button)](#manual-approval-for-deployment) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
   * [Custom Image tag pattern (toggle button)](#custom-image-tag-pattern)
   * [Pull container image with image digest](#pull-container-image-with-image-digest)
 * [Post-Deployment stage (tab)](#post-deployment-stage)
