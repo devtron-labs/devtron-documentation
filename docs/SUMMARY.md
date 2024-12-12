@@ -150,6 +150,7 @@
     * [DockerSlim](user-guide/plugins/docker-slim.md)    
     * [EKS Create Cluster](user-guide/plugins/eks-create-cluster.md)
     * [GCS Create Bucket](user-guide/plugins/gcs-create-bucket.md)
+    * [GitHub Pull Request Updater](user-guide/plugins/github-pull-request-updater.md)
     * [GoLang-migrate](user-guide/plugins/golang-migrate.md)
     * [Jenkins](user-guide/plugins/jenkins.md)
     * [Jira Issue Validator](user-guide/plugins/jira-validator.md)
