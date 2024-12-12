@@ -1,7 +1,7 @@
 # GCS Create Bucket
 
 ## Introduction
-The **GCS Create Bucket** plugin of Devtron enables automated creation of Google Cloud Storage (GCS) bucket directly within CI/CD workflows. By integrating the **GCS Create Bucket** plugin teams can simplify cloud storage provisioning and can efficiently manage and store application logs, deployment artifacts, backup data, and other critical application assets in a centralized cloud storage.
+The **GCS Create Bucket** plugin of Devtron enables automated creation of Google Cloud Storage (GCS) bucket directly within CI/CD workflows. By integrating the **GCS Create Bucket** plugin, teams can simplify cloud storage provisioning and can efficiently manage and store application logs, deployment artifacts, backup data, and other critical application assets in a centralized cloud storage.
 
 ### Prerequisites
 Before integrating the **GCS Create Bucket** plugin, ensure you have a Google Cloud Platform (GCP) account and GCP Project with appropriate permissions.
@@ -47,8 +47,8 @@ e.g., `A Plugin to create GCS Bucket`
 | ServiceAccountCred       | STRING       | Base64 encoded GCP service account credentials            | eyJ0eXBlIjoic2VydmljZV9hY2             |
 | LocationType             | STRING       | Type of location (region/dual-region/multi-region)            | region             |
 | Location                 | STRING       | Geographic location where bucket will be created            |  us-central1            |
-| EnableAutoClass          | BOOL         | Automatically optimizes storage costs by moving objects between storage classes based on how frequently they are accessed. Default is false.             |  true            |
-| UniformAccess            | STRING       | Enable uniform bucket-level access control to create bucket with bucket level permissions instead of Access control list (true/false)            |  true            | 
+| EnableAutoClass          | BOOL         | Automatically optimizes storage costs by moving objects between storage classes based on how frequently they are accessed. The default is false.             |  true            |
+| UniformAccess            | STRING       | Enable uniform bucket-level access control to create a bucket with bucket-level permissions instead of an Access control list (true/false)            |  true            | 
         
 ### Trigger/Skip Condition
 Here you can set conditions to execute or skip the task. You can select `Set trigger conditions` for the execution of a task or `Set skip conditions` to skip the task.
@@ -57,7 +57,7 @@ Here you can set conditions to execute or skip the task. You can select `Set tri
 
 | Variable                 | Format       | Description |
 | ------------------------ | ------------ | ----------- | 
-|   BucketName             | STRING       | The name of the bucket createed.
+|   BucketName             | STRING       | The name of the bucket created.
 
 ### Pass/Failure Condition
 Here you can define when a task should be marked as passed or failed. You can select `Set pass conditions` to define success criteria or `Set failure conditions` to specify failure scenarios.
