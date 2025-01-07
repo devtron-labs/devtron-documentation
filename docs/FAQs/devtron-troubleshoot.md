@@ -617,4 +617,6 @@ Follow the below steps if you are getting the above error:
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/empty-values.jpg)
 
-If you have uploaded your deployment chart that doesn't include an [app-values.yaml](../user-guide/global-configurations/deployment-charts.md#3-add-app-values.yaml) file and then select that chart as the [Base Deployment Template](../creating-application/deployment-template.md) for your application, both the **Basic (GUI)** and **Advanced (YAML)** sections will appear blank.
+This happens due to a missing [app-values.yaml](../user-guide/global-configurations/deployment-charts.md#3-add-app-values.yaml) file in your deployment chart. 
+
+To fix this issue, include an `app-values.yaml` file in your deployment helm chart before uploading the chart. Refer [adding app-values.yaml](../user-guide/global-configurations/deployment-charts.md#3-add-app-values.yaml) to know more.
