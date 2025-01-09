@@ -613,3 +613,10 @@ Follow the below steps if you are getting the above error:
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/chart-sync.jpg)
 
+#### 30. The Advanced (YAML) and Basic (GUI) sections are appearing blank in the Base Deployment Template of the application.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/empty-values.jpg)
+
+This happens due to a missing [app-values.yaml](../user-guide/global-configurations/deployment-charts.md#3-add-app-values.yaml) file in your deployment chart. 
+
+To fix this issue, include an `app-values.yaml` file in your deployment helm chart before uploading the chart. Refer [adding app-values.yaml](../user-guide/global-configurations/deployment-charts.md#3-add-app-values.yaml) to know more.
