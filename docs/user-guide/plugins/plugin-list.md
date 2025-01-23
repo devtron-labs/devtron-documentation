@@ -1,14 +1,24 @@
 ## Our Plugins
 
 We have multiple plugins available in Devtron. At the moment, here are the plugins for which user guide is available.
-
+* [Bitbucket Runner Trigger](./bitbucket-runner-trigger.md)
 * [Codacy](./codacy.md)
 * [Code-Scan](./code-scan.md)
 * [Copacetic](./copacetic.md)
+* [Container Image Exporter]()
 * [Copy Container Image](./copy-container-image.md)
+* [Cosign](./cosign.md)
+* [CraneCopy](./crane-copy.md)
 * [Dependency track - Maven & Gradle](./dependency-track-maven-gradle.md)
 * [Dependency track - NodeJS](./dependency-track-nodejs.md)
 * [Dependency track - Python](./dependency-track-python.md)
+* [Devtron CD Trigger](./devtron-cd-trigger.md)
+* [Devtron CI Trigger](./devtron-ci-trigger.md)
+* [Devtron Job Trigger](./devtron-job-trigger.md)
+* [DockerSlim](./docker-slim.md)
+* [EKS Create Cluster](./eks-create-cluster.md)
+* [GCS Create Buckter](./gcs-create-bucket.md)
+* [GitHub Pull Request Updater](./github-pull-request-updater.md)
 * [GoLang-migrate](./golang-migrate.md)
 * [Jenkins](./jenkins.md)
 * [Jira Issue Validator](./jira-validator.md)
@@ -18,3 +28,4 @@ We have multiple plugins available in Devtron. At the moment, here are the plugi
 * [Semgrep](./semgrep.md)
 * [SonarQube](./sonarqube.md)
 * [SonarQube v1.1.0](./sonarqube-v1.1.0.md)
+* [Vulnerability Scanning](./vulnerability-scanning.md)
