@@ -215,7 +215,7 @@ In case you have configured [SES or SMTP on Devtron](../global-configurations/ma
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Only the users having [Artifact promoter](./user-access.md#role-based-access-levels) role (for the application and environment) or superadmin permissions will be able to approve the image promotion request.
+Only the users having [Artifact promoter](./user-access.md#devtron-apps-permissions) role (for the application and environment) or superadmin permissions will be able to approve the image promotion request.
 {% endhint %} 
 
 1. Go to the **Build & Deploy** tab of your application.
