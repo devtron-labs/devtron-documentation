@@ -33,8 +33,8 @@ Here you can manage who can access your Devtron instance and what actions they c
    ![Figure 4: Assigning User Group(s)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/assign-user-group.gif)
 
 5. There are two types of permissions in Devtron (click the links below to learn more):
-   * [Super admin permission](#super-admin-permission) for granting full access.
-   * [Specific permissions](#specific-permission) for granting cherry-picked access.
+   * [Super admin permission](#grant-super-admin-permission) for granting full access.
+   * [Specific permissions](#grant-specific-permissions) for granting cherry-picked access.
 
    ![Figure 5: Granting Specific or Superadmin Access](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/superadmin-or-specific.gif)
 
