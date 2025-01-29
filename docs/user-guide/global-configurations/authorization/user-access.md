@@ -265,7 +265,7 @@ Here you can grant your user the permissions for accessing Chart Groups. Note th
 
 When working with multiple collaborators in Devtron, you may need to deactivate users who no longer require access and reactivate them when needed. This applies to users of Devtron Apps, Helm Apps, Jobs, and Kubernetes Resources.
 
-![Figure 13: Active/Inactive Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/user-level-activation.jpg)
+![Figure 13: Active/Inactive Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/active-inactive-levels.jpg)
 
 You can manage a user's active status at three levels:
 * 1. [User-level](#at-user-level)
