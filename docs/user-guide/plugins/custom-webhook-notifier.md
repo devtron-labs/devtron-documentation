@@ -3,7 +3,7 @@
 ## Introduction
 The Custom Webhook Notifier plugin by Devtron allows users to set up automated webhook notifications that integrate with various third-party services in their Job pipelines and at pre/post stages of Devtron CI/CD workflows. Teams can seamlessly integrate this plugin to keep external services and team members updated about pipeline events and status changes. Some key use cases of this plugin can be:
 - Configuring notifications at pre/post stages to update teams on task completion status, such as sending vulnerability scanning reports.
-- Setting up automated alerts at the runbooks of auto-remediation.
+- Setting up automated alerts at the runbooks of auto-remediation using jobs.
 
 {% hint style="warning" %}
 If you wish to get notifications at Trigger, Success, and Failure events of CI/CD pipelines, use Devtron's native [Notifications](https://docs.devtron.ai/global-configurations/manage-notification).
@@ -15,6 +15,11 @@ Before integrating the **Custom Webhook Notifier** plugin, you must ensure that 
 ---
 
 ## Steps
+
+{% hint style="warning" %}
+If you want to integrate the **Custom Webhook Notifier** at the job, navigate to the **[Custom Email Notifier](https://docs.devtron.ai/usage/plugins/plugin-list/custom-email-notifier)** plugin and follow the steps mentioned.
+{% endhint %}
+
 1. Go to **Applications** → **Devtron Apps**.
 2. Click your application.
 3. Go to **App Configuration** → **Workflow Editor**.
