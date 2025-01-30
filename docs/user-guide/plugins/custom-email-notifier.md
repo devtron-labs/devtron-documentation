@@ -1,8 +1,9 @@
 # Custom Email Notifier
 
 ## Introduction
-The **Custom Email Notifier** plugin by Devtron enables user to set an automated email notifications to respective stakeholders of that specific CI/CD workflow. The Custom Email Notifier can be integrated into pre/post stages of Devtron CI/CD workflows to keep team members informed about current status and other pipeline events. 
-For better understanding consider a common development scenario where a developer needs to notify the operations team about build completion. Using this plugin, the developer can configure Custom Email Notifier at the post-build stage to automatically send an email notification informing that the build process has completed successfully and the Docker image is ready for deployment.
+The **Custom Email Notifier** plugin by Devtron enables users to set automated email notifications to respective stakeholders of that specific CI/CD workflow. The Custom Email Notifier can be integrated into pre/post stages of Devtron CI/CD workflows to inform team members about the current status and other pipeline events. Some key use cases of this plugin can be:
+- Configuring notifications at pre/post stages to update teams on task completion status, such as sending vulnerability scanning reports.
+- Setting up automated alerts at the runbooks of auto-remediation using jobs.
 
 ### Prerequisites
 Before integrating the **Custom Email Notifier** plugin, you must ensure that you have properly configured notifications in your Devtron setup. For detailed notification configuration steps, please refer to the Devtron documentation at: [Devtron Notifications](https://docs.devtron.ai/global-configurations/manage-notification).
@@ -10,19 +11,23 @@ Before integrating the **Custom Email Notifier** plugin, you must ensure that yo
 ---
 
 ## Steps
-1. Go to **Applications** → **Devtron Apps**.
-2. Click your application.
-3. Go to **App Configuration** → **Workflow Editor**.
-4. Click **New Workflow** and navigate to the **Build and Deploy from Source Code**.
-5. Fill the required fields in the **Create build pipeline** window and navigate to the **Post-build stage**.
 
 {% hint style="warning" %}
-If you have already configured workflow, edit the build pipeline, and navigate to **Post-build stage**.
+If you want to integrate the **Custom Email Notifier** plugin into pre/post stages of CI/CD pipelines, navigate to the **[Custom Webhook Notifier](https://docs.devtron.ai/usage/plugins/plugin-list/custom-webhook-notifier)** plugin and follow the steps mentioned.
 {% endhint %}
 
-6. Under 'TASKS', click the **+ Add task** button.
-7. Click the **Custom Email Notifier** plugin.
-8. Enter the following [user inputs](#user-inputs) with appropriate values.
+1. Navigate to the **Jobs** section, click **Create**, and choose **Job**.
+2. In the 'Create job' window, enter **Job Name** and choose a target project.
+3. Click **Create Job**.
+4. In the 'Configurations' tab, fill the required fields under the 'Source code' section and click **Save**.
+5. In Workflow Editor, click **+ Job Pipeline**.
+6. Give a name to the workflow and click **Create Workflow**.
+7. Click **Add job pipeline to this workflow**.
+8. Fill the required fields in ‘Basic configuration’ tab.
+9. Go to the ‘Tasks to be executed’ tab.
+10. Under ‘Tasks’, click the **+ Add task** button.
+11. Select the **Custom Email Notifier**  plugin.
+12. Enter the following [user inputs](#user-inputs) with appropriate values.
 ---
 
 ## User Inputs
