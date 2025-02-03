@@ -16,7 +16,7 @@ Before integrating the **Mail Master** plugin, you must ensure that you have pro
 5. Fill the required fields in the **Create deploy pipeline** window and navigate to the **Post-deploy stage**.
 
 {% hint style="warning" %}
-If you have already configured workflow, edit the build pipeline, and navigate to **Post-deploy stage**.
+If you have already configured workflow, edit deployment pipeline, and navigate to **Post-deploy stage**.
 {% endhint %}
 
 6. Under 'TASKS', click the **+ Add task** button.
