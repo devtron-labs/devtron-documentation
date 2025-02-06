@@ -55,14 +55,15 @@ You may enable **Allow Custom Input** to give the user a choice to enter their o
 
 9. **Propagate Tag** - By default, tags assigned to applications in Devtron are not automatically propagated to Kubernetes resources as labels.
 
-    * Click the <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg"  height="10"> symbol on the left side of your tag to propagate a tag. The symbol turns dark to indicate that the tag propagation is enabled.
-    * To remove the tags from propagation, click the <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/propagate-dark.jpg" height="10"> symbol again.
+    ![Figure 10a: Propagating Tags](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/propagate-tag.gif) 
 
-    ![Figure 10a: Enabling/Disabling Tag Propagation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/propagate-tag.gif) 
+    <br />
+
+    ![Figure 10b: Enabling/Disabling Propagation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/propagation-symbols.jpg) 
     
     <br />
 
-    ![Figure 10b: How Tag Propagation Works](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/inject-tags.jpg)
+    ![Figure 10c: How Tag Propagation Works](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/inject-tags.jpg)
 
 {% hint style="Info" %}
 ### Changing Propagation in Suggested Tags vs. Mandatory Tags
