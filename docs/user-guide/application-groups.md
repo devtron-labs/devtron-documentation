@@ -32,7 +32,7 @@ As you can see, it has similar options as available under [Applications](./appli
 * Configurations
 
 {% hint style="info" %}
-Users need to have [View only permission](../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and applications) to view all the applications within a group.
+Users need to have [View only permission](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to view all the applications within a group.
 {% endhint %}
 
 First, we will walk you through the [key features](#key-features) of Application Groups, followed by [additional features](#additional-features) that will help you perform bulk actions.
@@ -87,7 +87,7 @@ Passing build parameters feature is only available in <img src="https://devtron-
     ![Figure 11: Triggered Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/build-image.jpg)
 
 {% hint style="info" %}
-Users need to have [Build and deploy permission](../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and applications) to trigger the build
+Users need to have [Build and deploy permission](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to trigger the build
 {% endhint %}
 
 
@@ -104,7 +104,7 @@ As shown below, you can handle the configurations of more than one application f
 ![Figure 12: Configurations of each App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/configurations.jpg)
 
 {% hint style="info" %}
-Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and applications) to change their configuration. Please note, you might not be able to change the values of locked keys in deployment template. Refer [Lock Deployment Configuration](./global-configurations/lock-deployment-config.md) to know more.
+Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to change their configuration. Please note, you might not be able to change the values of locked keys in deployment template. Refer [Lock Deployment Configuration](./global-configurations/lock-deployment-config.md) to know more.
 {% endhint %}
 
 
@@ -133,7 +133,7 @@ Once the deployment is successful, the pipelines will show `Succeeded`.
 ![Figure 17: Successful Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/successful.jpg)
 
 {% hint style="info" %}
-Users need to have [Build and deploy permission](../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and applications) to initiate the deployment
+Users need to have [Build and deploy permission](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to initiate the deployment
 {% endhint %}
 
 ---
@@ -214,7 +214,7 @@ The cloning process will skip if a CD pipeline (for the target environment) alre
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Build & deploy permission](./global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and application) to hibernate or unhibernate applications.
+Users need to have [Build & deploy permission](./global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and application) to hibernate or unhibernate applications.
 {% endhint %}
 
 Since every application comes with an option to hibernate, the same is true for application groups. Using application group, you can hibernate one or more applications belonging to the same environment if you do not want them to consume resources (replica count will be set to 0). 
@@ -257,7 +257,7 @@ Your applications would be up and running in some time.
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Build & deploy permission](./global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and application) to restart workloads in bulk.
+Users need to have [Build & deploy permission](./global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and application) to restart workloads in bulk.
 {% endhint %}
 
 Restarting workloads might be necessary if you want your new code or configuration to come into effect, or you are experiencing issues like crashing of pods.  
@@ -345,7 +345,7 @@ Users can delete a saved filter if they have Admin/Manager access on all applica
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and applications) to update their branch.
+Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to update their branch.
 {% endhint %}
 
 Assume you have a few applications whose [build pipelines](../reference/glossary.md#build-pipeline) fetch from the `main` branch of your code repository. However, you decided to maintain a `master` branch, and you want all the upcoming CI builds to consider the `master` branch as the source. Devtron provides you the option to change the branch at both levels—individual application as well as application group.

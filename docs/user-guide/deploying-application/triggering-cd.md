@@ -24,7 +24,7 @@ If no approved images are available or the current image is already deployed, yo
 
 ### Requesting for Image Approval
 
-Users need to have [Build & deploy permission](../global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and application) to request for an image approval.
+Users need to have [Build & deploy permission](../global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and application) to request for an image approval.
 
 To request an image approval, follow these steps:
 
@@ -57,7 +57,7 @@ To request an image approval, follow these steps:
 
 By default, super-admin users are considered as the default approvers. Users who build the image and/or request for its approval, cannot self-approve it even if they have super-admin privileges.
 
-Users with `Approver` permission (for the specific application and environment) can also approve a deployment. This permission can be granted to users from [`User Permissions`](../global-configurations/authorization/user-access.md#role-based-access-levels) present in [Global Configurations](../global-configurations/README.md).
+Users with `Approver` permission (for the specific application and environment) can also approve a deployment. This permission can be granted to users from [`User Permissions`](../global-configurations/authorization/user-access.md#devtron-apps-permissions) present in [Global Configurations](../global-configurations/README.md).
 
 In case [SES](../global-configurations/manage-notification.md#manage-ses-configurations) or [SMTP](../global-configurations/manage-notification.md#manage-smtp-configurations) was configured in Devtron, and the user chose the approvers while raising an image approval request, the approvers would receive an email notification as shown below:
 
@@ -79,7 +79,7 @@ To approve an image approval request, follow these steps:
 
 ### Deploying Approved Image
 
-Users need to have [Build & deploy permission](../global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the respective environment and application) to select and deploy an approved image.
+Users need to have [Build & deploy permission](../global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the respective environment and application) to select and deploy an approved image.
 
 In case the super-admin has set the minimum number of approval to more than 1 (in [workflow](../creating-application/workflow/cd-pipeline.md#4-manual-approval-for-deployment)), you must wait for all approvals before deploying the image. In other words, partially approved image will not be eligible for deployment.
 
