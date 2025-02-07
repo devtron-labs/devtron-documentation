@@ -292,8 +292,8 @@ You can manage a user's active status at three levels:
 ![Figure 15: Active/Inactive User from Permission Group](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/group-level-activation.jpg)
 
 * **Active/Activate** - Use this option to allow permissions from the group to take effect for the user.
-* **Inactive/Inactivate** - Use this option to stop the user from inheriting group permissions but they can still log in/log out of Devtron if [active at the user-level](#at-user-level).
-* **Keep active until** - Use this TTL-based option to grant group permissions to the user until a set date, after which permissions will be revoked.
+* **Inactive/Inactivate** - Use this option to prevent permissions from the group from taking effect for the user. However, they can still log in/log out of Devtron if [active at the user-level](#at-user-level).
+* **Keep active until** - Use this TTL-based option to grant group permissions to the user until a set date, after which permission group will become inactive for the user.
 
 ### At Direct Permissions level
 
