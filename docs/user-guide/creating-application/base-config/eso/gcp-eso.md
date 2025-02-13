@@ -33,7 +33,7 @@ You can use devtron generic chart for this.
 
 **7. Select `Google Secrets Manager` under `External Secret Operator` (ESO) from the dropdown of `Data type`.**
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/gcp-secret-manager-dropdow.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/gcp-secret-manager-dropdown.jpg)
 
 **8. Configure secret:**
 

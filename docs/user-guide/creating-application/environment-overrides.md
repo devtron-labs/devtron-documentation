@@ -44,10 +44,10 @@ Go to **App Configuration** → **Environment Overrides**. For each environment 
 ### Deployment Template
 
 {% hint style="info" %}
-Users who are not super-admins will land on [Basic (GUI)](#basic-gui) section when they visit the **Deployment Template** page; whereas super-admins will land on [Advanced (YAML)](#advanced-yaml) section. This is just a default behavior, they can still navigate to the other section if needed.
+Users who are not super-admins will land on [GUI](#gui) section when they visit the **Deployment Template** page; whereas super-admins will land on [YAML](#yaml) section. This is just a default behavior, they can still navigate to the other section if needed.
 {% endhint %}
 
-#### Basic (GUI)
+#### GUI
 
 If you have a [base deployment configuration](../creating-application/deployment-template/deployment.md#2.-basic-configuration) set up at application level, the environment(s) you define for your application will also inherit those values.
 
@@ -55,20 +55,20 @@ However, you have the flexibility to use different values at the environment lev
 
 ![Figure 2: Overriding Deployment Template - GUI Method](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/base-config-override.gif)
 
-Refer [basic configuration](../creating-application/deployment-template/deployment.md#2.-basic-configuration) to know more about each field within `Basic (GUI)` section.
+Refer [basic configuration](../creating-application/deployment-template/deployment.md#2.-basic-configuration) to know more about each field within `GUI` section.
 
 {% hint style="info" %}
-### Want to customize the fields displayed on Basic (GUI)? [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
-Refer [Customize Basic GUI](../creating-application/deployment-template.md#customize-basic-gui) to know the process of adding, removing, and customizing the Basic (GUI) section.
+### Want to customize the fields displayed on GUI? [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+Refer [Customize GUI](../creating-application/deployment-template.md#customize-basic-gui) to know the process of adding, removing, and customizing the GUI section.
 {% endhint %}
 
-#### Advanced (YAML)
+#### YAML
 
-Similarly, if you are an advanced user intending to tweak more values in deployment template, you may go to `Advanced (YAML)` section and edit them.
+Similarly, if you are an advanced user intending to tweak more values in deployment template, you may go to `YAML` section and edit them.
 
 ![Figure 3: Overriding Deployment Template - YAML Method](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/yaml-override.jpg)
 
-[Click here](../creating-application/deployment-template/deployment.md#3-advanced-yaml) to know more about each key-value pair within the `Advanced (YAML)` section.
+[Click here](../creating-application/deployment-template/deployment.md#3-advanced-yaml) to know more about each key-value pair within the `YAML` section.
 
 {% hint style="warning" %}
 **Delete Override** will discard the current overrides and the base deployment configuration will be applicable again to the environment. 

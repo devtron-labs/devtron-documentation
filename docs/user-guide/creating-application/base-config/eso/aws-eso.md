@@ -12,7 +12,7 @@ After creating the generic secret, navigate to `Secrets` section of the applicat
 
 **1. Click `Add Secret` to add a new secret**
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secrets.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg)
 
 **2. Select `AWS Secret Manager` under `External Secret Operator` (ESO) from the dropdown of `Data type`**
 

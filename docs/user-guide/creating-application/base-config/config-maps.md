@@ -1,4 +1,4 @@
-# Config Maps
+# ConfigMaps
 
 The ConfigMap API resource holds key-value pairs of the  configuration data that can be consumed by pods or used to store configuration data for system components such as controllers. ConfigMap is similar to Secrets, but designed to more conveniently support working with strings that do not contain sensitive information.
 
@@ -69,7 +69,7 @@ If you select `Environment Variable` in 3rd option, then you can provide your en
 
 `Data in YAML` \(please Check below screenshot\)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/configure-configmap.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/cm-env-variable.jpg)
 
 Now, Click on `Save ConfigMap` to save your configmap configuration.
 

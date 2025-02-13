@@ -6,6 +6,8 @@ This chart deploys Job & CronJob. A Job is a controller object that represents a
  * [Job](#1.-job)
  * [CronJob](#2.-cronjob)
 
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/job-cronjob.jpg)
+
 ## 1. Job
 
 A Job creates one or more Pods and will continue to retry execution of the Pods until a specified number of them successfully terminate. As pods successfully complete, the Job tracks the successful completions. When a specified number of successful completions is reached, the task (ie, Job) is complete. Deleting a Job will clean up the Pods it created. Suspeding a Job will delete its active Pods until the Job is resumed again.

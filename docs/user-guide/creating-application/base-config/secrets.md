@@ -11,7 +11,7 @@ Secret objects let you store and manage sensitive information, such as passwords
 Click `Add Secret` to add a new secret.
 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/create-secret.jpg)
 
 | Key | Description |
 | :--- | :--- |
@@ -21,6 +21,8 @@ Click `Add Secret` to add a new secret.
 | `Use secrets as Environment Variable` | Select this option if you want to inject Environment Variables in your pods using Secrets. |
 | `Use secrets as Data Volume` | Select this option if you want to configure a Data Volume that is accessible to Containers running in a pod. Ensure that you provide a Volume mount path for the same. |
 | `Key-Value` | Provide a key and the corresponding value of the provided key. |
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/secret-data-volume.jpg)
 
 ## Volume Mount Path
 
@@ -39,11 +41,11 @@ File permission will be provide at the configmap level not on the each key of th
 
 Click `Save Secret` to save the secret.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-4.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/save-secret.jpg)
 
 You can see the Secret is added.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-5.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/create-secret.gif)
 
 ## Update Secrets
 
@@ -51,7 +53,7 @@ You can update your secrets anytime later, but you cannot change the name of you
 
 To update secrets, click the secret you wish to update.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-6.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/update-secret.jpg)
 
 Click `Update Secret` to update your secret.
 
@@ -59,7 +61,7 @@ Click `Update Secret` to update your secret.
 
 You can delete your secret. Click your secret and click the `delete sign` to delete your secret.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-7.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/delete-secret.jpg)
 
 ## Data Types
 
@@ -106,11 +108,11 @@ $ helm install my-release external-secrets/kubernetes-external-secrets --set sec
 
 To add secrets from AWS secret manager, navigate to `Secrets` of the application and follow the steps mentioned below :
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-8.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg)
 
 1. Click `Add Secret` to add a new secret.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret.jpg)
 
 2. Select `AWS Secret Manager` from dropdown of `Data type`.
 

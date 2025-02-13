@@ -1,92 +1,82 @@
+# Deployment
 
-# Rollout Deployment
+This chart creates a deployment that runs multiple replicas of your application and automatically replaces any instances that fail or become unresponsive. It does not support Blue/Green and Canary deployments. This is the default deployment chart. You can select `Deployment` chart when you want to use only basic use cases which contain the following:
 
-The `Rollout Deployment` chart deploys an advanced version of deployment that supports Blue/Green and Canary deployments. For functioning, it requires a rollout controller to run inside the cluster.
+* Create a Deployment to rollout a ReplicaSet. The ReplicaSet creates Pods in the background. Check the status of the rollout to see if it succeeds or not.
+* Declare the new state of the Pods. A new ReplicaSet is created and the Deployment manages moving the Pods from the old ReplicaSet to the new one at a controlled rate. Each new ReplicaSet updates the revision of the Deployment.
+* Rollback to an earlier Deployment revision if the current state of the Deployment is not stable. Each rollback updates the revision of the Deployment.
+* Scale up the Deployment to facilitate more load.
+* Use the status of the Deployment as an indicator that a rollout has stuck.
+* Clean up older ReplicaSets that you do not need anymore.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/dt-type-2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/dt-type-3.jpg)
 
 You can define application behavior by providing information in the following sections:
 
 | Key | Descriptions |
 | :--- | :--- |
 | `Chart version` | Select the Chart Version using which you want to deploy the application.<br> Refer [Chart Version](../../creating-application/deployment-template.md#selecting-a-chart-version) section for more detail.</br> |
-| `Basic (GUI)` | You can perform a basic deployment configuration for your application in the **Basic (GUI)** section instead of configuring the YAML file.<br>Refer [Basic Configuration](../../creating-application/deployment-template.md#using-basic-gui) section for more detail.</br>|
-| `Advanced (YAML)` | If you want to do additional configurations, then click **Advanced (YAML)** for modifications.<br>Refer [Advanced (YAML)](#advanced-yaml) section for more detail.</br> |
+| `GUI` | You can perform a basic deployment configuration for your application in the **GUI** section instead of configuring the YAML file.<br>Refer [Basic Configuration](../../creating-application/deployment-template.md#using-basic-gui) section for more detail.</br>|
+| `YAML` | If you want to do additional configurations, then click **YAML** for modifications.<br>Refer [YAML](#advanced-yaml) section for more detail.</br> |
 | `Show application metrics` | You can enable `Show application metrics` to see your application's metrics-CPU Service Monitor usage, Memory Usage, Status, Throughput and Latency.<br>Refer [Application Metrics](../../creating-application/app-metrics.md) for more detail.</br> |
 
+
 {% hint style="warning" %}
-Super-admins can lock keys in rollout deployment template to prevent non-super-admins from modifying those locked keys. Refer [Lock Deployment Configuration](../../global-configurations/lock-deployment-config.md) to know more.
+Super-admins can lock keys in deployment template to prevent non-super-admins from modifying those locked keys. Refer [Lock Deployment Configuration](../../global-configurations/lock-deployment-config.md) to know more.
 {% endhint %}
+
+<!-- ## Basic Configuration
+
+Some of the use-cases which are defined on the Deployment Template (YAML file) may not be applicable to configure for your application. In such cases, you can do a basic deployment configuration for your application in the **GUI** section instead of configuring the YAML file.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/basic-config-deployment-template-v2.jpg)
+
+[Click here](../../creating-application/deployment-template.md#using-basic-gui) to know more about the GUI section. -->
 
 ---
 
-## Advanced (YAML)
+## YAML
 
 ### Container Ports
 
-This defines the ports on which application services will be exposed to other services.
+This defines ports on which application services will be exposed to other services
 
 ```yaml
 ContainerPort:
   - envoyPort: 8799
-    envoyTimeout: 15s
     idleTimeout:
     name: app
     port: 8080
     servicePort: 80
+    nodePort: 32056
     supportStreaming: true
     useHTTP2: true
 ```
 
 | Key | Description |
 | :--- | :--- |
-| `envoyPort` | envoy port for the container. |
-| `envoyTimeout` | envoy Timeout for the container,envoy supports a wide range of timeouts that may need to be configured depending on the deployment.By default the envoytimeout is 15s. |
-| `idleTimeout` | the duration of time that a connection is idle before the connection is terminated. |
-| `name` | name of the port. |
-| `port` | port for the container. |
-| `servicePort` | port of the corresponding kubernetes service. |
-| `supportStreaming` | Used for high performance protocols like grpc where timeout needs to be disabled. |
-| `useHTTP2` | Envoy container can accept HTTP2 requests. |
+| `envoyPort` | envoy port for the container |
+| `idleTimeout` | the duration of time that a connection is idle before the connection is terminated |
+| `name` | name of the port |
+| `port` | port for the container |
+| `servicePort` | port of the corresponding kubernetes service |
+| `nodePort` | nodeport of the corresponding kubernetes service |
+| `supportStreaming` | Used for high performance protocols like grpc where timeout needs to be disabled |
+| `useHTTP2` | Envoy container can accept HTTP2 requests |
 
 ### EnvVariables
 ```yaml
 EnvVariables: []
 ```
-`EnvVariables` provide run-time information to containers and allow to customize how the application works and the behavior of the applications on the system.
-
-Here we can pass the list of env variables , every record is an object which contain the `name` of variable along with `value`.
-
 To set environment variables for the containers that run in the Pod.
 
-### Example of EnvVariables
-
-`IMP` Docker image should have env variables, whatever we want to set.
+### EnvVariablesFromFieldPath
 ```yaml
-EnvVariables: 
-  - name: HOSTNAME
-    value: www.xyz.com
-  - name: DB_NAME
-    value: mydb
-  - name: USER_NAME
-    value: xyz
+EnvVariablesFromFieldPath:
+- name: ENV_NAME
+  fieldPath: status.podIP (example)
 ```
-
-But `ConfigMap` and `Secret` are the preferred way to inject env variables. You can create this in `App Configuration` Section.
-
-### ConfigMap
-
-It is a centralized storage, specific to k8s namespace where key-value pairs are stored in plain text.
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/configure-configmap.jpg)
-
-### Secret
-
-It is a centralized storage, specific to k8s namespace where we can store the key-value pairs in plain text as well as in encrypted(`Base64`) form.
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/created-secret.gif)
-
-`IMP` All key-values of `Secret` and `CofigMap` will reflect to your application.
+To set environment variables for the containers and fetching their values from pod-level fields.
 
 ### Liveness Probe
 
@@ -101,9 +91,6 @@ LivenessProbe:
   successThreshold: 1
   timeoutSeconds: 5
   failureThreshold: 3
-  command:
-    - python
-    - /etc/app/healthcheck.py
   httpHeaders:
     - name: Custom-Header
       value: abc
@@ -113,15 +100,14 @@ LivenessProbe:
 
 | Key | Description |
 | :--- | :--- |
-| `Path` | It define the path where the liveness needs to be checked. |
-| `initialDelaySeconds` | It defines the time to wait before a given container is checked for liveliness. |
-| `periodSeconds` | It defines how often (in seconds) to perform the liveness probe. |
-| `successThreshold` | It defines the number of successes required before a given container is said to fulfil the liveness probe. |
-| `timeoutSeconds` | The maximum time (in seconds) for the probe to complete. |
-| `failureThreshold` | The number of consecutive failures required to consider the probe as failed. |
-| `command` | The mentioned command is executed to perform the livenessProbe. If the command returns a non-zero value, it's equivalent to a failed probe. |
-| `httpHeaders` | Custom headers to set in the request. HTTP allows repeated headers,You can override the default headers by defining .httpHeaders for the probe. |
-| `scheme` | Scheme to use for connecting to the host (HTTP or HTTPS). Defaults to HTTP. |
+| `Path` | It define the path where the liveness needs to be checked |
+| `initialDelaySeconds` | It defines the time to wait before a given container is checked for liveliness |
+| `periodSeconds` | It defines the time to check a given container for liveness |
+| `successThreshold` | It defines the number of successes required before a given container is said to fulfill the liveness probe |
+| `timeoutSeconds` | It defines the time for checking timeout |
+| `failureThreshold` | It defines the maximum number of failures that are acceptable before a given container is not considered as live |
+| `httpHeaders` | Custom headers to set in the request. HTTP allows repeated headers, you can override the default headers by defining .httpHeaders for the probe. |
+| `scheme` | Scheme to use for connecting to the host (HTTP or HTTPS). Defaults to HTTP.
 | `tcp` | The kubelet will attempt to open a socket to your container on the specified port. If it can establish a connection, the container is considered healthy. |
 
 
@@ -160,9 +146,6 @@ ReadinessProbe:
   successThreshold: 1
   timeoutSeconds: 5
   failureThreshold: 3
-  command:
-    - python
-    - /etc/app/healthcheck.py
   httpHeaders:
     - name: Custom-Header
       value: abc
@@ -172,51 +155,74 @@ ReadinessProbe:
 
 | Key | Description |
 | :--- | :--- |
-| `Path` | It define the path where the readiness needs to be checked. |
-| `initialDelaySeconds` | It defines the time to wait before a given container is checked for readiness. |
-| `periodSeconds` | It defines how often (in seconds) to perform the readiness probe. |
-| `successThreshold` | It defines the number of successes required before a given container is said to fulfill the readiness probe. |
-| `timeoutSeconds` | The maximum time (in seconds) for the probe to complete. |
-| `failureThreshold` | The number of consecutive failures required to consider the probe as failed. |
-| `command` | The mentioned command is executed to perform the readinessProbe. If the command returns a non-zero value, it's equivalent to a failed probe. |
-| `httpHeaders` | Custom headers to set in the request. HTTP allows repeated headers,You can override the default headers by defining .httpHeaders for the probe. |
-| `scheme` | Scheme to use for connecting to the host (HTTP or HTTPS). Defaults to HTTP. |
+| `Path` | It define the path where the readiness needs to be checked |
+| `initialDelaySeconds` | It defines the time to wait before a given container is checked for readiness |
+| `periodSeconds` | It defines the time to check a given container for readiness |
+| `successThreshold` | It defines the number of successes required before a given container is said to fulfill the readiness probe |
+| `timeoutSeconds` | It defines the time for checking timeout |
+| `failureThreshold` | It defines the maximum number of failures that are acceptable before a given container is not considered as ready |
+| `httpHeaders` | Custom headers to set in the request. HTTP allows repeated headers, you can override the default headers by defining .httpHeaders for the probe. |
+| `scheme` | Scheme to use for connecting to the host (HTTP or HTTPS). Defaults to HTTP.
 | `tcp` | The kubelet will attempt to open a socket to your container on the specified port. If it can establish a connection, the container is considered healthy. |
 
+### Pod Disruption Budget
 
-### Startup Probe
-
-Startup Probe in Kubernetes is a type of probe used to determine when a container within a pod is ready to start accepting traffic. It is specifically designed for applications that have a longer startup time.
+You can create `PodDisruptionBudget` for each application. A PDB limits the number of pods of a replicated application that are down simultaneously from voluntary disruptions. For example, an application would like to ensure the number of replicas running is never brought below the certain number.
 
 ```yaml
-StartupProbe:
-  Path: ""
-  port: 8080
-  initialDelaySeconds: 20
-  periodSeconds: 10
-  successThreshold: 1
-  timeoutSeconds: 5
-  failureThreshold: 3
-  httpHeaders:
-    - name: Custom-Header
-      value: abc
-  command:
-    - python
-    - /etc/app/healthcheck.py
-  tcp: false
+podDisruptionBudget: 
+     minAvailable: 1
+```
+
+or
+
+```yaml
+podDisruptionBudget: 
+     maxUnavailable: 50%
+```
+
+You can specify either `maxUnavailable` or `minAvailable` in a PodDisruptionBudget and it can be expressed as integers or as a percentage.
+
+| Key | Description |
+| :--- | :--- |
+| `minAvailable` | Evictions are allowed as long as they leave behind 1 or more healthy pods of the total number of desired replicas. |
+| `maxUnavailable` | Evictions are allowed as long as at most 1 unhealthy replica among the total number of desired replicas. |
+
+### Ambassador Mappings
+
+You can create ambassador mappings to access your applications from outside the cluster. At its core a Mapping resource maps a resource to a service.
+
+```yaml
+ambassadorMapping:
+  ambassadorId: "prod-emissary"
+  cors: {}
+  enabled: true
+  hostname: devtron.example.com
+  labels: {}
+  prefix: /
+  retryPolicy: {}
+  rewrite: ""
+  tls:
+    context: "devtron-tls-context"
+    create: false
+    hosts: []
+    secretName: ""
 ```
 
 | Key | Description |
 | :--- | :--- |
-| `Path` | It define the path where the startup needs to be checked. |
-| `initialDelaySeconds` | It defines the time to wait before a given container is checked for startup. |
-| `periodSeconds` | It defines how often (in seconds) to perform the startup probe. |
-| `successThreshold` | The number of consecutive successful probe results required to mark the container as ready. |
-| `timeoutSeconds` | The maximum time (in seconds) for the probe to complete. |
-| `failureThreshold` | The number of consecutive failures required to consider the probe as failed. |
-| `command` | The mentioned command is executed to perform the startup probe. If the command returns a non-zero value, it's equivalent to a failed probe. |
-| `httpHeaders` | Custom headers to set in the request. HTTP allows repeated headers,You can override the default headers by defining .httpHeaders for the probe. |
-| `tcp` | The kubelet will attempt to open a socket to your container on the specified port. If it can establish a connection, the container is considered healthy. |
+| `enabled` | Set true to enable ambassador mapping else set false|
+| `ambassadorId` | used to specify id for specific ambassador mappings controller |
+| `cors` | used to specify cors policy to access host for this mapping |
+| `weight` | used to specify weight for canary ambassador mappings |
+| `hostname` | used to specify hostname for ambassador mapping |
+| `prefix` | used to specify path for ambassador mapping |
+| `labels` | used to provide custom labels for ambassador mapping |
+| `retryPolicy` | used to specify retry policy for ambassador mapping |
+| `corsPolicy` | Provide cors headers on flagger resource |
+| `rewrite` | used to specify whether to redirect the path of this mapping and where |
+| `tls` | used to create or define ambassador TLSContext resource |
+| `extraSpec` | used to provide extra spec values which not present in deployment template for ambassador resource |
 
 ### Autoscaling
 
@@ -234,12 +240,84 @@ autoscaling:
 
 | Key | Description |
 | :--- | :--- |
-| `enabled` | Set true to enable autoscaling else set false.|
-| `MinReplicas` | Minimum number of replicas allowed for scaling. |
-| `MaxReplicas` | Maximum number of replicas allowed for scaling. |
-| `TargetCPUUtilizationPercentage` | The target CPU utilization that is expected for a container. |
-| `TargetMemoryUtilizationPercentage` | The target memory utilization that is expected for a container. |
-| `extraMetrics` | Used to give external metrics for autoscaling. |
+| `enabled` | Set true to enable autoscaling else set false |
+| `MinReplicas` | Minimum number of replicas allowed for scaling |
+| `MaxReplicas` | Maximum number of replicas allowed for scaling |
+| `TargetCPUUtilizationPercentage` | The target CPU utilization that is expected for a container |
+| `TargetMemoryUtilizationPercentage` | The target memory utilization that is expected for a container |
+| `extraMetrics` | Used to give external metrics for autoscaling |
+
+### Flagger
+
+You can use flagger for canary releases with deployment objects. It supports flexible traffic routing with istio service mesh as well.
+
+```yaml
+flaggerCanary:
+  addOtherGateways: []
+  addOtherHosts: []
+  analysis:
+    interval: 15s
+    maxWeight: 50
+    stepWeight: 5
+    threshold: 5
+  annotations: {}
+  appProtocol: http
+  corsPolicy:
+    allowCredentials: false
+    allowHeaders:
+      - x-some-header
+    allowMethods:
+      - GET
+    allowOrigin:
+      - example.com
+    maxAge: 24h
+  createIstioGateway:
+    annotations: {}
+    enabled: false
+    host: example.com
+    labels: {}
+    tls:
+      enabled: false
+      secretName: example-tls-secret
+  enabled: false
+  gatewayRefs: null
+  headers:
+    request:
+      add:
+        x-some-header: value
+  labels: {}
+  loadtest:
+    enabled: true
+    url: http://flagger-loadtester.istio-system/
+  match:
+    - uri:
+        prefix: /
+  port: 8080
+  portDiscovery: true
+  retries: null
+  rewriteUri: /
+  targetPort: 8080
+  thresholds:
+    latency: 500
+    successRate: 90
+  timeout: null
+```
+
+| Key | Description |
+| :--- | :--- |
+| `enabled` | Set true to enable canary releases using flagger else set false |
+| `addOtherGateways` | To provide multiple istio gateways for flagger |
+| `addOtherHosts` | Add multiple hosts for istio service mesh with flagger |
+| `analysis` | Define how the canary release should progress and at what interval |
+| `annotations` | Annotation to add on flagger resource |
+| `labels` | Labels to add on flagger resource |
+| `appProtocol` | Protocol to use for canary |
+| `corsPolicy` | Provide cors headers on flagger resource |
+| `createIstioGateway` | Set to true if you want to create istio gateway as well with flagger |
+| `headers` | Add headers if any |
+| `loadtest` | Enable load testing for your canary release |
+
+
 
 ### Fullname Override
 
@@ -257,6 +335,16 @@ image:
 
 Image is used to access images in kubernetes, pullpolicy is used to define the instances calling the image, here the image is pulled when the image is not present,it can also be set as "Always".
 
+### imagePullSecrets
+
+`imagePullSecrets` contains the docker credentials that are used for accessing a registry.
+
+```yaml
+imagePullSecrets:
+  - regcred
+```
+regcred is the secret that contains the docker credentials that are used for accessing a registry. Devtron will not create this secret automatically, you'll have to create this secret using dt-secrets helm chart in the App store or create one using kubectl. You can follow this documentation Pull an Image from a Private Registry [https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/) .
+
 ### serviceAccount
 
 ```yaml
@@ -271,17 +359,6 @@ serviceAccount:
 | `enabled` | Determines whether to create a ServiceAccount for pods or not. If set to `true`, a ServiceAccount will be created. |
 | `name`  | Specifies the name of the ServiceAccount to use. |
 | `annotations` |  Specify annotations for the ServiceAccount. |
-
-
-### imagePullSecrets
-
-`imagePullSecrets` contains the docker credentials that are used for accessing a registry. 
-
-```yaml
-imagePullSecrets:
-  - regcred
-```
-regcred is the secret that contains the docker credentials that are used for accessing a registry. Devtron will not create this secret automatically, you'll have to create this secret using dt-secrets helm chart in the App store or create one using kubectl. You can follow this documentation Pull an Image from a Private Registry [https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/) .
 
 ### HostAliases
 
@@ -300,8 +377,7 @@ regcred is the secret that contains the docker credentials that are used for acc
 
 ### Ingress
 
-This allows public access to the url. Please ensure you are using the right nginx annotation for nginx class. 
-The default value is `nginx`.
+This allows public access to the url, please ensure you are using right nginx annotation for nginx class, its default value is nginx
 
 ```yaml
 ingress:
@@ -311,11 +387,9 @@ ingress:
   annotations: {}
   hosts:
       - host: example1.com
-        pathType: "ImplementationSpecific"
         paths:
             - /example
       - host: example2.com
-        pathType: "ImplementationSpecific"
         paths:
             - /example2
             - /example2/healthz
@@ -338,9 +412,8 @@ ingress:
 | :--- | :--- |
 | `enabled` | Enable or disable ingress |
 | `annotations` | To configure some options depending on the Ingress controller |
-| `host` | Host name |
-| `pathType` | Path in an Ingress is required to have a corresponding path type. Supported path types are `ImplementationSpecific`, `Exact` and `Prefix`. |
 | `path` | Path name |
+| `host` | Host name |
 | `tls` | It contains security details |
 
 ### Ingress Internal
@@ -355,11 +428,9 @@ ingressInternal:
   annotations: {}
   hosts:
       - host: example1.com
-        pathType: "ImplementationSpecific"
         paths:
             - /example
       - host: example2.com
-        pathType: "ImplementationSpecific"
         paths:
             - /example2
             - /example2/healthz
@@ -370,10 +441,8 @@ ingressInternal:
 | :--- | :--- |
 | `enabled` | Enable or disable ingress |
 | `annotations` | To configure some options depending on the Ingress controller |
-| `host` | Host name |
-| `pathType` | Path in an Ingress is required to have a corresponding path type. Supported path types are `ImplementationSpecific`, `Exact` and `Prefix`. |
 | `path` | Path name |
-| `pathType` | Supported path types are `ImplementationSpecific`, `Exact` and `Prefix`.|
+| `host` | Host name |
 | `tls` | It contains security details |
 
 ### Init Containers
@@ -442,15 +511,6 @@ This defines annotations and the type of service, optionally can define name als
     type: ClusterIP
     annotations: {}
 ```
-| Key | Description |
-| :--- | :--- |
-| `type` | Select the type of service, default `ClusterIP` |
-| `annotations` | Annotations are widely used to attach metadata and configs in Kubernetes. |
-| `name` | Optional field to assign name to service  |
-| `loadBalancerSourceRanges` | If service type is `LoadBalancer`, Provide a list of whitelisted IPs CIDR that will be allowed to use the Load Balancer. |
-
-Note - If `loadBalancerSourceRanges` is not set, Kubernetes allows traffic from 0.0.0.0/0 to the LoadBalancer / Node Security Group(s). 
-
 
 ### Volumes
 
@@ -533,16 +593,15 @@ This is used to give arguments to command.
 command:
   enabled: false
   value: []
-  workingDir: {}
 ```
 
-It contains the commands to run inside the container.
+It contains the commands for the server.
 
 | Key | Description |
 | :--- | :--- |
-| `enabled` | To enable or disable the command. |
-| `value` | It contains the commands. |
-| `workingDir` | It is used to specify the working directory where commands will be executed. |
+| `enabled` | To enable or disable the command |
+| `value` | It contains the commands |
+
 
 ### Containers
 Containers section can be used to run side-car containers along with your main container within same pod. Containers running within same pod can share volumes and IP Address and can address each other @localhost. We can use base image inside container by setting the reuseContainerImage flag to `true`.
@@ -567,8 +626,41 @@ Containers section can be used to run side-car containers along with your main c
           - flyway
           - -configFiles=/etc/ls-oms/flyway.conf
           - migrate
-
 ```
+
+### Container Lifecycle Hooks
+
+Container lifecycle hooks are mechanisms that allow users to define custom actions to be performed at specific stages of a container's lifecycle i.e. PostStart or PreStop.
+
+```yaml
+containerSpec:
+  lifecycle:
+    enabled: false
+    postStart:
+      httpGet:
+        host: example.com
+        path: /example
+        port: 90
+    preStop:
+      exec:
+        command:
+          - sleep
+          - "10"
+```
+
+| Key | Description |
+| :--- | :--- |
+| `containerSpec` | containerSpec to define container lifecycle hooks configuration |
+| `lifecycle` | Lifecycle hooks for the container |
+| `enabled` | Set true to enable lifecycle hooks for the container else set false |
+| `postStart` | The postStart hook is executed immediately after a container is created |
+| `httpsGet` | Sends an HTTP GET request to a specific endpoint on the container |
+| `host` | Specifies the host (example.com) to which the HTTP GET request will be sent |
+| `path` | Specifies the path (/example) of the endpoint to which the HTTP GET request will be sent |
+| `port` | Specifies the port (90) on the host where the HTTP GET request will be sent |
+| `preStop` | The preStop hook is executed just before the container is stopped |
+| `exec` | Executes a specific command, such as pre-stop.sh, inside the cgroups and namespaces of the container |
+| `command` | The command to be executed is sleep 10, which tells the container to sleep for 10 seconds before it is stopped |
 
 ### Prometheus
 
@@ -577,7 +669,7 @@ Containers section can be used to run side-car containers along with your main c
     release: monitoring
 ```
 
-It is a kubernetes monitoring tool and the name of the file to be monitored as monitoring in the given case.It describes the state of the prometheus.
+It is a kubernetes monitoring tool and the name of the file to be monitored as monitoring in the given case. It describes the state of the Prometheus.
 
 ### rawYaml
 
@@ -656,11 +748,6 @@ dbMigrationConfig:
 ```
 
 It is used to configure database migration.
-
-### Istio
-
-These Istio configurations collectively provide a comprehensive set of tools for controlling access, authenticating requests, enforcing security policies, and configuring traffic behavior within a microservices architecture. The specific settings you choose would depend on your security and traffic management requirements.
-
 
 ### Istio
 
@@ -803,194 +890,11 @@ istio:
 | `hosts`  | List of hosts (domains) to which this VirtualService is applied.  | 
 | `http`  |  Configuration for HTTP routes within the VirtualService. It define routing rules based on HTTP attributes such as URI prefixes, headers, timeouts, and retry policies. | 
 
-### Application Metrics
-
-Application metrics can be enabled to see your application's metrics-CPU Service Monitor usage, Memory Usage, Status, Throughput and Latency.
-
-### Deployment Metrics
-
-It gives the realtime metrics of the deployed applications
-
-| Key | Description |
-| :--- | :--- |
-| `Deployment Frequency` | It shows how often this app is deployed to production |
-| `Change Failure Rate` | It shows how often the respective pipeline fails. |
-| `Mean Lead Time` | It shows the average time taken to deliver a change to production. |
-| `Mean Time to Recovery` | It shows the average time taken to fix a failed pipeline. |
-
-
-## Addon features in Deployment Template Chart version 3.9.0
-
-### Service Account
-
-```yaml
-serviceAccountName: orchestrator
-```
-
-A service account provides an identity for the processes that run in a Pod.
-
-When you access the cluster, you are authenticated by the API server as a particular User Account. Processes in containers inside pod can also contact the API server. When you are authenticated as a particular Service Account.
-
-When you create a pod, if you do not create a service account, it is automatically assigned the default service account in the namespace.
-
-### Pod Disruption Budget
-
-You can create `PodDisruptionBudget` for each application. A PDB limits the number of pods of a replicated application that are down simultaneously from voluntary disruptions. For example, an application would like to ensure the number of replicas running is never brought below the certain number.
-
-```yaml
-podDisruptionBudget: 
-     minAvailable: 1
-```
-
-or
-
-```yaml
-podDisruptionBudget: 
-     maxUnavailable: 50%
-```
-
-You can specify either `maxUnavailable` or `minAvailable` in a PodDisruptionBudget and it can be expressed as integers or as a percentage.
-
-| Key | Description |
-| :--- | :--- |
-| `minAvailable` | Evictions are allowed as long as they leave behind 1 or more healthy pods of the total number of desired replicas. |
-| `maxUnavailable` | Evictions are allowed as long as at most 1 unhealthy replica among the total number of desired replicas. |
-
-### Application metrics Envoy Configurations
-
-```yaml
-envoyproxy:
-  image: envoyproxy/envoy:v1.14.1
-  configMapName: ""
-  resources:
-    limits:
-      cpu: "50m"
-      memory: "50Mi"
-    requests:
-      cpu: "50m"
-      memory: "50Mi"
-```
-
-Envoy is attached as a sidecar to the application container to collect metrics like 4XX, 5XX, Throughput and latency. You can now configure the envoy settings such as idleTimeout, resources etc.
-
-### Prometheus Rule
-
-```yaml
-prometheusRule:
-  enabled: true
-  additionalLabels: {}
-  namespace: ""
-  rules:
-    - alert: TooMany500s
-      expr: 100 * ( sum( nginx_ingress_controller_requests{status=~"5.+"} ) / sum(nginx_ingress_controller_requests) ) > 5
-      for: 1m
-      labels:
-        severity: critical
-      annotations:
-        description: Too many 5XXs
-        summary: More than 5% of the all requests did return 5XX, this require your attention
-```
-
-Alerting rules allow you to define alert conditions based on Prometheus expressions and to send notifications about firing alerts to an external service.
-
-In this case, Prometheus will check that the alert continues to be active during each evaluation for 1 minute before firing the alert. Elements that are active, but not firing yet, are in the pending state.
-
-### Pod Labels
-Labels are key/value pairs that are attached to pods. Labels are intended to be used to specify identifying attributes of objects that are meaningful and relevant to users, but do not directly imply semantics to the core system. Labels can be used to organize and to select subsets of objects.
-```yaml
-podLabels:
-  severity: critical
-```
-
-### Pod Annotations
-Pod Annotations are widely used to attach metadata and configs in Kubernetes.
-
-```yaml
-podAnnotations:
-  fluentbit.io/exclude: "true"
-```
-
-### Custom Metrics in HPA
-
-```yaml
-autoscaling:
-  enabled: true
-  MinReplicas: 1
-  MaxReplicas: 2
-  TargetCPUUtilizationPercentage: 90
-  TargetMemoryUtilizationPercentage: 80
-  behavior:
-    scaleDown:
-      stabilizationWindowSeconds: 300
-      policies:
-      - type: Percent
-        value: 100
-        periodSeconds: 15
-    scaleUp:
-      stabilizationWindowSeconds: 0
-      policies:
-      - type: Percent
-        value: 100
-        periodSeconds: 15
-      - type: Pods
-        value: 4
-        periodSeconds: 15
-      selectPolicy: Max
-```
-
-HPA, by default is configured to work with CPU and Memory metrics. These metrics are useful for internal cluster sizing, but you might want to configure wider set of metrics like service latency, I/O load etc. The custom metrics in HPA can help you to achieve this.
-
-### Wait For Seconds Before Scaling Down
-```yaml
-waitForSecondsBeforeScalingDown: 30
-```
-Wait for given period of time before scaling down the container.
-
-
-
-## 4. Show Application Metrics
-
-If you want to see application metrics like different HTTP status codes metrics, application throughput, latency, response time. Enable the Application metrics from below the deployment template Save button. After enabling it, you should be able to see all metrics on App detail page. By default it remains disabled.
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/application-metrics.jpg)
-
-Once all the Deployment template configurations are done, click on `Save` to save your deployment configuration. Now you are ready to create [Workflow](../workflow/README.md) to do CI/CD.
-
-### Helm Chart Json Schema Table
-
-Helm Chart json schema is used to validate the deployment template values.
-
-| Chart Version | Link |
-| :--- | :--- |
-| `reference-chart_3-12-0` | [Json Schema](https://github.com/devtron-labs/devtron/blob/main/scripts/devtron-reference-helm-charts/reference-chart_3-12-0/schema.json) |
-| `reference-chart_3-11-0` | [Json Schema](https://github.com/devtron-labs/devtron/blob/main/scripts/devtron-reference-helm-charts/reference-chart_3-11-0/schema.json) |
-| `reference-chart_3-10-0` | [Json Schema](https://github.com/devtron-labs/devtron/blob/main/scripts/devtron-reference-helm-charts/reference-chart_3-10-0/schema.json) |
-| `reference-chart_3-9-0` | [Json Schema](https://github.com/devtron-labs/devtron/blob/main/scripts/devtron-reference-helm-charts/reference-chart_3-9-0/schema.json) |
-
-
-### Other Validations in Json Schema
-
-The values of CPU and Memory in limits must be greater than or equal to in requests respectively. Similarly, In case of envoyproxy, the values of limits are greater than or equal to requests as mentioned below.
-```
-resources.limits.cpu >= resources.requests.cpu
-resources.limits.memory >= resources.requests.memory
-envoyproxy.resources.limits.cpu >= envoyproxy.resources.requests.cpu
-envoyproxy.resources.limits.memory >= envoyproxy.resources.requests.memory
-```
-
-## Addon features in Deployment Template Chart version 4.11.0
 
 ### KEDA Autoscaling
-
-**Prerequisite:** KEDA controller should be installed in the cluster. To install KEDA controller using Helm, navigate to chart store and search for `keda` chart and deploy it. You can follow this [documentation](../../deploy-chart/deployment-of-charts.md) for deploying a Helm chart on Devtron.
-
-KEDA Helm repo : https://kedacore.github.io/charts
-
-
 [KEDA](https://keda.sh) is a Kubernetes-based Event Driven Autoscaler. With KEDA, you can drive the scaling of any container in Kubernetes based on the number of events needing to be processed. KEDA can be installed into any Kubernetes cluster and can work alongside standard Kubernetes components like the Horizontal Pod Autoscaler(HPA).
 
-
-Example for autoscaling with KEDA using Prometheus metrics is given below:
+Example for autosccaling with KEDA using Prometheus metrics is given below:
 ```yaml
 kedaAutoscaling:
   enabled: true
@@ -1021,9 +925,7 @@ kedaAutoscaling:
     spec: {}
   authenticationRef: {}
 ```
-
 Example for autosccaling with KEDA based on kafka is given below :
-
 ```yaml
 kedaAutoscaling:
   enabled: true
@@ -1104,7 +1006,6 @@ networkPolicy:
 | `Ingress` | Controls incoming traffic to pods. |
 | `Egress`  | Controls outgoing traffic from pods. |
 
-
 ### Winter-Soldier
 Winter Soldier can be used to
 - cleans up (delete) Kubernetes resources
@@ -1163,7 +1064,6 @@ winterSoldier:
   fieldSelector: 
     - AfterTime(AddTime( ParseTime({{metadata.creationTimestamp}}, '2006-01-02T15:04:05Z'), '10h'), Now())
 ```
-
 Above settings will take action on `Sat` and `Sun` from 00:00 to 23:59:59, and on `Mon`-`Fri` from 00:00 to 08:00 and 20:00 to 23:59:59. If `action:sleep` then runs hibernate at timeFrom and unhibernate at `timeTo`. If `action: delete` then it will delete workloads at `timeFrom` and `timeTo`. Here the `action:scale` thus it scale the number of resource replicas to  `targetReplicas: [1,1,1]`. Here each element of `targetReplicas` array is mapped with the corresponding elements of array `timeRangesWithZone/timeRanges`. Thus make sure the length of both array is equal, otherwise the cnages cannot be observed.
 
 The above example will select the application objects which have been created 10 hours ago across all namespaces excluding application's namespace. Winter soldier exposes following functions to handle time, cpu and memory.
@@ -1174,9 +1074,8 @@ The above example will select the application objects which have been created 10
 - CpuToNumber - This can be used to compare CPU. For eg any({{spec.containers.#.resources.requests}}, { MemoryToNumber(.memory) < MemoryToNumber('60Mi')}) will check if any resource.requests is less than 60Mi.
 
 
-
 ### Security Context
-A security context defines privilege and access control settings for a Pod or Container.  
+A security context defines privilege and access control settings for a Pod or Container.
 
 To add a security context for main container:
 ```yaml
@@ -1202,4 +1101,39 @@ topologySpreadConstraints:
     whenUnsatisfiable: DoNotSchedule
     autoLabelSelector: true
     customLabelSelector: {}
+```
+
+### Deployment Metrics
+
+It gives the realtime metrics of the deployed applications
+
+| Key | Description |
+| :--- | :--- |
+| `Deployment Frequency` | It shows how often this app is deployed to production |
+| `Change Failure Rate` | It shows how often the respective pipeline fails |
+| `Mean Lead Time` | It shows the average time taken to deliver a change to production |
+| `Mean Time to Recovery` | It shows the average time taken to fix a failed pipeline |
+
+---
+
+## 4. Show Application Metrics
+
+If you want to see application metrics like different HTTP status codes metrics, application throughput, latency, response time. Enable the Application metrics from below the deployment template Save button. After enabling it, you should be able to see all metrics on App detail page. By default it remains disabled.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/deployment_application_metrics.jpg)
+
+Once all the Deployment template configurations are done, click on `Save` to save your deployment configuration. Now you are ready to create [Workflow](../workflow/README.md) to do CI/CD.
+
+### Helm Chart Json Schema 
+
+Helm Chart [json schema](../../../../scripts/devtron-reference-helm-charts/reference-chart_4-11-0/schema.json) is used to validate the deployment template values.
+
+### Other Validations in Json Schema
+
+The values of CPU and Memory in limits must be greater than or equal to in requests respectively. Similarly, In case of envoyproxy, the values of limits are greater than or equal to requests as mentioned below.
+```
+resources.limits.cpu >= resources.requests.cpu
+resources.limits.memory >= resources.requests.memory
+envoyproxy.resources.limits.cpu >= envoyproxy.resources.requests.cpu
+envoyproxy.resources.limits.memory >= envoyproxy.resources.requests.memory
 ```
