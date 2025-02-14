@@ -1,19 +1,50 @@
 # ConfigMaps
 
-The ConfigMap API resource holds key-value pairs of the  configuration data that can be consumed by pods or used to store configuration data for system components such as controllers. ConfigMap is similar to Secrets, but designed to more conveniently support working with strings that do not contain sensitive information.
+A ConfigMap stores key-value pairs that your applications can use as environment variables or mounted files. Unlike Secrets, ConfigMaps are meant for non-sensitive data.
 
-Click on `Add ConfigMap` to add a config map to your application.
+## Adding a ConfigMap
+
+1. Go to the **Configurations** → **Base Configurations**.
+
+  ![Figure 1: Application's 'Configurations' Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/appconfig-page.jpg)
+
+2. Click the **+** button next to **ConfigMaps**.
+
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/config-map.jpg)
+
+3. **Data Type** - Choose between the following data types:
+    * [Kubernetes ConfigMap](#using-kubernetes-configmap)
+    * [Kubernetes External ConfigMap](#using-kubernetes-external-configmap)
+
+4. **Mount data as** - Select how you want to mount the ConfigMap:
+    * **Environment Variable** – Injects values as environment variables.
+    * **Data Volume** – Mounts the ConfigMap as a file in a specified path.
+
+5. Add key-value pairs in GUI or YAML mode (not applicable for `Kubernetes External ConfigMap`).
+
+6. Click **Save**.
+
+---
+
+### Using Kubernetes ConfigMap
+
+1. **Select Kubernetes ConfigMap** as the data type.
+
+2. **Provide a Name** (cannot be changed later).
+
+3. **Choose Mount Type**:
+   - **Environment Variable**: Injects key-value pairs as environment variables.
+   - **Data Volume**: Mounts key-value pairs as files at the specified path.
+
+4. **Enter Data**:
+   - **GUI Mode** – User-friendly interface.
+   - **YAML Mode** – Raw YAML configuration.
+
+5. **Click Save** to apply the ConfigMap.
 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/config-map.jpg)
 
-## Configure the ConfigMap
-
-You can configure a configmap in two ways-
-
-\(a\) Using data type **Kubernetes ConfigMap**
-
-\(b\) Using data type **Kubernetes External ConfigMap**
+6. 
 
 
 | Key | Description |
@@ -95,7 +126,7 @@ Sub Path feature is not applicable in case of external configmap.
 ## File Permission
 File permission will be provide at the configmap level not on the each key of the configmap. It will take 3 digit standard permission for the file.
 
-### \(B\) Kubernetes External ConfigMap
+### Using Kubernetes External ConfigMap
 
 You can select `Kubernetes External ConfigMap` in the `data type` field if you have created a ConfigMap using the kubectl command.
 
