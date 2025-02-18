@@ -323,7 +323,6 @@ Only one draft can exist at time and you cannot create multiple drafts. In the t
 
 ![Figure 18: Discarding the Draft](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/discard-draft.jpg)
 
----
 
 ### Grant Approval for Changes
 

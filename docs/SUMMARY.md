@@ -72,7 +72,6 @@
     * [Git Repository](user-guide/creating-application/git-material.md)
     * [Build Configuration](user-guide/creating-application/docker-build-configuration.md)
     * [Base Configurations](user-guide/creating-application/base-config/README.md)
-      * [Overview](user-guide/creating-application/base-config/overview.md)
       * [Deployment Template](user-guide/creating-application/base-config/deployment-template.md)
       * [ConfigMaps](user-guide/creating-application/base-config/config-maps.md)
       * [Secrets](user-guide/creating-application/base-config/secrets.md)

@@ -1,17 +1,45 @@
 # Secrets
 
-Secrets and configmaps both are used to store environment variables but there is one major difference between them: Configmap stores key-values in normal text format while secrets store them in base64 encrypted form. Devtron hides the data of secrets for the normal users and it is only visible to the users having edit permission.
+Secrets and ConfigMaps are both used to store environment variables but there is one major difference between them: ConfigMap stores key-values in normal text format while secrets store them in base64 encrypted form. Devtron hides the data of secrets for the normal users and it is only visible to the users having edit permission.
 
 Secret objects let you store and manage sensitive information, such as passwords, authentication tokens, and ssh keys. Embedding this information in secrets is safer and more flexible than putting it verbatim in a Pod definition or in a container image.
 
-## Configure Secret
+## Adding a Secret
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg)
+1. Go to the **Configurations** → **Base Configurations**.
 
-Click `Add Secret` to add a new secret.
+    ![Figure 1: Application's 'Configurations' Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/appconfig-page.jpg)
 
+2. Click the **+** button next to **Secrets**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/create-secret.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg)
+
+3. **Data Type** - Choose between the following data types:
+    * [Kubernetes Secret](#kubernetes-secret)
+    * [Mount Existing Kubernetes Secret](#kubernetes-external-configmap)
+    * [External Secret Operator](#ex)
+
+    *Note: The conversion of secrets from various data types to Kubernetes Secrets is done within Devtron and irrespective of the data type, after conversion, the Pods access `secrets` normally.*
+
+### Kubernetes Secret
+
+1. Select **Kubernetes ConfigMap** as the Data Type.
+
+2. **Name** - Provide a name to your Secret (cannot be changed later).
+
+    ![Figure 3: ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/created-configmap.gif)
+
+3. **Mount data as** - Select how you want to mount the Secret:
+    * **Environment Variable** – Select this option if you want to inject Environment Variables in pods using ConfigMap.
+    * **Data Volume** – Select this option, if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-valume) to know more.
+
+4. Enter data in:
+   - **GUI mode** – User-friendly interface. Click **+Add** button and enter the **Key** and **Value** fields without quotes. 
+   - **YAML mode** – Raw YAML for entering key-value pairs in the format **`key: value`**. Quotes are not mandatory for either key or value.
+
+   {% embed url="https://www.youtube.com/watch?v=QfJqX6KM2lU" %}
+
+5. You may [perform a dry run](#perform-a-dry-run), before clicking **Save**.
 
 | Key | Description |
 | :--- | :--- |
@@ -63,17 +91,23 @@ You can delete your secret. Click your secret and click the `delete sign` to del
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/delete-secret.jpg)
 
-## Data Types
 
-There are five Data types that you can use to save your secret.
+### Mount Existing Kubernetes Secrets
 
-* **Kubernetes Secret**: The secret that you create using Devtron.
-* **Kubernetes External Secret**: The secret data of your application is fetched by Devtron externally. Then the Kubernetes External Secret is converted to Kubernetes Secret.
-* **AWS Secret Manager**: The secret data of your application is fetched from AWS Secret Manager and then converted to Kubernetes Secret from AWS Secret. 
-* **AWS System Manager**: The secret data for your application is fetched from AWS System Secret Manager and all the secrets stored in AWS System Manager are converted to Kubernetes Secret.
-* **HashiCorp Vault**: The secret data for your application is fetched from HashiCorp Vault and the secrets stored in HashiCorp Vault are converted to Kubernetes Secret.
+Use this option to mount an existing Kubernetes Secret in your application pods. A Secret will not be created by system so please ensure that the secret already exist within the namespace else the deployment will fail.
 
-*Note: The conversion of secrets from various data types to Kubernetes Secrets is done within Devtron and irrespective of the data type, after conversion, the Pods access `secrets` normally.*
+### Google Secrets Manager
+
+### AWS Secrets Manager
+
+The secret data of your application is fetched from AWS Secret Manager and then converted to Kubernetes Secret from AWS Secret. 
+
+### Azure Secrets Manager
+
+### Hashi Corp Vault
+
+The secret data for your application is fetched from HashiCorp Vault and the secrets stored in HashiCorp Vault are converted to Kubernetes Secret.
+
 
 ## Mount Existing Kubernetes Secrets
 

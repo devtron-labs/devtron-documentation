@@ -22,7 +22,7 @@ A ConfigMap stores key-value pairs that your applications can use as environment
 
 2. **Name** - Provide a name to your ConfigMap (cannot be changed later).
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/created-configmap.gif)
+    ![Figure 3: ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/created-configmap.gif)
 
 3. **Mount data as** - Select how you want to mount the ConfigMap:
     * **Environment Variable** – Select this option if you want to inject Environment Variables in pods using ConfigMap.
@@ -34,7 +34,7 @@ A ConfigMap stores key-value pairs that your applications can use as environment
 
    {% embed url="https://www.youtube.com/watch?v=QfJqX6KM2lU" %}
 
-5. Click **Save**.
+5. You may [perform a dry run](#perform-a-dry-run), before clicking **Save**.
 
 
 ### Kubernetes External ConfigMap
@@ -53,13 +53,13 @@ Use this option if you have a ConfigMap created using the kubectl command. Ensur
 
 ## Mount Data as Data Volume
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/cm-data-volume.jpg)
+![Figure 4: ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/cm-data-volume.jpg)
 
 In the above example, we have seen how to pass environment variables in your ConfigMap. Additionally, there is an option to create a ConfigMap by passing the content of a file. The content could be a plain text, json, yaml, bash script, etc. You can do so by selecting the `Data Volume` option in **Mount data as**.
 
 The key of the ConfigMap should be your filename and the value of the ConfigMap should be your file content. In the below example, you `file.json` is the key, and the json content is the value of that ConfigMap (below the pipe (**|**) symbol). This file will be created on your specified [volume mount path](#volume-mount-path).
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/filecontent-cm.jpg)
+![Figure 5: ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/filecontent-cm.jpg)
 
 ### Volume Mount Path
 
@@ -103,15 +103,27 @@ For example, **755** means:
 
 ---
 
+## Perform a Dry Run
+
+Before saving your configured ConfigMap, you can use the **Dry Run** option (as shown below) to preview the final Kubernetes manifests.
+
+This feature helps you verify your configurations, detect issues, and ensure correctness.
+
+![Figure 12: Performing a Dry Run](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/dry-run-cm.gif)
+
+Your configurations will appear in the left pane, while the right pane will display a section named `Manifest generated from merged` showing the computed Kubernetes manifest.
+
+---
+
 ## Update ConfigMap
 
 1. Click your configmap available inside the list of **ConfigMaps** inside **Base Configurations**.
-2. Modify its values
-3. Click **Update**
+2. Modify its values.
+3. Click **Update**.
 
 **Note**: You cannot change the name of a ConfigMap. Create a new ConfigMap instead.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/update_configmap.jpg)
+![Figure 3: ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/update_configmap.jpg)
 
 ---
 
@@ -124,5 +136,5 @@ You may delete a ConfigMap if not in use anymore. Once a ConfigMap is deleted, i
 3. Click **Delete**.
 4. Confirm the deletion in the dialogbox.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/delete_configmap.jpg)
+![Figure 3: ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/delete_configmap.jpg)
 
