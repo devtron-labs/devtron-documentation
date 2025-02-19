@@ -65,3 +65,60 @@ Go to the application where you want to create an external secret. Navigate to s
 
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/app-secret-clustersecretstore.jpg)
+
+<!-- ----------
+
+### AWS Secret Manager
+
+The secret data of your application is fetched from AWS Secret Manager and then converted to Kubernetes Secret from AWS Secret.
+
+Before adding any external secrets on Devtron, `kubernetes-external-secrets` must be installed on the target cluster. Kubernetes External Secrets allows you to use external secret management systems (e.g., AWS Secrets Manager, Hashicorp Vault, etc) to securely add secrets in Kubernetes.
+
+#### Installing kubernetes-external-secrets Using Chart
+
+To install the chart with the release named my-release:
+
+```bash
+$ helm install my-release external-secrets/kubernetes-external-secrets
+```
+To install the chart with AWS IAM Roles for Service Accounts:
+
+```bash
+$ helm install my-release external-secrets/kubernetes-external-secrets --set securityContext.fsGroup=65534 --set serviceAccount.annotations."eks\.amazonaws\.com/role-arn"='arn:aws:iam::111111111111:role/ROLENAME'
+```
+#### Adding Secrets From AWS Secret Manager
+
+To add secrets from AWS secret manager, navigate to `Secrets` of the application and follow the steps mentioned below :
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg)
+
+1. Click `Add Secret` to add a new secret.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret.jpg)
+
+2. Select `AWS Secret Manager` from dropdown of `Data type`.
+
+3. Provide a name to your secret.
+
+4. Select how you want to use the secret. You may leave it selected as environment variable and also you may leave `Role ARN` empty.
+
+5. In `Data` section, you will have to provide data in key-value format.
+
+All the required field to pass your data to fetch secrets on Devtron are described below :
+
+| Key | Description |
+| :--- | :--- |
+|`key`| Secret key in backend |
+|`name`| Name for this key in the generated secret |
+|`property`| Property to extract if secret in backend is a JSON object |
+|`isBinary`| Set this to true if configuring an item for a binary file stored else set false |
+
+#### Adding Secrets in AWS Secret Manager
+
+To add secrets in AWS secret manager, do the following steps :
+
+1. Go to AWS secret manager console.
+2. Click `Store a new secret`.
+3. Add and save your secret.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-10.jpg) -->

@@ -1,80 +1,124 @@
 # Environment Overrides
 
-You will see all your environments associated with an application under the `Environment Overrides` section.
+You can view all environments associated with an application under the **Environment Overrides** section.
 
-![Figure 1: App Configuration → Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/environment-override-v2.jpg)
+![Figure 1: App Configuration → Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/environment-override-v3.jpg)
 
+The Environment Overrides section allows you to customize the **Deployment Template**, **ConfigMaps**, and **Secrets** for different environments such as development, testing, staging, and production.
 
-You can customize your `Deployment template, ConfigMap, Secrets` in Environment Overrides section to add separate customizations for different environments such as dev, test, integration, prod, etc.
+## How it works
 
----
-
-## Deployment template - Functionality
-
-If you want to deploy an application in a non-production environment and then in production environment, once testing is done in the non-production environment, then you do not need to create a new application for production environment. Your existing pipeline\(non-production env\) will work for both the environments with little customization in your deployment template under `Environment overrides`.
-
-### Example customization:
-
-In a Non-production environment, you may have specified 100m CPU resources in the deployment template but in the Production environment, you may want to have 500m CPU resources as the traffic on Pods will be higher than traffic on non-production env.
-
-Configuring the Deployment template inside `Environment Overrides` for a specific environment will not affect the other environments because `Environment Overrides` will configure deployment templates on environment basis. And at the time of deployment, it will always pick the overridden deployment template if any.
-
-If there are no overrides specified for an environment in the `Environment Overrides` section, the deployment template will be the one you specified in the `deployment template section` of the app creation.
-
-*(Note: This example is meant only for a representational purpose. You can choose to add any customizations you want in your deployment templates in the `Environment Overrides` tab)*
-
-Any changes in the configuration will not be added to the template, instead, it will make a copy of the template and lets you customize it for each particular environment. And now this overridden template will be used only for the specified Environment.
-
-This will save you the trouble to manually create deployment files separately for each environment. Instead, all you have to do is to change the required variables in the deployment template.
+* When you add a deployment pipeline to an application's workflow, each environment configuration initially inherits the Deployment Template, ConfigMap and Secret from the **Base Configurations** of the application.
+* The **Environment Overrides** section lets you customize those Deployment Template, ConfigMap and Secret per environment without affecting those of other environment. For example, in a non-production environment, you might allocate 100m CPU, while in production, you increase it to 500m to handle higher traffic.
 
 ---
 
-## How to add Environment Overrides
+## Environment Configurations Page
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and applications) to change perform environment override.
+Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and applications) to perform environment override.
 {% endhint %}
 
-Go to **App Configuration** → **Environment Overrides**. For each environment you can override the following configurations:
-* [Deployment Template](#deployment-template)
-* [ConfigMaps](#configmaps--secrets)
-* [Secrets](#configmaps--secrets)
+1. In your application, go to **Configurations** → **Environment Overrides**. 
 
-### Deployment Template
+    ![Figure 2: App Configuration → Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/config-env-override.jpg)
+
+2. Select an environment whose configurations you wish to modify.
+
+    ![Figure 3: App Configuration → Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/environment-override-v3.jpg)
+
+3. You see the following options (similar to the **Base Configurations** page):
+    * [Deployment Template](#deployment-template)
+    * [ConfigMaps](#configmaps--secrets)
+    * [Secrets](#configmaps--secrets)
+
+    ![Figure 4: App Configuration → Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/env-config-screen.gif)
+
+Let's visit each of the configuration files and see how to override the values for the selected environment (*banking-final*).
+
+---
+
+## Override Deployment Template
+
+As you can see, the Deployment Template for the *banking-final* environment shows 3 tabs:
+* Inherited
+* No override or Override
+* Dry run
+
+1. Go the **Inherited** tab. This will show the inherited configuration in a read-only YAML editor. You cannot edit any values here.
+
+    ![Figure 5: App Configuration → Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/inherited-dt.gif)
+
+2. You can override the configuration (if not done already) by clicking **No override**.
+
+    ![Figure 6: App Configuration → Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/no-override-tab.gif)
+
+3. Click the **Create Override** button.
+
+    ![Figure 7: App Configuration → Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/create-override.gif)
+
+4. In the same tab (now labelled as **Override**), you can choose any one mode for changing the configuration values:
+    * **YAML** - This is a YAML based editor intended to cater advanced users
+    * **GUI** - This is a user-friendly interface intended to cater beginner to advanced users.
 
 {% hint style="info" %}
-Users who are not super-admins will land on [GUI](#gui) section when they visit the **Deployment Template** page; whereas super-admins will land on [YAML](#yaml) section. This is just a default behavior, they can still navigate to the other section if needed.
+Users who are not super-admins will land on [GUI](#gui) mode when they override; whereas super-admins will land on [YAML](#yaml) mode. This is just a default behavior, they can still toggle the mode if needed.
 {% endhint %}
 
-#### GUI
+Let's choose YAML mode for now and proceed. If you prefer GUI mode, go to [Override in GUI mode](#gui-mode) section.
 
-If you have a [base deployment configuration](../creating-application/deployment-template/deployment.md#2.-basic-configuration) set up at application level, the environment(s) you define for your application will also inherit those values.
+5. You can override the values using any Merge Strategy:
+    * [Patch](#using-patch-strategy)
+    * [Replace](#using-replace-strategy)
 
-However, you have the flexibility to use different values at the environment level by overriding the base configurations as shown below. 
+### Using Patch Strategy
 
-![Figure 2: Overriding Deployment Template - GUI Method](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/base-config-override.gif)
+* Only the fields you explicitly specify are updated.  
+* All other inherited fields remain unchanged.
+* Best for minor edits.
 
-Refer [basic configuration](../creating-application/deployment-template/deployment.md#2.-basic-configuration) to know more about each field within `GUI` section.
+| Field     | Inherited Configuration | User Input (with Patch) | Final Configuration  |
+|-----------|--------------------|----------------------------|----------------------|
+| cpu       | 100m               | 500m                       | 500m                 |
+| memory    | 256Mi              | *(Not specified)*          | 256Mi *(Unchanged)*  |
+| replicas  | 2                  | *(Not specified)*          | 2 *(Unchanged)*      |
+| logLevel  | "info"             | *(Not specified)*          | "info" *(Unchanged)* |
+| timeout   | (Not specified)    | 30s                        | 30s (Added)          |
 
-{% hint style="info" %}
-### Want to customize the fields displayed on GUI? [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
-Refer [Customize GUI](../creating-application/deployment-template.md#customize-basic-gui) to know the process of adding, removing, and customizing the GUI section.
-{% endhint %}
+You can achieve this by doing either of the following to achieve the same outcome: 
 
-#### YAML
+* If you know the fields you wish to replace, simply enter the changed key-value fields along with indentation (if any).
 
-Similarly, if you are an advanced user intending to tweak more values in deployment template, you may go to `YAML` section and edit them.
+    ![Figure 8: App Configuration → Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/patch1.gif)
 
-![Figure 3: Overriding Deployment Template - YAML Method](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/yaml-override.jpg)
+* Or you may copy-paste the entire config, and change the fields.
+
+    ![Figure 9: App Configuration → Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/patch2.gif)
+
+
+### Using Replace Strategy 
+
+* The entire configuration is replaced with your new environment-specific settings.
+* Any fields not included in the new configuration are completely removed.
+* Any fields included in the new configuration are added.
+* Best for a complete override.
+
+| Field     | Inherited Configuration | User Input (with Replace) | Final Configuration |
+|-----------|--------------------|------------------------------|---------------------|
+| cpu       | 100m               | 500m                         | 500m                |
+| memory    | 256Mi              | 512Mi                        | 512Mi               |
+| replicas  | 2                  | *(Not specified)*            | *(Removed)*         |
+| logLevel  | "info"             | *(Not specified)*            | *(Removed)*         |
+| timeout   | (Not specified)    | 30s                          | 30s (Added)         |
+
+![Figure 10: App Configuration → Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/no-override-tab.gif)
 
 [Click here](../creating-application/deployment-template/deployment.md#3-advanced-yaml) to know more about each key-value pair within the `YAML` section.
 
-{% hint style="warning" %}
-**Delete Override** will discard the current overrides and the base deployment configuration will be applicable again to the environment. 
-{% endhint %}
+---
 
-### ConfigMaps & Secrets
+## Override ConfigMap
 
 The same goes for `ConfigMap` and `Secrets`. You can also create an environment-specific configmap and Secrets inside the `Environment override` section.
 
@@ -93,3 +137,33 @@ Similarly, you can update Secrets too as shown below.
 
 ![Figure 3: Updating Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/update-secret.gif)
 
+---
+
+## Override Secret
+
+---
+
+## Overriding in GUI mode
+
+{% hint style="info" %}
+### Want to customize the fields displayed on GUI? [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+Refer [Customize GUI](../creating-application/deployment-template.md#customize-basic-gui) to know the process of adding, removing, and customizing the GUI section.
+{% endhint %}
+
+
+![Figure 2: Overriding Deployment Template - GUI Method](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/base-config-override.gif)
+
+Refer [base configuration](../creating-application/deployment-template/deployment.md#2.-basic-configuration) to know more about each field within the `GUI` section.
+
+
+---
+
+## Delete Override
+
+This action will discard the current overrides and the base configuration (in this example, deployment template) will be restored back for the environment. 
+
+1. On the right side, click the kebab menu (3 vertical dots).
+2. Click **Delete Override**.
+3. Confirm the deletion in the dialogbox.
+
+![Figure 10: App Configuration → Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/no-override-tab.gif)

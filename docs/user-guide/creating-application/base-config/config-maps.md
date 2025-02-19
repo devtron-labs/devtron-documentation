@@ -2,7 +2,7 @@
 
 A ConfigMap stores key-value pairs that your applications can use as environment variables or mounted files. Unlike secrets, ConfigMaps are meant for non-sensitive data. Moreover, you can update configurations without modifying or rebuilding your container images, thus making the deployments more efficient.
 
-## Adding a ConfigMap
+## Add ConfigMap
 
 1. Go to the **Configurations** → **Base Configurations**.
 
@@ -34,7 +34,7 @@ A ConfigMap stores key-value pairs that your applications can use as environment
 
    {% embed url="https://www.youtube.com/watch?v=QfJqX6KM2lU" %}
 
-5. You may [perform a dry run](#perform-a-dry-run), before clicking **Save**.
+5. You may [perform a dry run](#perform-a-dry-run) before clicking **Save**.
 
 
 ### Kubernetes External ConfigMap
@@ -105,7 +105,7 @@ For example, **755** means:
 
 ## Perform a Dry Run
 
-Before saving your configured ConfigMap, you can use the **Dry Run** option (as shown below) to preview the final Kubernetes manifests.
+Before saving your configured ConfigMap, you can use the **Dry Run** option (as shown below) to preview the final Kubernetes manifest.
 
 This feature helps you verify your configurations, detect issues, and ensure correctness.
 
@@ -117,11 +117,14 @@ Your configurations will appear in the left pane, while the right pane will disp
 
 ## Update ConfigMap
 
-1. Click your configmap available inside the list of **ConfigMaps** inside **Base Configurations**.
+1. Click your ConfigMap available inside the list of **ConfigMaps** inside **Base Configurations**.
 2. Modify its values.
 3. Click **Update**.
 
-**Note**: You cannot change the name of a ConfigMap. Create a new ConfigMap instead.
+{% hint style="warning" %}
+### Note
+You cannot change the name of a ConfigMap. Create a new ConfigMap instead.
+{% endhint %}
 
 ![Figure 3: ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/update_configmap.jpg)
 
@@ -131,7 +134,7 @@ Your configurations will appear in the left pane, while the right pane will disp
 
 You may delete a ConfigMap if not in use anymore. Once a ConfigMap is deleted, it will not be used in future deployments.
 
-1. Click your configmap available inside the list of **ConfigMaps** inside **Base Configurations**.
+1. Click your ConfigMap available inside the list of **ConfigMaps** inside **Base Configurations**.
 2. On the right side, click the kebab menu (3 vertical dots).
 3. Click **Delete**.
 4. Confirm the deletion in the dialogbox.

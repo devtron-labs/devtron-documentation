@@ -56,4 +56,3 @@ To configure the external secret that will be fetched from HashiCorp Vault for y
 After configuring the external secret from HashiCorp Vault, proceed to save the secret by clicking the **Save** button. 
 
 By following the steps mentioned above and configuring these values correctly, you can seamlessly fetch and utilize external secrets from HashiCorp Vault within your application environment by deploying the application.
-
