@@ -30,7 +30,7 @@ A ConfigMap stores key-value pairs that your applications can use as environment
 
 4. Enter data in:
    - **GUI mode** – User-friendly interface. Click **+Add** button and enter the **Key** and **Value** fields without quotes. 
-   - **YAML mode** – Raw YAML for entering key-value pairs in the format **`key: value`**. Quotes are not mandatory for either key or value.
+   - **YAML mode** – Raw YAML for entering key-value pairs in the format **`key: value`**. Boolean and numeric values must be wrapped in double quotes.
 
    {% embed url="https://www.youtube.com/watch?v=QfJqX6KM2lU" %}
 
@@ -140,4 +140,14 @@ You may delete a ConfigMap if not in use anymore. Once a ConfigMap is deleted, i
 4. Confirm the deletion in the dialogbox.
 
 ![Figure 3: ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/delete_configmap.jpg)
+
+---
+
+## Edit a Protected ConfigMap [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
+Any changes made to the protected base configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../global-configurations/approval-policy.md) is enforced.
+
+{% embed url="https://www.youtube.com/watch?v=pJPX-rJNb_o" %}
+
+
 

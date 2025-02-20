@@ -11,13 +11,6 @@ This guide covers how to:
 * [Perform a Dry Run](#perform-a-dry-run)
 * [Extra: Edit a Protected Deployment Configuration](#edit-a-protected-deployment-template) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-{% hint style="info" %}
-### Important
-If your deployment template configuration is protected, refer [Edit a Protected Deployment Configuration](#configure-a-protected-deployment-template).
-{% endhint %}
-
-
-
 ## Select a Deployment Chart Type
 
 {% hint style="warning" %}
