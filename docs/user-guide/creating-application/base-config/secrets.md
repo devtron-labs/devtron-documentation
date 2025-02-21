@@ -57,6 +57,8 @@ Use this option to mount an existing Kubernetes Secret in your application pods.
 
 ## Mount Data as Data Volume
 
+### Create Secret from File
+
 In the above example, we have seen how to pass environment variables in your Secret. Additionally, there is an option to create a Secret by passing the content of a file. The content could be a plain text, json, yaml, bash script, etc. You can do so by selecting the `Data Volume` option in **Mount data as**.
 
 ![Figure 4: Naming the Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/secret-data-volume.jpg)

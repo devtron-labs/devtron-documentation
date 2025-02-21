@@ -53,6 +53,8 @@ Use this option if you have a ConfigMap created using the kubectl command. Ensur
 
 ## Mount Data as Data Volume
 
+### Create ConfigMap from File
+
 ![Figure 4: Selecting Data Volume Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/cm-data-volume.jpg)
 
 In the above example, we have seen how to pass environment variables in your ConfigMap. Additionally, there is an option to create a ConfigMap by passing the content of a file. The content could be a plain text, json, yaml, bash script, etc. You can do so by selecting the `Data Volume` option in **Mount data as**.
