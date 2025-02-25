@@ -16,7 +16,7 @@ However, if an image is already deployed, you can identify it by the tag `Active
 
 ## Manual Approval for Deployment [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-When [manual approval is enabled](../creating-application/workflow/cd-pipeline.md#4-manual-approval-for-deployment) for the deployment pipeline configured in the workflow, you are expected to request for an image approval before each deployment. Alternatively, you can deploy images that have already been approved once.
+When [manual approval is enabled](../global-configurations/approval-policy.md) for the deployment pipeline configured in the workflow, you are expected to request for an image approval before each deployment. Alternatively, you can deploy images that have already been approved once.
 
 If no approved images are available or the current image is already deployed, you won't see any images for deployment when clicking **Select Image**.
 
