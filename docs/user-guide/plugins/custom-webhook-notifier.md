@@ -10,7 +10,7 @@ If you wish to get notifications at Trigger, Success, and Failure events of CI/C
 {% endhint %}
 
 ### Prerequisites
-Before integrating the **Custom Webhook Notifier** plugin, you must ensure that you have properly configured weebhook notifications in your Devtron setup.
+Before integrating the **Custom Webhook Notifier** plugin, you must ensure that you have properly configured webhook notifications in your Devtron setup.
 
 ---
 
@@ -46,8 +46,7 @@ e.g., `Webhook Notifier`
 ### Description
 Add a brief explanation of the task and the reason for choosing the plugin. Include information for someone else to understand the purpose of the task.
 
-e.g., `The Custom Webhook Notifier plugin is integrated for sending an automated email notifications to relevant stakeholders.`
-
+e.g., `The Custom Webhook Notifier plugin is integrated to automatically send email notifications about the build pipeline status, keeping relevant stakeholders informed.`
 ### Input Variables
 | Variable                 | Format       | Description | Sample Value |
 | ------------------------ | ------------ | ----------- | ------------ |
