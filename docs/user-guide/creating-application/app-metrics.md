@@ -1,67 +1,96 @@
 # Application Metrics
 
-Application metrics can be enabled to see your application's metrics.
+Application Metrics are the indicators used to evaluate the performance and efficiency of your application. It can be enabled in the Devtron platform to see your application's metrics.
 
-## Standard Metrics
+## Types of Metrics available in the Devtron platform:
 
-Devtron provides certain metrics (CPU and Memory utilization) for each application by default i.e. you do not need to enable “Application metrics”. However, prometheus needs to be present in the cluster and the endpoint of the same should be updated in Global Configurations --> Clusters & Environments section. 
+1. **CPU usage:** Overall CPU utilization per pod and aggregated.
+2. **Memory Usage:** Overall memory utilization per pod and aggregated.
+3. **Throughput:** Number of requests processed per minute.
+4. **Latency:** Delay between request and response, measured in percentiles.
 
-## Advanced Metrics
+## Setup Application Metrics
 
-There are certain advanced metrics (like Latency, Throughput, 4xx, 5xx, 2xx) which are only available when "Application metrics" is enabled from the Deployment Template. When you enable these advanced metrics, devtron attaches a envoy sidecar container to your main container which runs as a transparent proxy and passes each request through it to measure the advanced metrics. 
+1. **Install Grafana Dashboard:** 
 
-**Note: Since, all the requests are passed through envoy, any misconfiguration in envoy configs can bring your application down, so please test the configurations in a non-production environment extensively.**
+    To use the Grafana dashboard, you need to first install the integration from the Devtron Stack Manager. 
 
-```yaml
-envoyproxy:
-  image: envoyproxy/envoy:v1.14.1
-  configMapName: ""
-  resources:
-    limits:
-      cpu: "50m"
-      memory: "50Mi"
-    requests:
-      cpu: "50m"
-      memory: "50Mi"
-```
+    [Read Grafana Dashboard](https://docs.devtron.ai/devtron/v0.7/usage/integrations/grafana)
 
+2. **Install Required CRDs:** 
 
-![](../../images/creating-application/app-metrics/app-metrics-1.jpg)
+    Before installing Prometheus from the chart store, manually apply the necessary CRDs in your cluster.
 
+    Navigate to the `Resource Browser → Select your cluster → Click View Terminal` to open the cluster terminal.
 
-## CPU Usage Metrics
+    ![app1](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app1.jpg)
 
-CPU usage is a utilization metric that shows the overall utilization of cpu by an application. It is available as both, aggregated or per pod.
+    Now, apply these manifests with server-side validation:
 
-## Memory Usage Metrics
+    ```
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/main/manifests/setup/0alertmanagerConfigCustomResourceDefinition.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/main/manifests/setup/0alertmanagerCustomResourceDefinition.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/main/manifests/setup/0podmonitorCustomResourceDefinition.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/main/manifests/setup/0probeCustomResourceDefinition.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/main/manifests/setup/0prometheusCustomResourceDefinition.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/main/manifests/setup/0prometheusagentCustomResourceDefinition.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/main/manifests/setup/0prometheusruleCustomResourceDefinition.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/main/manifests/setup/0prometheusruleCustomResourceDefinition.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/main/manifests/setup/0scrapeconfigCustomResourceDefinition.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/main/manifests/setup/0servicemonitorCustomResourceDefinition.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/main/manifests/setup/0thanosrulerCustomResourceDefinition.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/main/manifests/setup/namespace.yaml
 
- Memory usage is a utilization metric that shows the overall utilization of memory by an application. It is available as both, aggregated or per pod.
+    ```
 
+3. **Install Prometheus:**
+    Go to the Chart Store and search for `prometheus`. Use the Prometheus community's `kube-prometheus-stack` chart to deploy Prometheus.
 
- ## Throughput Metrics
+    ![app2](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app2.jpg)
 
- This application metrics indicates the number of request processed by an application per minute. 
+    After selecting the chart, configure these values as needed before deployment.
 
- ## Status Code Metrics
+    ```
+    kube-state-metrics: 
+	  metricLabelsAllowlist:   
+	  - pods=[*]
+    ```
 
-This metrics indicates the  application’s response to client’s request with a specific status code i.e 1xx(Communicate transfer protocol-level information), 2xx(Client’s request was accepted successfully), 3xx(Client must take some additional action to complete their request), 4xx(Client side error) or 5xx(Server side error).  
+    Search for the above parameters, update them as shown (or customize as needed), and then click `Deploy Chart`.
 
-## Latency Metrics
+    ![app3](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app3.jpg)
 
-Latency metrics shows the latency for an application. Latency measures the delay between an action and a response.
+4. **Setup Prometheus Endpoint:**
+    After installing Prometheus, find its endpoint under `Networking → Service` in the K8s resources. Expand the Prometheus server service to see the endpoints. 
 
-**99.9th percentile latency**: The maximum latency, in seconds, for the fastest 99.9% of requests.
+    Copy the URL of the `kube-prometheus` service as shown in the image below.
 
-**99th percentile latency**: The maximum latency, in seconds, for the fastest 99% of requests.
+    ![app4](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app4.jpg)
 
-**95th percentile latency**: The maximum latency, in seconds, for the fastest 95% of requests.
+    To set Prometheus as a data source in Grafana, navigate to `Global Configurations → Clusters & Environments`, select your cluster, and edit its settings.
 
-**Note:** We also support custom percentile input inside the dropdown .A latency measurement based on a single request is not meaningful.
+    ![app5](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app5.jpg)
 
+    Now to set up the Prometheus endpoint:
+    - Enable the See metrics for applications in this cluster option, as shown in the image below.
+    - Paste the copied URL into the Prometheus endpoint field, ensuring it includes `http://`
+    - Click Update Cluster to save the changes.
 
-## Checklist for enabling Advanced Application metrics in Production
+    ![app6](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app6.jpg)
 
-* [ ]  Have adjusted resources to the envoy sidecar container, by default Devtron allocates 50m CPU and 50Mi Memory as both limits as well as requests. This should be enough for handling traffic upto 3000rpm per pod, if each replica of your pod is expected to handle more than 3000rpm, please adjust the resources accordingly.
-* [ ] If you are not leveraging http2 / streaming protocols, make sure to set supportStreaming and useHTTP2 in ContainerPort as false.
-* [ ]  Use envoy image as "quay.io/devtron/envoy:v1.14.1" instead of default "envoyproxy/envoy:v1.14.1" if your cluster occasionally hit dockerhub pull rate limit or if you are running too many replicas/micro-services in a cluster.
-* [ ] Enabled and tested extensively in non-production environment including load testing till highest rpm capacity per pod.
+    After adding the endpoint, application metrics will be visible in the Devtron dashboard for all the Devtron apps in the cluster. This includes CPU usage and Memory usage.
+
+    ![app7](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app7.jpg)
+
+5. **Enable Application Metrics:**
+
+    To enable Throughput and Latency metrics in Devtron, follow these steps:
+      - Open your Devtron app.
+      - Go to `Configurations → Base Configurations → Deployment Template`.
+      - Enable `Application Metrics` in the Deployment Template as shown below and save the changes.
+
+      ![app8](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app8.jpg)
+
+      Now, you can track all your application metrics by navigating to `Devtron Apps → Your App → App Details`, where you can view the Application Metrics as shown below.
+
+      ![app9](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app9.jpg)
