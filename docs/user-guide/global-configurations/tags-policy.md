@@ -28,7 +28,7 @@ Users need to have super-admin permission to create tag policy.
         * Blocks application creation if the required tag is not provided.
         * Blocks deployment if restriction is enforced.
 
-    * If you just want to offer tag suggestions, use `Suggested tags`. These will appear as [dropdown suggestions](#appearance-of-suggested-tags) when adding tags to applications, and users can choose to use them if needed.
+    * If you just want to offer tag suggestions, use `Suggested tags`. These will appear as [dropdown suggestions](#appearance-of-suggested-tags) when adding tags to applications globally, and users can optionally use them if needed.
 
     ![Figure 4: Creating Suggested or Mandatory Tag](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/suggested-mandatory.gif)
 
