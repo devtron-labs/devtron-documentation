@@ -6,11 +6,11 @@ Devtron allows you to connect and manage your existing Kubernetes clusters by ad
 
 Go to **Global Configurations** → **Clusters & Environments** → **Add Cluster** (button)
 
-![Figure 1: Adding a Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-clusters.jpg)
+![Figure 1: Adding a Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-clusters-new.jpg)
 
 You can add any of the following cluster types:
-* [Kubernetes Cluster](#add-kubernetes-cluster) - This is the recommended option for adding a cluster.
-* [Isolated Cluster](#add-isolated-cluster) - For airgapped/isolated use-cases use this option.
+* [Kubernetes Cluster](#add-kubernetes-cluster) - If you have access to the cluster, use this option.
+* [Isolated Cluster](#add-isolated-cluster) - For airgapped-related use-cases, use this option.
 
 ![Figure 2: Choosing Cluster Type](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-cluster-screen.jpg)
 
@@ -77,7 +77,7 @@ In case you prefer to add clusters using kubeconfig, follow these steps:
   ![Figure 8: Clicking Save](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/kubeconfig-save-cluster.jpg)
 
 4. Click the saved cluster, and complete the remaining steps (optional): 
-  * [Choose Connection Type](#choose-connection-type)
+  * [Choose Connection Type](#choose-method-of-connection)
   * [Use Secure TLS Connection](#use-secure-tls-connection)
   * [Configure Prometheus](#configure-prometheus-enable-application-metrics)
 
@@ -86,7 +86,7 @@ In case you prefer to add clusters using kubeconfig, follow these steps:
 Ensure that the kubeconfig file has admin permissions. It is crucial for Devtron to have the necessary administrative privileges; otherwise, it may encounter failures or disruptions during deployments and other operations. Admin permission is essential to ensure the smooth functioning of Devtron and to prevent any potential issues that may arise due to insufficient privileges.
 {% endhint %}
 
-### Choose Connection Type  
+### Choose Method of Connection [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 When adding a new cluster to Devtron, you must choose how Devtron will connect to it. There are three connection options available:  
 
@@ -97,15 +97,17 @@ Clusters with a directly accessible API server endpoint—either publicly or via
 
 ![Figure 9: Choosing Direct Connection](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/direct-connection.jpg)  
 
-#### Via Proxy
+#### Via Proxy [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
 For security reasons, some Kubernetes clusters are deployed behind a proxy. In this setup, Devtron routes all communication through the specified proxy URL.  
 * Use this option when network restrictions require traffic to go through a proxy server.  
 * Requires specifying a **Proxy URL** (e.g., `http://proxy.example.org:3128`).  
-* **Limitation**: Deployments via GitOps (ArgoCD) are not recommended for clusters connected via proxy.
+* **Limitation**: Deployments via [GitOps (ArgoCD)](../../reference/glossary.md#gitops) are not recommended for clusters connected via proxy.
 
 ![Figure 10: Choosing 'Via Proxy'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/via-proxy.jpg)  
 
-#### Via SSH Tunnel 
+#### Via SSH Tunnel [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
 When a direct connection isn't possible, Devtron can connect to the Kubernetes cluster through an SSH tunnel, ensuring secure and encrypted communication.  
 * Requires:  
   * **SSH Server URL** (e.g., `http://proxy.example.org`).  
@@ -114,7 +116,7 @@ When a direct connection isn't possible, Devtron can connect to the Kubernetes c
     * Password  
     * SSH Private Key  
     * Both Password & SSH Private Key  
-* **Limitation**: Deployments via GitOps (ArgoCD) are **not recommended** for clusters connected via SSH Tunnel.
+* **Limitation**: Deployments via [GitOps (ArgoCD)](../../reference/glossary.md#gitops) are **not recommended** for clusters connected via SSH Tunnel.
 
 ![Figure 11: Choosing 'Via SSH Tunnel'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/via-ssh.jpg)  
 
@@ -123,11 +125,11 @@ When a direct connection isn't possible, Devtron can connect to the Kubernetes c
 
 For a secure cluster connection, you can opt for TLS connection, where you need to provide Certificate Authority Data, a TLS Key, and a TLS Certificate.
 
-If your cluster is managed (e.g., EKS, AKS, GKE), you might need to download these certificates from your cloud provider’s dashboard or API.
+If your cluster is managed (e.g., [EKS](https://aws.amazon.com/eks/), [AKS](https://learn.microsoft.com/en-us/azure/aks/), [GKE](https://cloud.google.com/kubernetes-engine)), you might need to download these certificates from your cloud provider’s dashboard or API.
 
 | Field | Description |
 |--------|------------|
-| **Certificate Authority (CA) Data** | The CA certificate (see: ![example](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/kubeconfig-entry.jpg)) used to verify the Kubernetes API server’s identity. |
+| **Certificate Authority (CA) Data** | The CA certificate (see: [example](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/kubeconfig-entry.jpg)) used to verify the Kubernetes API server’s identity. |
 | **TLS Key** | The private key associated with the client certificate for authentication. |
 | **TLS Certificate** | The client certificate used to authenticate with the Kubernetes API server. |
 
@@ -154,7 +156,7 @@ Click **Save Cluster** to save your cluster on Devtron.
 
 ---
 
-## Add Isolated Cluster
+## Add Isolated Cluster [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
@@ -196,20 +198,23 @@ Users need to have super-admin permission to add an environment to a cluster.
 
   ![Figure 17: Adding an Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-environment-option.jpg)
 
-2. Enter a name for your environment and add a namespace.
+2. Fill the following details within the **Add Environment** modal window.
+
+  | Field | Description |
+  | :--- | :--- |
+  | **Environment Name** | Enter a name for your environment. |
+  | **Enter Namespace** | Enter a namespace corresponding to your environment.<br>**Note**: If this namespace does not exist in your cluster, Devtron will create it. If it already exists, Devtron will map the environment to it.</br> |
+  | **Environment Type** | Select your environment type:<ul><li>`Production`</li></ul> <ul><li>`Non-production`</li></ul>Note: Devtron shows deployment metrics (DORA metrics) for environments tagged as `Production` only. |
 
   ![Figure 18: Saving an Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-env-fields.jpg)
 
+3. **Add/Edit labels to namespace** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) - You can attach labels to your specified namespace in the Kubernetes cluster. Using labels will help you filter and identify resources via CLI or other Kubernetes tools. [Click here](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) to know more about labels.
 
-| Field | Description |
-| :--- | :--- |
-| **Environment Name** | Enter a name for your environment. |
-| **Enter Namespace** | Enter a namespace corresponding to your environment.<br>**Note**: If this namespace does not exist in your cluster, Devtron will create it. If it already exists, Devtron will map the environment to it.</br> |
-| **Environment Type** | Select your environment type:<ul><li>`Production`</li></ul> <ul><li>`Non-production`</li></ul>Note: Devtron shows deployment metrics (DORA metrics) for environments tagged as `Production` only. |
+  ![Figure 19: Newly Created Environment in the Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/labels-namespace.gif)
 
-3. Click **Save**. Your new environment will be visible in your cluster as shown below.
+4. Click **Save**. Your new environment will be visible in your cluster as shown below.
 
-  ![Figure 19: Newly Created Environment in the Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/added-env.jpg)
+  ![Figure 20: Newly Created Environment in the Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/added-env.jpg)
 
 
 ---
@@ -223,7 +228,7 @@ Users need to have super-admin permission to edit an environment in a cluster.
 
 You can also make edits to an existing environment if need be by clicking the edit icon.
 
-![Figure 20: Editing Environment in the Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/edit-env.jpg)
+![Figure 21: Editing Environment in the Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/edit-env.jpg)
 
 | Feature                           | Editable? |
 |-----------------------------------|-----------|
@@ -235,7 +240,7 @@ You can also make edits to an existing environment if need be by clicking the ed
 
 Click **Update** to save your changes.
 
-![Figure 21: Updating Environment in the Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/updated-env.jpg)
+![Figure 22: Updating Environment in the Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/update-env.jpg)
 
 
 ---
@@ -251,7 +256,7 @@ If an environment is no longer needed, you can delete it by following these step
 
 1. Click the delete icon for the environment you wish to remove.
 
-  ![Figure 22: Deleting Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/delete-env.jpg)
+  ![Figure 23: Deleting Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/delete-env.jpg)
 
 {% hint style="warning" %}
 ### Important  
@@ -260,7 +265,7 @@ Environment deletion is not allowed if any application has a CD pipeline corresp
 
 2. A confirmation dialog will appear. Click **Confirm** to permanently delete the environment.  
 
-    ![Figure 23: Confirming Environment Deletion](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/confirm-delete-env.jpg)
+    ![Figure 24: Confirming Environment Deletion](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/confirm-delete-env.jpg)
 
 ---
 
@@ -298,7 +303,7 @@ devtroncd
 {% endtab %}
 {% endtabs %}
 
-![Figure 24: Generating Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/generate-cluster-credentials.png)
+![Figure 25: Generating Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/generate-cluster-credentials.png)
 
 ### Benefits of Self-hosted URL
 
