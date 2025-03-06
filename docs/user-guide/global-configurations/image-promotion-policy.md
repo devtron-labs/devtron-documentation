@@ -153,15 +153,16 @@ You can apply a policy using our APIs or through Devtron CLI. Here is the CLI ap
 apiVersion: v1
 kind: artifactPromotionPolicy
 spec:
-    payload:
+  payload:
     applicationEnvironments:
-    - appName: "app1"
+      - appName: "app1"
         envName: "env-demo"
-    - appName: "app1"
+      - appName: "app1"
         envName: "env-staging"
-    - appName: "app2"
+      - appName: "app2"
         envName: "env-demo"
-    applyToPolicyName: "example-policy"
+    applyToPolicyNames:
+      - "example-policy"
 ```
 {% endcode %}
 
