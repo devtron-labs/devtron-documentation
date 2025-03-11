@@ -1,1 +1,0 @@
-# External Secret Operator (ESO)

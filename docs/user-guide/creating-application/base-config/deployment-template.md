@@ -26,7 +26,7 @@ Users need to have [Admin role](../user-guide/global-configurations/authorizatio
 
   ![Figure 2: Navigating to Base Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/click-baseconfig.gif)
 
-3. From the **Chart** dropdown, select a deployment chart. You can choose between [Charts by Devtron](./deployment-template/README.md) or [Custom Charts](../global-configurations/deployment-charts.md) (if available).
+3. From the **Chart** dropdown, select a deployment chart. You can choose between [Charts by Devtron](./deployment-template/README.md) or [Custom Charts](../../global-configurations/deployment-charts.md) (if available).
 
   ![Figure 3: Charts by Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/select-devtron-chart.gif)
 
@@ -35,7 +35,7 @@ Users need to have [Admin role](../user-guide/global-configurations/authorizatio
 
 {% hint style="info" %}
 ### Want to create and use your own deployment chart?
-Users with super-admin permissions may upload their own deployment chart in **Global Configurations** → **Deployment Charts**. Refer the [documentation](../global-configurations/deployment-charts.md) to learn more.
+Users with super-admin permissions may upload their own deployment chart in **Global Configurations** → **Deployment Charts**. Refer the [documentation](../../global-configurations/deployment-charts.md) to learn more.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -49,7 +49,7 @@ After you select and save a chart type for a given application, you won't be abl
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above to select a chart version.
+Users need to have [Admin role](../../../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above to select a chart version.
 {% endhint %}
 
 Devtron maintains multiple chart versions based on the features it support. Additionally, each chart version has a supporting README file you can use for knowing the features and variables.
@@ -66,7 +66,7 @@ Once you [select a deployment chart](#select-a-deployment-chart-type), choose a 
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above to configure a deployment template. However, super-admins can lock keys in deployment template to prevent non-super-admins from modifying them. Refer [Lock Deployment Configuration](../global-configurations/lock-deployment-config.md) to know more.
+Users need to have [Admin role](../../../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above to configure a deployment template. However, super-admins can lock keys in deployment template to prevent non-super-admins from modifying them. Refer [Lock Deployment Configuration](../../global-configurations/lock-deployment-config.md) to know more.
 {% endhint %}
 
 There are two ways of editing a deployment template:
@@ -122,14 +122,14 @@ Superadmin can define and apply custom deployment schema.
 By default, the **GUI** section comes with multiple predefined fields as seen earlier [in the table](#using-gui). However, if you wish to display a different set of fields to your team, you can modify the whole section as per your requirement.
 
 This is useful in scenarios where:
-* Your team members find it difficult to understand and edit the [YAML](#3-advanced-yaml) section.
+* Your team members find it difficult to understand and edit the YAML section.
 * You frequently edit certain fields in **YAML**, which you expect to remain easily accessible in **GUI** section.
 * You don't require some fields in **GUI** section.
 * You need the autonomy to keep the GUI unique for applications/clusters/environments/charts, or display the same GUI everywhere.
 
 {% hint style="info" %}
 There are two ways you can customize the GUI, use any one of the following:
-1. From [Deployment Charts](../global-configurations/deployment-charts.md#editing-gui-schema-of-deployment-charts) section
+1. From [Deployment Charts](../../global-configurations/deployment-charts.md#editing-gui-schema-of-deployment-charts) section
 2. Using APIs (explained below)
 {% endhint %}
 

@@ -12,7 +12,7 @@ Secret objects let you store and manage sensitive information, such as passwords
 
 2. Click the **+** button next to **Secrets**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg)
+    ![Figure 2: Add Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg)
 
 3. **Data Type** - Choose between the following data types:
     * [Kubernetes Secret](#kubernetes-secret)
@@ -94,9 +94,9 @@ The **Set File Permission** option applies permissions at the Secret level, not 
 
 The 3-digit numeric value represents the permission settings for the file:
 
-- **First digit**: Owner permissions (user).
-- **Second digit**: Group permissions.
-- **Third digit**: Other users' permissions.
+* **First digit**: Owner permissions (user).
+* **Second digit**: Group permissions.
+* **Third digit**: Other users' permissions.
 
 | **Permission** | **Description**                                |
 |----------------|------------------------------------------------|
@@ -105,9 +105,9 @@ The 3-digit numeric value represents the permission settings for the file:
 | **x** (execute)| Grants the ability to execute the file as a program. |
 
 For example, **755** means:
-- Owner can read, write, and execute (7),
-- Group can read and execute (5),
-- Others can read and execute (5).
+* Owner can read, write, and execute (7),
+* Group can read and execute (5),
+* Others can read and execute (5).
 
 ---
 

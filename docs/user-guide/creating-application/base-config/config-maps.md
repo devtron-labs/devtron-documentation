@@ -29,8 +29,8 @@ A ConfigMap stores key-value pairs that your applications can use as environment
     * **Data Volume** – Select this option, if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-valume) to know more.
 
 4. Enter data in:
-   - **GUI mode** – User-friendly interface. Click **+Add** button and enter the **Key** and **Value** fields without quotes. 
-   - **YAML mode** – Raw YAML for entering key-value pairs in the format **`key: value`**. Boolean and numeric values must be wrapped in double quotes.
+   * **GUI mode** – User-friendly interface. Click **+Add** button and enter the **Key** and **Value** fields without quotes. 
+   * **YAML mode** – Raw YAML for entering key-value pairs in the format **`key: value`**. Boolean and numeric values must be wrapped in double quotes.
 
    {% embed url="https://www.youtube.com/watch?v=QfJqX6KM2lU" %}
 
@@ -88,9 +88,9 @@ The **Set File Permission** option applies permissions at the ConfigMap level, n
 
 The 3-digit numeric value represents the permission settings for the file:
 
-- **First digit**: Owner permissions (user).
-- **Second digit**: Group permissions.
-- **Third digit**: Other users' permissions.
+* **First digit**: Owner permissions (user).
+* **Second digit**: Group permissions.
+* **Third digit**: Other users' permissions.
 
 | **Permission** | **Description**                                |
 |----------------|------------------------------------------------|
@@ -99,9 +99,9 @@ The 3-digit numeric value represents the permission settings for the file:
 | **x** (execute)| Grants the ability to execute the file as a program. |
 
 For example, **755** means:
-- Owner can read, write, and execute (7),
-- Group can read and execute (5),
-- Others can read and execute (5).
+* Owner can read, write, and execute (7),
+* Group can read and execute (5),
+* Others can read and execute (5).
 
 ---
 
@@ -111,7 +111,7 @@ Before saving your configured ConfigMap, you can use the **Dry Run** option (as 
 
 This feature helps you verify your configurations, detect issues, and ensure correctness.
 
-![Figure 12: Performing a Dry Run](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/dry-run-cm.gif)
+![Figure 6: Performing a Dry Run](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/dry-run-cm.gif)
 
 Your configurations will appear in the left pane, while the right pane will display a section named `Manifest generated from merged` showing the computed Kubernetes manifest.
 
@@ -128,7 +128,7 @@ Your configurations will appear in the left pane, while the right pane will disp
 You cannot change the name of a ConfigMap. Create a new ConfigMap instead.
 {% endhint %}
 
-![Figure 13: Updating Existing ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/update_configmap.jpg)
+![Figure 7: Updating Existing ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/update_configmap.jpg)
 
 ---
 
@@ -141,7 +141,7 @@ You may delete a ConfigMap if not in use anymore. Once a ConfigMap is deleted, i
 3. Click **Delete**.
 4. Confirm the deletion in the dialogbox.
 
-![Figure 14: Deleting ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/delete_configmap.jpg)
+![Figure 8: Deleting ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/delete_configmap.jpg)
 
 ---
 

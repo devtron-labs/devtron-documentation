@@ -84,7 +84,7 @@
         * [Install ESO](user-guide/creating-application/base-config/eso/install-eso.md)
         * [AWS Secrets Manager](user-guide/creating-application/base-config/eso/aws-eso.md)
         * [Google Secrets Manager](user-guide/creating-application/base-config/eso/gcp-eso.md)
-        * [HashiCorp Vault](user-guide/creating-application/eso/base-config/hashicorp-eso.md)
+        * [HashiCorp Vault](user-guide/creating-application/base-config/eso/hashicorp-eso.md)
     * [GitOps Configuration](user-guide/creating-application/gitops-config.md)
     * [Workflow Editor](user-guide/creating-application/workflow/README.md)
       * [CI Pipeline](user-guide/creating-application/workflow/ci-pipeline.md)

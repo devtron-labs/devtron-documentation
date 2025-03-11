@@ -10,19 +10,13 @@
 
 [Build Configuration](docker-build-configuration.md)
 
-[Base Deployment Template](deployment-template.md)
+[Base Configurations](./base-config/README.md)
 
 [GitOps Configuration](gitops-config.md)
 
 [Workflow Editor](workflow/README.md)
 
-[ConfigMaps](config-maps.md)
-
-[Secrets](secrets.md)
-
 [External Links](external-links.md)
-
-[Protect Configuration](config-approval.md)
 
 [Environment Overrides](environment-overrides.md)
 
