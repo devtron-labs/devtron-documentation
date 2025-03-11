@@ -80,7 +80,7 @@ It enables you to observe and monitor the cluster health and real-time node cond
 * Edit a node config
 * Delete a node
 
-With its rich features and intuitive interface, you can easily manage and [debug clusters through cluster terminal access](../../user-guide/clusters.md#access-cluster-via-terminal-for-troubleshooting) and use any CLI debugging tools like busybox, kubectl, netshoot or any custom CLI tools like k9s.
+With its rich features and intuitive interface, you can easily manage and [debug clusters through cluster terminal access](../../user-guide/resource-browser.md#cluster-terminal) and use any CLI debugging tools like busybox, kubectl, netshoot or any custom CLI tools like k9s.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/cluster-terminal.jpg)
 

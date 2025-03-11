@@ -42,12 +42,13 @@
     * [API Tokens](user-guide/global-configurations/authorization/api-tokens.md)
   * [Notifications](user-guide/global-configurations/manage-notification.md)
   * [Deployment Window](user-guide/global-configurations/deployment-window.md)
+  * [Approval Policy](user-guide/global-configurations/approval-policy.md)
   * [External Links](user-guide/global-configurations/external-links.md)
   * [Catalog Framework](user-guide/global-configurations/catalog-framework.md)
   * [Scoped Variables](user-guide/global-configurations/scoped-variables.md)
   * [Plugin Policy](user-guide/global-configurations/plugin-policy.md)
   * [Pull Image Digest](user-guide/global-configurations/pull-image-digest.md)
-  * [Tags](user-guide/global-configurations/tags-policy.md)
+  * [Tags Policy](user-guide/global-configurations/tags-policy.md)
   * [Filter Condition](user-guide/global-configurations/filter-condition.md)
   * [Lock Deployment Configuration](user-guide/global-configurations/lock-deployment-config.md)
   * [Image Promotion Policy](user-guide/global-configurations/image-promotion-policy.md)  
@@ -165,6 +166,7 @@
     * [Semgrep](user-guide/plugins/semgrep.md)
     * [SonarQube](user-guide/plugins/sonarqube.md)
     * [SonarQube v1.1.0](user-guide/plugins/sonarqube-v1.1.0.md)
+    * [Terraform CLI](user-guide/plugins/terraform-cli.md)
     * [Vulnerability Scanning](user-guide/plugins/vulnerability-scanning.md)
 
 
