@@ -13,9 +13,9 @@ Application Metrics are the indicators used to evaluate the performance and effi
 
 1. **Install Grafana Dashboard:** 
 
-    To use the Grafana dashboard, you need to first install the integration from the [Devtron Stack Manager](https://docs.devtron.ai/usage/integrations). 
+    To use the Grafana dashboard, you need to first install the integration from the [Devtron Stack Manager](../integrations/README.md). 
 
-    [Read Grafana Dashboard](https://docs.devtron.ai/devtron/v0.7/usage/integrations/grafana)
+    [Read Grafana Dashboard](../integrations/grafana.md)
 
 2. **Install Prometheus:**
    
@@ -58,7 +58,7 @@ Application Metrics are the indicators used to evaluate the performance and effi
     ![Figure 5: Clusters and Environments](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app5.jpg)
 
     Now to set up the Prometheus endpoint:
-    - Enable the See metrics for applications in this cluster option, as shown in the image below.
+    - Enable the `See metrics for applications in this cluster` option, as shown in the image below.
     - Paste the copied URL into the Prometheus endpoint field, ensuring it includes `http://`
     - Click Update Cluster to save the changes.
 
@@ -66,7 +66,7 @@ Application Metrics are the indicators used to evaluate the performance and effi
 
     After adding the endpoint, application metrics will be visible in the Devtron dashboard for all the Devtron apps in the cluster. This includes CPU usage and Memory usage.
 
-    ![Figure 7: CPU Usage & Memory Usage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app7.jpg)
+	![Figure 7: CPU Usage & Memory Usage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app7.jpg)
 
 5. **Enable Application Metrics:**
 
@@ -75,13 +75,13 @@ Application Metrics are the indicators used to evaluate the performance and effi
       - Go to **Configurations → Base Configurations → Deployment Template**.
       - Enable **Application Metrics** in the Deployment Template as shown below and save the changes.
 
-   {% hint style="warning" %}
-**Note:** Enable metrics option is only available for [Devtron charts](https://docs.devtron.ai/usage/deploy-chart) and not for [Custom Deployment Charts](https://docs.devtron.ai/devtron/v0.6/global-configurations/custom-charts).
+	![Figure 8: Enable Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app8.jpg)
+
+	Now, you can track all your application metrics by navigating to Applications and going to the App Details page of your Devtron App as shown below.
+
+	![Figure 9: Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-new3.jpg)
+
+{% hint style="warning" %}
+### Note 
+Enable metrics option is only available for [Devtron charts](../deploy-chart/README.md) and not for [Custom Deployment Charts](../global-configurations/deployment-charts.md).
 {% endhint %}
-
-
-      ![Figure 8: Enable Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app8.jpg)
-
-      Now, you can track all your application metrics by navigating to **Devtron Apps → Your App → App Details**, where you can view the Application Metrics as shown below.
-
-      ![Figure 9: Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-new3.jpg)
