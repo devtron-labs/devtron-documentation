@@ -149,10 +149,11 @@ Use the following command to configure AWS S3 bucket for storing build logs and 
 
 *  **Configure using S3 IAM policy:**
 
->NOTE: Pleasee ensure that S3 permission policy to the IAM role attached to the nodes of the cluster if you are using the below command.
+>NOTE: Please ensure that S3 permission policy to the IAM role attached to the nodes of the cluster if you are using the below command.
 
 ```bash
 helm repo update
+
 helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 --reuse-values \
 --set installer.modules={cicd} \
@@ -235,8 +236,105 @@ helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 ```
 
 {% endtab %}
+
+{% tab title="S3-compatible Storage" %}
+Use the following command to configure S3-compatible storage (e.g., Longhorn) for storing build logs and cache.
+
+```bash
+helm repo update
+
+helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
+--reuse-values \
+--set installer.modules={cicd} \
+--set configs.BLOB_STORAGE_PROVIDER=S3 \
+--set configs.DEFAULT_CACHE_BUCKET=demo-s3-bucket \
+--set configs.DEFAULT_CACHE_BUCKET_REGION=us-east-1 \
+--set configs.DEFAULT_BUILD_LOGS_BUCKET=demo-s3-bucket \
+--set configs.DEFAULT_CD_LOGS_BUCKET_REGION=us-east-1 \
+--set secrets.BLOB_STORAGE_S3_ACCESS_KEY=<access-key> \
+--set secrets.BLOB_STORAGE_S3_SECRET_KEY=<secret-key> \
+--set configs.BLOB_STORAGE_S3_ENDPOINT=<endpoint>
+```
+
+{% endtab %}
 {% endtabs %}
 
+---
+
+## Configuring NodeSelectors, Tolerations, and ImagePullSecrets
+
+### Adding Custom Configurations
+
+When installing Devtron, you can specify `nodeSelectors`, `tolerations`, and `imagePullSecrets` to fine-tune your deployment. These configurations can be added using either additional `--set` flags or a separate `values.yaml` file.
+
+### Global vs. Component-level Configurations
+
+* **Global Configurations**: When specified at the global level, these settings apply to all Devtron microservices, except for ArgoCD.
+* **Component-Level Configurations**: You can also apply these settings to specific components individually.
+* **Priority**: If a configuration is specified at both the global and component levels, the component-level setting takes precedence for that particular component.
+
+### Using `--set` Flags
+
+You can use the `--set` flag to specify individual values directly in the Helm command.
+
+
+1. **nodeSelector**
+
+To set a nodeSelector:
+
+```bash
+helm install devtron devtron/devtron-operator \
+    --create-namespace --namespace devtroncd \
+    --set global.nodeSelector."kubernetes\.io/hostname"=node1
+```
+
+This example sets the nodeSelector to schedule pods on a node with the hostname "node1".
+
+
+2. **Tolerations**
+
+To set tolerations:
+
+```bash
+helm install devtron devtron/devtron-operator \
+    --create-namespace --namespace devtroncd \
+    --set global.tolerations[0].key=example-key \
+    --set global.tolerations[0].operator=Exists \
+    --set global.tolerations[0].effect=NoSchedule
+```
+
+This example adds a tolerance for pods to be scheduled on nodes with the taint "example-key".
+
+
+3. **imagePullSecrets**  
+
+To set imagePullSecrets:
+
+> **Prerequisite**: Create Secrets in devtron-ci, devtron-cd, and devtroncd namespaces.  
+
+```bash
+helm install devtron devtron/devtron-operator \
+    --create-namespace --namespace devtroncd \
+    --set global.imagePullSecrets[0].name=my-registry-secret
+```
+
+### Using `values.yaml`
+
+In the values.yaml file of devtron chart, set the values of the following fields:
+
+```yaml
+global:
+  nodeSelector:
+    kubernetes.io/hostname: node1  # For nodeSelector
+  tolerations:
+    - key: example-key  # For tolerations
+      operator: Exists
+      effect: NoSchedule
+  imagePullSecrets:
+    - name: my-registry-secret  # For imagePullSecrets
+```
+
+---
 
 ## Secrets
 
