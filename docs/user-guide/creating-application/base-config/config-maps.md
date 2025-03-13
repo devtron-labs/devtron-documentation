@@ -149,7 +149,7 @@ You may delete a ConfigMap if not in use anymore. Once a ConfigMap is deleted, i
 
 Any changes made to the protected base configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../global-configurations/approval-policy.md) is enforced.
 
-{% embed url="https://www.youtube.com/watch?v=pJPX-rJNb_o" %}
+{% embed url="https://www.youtube.com/watch?v=gY9LKJSVS-g" %}
 
 
 
