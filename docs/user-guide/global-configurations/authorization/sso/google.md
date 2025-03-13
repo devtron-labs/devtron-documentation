@@ -8,18 +8,21 @@ Integrating Google as your Single Sign-On (SSO) provider enables users to authen
 
 To configure Google SSO in Devtron, you will need:
 
-* Super Admin permissions or Admin Credentials
+* Super Admin permissions
   * Only a [Super-Admin](https://docs.devtron.ai/global-configurations/authorization/user-access) can configure SSO. If you are setting up SSO for the first time, use [Admin Credentials](https://docs.devtron.ai/install/install-devtron#devtron-admin-credentials) instead.
 * A Google Cloud account to create and manage OAuth credentials. If you don’t have one, you must create it at the [Google Cloud Console](https://console.cloud.google.com/).
 
 ## Get the Redirect URI from Devtron
 
-Before configuring Google as an SSO provider, you need to retrieve the Redirect URI from Devtron, which will be required in Google Cloud while setting up OAuth credentials.
+Before configuring Google as an SSO provider, 
+* Ensure that the hostURL is correctly configured in Devtron. This is crucial because the Redirect URI is generated based on the hostURL.
+* You need to retrieve the Redirect URI from Devtron, which will be required in Google Cloud while setting up OAuth credentials.
 
-* Log in to Devtron.
-* Navigate to **Global Configurations** → **SSO Login Services**.
-* Select **Google** as the authentication provider.
-* Copy the Redirect URI displayed in this section. You will need to enter this in Google Cloud.
+  * Log in to Devtron.
+  * Navigate to **Global Configurations** → **SSO Login Services**.
+  * Select **Google** as the authentication provider.
+  * Enter the Host URL in the `URL` field. (This is essential to generate the correct Redirect URI.) 
+  * Copy the Redirect URI displayed in this section. You will need to enter this in Google Cloud.
 
 ![Figure 1: Get the Redirect URI](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect-uri-google-sso.jpg)
 
