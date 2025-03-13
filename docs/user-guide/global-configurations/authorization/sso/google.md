@@ -15,7 +15,7 @@ To configure Google SSO in Devtron, you will need:
 ## Get the Redirect URI from Devtron
 
 Before configuring Google as an SSO provider, 
-* Ensure that the hostURL is correctly configured in Devtron. This is crucial because the Redirect URI is generated based on the hostURL.
+* Ensure that the [Host URL](../../host-url.md) is correctly configured in Devtron. This is crucial because the Redirect URI is generated based on the Host URL.
 * You need to retrieve the Redirect URI from Devtron, which will be required in Google Cloud while setting up OAuth credentials.
 
   * Log in to Devtron.
