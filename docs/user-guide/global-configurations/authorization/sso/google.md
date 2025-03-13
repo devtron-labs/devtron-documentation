@@ -18,7 +18,7 @@ Before configuring Google as an SSO provider, you need to retrieve the Redirect 
 
 * Log in to Devtron.
 * Navigate to **Global Configurations** → **SSO Login Services**.
-* Select Google as the authentication provider.
+* Select **Google** as the authentication provider.
 * Copy the Redirect URI displayed in this section. You will need to enter this in Google Cloud.
 
 ![Figure 1: Get the Redirect URI](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect-uri-google-sso.jpg)
@@ -30,8 +30,8 @@ The next step is to configure OAuth credentials in Google Cloud Console. This in
 ### To set up OAuth, follow these steps:
 
 * Access [Google Cloud Console](https://console.cloud.google.com/) and create a new project or select an existing one.
-* Navigate to **APIs & Services → OAuth Consent Screen** and configure the required details as shown on the screen.
-* &#x20;In **APIs & Services → Credentials**, create a new OAuth Client ID:
+* Navigate to **APIs & Services** → **OAuth Consent Screen** and configure the required details as shown on the screen.
+* In **APIs & Services** → **Credentials**, create a new OAuth Client ID:
   * Select 'Web application' as the application type.
   * Paste the Redirect URI (copied from Devtron) under Authorized Redirect URIs.
 * Click **Create** to generate the Client ID and Client Secret.
@@ -56,7 +56,7 @@ Examples of invalid URIs:
 
 ![Figure 2a: Creating OAuth Client](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/creating-oauth-client-google-sso.jpg)
 
-You can see a new client ID is created in the **APIs & Services** → **Credentials**, under 'OAuth 2.0 Client IDs**' section. To obtain Client ID and Client Secret, click on the name (devtron-sso in our case) of the Client ID
+You can see a new client ID is created in the **APIs & Services** → **Credentials**, under **OAuth 2.0 Client IDs** section. To obtain Client ID and Client Secret, click on the name (devtron-sso in our case) of the **OAuth 2.0 Client IDs**
 
 ![Figure 2b: Client ID Created](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/client-id-created-google-sso.jpg)
 
@@ -77,13 +77,13 @@ The next step is to configure Devtron to use these credentials for authenticatio
 In the configuration,&#x20;
 
 * Enter the OAuth Credentials:
-  * Paste the Client ID obtained from Google Cloud.
-  * Paste the Client Secret obtained from Google Cloud.
+  * Paste the Client ID obtained from Google Cloud in the `clientID` field.
+  * Paste the Client Secret obtained from Google Cloud in the `clientSecret` field.
 * Configure Hosted Domains (Optional):
-  * If you want to restrict authentication to specific domains (e.g., only users from company.com can log in), add these under 'hostedDomains' in Devtron.
-  * If you want to allow all users with any valid Google account, remove the entire 'hostedDomains' section from the configuration.
+  * If you want to restrict authentication to specific domains (e.g., only users from company.com can log in), add these under `hostedDomains` in Devtron.
+  * If you want to allow all users with any valid Google account, remove the entire `hostedDomains` section from the configuration.
 * Enter the Redirect URI:
-  * Copy the Redirect URI displayed in Devtron and paste the value in the 'redirectURI' field&#x20;
+  * Copy the Redirect URI displayed in Devtron and paste the value in the `redirectURI` field.
 * Click **Update** to save the configuration, once saved, Google SSO is successfully configured
 
 {% hint style="warning" %}
@@ -107,7 +107,7 @@ To ensure users can log in:
 
 Once saved, Devtron will use Google OAuth for authentication, allowing users to log in using their Google accounts.
 
-For detailed steps on managing user permissions, refer to the [User Permissions Documentation](https://docs.devtron.ai/global-configurations/authorization/user-access).
+For detailed steps on managing user permissions, refer to the [User Permissions Documentation](../user-access.md).
 
 ## Reference
 
