@@ -106,7 +106,7 @@ If you wish to perform additional configurations, click the **Switch to Advanced
 
 ![Figure 8: Switch to Advanced (YAML Method)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/yaml-switch.jpg)
 
-{% hint style="warning" %}
+{% hint style="info" %}
 ### Note
 * If you change any values in the **GUI**, then the corresponding values will change in **YAML** too.
 * Users who are not super-admins will land on **GUI** section when they visit **Deployment Template** page; whereas super-admins will land on **YAML** section. This is just a default behavior, they can still navigate to the other section if needed.
@@ -128,6 +128,7 @@ This is useful in scenarios where:
 * You need the autonomy to keep the GUI unique for applications/clusters/environments/charts, or display the same GUI everywhere.
 
 {% hint style="info" %}
+### Note
 There are two ways you can customize the GUI, use any one of the following:
 1. From [Deployment Charts](../../global-configurations/deployment-charts.md#editing-gui-schema-of-deployment-charts) section
 2. Using APIs (explained below)
@@ -270,6 +271,7 @@ Your configurations will appear in the left pane, while the right pane will disp
 ## Edit a Protected Deployment Template [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 {% hint style="info" %}
+### Who Can Perform This Action?
 Only a super-admin, manager, and admin can edit the configuration values. 
 {% endhint %}
 
@@ -301,7 +303,7 @@ You cannot modify locked keys in deployment template unless you are a super-admi
 
     Since we are proposing the changes immediately, click **Propose Changes**.
 
-    ![Figure 16: Proposing Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/propose-changes-v2.jpg)
+    ![Figure 16: Proposing Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/propose-changes-v2.gif)
 
 4. You can also view the approval status if you wish.
 
@@ -320,6 +322,7 @@ Only one draft can exist at time and you cannot create multiple drafts. In the t
 ### Grant Approval for Changes
 
 {% hint style="info" %}
+### Who Can Perform This Action?
 Only a different super-admin user or someone (who is not amongst the editors of the draft), having `Configuration approver` access, can approve the changes made to the deployment configuration.
 {% endhint %}
 
