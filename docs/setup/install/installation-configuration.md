@@ -261,11 +261,11 @@ helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 
 ---
 
-## Configuring NodeSelectors, Tolerations, and ImagePullSecrets
+## Configuring NodeSelectors and Tolerations
 
 ### Adding Custom Configurations
 
-When installing Devtron, you can specify `nodeSelectors`, `tolerations`, and `imagePullSecrets` to fine-tune your deployment. These configurations can be added using either additional `--set` flags or a separate `values.yaml` file.
+When installing Devtron, you can specify `nodeSelectors` and `tolerations` to fine-tune your deployment. These configurations can be added using either additional `--set` flags or a separate `values.yaml` file.
 
 ### Global vs. Component-level Configurations
 
@@ -306,18 +306,6 @@ helm install devtron devtron/devtron-operator \
 This example adds a tolerance for pods to be scheduled on nodes with the taint "example-key".
 
 
-3. **imagePullSecrets**  
-
-To set imagePullSecrets:
-
-> **Prerequisite**: Create Secrets in devtron-ci, devtron-cd, and devtroncd namespaces.  
-
-```bash
-helm install devtron devtron/devtron-operator \
-    --create-namespace --namespace devtroncd \
-    --set global.imagePullSecrets[0].name=my-registry-secret
-```
-
 ### Using `values.yaml`
 
 In the values.yaml file of devtron chart, set the values of the following fields:
@@ -330,9 +318,41 @@ global:
     - key: example-key  # For tolerations
       operator: Exists
       effect: NoSchedule
-  imagePullSecrets:
-    - name: my-registry-secret  # For imagePullSecrets
 ```
+
+---
+
+## Set StorageClass for Devtron Microservices
+
+You can specify a StorageClass to be used by Devtron microservices' Persistent Volume Claims (PVCs) if a default StorageClass is not already configured in your cluster.
+
+### Checking for a Default StorageClass
+
+To check if your cluster has a default StorageClass, run:
+
+```bash
+kubectl get sc 
+```
+
+This command will list all available StorageClasses in your cluster, including the default storage class set (if any). The default StorageClass (if any) can be identified by the (default) label next to its name.
+
+### Setting a Default StorageClass
+
+If no StorageClass class is set as default, you can set one using the following command:
+
+```bash
+kubectl patch storageclass <storageclassname> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}
+```
+
+Or, if you do not want to change the default StorageClass or prefer to use a different StorageClass for Devtron microservices, specify it during installation using the `--set` flag:
+
+```bash
+helm install devtron devtron/devtron-operator \
+    --create-namespace --namespace devtroncd \
+    --set global.storageClass="<storageclassname>" # set your preferred StorageClass
+```
+
+Alternatively, you can specify the StorageClass in the values.yaml file by modifying the [following line in values.yaml](https://github.com/devtron-labs/devtron/blob/main/charts/devtron/values.yaml#L23).
 
 ---
 
