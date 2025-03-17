@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Here you can manage who can access your Devtron instance and what actions they can perform. Use this section to add team members, assign them roles, and control their access by granting role-based permissions.
+Here you can manage who can access your Devtron instance and what actions they can perform. Use this section to add team members, assign them roles, and control their access by granting fine grained permissions.
 
 ![Figure 1: User Permissions - Example](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/user-sample.jpg)
 
@@ -10,10 +10,14 @@ Here you can manage who can access your Devtron instance and what actions they c
 
 ## Add Users
 
+{% hint style="danger" %}
+### Mandatory Action
+This is a mandatory step after configuring SSO in Devtron; otherwise, your users won't be able to log in to Devtron via SSO. 
+{% endhint %}
+
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-* Managers and super-admins can add users.
-* This is a mandatory step after configuring SSO in Devtron; otherwise, your users won't be able to log in to Devtron via SSO. 
+Only managers and super-admins can add users.
 {% endhint %}
 
 1. Go to **Global Configurations** → **Authorization** → **User Permissions**.
@@ -79,9 +83,9 @@ Upon selecting this option, you get two additional sections:
 
 {% hint style="info" %}
 ### What happens when a user has direct permissions as well as permissions inherited from a group?
-If you assign both a permission group and direct permissions to the user, the direct permissions will either add to or override the group permissions in case of conflicts.
+If you assign a permission group as well as direct permissions to a user, the effective permissions will be a combination of both. 
 
-Let's say a user is part of the Developers group, and the group has **View Only** access to an application. If you assign **Build and Deploy** access (for that application) to the same user directly, they will be able to deploy the application despite the group's restriction. In this case, the direct permission overrides the group permission.
+**For example**: If a user has 'Build & Deploy' access to three apps through direct permissions and 'View Only' access to five apps (including those three) via a permission group, they will retain 'Build & Deploy' access for those three apps and 'View Only' access for the remaining two.
 {% endhint %}
 
 ### Devtron Apps permissions
@@ -91,7 +95,7 @@ Let's say a user is part of the Developers group, and the group has **View Only*
 The 'Devtron Apps' tab will be available only if the [CI/CD module](../../integrations/build-and-deploy-ci-cd.md) is installed.
 {% endhint %}
 
-Here you can grant your user the permissions for custom apps created using Devtron.
+Here you can grant your user the permissions for Devtron apps.
 
 ![Figure 8: Granting Devtron Apps Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/devtron-apps-perm.jpg)
 
@@ -112,7 +116,7 @@ There are seven role-based access levels:
 3. **Admin**: These users can create, edit, deploy, and delete permitted applications in selected projects.
 4. **Manager**: These users have the same permissions as `Admin` but can also grant or revoke user access for applications and environments they manage.
 5. **Image approver**: These users can approve image deployment requests.
-6. **Configuration approver**: These users can approve configuration change requests for Deployment Templates, ConfigMaps, and Secrets. However, users cannot self-approve their own proposed changes, even if they have this role or Super Admin access.
+6. **Configuration approver**: These users can approve configuration change requests for [Deployment Templates](), ConfigMaps, and Secrets. However, users cannot self-approve their own proposed changes, even if they have this role or Super Admin access.
 7. **Artifact promoter**: These users have the authority to approve the promotion of [artifacts](../../reference/glossary.md#artifacts) directly to the target CD pipeline.
 
 However, super-admin users have unrestricted access to all Devtron resources. They can create, modify, delete, and manage any resource, including user access, Git repositories, container registries, clusters, and environments.
