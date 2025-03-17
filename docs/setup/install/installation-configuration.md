@@ -245,7 +245,6 @@ helm repo update
 
 helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 --reuse-values \
---set installer.modules={cicd} \
 --set configs.BLOB_STORAGE_PROVIDER=S3 \
 --set configs.DEFAULT_CACHE_BUCKET=demo-s3-bucket \
 --set configs.DEFAULT_CACHE_BUCKET_REGION=us-east-1 \
@@ -300,7 +299,8 @@ helm install devtron devtron/devtron-operator \
     --create-namespace --namespace devtroncd \
     --set global.tolerations[0].key=example-key \
     --set global.tolerations[0].operator=Exists \
-    --set global.tolerations[0].effect=NoSchedule
+    --set global.tolerations[0].effect=NoSchedule \
+    --set global.tolerations[0].value=value1
 ```
 
 This example adds a tolerance for pods to be scheduled on nodes with the taint "example-key".
@@ -317,6 +317,7 @@ global:
   tolerations:
     - key: example-key  # For tolerations
       operator: Exists
+      value: "value1"
       effect: NoSchedule
 ```
 
