@@ -210,7 +210,7 @@ Use the below command to install Devtron without any Integrations
 
 1. Without `imagePullSecrets`:
     ```bash
-    helm install devtron <chart_name> -n devtroncd --set global.containerRegistry="$TARGET_REGISTRY" 
+    helm install devtron <chart_name> -n devtroncd --set global.containerRegistry="$TARGET_REGISTRY" --set-string components.devtron.customOverrides.IS_AIR_GAP_ENVIRONMENT=true
     ```
 
 2. With `imagePullSecrets`:
