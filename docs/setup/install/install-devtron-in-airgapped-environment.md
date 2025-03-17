@@ -7,11 +7,10 @@ In certain scenarios, you may need to deploy Devtron to a Kubernetes cluster tha
 ### Prerequisites
 
 1. Install `podman` or `docker` on the VM from where you're executing the installation commands.
-2. Clone the Devtron Helm chart:
+2. Get the latest image file
 
     ```bash
-    git clone https://github.com/devtron-labs/devtron.git
-    cd devtron
+    curl -LO https://raw.githubusercontent.com/devtron-labs/devtron/refs/heads/main/devtron-images.txt.source
     ```
 
 3. Set the values of `TARGET_REGISTRY`, `TARGET_REGISTRY_USERNAME`, and `TARGET_REGISTRY_TOKEN`. This registry should be accessible from the VM where you are running the cloning script and the K8s cluster where you’re installing Devtron.
@@ -173,7 +172,7 @@ Before starting, ensure you have created an image pull secret for your registry 
       --docker-username=$TARGET_REGISTRY_USERNAME \
       --docker-password=$TARGET_REGISTRY_TOKEN
     ```
-    If you are installing Devtron with the CI/CD module or using Argo CD, create the secret in the following namespaces else, you can skip this step-:  
+    If you are installing Devtron with the CI/CD module or using Argo CD, create the secret in the following namespaces else, you can skip this step-:
     ```bash
     kubectl create secret docker-registry devtron-imagepull \
       --namespace devtron-cd \
@@ -190,11 +189,6 @@ Before starting, ensure you have created an image pull secret for your registry 
       --docker-server=$TARGET_REGISTRY \
       --docker-username=$TARGET_REGISTRY_USERNAME \
       --docker-password=$TARGET_REGISTRY_TOKEN
-    ```
-
-3. Navigate to the Devtron Helm chart directory
-    ```bash
-    cd charts/devtron
     ```
 
 ### Get the latest Devtron Helm Chart
