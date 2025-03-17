@@ -202,7 +202,7 @@ Before starting, ensure you have created an image pull secret for your registry 
 ``` bash
 helm pull devtron-operator --repo http://helm.devtron.ai
 ```
-This would download the tar file of the devtron-operator chart, Make sure to replace the <chart_name> in the installation commands with this file name.
+This would download the tar file of the devtron-operator chart, Make sure to replace the `<chart_name>` in the installation commands with this file name.
 
 ### Install Devtron without any Integration
 
