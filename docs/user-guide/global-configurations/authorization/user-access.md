@@ -78,14 +78,18 @@ Upon selecting this option, you get two additional sections:
 
 | **Section**             | **Description**              |
 |-----------------------|------------------------------|
-| **Permission Groups** | (Optional, [check snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/assign-permission-groups.gif)) Use the dropdown to assign the user to a [permission group](./permission-groups.md). Your user will automatically inherit all the permissions to the projects/resources defined for that group. You may select more than one permission group too. Once you select a permission group, assigning direct permissions can be skipped (unless you wish to grant additional permissions). You may also [make users active/inactive](#at-permission-group-level) at permission group-level. |
+| **Permission Groups** <br /> | (*Recommended*, [check snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/assign-permission-groups.gif)) Use the dropdown to assign the user to a [permission group](./permission-groups.md). Your user will automatically inherit all the permissions to the projects/resources defined for that group. You may select more than one permission group too. Once you select a permission group, assigning direct permissions can be skipped (unless you wish to grant additional permissions). You may also [make users active/inactive](#at-permission-group-level) at permission group-level. We recommend using permission group over direct permissions for easier management of user access. |
 | **Direct Permissions**| This option allows you to grant your user the access to:<ul><li>[Devtron Apps](#devtron-apps-permissions)</li><li>[Helm Apps](#helm-apps-permissions)</li><li>[Jobs](#jobs-permissions)</li><li>[Kubernetes Resources](#kubernetes-resources-permissions)</li><li>[Chart Groups](#chart-groups-permissions)</li></ul>|
 
 {% hint style="info" %}
 ### What happens when a user has direct permissions as well as permissions inherited from a group?
-If you assign a permission group as well as direct permissions to a user, the effective permissions will be a combination of both. 
+If you assign a permission group as well as direct permissions, the user will have the combined permissions of both.
 
-**For example**: If a user has 'Build & Deploy' access to three apps through direct permissions and 'View Only' access to five apps (including those three) via a permission group, they will retain 'Build & Deploy' access for those three apps and 'View Only' access for the remaining two.
+**For example**: 
+
+* A user is granted ‘Build & Deploy’ access to three apps via direct permissions.
+* The same user is part of a group that has ‘View Only’ access to five apps (including those three apps).
+* The user will have both ‘Build & Deploy’ and ‘View Only’ permissions for those three apps, and just ‘View Only’ for the other two.
 {% endhint %}
 
 ### Devtron Apps permissions
@@ -111,26 +115,26 @@ Here you can grant your user the permissions for Devtron apps.
 
 There are seven role-based access levels:
 
-1. **View only**: These users can view applications, environments, and Helm charts they have access to but cannot view sensitive data like secrets used in applications or charts.
-2. **Build and Deploy**: In addition to `View only` access, these users can build and deploy images of assigned applications and Helm charts to permitted environments.
+1. **View only**: These users can view applications and environments access to but cannot view sensitive data like secrets used in applications or charts.
+2. **Build and Deploy**: In addition to `View only` access, these users can build and deploy images of applications to permitted environments.
 3. **Admin**: These users can create, edit, deploy, and delete permitted applications in selected projects.
 4. **Manager**: These users have the same permissions as `Admin` but can also grant or revoke user access for applications and environments they manage.
 5. **Image approver**: These users can approve image deployment requests.
-6. **Configuration approver**: These users can approve configuration change requests for [Deployment Templates](), ConfigMaps, and Secrets. However, users cannot self-approve their own proposed changes, even if they have this role or Super Admin access.
+6. **Configuration approver**: These users can approve configuration change requests for [Deployment Templates](../../creating-application/base-config/deployment-template.md), [ConfigMaps](../../creating-application/base-config/config-maps.md), and [Secrets](../../creating-application/base-config/secrets.md). However, users cannot self-approve their own proposed changes, even if they have this role or Super Admin access.
 7. **Artifact promoter**: These users have the authority to approve the promotion of [artifacts](../../reference/glossary.md#artifacts) directly to the target CD pipeline.
 
 However, super-admin users have unrestricted access to all Devtron resources. They can create, modify, delete, and manage any resource, including user access, Git repositories, container registries, clusters, and environments.
 
 | Role                  | View | Create | Edit | Delete | Build & Deploy | Approve Images | Approve Config Change | Approve Artifacts | Manage User Access |
 |-----------------------|:----:|:------:|:----:|:------:|:--------------:|:--------------:|:--------------:|:----------------:|:----------------:|
-| **View**                 | Yes  | No     | No   | No     | No             | No             | No             | No               | No               |
-| **Build and Deploy**     | Yes  | No     | No   | No     | Yes            | No             | No             | No               | No               |
-| **Admin**                | Yes  | Yes    | Yes  | Yes    | Yes            | No             | No             | No               | No               |
-| **Manager**              | Yes  | Yes    | Yes  | Yes    | Yes            | No             | No             | No               | Yes              |
-| **Image Approver**       | Yes  | No     | No   | No     | No             | Yes            | No             | No               | No               |
-| **Configuration Approver** | Yes | No    | No   | No     | No             | No             | Yes            | No               | No               |
-| **Artifact Promoter**    | Yes  | No     | No   | No     | No             | No             | No             | Yes              | No               |
-| **Super Admin**          | Yes  | Yes    | Yes  | Yes    | Yes            | Yes            | Yes            | Yes              | Yes              |
+| **View**                 | ✅  | ❌     | ❌   | ❌     | ❌             | ❌             | ❌             | ❌               | ❌               |
+| **Build and Deploy**     | ✅  | ❌     | ❌   | ❌     | ✅            | ❌             | ❌             | ❌               | ❌               |
+| **Admin**                | ✅  | ✅    | ✅  | ✅    | ✅            | ❌             | ❌             | ❌               | ❌               |
+| **Manager**              | ✅  | ✅    | ✅  | ✅    | ✅            | ❌             | ❌             | ❌               | ✅              |
+| **Image Approver**       | ✅  | ❌     | ❌   | ❌     | ❌             | ✅            | ❌             | ❌               | ❌               |
+| **Configuration Approver** | ✅ | ❌    | ❌   | ❌     | ❌             | ❌             | ✅            | ❌               | ❌               |
+| **Artifact Promoter**    | ✅  | ❌     | ❌   | ❌     | ❌             | ❌             | ❌             | ✅              | ❌               |
+| **Super Admin**          | ✅  | ✅    | ✅  | ✅    | ✅            | ✅            | ✅            | ✅              | ✅              |
 
 
 ### Helm Apps permissions
@@ -152,15 +156,15 @@ Here you can grant your user the permissions for Helm apps deployed from Devtron
 There are three role-based access levels:
 
 1. **View only**: Users with this role can only view Helm applications and their configurations but cannot make any modifications.
-2. **View & Edit**: These users can make changes to Helm applications, such as modifying configurations.
-3. **Admin**: Users with this role have full access to Helm applications, including the ability to manage and delete applications.
+2. **View & Edit**: These users can modify the configurations of permitted Helm applications and deploy them.
+3. **Admin**: Users with this role have full access to Helm applications, including the ability to create, manage, and delete applications.
 
-| Role                 | View        | Create         | Deploy         | Edit        | Delete        |
-| :---:                |  :---:      |    :---:       |    :---:       |   :---:     |   :---:       |
-| **View only**        | Yes         | No             | No             | No          | No            |
-| **View & Edit**      | Yes         | No             | No             | Yes         | No            |
-| **Admin**            | Yes         | Yes            | Yes            | Yes         | Yes           |
-| **Super Admin**      | Yes         | Yes            | Yes            | Yes         | Yes           |
+| Role              | View    | Create   | Deploy    | Edit      | Delete    |
+| :---:             |  :---:  |    :---: |    :---:  |   :---:   |   :---:   |
+| **View only**     | ✅      | ❌        | ❌        | ❌        | ❌         |
+| **View & Edit**   | ✅      | ❌        | ✅        | ✅        | ❌         |
+| **Admin**         | ✅      | ✅        | ✅        | ✅        | ✅         |
+| **Super Admin**   | ✅      | ✅        | ✅        | ✅        | ✅         |
 
 ### Jobs permissions
 
@@ -186,12 +190,12 @@ There are three role-based access levels:
 2. **Run Job**: These users can trigger jobs but cannot make modifications to workflows.
 3. **Admin**: Users with this role have full control over jobs, including creating, modifying, and deleting workflows.
 
-| Role                 | View        | Create         | Run            | Edit        | Delete        |
-| :---:                |  :---:      |    :---:       |    :---:       |   :---:     |   :---:       |
-| **View only**        | Yes         | No             | No             | No          | No            |
-| **Run job**          | Yes         | No             | Yes            | No          | No            |
-| **Admin**            | Yes         | Yes            | Yes            | Yes         | Yes           |
-| **Super Admin**      | Yes         | Yes            | Yes            | Yes         | Yes           |
+| Role              | View    | Create   | Run       | Edit      | Delete    |
+| :---:             |  :---:  |    :---: |    :---:  |   :---:   |   :---:   |
+| **View only**     | ✅       | ❌       | ❌        | ❌        | ❌         |
+| **Run job**       | ✅       | ❌       | ✅        | ❌        | ❌         |
+| **Admin**         | ✅       | ✅       | ✅        | ✅        | ✅         |
+| **Super Admin**   | ✅       | ✅       | ✅        | ✅        | ✅         |
 
 
 ### Kubernetes Resources permissions
@@ -227,12 +231,12 @@ There are two role-based access levels:
 1. **View**: Users with this role can inspect Kubernetes resources but cannot make changes.
 2. **Admin**: Users can create, modify, and delete Kubernetes resources within their assigned namespaces and clusters.
 
-| Role                 | View        | Create         | Edit        | Delete        |
-| :---:                |  :---:      | :---:          |   :---:     |   :---:       |
-| **View**             | Yes         | No             | No          | No            |
-| **Admin**            | Yes         | Yes            | Yes         | Yes           |
-| **Super Admin**      | Yes         | Yes            | Yes         | Yes           |
-
+| Role             | View    | Create  | Edit    | Delete   |
+| :---:            |  :---:  | :---:   |   :---: |   :---:  |
+| **View**         | ✅      | ❌       | ❌      | ❌       |
+| **Admin**        | ✅      | ✅       | ✅      | ✅       |
+| **Super Admin**  | ✅      | ✅       | ✅      | ✅       |
+   
 ### Chart Groups permissions
 
 {% hint style="warning" %}
@@ -256,12 +260,12 @@ Here you can grant your user the permissions for accessing Chart Groups. Note th
 2. **Create**: Users can create new chart groups and modify existing ones.
 3. **Edit**: Users can modify chart groups but cannot create new ones.
 
-| Role                 | View        | Create         | Deploy         | Edit                    | Delete        |
-| :---:                |  :---:      | :---:          |    :---:       |   :---:                 |   :---:       |
-| **View**             | Yes         | No             | No             | No                      | No            |
-| **Create**           | Yes         | Yes            | No             | Yes                     | Yes           |
-| **Edit**             | Yes         | No             | No             | None/Specific Groups    | No           |
-| **Super Admin**      | Yes         | Yes            | Yes            | Yes                     | Yes           |
+| Role            | View    | Create | Deploy    | Edit                 | Delete   |
+| :---:           |  :---:  | :---:  |    :---:  |   :---:              |   :---:  |
+| **View**        | ✅      | ❌      | ❌        | ❌                   | ❌        |
+| **Create**      | ✅      | ✅      | ❌        | ✅                   | ✅        |
+| **Edit**        | ✅      | ❌      | ❌        | None/Specific Groups | ❌        |
+| **Super Admin** | ✅      | ✅      | ✅        | ✅                   | ✅        |
 
 ---
 
