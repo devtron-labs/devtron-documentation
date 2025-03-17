@@ -149,10 +149,11 @@ Use the following command to configure AWS S3 bucket for storing build logs and 
 
 *  **Configure using S3 IAM policy:**
 
->NOTE: Pleasee ensure that S3 permission policy to the IAM role attached to the nodes of the cluster if you are using the below command.
+>NOTE: Please ensure that S3 permission policy to the IAM role attached to the nodes of the cluster if you are using the below command.
 
 ```bash
 helm repo update
+
 helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 --reuse-values \
 --set installer.modules={cicd} \
@@ -235,8 +236,126 @@ helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 ```
 
 {% endtab %}
+
+{% tab title="S3-compatible Storage" %}
+Use the following command to configure S3-compatible storage (e.g., Longhorn) for storing build logs and cache.
+
+```bash
+helm repo update
+
+helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
+--reuse-values \
+--set configs.BLOB_STORAGE_PROVIDER=S3 \
+--set configs.DEFAULT_CACHE_BUCKET=demo-s3-bucket \
+--set configs.DEFAULT_CACHE_BUCKET_REGION=us-east-1 \
+--set configs.DEFAULT_BUILD_LOGS_BUCKET=demo-s3-bucket \
+--set configs.DEFAULT_CD_LOGS_BUCKET_REGION=us-east-1 \
+--set secrets.BLOB_STORAGE_S3_ACCESS_KEY=<access-key> \
+--set secrets.BLOB_STORAGE_S3_SECRET_KEY=<secret-key> \
+--set configs.BLOB_STORAGE_S3_ENDPOINT=<endpoint>
+```
+
+{% endtab %}
 {% endtabs %}
 
+---
+
+## Configuring NodeSelectors and Tolerations
+
+### Adding Custom Configurations
+
+When installing Devtron, you can specify `nodeSelectors` and `tolerations` to fine-tune your deployment. These configurations can be added using either additional `--set` flags or a separate `values.yaml` file.
+
+### Global vs. Component-level Configurations
+
+* **Global Configurations**: When specified at the global level, these settings apply to all Devtron microservices, except for ArgoCD.
+* **Component-Level Configurations**: You can also apply these settings to specific components individually.
+* **Priority**: If a configuration is specified at both the global and component levels, the component-level setting takes precedence for that particular component.
+
+### Using `--set` Flags
+
+You can use the `--set` flag to specify individual values directly in the Helm command.
+
+
+1. **nodeSelector**
+
+To set a nodeSelector:
+
+```bash
+helm install devtron devtron/devtron-operator \
+    --create-namespace --namespace devtroncd \
+    --set global.nodeSelector."kubernetes\.io/hostname"=node1
+```
+
+This example sets the nodeSelector to schedule pods on a node with the hostname "node1".
+
+
+2. **Tolerations**
+
+To set tolerations:
+
+```bash
+helm install devtron devtron/devtron-operator \
+    --create-namespace --namespace devtroncd \
+    --set global.tolerations[0].key=example-key \
+    --set global.tolerations[0].operator=Exists \
+    --set global.tolerations[0].effect=NoSchedule \
+    --set global.tolerations[0].value=value1
+```
+
+This example adds a tolerance for pods to be scheduled on nodes with the taint "example-key".
+
+
+### Using `values.yaml`
+
+In the values.yaml file of devtron chart, set the values of the following fields:
+
+```yaml
+global:
+  nodeSelector:
+    kubernetes.io/hostname: node1  # For nodeSelector
+  tolerations:
+    - key: example-key  # For tolerations
+      operator: Exists
+      value: "value1"
+      effect: NoSchedule
+```
+
+---
+
+## Set StorageClass for Devtron Microservices
+
+You can specify a StorageClass to be used by Devtron microservices' Persistent Volume Claims (PVCs) if a default StorageClass is not already configured in your cluster.
+
+### Checking for a Default StorageClass
+
+To check if your cluster has a default StorageClass, run:
+
+```bash
+kubectl get sc 
+```
+
+This command will list all available StorageClasses in your cluster, including the default storage class set (if any). The default StorageClass (if any) can be identified by the (default) label next to its name.
+
+### Setting a Default StorageClass
+
+If no StorageClass class is set as default, you can set one using the following command:
+
+```bash
+kubectl patch storageclass <storageclassname> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}
+```
+
+Or, if you do not want to change the default StorageClass or prefer to use a different StorageClass for Devtron microservices, specify it during installation using the `--set` flag:
+
+```bash
+helm install devtron devtron/devtron-operator \
+    --create-namespace --namespace devtroncd \
+    --set global.storageClass="<storageclassname>" # set your preferred StorageClass
+```
+
+Alternatively, you can specify the StorageClass in the values.yaml file by modifying the [following line in values.yaml](https://github.com/devtron-labs/devtron/blob/main/charts/devtron/values.yaml#L23).
+
+---
 
 ## Secrets
 
