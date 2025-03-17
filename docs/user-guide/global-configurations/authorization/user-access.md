@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Here you can manage who can access your Devtron instance and what actions they can perform. Use this section to add team members, assign them roles, and control their access by granting fine grained permissions.
+Here you can manage who can access your Devtron instance and what actions they can perform. Use this section to add team members, assign them roles, and control their access by granting fine-grained permissions. Moreover, you can also download all user data in a CSV format.
 
 ![Figure 1: User Permissions - Example](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/user-sample.jpg)
 
@@ -78,7 +78,7 @@ Upon selecting this option, you get two additional sections:
 
 | **Section**             | **Description**              |
 |-----------------------|------------------------------|
-| **Permission Groups** <br /> | (*Recommended*, [check snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/assign-permission-groups.gif)) Use the dropdown to assign the user to a [permission group](./permission-groups.md). Your user will automatically inherit all the permissions to the projects/resources defined for that group. You may select more than one permission group too. Once you select a permission group, assigning direct permissions can be skipped (unless you wish to grant additional permissions). You may also [make users active/inactive](#at-permission-group-level) at permission group-level. We recommend using permission group over direct permissions for easier management of user access. |
+| **Permission Groups** <br /> | (*Recommended*, [see snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/assign-permission-groups.gif)) Use the dropdown to assign the user to a [permission group](./permission-groups.md). Your user will automatically inherit all the permissions to the projects/resources defined for that group. You may select more than one permission group too. Once you select a permission group, assigning direct permissions can be skipped (unless you wish to grant additional permissions). You may also [Making Users Active/Inactive](#at-permission-group-level) at permission group-level. We recommend using permission groups over direct permissions for easier management of user access. |
 | **Direct Permissions**| This option allows you to grant your user the access to:<ul><li>[Devtron Apps](#devtron-apps-permissions)</li><li>[Helm Apps](#helm-apps-permissions)</li><li>[Jobs](#jobs-permissions)</li><li>[Kubernetes Resources](#kubernetes-resources-permissions)</li><li>[Chart Groups](#chart-groups-permissions)</li></ul>|
 
 {% hint style="info" %}
@@ -88,8 +88,8 @@ If you assign a permission group as well as direct permissions, the user will ha
 **For example**: 
 
 * A user is granted ‘Build & Deploy’ access to three apps via direct permissions.
-* The same user is part of a group that has ‘View Only’ access to five apps (including those three apps).
-* The user will have both ‘Build & Deploy’ and ‘View Only’ permissions for those three apps, and just ‘View Only’ for the other two.
+* The same user is part of a group that has ‘View only’ access to five apps (including those three apps).
+* The user will have both ‘Build & Deploy’ and ‘View only’ permissions for those three apps, and just ‘View only’ for the other two.
 {% endhint %}
 
 ### Devtron Apps permissions
@@ -107,13 +107,13 @@ Here you can grant your user the permissions for Devtron apps.
 | --- | --- |
 | **Project** | Select a project from the dropdown list to grant the user access. You can select only one project at a time.<br>Note: If you want to select more than one project, then click **Add Permission**.</br> |
 | **Environment** | Select a specific environment or all environments from the dropdown list.<br>**Note**: If you select `All environments`, the user will have access to all the current environments including any new environment which gets associated with the application later.</br> |
-| **Application**  | Select a specific applications or all applications from the dropdown list corresponding to your selected environments.<br>**Note**: If you select `All applications`, the user will have access to all current and future applications associated with the project. Moreover, user with access permission of all applications, can create new applications too. </br>  |
+| **Application**  | Select a specific application or all applications from the dropdown list corresponding to your selected environments.<br>**Note**: If you select `All applications`, the user will have access to all current and future applications associated with the project. Moreover, user with access to all applications, can create new applications too. </br>  |
 | **Role**  | Available Roles:<ul><li>`View only`</li> <li>`Build and Deploy`</li><li>`Admin`</li><li>`Manager`</li></ul>[Click here](#roles-available-for-devtron-apps) to learn more about the role you wish to assign the user.  |
-| **Status**  | Read [Make Users Active/Inactive](#at-direct-permissions-level) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)   |
+| **Status**  | Read: [Making Users Active/Inactive](#at-direct-permissions-level) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)   |
 
 #### Roles available for Devtron Apps
 
-There are seven role-based access levels:
+There are seven role-based access levels for Devtron Apps:
 
 1. **View only**: These users can view applications and environments access to but cannot view sensitive data like secrets used in applications or charts.
 2. **Build and Deploy**: In addition to `View only` access, these users can build and deploy images of applications to permitted environments.
@@ -145,15 +145,15 @@ Here you can grant your user the permissions for Helm apps deployed from Devtron
 
 | Field | Description |
 | --- | --- |
-| **Project** | Select a project from the dropdown list to grant the user access. You can select only one project at a time.<br>Note: If you want to select more than one project, then click **Add Permission**.</br> |
-| **Environment or Cluster/Namespace** | Select a specific environment from the dropdown list.<br>**Note**: If you select `All existing + future environments in cluster`, then the user will get access to all the current environments including any new environment which gets associated with the application later.</br> |
-| **Application**  | Select a specific helm application or all helm apps from the dropdown list corresponding to your selected environments.<br>**Note**: If `All applications` is selected, then the user will get access to all the current applications including any new application which gets associated with the project later.</br>  |
+| **Project** | Select a project from the dropdown list to grant the user access. You can select only one project at a time.<br />Note: If you want to select more than one project, then click **Add Permission**. |
+| **Environment or Cluster/Namespace** | Select a specific environment from the dropdown list.<br />**Note**: If you select `All existing + future environments in cluster`, then the user will get access to all the current environments including any new environment which gets associated with the application later. |
+| **Application**  | Select a specific helm application or all helm apps from the dropdown list corresponding to your selected environments.<br />**Note**: If `All applications` is selected, the user will have access to all current and future applications associated with the project.  |
 | **Permission**  | Available Permissions:<ul><li>`View only`</li> <li>`View & Edit`</li></ul><ul><li>`Admin`</li></ul> [Click here](#roles-available-for-helm-apps) to learn more about the permission you wish to assign the user.  |
-| **Status**  | Read [Make Users Active/Inactive](#at-direct-permissions-level) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)   |
+| **Status**  | Read: [Making Users Active/Inactive](#at-direct-permissions-level) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)   |
 
 #### Roles available for Helm Apps
 
-There are three role-based access levels:
+There are three role-based access levels for Helm Apps:
 
 1. **View only**: Users with this role can only view Helm applications and their configurations but cannot make any modifications.
 2. **View & Edit**: These users can modify the configurations of permitted Helm applications and deploy them.
@@ -179,12 +179,12 @@ Here you can grant your user the permissions to access the jobs created in Devtr
 | **Workflow** | Select a specific workflow or `All workflows` to grant access to the workflows containing the job pipelines.  |
 | **Environment** | Select a specific environment or `All environments` to grant access to the environments associated with the job(s). |
 | **Role** | Available Roles:<ul><li>`View only`</li> <li>`Run job`</li><li>`Admin`</li></ul>[Click here](#roles-available-for-jobs) to learn more about the role you wish to assign the user.|
-| **Status** | Read [Make Users Active/Inactive](#at-direct-permissions-level) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) |
+| **Status** | Read: [Making Users Active/Inactive](#at-direct-permissions-level) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) |
 
 
 #### Roles available for Jobs
 
-There are three role-based access levels:
+There are three role-based access levels for Jobs:
 
 1. **View only**: Users can view the job workflows and logs but cannot trigger or modify jobs.
 2. **Run Job**: These users can trigger jobs but cannot make modifications to workflows.
@@ -216,17 +216,17 @@ To grant Kubernetes resource permission, click **Add permission**.
 
 | Field | Description |
 | --- | --- |
-| **Cluster** | Select a cluster from the dropdown list to which you want to give permission to the user. You can select only one cluster at a time.<br>**Note**: To add another cluster, then click **Add another**.</br> |
+| **Cluster** | Select a cluster from the dropdown list to which you want to give permission to the user. You can select only one cluster at a time.<br>**Note**: To add another cluster, click **Add another**.</br> |
 | **Namespace** | Select a namespace from the dropdown list. |
 | **API Group**  | Select a specific API group or `All API groups` from the dropdown list corresponding to the Kubernetes resource.  |
 | **Kind**  | Select a kind or `All kind` from the dropdown list corresponding to the Kubernetes resource.  |
 | **Resource name**  | Select a resource name or `All resources` from the dropdown list to which you want to give permission to the user. |
 | **Role**  | Available Roles:<ul><li>`View`</li> <li>`Admin`</li></ul>[Click here](#roles-available-for-kubernetes-resources) to learn more about the role you wish to assign the user. |
-| **Status**  | Read [Make Users Active/Inactive](#at-direct-permissions-level) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) |
+| **Status**  | Read: [Making Users Active/Inactive](#at-direct-permissions-level) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) |
 
 #### Roles available for Kubernetes Resources
 
-There are two role-based access levels:
+There are two role-based access levels for Kubernetes Resources:
 
 1. **View**: Users with this role can inspect Kubernetes resources but cannot make changes.
 2. **Admin**: Users can create, modify, and delete Kubernetes resources within their assigned namespaces and clusters.
@@ -252,7 +252,7 @@ Here you can grant your user the permissions for accessing Chart Groups. Note th
 | :---   | :---         |
 | **View**  | Click the `View` checkbox if you want the user(s) to view only the chart groups. |
 | **Create** | Click the `Create` checkbox if you want the user(s) to create, view, or delete the chart groups. |
-| **Edit** | <ul><li>**Deny**: Select the `Deny` option from the dropdown list to restrict the users from editing the chart groups.</li><li>**Specific Chart Groups**: Select the `Specific Charts Groups` option from the dropdown list and then select the chart group for which you want to allow users to edit.</li></ul> |
+| **Edit** | <ul><li>**Deny**: Select `Deny` from the dropdown list to restrict the users from editing the chart groups.</li><li>**Specific Chart Groups**: Select the `Specific Charts Groups` option from the dropdown list and then select the chart group for which you want to allow users to edit.</li></ul> |
 
 #### Roles available for Chart Groups
 
@@ -269,7 +269,7 @@ Here you can grant your user the permissions for accessing Chart Groups. Note th
 
 ---
 
-## Make Users Active/Inactive [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Making Users Active/Inactive [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
@@ -293,7 +293,7 @@ You can manage a user's active status at three levels:
 
 * **Active/Activate** - Use this option to activate a deactivated user while retaining their previous roles and permissions.
 * **Inactive/Inactivate** - Use this option to deactivate an existing active user and save the changes. If the user has an ongoing session, they will be logged out permanently on their next action or refresh.
-* **Keep active until** - Use this TTl-based option to keep a user active only till a specified date and time, after which the user is automatically deactivated. The user will not be able to log in to Devtron.
+* **Keep active until** - Use this TTL-based option to keep a user active only till a specified date and time, after which the user is automatically deactivated. The user will not be able to log in to Devtron.
 
 ### At Permission Group level
 
@@ -329,6 +329,21 @@ Direct user permissions cannot be edited if you're using [LDAP](./sso/ldap.md)/[
 You can edit the user permissions by clicking the edit icon. Click **Save** after editing the permissions.
 
 ![Figure 17: Editing User Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/edit-permissions.gif)
+
+---
+
+## Export User Data to CSV
+
+You may download the user data of current users and deleted users in a CSV format. Broadly, your exported CSV will include:
+
+* User's Email address
+* User ID & Status (Active/Inactive/Deleted)
+* Last Login Time
+* Detailed Permissions
+* Role
+* Timestamps for User Addition, Updation, and Deletion
+
+![Figure 18: Exporting User Data](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/export-users-csv.gif)
 
 ---
 
