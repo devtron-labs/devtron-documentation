@@ -40,7 +40,7 @@ These steps will not take effect if your application is deployed using [Custom D
 
     ![Figure 2: Prometheus Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app3.jpg)
 
-3. **Enable `upgradeJob` paramter to install CRDs:**
+3. **Enable `upgradeJob` parameter to install CRDs:**
 
    Since Helm does not automatically apply CRDs, you need to enable the `upgradeJob` parameter in the Helm chart to ensure CRDs are applied before deploying Prometheus.
 
