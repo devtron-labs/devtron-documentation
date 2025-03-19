@@ -11,6 +11,11 @@ Application Metrics are the indicators used to evaluate the performance and effi
 
 ## Setup Application Metrics
 
+{% hint style="warning" %}
+### Note 
+These steps will not take effect if your application is deployed using [Custom Deployment Charts](../global-configurations/deployment-charts.md) as those configurations override the default Deployment Template settings.
+{% endhint %}
+
 1. **Install Grafana Dashboard:** 
 
     To use the Grafana dashboard, you need to first install the integration from the [Devtron Stack Manager](../integrations/README.md). 
@@ -64,7 +69,7 @@ Application Metrics are the indicators used to evaluate the performance and effi
 
     	![Figure 6: Prometheus Endpoint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app6.jpg)
 
-    After adding the endpoint, application metrics will be visible in the Devtron dashboard for all the Devtron apps in the cluster. This includes CPU usage and Memory usage.
+    After adding the endpoint, application metrics will be visible in the Devtron dashboard for all the Devtron apps in the cluster (it may take a few minutes). This includes CPU usage and Memory usage.
 
 	![Figure 7: CPU Usage & Memory Usage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app7.jpg)
 
@@ -77,11 +82,11 @@ Application Metrics are the indicators used to evaluate the performance and effi
 
 	![Figure 8: Enable Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app8.jpg)
 
-	Now, you can track all your application metrics by navigating to Applications and going to the App Details page of your Devtron App as shown below.
+	Now, you can track all your application metrics by navigating to Applications and going to the App Details page of your Devtron App as shown below. 
 
 	![Figure 9: Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-new3.jpg)
 
 {% hint style="warning" %}
 ### Note 
-Enable metrics option is only available for [Devtron charts](../deploy-chart/README.md) and not for [Custom Deployment Charts](../global-configurations/deployment-charts.md).
+You won’t be able to enable the Application Metrics if your environment is [Overridden](../creating-application/environment-overrides.md), as it overrides the Deployment Template settings.
 {% endhint %}
