@@ -23,7 +23,7 @@ Tagging labels and comments are supported only for images in workflows with at l
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Build & deploy permission](../global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and application) to add labels and comments.
+Users need to have [Build & deploy permission](../global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and application) to add labels and comments.
 {% endhint %}
 
 You can add labels and comments from the following pages:
@@ -62,7 +62,7 @@ Refer [Deleting Labels](#deleting-labels-and-comments) if you commit a mistake w
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Build & deploy permission](../global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and application) to perform soft deletion of labels.
+Users need to have [Build & deploy permission](../global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and application) to perform soft deletion of labels.
 {% endhint %}
 
 This action marks the label as invalid but doesn't delete the label. Therefore, you can recover it again but you cannot reuse it for other image (unless it's a different application).
@@ -92,7 +92,7 @@ This action deletes the label permanently and makes it available for reuse in sa
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Build & deploy permission](../global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and application) to remove comments.
+Users need to have [Build & deploy permission](../global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and application) to remove comments.
 {% endhint %}
 
 If you wish to permanently remove a comment, do the following:
