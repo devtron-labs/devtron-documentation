@@ -13,7 +13,7 @@ Application Metrics are the indicators used to evaluate the performance and effi
 
 {% hint style="warning" %}
 ### Note 
-Application metrics will only take effect if your application is deployed using Devtron Deployment Charts and not [Custom Deployment Charts](../global-configurations/deployment-charts.md)
+Application metrics can only be enabled if your application is deployed using Devtron Deployment Charts and not [Custom Deployment Charts](../global-configurations/deployment-charts.md).
 {% endhint %}
 
 1. **Install Grafana Dashboard:** 
@@ -88,5 +88,5 @@ Application metrics will only take effect if your application is deployed using 
 
 {% hint style="warning" %}
 ### Note 
-You won’t be able to enable the Application Metrics if your environment is [Overridden](../creating-application/environment-overrides.md).
+If your environment is [Overridden](../creating-application/environment-overrides.md), you need to enable the Application Metrics at the environment override deployment template instead of the base deployment template.
 {% endhint %}
