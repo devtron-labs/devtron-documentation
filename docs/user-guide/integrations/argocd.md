@@ -28,3 +28,8 @@ The installation status may be one of the following:
 > A list of installed integrations can be viewed on the **Devtron Stack Manager > Installed** page.
  
 To update an installed integration, please [update Devtron](../../setup/upgrade/upgrade-devtron-ui.md).
+
+{% hint style="warning" %}
+### Next Required Action
+Edit all your existing cluster(s) in the [Cluster & Environments](../global-configurations/cluster-and-environments.md) page and click the **Update Cluster** button. Also save the [GitOps configuration](../global-configurations/gitops.md) (or update it if configured already).
+{% endhint %}

@@ -1,5 +1,10 @@
 # Clusters and Environments
 
+{% hint style="warning" %}
+### Installed ArgoCD Module?
+(For OSS Users) If you have installed [ArgoCD module](../integrations/argocd.md), edit your existing cluster(s) on Devtron (if any), and click the **Update Cluster** button. Also save the [GitOps configuration](../global-configurations/gitops.md) (or update it if configured already).
+{% endhint %}
+
 ## Introduction
 
 Devtron allows you to connect and manage your existing Kubernetes clusters by adding them to its platform. Once a cluster is added, you can create different environments within it, making it possible to deploy your applications.

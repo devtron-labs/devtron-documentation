@@ -1,5 +1,10 @@
 # GitOps
 
+{% hint style="warning" %}
+### Installed ArgoCD Module?
+(For OSS Users) If you have installed [ArgoCD module](../integrations/argocd.md), you must update the GitOps configuration too. Next, go to [Cluster & Environments](../global-configurations/gitops.md) and update all the clusters added before you installed ArgoCD module.
+{% endhint %}
+
 ## Introduction
 
 In Devtron, you can either use Helm or GitOps (Argo CD) to deploy your applications and charts. GitOps is a branch of DevOps that focuses on using Git repositories to manage infrastructure and application code deployments.
