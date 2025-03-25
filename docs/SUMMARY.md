@@ -12,6 +12,7 @@
   * [Backup for Disaster Recovery](setup/install/devtron-backup.md)
   * [Uninstall Devtron](setup/install/uninstall-devtron.md)
   * [FAQs](setup/install/faq-on-installation.md)
+* [Get Devtron Enterprise Trial License](setup/install/enterprise-license.md)
 * [Devtron Kubernetes Client](setup/install/install-devtron-Kubernetes-client.md)
 * [Configurations](setup/configurations/configurations-overview.md)
   * [Installation Configurations](setup/install/installation-configuration.md)
