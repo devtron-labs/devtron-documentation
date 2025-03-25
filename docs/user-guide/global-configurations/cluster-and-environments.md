@@ -303,7 +303,7 @@ devtroncd
 {% endtab %}
 {% endtabs %}
 
-![Figure 25: Generating Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/generate-cluster-credentials.png)
+![Figure 25: Generating Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/generate-cluster-credentials.jpg)
 
 ### Benefits of Self-hosted URL
 

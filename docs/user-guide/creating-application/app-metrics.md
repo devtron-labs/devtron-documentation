@@ -26,7 +26,7 @@ envoyproxy:
 ```
 
 
-![](../../images/creating-application/app-metrics/app-metrics-1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-1.jpg)
 
 
 ## CPU Usage Metrics

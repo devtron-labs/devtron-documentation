@@ -36,7 +36,7 @@ helm create my-custom-chart
 
 {% hint style="info" %}
 ### Example of Chart.yaml
-[Click here](https://devtron-public-asset.s3.us-east-2.amazonaws.com/custom-charts/chart-yaml-file.png) to view a sample 'Chart.yaml' file.
+[Click here](https://devtron-public-asset.s3.us-east-2.amazonaws.com/custom-charts/chart-yaml-file.jpg) to view a sample 'Chart.yaml' file.
 {% endhint %}
 
 ### 2. Create an Image Descriptor Template File

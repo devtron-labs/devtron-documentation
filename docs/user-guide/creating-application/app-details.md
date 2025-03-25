@@ -11,7 +11,7 @@ The users can access the [configured external links](../../user-guide/global-con
 
 As shown in the screenshot, the external links appear on the `App-Details` level:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/app-details-external-link.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/app-details-external-link.jpg)
 
 
 3. You can hover around an external link (e.g. Grafana) to view the description.
