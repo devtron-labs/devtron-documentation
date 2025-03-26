@@ -113,7 +113,7 @@ The dashboard URL will be: http://<HOST_IP>:<nodeport>/dashboard
 
 {% endtabs %}
 
-You will see a License Activation screen upon visiting your Dashboard URL as shown below. If you already have a license key, paste it and click **Activate**. If not, you can [generate a fresh license key](#generate-license-key).
+You will see a `License Activation` screen upon visiting your Dashboard URL as shown below. If you already have a license key, paste it and click **Activate**. If not, you can [generate a fresh license key](#generate-license-key).
 
 ![Figure 1: License Activation Screen](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-activation.jpg)
 
@@ -123,7 +123,7 @@ You will see a License Activation screen upon visiting your Dashboard URL as sho
 
 ## Generate License Key
 
-1. You will see an installation fingerprint that uniquely identifies your installation. Copy the fingerprint and click the **Get License** link to go to the **License Dashboard**.
+1. You will see an installation fingerprint that uniquely identifies your installation. Copy the fingerprint and click the **Get License** link.
 
     ![Figure 2: Copying Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-activation-2.jpg)
 
