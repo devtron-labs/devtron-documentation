@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Devtron provides [DevSecOps](https://devtron.ai/product/devsecops) capabilities across your software development life cycle for both: the default CI/CD solution by Devtron as well as your existing CI/CD Tools.
+Devtron provides [DevSecOps](https://devtron.ai/videos/devsecops-policies-as-guardrails) capabilities across your software development life cycle for both: the default CI/CD solution by Devtron as well as your existing CI/CD Tools.
 
 One of the key components of DevSecOps is the detection of security risks. Currently, Devtron supports the following types of scanning:
 

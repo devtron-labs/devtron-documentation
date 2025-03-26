@@ -131,3 +131,6 @@ redirects:
     global-configurations/authorization/sso-login/okta: user-guide/global-configurations/authorization/sso/okta.md
     global-configurations/custom-charts: user-guide/global-configurations/deployment-charts.md
     global-configurations/plugins-policy: user-guide/global-configurations/plugin-policy.md
+    usage/sdh: user-guide/software-distribution-hub/README.md
+    usage/sdh/tenants: user-guide/software-distribution-hub/tenants.md
+    usage/sdh/release-hub: user-guide/software-distribution-hub/release-hub.md

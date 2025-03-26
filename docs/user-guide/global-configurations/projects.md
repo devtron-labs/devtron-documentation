@@ -10,7 +10,7 @@ Refer [user access](../global-configurations/authorization/user-access.md) for m
 2. Click `Add Project`.
 3. Provide a project name in the field and click `Save`.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/projects/global-configs-projects.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/projects/global-configs-projects.jpg)
 
 
 

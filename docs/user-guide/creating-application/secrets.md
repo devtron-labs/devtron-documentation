@@ -110,7 +110,7 @@ To add secrets from AWS secret manager, navigate to `Secrets` of the application
 
 1. Click `Add Secret` to add a new secret.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret.jpg)
 
 2. Select `AWS Secret Manager` from dropdown of `Data type`.
 

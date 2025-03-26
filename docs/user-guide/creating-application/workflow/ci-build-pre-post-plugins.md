@@ -96,7 +96,7 @@ If the trigger condition fails, this Pre-build task will be skipped and the buil
 The variable `DB_NAME` is declared as an output variable that will be available as an input variable for the next task.
 The task fails if `DB_NAME` is not equal to "mysql".
 
-![Custom script - Shell](https://devtron-public-asset.s3.us-east-2.amazonaws.com/plugins/Custom-script-Shell.png)
+![Custom script - Shell](https://devtron-public-asset.s3.us-east-2.amazonaws.com/plugins/Custom-script-Shell.jpg)
 
 | Field name | Required/Optional | Field description |
 | --- | --- | --- |
@@ -121,7 +121,7 @@ Here is a screenshot with the failure message from the task:
 
 This example creates a Pre-build task from a container image. The output variable from the previous task is available as an input variable.
 
-![Custom script - Container image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/plugins/Custom-script-Container-image.png)
+![Custom script - Container image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/plugins/Custom-script-Container-image.jpg)
 
 | Field name | Required/Optional | Field description |
 | --- | --- | --- |

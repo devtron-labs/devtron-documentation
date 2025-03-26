@@ -120,8 +120,8 @@ There are seven role-based access levels for Devtron Apps:
 3. **Admin**: These users can create, edit, deploy, and delete permitted applications in selected projects.
 4. **Manager**: These users have the same permissions as `Admin` but can also grant or revoke user access for applications and environments they manage.
 5. **Image approver**: These users can approve image deployment requests.
-6. **Configuration approver**: These users can approve configuration change requests for [Deployment Templates](../../creating-application/base-config/deployment-template.md), [ConfigMaps](../../creating-application/base-config/config-maps.md), and [Secrets](../../creating-application/base-config/secrets.md). However, users cannot self-approve their own proposed changes, even if they have this role or Super Admin access.
-7. **Artifact promoter**: These users have the authority to approve the promotion of [artifacts](../../reference/glossary.md#artifacts) directly to the target CD pipeline.
+6. **Configuration approver**: These users can approve configuration change requests for [Deployment Templates](../../creating-application/deployment-template.md), [ConfigMaps](../../creating-application/config-maps.md), and [Secrets](../../creating-application/secrets.md). However, users cannot self-approve their own proposed changes, even if they have this role or Super Admin access.
+7. **Artifact promoter**: These users have the authority to approve the promotion of [artifacts](../../../reference/glossary.md#artifacts) directly to the target CD pipeline.
 
 However, super-admin users have unrestricted access to all Devtron resources. They can create, modify, delete, and manage any resource, including user access, Git repositories, container registries, clusters, and environments.
 
