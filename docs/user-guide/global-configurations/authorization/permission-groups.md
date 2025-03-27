@@ -12,11 +12,11 @@ The [User permissions](../../global-configurations/authorization/user-access.md)
 
 Go to **Global Configurations** → **Authorization** → **Permissions groups** → **Add group**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-1.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-1.jpg)
 
 Enter the `Group Name` and `Description`.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-2.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-2.jpg)
 
 You can either grant [super-admin](../../global-configurations/authorization/user-access.md#role-based-access-levels) permission to a user group or specific permissions to manage access for:
 

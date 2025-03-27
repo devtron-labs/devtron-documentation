@@ -35,4 +35,4 @@ Note:
 * You can enable or disable a git account. Enabled git accounts will be available on the App Configuration > [Git repository](../creating-application/git-material.md).
 
 
-![](../../user-guide/global-configurations/images/git-account-enable-disable.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/git-accounts/git-account-enable-disable.jpg)

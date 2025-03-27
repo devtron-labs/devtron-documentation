@@ -85,7 +85,7 @@ With its rich features and intuitive interface, you can easily manage and [debug
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/cluster-terminal.jpg)
 
 
-After your cluster is added via `Global Configurations`, go to the `Clusters` page and search or select your cluster. [Refer Clusters documentation for detail and its operations](../../user-guide/clusters.md).
+After your cluster is added via `Global Configurations`, go to the `Clusters` page and search or select your cluster. [Refer Clusters documentation for detail and its operations](../../user-guide/global-configurations/cluster-and-environments.md).
 
 
 ### Some Peripheral Commands

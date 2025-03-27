@@ -266,7 +266,7 @@ In the **Overview** section, you get a Markdown editor to add release notes. You
 
 ### Release Catalog
 
-Based on the schema provided in the catalog framework, you can add relevant details for release. Refer [Catalog Framework](./global-configurations/catalog-framework.md) for more details. 
+Based on the schema provided in the catalog framework, you can add relevant details for release. Refer [Catalog Framework](../global-configurations/catalog-framework.md) for more details. 
 
 ![Figure 27: Release Catalog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/release-catalog.jpg)
 

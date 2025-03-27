@@ -80,11 +80,11 @@ Click `Save` and your slack channel will be added.
 
 Click `Add New` to receive new notification.
 
-![](../../user-guide/global-configurations/images/notifications-add.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/notifications-add.jpg)
 
 ### **Manage Slack Notifications**
 
-![](../../user-guide/global-configurations/images/manage-slack-notifications.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/manage-slack-notifications.jpg)
 
 _**Send To**_
 

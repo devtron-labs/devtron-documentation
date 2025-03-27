@@ -22,6 +22,7 @@ Application metrics can only be enabled if your application is deployed using De
 
     [Read Grafana Dashboard](../integrations/grafana.md)
 
+
 2. **Install Prometheus:**
    
     Go to the Chart Store and search for `prometheus`. Use the Prometheus community's `kube-prometheus-stack` chart to deploy Prometheus.
@@ -46,7 +47,7 @@ Application metrics can only be enabled if your application is deployed using De
 
     - In the Prometheus Helm chart settings, locate the `upgradeJob` parameter and set it to `true` if it is `false`.
       
-      	![Figure 3: upgradeJob Parameter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-new2.jpg)
+       ![Figure 3: upgradeJob Parameter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-new2.jpg)
       
      	After enabling the parameter, click `Deploy Chart`.
 
