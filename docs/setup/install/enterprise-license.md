@@ -18,7 +18,12 @@ In order to use these enhanced features, you can get an uninterrupted 14-day fre
 
 * [Helm CLI](https://helm.sh/docs/intro/install/#from-script) and [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) installed
 * Access to Kubernetes Cluster (having neither ArgoCD nor Argo Workflows installed)
-* Create [ent-bom.yaml](https://raw.githubusercontent.com/devtron-labs/utilities/main/scripts/devtron-oss-to-ent/ent-bom.yaml)
+* Download `ent-bom.yaml` using this command:
+
+```bash
+curl -O https://raw.githubusercontent.com/devtron-labs/utilities/main/scripts/devtron-oss-to-ent/ent-bom.yaml
+```
+
 
 ---
 
@@ -133,11 +138,11 @@ In case your installation is not connected to the Internet, clicking the **Get L
 {% endhint %}
 
 
-2. Log in to the **License Dashboard** using SSO or email.
+2. Log in to the **License Dashboard** using SSO or a valid work email. Personal email addresses are not allowed.
 
     ![Figure 3: Log in to License Dashboard](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-sso-login.jpg)
 
-3. From your email address, the system will try to autopopulate the details in the form. If not, you can enter or modify the details too.
+3. From your work email address, the system will try to autopopulate the details in the form. If not, you can enter or modify the details too.
 
     ![Figure 4: Entering User Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/user-details.jpg)
 
@@ -154,7 +159,7 @@ In case your installation is not connected to the Internet, clicking the **Get L
 The license key you generate will be valid only for your enterprise installation. It is uniquely mapped to your installation fingerprint.
 {% endhint %}
 
-6. Go back to your **License Activation** page. Paste your license key and click **Activate**.
+6. Go back to your **License Activation** page (from [step 1](#generate-license-key)). Paste your license key and click **Activate**.
 
     ![Figure 7: Pasting License Key and Activating](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-activation-3.jpg)
 
