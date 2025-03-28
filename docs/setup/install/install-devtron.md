@@ -4,7 +4,7 @@ In this section, we describe on how you can install Helm Dashboard by Devtron wi
 
 If you want to install Devtron on Minikube, Microk8s, K3s, Kind, refer this [section](./Install-devtron-on-Minikube-Microk8s-K3s-Kind.md).
 
-{% hint style="info" %}
+{% hint style="success" %}
 ### Try Devtron Enterprise for Free
 Explore all capabilities of Devtron with its Enterprise version trial ([read more](enterprise-license.md)).
 {% endhint %}
