@@ -10,9 +10,17 @@ Click the '**+**' sign on CI Pipeline to attach a CD Pipeline to it.
 
 A basic `Create deployment pipeline` window will pop up.
 
-![Figure 1b: Creating CD Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/cd-workflow-basic-v3.jpg)
+![Figure 1b: Creating CD Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/new-cd-pipeline.jpg)
 
-Here, you get three sections:
+Here, you get two tabs:
+* [New Deployment](#new-deployment) - Use this option to create new Helm/GitOps deployment.
+* [Migrate to Devtron](#migrate-to-devtron) - Use this option if you wish to migrate your existing Helm Release/Argo CD Apps to Devtron.
+
+---
+
+## New Deployment
+
+The **New Deployment** tab displays the following sections:
 
 * [Deploy to Environment](#deploy-to-environment)
 * [Deployment Strategy](#deployment-strategy)
@@ -37,25 +45,13 @@ Devtron supports multiple deployment strategies depending on the [deployment cha
 
 Refer [Deployment Strategies](#deployment-strategies) to know more about each strategy in depth.
 
-{% hint style="info" %}
-The next section is [Advanced Options](#advanced-options) and it comes with additional capabilities. However, if you don't need them, you may proceed with a basic CD pipeline and click **Create Pipeline**. 
-{% endhint %}
-
----
-
-## Advanced Options
-
-This option is available at the bottom of the `Create deployment pipeline` window.
+The next section is [Advanced Options](#advanced-options) and it comes with additional capabilities. This option is available at the bottom of the `Create deployment pipeline` window. However, if you don't need them, you may proceed with a basic CD pipeline and click **Create Pipeline**. 
 
 ![Figure 3: Advanced Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/advanced-option.jpg)
 
 Now, the window will have 3 distinct tabs, and you will see the following additions:
 * [Pre-Deployment stage (tab)](#pre-deployment-stage)
 * [Deployment stage (tab)](#deployment-stage)
-  * [Pipeline Name (input field)](#pipeline-name)
-  * [Manual approval for deployment (toggle button)](#manual-approval-for-deployment) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
-  * [Custom Image tag pattern (toggle button)](#custom-image-tag-pattern)
-  * [Pull container image with image digest](#pull-container-image-with-image-digest)
 * [Post-Deployment stage (tab)](#post-deployment-stage)
 
 ![Figure 4: Advanced Options (Expanded View)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/cd-advanced.jpg)
@@ -218,13 +214,121 @@ You can use [ConfigMap and Secrets](#configmaps--secrets) in post deployments as
 
 ---
 
+## Migrate to Devtron
+
+{% hint style="info" %}
+### When can I see this option?
+This option will be available only during the [creation of CD pipeline](#creating-cd-pipeline) in your workflow. Existing CD pipelines will not have this option.
+{% endhint %}
+
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Only superadmins can migrate existing Helm releases or Argo apps to Devtron
+{% endhint %}
+
+If you already use external Helm or Argo CD for deployment and wish to try out Devtron, this feature helps you onboard and manage your external applications using Devtron’s CI/CD capabilities, offering the following benefits:
+
+* No hassle of manually migrating your existing applications
+* No need to set up a parallel Argo CD instance
+* No risk of losing your existing configurations
+* Use build pipeline in your workflow
+* Execute pre-deployment and post-deployment tasks
+* Scan your apps for vulnerabilities
+* Hibernate or restart your app
+* View config diff, deployment history, and all the capabilities that come with Devtron Apps
+
+### Migrate Helm Release
+
+{% hint style="warning" %}
+### Prerequisites
+* Add your external cluster (containing your Helm Apps) in [Clusters & Environments](../../global-configurations/cluster-and-environments.md).
+* Your Helm release must use the same chart type as your application. If needed, you can upload or select the appropriate chart in **Global Configuration** → **Deployment Charts**, then save the chart type at [base configuration](../deployment-template.md) of your application.
+{% endhint %}
+
+You can not only [view your external Helm apps](../../applications.md#view-external-helm-app-listing), but also manage their deployments using Devtron's CI/CD. 
+
+1. Click **Helm Release** in 'Select type of application to migrate'.
+
+2. Select the external cluster containing your Helm releases, and select the Helm release you wish to migrate.
+
+  ![Figure 16: Choosing External Cluster and Helm Release from Dropdown](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/choose-cluster-app.jpg)
+
+3. The target cluster, its namespace, and environment would be visible. If the environment is not available, click **Add Environment**. This will open a new tab. Once you have [added the environment to your cluster](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster), return and click the refresh button.
+
+  ![Figure 17: Adding Environment to Target](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/add-env-helm.jpg)
+
+4. Select the trigger (**Automatic/Manual**) and click **Create Pipeline**. 
+
+  ![Figure 18: Creating CD Pipeline for Helm Release](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/deploy-mode.jpg)
+
+5. Once the pipeline is created, you may go to [Build & Deploy](../../deploying-application/README.md) to trigger the pipelines. Your Helm release would be deployed using Devtron.
+
+{% hint style="info" %}
+### Limitations
+This feature comes with certain mentioned limitations and expectations. If your use case doesn't fit and goes beyond, feel free to [**open a feature request**](https://github.com/devtron-labs/devtron/issues).
+
+* Apps deployed using Helm + manual kubectl, kubectl, kustomize + helm are not supported.
+* This feature is specifically designed for use cases where you need to change only the container image via CD flow.
+* An installed Helm app may have multiple `values.yaml`. With Devtron, user can modify only one (if multiple files need to be modified, they must be merged into a single `values.yaml`.)
+* Once onboarded to Devtron, the user should only use Devtron to manage the application and not do manual changes (outside of Devtron) on that onboarded Helm release.
+* App’s custom chart and its required versions, including image descriptors, must be added in Devtron.  
+
+{% endhint %}
+
+### Migrate Argo CD Application
+
+You can not only [view your external Argo CD apps](../../applications.md#view-external-argocd-app-listing), but also manage their deployments using Devtron's CI/CD.
+
+{% hint style="warning" %}
+### Prerequisites
+* Your app should be an Argo Helm app ([read about supported tools](https://argo-cd.readthedocs.io/en/stable/user-guide/application_sources/)).
+* It must have a single `values.yaml` file and a single Git source.
+* The `values.yaml` should be in git.
+* A target cluster and namespace must be available (in the application object).
+* Your Argo CD app must use the same chart type as your application. If needed, you can upload or select the appropriate chart in **Global Configuration** → **Deployment Charts**. Then save the chart type at [base configuration](../deployment-template.md) of your application.
+* Add your external cluster (containing your Argo Apps) in [Clusters & Environments](../../global-configurations/cluster-and-environments.md).
+{% endhint %}
+
+1. Click **Argo CD Application** in 'Select type of application to migrate'.
+
+2. Select the external cluster containing your Argo apps, and select the Argo CD application you wish to migrate.
+
+  ![Figure 19: Choosing External Cluster and Argo App from Dropdown](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/choose-cluster-app2.jpg)
+
+3. The target cluster, its namespace, and environment would be visible. If the environment is not available, click **Add Environment**. This will open a new tab. Once you have [added the environment to your cluster](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster), return and click the refresh button.
+
+  ![Figure 20: Adding Environment to Target](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/add-env-argo.jpg)
+
+4. Select the trigger (**Automatic/Manual**) and click **Create Pipeline**. 
+
+  ![Figure 21: Creating CD Pipeline for Argo CD App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/deploy-mode2.jpg)
+
+5. Once the pipeline is created, you may go to [Build & Deploy](../../deploying-application/README.md) to trigger the pipelines. Your Argo CD app would be deployed using Devtron.
+
+{% hint style="info" %}
+### Limitations
+This feature comes with certain mentioned limitations and expectations. If your use case doesn't fit and goes beyond, feel free to [**open a feature request**](https://github.com/devtron-labs/devtron/issues).
+
+* App’s custom chart and its required versions, including image descriptors, must be added in Devtron. 
+* The Git source type should be branch HEAD.
+* The cluster containing Argo applications and the target deployment cluster are both added in Devtron.
+* The target deployment cluster’s endpoint in Devtron must be the same as the one configured in Argo CD.
+* The target deployment [environment exists in Devtron](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster).
+* GitOps credentials required to commit in the Git repo have been configured in [Global Configurations](../../global-configurations/gitops.md).
+* The external Argo CD has auto-sync enabled or an alternative syncing mechanism, as Devtron does not perform manual syncs.
+* Once onboarded to Devtron, users should manage the application only through Devtron and avoid making changes directly in Git or Argo CD.
+{% endhint %}
+
+---
+
+
 ## Updating CD Pipeline
 
 You can update the deployment stages and the deployment strategy of the CD Pipeline whenever you require it. However, you cannot change the name of a CD Pipeline or its Deployment Environment. If you want a new CD pipeline for the same environment, first delete the previous CD pipeline.
 
 To update a CD Pipeline, go to the `App Configurations` section, Click on `Workflow editor` and then click on the CD Pipeline you want to Update.
 
-![Figure 16: Updating CD Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/ca-workflow-update.gif)
+![Figure 22: Updating CD Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/ca-workflow-update.gif)
 
 
 Make changes as needed and click on `Update Pipeline` to update this CD Pipeline.
@@ -336,7 +440,7 @@ Please follow the steps mentioned below to create sequential pipelines:
 2. To add another CD Pipeline sequentially after previous one, again click on + sign on the last CD pipeline.
 3. Similarly, you can add multiple CD pipelines by clicking + sign of the last CD pipeline, each deploying in different environments.
 
-![Figure 17: Adding Multiple CD Pipelines](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/sequential-workflow.jpg)
+![Figure 23: Adding Multiple CD Pipelines](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/sequential-workflow.jpg)
 
 {% hint style="info" %}
 ### Tip
