@@ -17,7 +17,7 @@ In order to use these enhanced features, you can get an uninterrupted 14-day fre
 ## Prerequisites
 
 * [Helm CLI](https://helm.sh/docs/intro/install/#from-script) and [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) installed
-* Access to Kubernetes Cluster (having neither ArgoCD nor Argo Workflows installed)
+* Access to a Kubernetes cluster. If you wish to install Devtron in Full Mode (step 2 of [Install Devtron Enterprise](#install-devtron-enterprise)), ensure that neither ArgoCD nor Argo Workflows are installed in your cluster.
 * Download `ent-bom.yaml` using this command:
 
 ```bash
