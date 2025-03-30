@@ -269,13 +269,17 @@ This feature comes with certain mentioned limitations and expectations. If your 
 
 * Apps deployed using Helm + manual kubectl, kubectl, kustomize + helm are not supported.
 * This feature is specifically designed for use cases where you need to change only the container image via CD flow.
-* An installed Helm app may have multiple `values.yaml`. With Devtron, user can modify only one (if multiple files need to be modified, they must be merged into a single `values.yaml`.)
+* An installed Helm app may have multiple `values.yaml`. With Devtron, user can modify only one (if multiple files need to be modified, they must be merged into a single `app-values.yaml`.)
 * Once onboarded to Devtron, the user should only use Devtron to manage the application and not do manual changes (outside of Devtron) on that onboarded Helm release.
 * App’s custom chart and its required versions, including image descriptors, must be added in Devtron.  
 
 {% endhint %}
 
 ### Migrate Argo CD Application
+
+{% hint style="warning" %}
+If you are installing the GitOps (ArgoCD) module from [Devtron Stack Manager](../integrations/argocd.md), make sure to save or update both the GitOps configuration and the cluster configuration after installation.
+{% endhint %}
 
 You can not only [view your external Argo CD apps](../../applications.md#view-external-argocd-app-listing), but also manage their deployments using Devtron's CI/CD.
 
