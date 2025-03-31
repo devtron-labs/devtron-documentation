@@ -10,6 +10,9 @@ redirects:
     setup/install/ingress-setup: getting-started/install/ingress-setup
     setup/upgrade: setup/upgrade/README.md
     setup/upgrade/upgrade-devtron-ui: getting-started/upgrade/upgrade-devtron-ui
+    setup/upgrade/devtron-upgrade-0.6.x-0.7.x: getting-started/upgrade/devtron-upgrade-0.6.x-0.7.x
+    setup/upgrade/devtron-upgrade-0.5.x-0.6.x: getting-started/upgrade/devtron-upgrade-0.5.x-0.6.x
+    setup/upgrade/devtron-upgrade-0.4.x-0.5.x: getting-started/upgrade/devtron-upgrade-0.4.x-0.5.x
     setup/upgrade/devtron-upgrade-0.4.x-0.4.x: getting-started/upgrade/devtron-upgrade-0.4.x-0.4.x
     setup/upgrade/devtron-upgrade-0.3.x-0.4.x: getting-started/upgrade/devtron-upgrade-0.3.x-0.4.x
     setup/upgrade/devtron-upgrade-0.3.x-0.3.x: getting-started/upgrade/devtron-upgrade-0.3.x-0.3.x
@@ -39,7 +42,7 @@ redirects:
     setup/global-configurations/authorization/sso/ldap: user-guide/global-configurations/authorization/sso/ldap.md
     setup/global-configurations/authorization/sso/oidc: user-guide/global-configurations/authorization/sso/oidc.md
     setup/global-configurations/authorization/sso/openshift: user-guide/global-configurations/authorization/sso/openshift.md
-    setup/global-configurations/okta: user-guide/global-configurations/okta.md
+    setup/global-configurations/okta: user-guide/global-configurations/authorization/sso/okta.md
     setup/global-configurations/catalog-framework: user-guide/global-configurations/catalog-framework.md
     setup/global-configurations/scoped-variables: user-guide/global-configurations/scoped-variables.md
     setup/global-configurations/pull-image-digest: user-guide/global-configurations/pull-image-digest.md
@@ -101,7 +104,7 @@ redirects:
     getting-started/global-configurations/authorization/sso/ldap: user-guide/global-configurations/authorization/sso/ldap.md
     getting-started/global-configurations/authorization/sso/oidc: user-guide/global-configurations/authorization/sso/oidc.md
     getting-started/global-configurations/authorization/sso/openshift: user-guide/global-configurations/authorization/sso/openshift.md
-    getting-started/global-configurations/okta: user-guide/global-configurations/okta.md
+    getting-started/global-configurations/okta: user-guide/global-configurations/authorization/sso/okta.md
     getting-started/global-configurations/catalog-framework: user-guide/global-configurations/catalog-framework.md
     getting-started/global-configurations/scoped-variables: user-guide/global-configurations/scoped-variables.md
     getting-started/global-configurations/pull-image-digest: user-guide/global-configurations/pull-image-digest.md
@@ -122,6 +125,15 @@ redirects:
     getting-started/global-configurations/authorization/user-access: user-guide/global-configurations/authorization/user-access.md
     getting-started/global-configurations/authorization/permission-groups: user-guide/global-configurations/authorization/permission-groups.md
     getting-started/global-configurations/authorization/api-tokens: user-guide/global-configurations/authorization/api-tokens.md
+    getting-started/upgrade: setup/upgrade/README.md
+    getting-started/upgrade/upgrade-devtron-ui: setup/upgrade/upgrade-devtron-ui
+    getting-started/upgrade/devtron-upgrade-0.6.x-0.7.x: setup/upgrade/devtron-upgrade-0.6.x-0.7.x.md
+    getting-started/upgrade/devtron-upgrade-0.5.x-0.6.x: setup/upgrade/devtron-upgrade-0.5.x-0.6.x.md
+    getting-started/upgrade/devtron-upgrade-0.4.x-0.5.x: setup/upgrade/devtron-upgrade-0.4.x-0.5.x.md
+    getting-started/upgrade/devtron-upgrade-0.4.x-0.4.x: setup/upgrade/devtron-upgrade-0.4.x-0.4.x.md
+    getting-started/upgrade/devtron-upgrade-0.3.x-0.4.x: setup/upgrade/devtron-upgrade-0.3.x-0.4.x.md
+    getting-started/upgrade/devtron-upgrade-0.3.x-0.3.x: setup/upgrade/devtron-upgrade-0.3.x-0.3.x.md
+    getting-started/upgrade/devtron-upgrade-0.2.x-0.3.x: setup/upgrade/devtron-upgrade-0.2.x-0.3.x.md
     global-configurations/sso-login: user-guide/global-configurations/sso-login.md
     user-guide/use-cases/untitled-3: user-guide/use-cases/connect-django-with-mysql-database.md
     global-configurations/api-token: user-guide/global-configurations/authorization/api-tokens.md
