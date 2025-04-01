@@ -7,7 +7,7 @@ The `Overview` page contains three main sections:
 *	[`Environments`](#environments): Displays all environments where the application is deployed, along with their current status and quick access to associated workflows.
 *	[`Dependencies`](#dependencies): Shows which Devtron applications this application depends on, and which other Devtron applications depend on it — helping visualize inter-app relationships.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/overview-latest-1.jpg)
+![Figure 1: Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/overview-latest-1.jpg)
 
 ## About
 
@@ -20,7 +20,7 @@ The `About` section allows you to:
 
 The left side of the `About` section displays essential information about the application.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/left-about.jpg)
+![Figure 2a: About Section](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/left-about.jpg)
 
  The table below captures all the key elements presented in this section, along with their descriptions and whether they can be edited by the user.
 
@@ -38,7 +38,7 @@ The left side of the `About` section displays essential information about the ap
 ### Readme
 The right side of the `About` section contains a `README` area where you can maintain application-specific notes or documentation. The `Readme` supports Markdown formatting, making it easy to include formatted text, instructions, or important context related to the application.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/readme-edit.jpg)
+![Figure 2b: Readme](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/readme-edit.jpg)
 
 To add or update the `README`:
 1.	Click the `Edit` button in the Readme section.
@@ -65,7 +65,7 @@ These windows are defined by `Super-Admins` to control when deployments and rela
 
 You can expand each environment row to view detailed information like window name, duration, and frequency.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/deployement-window.jpg)
+![Figure 2c: Deployement Window](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/deployement-window.jpg)
 
 {% hint style=“info” %}
 This section is view-only and does not require any configuration at the application level.
@@ -77,7 +77,7 @@ This section is view-only and does not require any configuration at the applicat
 
 The `Catalog` in the `About` section displays information about your application—such as documentation references, ownership details, and technical specifications. This data is managed using [Devtron’s Catalog Framework](../global-configurations/catalog-framework.md).
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/catalog.jpg)
+![Figure 2d: Catalog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/catalog.jpg)
 
 `Super-Admins` define a custom JSON schema that determines what fields are shown in the catalog form. This schema is specific to each resource type, such as Devtron applications.
 
@@ -86,7 +86,7 @@ When you click the `Edit` icon, a form appears based on the defined schema. As a
 *	Code owners and on-call responsibilities
 *	Service attributes (e.g., internet-facing flag, communication method, framework, language)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/catalog-expanded.jpg)
+![Figure 2e: Catalog Form ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/catalog-expanded.jpg)
 
 {% hint style= "info" %}
 The structure and labels in the catalog form are entirely configurable by your platform team via JSON schema in `Catalog Framework`. Field names and sections may vary depending on how the schema was defined by your organization.
@@ -94,7 +94,7 @@ The structure and labels in the catalog form are entirely configurable by your p
 
 Once saved, this information is displayed in a readable format within the Catalog subsection and is accessible to all users who have permission to view the application.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/catalog-final.jpg)
+![Figure 2e: Catalog final view ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/catalog-final.jpg)
 
 ### Configure PersistentVolumeClaim (PVC)
 
@@ -161,7 +161,7 @@ Follow the steps below to apply the PVC to all or specific pipelines
 1. Navigate to your application’s `Overview` → `About` section.
 2. Click the `Edit` icon next to the Tags section.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/pvc-edit-tags-1.jpg)
+![Figure 3a: Click on the Edit Icon](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/pvc-edit-tags-1.jpg)
 
 3. Add one of the following key-value tags depending on how you want the PVC to be applied
   * To mount the PVC across all pipelines in the application
@@ -170,7 +170,7 @@ Follow the steps below to apply the PVC to all or specific pipelines
 |:--- |:---  | 
 |devtron.ai/ci-pvc-all | cache-pvc |
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-pvc-1.jpg)
+![Figure 3b: Mount PVC across all pipelines](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-pvc-1.jpg)
 
   * To mount the PVC for a specific pipeline only in the application
 
@@ -178,9 +178,9 @@ Follow the steps below to apply the PVC to all or specific pipelines
 |:--- |:---  | 
 |devtron.ai/ci-pvc-<pipeline-name>| cache-pvc |
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/pipeline-name-pvc-1.jpg)
+![Figure 3c: Find Pipeline name](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/pipeline-name-pvc-1.jpg)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/pipeline-level-tag.jpg)
+![Figure 3d: Mount PVC to a specific pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/pipeline-level-tag.jpg)
 
 > Replace <pipeline-name> with the exact name of the CI pipeline (visible in the Workflow Editor).
 
@@ -200,7 +200,7 @@ The Environments section provides a detailed view of all environments where the 
 | Comit|Displays the Git commit hash associated with the last deployment.|
 | Deployed AT|Indicates who deployed the application and when, it is shown as the email ID of the user along with a relative timestamp (e.g.,9 days ago).|
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/environments.jpg)
+![Figure 4: Environments](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/environments.jpg)
 
 ## Dependencies [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
@@ -216,24 +216,24 @@ Upstream dependencies are other Devtron applications that your current applicati
 To add upstream dependencies:
 1. Click the `Add Dependency` button in the `Dependencies` section. If dependencies already exist, click the `Edit Dependency` button on the right instead.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/add-dependencies.jpg)
+![Figure 5a: Dependencies Section](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/add-dependencies.jpg)
 
 2. In the right-side panel, under `UPSTREAM DEPENDENCY`, click `+ Add Dependency`.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/add-dependencies-part-2.jpg)
+![Figure 5b:Add Dependency](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/add-dependencies-part-2.jpg)
 
 3. Use the search bar to find and select one or more applications that your app depends on.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/add-dependencies-part-3.jpg)
+![Figure 5c: Select dependency](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/add-dependencies-part-3.jpg)
 
 4. Click `Map Environments` to associate each selected application with a specific environment.
   * This helps Devtron understand where your dependencies are running. By mapping environments, you can view the correct deployment details (like image, commit, and status) for each dependency.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/add-dependencies-part-4.jpg)
+![Figure 5d: Map Environments](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/add-dependencies-part-4.jpg)
 
 5. Once you’ve mapped the environments, click `Save` to confirm and apply the upstream dependencies.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/add-dependencies-part-5.jpg)
+![Figure 5e: Select environments for each dependency](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/add-dependencies-part-5.jpg)
 
 6. After saving:
 *	The selected applications will appear under `Dependent Applications` above your current application as Upstream Dependencies.
@@ -241,7 +241,7 @@ To add upstream dependencies:
     * You can switch the environment of your current application using the dropdown next to its name under `Environment`. This allows you to view the upstream and downstream dependencies specific to that environment. The table will refresh to show deployment details for the selected environment.
 * Any applications that have added your app as an upstream will automatically be listed below your app as Downstream Dependencies.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/add-dependencies-part-6.jpg)
+![Figure 5f: Dependencies List](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/add-dependencies-part-6.jpg)
 
 ### Downstream Dependencies
 
