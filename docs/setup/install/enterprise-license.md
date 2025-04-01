@@ -14,25 +14,11 @@ In order to use these enhanced features, you can get an uninterrupted 14-day fre
 
 ---
 
-## Prerequisites
-
-* [Helm CLI](https://helm.sh/docs/intro/install/#from-script) and [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) installed
-* Access to a Kubernetes cluster. If you wish to install Devtron in Full Mode (step 2 of [Install Devtron Enterprise](#install-devtron-enterprise)), ensure that neither ArgoCD nor Argo Workflows are installed in your cluster.
-* Download `ent-bom.yaml` using this command:
-
-```bash
-curl -O https://raw.githubusercontent.com/devtron-labs/utilities/main/scripts/devtron-oss-to-ent/ent-bom.yaml
-```
-
-
----
-
 ## Install Devtron Enterprise
 
 1. **Add Devtron Helm repository**
 
 ```bash
-kubectl create ns devtroncd
 helm repo add devtron https://helm.devtron.ai
 helm repo update devtron
 ```
@@ -46,9 +32,9 @@ helm repo update devtron
 To install Devtron with all the features, run the following command:
 
 ```bash
-helm install devtron devtron/devtron-operator -f ent-bom.yaml --namespace devtroncd \
---set installer.modules={cicd} --set argo-cd.enabled=true --set security.enabled=true  \
---set notifier.enabled=true  --set security.trivy.enabled=true --set monitoring.grafana.enabled=true \
+helm install devtron devtron/devtron-enterprise --create-namespace --namespace devtroncd \
+--set devtron.installer.modules={cicd} --set devtron.argo-cd.enabled=true --set devtron.security.enabled=true  \
+--set devtron.notifier.enabled=true  --set devtron.security.trivy.enabled=true --set devtron.monitoring.grafana.enabled=true \
 ```
 {% endtab %}
 
@@ -57,7 +43,7 @@ helm install devtron devtron/devtron-operator -f ent-bom.yaml --namespace devtro
 To install Devtron with just the Dashboard and without integrations, run the following command:
 
 ```bash
-helm install -n devtroncd devtron  devtron/devtron-operator  -f ent-bom.yaml
+helm install devtron  devtron/devtron-operator --create-namespace --namespace devtroncd
 ```
 
 {% endtab %}
