@@ -34,7 +34,7 @@ To install Devtron with all the features, run the following command:
 ```bash
 helm install devtron devtron/devtron-enterprise --create-namespace --namespace devtroncd \
 --set devtron.installer.modules={cicd} --set devtron.argo-cd.enabled=true --set devtron.security.enabled=true  \
---set devtron.notifier.enabled=true  --set devtron.security.trivy.enabled=true --set devtron.monitoring.grafana.enabled=true \
+--set devtron.notifier.enabled=true  --set devtron.security.trivy.enabled=true --set devtron.monitoring.grafana.enabled=true
 ```
 {% endtab %}
 
