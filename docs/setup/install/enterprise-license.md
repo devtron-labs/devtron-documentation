@@ -15,6 +15,11 @@ In order to use these enhanced features, you can get an uninterrupted 14-day fre
 ---
 
 ## Install Devtron Enterprise
+{% hint style="warning" %}
+
+Please ensure that cluster `kubeconfig` is properly configured and available in your system.
+
+{% endhint %}
 
 1. **Add Devtron Helm repository**
 
@@ -98,7 +103,7 @@ Get devtron-service port number using the following command:
 kubectl get svc -n devtroncd devtron-service -o jsonpath='{.spec.ports[0].nodePort}'
 ```
 
-The dashboard URL will be: http://<HOST_IP>:<nodeport>/dashboard
+The dashboard URL will be: `http://<HOST_IP>:<NODEPORT>/dashboard`
 
 {% endtab %}
 
