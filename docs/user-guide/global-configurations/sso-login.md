@@ -2,7 +2,7 @@
 
 Once Devtron is installed, it has a built-in `admin` user with super admin privileges with unrestricted access to all Devtron resources. We recommended to use a user with super admin privileges for initial and global configurations only and then switch to local users or configure SSO integration.
 
-Only users with [super-admin](../global-configurations/authorization/user-access.md#role-based-access-levels) privileges can create SSO configuration. Devtron uses [Dex](https://dexidp.io/docs/connectors/google/) for authenticating a user against the identity provider.
+Only users with [super-admin](../global-configurations/authorization/user-access.md#grant-super-admin-permission) privileges can create SSO configuration. Devtron uses [Dex](https://dexidp.io/docs/connectors/google/) for authenticating a user against the identity provider.
 
 
 To add/edit SSO configuration, go to the `SSO Login Services` section of `Global Configurations`. 
@@ -28,7 +28,7 @@ Refer the following documents for more detail.
 
 ### 1. Create new SSO Configuration
 
-Make sure that you have a [super admin access](../global-configurations/authorization/user-access.md#assign-super-admin-permission).
+Make sure that you have a [super admin access](../global-configurations/authorization/user-access.md#grant-super-admin-permission).
 
 * Go to the `Global Configurations` → `SSO Login Services` and click any `SSO Provider` of your choice.
 * In the `URL` field, enter the valid Devtron application `URL` where it is hosted.
@@ -62,6 +62,6 @@ You can change SSO configuration anytime by updating the configuration and click
 
 ## Next Steps
 
-After configuring an SSO for authentication, you need to [add users](./user-access.md#1-add-new-user) in Devtron, else your users won't be able to log in via SSO. 
+After configuring an SSO for authentication, you need to [add users](./authorization/user-access.md#add-users) in Devtron, else your users won't be able to log in via SSO. 
 
 In case you have enabled auto-assign permissions in [Microsoft](./authorization/sso/microsoft.md) or [LDAP](./authorization/sso/ldap.md), relevant [permission groups](./authorization/permission-groups.md#add-group) must also exist in Devtron for a successful login.

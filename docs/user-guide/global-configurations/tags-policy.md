@@ -64,7 +64,7 @@ You may enable **Allow Custom Input** to give the user a choice to enter their o
 
     <br />
 
-    ![Figure 10b: Enabling/Disabling Propagation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/propagation-symbols.jpg) 
+    ![Figure 10b: Enabling/Disabling Propagation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/propagation-enable-disable.jpg) 
     
     <br />
 
@@ -171,6 +171,6 @@ Similarly, if deployment restrictions apply due to missing mandatory tags, users
 
 ### Impact on Release
 
-If a user attempts to [deploy a release](../sdh/release-hub.md#deploying-release) that contains applications with missing mandatory tags, the deployment will be blocked if restrictions apply.
+If a user attempts to [deploy a release](../software-distribution-hub/release-hub.md#deploying-release) that contains applications with missing mandatory tags, the deployment will be blocked if restrictions apply.
 
 ![Figure 22: Deployment Restriction in Release (SDH)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/release-blocked.gif)
