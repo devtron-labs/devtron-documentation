@@ -10,7 +10,7 @@ With the Enterprise version of Devtron, you can access the premium features beyo
 5. Security scans
 6. Policies related to approval, deployment, plugins, tags, infra...and many more. 
 
-In order to use these enhanced features, you can get an uninterrupted 14-day free trial to explore and experience Devtron to its full potential.
+Enjoy an uninterrupted 14-day free trial and explore [all the features of Devtron Enterprise](https://devtron.ai/pricing) to their full potential.
 
 ---
 
@@ -21,14 +21,14 @@ Please ensure that cluster `kubeconfig` is properly configured and available in 
 
 {% endhint %}
 
-1. **Add Devtron Helm repository**
+### 1. Add Devtron Helm Repository
 
 ```bash
 helm repo add devtron https://helm.devtron.ai
 helm repo update devtron
 ```
 
-2. **Depending on your requirements, use any one of the following:**
+### 2. Choose an Installation Option 
 
 {% tabs %}
 
@@ -55,7 +55,7 @@ helm install devtron  devtron/devtron-operator --create-namespace --namespace de
 
 {% endtabs %}
 
-3. **Obtain the Dashboard URL to access Devtron**
+### 3. Obtain the Dashboard URL
 
 {% tabs %}
 
