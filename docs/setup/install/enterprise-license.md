@@ -78,7 +78,11 @@ Run the following command to port-forward the devtron service to port 8000
 kubectl -n devtroncd port-forward service/devtron-service 8000:80
 ```
 
-After port-forwarding, you can access the dashboard on this URL: http://127.0.0.1:8000
+#### Access Options
+##### From Remote VM (Default):
+* Run the above command and access the dashboard at `http://127.0.0.1:8000` directly from the VM.
+##### From Local System (Alternate):
+* To access the dashboard from your local machine, refer to the [Port Forwarding for Local System Access](#port-forwarding-for-local-system-access) section.
 
 
 {% endtab %}
@@ -109,13 +113,38 @@ The dashboard URL will be: `http://<HOST_IP>:<NODEPORT>/dashboard`
 
 {% endtabs %}
 
-You will see a `License Activation` screen upon visiting your Dashboard URL as shown below. If you already have a license key, paste it and click **Activate**. If not, you can [generate a fresh license key](#generate-license-key).
+#### Port Forwarding for Local System Access
+
+If Devtron is installed on a remote VM (e.g., AWS EC2, Azure VM, GCP Compute Engine) using **MicroK8s**, **Kind**, or **K3s**, the port-forward command `kubectl -n devtroncd port-forward service/devtron-service 8000:80` will only function within the remote VM’s network by default. 
+
+This implies that accessing the dashboard at `http://127.0.0.1:8000` is only possible from the remote VM itself and not from a local system.
+
+To access the dashboard from your local system:
+1. Export the kubeconfig file from the remote VM to your local machine:
+
+```bash
+scp user@cloud-vm-ip:/path/to/kubeconfig ~/.kube/config
+```
+
+2. Set the correct context:
+```bash
+kubectl config use-context <context-name>
+```
+3. Run the port-forward command from your local system:
+
+After ensuring your local system has access to the Cloud VM’s Kubernetes cluster (via the `kubeconfig` file), you can now run the port-forward command from your local machine. 
+
+```bash
+kubectl -n devtroncd port-forward service/devtron-service 8000:80
+```
+
+This command will now forwards traffic from the service running on the remote VM's **MicroK8s**, **Kind**, or **K3s** cluster to your local system’s port, making it accessible via `http://127.0.0.1:8000` on your local machine.
+
+## License Activation 
+
+Upon successfully obtaining the dashboard URL and accessing the dashboard, you will see a `License Activation` screen upon visiting your Dashboard URL as shown below. If you already have a license key, paste it and click **Activate**. If not, you can [generate a fresh license key](#generate-license-key).
 
 ![Figure 1: License Activation Screen](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-activation.jpg)
-
-
-
----
 
 ## Generate License Key
 
