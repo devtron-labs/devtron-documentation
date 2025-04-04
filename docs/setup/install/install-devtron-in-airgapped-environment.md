@@ -4,6 +4,11 @@
 
 In certain scenarios, you may need to deploy Devtron to a Kubernetes cluster that isn’t connected to the internet. Such air-gapped environments are used for various reasons, particularly in industries with strict regulatory requirements like healthcare, banking, and finance. This is because air-gapped environments aren't exposed to the public internet; therefore, they create a controlled and secure space for handling sensitive data and operations.
 
+{% hint style="success" %}
+### Try Devtron Enterprise for Free
+Explore [all capabilities](https://devtron.ai/pricing) of Devtron with its Enterprise version trial ([read more](enterprise-license.md)).
+{% endhint %}
+
 ### Prerequisites
 
 1. Install `podman` or `docker` on the VM from where you're executing the installation commands.
