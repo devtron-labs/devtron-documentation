@@ -89,33 +89,19 @@ kubectl get svc -n devtroncd devtron-service -o jsonpath='{.spec.ports[0].nodePo
 The Dashboard URL will be: `http://<HOST_IP>:<NODEPORT>/dashboard`
 
 ### Accessing the Dashboard locally from a remote VM (Port Forwarding via Kubeconfig)
-To obtain the Dashboard URL if Devtron is installed on a remote VM (e.g., AWS EC2, Azure VM, GCP Compute Engine) using MicroK8s, Kind, or K3s.
-
-In this case the port-forward command `kubectl -n devtroncd port-forward service/devtron-service 8000:80` will only forward the port within the remote VM’s local network environment. 
-
-This implies that the dashboard will only be accessible within the remote VM’s isolated environment and not from user's local system.
-
-To access the dashboard from your local system:
-1. Export the `kubeconfig` file from the remote VM to your local machine:
+To obtain the Dashboard URL if Devtron is installed on a remote VM (e.g., AWS EC2, Azure VM, GCP Compute Engine) using MicroK8s, Kind, or K3s, run the following commands:
 
 ```bash
-scp user@cloud-vm-ip:/path/to/kubeconfig ~/.kube/config
-```
+scp user@cloud-vm-ip:/path/to/kubeconfig ~/.kube/config 
+# Export the kubeconfig file from the remote VM to your local system.
 
-2. Set the correct context:
-
-```bash
 kubectl config use-context <context-name>
-```
-3. Run the port-forward command from your local system:
+# Set the correct context.
 
-After ensuring your local system has access to the Cloud VM’s Kubernetes cluster (via the `kubeconfig` file), you can now run the port-forward command from your local machine. 
-
-```bash
 kubectl -n devtroncd port-forward service/devtron-service 8000:80
+# This command will forward traffic from the service running on the 
+# remote VM's MicroK8s, Kind, or K3s cluster to your local system’s port.
 ```
-
-This command will now forwards traffic from the service running on the remote VM's MicroK8s, Kind, or K3s cluster to your local system’s port. 
 
 The Dashboard URL will be `http://127.0.0.1:8000` on your local machine.
 
@@ -135,14 +121,6 @@ This will directly open the dashboard URL on your browser
 
 {% tab title="Cloud VMs" %}
 
-### Accessing the Dashboard locally from the Cloud VM 
-To obtain the dashboard URL when devtron is running on a Cloud VMs, user can access it directly from within the VM itself by running the following command to port-forward the Devtron service to port `8000`.The port `8000` is restricted to the remote VM’s scope, means, Devtron dashboard will not be accessible from your local system in this case.
-
-```bash
-kubectl -n devtroncd port-forward service/devtron-service 8000:80
-```
-After port-forwarding, The Dashboard URL will be: `http://127.0.0.1:8000`
-
 ### Accessing the Dashboard via NodePort 
 To obtain the dashboard URL on Cloud VMs using NodePort, run the following command to  retrieve the port number assigned to the service:
 
@@ -152,33 +130,19 @@ kubectl get svc -n devtroncd devtron-service -o jsonpath='{.spec.ports[0].nodePo
 The Dashboard URL will be: `http://<HOST_IP>:<NODEPORT>/dashboard`
 
 ### Accessing the Dashboard locally from a remote VM (Port Forwarding via Kubeconfig)
-To obtain the dashboard URL if Devtron is installed on a Cloud VMs (e.g., AWS EC2, Azure VM, GCP Compute Engine) using MicroK8s, Kind, or **K3s.
-
-In this case the port-forward command `kubectl -n devtroncd port-forward service/devtron-service 8000:80` will only forward the port within the remote VM’s local network environment. 
-
-This implies that the dashboard will only be accessible within the Cloud VMs' isolated environment and not from user's local system.
-
-To access the Dashboard from your local system:
-1. Export the `kubeconfig` file from the remote VM to your local machine:
+To obtain the Dashboard URL if Devtron is installed on a remote VM (e.g., AWS EC2, Azure VM, GCP Compute Engine) using MicroK8s, Kind, or K3s, run the following commands:
 
 ```bash
-scp user@cloud-vm-ip:/path/to/kubeconfig ~/.kube/config
-```
+scp user@cloud-vm-ip:/path/to/kubeconfig ~/.kube/config 
+# Export the kubeconfig file from the remote VM to your local system.
 
-2. Set the correct context:
-
-```bash
 kubectl config use-context <context-name>
-```
-3. Run the port-forward command from your local system:
+# Set the correct context.
 
-After ensuring your local system has access to the Cloud VM’s Kubernetes cluster (via the `kubeconfig` file), you can now run the port-forward command from your local machine. 
-
-```bash
 kubectl -n devtroncd port-forward service/devtron-service 8000:80
+# This command will forward traffic from the service running on the 
+# remote VM's MicroK8s, Kind, or K3s cluster to your local system’s port.
 ```
-
-This command will now forwards traffic from the service running on the remote VM's MicroK8s, Kind, or K3s cluster to your local system’s port. 
 
 The Dashboard URL will be `http://127.0.0.1:8000` on your local machine.
 
