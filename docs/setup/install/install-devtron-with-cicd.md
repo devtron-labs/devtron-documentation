@@ -2,6 +2,11 @@
 
 In this section, we describe the steps in detail on how you can install Devtron with CI/CD integration.
 
+{% hint style="success" %}
+### Try Devtron Enterprise for Free
+Explore [all capabilities](https://devtron.ai/pricing) of Devtron with its Enterprise version trial ([read more](enterprise-license.md)).
+{% endhint %}
+
 ---
 
 ## Prerequisites

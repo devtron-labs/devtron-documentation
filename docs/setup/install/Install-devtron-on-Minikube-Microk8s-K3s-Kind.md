@@ -2,6 +2,11 @@
 
 You can install and try Devtron on a high-end machine or a Cloud VM. If you install it on a laptop/PC, it may start to respond slowly.
 
+{% hint style="success" %}
+### Try Devtron Enterprise for Free
+Explore [all capabilities](https://devtron.ai/pricing) of Devtron with its Enterprise version trial ([read more](enterprise-license.md)).
+{% endhint %}
+
 ## Prerequisites
 
 1. 2 vCPUs

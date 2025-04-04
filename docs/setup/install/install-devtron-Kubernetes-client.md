@@ -108,5 +108,8 @@ sh devtron-install.bash stop
 sh devtron-install.bash upgrade
 ```
 
-
+{% hint style="success" %}
+### Try Devtron Enterprise for Free
+Explore [all capabilities](https://devtron.ai/pricing) of Devtron with its Enterprise version trial ([read more](enterprise-license.md)).
+{% endhint %}
 
