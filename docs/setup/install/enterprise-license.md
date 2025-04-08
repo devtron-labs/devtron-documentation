@@ -88,14 +88,38 @@ You can access your Devtron Dashboard using the LoadBalancer URL displayed in th
 
 {% tab title="MicroK8s/Kind/K3s" %}
 
-Run the following command to port-forward the devtron service to port 8000
+### Accessing the Dashboard locally (MicroK8s/Kind/K3s)
+To obtain the Dashboard URL when MicroK8s/Kind/K3s running locally, run the following command to port-forward the devtron service to port `8000`
 
 ```bash
 kubectl -n devtroncd port-forward service/devtron-service 8000:80
 ```
+After port-forwarding, The Dashboard URL will be: `http://127.0.0.1:8000`
 
-After port-forwarding, you can access the dashboard on this URL: http://127.0.0.1:8000
+### Accessing the Dashboard via NodePort 
+To obtain the Dashboard URL on MicroK8s/Kind/K3s using NodePort, run the following command to  retrieve the port number assigned to the service:
 
+```bash
+kubectl get svc -n devtroncd devtron-service -o jsonpath='{.spec.ports[0].nodePort}'
+```
+The Dashboard URL will be: `http://<HOST_IP>:<NODEPORT>/dashboard`
+
+### Accessing the Dashboard locally from a remote VM (Port Forwarding via Kubeconfig)
+To obtain the Dashboard URL if Devtron is installed on a remote VM (e.g., AWS EC2, Azure VM, GCP Compute Engine) using MicroK8s, Kind, or K3s, run the following commands:
+
+```bash
+scp user@cloud-vm-ip:/path/to/kubeconfig ~/.kube/config 
+# Export the kubeconfig file from the remote VM to your local system.
+
+kubectl config use-context <context-name>
+# Set the correct context.
+
+kubectl -n devtroncd port-forward service/devtron-service 8000:80
+# This command will forward traffic from the service running on the 
+# remote VM's MicroK8s, Kind, or K3s cluster to your local system’s port.
+```
+
+The Dashboard URL will be `http://127.0.0.1:8000` on your local machine.
 
 {% endtab %}
 
@@ -113,25 +137,40 @@ This will directly open the dashboard URL on your browser
 
 {% tab title="Cloud VMs" %}
 
-Get devtron-service port number using the following command:
+### Accessing the Dashboard via NodePort 
+To obtain the dashboard URL on Cloud VMs using NodePort, run the following command to  retrieve the port number assigned to the service:
 
 ```bash
 kubectl get svc -n devtroncd devtron-service -o jsonpath='{.spec.ports[0].nodePort}'
 ```
+The Dashboard URL will be: `http://<HOST_IP>:<NODEPORT>/dashboard`
 
-The dashboard URL will be: `http://<HOST_IP>:<NODEPORT>/dashboard`
+### Accessing the Dashboard locally from a remote VM (Port Forwarding via Kubeconfig)
+To obtain the Dashboard URL if Devtron is installed on a remote VM (e.g., AWS EC2, Azure VM, GCP Compute Engine) using MicroK8s, Kind, or K3s, run the following commands:
+
+```bash
+scp user@cloud-vm-ip:/path/to/kubeconfig ~/.kube/config 
+# Export the kubeconfig file from the remote VM to your local system.
+
+kubectl config use-context <context-name>
+# Set the correct context.
+
+kubectl -n devtroncd port-forward service/devtron-service 8000:80
+# This command will forward traffic from the service running on the 
+# remote VM's MicroK8s, Kind, or K3s cluster to your local system’s port.
+```
+
+The Dashboard URL will be `http://127.0.0.1:8000` on your local machine.
 
 {% endtab %}
 
 {% endtabs %}
 
-You will see a `License Activation` screen upon visiting your Dashboard URL as shown below. If you already have a license key, paste it and click **Activate**. If not, you can [generate a fresh license key](#generate-license-key).
+## License Activation 
+
+Upon successfully obtaining the dashboard URL and accessing the dashboard, you will see a `License Activation` screen upon visiting your Dashboard URL as shown below. If you already have a license key, paste it and click **Activate**. If not, you can [generate a fresh license key](#generate-license-key).
 
 ![Figure 1: License Activation Screen](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-activation.jpg)
-
-
-
----
 
 ## Generate License Key
 
