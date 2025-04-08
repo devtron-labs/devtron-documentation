@@ -1,18 +1,27 @@
 # Jobs
 
-Job allows manual and automated execution of your source code. Job pipeline will not have CI/CD pipeline as the job is limited to your source code only. You can also configure [preset plugins](../creating-application/workflow/ci-build-pre-post-plugins.md#preset-plugins) in your job pipeline.
+Devtron Jobs provide a streamlined way to execute specific tasks or set of tasks within your application environment direlty on the source code. Devtron Jobs leverage Kubernetes Jobs to run isolated, task-specific operations within your Kubernetes cluster. 
 
-With job, you can execute your source code quickly and easily without going through CI/CD pipelines, which also optimize time.
+Unlike Devtron CI/CD pipelines that primarily focus on building, testing, and deploying applications, Devtron Jobs are designed to handle independent, ephemeral tasks and allows you to execute tasks without impacting Ci/CD workflows or pipelines, making them ideal for specific tasks.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/jobs.jpg)
+Each Devtron Job corresponds to a Kubernetes Job that creates one or more Pods to carry out a specified task. Once the task is completed, the Pods are terminated, making Devtron Jobs an ideal solution for one-time, recurring, or event-driven workloads.
 
-There are two main steps in executing Job:
+Jobs can be configured to run as:
 
-* [Configurations](configuration-job.md)
+* **One-time tasks**: Useful for maintenance operations, data migrations, backups, or environment cleanups.
 
-* [Trigger Job](triggering-job.md)
+* **Recurring tasks**: Scheduled operations like daily scans, periodic backups, or routine security checks.
 
-In the next section, we will learn on how to create, configure, trigger a job. You can also view the details on the [Overview](overview-job.md) tab and `Run History`.
+* **Event-driven tasks**: Triggered by specific events such as commits, pull requests, or tag creation.
 
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/jobs.jpg)
 
+Additionally, Devtron provides integrated [plugins]() that can be utilized within Jobs to enhance automation and streamline operations. You can explore the full list of plugins and their configurations in the [Devtron Plugin Documentation]() 
 
+To learn more about how to work with Jobs in Devtron, explore the following sections:
+
+* [Creating a Job]()
+* [configurations]()
+* [Trigger Job ]()
+* [Run History]()
+* [Job Overview]()  
