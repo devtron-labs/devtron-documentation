@@ -15,8 +15,6 @@ To create a new **Blank Job** in Devtron, follow these steps:
 
 3. The **Create Job** page opens. From the left panel, select **Blank job**, then enter the required details as listed in the table below.
 
-<!-- Provide below information on the `Create job` page to create a new **Blank Job**: -->
-
 | Fields| Description|
 |:---|:---|
 | **Project**           | User-defined name for the job in Devtron.|
@@ -27,9 +25,6 @@ To create a new **Blank Job** in Devtron, follow these steps:
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-page.jpg)
 
 4. Click **Create Job**. The job will be created, and you will be automatically redirected to the [Configurations page](./configuration.md)to continue setting up the job pipeline.
-<!-- <ul><li>Tags can also be used to [configure PersistentVolumeClaims (PVCs)](#configure-persistentvolumeclaim-pvc) for build time optimization.</li></ul> -->
-
-<!-- | **Select one of them** | <ul><li><strong>Create from scratch</strong> :Select the project from the drop-down list.<br><code>Note</code>: You have to add project under Global Configurations. Only then, it will appear in the drop-down list here.</li><li><strong>Clone existing application</strong>: Select an app you want to clone from and the project from the drop-down list.<br><code>Note</code>: You have to add project under Global Configurations. Only then, it will appear in the drop-down list here.</li></ul> | -->
 
 ## Create a Clone Job
 
@@ -41,8 +36,6 @@ To create a new **Clone Job** in Devtron, follow these steps:
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/select-create-job-latest.jpg)
 
 3. The **Create Job** page opens. From the left panel, select **Clone Job**, then enter the required details as listed in the table below.
-
-<!-- Provide below information on the `Create job` page to create a new **Blank Job**: -->
 
 | Fields| Description|
 |:---|:---|
