@@ -1,27 +1,14 @@
 # Jobs
 
-Devtron Jobs provide a streamlined way to execute specific tasks or set of tasks within your application environment direlty on the source code. Devtron Jobs leverage Kubernetes Jobs to run isolated, task-specific operations within your Kubernetes cluster. 
+Devtron Jobs provide a streamlined way to execute specific tasks or sets of tasks directly on your source code within your application environment. While they operate independently of standard CI/CD pipelines, Devtron Jobs follow a pipeline-based approach to run isolated, task-specific operations.
 
-Unlike Devtron CI/CD pipelines that primarily focus on building, testing, and deploying applications, Devtron Jobs are designed to handle independent, ephemeral tasks and allows you to execute tasks without impacting Ci/CD workflows or pipelines, making them ideal for specific tasks.
+To learn more about how Jobs work, see the full documentation below
 
-Each Devtron Job corresponds to a Kubernetes Job that creates one or more Pods to carry out a specified task. Once the task is completed, the Pods are terminated, making Devtron Jobs an ideal solution for one-time, recurring, or event-driven workloads.
+## Documentation
 
-Jobs can be configured to run as:
-
-* **One-time tasks**: Useful for maintenance operations, data migrations, backups, or environment cleanups.
-
-* **Recurring tasks**: Scheduled operations like daily scans, periodic backups, or routine security checks.
-
-* **Event-driven tasks**: Triggered by specific events such as commits, pull requests, or tag creation.
-
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/jobs.jpg)
-
-Additionally, Devtron provides integrated [plugins]() that can be utilized within Jobs to enhance automation and streamline operations. You can explore the full list of plugins and their configurations in the [Devtron Plugin Documentation]() 
-
-To learn more about how to work with Jobs in Devtron, explore the following sections:
-
-* [Creating a Job]()
-* [configurations]()
-* [Trigger Job ]()
+* [Getting Started with Jobs](./getting-started-job.md)
+* [Creating a Job](./create-job.md)
+* [Configurations](./configuration-job.md)
+* [Trigger Job ](./triggering-job.md)
 * [Run History]()
-* [Job Overview]()  
+* [Job Overview](./overview-job.md)  
