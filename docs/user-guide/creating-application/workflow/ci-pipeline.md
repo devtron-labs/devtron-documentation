@@ -86,7 +86,7 @@ There are 3 places from where you can control the cache behavior:
 
 ###### 1. Orchestrator ConfigMap (Global Settings)
 
-Super-admins can define the global cache settings in `orchestrator-cm` using the following flags:
+Super-admins can define the cache settings in `orchestrator-cm` globally for all applications and jobs using the following flags:
 
 ``` shell
 DEFAULT_CACHE_FOR_CI_BUILD # for main application build stage 
