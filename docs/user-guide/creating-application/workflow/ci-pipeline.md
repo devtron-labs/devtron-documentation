@@ -58,11 +58,67 @@ Go to the **Build stage** tab.
 
 | Field Name | Required/Optional | Description |
 | :--- | :--- | :--- |
-| TRIGGER BUILD PIPELINE | Required | The build execution may be set to: <ul><li>**Automatically (default)**: Build is triggered automatically as the Git source code changes.</li><li>**Manually**: Build is triggered manually.</li></ul> 
+| TRIGGER BUILD PIPELINE | Required | The build execution may be set to: <ul><li>**Automatically (default)**: Build is triggered automatically as the Git source code changes.</li><li>**Manually**: Build is triggered manually.</li></ul> |
+| DOCKER LAYER CACHING | Optional | Use this to [enable/disable caching of docker image layers](#docker-layer-caching) from your build pipeline |
 | Pipeline Name | Required | A name for the pipeline |
 | Source type | Required | Select the source type to build the CI pipeline: [Branch Fixed](#source-type-branch-fixed) \| [Branch Regex](#source-type-branch-regex) \| [Pull Request](#source-type-pull-request) \| [Tag Creation](#source-type-tag-creation) |
 | Branch Name | Required | Branch that triggers the CI build |
 | Docker build arguments | Optional | Override docker build configurations for this pipeline. <br> <ul><li>Key: Field name</li><li>Value: Field value</li></ul>
+
+##### Docker Layer Caching [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
+{% hint style="warning" %}
+### Prerequisite
+[Configure blob storage](https://docs.devtron.ai/configurations-overview/installation-configuration#configuration-of-blob-storage) if you wish to store cache.
+{% endhint %}
+
+If you are rebuilding the same Docker image frequently, an effective cache strategy can cut down build time. Docker images are built layer by layer and Docker’s [layer caching mechanism](https://docs.docker.com/build/cache/) allows unchanged layers to be reused across pipeline runs.
+
+You can disable caching if:
+* It’s not relevant to your workflow
+* It consumes unnecessary storage
+* The pipeline doesn’t perform an actual Docker build
+
+There are 3 places from where you can control the cache behavior:
+1. [Orchestrator ConfigMap (Global Settings)](#orchestrator-configmap-global-settings)
+2. [Editing Pipeline](#editing-pipeline)
+3. [During Trigger](#during-trigger)
+
+###### 1. Orchestrator ConfigMap (Global Settings)
+
+Super-admins can define the global cache settings in `orchestrator-cm` using the following flags:
+
+``` shell
+DEFAULT_CACHE_FOR_CI_BUILD # for main application build stage 
+DEFAULT_CACHE_FOR_CI_JOB # for CI jobs
+DEFAULT_CACHE_FOR_JOB # for general jobs
+DEFAULT_CACHE_FOR_CD_PRE # for pre-deployment stage 
+DEFAULT_CACHE_FOR_CD_POST # for post-deployment stage
+```
+
+![Cache behavior at Global-level](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/orchestrator-cm.jpg)
+
+###### 2. Editing Pipeline
+
+Go to **Workflow Editor** → **Edit Build Pipeline** (Build Stage) → **Docker Layer Caching** (toggle)  → **Use remote cache** (checkbox)
+
+By default, your build pipeline will inherit the Global Settings. However, you can use the toggle button to override it and decide the caching behavior using the **Use remote cache** checkbox. In other words, cache behavior defined in pipeline configuration will have higher priority than the global one.
+
+![Cache behavior at Pipeline-level](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/inherit-global.gif)
+
+###### 3. During Trigger
+
+Go to **Build & Deploy** (tab) → **Select Material** → **Ignore Cache** (checkbox)
+
+You have the option to ignore cache while triggering a build (regardless of the cache settings defined at the pipeline or global level).
+
+![Cache behavior at Trigger](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ignore-cache.gif)
+
+{% hint style="warning" %}
+### Note
+If the caching flags in **Global Settings** are set to false, ignoring cache becomes the default behavior even if you don't select the 'Ignore Cache' checkbox during trigger.
+{% endhint %}
+
 
 ##### Source type
 

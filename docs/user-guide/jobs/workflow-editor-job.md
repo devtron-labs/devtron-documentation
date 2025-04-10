@@ -24,6 +24,9 @@ In the `Workflow Editor` section, you can configure a job pipeline to be execute
 
 `Note`: You can create more than one job pipeline by clicking **+ Job Pipeline**.
 
+### Docker Layer Caching [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
+[Click here](../creating-application/workflow/ci-pipeline.md#docker-layer-caching) to read more about controlling cache behavior in Devtron.
 
 ### Source type: Branch Fixed
 
