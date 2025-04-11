@@ -5,7 +5,7 @@ The Overview page provides a centralized view of an application’s details with
 The **Overview** page contains three main sections:
 *	[**About**](#about): Contains application metadata such as name, description, project, creator, tags, and connected code source. It also includes options to manage tags and configure PVCs.
 *	[**Environments**](#environments): Displays all environments where the application is deployed, along with their current status and quick access to associated workflows.
-*	[**Dependencies**](#dependencies): Shows which Devtron applications this application depends on, and which other Devtron applications depend on it — helping visualize inter-app relationships.
+*	[**Dependencies**](#dependencies): Shows which Devtron applications this application depends on, and which other Devtron applications depend on it thus helping visualize microservices dependency.
 
 ![Figure 1: Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/overview-latest-1.jpg)
 
@@ -126,20 +126,7 @@ spec:
     requests:
       storage: 30Gi
 ```      
-You can apply this configuration using either of the following methods:
-
-**Apply using kubectl**
-
-1. Save the above YAML in a file named `cache-pvc.yaml`.
-2. Run the following command:
-```
-kubectl apply -f cache-pvc.yaml
-```
-3. The PVC will now be created and visible using:
-```
-kubectl get pvc -n devtron-ci
-```
-4. You should see its status as `Bound`, indicating that it’s successfully created and ready to be used by your CI pipelines.
+You can apply this configuration using Devtron’s **Resource Browser** 
 
 **Apply using Devtron’s Resource Browser**
 
@@ -197,7 +184,7 @@ The Environments section provides a detailed view of all environments where the 
 | **Application Status** |The current application status in that particular environment.|
 | **Environment** | Displays the name of the Environment.|
 | **Last Deployed**|Shows the image tag or artifact version from the latest deployment. If the application has not been deployed yet, this shows Not Deployed.|
-| **Comit**|Displays the Git commit hash associated with the last deployment.|
+| **Commit**|Displays the Git commit hash associated with the last deployment.|
 | **Deployed AT**|Indicates who deployed the application and when, it is shown as the email ID of the user along with a relative timestamp (e.g.,9 days ago).|
 
 ![Figure 4: Environments](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/environments.jpg)
