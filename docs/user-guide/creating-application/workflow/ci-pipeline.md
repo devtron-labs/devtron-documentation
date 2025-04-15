@@ -79,6 +79,11 @@ You can disable caching if:
 * It consumes unnecessary storage
 * The pipeline doesn’t perform an actual Docker build
 
+{% hint style="info" %}
+### Which cache gets impacted? 
+If a PVC with cache is attached, it will not be impacted by disabling cache. Only the remote cache is disabled.
+{% endhint %}
+
 There are 3 places from where you can control the cache behavior:
 1. [Orchestrator ConfigMap (Global Settings)](#orchestrator-configmap-global-settings)
 2. [Editing Pipeline](#editing-pipeline)
