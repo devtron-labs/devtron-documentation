@@ -26,7 +26,7 @@ Get in touch with us if you are looking for a way to improve the efficiency of y
 
 The **Refresh** icon updates the Git Commits section in the CI Pipeline by fetching the latest commits from the repository. Clicking on the refresh icon ensures that you have the most recent commit available.
 
-The **Ignore Cache** option ignores the previous build cache and creates a fresh build. If selected, will take a longer build time than usual.
+The **Ignore Cache** option ignores the previous build cache and creates a fresh build. If selected, will take a longer build time than usual. [Click here](../creating-application/workflow/ci-pipeline.md#docker-layer-caching) to read more about controlling cache behavior in Devtron.
 
 ---
 

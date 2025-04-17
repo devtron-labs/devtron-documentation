@@ -15,7 +15,7 @@ Various commits done in the repository can be seen here along with details like 
 
 **Refresh** icon, refreshes Git Commits in the job Pipeline and fetches the latest commits from the `Git Repository`.
 
-**Ignore Cache** : This option will ignore the previous build cache and create a fresh build. If selected, will take a longer build time than usual.
+**Ignore Cache** : This option will ignore the previous build cache and create a fresh build. If selected, will take a longer build time than usual. [Click here](../creating-application/workflow/ci-pipeline.md#docker-layer-caching) to read more about controlling cache behavior in Devtron.
 
 It can be seen that the job pipeline is triggered here and is the _Running_ state.
 
