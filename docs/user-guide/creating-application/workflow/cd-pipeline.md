@@ -235,7 +235,7 @@ If you already use external Helm or Argo CD for deployment and wish to try out D
 * Execute pre-deployment and post-deployment tasks
 * Scan your apps for vulnerabilities
 * Hibernate or restart your app
-* View config diff, deployment history, and all the capabilities that come with Devtron Apps
+* View config diff, deployment history, and all the capabilities that come with Devtron Apps. Check the [full list of features](https://devtron.ai/pricing).
 
 ### Migrate Helm Release
 
