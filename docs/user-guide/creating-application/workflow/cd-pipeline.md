@@ -268,29 +268,26 @@ You can not only [view your external Helm apps](../../applications.md#view-exter
 This feature comes with certain mentioned limitations and expectations. If your use case doesn't fit and goes beyond, feel free to [**open a feature request**](https://github.com/devtron-labs/devtron/issues).
 
 * Apps deployed using Helm + manual kubectl, kubectl, kustomize + helm are not supported.
-* This feature is specifically designed for use cases where you need to change only the container image via CD flow.
-* An installed Helm app may have multiple `values.yaml`. With Devtron, user can modify only one (if multiple files need to be modified, they must be merged into a single `app-values.yaml`.)
-* Once onboarded to Devtron, the user should only use Devtron to manage the application and not do manual changes (outside of Devtron) on that onboarded Helm release.
-* App’s custom chart and its required versions, including image descriptors, must be added in Devtron.  
+* By default, Devtron detects and uses `app-values.yaml` as the values file. If your Helm app contains multiple values files, you must consolidate it into a single `app-values.yaml`.
+* Once an app is onboarded to Devtron, the user should only use Devtron to manage that application and not make manual changes on that onboarded Helm release. This is because Devtron might not monitor or reconcile the manual changes you make outside Devtron.
 
 {% endhint %}
 
 ### Migrate Argo CD Application
-
-{% hint style="warning" %}
-If you are installing the GitOps (ArgoCD) module from [Devtron Stack Manager](../integrations/argocd.md), make sure to save or update both the GitOps configuration and the cluster configuration after installation.
-{% endhint %}
 
 You can not only [view your external Argo CD apps](../../applications.md#view-external-argocd-app-listing), but also manage their deployments using Devtron's CI/CD.
 
 {% hint style="warning" %}
 ### Prerequisites
 * Your app should be an Argo Helm app ([read about supported tools](https://argo-cd.readthedocs.io/en/stable/user-guide/application_sources/)).
-* It must have a single `values.yaml` file and a single Git source.
-* The `values.yaml` should be in git.
-* A target cluster and namespace must be available (in the application object).
+* It must have a single Git source and a single values file. By default, Devtron expects `app-values.yaml` so make sure it is committed to Git.
+* GitOps credentials required to commit in the Git repo have been configured in [Global Configurations](../../global-configurations/gitops.md).
+* The cluster containing your external Argo applications should be added to Devtron. Refer [Clusters & Environments](../../global-configurations/cluster-and-environments.md).
+* The target deployment cluster, its namespace, and its [environment](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster) should be added to Devtron.
 * Your Argo CD app must use the same chart type as your application. If needed, you can upload or select the appropriate chart in **Global Configuration** → **Deployment Charts**. Then save the chart type at [base configuration](../deployment-template.md) of your application.
-* Add your external cluster (containing your Argo Apps) in [Clusters & Environments](../../global-configurations/cluster-and-environments.md).
+
+* The external Argo CD should have auto-sync enabled or an alternative syncing mechanism, as Devtron does not perform manual syncs.
+
 {% endhint %}
 
 1. Click **Argo CD Application** in 'Select type of application to migrate'.
@@ -312,15 +309,15 @@ You can not only [view your external Argo CD apps](../../applications.md#view-ex
 {% hint style="info" %}
 ### Limitations
 This feature comes with certain mentioned limitations and expectations. If your use case doesn't fit and goes beyond, feel free to [**open a feature request**](https://github.com/devtron-labs/devtron/issues).
-
-* App’s custom chart and its required versions, including image descriptors, must be added in Devtron. 
+ 
 * The Git source type should be branch HEAD.
-* The cluster containing Argo applications and the target deployment cluster are both added in Devtron.
 * The target deployment cluster’s endpoint in Devtron must be the same as the one configured in Argo CD.
-* The target deployment [environment exists in Devtron](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster).
-* GitOps credentials required to commit in the Git repo have been configured in [Global Configurations](../../global-configurations/gitops.md).
-* The external Argo CD has auto-sync enabled or an alternative syncing mechanism, as Devtron does not perform manual syncs.
-* Once onboarded to Devtron, users should manage the application only through Devtron and avoid making changes directly in Git or Argo CD.
+* Once onboarded to Devtron, users should manage the application only through Devtron and avoid making changes directly in Git or Argo CD. This is because Devtron might not monitor or reconcile the manual changes you make outside Devtron.
+{% endhint %}
+
+{% hint style="warning" %}
+### Note
+If you have configured [GitOps](../gitops-config.md) for your external Argo apps in Devtron, and later install the GitOps (ArgoCD) module from [Devtron Stack Manager](../integrations/argocd.md) to deploy your Devtron apps/Helm apps via GitOps, you must once again save your GitOps and Cluster configurations after installation. This might prevent potential errors and ensure your GitOps deployments are functional.
 {% endhint %}
 
 ---
