@@ -281,7 +281,7 @@ You can not only [view your external Argo CD apps](../../applications.md#view-ex
 ### Prerequisites
 * Your app should be an Argo Helm app ([read about supported tools](https://argo-cd.readthedocs.io/en/stable/user-guide/application_sources/)).
 * It must have a single Git source and a single values file. By default, Devtron expects `app-values.yaml` so make sure it is committed to Git.
-* GitOps credentials required to commit in the Git repo have been configured in [Global Configurations](../../global-configurations/gitops.md).
+* GitOps credentials required to commit in the Git repo should be configured in [Global Configurations](../../global-configurations/gitops.md).
 * The cluster containing your external Argo applications should be added to Devtron. Refer [Clusters & Environments](../../global-configurations/cluster-and-environments.md).
 * The target deployment cluster, its namespace, and its [environment](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster) should be added to Devtron.
 * Your Argo CD app must use the same chart type as your application. If needed, you can upload or select the appropriate chart in **Global Configuration** → **Deployment Charts**. Then save the chart type at [base configuration](../deployment-template.md) of your application.
