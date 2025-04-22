@@ -63,8 +63,6 @@ kubectl logs -f job/devtron-upgrade-init -n devtroncd
 
 Ensure this job completes successfully before proceeding to the next step.
 
-The value should be "true" if the `devtron-upgrade-init` job was successful.
-
 
 ### 3. Apply the 'upgrade' job
 
