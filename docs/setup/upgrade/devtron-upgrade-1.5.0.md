@@ -1,6 +1,6 @@
 # Upgrade Devtron to 1.5.0
 
-This document outlines the step-by-step process that must be followed before upgrading Devtron to version **1.5.0**.
+This document outlines the step-by-step process to be followed before upgrading Devtron to version **1.5.0**.
 
 ## Overview of the Upgrade Process
 
@@ -10,19 +10,21 @@ The upgrade process consists of three sequential Kubernetes jobs:
 2. **devtron-upgrade-init**: Scales down Devtron and starts the migration process.
 3. **devtron-upgrade**: Performs the actual database migration and restores the system.
 
-After the completion of the above jobs, you may proceed to upgrade Devtron using the UI or CLI.
+After the completion of the above jobs, you may proceed to upgrade Devtron using the UI or command line.
 
 ---
 
 ## Prerequisites
 
-* Ensure that you have deployed the **devtron-backups** chart and at least one backup is pushed successfully.
+* Ensure that you have [deployed the **devtron-backups** chart](../install/devtron-backup.md) and that at least one backup has been pushed successfully. [Click here](https://github.com/devtron-labs/charts/blob/main/charts/devtron-backups/README.md) to know more about the backups chart.
 * You must have administrative access to the cluster where Devtron is running, along with `kubectl` configured.
-* PVC creation is not blocked by any policy. If it is, exclude the `devtroncd` namespace from it.
+* PVC creation must not be blocked by any policy. If it is, exclude the `devtroncd` namespace from it.
 
 ---
 
-## Step 1: Apply the pre-upgrade job
+## Steps
+
+### 1. Apply the 'pre-upgrade' job
 
 The `devtron-pre-upgrade` job creates the necessary resources and prepares for the database backup.
 
@@ -45,9 +47,8 @@ kubectl logs -f job/devtron-pre-upgrade -n devtroncd
 
 Wait for this job to complete successfully before proceeding.
 
----
 
-## Step 2: Monitor the upgrade-init job
+### 2. Monitor the 'upgrade-init' job
 
 The `devtron-upgrade-init` job is automatically triggered by the `devtron-pre-upgrade` job:
 1. It scales down all Devtron components to ensure database consistency.
@@ -60,14 +61,12 @@ To monitor the progress of this job:
 kubectl logs -f job/devtron-upgrade-init -n devtroncd
 ```
 
-The job will indicate when the "First Checkpoint" is reached. Ensure this job completes successfully before proceeding to the next step.
-
+Ensure this job completes successfully before proceeding to the next step.
 
 The value should be "true" if the `devtron-upgrade-init` job was successful.
 
----
 
-## Step 3: Apply the upgrade job
+### 3. Apply the 'upgrade' job
 
 Once the backup is confirmed, apply the final upgrade job:
 
@@ -127,4 +126,18 @@ Look for any entries with "ERROR" in the keys.
 
 ## Next Steps
 
-Once the database migration is complete, you can proceed with upgrading the Devtron application through the UI as mentioned in the final message of the upgrade job.
+Once the database migration is complete, you can proceed with upgrading the Devtron application through the UI as mentioned in the final message of the upgrade job. Alternatively, you may use the [upgrade commands](#upgrade-commands) mentioned below.
+
+### Upgrade Commands
+
+1. Update the Helm repository
+
+```bash
+helm repo update
+```
+
+2. Run the upgrade command for Devtron
+
+```bash
+helm upgrade devtron devtron/devtron-operator -n devtroncd --reuse-values -f https://raw.githubusercontent.com/devtron-labs/devtron/main/charts/devtron/devtron-bom.yaml
+```
