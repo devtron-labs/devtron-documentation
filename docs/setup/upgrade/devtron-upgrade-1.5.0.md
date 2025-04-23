@@ -7,8 +7,8 @@ This document outlines the step-by-step process to be followed before upgrading 
 The upgrade process consists of three sequential Kubernetes jobs:
 
 1. **devtron-pre-upgrade**: Prepares the environment for the upgrade.
-2. **devtron-upgrade-init**: Scales down Devtron and starts the migration process.
-3. **devtron-upgrade**: Performs the actual database migration and restores the system.
+2. **devtron-upgrade-init**: Scales down Devtron and takes the backup.
+3. **devtron-upgrade**: Performs the restoration of data and scales up Devtron.
 
 After the completion of the above jobs, you may proceed to upgrade Devtron using the UI or command line.
 
@@ -30,7 +30,7 @@ The `devtron-pre-upgrade` job creates the necessary resources and prepares for t
 
 ```bash
 # Apply the devtron-pre-upgrade job
-kubectl apply -f https://raw.githubusercontent.com/devtron-labs/utilities/refs/heads/raw-links/scripts/postgres-upgrade/devtron-pre-upgrade.yaml
+kubectl apply -f https://raw.githubusercontent.com/devtron-labs/utilities/refs/heads/main/scripts/postgres-upgrade/devtron-pre-upgrade.yaml
 ```
 
 This job will:
@@ -69,7 +69,7 @@ Ensure this job completes successfully before proceeding to the next step.
 Once the backup is confirmed, apply the final upgrade job:
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/devtron-labs/utilities/refs/heads/raw-links/scripts/postgres-upgrade/devtron-upgrade.yaml
+kubectl apply -f https://raw.githubusercontent.com/devtron-labs/utilities/refs/heads/main/scripts/postgres-upgrade/devtron-upgrade.yaml
 ```
 
 This job will:
