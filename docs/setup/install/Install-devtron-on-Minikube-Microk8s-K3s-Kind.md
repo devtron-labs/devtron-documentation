@@ -133,7 +133,7 @@ It is recommended to use Cloud VM with 2vCPU+, 4GB+ free memory, 20GB+ storage, 
 ### Create MicroK8s Cluster
 
 ```bash
-sudo snap install microk8s --classic --channel=1.22
+sudo snap install microk8s --classic 
 sudo usermod -a -G microk8s $USER
 sudo chown -f -R $USER ~/.kube
 newgrp microk8s
