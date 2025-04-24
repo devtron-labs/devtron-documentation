@@ -99,3 +99,15 @@ In the **Edit job pipeline** window, edit the required fields and select **Updat
 You can only delete a job pipeline in your workflow.
 
 To delete a job pipeline, go to **Configurations > Workflow Editor** and select **Delete Pipeline**.
+
+---
+
+## Next Steps
+
+*  After creating and configuring the job pipeline, the next optional step is to configure ConfigMaps and Secrets for your job. Refer the [ConfigMaps & Secrets](./configmap-secret/README.md) to configure them.
+
+* Devtron also allows you to configure environment-specific ConfigMaps and Secrets. Refer the [Environment Override](./environment-override-job) section to configure them. 
+
+* After creating and configuring the ConfigMaps & Secrets, the next step is to trigger your job pipeline. To trigger your configured job-pipeline refer [Triggering a job pipeline](../triggering-job.md)
+
+---

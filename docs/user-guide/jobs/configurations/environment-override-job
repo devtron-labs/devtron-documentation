@@ -1,0 +1,105 @@
+# Environment Overrides
+
+You can view all environments associated with a job under the **Environment Overrides** section.
+
+<!-- image -->
+
+The Environment Overrides section allows you to customize the **ConfigMaps**, and **Secrets** for different environments such as development, testing, staging, and production.
+
+## How it works
+
+* When you add a job pipeline to an job's workflow, each environment configuration initially inherits the  ConfigMap and Secret from the **Base Configurations** of the job.
+
+* The **Environment Overrides** section lets you customize those ConfigMap and Secret per environment without affecting those of other environments. For example, in a non-production environment, you might allocate `100m` CPU, while in production, you may increase it to `500m` to handle higher traffic.
+
+---
+
+## Environment Configurations Page
+
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and applications) to perform environment override.
+{% endhint %}
+
+1. In your job, go to **Configurations** → **Environment Overrides**. 
+
+    <!-- ![Figure 2: Accessing Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/config-env-override.jpg) -->
+
+2. Select an environment whose configurations you wish to modify.
+
+    <!-- ![Figure 3: Selecting Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/environment-override-v3.jpg) -->
+
+3. You will get the following options (similar to the **ConfigMaps & Secrets** page):
+    * [ConfigMaps](#override-configmap--secret)
+    * [Secrets](#override-configmap--secret)
+
+Let's visit each of the configuration files and see how to override their values for the selected environment.
+
+## Override ConfigMaps & Secrets
+
+If you want to configure your ConfigMaps and Secrets at the application-level then you can provide them in [ConfigMaps](../configuration/config-maps-and-secrets/configmaps.md) and [Secrets](../configuration/config-maps-and-secrets/secrets.md), but if you want to have environment-specific ConfigMaps & Secrets, use **Environment Override** to create new environment specific ConfigMaps & Secrets or override existing ConfigMaps & Secrets for specific environments. At the time of execution, devtron will pick environment specific ConfigMaps & Secrets according to the environment in which the job is executed and pass them to your job pods.
+
+1. Select the ConfigMap or Secret you wish to override, by default the ConfigMap or Secret is inherited from the base configuration.
+
+    <!-- ![Figure 6: No Override Tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/no-override-tab.gif) -->
+
+2. To create Override, select the **No Override** tab and click the **Create Override** button.
+
+    <!-- ![Figure 7: Create Override Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/create-override.gif) -->
+
+4. In the same tab (now labelled as **Override**), you can choose any one mode for changing the configuration values:
+    * **YAML** - This mode has a YAML based editor intended for advanced users.
+    * **GUI** - This mode has a user-friendly interface intended for beginner to advanced users.
+
+{% hint style="info" %}
+### Note
+Users who are not super-admins will land on GUI mode when they override; whereas super-admins will land on YAML mode. This is just the default behavior, users can still toggle the mode if needed.
+{% endhint %}
+
+<!-- Let's choose YAML mode for now and proceed. If you prefer GUI mode, go to [Override Deployment Template using GUI](#override-deployment-template-using-gui) section. -->
+
+5. You can override the values using [Replace](#using-replace-strategy) merge strategy:
+
+### Replace Strategy 
+
+* The entire configuration is replaced with your new environment-specific settings.
+* The replaced template will no longer depend or inherit from base configuration anymore.
+* Best for a complete override.
+
+| Field     | Inherited Configuration | Input (with Replace)    | Final Configuration |
+|-----------|--------------------|------------------------------|---------------------|
+| cpu       | 100m               | 500m                         | 500m                |
+| memory    | 256Mi              | 512Mi                        | 512Mi               |
+| replicas  | 2                  | *(Not specified)*            | *(Removed)*         |
+| logLevel  | "info"             | *(Not specified)*            | *(Removed)*         |
+| timeout   | (Not specified)    | 30s                          | 30s (Added)         |
+
+Refer the tutorials below to know the process in YAML mode. In case you wish to use GUI mode, skip to [Overriding in GUI mode](#using-gui-mode-for-overriding).
+
+{% embed url="https://www.youtube.com/watch?v=lSoj8wwOej0" %}
+
+---
+
+## Using GUI Mode for Overriding
+
+The above sections, i.e., [Override ConfigMap & Secret](#override-configmap--secret) explained the process of environment override using YAML.
+
+Refer the below tutorial videos to know the process of overriding them using GUI.
+
+### Override ConfigMaps and Secrets using GUI
+
+{% embed url="https://www.youtube.com/watch?v=UOTKLVuSkDg" %}
+
+---
+
+## Delete Override
+
+This action will discard the current overrides and the base configuration file (in this example, deployment template) will be restored back for the environment. 
+
+1. On the right side, click the kebab menu (3 vertical dots).
+2. Click **Delete Override**.
+3. Confirm the deletion in the dialogbox.
+<!-- 
+![Figure 9: Delete Override Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/delete-override.gif) -->
+
+---
