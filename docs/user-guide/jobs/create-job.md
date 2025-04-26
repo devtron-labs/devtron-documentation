@@ -11,6 +11,9 @@ In devtron, jobs can be created by two ways:
 To create a new **Blank Job** in Devtron, follow these steps:
 
 1. Navigate to **Devtron Dashboard** → **Jobs**.
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/jobs.jpg)
+
 2. Click **Create** button in the top-right corner and select **Job** from the drop-down list.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/select-create-job-latest.jpg)
@@ -47,7 +50,7 @@ To create a new **Clone Job** in Devtron, follow these steps:
 | **Tags**| <p>Key-value pairs used for identifying and organizing the application.<br>Users can propagate tags as Kubernetes labels to enable filtering, bulk operations, and integrations with Kubernetes tools.</p><ol><li>Click the <strong>Add tags to job</strong> dropdown on the <strong>Create job</strong> page.</li><li>Under the <strong>Tags</strong> section, Click <code>+</code> to add a new tag.</li><li>You can click <code>X</code> icon to delete an existing tag.</li><li>You can click the <code>propagation icon</code> <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg" alt=""> to propagate a tag (turns dark grey when propagated), click again to remove propagation.<br>[<a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-latest-1.jpg">Snapshot</a>]</li></ol> |
 | **Select an job to clone** | Select the existing job from the dropdown that you want to clone.Enter the description of a job.|
 
-<!-- image -->
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-clone-job.jpg)
 
 4. Click **Create Job**. The **Clone job** will be created, and you will be automatically redirected to the [Configurations page](configuration/), where the configuration will be pre-populated based on the selected source job. You may review and modify these settings as required.
 

@@ -12,24 +12,24 @@ To configure the Source Code, follow these steps:
 
 1. If the job has been just created, you will be automatically directed to the Configurations page. If not, navigate to the **Devtron Dashboard** → **Jobs** → **Select the job** → **Configurations**.
 
-<!-- image  -->
-
 2. Select the **Source Code** tab from the left sidebar.
 
-<!-- image  -->
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code.jpg)
 
-3. Under Add Git Repository, select the Git Account from the dropdown menu. <br>You can also select GitHub Public from the same dropdown to configure a public repository that does not require authentication.
+3. Under Add Git Repository, select the Git Account from the dropdown menu. You can also select GitHub Public from the same dropdown to configure a public repository that does not require authentication.
 
-<!-- image  -->
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-git-account.jpg)
 
 4. Enter the Repository URL in the Git Repo URL field, corresponding to the selected Git account.<br>
 If GitHub Public is selected, you can enter the URL of any public repository, as no authentication is required. 
 
-<!-- image  -->
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-repo-url.jpg)
 
 5. Configure the [Additional Options](#configure-additional-options-optional) for the job as per your requirements.
 
 6. Click on the **Save** button to save the changes.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-save.jpg)
 
 ### Configure Additional Options (optional)
 
@@ -45,7 +45,7 @@ To define the exclusion or inclusion rules, follow these steps:
 
 1. Check the **Exclude specific file/folder in this repo** checkbox.
 
-<!-- image -->
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-exclude-files.jpg)
 
 2. Enter the exclusion or inclusion rules in the **Enter file or folder paths to be included or excluded** field.
 
@@ -62,13 +62,11 @@ To define the exclusion or inclusion rules, follow these steps:
 
 You may use the **Learn how** link (as shown below) to understand the syntax of defining an exclusion or inclusion rule.
 
-<!-- image  -->
-
-![Figure 6: 'Learn how' Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/rules.jpg)
+![Figure : 'Learn how' Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-learn-how.jpg)
 
 Since file paths can be long, Devtron supports regex too for writing the paths. To understand it better, you may click the **How to use** link as shown below.
 
-![Figure 7: Regex Support](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/regex-help.jpg)
+![Figure : Regex Support](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-regex.jpg)
 
 
 #### Set checkout path
@@ -87,10 +85,12 @@ To set the checkout path, follow these steps:
 |`./src`|Checkout the repository to the src folder|
 |`./src/app`|Checkout the repository to the app folder inside the src folder|
 
-<!-- image  -->
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-checkout.jpg)
 
 #### Pull submodules recursively
 
 This checkbox is used for pulling [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) present in a repo. The submodules will be pulled recursively, and the auth method used for the parent repo will be used for submodules too.
 
 To pull the submodules recursively, check the **Pull submodules recursively** checkbox.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-pull.jpg)

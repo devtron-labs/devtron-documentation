@@ -1,113 +1,352 @@
 # Workflow Editor
 
-In the `Workflow Editor` section, you can configure a job pipeline to be executed. Pipelines can be configured to be triggered automatically or manually based on code change or time.
+The **Workflow Editor** in Devtron allows you to create and manage job pipelines.
+It provides visual interface to create and configure job pipelines, define Basic Configurations such as trigger types, branch name and allows you to add **Tasks to be executed** in the desired sequence.
 
-* After adding Git repo in the `Source Code` section, go to the `Workflow Editor`. 
-* Click `Job Pipeline`.
-* Provide the information in the following fields on the **Create job pipeline** page:
+To create and configure the Job Pipeline
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-pipeline-basic.jpg)
+1. Navigate to the **Workflow Editor** tab in the left sidebar of the Job **Configuration** page. Alternatively, you can go to the **Devtron Dashboard** → **Jobs** → **Select the job** → **Configurations** → **Workflow Editor**.
 
-| Field Name | Required/Optional | Description |
-| :--- | :--- | :--- |
-| Pipeline Name | Required | A name for the pipeline |
-| Source type | Required | Source type to trigger the job pipeline. Available options: [Branch Fixed](#source-type-branch-fixed) \| [Branch Regex](#source-type-branch-regex) \|[Pull Request](#source-type-pull-request) \| [Tag Creation](#source-type-tag-creation) |
-| Branch Name | Required | Branch that triggers the job pipeline. |
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor.jpg)
 
-* Click **Create Pipeline**.
+2. Click **+ Job Pipeline** to create a new Job workflow, a pop-up **Create job workflow** will appear asking you to enter a name for your Job workflow.
 
-* The job pipeline is created.
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-add-pipeline.jpg)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/job-pipeline-created.jpg)
+3. Enter the name for your Job workflow and click on **Create Workflow** button, a new Job workflow will be created, in which you can add a job pipeline.
 
-* To trigger job pipeline, go to the [Trigger Job](triggering-job.md) section. 
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-name.jpg)
 
-`Note`: You can create more than one job pipeline by clicking **+ Job Pipeline**.
+4. To add a job pipeline to your workflow, click anywhere in the `Add job pipeline to this workflow` area under the job workflow name. This opens the **Create job pipeline** Window in which you can create and configure your job.
 
-### Docker Layer Caching [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-area.jpg)
 
-[Click here](../creating-application/workflow/ci-pipeline.md#docker-layer-caching) to read more about controlling cache behavior in Devtron.
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-create-pipeline.jpg)
 
-### Source type: Branch Fixed
+## Create Job Pipeline
 
-The **Source type** - "Branch Fixed" allows you to trigger a CI build whenever there is a code change on the specified branch.
+In **Create job pipeline** window, you can create and configure job pipelines.\
+It includes 2 stages i.e., [**Basic Configurations**](./#basic-configurations) and [**Tasks to be executed**](./#tasks-to-be-executed)
 
-Select the **Source type** as "Branch Fixed" and enter the **Branch Name**.
+### Basic Configurations
 
-### Source type: Branch Regex
+This stage allows you to define primary configurations such as Pipeline name, Source Type, Branch Name, and how job should be triggered. Refer the following table to configure each field.
 
-`Branch Regex` allows users to easily switch between branches matching the configured Regex before triggering the build pipeline.
-In case of `Branch Fixed`, users cannot change the branch name in ci-pipeline unless they have admin access for the app. So, if users with 
-`Build and Deploy` access should be allowed to switch branch name before triggering ci-pipeline, `Branch Regex` should be selected as source type by a user with Admin access.
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-basic-config.jpg)
 
-For example if the user sets the Branch Regex as `feature-*`, then users can trigger from branches such as `feature-1450`, `feature-hot-fix` etc.
+| Field Name|Description|
+| :--- |:--- |
+| Trigger Job Pipeline | <p>The job execution may be set to:</p><ul><li><code>Automatically</code>: Job execution is triggered automatically as the Git source code changes.</li><li><code>Manually</code>: Build is triggered manually.</li></ul>|
+| Pipeline Name | Assign a name to your job pipeline|
+| Source type | Source type to trigger the job pipeline. Available options: Branch Fixed, Branch Regex, Pull Request, Tag Creation|
+| Branch Name| Branch that triggers the CI build|
+| Use remote cache| <p>Enable this option to use the Docker cache from previous builds. Docker's layer caching mechanism allows unchanged docker images layers to be reused across pipeline runs,thus drastically reducing execution times<br></p><div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p>The globe toggle, next to <code>Docker Layer Caching</code> means that the configuration is inherited from global<br></p><ul><li>Enabled: Inherits the caching settings defined globally.</li><li>Disabled: Allows you to define a pipeline-level configuration specific to this job.</li></ul></div> |
 
-### Source type: Pull Request
+### Tasks to be executed
 
-The **Source type** - "Pull Request" allows you to configure the CI Pipeline using the PR raised in your repository.
+The Stage allows you define tasks for your job.
 
-> Before you begin, [configure the webhook](../creating-application/workflow/ci-pipeline.md#configuring-webhook) for either GitHub or Bitbucket.
+You can create one or more tasks. Tasks can be dependent on each other for execution, In other words, the output variable of one task can be used as an input for the next task to execute your job. Tasks will execute in the order they are arranged and can be rearranged by drag-and-drop; however, the order of passing the variables must be followed.
 
-> The "Pull Request" source type feature only works for the host GitHub or Bitbucket cloud for now. To request support for a different Git host, please create a GitHub issue [here](https://github.com/devtron-labs/devtron/issues).
+To create a task:
 
+1. Navigate to **Tasks to be executed** in the **Create job pipeline** window. 
 
-To trigger the build from specific PRs, you can filter the PRs based on the following keys:
+2. Click **Add Task** to add a task in your job pipeline.
 
-| Filter key | Description |
-| :--- | :--- |
-| `Author` | Author of the PR |
-| `Source branch name` | Branch from which the Pull Request is generated |
-| `Target branch name` | Branch to which the Pull request will be merged |
-| `Title` | Title of the Pull Request |
-| `State` | State of the PR. Default is "open" and cannot be changed |
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-add-task.jpg)
 
-Select the appropriate filter and pass the matching condition as a regular expression (`regex`).
+3. A new task will be added (in the left side of the Create job pipeline window),you can configure the task either by selecting one of the available [preset plugins](#create-task-using-preset-plugins) or by [Executing a custom script](#create-task-using-custom-script)
 
-> Devtron uses regexp library, view [regexp cheatsheet](https://yourbasic.org/golang/regexp-cheat-sheet/). You can test your custom regex from [here](https://regex101.com/r/lHHuaE/1).
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-tasks.jpg)
 
-### Source type: Tag Creation
+#### Create Task using preset plugins
 
-The **Source type** - "Tag Creation" allows you to build the CI pipeline from a tag.
+In Devtron, preset plugins are pre-defined tasks templates, that helps you automate and execute common operations such as provisioning infrastructure, taking backups, exporting container images etc., without writing custom scripts.
 
-> Before you begin, [configure the webhook](../creating-application/workflow/ci-pipeline.md#configuring-webhook) for either GitHub or Bitbucket.
+Devtron provides a set of built-in preset plugins, and you can also create your own plugins in devtron according to your specific needs.
 
-To trigger the build from specific tags, you can filter the tags based on the `author` and/or the `tag name`.
+To create a task using preset plugins, let's take an scenario, where you want to provision a GKE Cluster in your Google Cloud Console, instead of defining a whole new custom script, you can use the `GKE Provisioner` plugin to provision the GKE cluster.
 
-| Filter key | Description |
-| :--- | :--- |
-| `Author` | The one who created the tag |
-| `Tag name` | Name of the tag for which the webhook will be triggered |
+To create a task using the GKE plugin follow the below steps:
 
-Select the appropriate filter and pass the matching condition as a regular expression (`regex`).
+1. After Configuring the basic configurations, select **Tasks to be executed** Tab
+2. Click **+Add Task** from the left side panel.
+3. Search for `GKE Provisioner` in the `Search Plugin` Search bar and select `GKE Provisioner` from the list of plugins. 
 
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke-search.jpg)
 
-### Add Preset Plugins
+ * The right-side panel will display the fields specific to the GKE Provisioner plugin which are required to be configured.
+ * The left-side panel will now shows a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by-default), along with it's logo. You can change the task's name using the `Task name` field but plugin's logo will remain indicating that it is a preset plugin.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-pipeline-add-tasks.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke.jpg)
 
-You can also add preset plugins in your job pipeline to execute some standard tasks, such as Code analysis, Load testing, Security scanning etc. Click `Add Task` to add [preset plugins](../creating-application/workflow/ci-build-pre-post-plugins.md#configuring-pre-post-build-tasks).
+4. Refer the [GKE Provisioner](/docs/user-guide/plugins/gke-provisioner.md) documentation to configure the `GKE Provisioner` fields with appropriate values.
 
+> Refer to the [Plugins documentation](/docs/user-guide/plugins/README.md) to explore and configure any of the available plugins. 
+
+5. After configuring the fields successfully, your task will be created, if you wish, you can add more tasks by clicking on `+ Add task` in the left-side panel.
+
+#### Create Task using Custom Script
+
+In devtron you can also define a task using custom script to meet specific requirements. To create a task a task using a custom script follow the below steps:
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-custom-task.jpg)
+
+1. After Configuring the basic configurations, select **Tasks to be executed** Tab.
+
+2. Click **+Add Task** from the left side panel, and then select **Execute custom task**.
+
+ * The right-side panel will display the fields which are required to be configured in order to create the task.
+ * The left-side panel will now displays a task under **Tasks (IN ORDER OF EXECUTION)**.
+
+3. Enter the Task name(required) and Task Description (optional).
+
+4. Select the **Task type**, it can be `Shell` or `Container Image`.
+
+ * **Shell Tasks**: These execute shell scripts directly within the job runtime environment.In this type of tasks you can define inline scripts or use script files from your configured source code.
+
+ * **Container Image Tasks**: These allows you to execute commands and scripts inside a custom docker container, instead of using the default environment provided by devtron, you can specify you own container image with all dependencies and tools required for the tasks. 
+
+These Tasks run using container in container approach, that means, the specified image is pulled and run inside the job pod, thus providing a complete isolated environment.
+
+5. After selecting the **Task type**, you need to configure task-specific fields based on that **Task type**.Let's look at some examples below to configure both **Shell type** and **Container image** tasks.
+
+#### Example - Shell Task
+
+Let's take an example of a **Shell task** for a job that allows you to back up a specific PostgreSQL database and stores it as a file.
+
+**Tasks Configurations**
+
+|Field| Values for This Example| Required/Optional | Description|
+| :--- | :--- | :--- | :--- |
+| **Task Name**| `pg-backup-task`| Required| Enter a name for the task|
+| **Task Description**| This task performs a backup of a specific PostgreSQL database and save it as a file and stores the file path as a output variable. | Optional | Short description for the task|
+| **Task Type** | `Shell`| Optional| Select the preferred task type |
+| Input variables| Refer the [Input Variable table](./#input-variable-table) below | Optional| <p>These variables provide dynamic values to the script at the time of execution and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
+| Trigger/Skip condition | `Trigger If: DB_NAME == prod-db`| Optional| A conditional statement to execute or skip the task|
+| Script| Refer the [Script](./#script)| Required| Custom script for executing Job tasks|
+| Output directory path  | `/backups`| Optional| Directory path where output files such as logs, errors, etc. will be available after the execution.|
+| Output variables| Refer the [output variable](./#output-variables) table| Optional| <p>Output variables  stores the output as variables and these variables can be used as input variables for the next task.</p><ul><li><a href="./#passfail-condition">Pass/Failure Condition</a> (Optional): Conditional statements to determine the success/failure of the task. A failed condition stops the execution of the next task and/or build process</li></ul>|
+
+**Input Variable Table**
+
+| Variable     | Type   | Value                  | Description                                   |
+| ------------ | ------ | ---------------------- | --------------------------------------------- |
+| DB\_NAME     | String | prod-db                | Name of the database to be backed up          |
+| DB\_USER     | String | postgres               | Username for the PostgreSQL instance          |
+| DB\_HOST     | String | localhost              | PostgreSQL server hostname                    |
+| BACKUP\_PATH | String | /backup                | Directory path where the backup file is saved |
+
+* To add a input variable, click **+ Add Variable** next to the `Input Variable`, a new table appear asking you to enter the variable and its required information.
+
+* You can click `+` icon next to **Variable** header field to add more rows to the input variable table.<br>
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-var-config.jpg)
+
+* You can click the slider icon next to each variable name to make it's value required and add a description for it.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-value-config.jpg)
+
+* You can click the slider icon next to each variable value to add choices, allow custom input, and ask value at runtime.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-choice.jpg)
+
+**Script:**
+
+{% code title="Custom Script" overflow="wrap" lineNumbers="true" %}
+```bash
+#!/bin/sh 
+set -eo pipefail 
+#set -v  ## uncomment this to debug the script 
+
+echo "Taking database backup"
+bash ./scripts/backup.sh --db-host "$DB_HOST" --db-user "$DB_USER" --db-name "$DB_NAME" --backup-path "$BACKUP_PATH"
+```
+{% endcode %}
+
+In the above script, instead of writing the entire script for the backup task, we have referenced the `backup.sh` script from the Github Repository configured as Source code. This approach avoids the need to rewrite the same script again and again for each task, thus making it reusable and efficient across multiple jobs.
+
+**backup.sh Script (Stored in Github repository)**
+
+{% code title="backup.sh" overflow="wrap" lineNumbers="true" %}
+```bash
+#!/bin/bash
+
+# Input variables for database connection
+DB_HOST="$DB_HOST"
+DB_USER="$DB_USER"
+DB_NAME="$DB_NAME"
+DB_PASSWORD="$DB_PASSWORD"
+BACKUP_PATH="$BACKUP_PATH"
+
+# Define the backup file path
+BACKUP_FILE_PATH="/backups/$DB_NAME-$(date +%F).backup"
+
+# Backup PostgreSQL database
+pg_dump -h "$DB_HOST" -U "$DB_USER" -d "$DB_NAME" -F c -b -v -f "$BACKUP_FILE_PATH"
+
+# Check if backup was successful
+if [ $? -eq 0 ]; then
+    BACKUP_STATUS="success"
+    echo "Backup completed successfully. File path: $BACKUP_FILE_PATH"
+    echo "BACKUP_STATUS=$BACKUP_STATUS"  # Set the output variable
+    echo "BACKUP_FILE_PATH=$BACKUP_FILE_PATH"  # Set the backup file path as output variable
+else
+    BACKUP_STATUS="failure"
+    echo "Backup failed."
+    exit 1
+fi
+```
+{% endcode %}
+
+**Output Variables:**
+
+| Variable           | Type   | Description                                         |
+| ------------------ | ------ | --------------------------------------------------- |
+| BACKUP\_FILE\_PATH | String | Stores the file path of the backup file generated.  |
+| BACKUP\_STATUS     | String | Indicates whether the backup was successful or not. |
+
+**Pass/Fail Condition**
+
+PASS If: `BACKUP_STATUS == success`\
+PASS If: `BACKUP_FILE_PATH != ""`
+
+After adding this backup task, you can add more tasks as well, for example, you can add a task to upload the backup files to cloud storage (e.g., AWS S3) or sending a notification about the backup status.These additional tasks can use the output variable BACKUP\_FILE\_PATH to access the backup file generated in the first task.
+
+#### Example - Container Image Task
+
+Let's take an example of a **Container Image Task** for a job that provision an AWS s3 bucket using terraform. Here instead of installing dependencies (such as terraform), this task pulls the official terraform image (hashicorp/terraform:1.5.0) in which our task will execute. This means a container will be created inside the job pod and runs terraform commands inside the container thus avoiding the need to install dependencies manually each time.
+
+**Tasks Configurations**
+
+| Field| Values for This Example| Required/Optional | Description|
+| :---|:---|:---|:---|
+| Task name| `provision-s3-bucket`| Required|Enter a name for the task|
+| Description| Provision an S3 bucket with Terraform| Optional| A descriptive message for the task|
+| Task type| `Container Image`| Optional| Allows you to execute commands and scripts inside a custom docker container|
+| Input variables| Refer the [Input Variable table](./#input-variable-table) below | Optional| <p>These variables provide dynamic values to the script and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
+| Trigger/Skip condition| TF\_ENV == "prod"| Optional| Execute or skip the task based on the condition provided.|
+| Container image| hashicorp/terraform:1.5.0| Required| Select an image from the drop-down list or enter a custom value in the format `<image>:<tag>`|
+| Mount custom code| Refer below| Optional| <p>Enable to mount the custom code in the container. Enter the script in the box below.</p><ul><li>**Mount above code at** (required): Path where the code should be mounted</li></ul>|
+| Command| sh| Optional|Mention commands to execute inside the container|
+| Args| /run.sh| Optional| The arguments to be passed to the command mentioned in the command field|
+| Port mapping| No| Optional| The port number on which the container listens. The port number exposes the container to outside services.|
+| Mount code to container| yes| Optional| Mounts the source code (configured git repository) inside the container. Default is "No". If set to "Yes", enter the path where the source should be mounted inside the container.|
+| Mount directory from host |No| Optional| Mount any directory from the host into the container. This can be used to mount code or even output directories.|
+| Output directory path|No| Optional| Directory path where output files such as logs, errors, etc. will be available after the execution.|
+
+**Input Variable Table**
+
+| Variable     | Type   | Value              | Description                                  |
+| ------------ | ------ | ------------------ | -------------------------------------------- |
+| AWS\_REGION  | String | us-east-1          | AWS region where the bucket will be created. |
+| BUCKET\_NAME | String | my-app-logs-bucket | Name of the S3 bucket to create.             |
+
+* To add a input variable, click **+ Add Variable** next to the `Input Variable`, a new table appear asking you to enter the variable and its required information.
+
+* You can click `+` icon next to **Variable** header field to add more rows to the input variable table.<br>
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-var-config.jpg)
+
+* You can click the slider icon next to each variable name to make it's value required and add a description for it.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-value-config.jpg)
+
+* You can click the slider icon next to each variable value to add choices, allow custom input, and ask value at runtime.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-choice.jpg)
+
+**Mount Custom Code**
+
+{% code title="Custom Script" overflow="wrap" lineNumbers="true" %}
+```bash
+#!/bin/sh
+set -eo pipefail
+
+# Navigate to your Terraform config
+cd /sourcecode/terraform/s3
+
+# Initialize & apply without prompts
+terraform init -input=false
+terraform plan
+terraform apply -auto-approve \
+  -var="region=us-east-1" \
+  -var="bucket_name=$BUCKET_NAME"
+
+# Capture the bucket name output
+echo "S3_BUCKET_NAME=$(terraform output -raw bucket_name)"
+```
+{% endcode %}
+
+In the above script, instead of writing the entire terraform scripts for provisioning the s3 bucket, we have stored the scripts `main.tf` and `variable.tf` in the Github Repository configured as Source code. By enabling `mount code to container`, the source code (configured Git Repository) is now mounted inside the container as well and available at `/sourcecode`. This approach avoids the need to rewrite the same scripts multiple times for each task, thus making the scripts reusable and efficient across multiple jobs.
+
+**main.tf Script (Stored in Github repository)**
+
+{% code title="main.tf" overflow="wrap" lineNumbers="true" %}
+```bash
+provider "aws" {
+  region = var.region
+}
+
+resource "aws_s3_bucket" "this" {
+  bucket = var.bucket_name
+
+  tags = var.tags
+}
+
+resource "aws_s3_bucket_versioning" "this" {
+  bucket = aws_s3_bucket.this.id
+
+  versioning_configuration {
+    status = var.versioning_enabled ? "Enabled" : "Suspended"
+  }
+}
+```
+{% endcode %}
+
+**variables.tf Script (Stored in Github repository)**
+
+{% code title="variables.tf" overflow="wrap" lineNumbers="true" %}
+```bash
+variable "bucket_name" {
+  description = "The name of the S3 bucket"
+  type        = string
+}
+
+variable "region" {
+  description = "AWS region to create the S3 bucket in"
+  type        = string
+}
+```
+{% endcode %}
+
+After adding this s3 provisioner task, you can add more tasks as well, for example, you can add a task to add a bucket policy or sending a notification to slack or email that s3 bucket is provisioned successfully.
+
+6. After configuring the tasks, Choose the environment in which you want the job to be executed.
+7. Select `Create Pipeline` and a job pipeline will be created.
+
+After creating the pipeline, you can configure configMaps and Secrets (optional) and environment overrides (Optional) before triggering it.
 
 ## Update Job Pipeline
 
 You can update the configurations of an existing Job Pipeline except for the pipeline's name.
-To update a pipeline, select your job pipeline.
-In the **Edit job pipeline** window, edit the required fields and select **Update Pipeline**.
+To update your job pipeline
+
+1. Navigate to **Devtron Dashboard** → **Jobs** → **Select the job** → **Configurations** → **Workflow Editor**.
+
+2. Select the job pipeline you wish to update, a edit job pipeline modal window will appear.
+
+3. Change the required configurations as per your requirements
+
+4. Select **Update Pipeline** to update the pipeline
 
 ## Delete Job Pipeline
 
-You can only delete a job pipeline in your workflow.
+To delete a job pipeline 
 
-To delete a job pipeline, go to **Configurations > Workflow Editor** and select **Delete Pipeline**.
+1.  Navigate to **Devtron Dashboard** → **Jobs** → **Select the job** → **Configurations** → **Workflow Editor**.
 
----
+2. Select the job pipeline you wish to delete, a edit job pipeline modal window will appear.
 
-## Next Steps
-
-*  After creating and configuring the job pipeline, the next optional step is to configure ConfigMaps and Secrets for your job. Refer the [ConfigMaps & Secrets](./configmap-secret/README.md) to configure them.
-
-* Devtron also allows you to configure environment-specific ConfigMaps and Secrets. Refer the [Environment Override](./environment-override-job) section to configure them. 
-
-* After creating and configuring the ConfigMaps & Secrets, the next step is to trigger your job pipeline. To trigger your configured job-pipeline refer [Triggering a job pipeline](../triggering-job.md)
-
----
+3. Select **Delete Pipeline** at the bottom left corner of the edit job pipeline modal window to delete the job pipeline.

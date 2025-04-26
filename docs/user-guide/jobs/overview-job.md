@@ -21,7 +21,7 @@ The `About` section allows you to:
 
 The left side of the `About` section displays essential information about the job.
 
-<!-- image -->
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-about-left.jpg)
 
 The table below captures all the key elements presented in this section, along with their descriptions and whether they can be edited by the user.
 
@@ -38,7 +38,7 @@ The table below captures all the key elements presented in this section, along w
 ### Readme
 The right side of the `About` section contains a `README` area where you can maintain job-specific notes or documentation. The `Readme` supports Markdown formatting, making it easy to include formatted text, instructions, or important context related to the application.
 
-<!-- image -->
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-readme.jpg)
 
 To add or update the `Readme`:
 1.	Click the **Edit** button in the Readme section.
@@ -47,7 +47,7 @@ To add or update the `Readme`:
 4.	Preview the content using the `Preview` tab.
 5.	Click **Save** to update the README.
 
-<!-- image -->
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-readme-edit.jpg)
 
 {% hint style="info" %}
  After saving, the system displays the email address of the user who last updated the README, along with the date and time. This information appears in the header of the Readme section, beside the title.
@@ -57,7 +57,7 @@ To add or update the `Readme`:
 
 The **Catalog** in the **About** section displays information about your job—such as Container port, Environment Variables, Arguments, Resources(CPU and RAM) This data is managed using [Devtron’s Catalog Framework](../global-configurations/catalog-framework.md).
 
-![Figure 2d: Catalog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/catalog.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog.jpg)
 
 `Super-Admins` define a custom JSON schema that determines what fields are shown in the catalog form. This schema is specific to each resource type, such as Devtron applications.
 
@@ -67,7 +67,7 @@ When you click the **Edit** icon, a form appears based on the defined schema. As
 *	Arguments
 * Resources(CPU and RAM)
 
-<!-- image -->
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog-expand.jpg)
 
 {% hint style= "info" %}
 The structure and labels in the catalog form are entirely configurable by your platform team via JSON schema in **Catalog Framework**. Field names and sections may vary depending on how the schema was defined by your organization.
@@ -75,7 +75,7 @@ The structure and labels in the catalog form are entirely configurable by your p
 
 Once saved, this information is displayed in a readable format within the Catalog subsection and is accessible to all users who have permission to view the job.
 
-<!-- image -->
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog-saved.jpg)
 
 ---
 
@@ -90,4 +90,4 @@ The Job Pipelines section provides a detailed view of all job pipelines. For eac
 | Run in environment | Displays the name of the environment in which job is executed. |
 | Last Run AT| Displays how long ago the job was last triggered.|
 
-<!-- image -->
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-job-pipelines.jpg)
