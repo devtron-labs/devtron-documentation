@@ -66,6 +66,7 @@ Secret objects let you store and manage sensitive information, such as passwords
  If you have selected Data type as `Mount Existing Kubernetes Secrets` then, no data is required as devtron will fetch the existing Secret data and use it to create a Secret.
 
  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-mount-existing-env-var.jpg)
+ 
 ---
 
  ### Mount Data as Data Volume
