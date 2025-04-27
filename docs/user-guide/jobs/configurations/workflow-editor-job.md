@@ -338,8 +338,6 @@ After adding this s3 provisioner task, you can add more tasks as well, for examp
 
 7. Select **Create Pipeline** and a job pipeline will be created.
 
-After creating the pipeline, you can configure ConfigMaps and Secrets (optional) and environment overrides (Optional) before triggering it.
-
 ---
 
 ## Update Job Pipeline
@@ -376,3 +374,7 @@ To delete a job pipeline
 4. A pop-up window will appear asking you to confirm the **Delete Pipeline** action.
 
   ![Figure 8c: Confirm Delete job pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-delete-dialog-box.jpg)
+
+---
+
+After creating the pipeline, you can configure [ConfigMaps](./configmap-secret/configmap-job.md) (optional) and [Secrets](./configmap-secret/secret-job.md) (optional) and [Environment overrides](./environment-override-job.md) (optional) before triggering it.

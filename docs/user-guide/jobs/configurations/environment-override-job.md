@@ -126,3 +126,5 @@ This action will discard the current overrides and the base configuration file (
  ![Figure 4b: Confirm Delete Override](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/env-over-delete-dialog-box.jpg)
 
 ---
+
+After setting up **Environment Overrides**, you can refer the [Trigger Job](../triggering-job.md) section to trigger your job-pipeline in different environments. 

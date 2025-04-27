@@ -150,7 +150,9 @@ This option allows you to mount an existing Kubernetes Secret in your job pods a
 ## Update Secret
 
 1. Click your Secret available inside the list of **Secrets** inside **ConfigMaps & Secrets**.
+
 2. Modify its values.
+
 3. Click **Save Changes**.
 
 ![Figure 7a: Update secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-update.jpg)
@@ -167,8 +169,11 @@ You cannot change the name of a Secret. Create a new Secret instead.
 You may delete a Secret if not in use anymore. Once a Secret is deleted, it will not be used in future deployments.
 
 1. Click your Secret available inside the list of **Secrets** inside **Base Configurations**.
+
 2. On the right side, click the kebab menu (3 vertical dots).
+
 3. Click **Delete**.
+
 4. Confirm the deletion in the dialogbox.
 
 ![Figure 8a: Delete secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-delete.jpg)
@@ -212,3 +217,13 @@ Manually add the following chart repository URL in Devtron: `https://charts.exte
 4. Click **Deploy Chart**.
 
 After Deploying the Chart, refer the [ESO Documentation](/docs/user-guide/creating-application/eso/README.md) to setup ESO for different providers.
+
+---
+
+After configuring Secrets
+
+ * Refer the [ConfigMaps](./configmap-job.md) section to configure ConfigMaps
+ 
+ * Refer the [Environment Override](../environment-override-job.md) section to configure Environment Overrides.
+
+ * Refer the [Trigger Job](../../triggering-job.md) section to trigger the job-pipeline. 

@@ -159,10 +159,21 @@ You cannot change the name of a ConfigMap. Create a new ConfigMap instead.
 You may delete a ConfigMap if not in use anymore. Once a ConfigMap is deleted, it will not be used in future deployments.
 
 1. Click your ConfigMap available inside the list of **ConfigMaps** inside **Base Configurations**.
+
 2. On the right side, click the kebab menu (3 vertical dots).
+
 3. Click **Delete**.
+
 4. Confirm the deletion in the dialog box.
 
 ![Figure 8a: Delete ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-delete.jpg)
 
 ---
+
+After configuring ConfigMaps 
+
+ * Refer the [Secrets](./secret-job.md) section to configure secrets 
+ 
+ * Refer the [Environment Override](../environment-override-job.md) section to configure Environment Overrides.
+
+ * Refer the [Trigger Job](../../triggering-job.md) section to trigger the job-pipeline. 
