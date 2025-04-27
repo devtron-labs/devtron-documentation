@@ -8,11 +8,11 @@ Either you have just executed the job and want to inspect live execution or you 
 
 1. Navigate to  **Devtron Dashboard** → **Jobs** → **Select the job** → **Run History**, all the executions will appear in a reverse chronological order under the pipeline name. In case you have configured multiple job pipelines within a job, you need to select the pipeline from `Select Pipeline` dropdown in the top-left corner. 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history.jpg)
+![Figure 1a: Select Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history.jpg)
 
 2. Select the specific execution you want to inspect. By default the latest execution is selected.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-select-execution.jpg)
+![Figure 1b: Select specific execution](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-select-execution.jpg)
 
 3. After selecting the execution, the right section of the page will display the details about that particular execution.
 
@@ -24,7 +24,7 @@ Either you have just executed the job and want to inspect live execution or you 
 |Execution succeeded|Timestamp marking when the job finished successfully.|
 |Worker status|Final outcome of the worker performing the job (e.g., Succeeded or Failed). On failure, the error message is also shown|
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-details.jpg)
+![Figure 1c: Execution's details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-details.jpg)
 
 Apart from these details, you can also inspect logs, source code, security, and download artifacts (if any).
 
@@ -34,7 +34,7 @@ Apart from these details, you can also inspect logs, source code, security, and 
 * You can expand/collapse each pipeline stage to view specific logs related to that stage. Use the `Expand/collapse all stages` button near the search bar to expand or collapse all stages at once.
 * Select the fullscreen button in the bottom-right corner to view logs in fullscreen.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-logs.jpg)
+![Figure 2a: Logs](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-logs.jpg)
 
 ### Source
 The source tab shows which commit is from the source code (configured Git repository) is used to execute the job pipeline. 
@@ -48,7 +48,7 @@ It shows following commit details
 |Author|Name & email of the committer.|
 |Date & time|When that commit was authored|
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-source.jpg)
+![Figure 2b: Source](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-source.jpg)
 
 ### Artifacts 
 The Artifacts tab shows all archives or files your job has produced such as backup binaries, reports, log bundles and let you download them for inspection or further use your job has produced.
@@ -56,3 +56,7 @@ The Artifacts tab shows all archives or files your job has produced such as back
 ### Security
 
 The Security tab provides a view of vulnerability scanning results for code, the container images used or built  during the job execution. It appears when a security scan plugin (e.g., Trivy via the Code Scan plugin) is integrated into your job pipeline.
+
+---
+
+After inspecting run history you can also setup the [Job Overview](/docs/user-guide/jobs/overview-job.md) so that others can easily use the job in future.
