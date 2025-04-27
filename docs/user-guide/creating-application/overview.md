@@ -3,7 +3,7 @@
 The Overview page provides a centralized view of an application’s details within Devtron. It allows users to quickly access information about the application, manage tags, view deployment environments, and understand inter-app dependencies — all in a single, organized interface.
 
 The **Overview** page contains three main sections:
-*	[**About**](#about): Contains application metadata such as name, description, project, creator, tags, and connected code source. It also includes options to manage tags and configure PVCs.
+*	[**About**](#about): Contains application metadata such as name, description, project, creator, tags, and connected code source. It also includes options to manage tags and [Configure PVCs](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims).
 *	[**Environments**](#environments): Displays all environments where the application is deployed, along with their current status and quick access to associated workflows.
 *	[**Dependencies**](#dependencies): Shows which Devtron applications this application depends on, and which other Devtron applications depend on it thus helping visualize microservices dependency.
 
@@ -16,7 +16,7 @@ The **About** section allows you to:
 * View key application details
 * Change the project your application is assigned to
 * Manage tags that you may have added during the application’s creation
-* Configure Persistent Volume Claims (PVCs)
+* [Configure Persistent Volume Claims (PVCs)](#configure-persistentvolumeclaim-pvc)
 
 The left side of the **About** section displays essential information about the application.
 
@@ -47,7 +47,7 @@ To add or update the **Readme**:
 4.	Preview the content using the **Preview** tab.
 5.	Click **Save** to update the Readme.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/readme.jpg)
+![Figure 2c: Edit readme](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/readme.jpg)
 
 {% hint style="info" %}
  After saving, the system displays the email address of the user who last updated the README, along with the date and time. This information appears in the header of the Readme section, beside the title.
@@ -57,7 +57,7 @@ To add or update the **Readme**:
 
 The **Deployment Window** in the **About** section displays all Blackout Windows and Maintenance Windows configured for your application’s environments.
 
-These windows are defined by Super-Admins to control when deployments and related actions are allowed or blocked. The goal is to minimize disruptions during critical business hours or maintenance periods.
+These windows are defined by Super-Admins to control when deployments and related actions are allowed or blocked. The goal is to minimize disruptions during critical business hours.
 
 *	**Blackout Window**: Periods during which deployments are strictly blocked.
 *	**Maintenance Window**: Periods during which deployments are allowed; outside of this window, they are blocked.
@@ -65,7 +65,7 @@ These windows are defined by Super-Admins to control when deployments and relate
 
 You can expand each environment row to view detailed information like window name, duration, and frequency.
 
-![Figure 2c: Deployement Window](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/deployement-window.jpg)
+![Figure 2c: Deployment Window](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/deployement-window.jpg)
 
 {% hint style=“info” %}
 This section is view-only and does not require any configuration at the application level.
@@ -79,9 +79,12 @@ The **Catalog** in the **About** section displays information about your applica
 
 ![Figure 2d: Catalog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/catalog.jpg)
 
+You can use the **Catalog framework** to maintain information about your application such as Documentation (e.g., API contract, service documentation), ownership details, technical attributes etc. This makes it easier for others to understand, manage and use your application.
+
 Super-Admins define a custom JSON schema that determines what fields are shown in the catalog form. This schema is specific to each resource type, such as Devtron applications.
 
 When you click the **Edit** icon, a form appears based on the defined schema. As an application owner or client, you can fill out fields like:
+
 *	Documentation (e.g., API contract, service documentation)
 *	Code owners and on-call responsibilities
 *	Service attributes (e.g., internet-facing flag, communication method, framework, language)
@@ -100,7 +103,7 @@ Once saved, this information is displayed in a readable format within the Catalo
 
 A [PersistentVolumeClaim (PVC)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims) is a request for storage, which is used to mount a PersistentVolume (PV) into a Pod that can be used by your application’s CI pipeline.
 
-In Devtron, you can use a PersistentVolumeClaim (PVC) to provide persistent storage to the Pod that runs your CI pipeline, enabling the pod to store and reuse cached data such as dependencies. This is particularly beneficial when building for multiple target platforms like amd64 and arm64, where caching can significantly reduce build time.
+In Devtron, you can use a [PersistentVolumeClaim (PVC)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims) to provide persistent storage to the Pod that runs your CI pipeline, enabling the pod to store and reuse cached data such as dependencies.
 
 Mounting a PVC into the build Pod gives it access to a dedicated storage volume for caching, without interfering with the normal build process, which continues to run based on the architecture and operating system of the Kubernetes node where the CI pipeline is executed.
 
