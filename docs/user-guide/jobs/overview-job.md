@@ -35,6 +35,7 @@ The table below captures all the key elements presented in this section, along w
 | `Tags` |Yes|Key-value pairs used for identifying and organizing the application.<br>Users can propagate tags as Kubernetes labels to enable filtering, bulk operations, and integrations with Kubernetes tools.<ol><li> Click the `Edit` icon next to `Tags`.</li><li> On the `Manage Tags` page, Click `+ Add tag` to add a new tag. <li>You can click `X` icon to delete an existing tag.</li><li>You can click the `propagation icon` <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg" height="10"> to propagate a tag (turns dark grey when propagated), click again to remove propagation.<br>[[Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-latest-1.jpg)]</li><li> Click `Save`, Configured Tags will reflect immediately under `Tags` in `About` Section </li></ol>|
 
 ### Readme
+
 The right side of the **About** section contains a **README** area where you can maintain job-specific notes or documentation. The `Readme` supports Markdown formatting, making it easy to include formatted text, instructions, or important context related to the application.
 
 ![Figure 2a: Readme](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-readme.jpg)

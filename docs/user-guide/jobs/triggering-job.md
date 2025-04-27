@@ -6,27 +6,27 @@ To trigger the job-pipeline:
 
 1. Navigate to the **Devtron Dashboard** → **Jobs** → **Select the job** → **Trigger Job**, which list all configured pipelines.
 
-![Figure 1a: Trigger job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job.jpg)
+ ![Figure 1a: Trigger job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job.jpg)
 
 2. Select **Select Material** for the job-pipeline you wish to execute, a modal window will open, under **Code-source** tab, this window lists all recent commits along with their hash, author, date, and message. from your configured source repository.
 
-![Figure 1b: Select material for specific pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-select-material.jpg)
+ ![Figure 1b: Select material for specific pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-select-material.jpg)
 
 3. Select the commit you want to use in the job execution. You can use the search bar to filter the commits hash, and you can also click the kebab menu to reveal excluded commits. If a recent commit isn’t displayed, click the Refresh icon to reload the commit list from your Git repository.
 
-![Figure 1c: Select commit](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-commit.jpg)
+ ![Figure 1c: Select commit](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-commit.jpg)
 
 4. Select the **Parameters** tab to configure pipeline runtime inputs(if any). The Key and Type columns are read‑only; enter values for each required parameter (denoted by *). Optional parameters can be configured as needed or left blank.
 
-![Figure 1d: Configure runtime parameters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-parameter.jpg)
+ ![Figure 1d: Configure runtime parameters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-parameter.jpg)
 
 5. After selecting the commit and configuring runtime parameters, pick the target environment from the **Execute job in** dropdown at the bottom.
 
-![Figure 1e: Select environment for job's execution](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-execute-env.jpg)
+ ![Figure 1e: Select environment for job's execution](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-execute-env.jpg)
 
 6. Select **Run Job** to execute your pipeline.
 
-![Figure 1f: Run job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-run-job.jpg)
+ ![Figure 1f: Run job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-run-job.jpg)
 
 ---
 
