@@ -14,6 +14,6 @@ Jobs can be configured to run as:
 
 * **Event-driven tasks**: Triggered by specific events such as commits, pull requests, or tag creation.
 
-Devtron Jobs support executing custom tasks or predefined operations using integrated pipeline plugins. These plugins extend job functionality by enabling tasks such as code scanning, image signing, vulnerability patching, container image copying, and external automation through tools like Ansible and Bitbucket Runners. To explore the full list of supported plugins and their configuration options, refer to the [Devtron Plugin Documentation]().
+Devtron Jobs support executing custom tasks or predefined operations using integrated pipeline plugins. These plugins extend job functionality by enabling tasks such as code scanning, image signing, vulnerability patching, container image copying, and external automation through tools like Ansible and Bitbucket Runners. To explore the full list of supported plugins and their configuration options, refer to the [Devtron Plugin Documentation](/docs/user-guide/plugins/README.md).
 
-To learn how to create a new Job in Devtron, continue to the [Create a new job](./create-a-new-job.md) section.
+To learn how to create a new Job in Devtron, continue to the [Create a new job](./create-job.md) section.

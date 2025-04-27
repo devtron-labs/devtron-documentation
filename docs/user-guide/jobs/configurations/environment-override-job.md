@@ -23,11 +23,11 @@ Users need to have [Admin role](../global-configurations/authorization/user-acce
 
 ![Figure 1a: Environment Override](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/env-over.jpg)
 
-2. Click `Add Environment` and select an environment from the dropdown for which you want your configurations to be modified.
+2. Click **Add Environment** and select an environment from the dropdown for which you want your configurations to be modified.
 
 ![Figure 1b: Add Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/env-over-select-env.jpg)
 
-3. The environment will be added under **Environment Override**, if you wish you can add more environments by clicking `Add Environment`.
+3. The environment will be added under **Environment Override**, if you wish you can add more environments by clicking **Add Environment**.
 
 ![Figure 1c: Select Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/env-over-env-added.jpg)
 
@@ -47,11 +47,13 @@ Users need to have [Admin role](../global-configurations/authorization/user-acce
 
  Let's see how to override the values of ConfigMaps & Secrets for the selected environment.
 
- ## Override ConfigMaps & Secrets
+---
 
- If you want to configure your ConfigMaps and Secrets at the application-level then you can provide them in [ConfigMaps](../configuration/config-maps-and-secrets/configmaps.md) and [Secrets](../configuration/config-maps-and-secrets/secrets.md), but if you want to have environment-specific ConfigMaps & Secrets, use **Environment Override** to create new environment specific ConfigMaps & Secrets or override existing ConfigMaps & Secrets for specific environments. At the time of execution, devtron will pick environment specific ConfigMaps & Secrets according to the environment in which the job is executed and pass them to your job pods.
+## Override ConfigMaps & Secrets
 
- 1. Under the selected environment, select the ConfigMap or Secret you wish to override, by default the ConfigMap or Secret is inherited from the base configuration.
+ If you want to have environment-specific **ConfigMaps & Secrets**, use **Environment Override** to override them for specific environments or create new environment specific **ConfigMaps & Secrets**. At the time of execution, devtron will pick environment specific **ConfigMaps & Secrets** according to the environment in which the job is executed and pass them to your job pods.
+
+ 1. Under the selected environment, select the **ConfigMap** or **Secret** you wish to override, by default the ConfigMap or Secret is inherited from the base configuration.
 
 ![Figure 2a: Select ConfigMap or Secrets](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/env-over-select-config-secret.jpg)
 
@@ -65,9 +67,9 @@ Users need to have [Admin role](../global-configurations/authorization/user-acce
  
 ![Figure 2c: Override ConfigMap or Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/env-over-config-override.jpg)
 
-  4. Override the data values using [Replace](#using-replace-strategy) merge strategy.
+  4. Override the data values using [Replace](#replace-strategy) merge strategy.
 
- ### Replace Strategy 
+### Replace Strategy 
 
  * The entire configuration is replaced with your new environment-specific settings.
  * The replaced template will no longer depend or inherit from base configuration anymore.
@@ -83,6 +85,7 @@ Users need to have [Admin role](../global-configurations/authorization/user-acce
 
  > To know how to configure ConfigMaps & Secrets refer to the following sections: <ul><li>[ConfigMaps](./config-maps-and-secrets/configmaps.md)</li> <li> [Secrets](./config-maps-and-secrets/secrets.md)</li></ul>
 
+---
 
 ## Create Additional ConfigMaps & Secrets
  
@@ -92,7 +95,7 @@ Users need to have [Admin role](../global-configurations/authorization/user-acce
 
 ![Figure 3a: Add ConfigMap or Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/env-over-add-config-secret.jpg)
 
- 2. A configuration tab will open (which was previously named override) to add a new ConfigMap or Secret. 
+ 2. A configuration tab will open (which was previously named override) to add a new **ConfigMap** or **Secret**. 
  
 ![Figure 3b: Configure ConfigMap or Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/env-over-add-view.jpg)
 

@@ -2,6 +2,8 @@
 
 A ConfigMap stores key-value pairs that your jobs can use as environment variables or mounted files. Unlike secrets, ConfigMaps are meant for non-sensitive data. Moreover, you can update configurations without modifying or rebuilding your container images, thus making the deployments more efficient.
 
+---
+
 ## Add ConfigMap
 
 1. Go to the **Configurations** → **ConfigMaps & Secrets**.
@@ -20,17 +22,17 @@ A ConfigMap stores key-value pairs that your jobs can use as environment variabl
 
 4. **Data Type** - Choose between the following data types:
 
+ * **Kubernetes ConfigMap**: Select the Data Type as Kubernetes ConfigMap, if you wish to create and use the ConfigMap using Devtron.
+
+ * **Kubernetes External ConfigMap**: Select the Data Type as Kubernetes External ConfigMap if you have already created a ConfigMap using the kubectl command and wants to use that in Devtron.
+
  ![Figure 1d: ConfigMap data type](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-type.jpg)
-
-    * [Kubernetes ConfigMap](#kubernetes-configmap): Select the Data Type as Kubernetes ConfigMap, if you wish to create and use the ConfigMap using Devtron.
-
-    * [Kubernetes External ConfigMap](#kubernetes-external-configmap): Select the Data Type as Kubernetes External ConfigMap if you have already created a ConfigMap using the kubectl command and wants to use that in Devtron.
 
 5. After selecting the data type, you can choose how to mount the data of your ConfigMap. Devtron allows you to mount ConfigMap Data in following ways <br><br> **Mount data as** - Select how you want to mount the ConfigMap:
 
-    * [**Environment Variable**](#mount-data-as-environment-variables) – Select this option if you want to inject Environment Variables in pods using ConfigMap.
+ * [**Environment Variable**](#mount-data-as-environment-variables) – Select this option if you want to inject Environment Variables in pods using ConfigMap.
 
-    * [**Data Volume**](#mount-data-as-data-volume) – Select this option, if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-valume) to know more.
+ * [**Data Volume**](#mount-data-as-data-volume) – Select this option, if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-valume) to know more.
 
  ![Figure 1e: Mount data as](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-mount-data.jpg)
 

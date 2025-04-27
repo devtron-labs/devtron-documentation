@@ -9,22 +9,22 @@ To learn more about how Jobs work, see the below sections
 
 * [Creating a Job](./create-job.md)
 
-* [Configurations](./configuration-job.md)
+* [Configurations](./configurations/README.md)
 
-    * [Source Code](./configuration/source-code.md)
+    * [Source Code](./configurations/source-code-job.md)
 
-    * [Workflow editor](./configuration/workflow-editor.md)
+    * [Workflow editor](./configurations/workflow-editor-job.md)
 
-    * [ConfigMaps & Secrets](./configuration/config-maps-and-secrets/README.md)
+    * [ConfigMaps & Secrets](./configurations/configmap-secret/README.md)
 
-      * [ConfigMaps](./configuration/config-maps-and-secrets/configmaps.md)
+      * [ConfigMaps](./configurations/configmap-secret/configmap-job.md)
 
-      * [Secrets](./configuration/config-maps-and-secrets/secrets.md)
+      * [Secrets](./configurations/configmap-secret/secret-job.md)
 
-    * [Environments Override](./configuration/environment-overrides.md)
+    * [Environments Override](./configurations/environment-override-job.md)
 
 * [Trigger Job ](./triggering-job.md)
 
-* [Run History](./run-history.md)
+* [Run History](./run-history-job.md)
 
 * [Job Overview](./overview-job.md)

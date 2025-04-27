@@ -6,6 +6,8 @@ In devtron, jobs can be created by two ways:
 
 * **Clone Job**: This allows you to create a new job by reusing the configuration of an existing job.
 
+---
+
 ## Create a Blank Job
 
 To create a new **Blank Job** in Devtron, follow these steps:
@@ -58,10 +60,6 @@ To create a new **Clone Job** in Devtron, follow these steps:
 
 ---
 
-After creating a job, the next step is to configure the job, refer the [Configurations](/docs/user-guide/jobs/configurations/README.md) section to configure the job.
-
----
-
 ## Delete Job
 
 To delete a job:
@@ -93,3 +91,7 @@ To delete a job:
 4. A pop-up window will appear asking you to confirm the **Delete Job** action.
 
 ![Figure 4b: Confirm delete job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-delete-job-dialog.jpg)
+
+---
+
+After creating a job, the next step is to configure the job, refer the [Configurations](./configurations/README.md) section to configure the job.

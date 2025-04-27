@@ -6,7 +6,7 @@ The run history allows you to review each and every execution of job-pipelines. 
 
 Either you have just executed the job and want to inspect live execution or you just want to check previous executions of a job pipeline
 
-1. Navigate to  **Devtron Dashboard** → **Jobs** → **Select the job** → **Run History**, all the executions will appear in a reverse chronological order under the pipeline name. In case you have configured multiple job pipelines within a job, you need to select the pipeline from `Select Pipeline` dropdown in the top-left corner. 
+1. Navigate to  **Devtron Dashboard** → **Jobs** → **Select the job** → **Run History**, all the executions will appear in a reverse chronological order under the pipeline name. In case you have configured multiple job pipelines within a job, you need to select the pipeline from **Select Pipeline** dropdown in the top-left corner. 
 
 ![Figure 1a: Select Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history.jpg)
 
@@ -59,4 +59,4 @@ The Security tab provides a view of vulnerability scanning results for code, the
 
 ---
 
-After inspecting run history you can also setup the [Job Overview](/docs/user-guide/jobs/overview-job.md) so that others can easily use the job in future.
+After inspecting run history you can also setup the [Job Overview](./overview-job.md) so that others can easily use the job in future.

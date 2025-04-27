@@ -4,22 +4,22 @@ The Overview page provides a centralized view of a job’s details within Devtro
 
 ![Figure 1a: Job's overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job.jpg)
 
-The `Overview` page contains three main sections:
-*	[`About`](#about): Contains job's metadata such as name, description, project, project, creator, and it also includes options to manage tags.
+The **Overview** page contains three main sections:
+*	[**About**](#about): Contains job's metadata such as name, description, project, project, creator, and it also includes options to manage tags.
 
-*	[`Job Pipelines`](#job-pipelines): Displays all job pipelines along with their last status and quick access to associated workflows.
+*	[**Job Pipelines**](#job-pipelines): Displays all job pipelines along with their last status and quick access to associated workflows.
 
 ---
 
 ## About
 
-The `About` section allows you to:
+The **About** section allows you to:
 
 * View key job details
 * Change the project your application is assigned to
 * Manage tags that you may have added during the job’s creation
 
-The left side of the `About` section displays essential information about the job.
+The left side of the **About** section displays essential information about the job.
 
 ![Figure 1b: Job's basic info](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-about-left.jpg)
 
@@ -32,19 +32,18 @@ The table below captures all the key elements presented in this section, along w
 | `Project` |Yes|Indicates the current project under which the application is organized.<br>You can change the project directly from this section.<ol><li> Click the `Edit` icon next to the current project.</li><li> In the `Change Project` window, select the new project from the dropdown.</li><li>Click `Save`.</li></ol>Changing the project will revoke access for existing users and grant access only to those who have permissions in the newly selected project.|
 | `Created on` |No|Shows the exact date and time when the application was created.|
 | `Created by`|No|Displays the email address of the user who created the application.|
-
 | `Tags` |Yes|Key-value pairs used for identifying and organizing the application.<br>Users can propagate tags as Kubernetes labels to enable filtering, bulk operations, and integrations with Kubernetes tools.<ol><li> Click the `Edit` icon next to `Tags`.</li><li> On the `Manage Tags` page, Click `+ Add tag` to add a new tag. <li>You can click `X` icon to delete an existing tag.</li><li>You can click the `propagation icon` <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg" height="10"> to propagate a tag (turns dark grey when propagated), click again to remove propagation.<br>[[Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-latest-1.jpg)]</li><li> Click `Save`, Configured Tags will reflect immediately under `Tags` in `About` Section </li></ol>|
 
 ### Readme
-The right side of the `About` section contains a `README` area where you can maintain job-specific notes or documentation. The `Readme` supports Markdown formatting, making it easy to include formatted text, instructions, or important context related to the application.
+The right side of the **About** section contains a **README** area where you can maintain job-specific notes or documentation. The `Readme` supports Markdown formatting, making it easy to include formatted text, instructions, or important context related to the application.
 
 ![Figure 2a: Readme](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-readme.jpg)
 
-To add or update the `Readme`:
+To add or update the **Readme**:
 1.	Click the **Edit** button in the Readme section.
 2.	A Markdown editor will appear where you can write or modify content under the `Write` tab.
 3.	Use standard Markdown syntax to format text, create lists, insert links, and more.
-4.	Preview the content using the `Preview` tab.
+4.	Preview the content using the **Preview** tab.
 5.	Click **Save** to update the README.
 
 ![Figure 2b: Edit Readme](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-readme-edit.jpg)
@@ -65,7 +64,7 @@ When you click the **Edit** icon, a form appears based on the defined schema. As
 *	Container port (e.g., API contract, service documentation)
 *	Environment Variables 
 *	Arguments
-* Resources(CPU and RAM)
+*   Resources(CPU and RAM)
 
 ![Figure 3b: Edit Catalog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog-expand.jpg)
 

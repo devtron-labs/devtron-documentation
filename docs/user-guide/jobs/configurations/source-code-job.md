@@ -1,10 +1,4 @@
-# Configuration
-
-After creating a Job, the next step is to configure it. This involves specifying the source code and using the Workflow Editor to define the sequence of tasks, such as code scanning, vulnerability checks, or data migrations, and setting up the conditions for when these tasks should run.
-
-The following sections will guide you through configuring the source code, setting up the Workflow Editor, and defining ConfigMaps, Secrets, and Environment Overrides for the job.
-
-## Source Code
+# Source Code
 
 In Devtron, the Source Code configuration is used to specify the repository that contains your scripts, terraform files, YAML configurations, or other resources. The repository acts as a central location for these files, allowing you to reference and execute them in your job without needing to rewrite the scripts in the Workflow Editor each time.
 
@@ -16,11 +10,11 @@ To configure the Source Code, follow these steps:
 
 ![Figure 1a: Select source code](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code.jpg)
 
-3. Under Add Git Repository, select the Git Account from the dropdown menu. You can also select GitHub Public from the same dropdown to configure a public repository that does not require authentication.
+3. Under **Add Git Repository**, select the **Git Account** from the dropdown menu. You can also select `GitHub Public` from the same dropdown to configure a public repository that does not require authentication.
 
 ![Figure 1b: Add git account](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-git-account.jpg)
 
-4. Enter the Repository URL in the Git Repo URL field, corresponding to the selected Git account.<br>
+4. Enter the **Repository URL** in the Git Repo `URL` field, corresponding to the selected Git account.<br>
 If GitHub Public is selected, you can enter the URL of any public repository, as no authentication is required. 
 
 ![Figure 1c: Add git repository](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-repo-url.jpg)
@@ -31,9 +25,11 @@ If GitHub Public is selected, you can enter the URL of any public repository, as
 
 ![Figure 1d: Save source code](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-save.jpg)
 
-### Configure Additional Options (optional)
+---
 
-#### Exclude specific file/folder in this repo
+## Configure Additional Options (optional)
+
+### Exclude specific file/folder in this repo
 
 Devtron allows you to exclude specific files or folders from the repository from being included in the job execution. This is particularly useful for avoiding unnecessary files or folders that do not contribute to the job’s tasks that are not relevant to the current job execution. 
 
@@ -51,12 +47,12 @@ To define the exclusion or inclusion rules, follow these steps:
 
 | Sample Rules | Description | Impact on Commits |
 |:---|:---|:---|
-| `!README.md` | **Exclusion of a single file in root folder:** | Commits containing changes made only in README.md file will not be shown |
-| `!README.md` <br /> `!index.js` | **Exclusion of multiple files in root folder:** |  Commits containing changes made only in README.md or/and index.js files will not be shown |
-|  `README.md` | **Inclusion of a single file in root folder:** | Commits containing changes made only in README.md file will be shown. Rest all will be excluded. |
-|  `!src/extensions/printer/code2.py` | **Exclusion of a single file in a folder tree:** |Commits containing changes made specifically to code2.py file will not be shown |
+| `!README.md` | **Exclusion of a single file in root folder** | Commits containing changes made only in README.md file will not be shown |
+| `!README.md` <br /> `!index.js` | **Exclusion of multiple files in root folder** |  Commits containing changes made only in README.md or/and index.js files will not be shown |
+|  `README.md` | **Inclusion of a single file in root folder** | Commits containing changes made only in README.md file will be shown. Rest all will be excluded. |
+|  `!src/extensions/printer/code2.py` | **Exclusion of a single file in a folder tree** |Commits containing changes made specifically to code2.py file will not be shown |
 |  `!src/*` | **Exclusion of a single folder and all its files:** |Commits containing changes made specifically to files within src folder will not be shown |
-|  `!README.md` <br/> `index.js` | **Exclusion and inclusion of files:** | Commits containing changes made only in README.md will not be shown, but commits made in index.js file will be shown. All other commits apart from the aforementioned files will be excluded. |
+|  `!README.md` <br/> `index.js` | **Exclusion and inclusion of files** | Commits containing changes made only in README.md will not be shown, but commits made in index.js file will be shown. All other commits apart from the aforementioned files will be excluded. |
 |  `!README.md` <br/> `README.md` | **Exclusion and inclusion of conflicting files** | If conflicting paths are defined in the rule, the one defined later will be considered. In this case, commits containing changes made only in README.md will be shown. |
 
 
@@ -69,7 +65,7 @@ Since file paths can be long, Devtron supports regex too for writing the paths. 
 ![Figure 2c: Regex Support](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-regex.jpg)
 
 
-#### Set checkout path
+### Set checkout path
 
 Devtron allows you to define a custom directory path where the repository will be checked out during job execution. By default, the repository is checked out to the root directory (./). However, you can set a custom path to specify a particular folder within the repository to be accessed and utilized during job execution.
 
@@ -87,10 +83,16 @@ To set the checkout path, follow these steps:
 
 ![Figure 3a: Checkout path](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-checkout.jpg)
 
-#### Pull submodules recursively
+### Pull submodules recursively
 
 This checkbox is used for pulling [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) present in a repo. The submodules will be pulled recursively, and the auth method used for the parent repo will be used for submodules too.
 
 To pull the submodules recursively, check the **Pull submodules recursively** checkbox.
 
 ![Figure 4a: Pull submodules recursively](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-pull.jpg)
+
+---
+
+After configuring **Source Code**, the next step to create and configure job pipelines.
+
+Refer the [Workflow editor](./workflow-editor-job.md) section to create and configure job pipelines.

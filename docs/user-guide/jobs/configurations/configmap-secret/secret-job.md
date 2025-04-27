@@ -4,6 +4,8 @@ Secrets and ConfigMaps are both used to store configurations but there is one ma
 
 Secret objects let you store and manage sensitive information, such as passwords, authentication tokens, and ssh keys. Embedding this information in secrets is safer and more flexible than putting it verbatim in a Pod definition or in a container image.
 
+---
+
 ## Add Secret
 
 1. Go to the **Configurations** → **Base Configurations**.
@@ -22,17 +24,16 @@ Secret objects let you store and manage sensitive information, such as passwords
 
 4. **Data Type** - Choose between the following data types:
 
- ![Figure 1d: Secret data type](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-type.jpg)
+ * **Kubernetes Secret**: Select the Data Type as Kubernetes Secret, if you wish to create and use the Secret using Devtron.
 
-* [Kubernetes Secret](#kubernetes-secret): Select the Data Type as Kubernetes Secret, if you wish to create and use the Secret using Devtron.
+ * **Mount Existing Kubernetes Secret**:  Select the Data Type as Existing Kubernetes Secret if you have already created a Secret using the kubectl command and wants to use that in Devtron.
 
-* [Mount Existing Kubernetes Secret](#mount-existing-kubernetes-secrets):  Select the Data Type as Existing Kubernetes Secret if you have already created a Secret using the kubectl command and wants to use that in Devtron.
-
-* [External Secret Operator (ESO)](#external-secret-operator-eso): External Secrets Operator (ESO) is a Kubernetes component that integrates with external secret management systems like AWS Secrets Manager, HashiCorp Vault, Google Secrets Manager, Azure Key Vault, and more. It retrieves secrets from these external sources and injects them into Kubernetes Secrets automatically.
+ * **External Secret Operator (ESO)**: External Secrets Operator (ESO) is a Kubernetes component that integrates with external secret management systems like AWS Secrets Manager, HashiCorp Vault, Google Secrets Manager, Azure Key Vault, and more. It retrieves secrets from these external sources and injects them into Kubernetes Secrets automatically.
     
-> `external-secrets` helm chart should be installed before setting up ESO, otherwise the External Secret Operator (ESO) will not appear. Refer the [External Secret Operator (ESO)](#external-secret-operator-eso) section to setup ESO 
+ > `external-secrets` helm chart should be installed before setting up ESO, otherwise the External Secret Operator (ESO) will not appear. Refer the [External Secret Operator (ESO)](#external-secret-operator-eso) section to setup ESO 
+
+![Figure 1d: Secret data type](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-type.jpg)
     
-<br>
 **Note**: Devtron automatically converts secrets from various data types to Kubernetes Secrets. Regardless of the original data type, once the conversion is complete, the Pods can access the secrets in the same way as native Kubernetes Secrets.
 
 5. After selecting the data type, you can choose how to mount the data of your Secret. Devtron allows you to mount Secret data in following ways <br><br> **Mount data as** - Select how you want to mount the Secret:
@@ -49,7 +50,7 @@ Secret objects let you store and manage sensitive information, such as passwords
 
  #### For Kubernetes Secret
 
- If you have selected Data type as `Kubernetes Secret` then, you also need to enter the required data (key-value pairs) in the **Data** field<br><br>Enter data in:
+ If you have selected Data type as `Kubernetes Secret` and mount data as `Environment Variable` then, you also need to enter the required data (key-value pairs) in the **Data** field<br><br>Enter data in:
 
  * **GUI mode** – User-friendly interface. Click **+Add** button and enter the **Key** and **Value** fields without quotes. 
 
@@ -121,7 +122,7 @@ For example, **755** means:
 * Group can read and execute (5),
 * Others can read and execute (5).
 
- ### Data
+### Data
 #### For Kubernetes Secret
 
 If you have selected Data type as `Kubernetes Secret` and mount data as `Data Volume` then, you also need to enter the required data (key-value pairs) in the **Data** field.
