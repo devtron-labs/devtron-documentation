@@ -5,6 +5,11 @@ It provides visual interface to create and configure job pipelines, define basic
 
 To create and configure the Job Pipeline
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+{% endhint %}
+
 1. Navigate to the **Workflow Editor** tab in the left sidebar of the Job **Configuration** page. Alternatively, you can go to the **Devtron Dashboard** → **Jobs** → **Select the job** → **Configurations** → **Workflow Editor**.
 
  ![Figure 1a: Select workflow editor](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor.jpg)
@@ -342,6 +347,11 @@ After adding this s3 provisioner task, you can add more tasks as well, for examp
 
 ## Update Job Pipeline
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+{% endhint %}
+
 You can update the configurations of an existing Job Pipeline except for the pipeline's name.
 To update your job pipeline
 
@@ -358,6 +368,11 @@ To update your job pipeline
 ---
 
 ## Delete Job Pipeline
+
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+{% endhint %}
 
 To delete a job pipeline 
 

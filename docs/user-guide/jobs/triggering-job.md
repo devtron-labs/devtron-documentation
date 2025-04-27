@@ -4,6 +4,11 @@ After creating the job pipeline, the next step is to trigger the job pipeline. T
 
 To trigger the job-pipeline:
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+{% endhint %}
+
 1. Navigate to the **Devtron Dashboard** → **Jobs** → **Select the job** → **Trigger Job**, which list all configured pipelines.
 
  ![Figure 1a: Trigger job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job.jpg)

@@ -4,6 +4,13 @@ The run history allows you to review each and every execution of job-pipelines. 
 
 ## Accessing run history for specific pipeline
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+
+In case of [View role](../global-configurations/authorization/user-access.md#role-based-access-levels), user should also have permission to access the specific Job.
+{% endhint %}
+
 Either you have just executed the job and want to inspect live execution or you just want to check previous executions of a job pipeline
 
 1. Navigate to  **Devtron Dashboard** → **Jobs** → **Select the job** → **Run History**, all the executions will appear in a reverse chronological order under the pipeline name. In case you have configured multiple job pipelines within a job, you need to select the pipeline from **Select Pipeline** dropdown in the top-left corner. 

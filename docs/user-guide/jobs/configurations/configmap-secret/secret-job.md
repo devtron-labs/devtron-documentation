@@ -8,6 +8,11 @@ Secret objects let you store and manage sensitive information, such as passwords
 
 ## Add Secret
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+{% endhint %}
+
 1. Go to the **Configurations** → **Base Configurations**.
 
 ![Figure 1a: ConfigMaps & Secrets](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret.jpg)
@@ -149,6 +154,11 @@ This option allows you to mount an existing Kubernetes Secret in your job pods a
 
 ## Update Secret
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+{% endhint %}
+
 1. Click your Secret available inside the list of **Secrets** inside **ConfigMaps & Secrets**.
 
 2. Modify its values.
@@ -165,6 +175,11 @@ You cannot change the name of a Secret. Create a new Secret instead.
 ---
 
 ## Delete Secret
+
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+{% endhint %}
 
 You may delete a Secret if not in use anymore. Once a Secret is deleted, it will not be used in future deployments.
 

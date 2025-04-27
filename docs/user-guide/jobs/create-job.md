@@ -10,6 +10,11 @@ In devtron, jobs can be created by two ways:
 
 ## Create a Blank Job
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+{% endhint %}
+
 To create a new **Blank Job** in Devtron, follow these steps:
 
 1. Navigate to **Devtron Dashboard** → **Jobs**.
@@ -37,6 +42,11 @@ To create a new **Blank Job** in Devtron, follow these steps:
 
 ## Create a Clone Job
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and applications) to perform environment override.
+{% endhint %}
+
 To create a new **Clone Job** in Devtron, follow these steps:
 
 1. From the **Devtron Dashboard** → **Jobs**.
@@ -61,6 +71,11 @@ To create a new **Clone Job** in Devtron, follow these steps:
 ---
 
 ## Delete Job
+
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+{% endhint %}
 
 To delete a job:
 

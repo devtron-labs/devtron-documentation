@@ -6,6 +6,11 @@ A ConfigMap stores key-value pairs that your jobs can use as environment variabl
 
 ## Add ConfigMap
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+{% endhint %}
+
 1. Go to the **Configurations** → **ConfigMaps & Secrets**.
 
 ![Figure 1a: ConfigMaps & Secrets](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap.jpg)
@@ -139,6 +144,11 @@ A ConfigMap stores key-value pairs that your jobs can use as environment variabl
 
 ## Update ConfigMap
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+{% endhint %}
+
 1. Click your ConfigMap available inside the list of **ConfigMaps** inside **ConfigMaps & Secrets**.
 
 2. Modify its values.
@@ -155,6 +165,11 @@ You cannot change the name of a ConfigMap. Create a new ConfigMap instead.
 ---
 
 ## Delete ConfigMap
+
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+{% endhint %}
 
 You may delete a ConfigMap if not in use anymore. Once a ConfigMap is deleted, it will not be used in future deployments.
 

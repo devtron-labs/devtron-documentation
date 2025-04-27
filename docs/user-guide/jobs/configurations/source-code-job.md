@@ -2,6 +2,11 @@
 
 In Devtron, the Source Code configuration is used to specify the repository that contains your scripts, terraform files, YAML configurations, or other resources. The repository acts as a central location for these files, allowing you to reference and execute them in your job without needing to rewrite the scripts in the Workflow Editor each time.
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+{% endhint %}
+
 To configure the Source Code, follow these steps:
 
 1. If the job has been just created, you will be automatically directed to the Configurations page. If not, navigate to the **Devtron Dashboard** → **Jobs** → **Select the job** → **Configurations**.
