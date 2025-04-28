@@ -6,12 +6,18 @@ For Devtron version older than v0.4.0, please refer the [CI Pipeline (legacy)](h
 
 ## Creating CI Pipeline
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have **Admin role**, **Manager role**, or **Super Admin role**.
+Refer the [User permissions](../../global-configurations/authorization/user-access.md#roles-available-for-devtron-apps).
+{% endhint %}
+
 A CI Workflow can be created in one of the following ways:
 
 * [Build and Deploy from Source Code](#id-1.-build-and-deploy-from-source-code)
 * [Linked Build Pipeline](#id-2.-linked-build-pipeline)
 * [Deploy Image from External Service](#id-3.-deploy-image-from-external-service)
-* Sync with Environment <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="10"></a>
+* Sync with Environment <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a>
 * Create a Job
 
 Each method has different use-cases that can be tailored according the needs of the organization.
@@ -20,7 +26,7 @@ Each method has different use-cases that can be tailored according the needs of 
 
 ### 1. Build and Deploy from Source Code
 
-`Build and Deploy from Source Code` workflow allows you to build the container image from a source code repository.
+**Build and Deploy from Source Code** workflow allows you to build the container image from a source code repository.
 
 {% hint style="info" %}
 Devtron typically uses a Dockerfile from your repository to build container images. If you don’t have one, Devtron provides default templates to help you get started. You can also build images without a Dockerfile using Buildpacks.
@@ -34,15 +40,15 @@ Devtron typically uses a Dockerfile from your repository to build container imag
 
 3. Click **+ New Workflow**.
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-1.jpg)
+ ![Figure 1a: Create New Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-1.jpg)
 
 4. Select **Build and Deploy from Source Code**.
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-2.jpg)
+ ![Figure 1b: 'Select Build and Deploy from Source Code'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-2.jpg)
 
 5. In the **Create Build Pipeline** window, enter the following details:
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-v1.jpg)
+ ![Figure 1c: Configure build pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-v1.jpg)
 
  | Field Name|Required/Optional| Description|
  | :--- | :--- | :--- |
@@ -54,7 +60,9 @@ Devtron typically uses a Dockerfile from your repository to build container imag
  #### Understanding Source Types
 
  Devtron provides multiple ways to trigger a build pipeline:
-
+ 
+ ![Figure 1d: Source Types](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-source-type.jpg)
+ 
  |Source Type| Description| Additional Requirements|
  |:---|:---|:---|
  | `Branch Fixed`| Triggers a CI build whenever changes are pushed to a specified branch.| Requires a predefined branch name.|
@@ -66,6 +74,8 @@ Devtron typically uses a Dockerfile from your repository to build container imag
  #### Pull Request Filters
 
  When using Pull Request as a source type, Devtron allows you to filter which PRs should trigger a build using the following filters
+
+ ![Figure 1e: Pull Request Filters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-pull-request-filters.jpg)
 
  Select the appropriate filter and pass the matching condition as a regular expression (`regex`).
 
@@ -85,6 +95,8 @@ Devtron typically uses a Dockerfile from your repository to build container imag
 
  When using Tag Creation as a source type, Devtron allows you to filter which tags should trigger a build based on the following filters
 
+ ![Figure 1f: Tag Creation Filters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-tag-creation-filters.jpg)
+
  Select the appropriate filter and pass the matching condition as a regular expression (`regex`).
 
  {% hint style="info" %}
@@ -96,7 +108,9 @@ Devtron typically uses a Dockerfile from your repository to build container imag
  | `Author`   | User who created the tag |
  | `Tag Name` | Name of the tag          |
 
-6. Click **Create Pipeline** to save the configuration and proceed. You can now proceed to trigger the build , or continue below to explore additional configuration options for customizing your pipeline.
+6. Click **Create Pipeline** to save the configuration. You can now proceed to trigger the build , or continue below to explore additional configuration options for customizing your pipeline.
+
+ ![Figure 1g: Create pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-create-pipeline.jpg)
 
 #### Configuring Advanced Options
 
@@ -113,11 +127,12 @@ This document focuses on configuring the Build Stage. If you want to set up Pre-
 #### Build Stage
 
 1. In **Create Build Pipeline** window, select **Advanced options**.
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/advanced-options.jpg)
+
+ ![Figure 2a: Advanced Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/advanced-options.jpg)
  
 2. Go to the **Build stage** tab and configure the following fields: 
 
- ![Build stage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-stage-v2.jpg)
+ ![Figure 2b: Build stage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-stage-v2.jpg)
 
 
  | Field Name| Required/Optional | Description|
@@ -134,7 +149,7 @@ This document focuses on configuring the Build Stage. If you want to set up Pre-
 
  {% hint style="warning" %}
  ### Prerequisite
- [Configure blob storage](https://docs.devtron.ai/configurations-overview/installation-configuration#configuration-of-blob-storage) if you wish to store cache.
+ [Figure 2c: Configure blob storage](https://docs.devtron.ai/configurations-overview/installation-configuration#configuration-of-blob-storage) if you wish to store cache.
  {% endhint %}
 
  If you are rebuilding the same Docker image frequently, an effective cache strategy can cut down build time. Docker images are built layer by layer and [Docker’s layer caching mechanism](https://docs.docker.com/build/cache/) allows unchanged layers to be reused across pipeline runs.
@@ -166,7 +181,7 @@ This document focuses on configuring the Build Stage. If you want to set up Pre-
  DEFAULT_CACHE_FOR_CD_POST # for post-deployment stage
  ```
 
- ![Cache behavior at Global-level](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/orchestrator-cm.jpg)
+ ![Figure 2d: Cache behavior at Global-level](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/orchestrator-cm.jpg)
 
  #### 2. Editing Pipeline
 
@@ -174,7 +189,7 @@ This document focuses on configuring the Build Stage. If you want to set up Pre-
 
  By default, your build pipeline will inherit the Global Settings. However, you can use the toggle button to override it and decide the caching behavior using the **Use remote cache** checkbox. In other words, cache behavior defined in pipeline configuration will have higher priority than the global one.
 
- ![Cache behavior at Pipeline-level](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/inherit-global.gif)
+ ![Figure 2e: Cache behavior at Pipeline-level](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/inherit-global.gif)
 
  #### 3. During Trigger
 
@@ -182,7 +197,7 @@ This document focuses on configuring the Build Stage. If you want to set up Pre-
 
  You have the option to ignore cache while triggering a build (regardless of the cache settings defined at the pipeline or global level).
 
- ![Cache behavior at Trigger](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ignore-cache.gif)
+ ![Figure 2f: Cache behavior at Trigger](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ignore-cache.gif)
 
  {% hint style="warning" %}
  ### Note
@@ -190,6 +205,8 @@ This document focuses on configuring the Build Stage. If you want to set up Pre-
  {% endhint %}
 
 3. Click **Create Pipeline** to save the configuration.
+
+ ![Figure 2g: Create Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-create-pipeline.jpg)
 
 #### Triggering a Build
 
@@ -199,11 +216,20 @@ Once the CI pipeline is set up, follow these steps to trigger a build:
 
 2. Click **Select Material** in the specific pipeline for which you want to trigger the build.
 
-3. Choose the **Git commit** to build.
+ ![Figure 3a: Select Material](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-select-material.jpg)
 
-4. Click **Start Build**.
+3. Choose the **Git commit** to build under **Code Source** tab.
+ 
+ ![Figure 3b: Select Git Commit](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-git-comit.jpg)
 
-This will trigger the build process and push the generated container image to the configured container registry for storage, versioning, and later use in the CD pipeline.
+
+4. Configure runtime parameters (if any) before starting the build under **Parameters** tab.
+
+ ![Figure 3c: Configure Runtime Parameters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-runntime-parameters.jpg)
+
+5. Click **Start Build**. This will trigger the build process and push the generated container image to the configured container registry for storage, versioning, and later use in the CD pipeline.
+
+ ![Figure 3d: Start Build](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-start-build.jpg)
 
 ### 2. Linked Build Pipeline
 
