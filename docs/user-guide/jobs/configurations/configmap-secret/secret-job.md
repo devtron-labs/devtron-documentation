@@ -10,7 +10,8 @@ Secret objects let you store and manage sensitive information, such as passwords
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+Users need to have **Admin role** or **Super Admin role**.
+Refer the [User permissions](../../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
 1. Go to the **Configurations** → **Base Configurations**.
@@ -156,7 +157,8 @@ This option allows you to mount an existing Kubernetes Secret in your job pods a
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+Users need to have **Admin role** or **Super Admin role**.
+Refer the [User permissions](../../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
 1. Click your Secret available inside the list of **Secrets** inside **ConfigMaps & Secrets**.
@@ -178,7 +180,8 @@ You cannot change the name of a Secret. Create a new Secret instead.
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+Users need to have **Admin role** or **Super Admin role**.
+Refer the [User permissions](../../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
 You may delete a Secret if not in use anymore. Once a Secret is deleted, it will not be used in future deployments.

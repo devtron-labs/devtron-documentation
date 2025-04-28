@@ -7,7 +7,8 @@ To create and configure the Job Pipeline
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+Users need to have **Admin role** or **Super Admin role**.
+Refer the [User permissions](../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
 1. Navigate to the **Workflow Editor** tab in the left sidebar of the Job **Configuration** page. Alternatively, you can go to the **Devtron Dashboard** → **Jobs** → **Select the job** → **Configurations** → **Workflow Editor**.
@@ -349,7 +350,8 @@ After adding this s3 provisioner task, you can add more tasks as well, for examp
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+Users need to have **Admin role** or **Super Admin role**.
+Refer the [User permissions](../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
 You can update the configurations of an existing Job Pipeline except for the pipeline's name.
@@ -371,7 +373,8 @@ To update your job pipeline
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+Users need to have **Admin role** or **Super Admin role**.
+Refer the [User permissions](../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
 To delete a job pipeline 

@@ -8,7 +8,8 @@ A ConfigMap stores key-value pairs that your jobs can use as environment variabl
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+Users need to have **Admin role** or **Super Admin role**.
+Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
 1. Go to the **Configurations** → **ConfigMaps & Secrets**.
@@ -146,7 +147,8 @@ Users need to have [Admin role](../global-configurations/authorization/user-acce
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+Users need to have **Admin role** or **Super Admin role**.
+Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
 1. Click your ConfigMap available inside the list of **ConfigMaps** inside **ConfigMaps & Secrets**.
@@ -168,7 +170,8 @@ You cannot change the name of a ConfigMap. Create a new ConfigMap instead.
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+Users need to have **Admin role** or **Super Admin role**.
+Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
 You may delete a ConfigMap if not in use anymore. Once a ConfigMap is deleted, it will not be used in future deployments.

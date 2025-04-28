@@ -6,9 +6,8 @@ The run history allows you to review each and every execution of job-pipelines. 
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
-
-In case of [View role](../global-configurations/authorization/user-access.md#role-based-access-levels), user should also have permission to access the specific Job.
+Users need to have **Admin role** or **Super Admin role**.
+Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
 Either you have just executed the job and want to inspect live execution or you just want to check previous executions of a job pipeline

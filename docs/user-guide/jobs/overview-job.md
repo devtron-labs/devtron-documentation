@@ -59,6 +59,8 @@ The **Catalog** in the **About** section displays information about your job—s
 
 ![Figure 3a: Catalog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog.jpg)
 
+You can use the **Catalog framework** to maintain information about your job such as Environment Variables, Resources(CPU and RAM), service documentations etc. This makes it easier for others to understand, manage and use your job.
+
 `Super-Admins` define a custom JSON schema that determines what fields are shown in the catalog form. This schema is specific to each resource type, such as Devtron applications.
 
 When you click the **Edit** icon, a form appears based on the defined schema. As an job owner, you can fill out fields like:

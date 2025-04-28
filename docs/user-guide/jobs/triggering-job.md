@@ -6,7 +6,8 @@ To trigger the job-pipeline:
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above.
+Users need to have **Admin role** or **Super Admin role**.
+Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
 1. Navigate to the **Devtron Dashboard** → **Jobs** → **Select the job** → **Trigger Job**, which list all configured pipelines.

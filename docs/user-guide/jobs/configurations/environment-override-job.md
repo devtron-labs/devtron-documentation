@@ -16,7 +16,8 @@ The Environment Overrides section allows you to customize the **ConfigMaps**, an
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and applications) to perform environment override.
+Users need to have **Admin role** or **Super Admin role**.
+Refer the [User permissions](../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
 1. In your job, go to **Configurations** → **Environment Overrides**. 
