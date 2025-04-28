@@ -19,7 +19,7 @@ K6 is an open-source tool and cloud service that makes load testing easy for dev
 | PrometheusUsername | String | Username of Prometheus account |
 | PrometheusApiKey | String | API key of Prometheus account |
 | PrometheusRemoteWriteEndpoint | String | Remote write endpoint of Prometheus account |
-| OutputType | String | `Log` or `Prometheus` |
+| OutputType | String | `LOG` or `PROMETHEUS` |
 
 * `Trigger/Skip Condition` refers to a conditional statement to execute or skip the task. You can select either:<ul><li>`Set trigger conditions` or</li><li>`Set skip conditions`</li></ul> 
 
