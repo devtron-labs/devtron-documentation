@@ -3,7 +3,7 @@
 The Overview page provides a centralized view of an application’s details within Devtron. It allows users to quickly access information about the application, manage tags, view deployment environments, and understand inter-app dependencies — all in a single, organized interface.
 
 The **Overview** page contains three main sections:
-*	[**About**](#about): Contains application metadata such as name, description, project, creator, tags, and connected code source. It also includes options to manage tags and [Configure PVCs](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims).
+*	[**About**](#about): Contains application metadata such as name, description, project, creator, tags, and connected code source. It also includes options to manage tags and [Configure PVCs](#configure-persistentvolumeclaim-pvc).
 *	[**Environments**](#environments): Displays all environments where the application is deployed, along with their current status and quick access to associated workflows.
 *	[**Dependencies**](#dependencies): Shows which Devtron applications this application depends on, and which other Devtron applications depend on it thus helping visualize microservices dependency.
 
