@@ -5,7 +5,7 @@ The Overview page provides a centralized view of an application’s details with
 The **Overview** page contains three main sections:
 *	[**About**](#about): Contains application metadata such as name, description, project, creator, tags, and connected code source. It also includes options to manage tags and [Configure PVCs](#configure-persistentvolumeclaim-pvc).
 *	[**Environments**](#environments): Displays all environments where the application is deployed, along with their current status and quick access to associated workflows.
-*	[**Dependencies**](#dependencies): Shows which Devtron applications this application depends on, and which other Devtron applications depend on it thus helping visualize microservices dependency.
+*	[**Dependencies**](#dependencies): Shows which Devtron applications this application depends on, and which other Devtron applications depend on it, thus helping visualize microservices dependency.
 
 ![Figure 1: Overview Tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/overview-latest-1.jpg)
 
@@ -79,7 +79,7 @@ The **Catalog** in the **About** section displays information about your applica
 
 ![Figure 6: Catalog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/catalog.jpg)
 
-You can use the **Catalog framework** to maintain information about your application such as Documentation (e.g., API contract, service documentation), ownership details, technical attributes etc. This makes it easier for others to understand, manage and use your application.
+You can use the **Catalog framework** to maintain information about your application, such as Documentation (e.g., API contract, service documentation), ownership details, technical attributes, etc. This makes it easier for others to understand, manage, and use your application.
 
 Super-Admins define a custom JSON schema that determines what fields are shown in the catalog form. This schema is specific to each resource type, such as Devtron applications.
 
@@ -115,7 +115,7 @@ Before you can configure an Application to use a PVC, you need to make sure the 
 
 The following is a sample PVC YAML configuration. You can modify it as needed based on your storage class, access mode, and resource requirements:
 
-{% code title="applyPolicy.sh" overflow="wrap" lineNumbers="true" %}
+{% code title="pvc.yaml" overflow="wrap" lineNumbers="true" %}
 ```bash
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -204,7 +204,7 @@ The Dependencies section displays the relationship of the current application wi
 
 ### Upstream Dependencies
 
-Upstream dependencies are other Devtron applications that your current application depends on. You can manually define upstream dependencies to indicate that your application depends on certain devtron applications.
+Upstream dependencies are other Devtron applications that your current application depends on. You can manually define upstream dependencies to indicate that your application depends on certain Devtron applications.
 
 To add upstream dependencies:
 1. Click the **Add Dependency** button in the **Dependencies** section. If dependencies already exist, click the **Edit Dependency** button on the right instead.
@@ -213,7 +213,7 @@ To add upstream dependencies:
 
 2. In the right-side panel, under Upstream Dependency, click **+ Add Dependency**.
 
-![Figure 14:Adding Dependency](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/add-dependencies-part-2.jpg)
+![Figure 14: Adding Dependency](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/add-dependencies-part-2.jpg)
 
 3. Use the search bar to find and select one or more applications that your app depends on.
 
