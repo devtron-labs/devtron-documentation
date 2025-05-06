@@ -146,3 +146,4 @@ redirects:
     usage/sdh: user-guide/software-distribution-hub/README.md
     usage/sdh/tenants: user-guide/software-distribution-hub/tenants.md
     usage/sdh/release-hub: user-guide/software-distribution-hub/release-hub.md
+    usage/integrations/clair: user-guide/integrations/vulnerability-scanning/clair.md
