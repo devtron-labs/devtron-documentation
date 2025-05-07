@@ -97,7 +97,7 @@ To configure the GitHub SSO in Devtron, follow the below steps of instructions:
 
 7. Click **Update** to save the configuration. GitHub SSO is now successfully configured.
 
-    ![Figure 4: Sign in with GitHub](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/github/github-sso-final-gif.gif)
+![Figure 4: Sign in with GitHub](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/github/github-sso-final.gif)
 
 {% hint style="warning" %}
 
