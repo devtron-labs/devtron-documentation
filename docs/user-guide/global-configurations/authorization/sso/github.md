@@ -4,6 +4,8 @@
 
 Setting up GitHub SSO enables you to authenticate using your GitHub account, ensuring secure access to Devtron without the need for passwords. This document provides you step-by-step instructions on setting up GitHub SSO in Devtron.
 
+---
+
 ## Prerequisites
 
 To configure GitHub SSO in Devtron, you need:
@@ -11,23 +13,27 @@ To configure GitHub SSO in Devtron, you need:
 * Super Admin permission
     * Only a [Super-Admin](../user-access.md) in Devtron can configure SSO. However, you can use the [Admin credentials](../../../../setup/install/install-devtron-with-cicd.md) provided during the initial setup, if you’re setting up Devtron for the first time.
 * A GitHub account to create and manage OAuth credentials. If you do not have a GitHub account, you must create it first on GitHub.
-* [Host URL](../../host-url.md) configured on the Host URL screen (**Devtron** → **Global Configurations** → **Host URL**).
+* [Host URL](../../host-url.md) configured on the Host URL screen (**Global Configurations** → **Host URL**).
+
+---
 
 ## Get the redirectURI from Devtron
 
 Configuring a redirectURI is a crucial component of the authentication process. It acts as an endpoint to which you are redirected after successful authentication. Follow the instructions below to configure the redirectURI:
 
-1. Navigate to **Devtron** → **Global Configurations** → **Authorization** → **SSO Login Services**. The SSO Login Service page is displayed.
+1. Navigate to **Global Configurations** → **Authorization** → **SSO Login Services**. The SSO Login Service page is displayed.
 
     ![Figure 1: Get the redirectURI](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/github/sso-login-services-2.jpg)
 
 2. Select **GitHub** from the list of available SSO login services.
 
-3. Click the suggested URL below the **URL** field. The Host URL is then updated in the **URL** field.
+3. Click the URL suggested in green color next to the **Click to use** label to update the **URL** field. Update the **URL** field only if the host URL displayed in the **URL** field is incorrect.
 
 4. Click the **Update** button.
 
-When you populate the Host URL in the **URL** field, the redirectURI (or callbackURI) is updated automatically at the top of the SSO Login Service screen. This redirectURI is essential, as it is required while setting up the OAuth credentials in GitHub.
+When you populate the Host URL in the **URL** field, the redirectURI (or callbackURI) is updated automatically in the purple block displayed at the top of the SSO Login Service screen. This redirectURI is essential, as it is required while setting up the OAuth credentials in GitHub.
+
+---
 
 ## Configuring OAuth in GitHub
 
@@ -70,10 +76,12 @@ Examples of invalid URIs:
 
 {% endhint %}
 
+---
+
 ## Configuring GitHub SSO in Devtron
 
 To configure the GitHub SSO in Devtron, follow the below steps of instructions:
-1. Navigate back to **Devtron** → **Global Configurations** → **Authorization** → **SSO Login Services**. The SSO Login Service page is displayed.
+1. Navigate back to the **SSO Login Services** screen in Devtron.
 
 2. Select the **Configuration** section available below the **URL** field.
 
@@ -83,17 +91,20 @@ To configure the GitHub SSO in Devtron, follow the below steps of instructions:
 
 4. Similarly, update the `clientSecret` attribute with the Client Secret generated in the OAuth application on GitHub.
 
-5. Configure the `hostedDomains` only if needed. For example, if you want to restrict authentication to specific domains, specify those domains in the `hostedDomains` attribute. If you want to allow any user with a valid GitHub account, remove the entire `hostedDomains` attribute from the **Configuration** section.
+5. Configure the `hostedDomains` only if needed. If you want to restrict authentication to specific domains, for example *www.yourorg.com* and *www.yourorg2.com*, specify those domains in the `hostedDomains` attribute. If you want to allow any user with a valid GitHub account, remove the entire `hostedDomains` attribute from the **Configuration** section.
 
 6. Update the `redirectURI` attribute with the `redirectURI` configured earlier.
 
 7. Click **Update** to save the configuration. GitHub SSO is now successfully configured.
 
-    ![Figure 4: Sign in with GitHub](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/github/github-sso-login.gif)
+    ![Figure 4: Sign in with GitHub](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/github/github-sso-final-gif.gif)
 
 {% hint style="warning" %}
+
+---
+
 ## Important: Enable User Access After SSO Setup
 
-Although GitHub SSO is now configured, you will not be able to sign in with GitHub unless you add yourself as a user with the necessary permissions in Devtron. For detailed steps on managing user permissions, refer to the [User Permissions Documentation](../user-access.md).
+Although GitHub SSO is now configured, you will not be able to sign in with GitHub unless you add yourself as a user with the necessary permissions and manage other user permissions as well in Devtron. For detailed steps on managing user permissions, refer to the [User Permissions Documentation](../user-access.md).
 
 {% endhint %}
