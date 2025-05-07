@@ -10,7 +10,7 @@ Users need to have **Admin role** or **Super Admin role**.
 Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
-1. Navigate to the **Devtron Dashboard** → **Jobs** → **Select the job** → **Trigger Job**, which list all configured pipelines.
+1. Navigate to the **Trigger Job** tab of your job, which list all configured pipelines.
 
  ![Figure 1a: Trigger job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job.jpg)
 

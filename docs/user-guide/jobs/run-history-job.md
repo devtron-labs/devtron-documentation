@@ -12,7 +12,7 @@ Refer the [User permissions](../global-configurations/authorization/user-access.
 
 Either you have just executed the job and want to inspect live execution or you just want to check previous executions of a job pipeline
 
-1. Navigate to  **Devtron Dashboard** → **Jobs** → **Select the job** → **Run History**, all the executions will appear in a reverse chronological order under the pipeline name. In case you have configured multiple job pipelines within a job, you need to select the pipeline from **Select Pipeline** dropdown in the top-left corner. 
+1. Navigate to **Run History** tab of your job, all the executions will appear in a reverse chronological order under the pipeline name. In case you have configured multiple job pipelines within a job, you need to select the pipeline from **Select Pipeline** dropdown in the top-left corner. 
 
  ![Figure 1a: Select Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history.jpg)
 

@@ -11,7 +11,7 @@ Users need to have **Admin role** or **Super Admin role**.
 Refer the [User permissions](../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
-1. Navigate to the **Workflow Editor** tab in the left sidebar of the Job **Configuration** page. Alternatively, you can go to the **Devtron Dashboard** → **Jobs** → **Select the job** → **Configurations** → **Workflow Editor**.
+1. Navigate to the **Workflow Editor** in the left sidebar of the Job **Configuration** page.
 
  ![Figure 1a: Select workflow editor](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor.jpg)
 
@@ -357,7 +357,7 @@ Refer the [User permissions](../../global-configurations/authorization/user-acce
 You can update the configurations of an existing Job Pipeline except for the pipeline's name.
 To update your job pipeline
 
-1. Navigate to **Devtron Dashboard** → **Jobs** → **Select the job** → **Configurations** → **Workflow Editor**.
+1. Navigate to **Configurations** → **Workflow Editor** of the specific job you want to update.
 
 2. Select the **Job pipeline** you wish to update, a **Edit job pipeline** modal window will appear.
 
@@ -379,7 +379,7 @@ Refer the [User permissions](../../global-configurations/authorization/user-acce
 
 To delete a job pipeline 
 
-1.  Navigate to **Devtron Dashboard** → **Jobs** → **Select the job** → **Configurations** → **Workflow Editor**.
+1.  Navigate to **Configurations** → **Workflow Editor** for the job you want to delete.
 
 2. Select the **Job pipeline** you wish to delete, a **Edit job pipeline** modal window will appear.
 

@@ -10,7 +10,7 @@ Refer the [User permissions](../../global-configurations/authorization/user-acce
 
 To configure the Source Code, follow these steps:
 
-1. If the job has been just created, you will be automatically directed to the Configurations page. If not, navigate to the **Devtron Dashboard** → **Jobs** → **Select the job** → **Configurations**.
+1. If the job has been just created, you will be automatically directed to the Configurations page. If not, navigate to **Configurations** tab of your job..
 
 2. Select the **Source Code** tab from the left sidebar.
 
