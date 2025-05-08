@@ -6,7 +6,7 @@ After successful installation of Devtron, when you login for the first time with
 
 Since only users with [Super-Admin](user-access.md) privileges can create SSO configurations in Devtron, we recommend that you create and manage appropriate [User Permissions](user-access.md) as soon as the SSO is configured in Devtron with [Super-Admin](user-access.md) privileges.
 
-Devtron uses Dex to authenticate you against the identity provider such as GitHub, Google, LinkedIn, as well as established protocols like LDAP.
+Devtron uses Dex to authenticate you against the identity provider such as GitHub, Google as well as established protocols like LDAP.
 
 ---
 
@@ -32,7 +32,7 @@ Devtron supports the following SSO providers:
 
 * [OpenShift](./authorization/sso/openshift.md)
 
-Only one SSO configuration can be active at a time. Display of multiple SSO configurations are currently not supported on Devtron's login page. When you create a SSO configuration, for example Google, the Google SSO configuration is made active and will be used by Devtron for authentication.  
+Only one SSO configuration can be active at a time. Display of multiple SSO configurations is currently not supported on Devtron's login page. When you create a SSO configuration, for e.g., Google, the Google SSO configuration is made active and will be used by Devtron for authentication.  
 
 {% hint style="warning" %}
 
@@ -47,12 +47,3 @@ If Google SSO is configured in Devtron, for example, and multiple users have log
 ## Next Steps
 
 The next step is to select your preferred SSO login service from the available list of providers and set up the SSO configuration. 
-
----
-
-## References
-
-Refer to the following documents to more about Dex:
-
-* https://dexidp.io/docs/connectors/
-* https://dexidp.io/docs/connectors/google/
