@@ -64,9 +64,9 @@ In the following example, we are creating a plugin named 'Secret Management Vali
 
     ![Figure 6: 'Execute Custom Task' Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/custom-task-page.jpg)
 
-7. Click **Update Plugin**.
+7. Click **Update Pipeline**.
 
-    ![Figure 7: 'Update Plugin' Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/update-plugin.jpg)
+    ![Figure 7: 'Update Pipeline' Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/update-plugin.jpg)
 
 {% hint style="success" %}
 ### Next Steps
