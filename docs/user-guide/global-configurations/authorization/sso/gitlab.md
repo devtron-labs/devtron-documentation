@@ -21,7 +21,7 @@ To configure GitLab SSO in Devtron, you need:
 
 ## Get the redirectURI from Devtron
 
-Getting the redirectURI from Devtron is a crucial component of the authentication process. It acts as an endpoint to which you are redirected after successful authentication. Follow the instructions below to configure the redirectURI:
+Getting the redirectURI from Devtron is a crucial component of the authentication process. It acts as an endpoint to which you are redirected after successful authentication. Follow the below instructions to get the redirectURI:
 
 1. Navigate to **Global Configurations** → **Authorization** → **SSO Login Services**. The SSO Login Service page is displayed.
 
