@@ -24,7 +24,7 @@ Each method has different use-cases that can be tailored according the needs of 
 
 ---
 
-### 1. Build and Deploy from Source Code
+## 1. Build and Deploy from Source Code
 
 **Build and Deploy from Source Code** workflow allows you to build the container image from a source code repository.
 
@@ -32,7 +32,7 @@ Each method has different use-cases that can be tailored according the needs of 
 Devtron typically uses a Dockerfile from your repository to build container images. If you don’t have one, Devtron provides default templates to help you get started. You can also build images without a Dockerfile using Buildpacks.
 {% endhint %}
 
-#### Creating a CI Pipeline
+### Creating a CI Pipeline
 
 1. From the Applications menu, select your application.
 
@@ -57,7 +57,7 @@ Devtron typically uses a Dockerfile from your repository to build container imag
  | `Branch Name`| Required| Branch that triggers the CI build|
  | `Advanced Options` | Optional| Create Pre-Build, Build, and Post-Build tasks <br> Refer the [Configure Advanced options](#configuring-advanced-options) section to configure **Advanced options**. |
 
- #### Understanding Source Types
+ ### Understanding Source Types
 
  Devtron provides multiple ways to trigger a build pipeline:
  
@@ -112,7 +112,7 @@ Devtron typically uses a Dockerfile from your repository to build container imag
 
  ![Figure 1g: Create pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-create-pipeline.jpg)
 
-#### Configuring Advanced Options
+### Configuring Advanced Options
 
 Devtron provides three stages in a CI pipeline: `Pre-Build`, `Build`, and `Post-Build`.
 
@@ -124,7 +124,7 @@ Devtron provides three stages in a CI pipeline: `Pre-Build`, `Build`, and `Post-
 
 This document focuses on configuring the Build Stage. If you want to set up Pre-Build and Post-Build stages, refer the [Pre-Build/Post-build Stages Configuration](https://docs.devtron.ai/usage/applications/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins).
 
-#### Build Stage
+### Build Stage
 
 1. In **Create Build Pipeline** window, select **Advanced options**.
 
@@ -145,7 +145,7 @@ This document focuses on configuring the Build Stage. If you want to set up Pre-
  | `Docker build arguments`|Optional| <p>Override docker build configurations for this pipeline.</p><ul><li><strong>Key</strong>: Field name</li><li><strong>Value</strong>: Field value.</li></ul>|
  | `Custom Image Tag Pattern` | Optional| <p>Enable the Custom Image Tag Pattern toggle.</p><ul><li>Define an alphanumeric pattern (e.g., <code>test-v1.0.{x}</code>) where <code>{x}</code> auto-increments with each build.</li><li>Tags must not start or end with a period (.) or comma (,).</li><li>After configuration, trigger a build by navigating to <code>Build &#x26; Deploy</code>, selecting the Git commit by clicking on <code>Select Material</code>, and clicking <code>Start Build</code>.</li><li>The generated image tag will be available in <code>Build History</code>, Docker Registry, CD Pipeline (Image Selection)</li></ul> <p> **Build will fail if the resulting image tag has already been built in the past. This error might occur when you reset the value of the variable `x` or when you disable/enable the toggle button for `Custom image tag pattern`**.</p>|
 
- #### Docker Layer Caching [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+ ### Docker Layer Caching [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
  {% hint style="warning" %}
  ### Prerequisite
@@ -231,28 +231,43 @@ Once the CI pipeline is set up, follow these steps to trigger a build:
 
  ![Figure 3d: Start Build](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-start-build.jpg)
 
-### 2. Linked Build Pipeline
+## 2. Linked Build Pipeline
 
-If one code is shared across multiple applications, `Linked Build Pipeline` can be used, and only one image will be built for multiple applications because if there is only one build, it is not advisable to create multiple CI Pipelines.
+**Linked Build Pipeline** allows you to reuse build images from another pipeline within **Devtron**, instead of building images from source code each time.
+ 
+This is useful when the same codebase is shared across multiple applications. 
+ 
+Instead of creating and maintaining separate pipelines for each application, you can first set-up a primary build pipeline (in the same application or in any other application) that builds the image from source code using **Build and Deploy from Source Code** or you can also use an existing pipeline from any application with the same codebase. 
 
-1. From the **Applications** menu, select your application.
-2. On the **App Configuration** page, select **Workflow Editor**.
-3. Select **+ New Workflow**.
-4. Select **Linked Build Pipeline**.
-5. On the **Create linked build pipeline** screen:
-    * Search for the application in which the source CI pipeline is present.
-    * Select the source CI pipeline from the application that you selected above.
-    * Enter a new name for the linked CI pipeline.
+Then for other applications you can simply link that source pipeline to reuse its build images directly in your workflow and proceed to create a CD pipeline using those images.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ca-workflow-linked.jpg)
+{% hint style="info" %}
+The **Linked Build Pipeline** can only access build images that are generated after it has been created. Any images built by the source pipeline before the Linked Build Pipeline was set up will not be available.
+{% endhint %}
+
+To create a **Linked Build Pipeline** follow the below steps. 
+
+1. Navigate to **Configurations** → **Workflow Editor** of your application.
+
+2. Select **+ New Workflow**; a modal window will appear where you can select the type of pipeline you want to create. 
+
+3. Select **Linked Build Pipeline**; another modal window will appear where you can enter the details of the existing pipeline you want to link.
+
+ |Field Name|Description|
+ |:---|:---|
+ |Filter By Application|Enter the application name in which the source CI pipeline exists.|
+ |Source CI pipeline|List all the build pipelines for the selected application. Choose the pipeline which you want to link|
+ |Name|Enter the name for the **Linked Build Pipeline**.<br><ul><li>By default, it takes the name of the source pipeline, if you wish, you can rename it.</li><li>In case the source pipeline exists within the same application, the **Linked Build Pipeline** name must be different from the source pipeline, as Devtron does not allow two pipelines with the same name within a single application.</li></ul>|
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ca-workflow-linked.jpg)
     
-6. Click **Create Linked CI Pipeline**.
+4. Click **Create Linked CI Pipeline** to create the pipeline.
 
-Thereafter, the source CI pipeline will indicate the number of Linked CI pipelines. Upon clicking it, it will display the child information as shown below. It reveals the applications and environments where Linked CI is used for deployment.
+ Thereafter, the source CI pipeline will indicate the number of Linked CI pipelines. On clicking it, a modal window will appear, which lists all the applications and the environments they are deployed, where this source build pipeline is being reused through **Linked Build Pipelines** as shown below.
 
-![Linked CI with Child Information](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linkedci.gif)
+ ![Linked CI with Child Information](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linkedci.gif)
 
-After creating a linked CI pipeline, you can create a CD pipeline. 
+5. After creating a **Linked CI Pipeline**, you can create a CD pipeline. Refer [CD Pipeline](./cd-pipeline.md) page to know more.
 
 {% hint style="warning" %}
 Linked CI pipelines can't trigger builds. They rely on the source CI pipeline to build images. Trigger a build in the source CI pipeline to see the images available for deployment in the linked CI pipeline's CD stage.
