@@ -53,7 +53,7 @@ Open Authentication (OAuth) allows you to authorize one application to sign in t
 
 5. Update the **Authorization callback URL** with the redirectURI created in Devtron.
 
-6. Click **Update** application.
+6. Click the **Update application** button.
 
 ---
 
