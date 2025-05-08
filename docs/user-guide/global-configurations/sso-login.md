@@ -6,7 +6,7 @@ After successful installation of Devtron, when you login for the first time with
 
 Since only users with [Super-Admin](user-access.md) privileges can create SSO configurations in Devtron, we recommend that you create and manage appropriate [User Permissions](user-access.md) as soon as the SSO is configured in Devtron with [Super-Admin](user-access.md) privileges.
 
-Devtron uses Dex to authenticate you against the identity provider such as GitHub, Google as well as established protocols like LDAP.
+Devtron uses Dex to authenticate you against the identity providers such as GitHub, GitLab, Google, Microsoft, LDAP, OIDC, and OpenShift.
 
 ---
 
