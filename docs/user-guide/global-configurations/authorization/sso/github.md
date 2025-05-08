@@ -19,7 +19,7 @@ To configure GitHub SSO in Devtron, you need:
 
 ## Get the redirectURI from Devtron
 
-Configuring a redirectURI is a crucial component of the authentication process. It acts as an endpoint to which you are redirected after successful authentication. Follow the instructions below to configure the redirectURI:
+Getting the redirectURI from Devtron is a crucial component of the authentication process. It acts as an endpoint to which you are redirected after successful authentication. Follow the instructions below to configure the redirectURI:
 
 1. Navigate to **Global Configurations** → **Authorization** → **SSO Login Services**. The SSO Login Service page is displayed.
 
@@ -77,11 +77,11 @@ To configure the GitHub SSO in Devtron, follow the below steps of instructions:
 
 ![Figure 4: Sign in with GitHub](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/github/github-sso-final.gif)
 
-{% hint style="warning" %}
-
 ---
 
-## Important: Enable User Access After SSO Setup
+{% hint style="warning" %}
+
+### Important: Enable User Access After SSO Setup
 
 Although GitHub SSO is now configured, you will not be able to sign in with GitHub unless you add yourself as a user with the necessary permissions and manage other user permissions as well in Devtron. For detailed steps on managing user permissions, refer to the [User Permissions Documentation](../user-access.md).
 
