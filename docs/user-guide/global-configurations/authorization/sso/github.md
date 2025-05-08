@@ -39,13 +39,13 @@ When you populate the Host URL in the **URL** field, the redirectURI (or callbac
 
 Open Authentication (OAuth) allows you to authorize one application to sign in to another without the need for passwords. Configuring OAuth credentials in GitHub involves creating a GitHub OAuth Client ID and Client Secret, which will then be used in Devtron for authentication.
 
-If you do not already have an OAuth application created on GitHub, refer to [Creating an OAuth app](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app). Once you have an OAuth application on GitHub, follow the instructions below:
-
-1. Navigate to **GitHub** → **Settings** → **Developer Options** → **OAuth Apps**.
+1. Navigate to **GitHub** → **Profile** → **Settings** → **Developer settings** → **OAuth Apps**. 
+    
+    If you do not already have an OAuth application created on GitHub, refer to [Creating an OAuth app](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app). If you already have an OAuth application on GitHub, follow the instructions below:
 
 2. Select your preferred OAuth app and click **Edit**.
 
-    ![Figure 2: Client ID and Client Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/github/oauth-application-2.jpg)
+    ![Figure 2: Client ID and Client Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/github/oauth-application.jpg)
 
 3. Click the **Generate a new client secret** button to create a new client secret. The client secret is created and displayed in the **Client Secrets** section. The Client ID is created by default and can be found in the **Client ID** field.
 
@@ -55,32 +55,12 @@ If you do not already have an OAuth application created on GitHub, refer to [Cre
 
 6. Click **Update** application.
 
-{% hint style="warning" %}
-
-### GitHub SSO Requires a Valid Domain with HTTPS
-
-GitHub does not support IP addresses as valid redirect URIs. You must use a valid domain name ([FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)) accessible over HTTPS.
-
-Examples of valid URIs: 
-
-✅ https://devtron.example.com/api/dex/callback
-
-✅ https://auth.yourcompany.com/callback
-
-
-Examples of invalid URIs:
-
-❌ http://localhost:8080/callback
-
-❌ http://192.168.1.10/callback
-
-{% endhint %}
-
 ---
 
 ## Configuring GitHub SSO in Devtron
 
 To configure the GitHub SSO in Devtron, follow the below steps of instructions:
+
 1. Navigate back to the **SSO Login Services** screen in Devtron.
 
 2. Select the **Configuration** section available below the **URL** field.
@@ -89,13 +69,11 @@ To configure the GitHub SSO in Devtron, follow the below steps of instructions:
 
 3. Update the `clientID` attribute with the Client ID generated in the OAuth application on GitHub.
 
-4. Similarly, update the `clientSecret` attribute with the Client Secret generated in the OAuth application on GitHub.
+4. Update the `clientSecret` attribute with the Client Secret generated in the OAuth application on GitHub.
 
-5. Configure the `hostedDomains` only if needed. If you want to restrict authentication to specific domains, for example *www.yourorg.com* and *www.yourorg2.com*, specify those domains in the `hostedDomains` attribute. If you want to allow any user with a valid GitHub account, remove the entire `hostedDomains` attribute from the **Configuration** section.
+5. Update the `redirectURI` attribute with the `redirectURI` configured earlier.
 
-6. Update the `redirectURI` attribute with the `redirectURI` configured earlier.
-
-7. Click **Update** to save the configuration. GitHub SSO is now successfully configured.
+6. Click **Update** to save the configuration. GitHub SSO is now successfully configured.
 
 ![Figure 4: Sign in with GitHub](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/github/github-sso-final.gif)
 
