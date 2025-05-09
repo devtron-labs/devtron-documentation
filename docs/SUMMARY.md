@@ -8,7 +8,6 @@
   * [Install Devtron without Integrations](setup/install/install-devtron.md)
   * [Install Devtron on Minikube, Microk8s, K3s, Kind, Cloud VMs](setup/install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md)
   * [Install Devtron on Airgapped Environment](setup/install/install-devtron-in-airgapped-environment.md)
-  * [Install Devtron Enterprise Trial](setup/install/enterprise-license.md)
   * [Demo on Popular Cloud Providers](setup/install/demo-tutorials.md)
   * [Backup for Disaster Recovery](setup/install/devtron-backup.md)
   * [Uninstall Devtron](setup/install/uninstall-devtron.md)
