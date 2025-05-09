@@ -292,11 +292,11 @@ Linked CI pipelines can't trigger builds. They rely on the source CI pipeline to
 {% endhint %}
 
 
-### 3. Deploy Image from External Service
+## 3. Deploy Image from External Service
 
-For CI pipeline, you can receive container images from an external services via webhook API.
+**Deploy Image from External Service** allows you to receive container images from an external CI services such as Jenkins, CircleCI, etc. via webhook.
 
-You can use Devtron for deployments on Kubernetes while using an external CI tool such as Jenkins or CircleCI. External CI feature can be used when the CI tool is hosted outside the Devtron platform. However, by using an external CI, you will not be able to use some of the Devtron features such as Image scanning and security policies, configuring pre-post CI stages etc. 
+You can use Devtron for deploying your container images on Kubernetes while using an external CI tool such as Jenkins or CircleCI. **Deploy Image from External Service** feature can be used when the CI tool is hosted outside the Devtron platform. However, by using an external CI, you will not be able to use some of the Devtron features such as Image scanning and security policies, configuring pre-post CI stages etc. 
 
 
 * Create a [new](../../create-application.md) or [clone](../../cloning-application.md) an application.
