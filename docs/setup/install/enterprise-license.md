@@ -1,7 +1,7 @@
 ---
 hidden: true
 ---
-
+ 
 # Install Devtron Enterprise Trial
 
 ## Introduction
@@ -32,12 +32,17 @@ Instead, we suggest you to perform a [fresh installation of Devtron Enterprise](
 
 2. Login with your **work email** using **Google**, **Github**, or **Microsoft**. Personal emails accounts such as gmail, yahoo are not supported.
 
+ ![Figure 1: Login into Devtron License Dashboard](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard.jpg)
+
 3. Once logged in, **Devtron License Dashboard** will open.
 
 4. Under **Tell Us About You**, enter some basic details to help us improve your Devtron Experience.
 
 5. After entering the details, click **Next** to proceed on the [Step 2:Install Devtron](#step-2-install-devtron).
 
+![Figure 2: Entering the Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-step-1.jpg)
+
+---
 
 ## Step 2: Install Devtron
 
@@ -46,6 +51,8 @@ After entering the basic details, the next step is to install **Devtron Enterpri
 The installation commands for installing **Devtron in Full Mode** (with integrations) is directly available on the **Devtron License Dashboard** for different K8s distributions.
 
 Choose your preferred K8s distribution and follow the displayed commands to install **Devtron in Full Mode**.  
+
+![Figure 3: Installing Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-step-2.jpg)
 
 In case, you want to install Devtron dashboard only, use the commands given in **Devtron without integrations (only dashboard)** tab in [Choose an Installation Option](#id-2.-choose-an-installation-option) section.
 
@@ -203,9 +210,13 @@ Follow the installation steps in [Devtron Enterprise (Air‐gapped)](https://git
 
 After successfully installing Devtron and obtaining the dashboard URL, click **Next** to proceed on the [Step 3: Get License Key](#step-3-get-license-key)
 
+---
+
 ## Step 3: Get License Key
 
 In Step 3, you need to enter your Devtron installation's fingerprint to generate a License key.
+
+![Figure 4: Enter Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-step-3.jpg)
 
 ### Get Devtron installation's fingerprint
 
@@ -213,11 +224,11 @@ To get the **Installation Fingerprint** follow the below steps
 
 1. Visit your Dashboard URL as shown below.
 
- ![Figure 1: License Activation Screen](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-activation.jpg)
+ ![Figure 5: License Activation Screen](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-fingerprint.jpg)
 
 2. You will see an Installation Fingerprint that uniquely identifies your installation. Copy the fingerprint.
 
- ![Figure 2: Copying Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-activation-2.jpg)
+ ![Figure 6: Copying Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-copy-fingerprint.jpg)
 
 {% hint style="info" %}
 ### What if my installation is airgapped and has no Internet access?
@@ -227,22 +238,24 @@ In case your installation is not connected to the Internet, clicking the **Get L
 
 3. Go back to the **License Dashboard** and paste the fingerprint you copied earlier and click **Get License Key**.
 
- ![Figure 5: Pasting Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/pasted-fingerprint.jpg)
+ ![Figure 7: Pasting Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-paste-fingerprint.jpg)
 
-5. Your license will be generated. Copy the license key.
+4. Your license will be generated. Copy the license key.
 
- ![Figure 6: Copying Generated License Key](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/generated-license-key.jpg)
+ ![Figure 8: Copying Generated License Key](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-key-generated.jpg)
 
 {% hint style="warning" %}
 ### Note
 The license key you generate will be valid only for your enterprise installation. It is uniquely mapped to your installation fingerprint.
 {% endhint %}
 
-6. Go back to your **Devtron Dashboard URL** page and paste your license key under **License Key** field and click **Activate**.
+5. Go back to your **Devtron Dashboard URL** page and paste your license key under **License Key** field and click **Activate**.
 
- ![Figure 7: Pasting License Key and Activating](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-activation-3.jpg)
+ ![Figure 9: Pasting License Key and Activating](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-paste-license-key.jpg)
 
-7. **Devtron Enterprise License** has been activated and now you can login into **Devtron**. 
+6. **Devtron Enterprise License** has been activated and now you can login into **Devtron Dashboard**. 
+
+ ![Figure 10: Login as Administrator ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-login.jpg)
 
 {% hint style="info" %}
 ### Facing Issues?
@@ -254,8 +267,8 @@ Visit the [Troubleshoot](#troubleshoot-issues) section to identify the issue or 
 ## Log in to Devtron
 
 1. After successful license activation, you will see the Devtron login page.
- 
-    ![Figure 8: Devtron Login Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/admin-login.jpg)
+
+ ![Figure 11: Devtron Login Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-login-admin.jpg)
 
 2. Initially, log in with the administrator credentials. By default, the username is **admin**. Run the following command to get the admin password:
 
@@ -271,6 +284,10 @@ When you install Devtron for the first time, it creates a default admin user and
 After the initial login, we recommend you set up any [Single Sign-On (SSO) service](../../user-guide/global-configurations/sso-login.md) like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (let's say, GitHub) to log in to the Dashboard.
 {% endhint %}
 
+3. After a successful login, the **Devtron Dashboard** will open, and you can start exploring **Devtron Enterprise** features.
+
+ ![Figure 12: Devtron Dashboard](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-dashbaord.jpg)
+
 ---
 
 ## Additional Actions
@@ -282,13 +299,13 @@ In Devtron, click the **Help** menu (top-right corner) → **About Devtron** to 
 * Installation fingerprint
 * Enterprise version
 
-![Figure 9: 'About Devtron' Help Menu](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-check.gif)
+![Figure 13: 'About Devtron' Help Menu](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-check.gif)
 
 ### Update License
 
 If you have a new license key, you can update the license key directly within Devtron, from the **About Devtron** page.
 
-![Figure 10: Updating License](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/update-license.jpg)
+![Figure 14: Updating License](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/update-license.jpg)
 
 ### Renew License
 
