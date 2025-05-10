@@ -6,7 +6,7 @@ In certain scenarios, you may need to deploy Devtron to a Kubernetes cluster tha
 
 {% hint style="success" %}
 ### Try Devtron Enterprise for Free
-Explore [all capabilities](https://devtron.ai/pricing) of Devtron with its Enterprise version trial ([read more](enterprise-license.md)).
+Explore [all capabilities](https://devtron.ai/pricing) of Devtron with its Enterprise version trial ([Try Now](https://license.devtron.ai/dashboard)).
 {% endhint %}
 
 ### Prerequisites

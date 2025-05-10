@@ -4,7 +4,7 @@ In this section, we describe the steps in detail on how you can install Devtron 
 
 {% hint style="success" %}
 ### Try Devtron Enterprise for Free
-Explore [all capabilities](https://devtron.ai/pricing) of Devtron with its Enterprise version trial ([read more](enterprise-license.md)).
+Explore [all capabilities](https://devtron.ai/pricing) of Devtron with its Enterprise version trial ([Try Now](https://license.devtron.ai/dashboard)).
 {% endhint %}
 
 
