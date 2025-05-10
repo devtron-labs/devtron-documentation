@@ -214,7 +214,7 @@ After successfully installing Devtron and obtaining the dashboard URL, click **N
 
 ## Step 3: Get License Key
 
-In Step 3, you need to enter your Devtron installation's fingerprint to generate a License key.
+In Step 3, you will need to enter your Devtron **Installation Fingerprint** to generate a license key.
 
 ![Figure 4: Enter Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-step-3.jpg)
 

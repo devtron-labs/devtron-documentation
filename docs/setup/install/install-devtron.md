@@ -7,7 +7,7 @@ If you want to install Devtron on Minikube, Microk8s, K3s, Kind, refer this [sec
 {% hint style="success" %}
 ### Try Devtron Enterprise — Free for 14 Days
 Get full access to all [Enterprise features](https://devtron.ai/pricing) with a **14-day free trial** — no interruptions, no limitations.  
-Want to know how it works? [Learn more about getting a trial license](enterprise-license.md).
+Want to know how it works? [Try Now](https://license.devtron.ai/dashboard)
 {% endhint %}
 
 ## Before you begin
