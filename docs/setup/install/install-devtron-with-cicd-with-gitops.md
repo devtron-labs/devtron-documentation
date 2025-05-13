@@ -3,8 +3,7 @@
 In this section, we describe the steps in detail on how you can install Devtron with CI/CD by enabling GitOps during the installation.
 
 {% hint style="success" %}
-### Try Devtron Enterprise for Free
-Explore [all capabilities](https://devtron.ai/pricing) of Devtron with its Enterprise version trial ([read more](enterprise-license.md)).
+Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
 {% endhint %}
 
 
