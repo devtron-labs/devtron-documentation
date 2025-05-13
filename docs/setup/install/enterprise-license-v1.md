@@ -1,3 +1,7 @@
+{% hint style="warning" %}
+This document had been deprecated. Refer the [Install Devtron Enterprise Trial](./enterprise-license.md) to install Devtron Enterprise.
+{% endhint %}
+
 # Install Devtron Enterprise Trial
 
 ## Introduction

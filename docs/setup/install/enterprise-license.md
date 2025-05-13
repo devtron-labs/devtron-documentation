@@ -26,11 +26,11 @@ Instead, we suggest you to perform a [fresh installation of Devtron Enterprise](
 
 ---
 
-## Step 1: Go to the [Devtron License Dashboard](https://license.devtron.ai/dashboard/)
+## Step 1: Go to the Devtron License Dashboard
 
 1. To install Devtron Enterprise; Go to the [Devtron License Dashboard](https://license.devtron.ai/dashboard/).
 
-2. Login with your **work email** using **Google**, **Github**, or **Microsoft**. Personal emails accounts such as gmail, yahoo are not supported.
+2. Log in with your **work email** using **Google**, **Github**, or **Microsoft**. Personal emails accounts such as gmail, yahoo are not supported.
 
  ![Figure 1: Login into Devtron License Dashboard](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard.jpg)
 
@@ -38,7 +38,7 @@ Instead, we suggest you to perform a [fresh installation of Devtron Enterprise](
 
 4. Under **Tell Us About You**, enter some basic details to help us improve your Devtron Experience.
 
-5. After entering the details, click **Next** to proceed on the [Step 2:Install Devtron](#step-2-install-devtron).
+5. After entering the details, click **Next** to proceed to [Step 2: Install Devtron](#step-2-install-devtron).
 
 ![Figure 2: Entering the Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-step-1.jpg)
 
@@ -56,8 +56,15 @@ Choose your preferred K8s distribution and follow the displayed commands to inst
 
 In case, you want to install Devtron dashboard only, use the commands given in **Devtron without integrations (only dashboard)** tab in [Choose an Installation Option](#id-2.-choose-an-installation-option) section.
 
+{% hint style="info" %}
+### Install Devtron in Air-Gapped Environments
 
-### Devtron Installation Commands
+You can also install Devtron in Air-Gapped environments to securely manage and deploy applications without internet access. 
+
+Refer the [Devtron Enterprise (Air‐gapped) Guide](https://github.com/devtron-labs/utilities/wiki/Devtron-Enterprise-(Air%E2%80%90gapped)) to install Devtron in Air-Gapped environments.
+
+{% endhint %}
+
 
 {% hint style="warning" %}
 ### Note
@@ -65,14 +72,14 @@ Please ensure that cluster `kubeconfig` is properly configured and available in 
 {% endhint %}
 
 
-#### 1. Add Devtron Helm Repository
+### 1. Add Devtron Helm Repository
 
-```bash
-helm repo add devtron https://helm.devtron.ai
-helm repo update devtron
-```
+ ```bash
+ helm repo add devtron https://helm.devtron.ai
+ helm repo update devtron
+ ```
 
-#### 2. Choose an Installation Option 
+### 2. Choose an Installation Option 
 
 {% tabs %}
 
@@ -107,7 +114,7 @@ helm install devtron devtron/devtron-enterprise --create-namespace --namespace d
 
 {% endtabs %}
 
-#### 3. Obtain the Dashboard URL
+### 3. Obtain the Dashboard URL
 
 {% tabs %}
 
@@ -202,19 +209,13 @@ The Dashboard URL will be `http://127.0.0.1:8000` on your local machine.
 
 {% endtabs %}
 
-### Install Devtron in air-gapped environments
-
-You can also install Devtron in air-gapped environments to securely manage and deploy applications without internet access. 
-
-Follow the installation steps in [Devtron Enterprise (Air‐gapped)](https://github.com/devtron-labs/utilities/wiki/Devtron-Enterprise-(Air%E2%80%90gapped)) page to install Devtron in air-gapped environments.
-
-After successfully installing Devtron and obtaining the dashboard URL, click **Next** to proceed on the [Step 3: Get License Key](#step-3-get-license-key)
+After successfully installing Devtron and obtaining the dashboard URL, click **Next** to proceed to [Step 3: Get License Key](#step-3-get-license-key)
 
 ---
 
 ## Step 3: Get License Key
 
-In Step 3, you will need to enter your Devtron **Installation Fingerprint** to generate a license key.
+You will now need to enter your Devtron **Installation Fingerprint** to generate a license key.
 
 ![Figure 4: Enter Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-step-3.jpg)
 
@@ -253,9 +254,9 @@ The license key you generate will be valid only for your enterprise installation
 
  ![Figure 9: Pasting License Key and Activating](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-paste-license-key.jpg)
 
-6. **Devtron Enterprise License** has been activated and now you can login into **Devtron Dashboard**. 
+6. **Devtron Enterprise License** has been activated and now you can log in into **Devtron Dashboard**. 
 
- ![Figure 10: Login as Administrator ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-login.jpg)
+ ![Figure 10: Log in as Administrator ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-login.jpg)
 
 {% hint style="info" %}
 ### Facing Issues?
