@@ -294,34 +294,39 @@ Linked CI pipelines can't trigger builds. They rely on the source CI pipeline to
 
 ## 3. Deploy Image from External Service
 
-**Deploy Image from External Service** allows you to receive container images from an external CI services such as Jenkins, CircleCI, etc. via webhook.
+**Deploy Image from External Service** allows you to deploy container images built by external CI tools such as Jenkins, CircleCI, etc. using webhooks.
 
-You can use Devtron for deploying your container images on Kubernetes while using an external CI tool such as Jenkins or CircleCI. **Deploy Image from External Service** feature can be used when the CI tool is hosted outside the Devtron platform. However, by using an external CI, you will not be able to use some of the Devtron features such as Image scanning and security policies, configuring pre-post CI stages etc. 
+This is useful when your CI pipeline is managed outside the Devtron platform, allowing you to use Devtron exclusively for deploying container images on Kubernetes while maintaining your existing CI setup.
+
+To create a pipeline form **Deploy Image from External Service**, follow the below steps
+
+1. Navigate to **Configurations** → **Workflow Editor** of your application.
+
+2. Select **+ New Workflow**; a modal window will appear where you can select the type of pipeline you want to create.
+
+3. Select **Deploy Image from External Service**, another modal window will appear where you can enter deployment details such as environment, execution mode, and deployment strategy.
+
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-from-external-source.jpg)
+
+4. Enter the deployment details and click **Create Pipeline** to create the pipeline.
+
+ | Fields | Description |
+ | --- | --- |
+ |**Environment**|Provide the name of the Environment in which you want to deploy your image.| 
+ |**Namespace**|It will display the namespace of that Environment.|
+ | **When do you want the pipeline to execute?** | You can deploy either in one of the following ways: <ul><li>`Automatic`: Pipeline triggers automatically when a new container image is received from the previous stage. Users can also trigger the pipeline manually.</ul></li> <ul><li>`Manual`: Users can trigger the pipeline manually.</ul></li>|
+ | **Deployment Strategy** | Choose the Deployment Strategy according to you preference. |
+
+5. After creating the pipeline, select **Show webhook details** to get the webhook URL and JSON sample payload to be used in external CI pipeline.
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/show-webhook-details-v2.jpg)
+
+### Configure Webhook in External CI
 
 
-* Create a [new](../../create-application.md) or [clone](../../cloning-application.md) an application.
-* To configure `Git Repository`, you can add any Git repository account (e.g., dummy account) and click **Next**.
-* To configure the `Container Registry` and `Container Repository`, you can leave the fields blank or simply add any test repository and click **Save & Next**.
-* On the `Base Deployment Template` page, select the `Chart type` from the drop-down list and configure as per your [requirements](../../creating-application/deployment-template.md) and click **Save & Next**.
-* On the **Workflow Editor** page, click **New Workflow** and select **Deploy image from external service**.
 
-* On the **Deploy image from external source** page, provide the information in the following fields:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-from-external-source.jpg)
-
-| Fields | Description |
-| --- | --- |
-| **Deploy to environment** | <ul><li>`Environment`: Provide the name of the [environment](../../global-configurations/cluster-and-environments.md#add-environment).</ul></li><ul><li>`Namespace`: Provide the [namespace](../../global-configurations/cluster-and-environments.md#add-environment).</ul></li> |
-| **When do you want to deploy** | You can deploy either in one of the following ways: <ul><li>`Automatic`: If you select automatic, your application will be deployed automatically everytime a new image is received.</ul></li> <ul><li>`Manual`: In case of manual, you have to select the image and deploy manually. </ul></li>|
-| **Deployment Strategy** | Configure the deployment preferences for this pipeline. |
-
-* Click **Create Pipeline**.
-A new CI pipeline will be created for the external source.
-To get the webhook URL and JSON sample payload to be used in external CI pipeline, click **Show webhook details**.
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/show-webhook-details-v2.jpg)
-
-* On the **Webhook Details** page, you have to authenticate via `API token` to allow requests from an external service (e.g. Jenkins or CircleCI).
+6. On the **Webhook Details** page, you have to authenticate via `API token` to allow requests from an external service (e.g. Jenkins or CircleCI).
 
 * For authentication, only users with `super-admin` permissions can select or generate an API token:
     * You can either use **Select API Token** if you have generated an [API Token](../../global-configurations/authorization/api-tokens.md) under **Global Configurations**. 
