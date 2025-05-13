@@ -14,7 +14,7 @@ With the Enterprise version of Devtron, you can access the premium features beyo
 5. Security scans
 6. Policies related to approval, deployment, plugins, tags, infra...and many more. 
 
-Enjoy an uninterrupted 14-day free trial and explore [all the features of Devtron Enterprise](https://devtron.ai/pricing) to their full potential.
+Enjoy an uninterrupted 14-day free trial and explore [all the features of Devtron Enterprise](https://devtron.ai/pricing#compare-plans) to their full potential.
 
 {% hint style="info" %}
 ### Already using Devtron's Open Source version?
@@ -72,14 +72,14 @@ Please ensure that cluster `kubeconfig` is properly configured and available in 
 {% endhint %}
 
 
-### 1. Add Devtron Helm Repository
+### 2.1 Add Devtron Helm Repository
 
  ```bash
  helm repo add devtron https://helm.devtron.ai
  helm repo update devtron
  ```
 
-### 2. Choose an Installation Option 
+### 2.2 Choose an Installation Option 
 
 {% tabs %}
 
@@ -114,7 +114,7 @@ helm install devtron devtron/devtron-enterprise --create-namespace --namespace d
 
 {% endtabs %}
 
-### 3. Obtain the Dashboard URL
+### 2.3 Obtain the Dashboard URL
 
 {% tabs %}
 
@@ -223,19 +223,13 @@ You will now need to enter your Devtron **Installation Fingerprint** to generate
 
 To get the **Installation Fingerprint** follow the below steps 
 
-1. Visit your Dashboard URL as shown below.
+1. Visit your Dashboard URL (which you have obtained in [Step-2.3](#23-obtain-the-dashboard-url))as shown below.
 
  ![Figure 5: License Activation Screen](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-fingerprint.jpg)
 
 2. You will see an Installation Fingerprint that uniquely identifies your installation. Copy the fingerprint.
 
  ![Figure 6: Copying Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-copy-fingerprint.jpg)
-
-{% hint style="info" %}
-### What if my installation is airgapped and has no Internet access?
-In case your installation is not connected to the Internet, clicking the **Get License** link will display a QR code that you can scan with an Internet-enabled device to obtain a license ([check snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/qr-code-airgapped.jpg)).
-{% endhint %}
-
 
 3. Go back to the **License Dashboard** and paste the fingerprint you copied earlier and click **Get License Key**.
 
@@ -318,9 +312,9 @@ If your trial license has expired and you wish to renew it, email us at enterpri
 
 | Issue | What it means | Where is it shown | Solution |
 |-------|----------------|-------------------|----------|
-| **License Claimed** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-claimed.jpg) | Someone from your organization has already availed a license | License Dashboard | Reach out to enterprise@devtron.ai for another trial |
-| **Invalid License Key** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/invalid-license-key.jpg) | The license key is incorrect or partial | License Activation Page | Go to the License Dashboard and recheck the license |
-| **License Key No Longer Valid** <br />  [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/invalid-license-2.jpg) | The license key has become invalid for your installation fingerprint | License Activation Page | Generate a new license from License Dashboard. |
-| **Invalid Fingerprint** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/invalid-fingerprint.jpg) | The fingerprint is incorrect or partial | License Dashboard | Go to the License Activation Page and verify the fingerprint |
-| **License Has Expired** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/expired-license.jpg) | You have exhausted the free trial | License Activation Page or License Dashboard | Reach out to enterprise@devtron.ai for renewal |
-| **License Key Already Exists for Fingerprint** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/key-already-exists.jpg) | You cannot generate more than 1 license key for 1 fingerprint | License Dashboard | Contact Support |
+| **License Claimed** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-claimed-v2.jpg) | Someone from your organization has already availed a license | License Dashboard | Reach out to enterprise@devtron.ai for another trial |
+| **Invalid License Key** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/invalid-license-v2.jpg) | The license key is incorrect or partial | Devtron Dashboard Page | Go to the License Dashboard and recheck the license |
+| **License Key No Longer Valid** <br />  [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-no-longer-valid-v2.jpg) | The license key has become invalid for your installation fingerprint | Devtron Dashboard Page | Generate a new license from License Dashboard. |
+| **Invalid Fingerprint** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-invalid-fingerprint-v2.jpg) | The fingerprint is incorrect or partial | License Dashboard (Step-3) | Go to the License Activation Page and verify the fingerprint |
+| **License Has Expired** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-expired-v2.jpg) | You have exhausted the free trial | Devtron Dashboard Page or License Dashboard | Reach out to enterprise@devtron.ai for renewal |
+| **License Key Already Exists for Fingerprint** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-already-exists-v2.jpg) | You cannot generate more than 1 license key for 1 fingerprint | License Dashboard (Step-3)| Contact Support |
