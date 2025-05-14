@@ -13,9 +13,9 @@ Try Devtron Enterprise for free — unlock advanced features built for scale. [S
 1. Install `podman` or `docker` on the VM from where you're executing the installation commands.
 2. Get the latest image file
 
-    ```bash
-    curl -LO https://raw.githubusercontent.com/devtron-labs/devtron/refs/heads/main/devtron-images.txt.source
-    ```
+```bash
+curl -LO https://raw.githubusercontent.com/devtron-labs/devtron/refs/heads/main/devtron-images.txt.source
+```
 
 3. Set the values of `TARGET_REGISTRY`, `TARGET_REGISTRY_USERNAME`, and `TARGET_REGISTRY_TOKEN`. This registry should be accessible from the VM where you are running the cloning script and the K8s cluster where you’re installing Devtron.
 
@@ -32,15 +32,15 @@ If you are using Docker, the TARGET_REGISTRY should be in the format `docker.io/
 
 #### For Linux/amd64
 
-    ```bash
-    export PLATFORM="linux/amd64"
-    ```
+```bash
+export PLATFORM="linux/amd64"
+```
     
 #### For Linux/arm64
 
-    ```bash
-    export PLATFORM="linux/arm64"
-    ```
+```bash
+export PLATFORM="linux/arm64"
+```
 
 
 
