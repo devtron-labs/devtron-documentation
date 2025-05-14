@@ -35,6 +35,7 @@ If you are using Docker, the TARGET_REGISTRY should be in the format `docker.io/
     ```bash
     export PLATFORM="linux/amd64"
     ```
+    
 #### For Linux/arm64
 
     ```bash
