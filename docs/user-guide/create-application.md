@@ -70,9 +70,9 @@ Follow the below instructions to create a new custom Devtron application:
 
 12. Click the **Create Application** button. 
     
-    A new custom application is now created and displayed in the **Devtron Apps** tab in the **Applications** page.
+    A new custom application is now created. The same is also displayed in the **Devtron Apps** tab in the **Applications** page.
 
-    ![Figure 4: Applications Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/create-custom-app/applications-page.jpg)
+    ![Figure 4: Application Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/create-custom-app/application-created.jpg)
 
 ---
 
