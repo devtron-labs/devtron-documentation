@@ -41,7 +41,7 @@ helm repo update devtron
 
 helm install devtron devtron/devtron-operator \
 --create-namespace --namespace devtroncd \
---set components.devtron.service.type=NodePort --set installer.arch=multi-arch
+--set components.devtron.service.type=NodePort
 
 ```
 {% endtab %}
