@@ -317,87 +317,97 @@ To create a pipeline form **Deploy Image from External Service**, follow the bel
  | **When do you want the pipeline to execute?** | You can deploy either in one of the following ways: <ul><li>`Automatic`: Pipeline triggers automatically when a new container image is received from the previous stage. Users can also trigger the pipeline manually.</ul></li> <ul><li>`Manual`: Users can trigger the pipeline manually.</ul></li>|
  | **Deployment Strategy** | Choose the Deployment Strategy according to you preference. |
 
-5. After creating the pipeline, select **Show webhook details** to get the webhook URL and JSON sample payload to be used in external CI pipeline.
-
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/show-webhook-details-v2.jpg)
+To get the image from a external CI service (let's say Jenkins), you need to configure the Webhook provided by Devtron in your existing External CI pipeline.
 
 ### Configure Webhook in External CI
 
+To configure the Webhook in External CI, follow the below steps.
+
+1.  After creating the pipeline, select **Show webhook details** to get the webhook URL and JSON sample payload to be used in external CI pipeline.
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/show-webhook-details-v2.jpg)
+
+2. On the **Webhook Details** page, click **Select or auto-generate token with required permissions** to select or generate an `API token`. This token allows external CI services to authenticate with Devtron.
+
+ * To select an existing API token, choose an API token from the dropdown under **Select API token**.
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/select-api-token-webhook-details-v2.jpg)
+
+ * To generate an API token, select **Auto-generate token** sub tab → Enter a name for the token in **Token Name** field → Click **Generate token** to generate a token.
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/auto-generate-token-webhook-details-v2.jpg)
+
+3. After generating an API token, click **Sample cURL request** and select the metadata you want to send to Devtron. Sample JSON and cURL request will be generated accordingly.
+
+ <!-- image -->
+
+4. Copy the Sample cURL request and integrate it into your External CI (jenkins) pipeline along with the API token and tag for Docker Image. Refer [Integrate with External Sources](#integrate-with-external-sources---jenkins) to know more.
+
+<!--  -->
+
+5. After integrating the webhook, whenever the external CI pipeline is triggered and generates an image, the webhook will automatically send the image details to Devtron for deployment.
 
 
+#### Integrate with External Sources - Jenkins
 
-6. On the **Webhook Details** page, you have to authenticate via `API token` to allow requests from an external service (e.g. Jenkins or CircleCI).
+To integrate Webhook with your jenkins project/pipeline, you need to add a new step/stage in your project/pipeline.
 
-* For authentication, only users with `super-admin` permissions can select or generate an API token:
-    * You can either use **Select API Token** if you have generated an [API Token](../../global-configurations/authorization/api-tokens.md) under **Global Configurations**. 
+Before adding the stage/step, you need to add the API token provided by Devtron as the secret in Jenkins. To do so follow the below steps.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/select-api-token-webhook-details-v2.jpg)
+1. Go to **Manage Jenkins** → **Credentials**.
 
-    * Or use **Auto-generate token** to generate the API token with the required permissions. Make sure to enter the token name in the **Token name** field.
+2. Select **System** under **Stores scoped to Jenkins** → **Global credentials (unrestricted)** → **+Add Credentials**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/auto-generate-token-webhook-details-v2.jpg)
+3. Select `Secret text` in the **Kind** field and select the required **Scope**
 
-* To allow requests from the external source, you can request the API by using:
-     * **Webhook URL**
-     * **cURL Request**
+4. Enter the **API Token** generated from Devtron in the **Secret** field.
 
-#### Webhook URL
+5. Provide an `ID` (devtron-token) in the **ID** field. If left blank, Jenkins will automatically generate an ID for the credential.
 
- HTTP Method: `POST`
+6. If you want you can also provide an optional description in the **Description** field.
 
- API Endpoint: `https://{domain-name}/orchestrator/webhook/ext-ci/{pipeline-id}`
-    
- JSON Payload:
+7. Select **Create** to create the secret in Jenkins.
 
-```bash
-    {
-    "dockerImage": "445808685819.dkr.ecr.us-east-2.amazonaws.com/orch:23907713-2"
-}
- ```  
+After adding the API token as secret, add a new step/stage in your Jenkins project/pipeline.
 
-You can also select metadata to send to Devtron. Sample JSON will be generated accordingly.
-You can send the Payload script to your CI tools such as Jenkins and Devtron will receive the build image every time the CI pipeline is triggered or you can use the Webhook URL, which will build an image every time CI pipeline is triggered using Devtron Dashboard.
+In case your Jenkins project is of type `freestyle`, follow the below steps:
+
+1. Select the Jenkins project in which you want to integrate the Webhook.
+
+2. Go to the **Configure** → **Environments** and enable the **Use secret text(s) or file(s)** option.
+
+3. Click **Add** under **Bindings** and select **Secret Text**.
+
+4. Provide a variable name (eg., `DEVTRON_TOKEN`) for the secret in **Variable** field. This variable name will be used to access the secret.
+
+5. Select the credential's `ID` in **Specific credentials** under **Credentials**. 
  
+     **Note:** In case you have provided a description for your credential, then instead of credential `ID`, description will be displayed.
 
-#### Sample cURL Request
-   
-```bash
-curl --location --request POST \
-'https://{domain-name}/orchestrator/webhook/ext-ci/{pipeline-id}' \
---header 'Content-Type: application/json' \
---header 'token: {token}' \
---data-raw '{
-    "dockerImage": "445808685819.dkr.ecr.us-east-2.amazonaws.com/orch:23907713-2"
-}'
- ```
+6. Go to the **Configure** → **Build Steps**, click **Add build step**, and then select **Execute Shell**.
 
-#### Response Codes
+ ![]()
 
-| Code    | Description |
-| --- | --- |
-| `200` | `app detail page url` |
-| `400` | `Bad request` |
-| `401` | `Unauthorized` |
+7. Enter the cURL request command as shown below. Make sure to enter the `API token` and `dockerImage` in your cURL command and click **Save**.
+
+    Note: API Token has been referenced from the secret via **Variable Name** (`DEVTRON_TOKEN`) configured in Jenkins credentials using its `ID`
+ 
+ ![]()
 
 
-#### Integrate with External Sources - Jenkins or CircleCI
+In case your Jenkins project is of type `pipeline`, `Multibranch Pipeline`, etc., which uses a **Pipeline Script** or **Jenkinsfile**, then you need to add a new stage in the pipeline for configuring the webhook. To do so follow the steps below.
 
- * On the Jenkins dashboard, select the Jenkins job which you want to integrate with the Devtron dashboard.
- * Go to the **Configuration** > **Build Steps**, click **Add build step**, and then click **Execute Shell**.
+1. Select the Jenkins project in which you want to integrate the Webhook.
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/add-build-step-jenkins-v2.jpg)
+2. Go to the **Configure** → **Pipeline**.
 
- * Enter the cURL request command.
- * Make sure to enter the `API token` and `dockerImage` in your cURL command and click **Save**.
+3. In case you are using **Pipeline Script**, then modify the script to add a new stage as shown below. If you are using **Pipeline script from SCM** then modify your Jenkinsfile in the same way.
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/execute-shell-jenkins-v2.jpg)
+<!-- image -->
 
-  Now, you can access the images on the Devtron dashboard and deploy manually. In case, if you select **Automatic** deployment option, then your application will be deployed automatically everytime a new image is received.
+4. Click **Save**
 
-  Similarly, you can also integrate with external source such as **CircleCI** by:
-  
-  * Select the job on the `CircleCI` dashboard and click `Configuration File`.
-  * On the respective job, enter the `cURL` command and update the `API token` and `dockerImage` in your cURL command.
+Now, you can access the images on the Devtron dashboard and deploy manually. In case, if you select **Automatic** deployment option, then your application will be deployed automatically everytime a new image is received.
 
 ---
 
@@ -418,9 +428,6 @@ You can only delete a CI pipeline if there is no CD pipeline created in your wor
 To delete a CI pipeline, go to **App Configurations > Workflow Editor** and select **Delete Pipeline**.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline.jpg)
-
-
-
 ---
 
 ## Extras
