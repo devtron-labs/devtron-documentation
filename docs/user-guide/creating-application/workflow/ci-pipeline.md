@@ -411,6 +411,33 @@ Now, you can access the images on the Devtron dashboard and deploy manually. In 
 
 ---
 
+## Sync with Environment
+
+**Sync with Environment** allows you to reuse the deployed container image from one CD workflow in another CD workflow within the same application. 
+
+It is useful when you want to test a microservice (say, A) in an test environment and it depends on another microservice (say, B). To ensure accurate testing of **Microservice (A)**, you need a stable version of **Microservice (B)** (the one which is already running in production). However modifying the production pipeline for testing purposes is not ideal and often not allowed due to stability concerns.
+
+In such cases, you can use **Sync with Environment** to create a new workflow that uses the deployed image from the existing CD pipeline (of microservice B) from a specific environment. This image then acts as the source CI for the new workflow within the same application.
+
+This allows the new workflow to use same image as the stable production environment; Thus enabling consistent and reliable testing without impacting production workloads. 
+
+To create a pipeline form **Sync with Environment**, follow the below steps
+
+1. Navigate to **Configurations** → **Workflow Editor** of your application.
+
+2. Select **+ New Workflow**; a modal window will appear where you can select the type of pipeline you want to create.
+
+3. Select **Sync with Environment**, another modal window will appear where you need to select the environment in which the source CD pipeline exists.
+
+4. Select the environment in which the source CD pipeline exists.
+
+5. Select **Deploy to** in the top right corner to select the environment in which you want to deploy the source CD image.
+
+6. Select **Create Pipeline** and a deployment pipeline is created.
+
+You can now configure the deployment pipeline and if you wish you can also add more deployment pipelines within the same workflow.   
+---
+
 ## Updating CI Pipeline
 
 You can update the configurations of an existing CI Pipeline except for the pipeline's name.
