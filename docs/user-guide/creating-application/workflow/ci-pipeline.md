@@ -429,15 +429,19 @@ To create a pipeline form **Sync with Environment**, follow the below steps
 
 3. Select **Sync with Environment**, another modal window will appear where you need to select the environment in which the source CD pipeline exists.
 
-4. Select the environment in which the source CD pipeline exists.
+4. Select the environment in which the source CD pipeline exists. You can only select one source CD per workflow.
+
+   **Note:**  The CD pipeline used as a source cannot be deleted while it’s linked.
 
 5. Select **Deploy to** in the top right corner to select the environment in which you want to deploy the source CD image.
 
-6. Select **Create Pipeline** and a deployment pipeline is created.
+6. Select **Create Pipeline** to create a new workflow.
 
-You can now configure the deployment pipeline and if you wish you can also add more deployment pipelines within the same workflow.   
+You can now configure the deployment pipeline and if you wish you can also add more deployment pipelines within the same workflow. 
+
 ---
 
+## Create a job
 ## Updating CI Pipeline
 
 You can update the configurations of an existing CI Pipeline except for the pipeline's name.
