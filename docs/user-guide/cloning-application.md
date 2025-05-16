@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In Devtron, an application represents your software project. You can clone a Devtron application but not a Helm application created using the Chart store. So if you prefer to know more about creating Helm apps using Charts, please refer to [Charts](../user-guide/deploy-chart/README.md). However, when you clone a Devtron application, you can configure the CI/CD pipeline, build and deploy your application, and perform other related tasks just like how you would do when creating a new Devtron application.
+In Devtron, an application represents your software project. You can clone a Devtron application, but not a Helm application created using the Chart store. If you prefer to know more about creating Helm apps using Charts, please refer to [Charts](../user-guide/deploy-chart/README.md). However, when you clone a Devtron application, you can configure the CI/CD pipeline, build and deploy your application, and perform other related tasks just as you would when creating a new Devtron application.
 
 This document provides you step-by-step instructions on cloning an existing Devtron application.
 
@@ -26,13 +26,13 @@ Follow the below instructions to clone an existing Devtron application:
 
 1. Navigate to the **Applications** page in Devtron.
 
-2. Click the **Create** button at the top-right corner of the screen.
+2. Click the **Create** button at the top-right corner of the page.
 
     ![Figure 1: Custom App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/create-custom-app/custom-application.jpg)
 
 3. Perform one of the following actions:
 
-    a. Click on the **From Chart store** option to create an application from the chart store. For more information, refer to [Charts](../user-guide/deploy-chart/README.md).
+    a. Click on the **From Chart store** option to create a Helm application from the chart store. For more information, refer to [Charts](../user-guide/deploy-chart/README.md).
 
     b. Click on the **Job** option to create or clone a job. For more information, refer to [Jobs](./jobs/README.md).
 
@@ -40,11 +40,11 @@ Follow the below instructions to clone an existing Devtron application:
 
     ![Figure 2: Clone an Existing Devtron Application](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/cloning-application/clone-application.jpg)
 
-4. Click **Clone application** to clone an existing Devtron application.
+4. Click **Clone application**.
 
 5. Select your preferred project from the **Project** drop-down box. All the projects that you have created in the **Projects** page (**Global Configurations** → **Projects**) are displayed as available options in the **Project** drop-down box.
 
-6. Enter your cloned application name in the **Application name** text box. You can enter a minimum of 3 and a maximum of 30 alphanumeric characters in the **Application name** text box. The usage of special characters and spaces are restricted. However, you can use hyphens (-) for separation.
+6. Enter the name of your cloned application in the **Application name** text box. You can enter a minimum of 3 and a maximum of 30 alphanumeric characters in the **Application name** text box. The usage of special characters and spaces are restricted. However, you can use hyphens (-) for separation.
 
 7. Enter the description for your cloned application in the **Description** text box (optional step). 
 
@@ -52,7 +52,7 @@ Follow the below instructions to clone an existing Devtron application:
 
     ![Figure 3: Add Tags to Application](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/create-custom-app/tags.jpg)
 
-9. Select your preferred existing application to clone from the **Select an app to clone** drop-down box. All Devtron applications created, irrespective of whether it is configured or not, are displayed as available options in the **Select an app to clone** drop-down box. 
+9. Select your preferred existing Devtron application to clone from the **Select an app to clone** drop-down box. All Devtron applications created, irrespective of whether it is configured or not, are displayed as available options in the **Select an app to clone** drop-down box. 
 
 10. Click the **Create Application** button. 
 
@@ -64,7 +64,7 @@ Follow the below instructions to clone an existing Devtron application:
 
 ## Next Steps
 
-Now that a cloned application is created, the immediate next step is to modify the Git repositories, corresponding branches and container registries to be used for each CI pipeline if required. Please refer to [What is Cloned and What is Not](#what-is-cloned-and-what-is-not) section in this document to know what is cloned and what is not from the existing Devtron application. 
+Now that a cloned application has been created, the next step is to modify the Git repository, corresponding configurations and container registries of your cloned application. Please refer to [What is Cloned and What is Not](#what-is-cloned-and-what-is-not) section in this document.
 
 To know more about configuring a Devtron application, please refer to [Configuring a Devtron Application](./Deploy-sample-app/nodejs_app.md).
 
@@ -90,19 +90,19 @@ Follow the below instructions to propagate tag to your application:
 
 ### What is Cloned and What is Not
 
-Please refer to the below table to know what is cloned and what is not when you clone an existing Devtron application that is already configured:
+Please refer to the table below to know what is cloned and what is not when you clone an existing, configured Devtron application:
 
-| Cloned | Not Cloned |
+| What is Cloned | What is Not |
 | ------ | ---------- |
-| GitHub repository configurations | Build not triggered |
-| Container registry and repository  | Deployment not triggered | 
+| GitHub repository configurations | No build is triggered |
+| Container registry and repository  | No deployment is triggered | 
 | Target platform for the build | No commit is deployed |
 | Base configurations | |
-| CI/CD pipeline | |
-| Trigger build & deploy pipeline configuration | | 
+| Workflow editor | |
+| Trigger build & deploy pipeline configurations | | 
 | Deployment strategy | | 
 | Cluster | |
 | Namespace | | 
 | Code source | | 
 
-When you clone an existing Devtron application that is not yet configured, then the cloned application will also have no configurations configured. 
+When you clone an existing Devtron application that is not yet configured, the cloned application will also remain unconfigured.
