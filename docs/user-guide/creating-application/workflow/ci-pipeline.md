@@ -6,392 +6,565 @@ For Devtron version older than v0.4.0, please refer the [CI Pipeline (legacy)](h
 
 ## Creating CI Pipeline
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have **Admin role**, **Manager role**, or **Super Admin role**.
+Refer the [User permissions](../../global-configurations/authorization/user-access.md#roles-available-for-devtron-apps).
+{% endhint %}
+
 A CI Workflow can be created in one of the following ways:
 
 * [Build and Deploy from Source Code](#id-1.-build-and-deploy-from-source-code)
 * [Linked Build Pipeline](#id-2.-linked-build-pipeline)
 * [Deploy Image from External Service](#id-3.-deploy-image-from-external-service)
-* Sync with Environment [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+* Sync with Environment <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a>
 * Create a Job
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-1.jpg)
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-2.jpg)
 
 Each method has different use-cases that can be tailored according the needs of the organization.
 
-### 1. Build and Deploy from Source Code
+---
 
-`Build and Deploy from Source Code` workflow allows you to build the container image from a source code repository.
+## 1. Build and Deploy from Source Code
 
-1. From the **Applications** menu, select your application.
-2. On the **App Configuration** page, select **Workflow Editor**.
-3. Select **+ New Workflow**.
+**Build and Deploy from Source Code** workflow allows you to build the container image from a source code repository.
+
+{% hint style="info" %}
+Devtron typically uses a Dockerfile from your repository to build container images. If you don’t have one, Devtron provides default templates to help you get started. You can also build images without a Dockerfile using Buildpacks.
+{% endhint %}
+
+### Creating a CI Pipeline
+
+1. From the Applications menu, select your application.
+
+2. Go to the **Configurations** page and select **Workflow Editor**.
+
+3. Click **+ New Workflow**.
+
+ ![Figure 1a: Create New Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-1.jpg)
+
 4. Select **Build and Deploy from Source Code**.
-5. Enter the following fields on the **Create build pipeline** window:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-v1.jpg)
+ ![Figure 1b: 'Select Build and Deploy from Source Code'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-2.jpg)
 
-| Field Name | Required/Optional | Description |
-| :--- | :--- | :--- |
-| Source type | Required | Source type to trigger the CI. Available options: [Branch Fixed](#source-type-branch-fixed) \| [Branch Regex](#source-type-branch-regex) \|[Pull Request](#source-type-pull-request) \| [Tag Creation](#source-type-tag-creation) |
-| Branch Name | Required | Branch that triggers the CI build |
-| Advanced Options | Optional | Create Pre-Build, Build, and Post-Build tasks |
+5. In the **Create Build Pipeline** window, enter the following details:
 
-#### Advanced Options
+ ![Figure 1c: Configure build pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-v1.jpg)
 
-The Advanced CI Pipeline includes the following stages:
+ | Field Name|Required/Optional| Description|
+ | :--- | :--- | :--- |
+ | `Pipeline Name`| Required (Auto-Assigned) | Devtron automatically assigns a unique name for the pipeline, if you wish, you can change it in Advanced Options|
+ | `Source type`| Required| Source type to trigger the CI. Available options: Branch Fixed, Branch Regex, Pull Request, Tag Creation|
+ | `Branch Name`| Required| Branch that triggers the CI build|
+ | `Advanced Options` | Optional| Create Pre-Build, Build, and Post-Build tasks <br> Refer the [Configure Advanced options](#configuring-advanced-options) section to configure **Advanced options**. |
 
-* **Pre-build stage**: The tasks in this stage are executed before the image is built.
-* **Build stage**: In this stage, the build is triggered from the source code that you provide.
-* **Post-build stage**: The tasks in this stage will be triggered once the build is complete.
+ ### Understanding Source Types
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/advanced-options.jpg)
+ Devtron provides multiple ways to trigger a build pipeline:
+ 
+ ![Figure 1d: Source Types](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-source-type.jpg)
+ 
+ |Source Type| Description| Additional Requirements|
+ |:---|:---|:---|
+ | `Branch Fixed`| Triggers a CI build whenever changes are pushed to a specified branch.| Requires a predefined branch name.|
+ | `Branch Regex`| Allows dynamic branch selection based on a regex pattern| Requires a regex pattern to be defined. For example if the user sets the Branch Regex as feature-\*, then users can trigger the build from branches such as feature-1450, feature-hot-fix etc. |
+ | `Pull Request` (PR) | Triggers a CI build when a new pull request is created. You can also define filters (such as PR author, title, or branch) to control which pull requests trigger the pipeline. | Requires configuring a webhook configuration for GitHub or Bitbucket.|
+ | `Tag Creation`| Triggers a build whenever a new tag is created. You can also define filters (such as author and tag name) to control which tags trigger the pipeline.| Requires webhook configuration for GitHub or Bitbucket.|
 
-The Pre-build and Post-build stages allow you to create Pre/Post-Build CI tasks as explained [here](./ci-build-pre-post-plugins.md).
 
-#### Build Stage
+ #### Pull Request Filters
 
-Go to the **Build stage** tab.
+ When using Pull Request as a source type, Devtron allows you to filter which PRs should trigger a build using the following filters
 
-![Build stage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-stage-v2.jpg)
+ ![Figure 1e: Pull Request Filters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-pull-request-filters.jpg)
 
-| Field Name | Required/Optional | Description |
-| :--- | :--- | :--- |
-| TRIGGER BUILD PIPELINE | Required | The build execution may be set to: <ul><li>**Automatically (default)**: Build is triggered automatically as the Git source code changes.</li><li>**Manually**: Build is triggered manually.</li></ul> |
-| DOCKER LAYER CACHING | Optional | Use this to [enable/disable caching of docker image layers](#docker-layer-caching) from your build pipeline |
-| Pipeline Name | Required | A name for the pipeline |
-| Source type | Required | Select the source type to build the CI pipeline: [Branch Fixed](#source-type-branch-fixed) \| [Branch Regex](#source-type-branch-regex) \| [Pull Request](#source-type-pull-request) \| [Tag Creation](#source-type-tag-creation) |
-| Branch Name | Required | Branch that triggers the CI build |
-| Docker build arguments | Optional | Override docker build configurations for this pipeline. <br> <ul><li>Key: Field name</li><li>Value: Field value</li></ul>
+ Select the appropriate filter and pass the matching condition as a regular expression (`regex`).
 
-##### Docker Layer Caching [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+ {% hint style="info" %}
+ Devtron uses regexp library, view [regexp cheatsheet](https://yourbasic.org/golang/regexp-cheat-sheet/). You can test your custom regex from [here](https://regex101.com/r/lHHuaE/1).
+ {% endhint %}
+
+ | Filter Key      | Description                                |
+ | --------------- | ------------------------------------------ |
+ | `Author`        | Author of the PR                           |
+ | `Source Branch` | The branch from which the PR originates    |
+ | `Target Branch` | The branch to which the PR is being merged |
+ | `Title`         | Title of the PR                            |
+ | `State`         | Status of the PR (default is `open`)       |
+
+ #### Tag Creation Filters
+
+ When using Tag Creation as a source type, Devtron allows you to filter which tags should trigger a build based on the following filters
+
+ ![Figure 1f: Tag Creation Filters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-tag-creation-filters.jpg)
+
+ Select the appropriate filter and pass the matching condition as a regular expression (`regex`).
+
+ {% hint style="info" %}
+ Devtron uses regexp library, view [regexp cheatsheet](https://yourbasic.org/golang/regexp-cheat-sheet/). You can test your custom regex from [here](https://regex101.com/r/lHHuaE/1).
+ {% endhint %}
+
+ | Filter Key | Description              |
+ | ---------- | ------------------------ |
+ | `Author`   | User who created the tag |
+ | `Tag Name` | Name of the tag          |
+
+6. Click **Create Pipeline** to save the configuration. You can now proceed to trigger the build , or continue below to explore additional configuration options for customizing your pipeline.
+
+ ![Figure 1g: Create pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-create-pipeline.jpg)
+
+### Configuring Advanced Options
+
+Devtron provides three stages in a CI pipeline: `Pre-Build`, `Build`, and `Post-Build`.
+
+`Pre-build stage`: The tasks in this stage are executed before the image is built.
+
+`Build stage`: In this stage, the build is triggered from the source code that you provide.
+
+`Post-build stage`: The tasks in this stage will be triggered once the build is complete.
+
+This document focuses on configuring the Build Stage. If you want to set up Pre-Build and Post-Build stages, refer the [Pre-Build/Post-build Stages Configuration](https://docs.devtron.ai/usage/applications/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins).
+
+### Build Stage
+
+1. In **Create Build Pipeline** window, select **Advanced options**.
+
+ ![Figure 2a: Advanced Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/advanced-options.jpg)
+ 
+2. Go to the **Build stage** tab and configure the following fields: 
+
+ ![Figure 2b: Build stage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-stage-v2.jpg)
+
+
+ | Field Name| Required/Optional | Description|
+ | :---| :--- |:---|
+ | `TRIGGER BUILD PIPELINE`| Required| <p>The build execution may be set to:</p><ul><li><code>Automatically</code>(default): Build is triggered automatically as the Git source code changes.</li><li><code>Manually</code>: Build is triggered manually.</li></ul>|
+ | DOCKER LAYER CACHING | Optional | Use this to [enable/disable caching of docker image layers](#docker-layer-caching) from your build pipeline |
+ | `Pipeline Name`| Required| Devtron automatically assigns a unique name for the pipeline, if you wish you can edit it here.|
+ | `Scan for Vulnerabilities` | Optional| <p><strong>Prerequisite</strong>: Install either Clair or Trivy.</p><ul><li>In the <code>Build</code> Stage, enable the <code>Scan for vulnerabilities</code> toggle.</li><li>Refer: Security Features</li></ul>|
+ | `Override Options`| Optional| Allows overriding configurations from earlier stages like CRI configuration, target platform configuration etc.|
+ | `Docker build arguments`|Optional| <p>Override docker build configurations for this pipeline.</p><ul><li><strong>Key</strong>: Field name</li><li><strong>Value</strong>: Field value.</li></ul>|
+ | `Custom Image Tag Pattern` | Optional| <p>Enable the Custom Image Tag Pattern toggle.</p><ul><li>Define an alphanumeric pattern (e.g., <code>test-v1.0.{x}</code>) where <code>{x}</code> auto-increments with each build.</li><li>Tags must not start or end with a period (.) or comma (,).</li><li>After configuration, trigger a build by navigating to <code>Build &#x26; Deploy</code>, selecting the Git commit by clicking on <code>Select Material</code>, and clicking <code>Start Build</code>.</li><li>The generated image tag will be available in <code>Build History</code>, Docker Registry, CD Pipeline (Image Selection)</li></ul> <p> **Build will fail if the resulting image tag has already been built in the past. This error might occur when you reset the value of the variable `x` or when you disable/enable the toggle button for `Custom image tag pattern`**.</p>|
+
+ ### Docker Layer Caching [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
+ {% hint style="warning" %}
+ ### Prerequisite
+ [Configure blob storage](https://docs.devtron.ai/configurations-overview/installation-configuration#configuration-of-blob-storage) if you wish to store cache.
+ {% endhint %}
+
+ If you are rebuilding the same Docker image frequently, an effective cache strategy can cut down build time. Docker images are built layer by layer and [Docker’s layer caching mechanism](https://docs.docker.com/build/cache/) allows unchanged layers to be reused across pipeline runs.
+
+ You can disable caching if:
+ * It’s not relevant to your workflow
+ * It consumes unnecessary storage
+ * The pipeline doesn’t perform an actual Docker build
+
+ {% hint style="info" %}
+ ### Which cache gets impacted? 
+ If a PVC with cache is attached, it will not be impacted by disabling cache. Only the remote cache is disabled.
+ {% endhint %}
+
+ There are 3 places from where you can control the cache behavior:
+ 1. [Orchestrator ConfigMap (Global Settings)](#orchestrator-configmap-global-settings)
+ 2. [Editing Pipeline](#editing-pipeline)
+ 3. [During Trigger](#during-trigger)
+
+ #### 1. Orchestrator ConfigMap (Global Settings)
+
+ Super-admins can define the cache settings in `orchestrator-cm` globally for all applications and jobs using the following flags:
+
+ ``` shell
+ DEFAULT_CACHE_FOR_CI_BUILD # for main application build stage 
+ DEFAULT_CACHE_FOR_CI_JOB # for CI jobs
+ DEFAULT_CACHE_FOR_JOB # for general jobs
+ DEFAULT_CACHE_FOR_CD_PRE # for pre-deployment stage 
+ DEFAULT_CACHE_FOR_CD_POST # for post-deployment stage
+ ```
+
+ ![Figure 2d: Cache behavior at Global-level](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/orchestrator-cm.jpg)
+
+ #### 2. Editing Pipeline
+
+ Go to **Workflow Editor** → **Edit Build Pipeline** (Build Stage) → **Docker Layer Caching** (toggle)  → **Use remote cache** (checkbox)
+
+ By default, your build pipeline will inherit the Global Settings. However, you can use the toggle button to override it and decide the caching behavior using the **Use remote cache** checkbox. In other words, cache behavior defined in pipeline configuration will have higher priority than the global one.
+
+ ![Figure 2e: Cache behavior at Pipeline-level](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/inherit-global.gif)
+
+ #### 3. During Trigger
+
+ Go to **Build & Deploy** (tab) → **Select Material** → **Ignore Cache** (checkbox)
+
+ You have the option to ignore cache while triggering a build (regardless of the cache settings defined at the pipeline or global level).
+
+ ![Figure 2f: Cache behavior at Trigger](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ignore-cache.gif)
+
+ {% hint style="warning" %}
+ ### Note
+ If the caching flags in **Global Settings** are set to false, ignoring cache becomes the default behavior even if you don't select the 'Ignore Cache' checkbox during trigger.
+ {% endhint %}
+
+3. Click **Create Pipeline** to save the configuration.
+
+ ![Figure 2g: Create Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-create-pipeline.jpg)
+
+#### Triggering a Build
+
+Once the CI pipeline is set up, follow these steps to trigger a build:
+
+1. Navigate to **Build & Deploy**.
+
+2. Click **Select Material** in the specific pipeline for which you want to trigger the build.
+
+ ![Figure 3a: Select Material](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-select-material.jpg)
+
+3. Choose the **Git commit** to build under **Code Source** tab.
+ 
+ ![Figure 3b: Select Git Commit](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-git-comit.jpg)
+
+
+4. Configure runtime parameters (if any) before starting the build under **Parameters** tab.
+
+ ![Figure 3c: Configure Runtime Parameters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-runntime-parameters.jpg)
+
+5. Click **Start Build**. This will trigger the build process and push the generated container image to the configured container registry for storage, versioning, and later use in the CD pipeline.
+
+ ![Figure 3d: Start Build](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-start-build.jpg)
+
+## 2. Linked Build Pipeline
+
+**Linked Build Pipeline** allows you to reuse build images from another pipeline within **Devtron**, instead of building images from source code each time.
+ 
+This is useful when the same codebase is shared across multiple applications. 
+ 
+Instead of creating and maintaining separate pipelines for each application, you can first set-up a primary build pipeline (in the same application or in any other application) that builds the image from source code using **Build and Deploy from Source Code** or you can also use an existing pipeline from any application with the same codebase. 
+
+Then for other applications you can simply link that source pipeline to reuse its build images directly in your workflow and proceed to create a CD pipeline using those images.
+
+{% hint style="info" %}
+The **Linked Build Pipeline** can only access build images that are generated after it has been created. Any images built by the source pipeline before the Linked Build Pipeline was set up will not be available.
+{% endhint %}
+
+To create a **Linked Build Pipeline** follow the below steps. 
 
 {% hint style="warning" %}
-### Prerequisite
-[Configure blob storage](https://docs.devtron.ai/configurations-overview/installation-configuration#configuration-of-blob-storage) if you wish to store cache.
+### Who Can Perform This Action?
+Users need to have **Admin role**, **Manager role**, or **Super Admin role**.
+Refer the [User permissions](../../global-configurations/authorization/user-access.md#roles-available-for-devtron-apps).
 {% endhint %}
 
-If you are rebuilding the same Docker image frequently, an effective cache strategy can cut down build time. Docker images are built layer by layer and Docker’s [layer caching mechanism](https://docs.docker.com/build/cache/) allows unchanged layers to be reused across pipeline runs.
+1. Navigate to **Configurations** → **Workflow Editor** of your application.
 
-You can disable caching if:
-* It’s not relevant to your workflow
-* It consumes unnecessary storage
-* The pipeline doesn’t perform an actual Docker build
+2. Select **+ New Workflow**; a modal window will appear where you can select the type of pipeline you want to create. 
 
-{% hint style="info" %}
-### Which cache gets impacted? 
-If a PVC with cache is attached, it will not be impacted by disabling cache. Only the remote cache is disabled.
-{% endhint %}
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-new-workflow.jpg)
 
-There are 3 places from where you can control the cache behavior:
-1. [Orchestrator ConfigMap (Global Settings)](#orchestrator-configmap-global-settings)
-2. [Editing Pipeline](#editing-pipeline)
-3. [During Trigger](#during-trigger)
+3. Select **Linked Build Pipeline**. another modal window will appear where you can enter the details of the existing pipeline you want to link.
 
-###### 1. Orchestrator ConfigMap (Global Settings)
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline.jpg)
 
-Super-admins can define the cache settings in `orchestrator-cm` globally for all applications and jobs using the following flags:
+4. Enter the details of the existing pipeline you want to link and click **Create Linked CI Pipeline** to create the pipeline.
 
-``` shell
-DEFAULT_CACHE_FOR_CI_BUILD # for main application build stage 
-DEFAULT_CACHE_FOR_CI_JOB # for CI jobs
-DEFAULT_CACHE_FOR_JOB # for general jobs
-DEFAULT_CACHE_FOR_CD_PRE # for pre-deployment stage 
-DEFAULT_CACHE_FOR_CD_POST # for post-deployment stage
-```
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-create-pipeline.jpg)
 
-![Cache behavior at Global-level](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/orchestrator-cm.jpg)
+ {% hint style="warning" %}
+ User must have at least view access of the application that contains the source pipeline; otherwise, the application will not appear in the **Filter By Application** field.
+ {% endhint %}
 
-###### 2. Editing Pipeline
+ |Field Name|Description|
+ |:---|:---|
+ |Filter By Application|Enter the application name in which the source CI pipeline exists.|
+ |Source CI pipeline|List all the build pipelines for the selected application. Choose the pipeline which you want to link|
+ |Name|Enter the name for the **Linked Build Pipeline**.<br><ul><li>By default, it takes the name of the source pipeline, if you wish, you can rename it.</li><li>In case the source pipeline exists within the same application, the **Linked Build Pipeline** name must be different from the source pipeline, as Devtron does not allow two pipelines with the same name within a single application.</li></ul>|
 
-Go to **Workflow Editor** → **Edit Build Pipeline** (Build Stage) → **Docker Layer Caching** (toggle)  → **Use remote cache** (checkbox)
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-created.jpg)
 
-By default, your build pipeline will inherit the Global Settings. However, you can use the toggle button to override it and decide the caching behavior using the **Use remote cache** checkbox. In other words, cache behavior defined in pipeline configuration will have higher priority than the global one.
+ Thereafter, the source CI pipeline will indicate the number of Linked CI pipelines. On clicking it, a modal window will appear, which lists all the applications and the environments they are deployed, where this source build pipeline is being reused through **Linked Build Pipelines** as shown below.
 
-![Cache behavior at Pipeline-level](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/inherit-global.gif)
+ ![Linked CI with Child Information](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linkedci.gif)
 
-###### 3. During Trigger
+5. After creating a **Linked CI Pipeline**, you can create a CD pipeline. Refer [CD Pipeline](./cd-pipeline.md) page to know more.
 
-Go to **Build & Deploy** (tab) → **Select Material** → **Ignore Cache** (checkbox)
-
-You have the option to ignore cache while triggering a build (regardless of the cache settings defined at the pipeline or global level).
-
-![Cache behavior at Trigger](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ignore-cache.gif)
-
-{% hint style="warning" %}
-### Note
-If the caching flags in **Global Settings** are set to false, ignoring cache becomes the default behavior even if you don't select the 'Ignore Cache' checkbox during trigger.
-{% endhint %}
-
-
-##### Source type
-
-###### Branch Fixed
-
-This allows you to trigger a CI build whenever there is a code change on the specified branch.
-
-Enter the **Branch Name** of your code repository.
-
-###### Branch Regex
-
-`Branch Regex` allows users to easily switch between branches matching the configured Regex before triggering the build pipeline.
-In case of `Branch Fixed`, users cannot change the branch name in ci-pipeline unless they have admin access for the app. So, if users with 
-`Build and Deploy` access should be allowed to switch branch name before triggering ci-pipeline, `Branch Regex` should be selected as source type by a user with Admin access.
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/branch-regex.jpg)
-
-For example if the user sets the Branch Regex as `feature-*`, then users can trigger from branches such as `feature-1450`, `feature-hot-fix` etc.
-
-###### Pull Request
-
-This allows you to trigger the CI build when a pull request is created in your repository.
-
-{% hint style="info" %}
-**Prerequisites**
-
-[Configure the webhook](#configuring-webhook) for either GitHub or Bitbucket.
-{% endhint %}
-
-{% hint style="warning" %}
-The **Pull Request** source type feature only works for the host GitHub or Bitbucket Cloud for now. To request support for a different Git host, please create a GitHub issue [here](https://github.com/devtron-labs/devtron/issues).
-{% endhint %}
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-3.jpg)
-
-To trigger the build from specific PRs, you can filter the PRs based on the following keys:
-
-| Filter key | Description |
-| :--- | :--- |
-| `Author` | Author of the PR |
-| `Source branch name` | Branch from which the Pull Request is generated |
-| `Target branch name` | Branch to which the Pull request will be merged |
-| `Title` | Title of the Pull Request |
-| `State` | State of the PR. Default is "open" and cannot be changed |
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-8.jpg)
-
-Select the appropriate filter and pass the matching condition as a regular expression (`regex`).
-
-> Devtron uses regexp library, view [regexp cheatsheet](https://yourbasic.org/golang/regexp-cheat-sheet/). You can test your custom regex from [here](https://regex101.com/r/lHHuaE/1).
-
-Select **Create Pipeline**.
-
-###### Tag Creation
-
-This allows you to trigger the CI build whenever a new tag is created.
-
-{% hint style="info" %}
-**Prerequisites**
-
-[Configure the webhook](#configuring-webhook) for either GitHub or Bitbucket.
-{% endhint %}
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-9.jpg)
-
-To trigger the build from specific tags, you can filter the tags based on the `author` and/or the `tag name`.
-
-| Filter key | Description |
-| :--- | :--- |
-| `Author` | The one who created the tag |
-| `Tag name` | Name of the tag for which the webhook will be triggered |
-
-Select the appropriate filter and pass the matching condition as a regular expression (`regex`).
-
-Select **Create Pipeline**.
-
-{% hint style="info" %}
-The total timeout for the execution of the CI pipeline is by default set as 3600 seconds. This default timeout is configurable according to the use case (refer [Build Infra](../../global-configurations/build-infra.md)).
-{% endhint %}
-
-##### Scan for Vulnerabilities 
-
-{% hint style="info" %}
-### Prerequisite
-Install any one of the following integrations from Devtron Stack Manager:
-* [Clair](../../../user-guide/integrations/clair.md)
-* Trivy
-{% endhint %}
-
-To perform the security scan after the container image is built, enable the **Scan for vulnerabilities** toggle in the build stage. Refer [Security features](../../../user-guide/security-features.md) to know more.
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/scan-for-vulnerabilities-v2.jpg)
-
-##### Custom Image Tag Pattern
-
-This feature helps you apply custom tags (e.g., `v1.0.0`) to readily distinguish container images within your repository.
-
-1. Enable the toggle button as shown below.
-
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-image-tag-pattern.jpg)
-
-2. You can write an alphanumeric pattern for your image tag, e.g., **test-v1.0.{x}**. Here, 'x' is a mandatory variable whose value will incrementally increase with every build. You can also define the value of 'x' for the next build trigger in case you want to change it.
-
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-image-tag-version.jpg)
-
-    {% hint style="warning" %}
-    Ensure your custom tag do not start or end with a period (.) or comma (,)
-    {% endhint %}
-
-3. Click **Update Pipeline**.
-
-4. Now, go to **Build & Deploy** tab of your application, and click **Select Material** in the CI pipeline.
-
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-material.jpg)
-
-5. Choose the git commit you wish to use for building the container image. Click **Start Build**.
-
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/choose-commit.jpg)
-
-6. The build will initiate and once it is successful the image tag would reflect at all relevant screens:
-
-    * **Build History**
-
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-history.jpg)
-
-    * **Docker Registry**
-
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/docker-image.jpg)
-
-    * **CD Pipeline (Image Selection)**
-
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/select-ci-image.jpg)
-
-
-{% hint style="info" %}
-Build will fail if the resulting image tag has already been built in the past. This means if there is an existing image with tag `test-v1.0.0`, you cannot build another image having the same tag `test-v1.0.0` in the same CI pipeline. This error might occur when you reset the value of the variable `x` or when you disable/enable the toggle button for `Custom image tag pattern`.
-{% endhint %}
-
-
-### 2. Linked Build Pipeline
-
-If one code is shared across multiple applications, `Linked Build Pipeline` can be used, and only one image will be built for multiple applications because if there is only one build, it is not advisable to create multiple CI Pipelines.
-
-1. From the **Applications** menu, select your application.
-2. On the **App Configuration** page, select **Workflow Editor**.
-3. Select **+ New Workflow**.
-4. Select **Linked Build Pipeline**.
-5. On the **Create linked build pipeline** screen:
-    * Search for the application in which the source CI pipeline is present.
-    * Select the source CI pipeline from the application that you selected above.
-    * Enter a new name for the linked CI pipeline.
-
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ca-workflow-linked.jpg)
-    
-6. Click **Create Linked CI Pipeline**.
-
-Thereafter, the source CI pipeline will indicate the number of Linked CI pipelines. Upon clicking it, it will display the child information as shown below. It reveals the applications and environments where Linked CI is used for deployment.
-
-![Linked CI with Child Information](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linkedci.gif)
-
-After creating a linked CI pipeline, you can create a CD pipeline. 
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-cd.jpg)
 
 {% hint style="warning" %}
 Linked CI pipelines can't trigger builds. They rely on the source CI pipeline to build images. Trigger a build in the source CI pipeline to see the images available for deployment in the linked CI pipeline's CD stage.
 {% endhint %}
 
 
-### 3. Deploy Image from External Service
+## 3. Deploy Image from External Service
 
-For CI pipeline, you can receive container images from an external services via webhook API.
+**Deploy Image from External Service** allows you to deploy container images built by external CI tools such as Jenkins, CircleCI, etc. using webhooks.
 
-You can use Devtron for deployments on Kubernetes while using an external CI tool such as Jenkins or CircleCI. External CI feature can be used when the CI tool is hosted outside the Devtron platform. However, by using an external CI, you will not be able to use some of the Devtron features such as Image scanning and security policies, configuring pre-post CI stages etc. 
+This is useful when your CI pipeline is managed outside the Devtron platform, allowing you to use Devtron exclusively for deploying container images on Kubernetes while maintaining your existing CI setup.
+
+To create a pipeline form **Deploy Image from External Service**, follow the below steps
+
+1. Navigate to **Configurations** → **Workflow Editor** of your application.
+
+2. Select **+ New Workflow**; a modal window will appear where you can select the type of pipeline you want to create.
+
+3. Select **Deploy Image from External Service**, another modal window will appear where you can enter deployment details such as environment, execution mode, and deployment strategy.
+
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-from-external-source.jpg)
+
+4. Enter the deployment details and click **Create Pipeline** to create the pipeline.
+
+ | Fields | Description |
+ | --- | --- |
+ |**Environment**|Provide the name of the Environment in which you want to deploy your image.| 
+ |**Namespace**|It will display the namespace of that Environment.|
+ | **When do you want the pipeline to execute?** | You can deploy either in one of the following ways: <ul><li>`Automatic`: Pipeline triggers automatically when a new container image is received from the previous stage. Users can also trigger the pipeline manually.</ul></li> <ul><li>`Manual`: Users can trigger the pipeline manually.</ul></li>|
+ | **Deployment Strategy** | Choose the Deployment Strategy according to you preference. |
+
+To get the image from a external CI service (let's say Jenkins), you need to configure the Webhook provided by Devtron in your existing External CI pipeline.
+
+### Configure Webhook in External CI
+
+To configure the Webhook in External CI, follow the below steps.
+
+1.  After creating the pipeline, select **Show webhook details** to get the webhook URL and JSON sample payload to be used in external CI pipeline.
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/show-webhook-details-v2.jpg)
+
+2. On the **Webhook Details** page, click **Select or auto-generate token with required permissions** to select or generate an `API token`. This token allows external CI services to authenticate with Devtron.
+
+ * To select an existing API token, choose an API token from the dropdown under **Select API token**.
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/select-api-token-webhook-details-v2.jpg)
+
+ * To generate an API token, select **Auto-generate token** sub tab → Enter a name for the token in **Token Name** field → Click **Generate token** to generate a token.
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/auto-generate-token-webhook-details-v2.jpg)
+
+3. After generating an API token, click **Sample cURL request** and select the metadata you want to send to Devtron. Sample JSON and cURL request will be generated accordingly.
+
+ <!-- image -->
+
+4. Copy the Sample cURL request and integrate it into your External CI (jenkins) pipeline along with the API token and tag for Docker Image. Refer [Integrate with External Sources](#integrate-with-external-sources---jenkins) to know more.
+
+<!--  -->
+
+5. After integrating the webhook, whenever the external CI pipeline is triggered and generates an image, the webhook will automatically send the image details to Devtron for deployment.
 
 
-* Create a [new](../../create-application.md) or [clone](../../cloning-application.md) an application.
-* To configure `Git Repository`, you can add any Git repository account (e.g., dummy account) and click **Next**.
-* To configure the `Container Registry` and `Container Repository`, you can leave the fields blank or simply add any test repository and click **Save & Next**.
-* On the `Base Deployment Template` page, select the `Chart type` from the drop-down list and configure as per your [requirements](../../creating-application/deployment-template.md) and click **Save & Next**.
-* On the **Workflow Editor** page, click **New Workflow** and select **Deploy image from external service**.
+#### Integrate with External Sources - Jenkins
 
-* On the **Deploy image from external source** page, provide the information in the following fields:
+To integrate Webhook with your jenkins project/pipeline, you need to add a new step/stage in your project/pipeline.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-from-external-source.jpg)
+Before adding the stage/step, you need to add the API token provided by Devtron as the secret in Jenkins. To do so follow the below steps.
 
-| Fields | Description |
-| --- | --- |
-| **Deploy to environment** | <ul><li>`Environment`: Provide the name of the [environment](../../global-configurations/cluster-and-environments.md#add-environment).</ul></li><ul><li>`Namespace`: Provide the [namespace](../../global-configurations/cluster-and-environments.md#add-environment).</ul></li> |
-| **When do you want to deploy** | You can deploy either in one of the following ways: <ul><li>`Automatic`: If you select automatic, your application will be deployed automatically everytime a new image is received.</ul></li> <ul><li>`Manual`: In case of manual, you have to select the image and deploy manually. </ul></li>|
-| **Deployment Strategy** | Configure the deployment preferences for this pipeline. |
+1. Go to **Manage Jenkins** → **Credentials**.
 
-* Click **Create Pipeline**.
-A new CI pipeline will be created for the external source.
-To get the webhook URL and JSON sample payload to be used in external CI pipeline, click **Show webhook details**.
+2. Select **System** under **Stores scoped to Jenkins** → **Global credentials (unrestricted)** → **+Add Credentials**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/show-webhook-details-v2.jpg)
+3. Select `Secret text` in the **Kind** field and select the required **Scope**
 
-* On the **Webhook Details** page, you have to authenticate via `API token` to allow requests from an external service (e.g. Jenkins or CircleCI).
+4. Enter the **API Token** generated from Devtron in the **Secret** field.
 
-* For authentication, only users with `super-admin` permissions can select or generate an API token:
-    * You can either use **Select API Token** if you have generated an [API Token](../../global-configurations/authorization/api-tokens.md) under **Global Configurations**. 
+5. Provide an `ID` (devtron-token) in the **ID** field. If left blank, Jenkins will automatically generate an ID for the credential.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/select-api-token-webhook-details-v2.jpg)
+6. If you want you can also provide an optional description in the **Description** field.
 
-    * Or use **Auto-generate token** to generate the API token with the required permissions. Make sure to enter the token name in the **Token name** field.
+7. Select **Create** to create the secret in Jenkins.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/auto-generate-token-webhook-details-v2.jpg)
+After adding the API token as secret, add a new step/stage in your Jenkins project/pipeline.
 
-* To allow requests from the external source, you can request the API by using:
-     * **Webhook URL**
-     * **cURL Request**
+In case your Jenkins project is of type `freestyle`, follow the below steps:
 
-#### Webhook URL
+1. Select the Jenkins project in which you want to integrate the Webhook.
 
- HTTP Method: `POST`
+2. Go to the **Configure** → **Environments** and enable the **Use secret text(s) or file(s)** option.
 
- API Endpoint: `https://{domain-name}/orchestrator/webhook/ext-ci/{pipeline-id}`
-    
- JSON Payload:
+3. Click **Add** under **Bindings** and select **Secret Text**.
 
-```bash
-    {
-    "dockerImage": "445808685819.dkr.ecr.us-east-2.amazonaws.com/orch:23907713-2"
-}
- ```  
+4. Provide a variable name (eg., `DEVTRON_TOKEN`) for the secret in **Variable** field. This variable name will be used to access the secret.
 
-You can also select metadata to send to Devtron. Sample JSON will be generated accordingly.
-You can send the Payload script to your CI tools such as Jenkins and Devtron will receive the build image every time the CI pipeline is triggered or you can use the Webhook URL, which will build an image every time CI pipeline is triggered using Devtron Dashboard.
+5. Select the credential's `ID` in **Specific credentials** under **Credentials**. 
  
+     **Note:** In case you have provided a description for your credential, then instead of credential `ID`, description will be displayed.
 
-#### Sample cURL Request
-   
-```bash
-curl --location --request POST \
-'https://{domain-name}/orchestrator/webhook/ext-ci/{pipeline-id}' \
---header 'Content-Type: application/json' \
---header 'token: {token}' \
---data-raw '{
-    "dockerImage": "445808685819.dkr.ecr.us-east-2.amazonaws.com/orch:23907713-2"
-}'
- ```
+6. Go to the **Configure** → **Build Steps**, click **Add build step**, and then select **Execute Shell**.
 
-#### Response Codes
+ ![]()
 
-| Code    | Description |
-| --- | --- |
-| `200` | `app detail page url` |
-| `400` | `Bad request` |
-| `401` | `Unauthorized` |
+7. Enter the cURL request command as shown below. Make sure to enter the `API token` and `dockerImage` in your cURL command and click **Save**.
+
+    Note: API Token has been referenced from the secret via **Variable Name** (`DEVTRON_TOKEN`) configured in Jenkins credentials using its `ID`
+ 
+ ![]()
 
 
-#### Integrate with External Sources - Jenkins or CircleCI
+In case your Jenkins project is of type `pipeline`, `Multibranch Pipeline`, etc., which uses a **Pipeline Script** or **Jenkinsfile**, then you need to add a new stage in the pipeline for configuring the webhook. To do so follow the steps below.
 
- * On the Jenkins dashboard, select the Jenkins job which you want to integrate with the Devtron dashboard.
- * Go to the **Configuration** > **Build Steps**, click **Add build step**, and then click **Execute Shell**.
+1. Select the Jenkins project in which you want to integrate the Webhook.
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/add-build-step-jenkins-v2.jpg)
+2. Go to the **Configure** → **Pipeline**.
 
- * Enter the cURL request command.
- * Make sure to enter the `API token` and `dockerImage` in your cURL command and click **Save**.
+3. In case you are using **Pipeline Script**, then modify the script to add a new stage as shown below. If you are using **Pipeline script from SCM** then modify your Jenkinsfile in the same way.
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/webhook-ci/execute-shell-jenkins-v2.jpg)
+<!-- image -->
 
-  Now, you can access the images on the Devtron dashboard and deploy manually. In case, if you select **Automatic** deployment option, then your application will be deployed automatically everytime a new image is received.
+4. Click **Save**
 
-  Similarly, you can also integrate with external source such as **CircleCI** by:
-  
-  * Select the job on the `CircleCI` dashboard and click `Configuration File`.
-  * On the respective job, enter the `cURL` command and update the `API token` and `dockerImage` in your cURL command.
+Now, you can access the images on the Devtron dashboard and deploy manually. In case, if you select **Automatic** deployment option, then your application will be deployed automatically everytime a new image is received.
+
+---
+
+## Sync with Environment
+
+**Sync with Environment** allows you to reuse the deployed container image from one CD workflow in another CD workflow within the same application. 
+
+It is useful when you want to test a microservice (say, A) in an test environment and it depends on another microservice (say, B). To ensure accurate testing of **Microservice (A)**, you need a stable version of **Microservice (B)** (the one which is already running in production). However modifying the production pipeline for testing purposes is not ideal and often not allowed due to stability concerns.
+
+In such cases, you can use **Sync with Environment** to create a new workflow that uses the deployed image from the existing CD pipeline (of microservice B) from a specific environment. This image then acts as the source CI for the new workflow within the same application.
+
+This allows the new workflow to use same image as the stable production environment; Thus enabling consistent and reliable testing without impacting production workloads. 
+
+To create a pipeline form **Sync with Environment**, follow the below steps
+
+1. Navigate to **Configurations** → **Workflow Editor** of your application.
+
+2. Select **+ New Workflow**; a modal window will appear where you can select the type of pipeline you want to create.
+
+3. Select **Sync with Environment**, another modal window will appear where you need to select the environment in which the source CD pipeline exists.
+
+4. Select the environment in which the source CD pipeline exists. You can only select one source CD per workflow.
+
+   **Note:**  The CD pipeline used as a source cannot be deleted while it’s linked.
+
+5. Select **Deploy to** in the top right corner to select the environment in which you want to deploy the source CD image.
+
+6. Select **Create Pipeline** to create a new workflow.
+
+You can now configure the deployment pipeline and if you wish you can also add more deployment pipelines within the same workflow. 
+
+---
+
+## Create a job
+
+Devtron Jobs provide a way to execute specific tasks or set of tasks, defined by you within your application environment. Each Devtron Job corresponds to a Kubernetes Job that creates one or more Pods to carry out the specific task. Once the task is completed, the Pods are terminated, making Devtron Jobs an ideal solution for one-time, recurring, or event-driven workloads.
+
+However, Devtron Jobs do not support deployment pipelines and thus cannot be used in CI/CD workflows.
+
+**Create a Job** allows you create a job workflow with CI/CD capabilities which includes post-build tasks, and deployments through connected deployments pipelines.
+
+In this workflow, the build stage is replaced by a Job stage, where you can either use a preset plugin or define a task to pull the container images required for deployment from a container registry. 
+
+This is useful when the image is built externally (for example, in Jenkins) and needs to be brought into Devtron for further processing and deployment. You can configure tasks like scanning, testing, or notifications using preset plugins either in the Job stage or the pre-CD stage, depending on your use case.
+
+**Create a Job** differs from **Deploy Image from External Source** as it supports post build tasks by using job's tasks.
+
+To create a workflow using **Create a job**, follow the below steps
+
+1. Navigate to **Configurations** → **Workflow Editor** of your application.
+
+2. Select **+ New Workflow**; a modal window will appear where you can select the type of pipeline you want to create.
+
+3. Select **Create a job**. This opens the **Create job pipeline** Window in which you can create and configure your job.
+
+ ![Figure 1e: Create job pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-create-pipeline.jpg)
+
+4. In **Create job pipeline** window, you can create and configure job pipelines.
+
+ It includes 2 stages 
+
+ * [**Basic Configurations**](#basic-configurations)  
+
+ * [**Tasks to be executed**](#tasks-to-be-executed)
+
+ ### Basic Configurations
+
+ This stage allows you to define primary configurations such as Pipeline name, Source Type, Branch Name, and how job should be triggered. Refer the following table to configure each field.
+
+ ![Figure 2a: Configure job pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-basic-config.jpg)
+
+  | Field Name|Description|
+  | :--- |:--- |
+  | `Trigger Job Pipeline` | <p>The job execution may be set to:</p><ul><li><code>Automatically</code>: Job execution is triggered automatically as the Git source code changes.</li><li><code>Manually</code>: Build is triggered manually.</li></ul>|
+  | `Pipeline Name` | Assign a name to your job pipeline|
+  | `Source type` | Source type to trigger the job pipeline. Available options: Branch Fixed, Branch Regex, Pull Request, Tag Creation|
+  | `Branch Name`| Branch that triggers the CI build|
+  | `Use remote cache`| <p>Enable this option to use the Docker cache from previous builds. Docker's layer caching mechanism allows unchanged docker images layers to be reused across pipeline runs,thus drastically reducing execution times<br></p><div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p>The globe toggle, next to <code>Docker Layer Caching</code> means that the configuration is inherited from global<br></p><ul><li>Enabled: Inherits the caching settings defined globally.</li><li>Disabled: Allows you to define a pipeline-level configuration specific to this job.</li></ul></div> |
+
+  ### Tasks to be executed
+
+  The Stage allows you define tasks for your job.
+
+  You can create one or more tasks. Tasks can be dependent on each other for execution, In other words, the output variable of one task can be used as an input for the next task to execute your job. Tasks will execute in the order they are arranged and can be rearranged by drag-and-drop; however, the order of passing the variables must be followed.
+
+  To create a task:
+
+  1. Navigate to **Tasks to be executed** in the **Create job pipeline** window. 
+
+  2. Click **Add Task** to add a task in your job pipeline.
+
+  ![Figure 3a: Add task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-add-task.jpg)
+
+  3. A new task will be added (in the left side of the Create job pipeline window),you can configure the task either by selecting one of the available [preset plugins](#create-task-using-preset-plugins) or by [Executing a custom script](#create-task-using-custom-script)
+
+  ![Figure 3b: Type of tasks](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-tasks.jpg)
+
+  #### Pulling images through preset plugin
+
+  In Devtron, preset plugins are pre-defined tasks templates, that helps you automate and execute common operations such as provisioning infrastructure, taking backups, exporting container images etc., without writing custom scripts.
+
+  Devtron provides a set of built-in preset plugins, and you can also create your own plugins in devtron according to your specific needs.
+
+  To create a task using the **Pull Images from Container Repository** plugin follow the below steps:
+
+  **Note:** **Pull Images from Container Repository** plugin only supports ECR and ACR. 
+
+  1. After Configuring the basic configurations, select **Tasks to be executed** Tab
+
+  2. Click **+Add Task** from the left side panel.
+
+  3. Search for `Pull Images from Container Repository` in the **Search Plugin** Search bar and select **Pull Images from Container Repository** from the list of plugins. 
+
+  ![Figure 4a: Search 'Gke Provisioner' plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke-search.jpg)
+
+    * The right-side panel will display the fields specific to the **Pull Images from Container Repository** plugin which are required to be configured.
+
+    * The left-side panel will now shows a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by-default), along with it's logo.<br>You can change the task's name using the **Task name** field but plugin's logo will remain indicating that it is a preset plugin.
+
+  ![Figure 4b: Gke provisioner plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke.jpg)
+
+  4. Refer the [Pull Images from Container Repository](/docs/user-guide/plugins/pull-images-from-container-repository.md) documentation to configure the **Pull Images from Container Repository** fields with appropriate values.
+
+  > Refer to the [Plugins documentation](/docs/user-guide/plugins/README.md) to explore and configure any of the available plugins. 
+
+  5. After configuring the fields successfully, your task will be created, if you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
+
+  #### Create Task using Custom Script
+
+  In the job stage you can also define a task using custom script to meet specific requirements. To create a task a task using a custom script follow the below steps:
+
+  ![Figure 5a: Execute custom task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-custom-task.jpg)
+
+  1. After Configuring the basic configurations, select **Tasks to be executed** Tab.
+
+  2. Click **+Add Task** from the left side panel, and then select **Execute custom task**.
+
+    * The right-side panel will display the fields which are required to be configured in order to create the task.
+
+    * The left-side panel will now displays a task under **Tasks (IN ORDER OF EXECUTION)**.
+
+  3. Enter the Task name(required) and Task Description (optional).
+
+  4. Select the **Task type**, it can be `Shell` or `Container Image`.
+
+    * **Shell Tasks**: These execute shell scripts directly within the job runtime environment. In this type of tasks you can define inline scripts or use script files from your configured source code.
+
+    * **Container Image Tasks**: These allows you to execute commands and scripts inside a custom docker container, instead of using the default environment provided by devtron, you can specify you own container image with all dependencies and tools required for the tasks. 
+
+  These Tasks run using container in container approach, that means, the specified image is pulled and run inside the job pod, thus providing a complete isolated environment.
+
+  5. After selecting the **Task type**, you need to configure task-specific fields based on that **Task type**.
+
+
+5. After configuring the **Basic Configurations** and adding the tasks, select **Create Pipeline** to create a new workflow with a job stage (instead of build stage). 
+
+Now, you can add a deployment pipeline to this workflow. The image will be pulled during execution of the pipeline using the configured plugin, and then passed to the CD stage for deployment.
 
 ---
 
@@ -412,9 +585,6 @@ You can only delete a CI pipeline if there is no CD pipeline created in your wor
 To delete a CI pipeline, go to **App Configurations > Workflow Editor** and select **Delete Pipeline**.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline.jpg)
-
-
-
 ---
 
 ## Extras
