@@ -443,17 +443,13 @@ You can now configure the deployment pipeline and if you wish you can also add m
 
 ## Create a job
 
-Devtron Jobs provide a way to execute specific tasks or set of tasks, defined by you within your application environment. Each Devtron Job corresponds to a Kubernetes Job that creates one or more Pods to carry out the specific task. Once the task is completed, the Pods are terminated, making Devtron Jobs an ideal solution for one-time, recurring, or event-driven workloads.
+If options like **Build and Deploy from Source Code** do not satisfy your use case, you can use **Create a Job** to define a workflow with custom CI stage and with deployment capabilities.
 
-However, Devtron Jobs do not support deployment pipelines and thus cannot be used in CI/CD workflows.
-
-**Create a Job** allows you create a job workflow with CI/CD capabilities which includes post-build tasks, and deployments through connected deployments pipelines.
-
-In this workflow, the build stage is replaced by a Job stage, where you can either use a preset plugin or define a task to pull the container images required for deployment from a container registry. 
+In this workflow, the build stage is replaced by a Job stage, where you can either use preset plugins or define custom tasks to define custom steps to satisfy your use case. For e.g., you can use a preset plugin to pull the container images required for deployment from a container registry (such as ACR or ECR). 
 
 This is useful when the image is built externally (for example, in Jenkins) and needs to be brought into Devtron for further processing and deployment. You can configure tasks like scanning, testing, or notifications using preset plugins either in the Job stage or the pre-CD stage, depending on your use case.
 
-**Create a Job** differs from **Deploy Image from External Source** as it supports post build tasks by using job's tasks.
+**Create a Job** differs from **Deploy Image from External Source** by allowing you to define custom tasks after the image is received, using Job tasks.
 
 To create a workflow using **Create a job**, follow the below steps
 
