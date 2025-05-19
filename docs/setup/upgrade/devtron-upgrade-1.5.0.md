@@ -137,5 +137,5 @@ helm repo update
 2. Run the upgrade command for Devtron
 
 ```bash
-helm upgrade devtron devtron/devtron-operator -n devtroncd --reuse-values -f https://raw.githubusercontent.com/devtron-labs/charts/refs/tags/devtron-operator-0.22.93/charts/devtron/devtron-bom.yaml
+helm upgrade devtron devtron/devtron-operator -n devtroncd --reuse-values -f https://raw.githubusercontent.com/devtron-labs/devtron/refs/tags/v1.5.1/charts/devtron/devtron-bom.yaml
 ```
