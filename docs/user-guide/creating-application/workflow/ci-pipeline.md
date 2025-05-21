@@ -615,8 +615,11 @@ Now, you can add a deployment pipeline to this workflow. The image will be pulle
 ## Updating CI Pipeline
 
 You can update the configurations of an existing CI Pipeline except for the pipeline's name.
-To update a pipeline, select your CI pipeline.
-In the **Edit build pipeline** window, edit the required stages and select **Update Pipeline**.
+To update a pipeline, 
+
+1. Select your CI pipeline.
+
+2. In the **Edit build pipeline** window, edit the required stages and select **Update Pipeline**.
 
 ![Figure 56: Updating CI pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/update-pipeline.jpg)
 
