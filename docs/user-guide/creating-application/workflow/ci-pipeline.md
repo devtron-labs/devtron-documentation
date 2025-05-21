@@ -501,108 +501,112 @@ To create a workflow using **Create a job**, follow the below steps
 
 2. Select **+ New Workflow**; a modal window will appear where you can select the type of pipeline you want to create.
 
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-new-workflow.jpg)
+
 3. Select **Create a job**. This opens the **Create job pipeline** Window in which you can create and configure your job.
 
- ![Figure 1e: Create job pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-create-pipeline.jpg)
+ ![Figure: Create job pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci.jpg)
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-create-job-pipeline.jpg)
 
 4. In **Create job pipeline** window, you can create and configure job pipelines.
 
- It includes 2 stages 
+It includes 2 stages 
 
- * [**Basic Configurations**](#basic-configurations)  
+* [**Basic Configurations**](#basic-configurations)  
 
- * [**Tasks to be executed**](#tasks-to-be-executed)
+* [**Tasks to be executed**](#tasks-to-be-executed)
 
- ### Basic Configurations
+### Basic Configurations
 
- This stage allows you to define primary configurations such as Pipeline name, Source Type, Branch Name, and how job should be triggered. Refer the following table to configure each field.
+This stage allows you to define primary configurations such as Pipeline name, Source Type, Branch Name, and how job should be triggered. Refer the following table to configure each field.
 
- ![Figure 2a: Configure job pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-basic-config.jpg)
+ ![Figure 2a: Configure job pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-basic-config.jpg)
 
-  | Field Name|Description|
-  | :--- |:--- |
-  | `Trigger Job Pipeline` | <p>The job execution may be set to:</p><ul><li><code>Automatically</code>: Job execution is triggered automatically as the Git source code changes.</li><li><code>Manually</code>: Build is triggered manually.</li></ul>|
-  | `Pipeline Name` | Assign a name to your job pipeline|
-  | `Source type` | Source type to trigger the job pipeline. Available options: Branch Fixed, Branch Regex, Pull Request, Tag Creation|
-  | `Branch Name`| Branch that triggers the CI build|
-  | `Use remote cache`| <p>Enable this option to use the Docker cache from previous builds. Docker's layer caching mechanism allows unchanged docker images layers to be reused across pipeline runs,thus drastically reducing execution times<br></p><div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p>The globe toggle, next to <code>Docker Layer Caching</code> means that the configuration is inherited from global<br></p><ul><li>Enabled: Inherits the caching settings defined globally.</li><li>Disabled: Allows you to define a pipeline-level configuration specific to this job.</li></ul></div> |
+| Field Name|Description|
+| :--- |:--- |
+| `Trigger Job Pipeline` | <p>The job execution may be set to:</p><ul><li><code>Automatically</code>: Job execution is triggered automatically as the Git source code changes.</li><li><code>Manually</code>: Build is triggered manually.</li></ul>|
+| `Pipeline Name` | Assign a name to your job pipeline|
+| `Source type` | Source type to trigger the job pipeline. Available options: Branch Fixed, Branch Regex, Pull Request, Tag Creation|
+| `Branch Name`| Branch that triggers the CI build|
+| `Use remote cache`| <p>Enable this option to use the Docker cache from previous builds. Docker's layer caching mechanism allows unchanged docker images layers to be reused across pipeline runs,thus drastically reducing execution times<br></p><div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p>The globe toggle, next to <code>Docker Layer Caching</code> means that the configuration is inherited from global<br></p><ul><li>Enabled: Inherits the caching settings defined globally.</li><li>Disabled: Allows you to define a pipeline-level configuration specific to this job.</li></ul></div> |
 
-  ### Tasks to be executed
+### Tasks to be executed
 
-  The Stage allows you define tasks for your job.
+The Stage allows you define tasks for your job.
 
-  You can create one or more tasks. Tasks can be dependent on each other for execution, In other words, the output variable of one task can be used as an input for the next task to execute your job. Tasks will execute in the order they are arranged and can be rearranged by drag-and-drop; however, the order of passing the variables must be followed.
+You can create one or more tasks. Tasks can be dependent on each other for execution, In other words, the output variable of one task can be used as an input for the next task to execute your job. Tasks will execute in the order they are arranged and can be rearranged by drag-and-drop; however, the order of passing the variables must be followed.
 
-  To create a task:
+To create a task:
 
-  1. Navigate to **Tasks to be executed** in the **Create job pipeline** window. 
+1. Navigate to **Tasks to be executed** in the **Create job pipeline** window. 
 
-  2. Click **Add Task** to add a task in your job pipeline.
+2. Click **Add Task** to add a task in your job pipeline.
 
-  ![Figure 3a: Add task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-add-task.jpg)
+ ![Figure 3a: Add task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-task-exec.jpg)
 
-  3. A new task will be added (in the left side of the Create job pipeline window),you can configure the task either by selecting one of the available [preset plugins](#create-task-using-preset-plugins) or by [Executing a custom script](#create-task-using-custom-script)
+3. A new task will be added (in the left side of the Create job pipeline window),you can configure the task either by selecting one of the available [preset plugins](#create-task-using-preset-plugins) or by [Executing a custom script](#create-task-using-custom-script)
 
-  ![Figure 3b: Type of tasks](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-tasks.jpg)
+ ![Figure 3b: Type of tasks](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-add-task.jpg)
 
-  #### Pulling images through preset plugin
+#### Pulling images through preset plugin
 
-  In Devtron, preset plugins are pre-defined tasks templates, that helps you automate and execute common operations such as provisioning infrastructure, taking backups, exporting container images etc., without writing custom scripts.
+In Devtron, preset plugins are pre-defined tasks templates, that helps you automate and execute common operations such as provisioning infrastructure, taking backups, exporting container images etc., without writing custom scripts.
 
-  Devtron provides a set of built-in preset plugins, and you can also create your own plugins in devtron according to your specific needs.
+Devtron provides a set of built-in preset plugins, and you can also create your own plugins in devtron according to your specific needs.
 
-  To create a task using the **Pull Images from Container Repository** plugin follow the below steps:
+To create a task using the **Pull Images from Container Repository** plugin follow the below steps:
 
-  **Note:** **Pull Images from Container Repository** plugin only supports ECR and ACR. 
+**Note:** **Pull Images from Container Repository** plugin only supports ECR and ACR. 
 
-  1. After Configuring the basic configurations, select **Tasks to be executed** Tab
+1. After Configuring the basic configurations, select **Tasks to be executed** Tab
 
-  2. Click **+Add Task** from the left side panel.
+2. Click **+Add Task** from the left side panel.
 
-  3. Search for `Pull Images from Container Repository` in the **Search Plugin** Search bar and select **Pull Images from Container Repository** from the list of plugins. 
+3. Search for `Pull Images from Container Repository` in the **Search Plugin** Search bar and select **Pull Images from Container Repository** from the list of plugins. 
 
-  ![Figure 4a: Search 'Gke Provisioner' plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke-search.jpg)
+ ![Figure 4a: Search 'Pull Images from Container Repository' plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-pull-images.jpg)
 
-    * The right-side panel will display the fields specific to the **Pull Images from Container Repository** plugin which are required to be configured.
+ 
+ * The right-side panel will display the fields specific to the **Pull Images from Container Repository** plugin which are required to be configured.
 
-    * The left-side panel will now shows a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by-default), along with it's logo.<br>You can change the task's name using the **Task name** field but plugin's logo will remain indicating that it is a preset plugin.
+ * The left-side panel will now shows a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by-default), along with it's logo.<br>You can change the task's name using the **Task name** field but plugin's logo will remain indicating that it is a preset plugin.
 
-  ![Figure 4b: Gke provisioner plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke.jpg)
+ ![Figure 4b: Gke provisioner plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-pull-images-added.jpg)
 
-  4. Refer the [Pull Images from Container Repository](/docs/user-guide/plugins/pull-images-from-container-repository.md) documentation to configure the **Pull Images from Container Repository** fields with appropriate values.
+4. Refer the [Pull Images from Container Repository](/docs/user-guide/plugins/pull-images-from-container-repository.md) documentation to configure the **Pull Images from Container Repository** fields with appropriate values.
 
   > Refer to the [Plugins documentation](/docs/user-guide/plugins/README.md) to explore and configure any of the available plugins. 
 
-  5. After configuring the fields successfully, your task will be created, if you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
+5. After configuring the fields successfully, your task will be created, if you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
 
-  #### Create Task using Custom Script
+#### Create Task using Custom Script
 
-  In the job stage you can also define a task using custom script to meet specific requirements. To create a task a task using a custom script follow the below steps:
+In the job stage you can also define a task using custom script to meet specific requirements. To create a task a task using a custom script follow the below steps:
 
-  ![Figure 5a: Execute custom task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-custom-task.jpg)
+1. After Configuring the basic configurations, select **Tasks to be executed** Tab.
 
-  1. After Configuring the basic configurations, select **Tasks to be executed** Tab.
+2. Click **+Add Task** from the left side panel, and then select **Execute custom task**.
 
-  2. Click **+Add Task** from the left side panel, and then select **Execute custom task**.
+ * The right-side panel will display the fields which are required to be configured in order to create the task.
 
-    * The right-side panel will display the fields which are required to be configured in order to create the task.
+ * The left-side panel will now displays a task under **Tasks (IN ORDER OF EXECUTION)**.
 
-    * The left-side panel will now displays a task under **Tasks (IN ORDER OF EXECUTION)**.
+3. Enter the Task name(required) and Task Description (optional).
 
-  3. Enter the Task name(required) and Task Description (optional).
+4. Select the **Task type**, it can be `Shell` or `Container Image`.
 
-  4. Select the **Task type**, it can be `Shell` or `Container Image`.
+ * **Shell Tasks**: These execute shell scripts directly within the job runtime environment. In this type of tasks  you can define inline scripts or use script files from your configured source code.
 
-    * **Shell Tasks**: These execute shell scripts directly within the job runtime environment. In this type of tasks you can define inline scripts or use script files from your configured source code.
+ * **Container Image Tasks**: These allows you to execute commands and scripts inside a custom docker container, instead of using the default environment provided by devtron, you can specify you own container image with all dependencies and tools required for the tasks. 
 
-    * **Container Image Tasks**: These allows you to execute commands and scripts inside a custom docker container, instead of using the default environment provided by devtron, you can specify you own container image with all dependencies and tools required for the tasks. 
+ These Tasks run using container in container approach, that means, the specified image is pulled and run inside the job pod, thus providing a complete isolated environment.
 
-  These Tasks run using container in container approach, that means, the specified image is pulled and run inside the job pod, thus providing a complete isolated environment.
+5. After selecting the **Task type**, you need to configure task-specific fields based on that **Task type**.
 
-  5. After selecting the **Task type**, you need to configure task-specific fields based on that **Task type**.
+Refer [ Create Task using Custom Script for Devtron Jobs]() to know more.
 
-
-5. After configuring the **Basic Configurations** and adding the tasks, select **Create Pipeline** to create a new workflow with a job stage (instead of build stage). 
+After configuring the **Basic Configurations** and adding the tasks, select **Create Pipeline** to create a new workflow with a job stage (instead of build stage). 
 
 Now, you can add a deployment pipeline to this workflow. The image will be pulled during execution of the pipeline using the configured plugin, and then passed to the CD stage for deployment.
 
@@ -638,27 +642,38 @@ If you choose [Pull Request](#pull-request) or [Tag Creation](#tag-creation) as 
 #### For GitHub
 
 1. Go to the **Settings** page of your repository and select **Webhooks**.
+
 2. Select **Add webhook**.
+
 3. In the **Payload URL** field, enter the Webhook URL that you get on selecting the source type as "Pull Request" or "Tag Creation" in Devtron the dashboard.
+
 4. Change the Content-type to `application/json`.
+
 5. In the **Secret** field, enter the secret from Devtron the dashboard when you select the source type as "Pull Request" or "Tag Creation".
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-4.jpg)
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-4.jpg)
+
 
 6. Under **Which events would you like to trigger this webhook?**, select **Let me select individual events.** to trigger the webhook to build CI Pipeline.
+
 7. Select **Branch or tag creation** and **Pull Requests**.
+
 8. Select **Add webhook**.
 
 #### For Bitbucket Cloud
 
 1. Go to the **Repository settings** page of your Bitbucket repository.
+
 2. Select **Webhooks** and then select **Add webhook**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-6.jpg)
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-6.jpg)
 
 3. Enter a **Title** for the webhook.
+
 4. In the **URL** field, enter the Webhook URL that you get on selecting the source type as "Pull Request" or "Tag Creation" in the Devtron dashboard.
+
 5. Select the event triggers for which you want to trigger the webhook.
+
 6. Select **Save** to save your configurations.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-7.jpg)
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-7.jpg)
