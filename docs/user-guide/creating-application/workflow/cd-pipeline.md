@@ -49,7 +49,12 @@ The next section is [Advanced Options](#advanced-options) and it comes with addi
 
 ![Figure 3: Advanced Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/advanced-option.jpg)
 
-Now, the window will have 3 distinct tabs, and you will see the following additions:
+---
+
+### Advanced Options
+
+After selecting **Advanced Options**, the `Create deployment pipeline` window now have 3 distinct tabs, and you will see the following additions:
+
 * [Pre-Deployment stage (tab)](#pre-deployment-stage)
 * [Deployment stage (tab)](#deployment-stage)
 * [Post-Deployment stage (tab)](#post-deployment-stage)
@@ -66,7 +71,9 @@ If your deployment requires prior actions like DB migration, code quality check 
 
 ![Figure 5: Pre-deployment Stage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/cd-predeployment-v2.jpg)
 
-1. **Tasks**
+Refer [Pre/Post tasks](./ci-build-pre-post-plugins.md) to configure `Pre-deployment stage` tasks.
+
+<!-- 1. **Tasks**
 
 Here you can add one or more tasks. The tasks can be re-arranged using drag-and-drop and they will be executed sequentially. 
 
@@ -130,7 +137,7 @@ Make sure your cluster has [devtron-agent](../../global-configurations/cluster-a
 
   ![Figure 9: Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/migration-incluster.jpg)
 
-* Deploy the chart in any environment within the Devtron cluster. Now you should be able to enable `Execute tasks in application environment` option for an environment of target cluster.
+* Deploy the chart in any environment within the Devtron cluster. Now you should be able to enable `Execute tasks in application environment` option for an environment of target cluster. -->
 
 ### Deployment Stage
 
@@ -209,6 +216,8 @@ If you need to run any actions for e.g., closure of Jira ticket, load testing or
 Post-deployment stages are similar to pre-deployment stages. The difference is, pre-deployment executes before the deployment, while post-deployment occurs after.
 
 You can use [ConfigMap and Secrets](#configmaps--secrets) in post deployments as well. The option to execute tasks in application environment is available too.
+
+Refer [Pre/Post tasks](./ci-build-pre-post-plugins.md) to configure `Post-deployment stage` tasks.
 
 ![Figure 15: Post-deployment Stage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/cd_post_build.jpg)
 
