@@ -624,11 +624,30 @@ In the **Edit build pipeline** window, edit the required stages and select **Upd
 
 ## Deleting CI Pipeline
 
-You can only delete a CI pipeline if there is no CD pipeline created in your workflow.
+To delete a CI pipeline make sure that there is no CD pipeline attached to it in your workflow; In that case you must first delete the CD pipeline and only then you can delete a CI pipeline.
 
-To delete a CI pipeline, go to **App Configurations > Workflow Editor** and select **Delete Pipeline**.
+To delete a CI pipeline follow the below steps.
+
+1. Navigate to  **Configurations** → **Workflow Editor** and choose the pipeline you wish to delete.
+
+2. Click on the CD Stage, **Edit deployment pipeline** window will open.
+
+3. Select **Delete Pipeline**, a pop-up will appear asking you to enter the environment name of the deployment. 
+
+4. Enter the environment name and select **Delete**. The CD pipeline will be deleted. 
+
+ In case there are multiple CD pipelines in the workflow, then you need to delete every single one of them in the similar way.
+
+5. After deleting all CD pipelines, click on the build stage, **Edit build pipeline** window will open. 
+
+6. Select **Delete Pipeline** from the bottom left corner of the window button in the CI Stage, a pop-up will appear prompting you to delete the CI pipeline.
+
+ In case your build pipeline is linked to another pipeline thorough **Linked Build Pipeline** then you must first delete the linked pipeline in order to delete your pipeline.
+
+7. Select **Delete** and the CI pipeline will be deleted along with it's workflow.
 
 ![Figure 57: Deleting CI pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline.jpg)
+
 ---
 
 ## Extras
