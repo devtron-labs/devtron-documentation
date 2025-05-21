@@ -461,13 +461,23 @@ To create a pipeline form **Sync with Environment**, follow the below steps
 
 2. Select **+ New Workflow**; a modal window will appear where you can select the type of pipeline you want to create.
 
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-new-workflow.jpg)
+
 3. Select **Sync with Environment**, another modal window will appear where you need to select the environment in which the source CD pipeline exists.
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env.jpg)
 
 4. Select the environment in which the source CD pipeline exists. You can only select one source CD per workflow.
 
-   **Note:**  The CD pipeline used as a source cannot be deleted while it’s linked.
+ **Note:**  The CD pipeline used as a source cannot be deleted while it’s linked.
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-select-source-cd.jpg)
 
 5. Select **Deploy to** in the top right corner to select the environment in which you want to deploy the source CD image.
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-deploy-to.jpg)
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-select-deploy-env.jpg)
 
 6. Select **Create Pipeline** to create a new workflow.
 
