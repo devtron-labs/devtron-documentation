@@ -29,7 +29,7 @@ To create a pre/post task, follow the below steps
 
  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/plugins/plugins-latest/applications-app.jpg)
 
-2. Go to the **App Configuration** tab, click **Workflow Editor**.
+2. Go to the **Configuration** tab, click **Workflow Editor**.
 
  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/plugins/plugins-latest/app-configuration.jpg)
 
@@ -87,29 +87,17 @@ Similarly you can configure any task with a preset plugin in Pre/post-build stag
 
  * The left-side panel will now displays a task under **Tasks (IN ORDER OF EXECUTION)**.
 
- Enter the Task name(required) and Task Description (optional).
+2. Enter the Task name(required) and Task Description (optional).
 
-2. Select the **Task type**, it can be `Shell` or `Container Image`.
+3. Select the **Task type**, it can be `Shell` or `Container Image`.
 
  * **Shell Tasks**: These execute shell scripts directly within the App runtime environment. In this type of tasks you can define inline scripts or use script files from your configured source code.
 
- * **Container Image Tasks**: These allows you to execute commands and scripts inside a custom docker container, instead of using the default environment provided by devtron, you can specify you own container image with all dependencies and tools required for the tasks. 
+ * **Container Image Tasks**: These allows you to execute commands and scripts inside a custom docker container, instead of using the default environment provided by devtron, you can specify you own container image with all dependencies and tools required for the tasks. <br> These Tasks run using container in container approach, that means, the specified image is pulled and run inside the App pod, thus providing a complete isolated environment.
 
- These Tasks run using container in container approach, that means, the specified image is pulled and run inside the App pod, thus providing a complete isolated environment.
-
-3. After selecting the **Task type**, you need to configure task-specific fields based on that **Task type**. Let's look at some examples below to configure both **Shell type** and **Container image** tasks.
+4. After selecting the **Task type**, you need to configure task-specific fields based on that **Task type**. Let's look at some examples below to configure both **Shell type** and **Container image** tasks.
 
 ### Example - Shell Task
-
-Consider an example that creates a Shell task to stop the build if the database name is not "mysql". The script takes 2 input variables, one is a global variable (`DOCKER_IMAGE`), and the other is a custom variable (`DB_NAME`) with a value "mysql".
-The task triggers only if the database name matches "mysql".
-If the trigger condition fails, this Pre-build task will be skipped and the build process will start.
-The variable `DB_NAME` is declared as an output variable that will be available as an input variable for the next task.
-The task fails if `DB_NAME` is not equal to "mysql".
-
-![Custom script - Shell](https://devtron-public-asset.s3.us-east-2.amazonaws.com/plugins/Custom-script-Shell.jpg)
-
-#### Example - Shell Task
 
 Let's take an example of a **Shell task** in the Pre-Build stage that ensures the database configured is prod-db. If the configured database is anything else, the build should stop.
 
