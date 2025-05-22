@@ -140,15 +140,15 @@ Let's take an example of a **Shell task** in the Pre-Build stage that ensures th
 
 * You can click `+` icon next to **Variable** header field to add more rows to the input variable table.<br>
 
- ![Figure 12: Variable configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-var-config.jpg)
+ ![Figure 12: Variable configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-var-config.jpg)
 
 * You can click the slider icon next to each variable name to make it's value required and add a description for it.
 
- ![Figure 13: Value configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-value-config.jpg)
+ ![Figure 13: Value configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-val-config.jpg)
 
 * You can click the slider icon next to each variable value to add choices, allow custom input, and ask value at runtime.
 
- ![Figure 14: Add choice](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-choice.jpg)
+ ![Figure 14: Add choice](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-add-choice.jpg)
 
 #### Script
 
@@ -222,15 +222,15 @@ Since we have already configured a shell task to validate that the database name
 
 * You can click `+` icon next to **Variable** header field to add more rows to the input variable table.<br>
 
- ![Figure 16: Variable configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-var-config.jpg)
+ ![Figure 16: Variable configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-var-config.jpg)
 
 * You can click the slider icon next to each variable name to make it's value required and add a description for it.
 
- ![Figure 17: Value configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-value-config.jpg)
+ ![Figure 17: Value configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-val-config.jpg)
 
 * You can click the slider icon next to each variable value to add choices, allow custom input, and ask value at runtime.
 
- ![Figure 18: Add choice](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-choice.jpg)
+ ![Figure 18: Add choice](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-add-choice.jpg)
 
 #### Mount Custom Code
 
