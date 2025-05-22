@@ -633,23 +633,34 @@ To delete a CI pipeline follow the below steps.
 
 1. Navigate to  **Configurations** → **Workflow Editor** and choose the pipeline you wish to delete.
 
-2. Click on the CD Stage, **Edit deployment pipeline** window will open.
+ ![Figure 57: Selecting Workflow to delete](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-select-workflow.jpg)
 
-3. Select **Delete Pipeline**, a pop-up will appear asking you to enter the environment name of the deployment. 
+
+2. Click on the CD Stage, **Edit deployment pipeline** window will open and select **Delete Pipeline**. 
+
+  ![Figure 58: Clicking 'Delete Pipeline'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-cd.jpg)
+
+3. A pop-up will appear asking you to enter the environment name of the deployment. 
 
 4. Enter the environment name and select **Delete**. The CD pipeline will be deleted. 
+
+  ![Figure 59: Deleting CD Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-cd-popup.jpg)
 
  In case there are multiple CD pipelines in the workflow, then you need to delete every single one of them in the similar way.
 
 5. After deleting all CD pipelines, click on the build stage, **Edit build pipeline** window will open. 
 
+ ![Figure 60: Selecting build stage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-select-build.jpg)
+
 6. Select **Delete Pipeline** from the bottom left corner of the window button in the CI Stage, a pop-up will appear prompting you to delete the CI pipeline.
+ 
+ ![Figure 61: Clicking 'Delete Pipeline'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-CI.jpg)
 
  In case your build pipeline is linked to another pipeline thorough **Linked Build Pipeline** then you must first delete the linked pipeline in order to delete your pipeline.
 
 7. Select **Delete** and the CI pipeline will be deleted along with it's workflow.
 
-![Figure 57: Deleting CI pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline.jpg)
+![Figure 62: Deleting CI pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-ci-popup.jpg)
 
 ---
 
@@ -673,11 +684,11 @@ To override a container registry, container image or target platform:
 
 3. Select the build pipeline of your application.
 
- ![Figure 58: Selecting Build Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/select-build-override.jpg)
+ ![Figure 63: Selecting Build Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/select-build-override.jpg)
 
 4. Click **Allow Override** in the **Build Stage**:
 
- ![Figure 59: Selecting Allow Override](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-allow-override.jpg)
+ ![Figure 64: Selecting Allow Override](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-allow-override.jpg)
 
  * Select the new container registry from the drop-down list.
 
@@ -709,7 +720,7 @@ If you choose [Pull Request](#pull-request) or [Tag Creation](#tag-creation) as 
 
 5. In the **Secret** field, enter the secret from Devtron the dashboard when you select the source type as "Pull Request" or "Tag Creation".
 
- ![Figure 61: Entering the secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-4.jpg)
+ ![Figure 65: Entering the secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-4.jpg)
 
 
 6. Under **Which events would you like to trigger this webhook?**, select **Let me select individual events.** to trigger the webhook to build CI Pipeline.
@@ -724,7 +735,7 @@ If you choose [Pull Request](#pull-request) or [Tag Creation](#tag-creation) as 
 
 2. Select **Webhooks** and then select **Add webhook**.
 
- ![Figure 62: Adding Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-6.jpg)
+ ![Figure 66: Adding Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-6.jpg)
 
 3. Enter a **Title** for the webhook.
 
@@ -734,4 +745,4 @@ If you choose [Pull Request](#pull-request) or [Tag Creation](#tag-creation) as 
 
 6. Select **Save** to save your configurations.
 
- ![Figure 63: Webhook Added](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-7.jpg)
+ ![Figure 67: Webhook Added](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-7.jpg)
