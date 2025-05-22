@@ -673,11 +673,11 @@ To override a container registry, container image or target platform:
 
 3. Select the build pipeline of your application.
 
- ![Figure 1: Selecting Build Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/select-build-override.jpg)
+ ![Figure 58: Selecting Build Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/select-build-override.jpg)
 
 4. Click **Allow Override** in the **Build Stage**:
 
- ![Figure 2: Selecting Allow Override](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-allow-override.jpg)
+ ![Figure 59: Selecting Allow Override](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-allow-override.jpg)
 
  * Select the new container registry from the drop-down list.
 
@@ -689,7 +689,7 @@ To override a container registry, container image or target platform:
 
 The overridden container registry/container image location/target platform will be reflected on the [Build Configuration](docker-build-configuration.md) page. You can also see the number of build pipelines for which the container registry/container image location/target platform is overridden.
 
-![Figure 3: Overrides in Build Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-configuration-overridden.jpg)
+![Figure 60: Overrides in Build Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-configuration-overridden.jpg)
 
 ### Configuring Webhook
 
@@ -709,7 +709,7 @@ If you choose [Pull Request](#pull-request) or [Tag Creation](#tag-creation) as 
 
 5. In the **Secret** field, enter the secret from Devtron the dashboard when you select the source type as "Pull Request" or "Tag Creation".
 
- ![Figure 58: Entering the secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-4.jpg)
+ ![Figure 61: Entering the secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-4.jpg)
 
 
 6. Under **Which events would you like to trigger this webhook?**, select **Let me select individual events.** to trigger the webhook to build CI Pipeline.
@@ -724,7 +724,7 @@ If you choose [Pull Request](#pull-request) or [Tag Creation](#tag-creation) as 
 
 2. Select **Webhooks** and then select **Add webhook**.
 
- ![Figure 59: Adding Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-6.jpg)
+ ![Figure 62: Adding Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-6.jpg)
 
 3. Enter a **Title** for the webhook.
 
@@ -734,4 +734,4 @@ If you choose [Pull Request](#pull-request) or [Tag Creation](#tag-creation) as 
 
 6. Select **Save** to save your configurations.
 
- ![Figure 60: Webhook Added](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-7.jpg)
+ ![Figure 63: Webhook Added](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-7.jpg)
