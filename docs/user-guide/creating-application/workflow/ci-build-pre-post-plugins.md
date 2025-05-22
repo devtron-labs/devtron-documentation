@@ -25,27 +25,33 @@ You can create a task either by selecting one of the available preset plugins or
 
 To create a pre/post task, follow the below steps
 
-1. Go to the **Applications** and select your application from the **Devtron Apps** tabs.
+1. Navigate to **Configuration** → **Workflow Editor** of your Devtron App. 
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/plugins/plugins-latest/applications-app.jpg)
+2. Select the **build** or **deployment** pipeline for configuring the pre/post tasks.
 
-2. Go to the **Configuration** tab, click **Workflow Editor**.
+ ![Figure 1: Selecting Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-workflow-editor.jpg)
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/plugins/plugins-latest/app-configuration.jpg)
-
-3. Select the **build** or **deployment** pipeline for configuring the pre/post tasks.
-
-4. Based on the pipeline you are editing, follow the steps below to add a task:
+3. Based on the pipeline you are editing, follow the steps below to add a task:
  
- * **Build pipelines:** On the **Edit build pipeline** screen, in the **Pre-Build stage**, click `+ Add task`.
- 
- * **Deployment pipelines:** On the **Edit deployment pipeline** screen, in the **Pre-Deployment stage**, click `+ Add task`.
+ * **Build pipelines:** On the **Edit build pipeline** window, select the **Pre-Build stage** or **Post-Build stage** tab.
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/plugins/plugins-latest/add-task-pre-build-stage.jpg)
+ ![Figure 2: Pre/Post-build stages](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-edit-build.jpg)
+ 
+ * **Deployment pipelines:** On the **Edit deployment pipeline** window, select the **Pre-Deployment stage** or **Post-Deployment stage** tab.
+
+ ![Figure 3: Pre/Post-deployment stages](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-edit-deploy.jpg)
+
+4. Select **+ Add task** to add a task.
+ 
+ ![Figure 4: Adding task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-add-task.jpg)
 
 5. Configure the task using a preset plugin or **Execute custom task**; if you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
 
+ ![Figure 5: Configuring the task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-configure.jpg)
+
 6. Click **Update Pipeline**; The pre/post task will be executed when you trigger the next build or deployment.
+
+ ![Figure 6: Select 'Update Pipeline'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-update-pipeline.jpg)
 
 ### Configure a Task using preset plugins
 
@@ -59,23 +65,25 @@ To create a task using preset plugins, lets take `Codacy` as an example and conf
 
 To configure a task using the **Codacy** plugin follow the below steps:
 
-1. Search for `Codacy` in the **Search Plugin** bar and select **Codacy** from the list of plugins. 
+1. Navigate to **Pre-Build stage** and select **+Add task**.
 
- ![Figure 4a: Search 'Codacy' plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke-search.jpg)
+2. Search for `Codacy` in the **Search Plugin** bar and select **Codacy** from the list of plugins. 
+
+ ![Figure 7: Searching 'Codacy' plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-search-codacy.jpg)
 
    * The right-side panel will display the fields specific to the **Codacy** plugin which are required to be configured.
 
    * The left-side panel will now shows a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by-default), along with it's logo.<br>You can change the task's name using the **Task name** field but plugin's logo will remain indicating that it is a preset plugin.
 
- ![Figure 4b: Codacy plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke.jpg)
+ ![Figure 8: Codacy plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-codacy-plugin.jpg)
 
-2. Refer the [Codacy](/docs/user-guide/plugins/codacy.md) documentation to configure the **Codacy** fields with appropriate values.
+3. Refer the [Codacy](/docs/user-guide/plugins/codacy.md) documentation to configure the **Codacy** fields with appropriate values.
 
 > Refer to the [Plugins documentation](/docs/user-guide/plugins/README.md) to explore and configure any of the available plugins. 
 
-3. After configuring the fields successfully, your task will be created, if you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
+4. After configuring the fields successfully, your task will be created, if you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
 
-4. Click **Update pipeline**; The pre/post task will be executed when you trigger the next build or deployment.
+5. Select **Update pipeline**; The pre/post task will be executed when you trigger the next build or deployment.
 
 Similarly you can configure any task with a preset plugin in Pre/post-build stages or pre/post-deployment stages. 
 
@@ -83,15 +91,19 @@ Similarly you can configure any task with a preset plugin in Pre/post-build stag
 
 1. After adding the task, Select **Execute custom script**.
 
+ ![Figure 9: Select 'Execute custom script'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-execute-custom-task.jpg)
+
  * The right-side panel will display the fields which are required to be configured in order to create the task.
 
  * The left-side panel will now displays a task under **Tasks (IN ORDER OF EXECUTION)**.
 
 2. Enter the Task name(required) and Task Description (optional).
 
+ ![Figure 10: Configuring Task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-custom-task.jpg)
+
 3. Select the **Task type**, it can be `Shell` or `Container Image`.
 
- * **Shell Tasks**: These execute shell scripts directly within the App runtime environment. In this type of tasks you can define inline scripts or use script files from your configured source code.
+ * **Shell Tasks**: These execute shell scripts directly within the application runtime environment. In this type of tasks you can define inline scripts or use script files from your configured source code.
 
  * **Container Image Tasks**: These allows you to execute commands and scripts inside a custom docker container, instead of using the default environment provided by devtron, you can specify you own container image with all dependencies and tools required for the tasks. <br> These Tasks run using container in container approach, that means, the specified image is pulled and run inside the App pod, thus providing a complete isolated environment.
 
@@ -103,10 +115,14 @@ Let's take an example of a **Shell task** in the Pre-Build stage that ensures th
 
 #### Tasks Configurations
 
+ ![Figure 11a: Configuring Shell Task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-shell-example.jpg)
+
+ ![Figure 11b: Configuring Pass/Fail Condition](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-shell-task-2.jpg)
+
 |Field| Values for This Example| Required/Optional | Description|
 | :--- | :--- | :--- | :--- |
 | `Task Name`| `check-db-name`| Required| Enter a name for the task|
-| `Task Description`| `This task stops the build if database name is not mysql` | Optional | Short description for the task|
+| `Task Description`| `This task stops the build if database name is not 'prod-db'` | Optional | Short description for the task|
 | `Task Type` | `Shell`| Optional| Select the preferred task type |
 | `Input variables`| Refer the [Input Variable table](#input-variable-table) below | Optional| <p>These variables provide dynamic values to the script at the time of execution and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
 | `Trigger/Skip condition` | Not required for this example | Optional| A conditional statement to execute or skip the task|
@@ -124,28 +140,31 @@ Let's take an example of a **Shell task** in the Pre-Build stage that ensures th
 
 * You can click `+` icon next to **Variable** header field to add more rows to the input variable table.<br>
 
- ![Figure 6a: Variable configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-var-config.jpg)
+ ![Figure 12: Variable configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-var-config.jpg)
 
 * You can click the slider icon next to each variable name to make it's value required and add a description for it.
 
- ![Figure 6b: Value configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-value-config.jpg)
+ ![Figure 13: Value configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-value-config.jpg)
 
 * You can click the slider icon next to each variable value to add choices, allow custom input, and ask value at runtime.
 
- ![Figure 6b: Add choice](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-choice.jpg)
+ ![Figure 14: Add choice](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-choice.jpg)
 
 #### Script
 
 {% code title="Custom Script" overflow="wrap" lineNumbers="true" %}
 ```bash
-#!/bin/sh
-set -e
+#!/bin/sh 
+set -eo pipefail 
+#set -v  ## uncomment this to debug the script 
 
 if [ "$DB_NAME" = "mysql" ]; then
-  echo "DB_VALIDATION=pass"
+  export DB_VALIDATION= pass
+  echo $DB_VALIDATION
   echo "Using valid database: $DB_NAME"
 else
-  echo "DB_VALIDATION=fail"
+  export DB_VALIDATION= fail
+  echo $DB_VALIDATION
   echo "Unsupported DB: $DB_NAME. Only 'mysql' is allowed for this build."
 fi
 ```
@@ -171,6 +190,10 @@ Since we have already configured a shell task to validate that the database name
 
 #### Tasks Configurations
 
+ ![Figure 15a: Container Image Task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-container-task.jpg)
+
+ ![Figure 15b: Configuring task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-container-task-2.jpg)
+
 | Field| Values for This Example| Required/Optional | Description|
 | :---|:---|:---|:---|
 | `Task name`| `verify-db-connectivity`| Required|Enter a name for the task|
@@ -191,23 +214,23 @@ Since we have already configured a shell task to validate that the database name
 
 | Variable| Type| Value| Description|
 | :--- | :---| :--- | :--- |
-| `DB_NAME`| String | `prod`| Name of the database |
+| `DB_NAME`| String | `prod`| Name of the database|
 | `DB_HOST` | String | `192.168.1.10` | Database hostname or IP address|
-| `DB_USER` | String | `root` | Database user.|
+| `DB_USER` | String | `root` | Database user|
 
 * To add a input variable, click **+ Add Variable** next to the `Input Variable`, a new table appear asking you to enter the variable and its required information.
 
 * You can click `+` icon next to **Variable** header field to add more rows to the input variable table.<br>
 
- ![Figure 7a: Variable configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-var-config.jpg)
+ ![Figure 16: Variable configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-var-config.jpg)
 
 * You can click the slider icon next to each variable name to make it's value required and add a description for it.
 
- ![Figure 7b: Value configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-value-config.jpg)
+ ![Figure 17: Value configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-value-config.jpg)
 
 * You can click the slider icon next to each variable value to add choices, allow custom input, and ask value at runtime.
 
- ![Figure 7c: Add choice](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-choice.jpg)
+ ![Figure 18: Add choice](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-choice.jpg)
 
 #### Mount Custom Code
 
@@ -250,6 +273,8 @@ The execution of the Pre/Post-Deployment stages can be set to:
 
 **Manually:** User needs to trigger Pre/Post-Deployment stages manually.
 
+ ![Figure 19: Trigger Deployment Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-trigger-post.jpg)
+
 ### ConfigMaps & Secrets
 
 {% hint style="info" %}
@@ -259,11 +284,15 @@ Make sure you have added [ConfigMaps](../config-maps.md) and [Secrets](../secret
 
 If you want to use some configuration files and secrets in pre-deployment stages or post-deployment stages, then you can use the `ConfigMaps` & `Secrets` options. You will get them as a drop-down in the pre-deployment stage.
 
+![Figure 20: ConfigMaps & Secrets](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-cm-secret.jpg)
+
 ### Execute tasks in application environment
 
 These `Pre-deployment CD / Post-deployment CD` pods can be created in your deployment cluster or the devtron build cluster. If your scripts/tasks has some dependency on the deployment environment, you may run these pods in the deployment cluster. Thus, your scripts \(if any\) can interact with the cluster services that may not be publicly exposed.
 
 Some tasks require extra permissions for the node where Devtron is installed. However, if the node already has the necessary permissions for deploying applications, there is no need to assign them again. Instead, you can enable the **Execute tasks in application environment** option for the pre-CD or post-CD steps. By default, this option is disabled.
+
+![Figure 21: Execute tasks in application environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-execute-tasks.jpg)
 
 To enable the `Execute tasks in application environment` option, follow these steps:
 
@@ -273,7 +302,7 @@ Make sure your cluster has [devtron-agent](../../global-configurations/cluster-a
 
 1. Go to the chart store and search for the devtron-in-clustercd chart.
 
-  ![Figure 6: 'devtron-in-clustercd' Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/devtron-incluster-chart.jpg)
+  ![Figure 22: 'devtron-in-clustercd' Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/devtron-incluster-chart.jpg)
 
 2. Configure the chart according to your requirements and deploy it in the target cluster.
 
@@ -290,7 +319,7 @@ Make sure your cluster has [devtron-agent](../../global-configurations/cluster-a
 
   `ORCH_HOST` value should be same as of `CD_EXTERNAL_LISTENER_URL` value which is passed in values.yaml.
 
-  ![Figure 7: Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/incluster-configuration.jpg)
+  ![Figure 23: Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/incluster-configuration.jpg)
 
 4. Delete the Devtron pod using the following command:
 
@@ -300,11 +329,11 @@ Make sure your cluster has [devtron-agent](../../global-configurations/cluster-a
 
 5. Again navigate to the chart store and search for the "migration-incluster-cd" chart.
 
-  ![Figure 8: 'migration-incluster-cd' chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/migration-incluster-chart.jpg)
+  ![Figure 24: 'migration-incluster-cd' chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/migration-incluster-chart.jpg)
 
 6. Edit the `cluster-name` and `secret name` values within the chart. The `cluster name` refers to the name used when adding the cluster in the global configuration and for which you are going to enable `Execute tasks in application environment` option.
 
-  ![Figure 9: Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/migration-incluster.jpg)
+  ![Figure 25: Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/migration-incluster.jpg)
 
 7. Deploy the chart in any environment within the Devtron cluster. Now you should be able to enable `Execute tasks in application environment` option for an environment of target cluster.
 
@@ -313,3 +342,5 @@ Make sure your cluster has [devtron-agent](../../global-configurations/cluster-a
 ## What's next
 
 Trigger the [CI pipeline](../../deploying-application/triggering-ci.md)
+
+Trigger the [CD pipeline](../../deploying-application/triggering-cd.md)
