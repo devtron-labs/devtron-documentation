@@ -4,7 +4,7 @@ After configuring the **Build Configurations** and **Base Configurations**, the 
 
 In Devtron, a **Workflow** is a logical sequence of different stages(pipelines) used for continuous integration and continuous deployment of an application. 
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/arora1.gif)
+ ![Figure 1: Workflow Editor](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/arora1.gif)
 
 For Devtron Apps you can create five types of workflows depending upon your use case.
 
@@ -18,8 +18,8 @@ For Devtron Apps you can create five types of workflows depending upon your use 
 
 * [Create a Job](./cd-pipeline.md#5-create-a-job)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/workflow-ci.jpg)
+![Figure 2: Selecting an Image Source](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/workflow-ci.jpg)
 
-To know how to create the CI pipeline for your application, click on: [Create CI Pipelines](ci-pipeline.md)
+To know how to create the CI pipeline for your application, refer [Create CI Pipelines](./ci-pipeline.md)
 
-To know how to create the CD pipeline for your application, click on: [Create CD Pipelines](cd-pipeline.md)
+To know how to create the CD pipeline for your application, refer [Create CD Pipelines](./cd-pipeline.md)
