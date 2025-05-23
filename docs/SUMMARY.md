@@ -15,6 +15,7 @@
 * [Install Devtron Enterprise](setup/install/enterprise-license.md) 
 * [Install Devtron Enterprise Trial](https://license.devtron.ai/dashboard)  
 * [Devtron Kubernetes Client](setup/install/install-devtron-Kubernetes-client.md)
+* [Production Infra Recommendations](setup/install/prod-infra.md)
 * [Configurations](setup/configurations/configurations-overview.md)
   * [Installation Configurations](setup/install/installation-configuration.md)
   * [Override Configurations](setup/install/override-default-devtron-installation-configs.md)
