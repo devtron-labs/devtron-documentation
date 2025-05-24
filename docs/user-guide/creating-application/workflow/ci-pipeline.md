@@ -439,7 +439,47 @@ In case your Jenkins project is of type `pipeline`, `Multibranch Pipeline`, etc.
 
  ![Figure 43: Adding Webhook pipeline stage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-add-webhook-stage.jpg)
 
-4. Click **Save**
+4. Click **Save**.
+
+The new images which will be build after adding the webhook will be available to Devtron for deployment.
+
+Now, you can access the images on the Devtron dashboard and deploy manually. In case, if you select **Automatic** deployment option, then your application will be deployed automatically everytime a new image is received.
+
+#### Integrate with External Sources - GitHub Actions
+
+To integrate Webhook with your GitHub Actions workflow, you need to add a new step in your workflow file.
+
+Before adding the step in workflow, you need to add the API token provided by Devtron as a secret in your repository. To do so follow the below steps
+
+1. Navigate to **Settings** tab of your repository.
+
+2. Select **Secrets and variables** → **Actions** under **Security**.
+
+3. Under **Secrets** tab, select **New repository secret**.
+
+4. Enter a name for your secret in the **Name** field.
+
+5. Enter the value of the secret in the **Secret** field.
+
+6. Select **Add Secret** and the secret will be added to your repository.
+
+After adding the API token as secret, add a new step in your Github Action workflow. To do so follow the below steps:
+
+1. Navigate to **Actions** tab of your repository. 
+
+2. Select your workflow under **All workflows** section.
+
+3. Click the workflow file (`main.yml`) under the workflow name, this will open the workflow file in GitHub.
+
+4. Select the edit icon to add the webhook step in the workflow file.
+
+5. Add the webhook step in the workflow file and select **Commit changes...**
+
+6. Provide a **Commit message** and a optional description.
+
+7. Select **Commit changes** and the workflow file will be updated with the webhook step.
+
+The new images which will be build after adding the webhook will be available to Devtron for deployment.
 
 Now, you can access the images on the Devtron dashboard and deploy manually. In case, if you select **Automatic** deployment option, then your application will be deployed automatically everytime a new image is received.
 
