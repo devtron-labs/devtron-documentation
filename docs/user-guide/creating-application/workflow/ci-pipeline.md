@@ -710,39 +710,65 @@ If you choose [Pull Request](#pull-request) or [Tag Creation](#tag-creation) as 
 
 #### For GitHub
 
-1. Go to the **Settings** page of your repository and select **Webhooks**.
+1. Go to the **Settings** → **Webhooks** of your repository.
 
 2. Select **Add webhook**.
 
 3. In the **Payload URL** field, enter the Webhook URL that you get on selecting the source type as "Pull Request" or "Tag Creation" in Devtron the dashboard.
 
-4. Change the Content-type to `application/json`.
+4. Select the Content-type as `application/json`.
 
 5. In the **Secret** field, enter the secret from Devtron the dashboard when you select the source type as "Pull Request" or "Tag Creation".
 
  ![Figure 65: Entering the secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-4.jpg)
 
 
-6. Under **Which events would you like to trigger this webhook?**, select **Let me select individual events.** to trigger the webhook to build CI Pipeline.
+6. Under **Which events would you like to trigger this webhook?**, select **Let me select individual events.** to trigger the webhook for specific events.
 
-7. Select **Branch or tag creation** and **Pull Requests**.
+7. Select the appropriate triggers
+
+   * For Pull Requests select **Pull Requests**.
+
+   * For Tag Creation select **Branch or tag creation**.
 
 8. Select **Add webhook**.
 
+#### For GitLab 
+
+1. Navigate to **Setting** → **Webhooks** of your repository. 
+
+2. Select **Add new webhook**.
+
+3. Enter optional Name and Description.
+
+4. In the **URL** field, enter the Webhook URL that you get on selecting the source type as "Pull Request" or "Tag Creation" in Devtron dashboard.
+
+5.  In the **Secret token** field, enter the secret from Devtron dashboard when you select the source type as "Pull Request" or "Tag Creation".
+
+6. Checkmark the appropriate triggers under **Trigger** section.
+
+   * For Pull Requests select **Merge request events**.
+
+   * For Tag Creation select **Tag push events**
+
+7. Select **Add Webhook** and the webhook will be added to your repository.
+
 #### For Bitbucket Cloud
 
-1. Go to the **Repository settings** page of your Bitbucket repository.
+1. Navigate to the **Repository settings** page of your Bitbucket repository.
 
-2. Select **Webhooks** and then select **Add webhook**.
+2. Select **Webhooks** under **Workflow** section and then select **Add webhook**.
 
  ![Figure 66: Adding Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-6.jpg)
 
 3. Enter a **Title** for the webhook.
 
-4. In the **URL** field, enter the Webhook URL that you get on selecting the source type as "Pull Request" or "Tag Creation" in the Devtron dashboard.
+4. In the **URL** field, enter the Webhook URL that you get on selecting the source type as "Pull Request" or "Tag Creation" in Devtron dashboard.
 
-5. Select the event triggers for which you want to trigger the webhook.
+5. In the **Secret** field, enter the secret from Devtron dashboard when you select the source type as "Pull Request" or "Tag Creation".
 
-6. Select **Save** to save your configurations.
+6. Select the event triggers for which you want to trigger the webhook under **Triggers** section.
+
+7. Select **Save** to save your configurations.
 
  ![Figure 67: Webhook Added](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-7.jpg)
