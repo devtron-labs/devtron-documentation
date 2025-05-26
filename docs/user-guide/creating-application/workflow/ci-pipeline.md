@@ -356,7 +356,7 @@ To configure the Webhook in External CI, follow the below steps.
 5. After integrating the webhook, whenever the external CI pipeline is triggered and generates an image, the webhook will automatically send the image details to Devtron for deployment.
 
 
-#### Integrate with External Sources - Jenkins
+### Integrate with External Sources - Jenkins
 
 To integrate Webhook with your jenkins project/pipeline, you need to add a new step/stage in your project/pipeline.
 
@@ -445,7 +445,7 @@ The new images which will be build after adding the webhook will be available to
 
 Now, you can access the images on the Devtron dashboard and deploy manually. In case, if you select **Automatic** deployment option, then your application will be deployed automatically everytime a new image is received.
 
-#### Integrate with External Sources - GitHub Actions
+### Integrate with External Sources - GitHub Actions
 
 To integrate Webhook with your GitHub Actions workflow, you need to add a new step in your workflow file.
 
@@ -453,15 +453,15 @@ Before adding the step in workflow, you need to add the API token provided by De
 
 1. Navigate to **Settings** tab of your repository.
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-settings.jpg)
+ ![Figure 44: Navigating to 'Settings'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-settings.jpg)
 
 2. Select **Secrets and variables** → **Actions** under **Security**.
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-secrets.jpg)
+ ![Figure 45: Selecting 'Actions'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-secrets.jpg)
 
 3. Under **Secrets** tab, select **New repository secret**.
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-new-secret.jpg)
+ ![Figure 46: Selecting 'New repository secret'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-new-secret.jpg)
 
 4. Enter a name for your secret in the **Name** field.
 
@@ -469,39 +469,39 @@ Before adding the step in workflow, you need to add the API token provided by De
 
 6. Select **Add Secret** and the secret will be added to your repository.
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-add-secret.jpg)
+ ![Figure 47a: Entering secret info](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-add-secret.jpg)
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-secret-added.jpg)
+ ![Figure 47b: Secret Added](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-secret-added.jpg)
 
 After adding the API token as secret, add a new step in your Github Action workflow. To do so follow the below steps:
 
 1. Navigate to **Actions** tab of your repository. 
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-actions.jpg)
+ ![Figure 48: Navigating to Actions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-actions.jpg)
 
 2. Select your workflow under **All workflows** section.
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-select-workflow.jpg)
+ ![Figure 49: Selecting workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-select-workflow.jpg)
 
 3. Click the workflow file (`main.yml`) under the workflow name, this will open the workflow file in GitHub.
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-select-workflow-file.jpg)
+ ![Figure 50: Selecting 'Workflow File'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-select-workflow-file.jpg)
 
 4. Select the edit icon to add the webhook step in the workflow file.
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-edit-icon.jpg)
+ ![Figure 51: Selecting 'Edit' Icon](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-edit-icon.jpg)
 
 5. Add the webhook step in the workflow file and select **Commit changes...**
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-step-added.jpg)
+ ![Figure 52a: Adding Webhook Step](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-step-added.jpg)
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-commit-changes.jpg)
+ ![Figure 52ab: Committing Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-commit-changes.jpg)
 
 6. Provide a **Commit message** and a optional description.
 
 7. Select **Commit changes** and the workflow file will be updated with the webhook step.
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-commit-changes-2.jpg)
+ ![Figure 53: Selecting 'Commit changes'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-commit-changes-2.jpg)
 
 The new images which will be build after adding the webhook will be available to Devtron for deployment.
 
@@ -525,23 +525,23 @@ To create a pipeline form **Sync with Environment**, follow the below steps
 
 2. Select **+ New Workflow**; a modal window will appear where you can select the type of pipeline you want to create.
 
- ![Figure 44: Creating New Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-new-workflow.jpg)
+ ![Figure 54: Creating New Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-new-workflow.jpg)
 
 3. Select **Sync with Environment**, another modal window will appear where you need to select the environment in which the source CD pipeline exists.
 
- ![Figure 45 : Selecting 'Sync with Environment'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env.jpg)
+ ![Figure 55 : Selecting 'Sync with Environment'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env.jpg)
 
 4. Select the environment in which the source CD pipeline exists. You can only select one source CD per workflow.
 
  **Note:**  The CD pipeline used as a source cannot be deleted while it’s linked.
 
- ![Figure 46: Selecting Source CD Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-select-source-cd.jpg)
+ ![Figure 56: Selecting Source CD Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-select-source-cd.jpg)
 
 5. Select **Deploy to** in the top right corner to select the environment in which you want to deploy the source CD image.
 
- ![Figure 47a: Selecting 'Deploy To'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-deploy-to.jpg)
+ ![Figure 57a: Selecting 'Deploy To'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-deploy-to.jpg)
 
- ![Figure 47b: Selecting the Deployment Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-select-deploy-env.jpg)
+ ![Figure 57b: Selecting the Deployment Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-select-deploy-env.jpg)
 
 6. Select **Create Pipeline** to create a new workflow.
 
@@ -565,15 +565,15 @@ To create a workflow using **Create a job**, follow the below steps
 
 2. Select **+ New Workflow**; a modal window will appear where you can select the type of pipeline you want to create.
 
- ![Figure 48: Creating New Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-new-workflow.jpg)
+ ![Figure 58: Creating New Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-new-workflow.jpg)
 
 3. Select **Create a job**. This opens the **Create job pipeline** Window in which you can create and configure your job.
 
- ![Figure 49: Selecting 'Create a job'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci.jpg)
+ ![Figure 59: Selecting 'Create a job'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci.jpg)
 
 4. In **Create job pipeline** window, you can create and configure job pipelines.
 
-  ![Figure 50: Create job pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-create-job-pipeline.jpg)
+  ![Figure 60: Create job pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-create-job-pipeline.jpg)
 
 It includes 2 stages 
 
@@ -585,7 +585,7 @@ It includes 2 stages
 
 This stage allows you to define primary configurations such as Pipeline name, Source Type, Branch Name, and how job should be triggered. Refer the following table to configure each field.
 
- ![Figure 51: Configure Basic Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-basic-config.jpg)
+ ![Figure 61: Configure Basic Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-basic-config.jpg)
 
 | Field Name|Description|
 | :--- |:--- |
@@ -607,11 +607,11 @@ To create a task:
 
 2. Click **Add Task** to add a task in your job pipeline.
 
- ![Figure 52: Add task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-task-exec.jpg)
+ ![Figure 62: Add task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-task-exec.jpg)
 
 3. A new task will be added (in the left side of the Create job pipeline window),you can configure the task either by selecting one of the available [preset plugins](#create-task-using-preset-plugins) or by [Executing a custom script](#create-task-using-custom-script)
 
- ![Figure 53: Type of tasks](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-add-task.jpg)
+ ![Figure 63: Type of tasks](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-add-task.jpg)
 
 #### Pulling images through preset plugin
 
@@ -629,14 +629,14 @@ To create a task using the **Pull Images from Container Repository** plugin foll
 
 3. Search for `Pull Images from Container Repository` in the **Search Plugin** Search bar and select **Pull Images from Container Repository** from the list of plugins. 
 
- ![Figure 54: Search 'Pull Images from Container Repository' plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-pull-images.jpg)
+ ![Figure 64: Search 'Pull Images from Container Repository' plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-pull-images.jpg)
 
  
  * The right-side panel will display the fields specific to the **Pull Images from Container Repository** plugin which are required to be configured.
 
  * The left-side panel will now shows a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by-default), along with it's logo.<br>You can change the task's name using the **Task name** field but plugin's logo will remain indicating that it is a preset plugin.
 
- ![Figure 55: Gke provisioner plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-pull-images-added.jpg)
+ ![Figure 65: Gke provisioner plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-pull-images-added.jpg)
 
 4. Refer the [Pull Images from Container Repository](/docs/user-guide/plugins/pull-images-from-container-repository.md) documentation to configure the **Pull Images from Container Repository** fields with appropriate values.
 
@@ -685,7 +685,7 @@ To update a pipeline,
 
 2. In the **Edit build pipeline** window, edit the required stages and select **Update Pipeline**.
 
-![Figure 56: Updating CI pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/update-pipeline.jpg)
+![Figure 66: Updating CI pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/update-pipeline.jpg)
 
 ---
 
@@ -697,34 +697,34 @@ To delete a CI pipeline follow the below steps.
 
 1. Navigate to  **Configurations** → **Workflow Editor** and choose the pipeline you wish to delete.
 
- ![Figure 57: Selecting Workflow to delete](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-select-workflow.jpg)
+ ![Figure 67: Selecting Workflow to delete](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-select-workflow.jpg)
 
 
 2. Click on the CD Stage, **Edit deployment pipeline** window will open and select **Delete Pipeline**. 
 
-  ![Figure 58: Clicking 'Delete Pipeline'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-cd.jpg)
+  ![Figure 68: Clicking 'Delete Pipeline'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-cd.jpg)
 
 3. A pop-up will appear asking you to enter the environment name of the deployment. 
 
 4. Enter the environment name and select **Delete**. The CD pipeline will be deleted. 
 
-  ![Figure 59: Deleting CD Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-cd-popup.jpg)
+  ![Figure 69: Deleting CD Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-cd-popup.jpg)
 
  In case there are multiple CD pipelines in the workflow, then you need to delete every single one of them in the similar way.
 
 5. After deleting all CD pipelines, click on the build stage, **Edit build pipeline** window will open. 
 
- ![Figure 60: Selecting build stage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-select-build.jpg)
+ ![Figure 70: Selecting build stage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-select-build.jpg)
 
 6. Select **Delete Pipeline** from the bottom left corner of the window button in the CI Stage, a pop-up will appear prompting you to delete the CI pipeline.
  
- ![Figure 61: Clicking 'Delete Pipeline'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-CI.jpg)
+ ![Figure 71: Clicking 'Delete Pipeline'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-CI.jpg)
 
  In case your build pipeline is linked to another pipeline thorough **Linked Build Pipeline** then you must first delete the linked pipeline in order to delete your pipeline.
 
 7. Select **Delete** and the CI pipeline will be deleted along with it's workflow.
 
-![Figure 62: Deleting CI pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-ci-popup.jpg)
+![Figure 72: Deleting CI pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-ci-popup.jpg)
 
 ---
 
@@ -748,11 +748,11 @@ To override a container registry, container image or target platform:
 
 3. Select the build pipeline of your application.
 
- ![Figure 63: Selecting Build Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/select-build-override.jpg)
+ ![Figure 73: Selecting Build Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/select-build-override.jpg)
 
 4. Click **Allow Override** in the **Build Stage**:
 
- ![Figure 64: Selecting Allow Override](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-allow-override.jpg)
+ ![Figure 74: Selecting Allow Override](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-allow-override.jpg)
 
  * Select the new container registry from the drop-down list.
 
@@ -764,7 +764,7 @@ To override a container registry, container image or target platform:
 
 The overridden container registry/container image location/target platform will be reflected on the [Build Configuration](docker-build-configuration.md) page. You can also see the number of build pipelines for which the container registry/container image location/target platform is overridden.
 
-![Figure 60: Overrides in Build Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-configuration-overridden.jpg)
+![Figure 75: Overrides in Build Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-configuration-overridden.jpg)
 
 ### Configuring Webhook
 
@@ -776,7 +776,13 @@ If you choose [Pull Request](#pull-request) or [Tag Creation](#tag-creation) as 
 
 1. Go to the **Settings** → **Webhooks** of your repository.
 
+   ![Figure 76a: Navigating to Repository Settings](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-settings.jpg)
+
+   ![Figure 76b: Selecting 'Webhooks'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-webhooks.jpg)
+
 2. Select **Add webhook**.
+
+   ![Figure 77: Selecting 'Add webhook'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-add-webhook.jpg)
 
 3. In the **Payload URL** field, enter the Webhook URL that you get on selecting the source type as "Pull Request" or "Tag Creation" in Devtron the dashboard.
 
@@ -784,24 +790,33 @@ If you choose [Pull Request](#pull-request) or [Tag Creation](#tag-creation) as 
 
 5. In the **Secret** field, enter the secret from Devtron the dashboard when you select the source type as "Pull Request" or "Tag Creation".
 
- ![Figure 65: Entering the secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-4.jpg)
-
-
 6. Under **Which events would you like to trigger this webhook?**, select **Let me select individual events.** to trigger the webhook for specific events.
+
+   ![Figure 78: Configuring Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-enter-info.jpg)
 
 7. Select the appropriate triggers
 
    * For Pull Requests select **Pull Requests**.
 
+   ![Figure 79: Selecting 'Pull Requests'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-pull.jpg)
+
    * For Tag Creation select **Branch or tag creation**.
 
+   ![Figure 80: Selecting 'Branch or tag creation'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-branch.jpg)
+
 8. Select **Add webhook**.
+
+   ![Figure 81: Selecting 'Add webhook'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-webhook-added.jpg)
 
 #### For GitLab 
 
 1. Navigate to **Setting** → **Webhooks** of your repository. 
 
+   ![Figure 82: Navigating to Repository Settings](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-settings-webhook.jpg)
+
 2. Select **Add new webhook**.
+
+   ![Figure 83: Selecting 'Add new webhook'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-add-new-webhook.jpg)
 
 3. Enter optional Name and Description.
 
@@ -809,21 +824,33 @@ If you choose [Pull Request](#pull-request) or [Tag Creation](#tag-creation) as 
 
 5.  In the **Secret token** field, enter the secret from Devtron dashboard when you select the source type as "Pull Request" or "Tag Creation".
 
+   ![Figure 84: Configuring Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-enter-info.jpg)
+
 6. Checkmark the appropriate triggers under **Trigger** section.
 
    * For Pull Requests select **Merge request events**.
 
+   ![Figure 85: Selecting 'Merge request events'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-merge.jpg)
+
    * For Tag Creation select **Tag push events**
 
+   ![Figure 86: Selecting 'Tag push events'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-tag.jpg)
+
 7. Select **Add Webhook** and the webhook will be added to your repository.
+
+   ![Figure 87:Selecting 'Add Webhook'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-webhook-added.jpg)
 
 #### For Bitbucket Cloud
 
 1. Navigate to the **Repository settings** page of your Bitbucket repository.
 
+   ![Figure 88: Navigating to Repository Settings](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-settings.jpg)
+
 2. Select **Webhooks** under **Workflow** section and then select **Add webhook**.
 
- ![Figure 66: Adding Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-6.jpg)
+   ![Figure 89a: Selecting 'Webhooks'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-webhook.jpg)
+
+   ![Figure 89b: Selecting 'Add webhook'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-add-webhook.jpg)
 
 3. Enter a **Title** for the webhook.
 
@@ -831,8 +858,12 @@ If you choose [Pull Request](#pull-request) or [Tag Creation](#tag-creation) as 
 
 5. In the **Secret** field, enter the secret from Devtron dashboard when you select the source type as "Pull Request" or "Tag Creation".
 
+   ![Figure 90: Configuring Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-enter-info.jpg)
+
 6. Select the event triggers for which you want to trigger the webhook under **Triggers** section.
+
+   ![Figure 91: Selecting triggers](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-trigger.jpg)
 
 7. Select **Save** to save your configurations.
 
- ![Figure 67: Webhook Added](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-7.jpg)
+   ![Figure 92: Saving Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-save.jpg)
