@@ -453,9 +453,15 @@ Before adding the step in workflow, you need to add the API token provided by De
 
 1. Navigate to **Settings** tab of your repository.
 
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-settings.jpg)
+
 2. Select **Secrets and variables** → **Actions** under **Security**.
 
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-secrets.jpg)
+
 3. Under **Secrets** tab, select **New repository secret**.
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-new-secret.jpg)
 
 4. Enter a name for your secret in the **Name** field.
 
@@ -463,21 +469,39 @@ Before adding the step in workflow, you need to add the API token provided by De
 
 6. Select **Add Secret** and the secret will be added to your repository.
 
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-add-secret.jpg)
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-secret-added.jpg)
+
 After adding the API token as secret, add a new step in your Github Action workflow. To do so follow the below steps:
 
 1. Navigate to **Actions** tab of your repository. 
 
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-actions.jpg)
+
 2. Select your workflow under **All workflows** section.
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-select-workflow.jpg)
 
 3. Click the workflow file (`main.yml`) under the workflow name, this will open the workflow file in GitHub.
 
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-select-workflow-file.jpg)
+
 4. Select the edit icon to add the webhook step in the workflow file.
 
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-edit-icon.jpg)
+
 5. Add the webhook step in the workflow file and select **Commit changes...**
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-step-added.jpg)
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-commit-changes.jpg)
 
 6. Provide a **Commit message** and a optional description.
 
 7. Select **Commit changes** and the workflow file will be updated with the webhook step.
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-commit-changes-2.jpg)
 
 The new images which will be build after adding the webhook will be available to Devtron for deployment.
 
