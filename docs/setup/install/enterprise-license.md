@@ -1,7 +1,7 @@
 ---
 hidden: true
 ---
- 
+
 # Install Devtron Enterprise Trial
 
 ## Introduction
@@ -28,33 +28,34 @@ Instead, we suggest you to perform a [fresh installation of Devtron Enterprise](
 
 ## Step 1: Go to the Devtron License Dashboard
 
+{% hint style="info" %}
+### Note
+Personal email accounts such as Gmail, Yahoo are not supported.
+{% endhint %}
+
 1. To install Devtron Enterprise; Go to the [Devtron License Dashboard](https://license.devtron.ai/dashboard/).
 
-2. Log in with your **work email**
+2. Log in with your work email to access the license dashboard
 
 * You can log in using **Google**, **GitHub**, or **Microsoft** SSO providers.
 
- ![Figure 1: Selecting SSO Provider](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-sso.jpg)
+     ![Figure 1: Selecting SSO Provider](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-sso.jpg)
 
 * Alternatively, you can also log in via **Continue with Email**. This will send a **Login Link** to the provided email. To do so, follow the below steps:
 
     * Select **Continue with Email** to log in.
 
-    ![Figure 2: Selecting 'Continue with Email'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-email.jpg)
+     ![Figure 2: Selecting 'Continue with Email'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-email.jpg)
 
     * Enter your work email to receive the Login Link and select **Send Login Link**
 
-    ![Figure 3: Entering Email](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-enter-email.jpg)
+     ![Figure 3: Entering Email](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-enter-email.jpg)
 
     * A login link will be sent to the email provided by you. If you do not revive the link, you can resend it after 30 seconds.
 
-    ![Figure 4: Sending Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-resend-email.jpg)
+     ![Figure 4: Sending Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-resend-email.jpg)
 
     * Go to your provided email inbox and use the login link to log into the **Devtron License Dashboard**.
-
-{% hint style="info" %}
-**Note:** Personal email accounts such as Gmail, Yahoo are not supported.
-{% endhint %}
 
 3. Once logged in, **Devtron License Dashboard** will open.
 
@@ -62,7 +63,7 @@ Instead, we suggest you to perform a [fresh installation of Devtron Enterprise](
 
 5. After entering the details, click **Next** to proceed to [Step 2: Install Devtron](install-devtron-enterprise-trial.md#step-2-install-devtron).
 
-![Figure 5: Entering the Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-step-1.jpg)
+ ![Figure 5: Entering the Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-step-1.jpg)
 
 ---
 
@@ -76,7 +77,7 @@ Choose your preferred K8s distribution and follow the displayed commands to inst
 
 ![Figure 6: Installing Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-step-2.jpg)
 
-In case, you want to install Devtron dashboard only, use the commands given in **Devtron without integrations (only dashboard)** tab in [Choose an Installation Option](#id-2.-choose-an-installation-option) section.
+In case, you want to install Devtron dashboard only, use the commands given in **Devtron without integrations (only dashboard)** tab in [Choose an Installation Option](#id-2.2-choose-an-installation-option) section.
 
 {% hint style="info" %}
 ### Install Devtron in Air-Gapped Environments
