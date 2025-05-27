@@ -15,10 +15,14 @@ Refer the [User permissions](../../global-configurations/authorization/user-acce
 A CI Workflow can be created in one of the following ways:
 
 * [Build and Deploy from Source Code](#id-1.-build-and-deploy-from-source-code)
+
 * [Linked Build Pipeline](#id-2.-linked-build-pipeline)
+
 * [Deploy Image from External Service](#id-3.-deploy-image-from-external-service)
-* [Sync with Environment](#4-sync-with-environment) <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a>
-* [Create a Job](#5-create-a-job)
+
+* [Sync with Environment](#id-4.-sync-with-environment) <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a>
+
+* [Create a Job](#id-5.-create-a-job)
 
 Each method has different use-cases that can be tailored according the needs of the organization.
 
