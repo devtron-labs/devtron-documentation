@@ -1,279 +1,287 @@
-# Manage Notifications
+# CI/CD Notifications
 
 ## Introduction
 
-Monitoring updates of your CI/CD pipelines, such as their triggers, successes, and failures, can be tricky without a notification system in place.
+Monitoring updates of your CI/CD pipelines, such as their triggers, successes, and failures, can be challenging without a proper notification system in place.
 
-The **Notifications** feature in Devtron helps you solve this by sending updates about your pipelines through tools like Email, Slack, Discord, Microsoft Teams, and many more, thus ensuring you stay in the loop.
-
-![Figure 1: Notifications Page in Global Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/notification-screen.gif)
-
-{% hint style="info" %}
-### Prerequisite
-OSS users should install the **Notifications** integration available in [Devtron Stack Manager](../stack-manager.md).
-{% endhint %}
-
-Go to **Global Configurations** → **Notifications** to access this feature in Devtron. As shown below, there are 2 tabs available for you to manage your notification settings:
-* [Configurations](#configurations)
-* [Notifications](#notifications)
+The **Notifications** module (available for both the OSS and Enterprise users) in Devtron helps you solve this problem by sending you timely updates about your CI/CD pipelines through various tools such as Email, Slack, Discord, and much more - ensuring you stay informed at all times.
 
 ---
 
-## Configurations
+## Prerequisites
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
-Only superadmins can manage configurations.
-{% endhint %}
+To access the **Notifications** page, you need:
 
-This section allows you to perform the configurations required for your notifications to work. Make sure you finish this step before [creating a notification](#create-notifications).
+* The **Notifications** module integration installed in your system. 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/configurations-tab.jpg)
+    * If you are an Enterprise user, you can skip this step. The **Notifications** module is integrated by default when you install the Devtron application. 
+    
+    * If you are an OSS user, you must install the **Notifications** module from the Devtron Stack Manager. It will take an average of 5-6 minutes to complete the installation.
 
-Here you can add and manage the following configurations:
-* [SES Configuration](#ses-configuration)
-* [SMTP Configuration](#smtp-configuration)
-* [Slack Configuration](#slack-configuration)
-* [Webhook Configuration](#webhook-configuration)
+* Super Admin permission
 
-{% hint style="info" %}
-### Tip
-At any point in time, you have the option to edit or delete an existing configuration or add more as per your requirements.
-{% endhint %}
+    * Only a [Super Admin](./user-access.md) can create and manage configurations on the **Notifications** page. To know more, refer to [User Permissions](./user-access.md).
 
-### SES Configuration
+* AWS access key and secret key (for AWS users configuring email via SES). 
 
-{% hint style="info" %}
-### Prerequisites
-* [Generate SMTP Credentials from AWS SES](https://docs.aws.amazon.com/ses/latest/dg/smtp-credentials.html) - To get the user access key and secret key.
-* [Verify Email Identities in AWS SES](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#verify-email-addresses-procedure) - This is to verify the sender's email address (e.g., *michael@devtron.ai*) you wish to use for sending email notifications.
-{% endhint %}
+    * To know more, visit [Types of Amazon SES Credentials](https://docs.aws.amazon.com/ses/latest/dg/send-email-concepts-credentials.html). 
+    
+    * To verify the sender's email address you wish to use for sending email notifications, visit [Verify Email Identities in AWS SES](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#verify-email-addresses-procedure).
 
-You can use Amazon Simple Email Service (SES) to send email notifications to the recipients.
+    {% hint style="warning" %}
+    
+    ### Important Note
 
-1. Click **Add**.
+    When obtaining access key and secret access key from AWS SES, make sure to generate them from the **Security credentials** page (**Profile** → **Security credentials** → **Access keys** → **Create access key**) and not from the **SMTP settings** page in AWS. 
 
-2. Enter the following details in the **Configure SES** window:
+    {% endhint %}
+
+* SMTP credentials from your SMTP provider. 
+
+    * If you are using AWS SMTP, make sure to [Verify Domain Identities](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#verify-domain-procedure) (e.g., *devtron.ai*) of the sender email address you wish to use for sending email notifications.
+
+* A Slack account, a Slack channel, and an [Incoming Webhook URL](https://slack.com/intl/en-gb/help/articles/115005265063-Incoming-webhooks-for-Slack) for your Slack channel (if you prefer to configure notifications to be sent via Slack).
+
+* A Webhook URL to receive notifications (e.g., Microsoft Teams Webhook URL, Discord Webhook URL).
+---
+
+## Configure Notifications
+
+The **Notifications** page allows you to configure and manage notifications for your CI/CD pipeline(s). To access the **Notifications** page, navigate to **Global Configurations** → **Notifications**.
+
+![Figure 1: Notifications Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/notifications-screen-configurations.jpg)
+
+The **Notifications** page has the following two tabs:
+
+* **Configurations** - allows you to configure external tools (such as Slack, Email, etc.,) through which notifications will be delivered.
+
+* **Notifications** - allows you to define the recipients and the conditions (e.g., CI/CD success, failure, trigger) under which the notifications must be sent out.
+
+Ensure that you finish configuring the notifications first in the **Configurations** tab, before proceeding to [Add Notifications](#add-notifications) in the **Notifications** tab. 
+
+There are two ways with which you can configure notifications in Devtron - **Email** and **Webhook**. Just for better usability and ease of access, the most popular and widely-used configurations, **Email (SES)** - for AWS users and **Slack** - for Slack users are prominently displayed alongside **Email (SMTP)** and **Webhook** in the **Configurations** tab. 
+
+### For Email
+
+#### Email (SES)
+
+If you prefer to configure the notifications to be sent via Amazon Simple Email Service (SES), either watch the [AWS SES Email Notification Walkthrough](#email-notification) tutorial or follow the below instructions:
+
+1. Navigate to the **Global Configurations** → **Notifications** → **Configurations** → **Email (SES)** → **Add SES**.
+
+    ![Figure 2: Configure SES](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/configure-ses.jpg)
+
+2. Enter the following details in the **Configure SES** page:
 
     | Key | Description |
     | --- | ----------- |
     | **Configuration Name** | Give a name to your SES Configuration, e.g., `Email SES 2024` |
-    | **Access Key ID** | Valid user ID from your AWS SMTP Settings page, e.g., `AKIAWEAVHF123ABCD123` |
-    | **Secret Access Key** | Password from your AWS SMTP Settings page |
+    | **Access Key ID** | Valid access key from your **AWS Security credentials** page, e.g., `AKIAWEAVHF123ABCD123` |
+    | **Secret Access Key** | Secret access key from your **AWS Security credentials** page |
     | **AWS Region** | The AWS Region you used while setting up SES |
     | **Send email from** | The sender email address verified by SES for sending emails |
 
-  ![Figure 2: Sample SES Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/ses-data.jpg)
+3. Enable the **Set as default configuration to send emails** check box (optional) if you wish to keep this configuration as the default one for sending emails.
 
-3. (Optional) If you wish to keep your configuration as the default one for sending emails, tick the **Set as default configuration to send emails** checkbox.
+4. Click **Save**.
 
-4. Click **Save**. You may watch the [Email Notification Walkthrough](#email-notification) for better understanding.
+Now that the Email (SES) configuration is set up, you can proceed to [Add Notifications](#add-notifications). 
 
-{% hint style="success" %}
-### Next Step
-Refer [Create Notifications](#create-notifications).
-{% endhint %}
+#### Email (SMTP)
 
+If you prefer to configure the notifications to be sent via any other SMTP providers (such as Gmail SMTP, AWS), either watch the [Gmail SMTP Email Notification Walkthrough](#email-notification) tutorial or follow the below instructions:
 
-### SMTP Configuration
+1. Navigate to the **Global Configurations** → **Notifications** → **Configurations** → **Email (SMTP)** → **Add SMTP**.
 
-{% hint style="info" %}
-### Prerequisite
-SMTP Credentials from your SMTP Provider. If you are using AWS SMTP, make sure to [verify domain identities](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#verify-domain-procedure) to verify the domain (e.g., *devtron.ai*) of the sender email address you wish to use for sending email notifications.
-{% endhint %}
+    ![Figure 3: Configure SMTP](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/configure-smtp.jpg)
 
-You can use any SMTP provider (e.g., Gmail SMTP, AWS) to send email notifications to the recipients. 
-
-1. Click **Add**.
-
-2. Enter the following details in the **Configure SMTP** window:
+2. Enter the following details in the **Configure SMTP** page:
 
     | Key | Description |
     | :--- | :--- |
     | **Configuration Name** | Give a name to your SMTP Configuration, e.g., `Email SMTP 2024` |
-    | **SMTP Host** | The SMTP endpoint available in your SMTP settings, e.g., `email-smtp.ap-south-1.amazonaws.com`  |
     | **SMTP Port** | The port number available in your SMTP settings, e.g., `587` |
+    | **SMTP Host address/Server** | The SMTP endpoint available in your SMTP settings, e.g., `email-smtp.ap-south-1.amazonaws.com`  |
     | **SMTP Username** | A valid username created with your SMTP provider, e.g., `AKIAWEAVHF123ABCD123` |
     | **SMTP Password** | The password generated by your SMTP provider |
     | **Send email from** | The sender email address verified by your SMTP provider for sending emails |
 
-  ![Figure 3: Sample SMTP Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/smtp-data.jpg)
-  
-3. (Optional) If you wish to keep your configuration as the default one for sending emails, tick the **Set as default configuration to send emails** checkbox.
+3. Enable the **Set as default configuration to send emails** check box (optional) if you wish to keep this configuration as the default one for sending emails.
 
-4. Click **Save**. You may watch the [Email Notification Walkthrough](#email-notification) for better understanding.
+4. Click **Save**.
 
-{% hint style="success" %}
-### Next Step
-Refer [Create Notifications](#create-notifications).
-{% endhint %}
+Now that the Email (SMTP) configuration is set up, you can proceed to [Add Notifications](#add-notifications).
 
-### Slack Configuration
+### For Webhook
 
-{% hint style="info" %}
-### Prerequisites
-* A Slack account
-* A Slack channel
-* An [Incoming Webhook URL](https://slack.com/intl/en-gb/help/articles/115005265063-Incoming-webhooks-for-Slack) for your Slack Channel
-{% endhint %}
+#### Slack 
 
-This configuration helps you receive notifications on your preferred Slack channel.
+If you prefer to receive the notifications via Slack, either watch the [Slack Notification Walkthrough](#slack-notification) tutorial or follow the below instructions:
 
-1. Click **Add**.
+1. Navigate to the **Global Configurations** → **Notifications** → **Configurations** → **Slack** → **Add Slack**.
 
-2. Enter the following details in the **Configure Slack** window:
+    ![Figure 4: Configure Slack](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/configure-slack.jpg)
+
+2. Enter the following details in the **Configure Slack** page:
 
     | Key | Description |
     | :--- | :--- |
     | **Slack Channel** | Name of the Slack channel on which you wish to receive notifications |
-    | **Webhook URL** | Enter a valid incoming webhook URL (see [prerequisites](#prerequisites-1)) |
+    | **Webhook URL** | Enter a valid incoming webhook URL |
     | **Project** | Select the project name to control user access. Apps outside your selected project cannot use this configuration.|
 
-  ![Figure 4: Sample Slack Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/slack-data.jpg)
+3. Click **Save**. 
 
-3. Click **Save**. You may watch the [Slack Notification Walkthrough](#slack-notification) for better understanding.
+Now that the Slack configuration is set up, you can proceed to [Add Notifications](#add-notifications).
 
-{% hint style="success" %}
-### Next Step
-Refer [Create Notifications](#create-notifications).
-{% endhint %}
+#### Webhook
 
-### Webhook Configuration
+If you prefer to receive the notifications via other applications (Microsoft Teams, Discord, etc.,), follow the below instructions:
 
-{% hint style="info" %}
-### Prerequisites
-A Webhook URL for receiving notifications (e.g., Microsoft Teams Webhook URL, Discord Webhook URL, etc.)
-{% endhint %}
+1. Navigate to the **Global Configurations** → **Notifications** → **Configurations** → **Slack** → **Add Webhook**.
 
-1. Click **Add**.
+    ![Figure 5: Configure Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/configure-webhook.jpg)
 
-2. Enter the following details in the **Configure Webhook** window:
+2. Enter the following details in the **Configure Webhook** page:
 
     | Key | Description |
     | :--- | :--- |
     | **Configuration name** | Give a name to your webhook configuration |
     | **Webhook URL** | Enter a valid Webhook URL link |
     | **Headers** | Add optional key-value pairs, e.g. `Content-Type: application/json` |
-    | **Data** | Write the payload content of the notification in a JSON format. <br /> Refer: <ul><li>[Microsoft Teams Payload](#for-microsoft-teams)</li><li>[Discord Payload](#for-discord)</li><li>[Slack Payload](#for-slack)</li><li>[RingCentral Payload](#for-ringcentral)</li></ul> |
+    | **Data to be shared through webhook** | Write the payload content of the notification in a JSON format. <br /> Refer: <ul><li>[Microsoft Teams Payload](#for-microsoft-teams)</li><li>[Discord Payload](#for-discord)</li><li>[Slack Payload](#for-slack)</li><li>[RingCentral Payload](#for-ringcentral)</li></ul> |
 
-  ![Figure 5: Sample Webhook Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/webhook-data.jpg)
+3. Click **Save**. 
 
-3. Here are some sample payloads for your reference:
+If you prefer to receive the notifications via Discord, please watch [Discord Notification Walkthrough](#discord-notification) for better understanding.
 
-4. Click **Save**. You may watch the [Discord Notification Walkthrough](#discord-notification) for better understanding.
-
-{% hint style="success" %}
-### Next Step
-Refer [Create Notifications](#create-notifications).
-{% endhint %}
+Now that the Webhook configuration is set up, you can proceed to [Add Notifications](#add-notifications).
 
 ---
 
-## Notifications
+## Manage Notifications
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
-Only superadmins can manage notifications.
-{% endhint %}
+### Add Notifications
 
-### Create Notifications
+Once you have configured the notifications in the **Configuration** tab, you can then add, edit, and delete notifications in the **Notifications** tab. To create a new notification, follow the below instructions:
 
-After completing the [configurations](#configurations), you can start creating notifications.
+1. Navigate back to the **Notifications** tab.
 
-1. Go to the **Notifications** tab and click **Add Notification**.
+    ![Figure 6: Notifications Tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/notifications-tab.jpg)
 
-  ![Figure 6: Adding Notifications](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/add-notification-v2.jpg)
+2. Click the **Add Notification** button. The **Add Notifications** page is displayed.
 
-2. Click the **Send to** dropdown and select the recipient. It can be any of the following:
-    * A verified email address (by SES/SMTP) 
-    * A Slack channel
-    * A Webhook 
+    ![Figure 7: Add Notifications Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/add-notifications-page.jpg)
 
-  ![Figure 7: Choosing Recipients](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/send-to.gif)
+3. Enter your preferred recipient in the **Send to** drop-down box. You can add one or more recipients in the **Send to** drop-down box and the recipients can be any or all of the following:
 
-{% hint style="info" %}
-### Note
-You can add more than one recipient as per your requirement.
-{% endhint %}
+    a. A verified email address (by SES/SMTP)
 
-3. Click the **Select pipelines** dropdown and choose a filter. It can be any of the following:
-    * Application
-    * Project
-    * Environment
-    * Cluster
+    b. A Slack channel
 
-  ![Figure 8: Selecting Pipelines with Filters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/filter-pipeline.gif)
+    c. A Webhook
 
-{% hint style="info" %}
-### Note
-You will see a list of CI/CD pipelines corresponding to your selected filter type.
-* <span><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/ci1.jpg" alt="CI Icon"></span> indicates that it is a CI (Build) pipeline.
-* <span><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/cd1.jpg" alt="CD Icon"></span> indicates that it is a CD (Deployment) pipeline.
-* You can also choose to receive notifications for any CI or CD pipelines that do not exist currently but may exist in future.
-{% endhint %}
-  
-4. For each pipeline, there are individual checkboxes for 3 types of events:
-    * **Trigger** - Use this if you wish to receive notification whenever the pipeline is triggered.
-    * **Success** - Use this if you wish to receive notification upon a successful build or deploy.
-    * **Failure** - Use this if you wish to receive notification upon a failed build or deploy.
+4. Select your preferred filter type from the following in the **Select pipelines** field:
 
-  Click the checkbox relevant to you to receive notifications. You can choose more than one as per your requirements.
+    a. **Application** - select **Application**, if you specifically know for which application(s) you need notifications for.
 
-  ![Figure 9: Selecting Events](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/choose-events.gif)
+    b. **Project** - select **Project**, if you want notifications for one or more applications within specific project(s). 
 
-5. Click **Save**.
+    c. **Environment** - select **Environment**, if you want notifications for applications deployed in specific environment(s) (e.g., production).
 
-{% hint style="success" %}
-### Next Step
-Build and Deploy your application to get notifications of its CI/CD events.
-{% endhint %}
+    d. **Cluster** - select **Cluster**, if you want notifications for applications in a select cluster(s).
 
-### Edit Notifications
+    Once you have selected your preferred filter type, a list of CI/CD pipelines are displayed as filter results. 
 
-You can use the checkbox beside the notifications to edit them. You may delete the notification, modify its event, or change its recipients. Moreover, you can do it one by one or in bulk. 
+    * <span><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/ci1.jpg" alt="CI Icon"></span> indicates that it is a CI (Build) pipeline.
 
-#### Delete Notification
+    * <span><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/cd1.jpg" alt="CD Icon"></span> indicates that it is a CD (Deployment) pipeline.
 
-Use this to delete unwanted notifications.
+    * You can also choose to receive notifications for any CI or CD pipelines that do not exist currently but may exist in future by enabling the **All current and future pipelines matching** pipeline in the **Pipeline Name** column. 
 
-![Figure 10: Deleting Existing Notifications](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/bulk-delete.gif)
+5. Select your preferred events for which a notification must be sent out in the **Events** column. The labels are displayed when you hover over the check boxes. You can enable one or more events as per your requirements.
 
-#### Modify Event
+    a. **Trigger** - Enable this if you wish to receive notification whenever the pipeline is triggered.
 
-Use this to change the events (trigger/success/failure) for which the notification is sent.
+    b. **Success** - Enable this if you wish to receive notification upon a successful build or deploy.
 
-![Figure 11: Changing Event for Notifications](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/modify-event.gif)
+    c. **Failure** - Enable this if you wish to receive notification upon a failed build or deploy.
 
-#### Modify Recipients
+6. Click **Save**. The notification is now successfully added. You can now build and deploy your application to get notifications of its CI/CD events.
 
-Use this to remove or add recipients/channels to the existing notification(s).
+### Modify Notifications
 
-![Figure 12: Changing Recipients of Notifications](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/modify-recipients.gif)
+To modify the events, follow the below steps:
+
+1. Navigate to the **Notifications** tab. 
+
+2. Select your preferred notification. 
+
+3. Check the check box in the left side of the notification to select it. 
+
+4. Click **Modify Events** to modify the events. Check or uncheck the events based on your requirements.
+
+5. Click **Apply**.
+
+![Figure 8: Modify Events](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/modify-event.gif)
+
+To modify the recipients, follow the below steps:
+
+1. Navigate to the **Notifications** tab. 
+
+2. Select your preferred notification. 
+
+3. Check the check box in the left side of the notification to select it. 
+
+4. Click **Modify Recipients** to modify the recipients. Add or remove the recipients based on your requirements.
+
+5. Click **Save Changes**.
+
+![Figure 9: Modify Recipients](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/modify-receipient.gif)
+
+### Delete Notifications
+
+To delete a notification, follow the below steps:
+
+1. Navigate to the **Notifications** tab. 
+
+2. Select your preferred notification. 
+
+3. Check the check box in the left side of the notification to select it. 
+
+4. Click **Delete** to delete the notification.
+
+![Figure 10: Delete Notifications](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/delete-notification.gif)
 
 ---
 
-## Tutorials
+## Extras
 
-### Email Notification
+### Tutorials
 
-{% embed url="https://www.youtube.com/watch?v=rzP3KfTY3XU" caption="Enabling Email Notifications for Devtron CI/CD" %}
+#### Email Notification Walkthrough
 
-### Slack Notification
+**AWS SES**
+
+{% embed url="https://www.youtube.com/watch?v=WRP1CBHW6Ic" caption="Enabling Email Notifications for Devtron CI/CD" %}
+
+**Gmail SMTP**
+
+{% embed url="https://www.youtube.com/watch?v=CkPG7wC59hY" caption="Enabling Email Notifications for Devtron CI/CD" %}
+
+#### Slack Notification Walkthrough
 
 {% embed url="https://www.youtube.com/watch?v=ve1eGqslBqc" caption="Enabling Slack Notifications for Devtron CI/CD" %}
 
-### Discord Notification
+#### Discord Notification Walkthrough
 
 {% embed url="https://www.youtube.com/watch?v=8RQ2dezrVvY" caption="Enabling Notifications for Devtron CI/CD using Webhook" %}
 
-
----
-
-## Sample Payloads
+### Sample Payloads
 
 Here are some sample payloads for [webhook configurations](#webhook-configuration).
 
-### For Microsoft Teams
+#### For Microsoft Teams
 
 {% code title="Teams Webhook Payload" overflow="wrap" lineNumbers="true" %}
 ```json
@@ -300,7 +308,7 @@ Here are some sample payloads for [webhook configurations](#webhook-configuratio
 ```
 {% endcode %}
 
-### For Slack
+#### For Slack
 
 {% code title="Slack Webhook Payload" overflow="wrap" lineNumbers="true" %}
 ```json
@@ -324,7 +332,7 @@ Here are some sample payloads for [webhook configurations](#webhook-configuratio
 ```
 {% endcode %}
 
-### For Discord
+#### For Discord
 
 {% code title="Discord Webhook Payload" overflow="wrap" lineNumbers="true" %}
 ```json
@@ -334,7 +342,7 @@ Here are some sample payloads for [webhook configurations](#webhook-configuratio
 ```
 {% endcode %}
 
-### For RingCentral
+#### For RingCentral 
 
 {% code title="RingCentral Webhook Payload" overflow="wrap" lineNumbers="true" %}
 ```json
@@ -395,9 +403,3 @@ Here are some sample payloads for [webhook configurations](#webhook-configuratio
 }
 ```
 {% endcode %}
-
-
-
-
-
-
