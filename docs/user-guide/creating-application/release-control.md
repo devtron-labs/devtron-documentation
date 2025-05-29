@@ -22,17 +22,31 @@ To deploy an image using Canary deployment strategy, follow the below steps
 
 1. Navigate to **Configurations** → **Workflow Editor** and choose your workflow.
 
+     ![]()
+
 2. Select the deployment pipeline, a **Edit deployment pipeline** window will open.
+
+     ![]()
 
 3. Select **Add Strategy** and select the strategies you want to add; Strategies will be added as the **Deployment Strategy** in your deployment pipeline.
 
- * In case you have multiple deployment strategies, you can choose a default deployment strategy 
+ * In case you have multiple deployment strategies, you can choose a default deployment strategy.
+
+     ![]()
  
  * You can also choose the deployment strategy in **Build & Deploy** section while triggering the deployment.
 
+     ![]()
+
 4. Configure the deployment strategy by selecting the **Settings** icon next to it to edit the strategy template according to your use case.
 
+     ![]()
+
+     ![]()
+
 5. Select **Update Pipeline** to save the configurations.
+
+     ![]()
 
 ### Canary Deployments
 
@@ -42,7 +56,7 @@ After triggering the deployment, navigate to **App details**, to get a quick ove
 
 You can select the **Manage Traffic** button to view the rollout status and steps involved in the release. If you wish you can also trigger the specific release steps or you can trigger the full rollout at once.
 
-<!-- Image -->
+     ![]()
 
 #### Rollback the deployment.
 
@@ -74,12 +88,3 @@ To do so follow the below steps:
 In case `autoPromotionEnabled` is set to `false`, the after the deployment succeeded, you will see a **Swap Traffic** button under awaiting traffic swap.
 
 3. Enter the name and select **Swap Traffic**; this will route the end user traffic to the application’s new deployment on a particular environment during the deployment.
-
-
-
-
-
-
-
-
-
