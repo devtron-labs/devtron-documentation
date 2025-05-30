@@ -1,6 +1,6 @@
 # Deployment Strategies Release and Traffic Control
 
-Devtron helps you to manage your **Canary** and **Blue-Green** deployments by providing visibility and direct controls for managing rollout of your releases.
+Devtron helps you to manage your **Canary** and **Blue-Green** deployments by providing visibility and easy controls to manage how new versions (releases) are shared with users.
 
 Devtron allows you to:
 
@@ -16,9 +16,9 @@ Devtron allows you to:
 
 * Easily rollback deployments (if needed).
 
-### Configure the Application
+## Configure the Application
 
-To deploy an image using Canary deployment strategy, follow the below steps
+Before deploying the application Canary or Blue-Green deployment strategies, you must configure the application for these deployment strategies. To do so, follow the below steps:
 
 1. Navigate to **Configurations** → **Workflow Editor** and choose your workflow.
 
@@ -28,9 +28,9 @@ To deploy an image using Canary deployment strategy, follow the below steps
 
      ![]()
 
-3. Select **Add Strategy** and select the strategies you want to add; Strategies will be added as the **Deployment Strategy** in your deployment pipeline.
+3. Select **Add Strategy** and select the strategies you want to add; strategies will be added as the **Deployment Strategy** in your deployment pipeline.
 
- * In case you have multiple deployment strategies, you can choose a default deployment strategy.
+ * In case, you have multiple deployment strategies, you can choose a default deployment strategy.
 
      ![]()
  
@@ -48,17 +48,19 @@ To deploy an image using Canary deployment strategy, follow the below steps
 
      ![]()
 
-### Canary Deployments
+## Canary Deployments
 
-#### Manage traffic
+### Manage traffic
 
-After triggering the deployment, navigate to **App details**, to get a quick overview of your release rollout status.
+After triggering the deployment, navigate to **App Details**, to get a quick overview of your release rollout status.
 
-You can select the **Manage Traffic** button to view the rollout status and steps involved in the release. If you wish you can also trigger the specific release steps or you can trigger the full rollout at once.
+You can select the **Manage Traffic** button to view the rollout status and steps involved in the release. 
+
+If you wish you can also trigger the specific release steps (for example 25%, 50%, 75%) or you can also trigger the full rollout at once.
 
      ![]()
 
-#### Rollback the deployment.
+### Rollback the deployment.
 
 In case you have identified some bugs or performance of the release is not as expected then you can also rollback to the previous release.
 
@@ -66,25 +68,25 @@ To rollback follow the below steps:
 
 1. Navigate to **App details** of your Devtron Application.
 
-2. Select **Rollback** in the under **Canary Strategy**, a new window will appear.
+2. Select **Rollback** under **Canary Strategy**, a new window will appear.
 
 3. Select the image to which you want your release to be rolled back.
 
 4. Select **Deploy** to rollback the release.
 
 
-### Blue Green deployments
+## Blue Green deployments
 
-#### Skip & promote full
+### Skip & promote full
 
 Devtron allows you to directly route the end user traffic to the application’s new deployment on a particular environment during the deployment.
 
-To do so follow the below steps:
+To do so, follow the below steps:
 
 1. Navigate to **App Details** of your application.
 
-2. While deploying, under Blue-Green Strategy, you will see a **Skip & promote full** button, clicking on it, A dialog box will appear asking you to enter the environment name to confirm the action.
+2. During Blue-Green deployment, click the **Skip & promote full** button to shift the traffic to application's new deployment.
 
-In case `autoPromotionEnabled` is set to `false`, the after the deployment succeeded, you will see a **Swap Traffic** button under awaiting traffic swap.
+     In case `autoPromotionEnabled` is set to `false`, then after the deployment succeeded, you will see a **Swap Traffic** button instead of **Skip & promote full**. 
 
 3. Enter the name and select **Swap Traffic**; this will route the end user traffic to the application’s new deployment on a particular environment during the deployment.
