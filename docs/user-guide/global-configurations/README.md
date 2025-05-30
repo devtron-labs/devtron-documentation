@@ -26,11 +26,15 @@ Before you start creating an application, we recommend to provide basic informat
 
 [Deployment Window](deployment-window.md)
 
+[Approval Policy](approval-policy.md)
+
 [External Links](external-links.md)
 
 [Catalog Framework](catalog-framework.md)
 
 [Scoped Variables](scoped-variables.md)
+
+[Plugin Policy](plugin-policy.md)
 
 [Pull Image Digest](pull-image-digest.md)
 
@@ -44,8 +48,8 @@ Before you start creating an application, we recommend to provide basic informat
 
 [Build Infra](build-infra.md)
 
-You can also refer our YouTube video provided here.
+<!-- You can also refer our YouTube video provided here.
 
-{% embed url="https://www.youtube.com/watch?v=4VFjrjtieMI" caption="" %}
+{% embed url="https://www.youtube.com/watch?v=4VFjrjtieMI" caption="" %} -->
 
 

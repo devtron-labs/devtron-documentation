@@ -8,7 +8,7 @@ You can add more chart repositories to Devtron. Once added, they will be availab
 
 To add chart repository, go to the `Chart Repositories` section of `Global Configurations`. Click **Add repository**.
 
-**Note**: Only public chart repositories can be connected as of now via Devtron.
+<!-- **Note**: Only public chart repositories can be connected as of now via Devtron. -->
 
 Provide below information in the following fields:
 
@@ -32,5 +32,5 @@ You can also update your saved chart repository settings.
 
 **Note**: 
 * You can perform a dry run to validate the below chart repo configurations by clicking `Validate`.
-* You can enable or disable your chart repository. If you enable it, then you will be able to see the enabled chart in `All Charts` section of the [Chart Store](../deploy-chart/overview-of-charts.md).
+<!-- * You can enable or disable your chart repository. If you enable it, then you will be able to see the enabled chart in `All Charts` section of the [Chart Store](../deploy-chart/overview-of-charts.md). -->
 

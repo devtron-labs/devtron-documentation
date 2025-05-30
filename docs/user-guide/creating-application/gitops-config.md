@@ -16,7 +16,7 @@ The application-level GitOps configuration offers the flexibility to add a custo
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin permission](../../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and application) to configure user-defined Git repo.
+Users need to have [Admin permission](../global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and application) to configure user-defined Git repo.
 {% endhint %}
 
 ### For Devtron Apps

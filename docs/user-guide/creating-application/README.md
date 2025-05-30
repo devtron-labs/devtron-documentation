@@ -22,7 +22,7 @@
 
 [External Links](external-links.md)
 
-[Protect Configuration](config-approval.md)
+<!-- [Protect Configuration](config-approval.md) -->
 
 [Environment Overrides](environment-overrides.md)
 

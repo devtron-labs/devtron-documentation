@@ -4,15 +4,18 @@
 
 In certain scenarios, you may need to deploy Devtron to a Kubernetes cluster that isn’t connected to the internet. Such air-gapped environments are used for various reasons, particularly in industries with strict regulatory requirements like healthcare, banking, and finance. This is because air-gapped environments aren't exposed to the public internet; therefore, they create a controlled and secure space for handling sensitive data and operations.
 
+{% hint style="success" %}
+Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
+{% endhint %}
+
 ### Prerequisites
 
 1. Install `podman` or `docker` on the VM from where you're executing the installation commands.
-2. Clone the Devtron Helm chart:
+2. Get the latest image file
 
-    ```bash
-    git clone https://github.com/devtron-labs/devtron.git
-    cd devtron
-    ```
+```bash
+curl -LO https://raw.githubusercontent.com/devtron-labs/devtron/refs/heads/main/devtron-images.txt.source
+```
 
 3. Set the values of `TARGET_REGISTRY`, `TARGET_REGISTRY_USERNAME`, and `TARGET_REGISTRY_TOKEN`. This registry should be accessible from the VM where you are running the cloning script and the K8s cluster where you’re installing Devtron.
 
@@ -29,14 +32,15 @@ If you are using Docker, the TARGET_REGISTRY should be in the format `docker.io/
 
 #### For Linux/amd64
 
-    ```bash
-    export PLATFORM="linux/amd64"
-    ```
+```bash
+export PLATFORM="linux/amd64"
+```
+    
 #### For Linux/arm64
 
-    ```bash
-    export PLATFORM="linux/arm64"
-    ```
+```bash
+export PLATFORM="linux/arm64"
+```
 
 
 
@@ -173,7 +177,7 @@ Before starting, ensure you have created an image pull secret for your registry 
       --docker-username=$TARGET_REGISTRY_USERNAME \
       --docker-password=$TARGET_REGISTRY_TOKEN
     ```
-    If you are installing Devtron with the CI/CD module or using Argo CD, create the secret in the following namespaces else, you can skip this step-:  
+    If you are installing Devtron with the CI/CD module or using Argo CD, create the secret in the following namespaces else, you can skip this step-:
     ```bash
     kubectl create secret docker-registry devtron-imagepull \
       --namespace devtron-cd \
@@ -192,11 +196,12 @@ Before starting, ensure you have created an image pull secret for your registry 
       --docker-password=$TARGET_REGISTRY_TOKEN
     ```
 
-3. Navigate to the Devtron Helm chart directory
-    ```bash
-    cd charts/devtron
-    ```
+### Get the latest Devtron Helm Chart
 
+``` bash
+helm pull devtron-operator --repo http://helm.devtron.ai
+```
+This would download the tar file of the devtron-operator chart, Make sure to replace the `<devtron-chart-file>` in the installation commands with this file name.
 
 ### Install Devtron without any Integration
 
@@ -204,12 +209,12 @@ Use the below command to install Devtron without any Integrations
 
 1. Without `imagePullSecrets`:
     ```bash
-    helm install devtron . -n devtroncd --set global.containerRegistry="$TARGET_REGISTRY"
+    helm install devtron <devtron-chart-file> -n devtroncd --set global.containerRegistry="$TARGET_REGISTRY" --set-string components.devtron.customOverrides.IS_AIR_GAP_ENVIRONMENT=true
     ```
 
 2. With `imagePullSecrets`:
     ```bash
-    helm install devtron . -n devtroncd --set global.containerRegistry="$TARGET_REGISTRY" --set global.imagePullSecrets[0].name=devtron-imagepull
+    helm install devtron <devtron-chart-file> -n devtroncd --set global.containerRegistry="$TARGET_REGISTRY" --set global.imagePullSecrets[0].name=devtron-imagepull --set-string components.devtron.customOverrides.IS_AIR_GAP_ENVIRONMENT=true
     ```
 
 ### Installing Devtron with CI/CD Mode
@@ -217,12 +222,12 @@ Use the below command to install Devtron with only the CI/CD module
 
 1. Without `imagePullSecrets`:
     ```bash
-    helm install devtron . -n devtroncd --set installer.modules={cicd} --set global.containerRegistry="$TARGET_REGISTRY"
+    helm install devtron <devtron-chart-file> -n devtroncd --set installer.modules={cicd} --set global.containerRegistry="$TARGET_REGISTRY" --set-string components.devtron.customOverrides.IS_AIR_GAP_ENVIRONMENT=true
     ```
 
 2. With `imagePullSecrets`:
     ```bash
-    helm install devtron . -n devtroncd --set installer.modules={cicd} --set global.containerRegistry="$TARGET_REGISTRY" --set global.imagePullSecrets[0].name=devtron-imagepull
+    helm install devtron <devtron-chart-file> -n devtroncd --set installer.modules={cicd} --set global.containerRegistry="$TARGET_REGISTRY" --set global.imagePullSecrets[0].name=devtron-imagepull --set-string components.devtron.customOverrides.IS_AIR_GAP_ENVIRONMENT=true
     ```
 
 ### Install Devtron with CICD Mode including Argocd
@@ -231,12 +236,12 @@ Use the below command to install Devtron with the CI/CD module and Argo CD
 
 1. Without `imagePullSecrets`:
     ```bash
-    helm install devtron . --create-namespace -n devtroncd --set installer.modules={cicd} --set argo-cd.enabled=true --set global.containerRegistry="$TARGET_REGISTRY" --set argo-cd.global.image.repository="${TARGET_REGISTRY}/argocd" --set argo-cd.redis.image.repository="${TARGET_REGISTRY}/redis"
+    helm install devtron <devtron-chart-file> --create-namespace -n devtroncd --set installer.modules={cicd} --set argo-cd.enabled=true --set global.containerRegistry="$TARGET_REGISTRY" --set argo-cd.global.image.repository="${TARGET_REGISTRY}/argocd" --set argo-cd.redis.image.repository="${TARGET_REGISTRY}/redis" --set-string components.devtron.customOverrides.IS_AIR_GAP_ENVIRONMENT=true
     ```
 
 2. With `imagePullSecrets`:
     ```bash
-    helm install devtron . --create-namespace -n devtroncd --set installer.modules={cicd} --set argo-cd.enabled=true --set global.containerRegistry="$TARGET_REGISTRY" --set argo-cd.global.image.repository="${TARGET_REGISTRY}/argocd" --set argo-cd.redis.image.repository="${TARGET_REGISTRY}/redis" --set global.imagePullSecrets[0].name=devtron-imagepull
+    helm install devtron <devtron-chart-file> --create-namespace -n devtroncd --set installer.modules={cicd} --set argo-cd.enabled=true --set global.containerRegistry="$TARGET_REGISTRY" --set argo-cd.global.image.repository="${TARGET_REGISTRY}/argocd" --set argo-cd.redis.image.repository="${TARGET_REGISTRY}/redis" --set global.imagePullSecrets[0].name=devtron-imagepull --set-string components.devtron.customOverrides.IS_AIR_GAP_ENVIRONMENT=true
     ```
 
 ---

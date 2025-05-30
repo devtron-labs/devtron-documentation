@@ -4,6 +4,10 @@ In this section, we describe on how you can install Helm Dashboard by Devtron wi
 
 If you want to install Devtron on Minikube, Microk8s, K3s, Kind, refer this [section](./Install-devtron-on-Minikube-Microk8s-K3s-Kind.md).
 
+{% hint style="success" %}
+Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
+{% endhint %}
+
 ## Before you begin
 
 Install [Helm](https://helm.sh/docs/intro/install/) if you have not installed it.
@@ -31,11 +35,9 @@ helm install devtron devtron/devtron-operator \
 ```
 
 
-## Install Multi-Architecture Nodes (ARM and AMD)
+<!-- ## Install Multi-Architecture Nodes (ARM and AMD)
 
 To install Devtron on clusters with the multi-architecture nodes (ARM and AMD), append the Devtron installation command with `--set installer.arch=multi-arch`.
-
-
 
 [//]: # (If you are planning to use Hyperion for `production deployments`, please refer to our recommended overrides for [Devtron Installation]&#40;override-default-devtron-installation-configs.md&#41;.)
 
@@ -49,7 +51,7 @@ To install Devtron on clusters with the multi-architecture nodes (ARM and AMD), 
 
 [//]: # (kubectl -n devtroncd get installers installer-devtron -o jsonpath='{.status.sync.status}')
 
-[//]: # (```)
+[//]: # (```) -->
 
 ## Devtron Dashboard
 

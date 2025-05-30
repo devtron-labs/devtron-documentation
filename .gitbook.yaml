@@ -10,6 +10,9 @@ redirects:
     setup/install/ingress-setup: getting-started/install/ingress-setup
     setup/upgrade: setup/upgrade/README.md
     setup/upgrade/upgrade-devtron-ui: getting-started/upgrade/upgrade-devtron-ui
+    setup/upgrade/devtron-upgrade-0.6.x-0.7.x: getting-started/upgrade/devtron-upgrade-0.6.x-0.7.x
+    setup/upgrade/devtron-upgrade-0.5.x-0.6.x: getting-started/upgrade/devtron-upgrade-0.5.x-0.6.x
+    setup/upgrade/devtron-upgrade-0.4.x-0.5.x: getting-started/upgrade/devtron-upgrade-0.4.x-0.5.x
     setup/upgrade/devtron-upgrade-0.4.x-0.4.x: getting-started/upgrade/devtron-upgrade-0.4.x-0.4.x
     setup/upgrade/devtron-upgrade-0.3.x-0.4.x: getting-started/upgrade/devtron-upgrade-0.3.x-0.4.x
     setup/upgrade/devtron-upgrade-0.3.x-0.3.x: getting-started/upgrade/devtron-upgrade-0.3.x-0.3.x
@@ -39,7 +42,7 @@ redirects:
     setup/global-configurations/authorization/sso/ldap: user-guide/global-configurations/authorization/sso/ldap.md
     setup/global-configurations/authorization/sso/oidc: user-guide/global-configurations/authorization/sso/oidc.md
     setup/global-configurations/authorization/sso/openshift: user-guide/global-configurations/authorization/sso/openshift.md
-    setup/global-configurations/okta: user-guide/global-configurations/okta.md
+    setup/global-configurations/okta: user-guide/global-configurations/authorization/sso/okta.md
     setup/global-configurations/catalog-framework: user-guide/global-configurations/catalog-framework.md
     setup/global-configurations/scoped-variables: user-guide/global-configurations/scoped-variables.md
     setup/global-configurations/pull-image-digest: user-guide/global-configurations/pull-image-digest.md
@@ -54,11 +57,13 @@ redirects:
     user-guide/creating-application/deployment-template: usage/applications/creating-application/deployment-template
     user-guide/creating-application/deployment-template/rollout-deployment: usage/applications/creating-application/deployment-template/rollout-deployment
     user-guide/creating-application/deployment-template/job-and-cronjob: usage/applications/creating-application/deployment-template/job-and-cronjob
-    user-guide/creating-application/workflow: usage/applications/creating-application/workflow
-    user-guide/creating-application/workflow/ci-pipeline: usage/applications/creating-application/ci-pipeline
-    user-guide/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins: usage/applications/creating-application/ci-pipeline/ci-build-pre-post-plugins
+    user-guide/creating-application/workflow: user-guide/creating-application/workflow/README.md
+    user-guide/creating-application/workflow/ci-pipeline: user-guide/creating-application/workflow/ci-pipeline.md
+    user-guide/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/ci-build-pre-post-plugins.md
+    usage/applications/creating-application/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/ci-build-pre-post-plugins.md
+    usage/applications/creating-application/ci-pipeline: user-guide/creating-application/workflow/ci-pipeline.md
+    user-guide/creating-application/workflow/cd-pipeline: user-guide/creating-application/workflow/cd-pipeline.md
     user-guide/creating-application/workflow/ci-pipeline-legacy: usage/applications/creating-application/ci-pipeline-legacy
-    user-guide/creating-application/workflow/cd-pipeline: usage/applications/creating-application/cd-pipeline
     user-guide/creating-application/config-maps: usage/applications/creating-application/config-maps
     user-guide/creating-application/secrets: usage/applications/creating-application/secrets
     user-guide/creating-application/environment-overrides: usage/applications/creating-application/environment-overrides
@@ -99,7 +104,7 @@ redirects:
     getting-started/global-configurations/authorization/sso/ldap: user-guide/global-configurations/authorization/sso/ldap.md
     getting-started/global-configurations/authorization/sso/oidc: user-guide/global-configurations/authorization/sso/oidc.md
     getting-started/global-configurations/authorization/sso/openshift: user-guide/global-configurations/authorization/sso/openshift.md
-    getting-started/global-configurations/okta: user-guide/global-configurations/okta.md
+    getting-started/global-configurations/okta: user-guide/global-configurations/authorization/sso/okta.md
     getting-started/global-configurations/catalog-framework: user-guide/global-configurations/catalog-framework.md
     getting-started/global-configurations/scoped-variables: user-guide/global-configurations/scoped-variables.md
     getting-started/global-configurations/pull-image-digest: user-guide/global-configurations/pull-image-digest.md
@@ -120,6 +125,15 @@ redirects:
     getting-started/global-configurations/authorization/user-access: user-guide/global-configurations/authorization/user-access.md
     getting-started/global-configurations/authorization/permission-groups: user-guide/global-configurations/authorization/permission-groups.md
     getting-started/global-configurations/authorization/api-tokens: user-guide/global-configurations/authorization/api-tokens.md
+    getting-started/upgrade: setup/upgrade/README.md
+    getting-started/upgrade/upgrade-devtron-ui: setup/upgrade/upgrade-devtron-ui
+    getting-started/upgrade/devtron-upgrade-0.6.x-0.7.x: setup/upgrade/devtron-upgrade-0.6.x-0.7.x.md
+    getting-started/upgrade/devtron-upgrade-0.5.x-0.6.x: setup/upgrade/devtron-upgrade-0.5.x-0.6.x.md
+    getting-started/upgrade/devtron-upgrade-0.4.x-0.5.x: setup/upgrade/devtron-upgrade-0.4.x-0.5.x.md
+    getting-started/upgrade/devtron-upgrade-0.4.x-0.4.x: setup/upgrade/devtron-upgrade-0.4.x-0.4.x.md
+    getting-started/upgrade/devtron-upgrade-0.3.x-0.4.x: setup/upgrade/devtron-upgrade-0.3.x-0.4.x.md
+    getting-started/upgrade/devtron-upgrade-0.3.x-0.3.x: setup/upgrade/devtron-upgrade-0.3.x-0.3.x.md
+    getting-started/upgrade/devtron-upgrade-0.2.x-0.3.x: setup/upgrade/devtron-upgrade-0.2.x-0.3.x.md
     global-configurations/sso-login: user-guide/global-configurations/sso-login.md
     user-guide/use-cases/untitled-3: user-guide/use-cases/connect-django-with-mysql-database.md
     global-configurations/api-token: user-guide/global-configurations/authorization/api-tokens.md
@@ -127,5 +141,8 @@ redirects:
     user-guide/clusters: user-guide/resource-browser.md
     usage/clusters: user-guide/resource-browser.md
     global-configurations/authorization/sso-login/okta: user-guide/global-configurations/authorization/sso/okta.md
-    usage/applications/creating-application/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/ci-build-pre-post-plugins.md
     global-configurations/custom-charts: user-guide/global-configurations/deployment-charts.md
+    global-configurations/plugins-policy: user-guide/global-configurations/plugin-policy.md
+    usage/sdh: user-guide/software-distribution-hub/README.md
+    usage/sdh/tenants: user-guide/software-distribution-hub/tenants.md
+    usage/sdh/release-hub: user-guide/software-distribution-hub/release-hub.md

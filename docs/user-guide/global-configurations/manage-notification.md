@@ -65,7 +65,7 @@ Verified domain/email identities on AWS SES - To know more, visit [Creating and 
 
 #### Email (SES) Tutorial
 
-{% embed url="https://www.youtube.com/watch?v=WRP1CBHW6Ic" caption="Enabling Email Notifications for Devtron CI/CD" %}
+{% embed url="https://www.youtube.com/watch?v=WRP1CBHW6Ic" caption="Enabling Email SES Notifications for Devtron CI/CD" %}
 
 #### Steps
 
@@ -108,9 +108,9 @@ SMTP credentials (username and password) from your SMTP provider.
 
 {% endhint %}
 
-#### Email SMTP Tutorial
+#### Email (SMTP) Tutorial
 
-{% embed url="https://www.youtube.com/watch?v=CkPG7wC59hY" caption="Enabling Email Notifications for Devtron CI/CD" %}
+{% embed url="https://www.youtube.com/watch?v=CkPG7wC59hY" caption="Enabling Email SMTP Notifications for Devtron CI/CD" %}
 
 #### Steps
 
