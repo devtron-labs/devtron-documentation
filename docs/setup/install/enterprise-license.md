@@ -28,9 +28,9 @@ Instead, we suggest you to perform a [fresh installation of Devtron Enterprise](
 
 ## Step 1: Go to the Devtron License Dashboard
 
-To install Devtron Enterprise; Go to the [Devtron License Dashboard](https://license.devtron.ai/dashboard/).
+To install Devtron Enterprise; go to the [Devtron License Dashboard](https://license.devtron.ai/dashboard/).
 <br><br>
-Log in with your work email to access the license dashboard. Devtron provides two login methods to login to the License Dashboard
+Log in with your work email to access the license dashboard. Devtron provides two login methods to log in to the License Dashboard
 
 ### Method 1: Log In with SSO
 
@@ -38,7 +38,7 @@ Log in with your work email to access the license dashboard. Devtron provides tw
 
  ![Figure 1: Selecting SSO Provider](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-sso.jpg)
 
-2. Once logged in, **Devtron License Dashboard** will open.
+2. Once logged in, the **Devtron License Dashboard** will open.
 
 3. Under **Tell Us About You**, enter some basic details to help us improve your Devtron Experience.
 
@@ -48,7 +48,7 @@ Log in with your work email to access the license dashboard. Devtron provides tw
 
 ### Method 2: Log In with Email 
 
-You can also log in via **Continue with Email**. This will send a 'Login Link' to the provided email. To do so, follow the below steps:
+You can also log in via **Continue with Email**. This will send a 'Login Link' to the provided work email. To do so, follow the below steps:
 
 1. Select **Continue with Email** to log in.
 
@@ -264,7 +264,7 @@ You will now need to enter your Devtron **Installation Fingerprint** to generate
 
 ### Get Devtron installation's fingerprint
 
-To get the **Installation Fingerprint** follow the below steps 
+To get the **Installation Fingerprint**, follow the below steps 
 
 1. Visit your Dashboard URL (which you have obtained in [Step-2.3](#23-obtain-the-dashboard-url))as shown below.
 
