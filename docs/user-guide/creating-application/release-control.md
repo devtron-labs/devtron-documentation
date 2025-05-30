@@ -65,20 +65,6 @@ If you wish you can also trigger the specific release steps (for example 25%, 50
 
      ![]()
 
-### Rollback the deployment.
-
-In case you have identified some bugs or performance of the release is not as expected then you can also rollback to the previous release.
-
-To rollback follow the below steps:
-
-1. Navigate to **App details** of your Devtron Application.
-
-2. Select **Rollback** under **Canary Strategy**, a new window will appear.
-
-3. Select the image to which you want your release to be rolled back.
-
-4. Select **Deploy** to rollback the release.
-
 
 ## Blue Green deployments
 
@@ -95,3 +81,21 @@ To do so, follow the below steps:
      In case `autoPromotionEnabled` is set to `false`, then after the deployment succeeded, you will see a **Swap Traffic** button instead of **Skip & promote full**. 
 
 3. Enter the name and select **Swap Traffic**; this will route the end user traffic to the application’s new deployment on a particular environment during the deployment.
+
+## Rollback the deployment.
+
+In case you have identified some bugs or performance of the release is not as expected then you can also rollback to the previous release.
+
+To rollback follow the below steps:
+
+1. Navigate to **App details** of your Devtron Application.
+
+2. Based on the type of deployment strategy, perform one of the following actions:
+    
+     * In case of Canary deployments, select **Rollback** under **Canary Strategy**.
+
+     * In case of Blue Green deployments, select **Rollback** under **Blue Green Strategy**.
+
+3. Select the image to which you want your release to be rolled back.
+
+4. Select **Deploy** to rollback the release.
