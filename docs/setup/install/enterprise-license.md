@@ -60,15 +60,16 @@ You can also log in via **Continue with Email**. This will send a 'Login Link' t
 
 3. A 'Login Link' will be sent to the email provided by you. If you do not receive the link, you can resend it after 30 seconds.
 
- **Note:** 'Login Link' will expire in 10 minutes.
+ **Note:** Your 'Login Link' is valid only for 10 minutes.
 
   ![Figure 5: Sending Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-resend-email.jpg)
 
 {% hint style="info" %}
 ### Email not received?
 
-* Check all sections of the Inbox including spam section.
-* In case the 'Login Link' email delivers in the spam section, mark it as Not Spam.
+* Check all sections of the mailbox, including the Spam section.
+
+* If you find the 'Login Link' email in the Spam section, mark it as 'Not Spam'.
 
 {% endhint %}
 
