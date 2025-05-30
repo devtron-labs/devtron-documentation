@@ -4,21 +4,19 @@
 
 Monitoring updates of your CI/CD pipelines, such as their triggers, successes, and failures, can be challenging without a proper notification system in place.
 
-The **Notifications** module in Devtron helps you solve this problem by sending you timely updates about your CI/CD pipelines through various tools such as Email, Slack, Discord, and much more - ensuring you stay informed at all times.
+The **Notifications** module in Devtron helps you solve this problem by sending you timely updates about your CI/CD pipelines through various mediums such as Email, Slack, Discord, and much more - ensuring you stay informed at all times.
 
 ---
 
 ## Initial Prerequisites
 
-* [Build and Deploy (CI/CD)](../integrations/build-and-deploy-ci-cd.md) integration installed in your system.
+* [Build and Deploy (CI/CD)](../integrations/build-and-deploy-ci-cd.md) integration installed in your Devtron instance.
 
-* [Super-Admin](user-access.md) permission.
+* **Notifications** module integration installed in your Devtron instance. 
 
-* **Notifications** module integration installed in your system. 
+    * **For OSS users**: The **Notifications** page won't appear in Global Configurations unless you install the **Notifications** module from [Devtron Stack Manager](../integrations/README.md) (Average installation time: ~ 5–6 minutes).
 
-    * For an OSS user, the **Notifications** page will not be displayed unless you install the **Notifications** module from the Devtron Stack Manager. 
-
-    * For Enterprise users, this module is integrated by default in our Enterprise offering.
+    * **For Enterprise users**: This module comes installed by default. 
 
 ---
 
@@ -30,9 +28,9 @@ The **Notifications** page allows you to configure and manage notifications for 
 
 The **Notifications** page has the following two tabs:
 
-* **Configurations** - allows you to configure the way (such as Slack, Email, etc.,) through which the notifications will be delivered.
+* **Configurations** - Allows you to configure the way (Email SES, Email SMTP, Slack, Webhook) through which the notifications will be delivered.
 
-* **Notifications** - allows you to define the recipients and the conditions (e.g., CI/CD success, failure, trigger) under which the notifications must be sent out.
+* **Notifications** - Allows you to define the recipients and the events (e.g., CI/CD success, failure, trigger) for which the notifications must be sent out.
 
 You can configure notifications in Devtron in the following four ways: 
 
@@ -44,7 +42,16 @@ You can configure notifications in Devtron in the following four ways:
 
 * [Webhook Configuration](#webhook-configuration)
 
-### SES Configuration
+### Email SES Configuration
+
+{% hint style="warning" %}
+    
+### Who Can Perform This Action?
+
+Only [Super-Admins](user-access.md) can create and manage SES configurations.
+
+{% endhint %}
+
 
 {% hint style="info" %}
     
@@ -52,21 +59,15 @@ You can configure notifications in Devtron in the following four ways:
 
 AWS access key and secret key - When obtaining access key and secret access key from AWS SES, make sure to generate them from the **Security credentials** page (**Profile** → **Security credentials** → **Access keys** → **Create access key**) and not from the **SMTP settings** page in AWS.
 
-Domain verification - Make sure to [Verify Domain Identities](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#verify-domain-procedure) (e.g., *devtron.ai*) of the sender email address you wish to use for sending email notifications.
+Verified domain/email identities on AWS SES - To know more, visit [Creating and Verifying Identities in Amazon SES](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html).
 
 {% endhint %}
 
-{% hint style="warning" %}
-    
-### Who Can Perform This Action?
-
-Only [Super-Admins](user-access.md) can create and manage configurations.
-
-{% endhint %}
+#### Email (SES) Tutorial
 
 {% embed url="https://www.youtube.com/watch?v=WRP1CBHW6Ic" caption="Enabling Email Notifications for Devtron CI/CD" %}
 
-If you prefer to configure the notifications to be sent via Amazon Simple Email Service (SES), please watch the above AWS SES tutorial or follow the below instructions:
+#### Steps
 
 1. Navigate to the **Global Configurations** → **Notifications** → **Configurations** → **Email (SES)** → **Add SES**.
 
@@ -79,7 +80,7 @@ If you prefer to configure the notifications to be sent via Amazon Simple Email 
     | **Configuration Name** | Give a name to your SES Configuration, e.g., `Email SES 2024` |
     | **Access Key ID** | Valid access key from your **AWS Security credentials** page, e.g., `AKIAWEAVHF123ABCD123` |
     | **Secret Access Key** | Secret access key from your **AWS Security credentials** page |
-    | **AWS Region** | The AWS Region you used while setting up SES |
+    | **AWS Region** | The AWS region you used while setting up SES |
     | **Send email from** | The sender email address verified by SES for sending emails |
 
 3. Enable the **Set as default configuration to send emails** check box (optional) if you wish to keep this configuration as the default one for sending emails.
@@ -88,7 +89,16 @@ If you prefer to configure the notifications to be sent via Amazon Simple Email 
 
 Now that the Email (SES) configuration is set up, you can proceed to [Add Notifications](#add-notifications). 
 
-### SMTP Configuration
+### Email SMTP Configuration
+
+{% hint style="warning" %}
+    
+### Who Can Perform This Action?
+
+Only [Super-Admins](user-access.md) can create and manage SMTP configurations.
+
+{% endhint %}
+
 
 {% hint style="info" %}
     
@@ -98,17 +108,11 @@ SMTP credentials (username and password) from your SMTP provider.
 
 {% endhint %}
 
-{% hint style="warning" %}
-    
-### Who Can Perform This Action?
-
-Only [Super-Admins](user-access.md) can create and manage configurations.
-
-{% endhint %}
+#### Email SMTP Tutorial
 
 {% embed url="https://www.youtube.com/watch?v=CkPG7wC59hY" caption="Enabling Email Notifications for Devtron CI/CD" %}
 
-If you prefer to configure the notifications to be sent via SMTP providers (such as Gmail SMTP, AWS), please watch the tutorial or follow the below instructions:
+#### Steps
 
 1. Navigate to the **Global Configurations** → **Notifications** → **Configurations** → **Email (SMTP)** → **Add SMTP**.
 
@@ -133,25 +137,28 @@ Now that the Email (SMTP) configuration is set up, you can proceed to [Add Notif
 
 ### Slack Configuration
 
-{% hint style="info" %}
-    
-### Prerequisite
-
-A Slack account, a Slack channel, and an [Incoming Webhook URL](https://slack.com/intl/en-gb/help/articles/115005265063-Incoming-webhooks-for-Slack) for your Slack channel (if you prefer to configure notifications to be sent via Slack). 
-
-{% endhint %}
-
 {% hint style="warning" %}
     
 ### Who Can Perform This Action?
 
-Only [Super-Admins](user-access.md) can create and manage configurations.
+Only [Super-Admins](user-access.md) can create and manage Slack configurations.
 
 {% endhint %}
 
+
+{% hint style="info" %}
+    
+### Prerequisite
+
+A Slack account, a Slack channel, and an [Incoming Webhook URL](https://api.slack.com/messaging/webhooks#getting_started).
+
+{% endhint %}
+
+#### Slack Tutorial
+
 {% embed url="https://www.youtube.com/watch?v=ve1eGqslBqc" caption="Enabling Slack Notifications for Devtron CI/CD" %}
 
-If you prefer to receive the notifications via Slack, please watch the above Slack notification tutorial or follow the below instructions:
+#### Steps
 
 1. Navigate to the **Global Configurations** → **Notifications** → **Configurations** → **Slack** → **Add Slack**.
 
@@ -171,6 +178,15 @@ Now that the Slack configuration is set up, you can proceed to [Add Notification
 
 ### Webhook Configuration
 
+{% hint style="warning" %}
+    
+### Who Can Perform This Action?
+
+Only [Super-Admins](user-access.md) can create and manage Webhook configurations.
+
+{% endhint %}
+
+
 {% hint style="info" %}
     
 ### Prerequisite
@@ -179,19 +195,13 @@ A Webhook URL to receive notifications (e.g., Microsoft Teams Webhook URL, Disco
 
 {% endhint %}
 
-{% hint style="warning" %}
-    
-### Who Can Perform This Action?
-
-Only [Super-Admins](user-access.md) can create and manage configurations.
-
-{% endhint %}
+#### Webhook Tutorial
 
 {% embed url="https://www.youtube.com/watch?v=8RQ2dezrVvY" caption="Enabling Notifications for Devtron CI/CD using Webhook" %}
 
-If you prefer to receive the notifications via Discord, please watch the above Discord notification tutorial for better understanding. If you prefer to receive the notifications via other applications, follow the below instructions:
+#### Steps
 
-1. Navigate to the **Global Configurations** → **Notifications** → **Configurations** → **Slack** → **Add Webhook**.
+1. Navigate to the **Global Configurations** → **Notifications** → **Configurations** → **Webhook** → **Add Webhook**.
 
     ![Figure 5: Configure Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/configure-webhook.jpg)
 
@@ -262,6 +272,8 @@ Once you have configured the notifications in the **Configuration** tab, you can
 
 ### Modify Notifications
 
+When creating notifications, if you initially selected events like CI/CD **Trigger** and **Failure**, for example, but now want to remove notifications for CI/CD **Failure** or add notifications for CI/CD **Success**, you can do so by modifying the events. 
+
 To modify the events, follow the below steps:
 
 1. Navigate to the **Notifications** tab. 
@@ -276,6 +288,8 @@ To modify the events, follow the below steps:
 
 ![Figure 8: Modify Events](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/modify-event.gif)
 
+When creating notifications, if you previously added a recipient but now no longer want them to receive the CI/CD notifications, or if you want to add a new recipient or remove a specific communication medium (e.g., Slack), you can do so by modifying the recipients. 
+
 To modify the recipients, follow the below steps:
 
 1. Navigate to the **Notifications** tab. 
@@ -289,6 +303,18 @@ To modify the recipients, follow the below steps:
 5. Click **Save Changes**.
 
 ![Figure 9: Modify Recipients](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/modify-receipient.gif)
+
+### Delete Notifications
+
+If you no longer wish to receive CI/CD notifications for an application, you can delete the corresponding notification from the **Notifications** tab. 
+
+{% hint style="danger" %}
+    
+### Important Note
+
+If you're currently receiving CI/CD notifications for a specific application, deleting its associated notification from the **Notifications** tab will stop all CI/CD notifications for that application across all configured communication channels. 
+
+{% endhint %}
 
 To delete a notification, follow the below steps:
 
