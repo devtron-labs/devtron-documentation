@@ -1,4 +1,4 @@
-# Manage CI/CD Notifications
+# Manage Notifications
 
 ## Introduction
 
@@ -77,10 +77,10 @@ Verified domain/email identities on AWS SES - To know more, visit [Creating and 
 
     | Key | Description |
     | --- | ----------- |
-    | **Configuration Name** | Give a name to your SES Configuration, e.g., `Email SES 2024` |
+    | **Configuration Name** | Give a name to your SES Configuration, e.g., `qa-ses` |
     | **Access Key ID** | Valid access key from your **AWS Security credentials** page, e.g., `AKIAWEAVHF123ABCD123` |
     | **Secret Access Key** | Secret access key from your **AWS Security credentials** page |
-    | **AWS Region** | The AWS region you used while setting up SES |
+    | **AWS Region** | The AWS region you used while setting up SES, e.g., `United States (Ohio)` |
     | **Send email from** | The sender email address verified by SES for sending emails |
 
 3. Enable the **Set as default configuration to send emails** check box (optional) if you wish to keep this configuration as the default one for sending emails.
@@ -122,7 +122,7 @@ SMTP credentials (username and password) from your SMTP provider.
 
     | Key | Description |
     | :--- | :--- |
-    | **Configuration Name** | Give a name to your SMTP Configuration, e.g., `Email SMTP 2024` |
+    | **Configuration Name** | Give a name to your SMTP Configuration, e.g., `qa-smtp` |
     | **SMTP Port** | The port number available in your SMTP settings, e.g., `587` |
     | **SMTP Host address/Server** | The SMTP endpoint available in your SMTP settings, e.g., `smtp.gmail.com`  |
     | **SMTP Username** | A valid username created with your SMTP provider, e.g., `AKIAWEAVHF123ABCD123` in case of AWS SMTP and `johndoe@gmail.com` in case of Gmail SMTP. |
@@ -168,9 +168,9 @@ A Slack account, a Slack channel, and an [Incoming Webhook URL](https://api.slac
 
     | Key | Description |
     | :--- | :--- |
-    | **Slack Channel** | Name of the Slack channel on which you wish to receive notifications |
+    | **Slack Channel** | Name of the Slack channel on which you wish to receive notifications, e.g., `qa-slack-channel` |
     | **Webhook URL** | Enter a valid incoming webhook URL |
-    | **Project** | Select the project name to control user access. Apps outside your selected project cannot use this configuration.|
+    | **Project** | Select the project name to control user access. Apps outside your selected project cannot use this configuration, e.g., `qa-demo` |
 
 3. Click **Save**. 
 
@@ -209,7 +209,7 @@ A Webhook URL to receive notifications (e.g., Microsoft Teams Webhook URL, Disco
 
     | Key | Description |
     | :--- | :--- |
-    | **Configuration name** | Give a name to your webhook configuration |
+    | **Configuration name** | Give a name to your webhook configuration, e.g., `qa-webhook` |
     | **Webhook URL** | Enter a valid Webhook URL link |
     | **Headers** | Add optional key-value pairs, e.g. `Content-Type: application/json` |
     | **Data to be shared through webhook** | Write the payload content of the notification in a JSON format. <br /> Refer: <ul><li>[Microsoft Teams Payload](#for-microsoft-teams)</li><li>[Discord Payload](#for-discord)</li><li>[Slack Payload](#for-slack)</li><li>[RingCentral Payload](#for-ringcentral)</li></ul> |
@@ -250,7 +250,7 @@ Once you have configured the notifications in the **Configuration** tab, you can
 
     c. **Environment** - Select **Environment**, if you want notifications for applications deployed in specific environment(s) (e.g., production).
 
-    d. **Cluster** - Select **Cluster**, if you want notifications for applications in a select cluster(s).
+    d. **Cluster** - Select **Cluster**, if you want notifications for applications in a specific cluster(s).
 
     Once you have selected your preferred filter type, a list of CI/CD pipelines are displayed as filter results. 
 
@@ -272,7 +272,7 @@ Once you have configured the notifications in the **Configuration** tab, you can
 
 ### Modify Notifications
 
-When creating notifications, if you initially selected events like CI/CD **Trigger** and **Failure**, for example, but now want to remove notifications for CI/CD **Failure** or add notifications for CI/CD **Success**, you can do so by modifying the events. 
+You can always edit existing notifications instead of deleting them and creating new ones from scratch. For example, if you initially created notifications for **Trigger** and **Failure** events of your CI/CD pipelines, you can perform removal/addition of events anytime by modifying them.
 
 To modify the events, follow the below steps:
 
@@ -312,7 +312,7 @@ If you no longer wish to receive CI/CD notifications for an application, you can
     
 ### Important Note
 
-If you're currently receiving CI/CD notifications for a specific application, deleting its associated notification from the **Notifications** tab will stop all CI/CD notifications for that application across all configured communication channels. 
+If you are currently receiving CI/CD notifications for a specific application, deleting its associated notification(s) in Devtron will stop the notifications for all events and recipients mentioned in those deleted notification(s).
 
 {% endhint %}
 
