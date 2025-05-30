@@ -6,6 +6,8 @@ Monitoring updates of your CI/CD pipelines, such as their triggers, successes, a
 
 The **Notifications** module in Devtron helps you solve this problem by sending you timely updates about your CI/CD pipelines through various mediums such as Email, Slack, Discord, and much more - ensuring you stay informed at all times.
 
+![Figure 1: Notification](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/notifications-example.jpg)
+
 ---
 
 ## Initial Prerequisites
@@ -24,7 +26,7 @@ The **Notifications** module in Devtron helps you solve this problem by sending 
 
 The **Notifications** page allows you to configure and manage notifications for your CI/CD pipeline(s). To access the **Notifications** page, navigate to **Global Configurations** → **Notifications**.
 
-![Figure 1: Notifications Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/notifications-screen-configurations.jpg)
+![Figure 2: Notifications Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/notifications-screen-configurations.jpg)
 
 The **Notifications** page has the following two tabs:
 
@@ -65,13 +67,13 @@ Verified domain/email identities on AWS SES - To know more, visit [Creating and 
 
 #### Email (SES) Tutorial
 
-{% embed url="https://www.youtube.com/watch?v=WRP1CBHW6Ic" caption="Enabling Email SES Notifications for Devtron CI/CD" %}
+{% embed url="https://www.youtube.com/watch?v=WRP1CBHW6Ic" caption="Enabling Email Notifications for Devtron CI/CD" %}
 
 #### Steps
 
 1. Navigate to the **Global Configurations** → **Notifications** → **Configurations** → **Email (SES)** → **Add SES**.
 
-    ![Figure 2: Configure SES](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/configure-ses.jpg)
+    ![Figure 3: Configure SES](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/configure-ses.jpg)
 
 2. Enter the following details in the **Configure SES** page:
 
@@ -108,15 +110,15 @@ SMTP credentials (username and password) from your SMTP provider.
 
 {% endhint %}
 
-#### Email (SMTP) Tutorial
+#### Email SMTP Tutorial
 
-{% embed url="https://www.youtube.com/watch?v=CkPG7wC59hY" caption="Enabling Email SMTP Notifications for Devtron CI/CD" %}
+{% embed url="https://www.youtube.com/watch?v=CkPG7wC59hY" caption="Enabling Email Notifications for Devtron CI/CD" %}
 
 #### Steps
 
 1. Navigate to the **Global Configurations** → **Notifications** → **Configurations** → **Email (SMTP)** → **Add SMTP**.
 
-    ![Figure 3: Configure SMTP](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/configure-smtp.jpg)
+    ![Figure 4: Configure SMTP](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/configure-smtp.jpg)
 
 2. Enter the following details in the **Configure SMTP** page:
 
@@ -162,7 +164,7 @@ A Slack account, a Slack channel, and an [Incoming Webhook URL](https://api.slac
 
 1. Navigate to the **Global Configurations** → **Notifications** → **Configurations** → **Slack** → **Add Slack**.
 
-    ![Figure 4: Configure Slack](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/configure-slack.jpg)
+    ![Figure 5: Configure Slack](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/configure-slack.jpg)
 
 2. Enter the following details in the **Configure Slack** page:
 
@@ -203,7 +205,7 @@ A Webhook URL to receive notifications (e.g., Microsoft Teams Webhook URL, Disco
 
 1. Navigate to the **Global Configurations** → **Notifications** → **Configurations** → **Webhook** → **Add Webhook**.
 
-    ![Figure 5: Configure Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/configure-webhook.jpg)
+    ![Figure 6: Configure Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/configure-webhook.jpg)
 
 2. Enter the following details in the **Configure Webhook** page:
 
@@ -228,11 +230,11 @@ Once you have configured the notifications in the **Configuration** tab, you can
 
 1. Navigate back to the **Notifications** tab.
 
-    ![Figure 6: Notifications Tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/notifications-tab.jpg)
+    ![Figure 7: Notifications Tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/notifications-tab.jpg)
 
 2. Click the **Add Notification** button. The **Add Notifications** page is displayed.
 
-    ![Figure 7: Add Notifications Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/add-notifications-page.jpg)
+    ![Figure 8: Add Notifications Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/add-notifications-page.jpg)
 
 3. Enter your preferred recipient in the **Send to** drop-down box. You can add one or more recipients in the **Send to** drop-down box and the recipients can be any or all of the following:
 
@@ -286,7 +288,7 @@ To modify the events, follow the below steps:
 
 5. Click **Apply**.
 
-![Figure 8: Modify Events](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/modify-event.gif)
+![Figure 9: Modify Events](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/modify-event.gif)
 
 When creating notifications, if you previously added a recipient but now no longer want them to receive the CI/CD notifications, or if you want to add a new recipient or remove a specific communication medium (e.g., Slack), you can do so by modifying the recipients. 
 
@@ -302,7 +304,7 @@ To modify the recipients, follow the below steps:
 
 5. Click **Save Changes**.
 
-![Figure 9: Modify Recipients](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/modify-receipient.gif)
+![Figure 10: Modify Recipients](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/modify-receipient.gif)
 
 ### Delete Notifications
 
@@ -326,7 +328,7 @@ To delete a notification, follow the below steps:
 
 4. Click **Delete** to delete the notification.
 
-![Figure 10: Delete Notifications](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/delete-notification.gif)
+![Figure 11: Delete Notifications](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/manage-notification/revised-imgs-21052025/delete-notification.gif)
 
 ---
 
