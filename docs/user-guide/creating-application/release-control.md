@@ -20,6 +20,11 @@ Devtron allows you to:
 
 Before deploying the application Canary or Blue-Green deployment strategies, you must configure the application for these deployment strategies. To do so, follow the below steps:
 
+{% hint style="info" %}
+### Note
+A CD pipeline (workflow) must already exist in the workflow editor. Refer [CD Pipeline](../creating-application/workflow/cd-pipeline.md) to set up a CD Pipeline.
+{% endhint %}
+
 1. Navigate to **Configurations** → **Workflow Editor** and choose your workflow.
 
      ![]()
