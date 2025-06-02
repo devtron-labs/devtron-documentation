@@ -144,6 +144,35 @@ Once the deployment is successful, the pipelines will show `Succeeded`.
 Users need to have [Build and deploy permission](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to initiate the deployment
 {% endhint %}
 
+
+### Managing Traffic
+
+While deployment, Devtron allows you to manage your **Canary** and **Blue-Green** deployments by providing visibility and easy controls to manage how new versions (releases) are shared with users.
+
+To do so, follow the below steps:
+
+1. Go to **Overview** and Click on **Manage Traffic**.
+
+2. Select the required applications, a side window will appear displaying all the eligible rollouts.
+
+3. You can take the following actions based on the deployment strategy of the application
+
+ * For **Canary Deployments**, you can either choose to initiate the next step or to initiate the full rollout.
+
+  ![]()
+
+ * For **Blue Green deployments**, you can either choose to **Swap Traffic**, or you can choose Skip & Promote Full. 
+
+     * **Swap Traffic**: This will swap the traffic from the current deployment to the application latest deployment.
+
+     ![]()
+
+     * **Skip & Promote Full**: While deploying, this will directly deploy the whole traffic to application latest deployment.
+
+     ![]()
+
+4. Click **Initiate Eligible Rollouts** to implement the actions.
+
 ---
 
 ## Additional Features
