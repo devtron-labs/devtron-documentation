@@ -120,11 +120,19 @@ The **Build & Deploy** tab of your application group helps you deploy one or mor
 
     ![Figure 14: Selecting Image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-image-1.jpg)
 
-    Repeat the step for other applications too, and then click **Deploy**.
+    Repeat the step for other applications too.
 
     ![Figure 15: Deploying Apps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-image-2.jpg)
 
-3. The deployment will be initiated, following which, you can close the screen as shown below.
+3. If you wish, you can deploy all applications in a Application Group using a single deployment strategy; select the preferred deployment strategy for all the applications and click **Deploy**. <br><br> By default, all applications will be deployed using their respective default strategies.
+
+    ![]()
+
+ * **Deployment feasibility** page will open; in case for any application, the selected deployment strategy is not configured, you can select one of the configured strategies for that application. <br><br> If you do not select a configured deployment strategy, deployment will be skipped for that particular application.
+
+    ![]()
+
+4. The deployment will be initiated, following which, you can close the screen as shown below.
 
     ![Figure 16: Triggered Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/deploy-app.jpg)
 
