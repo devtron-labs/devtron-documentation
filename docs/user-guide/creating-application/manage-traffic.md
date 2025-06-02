@@ -1,4 +1,4 @@
-# Deployment Strategies Release and Traffic Control
+# Manage Traffic
 
 Devtron helps you to manage your **Canary** and **Blue-Green** deployments by providing visibility and easy controls to manage how new versions (releases) are shared with users.
 
@@ -84,11 +84,11 @@ To do so, follow the below steps:
 
       ![Figure 7: Selecting 'Skip & Promote Full'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-skip-and-promote.jpg)
       
-  In case `autoPromotionEnabled` is set to `false`, then after the deployment succeeded, you will see a **Swap Traffic** button instead of **Skip & promote full**.  <br>
+   In case `autoPromotionEnabled` is set to `false`, then after the deployment succeeded, you will see a **Swap Traffic** button instead of **Skip & promote full**.  <br>
 
-    ![Figure 8a: autoPromotionEnabled: false](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-auto-promotion-enabled-false.jpg)
+      ![Figure 8a: autoPromotionEnabled: false](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-auto-promotion-enabled-false.jpg)
 
-    ![Figure 8b: Selecting Swap Traffic](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-awating-swap.jpg)
+      ![Figure 8b: Selecting Swap Traffic](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-awating-swap.jpg)
 
 3. Enter the name of the environment and select **Swap Traffic** or **Promote to Full**; this will route the end user traffic to the application’s new deployment on a particular environment during the deployment.
 
