@@ -27,31 +27,33 @@ A CD pipeline (workflow) must already exist in the workflow editor. Refer [CD Pi
 
 1. Navigate to **Configurations** → **Workflow Editor** and choose your workflow.
 
-     ![]()
+      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-select-workflow.jpg)
 
 2. Select the deployment pipeline, a **Edit deployment pipeline** window will open.
 
-     ![]()
+      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-edit-deploy.jpg)
 
 3. Select **Add Strategy** and select the strategies you want to add; strategies will be added as the **Deployment Strategy** in your deployment pipeline.
 
+      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-add-strategy.jpg)
+
  * In case, you have multiple deployment strategies, you can choose a default deployment strategy.
 
-     ![]()
+      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-set-default.jpg)
  
  * You can also choose the deployment strategy in **Build & Deploy** section while triggering the deployment.
 
-     ![]()
+      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-build.jpg)
 
 4. Configure the deployment strategy by selecting the **Settings** icon next to it to edit the strategy template according to your use case.
 
-     ![]()
+     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-canary-config.jpg)
 
-     ![]()
+     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-blue-green-config.jpg)
 
 5. Select **Update Pipeline** to save the configurations.
 
-     ![]()
+     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-update-pipeline.jpg)
 
 ## Canary Deployments
 
@@ -63,7 +65,9 @@ You can select the **Manage Traffic** button to view the rollout status and step
 
 If you wish you can also trigger the specific release steps (for example 25%, 50%, 75%) or you can also trigger the full rollout at once.
 
-     ![]()
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-manage-traffic.jpg)
+
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-manage-traffic-2.jpg)
 
 
 ## Blue Green deployments
@@ -78,9 +82,19 @@ To do so, follow the below steps:
 
 2. During Blue-Green deployment, click the **Skip & promote full** button to shift the traffic to application's new deployment.
 
-     In case `autoPromotionEnabled` is set to `false`, then after the deployment succeeded, you will see a **Swap Traffic** button instead of **Skip & promote full**. 
+      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-skip-and-promote.jpg)
 
-3. Enter the name and select **Swap Traffic**; this will route the end user traffic to the application’s new deployment on a particular environment during the deployment.
+ In case `autoPromotionEnabled` is set to `false`, then after the deployment succeeded, you will see a **Swap Traffic** button instead of **Skip & promote full**. 
+
+      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-auto-promotion-enabled-false.jpg)
+
+      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-awating-swap.jpg)
+
+3. Enter the name of the environment and select **Swap Traffic** or **Promote to Full**; this will route the end user traffic to the application’s new deployment on a particular environment during the deployment.
+
+      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-swap-live-traffic.jpg)
+
+      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-skip-and-promote-2.jpg)
 
 ## Rollback the deployment.
 
@@ -92,10 +106,14 @@ To rollback follow the below steps:
 
 2. Based on the type of deployment strategy, perform one of the following actions:
     
-     * In case of Canary deployments, select **Rollback** under **Canary Strategy**.
+  * In case of Canary deployments, select **Rollback** under **Canary Strategy**.
 
-     * In case of Blue Green deployments, select **Rollback** under **Blue Green Strategy**.
+      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-rollback.jpg)
 
-3. Select the image to which you want your release to be rolled back.
+  * In case of Blue Green deployments, select **Rollback** under **Blue Green Strategy**.
 
-4. Select **Deploy** to rollback the release.
+      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-rollback-blue-green.jpg)
+
+3. Select the image to which you want your release to be rolled back and click  **Deploy** to rollback the release.
+
+      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-rollback-select-image+.jpg)
