@@ -37,13 +37,13 @@ Only superadmins can configure Devtron Intelligence.
 apiVersion: v1
 kind: Secret
 metadata:
-  name: devtron-intelligence-secret
+  name: devtron-ai-secret
   namespace: <your-env-namespace>
 data:
   OpenAiKey: <your_base64_encoded_key>
 ```
 
-![Figure 1: Creating a Secret for LLM Key](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/create-ai-secret.jpg)
+![Figure 1: Creating a Secret for LLM Key](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/create-ai-secret-v2.jpg)
 
 ### 3. Add Chart Repository
 
@@ -54,7 +54,7 @@ data:
     * **Name**: `devtron-ai`
     * **URL**: `https://robusta-charts.storage.googleapis.com`
 
-![Figure 2: Adding Devtron Intelligence Chart Repo](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/add-robusta-repo.jpg)
+![Figure 2: Adding Devtron Intelligence Chart Repo](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/add-devtronai-repo.jpg)
 
 
 ### 4. Install and Configure the Devtron Intelligence Chart
@@ -86,18 +86,18 @@ Install the chart in the cluster whose workloads you wish to troubleshoot.
 
 ```yaml
 additionalEnvVars:
-- name: MODEL
+  - name: MODEL
     value: gpt-4o-mini
-- name: OPENAI_API_KEY
+  - name: OPENAI_API_KEY
     valueFrom: 
-    secretKeyRef:
+      secretKeyRef:
         key: OpenAiKey
-        name: devtron-intelligence-secret
-- name: CLUSTER_NAME
+        name: devtron-ai-secret
+  - name: CLUSTER_NAME
     value: document-nonprod
 ```
 
-![Figure 3: Chart Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/chart-config.jpg)
+![Figure 3: Chart Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/chart-config-v2.jpg)
 
 * Click the **Deploy Chart** button.
 
@@ -107,7 +107,7 @@ additionalEnvVars:
 
 * Locate the service entry with the URL in the format: `<service-name>.<namespace>:<port>`. Note the values of `serviceName`, `namespace`, and `port` for the next step.
 
-![Figure 4: Service Endpoint of Devtron Intelligence Helm App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/service-endpoint.jpg)
+![Figure 4: Service Endpoint of Devtron Intelligence Helm App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/service-endpoint-v2.jpg)
 
 
 ### 5. Update ConfigMaps
@@ -128,8 +128,7 @@ additionalEnvVars:
     FEATURE_AI_INTEGRATION_ENABLE: "true"
     ```
 
-
-![Figure 5a: Entry in 'orchestrator-cm' or 'devtron-cm' ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/devtron-cm.jpg) 
+![Figure 5a: Entry in 'orchestrator-cm' or 'devtron-cm' ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/devtron-cm-v2.jpg) 
 
 
 ![Figure 5b: Entry in 'dashboard-cm' ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/dashboard-cm.jpg)
