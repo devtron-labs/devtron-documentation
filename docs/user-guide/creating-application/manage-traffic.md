@@ -1,4 +1,4 @@
-# Manage Traffic
+# Deployment Visibility & Actions
 
 Devtron helps you to manage your **Canary** and **Blue-Green** deployments by providing visibility and easy controls to manage how new versions (releases) are shared with users.
 
@@ -15,6 +15,56 @@ Devtron allows you to:
      * You can swap the traffic from Blue to Green.
 
 * Easily rollback deployments (if needed).
+
+## Deployment Strategies
+
+A deployment strategy is a method of updating, downgrading, or creating new versions of an application. The options you see under deployment strategy depend on the selected chart type (see fig 2). Below are some deployment configuration-based strategies.
+
+### Blue-Green Strategy
+
+Blue-green deployments involve running two versions of an application at the same time and moving traffic from the in-production version \(the green version\) to the newer version \(the blue version\).
+
+```markup
+blueGreen:
+  autoPromotionSeconds: 30
+  scaleDownDelaySeconds: 30
+  previewReplicaCount: 1
+  autoPromotionEnabled: false
+```
+
+| Key | Description |
+| :--- | :--- |
+| `autoPromotionSeconds` | It will make the rollout automatically promote the new ReplicaSet to active Service after this time has passed |
+| `scaleDownDelaySeconds` | It is used to delay scaling down the old ReplicaSet after the active Service is switched to the new ReplicaSet |
+| `previewReplicaCount` | It will indicate the number of replicas that the new version of an application should run |
+| `autoPromotionEnabled` | It will make the rollout automatically promote the new ReplicaSet to the active service |
+
+### Canary Strategy
+
+Canary deployments are a pattern for rolling out releases to a subset of users or servers. The idea is to first deploy the change to a small subset of servers, test it, and then roll the change out to the rest of the servers. The canary deployment serves as an early warning indicator with less impact on downtime: if the canary deployment fails, the rest of the servers aren't impacted.
+
+```markup
+canary:
+  maxSurge: "25%"
+  maxUnavailable: 1
+  steps:
+    - setWeight: 25
+    - pause:
+        duration: 15 # 1 min
+    - setWeight: 50
+    - pause:
+        duration: 15 # 1 min
+    - setWeight: 75
+    - pause:
+        duration: 15 # 1 min
+```
+
+| Key | Description |
+| :--- | :--- |
+| `maxSurge` | It defines the maximum number of replicas the rollout can create to move to the correct ratio set by the last setWeight |
+| `maxUnavailable` | The maximum number of pods that can be unavailable during the update |
+| `setWeight` | It is the required percent of pods to move to the next step |
+| `duration` | It is used to set the duration to wait to move to the next step |
 
 ## Configure the Application
 
@@ -37,11 +87,11 @@ A CD pipeline (workflow) must already exist in the workflow editor. Refer [CD Pi
 
       ![Figure 3a: Adding Deployment Strategy ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-add-strategy.jpg)
 
- * In case, you have multiple deployment strategies, you can choose a default deployment strategy.
+ * In case, you have multiple deployment strategies, you can choose a default deployment strategy which are configured for the pipeline.
 
       ![Figure 3b: Selecting Default Deployment Strategy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-set-default.jpg)
  
- * You can also choose the deployment strategy in **Build & Deploy** section while triggering the deployment.
+ * You can also choose the deployment strategy which are configured for that pipeline in **Build & Deploy** section while triggering the deployment.
 
       ![Figure 3c: Selecting Deployment Strategy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-build.jpg)
 
@@ -55,9 +105,9 @@ A CD pipeline (workflow) must already exist in the workflow editor. Refer [CD Pi
 
      ![Figure 5: Selecting Update Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-update-pipeline.jpg)
 
-## Canary Deployments
+## Visibility & Actions
 
-### Manage traffic
+### For Canary Deployments
 
 After triggering the deployment, navigate to **App Details**, to get a quick overview of your release rollout status.
 
@@ -70,9 +120,9 @@ If you wish you can also trigger the specific release steps (for example 25%, 50
  ![Figure 6b: Managing Canary Traffic](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-manage-traffic-2.jpg)
 
 
-## Blue Green deployments
+### For Blue Green deployments
 
-### Skip & promote full
+#### Skip & Promote Full
 
 Devtron allows you to directly route the end user traffic to the application’s new deployment on a particular environment during the deployment.
 
@@ -96,7 +146,7 @@ To do so, follow the below steps:
 
       ![Figure 9b: Promote to Full Pop Up](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-skip-and-promote-2.jpg)
 
-## Rollback the deployment.
+### Rollback the Deployment
 
 In case you have identified some bugs or performance of the release is not as expected then you can also rollback to the previous release.
 
