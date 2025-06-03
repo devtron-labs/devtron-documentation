@@ -1,6 +1,6 @@
 # Using Devtron Intelligence
 
-## What is Devtron Intelligence (AI)
+## What is Devtron Intelligence (AI) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 Devtron Intelligence is an AI assistant (powered by [HolmesGPT](https://github.com/robusta-dev/holmesgpt)) that helps you troubleshoot issues faster by analyzing your Kubernetes workloads. It offers smart and easy-to-understand suggestions using large language models (LLM) of your choice.
 

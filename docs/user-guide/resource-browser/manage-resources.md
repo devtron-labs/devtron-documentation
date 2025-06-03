@@ -72,6 +72,11 @@ You can monitor activities like creation, deletion, updation, scaling, or errors
 
 ### AI-assistance on Events [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
+{% hint style="info" %}
+### How to Configure Devtron Intelligence?
+Refer [Devtron Intelligence](./devtron-intelligence.md) to enable this feature.
+{% endhint %}
+
 For events with warnings, you can take the assistance of AI. Clicking the **Explain** button will help you identify the root cause of the issue along with suggestions to fix those.
 
 ![Figure 4b: AI-assistance](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/ai-assist-eventfix.gif)
