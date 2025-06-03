@@ -2,7 +2,7 @@
 
 ## What is Devtron Intelligence (AI) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-Devtron Intelligence is an AI assistant (powered by [HolmesGPT](https://github.com/robusta-dev/holmesgpt)) that helps you troubleshoot issues faster by analyzing your Kubernetes workloads. It offers smart and easy-to-understand suggestions using large language models (LLM) of your choice.
+Devtron Intelligence is an AI assistant that helps you troubleshoot issues faster by analyzing your Kubernetes workloads. It offers smart and easy-to-understand suggestions using large language models (LLM) of your choice.
 
 ![Devtron Intelligence for AI-assisted Debugging](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/devtron-ai-assist.gif)
 
@@ -31,13 +31,13 @@ Only superadmins can configure Devtron Intelligence.
 
 * Go to Devtron's **Resource Browser** → (Select Cluster) → **Create Resource**
 
-* Paste the following YAML and replace the key with your base64-encoded OpenAI key. Also, enter the namespace where [Holmes chart](#id-4.-install-and-configure-the-holmes-chart) will be installed:
+* Paste the following YAML and replace the key with your base64-encoded OpenAI key. Also, enter the namespace where [Devtron AI chart](#id-4.-install-and-configure-the-devtron-intelligence-chart) will be installed:
 
 ```yaml
 apiVersion: v1
 kind: Secret
 metadata:
-  name: holmes-secret
+  name: devtron-intelligence-secret
   namespace: <your-env-namespace>
 data:
   OpenAiKey: <your_base64_encoded_key>
@@ -51,17 +51,17 @@ data:
 
 * Use the following to add the chart repo:
 
-    * **Name**: `holmes-ai`
+    * **Name**: `devtron-ai`
     * **URL**: `https://robusta-charts.storage.googleapis.com`
 
-![Figure 2: Adding Robusta's Chart Repo](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/add-robusta-repo.jpg)
+![Figure 2: Adding Devtron Intelligence Chart Repo](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/add-robusta-repo.jpg)
 
 
-### 4. Install and Configure the Holmes Chart
+### 4. Install and Configure the Devtron Intelligence Chart
 
 {% hint style="warning" %}
-### Where should I install Holmes Chart?
-Install Holmes Chart in the cluster whose workloads you wish to troubleshoot.
+### Where should I install the Chart?
+Install the chart in the cluster whose workloads you wish to troubleshoot.
 {% endhint %}
 
 * Go to Devtron's Chart Store.
@@ -72,7 +72,7 @@ Install Holmes Chart in the cluster whose workloads you wish to troubleshoot.
 
 * In the left-hand pane:
 
-    * **App Name**: Give a name to your app, e.g. `holmes-ai-app`
+    * **App Name**: Give a name to your app, e.g. `devtron-ai-app`
 
     * **Project**: Select your project
 
@@ -92,22 +92,22 @@ additionalEnvVars:
     valueFrom: 
     secretKeyRef:
         key: OpenAiKey
-        name: holmes-secret
+        name: devtron-intelligence-secret
 - name: CLUSTER_NAME
     value: document-nonprod
 ```
 
-![Figure 3: Holmes AI Chart Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/chart-config.jpg)
+![Figure 3: Chart Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/chart-config.jpg)
 
 * Click the **Deploy Chart** button.
 
-* After successful deployment, go to your Holmes app's **App Details** page.
+* After successful deployment, go to the **App Details** page of the deployed chart.
 
 * In the left navigation panel, expand **Networking**, then click on **Service**.
 
 * Locate the service entry with the URL in the format: `<service-name>.<namespace>:<port>`. Note the values of `serviceName`, `namespace`, and `port` for the next step.
 
-![Figure 4: Service Endpoint of Holmes AI Helm App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/service-endpoint.jpg)
+![Figure 4: Service Endpoint of Devtron Intelligence Helm App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/service-endpoint.jpg)
 
 
 ### 5. Update ConfigMaps
@@ -116,7 +116,7 @@ additionalEnvVars:
 
 * Edit the ConfigMaps:
 
-    * **Orchestrator ConfigMap or Devtron ConfigMap** - This config is for indicating in which target cluster the Holmes AI service exists and what is its endpoint. The cluster ID (numeric) is generally visible in the URL after you select a cluster in Resource Browser. If Devtron is managing your setup, edit `orchestrator-cm`, whereas, if you installed Devtron via Helm, edit `devtron-cm` and add the following entry:
+    * **Orchestrator ConfigMap or Devtron ConfigMap** - This config is for indicating in which target cluster the Devtron AI service exists and what is its endpoint. The cluster ID (numeric) is generally visible in the URL after you select a cluster in Resource Browser. If Devtron is managing your setup, edit `orchestrator-cm`, whereas, if you installed Devtron via Helm, edit `devtron-cm` and add the following entry:
 
     ```yaml
     CLUSTER_CHAT_CONFIG: '{"<enter-targetClusterID>": {"serviceName": " ", "namespace": " ", "port": " "}}'
