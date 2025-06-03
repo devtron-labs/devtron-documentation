@@ -187,6 +187,50 @@ When you deploy to an isolated environment, Devtron automatically packages appli
 
 ---
 
+## Assign Category to the Cluster & Environment
+
+Devtron allows you to assign a category, (for e.g. Prod, QA, Dev, or Stage) to both clusters and their environments. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to Prod, QA, Dev, or Stage environment.
+
+### Adding a Category
+
+Before assigning a category, you must first add the category. To add a category, follow the below steps:
+
+1. Go to **Global Configurations** → **Clusters and Environments**.
+
+2. Click **Manage Categories**, a modal window will open.
+
+3. Enter the name of the category in the **CATEGORIES** field and provide a description in the **DESCRIPTION** field.
+
+   **Note:** Category name should be unique and cannot be changed once defined. It must be minimum of 3 characters.
+
+4. If you wish to add more categories, click **Add Category**, a new row will appear, enter the name and description of the new category.
+
+5. Click **Update** and your categories will be added.
+
+### Assigning Category To A Cluster
+
+To assign a category to a cluster, follow the below steps:
+
+1. Go to **Global Configurations** → **Clusters and Environments**.
+
+2. Click on the **Edit Cluster** icon, a modal window will appear.
+
+3. Select a category from the dropdown under **Assign Category** amd click **Update Cluster**.
+
+4. The selected category will be assigned to the cluster.
+
+### Assigning Category To A Environment.
+
+1. Go to **Global Configurations** → **Clusters and Environments**.
+
+2. Click on the **Edit Environment** icon, a modal window will appear.
+
+3. Select a category from the dropdown under **Assign Category** amd click **Update**.
+
+4. The selected category will be assigned to the environment.
+
+---
+
 ## Add Environment to a Cluster
 
 {% hint style="warning" %}
