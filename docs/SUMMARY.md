@@ -130,7 +130,6 @@
   * [Build and Deploy (CI/CD)](user-guide/integrations/build-and-deploy-ci-cd.md)
   * [GitOps (Argo CD)](user-guide/integrations/argocd.md)
   * [Vulnerability Scanning](user-guide/integrations/vulnerability-scanning/README.md)
-    * [What is Vulnerability Scanning](user-guide/integrations/vulnerability-scanning/vulnerability-scanning.md)
     * [Clair](user-guide/integrations/vulnerability-scanning/clair.md)
     * [Trivy](user-guide/integrations/vulnerability-scanning/trivy.md)
   * [Notifications](user-guide/integrations/notifications.md)
