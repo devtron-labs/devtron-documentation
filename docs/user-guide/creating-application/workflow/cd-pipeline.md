@@ -160,7 +160,7 @@ To know more about the approval process, refer [Triggering CD](../../deploying-a
 
 #### Deployment Strategies
 
-A deployment strategy is a method of updating, downgrading, or creating new versions of an application. The options you see under deployment strategy depend on the selected chart type (see fig 2). Below are some deployment configuration-based strategies.
+A deployment strategy is a method of updating, downgrading, or creating new versions of an application. The options you see under deployment strategy depend on the selected chart type (see Fig 3). Below are some deployment configuration-based strategies.
 
 #### Blue-Green Strategy
 
