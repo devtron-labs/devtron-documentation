@@ -16,7 +16,11 @@ This video contains a quick walkthrough of the steps mentioned in the [Preparing
 
 ---
 
+<a id="prerequisites"></a>
+
 ## Preparing a Deployment Chart
+
+Below is the 5-step prerequisite you can follow to have your chart ready for uploading.
 
 ### 1. Create a Helm Chart
 

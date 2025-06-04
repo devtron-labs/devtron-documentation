@@ -317,7 +317,7 @@ This feature comes with certain mentioned limitations and expectations. If your 
 
 {% hint style="warning" %}
 ### Note
-If you have configured [GitOps](../gitops-config.md) for your external Argo apps in Devtron, and later install the GitOps (ArgoCD) module from [Devtron Stack Manager](../integrations/argocd.md) to deploy your Devtron apps/Helm apps via GitOps, you must once again save your GitOps and Cluster configurations after installation. This might prevent potential errors and ensure your GitOps deployments are functional.
+If you have configured [GitOps](../gitops-config.md) for your external Argo apps in Devtron, and later install the GitOps (ArgoCD) module from [Devtron Stack Manager](../../integrations/argocd.md) to deploy your Devtron apps/Helm apps via GitOps, you must once again save your GitOps and Cluster configurations after installation. This might prevent potential errors and ensure your GitOps deployments are functional.
 {% endhint %}
 
 ---
