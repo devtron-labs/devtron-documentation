@@ -104,6 +104,7 @@
     * [Debugging Deployment And Monitoring](user-guide/debugging-deployment-and-monitoring.md)
     * [Using Ephemeral Containers](user-guide/app-details/ephemeral-containers.md)
     * [Application Metrics](user-guide/creating-application/app-metrics.md)
+    * [Deployment Visibility & Actions](user-guide/creating-application/deployment-visibility.md)
   * [Application Overview](user-guide/creating-application/overview.md)
 * [Jobs](user-guide/jobs/README.md)
   * [Create a new job](user-guide/jobs/create-job.md)
