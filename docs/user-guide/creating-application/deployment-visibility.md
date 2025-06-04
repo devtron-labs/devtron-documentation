@@ -1,5 +1,10 @@
 # Deployment Visibility & Actions
 
+{% hint style="info" %}
+### Prerequisites
+The deployment chart type must be set to Rollout in order to use Blue-Green or Canary strategies.
+{% endhint %}
+
 Devtron helps you to manage your **Canary** and **Blue-Green** deployments by providing visibility and easy controls to manage how new versions (releases) are shared with users.
 
 Devtron allows you to:

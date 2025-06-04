@@ -42,15 +42,13 @@ You can also copy the Ingress Host URL from the **URLs** instead of searching in
 3. Click **URLs**.
 4. You can view or copy the **URL** of the Ingress Host.
 
-## Manage Traffic
+## Deployment Visibility & Actions
 
 Devtron helps you to manage your **Canary** and **Blue-Green** deployments by providing visibility and easy controls to manage how new versions (releases) are shared with users.
 
-Refer [Manage Traffic](./manage-traffic.md) to know more.
+Refer [Deployment Visibility & Actions](./manage-traffic.md) to know more.
 
 
 **Note**: 
 * The Ingress Host URL will point to the load balancer of your application.
 * You can also view the `Service` name with the load balancer detail.
-
-

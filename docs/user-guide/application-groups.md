@@ -124,7 +124,7 @@ The **Build & Deploy** tab of your application group helps you deploy one or mor
 
     ![Figure 15: Deploying Apps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-image-2.jpg)
 
-3. If you wish, you can deploy all applications in a Application Group using a single deployment strategy; select the preferred deployment strategy for all the applications and click **Deploy**. <br><br> By default, all applications will be deployed using their respective default strategies.
+3. If you wish, you can deploy all applications in an Application Group using a single deployment strategy; select the preferred deployment strategy for all the applications and click **Deploy**. <br><br> By default, all applications will be deployed using their respective default strategies.
 
     ![Figure 16: Selecting Deployment Strategy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-default-strategy.jpg)
 
