@@ -158,6 +158,121 @@ To enable manual approval for deployment, follow these steps:
 
 To know more about the approval process, refer [Triggering CD](../../deploying-application/triggering-cd.md#manual-approval-for-deployment).  -->
 
+#### Deployment Strategies
+
+A deployment strategy is a method of updating, downgrading, or creating new versions of an application. The options you see under deployment strategy depend on the selected chart type (see fig 2). Below are some deployment configuration-based strategies.
+
+#### Blue-Green Strategy
+
+Blue-green deployments involve running two versions of an application at the same time and moving traffic from the in-production version \(the green version\) to the newer version \(the blue version\).
+
+```markup
+blueGreen:
+  autoPromotionSeconds: 30
+  scaleDownDelaySeconds: 30
+  previewReplicaCount: 1
+  autoPromotionEnabled: false
+```
+
+| Key | Description |
+| :--- | :--- |
+| `autoPromotionSeconds` | It will make the rollout automatically promote the new ReplicaSet to active Service after this time has passed |
+| `scaleDownDelaySeconds` | It is used to delay scaling down the old ReplicaSet after the active Service is switched to the new ReplicaSet |
+| `previewReplicaCount` | It will indicate the number of replicas that the new version of an application should run |
+| `autoPromotionEnabled` | It will make the rollout automatically promote the new ReplicaSet to the active service |
+
+#### Rolling Strategy
+
+A rolling deployment slowly replaces instances of the previous version of an application with instances of the new version of the application. Rolling deployment typically waits for new pods to become ready via a readiness check before scaling down the old components. If a significant issue occurs, the rolling deployment can be aborted.
+
+```markup
+rolling:
+  maxSurge: "25%"
+  maxUnavailable: 1
+```
+
+| Key | Description |
+| :--- | :--- |
+| `maxSurge` | No. of replicas allowed above the scheduled quantity |
+| `maxUnavailable` | Maximum number of pods allowed to be unavailable |
+
+#### Canary Strategy
+
+Canary deployments are a pattern for rolling out releases to a subset of users or servers. The idea is to first deploy the change to a small subset of servers, test it, and then roll the change out to the rest of the servers. The canary deployment serves as an early warning indicator with less impact on downtime: if the canary deployment fails, the rest of the servers aren't impacted.
+
+```markup
+canary:
+  maxSurge: "25%"
+  maxUnavailable: 1
+  steps:
+    - setWeight: 25
+    - pause:
+        duration: 15 # 15 sec
+    - setWeight: 50
+    - pause:
+        duration: 1m # 1 min
+    - setWeight: 75
+    - pause:
+        duration: 1m # 1 min
+```
+
+| Key | Description |
+| :--- | :--- |
+| `maxSurge` | It defines the maximum number of replicas the rollout can create to move to the correct ratio set by the last setWeight |
+| `maxUnavailable` | The maximum number of pods that can be unavailable during the update |
+| `setWeight` | It is the required percent of pods to move to the next step |
+| `duration` | It is used to set the duration to wait to move to the next step |
+
+#### Recreate Strategy
+
+The recreate strategy is a dummy deployment that consists of shutting down version 'A' and then deploying version 'B' after version 'A' is turned off. 
+
+A recreate deployment incurs downtime because, for a brief period, no instances of your application are running. However, your old code and new code do not run at the same time. It terminates the old version and releases the new one.
+
+```markup
+recreate:
+```
+
+Unlike other strategies mentioned above, 'Recreate' strategy doesn't contain keys for you to configure.
+
+{% hint style="info" %}
+Does your app have different requirements for different environments? Read [Environment Overrides](../environment-overrides.md)
+{% endhint %}
+
+
+#### Configure Deployment Strategies
+
+To configure the CD pipeline for different deployment strategies, follow the steps below:
+
+1. Select **Add Strategy** and select the deployment strategies you want to add.
+
+      ![Figure 3a: Adding Deployment Strategy ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-add-strategy.jpg)
+
+ * In case, you have multiple deployment strategies, you have to choose a default deployment strategy which are configured for the pipeline.
+
+      ![Figure 3b: Selecting Default Deployment Strategy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-set-default.jpg)
+ 
+ * If in any scenario such as deploying a hotfix, if you need to use a different deployment strategy other than the default, you can change it from **Build & Deploy** section while triggering the deployment.
+
+    **Note:** You can only select the deployment strategies which are configured for that pipeline.
+
+     ![Figure 3c: Selecting Deployment Strategy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-build.jpg)
+
+2. Configure the deployment strategy by selecting the **Settings** icon next to it to edit the strategy template according to your use case.
+
+     ![Figure 4a: Editing Blue Green Strategy Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-rolling-config.jpg)
+
+     ![Figure 4b: Editing Blue Green Strategy Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-recreate-config.jpg)
+
+     ![Figure 4c: Editing Canary Strategy Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-canary-config.jpg)
+
+     ![Figure 4d: Editing Blue Green Strategy Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-blue-green-config.jpg)
+
+3. Select **Update Pipeline** to save the configurations.
+
+     ![Figure 5: Selecting Update Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-update-pipeline.jpg)
+
+
 #### Custom Image Tag Pattern
 
 {% hint style="warning" %}
@@ -350,87 +465,6 @@ Deleting a CD pipeline also deletes all the K8s resources associated with it and
 
 ## Extras
 
-### Deployment Strategies
-
-A deployment strategy is a method of updating, downgrading, or creating new versions of an application. The options you see under deployment strategy depend on the selected chart type (see fig 2). Below are some deployment configuration-based strategies.
-
-#### Blue-Green Strategy
-
-Blue-green deployments involve running two versions of an application at the same time and moving traffic from the in-production version \(the green version\) to the newer version \(the blue version\).
-
-```markup
-blueGreen:
-  autoPromotionSeconds: 30
-  scaleDownDelaySeconds: 30
-  previewReplicaCount: 1
-  autoPromotionEnabled: false
-```
-
-| Key | Description |
-| :--- | :--- |
-| `autoPromotionSeconds` | It will make the rollout automatically promote the new ReplicaSet to active Service after this time has passed |
-| `scaleDownDelaySeconds` | It is used to delay scaling down the old ReplicaSet after the active Service is switched to the new ReplicaSet |
-| `previewReplicaCount` | It will indicate the number of replicas that the new version of an application should run |
-| `autoPromotionEnabled` | It will make the rollout automatically promote the new ReplicaSet to the active service |
-
-#### Rolling Strategy
-
-A rolling deployment slowly replaces instances of the previous version of an application with instances of the new version of the application. Rolling deployment typically waits for new pods to become ready via a readiness check before scaling down the old components. If a significant issue occurs, the rolling deployment can be aborted.
-
-```markup
-rolling:
-  maxSurge: "25%"
-  maxUnavailable: 1
-```
-
-| Key | Description |
-| :--- | :--- |
-| `maxSurge` | No. of replicas allowed above the scheduled quantity |
-| `maxUnavailable` | Maximum number of pods allowed to be unavailable |
-
-#### Canary Strategy
-
-Canary deployments are a pattern for rolling out releases to a subset of users or servers. The idea is to first deploy the change to a small subset of servers, test it, and then roll the change out to the rest of the servers. The canary deployment serves as an early warning indicator with less impact on downtime: if the canary deployment fails, the rest of the servers aren't impacted.
-
-```markup
-canary:
-  maxSurge: "25%"
-  maxUnavailable: 1
-  steps:
-    - setWeight: 25
-    - pause:
-        duration: 15 # 1 min
-    - setWeight: 50
-    - pause:
-        duration: 15 # 1 min
-    - setWeight: 75
-    - pause:
-        duration: 15 # 1 min
-```
-
-| Key | Description |
-| :--- | :--- |
-| `maxSurge` | It defines the maximum number of replicas the rollout can create to move to the correct ratio set by the last setWeight |
-| `maxUnavailable` | The maximum number of pods that can be unavailable during the update |
-| `setWeight` | It is the required percent of pods to move to the next step |
-| `duration` | It is used to set the duration to wait to move to the next step |
-
-#### Recreate Strategy
-
-The recreate strategy is a dummy deployment that consists of shutting down version 'A' and then deploying version 'B' after version 'A' is turned off. 
-
-A recreate deployment incurs downtime because, for a brief period, no instances of your application are running. However, your old code and new code do not run at the same time. It terminates the old version and releases the new one.
-
-```markup
-recreate:
-```
-
-Unlike other strategies mentioned above, 'Recreate' strategy doesn't contain keys for you to configure.
-
-{% hint style="info" %}
-Does your app have different requirements for different environments? Read [Environment Overrides](../environment-overrides.md)
-{% endhint %}
-
 ### Creating Sequential Pipelines
 
 Devtron supports attaching multiple deployment pipelines to a single build pipeline, in its workflow editor. This feature lets you deploy an image first to stage, run tests and then deploy the same image to production.
@@ -441,7 +475,7 @@ Please follow the steps mentioned below to create sequential pipelines:
 2. To add another CD Pipeline sequentially after previous one, again click on + sign on the last CD pipeline.
 3. Similarly, you can add multiple CD pipelines by clicking + sign of the last CD pipeline, each deploying in different environments.
 
-![Figure 23: Adding Multiple CD Pipelines](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/sequential-workflow.jpg)
+![Figure 19: Adding Multiple CD Pipelines](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/sequential-workflow.jpg)
 
 {% hint style="info" %}
 ### Tip
