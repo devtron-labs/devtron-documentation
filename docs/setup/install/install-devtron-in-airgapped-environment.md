@@ -5,8 +5,7 @@
 In certain scenarios, you may need to deploy Devtron to a Kubernetes cluster that isn’t connected to the internet. Such air-gapped environments are used for various reasons, particularly in industries with strict regulatory requirements like healthcare, banking, and finance. This is because air-gapped environments aren't exposed to the public internet; therefore, they create a controlled and secure space for handling sensitive data and operations.
 
 {% hint style="success" %}
-### Try Devtron Enterprise for Free
-Explore [all capabilities](https://devtron.ai/pricing) of Devtron with its Enterprise version trial ([read more](enterprise-license.md)).
+Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
 {% endhint %}
 
 ### Prerequisites
@@ -14,9 +13,9 @@ Explore [all capabilities](https://devtron.ai/pricing) of Devtron with its Enter
 1. Install `podman` or `docker` on the VM from where you're executing the installation commands.
 2. Get the latest image file
 
-    ```bash
-    curl -LO https://raw.githubusercontent.com/devtron-labs/devtron/refs/heads/main/devtron-images.txt.source
-    ```
+```bash
+curl -LO https://raw.githubusercontent.com/devtron-labs/devtron/refs/heads/main/devtron-images.txt.source
+```
 
 3. Set the values of `TARGET_REGISTRY`, `TARGET_REGISTRY_USERNAME`, and `TARGET_REGISTRY_TOKEN`. This registry should be accessible from the VM where you are running the cloning script and the K8s cluster where you’re installing Devtron.
 
@@ -33,14 +32,15 @@ If you are using Docker, the TARGET_REGISTRY should be in the format `docker.io/
 
 #### For Linux/amd64
 
-    ```bash
-    export PLATFORM="linux/amd64"
-    ```
+```bash
+export PLATFORM="linux/amd64"
+```
+    
 #### For Linux/arm64
 
-    ```bash
-    export PLATFORM="linux/arm64"
-    ```
+```bash
+export PLATFORM="linux/arm64"
+```
 
 
 

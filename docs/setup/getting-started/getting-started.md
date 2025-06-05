@@ -17,6 +17,11 @@ First, lets see what are the prerequisite requirements before you install Devtro
 
 
 ### Create a Kubernetes Cluster
+
+{% hint style="info" %}
+### Setting up a production-grade infrastructure?
+Refer [Devtron's Production Infra Recommendations](../install/prod-infra.md).
+{% endhint %}
  
 You can create any [Kubernetes cluster](https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/) (preferably K8s version 1.16 or higher) for installing Devtron.
 

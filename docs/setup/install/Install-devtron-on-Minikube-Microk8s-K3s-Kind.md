@@ -3,8 +3,7 @@
 You can install and try Devtron on a high-end machine or a Cloud VM. If you install it on a laptop/PC, it may start to respond slowly.
 
 {% hint style="success" %}
-### Try Devtron Enterprise for Free
-Explore [all capabilities](https://devtron.ai/pricing) of Devtron with its Enterprise version trial ([read more](enterprise-license.md)).
+Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
 {% endhint %}
 
 ## Prerequisites
@@ -42,7 +41,7 @@ helm repo update devtron
 
 helm install devtron devtron/devtron-operator \
 --create-namespace --namespace devtroncd \
---set components.devtron.service.type=NodePort --set installer.arch=multi-arch
+--set components.devtron.service.type=NodePort
 
 ```
 {% endtab %}
