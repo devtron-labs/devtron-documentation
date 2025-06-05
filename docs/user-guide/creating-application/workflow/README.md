@@ -1,26 +1,25 @@
-# Workflow
+# Workflow Editor
 
-Workflow is a logical sequence of different stages used for continuous integration and continuous deployment of an application.
+After configuring the **Build Configurations** and **Base Configurations**, the next step is to create a workflow in the workflow editor.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/arora1.gif)
+In Devtron, a **Workflow** is a logical sequence of different stages(pipelines) used for continuous integration and continuous deployment of an application. 
 
-Click on `New Build Pipeline` to create a new workflow
+ ![Figure 1: Workflow Editor](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/arora1.gif)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/new-build-pipeline-1.jpg)
+For Devtron Apps, you can create five types of workflows depending on your use case.
 
-On clicking `New Build Pipeline`, three options appear as mentioned below:
+* [Build and Deploy from Source Code](./ci-pipeline.md#1-build-and-deploy-from-source-code): Choose this option if you want Devtron to build and deploy the image of the source code.
 
-* **Continuous Integration:** Choose this option if you want Devtron to build the image of source code.
-* **Linked CI Pipeline:** Choose this option if you want to use an image created by an existing CI pipeline in Devtron.
-* **Incoming Webhook:** Choose this if you want to build your image outside Devtron, it will receive a docker image from an external source via the incoming webhook.
+* [Linked Build Pipeline](./ci-pipeline.md#2-linked-build-pipeline): Choose this option if you want to use an image created by an existing CI pipeline in Devtron.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/workflow-ci.jpg)
+* [Deploy Image from External Service](./ci-pipeline.md#3-deploy-image-from-external-service): Choose this if you want to build your image outside Devtron; it will receive a Docker image from an external source via the incoming webhook.
 
-Then, create CI/CD Pipelines for your application.
+* [Sync with Environment](./ci-pipeline.md#4-sync-with-environment) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-To know how to create the CI pipeline for your application, click on: [Create CI Pipelines](ci-pipeline.md)
+* [Create a Job](./cd-pipeline.md#5-create-a-job)
 
-To know how to create the CD pipeline for your application, click on: [Create CD Pipelines](cd-pipeline.md)
+![Figure 2: Selecting an Image Source](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/workflow-ci.jpg)
 
+To know how to create the CI pipeline for your application, refer to [Create CI Pipelines](./ci-pipeline.md)
 
-
+To know how to create the CD pipeline for your application, refer to [Create CD Pipelines](./cd-pipeline.md)
