@@ -1,12 +1,12 @@
 # Environment Overrides
 
-The Environment Overrides section allows you to customize the **ConfigMaps**, and **Secrets** for different environments such as development, testing, staging, and production and it even allows to create additional **ConfigMaps**, and **Secrets** (if required) for different environments
+The Environment Overrides section allows you to customize the **ConfigMaps**, and **Secrets** for different environments such as development, testing, staging, and production, and it even allows you to create additional **ConfigMaps**, and **Secrets** (if required) for different environments
 
 ## How it works
 
-* When you add a job pipeline to an job's workflow, each environment configuration initially inherits the  ConfigMap and Secret from the **Base Configurations** of the job.
+* When you add a job pipeline to a job's workflow, each environment configuration initially inherits the  ConfigMap and Secret from the **Base Configurations** of the job.
 
-* The **Environment Overrides** section lets you customize those ConfigMap and Secret per environment without affecting those of other environments. For example, in a non-production environment, you might allocate `100m` CPU, while in production, you may increase it to `500m` to handle higher traffic.
+* The **Environment Overrides** section lets you customize the ConfigMap and Secret per environment without affecting those of other environments. For example, in a non-production environment, you might allocate `100m` CPU, while in production, you may increase it to `500m` to handle higher traffic.
 
 * The **Environment Overrides** section also lets you create additional ConfigMaps and Secrets per environment without affecting those of other environments. For example, a testing environment may require additional ConfigMaps and Secrets for temporary or test-specific configurations, while a production environment uses only the base ConfigMaps and Secrets needed for running the application.
 
@@ -16,7 +16,7 @@ The Environment Overrides section allows you to customize the **ConfigMaps**, an
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have **Admin role** or **Super Admin role**.
+Users need to have the **Admin role** or the **Super Admin role**.
 Refer the [User permissions](../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
@@ -28,7 +28,7 @@ Refer the [User permissions](../../global-configurations/authorization/user-acce
 
  ![Figure 1b: Add Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/env-over-select-env.jpg)
 
-3. The environment will be added under **Environment Override**, if you wish you can add more environments by clicking **Add Environment**.
+3. The environment will be added under **Environment Override**. If you wish, you can add more environments by clicking **Add Environment**.
 
  ![Figure 1c: Select Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/env-over-env-added.jpg)
 
@@ -52,9 +52,9 @@ Refer the [User permissions](../../global-configurations/authorization/user-acce
 
 ## Override ConfigMaps & Secrets
 
-If you want to have environment-specific **ConfigMaps & Secrets**, use **Environment Override** to override them for specific environments or create new environment specific **ConfigMaps & Secrets**. At the time of execution, devtron will pick environment specific **ConfigMaps & Secrets** according to the environment in which the job is executed and pass them to your job pods.
+If you want to have environment-specific **ConfigMaps & Secrets**, use **Environment Override** to override them for specific environments or create new environment-specific **ConfigMaps & Secrets**. At the time of execution, Devtron will pick environment-specific **ConfigMaps & Secrets** according to the environment in which the job is executed and pass them to your job pods.
 
-1. Under the selected environment, select the **ConfigMap** or **Secret** you wish to override, by default the ConfigMap or Secret is inherited from the base configuration.
+1. Under the selected environment, select the **ConfigMap** or **Secret** you wish to override; by default, the ConfigMap or Secret is inherited from the base configuration.
 
  ![Figure 2a: Select ConfigMap or Secrets](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/env-over-select-config-secret.jpg)
 
@@ -73,7 +73,7 @@ If you want to have environment-specific **ConfigMaps & Secrets**, use **Environ
 ### Replace Strategy 
 
 * The entire configuration is replaced with your new environment-specific settings.
-* The replaced template will no longer depend or inherit from base configuration anymore.
+* The replaced template will no longer depend on or inherit from the base configuration anymore.
 * Best for a complete override.
 
 | Field     | Inherited Configuration | Input (with Replace)    | Final Configuration |
@@ -100,13 +100,13 @@ To create additional ConfigMaps & Secrets, follow the given steps
  
  ![Figure 3b: Configure ConfigMap or Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/env-over-add-view.jpg)
 
- Follow the below guide to create a ConfigMap or Secret:
+ Follow the guide below to create a ConfigMap or Secret:
 
  * [Add ConfigMaps](./config-maps-and-secrets/configmaps.md#add-configmap)
  
  * [Add Secrets](./config-maps-and-secrets/secrets.md#add-secret)
 
-3. Once created, a new ConfigMap or Secret will be added with a label `Created at environment` under it's name, in the left-section under ConfigMap or Secret respectively.
+3. Once created, a new ConfigMap or Secret will be added with a label `Created at environment` under its name, in the left section under ConfigMap or Secret, respectively.
 
  ![Figure 3c: ConfigMap or Secret added](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/env-over-new-added.jpg)
 
@@ -114,7 +114,7 @@ To create additional ConfigMaps & Secrets, follow the given steps
 
 ## Delete Override
 
-This action will discard the current overrides and the base configuration file (in this example, deployment template) will be restored back for the environment. 
+This action will discard the current overrides, and the base configuration file (in this example, the deployment template) will be restored back for the environment. 
 
 1. On the right side, click the kebab menu (3 vertical dots).
 
@@ -128,4 +128,4 @@ This action will discard the current overrides and the base configuration file (
 
 ---
 
-After setting up **Environment Overrides**, you can refer the [Trigger Job](../triggering-job.md) section to trigger your job-pipeline in different environments. 
+After setting up **Environment Overrides**, you can refer to the [Trigger Job](../triggering-job.md) section to trigger your job pipeline in different environments. 
