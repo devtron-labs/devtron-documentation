@@ -18,17 +18,17 @@ Codacy is an automated code analysis/quality tool that helps developers to ship 
  | ---- | ---- | ---- |
  | CodacyEndpoint | String | API endpoint for Codacy |
  | GitProvider | String | Git provider for the scanning |
- | CodacyApiToken | String | API token for Codacy. If it is provided, it will be used, otherwise it will be picked from Global secret (CODACY_API_TOKEN). |
+ | CodacyApiToken | String | API token for Codacy. If it is provided, it will be used, otherwise, it will be picked from the Global secret (CODACY_API_TOKEN). |
  | Organisation | String | Your Organization for Codacy|
  | RepoName | String | Your Repository name |
  | Branch | String | Your branch name |
 
  * `Trigger/Skip Condition` refers to a conditional statement to execute or skip the task. You can select either:<ul><li>`Set trigger conditions` or</li><li>`Set skip conditions`</li></ul> 
 
- * `Pass/Failure Condition` refers to conditions to execute pass or fail of your build. You can select either:<ul><li>`Set pass conditions` or</li><li>`Set failure conditions`</li></ul> 
+ * `Pass/Failure Condition` refers to conditions to execute a pass or fail of your build. You can select either:<ul><li>`Set pass conditions` or</li><li>`Set failure conditions`</li></ul> 
 
 4. Click **Update Pipeline**.
 
 5. Go to the **Build & Deploy**, click the build pipeline and start your build.
 
-6. Click `Details` on the build pipeline and you can view the details on the `Logs`.
+6. Click `Details` on the build pipeline, and you can view the details on the `Logs`.
