@@ -1,24 +1,24 @@
 # Triggering Job Pipeline
 
-After creating the job pipeline, the next step is to trigger the job pipeline. This is the step where the job will executed in the selected environment.
+After creating the job pipeline, the next step is to trigger the job pipeline. This is the step where the job will be executed in the selected environment.
 
-To trigger the job-pipeline:
+To trigger the job pipeline:
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have **Admin role** or **Super Admin role**.
+Users need to have the **Admin role** or the **Super Admin role**.
 Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
-1. Navigate to the **Trigger Job** tab of your job, which list all configured pipelines.
+1. Navigate to the **Trigger Job** tab of your job, which lists all configured pipelines.
 
  ![Figure 1a: Trigger job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job.jpg)
 
-2. Select **Select Material** for the job-pipeline you wish to execute, a modal window will open, under **Code-source** tab, this window lists all recent commits along with their hash, author, date, and message. from your configured source repository.
+2. Select **Select Material** for the job pipeline you wish to execute. A modal window will open, under the **Code-source** tab, this window lists all recent commits along with their hash, author, date, and message from your configured source repository.
 
  ![Figure 1b: Select material for specific pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-select-material.jpg)
 
-3. Select the commit you want to use in the job execution. You can use the search bar to filter the commits hash, and you can also click the kebab menu to reveal excluded commits. If a recent commit isn’t displayed, click the Refresh icon to reload the commit list from your Git repository.
+3. Select the commit you want to use in the job execution. You can use the search bar to filter the commit hash, and you can also click the kebab menu to reveal excluded commits. If a recent commit isn’t displayed, click the Refresh icon to reload the commit list from your Git repository.
 
  ![Figure 1c: Select commit](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-commit.jpg)
 
@@ -36,6 +36,6 @@ Refer the [User permissions](../global-configurations/authorization/user-access.
 
 ---
 
-After executing your pipeline, the pipeline will now be in running state and you can monitor the pipeline execution(such as logs, source,artifacts)in [run-history](./run-history.md) either by navigating to **Run History** tab or by clicking `details` above the **Select Material** of the specific pipeline.
+After executing your pipeline, the pipeline will now be in running state and you can monitor the pipeline execution(such as logs, source, artifacts)in [run-history](./run-history.md) either by navigating to **Run History** tab or by clicking `details` above the **Select Material** of the specific pipeline.
 
 ![Figure 2: Job status](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-details.jpg)
