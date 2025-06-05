@@ -1,6 +1,6 @@
 # Create Job
 
-In devtron, jobs can be created by two ways:
+In Devtron, jobs can be created in two ways:
 
 * **Blank Job**: This allows you to create a new job from scratch by manually defining all configurations.
 
@@ -12,7 +12,7 @@ In devtron, jobs can be created by two ways:
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have **Admin role** or **Super Admin role**.
+Users need to have the **Admin role** or the **Super Admin role**.
 Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
@@ -75,7 +75,7 @@ To create a new **Clone Job** in Devtron, follow these steps:
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have **Admin role** or **Super Admin role**.
+Users need to have the **Admin role** or the **Super Admin role**.
 Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
@@ -83,13 +83,13 @@ To delete a job:
 
 1. Navigate to **Devtron Dashboard** → **Jobs** → **Select the job** → **Configurations**.
 
-2. To delete the job, you have to first delete any configured pipelines in the jobs.
+2. To delete the job, you have to first delete any configured pipelines in the job workflow.
 
  ### Delete job pipelines
 
  * Navigate to **Devtron Dashboard** → **Jobs** → **Select the job** → **Configurations** → **Workflow Editor**.
 
- * Select the job pipeline you wish to delete, a edit job pipeline modal window will appear.
+ * Select the job pipeline you wish to delete, and an edit job pipeline modal window will appear.
 
  ![Figure 3a: Select job pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-delete-select.jpg)
 
@@ -111,4 +111,4 @@ To delete a job:
 
 ---
 
-After creating a job, the next step is to configure the job, refer the [Configurations](./configurations/README.md) section to configure the job.
+After creating a job, the next step is to configure the job. Refer to the [Configurations](./configurations/README.md) section to configure the job.
