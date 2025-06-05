@@ -154,19 +154,19 @@ Only [Super-Admins](#grant-super-admin-permission) can create an **Access Manage
 
 **Access Manager** is an enterprise feature that allows you to manage user permissions on a granular level. As an Access Manager, you can assign or revoke permissions of existing users within your granted scope. 
 
-For example, when a Super-Admin creates an Access Manager and grants him **View only** access under **Base Role**, and **Admin**, **Config Approver** permissions under the **Access Manager** role, then the Access Manager will have **View only** access across Devtron and will not be able to perform any other operations. 
+For example, when a [Super-Admin](#grant-super-admin-permission) creates an Access Manager and grants him **View only** access under **Base Role**, and **Admin**, **Config Approver** permissions under the **Access Manager** role, then the Access Manager will have **View only** access across Devtron and will not be able to perform any other operations. 
 
-However, he will still be able to assign **View only** access, assign or revoke **Admin** and **Config Approver** permissions to other existing users. This is possible because the Super-Admin has explicitly granted those permissions under the **Access Manager** role when creating the Access Manager. 
+However, he will still be able to assign **View only** access, assign or revoke **Admin** and **Config Approver** permissions to other existing users. This is possible because the [Super-Admin](#grant-super-admin-permission) has explicitly granted those permissions under the **Access Manager** role when creating the Access Manager. 
 
 {% hint style="warning" %}
 
 ### Important Note
 
-An Access Manager cannot create other Access Managers or add new users. Creation of new users and Access Manager is restricted only to Super-Admin. 
+An Access Manager cannot create other Access Managers or add new users. Creation of new users and Access Manager is restricted only to [Super-Admins](#grant-super-admin-permission). 
 
 {% endhint %}
 
-If a Super-Admin enables the **Can manage access for all roles** toggle for a user, then that user can create new users, modify permissions of even existing Super-Admins. However, he will still not be able to create a Super-Admin. The **Can manage access for all roles** toggle is exclusively available to Super Admins and is not visible to any other users.
+If a [Super-Admin](#grant-super-admin-permission) enables the **Can manage access for all roles** toggle for a user, then that user can create new users, modify permissions of even existing [Super-Admin](#grant-super-admin-permission). However, he will still not be able to create a [Super-Admin](#grant-super-admin-permission). The **Can manage access for all roles** toggle is exclusively available to [Super-Admin](#grant-super-admin-permission) and is not visible to any other users.
 
 ![Figure 11: Can manage access for all roles Toggle](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/cmafar-highlighted.jpg)
 
@@ -174,7 +174,7 @@ Enabling this toggle, however, does not grant the user the ability to give anoth
 
 ![Figure 12: Access Manager is not Displayed](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/access-manager-not-displayed.jpg)
 
-For a Super-Admin, the **Access Manager** toggle is disabled by default. When you enable the **Access Manager** toggle from the **Role** drop-down but do not select any permissions, the system treats it as if the toggle were never enabled. In other words, enabling the toggle without assigning any permissions has no effect. Therefore, when enabling the **Access Manager** toggle, it is recommended to select at least one permission to ensure the role is active.
+For a [Super-Admin](#grant-super-admin-permission), the **Access Manager** toggle is disabled by default. When you enable the **Access Manager** toggle from the **Role** drop-down but do not select any permissions, the system treats it as if the toggle were never enabled. In other words, enabling the toggle without assigning any permissions has no effect. Therefore, when enabling the **Access Manager** toggle, it is recommended to select at least one permission to ensure the role is active.
 
 The following permissions are currently available in the Access Manager role:
 
@@ -190,11 +190,11 @@ The following permissions are currently available in the Access Manager role:
 
 The **Deployment approver** permission is not currently available within the **Access Manager** role. If you would like to see this permission included, we encourage you to raise a feature request on GitHub.
 
-An Access Manager cannot modify Super Admin permissions. If an Access Manager attempts to perform any action beyond their granted scope, the system will display an appropriate error message. For example, if an Access Manager has **View Only** access under the **Base Role**, and attempts to modify an existing user who currently has **Admin** access, the Access Manager can downgrade the user’s access to **View only**. But, he will not be able to reassign **Admin** access afterward, as he himself do not hold that permission and an appropriate error message is displayed. Access Managers can only modify permissions that fall within their own granted scope.
+An Access Manager cannot modify [Super-Admin](#grant-super-admin-permission) permissions. If an Access Manager attempts to perform any action beyond their granted scope, the system will display an appropriate error message. For example, if an Access Manager has **View Only** access under the **Base Role**, and attempts to modify an existing user who currently has **Admin** access, the Access Manager can downgrade the user’s access to **View only**. But, he will not be able to reassign **Admin** access afterward, as he himself do not hold that permission and an appropriate error message is displayed. Access Managers can only modify permissions that fall within their own granted scope.
 
 When an Access Manager modifies and assigns the **Artifact Promoter** permission to an existing user, for example, then that user will only have **Artifact Promoter** permission selected and displayed in the **Role** drop-down box, whereas the other permissions, **Config Approver** and **Deployment approver**, will not be displayed. 
 
-However, super-admin users have unrestricted access to all Devtron resources. They can create, modify, delete, and manage any resource, including user access, Git repositories, container registries, clusters, and environments.
+However, [Super-Admin](#grant-super-admin-permission) users have unrestricted access to all Devtron resources. They can create, modify, delete, and manage any resource, including user access, Git repositories, container registries, clusters, and environments.
 
 | Role                  | View | Create | Edit | Delete | Build & Deploy | Approve Images | Approve Config Change | Approve Artifacts | Manage User Access |
 |-----------------------|:----:|:------:|:----:|:------:|:--------------:|:--------------:|:--------------:|:----------------:|:----------------:|
