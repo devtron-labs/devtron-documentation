@@ -37,7 +37,7 @@ You can choose to add your Kubernetes cluster using either of the following meth
 
 {% hint style="info" %}
 ### Note
-Refer [Get Cluster Credentials](#get-cluster-credentials) to learn the process of getting the Server URL and bearer token.
+Refer to [Get Cluster Credentials](#get-cluster-credentials) to learn the process of getting the Server URL and bearer token.
 {% endhint %}
 
 1. To add a Kubernetes cluster on Devtron using Server URL and Bearer Token, provide the following information:
@@ -57,7 +57,7 @@ Refer [Get Cluster Credentials](#get-cluster-credentials) to learn the process o
 
 {% hint style="tip" %}
 ### Tip
-If you have a kubeconfig file ready, you may skip the above process and refer [Add Cluster Using Kubeconfig](#add-cluster-using-kubeconfig) instead.
+If you have a kubeconfig file ready, you may skip the above process and refer to [Add Cluster Using Kubeconfig](#add-cluster-using-kubeconfig) instead.
 {% endhint %}
 
 ### Add Cluster Using Kubeconfig
@@ -226,7 +226,7 @@ Users need to have super-admin permission to add an environment to a cluster.
 Users need to have super-admin permission to edit an environment in a cluster.
 {% endhint %}
 
-You can also make edits to an existing environment if need be by clicking the edit icon.
+You can also make edits to an existing environment if needed by clicking the edit icon.
 
 ![Figure 21: Editing Environment in the Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/edit-env.jpg)
 
@@ -321,7 +321,7 @@ To assign a category to a cluster, follow the steps below:
 
 1. Go to **Global Configurations** → **Cluster and Environments**.
 
-2. Select **Clusters and Environments** and click the **Edit Environment** icon for the environment you want to modify, a **Edit Environment** modal window will appear.
+2. Select **Clusters and Environments** and click the **Edit Environment** icon for the environment you want to modify. A **Edit Environment** modal window will appear.
 
    ![Figure 33: Editing Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-edit-env.jpg)
 
