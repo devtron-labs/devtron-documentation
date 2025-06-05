@@ -1,6 +1,6 @@
 # Overview
 
-The Overview page provides a centralized view of a job’s details within Devtron. It allows users to quickly access information about the job, manage tags, view job pipelines — all in a single, organized interface.
+The Overview page provides a centralized view of a job’s details within Devtron. It allows users to quickly access information about the job, manage tags, and view job pipelines — all in a single, organized interface.
 
 ![Figure 1a: Job's overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job.jpg)
 
@@ -55,15 +55,15 @@ To add or update the **Readme**:
 
 ### Catalog [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-The **Catalog** in the **About** section displays information about your job—such as Container port, Environment Variables, Arguments, Resources(CPU and RAM) This data is managed using [Devtron’s Catalog Framework](../global-configurations/catalog-framework.md).
+The **Catalog** in the **About** section displays information about your job, such as Container port, Environment Variables, Arguments, Resources(CPU and RAM). This data is managed using [Devtron’s Catalog Framework](../global-configurations/catalog-framework.md).
 
 ![Figure 3a: Catalog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog.jpg)
 
-You can use the **Catalog framework** to maintain information about your job such as Environment Variables, Resources(CPU and RAM), service documentations etc. This makes it easier for others to understand, manage and use your job.
+You can use the **Catalog framework** to maintain information about your job, such as Environment Variables, Resources(CPU and RAM), service documentation, etc. This makes it easier for others to understand, manage, and use your job.
 
 `Super-Admins` define a custom JSON schema that determines what fields are shown in the catalog form. This schema is specific to each resource type, such as Devtron applications.
 
-When you click the **Edit** icon, a form appears based on the defined schema. As an job owner, you can fill out fields like:
+When you click the **Edit** icon, a form appears based on the defined schema. As a job owner, you can fill out fields like:
 *	Container port (e.g., API contract, service documentation)
 *	Environment Variables 
 *	Arguments
@@ -89,7 +89,7 @@ The Job Pipelines section provides a detailed view of all job pipelines. For eac
 | :--------- |:--------- |
 | Pipeline name |Name of the job pipeline.|
 | Last Run Status|Displays the status of the most recent job execution|
-| Run in environment | Displays the name of the environment in which job is executed. |
+| Run in environment | Displays the name of the environment in which the job is executed. |
 | Last Run AT| Displays how long ago the job was last triggered.|
 
 ![Figure 4: Job Pipelines](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-job-pipelines.jpg)
