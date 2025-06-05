@@ -1,8 +1,8 @@
 # Jobs
 
-Devtron Jobs provide a streamlined way to execute specific tasks or set of tasks defined by the user within the user's application environment.
+Devtron Jobs provides a streamlined way to execute specific tasks or a set of tasks defined by the user within the user's application environment.
 
-To learn more about how Jobs work, see the below sections
+To learn more about how Jobs work, see the sections below
 
 
 * [What is Jobs](./what-is-job.md)
