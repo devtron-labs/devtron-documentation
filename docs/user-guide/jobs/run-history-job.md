@@ -1,22 +1,22 @@
 # Run History
 
-The run history allows you to review each and every execution of job-pipelines. Here you can review who triggered each pipeline, when it started executing and finished, and whether it succeeded or failed. It also allows you to inspect logs for each execution.
+The run history allows you to review every execution of job pipelines. Here you can review who triggered each pipeline, when it started executing and finished, and whether it succeeded or failed. It also allows you to inspect logs for each execution.
 
 ## Accessing run history for specific pipeline
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have **Admin role** or **Super Admin role**.
+Users need to have the **Admin role** or the **Super Admin role**.
 Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
-Either you have just executed the job and want to inspect live execution or you just want to check previous executions of a job pipeline
+Either you have just executed the job and want to inspect the live execution, or you just want to check previous executions of a job pipeline
 
-1. Navigate to **Run History** tab of your job, all the executions will appear in a reverse chronological order under the pipeline name. In case you have configured multiple job pipelines within a job, you need to select the pipeline from **Select Pipeline** dropdown in the top-left corner. 
+1. Navigate to the **Run History** tab of your job, and all the executions will appear in a reverse chronological order under the pipeline name. In case you have configured multiple job pipelines within a job, you need to select the pipeline from the **Select Pipeline** dropdown in the top-left corner. 
 
  ![Figure 1a: Select Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history.jpg)
 
-2. Select the specific execution you want to inspect. By default the latest execution is selected.
+2. Select the specific execution you want to inspect. By default, the latest execution is selected.
 
  ![Figure 1b: Select specific execution](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-select-execution.jpg)
 
@@ -35,7 +35,7 @@ Either you have just executed the job and want to inspect live execution or you 
 Apart from these details, you can also inspect logs, source code, security, and download artifacts (if any).
 
 ### Logs
- * In logs tab, you can inspect logs for each pipeline stage and task along with their runtime.
+ * In the logs tab, you can inspect logs for each pipeline stage and task along with their runtime.
  * Use the `Search log` search bar to search specific keywords or errors.
  * You can expand/collapse each pipeline stage to view specific logs related to that stage. Use the `Expand/collapse all stages` button near the search bar to expand or collapse all stages at once.
  * Select the fullscreen button in the bottom-right corner to view logs in fullscreen.
@@ -43,9 +43,9 @@ Apart from these details, you can also inspect logs, source code, security, and 
  ![Figure 2a: Logs](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-logs.jpg)
 
 ### Source
- The source tab shows which commit is from the source code (configured Git repository) is used to execute the job pipeline. 
+ The source tab shows which commit is from the source code (configured Git repository) that is used to execute the job pipeline. 
 
- It shows following commit details
+ It shows the following commit details
  |Field|Description|
  |:---|:---|
  |`Repository name & icon` |The Git repo used with its provider logo|
@@ -66,4 +66,4 @@ Apart from these details, you can also inspect logs, source code, security, and 
 
 ---
 
-After inspecting run history you can also setup the [Job Overview](./overview-job.md) so that others can easily use the job in future.
+After inspecting the run history, you can also set up the [Job Overview](./overview-job.md) so that others can easily use the job in the future.
