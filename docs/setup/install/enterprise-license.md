@@ -21,7 +21,7 @@ Enjoy an uninterrupted 14-day free trial and explore [all the features of Devtro
 This guide is intended for fresh installation of **Devtron Enterprise**.  
 If you're currently using the open-source (OSS) version of Devtron, we **do not recommend** converting your existing setup to the Enterprise edition.
 
-Instead, we suggest you to perform a [fresh installation of Devtron Enterprise](#install-devtron-enterprise) for the best experience.
+Instead, we suggest you to perform a fresh installation of Devtron Enterprise (following the steps below) for the best experience.
 {% endhint %}
 
 ---
@@ -42,13 +42,13 @@ Log in with your work email to access the license dashboard. Devtron provides tw
 
 3. Under **Tell Us About You**, enter some basic details to help us improve your Devtron Experience.
 
-4. After entering the details, click **Next** to proceed to [Step 2: Install Devtron](install-devtron-enterprise-trial.md#step-2-install-devtron).
+4. After entering the details, click **Next** to proceed to [Step 2: Install Devtron](#step-2-install-devtron).
 
  ![Figure 2: Entering the Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-step-1.jpg)
 
 ### Method 2: Log In with Email 
 
-You can also log in via **Continue with Email**. This will send a 'Login Link' to the provided work email. To do so, follow the below steps:
+You can also log in via **Continue with Email**. This will send a login link to the provided work email. To do so, follow the below steps:
 
 1. Select **Continue with Email** to log in.
 
@@ -58,9 +58,9 @@ You can also log in via **Continue with Email**. This will send a 'Login Link' t
 
   ![Figure 4: Entering Email](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-enter-email.jpg)
 
-3. A 'Login Link' will be sent to the email provided by you. If you do not receive the link, you can resend it after 30 seconds.
+3. A login link will be sent to the email provided by you. If you do not receive the link, you can resend it after 30 seconds.
 
- **Note:** Your 'Login Link' is valid only for 10 minutes.
+ **Note:** Your login link is valid only for 10 minutes.
 
   ![Figure 5: Sending Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-resend-email.jpg)
 
@@ -69,21 +69,21 @@ You can also log in via **Continue with Email**. This will send a 'Login Link' t
 
 * Check all sections of the mailbox, including the Spam section.
 
-* If you find the 'Login Link' email in the Spam section, mark it as 'Not Spam'.
+* If you find the login link email in the Spam section, mark it as 'Not Spam'.
 
 {% endhint %}
 
-4. Go to your provided email inbox and use the 'Login Link' to log into the **Devtron License Dashboard**.
+4. Go to your provided email inbox and use the login link.
 
-  ![Figure 6: 'Login Link' Email](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-email.jpg)
+  ![Figure 6: Email with Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-email.jpg)
 
-5. Once logged in, **Devtron License Dashboard** will open.
+  Once logged in, the **Devtron License Dashboard** will open.
 
-6. Under **Tell Us About You**, enter some basic details to help us improve your Devtron Experience.
+5. Under **Tell Us About You**, enter a few basic details to help us improve your Devtron Experience.
 
-7. After entering the details, click **Next** to proceed to [Step 2: Install Devtron](install-devtron-enterprise-trial.md#step-2-install-devtron).
+6. Click **Next** to proceed to [Step 2: Install Devtron](#step-2-install-devtron).
 
- ![Figure 7: Entering the Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-step-1.jpg)
+  ![Figure 7: Entering the Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-step-1.jpg)
 
 ---
 
@@ -266,7 +266,7 @@ You will now need to enter your Devtron **Installation Fingerprint** to generate
 
 To get the **Installation Fingerprint**, follow the below steps 
 
-1. Visit your Dashboard URL (which you have obtained in [Step-2.3](#23-obtain-the-dashboard-url))as shown below.
+1. Visit your Dashboard URL (which you have obtained in [Step-2.3](#id-2.3-obtain-the-dashboard-url))as shown below.
 
  ![Figure 10: License Activation Screen](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-fingerprint.jpg)
 
@@ -291,7 +291,7 @@ The license key you generate will be valid only for your enterprise installation
 
  ![Figure 14: Pasting License Key and Activating](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-paste-license-key.jpg)
 
-6. **Devtron Enterprise License** has been activated and now you can log in into **Devtron Dashboard**. 
+6. **Devtron Enterprise License** will be activated and you can log in to **Devtron Dashboard**. 
 
  ![Figure 15: Log in as Administrator ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-login.jpg)
 
@@ -322,7 +322,7 @@ When you install Devtron for the first time, it creates a default admin user and
 After the initial login, we recommend you set up any [Single Sign-On (SSO) service](../../user-guide/global-configurations/sso-login.md) like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (let's say, GitHub) to log in to the Dashboard.
 {% endhint %}
 
-3. After a successful login, the **Devtron Dashboard** will open, and you can start exploring **Devtron Enterprise** features.
+3. After a successful login, the **Devtron Dashboard** will open, and you can explore **Devtron Enterprise** features.
 
  ![Figure 17: Devtron Dashboard](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-dashbaord.jpg)
 

@@ -72,7 +72,7 @@ Here you can add one or more tasks. The tasks can be re-arranged using drag-and-
 
 2. **Trigger Pre-Deployment Stage**
 
-Refer the trigger types from [here](#1-deploy-to-environment).
+Refer the trigger types from [here](#deploy-to-environment).
 
 3. **ConfigMaps & Secrets**
 

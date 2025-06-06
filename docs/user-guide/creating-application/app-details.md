@@ -50,4 +50,4 @@ You can also copy the Ingress Host URL from the **URLs** instead of searching in
 
 Devtron helps you to manage your **Canary** and **Blue-Green** deployments by providing visibility and easy controls to manage how new versions (releases) are shared with users.
 
-Refer [Deployment Visibility & Actions](./manage-traffic.md) to know more.
+Refer [this doc](../creating-application/deployment-visibility.md) to know more.
