@@ -166,7 +166,7 @@ An Access Manager cannot create other Access Managers or add new users. Creation
 
 {% endhint %}
 
-If a [Super-Admin](#grant-super-admin-permission) enables the **Can manage access for all roles** toggle for a user, then that user can create new users, modify permissions of even existing [Super-Admin](#grant-super-admin-permission). However, he will still not be able to create a [Super-Admin](#grant-super-admin-permission). The **Can manage access for all roles** toggle is exclusively available to [Super-Admin](#grant-super-admin-permission) and is not visible to any other users.
+If a [Super-Admin](#grant-super-admin-permission) enables the **Can manage access for all roles** toggle for a user, then that user can modify permissions of existing users and even [Super-Admins](#grant-super-admin-permission). However, he will still not be able to create a [Super-Admin](#grant-super-admin-permission) or new users. The **Can manage access for all roles** toggle is exclusively available to [Super-Admin](#grant-super-admin-permission) and is not visible to any other users.
 
 ![Figure 11: Can manage access for all roles Toggle](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/cmafar-highlighted.jpg)
 
