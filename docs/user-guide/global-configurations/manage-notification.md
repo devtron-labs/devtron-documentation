@@ -36,9 +36,9 @@ The **Notifications** page has the following two tabs:
 
 You can configure notifications in Devtron in the following four ways: 
 
-* [SES Configuration](#ses-configuration)
+* [SES Configuration](#email-ses-configuration)
 
-* [SMTP Configuration](#smtp-configuration)
+* [SMTP Configuration](#email-smtp-configuration)
 
 * [Slack Configuration](#slack-configuration)
 
@@ -59,9 +59,9 @@ Only [Super-Admins](user-access.md) can create and manage SES configurations.
     
 ### Prerequisites
 
-AWS access key and secret key - When obtaining access key and secret access key from AWS SES, make sure to generate them from the **Security credentials** page (**Profile** → **Security credentials** → **Access keys** → **Create access key**). If you prefer to use the SMTP credentials generated from the **SMTP settings** page in AWS, please refer to [Email SMTP Configuration](#email-smtp-configuration).
+* **AWS access key and secret key** - When obtaining access key and secret access key from AWS SES, make sure to generate them from the **Security credentials** page (**Profile** → **Security credentials** → **Access keys** → **Create access key**).
 
-Verified domain/email identities on AWS SES - To know more, visit [Creating and Verifying Identities in Amazon SES](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html).
+* **Verified domain/email identities on AWS SES** - To know more, visit [Creating and Verifying Identities in Amazon SES](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html).
 
 {% endhint %}
 
@@ -107,6 +107,10 @@ Only [Super-Admins](user-access.md) can create and manage SMTP configurations.
 ### Prerequisite
 
 SMTP credentials (username and password) from your SMTP provider. 
+
+**Additional Resources**:
+* [Generate AWS SMTP Credentials](https://docs.aws.amazon.com/ses/latest/dg/smtp-credentials.html)
+* [Configure Gmail SMTP](https://mailtrap.io/blog/gmail-smtp/#Step-1-Enabling-SMTP-in-Gmail-settings)
 
 {% endhint %}
 

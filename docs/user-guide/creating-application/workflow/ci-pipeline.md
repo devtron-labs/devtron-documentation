@@ -209,8 +209,8 @@ The total timeout for the execution of the CI pipeline is by default set as 3600
 {% hint style="info" %}
 ### Prerequisite
 Install any one of the following integrations from Devtron Stack Manager:
-* [Clair](../../../user-guide/integrations/clair.md)
-* Trivy
+* [Clair](../../../user-guide/integrations/vulnerability-scanning/clair.md)
+* [Trivy](../../../user-guide/integrations/vulnerability-scanning/trivy.md)
 {% endhint %}
 
 To perform the security scan after the container image is built, enable the **Scan for vulnerabilities** toggle in the build stage. Refer [Security features](../../../user-guide/security-features.md) to know more.
