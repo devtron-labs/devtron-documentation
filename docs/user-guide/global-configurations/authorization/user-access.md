@@ -154,27 +154,29 @@ Only [Super-Admins](#grant-super-admin-permission) can create an **Access Manage
 
 **Access Manager** is an enterprise feature that allows you to manage user permissions on a granular level. As an Access Manager, you can assign or revoke permissions of existing users within your granted scope. 
 
-For example, when a [Super-Admin](#grant-super-admin-permission) creates an Access Manager and grants him **View only** access under **Base Role**, and **Admin**, **Config Approver** permissions under the **Access Manager** role, then the Access Manager will have **View only** access across Devtron and will not be able to perform any other operations. 
+For example, when a Super-Admin creates an Access Manager and grants him **View only** access under **Base Role**, and **Admin**, **Config Approver** permissions under the **Access Manager** role, then the Access Manager will have **View only** access across Devtron and will not be able to perform any other operations. 
 
-However, he will still be able to assign **View only** access, assign or revoke **Admin** and **Config Approver** permissions to other existing users. This is possible because the [Super-Admin](#grant-super-admin-permission) has explicitly granted those permissions under the **Access Manager** role when creating the Access Manager. 
+However, he will still be able to assign **View only** access, assign or revoke **Admin** and **Config Approver** permissions to other existing users. This is possible because the Super-Admin has explicitly granted those permissions under the **Access Manager** role when creating the Access Manager. 
 
 {% hint style="warning" %}
 
 ### Important Note
 
-An Access Manager cannot create other Access Managers or add new users. Creation of new users and Access Manager is restricted only to [Super-Admins](#grant-super-admin-permission). 
+An Access Manager cannot create other Access Managers or add new users. Creation of new users and Access Manager is restricted only to Super-Admins. 
 
 {% endhint %}
 
-If a [Super-Admin](#grant-super-admin-permission) enables the **Can manage access for all roles** toggle for a user, then that user can modify permissions of existing users and even [Super-Admins](#grant-super-admin-permission). However, he will still not be able to create a [Super-Admin](#grant-super-admin-permission) or new users. The **Can manage access for all roles** toggle is exclusively available to [Super-Admin](#grant-super-admin-permission) and is not visible to any other users.
+If a Super-Admin enables the **Can manage access for all roles** toggle for a user, then that user can modify permissions of existing users and even Super-Admin. However, he will still not be able to create a Super-Admin or new users. The **Can manage access for all roles** toggle is exclusively available to Super-Admin and is not visible to any other users.
 
-![Figure 11: Can manage access for all roles Toggle](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/cmafar-highlighted.jpg)
+![Figure 11: 'Can manage access for all roles' Toggle](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/cmafar-highlighted.jpg)
 
-Enabling this toggle, however, does not grant the user the ability to give another user the Access Manager role. When an Access Manager modifies permissions of an existing user, the **Access Manager** toggle in the **Role** drop-down box remains hidden. 
+Enabling this toggle, however, does not grant the user the ability to give another user the Access Manager role. For example, when a Super-Admin enables the **Can manage access for all roles** toggle for a user, then for that user, the **Access Manager** toggle will not be available in the **Role** drop-down box, thereby restricting the ability to create Access Managers to Super-Admin.
 
 ![Figure 12: Access Manager is not Displayed](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/access-manager-not-displayed.jpg)
 
-For a [Super-Admin](#grant-super-admin-permission), the **Access Manager** toggle is disabled by default. When you enable the **Access Manager** toggle from the **Role** drop-down but do not select any permissions, the system treats it as if the toggle were never enabled. In other words, enabling the toggle without assigning any permissions has no effect. Therefore, when enabling the **Access Manager** toggle, it is recommended to select at least one permission to ensure the role is active.
+The **Access Manager** toggle in the **Role** drop-down box is disabled by default.
+
+When a Super-Admin creates a new user or edits the permissions of an existing user, if he enables the **Access Manager** toggle from the **Role** drop-down box but do not select any permissions, the system treats it as if the toggle were never enabled. In other words, enabling the toggle without assigning any permissions has no effect. Therefore, when enabling the **Access Manager** toggle, it is recommended to select at least one permission to ensure the role is active.
 
 The following permissions are currently available in the Access Manager role:
 
@@ -190,11 +192,15 @@ The following permissions are currently available in the Access Manager role:
 
 The **Deployment approver** permission is not currently available within the **Access Manager** role. If you would like to see this permission included, we encourage you to raise a feature request on GitHub.
 
-An Access Manager cannot modify [Super-Admin](#grant-super-admin-permission) permissions. If an Access Manager attempts to perform any action beyond their granted scope, the system will display an appropriate error message. For example, if an Access Manager has **View Only** access under the **Base Role**, and attempts to modify an existing user who currently has **Admin** access, the Access Manager can downgrade the user’s access to **View only**. But, he will not be able to reassign **Admin** access afterward, as he himself do not hold that permission and an appropriate error message is displayed. Access Managers can only modify permissions that fall within their own granted scope.
+An Access Manager cannot modify Super-Admin permissions. If an Access Manager attempts to perform any action beyond their granted scope, the system will display an appropriate error message. For example, when modifying the permissions of an existing user, if the Access Manager only has the **View only** permission, but attempt to assign **Build and Deploy** permission to the existing user, an error message is displayed.
+
+![Figure 13: Not Authorized Error](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/not-authorized.gif)
+
+Similarly, if an Access Manager has **View Only** access, but attempts to modify an existing user who currently has **Admin** access, the Access Manager can downgrade the user’s access to **View only**. But, he will not be able to reassign **Admin** access afterward, as he himself do not hold that permission and an appropriate error message is displayed. Access Managers can only modify permissions that fall within their own granted scope.
 
 When an Access Manager modifies and assigns the **Artifact Promoter** permission to an existing user, for example, then that user will only have **Artifact Promoter** permission selected and displayed in the **Role** drop-down box, whereas the other permissions, **Config Approver** and **Deployment approver**, will not be displayed. 
 
-However, [Super-Admin](#grant-super-admin-permission) users have unrestricted access to all Devtron resources. They can create, modify, delete, and manage any resource, including user access, Git repositories, container registries, clusters, and environments.
+However, Super-Admin users have unrestricted access to all Devtron resources. They can create, modify, delete, and manage any resource, including user access, Git repositories, container registries, clusters, and environments.
 
 | Role                  | View | Create | Edit | Delete | Build & Deploy | Approve Images | Approve Config Change | Approve Artifacts | Manage User Access |
 |-----------------------|:----:|:------:|:----:|:------:|:--------------:|:--------------:|:--------------:|:----------------:|:----------------:|
@@ -212,7 +218,7 @@ However, [Super-Admin](#grant-super-admin-permission) users have unrestricted ac
 
 Here you can grant your user the permissions for Helm apps deployed from Devtron or outside Devtron.
 
-![Figure 13: Granting Helm Apps Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/helm-apps-perm.jpg)
+![Figure 14: Granting Helm Apps Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/helm-apps-perm.jpg)
 
 | Field | Description |
 | --- | --- |
@@ -241,7 +247,7 @@ There are three role-based access levels for Helm Apps:
 
 Here you can grant your user the permissions to access the jobs created in Devtron.
 
-![Figure 14: Granting Jobs Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/jobs-perm.jpg)
+![Figure 15: Granting Jobs Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/jobs-perm.jpg)
 
 | Field | Description |
 | --- | --- |
@@ -280,10 +286,10 @@ Here you can provide permission to view, inspect, manage, and delete resources i
 
 To grant Kubernetes resource permission, click **Add permission**.
 
-![Figure 15a: Adding Permissions for Kubernetes Resources](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/k8s-perm1.jpg)
+![Figure 16a: Adding Permissions for Kubernetes Resources](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/k8s-perm1.jpg)
 
 
-![Figure 15b: Granting Permissions for Kubernetes Resources](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/k8s-perm2.jpg)
+![Figure 16b: Granting Permissions for Kubernetes Resources](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/k8s-perm2.jpg)
 
 | Field | Description |
 | --- | --- |
@@ -317,7 +323,7 @@ The 'Chart Groups' tab will be available only if the [CI/CD module](../../integr
 
 Here you can grant your user the permissions for accessing Chart Groups. Note that you can only give users the permission to either create chart groups or edit them, but not both.
 
-![Figure 16: Granting Chart Group Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/chart-group-perm.jpg)
+![Figure 17: Granting Chart Group Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/chart-group-perm.jpg)
 
 | Action | Permissions |
 | :---   | :---         |
@@ -350,7 +356,7 @@ Here you can grant your user the permissions for accessing Chart Groups. Note th
 
 When working with multiple collaborators in Devtron, you may need to deactivate users who no longer require access and reactivate them when needed. This applies to users of Devtron Apps, Helm Apps, Jobs, and Kubernetes Resources.
 
-![Figure 17: Active/Inactive Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/active-inactive-levels.jpg)
+![Figure 18: Active/Inactive Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/active-inactive-levels.jpg)
 
 You can manage a user's active status at three levels:
 * [User-level](#at-user-level)
@@ -360,7 +366,7 @@ You can manage a user's active status at three levels:
 
 ### At User level
 
-![Figure 18: Active/Inactive User](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/user-level-activation.jpg)
+![Figure 19: Active/Inactive User](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/user-level-activation.jpg)
 
 * **Active/Activate** - Use this option to activate a deactivated user while retaining their previous roles and permissions.
 * **Inactive/Inactivate** - Use this option to deactivate an existing active user and save the changes. If the user has an ongoing session, they will be logged out permanently on their next action or refresh.
@@ -368,7 +374,7 @@ You can manage a user's active status at three levels:
 
 ### At Permission Group level
 
-![Figure 19: Active/Inactive User from Permission Group](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/group-level-activation.jpg)
+![Figure 20: Active/Inactive User from Permission Group](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/group-level-activation.jpg)
 
 * **Active/Activate** - Use this option to allow permissions from the group to take effect for the user.
 * **Inactive/Inactivate** - Use this option to prevent permissions from the group from taking effect for the user. However, they can still log in/log out of Devtron if [active at the user-level](#at-user-level).
@@ -376,7 +382,7 @@ You can manage a user's active status at three levels:
 
 ### At Direct Permissions level
 
-![Figure 20: Active/Inactive User for Project Access](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/permission-level-activation.jpg)
+![Figure 21: Active/Inactive User for Project Access](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/permission-level-activation.jpg)
 
 * **Active/Activate** - Use this option to grant the project/resource access to the user. 
 * **Inactive/Inactivate** - Use this option to revoke the project/resource access from the user. **Note**: The user will still be able to log in/log out of Devtron if [active at user-level](#at-user-level).
@@ -399,7 +405,7 @@ Direct user permissions cannot be edited if you're using [LDAP](./sso/ldap.md)/[
 
 You can edit the user permissions by clicking the edit icon. Click **Save** after editing the permissions.
 
-![Figure 21: Editing User Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/edit-permissions.gif)
+![Figure 22: Editing User Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/edit-permissions.gif)
 
 ---
 
@@ -414,7 +420,7 @@ You may download the user data of current users and deleted users in a CSV forma
 * Role
 * Timestamps for User Addition, Updation, and Deletion
 
-![Figure 22: Exporting User Data](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/export-users-csv-v2.gif)
+![Figure 23: Exporting User Data](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/export-users-csv-v2.gif)
 
 ---
 
@@ -428,6 +434,6 @@ You may download the user data of current users and deleted users in a CSV forma
 
 If you want to delete a user, click **Delete**.
 
-![Figure 23: Deleting a User](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/delete-user.jpg)
+![Figure 24: Deleting a User](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/delete-user.jpg)
 
 This will remove the user from the system along with all the permissions granted earlier. The user will no longer be able to log in to Devtron unless added again.
