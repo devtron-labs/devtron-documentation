@@ -205,7 +205,7 @@ There are three role-based access levels for Jobs:
 The 'Kubernetes Resources' tab will be available only if you have super-admin permissions.
 {% endhint %}
 
-Here you can provide permission to view, inspect, manage, and delete resources in your clusters from [Devtron's Resource Browser](../../resource-browser.md).
+Here you can provide permission to view, inspect, manage, and delete resources in your clusters from [Devtron's Resource Browser](../../resource-browser/README.md).
 
 To grant Kubernetes resource permission, click **Add permission**.
 

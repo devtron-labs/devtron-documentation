@@ -92,7 +92,7 @@ Once you have finished assigning the appropriate permissions for the groups, Cli
 
 ### Kubernetes Resources Permissions
 
-In `Kubernetes Resources` option, you can provide permission to view, inspect, manage, and delete resources in your clusters from [Kubernetes Resource Browser](../../../user-guide/resource-browser.md) page in Devtron. You can also create resources from the `Kubernetes Resource Browser` page.
+In `Kubernetes Resources` option, you can provide permission to view, inspect, manage, and delete resources in your clusters from [Kubernetes Resource Browser](../../../user-guide/resource-browser/README.md) page in Devtron. You can also create resources from the `Kubernetes Resource Browser` page.
 
 {% hint style="info" %}
 Only super admin users will be able to see `Kubernetes Resources` tab and provide permission to other users to access `Resource Browser`.
