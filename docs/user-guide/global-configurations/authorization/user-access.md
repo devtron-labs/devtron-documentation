@@ -126,7 +126,7 @@ The role-based access for Devtron Apps are as follows:
 
 * **Admin**: Users can create, edit, deploy, and delete permitted applications in permitted projects.
 
-* **Manager**: In addition to **Admin** permission, users can also grant or revoke user access for applications and environments that they manage.
+* **Manager**: In addition to **Admin** permission, users can also grant or revoke user access for applications and environments that they manage. The **Manager** role for enterprise users will be deprecated and removed soon. Therefore, we recommend using the **Access Manager** role instead of **Manager** going forward. 
 
 * **Additional Roles**  [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
@@ -134,11 +134,11 @@ The role-based access for Devtron Apps are as follows:
    
    The following permissions are currently available in **Additional Roles**: 
 
+   * **Artifact Promoter**: You can approve the promotion of [artifacts](../../../reference/glossary.md#artifacts) directly to the target CD pipeline. For example, if your application workflow includes three CD pipelines (e.g., dev, qa, and prod) and someone raises a request to bypass dev and qa and deploy the artifact directly to prod, you can approve and perform this action with the **Artifact promoter** permission.
+
    * **Config Approver**: You can approve configuration change requests for [Deployment Templates](../../creating-application/deployment-template.md), [ConfigMaps](../../creating-application/config-maps.md), and [Secrets](../../creating-application/secrets.md). However, you cannot self-approve your own proposed changes, even if you have the **Config Approver** permission or even the Super Admin access.
 
-   * **Artifact promoter**: You can approve the promotion of [artifacts](../../../reference/glossary.md#artifacts) directly to the target CD pipeline. For example, if your application workflow includes three CD pipelines (e.g., dev, qa, and prod) and someone raises a request to bypass dev and qa and deploy the artifact directly to prod, you can approve and perform this action with the **Artifact promoter** permission.
-
-   * **Deployment approver**: You can approve the image deployment requests.
+   * **Deployment Approver**: You can approve the deployment requests for the selected applications and environments.
 
 **Access Manager** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
@@ -146,17 +146,17 @@ The role-based access for Devtron Apps are as follows:
 
 ### Who Can Perform This Action?
 
-Only [Super-Admins](#grant-super-admin-permission) can create an **Access Manager** role.  
+Only [Super-Admins](#grant-super-admin-permission) can grant an **Access Manager** role.  
 
 {% endhint %}
 
 ![Figure 10: Access Manager](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/access-manager-highlighted.jpg)
 
-**Access Manager** allows you to manage user permissions on a granular level. As an Access Manager, you can assign or revoke permissions of existing users within your granted scope. 
+**Access Manager** allows you to manage user permissions on a granular level. The user to whom you have granted the Access Manager role can assign or revoke permissions of existing users within their granted scope.
 
-For example, when you create an Access Manager and grant him **View only** access under **Base Role**, and **Admin**, **Config Approver** permissions under the **Access Manager** role, then the Access Manager will have **View only** access across Devtron and will not be able to perform any other operations. 
+For example, when you create an Access Manager with **View only** access under **Base Role**, and **Admin**, **Config Approver** permissions under the **Access Manager** role, then the Access Manager will have **View only** access across Devtron and will not be able to perform any other operations. 
 
-However, he will still be able to assign **View only** access, and assign or revoke **Admin** and **Config Approver** permissions to other existing users. This is possible because you have explicitly granted those permissions under the **Access Manager** role when creating the Access Manager. 
+However, the Access Manager will still be able to assign **View only** access, and assign or revoke **Admin** and **Config Approver** permissions to other existing users. This is possible because you have granted those permissions under the **Access Manager** role when creating the Access Manager. 
 
 {% hint style="warning" %}
 
@@ -166,7 +166,7 @@ An Access Manager cannot create other Access Managers or add new users. Creation
 
 {% endhint %}
 
-If you enable the **Can manage access for all roles** toggle for a user, then that user can modify permissions of existing users and even Super-Admin. However, he will still not be able to create a Super-Admin or a new user. The **Can manage access for all roles** toggle is exclusively available to Super-Admins and is not visible to any other users.
+If you enable the **Can manage access for all roles** toggle for a user, then that user can modify permissions of existing users and even Super-Admin. However, the user will still not be able to create a Super-Admin or a new user. The [Can manage access for all roles](#can-manage-access-for-all-roles-toggle) toggle is exclusively available to Super-Admin and is not visible to any other users.
 
 ![Figure 11: 'Can manage access for all roles' Toggle](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/cmafar-highlighted.jpg)
 
@@ -174,7 +174,7 @@ If you enable the **Can manage access for all roles** toggle for a user, then th
 
 ### Note
 
-Even if you enable the **Can manage access for all roles** toggle for a user, that user will not be able to further make another user an Access Manager.
+Even if you enable the [Can manage access for all roles toggle](#can-manage-access-for-all-roles-toggle) for a user, that user will not be able to further make another user an Access Manager.
 
 {% endhint %}
 
@@ -182,15 +182,7 @@ Even if you enable the **Can manage access for all roles** toggle for a user, th
 
 The **Access Manager** toggle in the **Role** drop-down box is disabled by default.
 
-When enabling the **Access Manager** toggle, make sure to select at least one permission from the checkboxes of permissions displayed beneath the toggle. 
-
-{% hint style="info" %}
-
-### Note
-
-When you create a new user or edit the permissions of an existing user, if you enable the **Access Manager** toggle from the **Role** drop-down box but do not select any permissions, the system treats it as if the toggle were never enabled. In other words, enabling the toggle without assigning any permissions has no effect. Therefore, when enabling the **Access Manager** toggle, it is recommended to select at least one permission to ensure the role is active.
-
-{% endhint %}
+When enabling the **Access Manager** toggle, make sure to select at least one permission from the checkboxes displayed beneath the toggle to ensure the role is active. 
 
 The following permissions are currently available in the Access Manager role:
 
@@ -204,19 +196,19 @@ The following permissions are currently available in the Access Manager role:
 
 * **Artifact promoter**: When selected, this permission allows the Access Manager to grant or revoke Artifact promoter access to other users.
 
-The **Deployment approver** permission is not currently available within the **Access Manager** role. If you would like to see this permission included, we encourage you to raise a feature request on GitHub.
+The **Deployment approver** permission is not currently available within the **Access Manager** role. If you would like to see this permission included, we encourage you to [raise a feature request on GitHub](https://github.com/devtron-labs/devtron/issues).
 
 An Access Manager cannot modify Super-Admin permissions. If an Access Manager attempts to perform any action beyond their granted scope, the system will display an appropriate error message. For example, when modifying the permissions of an existing user, if the Access Manager only has the **View only** permission, but attempt to assign **Build and Deploy** permission to the existing user, an error message is displayed.
 
 ![Figure 13: Not Authorized Error](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/not-authorized.gif)
 
-Similarly, if an Access Manager has **View Only** access, but attempts to modify an existing user who currently has **Admin** access, the Access Manager can downgrade the user’s access to **View only**. But, he will not be able to reassign **Admin** access afterward, as he himself do not hold that permission and an appropriate error message is displayed. Access Managers can only modify permissions that fall within their own granted scope.
+Similarly, if an Access Manager has **View only** access and attempts to modify an existing user who currently has **Admin** access, the Access Manager can downgrade the user's access to **View only**. However, the Access Manager cannot reassign **Admin** access afterward, as they do not hold that permission, and an appropriate error message is displayed. Access Managers can only modify permissions that fall within their own granted scope.
 
 {% hint style="info" %}
 
 ### Note
 
-When an Access Manager modifies and assigns the **Artifact Promoter** permission to an existing user, for example, then that user will only have **Artifact Promoter** permission selected and displayed in the **Role** drop-down box, whereas the other permissions, **Config Approver** and **Deployment approver**, will not be displayed. 
+When an Access Manager modifies and assigns the **Artifact Promoter** permission to an existing user, for example, then that user will only have **Artifact Promoter** permission selected and displayed in the **Role** drop-down box. The other permissions, **Config Approver** and **Deployment approver**, will not be displayed. 
 
 {% endhint %}
 
@@ -228,11 +220,11 @@ However, Super-Admin users have unrestricted access to all Devtron resources. Th
 | **Build and Deploy**     | ✅  | ❌     | ❌   | ❌     | ✅            | ❌             | ❌             | ❌               | ❌               |
 | **Admin**                | ✅  | ✅    | ✅  | ✅    | ✅            | ❌             | ❌             | ❌               | ❌               |
 | **Manager**              | ✅  | ✅    | ✅  | ✅    | ✅            | ❌             | ❌             | ❌               | ✅              |
-| **Deployment Approver**       | ✅  | ❌     | ❌   | ❌     | ❌             | ✅            | ❌             | ❌               | ❌               |
-| **Configuration Approver** | ✅ | ❌    | ❌   | ❌     | ❌             | ❌             | ✅            | ❌               | ❌               |
 | **Artifact Promoter**    | ✅  | ❌     | ❌   | ❌     | ❌             | ❌             | ❌             | ✅              | ❌               |
+| **Configuration Approver** | ✅ | ❌    | ❌   | ❌     | ❌             | ❌             | ✅            | ❌               | ❌               |
+| **Deployment Approver**       | ✅  | ❌     | ❌   | ❌     | ❌             | ✅            | ❌             | ❌               | ❌               |
+| **Access Manager**                 | ❌  | ❌     | ❌   | ❌     | ❌             | ❌             | ❌             | ❌               | ✅               |
 | **Super Admin**          | ✅  | ✅    | ✅  | ✅    | ✅            | ✅            | ✅            | ✅              | ✅              |
-
 
 ### Helm Apps permissions
 
@@ -364,6 +356,19 @@ Here you can grant your user the permissions for accessing Chart Groups. Note th
 | **Edit**        | ✅      | ❌      | ❌        | None/Specific Groups | ❌        |
 | **Super Admin** | ✅      | ✅      | ✅        | ✅                   | ✅        |
 
+### Can Manage Access For All Roles Toggle
+
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Only a [Super Admin](#grant-super-admin-permission) can enable the **Can manage access for all roles** toggle for other users. This toggle is available only to Super-Admin and not to other users.
+{% endhint %}
+
+![Figure 18: 'Can manage access for all roles' Toggle](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/cmafar-highlighted.jpg)
+
+The **Can manage access for all roles** toggle allows you to grant a user the permission to manage access for all roles across Devtron apps, Helm Apps, Jobs, Kubernetes Resources, and Chart Groups. 
+
+When you enable this toggle for a user, they can then manage access for all roles of existing users. However, they cannot create new users. By default, the **Can manage access for all roles** toggle is disabled. 
+
 ---
 
 ## Making Users Active/Inactive [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
@@ -376,7 +381,7 @@ Here you can grant your user the permissions for accessing Chart Groups. Note th
 
 When working with multiple collaborators in Devtron, you may need to deactivate users who no longer require access and reactivate them when needed. This applies to users of Devtron Apps, Helm Apps, Jobs, and Kubernetes Resources.
 
-![Figure 18: Active/Inactive Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/active-inactive-levels.jpg)
+![Figure 19: Active/Inactive Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/active-inactive-levels.jpg)
 
 You can manage a user's active status at three levels:
 * [User-level](#at-user-level)
@@ -386,7 +391,7 @@ You can manage a user's active status at three levels:
 
 ### At User level
 
-![Figure 19: Active/Inactive User](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/user-level-activation.jpg)
+![Figure 20: Active/Inactive User](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/user-level-activation.jpg)
 
 * **Active/Activate** - Use this option to activate a deactivated user while retaining their previous roles and permissions.
 * **Inactive/Inactivate** - Use this option to deactivate an existing active user and save the changes. If the user has an ongoing session, they will be logged out permanently on their next action or refresh.
@@ -394,7 +399,7 @@ You can manage a user's active status at three levels:
 
 ### At Permission Group level
 
-![Figure 20: Active/Inactive User from Permission Group](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/group-level-activation.jpg)
+![Figure 21: Active/Inactive User from Permission Group](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/group-level-activation.jpg)
 
 * **Active/Activate** - Use this option to allow permissions from the group to take effect for the user.
 * **Inactive/Inactivate** - Use this option to prevent permissions from the group from taking effect for the user. However, they can still log in/log out of Devtron if [active at the user-level](#at-user-level).
@@ -402,7 +407,7 @@ You can manage a user's active status at three levels:
 
 ### At Direct Permissions level
 
-![Figure 21: Active/Inactive User for Project Access](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/permission-level-activation.jpg)
+![Figure 22: Active/Inactive User for Project Access](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/permission-level-activation.jpg)
 
 * **Active/Activate** - Use this option to grant the project/resource access to the user. 
 * **Inactive/Inactivate** - Use this option to revoke the project/resource access from the user. **Note**: The user will still be able to log in/log out of Devtron if [active at user-level](#at-user-level).
@@ -425,7 +430,7 @@ Direct user permissions cannot be edited if you're using [LDAP](./sso/ldap.md)/[
 
 You can edit the user permissions by clicking the edit icon. Click **Save** after editing the permissions.
 
-![Figure 22: Editing User Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/edit-permissions.gif)
+![Figure 23: Editing User Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/edit-permissions.gif)
 
 ---
 
@@ -440,7 +445,7 @@ You may download the user data of current users and deleted users in a CSV forma
 * Role
 * Timestamps for User Addition, Updation, and Deletion
 
-![Figure 23: Exporting User Data](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/export-users-csv-v2.gif)
+![Figure 24: Exporting User Data](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/export-users-csv-v2.gif)
 
 ---
 
@@ -454,6 +459,6 @@ You may download the user data of current users and deleted users in a CSV forma
 
 If you want to delete a user, click **Delete**.
 
-![Figure 24: Deleting a User](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/delete-user.jpg)
+![Figure 25: Deleting a User](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/delete-user.jpg)
 
 This will remove the user from the system along with all the permissions granted earlier. The user will no longer be able to log in to Devtron unless added again.
