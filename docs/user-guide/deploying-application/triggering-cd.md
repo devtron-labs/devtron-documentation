@@ -6,13 +6,43 @@ After the [CI pipeline](./triggering-ci.md) is complete, you can trigger the CD 
 
     ![Figure 1: 'Select Image' Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/select-image.jpg)
 
-2. Select an image to deploy and then click **Deploy** to trigger the CD pipeline.
+2. Select an image for deployment.
 
     ![Figure 2: Selecting an Image for Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/deploy-v2.jpg)
 
-However, if an image is already deployed, you can identify it by the tag `Active on <Environment name>`.
+ However, if an image is already deployed, you can identify it by the tag `Active on <Environment name>`.
 
-![Figure 3: Currently Deployed Image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/active-tag.jpg)
+ ![Figure 3: Currently Deployed Image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/active-tag.jpg)
+
+3. If in any scenario such as deploying a hotfix, if you need to use a different deployment strategy other than the default, you can select a different deployment strategy. 
+
+     **Note:** You can only select the deployment strategies which are configured for that pipeline.
+
+     ![Figure 4: Selecting Deployment Strategy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-build.jpg)
+
+4. In case you have made any changes in the environment configurations (such as changing deployment strategy, modifying ConfigMaps & Secrets, etc.) since the last deployment, use the **Config Diff** button to compare the new configurations with last deployed configurations before deploying. <br>
+
+     Refer [Reviewing Configurations Differences](#reviewing-configurations-differences) to learn more.
+
+5. Click **Deploy** to trigger the CD pipeline.
+
+## Reviewing Configurations Differences
+
+Before triggering a deployment, if you’ve made any changes to the environment configurations, you can review the configuration differences between your **Last Deployed Configurations** (old configurations) and your **Last Saved Configurations** (new configurations) by clicking the **Config Diff** button. After reviewing, you can choose whether to deploy using the updated configurations or stick with the previously deployed ones.
+
+1. Click the **Config Diff** button to review the changes; a modal window will appear.
+
+     ![]()
+
+2. You can compare configurations differences for various resources including **Deployment template**, **Pipeline Configurations**, **ConfigMaps**, and **Secrets**.
+
+3. To compare changes for a specific resource; select it from the left-side of the modal window under **Deployment Configurations**. 
+
+4. The right panel displays a side-by-side comparison between the **Last Deployed** and **Last Saved** configurations for the selected resource. <br> You can review the configuration differences for each resource before triggering the deployment. 
+
+5. After reviewing, select whether you want to trigger the deployment with **Last Saved Config** (new configurations) or **Last Deploy Config** (old configurations).
+
+6. Select **Deploy** to trigger the deployment.
 
 ## Manual Approval for Deployment [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
@@ -43,7 +73,7 @@ To request an image approval, follow these steps:
     The users you selected will receive an approval request via email. Any user with 'Image approver' permission alongwith access to the given application and given environment would be able to approve the image.
 
 
-#### Extras
+## Extras
 
 * In case you wish to cancel the image approval request, you can do so from the `Approval pending` tab as shown in the below image.
 
