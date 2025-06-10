@@ -23,9 +23,9 @@ You can add any of the following cluster types:
 Users need to have super-admin permission to add a Kubernetes cluster to Devtron.
 {% endhint %}
 
-On the **Add Cluster** screen, select **Add Kubernetes Cluster**.
+On the **Add Cluster** screen, select **Connect Cluster**.
 
-![Figure 3: Selecting 'Add Kubernetes Cluster'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/select-kubernetes-cluster.jpg)
+![Figure 3: Selecting 'Connect Cluster'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/select-kubernetes-cluster.jpg)
 
 You can choose to add your Kubernetes cluster using either of the following methods:
   * [Server URL & Bearer Token](#add-cluster-using-server-url--bearer-token)
@@ -54,6 +54,7 @@ Refer [Get Cluster Credentials](#get-cluster-credentials) to learn the process o
   * [Choose Connection Type](#choose-connection-type)
   * [Use Secure TLS Connection](#use-secure-tls-connection)
   * [Configure Prometheus](#configure-prometheus-enable-application-metrics)
+  * [Assign a Category](#assigning-category-to-a-cluster)
 
 {% hint style="tip" %}
 ### Tip
@@ -85,6 +86,23 @@ In case you prefer to add clusters using kubeconfig, follow these steps:
 ### Note
 Ensure that the kubeconfig file has admin permissions. It is crucial for Devtron to have the necessary administrative privileges; otherwise, it may encounter failures or disruptions during deployments and other operations. Admin permission is essential to ensure the smooth functioning of Devtron and to prevent any potential issues that may arise due to insufficient privileges.
 {% endhint %}
+
+### Assigning Category To A Cluster
+
+Devtron allows you to assign a category, (for e.g. Prod, QA, Dev, or Stage) to your clusters. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to Prod, QA, Dev, or Stage environment.
+
+Before assigning a category, you must first add the category. To add a category, refer to [Adding a Category](#adding-a-category) section to learn more.
+
+To assign a category to a cluster, follow the below steps:
+
+1. Select a category from the dropdown under **Assign Category** amd click **Update Cluster**.
+
+   ![Figure 32: Assigning Category](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-cluster.jpg)
+
+2. The selected category will be assigned to the cluster.
+
+   ![Figure 33: Category Assigned](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-category-added-cluster.jpg)
+
 
 ### Choose Method of Connection [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
@@ -208,11 +226,23 @@ Users need to have super-admin permission to add an environment to a cluster.
 
   ![Figure 18: Saving an Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-env-fields.jpg)
 
-3. **Add/Edit labels to namespace** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) - You can attach labels to your specified namespace in the Kubernetes cluster. Using labels will help you filter and identify resources via CLI or other Kubernetes tools. [Click here](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) to know more about labels.
+3. **Assign a Category to environment** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) - Devtron allows you to assign a category, (for e.g. Prod, QA, Dev, or Stage) to your environments. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to Prod, QA, Dev, or Stage environment. 
+ To assign a category to your environment, follow the steps below: 
+   1. Select a category from the dropdown under **Assign Category** and click **Update**.
+
+   ![Figure 36: Assigning Category](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-env.jpg)
+
+   2. The selected category will be assigned to the environment.
+
+   ![Figure 37: Category Assigned](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-category-added-env.jpg)
+
+ **Note:** Before assigning a category, you must first add the category. To add a category, refer to [Adding a Category](#adding-a-category) section to learn more.
+
+4. **Add/Edit labels to namespace** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) - You can attach labels to your specified namespace in the Kubernetes cluster. Using labels will help you filter and identify resources via CLI or other Kubernetes tools. [Click here](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) to know more about labels.
 
   ![Figure 19: Adding Labels to Namespace](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/labels-namespace.gif)
 
-4. Click **Save**. Your new environment will be visible in your cluster as shown below.
+5. Click **Save**. Your new environment will be visible in your cluster as shown below.
 
   ![Figure 20: Newly Created Environment in the Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/added-env.jpg)
 
@@ -269,10 +299,6 @@ Environment deletion is not allowed if any application has a CD pipeline corresp
 
 ---
 
-## Assign Category to the Cluster & Environment
-
-Devtron allows you to assign a category, (for e.g. Prod, QA, Dev, or Stage) to both clusters and their environments. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to Prod, QA, Dev, or Stage environment.
-
 ### Adding a Category
 
 Before assigning a category, you must first add the category. To add a category, follow the below steps:
@@ -298,44 +324,6 @@ Before assigning a category, you must first add the category. To add a category,
 5. Click **Update** and your categories will be added.
 
    ![Figure 29: Categories Added](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-update.jpg)
-
-### Assigning Category To A Cluster
-
-To assign a category to a cluster, follow the below steps:
-
-1. Go to **Global Configurations**. 
-
-   ![Figure 30: Navigating to Global Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-global-config.jpg)
-
-2. Select **Clusters and Environments** and then click the **Edit Cluster** icon for the cluster you want to modify, a **Edit Cluster** modal window will appear.
-
-   ![Figure 31: Editing Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-edit-cluster.jpg)
-
-3. Select a category from the dropdown under **Assign Category** amd click **Update Cluster**.
-
-   ![Figure 32: Assigning Category](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-cluster.jpg)
-
-4. The selected category will be assigned to the cluster.
-
-   ![Figure 33: Category Assigned](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-category-added-cluster.jpg)
-
-### Assigning Category To A Environment
-
-1. Go to **Global Configurations**.
-
-   ![Figure 34: Navigating to Global Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-global-config.jpg)
-
-2. Select **Clusters and Environments** and click the **Edit Environment** icon for the environment you want to modify, a **Edit Environment** modal window will appear.
-
-   ![Figure 35: Editing Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-edit-env.jpg)
-
-3. Select a category from the dropdown under **Assign Category** amd click **Update**.
-
-   ![Figure 36: Assigning Category](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-env.jpg)
-
-4. The selected category will be assigned to the environment.
-
-   ![Figure 37: Category Assigned](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-category-added-env.jpg)
 
 ---
 
