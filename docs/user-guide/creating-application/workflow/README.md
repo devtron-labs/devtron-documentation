@@ -8,9 +8,9 @@ In Devtron, a **Workflow** is a logical sequence of different stages(pipelines) 
 
 ## Create Workflow
 
-The **Build and Deploy from Source Code** provides a simple way to create both CI and CD pipelines in one step. It is for users who want to set up a complete workflow quickly using minimal required information such as source repository branch and target environment.
+The **Build and Deploy from Source Code** provides a simple way to create both CI and CD pipelines in one step. It is for users who want to set up a complete workflow quickly using minimal required information, such as the source repository branch and the target environment.
 
-To create a quick workflow with both build and deployment pipeline, follow the steps below: 
+To create a quick workflow with both build and deployment pipelines, follow the steps below: 
 
 1. Click **New Workflow** in the workflow editor.
 
@@ -36,19 +36,19 @@ To create a quick workflow with both build and deployment pipeline, follow the s
  |Source Type| Description| Additional Requirements|
  |:---|:---|:---|
  | `Branch Fixed`| Triggers a CI build whenever changes are pushed to a specified branch.| Requires a predefined branch name.|
- | `Branch Regex`| Allows dynamic branch selection based on a regex pattern| Requires a regex pattern to be defined. For example, if the user sets the Branch Regex as feature-\*, then users can trigger the build from branches such as feature-1450, feature-hot-fix, etc. |
+ | `Branch Regex`| Allows dynamic branch selection based on a regex pattern| Requires a regex pattern to be defined. For example, if the user sets the Branch Regex as feature-\*, then users can trigger the build from branches such as feature-1450, feature-hot-fix, etc.. |
  | `Pull Request` (PR) | Triggers a CI build when a new pull request is created. You can also define filters (such as PR author, title, or branch) to control which pull requests trigger the pipeline. | Requires configuring a webhook configuration for GitHub or Bitbucket.|
  | `Tag Creation`| Triggers a build whenever a new tag is created. You can also define filters (such as author and tag name) to control which tags trigger the pipeline.| Requires webhook configuration for GitHub or Bitbucket.|
  
-4. Click **Create Workflow**; a workflow with both build and deployment pipeline will be created.
+4. Click **Create Workflow**; a workflow with both build and deployment pipelines will be created.
 
      ![Figure 5: Clicking 'Create Workflow'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-save-workflow.jpg)
 
-5. If you want to configure advanced configurations in build pipeline such as Custom image tag pattern, Vulnerability Scanning, etc., refer to the [CI Pipeline](./ci-pipeline.md#advanced-options) page to learn more.
+5. If you want to configure advanced configurations in the build pipeline, such as Custom image tag pattern, Vulnerability Scanning, etc., refer to the [CI Pipeline](./ci-pipeline.md#advanced-options) page to learn more.
 
-6. If you want to configure advanced configurations in deployment pipeline such as adding pre/post tasks, Custom image tag pattern, configure different deployment strategies etc., refer to the [CD Pipeline](./cd-pipeline.mdcd-pipeline.md) page to learn more.
+6. If you want to configure advanced configurations in the deployment pipeline, such as adding pre/post tasks, Custom image tag pattern, configure different deployment strategies, etc., refer to the [CD Pipeline](./cd-pipeline.mdcd-pipeline.md) page to learn more.
 
-7. If you want you can also add Pre/Post Tasks in both build and deployment pipelines. To do so, refer to the [Pre/Post tasks](./ci-build-pre-post-plugins.md) page to learn more.
+7. If you want, you can also add Pre/Post Tasks in both build and deployment pipelines. To do so, refer to the [Pre/Post tasks](./ci-build-pre-post-plugins.md) page to learn more.
 
 
 ### Types of CI Pipelines
