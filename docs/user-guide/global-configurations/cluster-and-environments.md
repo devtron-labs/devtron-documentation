@@ -37,7 +37,7 @@ You can choose to add your Kubernetes cluster using either of the following meth
 
 {% hint style="info" %}
 ### Note
-Refer to [Get Cluster Credentials](#get-cluster-credentials) to learn the process of getting the Server URL and bearer token.
+Refer [Get Cluster Credentials](#get-cluster-credentials) to learn the process of getting Server URL and bearer token.
 {% endhint %}
 
 1. To add a Kubernetes cluster on Devtron using Server URL and Bearer Token, provide the following information:
@@ -50,7 +50,7 @@ Refer to [Get Cluster Credentials](#get-cluster-credentials) to learn the proces
 
   ![Figure 5: Enter Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-cluster-cred.jpg)
 
-2. Complete the remaining steps (optional): 
+2. complete the remaining steps (optional): 
   * [Choose Connection Type](#choose-connection-type)
   * [Use Secure TLS Connection](#use-secure-tls-connection)
   * [Configure Prometheus](#configure-prometheus-enable-application-metrics)
@@ -58,7 +58,7 @@ Refer to [Get Cluster Credentials](#get-cluster-credentials) to learn the proces
 
 {% hint style="tip" %}
 ### Tip
-If you have a kubeconfig file ready, you may skip the above process and refer to [Add Cluster Using Kubeconfig](#add-cluster-using-kubeconfig) instead.
+If you have a kubeconfig file ready, you may skip the above process and refer [Add Cluster Using Kubeconfig](#add-cluster-using-kubeconfig) instead.
 {% endhint %}
 
 ### Add Cluster Using Kubeconfig
@@ -141,7 +141,7 @@ When a direct connection isn't possible, Devtron can connect to the Kubernetes c
 
 ### Use Secure TLS Connection
 
-For a secure cluster connection, you can opt for a TLS connection, where you need to provide Certificate Authority Data, a TLS Key, and a TLS Certificate.
+For a secure cluster connection, you can opt for TLS connection, where you need to provide Certificate Authority Data, a TLS Key, and a TLS Certificate.
 
 If your cluster is managed (e.g., [EKS](https://aws.amazon.com/eks/), [AKS](https://learn.microsoft.com/en-us/azure/aks/), [GKE](https://cloud.google.com/kubernetes-engine)), you might need to download these certificates from your cloud provider’s dashboard or API.
 
@@ -200,7 +200,7 @@ You have successfully configured an isolated cluster.
 ### Note
 When you deploy to an isolated environment, Devtron automatically packages application manifests and images into a [Helm chart](../../reference/glossary.md#helm-chartspackages). You can then either:
 * Download and install manually in a fully air-gapped setup.
-* Push it to an [OCI registry](../global-configurations/container-registries.md) (provided pushing of helm package is enabled), allowing manifests to be pulled manually or automatically via Devtron on an air-gapped cluster (if pull access to the OCI registry is available).
+* Push it to an [OCI registry](../global-configurations/container-registries.md) (provided pushing of helm package is enabled), allowing manifests to be pulled manually or automatically via Devtron on air-gapped cluster (if pull access to the OCI registry is available).
 {% endhint %}
 
 ---
@@ -226,7 +226,19 @@ Users need to have super-admin permission to add an environment to a cluster.
 
   ![Figure 18: Saving an Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-env-fields.jpg)
 
-3. **Add/Edit labels to namespace** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) - You can attach labels to your specified namespace in the Kubernetes cluster. Using labels will help you filter and identify resources via CLI or other Kubernetes tools. [Click here](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) to know more about labels.
+3. **Assign a Category to environment** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) - Devtron allows you to assign a category, (for e.g. Prod, QA, Dev, or Stage) to your environments. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to Prod, QA, Dev, or Stage environment. 
+ To assign a category to your environment, follow the steps below: 
+   1. Select a category from the dropdown under **Assign Category** and click **Update**.
+
+   ![Figure 36: Assigning Category](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-env.jpg)
+
+   2. The selected category will be assigned to the environment.
+
+   ![Figure 37: Category Assigned](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-category-added-env.jpg)
+
+ **Note:** Before assigning a category, you must first add the category. To add a category, refer to [Adding a Category](#adding-a-category) section to learn more.
+
+4. **Add/Edit labels to namespace** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) - You can attach labels to your specified namespace in the Kubernetes cluster. Using labels will help you filter and identify resources via CLI or other Kubernetes tools. [Click here](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) to know more about labels.
 
   ![Figure 19: Adding Labels to Namespace](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/labels-namespace.gif)
 
@@ -244,7 +256,7 @@ Users need to have super-admin permission to add an environment to a cluster.
 Users need to have super-admin permission to edit an environment in a cluster.
 {% endhint %}
 
-You can also make edits to an existing environment if needed by clicking the edit icon.
+You can also make edits to an existing environment if need be by clicking the edit icon.
 
 ![Figure 21: Editing Environment in the Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/edit-env.jpg)
 
@@ -287,13 +299,9 @@ Environment deletion is not allowed if any application has a CD pipeline corresp
 
 ---
 
-## Assign Category to the Cluster & Environment
-
-Devtron allows you to assign a category, (for e.g. Prod, QA, Dev, or Stage) to both clusters and their environments. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to Prod, QA, Dev, or Stage environment.
-
 ### Adding a Category
 
-Before assigning a category, you must first add the category. To add a category, follow the steps below:
+Before assigning a category, you must first add the category. To add a category, follow the below steps:
 
 1. Go to **Global Configurations**. 
 
@@ -305,7 +313,7 @@ Before assigning a category, you must first add the category. To add a category,
 
 3. Enter the name of the category in the **CATEGORIES** field and provide a description in the **DESCRIPTION** field.
 
-   **Note:** Category name should be unique and cannot be changed once defined. It must be a minimum of 3 characters.
+   **Note:** Category name should be unique and cannot be changed once defined. It must be minimum of 3 characters.
 
    ![Figure 27: Adding Category](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-add.jpg)
 
@@ -316,44 +324,6 @@ Before assigning a category, you must first add the category. To add a category,
 5. Click **Update** and your categories will be added.
 
    ![Figure 29: Categories Added](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-update.jpg)
-
-### Assigning Category To A Cluster
-
-To assign a category to a cluster, follow the below steps:
-
-1. Go to **Global Configurations**. 
-
-   ![Figure 30: Navigating to Global Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-global-config.jpg)
-
-2. Select **Clusters and Environments** and then click the **Edit Cluster** icon for the cluster you want to modify, a **Edit Cluster** modal window will appear.
-
-   ![Figure 31: Editing Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-edit-cluster.jpg)
-
-3. Select a category from the dropdown under **Assign Category** amd click **Update Cluster**.
-
-   ![Figure 32: Assigning Category](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-cluster.jpg)
-
-4. The selected category will be assigned to the cluster.
-
-   ![Figure 33: Category Assigned](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-category-added-cluster.jpg)
-
-### Assigning Category To A Environment
-
-1. Go to **Global Configurations**.
-
-   ![Figure 34: Navigating to Global Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-global-config.jpg)
-
-2. Select **Clusters and Environments** and click the **Edit Environment** icon for the environment you want to modify, a **Edit Environment** modal window will appear.
-
-   ![Figure 35: Editing Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-edit-env.jpg)
-
-3. Select a category from the dropdown under **Assign Category** amd click **Update**.
-
-   ![Figure 36: Assigning Category](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-env.jpg)
-
-4. The selected category will be assigned to the environment.
-
-   ![Figure 37: Category Assigned](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-category-added-env.jpg)
 
 ---
 
@@ -368,14 +338,14 @@ To assign a category to a cluster, follow the below steps:
 
 {% hint style="info" %}
 ### Note
-We recommend using a self-hosted URL instead of a cloud-hosted URL. Refer to the benefits of a [self-hosted URL](#benefits-of-self-hosted-url).
+We recommend using a self-hosted URL instead of a cloud-hosted URL. Refer the benefits of a [self-hosted URL](#benefits-of-self-hosted-url).
 {% endhint %}
 
-You can get the **Server URL** and **Bearer Token** by running the following command, depending on the cluster provider:
+You can get the **Server URL** and **Bearer Token** by running the following command depending on the cluster provider:
 
 {% tabs %}
 {% tab title="k8s Cluster Providers" %}
-If you are using EKS, AKS, GKE, Kops, or Digital Ocean managed Kubernetes, run the following command to generate the server URL and bearer token:
+If you are using EKS, AKS, GKE, Kops, Digital Ocean managed Kubernetes, run the following command to generate the server URL and bearer token:
 ```bash
 curl -O https://raw.githubusercontent.com/devtron-labs/utilities/main/kubeconfig-exporter/kubernetes_export_sa.sh && bash kubernetes_export_sa.sh cd-user  devtroncd
 ```
@@ -391,14 +361,14 @@ devtroncd
 {% endtab %}
 {% endtabs %}
 
-![Figure 36: Generating Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/generate-cluster-credentials.jpg)
+![Figure 38: Generating Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/generate-cluster-credentials.jpg)
 
 ### Benefits of Self-hosted URL
 
 * **Disaster Recovery**: 
   * You cannot edit the server URL of a cloud-specific provider. If you're using an EKS URL (e.g.` *****.eu-west-1.elb.amazonaws.com`), it will be a tedious task to add a new cluster and migrate all the services one by one. 
-  * But in case of using a self-hosted URL (e.g. `clear.example.com`), you can just point to the new cluster's server URL in the DNS manager and update the new cluster token and sync all the deployments.
+  * But in case of using a self-hosted URL (e.g. `clear.example.com`), you can just point to the new cluster's server URL in DNS manager and update the new cluster token and sync all the deployments.
 
 * **Easy Cluster Migrations**: 
-  * In case of managed Kubernetes clusters (like EKS, AKS, GKE, etc), which is a cloud provider specific, migrating your cluster from one provider to another will result in a waste of time and effort. 
+  * In case of managed Kubernetes clusters (like EKS, AKS, GKE etc) which is a cloud provider specific, migrating your cluster from one provider to another will result in waste of time and effort. 
   * On the other hand, migration for a self-hosted URL is easy, as the URL belongs to a single hosted domain independent of the cloud provider.
