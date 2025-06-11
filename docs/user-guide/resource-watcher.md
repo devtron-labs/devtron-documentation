@@ -8,7 +8,7 @@ An incident response if delayed can impact businesses, revenue, and waste valuab
 * **Update Event** - Occurs when an existing Kubernetes resource is modified, for e.g., deployment configuration tweaked to increase the replica count.
 * **Delete Event** - Occurs when an existing Kubernetes resource is deleted, for e.g., deletion of an orphaned pod. 
 
-You can make the Resource Watcher listen to the above events and accordingly run a job you wish to get done, for e.g., increasing memory, executing a script, raising Jira ticket, emailing your stakeholders, sending Slack notifications, and many more. Since manual intervention is absent, the timely response of this auto-remediation system improves your operational efficiency.
+You can make the Resource Watcher listen to the above events and accordingly run a webhook or run a job you wish to get done, for e.g., increasing memory, executing a script, raising Jira ticket, emailing your stakeholders, sending Slack notifications, and many more. Since manual intervention is absent, the timely response of this auto-remediation system improves your operational efficiency.
 
 ---
 
@@ -86,13 +86,13 @@ Here, you can select the exact Kubernetes resource(s) you wish to track for chan
 
 #### Trigger Devtron Job
 
-The **Trigger Devtron Job** radio button allows you to choose a Devtron job pipeline that triggers a job (e.g., executing a script, emailing your stakeholders, etc.) whenever the watcher intercepts any changes.
+The **Trigger Devtron Job** option allows you to choose a Devtron job pipeline that triggers a job (e.g., executing a script, emailing your stakeholders, etc.) whenever the watcher intercepts any changes.
 
 ![Figure 7: Trigger Devtron Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/trigger-job.gif)
 
 Follow the below steps to trigger Devtron job: 
 
-1. Select the **Trigger Devtron Job** radio button.
+1. Select the **Trigger Devtron Job** option.
 
 2. Choose your preferred [Devtron job pipeline](./jobs/workflow-editor-job.md) from the **Run Devtron Job pipeline** drop-down box. The pipelines configured while creating a job are displayed as options in the **Run Devtron Job pipeline** drop-down box. Unless a job pipeline is selected, the watcher will not intercept matching resource changes, even if defined conditions are met.
 
@@ -110,23 +110,25 @@ Follow the below steps to trigger Devtron job:
 
 The watcher is now ready to intercept changes to selected resources and execute the configured job.
 
-![Figure 8: Intercepted Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/intercepted-changes.jpg)
+![Figure 8: Intercepted Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/intercepted-changes-job.jpg)
 
 #### Trigger Webhook
 
-The **Trigger Webhook** radio button allows you to configure your preferred communication channel (using Webhook URL) to send a notification whenever your watcher intercepts any changes. 
+The Trigger Webhook option allows you to configure a [Webhook](https://hookdeck.com/webhooks/guides/what-are-webhooks-how-they-work) URL along with the payload (data) to be sent whenever the webhook is triggered. For example, to receive notifications in Slack, you can provide the Slack webhook URL and define the payload accordingly.
 
 ![Figure 9: Trigger Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/run-webhook.gif)
 
 Follow the below steps to trigger webhook:
 
-1. Select the **Trigger Webhook** radio button.
+1. Select the **Trigger Webhook** option.
 
-2. Enter your preferred communication channel’s webhook URL in the **Webhook URL** field. The configured payload will be delivered in this configured webhook.
+2. Enter your webhook URL in the **Webhook URL** field. Your configured payload will be delivered through this webhook.
 
 3. Enter the relevant header key-value pairs that are necessary for authentication or to include additional metadata for the receiving endpoint in the `Header Key` and `Value` fields accordingly. 
 
-4. Define the payload data to be delivered to the webhook whenever the webhook is triggered in the **Payload (Data to be shared through Webhook)** field. You can customize this payload with information related to changes in the intercepted resources. You can pass the properties of resource manifest in the webhook payload using the following keys:
+4. Configure the payload in the **Payload (Data to be shared through Webhook)** field. 
+    
+    The payload is the actual content delivered to the webhook endpoint when the webhook is triggered. It contains the relavant information about changes in intercepted resources. The payload data must be entered in valid JSON format. Other formats such as YAML, or plain text are not supported. You can also customize the payload to include any resource-specific values that are useful for your integration. You can pass the properties of resource manifest in the webhook payload using the following keys:
 
     * To access the initial resource manifest use: `DEVTRON_INITIAL_MANIFEST`
 
