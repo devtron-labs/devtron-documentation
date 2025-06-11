@@ -37,7 +37,7 @@ You can choose to add your Kubernetes cluster using either of the following meth
 
 {% hint style="info" %}
 ### Note
-Refer [Get Cluster Credentials](#get-cluster-credentials) to learn the process of getting Server URL and bearer token.
+Refer to [Get Cluster Credentials](#get-cluster-credentials) to learn the process of getting the Server URL and bearer token.
 {% endhint %}
 
 1. To add a Kubernetes cluster on Devtron using Server URL and Bearer Token, provide the following information:
@@ -50,7 +50,7 @@ Refer [Get Cluster Credentials](#get-cluster-credentials) to learn the process o
 
   ![Figure 5: Enter Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-cluster-cred.jpg)
 
-2. complete the remaining steps (optional): 
+2. Complete the remaining steps (optional): 
   * [Choose Connection Type](#choose-connection-type)
   * [Use Secure TLS Connection](#use-secure-tls-connection)
   * [Configure Prometheus](#configure-prometheus-enable-application-metrics)
@@ -58,7 +58,7 @@ Refer [Get Cluster Credentials](#get-cluster-credentials) to learn the process o
 
 {% hint style="tip" %}
 ### Tip
-If you have a kubeconfig file ready, you may skip the above process and refer [Add Cluster Using Kubeconfig](#add-cluster-using-kubeconfig) instead.
+If you have a kubeconfig file ready, you may skip the above process and refer to [Add Cluster Using Kubeconfig](#add-cluster-using-kubeconfig) instead.
 {% endhint %}
 
 ### Add Cluster Using Kubeconfig
@@ -89,11 +89,11 @@ Ensure that the kubeconfig file has admin permissions. It is crucial for Devtron
 
 ### Assigning Category To A Cluster
 
-Devtron allows you to assign a category, (for e.g. Prod, QA, Dev, or Stage) to your clusters. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to Prod, QA, Dev, or Stage environment.
+Devtron allows you to assign a category (for e.g. Prod, QA, Dev, or Stage) to your clusters. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to the Prod, QA, Dev, or Stage environment.
 
-Before assigning a category, you must first add the category. To add a category, refer to [Adding a Category](#adding-a-category) section to learn more.
+Before assigning a category, you must first add the category. To add a category, refer to the [Adding a Category](#adding-a-category) section to learn more.
 
-To assign a category to a cluster, follow the below steps:
+To assign a category to a cluster, follow the steps below:
 
 1. Select a category from the dropdown under **Assign Category** amd click **Update Cluster**.
 
