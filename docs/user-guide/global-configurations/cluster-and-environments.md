@@ -227,7 +227,7 @@ Users need to have super-admin permission to add an environment to a cluster.
 
   ![Figure 20: Saving an Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-env-fields.jpg)
 
-3. **Assign a Category to environment** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) - Devtron allows you to assign a category, (for e.g. Prod, QA, Dev, or Stage) to your environments. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to Prod, QA, Dev, or Stage environment. 
+3. **Assign a Category to environment** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) - Devtron allows you to assign a category, (for e.g. Prod, QA, Dev, or Stage) to your environments. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to Prod, QA, Dev, or Stage environment.<br><br>
  To assign a category to your environment, follow the steps below: 
    1. Select a category from the dropdown under **Assign Category** and click **Update**.
 
@@ -261,13 +261,14 @@ You can also make edits to an existing environment if need be by clicking the ed
 
 ![Figure 25: Editing Environment in the Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/edit-env.jpg)
 
-| Feature                           | Editable? |
-|-----------------------------------|-----------|
+| Feature                              | Editable? |
+|:-------------------------------------|:-------|
 | **Production/Non-Production Option** | ✅ Yes |
-| **Description**                   | ✅ Yes |
-| **Labels for Namespace**           | ✅ Yes |
-| **Environment Name**               | ❌ No  |
-| **Namespace Name**                 | ❌ No  |
+| **Description**                      | ✅ Yes |
+| **Labels for Namespace**             | ✅ Yes |
+| **Assign a category**                | ✅ Yes |
+| **Environment Name**                 | ❌ No  |
+| **Namespace Name**                   | ❌ No  |
 
 Click **Update** to save your changes.
 
