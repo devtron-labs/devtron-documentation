@@ -122,7 +122,7 @@ Follow the below steps to trigger webhook:
 
 1. Select the **Trigger Webhook** option.
 
-2. Enter your webhook URL in the **Webhook URL** field. Your configured payload will be delivered through this webhook.
+2. Enter your complete webhook URL, including `https://`, in the **Webhook URL** field.  Your configured payload will be delivered through this webhook.
 
 3. Enter the relevant header key-value pairs that are necessary for authentication or to include additional metadata for the receiving endpoint in the `Header Key` and `Value` fields accordingly. 
 
