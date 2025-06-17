@@ -88,7 +88,7 @@ In case you prefer to add clusters using kubeconfig, follow these steps:
 Ensure that the kubeconfig file has admin permissions. It is crucial for Devtron to have the necessary administrative privileges; otherwise, it may encounter failures or disruptions during deployments and other operations. Admin permission is essential to ensure the smooth functioning of Devtron and to prevent any potential issues that may arise due to insufficient privileges.
 {% endhint %}
 
-### Assigning Category To A Cluster
+### Assign Category to a Cluster
 
 Devtron allows you to assign a category (for e.g. Prod, QA, Dev, or Stage) to your clusters. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to the Prod, QA, Dev, or Stage environment.
 
@@ -301,7 +301,7 @@ Environment deletion is not allowed if any application has a CD pipeline corresp
 
 ---
 
-## Adding a Category
+## Add Category
 
 Before assigning a category, you must first add the category. To add a category, follow the steps below:
 
@@ -333,11 +333,11 @@ Before assigning a category, you must first add the category. To add a category,
    ![Figure 33: Categories Added](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-update.jpg)
 
 
-## Delete a Category
+## Delete Category
 
 To delete a category, follow the steps below:
 
-1. 1. Go to **Global Configurations**. 
+1. Go to **Global Configurations**. 
 
    ![Figure 34: Navigating to Global Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-global-config.jpg)
 
