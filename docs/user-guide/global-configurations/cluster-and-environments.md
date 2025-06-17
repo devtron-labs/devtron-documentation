@@ -301,7 +301,7 @@ Environment deletion is not allowed if any application has a CD pipeline corresp
 
 ---
 
-### Adding a Category
+## Adding a Category
 
 Before assigning a category, you must first add the category. To add a category, follow the steps below:
 
@@ -332,6 +332,26 @@ Before assigning a category, you must first add the category. To add a category,
 
    ![Figure 33: Categories Added](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-update.jpg)
 
+
+## Delete a Category
+
+To delete a category, follow the steps below:
+
+1. 1. Go to **Global Configurations**. 
+
+   ![Figure 34: Navigating to Global Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-global-config.jpg)
+
+2. Select **Clusters and Environments** and click **Manage Categories**, a modal window will open.
+
+   ![Figure 35: Clicking Manage Categories](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-manage-categories.jpg)
+
+3. Select the `x` icon next to the categories you want to delete.
+
+   **Note**: You cannot delete a category if it is assigned to a cluster or environment.
+
+  ![Figure 36: Clicking 'x' icon](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-x-icon.jpg)
+
+4. Click **Update** to delete the categories.
 ---
 
 ## Extras
