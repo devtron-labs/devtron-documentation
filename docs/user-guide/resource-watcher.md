@@ -72,7 +72,7 @@ Here, you can select the exact Kubernetes resource(s) you wish to track for chan
     | Updated    | Triggers the watcher when your existing Kubernetes resource is modified |
     | Deleted    | Triggers the watcher when your existing Kubernetes resource is deleted  |
 
-* Enter a [CEL expression](https://github.com/google/cel-spec/blob/master/doc/langdef.md) to catch a specific change in the resource's manifest.
+* Enter a [CEL expression](https://kubernetes.io/docs/reference/using-api/cel/) to catch a specific change in the resource's manifest.
 
 {% hint style="info" %}
 * **If resource is created** - Use 'DEVTRON_FINAL_MANIFEST'
