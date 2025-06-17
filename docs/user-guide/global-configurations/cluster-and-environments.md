@@ -45,7 +45,7 @@ Refer to [Get Cluster Credentials](#get-cluster-credentials) to learn the proces
   | Field | Description |
   | :--- | :--- |
   | **Name** | Enter the name of your cluster. |
-  | **Server URL** |  Enter the Server URL of your cluster (with https)<br />**Note**: We recommend using a [self-hosted URL](#benefits-of-self-hosted-url) instead of cloud hosted URL.  |
+  | **Server URL** |  Enter the Server URL of your cluster (with https)<br />**Note**: We recommend using a [self-hosted URL](#benefits-of-self-hosted-url) instead of a cloud-hosted URL.  |
   | **Bearer Token** | Paste the bearer token of your cluster |
 
   ![Figure 5: Enter Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-cluster-cred.jpg)
@@ -201,7 +201,7 @@ You have successfully configured an isolated cluster.
 ### Note
 When you deploy to an isolated environment, Devtron automatically packages application manifests and images into a [Helm chart](../../reference/glossary.md#helm-chartspackages). You can then either:
 * Download and install manually in a fully air-gapped setup.
-* Push it to an [OCI registry](../global-configurations/container-registries.md) (provided pushing of helm package is enabled), allowing manifests to be pulled manually or automatically via Devtron on air-gapped cluster (if pull access to the OCI registry is available).
+* Push it to an [OCI registry](../global-configurations/container-registries.md) (provided pushing of helm package is enabled), allowing manifests to be pulled manually or automatically via Devtron on an air-gapped cluster (if pull access to the OCI registry is available).
 {% endhint %}
 
 ---
@@ -227,7 +227,7 @@ Users need to have super-admin permission to add an environment to a cluster.
 
   ![Figure 20: Saving an Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/add-env-fields.jpg)
 
-3. **Assign a Category to environment** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) - Devtron allows you to assign a category, (for e.g. Prod, QA, Dev, or Stage) to your environments. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to Prod, QA, Dev, or Stage environment.<br><br>
+3. **Assign a Category to environment** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) - Devtron allows you to assign a category (for e.g. Prod, QA, Dev, or Stage) to your environments. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to Prod, QA, Dev, or Stage environment.<br><br>
  To assign a category to your environment, follow the steps below: 
    1. Select a category from the dropdown under **Assign Category** and click **Update**.
 
@@ -257,7 +257,7 @@ Users need to have super-admin permission to add an environment to a cluster.
 Users need to have super-admin permission to edit an environment in a cluster.
 {% endhint %}
 
-You can also make edits to an existing environment if need be by clicking the edit icon.
+You can also make edits to an existing environment if needed by clicking the edit icon.
 
 ![Figure 25: Editing Environment in the Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/edit-env.jpg)
 
@@ -303,7 +303,7 @@ Environment deletion is not allowed if any application has a CD pipeline corresp
 
 ### Adding a Category
 
-Before assigning a category, you must first add the category. To add a category, follow the below steps:
+Before assigning a category, you must first add the category. To add a category, follow the steps below:
 
 1. Go to **Global Configurations**. 
 
@@ -317,8 +317,8 @@ Before assigning a category, you must first add the category. To add a category,
   
  {% hint style="info" %}
  ### Note:
- * The category name must be unique and cannot be changed once defined. It should be minimum of 3 characters.
- * It can contain alphanumeric characters but cannot start with a number.
+ * The category name must be unique and cannot be changed once defined. It should be a minimum of 3 characters.
+ * It can contain alphanumeric characters, but cannot start with a number.
  * The name should be in lowercase only.
  {% endhint %}
 
@@ -345,10 +345,10 @@ Before assigning a category, you must first add the category. To add a category,
 
 {% hint style="info" %}
 ### Note
-We recommend using a self-hosted URL instead of a cloud-hosted URL. Refer the benefits of a [self-hosted URL](#benefits-of-self-hosted-url).
+We recommend using a self-hosted URL instead of a cloud-hosted URL. Refer to the benefits of a [self-hosted URL](#benefits-of-self-hosted-url).
 {% endhint %}
 
-You can get the **Server URL** and **Bearer Token** by running the following command depending on the cluster provider:
+You can get the **Server URL** and **Bearer Token** by running the following command, depending on the cluster provider:
 
 {% tabs %}
 {% tab title="k8s Cluster Providers" %}
