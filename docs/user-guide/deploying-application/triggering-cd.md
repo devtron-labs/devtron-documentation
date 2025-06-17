@@ -16,7 +16,7 @@ After the [CI pipeline](./triggering-ci.md) is complete, you can trigger the CD 
 
 3. If in any scenario, such as deploying a hotfix, if you need to use a different deployment strategy other than the default, you can select a different deployment strategy. 
 
-     **Note:** You can only select the deployment strategies that are configured for that pipeline.
+     **Note:** You can only select the deployment strategies that are configured for that pipeline. Refer to the [CD Pipeline](../creating-application/workflow/cd-pipeline.md#configure-deployment-strategies) to learn more.
 
      ![Figure 4: Selecting Deployment Strategy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-build.jpg)
 
