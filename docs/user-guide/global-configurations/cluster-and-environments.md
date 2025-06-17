@@ -96,7 +96,7 @@ Before assigning a category, you must first add the category. To add a category,
 
 To assign a category to a cluster, follow the steps below:
 
-1. Select a category from the dropdown under **Assign Category** amd click **Update Cluster**.
+1. Select a category from the dropdown under **Assign Category** and click **Update Cluster**.
 
    ![Figure 9: Assigning Category](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-cluster.jpg)
 
@@ -314,8 +314,13 @@ Before assigning a category, you must first add the category. To add a category,
    ![Figure 30: Clicking Manage Categories](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-manage-categories.jpg)
 
 3. Enter the name of the category in the **CATEGORIES** field and provide a description in the **DESCRIPTION** field.
-
-   **Note:** Category name should be unique and cannot be changed once defined. It must be minimum of 3 characters.
+  
+ {% hint style="info" %}
+ ### Note:
+ * The category name must be unique and cannot be changed once defined. It should be minimum of 3 characters.
+ * It can contain alphanumeric characters but cannot start with a number.
+ * The name should be in lowercase only.
+ {% endhint %}
 
    ![Figure 31: Adding Category](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-add.jpg)
 
