@@ -4,7 +4,7 @@
 The Code Scan plugin of Devtron allows you to perform the code scanning using Trivy. By integrating the **Code Scan** plugin into your workflow you can detect common Vulnerabilities, Misconfigurations, License Risks, and Exposed Secrets in your code.
 
 ### Prerequisites
-Before integrating the **Code Scan** plugin, install the [Vulnerability Scanning (Trivy/Clair)](https://docs.devtron.ai/usage/integrations/clair) integration from Devtron Stack Manager.
+Before integrating the **Code Scan** plugin, install the [Vulnerability Scanning (Trivy/Clair)](../integrations/vulnerability-scanning/README.md) integration from Devtron Stack Manager.
 
 ---
 
