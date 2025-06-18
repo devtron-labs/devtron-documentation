@@ -3,8 +3,7 @@
 You can install and try Devtron on a high-end machine or a Cloud VM. If you install it on a laptop/PC, it may start to respond slowly.
 
 {% hint style="success" %}
-### Try Devtron Enterprise for Free
-Explore [all capabilities](https://devtron.ai/pricing) of Devtron with its Enterprise version trial ([read more](enterprise-license.md)).
+Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
 {% endhint %}
 
 ## Prerequisites
@@ -42,7 +41,7 @@ helm repo update devtron
 
 helm install devtron devtron/devtron-operator \
 --create-namespace --namespace devtroncd \
---set components.devtron.service.type=NodePort --set installer.arch=multi-arch
+--set components.devtron.service.type=NodePort
 
 ```
 {% endtab %}
@@ -88,7 +87,7 @@ To access the dashboard on **MicroK8s/Kind/K3s** cluster, run the following comm
 kubectl -n devtroncd port-forward service/devtron-service 8000:80
 ```
 
-After port-forwarding, you can access the dashboard at this URL: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+After port-forwarding, you can access the dashboard at this URL: `http://127.0.0.1:8000`
 
 {% endtab %}
 {% endtabs %}
@@ -133,7 +132,7 @@ It is recommended to use Cloud VM with 2vCPU+, 4GB+ free memory, 20GB+ storage, 
 ### Create MicroK8s Cluster
 
 ```bash
-sudo snap install microk8s --classic --channel=1.22
+sudo snap install microk8s --classic 
 sudo usermod -a -G microk8s $USER
 sudo chown -f -R $USER ~/.kube
 newgrp microk8s

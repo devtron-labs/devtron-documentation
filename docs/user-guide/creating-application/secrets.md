@@ -67,9 +67,11 @@ There are five Data types that you can use to save your secret.
 
 * **Kubernetes Secret**: The secret that you create using Devtron.
 * **Kubernetes External Secret**: The secret data of your application is fetched by Devtron externally. Then the Kubernetes External Secret is converted to Kubernetes Secret.
-* **AWS Secret Manager**: The secret data of your application is fetched from AWS Secret Manager and then converted to Kubernetes Secret from AWS Secret. 
-* **AWS System Manager**: The secret data for your application is fetched from AWS System Secret Manager and all the secrets stored in AWS System Manager are converted to Kubernetes Secret.
-* **HashiCorp Vault**: The secret data for your application is fetched from HashiCorp Vault and the secrets stored in HashiCorp Vault are converted to Kubernetes Secret.
+* [External Secrets Operator](./eso/README.md)
+    * **Google Secrets Manager**
+    * **AWS Secret Manager**
+    * **Azure Secrets Manager**
+    * **HashiCorp Vault**
 
 *Note: The conversion of secrets from various data types to Kubernetes Secrets is done within Devtron and irrespective of the data type, after conversion, the Pods access `secrets` normally.*
 
@@ -85,6 +87,12 @@ The secret that is already created and stored in the environment and being used 
 2. Click `Add Secret` to add a new secret.
 3. Select `Kubernetes External Secret` from dropdown of `Data type`.
 4. Provide a name to your secret. Devtron will search secret in the environment with the same name that you mention here. 
+
+---
+
+## External Secrets
+
+Refer [External Secrets Operator](./eso/README.md) to know more.
 
 ### AWS Secret Manager
 
