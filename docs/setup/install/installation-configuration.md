@@ -364,6 +364,7 @@ You can configure Devtron to use an external PostgreSQL database (e.g., Amazon R
 ### Prerequisites
 
 * An external PostgreSQL server that is running and accessible
+* PostgreSQL version must be 14.
 * The username Devtron uses to connect with PostgreSQL must be `postgres`
 * Network connectivity between Devtron and PostgreSQL server
 * DNS mapping must be completed for your PostgreSQL server
