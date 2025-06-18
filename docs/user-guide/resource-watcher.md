@@ -8,7 +8,7 @@ An incident response if delayed can impact businesses, revenue, and waste valuab
 * **Update Event** - Occurs when an existing Kubernetes resource is modified, for e.g., deployment configuration tweaked to increase the replica count.
 * **Delete Event** - Occurs when an existing Kubernetes resource is deleted, for e.g., deletion of an orphaned pod. 
 
-You can make the Resource Watcher listen to the above events and accordingly run a job you wish to get done, for e.g., increasing memory, executing a script, raising Jira ticket, emailing your stakeholders, sending Slack notifications, and many more. Since manual intervention is absent, the timely response of this auto-remediation system improves your operational efficiency.
+You can make the Resource Watcher listen to the above events and accordingly run a webhook or run a job you wish to get done, for e.g., increasing memory, executing a script, raising Jira ticket, emailing your stakeholders, sending Slack notifications, and many more. Since manual intervention is absent, the timely response of this auto-remediation system improves your operational efficiency.
 
 ---
 
@@ -72,7 +72,7 @@ Here, you can select the exact Kubernetes resource(s) you wish to track for chan
     | Updated    | Triggers the watcher when your existing Kubernetes resource is modified |
     | Deleted    | Triggers the watcher when your existing Kubernetes resource is deleted  |
 
-* Enter a [CEL expression](https://github.com/google/cel-spec/blob/master/doc/langdef.md) to catch a specific change in the resource's manifest.
+* Enter a [CEL expression](https://kubernetes.io/docs/reference/using-api/cel/) to catch a specific change in the resource's manifest.
 
 {% hint style="info" %}
 * **If resource is created** - Use 'DEVTRON_FINAL_MANIFEST'
@@ -84,23 +84,63 @@ Here, you can select the exact Kubernetes resource(s) you wish to track for chan
 
 ### Execute Runbook
 
-Here, you can choose a job that should trigger if your watcher intercepts any changes.
+#### Trigger Devtron Job
 
-![Figure 7: Choosing a Job to Trigger](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/execute-runbook.gif)
+The **Trigger Devtron Job** option allows you to choose a Devtron job pipeline that triggers a job (e.g., executing a script, emailing your stakeholders, etc.) whenever the watcher intercepts any changes.
 
-* Choose a job pipeline from the **Run Devtron Job pipeline** dropdown. If a pipeline is not selected, the watcher won't intercept matching resource changes even if your defined conditions are met.
+![Figure 7: Trigger Devtron Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/trigger-job.gif)
 
-* Select the environment in which the job should run. It can either be `devtron-ci` or the source environment (the intercepted namespace where the event has occurred).
+Follow the below steps to trigger Devtron job: 
 
-* If the job expects input parameters, you may add its key and value under **Runtime input parameters**. 
+1. Select the **Trigger Devtron Job** option.
 
-    During a job's execution, its container can access the initial and final resource manifest through special environment variables. These variables are:
-    * `DEVTRON_INITIAL_MANIFEST`
-    * `DEVTRON_FINAL_MANIFEST`
+2. Choose your preferred [Devtron job pipeline](./jobs/workflow-editor-job.md) from the **Run Devtron Job pipeline** drop-down box. The pipelines configured while creating a job are displayed as options in the **Run Devtron Job pipeline** drop-down box. Unless a job pipeline is selected, the watcher will not intercept matching resource changes, even if defined conditions are met.
 
-* Click **Create Watcher**. 
+3. Select your preferred environment for the job to run in the **Execute job in environment** drop-down box.
 
-Your watcher is now ready to intercept the changes to the selected resources. 
+4. Enter the runtime parameters (`Key`, `Type`, `Value`) in the **Runtime Parameters** section.
+
+    When a job is executed, its container can access the initial and final resource manifest through the following special environment variables:
+
+    * To access the initial resource manifest use: `DEVTRON_INITIAL_MANIFEST`
+
+    * To access the final resource manifest use: `DEVTRON_FINAL_MANIFEST`
+
+5. Click **Create Watcher**.
+
+The watcher is now ready to intercept changes to selected resources and execute the configured job.
+
+![Figure 8: Intercepted Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/intercepted-changes-job.jpg)
+
+#### Trigger Webhook
+
+The Trigger Webhook option allows you to configure a [Webhook](https://hookdeck.com/webhooks/guides/what-are-webhooks-how-they-work) URL along with the payload (data) to be sent whenever the webhook is triggered. For example, to receive notifications in Slack, you can provide the Slack webhook URL and define the payload accordingly.
+
+![Figure 9: Trigger Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/run-webhook.gif)
+
+Follow the below steps to trigger webhook:
+
+1. Select the **Trigger Webhook** option.
+
+2. Enter your complete webhook URL, including `https://`, in the **Webhook URL** field.  Your configured payload will be delivered through this webhook.
+
+3. Enter the relevant header key-value pairs that are necessary for authentication or to include additional metadata for the receiving endpoint in the `Header Key` and `Value` fields accordingly. 
+
+4. Configure the payload in the **Payload (Data to be shared through Webhook)** field. 
+    
+    The payload is the actual content delivered to the webhook endpoint when the webhook is triggered. It contains the relavant information about changes in intercepted resources. The payload data must be entered in valid JSON format. Other formats such as YAML, or plain text are not supported. You can also customize the payload to include any resource-specific values that are useful for your integration. You can pass the properties of resource manifest in the webhook payload using the following keys:
+
+    * To access the initial resource manifest use: `DEVTRON_INITIAL_MANIFEST`
+
+    * To access the final resource manifest use: `DEVTRON_FINAL_MANIFEST`
+
+        The above keys return values as stringified JSON.
+
+5. Click **Create Watcher**. 
+
+The watcher is now ready to intercept changes to selected resources and trigger the webhook.
+
+![Figure 10: Intercepted Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/intercepted-changes.jpg)
 
 ---
 
@@ -115,7 +155,7 @@ Users need to have super-admin permission to view intercepted changes.
 
 This page allows you to view the changes to Kubernetes resources that you have selected for tracking changes. 
 
-![Figure 8: Intercepted Changes - Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/intercepted-changes-page.jpg)
+![Figure 11: Intercepted Changes - Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/intercepted-changes-page.jpg)
 
 It comes with the following items to help you locate the resource, where the event has been intercepted:
 
@@ -140,19 +180,19 @@ You get the following details in the results shown on the page.
 
 You can check the changes in manifest by clicking **View Manifest** in `Change In Resource` column.
 
-![Figure 9a: Created Resource Manifest - Final Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/view-manifest-v1.gif)
+![Figure 12a: Created Resource Manifest - Final Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/view-manifest-v1.gif)
 
 
-![Figure 9b: Updated Resource - Initial and Final Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/view-manifest-v2.gif)
+![Figure 12b: Updated Resource - Initial and Final Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/view-manifest-v2.gif)
 
 
-![Figure 9c: Deleted Resource - Initial Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/view-manifest.gif)
+![Figure 12c: Deleted Resource - Initial Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/view-manifest.gif)
 
 ### Job Execution Log
 
 You can check the logs of the job executed when the Resource Watcher intercepts any change by clicking **logs**.
 
-![Figure 10: Job Progress](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/job-exec-log.gif)
+![Figure 13: Job Progress](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/job-exec-log.gif)
 
 ---
 
