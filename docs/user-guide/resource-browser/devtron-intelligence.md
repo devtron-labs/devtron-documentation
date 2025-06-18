@@ -37,9 +37,15 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: ai-secret
-  namespace: <your-env-namespace>
-data:
-  AiKey: <your_base64_encoded_key>
+  namespace: <your-env-namespace>  # Namespace where the AI Agent chart will be installed
+type: Opaque
+data: 
+  ## OpenAiKey: <base64-encoded-openai-key>           # For OpenAI
+  ## GoogleKey: <base64-encoded-google-key>           # For Gemini
+  ## azureOpenAiKey: <base64-encoded-azure-key>       # For Azure OpenAI
+  ## awsAccessKeyId: <base64-encoded-aws-access-key>  # For AWS Bedrock
+  ## awsSecretAccessKey: <base64-encoded-aws-secret>  # For AWS Bedrock
+  ## AnthropicKey: <base64-encoded-anthropic-key>     # For Anthropic
 ```
 
 ![Figure 2: Creating K8s Secret for LLM API Key](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/create-secret-v3.jpg)
@@ -69,20 +75,100 @@ Install the chart in the cluster whose workloads you wish to troubleshoot.
 
   * **Chart Values**: Choose `Default 0.0.1`
 
-* Configure the `values.yaml` and add the `additionalEnvVars` block given below, using the editor.
+* In the `values.yaml` file editor, add the appropriate `additionalEnvVars` block based on your LLM provider. Use the tabs below to find the correct configuration snippet for your provider.
 
+{% tabs %}
+
+{% tab title="OpenAI" %}
 ```yaml
 additionalEnvVars:
   - name: MODEL
-    value: gpt-4o-mini ## Specify LLM Model
-  - name: LLM_API_KEY
+    value: gpt-4o-mini       ## Examples: gpt-4o, gpt-4, gpt-3.5-turbo
+  - name: OPENAI_API_KEY
     valueFrom: 
       secretKeyRef:
-        key: AiKey ## Key of the secret created in Step 2
-        name: ai-secret ## Name of the secret created in Step 2
+        key: OpenAiKey       ## Key of the secret created in Step 2
+        name: ai-secret      ## Name of the secret created in Step 2
   - name: CLUSTER_NAME
-    value: document-nonprod ## Name of the target cluster (optional)
+    value: document-nonprod  ## Name of the target cluster (optional)
 ```
+{% endtab %}
+
+{% tab title="Google" %}
+```yaml
+additionalEnvVars:
+  - name: MODEL
+    value: gemini-1.5-pro    ## Examples: gemini-2.0-flash, gemini-2.0-flash-lite
+  - name: GOOGLE_API_KEY
+    valueFrom: 
+      secretKeyRef:
+        key: GoogleKey       ## Key of the secret created in Step 2
+        name: ai-secret      ## Name of the secret created in Step 2
+  - name: CLUSTER_NAME
+    value: document-nonprod  ## Name of the target cluster (optional)
+```
+{% endtab %}
+
+{% tab title="Azure OpenAI" %}
+```yaml
+additionalEnvVars:
+  - name: MODEL
+    value: azure/<DEPLOYMENT_NAME>   ## Replace with your Azure deployment name (keep "azure/" prefix)
+  - name: MODEL_TYPE
+    value: gpt-4o                ## Supported: gpt-4o, gpt-35-turbo, etc.
+  - name: AZURE_API_VERSION
+    value: <API_VERSION>    ## Replace with the version from Azure portal
+  - name: AZURE_API_BASE
+    value: <AZURE_ENDPOINT>  ## Your Azure endpoint e.g. https://my-org.openai.azure.com/
+  - name: AZURE_API_KEY
+    valueFrom:
+      secretKeyRef:
+        key: azureOpenAiKey      ## Key of the secret created in Step 2
+        name: ai-secret          ## Name of the secret created in Step 2
+  - name: CLUSTER_NAME
+    value: document-nonprod  ## Name of the target cluster (optional)
+```
+{% endtab %}
+
+{% tab title="AWS Bedrock" %}
+```yaml
+additionalEnvVars:
+  - name: MODEL
+    value: bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0  ## Replace with your actual Bedrock model name
+  - name: AWS_REGION_NAME
+    value: us-east-1
+  - name: AWS_ACCESS_KEY_ID
+    valueFrom:
+      secretKeyRef:
+        key: awsAccessKeyId
+        name: ai-secret
+  - name: AWS_SECRET_ACCESS_KEY
+    valueFrom:
+      secretKeyRef:
+        key: awsSecretAccessKey
+        name: ai-secret 
+  - name: CLUSTER_NAME
+    value: document-nonprod  ## Name of the target cluster (optional)
+```
+{% endtab %}
+
+{% tab title="Anthropic" %}
+```yaml
+additionalEnvVars:
+  - name: MODEL
+    value: claude-3-sonnet   ## Examples: claude-3-sonnet, claude-3-haiku
+  - name: ANTHROPIC_API_KEY
+    valueFrom: 
+      secretKeyRef:
+        key: AnthropicKey    ## Key of the secret created in Step 2
+        name: ai-secret      ## Name of the secret created in Step 2
+  - name: CLUSTER_NAME
+    value: document-nonprod  ## Name of the target cluster (optional)
+```
+{% endtab %}
+
+{% endtabs %}
+
 
 ![Figure 3: Chart Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/chart-config-v3.jpg)
 
