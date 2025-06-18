@@ -35,11 +35,9 @@ helm install devtron devtron/devtron-operator \
 ```
 
 
-## Install Multi-Architecture Nodes (ARM and AMD)
+<!-- ## Install Multi-Architecture Nodes (ARM and AMD)
 
 To install Devtron on clusters with the multi-architecture nodes (ARM and AMD), append the Devtron installation command with `--set installer.arch=multi-arch`.
-
-
 
 [//]: # (If you are planning to use Hyperion for `production deployments`, please refer to our recommended overrides for [Devtron Installation]&#40;override-default-devtron-installation-configs.md&#41;.)
 
@@ -53,7 +51,7 @@ To install Devtron on clusters with the multi-architecture nodes (ARM and AMD), 
 
 [//]: # (kubectl -n devtroncd get installers installer-devtron -o jsonpath='{.status.sync.status}')
 
-[//]: # (```)
+[//]: # (```) -->
 
 ## Devtron Dashboard
 

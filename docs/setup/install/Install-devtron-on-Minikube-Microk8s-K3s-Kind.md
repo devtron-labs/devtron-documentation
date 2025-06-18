@@ -41,7 +41,7 @@ helm repo update devtron
 
 helm install devtron devtron/devtron-operator \
 --create-namespace --namespace devtroncd \
---set components.devtron.service.type=NodePort --set installer.arch=multi-arch
+--set components.devtron.service.type=NodePort
 
 ```
 {% endtab %}
@@ -87,7 +87,7 @@ To access the dashboard on **MicroK8s/Kind/K3s** cluster, run the following comm
 kubectl -n devtroncd port-forward service/devtron-service 8000:80
 ```
 
-After port-forwarding, you can access the dashboard at this URL: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+After port-forwarding, you can access the dashboard at this URL: `http://127.0.0.1:8000`
 
 {% endtab %}
 {% endtabs %}
