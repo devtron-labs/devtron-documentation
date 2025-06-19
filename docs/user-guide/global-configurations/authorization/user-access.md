@@ -88,19 +88,19 @@ The **Permission Groups** drop-down box allows you to select from a list of perm
 
 ![Figure 9: Permission Groups](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/assign-permission-groups.gif)
 
-You can select one or more permission groups, and the user will automatically inherit all the permissions to the projects and resources defined for those groups. Once you select permission group(s), assigning specific permissions can be skipped (unless you wish to grant additional permissions). 
+You can select one or more permission groups, and the user will automatically inherit all the permissions to the projects and resources defined for those groups. Once you select permission group(s), assigning direct permissions can be skipped (unless you wish to grant additional permissions). 
 
 You can also make users [Active/Inactive](#making-users-activeinactive) at permission group-level.
 
 {% hint style="info" %}
 
-### What happens when a user has specific permissions as well as permissions inherited from a group?
+### What happens when a user has direct permissions as well as permissions inherited from a group?
 
-If you assign a permission group as well as specific permissions, the user will have the combined permissions of both.
+If you assign a permission group as well as direct permissions, the user will have the combined permissions of both.
 
 **For example**: 
 
-* A user is granted **Build & Deploy** access to three apps via specific permissions.
+* A user is granted **Build & Deploy** access to three apps via direct permissions.
 
 * The same user is part of a group that has **View only** access to five apps (including those three apps).
 
@@ -108,21 +108,21 @@ If you assign a permission group as well as specific permissions, the user will 
 
 {% endhint %}
 
-### Can Manage Access For All Roles Toggle
+### Can Manage Access For All Roles (Toggle)
 
 {% hint style="warning" %}
 
 ### Who Can Perform This Action?
 
-Only a [Super Admin](#grant-super-admin-permission) can enable the **Can manage access for all roles** toggle for other users. This toggle is available only to Super-Admins.
+Only a [Super Admin](#grant-super-admin-permission) can enable the **Can manage access for all roles** toggle for other users.
 
 {% endhint %}
 
 ![Figure 10: 'Can manage access for all roles' Toggle](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/cmafar-highlighted.jpg)
 
-The **Can manage access for all roles** toggle allows you to grant a user the permission to manage access for all roles across Devtron apps, Helm Apps, Jobs, Kubernetes Resources, and Chart Groups. However, they cannot create new users. 
+By enabling the **Can manage access for all roles** toggle, you can grant a user the permission to manage access for all roles across Devtron apps, Helm Apps, Jobs, Kubernetes Resources, and Chart Groups. However, they cannot create new users. 
 
-By default, the **Can manage access for all roles** toggle is disabled. 
+By default, this toggle is disabled. 
 
 {% hint style="warning" %}
 
@@ -202,12 +202,20 @@ An Access Manager cannot create other Access Managers or add new users. Creation
 
 {% endhint %}
 
-| Users | Base Role(s) | Access Manager Role(s) | What's Allowed | What's Not Allowed |
-|:-----------------------|:----|:------|:----|:------|
-| User A | Admin | View Only | Changing user B's **Manager** role to **View Only** role (Manager → View Only) |<ul><li>Reverting to User B's **Manager** role (View Only → Manager)</li><li>Changing User B's **Manager** role to any other role, except for **View Only**</li><li>Performing operations beyond the base role (i.e., **Admin**)</li><li>Modifying Super-Admin permissions</li></ul>|
-| User B | Manager | Not Applicable | Perform the operations under the scope of **Manager** role across Devtron | <ul><li>Manage user access for other users</li><li>Perform operations beyond the base role (i.e., **Manager**)</li><li>Modifying Super-Admin permissions</li></ul>|
+A user who is an Access Manager can grant or change permissions for other existing users only within the permissions assigned to them under the **Access Manager** role in the **Role** drop-down box. For example, refer to the tables below to understand what an Access Manager is allowed and not allowed to do.
 
-{% hint style="warning" %}
+| Users | Base Role(s) | Access Manager Role(s) |
+|:-----------------------|:----|:------|
+| User A | Admin | View Only |
+| User B | Manager | Not Applicable |
+
+| What's Allowed | What's Not Allowed |
+|:----|:------|
+| Changing user B's **Manager** role to **View Only** role (Manager → View Only) |<ul><li>Reverting to User B's **Manager** role (View Only → Manager)</li><li>Changing User B's **Manager** role to any other role, except for **View Only**</li><li>Performing operations beyond the base role (i.e., **Admin**)</li><li>Modifying Super-Admin permissions</li></ul>|
+| Perform the operations under the scope of **Manager** role across Devtron | <ul><li>Manage user access for other users</li><li>Perform operations beyond the base role (i.e., **Manager**)</li><li>Modifying Super-Admin permissions</li></ul>|
+
+
+{% hint style="info" %}
 
 ### Note
 
