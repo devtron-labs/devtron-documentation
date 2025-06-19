@@ -202,7 +202,7 @@ An Access Manager cannot create other Access Managers or add new users. Creation
 
 {% endhint %}
 
-A user who is an Access Manager can grant or change permissions for other existing users only within the permissions assigned to them under the **Access Manager** role in the **Role** drop-down box. For example, refer to the tables below to understand what an Access Manager is allowed and not allowed to do.
+A user who is an Access Manager can grant or change permissions for other existing users only within the permissions assigned to them under the **Access Manager** role in the **Role** drop-down box. For example, refer to the tables below to understand what an Access Manager (User A) is allowed and not allowed to do with the permissions of an existing user (User B).
 
 | Users | Base Role(s) | Access Manager Role(s) |
 |:-----------------------|:----|:------|
@@ -211,7 +211,7 @@ A user who is an Access Manager can grant or change permissions for other existi
 
 | What's Allowed | What's Not Allowed |
 |:----|:------|
-| Changing user B's **Manager** role to **View Only** role (Manager → View Only) |<ul><li>Reverting to User B's **Manager** role (View Only → Manager)</li><li>Changing User B's **Manager** role to any other role, except for **View Only**</li><li>Performing operations beyond the base role (i.e., **Admin**)</li><li>Modifying Super-Admin permissions</li></ul>|
+| Changing User B's **Manager** role to **View Only** role (Manager → View Only) |<ul><li>Reverting to User B's **Manager** role (View Only → Manager)</li><li>Changing User B's **Manager** role to any other role, except for **View Only**</li><li>Performing operations beyond the base role (i.e., **Admin**)</li><li>Modifying Super-Admin permissions</li></ul>|
 | Perform the operations under the scope of **Manager** role across Devtron | <ul><li>Manage user access for other users</li><li>Perform operations beyond the base role (i.e., **Manager**)</li><li>Modifying Super-Admin permissions</li></ul>|
 
 
