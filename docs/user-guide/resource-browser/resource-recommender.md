@@ -84,7 +84,17 @@ If you wish, you can apply recommended resource configurations to multiple or al
 
 4. Click **Apply Changes** to update the resource configuration.
 
-## Download 
+## Export Recommendations in CSV File
+
+You can also export resource recommendations to a CSV file. To do so, follow the below steps:
+
+1. Filter the workloads for which you want to export resource recommendations, based on there `Kind` and `Namespace`. By default, it will export resource recommendations for all workloads. 
+
+2. Click the **Download** button; a dialog box appears asking you to choose the location where you want to save the file.
+
+3. Select the location where you want to save the file.
+
+4. Click **Save**; file will be saved at the selected location.
 
 ## Modify Resource Recommender Job Schedule
 
@@ -101,6 +111,4 @@ To modify the schedule of the **Resource Recommender** background job, follow th
 
 4. Click **Apply Changes** and manifest will be updated.
 
-5. Restart the 
- 
-
+5. Restart the `orchestrator` or `devtron` pod to implement the changes.
