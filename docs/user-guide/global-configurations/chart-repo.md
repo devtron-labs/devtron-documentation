@@ -1,6 +1,6 @@
 # Chart Repository
 
-You can add more chart repositories to Devtron. Once added, they will be available in the `All Charts` section of the [Chart Store](../deploy-chart/overview-of-charts.md).
+You can add more chart repositories to Devtron. Once added, they will be available in the **All Charts** section of the [Chart Store](../../user-guide/deploy-chart/README.md)
 
 **Note**: After the successful installation of Devtron, click `Refetch Charts` to sync and download all the default charts listed on the dashboard.
 
@@ -19,7 +19,7 @@ Provide below information in the following fields:
 | **Name** | Provide a `Name` of your chart repository. This name is added as prefix to the name of the chart in the listing on the helm chart section of application. |
 | **URL** | This is the URL of your chart repository. E.g. https://charts.bitnami.com/bitnami |
 
-
+---
 
 ## Update Chart Repository
 
@@ -33,4 +33,3 @@ You can also update your saved chart repository settings.
 **Note**: 
 * You can perform a dry run to validate the below chart repo configurations by clicking `Validate`.
 <!-- * You can enable or disable your chart repository. If you enable it, then you will be able to see the enabled chart in `All Charts` section of the [Chart Store](../deploy-chart/overview-of-charts.md). -->
-
