@@ -16,6 +16,11 @@ It helps users eliminate manual guesswork, reduce over-provisioning, and prevent
 
 {% endhint %}
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [access to the cluster](../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to inspect and apply recommendations.
+{% endhint %}
+
 ## Inspect Recommendations
 
 To inspect the resource recommendations, follow the steps below:
