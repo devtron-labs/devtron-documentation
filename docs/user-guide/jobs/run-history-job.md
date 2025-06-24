@@ -2,7 +2,7 @@
 
 The run history allows you to review every execution of job pipelines. Here you can review who triggered each pipeline, when it started executing and finished, and whether it succeeded or failed. It also allows you to inspect logs for each execution.
 
-## Accessing run history for specific pipeline
+## Accessing Run History for Specific Pipeline
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
@@ -14,11 +14,11 @@ Either you have just executed the job and want to inspect the live execution, or
 
 1. Navigate to the **Run History** tab of your job, and all the executions will appear in a reverse chronological order under the pipeline name. In case you have configured multiple job pipelines within a job, you need to select the pipeline from the **Select Pipeline** dropdown in the top-left corner. 
 
- ![Figure 1a: Select Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history.jpg)
+ ![Figure 1: Selecting Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history.jpg)
 
 2. Select the specific execution you want to inspect. By default, the latest execution is selected.
 
- ![Figure 1b: Select specific execution](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-select-execution.jpg)
+ ![Figure 2: Selecting Specific Execution](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-select-execution.jpg)
 
 3. After selecting the execution, the right section of the page will display the details about that particular execution.
 
@@ -30,7 +30,7 @@ Either you have just executed the job and want to inspect the live execution, or
  |`Execution succeeded`|Timestamp marking when the job finished successfully.|
  |`Worker status`|Final outcome of the worker performing the job (e.g., Succeeded or Failed). On failure, the error message is also shown|
 
- ![Figure 1c: Execution's details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-details.jpg)
+ ![Figure 3: Execution's details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-details.jpg)
 
 Apart from these details, you can also inspect logs, source code, security, and download artifacts (if any).
 
@@ -40,7 +40,7 @@ Apart from these details, you can also inspect logs, source code, security, and 
  * You can expand/collapse each pipeline stage to view specific logs related to that stage. Use the `Expand/collapse all stages` button near the search bar to expand or collapse all stages at once.
  * Select the fullscreen button in the bottom-right corner to view logs in fullscreen.
 
- ![Figure 2a: Logs](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-logs.jpg)
+ ![Figure 4: Logs](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-logs.jpg)
 
 ### Source
  The source tab shows which commit is from the source code (configured Git repository) that is used to execute the job pipeline. 
@@ -54,7 +54,7 @@ Apart from these details, you can also inspect logs, source code, security, and 
  |`Author`|Name & email of the committer.|
  |`Date & time`|When that commit was authored|
 
- ![Figure 2b: Source](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-source.jpg)
+ ![Figure 5: Source](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-source.jpg)
 
 ### Artifacts
 
@@ -62,8 +62,8 @@ Apart from these details, you can also inspect logs, source code, security, and 
 
 ### Security
 
- The Security tab provides a view of vulnerability scanning results for code, the container images used or built  during the job execution. It appears when a security scan plugin (e.g., Trivy via the Code Scan plugin) is integrated into your job pipeline.
+ The Security tab provides a view of vulnerability scanning results for code, the container images used or built during the job execution. It appears when a security scan plugin (e.g., Trivy via the Code Scan plugin) is integrated into your job pipeline.
 
 ---
 
-After inspecting the run history, you can also set up the [Job Overview](./overview-job.md) so that others can easily use the job in the future.
+After inspecting the run history, you can also set up the [Job Overview](./overview-job.md) so that others can easily know more about the job.

@@ -14,28 +14,28 @@ To configure the Source Code, follow these steps:
 
 2. Select the **Source Code** tab from the left sidebar.
 
- ![Figure 1a: Select source code](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code.jpg)
+ ![Figure 1: Selecting Source Code](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code.jpg)
 
 3. Under **Add Git Repository**, select the **Git Account** from the dropdown menu. You can also select `GitHub Public` from the same dropdown to configure a public repository that does not require authentication.
 
- ![Figure 1b: Add git account](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-git-account.jpg)
+ ![Figure 2: Adding Git Account](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-git-account.jpg)
 
 4. Enter the **Repository URL** in the Git Repo `URL` field, corresponding to the selected Git account.<br>
 If GitHub Public is selected, you can enter the URL of any public repository, as no authentication is required. 
 
- ![Figure 1c: Add git repository](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-repo-url.jpg)
+ ![Figure 3: Adding Git Repository](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-repo-url.jpg)
 
 5. Configure the [Additional Options](#configure-additional-options-optional) for the job as per your requirements.
 
 6. Click on the **Save** button to save the changes.
 
- ![Figure 1d: Save source code](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-save.jpg)
+ ![Figure 4: Saving Source Code](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-save.jpg)
 
 ---
 
 ## Configure Additional Options (optional)
 
-### Exclude specific file/folder in this repo
+### Exclude Specific File/Folder in this Repo
 
 Devtron allows you to exclude specific files or folders from the repository from being included in the job execution. This is particularly useful for avoiding unnecessary files or folders that do not contribute to the job’s tasks that are not relevant to the current job execution. 
 
@@ -47,7 +47,7 @@ To define the exclusion or inclusion rules, follow these steps:
 
 1. Check the **Exclude specific file/folder in this repo** checkbox.
 
- ![Figure 2a: Exclude specific file/folder](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-exclude-files.jpg)
+ ![Figure 5: Excluding Specific File/Folder](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-exclude-files.jpg)
 
 2. Enter the exclusion or inclusion rules in the **Enter file or folder paths to be included or excluded** field.
 
@@ -64,14 +64,14 @@ To define the exclusion or inclusion rules, follow these steps:
 
  You may use the **Learn how** link (as shown below) to understand the syntax of defining an exclusion or inclusion rule.
 
- ![Figure 2b: 'Learn how' Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-learn-how.jpg)
+ ![Figure 6: 'Learn how' Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-learn-how.jpg)
 
  Since file paths can be long, Devtron supports regex too for writing the paths. To understand it better, you may click the **How to use** link as shown below.
 
- ![Figure 2c: Regex Support](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-regex.jpg)
+ ![Figure 7: Regex Support](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-regex.jpg)
 
 
-### Set checkout path
+### Set Checkout Path
 
 Devtron allows you to define a custom directory path where the repository will be checked out during job execution. By default, the repository is checked out to the root directory (./). However, you can set a custom path to specify a particular folder within the repository to be accessed and utilized during job execution.
 
@@ -87,15 +87,15 @@ To set the checkout path, follow these steps:
  |`./src`|Checkout the repository to the src folder|
  |`./src/app`|Checkout the repository to the app folder inside the src folder|
 
- ![Figure 3a: Checkout path](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-checkout.jpg)
+ ![Figure 8: Checkout Path](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-checkout.jpg)
 
-### Pull submodules recursively
+### Pull Submodules Recursively
 
 This checkbox is used for pulling [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) present in a repo. The submodules will be pulled recursively, and the auth method used for the parent repo will be used for submodules too.
 
 To pull the submodules recursively, check the **Pull submodules recursively** checkbox.
 
-![Figure 4a: Pull submodules recursively](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-pull.jpg)
+![Figure 9: Pulling Submodules Recursively](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-pull.jpg)
 
 ---
 

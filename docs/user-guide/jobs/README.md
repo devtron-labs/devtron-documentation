@@ -13,7 +13,7 @@ To learn more about how Jobs work, see the sections below
 
     * [Source Code](./configurations/source-code-job.md)
 
-    * [Workflow editor](./configurations/workflow-editor-job.md)
+    * [Workflow Editor](./configurations/workflow-editor-job.md)
 
     * [ConfigMaps & Secrets](./configurations/configmap-secret/README.md)
 

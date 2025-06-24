@@ -1,6 +1,6 @@
 # Secrets
 
-Secrets and ConfigMaps are both used to store configurations, but there is one major difference between them: ConfigMaps store key-values in normal text format, whereas secrets store them in base64 encrypted form. Devtron hides the data of secrets for the normal users, and it is only visible to the users having edit permission.
+Secrets are used to store configurations in base64 encrypted form. Devtron hides the data of secrets for the normal users, and it is only visible to the users having edit permission.
 
 Secret objects let you store and manage sensitive information, such as passwords, authentication tokens, and SSH keys. Embedding this information in secrets is safer and more flexible than putting it verbatim in a Pod definition or in a container image.
 
@@ -16,17 +16,17 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
 
 1. Go to the **Configurations** → **Base Configurations**.
 
-![Figure 1a: ConfigMaps & Secrets](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret.jpg)
+![Figure 1: ConfigMaps & Secrets](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret.jpg)
 
 2. Click the **+** button next to **Secrets**.
 
-![Figure 1b: Create Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-add.jpg)
+![Figure 2: Creating Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-add.jpg)
 
 3. Enter a name for the Secret (Once defined, the name cannot be changed later). 
 
     In case you are mounting an existing Kubernetes Secret, the name should be exactly the same as the name given using the `kubectl create secret <secret-name> <data source>` command.
     
-![Figure 1c: Enter secret name](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-name.jpg)
+![Figure 3: Entering Secret Name](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-name.jpg)
 
 4. **Data Type** - Choose between the following data types:
 
@@ -38,7 +38,7 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
     
  > `external-secrets` helm chart should be installed before setting up ESO; otherwise, the External Secret Operator (ESO) will not appear. Refer to the [External Secret Operator (ESO)](#external-secret-operator-eso) section to set up ESO 
 
-![Figure 1d: Secret data type](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-type.jpg)
+![Figure 4: Secret Data Type](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-type.jpg)
     
 **Note**: Devtron automatically converts secrets from various data types to Kubernetes Secrets. Regardless of the original data type, once the conversion is complete, the Pods can access the secrets in the same way as native Kubernetes Secrets.
 
@@ -48,9 +48,9 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
 
     * [**Data Volume**](#mount-data-as-data-volume) – Select this option if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-valume) to know more.
 
- ![Figure 1e: Mount data as](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-mount-data.jpg)
+ ![Figure 5: Mount Data as](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-mount-data.jpg)
 
- ### Mount data as environment variables
+ ### Mount Data as Environment Variables
 
  This will pass your secret data into your Job pod as environment variables, thus making the configuration values directly accessible by your job.
 
@@ -60,11 +60,11 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
 
  * **GUI mode** – User-friendly interface. Click the **+Add** button and enter the **Key** and **Value** fields without quotes. 
 
- ![Figure 2a: Enter data in 'GUI' mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-env-var-gui.jpg)
+ ![Figure 6: Entering Data in 'GUI' Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-env-var-gui.jpg)
 
  * **YAML mode** – Raw YAML for entering key-value pairs in the format **`key: value`**. Boolean and numeric values must be wrapped in double quotes.
 
- ![Figure 2b: Enter data in 'YAML' mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-env-var-yaml.jpg)
+ ![Figure 7: Entering Data in 'YAML' Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-env-var-yaml.jpg)
 
  ### Mount Existing Kubernetes Secrets
 
@@ -72,7 +72,7 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
 
  If you have selected Data type as `Mount Existing Kubernetes Secrets`, then no data is required, as Devtron will fetch the existing Secret data and use it to create a Secret.
 
- ![Figure 3a: Mount Existing Kubernetes Secrets for 'Environment Variable'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-mount-existing-env-var.jpg)
+ ![Figure 8: Mounting Existing Kubernetes Secrets for 'Environment Variable'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-mount-existing-env-var.jpg)
  
 ---
 
@@ -81,19 +81,19 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
 
 This option allows you to create a Secret by passing the content of a file. The content could be plain text, json, yaml, bash script, etc.
 
-![Figure 4a: Mount Data as Data Volume](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-vol.jpg)
+![Figure 9: Mounting Data as Data Volume](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-vol.jpg)
 
  ### Volume Mount Path
 
 Enter the folder path where the data volume should be mounted for it to be accessible to the containers running in a pod. Your keys will be mounted as files to that volume.
 
-![Figure 4b: Volume Mount Path](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-vol-mount-path.jpg)
+![Figure 10: Volume Mount Path](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-vol-mount-path.jpg)
 
  ### Set Sub Path
 
 When mounting multiple files to the same location, you can use the **Set Sub Path** option to control how the files are handled. This setting allows you to control whether existing files are overwritten or preserved when mounting new files.
 
-![Figure 4b: Set Sub Path](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-vol-sub-path.jpg)
+![Figure 11: Setting Sub Path](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-vol-sub-path.jpg)
 
 * If **Set Sub Path** is enabled, the system will preserve existing files in the [specified path](#volume-mount-path) and append the new file using the file name as a sub-path.
 
@@ -109,7 +109,7 @@ In case of External Secrets, manually specify the keys that should be mounted as
 
 The **Set File Permission** option applies permissions at the Secret level, not to its individual secret keys. Enabling this option will let you enter a 3-digit standard permission value to control access to the file.
 
-![Figure 4c: Set File Permission](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-vol-file-per.jpg)
+![Figure 12: Setting File Permission](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-vol-file-per.jpg)
 
 The 3-digit numeric value represents the permission settings for the file:
 
@@ -133,23 +133,23 @@ For example, **755** means:
 
 If you have selected Data type as `Kubernetes Secret` and mount data as `Data Volume`, then you also need to enter the required data (key-value pairs) in the **Data** field.
 
-The key of the Secret should be your filename, and the value of the Secret should be your file content. In the below example, you `file.json` is the key, and the json content is the value of that Secret (below the pipe (**|**) symbol). This file will be created on your specified [volume mount path](#volume-mount-path).
+The key of the Secret should be your filename, and the value of the Secret should be your file content. In the below example, you `file.json` is the key, and the JSON content is the value of that Secret (below the pipe (**|**) symbol). This file will be created on your specified [volume mount path](#volume-mount-path).
 
 Enter data in:
 
  * **GUI mode** – User-friendly interface. Click the **+Add** button and enter the **Key** and **Value** fields without quotes. 
 
- ![Figure 5a: Enter data in 'GUI' mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-vol-gui.jpg)
+ ![Figure 13: Entering Data in 'GUI' Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-vol-gui.jpg)
 
  * **YAML mode** – Raw YAML for entering key-value pairs in the format **`key: value`**. Boolean and numeric values must be wrapped in double quotes.
  
- ![Figure 5b: Enter data in 'YAML' mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-vol-yaml.jpg)
+ ![Figure 14: Entering Data in 'YAML' Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-vol-yaml.jpg)
 
 #### For Mount Existing Kubernetes Secrets
 
 This option allows you to mount an existing Kubernetes Secret in your job pods as data volumes. A Secret will not be created by the system, so please ensure that the secret with the same name already exists within the namespace. Otherwise, the deployment will fail.<br><br>If you have selected Data type as `Mount Existing Kubernetes Secrets`, then no data is required as Devtron will fetch the existing Secret data and use it to create a Secret.
 
-![Figure 6a: Mount Existing Kubernetes Secrets for 'Data Volume'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-mount-existing-data-vol.jpg)
+![Figure 15: Mounting Existing Kubernetes Secrets for 'Data Volume'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-mount-existing-data-vol.jpg)
 
 ---
 
@@ -167,7 +167,7 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
 
 3. Click **Save Changes**.
 
-![Figure 7a: Update secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-update.jpg)
+![Figure 16: Updating Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-update.jpg)
 
 {% hint style="warning" %}
 ### Note
@@ -194,7 +194,7 @@ You may delete a Secret if not in use anymore. Once a Secret is deleted, it will
 
 4. Confirm the deletion in the dialog box.
 
-![Figure 8a: Delete secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-delete.jpg)
+![Figure 17: Deleting Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-delete.jpg)
 
 ---
 
@@ -221,7 +221,7 @@ External Secrets Operator (ESO) is a Kubernetes component that integrates with e
 
 2. Search for the `external-secrets` chart.
 
-    ![Figure 9a: Searching External Secrets Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/external-secret.jpg)
+    ![Figure 18: Searching External Secrets Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/external-secret.jpg)
 
 {% hint style="info" %}
 ### What if the external-secrets chart is not found?
@@ -230,7 +230,7 @@ Manually add the following chart repository URL in Devtron: `https://charts.exte
 
 3. Give a name to the helm app that will be created from the chart. Also, enter the project and environment where you wish to install the chart.
 
-    ![Figure 9b: Adding Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/ext-secret-fields.jpg)
+    ![Figure 19: Adding Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/ext-secret-fields.jpg)
 
 4. Click **Deploy Chart**.
 
