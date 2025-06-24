@@ -16,7 +16,7 @@ A CI Workflow can be created in one of the following ways:
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-1.jpg)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/workflow-ci.jpg)
 
 Each method has different use-cases that can be tailored according the needs of the organization.
 
