@@ -4,13 +4,17 @@
 
 Integrating Google as your Single Sign-On (SSO) provider enables users to authenticate with their Google accounts, ensuring secure and streamlined access to Devtron. This document walks you through setting up Google SSO in Devtron, ensuring users can log in smoothly.
 
-## Prerequisites
+{% hint style="info" %}
+
+### Prerequisites
 
 To configure Google SSO in Devtron, you will need:
 
 * Super Admin permissions
   * Only a [Super-Admin](https://docs.devtron.ai/global-configurations/authorization/user-access) can configure SSO. If you are setting up SSO for the first time, use [Admin Credentials](https://docs.devtron.ai/install/install-devtron#devtron-admin-credentials) instead.
 * A Google Cloud account to create and manage OAuth credentials. If you don’t have one, you must create it at the [Google Cloud Console](https://console.cloud.google.com/).
+
+{%endhint%}
 
 ## Get the Redirect URI from Devtron
 
@@ -21,10 +25,10 @@ Before configuring Google as an SSO provider,
   * Log in to Devtron.
   * Navigate to **Global Configurations** → **SSO Login Services**.
   * Select **Google** as the authentication provider.
-  * Enter the Host URL in the `URL` field. (This is essential to generate the correct Redirect URI.) 
-  * Copy the Redirect URI displayed in this section. You will need to enter this in Google Cloud.
+  * Click the URL next to **Click to use** in green color. The URL field will be automatically populated with the URL next to **Click to use**; this is essential to generate the correct **Redirect URI**.
+  * Copy the **Redirect URI** displayed in this section. You will need to enter this in Google Cloud.
 
-![Figure 1: Get the Redirect URI](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect-uri-google-sso.jpg)
+ {% embed url="https://www.youtube.com/watch?v=QvufIzUSNpg" caption="Getting the Redirect URI" %}
 
 ## Configure OAuth in Google Cloud Console
 
@@ -40,7 +44,7 @@ The next step is to configure OAuth credentials in Google Cloud Console. This in
 * Click **Create** to generate the Client ID and Client Secret.
 
 {% hint style="warning" %}
-Google SSO Requires a Valid Domain with HTTPS
+### Google SSO Requires a Valid Domain with HTTPS
 
 Google does not support IP addresses as valid redirect URIs. You must use a valid domain name ([FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)) accessible over HTTPS.
 
@@ -57,15 +61,15 @@ Examples of invalid URIs:
 ❌ http://192.168.1.10/callback
 {% endhint %}
 
-![Figure 2a: Creating OAuth Client](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/creating-oauth-client-google-sso.jpg)
+![Figure 1: Creating OAuth Client](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/creating-oauth-client-google-sso.jpg)
 
 You can see a new client ID is created in the **APIs & Services** → **Credentials**, under **OAuth 2.0 Client IDs** section. To obtain Client ID and Client Secret, click on the name (devtron-sso in our case) of the **OAuth 2.0 Client IDs**
 
-![Figure 2b: Client ID Created](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/client-id-created-google-sso.jpg)
+![Figure 2: Client ID Created](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/client-id-created-google-sso.jpg)
 
 Copy the Client ID and Client Secret, as they will be required in Devtron’s SSO configuration.
 
-![Figure 2c: Get the Client ID and Client Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/client-id-and-secret-google-sso.jpg)
+![Figure 3: Get the Client ID and Client Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/client-id-and-secret-google-sso.jpg)
 
 For a detailed step-by-step guide, refer to Google’s official documentation: [Get Google API Client ID](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid).
 
@@ -75,7 +79,7 @@ The next step is to configure Devtron to use these credentials for authenticatio
 
 ## Configuration
 
-![Figure 3: Configuring SSO in Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/configuration-devtron-google-sso.jpg)
+![Figure 4: Configuring SSO in Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/configuration-devtron-google-sso.jpg)
 
 In the configuration,&#x20;
 
@@ -100,13 +104,13 @@ To ensure users can log in:
 * Go to **Global Configurations** → **Authorization** → **User Permissions**.
 * Click **Add User**.
 
-![Figure 4a: Configuring User Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/config-user-permissions-google-sso.jpg)
+![Figure 5: Configuring User Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/config-user-permissions-google-sso.jpg)
 
 * Enter their email (matching their Google account).
 * Assign the required role.
 * Click **Save** to complete the setup.
 
-![Figure 4b: Adding User with required permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/adding-user-google-sso.jpg)
+![Figure 6: Adding User with required permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/adding-user-google-sso.jpg)
 
 Once saved, Devtron will use Google OAuth for authentication, allowing users to log in using their Google accounts.
 
