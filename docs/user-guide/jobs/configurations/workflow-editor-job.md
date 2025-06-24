@@ -73,7 +73,7 @@ To create a task:
 
  ![Figure 8: Type of Tasks](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-tasks.jpg)
 
-#### Create a Task Using Preset Plugins
+### Create Task Using Preset Plugins
 
 In Devtron, preset plugins are pre-defined tasks templates that helps you automate and execute common operations such as provisioning infrastructure, taking backups, exporting container images etc., without writing custom scripts.
 
@@ -103,7 +103,7 @@ To create a task using the **GKE Provisioner** plugin, follow the steps below:
 
 5. After configuring the fields successfully, your task will be created. If you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
 
-#### Create Task Using Custom Script
+### Create Task Using Custom Script
 
 In Devtron, you can also define a task using a custom script to meet specific requirements. To create a task a task using a custom script, follow the steps below:
 
