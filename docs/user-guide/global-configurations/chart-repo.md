@@ -1,10 +1,12 @@
 # Chart Repository
 
-A Chart repository is like a library where Helm charts are stored and shared. It provides a centralized place to store and distribute your Helm charts across environments and teams.
+## Introduction
+
+A Chart repository is like a library where [Helm charts](../../reference/glossary.md#helm-chartspackages) are stored and shared. It provides a centralized place to store and distribute your Helm charts across environments and teams.
 
 You can add one ore more chart repositories to Devtron. Once added, the charts from these repositories will be available in the **All Charts** section of the [Chart Store](../../user-guide/deploy-chart/README.md). This process may take a few minutes. 
 
-By default, Devtron includes built-in chart repositories that are added automatically after successful installation.
+By default, Devtron automatically includes a set of built-in chart repositories during installation.
 
 {% hint style="warning" %}
 
@@ -13,6 +15,8 @@ By default, Devtron includes built-in chart repositories that are added automati
 Only a [Super-Admin](../global-configurations/authorization/user-access.md#grant-super-admin-permission) can add, update, delete chart repositories. 
 
 {% endhint %}
+
+---
 
 ## Add Chart Repository
 
@@ -60,7 +64,9 @@ To update a chart repository, follow the below steps:
 4. Click **Update**.
 
 <!-- * You can enable or disable your chart repository. If you enable it, then you will be able to see the enabled chart in `All Charts` section of the [Chart Store](../deploy-chart/overview-of-charts.md). -->
+
 ---
+
 ## Delete a Chart Repository
 
 If you are using an chart repository as your chart source and prefer to delete it, follow the instructions below:

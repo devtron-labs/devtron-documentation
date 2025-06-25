@@ -43,7 +43,7 @@ To configure and deploy Helm, follow the instructions below:
     | Key | Description |
     | :--- | :--- |
     | **App Name** | Enter your application name|
-    | **Project** |  Select the project |
+    | **Project** |  Select your project |
     | **Deploy to Environment** | Select the environment where you want to deploy the chart |
     | **Chart Version** | Select the chart version you prefer to deploy|
     | **Chart Value** | Select the chart value you prefer to use. Kindly refer to [Preset Values](#preset-values) |
@@ -54,7 +54,7 @@ Once you have deployed a chart, you will be redirected automatically to the **Ap
 
 ![Figure 3: Check Deployment Status](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/app-installation-success.jpg)
 
-The application deployment could take a couple of minutes, after which the Application Status should be `Healthy`, indicating that the application has been successfully deployed.
+The Application Status should be `Healthy`, indicating that the application has been successfully deployed.
 
 ---
 
@@ -200,11 +200,11 @@ To predefine the configurations for a chart, follow the instructions below:
 
 1. Click the **Preset Values** button. 
 
-    ![Figure 10: Preset Values](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/configure-deploy.jpg)
+    ![Figure 8: Preset Values](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/configure-deploy.jpg)
 
 2. Enter your preferred preset value name in the **Name** field. 
 
-    ![Figure 11: Editing Preset Values](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/preset-values.jpg)
+    ![Figure 9: Editing Preset Values](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/preset-values.jpg)
 
 3. Select the chart version for which you'd like to create a preset value from the **Chart Version** drop-down box. 
 
@@ -224,7 +224,7 @@ A preset value for the selected chart version is now created and will be display
 
 1. Navigate to **Chart Store**. 
 
-    ![Figure 12: Chart Store](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/discover-chart.jpg) 
+    ![Figure 10: Chart Store](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/discover-chart.jpg) 
 
 2. Enter `mySQL` in the search bar at the top-left corner of the **Chart Store** page.
 
@@ -236,16 +236,16 @@ Once you have clicked on the `bitnami/mySQL`, follow the set of instructions bel
 
 1. Read the **README.md** file to know more about the chart configurations. 
 
-    ![Figure 13: Configure and Deploy Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/configure-deploy.jpg) 
+    ![Figure 11: Configure and Deploy Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/configure-deploy.jpg) 
 
 2. Refer to the tables below and fill in the details:
 
-    ![Figure 14: Configure Values](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/configure-values.jpg)
+    ![Figure 12: Configure Values](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/configure-values.jpg)
 
     | Key | Description |
     | :--- | :--- |
     | **App Name** | Enter the name of your application |
-    | **Project** | Select the project |
+    | **Project** | Select your project |
     | **Environment** | Select the environment where you want to deploy the chart |
     | **Chart Version** | Select the chart version you prefer to deploy |
     | **Chart Value** | Select the chart value you prefer to use. Kindly refer to [Preset Values](#preset-values) |
@@ -263,12 +263,12 @@ Once you have clicked on the `bitnami/mySQL`, follow the set of instructions bel
 
 When you deploy the chart, you will be redirected to the **App Details** tab of the Helm application. 
 
-![Figure 15: Deployment Status](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/application-status.jpg)
+![Figure 13: Deployment Status](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/application-status.jpg)
 
-The application deployment could take a couple of minutes, after which the **Application Status** should be `Healthy`, indicating that the application has been successfully deployed.
+The **Application Status** should be `Healthy`, indicating that the application has been successfully deployed.
 
 #### Extract the Service Name
 
 Service names makes it easier to find, connect to, and interact with your application. To extract the service name, navigate to **K8s Resources** → **Networking** → **Service**. The service name(s) are displayed in the **Name** column along with the URL in the **URL** column. 
 
-![Figure 16: Service Name](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/service-name.gif)
+![Figure 14: Service Name](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/service-name.gif)

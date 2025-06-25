@@ -45,7 +45,7 @@ In case you are choosing an [isolated environment](../../global-configurations/c
   * **Do not push** - A link to download the helm package will be available after the deployment. However, it will not push the helm package to the OCI registry.
   * **Push to registry** - This will generate and [push the helm package to the OCI registry](../../global-configurations/container-registries.md#push-helm-packages). Upon selecting this option, you will get two more fields:
       * **Registry** - Choose the OCI registry to which the helm chart package must be pushed. Only those registries that have `Push helm packages` enabled will be shown in the dropdown.
-      * **Repository** - Write the repository name in the format `username/repo-name`. You can find the username from your registry provider account (e.g., Docker Hub).
+      * **Repository** - Enter the repository name. You can find the username from your registry provider account (e.g., Docker Hub).
 
 {% endhint %}
 
