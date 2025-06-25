@@ -1,6 +1,6 @@
 # Workflow Editor
 
-After configuring the **Build Configurations** and **Base Configurations**, the next step is to create a workflow in the workflow editor.
+After configuring the **Build Configurations** and **Base Configurations**, the next step is to create a workflow using the workflow editor.
 
 In Devtron, a **Workflow** is a logical sequence of different stages(pipelines) used for continuous integration and continuous deployment of an application. 
 
