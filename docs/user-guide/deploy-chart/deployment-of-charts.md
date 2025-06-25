@@ -1,44 +1,40 @@
-# Chart Operations
+# Deploy Charts
 
 ## Introduction
 
-This document helps you perforing chart operations, such as deploying, updating, upgrading, disabling and deleting charts. 
-
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
-Only a [Super-Admin](../global-configurations/authorization/user-access.md) can perform chart-related operations. 
-
-{% endhint %}
-
----
-
-## Prerequisites
-
-* [Chart Repository](../global-configurations/chart-repo.md) added to Devtron
-
-* [OCI-Compliant Registry](../global-configurations/container-registries.md) (e.g., Docker Hub)
+This document helps you deploy, update, upgrade, disable, and delete charts.
 
 ---
 
 ## Configure and Deploy Charts
 
-When you want to install your own helm chart or browse through available helm charts in Chart Store and set up services or tools, follow the instructions below:
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a [Super-Admin or an Admin](../global-configurations/authorization/user-access.md#helm-apps-permissions) can configure and deploy charts. 
+
+{% endhint %}
+
+To configure and deploy Helm, follow the instructions below:
 
 1. Navigate to **Chart Store**. 
 
 2. Enter your preferred chart name in the search bar at the top-left corner of the screen. 
 
-3. Select your preferred chart.
+3. Select your preferred chart. The chart page is displayed.
 
     ![Figure 1: Discover a Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/configure-deploy.jpg)
 
-    The **About** section provides a short description of the chart. The **README.MD** file contains the instructions, configurations and everything related to the configuration and deployment of the chart. The **Deployments** section contains the list of projects where the helm chart is deployed.
+    | Section | Description |
+    | :--- | :--- |
+    | **About** | A short description of the chart|
+    | **README.md** | Contains the instructions, configurations, and everything related to the configuration and deployment of the chart |
+    | **Deployments** | Displays the list of projects under which the chart is deployed |
 
 4. Click **Configure & Deploy**. Configuring a Helm chart gives you the flexibility to customize it to your needs instead of relying on the default values of the chart.
     
-    If you frequently deploy a particular chart, you can then predefine the configurations for that chart as a template, making it easier to deploy across projects and environments. To set preset values for a chart, refer to [Preset Values](#preset-values).
+    To predefine configurations and make future deployments across environments easier, refer to [Preset Values](#preset-values).
 
     ![Figure 2: Configure & Deploy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deploy-chart.jpg)
 
@@ -47,7 +43,7 @@ When you want to install your own helm chart or browse through available helm ch
     | Key | Description |
     | :--- | :--- |
     | **App Name** | Enter your application name|
-    | **Project** |  Select the project where you want to deploy the chart |
+    | **Project** |  Select the project |
     | **Deploy to Environment** | Select the environment where you want to deploy the chart |
     | **Chart Version** | Select the chart version you prefer to deploy|
     | **Chart Value** | Select the chart value you prefer to use. Kindly refer to [Preset Values](#preset-values) |
@@ -64,7 +60,7 @@ The application deployment could take a couple of minutes, after which the Appli
 
 ## Refetch Charts
 
-When you click on **Refetch Charts**, the system fetches the latest Helm charts (e.g., `stable/mySQL`, `bitnami/mySQL`) and their latest available versions (e.g., v1.0, v1.1) that include improvements, features, and fixes. You can then either update a chart version or upgrade the chart itself in your project or environment. 
+When you click on **Refetch Charts**, the system fetches the latest Helm charts (e.g., `stable/mySQL`, `bitnami/mySQL`) and their latest available versions (e.g., v1.0, v1.1) that include improvements, features, and fixes. You can then either update a chart version or upgrade the chart itself in your environment. 
 
 To check the latest charts and chart versions, follow the instructions below:
 
@@ -78,7 +74,15 @@ To check the latest charts and chart versions, follow the instructions below:
 
 ## Update Charts
 
-When you update a Helm chart, the system actually deploys the selected latest version of a chart (e.g., `12.4.2`) in your project or environment, just like how you'd install the latest version of an app from the app store.
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a [Super-Admin or an Admin](../global-configurations/authorization/user-access.md#helm-apps-permissions) can update charts. 
+
+{% endhint %}
+
+When you update a Helm chart, the system actually deploys the selected latest version of a chart (e.g., `12.4.2`) in your environment, just like how you'd install the latest version of an app from the app store.
 
 Follow the below instructions to update a Helm chart:
 
@@ -96,6 +100,14 @@ Follow the below instructions to update a Helm chart:
 
 ## Upgrade Charts
 
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a [Super-Admin or an Admin](../global-configurations/authorization/user-access.md#helm-apps-permissions) can upgrade charts. 
+
+{% endhint %}
+
 If the chart you're already using is deprecated or for other business reasons you wish to move from one chart to another (e.g., `stable/mySQL` to `bitnami/mySQL`), consider upgrading your charts. 
 
 Follow the below instructions to upgrade a Helm chart:
@@ -104,7 +116,13 @@ Follow the below instructions to upgrade a Helm chart:
 
 2. Select your preferred chart from the **Helm Chart** drop-down box.
 
+    {% hint style="info" %}
+
+    ### Note
+
     When you upgrade your helm chart, ensure that the values are compatible with the new chart.
+
+    {% endhint %}
 
     ![Figure 6: Upgrade Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/upgrade-chart.jpg)
 
@@ -112,29 +130,45 @@ Follow the below instructions to upgrade a Helm chart:
 
 ---
 
-## Security Scan
+## Security Scan [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 Enabling the **Security scan** toggle scans the image(s) in the chart for vulnerabilities and license risks. To know more about security scan, refer to [Vulnerability Scanning](../plugins/vulnerability-scanning.md).
 
 ---
 
 ## Disable Chart Source
- 
+
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a [Super-Admin](../global-configurations/authorization/user-access.md#helm-apps-permissions) can disable a chart source in the Chart Store. 
+
+{% endhint %}
+
 Disabling a Helm chart source (e.g., Bitnami) does not display all associated charts in the Chart Store. When you previously used charts from a particular chart source, but no longer want to use it, you can simply disable the chart source by following the instructions below:
 
 1. Navigate to **Chart Store** → **Source**.
 
-2. Disable the **Disable chart repository** toggle next to your preferred chart source (e.g., Bitnami).
+2. Disable the toggle next to your preferred chart source (e.g., Bitnami).
 
     ![Figure 7: Disable chart repository](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/disable-charts.jpg)
 
-The chart source (e.g., Bitnami) will no longer be displayed in the **Chart Store** drop-down box, and all its associated charts will no longer be displayed in the **All Charts** section of the **Chart Store** page.
+The chart source (e.g., Bitnami) will no longer be displayed in the **Chart Source** drop-down box, and all its associated charts will no longer be displayed in the **All Charts** section of the **Chart Store** page.
 
-You can always enable the chart source again anytime by enabling the **Enable chart repository** toggle next to the chart source.
+You can always enable the chart source again anytime by enabling the toggle next to the chart source.
 
 ---
 
 ## Delete Chart Source
+
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a [Super-Admin](../global-configurations/authorization/user-access.md#helm-apps-permissions) can delete a chart source in Devtron. 
+
+{% endhint %}
 
 When you delete a chart source in Devtron, all associated charts will be removed from the Chart Store, and you will no longer be able to view or deploy them. You can consider deleting a chart source when you no longer have any applications running on its charts or when the chart repository is no longer relevant to your business needs.
 
@@ -148,45 +182,19 @@ Disabling charts only hides specific chart repositories and their associated cha
 
 You can delete a chart source in the following two ways:
 
-* [By deleting a chart repository](#delete-a-chart-repository)
+* [By deleting a chart repository](../global-configurations/chart-repo.md#delete-a-chart-repository)
 
-* [By deleting an OCI registry](#delete-an-oci-registry)
+* [By deleting an OCI registry](../global-configurations/container-registries.md#delete-an-oci-registry)
 
-A Helm chart source can be deleted only if no active applications are running on any of its charts. If an application is using a Helm chart from the chart source, you will not be able to delete that chart source. Additionally, you cannot disable or delete the default charts provided by Devtron.
-
-### Delete a Chart Repository
-
-If you are using an chart repository as your chart source and prefer to delete it, follow the instructions below:
-
-1. Navigate to **Global Configurations** → **Chart Repositories**. The **Chart Repository** page is displayed.
-
-    ![Figure 8: Delete a Chart Repository](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/delete-chart-repos.gif)
-
-2. Select your preferred chart repository. 
-
-3. Click the **Delete** button. 
-
-    The chart repository will be deleted and removed from the **Chart Store** page.
-
-### Delete an OCI Registry
-
-If you are using a OCI registry as your chart source and prefer to delete it, follow the instructions below:
-
-1. Navigate to **Global Configurations** → **Container/OCI Registry**. The **Container/OCI Registry** page is displayed.
-
-    ![Figure 9: Delete an OCI Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/delete-oci-registry.jpg)
-
-2. Select your preferred OCI registry. 
-
-3. Click the **Delete** button. 
-
-    The OCI registry will be deleted and removed from the **Chart Store** page.
+You cannot disable or delete the default charts provided by Devtron.
 
 ---
 
 ## Extras
 
 ### Preset Values
+
+If you frequently deploy a particular chart, you can then predefine its configurations as a template, making it easier to deploy across environments. 
 
 To predefine the configurations for a chart, follow the instructions below:
 
@@ -236,11 +244,11 @@ Once you have clicked on the `bitnami/mySQL`, follow the set of instructions bel
 
     | Key | Description |
     | :--- | :--- |
-    | `App Name` | Enter the name of your application |
-    | `Project` | Select the project where you want to deploy the chart|
-    | `Environment` | Select the environment where you want to deploy the chart |
-    | `Chart Version` | Select the chart version you prefer to deploy |
-    | `Chart Value` | Select the chart value you prefer to use. Kindly refer to [Preset Values](#preset-values) |
+    | **App Name** | Enter the name of your application |
+    | **Project** | Select the project |
+    | **Environment** | Select the environment where you want to deploy the chart |
+    | **Chart Version** | Select the chart version you prefer to deploy |
+    | **Chart Value** | Select the chart value you prefer to use. Kindly refer to [Preset Values](#preset-values) |
 
     | Parameters | Description |
     | :--- | :--- |
@@ -261,6 +269,6 @@ The application deployment could take a couple of minutes, after which the **App
 
 #### Extract the Service Name
 
-To extract the service name, navigate to **K8s Resources** → **Networking** → **Service**. The service name(s) are displayed in the **Name** column along with the URL in the **URL** column. 
+Service names makes it easier to find, connect to, and interact with your application. To extract the service name, navigate to **K8s Resources** → **Networking** → **Service**. The service name(s) are displayed in the **Name** column along with the URL in the **URL** column. 
 
 ![Figure 16: Service Name](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/service-name.gif)

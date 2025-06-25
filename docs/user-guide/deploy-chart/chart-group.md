@@ -1,4 +1,4 @@
-# Chart Group Operations
+# Chart Groups
 
 ## Introduction
 
@@ -6,29 +6,33 @@ A Chart Group in Devtron is a collection of Helm charts grouped together (e.g., 
 
 When setting up a new environment or a microservice, or when your application requires multiple Helm charts, you can simply group the required charts into a chart group. You can then view, manage, and deploy related charts together in one place instead of searching and installing each one individually.
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
-Only a [Super-Admin](../global-configurations/authorization/user-access.md) can perform chart group related operations. 
-
-{% endhint %}
-
 ---
 
 ## Prerequisites
 
-* [Chart Repository](../global-configurations/chart-repo.md) added to Devtron
+* [Build and Deploy (CI/CD)](../../user-guide/integrations/build-and-deploy-ci-cd.md) integration installed in your Devtron instance.
 
-* [OCI-Compliant Registry](../global-configurations/container-registries.md) (e.g., Docker Hub)
+    * **For OSS users**: The Build and Deploy (CI/CD) integration is must for creating chart groups in the Chart Store.
+
+    * **For Enterprise users**: The Build and Deploy (CI/CD) is integrated by default. 
 
 ---
 
 ## Create and Deploy a Chart Group
 
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+* A user with the **Create** permission enabled for [Chart Groups](../global-configurations/authorization/user-access.md#chart-groups-permissions) can create a chart group. However, they will not be able to deploy it.  
+
+* Only a [Super-Admin](../global-configurations/authorization/user-access.md#chart-groups-permissions) can create as well as deploy a chart group. 
+
+{% endhint %}
+
 To create a chart group, follow the instructions below:
 
-1. Navigate to **Chart Store**. 
+1. Navigate to **Chart Store**.
 
 2. Click the **Create Group** button. The **Create Chart Group** page is displayed. 
 
@@ -36,7 +40,7 @@ To create a chart group, follow the instructions below:
 
 3. Enter your preferred chart group name in the **Name** field. 
 
-4. Enter the chart group description in the **Description** field (optional).
+4. (Optional) Enter the chart group description in the **Description** field.
 
 5. Click **Create Group** button.
 
@@ -52,7 +56,7 @@ To create a chart group, follow the instructions below:
 
 9. Click on the **Deploy to...** button. The **Deploy Selected Charts** screen is displayed.
 
-10. Select the project where you want to deploy the chart group in the **Project** drop-down box.
+10. Select the project in the **Project** drop-down box.
 
 11. Select the environment where you want to deploy the charts in the **Deploy to Environment** drop-down box. 
 
@@ -65,6 +69,16 @@ To create a chart group, follow the instructions below:
 ---
 
 ## Edit a Chart Group
+
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+* Only when a user is granted the **Edit** permission for the specific [Chart Group](../global-configurations/authorization/user-access.md#chart-groups-permissions) can they edit that chart group. 
+
+* A [Super-Admin](../global-configurations/authorization/user-access.md#chart-groups-permissions) can also edit a chart group. 
+
+{% endhint %}
 
 If you want to add and/or remove a chart to your existing chart group, or change the chart group name, you can edit the chart group. Follow the below instructions to edit a chart group:
 
@@ -84,15 +98,21 @@ If you want to add and/or remove a chart to your existing chart group, or change
 
 ## Delete a Chart Group
 
+{% hint style="warning" %}
+
+### Who Can Perform This Action? 
+
+Only a [Super-Admin](../global-configurations/authorization/user-access.md#chart-groups-permissions) or a user with the **Create** permission can delete a chart group. 
+
+{% endhint %}
+
 When you delete a chart group, only the chart group is deleted. Application deployed using that chart group remain unaffected. Follow the below instructions to delete a chart group. 
 
 1. Select your preferred chart group in the **Chart Store**.
 
     ![Figure 6: Delete a Chart Group](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/delete-chart-group.gif)
 
-2. Click the **Delete** button. A pop-up window requesting confirmation to delete the chart group will be displayed. 
-
-3. Click **Delete** and the chart group will be deleted. 
+2. Click the **Delete** button. A pop-up window will appear, asking for confirmation to delete the chart group.
 
 ---
 
@@ -112,6 +132,6 @@ The **Advanced Options** page enables you to change the chart values, chart conf
 
 4. Select the chart values you'd like to use from the **Values** drop-down box. If you want to configure a preset value for your chart, or use a previously configured one, select **Preset values**. Refer to [Preset Values](deployment-of-charts.md/#preset-values) for more information.
 
-5. Select the project where you want to deploy the chart group in the **Project** drop-down box.
+5. Select the project in the **Project** drop-down box.
 
 6. Click **Deploy** to deploy the charts. The deployment will be initiated.

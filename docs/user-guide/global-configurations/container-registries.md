@@ -44,7 +44,7 @@ You can configure a container registry using any registry provider of your choic
 
 Upon enabling this option, Devtron supports the pushing of helm charts to your OCI registry.  
 
-This is possible through [isolated clusters](../global-configurations/cluster-and-environments.md#add-isolated-cluster) that facilitate virtual deployments. In other words, it generates a helm package that you can use to [deploy your application in air-gapped clusters](../use-cases/airgapped-app-deployment.md).
+This is possible through [isolated clusters](../global-configurations/cluster-and-environments.md#add-isolated-cluster) that facilitate airgapped deployments. In other words, it generates a helm package that you can use to deploy your application in air-gapped clusters.
 
 If you have [configured your CD pipeline](../creating-application/workflow/cd-pipeline.md#deploying-to-an-isolated-environment) to push the helm package to your OCI registry, you can view the pushed helm package in your registry as shown below:
 
@@ -226,3 +226,23 @@ Typing secrets on the command line may store them in your shell history unprotec
 {% endhint %}
 
 Enter the Secret name in the field and click **Save**.
+
+## Delete an OCI Registry
+
+If you prefer to delete an OCI registry, follow the instructions below:
+
+1. Navigate back to **Container/OCI Registry** page. 
+
+    ![Figure 6: Delete an OCI Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/delete-oci-registry.jpg)
+
+2. Select your preferred OCI registry. 
+
+3. Click the **Delete** button. The OCI registry will be deleted.
+
+    {% hint style="warning" %}
+
+    ### Important Note
+
+    If you used an OCI registry as a chart source, deleting the OCI registry will remove all its associated charts from the Chart Store.
+
+    {% endhint %}
