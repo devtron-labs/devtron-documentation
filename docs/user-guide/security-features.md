@@ -12,7 +12,7 @@ One of the key components of DevSecOps is the detection of security risks. Curre
 
 ![Figure 1: Security Scan Results](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/security-scan.jpg)
 
-You can integrate a scanning tool of your choice. By default, Devtron integrates with Trivy using which you can scan for the following issues:
+You can integrate a scanning tool of your choice. By default, Devtron integrates with [Trivy](./integrations/vulnerability-scanning/trivy.md) using which you can scan for the following issues:
 
 * Vulnerability
 * License Risks

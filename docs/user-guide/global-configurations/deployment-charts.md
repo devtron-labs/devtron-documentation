@@ -118,9 +118,9 @@ However, if you upload the chart without an `app-values.yaml` or with an empty o
 
 ### 4. Add release-values.yaml
 
-The `release-values.yaml` file contains essential values needed for deployment that aren’t covered by [app-values.yaml](#3-add-app-values.yaml). For example:
+The `release-values.yaml` file contains essential values needed for deployment that aren’t covered by [app-values.yaml](#id-3.-add-app-values.yaml). For example:
 
-* Some dynamic values (such as `IMAGE_TAG` and `IMAGE_REPO` from the [image descriptor JSON file](#2-create-an-image-descriptor-template-file)) are populated here because they are needed for deployment.
+* Some dynamic values (such as `IMAGE_TAG` and `IMAGE_REPO` from the [image descriptor JSON file](#id-2.-create-an-image-descriptor-template-file)) are populated here because they are needed for deployment.
 * You can use `autoPromotionSeconds` to decide how long to keep old pods running once the latest pods of new release are available.
 
 In the root directory of your chart, create a file named `release-values.yaml` with the following command:

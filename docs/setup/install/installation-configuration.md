@@ -357,6 +357,97 @@ Alternatively, you can specify the StorageClass in the values.yaml file by modif
 
 ---
 
+## Configure External PostgreSQL Database
+
+You can configure Devtron to use an external PostgreSQL database (e.g., Amazon RDS, Google Cloud SQL, Azure PostgreSQL) instead of the default internal database.
+
+### Prerequisites
+
+* An external PostgreSQL server that is running and accessible
+* PostgreSQL version must be 14
+* The username Devtron uses to connect with PostgreSQL must be `postgres`
+* Network connectivity between Devtron and PostgreSQL server
+* DNS mapping must be completed for your PostgreSQL server
+
+### Database Setup
+
+Before installing Devtron, create the following databases on your external PostgreSQL server.
+
+1. **orchestrator** - Main Devtron orchestration database  
+2. **lens** - Lens service database  
+3. **git_sensor** - Git sensor service database  
+4. **casbin** - Authorization and policy database
+5. **clairv4** - (*Optional*) Required only if you are using [Clair](../../user-guide/integrations/vulnerability-scanning/clair.md) for image scanning instead of [Trivy](../../user-guide/integrations/vulnerability-scanning/trivy.md)
+
+{% hint style="warning" %}
+### Not sure how to create a PostgreSQL database?
+Here’s how you can create databases using popular providers:
+* [Amazon RDS instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html)
+* [Google Cloud SQL for PostgreSQL](https://cloud.google.com/sql/docs/postgres/create-instance#create-2nd-gen)
+* [Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server)
+{% endhint %}
+
+#### Database Creation Commands
+
+Connect to your PostgreSQL server as the `postgres` user and run the following commands:
+
+```sql
+-- Connect as postgres user
+CREATE DATABASE orchestrator;
+CREATE DATABASE lens;
+CREATE DATABASE git_sensor;
+CREATE DATABASE casbin;
+
+-- Optional: Only if using Clair for image scanning
+CREATE DATABASE clairv4;
+```
+
+### Devtron Configuration for External DB
+
+{% hint style="warning" %}
+### Note
+Ensure the [required databases](#database-creation-commands) exist before proceeding.
+{% endhint %}
+
+When installing Devtron, you can specify your external PostgreSQL by using either of the following:
+* Updating `values.yaml` file
+* Passing `--set` flags during Helm installation
+
+#### Using `values.yaml` file
+
+You can specify the following parameters in your Devtron [values.yaml](https://github.com/devtron-labs/devtron/blob/main/charts/devtron/values.yaml#L12):
+
+```yaml
+externalPostgres:
+  enabled: true
+  # Password for the postgres user
+  PG_PASSWORD: "your_postgres_password"
+  # DNS endpoint of your PostgreSQL server
+  PG_ADDR: "your.postgres.endpoint"
+```
+
+#### Using `--set` flags
+
+You can use the following `--set` flags when installing Devtron with Helm:
+
+```bash
+helm install devtron devtron/devtron-operator \
+  --set global.externalPostgres.enabled=true \
+  --set global.externalPostgres.PG_PASSWORD="your_postgres_password" \
+  --set global.externalPostgres.PG_ADDR="your.postgres.endpoint"
+```
+
+#### Example
+
+```bash
+helm install devtron devtron/devtron-operator \
+  --set global.externalPostgres.enabled=true \
+  --set global.externalPostgres.PG_PASSWORD="mySecurePassword123" \
+  --set global.externalPostgres.PG_ADDR="postgres.example.com"
+```
+
+---
+
 ## Secrets
 
 |Parameter | Description| Default| Necessity|
