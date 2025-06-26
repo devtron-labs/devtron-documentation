@@ -121,7 +121,6 @@
   * [Discover and Manage Resources](user-guide/resource-browser/manage-resources.md)
   * [Nodes and Operations](user-guide/resource-browser/nodes.md)
   * [Pod Management and Debugging](user-guide/resource-browser/pods.md)
-  * [Using Devtron Intelligence](user-guide/resource-browser/devtron-intelligence.md)
   * [Cluster Terminal](user-guide/resource-browser/cluster-terminal.md)
   * [Add Monitoring Dashboards/Graphs](user-guide/resource-browser/monitoring-graphs.md)
   * [Run Kubectl Commands Locally](user-guide/resource-browser/kubectl-local.md) 
@@ -179,7 +178,7 @@
     * [SonarQube v1.1.0](user-guide/plugins/sonarqube-v1.1.0.md)
     * [Terraform CLI](user-guide/plugins/terraform-cli.md)
     * [Vulnerability Scanning](user-guide/plugins/vulnerability-scanning.md)
-
+* [Using Devtron Intelligence](user-guide/devtron-intelligence.md)
 
 ## Resources
 

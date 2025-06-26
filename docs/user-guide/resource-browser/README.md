@@ -30,7 +30,6 @@ You may click a cluster to view and manage all its resources as shown below.
 * [Discover and Manage Resources](manage-resources.md)
 * [Nodes and Operations](nodes.md)
 * [Pod Management and Debugging](pods.md)
-* [Using Devtron Intelligence (AI)](devtron-intelligence.md)
 * [Cluster Terminal](cluster-terminal.md)
 * [Add Monitoring Dashboards/Graphs](monitoring-graphs.md)
 * [Run Kubectl Commands Locally](kubectl-local.md)
