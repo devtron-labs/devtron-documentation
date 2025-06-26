@@ -147,3 +147,4 @@ redirects:
     usage/sdh/tenants: user-guide/software-distribution-hub/tenants.md
     usage/sdh/release-hub: user-guide/software-distribution-hub/release-hub.md
     usage/integrations/clair: user-guide/integrations/vulnerability-scanning/clair.md
+    usage/resource-browser/devtron-intelligence: user-guide/devtron-intelligence.md
