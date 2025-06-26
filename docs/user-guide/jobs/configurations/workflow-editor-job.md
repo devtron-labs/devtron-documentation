@@ -11,7 +11,7 @@ Users need to have the **Admin role** or the **Super Admin role**.
 Refer the [User permissions](../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
-1. Navigate to the **Workflow Editor** in the left sidebar of the Job **Configuration** page.
+1. Navigate to the **Workflow Editor** in the left sidebar of the **Configurations** page.
 
  ![Figure 1: Selecting Workflow Editor](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor.jpg)
 
@@ -69,7 +69,7 @@ To create a task:
 
  ![Figure 7: Adding Task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-add-task.jpg)
 
-3. A new task will be added (on the left side of the Create job pipeline window). You can configure the task either by selecting one of the available [preset plugins](#create-task-using-preset-plugins) or by [Executing a custom script](#create-task-using-custom-script)
+3. A new task will be added (on the left side of the 'Create job pipeline' window). You can configure the task either by selecting one of the available [preset plugins](#create-task-using-preset-plugins) or by [Executing a custom script](#create-task-using-custom-script)
 
  ![Figure 8: Type of Tasks](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-tasks.jpg)
 

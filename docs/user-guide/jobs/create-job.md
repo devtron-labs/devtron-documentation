@@ -33,7 +33,7 @@ To create a new **Blank Job** in Devtron, follow these steps:
  | `Project`| Select the project from the dropdown.|
  | `Job Name`| User-defined name for the job in Devtron.|
  | `Description` | Enter the description for the job.|
- | `Tags`| <p>Key-value pairs used for identifying and organizing the application.<br>Users can propagate tags as Kubernetes labels to enable filtering, bulk operations, and integrations with Kubernetes tools.</p><ol><li>Click the <strong>Add tags to job</strong> dropdown on the <strong>Create job</strong> page.</li><li>Under the <strong>Tags</strong> section, Click <code>+</code> to add a new tag.</li><li>You can click <code>X</code> icon to delete an existing tag.</li><li> You can click the **propagation icon** <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg" alt=""> to propagate a tag (turns dark grey when propagated), click again to remove propagation.<br>[Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-latest-1.jpg)</li></ol> |
+ | `Tags`| Key-value pairs used for identifying and organizing the application and can be propagated as Kubernetes labels. To learn more refer [Tags](#tags) section.|
 
  ![Figure 3: Creating Blank Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-page.jpg)
 
@@ -62,8 +62,7 @@ To create a new **Clone Job** in Devtron, follow these steps:
  | `Project`| Select the project from the dropdown.|
  | `Job Name`| User-defined name for the job in Devtron.|
  | `Description`| Enter the description of a job.|
- | `Tags`| <p>Key-value pairs used for identifying and organizing the application.<br>Users can propagate tags as Kubernetes labels to enable filtering, bulk operations, and integrations with Kubernetes tools.</p><ol><li>Click the <strong>Add tags to job</strong> dropdown on the <strong>Create job</strong> page.</li><li>Under the <strong>Tags</strong> section, Click <code>+</code> to add a new tag.</li><li>You can click <code>X</code> icon to delete an existing tag.</li><li> You can click the **propagation icon** <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg" alt=""> to propagate a tag (turns dark grey when propagated), click again to remove propagation.<br>[<a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-latest-1.jpg">Snapshot</a>]</li></ol> |
- | `Select an job to clone` | Select the existing job from the dropdown that you want to clone. Enter the description of a job.|
+ | `Tags`| Key-value pairs used for identifying and organizing the application and can be propagated as Kubernetes labels. To learn more refer [Tags](#tags) section.|
 
  ![Figure 5: Creating Clone Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-clone-job.jpg)
 
@@ -112,3 +111,19 @@ To delete a job:
 ---
 
 After creating a job, the next step is to configure the job. Refer to the [Configurations](./configurations/README.md) section to configure the job.
+
+## Extras
+
+### Tags 
+
+Tags are Key-value pairs used for identifying and organizing the application. Users can propagate tags as Kubernetes labels to enable filtering, bulk operations, and integrations with Kubernetes tools. To do so, follow the steps below. 
+
+1. Click the **Add tags to job** dropdown on the **Create job** page.
+
+2. Under the **Tags** section, Click `+` to add a new tag.
+
+3. You can click `X` icon to delete an existing tag.
+
+4. You can click the **propagation icon** <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg" alt=""> to propagate a tag (turns dark grey when propagated), click again to remove propagation.
+
+![Figure 11: Tags](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-latest-1.jpg)
