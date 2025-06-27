@@ -48,14 +48,6 @@ Only managers and super-admins can add users.
 
 ## Grant Super Admin Permission
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
-Only existing super-admins can assign super-admin permissions to another user.
-
-{% endhint %}
-
 ![Figure 7: Granting Superadmin Access](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/superadmin-perm.jpg)
 
 Super-Admins have unrestricted access to all Devtron resources. They can create, modify, delete, and manage any resource, including user access, Git repositories, container registries, clusters, and environments. Before assigning this permission, please note:
@@ -69,14 +61,6 @@ Super-Admins have unrestricted access to all Devtron resources. They can create,
 ---
 
 ## Grant Specific Permissions
-
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
-Only managers and super-admins can assign specific permissions to a user.
-
-{% endhint %}
 
 ![Figure 8: Granting Specific Access](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/specific-permissions.jpg)
 
