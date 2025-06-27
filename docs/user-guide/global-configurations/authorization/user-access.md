@@ -108,30 +108,6 @@ If you assign a permission group as well as direct permissions, the user will ha
 
 {% endhint %}
 
-### Can Manage Access For All Roles (Toggle)
-
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
-Only a [Super Admin](#grant-super-admin-permission) can enable the **Can manage access for all roles** toggle for other users.
-
-{% endhint %}
-
-![Figure 10: 'Can manage access for all roles' Toggle](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/cmafar-highlighted.jpg)
-
-By enabling the **Can manage access for all roles** toggle, you can grant a user the permission to manage access for all roles across Devtron apps, Helm Apps, Jobs, Kubernetes Resources, and Chart Groups. However, they cannot create new users. 
-
-By default, this toggle is disabled. 
-
-{% hint style="warning" %}
-
-### Important Note
-
-If you enable the **Can manage access for all roles** toggle for a user, then that user can modify permissions of all the users including super-admins.
-
-{% endhint %}
-
 ### Devtron Apps permissions
 
 {% hint style="warning" %}
@@ -144,7 +120,7 @@ The **Devtron Apps** tab is displayed only when the [Build and Deploy (CI/CD)](.
 
 The **Devtron Apps** tab allows you to grant user permissions for Devtron applications.
 
-![Figure 11: Granting Devtron Apps Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/devtron-apps-perm.jpg)
+![Figure 10: Granting Devtron Apps Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/devtron-apps-perm.jpg)
 
 | Field | Description |
 | --- | --- |
@@ -180,66 +156,7 @@ The role-based access for Devtron Apps are as follows:
 
    * **Deployment Approver**: You can approve the deployment requests for the selected applications and environments.
 
-**Access Manager** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
-
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
-Only [Super-Admins](#grant-super-admin-permission) can grant an **Access Manager** role.  
-
-{% endhint %}
-
-![Figure 12: Access Manager](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/access-manager-highlighted.jpg)
-
-Enabling **Access Manager** for a user allows that user to further grant or change permissions of existing users.
-
-{% hint style="warning" %}
-
-### Important Note
-
-An Access Manager cannot create other Access Managers or add new users. Creation of new users and Access Manager is restricted only to Super-Admins. 
-
-{% endhint %}
-
-A user who is an Access Manager can grant or change permissions for other existing users only within the permissions assigned to them under the **Access Manager** role in the **Role** drop-down box. For example, refer to the tables below to understand what an Access Manager (User A) is allowed and not allowed to do with the permissions of an existing user (User B).
-
-| Users | Base Role(s) | Access Manager Role(s) |
-|:-----------------------|:----|:------|
-| User A | Admin | View Only |
-| User B | Manager | Not Applicable |
-
-| What's Allowed | What's Not Allowed |
-|:----|:------|
-| Changing User B's **Manager** role to **View Only** role (Manager → View Only) |<ul><li>Reverting to User B's **Manager** role (View Only → Manager)</li><li>Changing User B's **Manager** role to any other role, except for **View Only**</li><li>Performing operations beyond the base role (i.e., **Admin**)</li><li>Modifying Super-Admin permissions</li></ul>|
-| Perform the operations under the scope of **Manager** role across Devtron | <ul><li>Manage user access for other users</li><li>Perform operations beyond the base role (i.e., **Manager**)</li><li>Modifying Super-Admin permissions</li></ul>|
-
-
-{% hint style="info" %}
-
-### Note
-
-If you need to grant someone global control over modifying the roles of other users, enable the [Can manage access for all roles](#can-manage-access-for-all-roles-toggle) toggle instead.
-
-{% endhint %}
-
-The **Access Manager** toggle in the **Role** drop-down box is disabled by default.
-
-When enabling the **Access Manager** toggle, make sure to select at least one permission from the checkboxes displayed beneath the toggle to ensure the role is active. 
-
-The following permissions are currently available in the Access Manager role:
-
-* **View only**: When selected, this permission allows the Access Manager to grant or revoke View Only access to other users.
-
-* **Build and Deploy**: When selected, this permission allows the Access Manager to grant or revoke Build and Deploy access to other users.
-
-* **Admin**: When selected, this permission allows the Access Manager to grant or revoke Admin access to other users.
-
-* **Config Approver**: When selected, this permission allows the Access Manager to grant or revoke Config Approver access to other users.
-
-* **Artifact promoter**: When selected, this permission allows the Access Manager to grant or revoke Artifact promoter access to other users.
-
-The **Deployment approver** permission is not currently available within the **Access Manager** role. If you would like to see this permission included, we encourage you to [raise a feature request on GitHub](https://github.com/devtron-labs/devtron/issues).
+To make a user an Access Manager with global or Devtron app-specific control over user permissions, refer to [Access Manager](#access-manager).
 
 #### Roles and Scopes
 
@@ -259,7 +176,7 @@ The **Deployment approver** permission is not currently available within the **A
 
 Here you can grant your user the permissions for Helm apps deployed from Devtron or outside Devtron.
 
-![Figure 13: Granting Helm Apps Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/helm-apps-perm.jpg)
+![Figure 11: Granting Helm Apps Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/helm-apps-perm.jpg)
 
 | Field | Description |
 | --- | --- |
@@ -288,7 +205,7 @@ There are three role-based access levels for Helm Apps:
 
 Here you can grant your user the permissions to access the jobs created in Devtron.
 
-![Figure 14: Granting Jobs Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/jobs-perm.jpg)
+![Figure 12: Granting Jobs Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/jobs-perm.jpg)
 
 | Field | Description |
 | --- | --- |
@@ -327,10 +244,10 @@ Here you can provide permission to view, inspect, manage, and delete resources i
 
 To grant Kubernetes resource permission, click **Add permission**.
 
-![Figure 15a: Adding Permissions for Kubernetes Resources](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/k8s-perm1.jpg)
+![Figure 13a: Adding Permissions for Kubernetes Resources](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/k8s-perm1.jpg)
 
 
-![Figure 15b: Granting Permissions for Kubernetes Resources](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/k8s-perm2.jpg)
+![Figure 13b: Granting Permissions for Kubernetes Resources](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/k8s-perm2.jpg)
 
 | Field | Description |
 | --- | --- |
@@ -364,7 +281,7 @@ The 'Chart Groups' tab will be available only if the [CI/CD module](../../integr
 
 Here you can grant your user the permissions for accessing Chart Groups. Note that you can only give users the permission to either create chart groups or edit them, but not both.
 
-![Figure 16: Granting Chart Group Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/chart-group-perm.jpg)
+![Figure 14: Granting Chart Group Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/chart-group-perm.jpg)
 
 | Action | Permissions |
 | :---   | :---         |
@@ -384,6 +301,100 @@ Here you can grant your user the permissions for accessing Chart Groups. Note th
 | **Create**      | ✅      | ✅      | ❌        | ✅                   | ✅        |
 | **Edit**        | ✅      | ❌      | ❌        | None/Specific Groups | ❌        |
 | **Super Admin** | ✅      | ✅      | ✅        | ✅                   | ✅        |
+
+---
+
+## Access Manager [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
+### Can Manage Access For All Roles (Toggle)
+
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a [Super Admin](#grant-super-admin-permission) can enable the **Can manage access for all roles** toggle for other users.
+
+{% endhint %}
+
+![Figure 15: 'Can manage access for all roles' Toggle](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/cmafar-highlighted.jpg)
+
+By enabling the **Can manage access for all roles** toggle, you can grant a user the permission to manage access for all roles across Devtron apps, Helm Apps, Jobs, Kubernetes Resources, and Chart Groups. However, they cannot create new users. 
+
+By default, this toggle is disabled. 
+
+{% hint style="warning" %}
+
+### Important Note
+
+If you enable the **Can manage access for all roles** toggle for a user, then that user can modify permissions of all the users including super-admins.
+
+{% endhint %}
+
+### Access Manager (Devtron Apps)
+
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only [Super-Admins](#grant-super-admin-permission) can grant an **Access Manager** role.  
+
+{% endhint %}
+
+![Figure 16: Access Manager](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/access-manager-highlighted.jpg)
+
+Enabling **Access Manager** for a user allows that user to further grant or change permissions of existing users.
+
+{% hint style="warning" %}
+
+### Important Note
+
+An Access Manager cannot create other Access Managers or add new users. Creation of new users and Access Manager is restricted only to Super-Admins. 
+
+{% endhint %}
+
+A user who is an Access Manager can grant or change permissions for other existing users only within the permissions assigned to them under the **Access Manager** role in the **Role** drop-down box. For example, refer to the tables below to understand what an Access Manager (User A) is allowed and not allowed to do with the permissions of an existing user (User B).
+
+| Users | Base Role(s) | Access Manager Role(s) |
+|:-----------------------|:----|:------|
+| User A | Admin | View Only |
+| User B | Manager | Not Applicable |
+
+| What's Allowed | What's Not Allowed |
+|:----|:------|
+| Changing User B's **Manager** role to **View Only** role (Manager → View Only) |<ul><li>Reverting to User B's **Manager** role (View Only → Manager)</li><li>Changing User B's **Manager** role to any other role, except for **View Only**</li><li>Performing operations beyond the base role (i.e., **Admin**)</li><li>Modifying Super-Admin permissions</li></ul>|
+| Perform the operations under the scope of **Manager** role across Devtron | <ul><li>Manage user access for other users</li><li>Perform operations beyond the base role (i.e., **Manager**)</li><li>Modifying Super-Admin permissions</li></ul>|
+
+{% hint style="info" %}
+
+### Note
+
+If you need to grant someone global control over modifying the roles of other users, enable the [Can manage access for all roles](#can-manage-access-for-all-roles-toggle) toggle instead.
+
+{% endhint %}
+
+The **Access Manager** toggle in the **Role** drop-down box is disabled by default.
+
+When enabling the **Access Manager** toggle, make sure to select at least one permission from the checkboxes displayed beneath the toggle to ensure the role is active. 
+
+The following permissions are currently available in the Access Manager role:
+
+* **View only**: When selected, this permission allows the Access Manager to grant or revoke View Only access to other users.
+
+* **Build and Deploy**: When selected, this permission allows the Access Manager to grant or revoke Build and Deploy access to other users.
+
+* **Admin**: When selected, this permission allows the Access Manager to grant or revoke Admin access to other users.
+
+* **Config Approver**: When selected, this permission allows the Access Manager to grant or revoke Config Approver access to other users.
+
+* **Artifact promoter**: When selected, this permission allows the Access Manager to grant or revoke Artifact promoter access to other users.
+
+The **Deployment approver** permission is not currently available within the **Access Manager** role. If you would like to see this permission included, we encourage you to [raise a feature request on GitHub](https://github.com/devtron-labs/devtron/issues).
+
+#### Role and Scope
+
+| Role                  | View | Create | Edit | Delete | Build & Deploy | Approve Images | Approve Config Change | Approve Artifacts | Manage User Access |
+|-----------------------|:----:|:------:|:----:|:------:|:--------------:|:--------------:|:--------------:|:----------------:|:----------------:|
+| **Access Manager**                 | ❌  | ❌     | ❌   | ❌     | ❌             | ❌             | ❌             | ❌               | ✅               |
 
 ---
 
