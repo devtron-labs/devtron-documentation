@@ -62,7 +62,7 @@ Super-Admins have unrestricted access to all Devtron resources. They can create,
 
 ## Grant Specific Permissions
 
-![Figure 8: Granting Specific Access](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/specific-permissions.jpg)
+![Figure 8: Granting Specific Access](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/specific-permissions-1.jpg)
 
 ### Permission Groups
 
