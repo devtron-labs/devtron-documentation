@@ -21,20 +21,31 @@ From the left sidebar, go to **Global Configurations** → **Build Infra**.
 
 ![Figure 1: Global Configurations - Build Infra](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/gc-build-infra.jpg)
 
-You will see the [Default Profile](#default-profile) and a list of [Custom Profiles](#creating-custom-profile) (if they exist). Setting up profiles makes it easier for you to manage the build infra configurations, ensuring its reusability in the long term.
+Under **Profiles** tab, you will see the [Global Profile](#global-profile) and a list of [Custom Profiles](#creating-custom-profile) (if they exist). Setting up profiles makes it easier for you to manage the build infra configurations, ensuring its reusability in the long term.
 
-### Default Profile
+### Global Profile
 
 This contains the default infra configuration applicable to all the applications, be it large or small.
 
 ![Figure 2: Default Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/default-profile.jpg)
 
 You may click it to modify the following:
+
 * **CPU** - Processor core allocated to the build process. See [CPU units](#cpu-units).
+
 * **Memory** - RAM allocated to the build process. See [memory units](#memory-units).
+
 * **Build Timeout** - Max. time limit allocated to the build process. See [timeout units](#timeout-units).
 
-![Figure 3: Editing Default Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/default-infra-config.jpg)
+* **Node Selector** - Node Selector are key-value pair labels to match Pods with Nodes. To learn more, refer to [nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) page.
+
+* **Toleration** - A Toleration allow a pod to be scheduled on a Node that has a matching Taint. To learn more, refer to [Taints and Toleration](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) page.
+
+* **ConfigMaps** - Key Value pairs to store non-sensitive configurations. Refer to [ConfigMaps](../creating-application/config-maps.md).
+
+* **Secrets** - Key Value pairs to store sensitive configurations. Refer to [Secrets](../creating-application/secrets.md).
+
+![Figure 3: Editing Global Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/default-infra-config.jpg)
 
 Furthermore, CPU and Memory have 2 fields each:
 
@@ -45,13 +56,13 @@ Furthermore, CPU and Memory have 2 fields each:
 
 ### Creating Custom Profile [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-Instead of default profile, you can create custom profiles having different infra configurations. Example: One profile for Python apps, a second profile for large apps, and a third profile for small apps, and many more.
+Instead of global profile, you can create custom profiles having different infra configurations. Example: One profile for Python apps, a second profile for large apps, and a third profile for small apps, and many more.
 
 1. Click **Create Profile**.
 
     ![Figure 4: Creating Custom Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/create-new-profile.jpg)
 
-2. Give a name to the profile along with a brief description, and select the configurations to specify the values.
+2. Enter a name for the profile along with a brief description (optional)
 
     ![Figure 5a: Empty Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/new-profile-fields.jpg)
 
@@ -60,6 +71,16 @@ Instead of default profile, you can create custom profiles having different infr
 3. Click **Save**. Your custom profile will appear under the list of custom profiles as shown below.
 
     ![Figure 6: Listed Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/new-profile-listed.jpg)
+
+4. Click on your custom profile; a new page will open displaying the custom runner configuration which is inherited from global profile by default.
+
+5. To modify a specific configuration, click the **edit** icon next to that configurations, and turn off the **Inherit** toggle; this will stop that configuration from being inherited from global profile.
+
+6. Modify the configuration according to your use case and click **Save**.
+
+7. Repeat step 5 and 6 to modify the required configurations.
+
+
 
 ### Attaching Profile
 
