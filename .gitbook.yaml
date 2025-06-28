@@ -148,3 +148,4 @@ redirects:
     usage/sdh/release-hub: user-guide/software-distribution-hub/release-hub.md
     usage/deploy-chart/overview-of-charts: user-guide/deploy-chart/README.md
     usage/integrations/clair: user-guide/integrations/vulnerability-scanning/clair.md
+    usage/resource-browser/devtron-intelligence: user-guide/devtron-intelligence.md
