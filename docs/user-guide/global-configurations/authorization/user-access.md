@@ -345,8 +345,8 @@ A user who is an Access Manager can grant or change permissions for other existi
 
 | What's Allowed | What's Not Allowed |
 |:----|:------|
-| Changing User B's **Manager** role to **View Only** role (Manager → View Only) |<ul><li>Reverting to User B's **Manager** role (View Only → Manager)</li><li>Changing User B's **Manager** role to any other role, except for **View Only**</li><li>Performing operations beyond the base role (i.e., **Admin**)</li><li>Modifying Super-Admin permissions</li></ul>|
-| Perform the operations under the scope of **Manager** role across Devtron | <ul><li>Manage user access for other users</li><li>Perform operations beyond the base role (i.e., **Manager**)</li><li>Modifying Super-Admin permissions</li></ul>|
+| **For User A:** <br> Changing User B's **Manager** role to **View Only** role (Manager → View Only) |<ul><li>Reverting to User B's **Manager** role (View Only → Manager)</li><li>Changing User B's **Manager** role to any other role, except for **View Only**</li><li>Performing operations beyond the base role (i.e., **Admin**)</li><li>Modifying Super-Admin permissions</li></ul>|
+| **For User B:** <br> Perform the operations under the scope of **Manager** role across Devtron | <ul><li>Manage user access for other users</li><li>Perform operations beyond the base role (i.e., **Manager**)</li><li>Modifying Super-Admin permissions</li></ul>|
 
 {% hint style="info" %}
 
@@ -355,8 +355,6 @@ A user who is an Access Manager can grant or change permissions for other existi
 If you need to grant someone global control over modifying the roles of other users, enable the [Can manage access for all roles](#can-manage-access-for-all-roles-toggle) toggle instead.
 
 {% endhint %}
-
-The **Access Manager** toggle in the **Role** drop-down box is disabled by default.
 
 When enabling the **Access Manager** toggle, make sure to select at least one permission from the checkboxes displayed beneath the toggle to ensure the role is active. 
 
@@ -372,15 +370,23 @@ The following permissions are currently available in the Access Manager role:
 
 * **Artifact promoter**: When selected, this permission allows the Access Manager to grant or revoke Artifact promoter access to other users.
 
-The **Deployment approver** permission is not currently available within the **Access Manager** role. If you would like to see this permission included, we encourage you to [raise a feature request on GitHub](https://github.com/devtron-labs/devtron/issues).
-
 #### Role and Scope
 
 | Role                  | View | Create | Edit | Delete | Build & Deploy | Approve Images | Approve Config Change | Approve Artifacts | Manage User Access |
 |-----------------------|:----:|:------:|:----:|:------:|:--------------:|:--------------:|:--------------:|:----------------:|:----------------:|
 | **Access Manager**                 | ❌  | ❌     | ❌   | ❌     | ❌             | ❌             | ❌             | ❌               | ✅               |
 
-The app-specific Access Manager role is currenly available only for Devtron Apps. If you would like to have this role for Helm apps, Jobs, Kubernetes Resources, or Chart Groups, please [Raise a Feature Request](https://github.com/devtron-labs/devtron/issues) on GitHub.
+{% hint style="info" %}
+
+### Note
+
+[Raise a feature request on GitHub](https://github.com/devtron-labs/devtron/issues) if: 
+
+* You would like to see the **Deployment approver** permission also within the **Access Manager** role.
+
+* You would like to have the app-specific **Access Manager** role (currently available only for Devtron Apps) for Helm apps, Jobs, Kubernetes Resources, or Chart Groups as well. 
+
+{% endhint %}
 
 ---
 
