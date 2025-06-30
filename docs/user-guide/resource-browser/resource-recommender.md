@@ -150,16 +150,16 @@ To modify the schedule of the **Resource Recommender** background job, follow th
      
      2. If you installed Devtron via Helm, select `devtron-cm` and click **Edit Live Manifest**.
 
-      ![Figure 17a: Selecting Devtron CM](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-devtron-cm.jpg)
+      ![Figure 16a: Selecting Devtron CM](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-devtron-cm.jpg)
 
-      ![Figure 17b: Clicking 'Edit Live Manifest'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-edit-live-manifest.jpg)
+      ![Figure 16b: Clicking 'Edit Live Manifest'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-edit-live-manifest.jpg)
 
 3. Edit the `KRR_SYNC_JOB_CRON_SCHEDULE` key and set the schedule according to your use case using a cron expression.
 
 4. Click **Apply Changes** and manifest will be updated.
 
-      ![Figure 18: Applying Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-apply-changes-manifest.jpg)
+      ![Figure 17: Applying Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-apply-changes-manifest.jpg)
 
 5. Restart the `orchestrator` or `devtron` pod to implement the changes.
 
-      ![Figure 19: Restarting Pods](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-restart-pod.jpg)
+      ![Figure 18: Restarting Pods](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-restart-pod.jpg)
