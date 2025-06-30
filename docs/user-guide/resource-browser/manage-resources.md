@@ -74,7 +74,7 @@ You can monitor activities like creation, deletion, updation, scaling, or errors
 
 {% hint style="info" %}
 ### How to Configure Devtron Intelligence?
-Refer [Devtron Intelligence](./devtron-intelligence.md) to enable this feature.
+Refer [Devtron Intelligence](../devtron-intelligence.md) to enable this feature.
 {% endhint %}
 
 For events with warnings, you can take the assistance of AI. Clicking the **Explain** button will help you identify the root cause of the issue along with suggestions to fix those.
