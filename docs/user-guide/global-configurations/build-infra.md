@@ -31,19 +31,15 @@ This contains the default infra configuration applicable to all the applications
 
 You may click it to modify the following:
 
-* **CPU** - Processor core allocated to the build process. See [CPU units](#cpu-units).
-
-* **Memory** - RAM allocated to the build process. See [memory units](#memory-units).
-
-* **Build Timeout** - Max. time limit allocated to the build process. See [timeout units](#timeout-units).
-
-* **Node Selector** - Node Selector are key-value pair labels to match Pods with Nodes. To learn more, refer to [nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) page.
-
-* **Toleration** - A Toleration allow a pod to be scheduled on a Node that has a matching Taint. To learn more, refer to [Taints and Toleration](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) page.
-
-* **ConfigMaps** - Key Value pairs to store non-sensitive configurations. Refer to [ConfigMaps](../creating-application/config-maps.md).
-
-* **Secrets** - Key Value pairs to store sensitive configurations. Refer to [Secrets](../creating-application/secrets.md).
+|Field| Description |
+|:---|:---|
+|**CPU**|Processor core allocated to the build process. See [CPU units](#cpu-units).|
+|**Memory**|RAM allocated to the build process. See [memory units](#memory-units).|
+|**Build Timeout**|Max. time limit allocated to the build process. See [timeout units](#timeout-units).|
+|**Node Selector**|Node Selector are key-value pair labels to match Pods with Nodes. To learn more, refer to [nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) page.|
+|**Toleration**|A Toleration allow a pod to be scheduled on a Node that has a matching Taint. To learn more, refer to [Taints and Toleration](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) page.|
+|**ConfigMaps**|Key Value pairs to store non-sensitive configurations. Refer to [ConfigMaps](../creating-application/config-maps.md).|
+|**Secrets**|Key Value pairs to store sensitive configurations. Refer to [Secrets](../creating-application/secrets.md).|
 
 ![Figure 3: Editing Global Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/default-infra-config.jpg)
 
@@ -79,6 +75,9 @@ Instead of global profile, you can create custom profiles having different infra
 6. Modify the configuration according to your use case and click **Save**.
 
 7. Repeat step 5 and 6 to modify the required configurations.
+
+## Adding Platform Specific Configurations
+
 
 
 
