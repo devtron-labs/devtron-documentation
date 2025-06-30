@@ -128,12 +128,8 @@
   * [Run Kubectl Commands Locally](user-guide/resource-browser/kubectl-local.md) 
 * [Resource Watcher](user-guide/resource-watcher.md) 
 * [Charts](user-guide/deploy-chart/README.md)
-  * [Charts Overview](user-guide/deploy-chart/overview-of-charts.md)
-  * [Deploy & Observe](user-guide/deploy-chart/deployment-of-charts.md)
-  * [Examples](user-guide/deploy-chart/examples/README.md)
-    * [Deploying Mysql Helm Chart](user-guide/deploy-chart/examples/deploying-mysql-helm-chart.md)
-    * [Deploying MongoDB Helm Chart](user-guide/deploy-chart/examples/deploying-mongodb-helm-chart.md)
-  * [Chart Group](user-guide/deploy-chart/chart-group.md)
+  * [Deploy Charts](user-guide/deploy-chart/deployment-of-charts.md)
+  * [Chart Groups](user-guide/deploy-chart/chart-group.md)
 * [Security](user-guide/security-features.md)
   * [Security Scans](user-guide/security-features/security-scans.md)
   * [Security Policies](user-guide/security-features/security-policies.md)
@@ -180,7 +176,7 @@
     * [SonarQube v1.1.0](user-guide/plugins/sonarqube-v1.1.0.md)
     * [Terraform CLI](user-guide/plugins/terraform-cli.md)
     * [Vulnerability Scanning](user-guide/plugins/vulnerability-scanning.md)
-
+* [Using Devtron Intelligence](user-guide/devtron-intelligence.md)
 
 ## Resources
 

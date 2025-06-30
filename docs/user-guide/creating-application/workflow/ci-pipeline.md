@@ -8,7 +8,7 @@ For Devtron version older than v0.4.0, please refer the [CI Pipeline (legacy)](h
 
 A CI Workflow can be created in one of the following ways:
 
-* [Build and Deploy from Source Code](#id-1.-build-and-deploy-from-source-code)
+* [Build from Source Code](#id-1.-build-and-deploy-from-source-code)
 * [Linked Build Pipeline](#id-2.-linked-build-pipeline)
 * [Deploy Image from External Service](#id-3.-deploy-image-from-external-service)
 * Sync with Environment [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
@@ -16,18 +16,18 @@ A CI Workflow can be created in one of the following ways:
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-1.jpg)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/workflow-ci.jpg)
 
 Each method has different use-cases that can be tailored according the needs of the organization.
 
-### 1. Build and Deploy from Source Code
+### 1. Build from Source Code
 
-`Build and Deploy from Source Code` workflow allows you to build the container image from a source code repository.
+`Build from Source Code` workflow allows you to build the container image from a source code repository.
 
 1. From the **Applications** menu, select your application.
 2. On the **App Configuration** page, select **Workflow Editor**.
 3. Select **+ New Workflow**.
-4. Select **Build and Deploy from Source Code**.
+4. Select **Build from Source Code**.
 5. Enter the following fields on the **Create build pipeline** window:
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-v1.jpg)
