@@ -41,13 +41,16 @@ You may click it to modify the following:
 |**ConfigMaps**|Key Value pairs to store non-sensitive configurations. Refer to [ConfigMaps](../creating-application/config-maps.md).|
 |**Secrets**|Key Value pairs to store sensitive configurations. Refer to [Secrets](../creating-application/secrets.md).|
 
+**Note:** ConfigMaps and Secrets defined here will be used at the time of build, not during deployment.
+
 ![Figure 3: Editing Global Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/default-infra-config.jpg)
 
 Furthermore, CPU and Memory have 2 fields each:
 
-* **Request** - Use this field to specify the minimum guaranteed amount of CPU/Memory resources your application needs for its CI build. In our example, we required 1500m or 1.5 cores CPU along with 6 GB of RAM. 
-
-* **Limit** - Use this field to set the maximum amount of CPU/Memory resources the build process can use, even if there is a lot available in the cluster. 
+|Field|Description|
+|:---|:---|
+| **Request** | This field is use to specify the minimum guaranteed amount of CPU/Memory resources your application needs for its CI build. In our example, we required 1500m or 1.5 cores CPU along with 6 GB of RAM.|
+| **Limit** | This field is use to set the maximum amount of CPU/Memory resources the build process can use, even if there is a lot available in the cluster.|
 
 
 ### Creating Custom Profile [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
@@ -76,12 +79,33 @@ Instead of global profile, you can create custom profiles having different infra
 
 7. Repeat step 5 and 6 to modify the required configurations.
 
+---
+
 ## Adding Platform Specific Configurations
 
+In multi-architecture (multi-arch) builds, different platforms such as amd64, arm64, etc., require different resource configurations. Devtron allows defining platform specific configurations within a build infra profile. This ensures each build is executed with the right configurations specific to the target architecture, thus providing better performance and resource efficiency across multiple architecture.
+
+You can only configure platform specific configurations for builds executed using the k8s driver and not using the container driver (where all builds run inside the CI runner pod).
+
+To configure platform specific configurations:
+
+1. From the left sidebar, go to **Global Configurations** → **Build Infra**. 
+
+2. Select the profile for which you want to configure platform specific configurations.
+
+3. Check the **Use K8s driver for build** and click **+Add Target Platform**; a modal window will open.
+
+4. Under **Select a target platform**, select the platform for which you want to define platform specific configurations.
+ 1. You can choose from `linux/amd64` or `linux/arm64`.
+
+ 2. You can also type to add a new platform.
+
+5. Configure the resources for the specific platform and click **Save**.
+
+6. The platform specific configuration will be available below the runner configuration.
 
 
-
-### Attaching Profile
+## Attaching Profile
 
 Once you create a profile, attach it to the intended applications, or else the [default profile](#default-profile) will remain applied. 
 
@@ -105,7 +129,7 @@ Once you create a profile, attach it to the intended applications, or else the [
 
 ![Figure 11: Quick Profile Creation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/quick-profile-creation.jpg)
 
-#### Performing Bulk Action
+### Performing Bulk Action
 
 If you wish to apply a profile to multiple applications at once, you can do that too.
 
@@ -122,7 +146,7 @@ Once you apply a profile, it will show the count of applications attached to it.
 ![Figure 14: Count of Applications](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-applicable-count.jpg)
 
 
-### Editing or Deleting Profile
+## Editing or Deleting Profile
 
 You can edit or delete a custom profile using the respective icons as shown below.
 
