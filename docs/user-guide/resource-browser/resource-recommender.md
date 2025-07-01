@@ -11,7 +11,7 @@ It helps users eliminate manual guesswork, reduce over-provisioning, and prevent
 {% hint style="info" %}
 ### Prerequisites
 
-* Prometheus endpoint must be configured. Refer to the [Cluster and Environments](./global-configurations/cluster-and-environments.md#configure-prometheus-enable-application-metrics)
+* Prometheus endpoint must be configured. Refer to the [Cluster and Environments](../global-configurations/cluster-and-environments.md#configure-prometheus-enable-application-metrics)
 
 {% endhint %}
 
