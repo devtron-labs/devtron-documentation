@@ -36,6 +36,12 @@ To inspect the resource recommendations, follow the steps below:
 
       ![Figure 2: Selecting Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-select-cluster.jpg)
 
+{% hint style="warning"%}
+### No Recommendations
+In case, you have just configured the Prometheus endpoint, you might face **No recommendations yet**  
+
+{%endhint%}
+
 3. Select the **Resource Recommender** tab to inspect the recommendations. 
 
       ![Figure 3: Selecting Resource Recommender](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-click-rr-button.jpg)
@@ -46,6 +52,12 @@ To inspect the resource recommendations, follow the steps below:
       2. Recommendations are shown as percentage changes by default. You can use the **Show absolute values** checkbox to see current v/s recommended values in actual units (e.g., 128Mi → 4900Ki).
 
            ![Figure 5: Toggling 'Show Absolute Values'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-absolute-values.jpg)
+
+ {% hint style="info"%}
+ ### No Recommendations
+ In case, you have just configured the Prometheus endpoint, you might face **No recommendations yet** screen, after selecting **Resource Recommender**. Click **Check for Recommendations** to initiate the scan and recommendations will be available in few minutes.
+ 
+ {%endhint%}
 
 4. You can inspect the resource recommendations for each workload within the cluster.
      1. If you wish, you can filter the workloads based on their `Kind` and `Namespace`.
@@ -87,6 +99,16 @@ To inspect the resource recommendations, follow the steps below:
       ![Figure 8c: Recommending to not take any action](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-zero.jpg)
 
       ![Figure 8d: No Recommendation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-no-recommendation.jpg)
+
+### Rescan for Recommendations
+
+If you want to rescan for recommendations, use this option to fetch the most recent data for your cluster. To do so follow the below steps:
+
+1. Select the kebab menu (⋮) from the right side.
+
+2. Click **Rescan for recommendations**.
+
+3. Rescaning will start, and recommendations will be updated in few minutes.
 
 ## Apply Recommendations
 
