@@ -15,7 +15,7 @@ Users need to have super-admin permission to configure Build Infra.
 
 ---
 
-## Steps to Configure Build Infra
+## Configure Build Infra
 
 From the left sidebar, go to **Global Configurations** → **Build Infra**. 
 
@@ -65,11 +65,11 @@ Instead of global profile, you can create custom profiles having different infra
 
     ![Figure 5a: Empty Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/new-profile-fields.jpg)
 
-    ![Figure 5b: Filled Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/filled-profile-fields.jpg)
+3. Click **Create**. Your custom profile will appear under the list of custom profiles as shown below.
 
-3. Click **Save**. Your custom profile will appear under the list of custom profiles as shown below.
+    ![Figure 6a: Filled Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/filled-profile-fields.jpg)
 
-    ![Figure 6: Listed Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/new-profile-listed.jpg)
+    ![Figure 6b: Listed Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/new-profile-listed.jpg)̀
 
 4. Click on your custom profile; a new page will open displaying the custom runner configuration which is inherited from global profile by default.
 
