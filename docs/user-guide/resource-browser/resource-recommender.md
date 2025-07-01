@@ -105,6 +105,8 @@ If you want to rescan for recommendations, use this option to fetch the most rec
 
 3. Rescaning will start, and recommendations will be updated in few minutes.
 
+      ![Figure 9: Rescanning for Recommendations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resource-recommender-rescan.gif)
+
 ## Apply Recommendations
 
 After inspecting the recommendations, you can directly apply them to your workloads in the following ways:
@@ -118,15 +120,15 @@ To apply recommended resources to a specific workload, follow the steps below:
 
 1. Hover over the specific workload row and click the **Apply** button that appears on hover.
 
-      ![Figure 9: Selecting Workload](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-apply.jpg)
+      ![Figure 10: Selecting Workload](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-apply.jpg)
 
 2. A modal window will open, displaying the comparison between the current and recommended resource values for that specific workload; review the recommended changes carefully.
 
-      ![Figure 10: Comparing Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-compare.jpg)
+      ![Figure 11: Comparing Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-compare.jpg)
 
 3. Click **Apply Changes** to update the resource configuration.
 
-      ![Figure 11: Applying Changes ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-apply-changes.jpg)
+      ![Figure 12: Applying Changes ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-apply-changes.jpg)
 
 ### Bulk Apply
 
@@ -134,15 +136,15 @@ If you wish, you can apply recommended resource configurations to multiple or al
 
 1. Select the workloads for which you want to apply recommended resource configurations and click **Apply Changes**.
 
-      ![Figure 12: Selecting Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-apply-changes-bulk.jpg)
+      ![Figure 13: Selecting Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-apply-changes-bulk.jpg)
 
 2. A modal window will open, displaying the comparison between the current and recommended resource values for each workload; review the recommended changes for each workload carefully.
 
-      ![Figure 13: Comparing Configurations for each workload](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-compare-bulk.jpg)
+      ![Figure 14: Comparing Configurations for each workload](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-compare-bulk.jpg)
 
 3. Click **Apply Changes** to update the resource configuration.
 
-      ![Figure 14: Applying Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-apply-in-bulk.jpg)
+      ![Figure 15: Applying Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-apply-in-bulk.jpg)
 
 ## Export Recommendations in CSV File
 
@@ -152,9 +154,9 @@ You can also export resource recommendations to a CSV file. To do so, follow the
 
 2. Click the **Download** button; a dialog box will appear displaying that your export is ready. By default, the file will be downloaded automatically in your system. If you wish you can select **Click Here To Download Manually** to download the file manually. 
 
-      ![Figure 15a: Clicking Download Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-download.jpg)
+      ![Figure 16a: Clicking Download Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-download.jpg)
 
-      ![Figure 15b: Export Ready](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-manual-download.jpg)
+      ![Figure 16b: Export Ready](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-manual-download.jpg)
 
 ## Modify Resource Recommender Job Schedule
 
@@ -167,16 +169,16 @@ To modify the schedule of the **Resource Recommender** background job, follow th
      
      2. If you installed Devtron via Helm, select `devtron-cm` and click **Edit Live Manifest**.
 
-      ![Figure 16a: Selecting Devtron CM](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-devtron-cm.jpg)
+      ![Figure 17a: Selecting Devtron CM](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-devtron-cm.jpg)
 
-      ![Figure 16b: Clicking 'Edit Live Manifest'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-edit-live-manifest.jpg)
+      ![Figure 17b: Clicking 'Edit Live Manifest'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-edit-live-manifest.jpg)
 
 3. Edit the `KRR_SYNC_JOB_CRON_SCHEDULE` key and set the schedule according to your use case using a cron expression.
 
 4. Click **Apply Changes** and manifest will be updated.
 
-      ![Figure 17: Applying Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-apply-changes-manifest.jpg)
+      ![Figure 18: Applying Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-apply-changes-manifest.jpg)
 
 5. Restart the `orchestrator` or `devtron` pod to implement the changes.
 
-      ![Figure 18: Restarting Pods](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-restart-pod.jpg)
+      ![Figure 19: Restarting Pods](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-restart-pod.jpg)
