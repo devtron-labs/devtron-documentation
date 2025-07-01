@@ -61,19 +61,21 @@ Instead of global profile, you can create custom profiles having different infra
 
     ![Figure 4: Creating Custom Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/create-new-profile.jpg)
 
-2. Enter a name for the profile along with a brief description (optional)
+2. Enter a name for the profile along with a brief description (optional) and click **Create** button.
 
-    ![Figure 5a: Empty Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/new-profile-fields.jpg)
+    ![Figure 5: Entering Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/new-profile-fields.jpg)
 
-3. Click **Create**. Your custom profile will appear under the list of custom profiles as shown below.
+3. Your custom profile will appear under the list of custom profiles as shown below.
 
-    ![Figure 6a: Filled Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/filled-profile-fields.jpg)
-
-    ![Figure 6b: Listed Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/new-profile-listed.jpg)̀
-
+    ![Figure 6: Profile Created](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/build-infra-profile-created.jpg)
+   
 4. Click on your custom profile; a new page will open displaying the custom runner configuration which is inherited from global profile by default.
 
+  ![Figure 7: Editing Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/filled-profile-fields.jpg)
+
 5. To modify a specific configuration, click the **edit** icon next to that configurations, and turn off the **Inherit** toggle; this will stop that configuration from being inherited from global profile.
+
+  ![Figure 8: Configuring Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/new-profile-listed.jpg)̀
 
 6. Modify the configuration according to your use case and click **Save**.
 
@@ -104,6 +106,9 @@ To configure platform specific configurations:
 
 6. The platform specific configuration will be available below the runner configuration.
 
+{% embed url="https://www.youtube.com/watch?v=5nFJfai125U" caption="Platform Specific Configurations" %}
+
+---
 
 ## Attaching Profile
 
@@ -111,23 +116,23 @@ Once you create a profile, attach it to the intended applications, or else the [
 
 1. Go to the **Applications** tab.
 
-    ![Figure 7: Applications Tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/applications-tab.jpg)
+    ![Figure 9: Applications Tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/applications-tab.jpg)
 
 2. Choose an application and click the dropdown below it.
 
-    ![Figure 8: Profile Dropdown](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-dropdown.jpg)
+    ![Figure 10: Profile Dropdown](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-dropdown.jpg)
 
 3. Choose the profile you wish to apply from the dropdown.
 
-    ![Figure 9: Selecting a Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-selection.jpg)
+    ![Figure 11: Selecting a Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-selection.jpg)
 
 4. Click **Change** to apply the profile to your application.
 
-    ![Figure 10: Confirming Profile Change](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/confirm-profile-change.jpg)
+    ![Figure 12: Confirming Profile Change](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/confirm-profile-change.jpg)
 
 **Tip**: If you missed creating a profile but selected your application(s), you can use the 'Create Profile' button. This will quickly open a new tab for creating a profile. Once done, you can return and click the refresh icon as shown below.
 
-![Figure 11: Quick Profile Creation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/quick-profile-creation.jpg)
+![Figure 13: Quick Profile Creation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/quick-profile-creation.jpg)
 
 ### Performing Bulk Action
 
@@ -135,26 +140,27 @@ If you wish to apply a profile to multiple applications at once, you can do that
 
 Simply use the checkboxes to select the applications. You can do this even if there are many applications spanning multiple pages. You will see a draggable floating widget as shown below.
 
-![Figure 12: Floating Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/floating-widget.jpg)
+![Figure 14: Floating Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/floating-widget.jpg)
 
 Select the profile you wish to apply from the dropdown and confirm the changes.
 
-![Figure 13: Selecting a Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-selection-bulk.jpg)
+![Figure 15: Selecting a Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-selection-bulk.jpg)
 
 Once you apply a profile, it will show the count of applications attached to it.
 
-![Figure 14: Count of Applications](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-applicable-count.jpg)
+![Figure 16: Count of Applications](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-applicable-count.jpg)
 
+---
 
 ## Editing or Deleting Profile
 
 You can edit or delete a custom profile using the respective icons as shown below.
 
-![Figure 15: Edit and Delete Icons](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/edit-delete-icons-v2.jpg)
+![Figure 17: Edit and Delete Icons](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/edit-delete-icons-v2.jpg)
 
 If you delete a profile attached to one or more applications, the [default profile](#default-profile) will apply from the next build.
 
-![Figure 16: Confirm Profile Deletion](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/delete-dialog.jpg)
+![Figure 18: Confirm Profile Deletion](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/delete-dialog.jpg)
 
 
 ### Need More Options?
