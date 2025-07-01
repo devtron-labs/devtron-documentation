@@ -36,12 +36,6 @@ To inspect the resource recommendations, follow the steps below:
 
       ![Figure 2: Selecting Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-select-cluster.jpg)
 
-{% hint style="warning"%}
-### No Recommendations
-In case, you have just configured the Prometheus endpoint, you might face **No recommendations yet**  
-
-{%endhint%}
-
 3. Select the **Resource Recommender** tab to inspect the recommendations. 
 
       ![Figure 3: Selecting Resource Recommender](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-click-rr-button.jpg)
@@ -55,8 +49,9 @@ In case, you have just configured the Prometheus endpoint, you might face **No r
 
  {% hint style="info"%}
  ### No Recommendations
- In case, you have just configured the Prometheus endpoint, you might face **No recommendations yet** screen, after selecting **Resource Recommender**. Click **Check for Recommendations** to initiate the scan and recommendations will be available in few minutes.
+ * In case, you have just configured the Prometheus endpoint, you might face **No recommendations yet** screen after selecting **Resource Recommender**. 
  
+ * Click **Check for Recommendations** to initiate the scan and recommendations will be available in few minutes.
  {%endhint%}
 
 4. You can inspect the resource recommendations for each workload within the cluster.
