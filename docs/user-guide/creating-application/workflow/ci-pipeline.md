@@ -24,8 +24,6 @@ A CI Workflow can be created in one of the following ways:
 
 * [Create a Job](#id-5.-create-a-job)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/workflow-ci.jpg)
-
 Each method has different use-cases that can be tailored according to the needs of the organization.
 
 ## 1. Build from Source Code
@@ -126,7 +124,7 @@ Devtron provides three stages in a CI pipeline: `Pre-Build`, `Build`, and `Post-
 
 `Post-build stage`: The tasks in this stage will be triggered once the build is complete.
 
-This document focuses on configuring the Build Stage. If you want to set up Pre-Build and Post-Build stages, refer to the [Pre-Build/Post-build Stages Configuration](https://docs.devtron.ai/usage/applications/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins).
+This document focuses on configuring the Build Stage. If you want to set up Pre-Build and Post-Build stages, refer to the [Pre/Post Stages](./ci-build-pre-post-plugins.md) to learn more.
 
 ### Build Stage
 
@@ -144,16 +142,16 @@ This document focuses on configuring the Build Stage. If you want to set up Pre-
  | `TRIGGER BUILD PIPELINE`| Required| <p>The build execution may be set to:</p><ul><li><code>Automatically</code>(default): Build is triggered automatically as the Git source code changes.</li><li><code>Manually</code>: Build is triggered manually.</li></ul>|
  | DOCKER LAYER CACHING | Optional | Use this to [enable/disable caching of docker image layers](#docker-layer-caching) from your build pipeline |
  | `Pipeline Name`| Required| Devtron automatically assigns a unique name for the pipeline; if you wish, you can edit it here.|
- | `Scan for Vulnerabilities` | Optional| <p><strong>Prerequisite</strong>: Install either Clair or Trivy.</p><ul><li>In the <code>Build</code> Stage, enable the <code>Scan for vulnerabilities</code> toggle.</li><li>Refer: Security Features</li></ul>|
+ | `Scan for Vulnerabilities` | Optional| <p><strong>Prerequisite</strong>: Install either [Clair](../../integrations/vulnerability-scanning/clair.md) or [Trivy](../../integrations/vulnerability-scanning/trivy.md).</p><ul><li>In the **Build** Stage, enable the **Scan for vulnerabilities** toggle.</li><li>Refer: [Vulnerability Scanning](../../integrations/vulnerability-scanning/README.md) to learn more.</li></ul>|
  | `Override Options`| Optional| Allows overriding configurations from earlier stages like CRI configuration, target platform configuration, etc.|
  | `Docker build arguments`|Optional| <p>Override docker build configurations for this pipeline.</p><ul><li><strong>Key</strong>: Field name</li><li><strong>Value</strong>: Field value.</li></ul>|
- | `Custom Image Tag Pattern` | Optional| <p>Enable the Custom Image Tag Pattern toggle.</p><ul><li>Define an alphanumeric pattern (e.g., <code>test-v1.0.{x}</code>) where <code>{x}</code> auto-increments with each build.</li><li>Tags must not start or end with a period (.) or comma (,).</li><li>After configuration, trigger a build by navigating to <code>Build &#x26; Deploy</code>, selecting the Git commit by clicking on <code>Select Material</code>, and clicking <code>Start Build</code>.</li><li>The generated image tag will be available in <code>Build History</code>, Docker Registry, CD Pipeline (Image Selection)</li></ul> <p> **Build will fail if the resulting image tag has already been built in the past. This error might occur when you reset the value of the variable `x` or when you disable/enable the toggle button for `Custom image tag pattern`**.</p>|
+ | `Custom Image Tag Pattern` | Optional| <p>Enable the Custom Image Tag Pattern toggle.</p><ul><li>Define an alphanumeric pattern (e.g., <code>test-v1.0.{x}</code>) where <code>{x}</code> auto-increments with each build.</li><li>Tags must not start or end with a period (.) or comma (,).</li><li>After configuration, trigger a build by navigating to **Build & Deploy**, selecting the Git commit by clicking on **Select Material**, and clicking **Start Build**.</li><li>The generated image tag will be available in **Build History**, Docker Registry, CD Pipeline (Image Selection)</li></ul> <p> Note: Build will fail if the resulting image tag has already been built in the past. This error might occur when you reset the value of the variable `x` or when you disable/enable the toggle button for **Custom image tag pattern**.</p>|
 
  ### Docker Layer Caching [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
  {% hint style="warning" %}
  ### Prerequisite
- [Configure blob storage](https://docs.devtron.ai/configurations-overview/installation-configuration#configuration-of-blob-storage) if you wish to store cache.
+ [Configure blob storage](../../../setup/install/installation-configuration.md#configuration-of-blob-storage) if you wish to store cache.
  {% endhint %}
 
  If you are rebuilding the same Docker image frequently, an effective cache strategy can cut down build time. Docker images are built layer by layer, and [Docker’s layer caching mechanism](https://docs.docker.com/build/cache/) allows unchanged layers to be reused across pipeline runs.
@@ -169,9 +167,9 @@ This document focuses on configuring the Build Stage. If you want to set up Pre-
  {% endhint %}
 
  There are 3 places from where you can control the cache behavior:
- 1. [Orchestrator ConfigMap (Global Settings)](#orchestrator-configmap-global-settings)
- 2. [Editing Pipeline](#editing-pipeline)
- 3. [During Trigger](#during-trigger)
+ 1. [Orchestrator ConfigMap (Global Settings)](#id-1.-orchestrator-configmap-global-settings)
+ 2. [Editing Pipeline](#id-2.-editing-pipeline)
+ 3. [During Trigger](#id-3.-during-trigger)
 
  #### 1. Orchestrator ConfigMap (Global Settings)
 
@@ -241,7 +239,7 @@ Once the CI pipeline is set up, follow these steps to trigger a build:
  
 This is useful when the same codebase is shared across multiple applications. 
  
-Instead of creating and maintaining separate pipelines for each application, you can first set-up a primary build pipeline (in the same application or in any other application) that builds the image from source code using **Build and Deploy from Source Code** or you can also use an existing pipeline from any application with the same codebase. 
+Instead of creating and maintaining separate pipelines for each application, you can first set up a primary build pipeline (in the same application or in any other application) that builds the image from source code using **Build and Deploy from Source Code** or you can also use an existing pipeline from any application with the same codebase. 
 
 Then, for other applications, you can simply link that source pipeline to reuse its build images directly in your workflow and proceed to create a CD pipeline using those images.
 
@@ -335,7 +333,7 @@ To configure the Webhook in External CI, follow the steps below.
 
  ![Figure 27: Getting Webhook Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-show-webhook.jpg)
 
-2. On the **Webhook Details** page, click **Select or auto-generate token with required permissions** to select or generate an `API token`. This token allows external CI services to authenticate with Devtron.
+2. On the **Webhook Details** page, click **Select or auto-generate token with required permissions** to select or generate a `API token`. This token allows external CI services to authenticate with Devtron.
 
  ![Figure 28: Clicking 'Select or auto-generate token with required permissions'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-select-auto-generate.jpg)
 
@@ -384,7 +382,7 @@ Before adding the stage/step, you need to add the API token provided by Devtron 
 
 4. Enter the **API Token** generated from Devtron in the **Secret** field.
 
-5. Provide an `ID` (devtron-token) in the **ID** field. If left blank, Jenkins will automatically generate an ID for the credential.
+5. Provide a `ID` (devtron-token) in the **ID** field. If left blank, Jenkins will automatically generate an ID for the credential.
 
 6. If you want you can also provide an optional description in the **Description** field.
 
@@ -501,7 +499,7 @@ After adding the API token as a secret, add a new step in your GitHub Action wor
 
  ![Figure 52ab: Committing Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-commit-changes.jpg)
 
-6. Provide a **Commit message** and a optional description.
+6. Provide a **Commit message** and an optional description.
 
 7. Select **Commit changes**, and the workflow file will be updated with the webhook step.
 
@@ -537,7 +535,7 @@ To create a pipeline form **Sync with Environment**, follow the steps below
 
 4. Select the environment in which the source CD pipeline exists. You can only select one source CD per workflow.
 
- **Note:**  The CD pipeline used as a source cannot be deleted while it’s linked.
+ **Note:** The CD pipeline used as a source cannot be deleted while it’s linked.
 
  ![Figure 56: Selecting Source CD Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-select-source-cd.jpg)
 
@@ -597,7 +595,7 @@ This stage allows you to define primary configurations such as Pipeline name, So
 | `Pipeline Name` | Assign a name to your job pipeline|
 | `Source type` | Source type to trigger the job pipeline. Available options: Branch Fixed, Branch Regex, Pull Request, Tag Creation|
 | `Branch Name`| Branch that triggers the CI build|
-| `Use remote cache`| <p>Enable this option to use the Docker cache from previous builds. Docker's layer caching mechanism allows unchanged docker images layers to be reused across pipeline runs, thus drastically reducing execution times<br></p><div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p>The globe toggle, next to <code>Docker Layer Caching</code> means that the configuration is inherited from global<br></p><ul><li>Enabled: Inherits the caching settings defined globally.</li><li>Disabled: Allows you to define a pipeline-level configuration specific to this job.</li></ul></div> |
+| `Use remote cache`| <p>Enable this option to use the Docker cache from previous builds. Docker's layer caching mechanism allows unchanged docker images layers to be reused across pipeline runs, thus drastically reducing execution times<br></p><div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p>The globe toggle, next to <code>Docker Layer Caching</code> means that the configuration is inherited from global<br></p><ul><li>Enabled: Inherits the caching settings defined globally.</li><li> Disabled: Allows you to define a pipeline-level configuration specific to this job.</li></ul></div> |
 
 ### Tasks to be executed
 
@@ -638,19 +636,19 @@ To create a task using the **Pull Images from Container Repository** plugin, fol
  
  * The right-side panel will display the fields specific to the **Pull Images from Container Repository** plugin, which are required to be configured.
 
- * The left-side panel will now shows a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by default), along with its logo.<br>You can change the task's name using the **Task name** field but plugin's logo will remain indicating that it is a preset plugin.
+ * The left-side panel will now show a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by default), along with its logo.<br> You can change the task's name using the **Task name** field, but plugin's logo will remain indicating that it is a preset plugin.
 
- ![Figure 65: Gke provisioner plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-pull-images-added.jpg)
+ ![Figure 65: GKE provisioner plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-pull-images-added.jpg)
 
-4. Refer the [Pull Images from Container Repository](/docs/user-guide/plugins/pull-images-from-container-repository.md) documentation to configure the **Pull Images from Container Repository** fields with appropriate values.
+4. Refer the [Pull Images from Container Repository](../../plugins/pull-images-from-container-repository.md) documentation to configure the **Pull Images from Container Repository** fields with appropriate values.
 
-  > Refer to the [Plugins documentation](/docs/user-guide/plugins/README.md) to explore and configure any of the available plugins. 
+  > Refer to the ['Plugins' documentation](../../plugins/README.md) to explore and configure any of the available plugins. 
 
 5. After configuring the fields successfully, your task will be created. If you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
 
 #### Create Task using Custom Script
 
-In the job stage, you can also define a task using a custom script to meet specific requirements. To create a task a task using a custom script, follow the steps below:
+In the job stage, you can also define a task using a custom script to meet specific requirements. To create a task using a custom script, follow the steps below:
 
 1. After configuring the basic configurations, select the **Tasks to be executed** Tab.
 
@@ -664,7 +662,7 @@ In the job stage, you can also define a task using a custom script to meet speci
 
 4. Select the **Task type**, it can be `Shell` or `Container Image`.
 
- * **Shell Tasks**: These execute shell scripts directly within the job runtime environment. In this type of task,  you can define inline scripts or use script files from your configured source code.
+ * **Shell Tasks**: These execute shell scripts directly within the job runtime environment. In this type of task, you can define inline scripts or use script files from your configured source code.
 
  * **Container Image Tasks**: These allow you to execute commands and scripts inside a custom Docker container. Instead of using the default environment provided by Devtron, you can specify you own container image with all dependencies and tools required for the tasks. 
 
@@ -672,7 +670,7 @@ In the job stage, you can also define a task using a custom script to meet speci
 
 5. After selecting the **Task type**, you need to configure task-specific fields based on that **Task type**.
 
-Refer to [Create Task using Custom Script for Devtron Jobs]() to know more.
+<!-- Refer to [Create Task using Custom Script for Devtron Jobs]() to know more. -->
 
 After configuring the **Basic Configurations** and adding the tasks, select **Create Pipeline** to create a new workflow with a job stage (instead of a build stage). 
 
@@ -699,7 +697,7 @@ To delete a CI pipeline, make sure that there is no CD pipeline attached to it i
 
 To delete a CI pipeline, follow the steps below.
 
-1. Navigate to  **Configurations** → **Workflow Editor** and choose the pipeline you wish to delete.
+1. Navigate to **Configurations** → **Workflow Editor** and choose the pipeline you wish to delete.
 
  ![Figure 67: Selecting Workflow to delete](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-select-workflow.jpg)
 
@@ -714,7 +712,7 @@ To delete a CI pipeline, follow the steps below.
 
   ![Figure 69: Deleting CD Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-cd-popup.jpg)
 
- In case there are multiple CD pipelines in the workflow, then you need to delete every single one of them in a similar way.
+ In case there are multiple CD pipelines in the workflow, then you need to delete every single one of them in ̀a similar way.
 
 5. After deleting all CD pipelines, click on the build stage, and the **Edit build pipeline** window will open. 
 
@@ -760,13 +758,13 @@ To override a container registry, container image, or target platform:
 
  * Select the new container registry from the drop-down list.
 
- * [Create and build the new container image](../creating-application/docker-build-configuration.md#build-the-container-image) with different options.
+ * [Create and build the new container image](../../creating-application/docker-build-configuration.md#build-the-container-image) with different options.
 
- * Set a [new target platform](../creating-application/docker-build-configuration.md#set-target-platform-for-the-build) from the drop-down list or enter a new target platform.
+ * Set a [new target platform](../../creating-application/docker-build-configuration.md#set-target-platform-for-the-build) from the drop-down list or enter a new target platform.
 
 5. Select **Update Pipeline**; The override will be effective when the next build is triggered.
 
-The overridden container registry/container image location/target platform will be reflected on the [Build Configuration](docker-build-configuration.md) page. You can also see the number of build pipelines for which the container registry/container image location/target platform are overridden.
+The overridden container registry/container image location/target platform will be reflected on the [Build Configuration](../../creating-application/docker-build-configuration.md) page. You can also see the number of build pipelines for which the container registry/container image location/target platform are overridden.
 
 ![Figure 75: Overrides in Build Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-configuration-overridden.jpg)
 
