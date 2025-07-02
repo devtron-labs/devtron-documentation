@@ -77,9 +77,9 @@ To configure a task using the **Codacy** plugin, follow the steps below:
 
  ![Figure 8: Codacy plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-codacy-plugin.jpg)
 
-3. Refer the [Codacy](/docs/user-guide/plugins/codacy.md) documentation to configure the **Codacy** fields with appropriate values.
+3. Refer the [Codacy](../../plugins/codacy.md) documentation to configure the **Codacy** fields with appropriate values.
 
-> Refer to the [Plugins documentation](/docs/user-guide/plugins/README.md) to explore and configure any of the available plugins. 
+> Refer to the [Plugins documentation](../../plugins/README.md) to explore and configure any of the available plugins. 
 
 4. After configuring the fields successfully, your task will be created. If you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
 
@@ -128,7 +128,7 @@ Let's take an example of a **Shell task** in the Pre-Build stage that ensures th
 | `Trigger/Skip condition` | Not required for this example | Optional| A conditional statement to execute or skip the task|
 | `Script`| Refer the [Script](#script) below| Required| Custom script for executing tasks|
 | `Output directory path`  | Not required for this example | Optional| Directory path where output files such as logs, errors, etc. will be available after the execution.|
-| `Output variables`| Refer to the [output variable](#output-variables) table| Optional| <p>Output variables  store the output as variables, and these variables can be used as input variables for the next task.</p><ul><li>[Pass/Failure Condition](#pass-fail-condition) (Optional): Conditional statements to determine the success/failure of the task. A failed condition stops the execution of the next task and/or build process</li></ul>|
+| `Output variables`| Refer to the [output variable](#output-variables) table| Optional| <p>Output variables  store the output as variables, and these variables can be used as input variables for the next task.</p><ul><li>[Pass/Failure Condition](#passfail-condition) (Optional): Conditional statements to determine the success/failure of the task. A failed condition stops the execution of the next task and/or build process</li></ul>|
 
 #### Input Variable Table
 
