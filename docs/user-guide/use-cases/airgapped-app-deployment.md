@@ -37,4 +37,3 @@ In fully air-gapped environments with no Internet access, the vendor and client 
    - The client deploys the package to the environment using their deployment tools, CLI, or [Cluster Terminal in Devtron's Resource Browser](../resource-browser.md#cluster-terminal).
 
 This method ensures that clients using air-gapped clusters, even without Internet access, can securely receive software updates.
-

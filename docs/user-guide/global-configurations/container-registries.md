@@ -2,57 +2,78 @@
 
 ## Introduction
 
-While [container registries](../../reference/glossary.md#container-registry) are typically used for storing [images](../../reference/glossary.md#image) built by the CI Pipeline, an OCI registry can store container images as well as other artifacts such as [helm charts](../../reference/glossary.md#helm-charts-packages). In other words, all container registries are OCI registries, but not all OCI registries are container registries.
+A [Container Registry](../../reference/glossary.md#container-registry) acts as a storage place for container [images](../../reference/glossary.md#image) whereas an OCI Registry acts as a storage place for container images, [Helm charts](../../reference/glossary.md#helm-charts-packages), as well as other OCI-compliant artifacts.
 
-You can configure a container registry using any registry provider of your choice. It allows you to build, deploy, and manage your container images or charts with easy-to-use UI. 
+You can pull Helm charts from either a public registry or a private registry (only if the registry contains Helm charts) and display them on the [Chart Store](../deploy-chart/README.md) page in Devtron. 
+
+![Figure 1: Container/OCI Registry Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/container-oci-registry-home.jpg)
+
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a Super-Admin can create, update, or delete a container/OCI registry.
+
+{% endhint %}
 
 ---
 
-## Add Container Registry
+## Add an OCI Registry
 
 ### Steps
 
-1. From the left sidebar, go to **Global Configurations** → **Container/OCI Registry**.
+To add a container/OCI registry, follow the steps below:
 
-    ![Figure 1: Container/OCI Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/add-registry.jpg)
+1. Navigate to **Global Configurations** → **Container/OCI Registry**.
+
+    ![Figure 2: Container/OCI Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/add-registry.jpg)
 
 2. Click **Add Registry**.
 
-    ![Figure 2: Add a Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/add-container-registry-1.jpg)
+    ![Figure 3: Add a Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/add-container-registry-1.jpg)
 
-3. Choose a provider from the **Registry provider** dropdown. View the [Supported Registry Providers](#supported-registry-providers).
+3. Choose your preferred registry provider from the **Registry provider** drop-down box. Refer to [Supported Registry Providers](#supported-registry-providers) for more information.
 
 4. Choose the Registry type:
-    * **Private Registry**: Choose this if your images or artifacts are hosted or should be hosted on a private registry restricted to authenticated users of that registry. Selecting this option requires you to enter your registry credentials (username and password/token).
-    * **Public Registry**: Unlike private registry, this doesn't require your registry credentials. Only the registry URL and repository name(s) would suffice.
 
-5. Assuming your registry type is private, here are few of the common fields you can expect:
+    * **Private Registry**: Select this if your images or artifacts are hosted, or should be hosted, on a private registry restricted to the authenticated users. Selecting this option requires you to enter your registry credentials (username and password/token).
+
+    * **Public Registry**: Unlike private registry, this option does not require credentials. You only need to provide the registry URL and repository name(s).
+
+5. Refer to the following table and enter the required details:
 
     | Fields | Description |
     | --- | --- |
-    | **Name** | Provide a name to your registry, this name will appear in the **Container Registry** drop-down list available within the [Build Configuration](../creating-application/docker-build-configuration.md) section of your application|
-    | **Registry URL** | Provide the URL of your registry in case it doesn't come prefilled (do not include `oci://`, `http://`, or `/https://` in the URL) |
-    | **Authentication Type** | The credential input fields may differ depending on the registry provider, check [Registry Providers](#supported-registry-providers) |
-    | **Push container images** | Tick this checkbox if you wish to use the repository to push container images. This comes selected by default and you may untick it if you don't intend to push container images after a CI build. If you wish to to use the same repository to pull container images too, read [Registry Credential Access](#registry-credential-access). |
-    | **Push helm packages** | Tick this checkbox if you wish to [push helm charts to your OCI registry](#push-helm-packages) |
-    | **Use as chart repository** | Tick this checkbox if you want Devtron to [pull helm charts from your registry and display them on chart store](#use-as-chart-repository). Also, you will have to provide a list of repositories (present within your registry) for Devtron to successfully pull the helm charts. |
-    | **Set as default registry** | Tick this checkbox to set your registry as the default registry hub for your images or artifacts |
+    | **Name** | Enter your registry name. You can [find the username](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/find-username.jpg) from your registry provider account. This name will also appear in the **Container Registry** drop-down box available within the [Build Configuration](../creating-application/docker-build-configuration.md) section of your application|
+    | **Registry URL** | Enter your registry URL (**Note**: do not include `oci://`, `http://`, or `/https://` in the URL) |
+    | **Authentication Type** | Select your preferred authentication type. The credential input fields may differ depending on the registry provider, check [Registry Providers](#supported-registry-providers)|
+    |**Connection Method** | * `Direct`: Select this option to directly connect to an API server that is on the same network or publicly accessible. <br> * `via Proxy`: Select this option to connect to a remote server that is behind a proxy and not directly reachable. <br> * `via SSH Tunnel`: Select this option to connect to a server that is not publically accessible, using a secure SSH connection| 
+    | **Push container images** | Enable this checkbox if you'd like to use the repository to push container images. This checkbox is enabled by default, and you may disable it if you don't intend to push container images after a CI build. If you wish to to use the same repository to pull container images as well, read [Registry Credential Access](#registry-credential-access) |
+    | **Push helm packages** | Enable this checkbox if you wish to [push Helm charts to your OCI registry](#push-helm-packages) |
+    | **Use as chart repository** | Enable this checkbox if you want Devtron to [pull Helm charts from your registry and display them on Chart Store](#use-as-chart-repository). Also, you will have to provide a list of repositories (present within your registry) for Devtron to successfully pull the Helm charts |
+    | **Set as default registry** | Enable this checkbox to set your registry as the default registry hub for your images or artifacts |
 
 6. Click **Save**.
 
 ### Push Helm Packages
 
-Upon enabling this option, Devtron supports the pushing of helm charts to your OCI registry.  
+Upon enabling this option, Devtron supports the pushing of Helm charts to your OCI registry.  
 
-This is possible through [isolated clusters](../global-configurations/cluster-and-environments.md#add-isolated-cluster) that facilitate airgapped deployments. In other words, it generates a helm package that you can use to deploy your application in air-gapped clusters.
+This is possible through [isolated clusters](../global-configurations/cluster-and-environments.md#add-isolated-cluster) that facilitate airgapped deployments. In other words, it generates a Helm package that you can use to deploy your application in air-gapped clusters.
 
-If you have [configured your CD pipeline](../creating-application/workflow/cd-pipeline.md#deploying-to-an-isolated-environment) to push the helm package to your OCI registry, you can view the pushed helm package in your registry as shown below:
+If you have [configured your CD pipeline](../creating-application/workflow/cd-pipeline.md#deploying-to-an-isolated-environment) to push the Helm package to your OCI registry, you can view the pushed Helm package in your registry as shown below:
 
-![Figure 3a: OCI Registry Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/pushed-artifacts.jpg)
+![Figure 4a: OCI Registry Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/pushed-artifacts.jpg)
 
-![Figure 3b: Pushed Helm Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/helm-chart.jpg)
+![Figure 4b: Pushed Helm Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/helm-chart.jpg)
 
 {% hint style="warning" %}
+
+### Important Note
+
+Devtron does not support pushing Helm packages to chart repositories.
+
+{% endhint %}
 
 ### Use as Chart Repository
 
@@ -60,13 +81,11 @@ If you have [configured your CD pipeline](../creating-application/workflow/cd-pi
 
 ### Prerequisite
 
-OCI registry with `Use as chart repository` option enabled. 
+An OCI registry with `Use as chart repository` option enabled. 
 
 {% endhint %}
 
-Unlike Helm repos, OCI registries do not have an index file to discover all the charts. If you have helm packages pushed to your OCI registry, you can that registry as a chart repository. 
-
-Upon enabling this option, Devtron can use your OCI registry as the chart source and pull the helm charts to display them on your [Chart Store](../deploy-chart/README.md) for easy deployment.
+When you have your own Helm charts in a private registry and prefer to use them, enable the **Use as chart repository** checkbox. The OCI registry is then considered as a chart repository, and all the existing charts are fetched and displayed in the [Chart Store](../deploy-chart/README.md). 
 
 #### Tutorial
 
@@ -74,11 +93,122 @@ Upon enabling this option, Devtron can use your OCI registry as the chart source
 
 #### Steps
 
-Search your OCI registry in the list and click it. 
+To use an OCI registry as a chart repository, follow the steps below:
 
-In the **List of repositories** field, add your chart repo(s). You can [find the username](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/find-username.jpg) from your registry provider account.
+1. Navigate to **Global Configurations** → **Container/OCI Registry**.
 
+2. Search for your preferred OCI registry in the list and select it.
 
+3. Add your chart repositories (where the helm charts are present) in the **List of repositories** field.
+
+    ![Figure 5: Adding Chart Repositories](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/use-as-cr.jpg)
+
+4. Click **Save**. 
+
+---
+
+## Registry Credential Access
+
+You can pull [images](../../reference/glossary.md#image) from a container/OCI registry, but when using private registries, it is important to control which clusters have acccess to pull the images. That is why managing registry credential access becomes crucial.
+
+You can choose to either auto-inject registry credentials to clusters or use a [Secret](../../reference/glossary.md#secrets) to pull an image for deployment to environments on specific clusters. When you choose to auto-inject registry credentials, the right authentication details (e.g., `username`/`password or token`) are automatically provided to a pod without the need of manual intervention.
+
+You can create a pod that uses a [Secret](../../reference/glossary.md#secrets) to pull an image from a private container registry of your choice (e.g., [Docker Hub](https://www.docker.com/products/docker-hub)).
+
+To manage the registry credential access, follow the steps below:
+
+1. Navigate back to the **Container/OCI Registry** page.
+
+2. Select your preferred registry.
+
+3. Click the **Manage** button displayed next to the **Registry credential access is auto injected to** label.
+
+    ![Figure 6: Manage Access of Registry Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/manage-button.jpg)
+
+    You can manage registry credential access in the following two ways:
+
+    | Fields | Description |
+    | --- | --- |
+    | **Do not inject credentials to clusters** | Select the clusters where you do not want to inject credentials |
+    | **Auto-inject credentials to clusters** | Select the clusters where you want to inject credentials |
+
+4. You can choose one of the two options for defining credentials:
+
+    * [Use Registry Credentials](#use-registry-credentials)
+
+    * [Specify Image Pull Secret](#specify-image-pull-secret) 
+
+    ![Figure 7: Define Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/manage-access-of-reg-creds.jpg)
+
+5. Click **Save**.
+
+### Use Registry Credentials
+
+If you select **Use Registry Credentials**, the clusters will be auto-injected with the registry credentials of your registry type. As an example, if you select **Docker** as the registry type, then the clusters will be auto-injected with the `username` and `password/token` associated with your Docker Hub account.
+
+![Figure 8: Using Registry Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/use-registry-credentials-1.jpg)
+
+### Specify Image Pull Secret
+
+You can create a Secret by providing credentials on the Command Line/Terminal.
+
+![Figure 9: Using Image Pull Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/specify-image-pull-secret-1.jpg)
+
+1. Navigate back to the **Container/OCI Registry** page. 
+
+2. Enter the secret name (e.g., `regcred`) in the **Specify Image Pull Secret** section.
+
+3. Refer to the table below and enter the following command in the Command Line/Terminal to create a Secret:
+
+{% hint style="info" %}
+
+### Important Note
+
+Docker is used just as an example here. However, you can create Secrets with any registry provider of your choice.
+
+{% endhint %}
+
+```bash
+kubectl create -n <namespace> secret docker-registry regcred --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>
+```
+    
+| Key | Description |
+| --- | --- |
+| `namespace` | Specify your sub-cluster (e.g., **devtron-demo**) |
+| `your-registry-server` | Specify your private Docker registry FQDN. For Docker Hub, use https://index.docker.io/v1/ |
+| `your-name` | Specify your Docker registry username (e.g., `johndoe`) | 
+| `your-pword` | Specify your Docker password | 
+| `your-email` | Specify your Docker email id |
+
+You have successfully set your Docker credentials in the cluster as a Secret called `regcred`.
+
+{% hint style="warning" %}
+
+When you enter Secrets in the Command Line/Terminal while `kubectl` is running, the Secrets can get stored in your shell history unprotected, and can also be temporarily visible to other users.
+
+{% endhint %}
+
+## Delete an OCI Registry
+
+If you prefer to delete an OCI registry, follow the instructions below:
+
+1. Navigate back to **Container/OCI Registry** page. 
+
+    ![Figure 10: Delete an OCI Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/delete-oci-registry.jpg)
+
+2. Select your preferred OCI registry. 
+
+3. Click the **Delete** button. The OCI registry will be deleted.
+
+{% hint style="warning" %}
+
+### Important Note
+
+If you used an OCI registry as a chart source, deleting the OCI registry will remove all its associated charts from the Chart Store.
+
+{% endhint %}
+
+---
 
 ## Supported Registry Providers
 
@@ -166,84 +296,7 @@ Provide below information if you select the registry type as `Other`.
 | **Advanced Registry URL Connection Options** | <ul><li>**Allow Only Secure Connection**: Tick this option for the registry to allow only secure connections</li></ul><ul><li>**Allow Secure Connection With CA Certificate**: Tick this option for the registry to allow secure connection by providing a private CA certificate (ca.crt)</li></ul><ul><li>**Allow Insecure Connection**: Tick this option to make an insecure communication with the registry (for e.g., when SSL certificate is expired)</li></ul> |
 
 {% hint style="info" %}
+
 You can use any registry which can be authenticated using `docker login -u <username> -p <password> <registry-url>`. However these registries might provide a more secured way for authentication, which we will support later.
+
 {% endhint %}
-
----
-
-## Registry Credential Access
-
-You can create a Pod that uses a [Secret](../../reference/glossary.md#secrets) to pull an image from a private container registry. You can use any private container registry of your choice, for e.g., [Docker Hub](https://www.docker.com/products/docker-hub).
-
-Super-admin users can decide if they want to auto-inject registry credentials or use a secret to pull an image for deployment to environments on specific clusters.
-
-1. To manage the access of registry credentials, click **Manage**.
-
-There are two options to manage the access of registry credentials:
-
-| Fields | Description |
-| --- | --- |
-| **Do not inject credentials to clusters** | Select the clusters for which you do not want to inject credentials |
-| **Auto-inject credentials to clusters** | Select the clusters for which you want to inject credentials |
-
-2. You can choose one of the two options for defining credentials:
-
-* [Use Registry Credentials](#use-registry-credentials)
-* [Specify Image Pull Secret](#specify-image-pull-secret) 
-
-### Use Registry Credentials
-
-If you select **Use Registry Credentials**, the clusters will be auto-injected with the registry credentials of your registry type. As an example, If you select `Docker` as Registry Type, then the clusters will be auto-injected with the `username` and `password/token` which you use on the Docker Hub account.
-
-Click **Save**.
-
-![Figure 4: Using Registry Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/use-registry-credentials-1.jpg)
-
-
-### Specify Image Pull Secret
-
-You can create a Secret by providing credentials on the command line.
-
-![Figure 5: Using Image Pull Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/specify-image-pull-secret-1.jpg)
-
-Create this Secret and name it `regcred` (let's say):
-
-```bash
-kubectl create -n <namespace> secret docker-registry regcred --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>
-```
-
-where,
-
-* **namespace** is your sub-cluster, e.g., devtron-demo
-* **your-registry-server** is your Private Docker Registry FQDN. Use https://index.docker.io/v1/ for Docker Hub.
-* **your-name** is your Docker username
-* **your-pword** is your Docker password
-* **your-email** is your Docker email
-
-You have successfully set your Docker credentials in the cluster as a Secret called `regcred`.
-
-{% hint style="warning" %}
-Typing secrets on the command line may store them in your shell history unprotected, and those secrets might also be visible to other users on your PC during the time when kubectl is running.
-{% endhint %}
-
-Enter the Secret name in the field and click **Save**.
-
-## Delete an OCI Registry
-
-If you prefer to delete an OCI registry, follow the instructions below:
-
-1. Navigate back to **Container/OCI Registry** page. 
-
-    ![Figure 6: Delete an OCI Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/delete-oci-registry.jpg)
-
-2. Select your preferred OCI registry. 
-
-3. Click the **Delete** button. The OCI registry will be deleted.
-
-    {% hint style="warning" %}
-
-    ### Important Note
-
-    If you used an OCI registry as a chart source, deleting the OCI registry will remove all its associated charts from the Chart Store.
-
-    {% endhint %}
