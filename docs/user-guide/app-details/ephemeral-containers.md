@@ -57,7 +57,7 @@ Wherever you can access pod resources in Devtron, you can launch an ephemeral co
 
 ### From Devtron (Resource Browser)
 
-Click [here](../resource-browser.md#launching-ephemeral-container) to know more.
+Click [here](../resource-browser/pods.md#launching-ephemeral-container) to know more.
 
 ### From Devtron's Cluster Terminal
 
