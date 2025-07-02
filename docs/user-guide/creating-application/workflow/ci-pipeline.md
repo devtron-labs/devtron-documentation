@@ -14,7 +14,7 @@ Refer the [User permissions](../../global-configurations/authorization/user-acce
 
 A CI Workflow can be created in one of the following ways:
 
-* [Build and Deploy from Source Code](#id-1.-build-and-deploy-from-source-code)
+* [Build from Source Code](#id-1.-build-from-source-code)
 
 * [Linked Build Pipeline](#id-2.-linked-build-pipeline)
 
@@ -24,13 +24,13 @@ A CI Workflow can be created in one of the following ways:
 
 * [Create a Job](#id-5.-create-a-job)
 
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/workflow-ci.jpg)
+
 Each method has different use-cases that can be tailored according to the needs of the organization.
 
----
+## 1. Build from Source Code
 
-## 1. Build and Deploy from Source Code
-
-**Build and Deploy from Source Code** workflow allows you to build the container image from a source code repository.
+`Build from Source Code` workflow allows you to build the container image from a source code repository.
 
 {% hint style="info" %}
 Devtron typically uses a Dockerfile from your repository to build container images. If you don’t have one, Devtron provides default templates to help you get started. You can also build images without a Dockerfile using Buildpacks.
@@ -46,9 +46,9 @@ Devtron typically uses a Dockerfile from your repository to build container imag
 
  ![Figure 1: Creating New Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-1.jpg)
 
-4. Select **Build and Deploy from Source Code**.
+4. Select **Build from Source Code**.
 
- ![Figure 2: 'Selecting Build and Deploy from Source Code'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-2.jpg)
+ ![Figure 2: 'Selecting Build from Source Code'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-2.jpg)
 
 5. In the **Create Build Pipeline** window, enter the following details:
 
