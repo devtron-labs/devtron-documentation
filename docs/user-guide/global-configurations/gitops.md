@@ -60,7 +60,7 @@ Alternatively, you may use the feature flag **FEATURE_USER_DEFINED_GITOPS_REPO_E
 
 ![Using Feature Flag](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/dashboard-cm.gif)
 
-1. Go to [Devtron's Resource Browser](../resource-browser.md).
+1. Go to [Devtron's Resource Browser](../resource-browser/README.md).
 2. Select the cluster where Devtron is running, i.e., `default_cluster`.
 3. Go to the **Config & Storage** dropdown on the left.
 4. Click **ConfigMap**.

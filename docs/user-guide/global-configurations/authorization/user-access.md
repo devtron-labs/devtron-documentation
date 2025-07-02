@@ -4,7 +4,7 @@
 
 Here you can manage who can access your Devtron instance and what actions they can perform. Use this section to add team members, assign them roles, and control their access by granting fine-grained permissions. Moreover, you can also download all user data in a CSV format.
 
-![Figure 1: User Permissions - Example](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/user-sample.jpg)
+![Figure 1: User Permissions - Example](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/add-user.jpg)
 
 ---
 
@@ -22,25 +22,25 @@ Only managers and super-admins can add users.
 
 1. Go to **Global Configurations** → **Authorization** → **User Permissions**.
 
-   ![Figure 2: User Permissions in Global Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/user-permissions-screen.jpg)
+   ![Figure 2: User Permissions in Global Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/user-permissions-gc.jpg)
 
 2. Click **Add Users**.
 
-   ![Figure 3: 'Add Users' Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/add-users.jpg)
+   ![Figure 3: 'Add Users' Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/user-permissions-add.jpg)
 
 3. In the **Email addresses** field, type the email address of the user you wish to add. You may add more than one email address.
 
-   ![Figure 4: Adding Email Addresses of Users](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/adding-email-address.gif)
+   ![Figure 4: Adding Email Addresses of Users](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/adding-user.gif)
 
 4. (Optional) From the **Assign user groups** dropdown, you may assign one or more user groups to the user. This helps in identifying the group/team to which the user belongs (e.g., Security Team, Frontend Team, Department Leads) especially when adding larger teams.
 
-   ![Figure 5: Assigning User Group(s)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/assign-user-group.gif)
+   ![Figure 5: Assigning User Group(s)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/assigning-user-groups.gif)
 
 5. There are two types of permissions in Devtron (click the links below to learn more):
    * [Super admin permission](#grant-super-admin-permission) for granting full access.
    * [Specific permissions](#grant-specific-permissions) for granting cherry-picked access.
 
-   ![Figure 6: Granting Specific or Superadmin Access](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/superadmin-or-specific.gif)
+   ![Figure 6: Granting Specific or Superadmin Access](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/two-permissions.gif)
 
 6. Click **Save**. You have successfully added your user(s).
 
@@ -48,14 +48,9 @@ Only managers and super-admins can add users.
 
 ## Grant Super Admin Permission
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
-Only existing super-admins can assign super-admin permissions to another user.
-{% endhint %}
-
 ![Figure 7: Granting Superadmin Access](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/superadmin-perm.jpg)
 
-Before assigning this permission, please note the following:
+Super-Admins have unrestricted access to all Devtron resources. They can create, modify, delete, and manage any resource, including user access, Git repositories, container registries, clusters, and environments. Before assigning this permission, please note:
 
 * Selecting this option will grant the user full access to all the resources. 
 
@@ -67,63 +62,87 @@ Before assigning this permission, please note the following:
 
 ## Grant Specific Permissions
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
-Only managers and super-admins can assign specific permissions to a user.
-{% endhint %}
+![Figure 8: Granting Specific Access](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/specific-permissions-1.jpg)
 
-![Figure 8: Granting Specific Access](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/specific-perm.jpg)
+### Permission Groups
 
-Upon selecting this option, you get two additional sections:
+**Permission Groups** allows you select a group with a predefined set of user permissions, so that the users belonging to the group automatically inherits those permissions. This reduces the need to repeatedly grant permissions each time a user is added. 
 
-| **Section**             | **Description**              |
-|-----------------------|------------------------------|
-| **Permission Groups** <br /> | (*Recommended*, [see snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/assign-permission-groups.gif)) Use the dropdown to assign the user to a [permission group](./permission-groups.md). Your user will automatically inherit all the permissions to the projects/resources defined for that group. You may select more than one permission group too. Once you select a permission group, assigning direct permissions can be skipped (unless you wish to grant additional permissions).<br /><br />You may also [make users Active/Inactive](#at-permission-group-level) at permission group-level. <br /><br /> **We recommend using permission groups over direct permissions for easier management of user access**. |
-| **Direct Permissions**| This option allows you to grant your user the access to:<ul><li>[Devtron Apps](#devtron-apps-permissions)</li><li>[Helm Apps](#helm-apps-permissions)</li><li>[Jobs](#jobs-permissions)</li><li>[Kubernetes Resources](#kubernetes-resources-permissions)</li><li>[Chart Groups](#chart-groups-permissions)</li></ul>|
+The **Permission Groups** drop-down box allows you to select from a list of permission groups already created in the [Permission Groups](../authorization/permission-groups.md) page.
+
+![Figure 9: Permission Groups](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/assigning-permission-groups.gif)
+
+You can select one or more permission groups, and the user will automatically inherit all the permissions to the projects and resources defined for those groups. Once you select permission group(s), assigning direct permissions can be skipped (unless you wish to grant additional permissions). 
+
+You can also make users [Active/Inactive](#making-users-activeinactive) at permission group-level.
 
 {% hint style="info" %}
+
 ### What happens when a user has direct permissions as well as permissions inherited from a group?
+
 If you assign a permission group as well as direct permissions, the user will have the combined permissions of both.
 
 **For example**: 
 
-* A user is granted ‘Build & Deploy’ access to three apps via direct permissions.
-* The same user is part of a group that has ‘View only’ access to five apps (including those three apps).
-* Now, the user will have both ‘Build & Deploy’ and ‘View only’ permissions for those three apps, and just ‘View only’ for the other two.
+* A user is granted **Build & Deploy** access to three apps via direct permissions.
+
+* The same user is part of a group that has **View only** access to five apps (including those three apps).
+
+* Now, the user will have both **Build & Deploy** and **View only** permissions for those three apps, and just **View only** for the other two.
+
 {% endhint %}
 
 ### Devtron Apps permissions
 
 {% hint style="warning" %}
+
 ### Note
-The 'Devtron Apps' tab will be available only if the [CI/CD module](../../integrations/build-and-deploy-ci-cd.md) is installed.
+
+The **Devtron Apps** tab is displayed only when the [Build and Deploy (CI/CD)](../../integrations/build-and-deploy-ci-cd.md) module is installed in your Devtron instance.
+
 {% endhint %}
 
-Here you can grant your user the permissions for Devtron apps.
+The **Devtron Apps** tab allows you to grant user permissions for Devtron applications.
 
-![Figure 9: Granting Devtron Apps Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/devtron-apps-perm.jpg)
+![Figure 10: Granting Devtron Apps Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/devtron-apps.jpg)
 
 | Field | Description |
 | --- | --- |
-| **Project** | Select a project from the dropdown list to grant the user access. You can select only one project at a time.<br />**Note**: If you want to select more than one project, then click **Add Permission**. |
-| **Environment** | Select a specific environment or all environments from the dropdown list.<br />**Note**: If you select `All environments`, the user will have access to all the current environments including any new environment which gets associated with the application later. |
-| **Application**  | Select a specific application or all applications from the dropdown list corresponding to your selected environments.<br />**Note**: If you select `All applications`, the user will have access to all current and future applications associated with the project. Moreover, user with access to all applications, can create new applications too.  |
-| **Role**  | Available Roles:<ul><li>`View only`</li> <li>`Build and Deploy`</li><li>`Admin`</li><li>`Manager`</li></ul>[Click here](#roles-available-for-devtron-apps) to learn more about the role you wish to assign the user.  |
+| **Project** | Select your preferred project from the drop-down box to grant the user access. You can select only one project at a time.<br />**Note**: If you want to select more than one project, then click **Add Permission**. |
+| **Environment** | Select a specific environment or all environments from the drop-down box as per your requirement.<br />**Note**: If you select `All environments`, the user will have access to all the current environments and any new environment which gets associated with the application in the future. |
+| **Application**  | Select a specific application or all applications from the drop-down box that is associated with the environment(s) selected in the **Environment** drop-down box, as per your requirement.<br />**Note**: If you select `All applications`, the user will have access to all the current and future applications associated with the project. Moreover, user with access to all applications, can create new applications too.  |
+| **Role**  | Available Roles:<ul><li>`Base Role`</li> <li>`Additional Roles` [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)</li><li>`Access Manager` [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)</li></ul>[Click here](#roles-available-for-devtron-apps) to learn more about the role you wish to assign to the user.  |
 | **Status**  | Read: [Making Users Active/Inactive](#at-direct-permissions-level) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)   |
 
 #### Roles available for Devtron Apps
 
-There are seven role-based access levels for Devtron Apps:
+The role-based access for Devtron Apps are as follows:
 
-1. **View only**: These users can view applications and environments access to but cannot view sensitive data like secrets used in applications or charts.
-2. **Build and Deploy**: In addition to `View only` access, these users can build and deploy images of applications to permitted environments.
-3. **Admin**: These users can create, edit, deploy, and delete permitted applications in selected projects.
-4. **Manager**: These users have the same permissions as `Admin` but can also grant or revoke user access for applications and environments they manage.
-5. **Image approver**: These users can approve image deployment requests.
-6. **Configuration approver**: These users can approve configuration change requests for [Deployment Templates](../../creating-application/deployment-template.md), [ConfigMaps](../../creating-application/config-maps.md), and [Secrets](../../creating-application/secrets.md). However, users cannot self-approve their own proposed changes, even if they have this role or Super Admin access.
-7. **Artifact promoter**: These users have the authority to approve the promotion of [artifacts](../../../reference/glossary.md#artifacts) directly to the target CD pipeline.
+**Base Role**
 
-However, super-admin users have unrestricted access to all Devtron resources. They can create, modify, delete, and manage any resource, including user access, Git repositories, container registries, clusters, and environments.
+* **View only**: Users can view applications and access environments but cannot view sensitive information like secrets used in applications or charts or perform any actions.
+
+* **Build and Deploy**: In addition to **View only** permission, users can build and deploy images of applications in permitted environments.
+
+* **Admin**: Users can create, edit, deploy, and delete permitted applications in permitted projects.
+
+* **Manager**: In addition to **Admin** permission, users can also grant or revoke user access for applications and environments that they manage. The **Manager** role for enterprise users will be deprecated and removed soon. Therefore, we recommend using the **Access Manager** role instead of **Manager** going forward. 
+
+* **Additional Roles**  [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
+   **Additional Roles** allows you to assign specific permissions to a user beyond their **Base Role**. For example, you can grant a user both the **Build and Deploy** (Base Role) and **Config Approver** permissions (Additional Role). This allows the user to build and deploy images, while also being responsible for approving configuration change requests.
+   
+   The following permissions are currently available in **Additional Roles**: 
+
+   * **Artifact Promoter**: You can approve the promotion of [artifacts](../../../reference/glossary.md#artifacts) directly to the target CD pipeline. For example, if your application workflow includes three CD pipelines (e.g., dev, qa, and prod) and someone raises a request to bypass dev and qa and deploy the artifact directly to prod, you can approve and perform this action with the **Artifact promoter** permission.
+
+   * **Config Approver**: You can approve configuration change requests for [Deployment Templates](../../creating-application/deployment-template.md), [ConfigMaps](../../creating-application/config-maps.md), and [Secrets](../../creating-application/secrets.md). However, you cannot self-approve your own proposed changes, even if you have the **Config Approver** permission or even the Super Admin access.
+
+   * **Deployment Approver**: You can approve the deployment requests for the selected applications and environments.
+
+You also have the provision of granting Access Manager role to a user. Refer [Access Manager](#access-manager) to know more.
+
+#### Roles and Scopes
 
 | Role                  | View | Create | Edit | Delete | Build & Deploy | Approve Images | Approve Config Change | Approve Artifacts | Manage User Access |
 |-----------------------|:----:|:------:|:----:|:------:|:--------------:|:--------------:|:--------------:|:----------------:|:----------------:|
@@ -131,17 +150,17 @@ However, super-admin users have unrestricted access to all Devtron resources. Th
 | **Build and Deploy**     | ✅  | ❌     | ❌   | ❌     | ✅            | ❌             | ❌             | ❌               | ❌               |
 | **Admin**                | ✅  | ✅    | ✅  | ✅    | ✅            | ❌             | ❌             | ❌               | ❌               |
 | **Manager**              | ✅  | ✅    | ✅  | ✅    | ✅            | ❌             | ❌             | ❌               | ✅              |
-| **Image Approver**       | ✅  | ❌     | ❌   | ❌     | ❌             | ✅            | ❌             | ❌               | ❌               |
-| **Configuration Approver** | ✅ | ❌    | ❌   | ❌     | ❌             | ❌             | ✅            | ❌               | ❌               |
 | **Artifact Promoter**    | ✅  | ❌     | ❌   | ❌     | ❌             | ❌             | ❌             | ✅              | ❌               |
+| **Configuration Approver** | ✅ | ❌    | ❌   | ❌     | ❌             | ❌             | ✅            | ❌               | ❌               |
+| **Deployment Approver**       | ✅  | ❌     | ❌   | ❌     | ❌             | ✅            | ❌             | ❌               | ❌               |
+| **Access Manager**                 | ❌  | ❌     | ❌   | ❌     | ❌             | ❌             | ❌             | ❌               | ✅               |
 | **Super Admin**          | ✅  | ✅    | ✅  | ✅    | ✅            | ✅            | ✅            | ✅              | ✅              |
-
 
 ### Helm Apps permissions
 
 Here you can grant your user the permissions for Helm apps deployed from Devtron or outside Devtron.
 
-![Figure 10: Granting Helm Apps Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/helm-apps-perm.jpg)
+![Figure 11: Granting Helm Apps Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/helm-apps.jpg)
 
 | Field | Description |
 | --- | --- |
@@ -170,7 +189,7 @@ There are three role-based access levels for Helm Apps:
 
 Here you can grant your user the permissions to access the jobs created in Devtron.
 
-![Figure 11: Granting Jobs Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/jobs-perm.jpg)
+![Figure 12: Granting Jobs Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/jobs.jpg)
 
 | Field | Description |
 | --- | --- |
@@ -205,14 +224,14 @@ There are three role-based access levels for Jobs:
 The 'Kubernetes Resources' tab will be available only if you have super-admin permissions.
 {% endhint %}
 
-Here you can provide permission to view, inspect, manage, and delete resources in your clusters from [Devtron's Resource Browser](../../resource-browser.md).
+Here you can provide permission to view, inspect, manage, and delete resources in your clusters from [Devtron's Resource Browser](../../resource-browser/README.md).
 
 To grant Kubernetes resource permission, click **Add permission**.
 
-![Figure 12a: Adding Permissions for Kubernetes Resources](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/k8s-perm1.jpg)
+![Figure 13a: Adding Permissions for Kubernetes Resources](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/k8s-resources-1.jpg)
 
 
-![Figure 12b: Granting Permissions for Kubernetes Resources](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/k8s-perm2.jpg)
+![Figure 13b: Granting Permissions for Kubernetes Resources](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/k8s-resources-2.jpg)
 
 | Field | Description |
 | --- | --- |
@@ -246,7 +265,7 @@ The 'Chart Groups' tab will be available only if the [CI/CD module](../../integr
 
 Here you can grant your user the permissions for accessing Chart Groups. Note that you can only give users the permission to either create chart groups or edit them, but not both.
 
-![Figure 13: Granting Chart Group Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/chart-group-perm.jpg)
+![Figure 14: Granting Chart Group Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/chart-groups.jpg)
 
 | Action | Permissions |
 | :---   | :---         |
@@ -269,6 +288,108 @@ Here you can grant your user the permissions for accessing Chart Groups. Note th
 
 ---
 
+## Access Manager [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
+### Can Manage Access For All Roles (Toggle)
+
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a [Super Admin](#grant-super-admin-permission) can enable the **Can manage access for all roles** toggle for other users.
+
+{% endhint %}
+
+![Figure 15: 'Can manage access for all roles' Toggle](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/cmafar-highlighted.jpg)
+
+By enabling the **Can manage access for all roles** toggle, you can grant a user the permission to manage access for all roles across Devtron apps, Helm Apps, Jobs, Kubernetes Resources, and Chart Groups. However, they cannot create new users. 
+
+By default, this toggle is disabled. 
+
+{% hint style="warning" %}
+
+### Important Note
+
+If you enable the **Can manage access for all roles** toggle for a user, then that user can modify permissions of all the users including super-admins.
+
+{% endhint %}
+
+### Access Manager (Devtron Apps)
+
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only [Super-Admins](#grant-super-admin-permission) can grant an **Access Manager** role.  
+
+{% endhint %}
+
+![Figure 16: Access Manager](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/access-manager-highlighted.jpg)
+
+Enabling **Access Manager** for a user allows that user to further grant or change permissions of existing users.
+
+{% hint style="warning" %}
+
+### Important Note
+
+An Access Manager cannot create other Access Managers or add new users. Creation of new users and Access Manager is restricted only to Super-Admins. 
+
+{% endhint %}
+
+A user who is an Access Manager can grant or change permissions for other existing users only within the permissions assigned to them under the **Access Manager** role in the **Role** drop-down box. For example, refer to the tables below to understand what an Access Manager (User A) is allowed and not allowed to do with the permissions of an existing user (User B).
+
+| Users | Base Role(s) | Access Manager Role(s) |
+|:-----------------------|:----|:------|
+| User A | Admin | View Only |
+| User B | Manager | Not Applicable |
+
+| What's Allowed | What's Not Allowed |
+|:----|:------|
+| **For User A:** <br> Changing User B's **Manager** role to **View Only** role (Manager → View Only) |<ul><li>Reverting to User B's **Manager** role (View Only → Manager)</li><li>Changing User B's **Manager** role to any other role, except for **View Only**</li><li>Performing operations beyond the base role (i.e., **Admin**)</li><li>Modifying Super-Admin permissions</li></ul>|
+| **For User B:** <br> Perform the operations under the scope of **Manager** role across Devtron | <ul><li>Manage user access for other users</li><li>Perform operations beyond the base role (i.e., **Manager**)</li><li>Modifying Super-Admin permissions</li></ul>|
+
+{% hint style="info" %}
+
+### Note
+
+If you need to grant someone global control over modifying the roles of other users, enable the [Can manage access for all roles](#can-manage-access-for-all-roles-toggle) toggle instead.
+
+{% endhint %}
+
+When enabling the **Access Manager** toggle, make sure to select at least one permission from the checkboxes displayed beneath the toggle to ensure the role is active. 
+
+The following permissions are currently available in the Access Manager role:
+
+* **View only**: When selected, this permission allows the Access Manager to grant or revoke View Only access to other users.
+
+* **Build and Deploy**: When selected, this permission allows the Access Manager to grant or revoke Build and Deploy access to other users.
+
+* **Admin**: When selected, this permission allows the Access Manager to grant or revoke Admin access to other users.
+
+* **Config Approver**: When selected, this permission allows the Access Manager to grant or revoke Config Approver access to other users.
+
+* **Artifact promoter**: When selected, this permission allows the Access Manager to grant or revoke Artifact promoter access to other users.
+
+#### Role and Scope
+
+| Role                  | View | Create | Edit | Delete | Build & Deploy | Approve Images | Approve Config Change | Approve Artifacts | Manage User Access |
+|-----------------------|:----:|:------:|:----:|:------:|:--------------:|:--------------:|:--------------:|:----------------:|:----------------:|
+| **Access Manager**                 | ❌  | ❌     | ❌   | ❌     | ❌             | ❌             | ❌             | ❌               | ✅               |
+
+{% hint style="info" %}
+
+### Note
+
+[Raise a feature request on GitHub](https://github.com/devtron-labs/devtron/issues) if: 
+
+* You would like to see the **Deployment approver** permission also within the **Access Manager** role.
+
+* You would like to have the app-specific **Access Manager** role (currently available only for Devtron Apps) for Helm apps, Jobs, Kubernetes Resources, or Chart Groups as well. 
+
+{% endhint %}
+
+---
+
 ## Making Users Active/Inactive [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 {% hint style="warning" %}
@@ -279,7 +400,7 @@ Here you can grant your user the permissions for accessing Chart Groups. Note th
 
 When working with multiple collaborators in Devtron, you may need to deactivate users who no longer require access and reactivate them when needed. This applies to users of Devtron Apps, Helm Apps, Jobs, and Kubernetes Resources.
 
-![Figure 14: Active/Inactive Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/active-inactive-levels.jpg)
+![Figure 17: Active/Inactive Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/active-inactive.jpg)
 
 You can manage a user's active status at three levels:
 * [User-level](#at-user-level)
@@ -289,7 +410,7 @@ You can manage a user's active status at three levels:
 
 ### At User level
 
-![Figure 15: Active/Inactive User](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/user-level-activation.jpg)
+![Figure 18: Active/Inactive User](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/user-level.jpg)
 
 * **Active/Activate** - Use this option to activate a deactivated user while retaining their previous roles and permissions.
 * **Inactive/Inactivate** - Use this option to deactivate an existing active user and save the changes. If the user has an ongoing session, they will be logged out permanently on their next action or refresh.
@@ -297,7 +418,7 @@ You can manage a user's active status at three levels:
 
 ### At Permission Group level
 
-![Figure 16: Active/Inactive User from Permission Group](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/group-level-activation.jpg)
+![Figure 19: Active/Inactive User from Permission Group](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/permission-group-level.jpg)
 
 * **Active/Activate** - Use this option to allow permissions from the group to take effect for the user.
 * **Inactive/Inactivate** - Use this option to prevent permissions from the group from taking effect for the user. However, they can still log in/log out of Devtron if [active at the user-level](#at-user-level).
@@ -305,7 +426,7 @@ You can manage a user's active status at three levels:
 
 ### At Direct Permissions level
 
-![Figure 17: Active/Inactive User for Project Access](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/permission-level-activation.jpg)
+![Figure 20: Active/Inactive User for Project Access](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/direct-permissions-level.jpg)
 
 * **Active/Activate** - Use this option to grant the project/resource access to the user. 
 * **Inactive/Inactivate** - Use this option to revoke the project/resource access from the user. **Note**: The user will still be able to log in/log out of Devtron if [active at user-level](#at-user-level).
@@ -328,7 +449,7 @@ Direct user permissions cannot be edited if you're using [LDAP](./sso/ldap.md)/[
 
 You can edit the user permissions by clicking the edit icon. Click **Save** after editing the permissions.
 
-![Figure 18: Editing User Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/edit-permissions.gif)
+![Figure 21: Editing User Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/editing-permissions.gif)
 
 ---
 
@@ -343,7 +464,7 @@ You may download the user data of current users and deleted users in a CSV forma
 * Role
 * Timestamps for User Addition, Updation, and Deletion
 
-![Figure 19: Exporting User Data](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/export-users-csv-v2.gif)
+![Figure 22: Exporting User Data](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/export-users-csv-v2.gif)
 
 ---
 
@@ -357,6 +478,6 @@ You may download the user data of current users and deleted users in a CSV forma
 
 If you want to delete a user, click **Delete**.
 
-![Figure 20: Deleting a User](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-permissions/delete-user.jpg)
+![Figure 23: Deleting a User](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/delete-user.jpg)
 
 This will remove the user from the system along with all the permissions granted earlier. The user will no longer be able to log in to Devtron unless added again.

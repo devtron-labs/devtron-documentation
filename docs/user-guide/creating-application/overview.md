@@ -33,7 +33,26 @@ The left side of the **About** section displays essential information about the 
 | **Created by**|No|Displays the email address of the user who created the application.|
 | **Code Source** |No|Shows the connected Git repository or template used for the application.|
 | **Part of release track** |No|Lists all release track names linked to the app.<ul><li>Clicking a release opens its detailed view in the Software Distribution Hub.</li><li>This is an enterprise-only feature available as part of Devtron's SDH offering.</li></ul>|
-| **Tags** |Yes|Key-value pairs used for identifying and organizing the application.<br>Users can propagate tags as Kubernetes labels to enable filtering, bulk operations, and integrations with Kubernetes tools.<ol><li> Click the **Edit** icon next to **Tags**.</li><li> On the **Manage Tags** page, Click **+ Add tag** to add a new tag. <li>You can click **X** icon to delete an existing tag.</li><li>You can click the **propagation icon** <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg" height="10"> to propagate a tag (turns dark grey when propagated), click again to remove propagation.<br>[[Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-latest-1.jpg)]</li><li> Click **Save**, Configured Tags will reflect immediately under **Tags** in **About** Section </li></ol><ul><li>Tags can also be used to [configure PersistentVolumeClaims (PVCs)](#configure-persistentvolumeclaim-pvc) for build time optimization.</li></ul> |
+| **Tags** |Yes| Refer [Manage Tags](#manage-tags) |
+
+
+### Manage Tags
+
+Tags are key-value pairs used to identify and organize applications effectively. These tags can be propagated as Kubernetes labels, enabling filtering, bulk operations, and integrations with Kubernetes tools.
+
+1. Click the **Edit** icon next to **Tags**.
+2. On the **Manage Tags** page, click **+ Add tag** to create a new tag.
+3. To delete a tag, click the **X** icon next to it.
+4. To propagate a tag as a Kubernetes label, click the **Propagation** icon ![propagation icon](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg).  
+   - The icon turns dark grey when propagation is enabled.  
+   - Click again if you wish to disable propagation.  
+   
+  ![Snapshot of Manage Tags](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-latest-1.jpg)
+
+5. Click **Save**. The configured tags will appear under the **Tags** in the **About** section immediately.
+
+> **Note:** Tags can also be used to [configure PersistentVolumeClaims (PVCs)](#configure-persistentvolumeclaim-pvc) to optimize build time.
+
 
 ### Readme
 The right side of the **About** section contains a **Readme** area where you can maintain application-specific notes or documentation. The **Readme** supports Markdown formatting, making it easy to include formatted text, instructions, or important context related to the application.
@@ -136,7 +155,7 @@ You can apply this configuration using Devtron’s **Resource Browser**
 
 **Apply using Devtron’s Resource Browser**
 
-1.	Navigate to [Resource Browser](../resource-browser.md) in the Devtron sidebar.
+1.	Navigate to [Resource Browser](../resource-browser/README.md) in the Devtron sidebar.
 2.	Select the Cluster where your CI pipelines run.
 3.	Click **Create Resource**.
 4.	Paste the YAML into the editor and click **Create**.
