@@ -71,11 +71,11 @@ Instead of global profile, you can create custom profiles having different infra
    
 4. Click on your custom profile; a new page will open displaying the custom runner configuration which is inherited from global profile by default.
 
-  ![Figure 7: Editing Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/filled-profile-fields.jpg)
+    ![Figure 7: Editing Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/filled-profile-fields.jpg)
 
 5. To modify a specific configuration, click the **edit** icon next to that configurations, and turn off the **Inherit** toggle; this will stop that configuration from being inherited from global profile.
 
-  ![Figure 8: Configuring Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/new-profile-listed.jpg)̀
+    ![Figure 8: Configuring Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/new-profile-listed.jpg)
 
 6. Modify the configuration according to your use case and click **Save**.
 
@@ -98,9 +98,9 @@ To configure platform specific configurations:
 3. Check the **Use K8s driver for build** and click **+Add Target Platform**; a modal window will open.
 
 4. Under **Select a target platform**, select the platform for which you want to define platform specific configurations.
- 1. You can choose from `linux/amd64` or `linux/arm64`.
+     1. You can choose from `linux/amd64` or `linux/arm64`.
 
- 2. You can also type to add a new platform.
+     2. You can also type to add a new platform.
 
 5. Configure the resources for the specific platform and click **Save**.
 
