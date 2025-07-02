@@ -149,10 +149,11 @@ Use the following command to configure AWS S3 bucket for storing build logs and 
 
 *  **Configure using S3 IAM policy:**
 
->NOTE: Pleasee ensure that S3 permission policy to the IAM role attached to the nodes of the cluster if you are using the below command.
+>NOTE: Please ensure that S3 permission policy to the IAM role attached to the nodes of the cluster if you are using the below command.
 
 ```bash
 helm repo update
+
 helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 --reuse-values \
 --set installer.modules={cicd} \
@@ -235,8 +236,217 @@ helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 ```
 
 {% endtab %}
+
+{% tab title="S3-compatible Storage" %}
+Use the following command to configure S3-compatible storage (e.g., Longhorn) for storing build logs and cache.
+
+```bash
+helm repo update
+
+helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
+--reuse-values \
+--set configs.BLOB_STORAGE_PROVIDER=S3 \
+--set configs.DEFAULT_CACHE_BUCKET=demo-s3-bucket \
+--set configs.DEFAULT_CACHE_BUCKET_REGION=us-east-1 \
+--set configs.DEFAULT_BUILD_LOGS_BUCKET=demo-s3-bucket \
+--set configs.DEFAULT_CD_LOGS_BUCKET_REGION=us-east-1 \
+--set secrets.BLOB_STORAGE_S3_ACCESS_KEY=<access-key> \
+--set secrets.BLOB_STORAGE_S3_SECRET_KEY=<secret-key> \
+--set configs.BLOB_STORAGE_S3_ENDPOINT=<endpoint>
+```
+
+{% endtab %}
 {% endtabs %}
 
+---
+
+## Configuring NodeSelectors and Tolerations
+
+### Adding Custom Configurations
+
+When installing Devtron, you can specify `nodeSelectors` and `tolerations` to fine-tune your deployment. These configurations can be added using either additional `--set` flags or a separate `values.yaml` file.
+
+### Global vs. Component-level Configurations
+
+* **Global Configurations**: When specified at the global level, these settings apply to all Devtron microservices, except for ArgoCD.
+* **Component-Level Configurations**: You can also apply these settings to specific components individually.
+* **Priority**: If a configuration is specified at both the global and component levels, the component-level setting takes precedence for that particular component.
+
+### Using `--set` Flags
+
+You can use the `--set` flag to specify individual values directly in the Helm command.
+
+
+1. **nodeSelector**
+
+To set a nodeSelector:
+
+```bash
+helm install devtron devtron/devtron-operator \
+    --create-namespace --namespace devtroncd \
+    --set global.nodeSelector."kubernetes\.io/hostname"=node1
+```
+
+This example sets the nodeSelector to schedule pods on a node with the hostname "node1".
+
+
+2. **Tolerations**
+
+To set tolerations:
+
+```bash
+helm install devtron devtron/devtron-operator \
+    --create-namespace --namespace devtroncd \
+    --set global.tolerations[0].key=example-key \
+    --set global.tolerations[0].operator=Exists \
+    --set global.tolerations[0].effect=NoSchedule \
+    --set global.tolerations[0].value=value1
+```
+
+This example adds a tolerance for pods to be scheduled on nodes with the taint "example-key".
+
+
+### Using `values.yaml`
+
+In the values.yaml file of devtron chart, set the values of the following fields:
+
+```yaml
+global:
+  nodeSelector:
+    kubernetes.io/hostname: node1  # For nodeSelector
+  tolerations:
+    - key: example-key  # For tolerations
+      operator: Exists
+      value: "value1"
+      effect: NoSchedule
+```
+
+---
+
+## Set StorageClass for Devtron Microservices
+
+You can specify a StorageClass to be used by Devtron microservices' Persistent Volume Claims (PVCs) if a default StorageClass is not already configured in your cluster.
+
+### Checking for a Default StorageClass
+
+To check if your cluster has a default StorageClass, run:
+
+```bash
+kubectl get sc 
+```
+
+This command will list all available StorageClasses in your cluster, including the default storage class set (if any). The default StorageClass (if any) can be identified by the (default) label next to its name.
+
+### Setting a Default StorageClass
+
+If no StorageClass class is set as default, you can set one using the following command:
+
+```bash
+kubectl patch storageclass <storageclassname> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}
+```
+
+Or, if you do not want to change the default StorageClass or prefer to use a different StorageClass for Devtron microservices, specify it during installation using the `--set` flag:
+
+```bash
+helm install devtron devtron/devtron-operator \
+    --create-namespace --namespace devtroncd \
+    --set global.storageClass="<storageclassname>" # set your preferred StorageClass
+```
+
+Alternatively, you can specify the StorageClass in the values.yaml file by modifying the [following line in values.yaml](https://github.com/devtron-labs/devtron/blob/main/charts/devtron/values.yaml#L23).
+
+---
+
+## Configure External PostgreSQL Database
+
+You can configure Devtron to use an external PostgreSQL database (e.g., Amazon RDS, Google Cloud SQL, Azure PostgreSQL) instead of the default internal database.
+
+### Prerequisites
+
+* An external PostgreSQL server that is running and accessible
+* PostgreSQL version must be 14
+* The username Devtron uses to connect with PostgreSQL must be `postgres`
+* Network connectivity between Devtron and PostgreSQL server
+* DNS mapping must be completed for your PostgreSQL server
+
+### Database Setup
+
+Before installing Devtron, create the following databases on your external PostgreSQL server.
+
+1. **orchestrator** - Main Devtron orchestration database  
+2. **lens** - Lens service database  
+3. **git_sensor** - Git sensor service database  
+4. **casbin** - Authorization and policy database
+5. **clairv4** - (*Optional*) Required only if you are using [Clair](../../user-guide/integrations/vulnerability-scanning/clair.md) for image scanning instead of [Trivy](../../user-guide/integrations/vulnerability-scanning/trivy.md)
+
+{% hint style="warning" %}
+### Not sure how to create a PostgreSQL database?
+Here’s how you can create databases using popular providers:
+* [Amazon RDS instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html)
+* [Google Cloud SQL for PostgreSQL](https://cloud.google.com/sql/docs/postgres/create-instance#create-2nd-gen)
+* [Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server)
+{% endhint %}
+
+#### Database Creation Commands
+
+Connect to your PostgreSQL server as the `postgres` user and run the following commands:
+
+```sql
+-- Connect as postgres user
+CREATE DATABASE orchestrator;
+CREATE DATABASE lens;
+CREATE DATABASE git_sensor;
+CREATE DATABASE casbin;
+
+-- Optional: Only if using Clair for image scanning
+CREATE DATABASE clairv4;
+```
+
+### Devtron Configuration for External DB
+
+{% hint style="warning" %}
+### Note
+Ensure the [required databases](#database-creation-commands) exist before proceeding.
+{% endhint %}
+
+When installing Devtron, you can specify your external PostgreSQL by using either of the following:
+* Updating `values.yaml` file
+* Passing `--set` flags during Helm installation
+
+#### Using `values.yaml` file
+
+You can specify the following parameters in your Devtron [values.yaml](https://github.com/devtron-labs/devtron/blob/main/charts/devtron/values.yaml#L12):
+
+```yaml
+externalPostgres:
+  enabled: true
+  # Password for the postgres user
+  PG_PASSWORD: "your_postgres_password"
+  # DNS endpoint of your PostgreSQL server
+  PG_ADDR: "your.postgres.endpoint"
+```
+
+#### Using `--set` flags
+
+You can use the following `--set` flags when installing Devtron with Helm:
+
+```bash
+helm install devtron devtron/devtron-operator \
+  --set global.externalPostgres.enabled=true \
+  --set global.externalPostgres.PG_PASSWORD="your_postgres_password" \
+  --set global.externalPostgres.PG_ADDR="your.postgres.endpoint"
+```
+
+#### Example
+
+```bash
+helm install devtron devtron/devtron-operator \
+  --set global.externalPostgres.enabled=true \
+  --set global.externalPostgres.PG_PASSWORD="mySecurePassword123" \
+  --set global.externalPostgres.PG_ADDR="postgres.example.com"
+```
+
+---
 
 ## Secrets
 

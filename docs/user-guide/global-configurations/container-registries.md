@@ -44,7 +44,7 @@ You can configure a container registry using any registry provider of your choic
 
 Upon enabling this option, Devtron supports the pushing of helm charts to your OCI registry.  
 
-This is possible through [isolated clusters](../global-configurations/cluster-and-environments.md#add-isolated-cluster) that facilitate virtual deployments. In other words, it generates a helm package that you can use to [deploy your application in air-gapped clusters](../use-cases/airgapped-app-deployment.md).
+This is possible through [isolated clusters](../global-configurations/cluster-and-environments.md#add-isolated-cluster) that facilitate airgapped deployments. In other words, it generates a helm package that you can use to deploy your application in air-gapped clusters.
 
 If you have [configured your CD pipeline](../creating-application/workflow/cd-pipeline.md#deploying-to-an-isolated-environment) to push the helm package to your OCI registry, you can view the pushed helm package in your registry as shown below:
 
@@ -53,14 +53,15 @@ If you have [configured your CD pipeline](../creating-application/workflow/cd-pi
 ![Figure 3b: Pushed Helm Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/helm-chart.jpg)
 
 {% hint style="warning" %}
-Devtron doesn't support pushing helm packages to [chart repositories](../global-configurations/chart-repo.md)
-{% endhint %}
 
 ### Use as Chart Repository
 
 {% hint style="info" %}
+
 ### Prerequisite
+
 OCI registry with `Use as chart repository` option enabled. 
+
 {% endhint %}
 
 Unlike Helm repos, OCI registries do not have an index file to discover all the charts. If you have helm packages pushed to your OCI registry, you can that registry as a chart repository. 
@@ -75,11 +76,9 @@ Upon enabling this option, Devtron can use your OCI registry as the chart source
 
 Search your OCI registry in the list and click it. 
 
-In the **List of repositories** field, add your chart repo(s). The format should be `username/chartname`. You can [find the username](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/find-username.jpg) from your registry provider account.
+In the **List of repositories** field, add your chart repo(s). You can [find the username](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/find-username.jpg) from your registry provider account.
 
-![Figure 4: Adding Chart Repos](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/container-config.jpg)
 
----
 
 ## Supported Registry Providers
 
@@ -198,14 +197,14 @@ If you select **Use Registry Credentials**, the clusters will be auto-injected w
 
 Click **Save**.
 
-![Figure 5: Using Registry Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/use-registry-credentials-1.jpg)
+![Figure 4: Using Registry Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/use-registry-credentials-1.jpg)
 
 
 ### Specify Image Pull Secret
 
 You can create a Secret by providing credentials on the command line.
 
-![Figure 6: Using Image Pull Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/specify-image-pull-secret-1.jpg)
+![Figure 5: Using Image Pull Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/specify-image-pull-secret-1.jpg)
 
 Create this Secret and name it `regcred` (let's say):
 
@@ -228,3 +227,23 @@ Typing secrets on the command line may store them in your shell history unprotec
 {% endhint %}
 
 Enter the Secret name in the field and click **Save**.
+
+## Delete an OCI Registry
+
+If you prefer to delete an OCI registry, follow the instructions below:
+
+1. Navigate back to **Container/OCI Registry** page. 
+
+    ![Figure 6: Delete an OCI Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/delete-oci-registry.jpg)
+
+2. Select your preferred OCI registry. 
+
+3. Click the **Delete** button. The OCI registry will be deleted.
+
+    {% hint style="warning" %}
+
+    ### Important Note
+
+    If you used an OCI registry as a chart source, deleting the OCI registry will remove all its associated charts from the Chart Store.
+
+    {% endhint %}

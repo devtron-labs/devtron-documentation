@@ -4,8 +4,8 @@
 ### Prerequisite
 
 Install any one of the following integrations for scanning vulnerabilities:
-* [Clair](../../user-guide/integrations/clair.md)
-* Trivy
+* [Clair](../../user-guide/integrations/vulnerability-scanning/clair.md)
+* [Trivy](../../user-guide/integrations/vulnerability-scanning/trivy.md)
 {% endhint %}
 
 Devtron's CI pipeline provides a [**Scan for vulnerabilities**](../creating-application/workflow/ci-pipeline.md#scan-for-vulnerabilities) option as shown below. Once you enable this option, it will automatically scan the image for vulnerabilities.

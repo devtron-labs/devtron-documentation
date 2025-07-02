@@ -7,7 +7,7 @@ Prometheus is an open-source technology designed to provide monitoring and alert
 ### **Open Devtron dashboard and select chartstore from side panel**
 
 ### Search for Prometheus and choose the kube-prometheus-stack chart of prometheus-community repo.
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/prometheus-stack/prome.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/prometheus-stack/prometheus-chart.jpg)
 
 
 ### ***We have to configure below values in values.yaml***
@@ -34,5 +34,5 @@ serviceMonitorSelectorNilUsesHelmValues: false
 
 Here we can see the all the resources of this stack are in healthy state . 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/prometheus-stack/prometheus-demo.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/prometheus-stack/prometheus-demo.jpg)
 

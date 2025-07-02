@@ -11,7 +11,7 @@ The users can access the [configured external links](../../user-guide/global-con
 
 As shown in the screenshot, the external links appear on the `App-Details` level:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/app-details-external-link.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/app-details-external-link.jpg)
 
 
 3. You can hover around an external link (e.g. Grafana) to view the description.
@@ -28,8 +28,6 @@ You can also `Add Link` to add a new external link.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/app-config-external-link.jpg)
 
-
-
 ## Ingress Host URL
 
 You can view the Ingress Host URL and the Load Balancer URL on the **URLs** section on the **App Details**.
@@ -44,9 +42,12 @@ You can also copy the Ingress Host URL from the **URLs** instead of searching in
 3. Click **URLs**.
 4. You can view or copy the **URL** of the Ingress Host.
 
-
 **Note**: 
 * The Ingress Host URL will point to the load balancer of your application.
 * You can also view the `Service` name with the load balancer detail.
 
+## Deployment Visibility & Actions
 
+Devtron helps you to manage your **Canary** and **Blue-Green** deployments by providing visibility and easy controls to manage how new versions (releases) are shared with users.
+
+Refer [this doc](../creating-application/deployment-visibility.md) to know more.

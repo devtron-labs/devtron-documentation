@@ -2,6 +2,10 @@
 
 In this section, we describe the steps in detail on how you can install Devtron with CI/CD by enabling GitOps during the installation.
 
+{% hint style="success" %}
+Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
+{% endhint %}
+
 
 ## Before you begin
 
@@ -26,13 +30,13 @@ helm install devtron devtron/devtron-operator \
 **Note**: If you want to configure Blob Storage during the installation, refer [configure blob storage duing installation](#configure-blob-storage-during-installation).
 
 
-## Install Multi-Architecture Nodes (ARM and AMD)
+<!-- ## Install Multi-Architecture Nodes (ARM and AMD)
 
 To install Devtron on clusters with the multi-architecture nodes (ARM and AMD), append the Devtron installation command with `--set installer.arch=multi-arch`.
 
 **Note**: 
 
-* If you want to install Devtron for `production deployments`, please refer to our recommended overrides for [Devtron Installation](override-default-devtron-installation-configs.md).
+* If you want to install Devtron for `production deployments`, please refer to our recommended overrides for [Devtron Installation](override-default-devtron-installation-configs.md). -->
 
 
 ## Configure Blob Storage during Installation

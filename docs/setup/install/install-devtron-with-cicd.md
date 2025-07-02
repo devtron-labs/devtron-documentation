@@ -2,6 +2,10 @@
 
 In this section, we describe the steps in detail on how you can install Devtron with CI/CD integration.
 
+{% hint style="success" %}
+Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
+{% endhint %}
+
 ---
 
 ## Prerequisites
@@ -42,7 +46,7 @@ helm install devtron devtron/devtron-operator \
 If you want to configure Blob Storage during the installation, refer [configure blob storage duing installation](#configure-blob-storage-during-installation).
 {% endhint %}
 
----
+<!-- ---
 
 ## Install Multi-Architecture Nodes (ARM and AMD)
 
@@ -50,7 +54,7 @@ To install Devtron on clusters with the multi-architecture nodes (ARM and AMD), 
 
 {% hint style="info" %}
 If you want to install Devtron for `production deployments`, please refer our [recommended overrides](override-default-devtron-installation-configs.md) for Devtron Installation.
-{% endhint %}
+{% endhint %} -->
 
 ---
 

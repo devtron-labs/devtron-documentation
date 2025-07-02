@@ -12,11 +12,11 @@ The [User permissions](../../global-configurations/authorization/user-access.md)
 
 Go to **Global Configurations** → **Authorization** → **Permissions groups** → **Add group**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-1.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-1.jpg)
 
 Enter the `Group Name` and `Description`.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-2.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-2.jpg)
 
 You can either grant [super-admin](../../global-configurations/authorization/user-access.md#role-based-access-levels) permission to a user group or specific permissions to manage access for:
 
@@ -92,7 +92,7 @@ Once you have finished assigning the appropriate permissions for the groups, Cli
 
 ### Kubernetes Resources Permissions
 
-In `Kubernetes Resources` option, you can provide permission to view, inspect, manage, and delete resources in your clusters from [Kubernetes Resource Browser](../../../user-guide/resource-browser.md) page in Devtron. You can also create resources from the `Kubernetes Resource Browser` page.
+In `Kubernetes Resources` option, you can provide permission to view, inspect, manage, and delete resources in your clusters from [Kubernetes Resource Browser](../../../user-guide/resource-browser/README.md) page in Devtron. You can also create resources from the `Kubernetes Resource Browser` page.
 
 {% hint style="info" %}
 Only super admin users will be able to see `Kubernetes Resources` tab and provide permission to other users to access `Resource Browser`.

@@ -37,15 +37,15 @@ Before you begin, configure an application in the Devtron dashboard.
 1. On the Devtron dashboard, go to the `Global Configurations` from the left navigation pane.
 2. Select `External links`.
    
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/external-tools/external-links-welcome.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/external-links-v2.jpg)
 
 3. Select **Add Link**.
 4. On the `Add Link` page, select the external link (e.g. Grafana) which you want to link to your application from Webpage.
 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/external-add-link.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/external-add-link.jpg)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/external-link-specific-applications.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/external-link-specific-applications.jpg)
 
 The following fields are provided on the **Add Link** page:
 
@@ -128,7 +128,7 @@ On the `External Links` page, the configured external links can be filtered/sear
 
 Select `Global Configurations > External links`.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/manage-external-links.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/manage-external-links-v2.jpg)
 
 * Filter and search the links based on the link's name or a user-defined name.
 * Edit a link by selecting the edit icon next to an external link.

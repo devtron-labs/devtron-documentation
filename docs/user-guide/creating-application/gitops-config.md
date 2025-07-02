@@ -16,7 +16,7 @@ The application-level GitOps configuration offers the flexibility to add a custo
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin permission](../../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and application) to configure user-defined Git repo.
+Users need to have [Admin permission](../global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and application) to configure user-defined Git repo.
 {% endhint %}
 
 ### For Devtron Apps
@@ -49,7 +49,7 @@ GitOps repositories, whether auto-created by Devtron or added manually, are immu
 
 ### For Helm Apps
 
-You can [deploy a helm chart](../deploy-chart/overview-of-charts.md#deploying-chart) using either Helm or GitOps. Let's assume you wish to deploy `airflow` chart.
+You can [deploy a helm chart](../deploy-chart/deployment-of-charts.md#configure-and-deploy-charts) using either Helm or GitOps. Let's assume you wish to deploy `airflow` chart.
 
 1. Select the helm chart from the [Chart Store](../deploy-chart/README.md).
 
