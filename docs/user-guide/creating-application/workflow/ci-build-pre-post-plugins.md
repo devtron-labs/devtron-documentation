@@ -296,10 +296,6 @@ Some tasks require extra permissions for the node where Devtron is installed. Ho
 
 To enable the `Execute tasks in application environment` option, follow these steps:
 
-{% hint style="info" %}
-Make sure your cluster has [devtron-agent](../../global-configurations/cluster-and-environments.md#installing-devtron-agent) installed.
-{% endhint %}
-
 1. Go to the chart store and search for the devtron-in-clustercd chart.
 
   ![Figure 22: 'devtron-in-clustercd' Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/devtron-incluster-chart.jpg)
