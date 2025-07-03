@@ -67,21 +67,13 @@ If you have [configured your CD pipeline](../creating-application/workflow/cd-pi
 
 ![Figure 4b: Pushed Helm Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/helm-chart.jpg)
 
-{% hint style="warning" %}
-
-### Important Note
-
-Devtron does not support pushing Helm packages to chart repositories.
-
-{% endhint %}
-
 ### Use as Chart Repository
 
 {% hint style="info" %}
 
 ### Prerequisite
 
-An OCI registry with `Use as chart repository` option enabled. 
+An OCI registry containing Helm charts is added to the Container/OCI Registry page. 
 
 {% endhint %}
 

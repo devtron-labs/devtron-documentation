@@ -28,7 +28,7 @@ The plugin can be used at post CI, pre-CD, and post-CD. Moreover, you can also [
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/image-destination.jpg)
 
-    * **registry-name** is the name you gave to your container registry while adding it in [Global Configuration → OCI/Container Registry](../global-configurations/container-registries.md#add-container-registry).
+    * **registry-name** is the name you gave to your container registry while adding it in [Global Configuration → OCI/Container Registry](../global-configurations/container-registries.md#add-an-oci-registry).
 
     * **user-name** is the your account name registered with you container registry, e.g., DockerHub.
 

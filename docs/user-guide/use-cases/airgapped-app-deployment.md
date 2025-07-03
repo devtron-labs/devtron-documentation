@@ -20,7 +20,7 @@ In cases where the air-gapped cluster gets controlled access to the Internet, De
 
 2. **Client Action:**
    - The client can install the helm package from the OCI registry using their existing deployment tools, or use Devtron to [pull the Helm package](../global-configurations/container-registries.md#use-as-chart-repository) from the OCI registry to their [Chart Store](../deploy-chart/README.md).
-   - Once the Helm package is pulled, it [appears in the Chart Store](../deploy-chart/README.md#populating-your-charts-to-the-chart-store), allowing easy deployment to the air-gapped environment.
+   - Once the Helm package is pulled, it [appears in the Chart Store](../deploy-chart/README.md#fetch-and-populate-charts), allowing easy deployment to the air-gapped environment.
 
 
 ### Scenario 2: Air-Gapped Cluster has no Internet Access
@@ -34,6 +34,6 @@ In fully air-gapped environments with no Internet access, the vendor and client 
 
 2. **Client Action:**
    - The client manually uploads the Helm package to their air-gapped cluster by mounting the storage device.
-   - The client deploys the package to the environment using their deployment tools, CLI, or [Cluster Terminal in Devtron's Resource Browser](../resource-browser.md#cluster-terminal).
+   - The client deploys the package to the environment using their deployment tools, CLI, or [Cluster Terminal in Devtron's Resource Browser](../resource-browser/cluster-terminal.md).
 
 This method ensures that clients using air-gapped clusters, even without Internet access, can securely receive software updates.
