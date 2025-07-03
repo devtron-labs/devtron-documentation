@@ -120,6 +120,7 @@
   * [Discover and Manage Resources](user-guide/resource-browser/manage-resources.md)
   * [Nodes and Operations](user-guide/resource-browser/nodes.md)
   * [Pod Management and Debugging](user-guide/resource-browser/pods.md)
+  * [Resource Recommender](user-guide/resource-browser/resource-recommender.md)
   * [Cluster Terminal](user-guide/resource-browser/cluster-terminal.md)
   * [Add Monitoring Dashboards/Graphs](user-guide/resource-browser/monitoring-graphs.md)
   * [Run Kubectl Commands Locally](user-guide/resource-browser/kubectl-local.md) 
