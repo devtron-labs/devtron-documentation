@@ -49,7 +49,7 @@ GitOps repositories, whether auto-created by Devtron or added manually, are immu
 
 ### For Helm Apps
 
-You can [deploy a helm chart](../deploy-chart/overview-of-charts.md#deploying-chart) using either Helm or GitOps. Let's assume you wish to deploy `airflow` chart.
+You can [deploy a helm chart](../deploy-chart/deployment-of-charts.md#configure-and-deploy-charts) using either Helm or GitOps. Let's assume you wish to deploy `airflow` chart.
 
 1. Select the helm chart from the [Chart Store](../deploy-chart/README.md).
 
