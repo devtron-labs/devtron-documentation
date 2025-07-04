@@ -30,12 +30,12 @@ The **New Deployment** tab displays the following sections:
 
 This section expects four inputs from you:
 
-| Setting     | Description                                                | Options                   |
+| Setting     | Description                                                | Options                   | 
 | ----------- | ---------------------------------------------------------- | ------------------------- |
 | Environment | Select the environment where you want to deploy your application | (List of available environments)  |
 | Namespace   | Automatically populated based on the selected environment | Not Applicable                           |
 | Trigger     | When to execute the deployment pipeline                   | **Automatic**: Deployment triggers automatically when a new image completes the previous stage (build pipeline or another deployment pipeline) <br /> **Manual**: Deployment is not initiated automatically. You can trigger deployment with a desired image. |
-| Deployment Approach | How to deploy the application | **Helm** or **GitOps** <br /> Refer [GitOps](../../global-configurations/gitops.md)  |
+| Deployment Approach | How to deploy the application | **Helm**, [GitOps(ArgoCD)](../../integrations/argocd.md) or [Gitops (FluxCD)](../../integrations/fluxcd.md) <br/> Refer [GitOps](../../global-configurations/gitops.md) to learn more  |
 
 {% hint style="info" %}
 
