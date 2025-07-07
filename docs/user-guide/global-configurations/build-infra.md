@@ -36,12 +36,15 @@ You may click it to modify the following:
 |**CPU**|Processor core allocated to the build process. See [CPU units](#cpu-units).|
 |**Memory**|RAM allocated to the build process. See [memory units](#memory-units).|
 |**Build Timeout**|Max. time limit allocated to the build process. See [timeout units](#timeout-units).|
-|**Node Selector**|Node Selector are key-value pair labels to match Pods with Nodes. To learn more, refer to [nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) page.|
-|**Toleration**|A Toleration allow a pod to be scheduled on a Node that has a matching Taint. To learn more, refer to [Taints and Toleration](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) page.|
-|**ConfigMaps**|Key Value pairs to store non-sensitive configurations. Refer to [ConfigMaps](../creating-application/config-maps.md).|
-|**Secrets**|Key Value pairs to store sensitive configurations. Refer to [Secrets](../creating-application/secrets.md).|
+|**Node Selector** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a> |Node Selector are key-value pair labels to match Pods with Nodes. To learn more, refer to [nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) page.|
+|**Toleration** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a>|A Toleration allow a pod to be scheduled on a Node that has a matching Taint. To learn more, refer to [Taints and Toleration](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) page.|
+|**ConfigMaps** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a>|Key Value pairs to store non-sensitive configurations. Refer to [ConfigMaps](../creating-application/config-maps.md).|
+|**Secrets** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a>|Key Value pairs to store sensitive configurations. Refer to [Secrets](../creating-application/secrets.md).|
 
-**Note:** ConfigMaps and Secrets defined here will be used at the time of build, not during deployment.
+{% hint style="info" %}
+### Note
+ConfigMaps and Secrets defined here will be used at the time of build, not during deployment.
+{% endhint %}
 
 ![Figure 3: Editing Global Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/default-infra-config.jpg)
 
@@ -73,21 +76,41 @@ Instead of global profile, you can create custom profiles having different infra
 
     ![Figure 7: Editing Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/filled-profile-fields.jpg)
 
-5. To modify a specific configuration, click the **edit** icon next to that configurations, and turn off the **Inherit** toggle; this will stop that configuration from being inherited from global profile.
+5. To modify a specific configuration, click the **edit** icon next to that configuration, and turn off the **Inherit** toggle; this will stop that configuration from being inherited from global profile.
 
     ![Figure 8: Configuring Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/new-profile-listed.jpg)
 
-6. Modify the configuration according to your use case and click **Save**.
+6. Modify the resources according to your use case and click **Save**.
 
-7. Repeat step 5 and 6 to modify the required configurations.
+7. Repeat step 5 and 6 to define other resources.
 
 ---
 
-## Adding Platform Specific Configurations
+## Adding Platform Specific Configurations [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-In multi-architecture (multi-arch) builds, different platforms such as amd64, arm64, etc., require different resource configurations. Devtron allows defining platform specific configurations within a build infra profile. This ensures each build is executed with the right configurations specific to the target architecture, thus providing better performance and resource efficiency across multiple architecture.
+Modern applications often need to run on different hardware platforms (architectures), such as `amd64` (x86_64) and `arm64` to support cross-platform compatibility, cost and performance optimization, etc.
 
-You can only configure platform specific configurations for builds executed using the k8s driver and not using the container driver (where all builds run inside the CI runner pod).
+[Multi-architecture (multi-arch) builds](https://docs.docker.com/build/building/multi-platform/) enables you to build container images that work seamlessly across multiple platforms.
+
+Each platform may have unique requirements for resources like CPU and memory, or they may benefit from different configuration of resources. 
+
+Optimizing your CI builds for each platform ensures:
+   
+   * **Better performance**: Builds are tailored to the capabilities of the target architecture.
+   
+   * **Resource efficiency**: Prevents over or under-provisioning, saving costs and improving reliability.
+
+Devtron allows defining platform specific configurations within a build infra profile. This ensures each build is executed with the right configurations specific to the target platform, thus providing better performance and resource efficiency across multiple platforms.
+
+{% hint style="info" %}
+### K8s Driver v/s Container Driver
+ **Platform specific configurations** are only supported for builds executed using the k8s driver. 
+ 
+ When you use the K8s driver, each build for a target platform runs as its own pod within your Kubernetes cluster. This allows you to assign different CPU, memory, and other configurations for each target platform like `amd64` or `arm64`. 
+ 
+ If you use the container driver, all builds run inside a single CI runner pod and share the same configuration, regardless of the target platform while K8s driver.
+
+ {% endhint %}
 
 To configure platform specific configurations:
 
@@ -130,7 +153,11 @@ Once you create a profile, attach it to the intended applications, or else the [
 
     ![Figure 12: Confirming Profile Change](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/confirm-profile-change.jpg)
 
-**Tip**: If you missed creating a profile but selected your application(s), you can use the 'Create Profile' button. This will quickly open a new tab for creating a profile. Once done, you can return and click the refresh icon as shown below.
+
+{% hint style="success" %}
+### Tip
+If you missed creating a profile but selected your application(s), you can use the 'Create Profile' button. This will quickly open a new tab for creating a profile. Once done, you can return and click the refresh icon as shown below.
+{% endhint %}
 
 ![Figure 13: Quick Profile Creation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/quick-profile-creation.jpg)
 
