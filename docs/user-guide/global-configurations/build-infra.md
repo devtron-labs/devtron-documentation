@@ -27,7 +27,7 @@ Under **Profiles** tab, you will see the [Global Profile](#global-profile) and a
 
 This contains the default infra configuration applicable to all the applications, be it large or small.
 
-![Figure 2: Default Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/default-profile.jpg)
+![Figure 2: Global Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/default-profile.jpg)
 
 You may click it to modify the following:
 
@@ -88,11 +88,9 @@ Instead of global profile, you can create custom profiles having different infra
 
 ## Adding Platform Specific Configurations [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-Modern applications often need to run on different hardware platforms (architectures), such as `amd64` (x86_64) and `arm64` to support cross-platform compatibility, cost and performance optimization, etc.
+Modern applications often need to run on different hardware platforms (architectures), such as `amd64` (x86_64) and `arm64` to support cross-platform compatibility.
 
 [Multi-architecture (multi-arch) builds](https://docs.docker.com/build/building/multi-platform/) enables you to build container images that work seamlessly across multiple platforms.
-
-Each platform may have unique requirements for resources like CPU and memory, or they may benefit from different configuration of resources. 
 
 Optimizing your CI builds for each platform ensures:
    
@@ -100,7 +98,7 @@ Optimizing your CI builds for each platform ensures:
    
    * **Resource efficiency**: Prevents over or under-provisioning, saving costs and improving reliability.
 
-Devtron allows defining platform specific configurations within a build infra profile. This ensures each build is executed with the right configurations specific to the target platform, thus providing better performance and resource efficiency across multiple platforms.
+Each platform may have unique requirements for resources like CPU and memory, or they may benefit from different configuration of resources. Thus, Devtron allows defining platform specific configurations within a build infra profile. This ensures each build is executed with the right configurations specific to the target platform.
 
 {% hint style="info" %}
 ### K8s Driver v/s Container Driver
@@ -135,7 +133,7 @@ To configure platform specific configurations:
 
 ## Attaching Profile
 
-Once you create a profile, attach it to the intended applications, or else the [default profile](#default-profile) will remain applied. 
+Once you create a profile, attach it to the intended applications, or else the [global profile](#global-profile) will remain applied. 
 
 1. Go to the **Applications** tab.
 
@@ -185,7 +183,7 @@ You can edit or delete a custom profile using the respective icons as shown belo
 
 ![Figure 17: Edit and Delete Icons](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/edit-delete-icons-v2.jpg)
 
-If you delete a profile attached to one or more applications, the [default profile](#default-profile) will apply from the next build.
+If you delete a profile attached to one or more applications, the [global profile](#global-profile) will apply from the next build.
 
 ![Figure 18: Confirm Profile Deletion](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/delete-dialog.jpg)
 
