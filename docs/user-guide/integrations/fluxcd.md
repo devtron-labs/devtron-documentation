@@ -22,13 +22,13 @@ Devtron supports FluxCD to help you manage application deployments using GitOps.
 
 ## Installation
 
-To enable deployments through GitOps via FluxCD or if you want to migrate your existing FluxCD application to Devtron, you need to enable two specific feature flags for the specific cluster and then install FluxCD CRD on that specific cluster. To do so, follow the below steps:
+To enable deployments through GitOps via FluxCD or if you want to migrate your existing FluxCD application to Devtron, you need to enable two specific feature flags for the default cluster in Devtron and then install FluxCD CRD on that clusters in which you want to deploy the FluxCD applications. To do so, follow the below steps:
 
 ### Step 1: Enable Feature Flags
 
-1. Navigate to Devtron Resource Browser.
+1. Navigate to Devtron **Resource Browser**.
 
-2. Select the cluster for which you want to enable the feature flags.
+2. Select the default-cluster to enable the feature flags.
 
 3. Go to Config & Storage → ConfigMap, and select `dashboard-cm` ConfigMap
 
@@ -41,10 +41,14 @@ To enable deployments through GitOps via FluxCD or if you want to migrate your e
  FEATURE_LINK_EXTERNAL_FLUX_ENABLE: "true"
  ```
 
-5. Restart the Pod
-     1. Go to Resource Browser → (Select Cluster in which you have enabled the feature flags) → Workloads → Deployment.
+5. Rotate the pods: 
+     1. Go to Resource Browser → (Select Cluster in which you have enabled the feature flags) → Workloads → Pods.
 
-     2. Click the checkbox next to the `dashboard` Deployment workload and restart it using the ⟳ button.
+     2. Select the pod `dashboard-xxxx` in the devtroncd namespace.
+     
+     3. Select the Kebab menu (⋮) next to the `dashboard-xxxx` pod and click **Delete**.  
+     
+     4. The pod will spin up automatically again after deletion.
 
 6. Perform a hard refresh of the browser to clear the cache:
 
@@ -54,11 +58,11 @@ To enable deployments through GitOps via FluxCD or if you want to migrate your e
 
 ### Step:2 Install FluxCD CRD
 
-After enabling the feature flags, the next step is to install FluxCD CRD in the same cluster. To do so follow the below steps:
+After enabling the feature flags, the next step is to install FluxCD CRD in every cluster (including default cluster) in which you want to deploy the FluxCD applications. To do so follow the below steps:
 
 1. Navigate to Devtron Resource Browser.
 
-2. Select the same cluster for which you have enabled the feature flags.
+2. Select the cluster for which you have enabled the feature flags.
 
 3. Click the **Terminal** tab.
 
@@ -68,4 +72,4 @@ After enabling the feature flags, the next step is to install FluxCD CRD in the 
  kubectl apply -f https://github.com/fluxcd/flux2/releases/download/v0.35.0/install.yaml
  ```
 
-5. After the command executed successfully, you can now deploy or migrate your apps through GitOps (via FluxCD).
+5. After the command executed successfully, you can now deploy or migrate your applications through GitOps (via FluxCD) in that cluster.
