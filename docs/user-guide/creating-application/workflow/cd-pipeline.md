@@ -35,7 +35,7 @@ This section expects four inputs from you:
 | Environment | Select the environment where you want to deploy your application | (List of available environments)  |
 | Namespace   | Automatically populated based on the selected environment | Not Applicable                           |
 | Trigger     | When to execute the deployment pipeline                   | **Automatic**: Deployment triggers automatically when a new image completes the previous stage (build pipeline or another deployment pipeline) <br /> **Manual**: Deployment is not initiated automatically. You can trigger deployment with a desired image. |
-| Deployment Approach | How to deploy the application | **Helm**, [GitOps(ArgoCD)](../../integrations/argocd.md) or [Gitops (FluxCD)](../../integrations/fluxcd.md) <br/> Refer [GitOps](../../global-configurations/gitops.md) to learn more  |
+| Deployment Approach | How to deploy the application | **Helm**, [GitOps(ArgoCD)](../../integrations/argocd.md) or [Gitops (FluxCD)](../../integrations/fluxcd.md) <br> Refer [GitOps](../../global-configurations/gitops.md) to learn more  |
 
 {% hint style="info" %}
 
@@ -407,10 +407,15 @@ You can not only [view your external Argo CD apps](../../applications.md#view-ex
 {% hint style="warning" %}
 ### Prerequisites
 * Your app should be an Argo Helm app ([read about supported tools](https://argo-cd.readthedocs.io/en/stable/user-guide/application_sources/)).
+
 * It must have a single Git source and a single values file. By default, Devtron expects `app-values.yaml` so make sure it is committed to Git.
+
 * GitOps credentials required to commit in the Git repo should be configured in [Global Configurations](../../global-configurations/gitops.md).
+
 * The cluster containing your external Argo applications should be added to Devtron. Refer [Clusters & Environments](../../global-configurations/cluster-and-environments.md).
+
 * The target deployment cluster, its namespace, and its [environment](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster) should be added to Devtron.
+
 * Your Argo CD app must use the same chart type as your application. If needed, you can upload or select the appropriate chart in **Global Configurations** → **Deployment Charts**. Then save the chart type at [base configuration](../deployment-template.md) of your application.
 
 * The external Argo CD should have auto-sync enabled or an alternative syncing mechanism, as Devtron does not perform manual syncs.
@@ -446,6 +451,43 @@ This feature comes with certain mentioned limitations and expectations. If your 
 ### Note
 If you have configured [GitOps](../gitops-config.md) for your external Argo apps in Devtron, and later install the GitOps (ArgoCD) module from [Devtron Stack Manager](../../integrations/argocd.md) to deploy your Devtron apps/Helm apps via GitOps, you must once again save your GitOps and Cluster configurations after installation. This might prevent potential errors and ensure your GitOps deployments are functional.
 {% endhint %}
+
+### Migrate Flux CD Application
+
+You can not only [view your external Flux CD apps](../../applications.md#view-external-fluxcd-app-listing), but also manage their deployments using Devtron's CI/CD.
+
+{% hint style="warning" %}
+### Prerequisites
+
+ * Your app should be a Flux Helm release.
+ <!-- 
+ * Values will be read from spec.HelmReleaseValuesFiles if available else spec.ExtFluxValues -->
+ 
+ * GitOps credentials required to commit in the Git repo should be configured in [Global Configurations](../../global-configurations/gitops.md).
+ 
+ * The cluster containing your external Flux Helm release applications should be added to Devtron. Refer [Clusters & Environments](../../global-configurations/cluster-and-environments.md).
+ 
+ * The target deployment cluster, its namespace, and its [environment](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster) should be added to Devtron.
+ 
+ * The external Flux CD should have auto-sync enabled or an alternative syncing mechanism, as Devtron does not perform manual syncs.
+
+{% endhint %}
+
+1. Click **Flux CD Application** in 'Select type of application to migrate'.
+
+2. Select the external cluster containing your Flux apps, and select the Flux CD application you wish to migrate.
+
+  ![Figure 25: Choosing External Cluster and Flux App from Dropdown](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/choose-cluster-app2.jpg)
+
+3. The target cluster, its namespace, and environment would be visible. If the environment is not available, click **Add Environment**. This will open a new tab. Once you have [added the environment to your cluster](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster), return and click the refresh button.
+
+  ![Figure 26: Adding Environment to Target](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/add-env-argo.jpg)
+
+4. Select the trigger (**Automatic/Manual**) and click **Create Pipeline**. 
+
+  ![Figure 27: Creating CD Pipeline for Flux CD App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/deploy-mode2.jpg)
+
+5. Once the pipeline is created, you may go to [Build & Deploy](../../deploying-application/README.md) to trigger the pipelines. Your Flux CD app would be deployed using Devtron.
 
 ---
 
