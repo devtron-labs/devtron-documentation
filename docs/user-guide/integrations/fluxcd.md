@@ -22,7 +22,7 @@ Devtron supports FluxCD to help you manage application deployments using GitOps.
 
 ## Installation
 
-To enable deployments via FluxCD, you need to enable two specific feature flags for the specific cluster and then install flux controller on that specific cluster. To do so, follow the below steps:
+To enable deployments through GitOps via FluxCD or if you want to migrate your existing FluxCD application to Devtron, you need to enable two specific feature flags for the specific cluster and then install FluxCD CRD on that specific cluster. To do so, follow the below steps:
 
 ### Step 1: Enable Feature Flags
 
@@ -51,3 +51,21 @@ To enable deployments via FluxCD, you need to enable two specific feature flags 
      * Mac: Hold down Cmd and Shift and then press R.
 
      * Windows/Linux: Hold down Ctrl and then press F5.
+
+### Step:2 Install FluxCD CRD
+
+After enabling the feature flags, the next step is to install FluxCD CRD in the same cluster. To do so follow the below steps:
+
+1. Navigate to Devtron Resource Browser.
+
+2. Select the same cluster for which you have enabled the feature flags.
+
+3. Click the **Terminal** tab.
+
+4. Run the following command to install the FluxCD CRD.
+
+ ```bash
+ kubectl apply -f https://github.com/fluxcd/flux2/releases/download/v0.35.0/install.yaml
+ ```
+
+5. After the command executed successfully, you can now deploy or migrate your apps through GitOps (via FluxCD).
