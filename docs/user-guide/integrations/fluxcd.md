@@ -10,7 +10,7 @@ Devtron supports FluxCD to help you manage application deployments using GitOps.
 ### Additional Resources
  [What is FluxCD? A Quick Guide to GitOps with FluxCD](https://devtron.ai/blog/what-is-fluxcd/)
 
- [Choosing the Right GitOps Tool: ArgoCD vs. FluxCD](https://devtron.ai/blog/gitops-tool-selection-argo-cd-or-flux-cd/)
+ [Choosing the Right GitOps Tool: ArgoCD vs.FluxCD](https://devtron.ai/blog/gitops-tool-selection-argo-cd-or-flux-cd/)
 
 {% endhint %}
 
@@ -22,7 +22,7 @@ Devtron supports FluxCD to help you manage application deployments using GitOps.
 
 ## Installation
 
-To enable deployments through GitOps via FluxCD or if you want to migrate your existing FluxCD application to Devtron, you need to enable two specific feature flags for the default cluster in Devtron and then install FluxCD CRD on that clusters in which you want to deploy the FluxCD applications. To do so, follow the below steps:
+To enable deployments through GitOps via FluxCD or if you want to migrate your existing FluxCD application to Devtron, you need to enable two specific feature flags for the default cluster in Devtron and then install FluxCD controller on that clusters in which you want to deploy the FluxCD applications. To do so, follow the below steps:
 
 ### Step 1: Enable Feature Flags
 
@@ -56,9 +56,9 @@ To enable deployments through GitOps via FluxCD or if you want to migrate your e
 
      * Windows/Linux: Hold down Ctrl and then press F5.
 
-### Step:2 Install FluxCD CRD
+### Step:2 Install FluxCD Controller
 
-After enabling the feature flags, the next step is to install FluxCD CRD in every cluster (including default cluster) in which you want to deploy the FluxCD applications. To do so follow the below steps:
+After enabling the feature flags, the next step is to install FluxCD Controller in every cluster (including default cluster) in which you want to deploy the FluxCD applications. To do so follow the below steps:
 
 1. Navigate to Devtron Resource Browser.
 
@@ -66,7 +66,7 @@ After enabling the feature flags, the next step is to install FluxCD CRD in ever
 
 3. Click the **Terminal** tab.
 
-4. Run the following command to install the FluxCD CRD.
+4. Run the following command to install the FluxCD Controller.
 
  ```bash
  kubectl apply -f https://github.com/fluxcd/flux2/releases/download/v0.35.0/install.yaml
