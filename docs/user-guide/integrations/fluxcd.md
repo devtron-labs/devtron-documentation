@@ -28,7 +28,7 @@ To enable deployments through GitOps via FluxCD or if you want to migrate your e
 
 1. Navigate to Devtron **Resource Browser**.
 
-2. Select the default-cluster to enable the feature flags.
+2. Select the `default-cluster` to enable the feature flags.
 
 3. Go to Config & Storage → ConfigMap, and select `dashboard-cm` ConfigMap
 
@@ -41,14 +41,25 @@ To enable deployments through GitOps via FluxCD or if you want to migrate your e
  FEATURE_LINK_EXTERNAL_FLUX_ENABLE: "true"
  ```
 
-5. Rotate the pods: 
-     1. Go to Resource Browser → (Select Cluster in which you have enabled the feature flags) → Workloads → Pods.
+5. Restart the deployment: 
 
-     2. Select the pod `dashboard-xxxx` in the devtroncd namespace.
+ * For OSS Users:
+      1. Navigate to Devtron Resource Browser.
+
+      2. Select the cluster for which you have enabled the feature flags.
      
-     3. Select the Kebab menu (⋮) next to the `dashboard-xxxx` pod and click **Delete**.  
-     
-     4. The pod will spin up automatically again after deletion.
+      3. Restart the deployment using the following command:  
+
+           ```yaml
+           kubectl rollout restart deployment dashboard -n devtroncd 
+           ```
+
+ * For Enterprise Users:
+      1. Go to Resource Browser → (Select Cluster in which you have enabled the feature flags) → Workloads → Deployment
+
+      2. Click the checkbox next to the following Deployment workloads and restart them using the ⟳ button:
+           * devtron
+           * dashboard
 
 6. Perform a hard refresh of the browser to clear the cache:
 
