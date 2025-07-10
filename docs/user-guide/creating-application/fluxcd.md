@@ -25,6 +25,13 @@ Devtron supports FluxCD to help you manage application deployments using GitOps.
 
 ## Installation
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+User must have permissions to:
+  * Edit the ConfigMaps of 'default-cluster'
+  * Restart the pods
+{% endhint %}
+
 To enable deployments through GitOps via FluxCD or if you want to migrate your existing FluxCD application to Devtron, you need to enable two specific feature flags for the `default_cluster` in **Devtron** and then install FluxCD controller on that clusters in which you want to deploy the FluxCD applications. To do so, follow the below steps:
 
 ### Step 1: Enable Feature Flags
