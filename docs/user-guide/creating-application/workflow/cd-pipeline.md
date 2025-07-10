@@ -475,17 +475,19 @@ You can not only [view your external Flux CD apps](../../applications.md#view-ex
 
 1. Click **Flux CD Application** in 'Select type of application to migrate'.
 
+  ![Figure 28: Choosing 'Flux CD Application'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-fluxcd.jpg)
+
 2. Select the external cluster containing your Flux apps, and select the Flux CD application you wish to migrate.
 
-  ![Figure 25: Choosing External Cluster and Flux App from Dropdown](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/choose-cluster-app2.jpg)
+  ![Figure 29: Choosing External Cluster and Flux App from Dropdown](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-app.jpg)
 
 3. The target cluster, its namespace, and environment would be visible. If the environment is not available, click **Add Environment**. This will open a new tab. Once you have [added the environment to your cluster](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster), return and click the refresh button.
 
-  ![Figure 26: Adding Environment to Target](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/add-env-argo.jpg)
+  ![Figure 30: Target Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-target-cluster.jpg)
 
 4. Select the trigger (**Automatic/Manual**) and click **Create Pipeline**. 
 
-  ![Figure 27: Creating CD Pipeline for Flux CD App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/deploy-mode2.jpg)
+  ![Figure 31: Creating CD Pipeline for Flux CD App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-how-to-deploy.jpg)
 
 5. Once the pipeline is created, you may go to [Build & Deploy](../../deploying-application/README.md) to trigger the pipelines. Your Flux CD app would be deployed using Devtron.
 
@@ -499,7 +501,6 @@ This feature comes with certain mentioned limitations and expectations. If your 
 * Once onboarded to Devtron, users should manage the application only through Devtron and avoid making changes directly in Git or Argo CD. This is because Devtron might not monitor or reconcile the manual changes you make outside Devtron.
 {% endhint %}
 
-
 ---
 
 ## Updating CD Pipeline
@@ -508,7 +509,7 @@ You can update the deployment stages and the deployment strategy of the CD Pipel
 
 To update a CD Pipeline, go to the `App Configurations` section, Click on `Workflow editor` and then click on the CD Pipeline you want to Update.
 
-![Figure 28: Updating CD Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/ca-workflow-update.gif)
+![Figure 32: Updating CD Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/ca-workflow-update.gif)
 
 
 Make changes as needed and click on `Update Pipeline` to update this CD Pipeline.
@@ -539,7 +540,7 @@ Please follow the steps mentioned below to create sequential pipelines:
 2. To add another CD Pipeline sequentially after previous one, again click on + sign on the last CD pipeline.
 3. Similarly, you can add multiple CD pipelines by clicking + sign of the last CD pipeline, each deploying in different environments.
 
-![Figure 29: Adding Multiple CD Pipelines](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/sequential-workflow.jpg)
+![Figure 33: Adding Multiple CD Pipelines](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/sequential-workflow.jpg)
 
 {% hint style="info" %}
 ### Tip
