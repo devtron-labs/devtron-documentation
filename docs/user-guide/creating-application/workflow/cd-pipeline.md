@@ -35,7 +35,12 @@ This section expects four inputs from you:
 | Environment | Select the environment where you want to deploy your application | (List of available environments)  |
 | Namespace   | Automatically populated based on the selected environment | Not Applicable                           |
 | Trigger     | When to execute the deployment pipeline                   | **Automatic**: Deployment triggers automatically when a new image completes the previous stage (build pipeline or another deployment pipeline) <br /> **Manual**: Deployment is not initiated automatically. You can trigger deployment with a desired image. |
-| Deployment Approach | How to deploy the application | **Helm**, [GitOps(ArgoCD)](../../integrations/argocd.md) or [Gitops (FluxCD)](../../integrations/fluxcd.md) <br> Refer [GitOps](../../global-configurations/gitops.md) to learn more  |
+| Deployment Approach | How to deploy the application | **Helm**, [GitOps(ArgoCD)](../../integrations/argocd.md) or [Gitops (FluxCD)](../../creating-application/fluxcd.md) <br> Refer [GitOps](../../global-configurations/gitops.md) to learn more  |
+
+{% hint style="warning" %}
+### FluxCD Deployment Failed
+Make sure that FluxCD controller must be installed in the cluster in which you want to deploy the application. Refer [GitOps (Flux CD)](../../creating-application/fluxcd.md#step2-install-fluxcd-controller) to learn more.
+{% endhint %}
 
 {% hint style="info" %}
 
@@ -460,8 +465,10 @@ You can not only [view your external Flux CD apps](../../applications.md#view-ex
 ### Prerequisites
 
  * Your app should be a Flux Helm release.
- <!-- 
- * Values will be read from spec.HelmReleaseValuesFiles if available else spec.ExtFluxValues -->
+ 
+ * The Helm chart values will be referenced from the file (e.g., values.yaml) mentioned in the helm release at `spec.chart.spec.valuesFiles`, otherwise, they will be taken from `spec.extFluxValues`.
+
+   * Devtron only supports [Refer to values inside the chart](https://fluxcd.io/flux/guides/helmreleases/#refer-to-values-inside-the-chart) only.  
  
  * GitOps credentials required to commit in the Git repo should be configured in [Global Configurations](../../global-configurations/gitops.md).
  

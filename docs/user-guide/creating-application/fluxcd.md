@@ -40,12 +40,12 @@ To enable deployments through GitOps via FluxCD or if you want to migrate your e
 
 4. Edit the `dashboard-cm` ConfigMap by clicking **Edit live manifest**.
 
-      * To enable deployments via FluxCD, check if the below entries are present in the ConfigMap (create one if it doesn't exist) and select **Apply changes**.
+      * To enable deployments via FluxCD, check if the below entries are present in the ConfigMap (create one if it doesn't exist) and select **Apply changes**.<br>
 
-      ```yaml
-      FEATURE_FLUX_DEPLOYMENTS_ENABLE: " true"
-      FEATURE_LINK_EXTERNAL_FLUX_ENABLE: "true"
-      ```
+           ```yaml
+           FEATURE_FLUX_DEPLOYMENTS_ENABLE: " true"
+           FEATURE_LINK_EXTERNAL_FLUX_ENABLE: "true"
+           ```
 
       ![Figure 4: Editing Live Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-edit-live-manifest.jpg)
 
@@ -53,31 +53,31 @@ To enable deployments through GitOps via FluxCD or if you want to migrate your e
 
 5. Restart the deployment: 
 
- * For OSS Users:
-      1. Navigate to Devtron Resource Browser.
+     * For OSS Users:
+          1. Navigate to Devtron Resource Browser.
 
-      2. Select the cluster for which you have enabled the feature flags.
+          2. Select the cluster for which you have enabled the feature flags.
 
-      3. Click the **Terminal** tab.
-     
-      4. Restart the deployment using the following command:  
+          3. Click the **Terminal** tab.
+          
+          4. Restart the deployment using the following command:  
 
-           ```yaml
-           kubectl rollout restart deployment dashboard -n devtroncd 
-           ```
+               ```yaml
+               kubectl rollout restart deployment dashboard -n devtroncd 
+               ```
+               <br>
+               ![Figure 6: Restarting Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-restart-deployment.gif)
 
-           ![Figure 6: Restarting Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-restart-deployment.gif)
+     * For Enterprise Users:
+          1. Go to Resource Browser → (Select Cluster in which you have enabled the feature flags) → Workloads → Deployment
 
- * For Enterprise Users:
-      1. Go to Resource Browser → (Select Cluster in which you have enabled the feature flags) → Workloads → Deployment
+          2. Click the checkbox next to the following Deployment workloads and restart them using the ⟳ button:
 
-      2. Click the checkbox next to the following Deployment workloads and restart them using the ⟳ button:
+               * devtron
 
-           * devtron
+               * dashboard
 
-           * dashboard
-
-           ![Figure 7: Restart 'devtron' and 'dashboard' deployment workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/restart-deployments.jpg)
+               ![Figure 7: Restart 'devtron' and 'dashboard' deployment workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/restart-deployments.jpg)
 
 6. Perform a hard refresh of the browser to clear the cache:
 
@@ -95,11 +95,12 @@ After enabling the feature flags, the next step is to install FluxCD Controller 
 
 3. Click the **Terminal** tab.
 
-4. Run the following command to install the FluxCD Controller.
+4. Run the following command to install the FluxCD Controller:<br> 
 
  ```bash
  kubectl apply -f https://github.com/fluxcd/flux2/releases/download/v0.35.0/install.yaml
  ```
+ <br>
 
  ![Figure 8: Installing FluxCD Controller](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-install-controller.gif)
 
