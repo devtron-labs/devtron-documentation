@@ -1,10 +1,13 @@
 # GitOps (Flux CD)
  
-## Prerequisite
+{% hint style="info" %} 
+### Prerequisite
 
- Please make sure to install **Build and Deploy (CI/CD)** integration. To install it, click [here](../integrations/build-and-deploy-ci-cd.md).
+Please make sure to install **Build and Deploy (CI/CD)** integration. To install it, click [here](../integrations/build-and-deploy-ci-cd.md).
 
-Devtron supports FluxCD to help you manage application deployments using GitOps. With FluxCD, your Git repository becomes the single source of truth for your Kubernetes apps. Any changes you make in Git are automatically applied to your Kubernetes cluster by FluxCD. Learn more in the [FluxCD documentation](https://fluxcd.io/flux/)
+{% endhint %}
+
+Devtron supports FluxCD to help you manage application deployments using GitOps. With FluxCD, your Git repository becomes the single source of truth for your Kubernetes apps. Any changes you make in Git are automatically applied to your Kubernetes cluster by FluxCD. Refer the [FluxCD documentation](https://fluxcd.io/flux/) to learn more.
 
 {% hint style="info" %}
 ### Additional Resources
@@ -22,7 +25,7 @@ Devtron supports FluxCD to help you manage application deployments using GitOps.
 
 ## Installation
 
-To enable deployments through GitOps via FluxCD or if you want to migrate your existing FluxCD application to Devtron, you need to enable two specific feature flags for the default cluster in Devtron and then install FluxCD controller on that clusters in which you want to deploy the FluxCD applications. To do so, follow the below steps:
+To enable deployments through GitOps via FluxCD or if you want to migrate your existing FluxCD application to Devtron, you need to enable two specific feature flags for the `default_cluster` in **Devtron** and then install FluxCD controller on that clusters in which you want to deploy the FluxCD applications. To do so, follow the below steps:
 
 ### Step 1: Enable Feature Flags
 
@@ -53,7 +56,7 @@ To enable deployments through GitOps via FluxCD or if you want to migrate your e
 
 5. Restart the deployment: 
 
-     * For OSS Users:
+      * For OSS Users:
           1. Navigate to Devtron Resource Browser.
 
           2. Select the cluster for which you have enabled the feature flags.
@@ -66,24 +69,25 @@ To enable deployments through GitOps via FluxCD or if you want to migrate your e
                kubectl rollout restart deployment dashboard -n devtroncd 
                ```
                <br>
+
                ![Figure 6: Restarting Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-restart-deployment.gif)
 
-     * For Enterprise Users:
-          1. Go to Resource Browser → (Select Cluster in which you have enabled the feature flags) → Workloads → Deployment
+      * For Enterprise Users:
+           1. Go to Resource Browser → (Select Cluster in which you have enabled the feature flags) → Workloads → Deployment
 
-          2. Click the checkbox next to the following Deployment workloads and restart them using the ⟳ button:
+           2. Click the checkbox next to the following Deployment workloads and restart them using the ⟳ button:
 
-               * devtron
+                * devtron
 
-               * dashboard
+                * dashboard
 
-               ![Figure 7: Restart 'devtron' and 'dashboard' deployment workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/restart-deployments.jpg)
+                ![Figure 7: Restart 'devtron' and 'dashboard' deployment workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/restart-deployments.jpg)
 
 6. Perform a hard refresh of the browser to clear the cache:
 
-     * Mac: Hold down Cmd and Shift and then press R.
+      * Mac: Hold down Cmd and Shift and then press R.
 
-     * Windows/Linux: Hold down Ctrl and then press F5.
+      * Windows/Linux: Hold down Ctrl and then press F5.
 
 ### Step:2 Install FluxCD Controller
 

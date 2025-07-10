@@ -120,14 +120,14 @@ Make sure your cluster has [devtron-agent](../../global-configurations/cluster-a
 
 * After the deployment, edit the devtron-cm configmap and add the following key-value pair:
 
-  ```bash
+ ```bash
   ORCH_HOST: <host_url>/orchestrator/webhook/msg/nats
 
   Example:
 
   ORCH_HOST: http://xyz.devtron.com/orchestrator/webhook/msg/nats
 
-  ```
+ ```
 
   `ORCH_HOST` value should be same as of `CD_EXTERNAL_LISTENER_URL` value which is passed in values.yaml.
 
