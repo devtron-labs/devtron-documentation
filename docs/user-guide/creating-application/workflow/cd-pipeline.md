@@ -482,19 +482,19 @@ You can not only [view your external Flux CD apps](../../applications.md#view-ex
 
 1. Click **Flux CD Application** in 'Select type of application to migrate'.
 
-  ![Figure 28: Choosing 'Flux CD Application'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-fluxcd.jpg)
+   ![Figure 28: Choosing 'Flux CD Application'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-fluxcd.jpg)
 
 2. Select the external cluster containing your Flux apps, and select the Flux CD application you wish to migrate.
 
-  ![Figure 29: Choosing External Cluster and Flux App from Dropdown](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-app.jpg)
+   ![Figure 29: Choosing External Cluster and Flux App from Dropdown](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-app.jpg)
 
 3. The target cluster, its namespace, and environment would be visible. If the environment is not available, click **Add Environment**. This will open a new tab. Once you have [added the environment to your cluster](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster), return and click the refresh button.
 
-  ![Figure 30: Target Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-target-cluster.jpg)
+   ![Figure 30: Target Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-target-cluster.jpg)
 
 4. Select the trigger (**Automatic/Manual**) and click **Create Pipeline**. 
 
-  ![Figure 31: Creating CD Pipeline for Flux CD App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-how-to-deploy.jpg)
+   ![Figure 31: Creating CD Pipeline for Flux CD App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-how-to-deploy.jpg)
 
 5. Once the pipeline is created, you may go to [Build & Deploy](../../deploying-application/README.md) to trigger the pipelines. Your Flux CD app would be deployed using Devtron.
 
