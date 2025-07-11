@@ -27,7 +27,16 @@ Whereas, the 'lock deployment configuration' feature goes one step further. It i
 Users need to have super-admin permission to lock deployment keys.
 {% endhint %}
 
-1. Go to **Global Configurations** → **Lock Deployment Config**. Click **Configure Lock**.
+To lock deployment keys, you first need to create a profile and then apply it to the desired apps.
+
+{% hint style="Tip" %}
+### Who is a Lock Deployment Profile?
+A Lock Deployment profile is a template which specifies which keys in the deployment template can be edited or locked. It enables super-admins to manage which deployment template keys other users can modify. By using profiles, super-admins can manage edit access at different levels, such as, global, cluster, environment, application, or a combination of application and environment.
+
+This allows for better control by making sure critical deployment template keys are locked in sensitive environments (production), while giving flexibility to change deployment template keys in other less critical environments (QA, Staging, etc.).
+{% endhint %}
+
+1. Go to **Global Configurations** → **Lock Deployment Configuration**. Click **Configure Lock**.
 
     ![Figure 2: Configure Lock Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-deployment-config.jpg)
 
