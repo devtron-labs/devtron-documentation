@@ -13,7 +13,7 @@ A basic `Create deployment pipeline` window will pop up.
 ![Figure 2: Creating CD Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/new-cd-pipeline.jpg)
 
 Here, you get two tabs:
-* [New Deployment](#new-deployment) - Use this option to create new Helm/GitOps deployment.
+* [New Deployment](#new-deployment) - Use this option to create a new Helm/GitOps deployment.
 * [Migrate to Devtron](#migrate-to-devtron) - Use this option if you wish to migrate your existing Helm Release/Argo CD Apps to Devtron.
 
 ---
@@ -39,7 +39,7 @@ This section expects four inputs from you:
 
 {% hint style="warning" %}
 ### FluxCD Deployment Failed
-Make sure that FluxCD controller must be installed in the cluster in which you want to deploy the application. Refer [GitOps (Flux CD)](../../creating-application/fluxcd.md#step2-install-fluxcd-controller) to learn more.
+Make sure that the FluxCD controller is installed in the cluster in which you want to deploy the application. Refer [GitOps (Flux CD)](../../creating-application/fluxcd.md#step2-install-fluxcd-controller) to learn more.
 {% endhint %}
 
 {% hint style="info" %}
@@ -60,7 +60,7 @@ Devtron supports multiple deployment strategies depending on the [deployment cha
 
 ![Figure 3: Strategies Supported by Chart Type](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/chart-and-strategy.jpg)
 
-Refer [Deployment Strategies](#deployment-strategies) to know more about each strategy in depth.
+Refer to [Deployment Strategies](#deployment-strategies) to know more about each strategy in depth.
 
 The next section is [Advanced Options](#advanced-options) and it comes with additional capabilities. This option is available at the bottom of the `Create deployment pipeline` window. However, if you don't need them, you may proceed with a basic CD pipeline and click **Create Pipeline**. 
 
@@ -102,7 +102,7 @@ If you want to use some configuration files and secrets in pre-deployment stages
 
 4. **Execute tasks in application environment**
 
-These `Pre-deployment CD / Post-deployment CD` pods can be created in your deployment cluster or the devtron build cluster. If your scripts/tasks has some dependency on the deployment environment, you may run these pods in the deployment cluster. Thus, your scripts \(if any\) can interact with the cluster services that may not be publicly exposed.
+These `Pre-deployment CD / Post-deployment CD` pods can be created in your deployment cluster or the Devtron build cluster. If your scripts/tasks have some dependency on the deployment environment, you may run these pods in the deployment cluster. Thus, your scripts \(if any\) can interact with the cluster services that may not be publicly exposed.
 
 Some tasks require extra permissions for the node where Devtron is installed. However, if the node already has the necessary permissions for deploying applications, there is no need to assign them again. Instead, you can enable the **Execute tasks in application environment** option for the pre-CD or post-CD steps. By default, this option is disabled.
 
@@ -143,7 +143,7 @@ Make sure your cluster has [devtron-agent](../../global-configurations/cluster-a
 
   ![Figure 9: 'migration-incluster-cd' chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/migration-incluster-chart.jpg)
 
-* Edit the `cluster-name` and `secret name` values within the chart. The `cluster name` refers to the name used when adding the cluster in the global configuration and for which you are going to enable `Execute tasks in application environment` option.
+* Edit the `cluster-name` and `secret name` values within the chart. The `cluster name` refers to the name used when adding the cluster in the global configuration, and for which you are going to enable the `Execute tasks in application environment` option.
 
   ![Figure 10: Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/migration-incluster.jpg)
 
@@ -153,7 +153,7 @@ Make sure your cluster has [devtron-agent](../../global-configurations/cluster-a
 
 #### Pipeline Name
 
-Pipeline name will be auto-generated; however, you are free to modify the name as per your requirement.
+The pipeline name will be auto-generated; however, you are free to modify the name as per your requirement.
 
 <!-- #### Manual Approval for Deployment [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
@@ -177,7 +177,7 @@ To know more about the approval process, refer [Triggering CD](../../deploying-a
 
 #### Deployment Strategies
 
-A deployment strategy is a method of updating, downgrading, or creating new versions of an application. The options you see under deployment strategy depend on the selected chart type (see Fig 3). Below are some deployment configuration-based strategies.
+A deployment strategy is a method of updating, downgrading, or creating new versions of an application. The options you see under deployment strategy depend on the selected chart type (see Fig. 3). Below are some deployment configuration-based strategies.
 
 #### Blue-Green Strategy
 
@@ -336,9 +336,9 @@ Users need to have Admin permission or above (along with access to the environme
 
 ### Post-Deployment Stage
 
-If you need to run any actions for e.g., closure of Jira ticket, load testing or performance testing, you can configure such actions in the post-deployment stages.
+If you need to run any actions, e.g., closure of Jira ticket, load testing, or performance testing, you can configure such actions in the post-deployment stages.
 
-Post-deployment stages are similar to pre-deployment stages. The difference is, pre-deployment executes before the deployment, while post-deployment occurs after.
+Post-deployment stages are similar to pre-deployment stages. The difference is that pre-deployment executes before the deployment, while post-deployment occurs after.
 
 You can use [ConfigMap and Secrets](#configmaps--secrets) in post deployments as well. The option to execute tasks in application environment is available too.
 
