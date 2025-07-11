@@ -80,10 +80,10 @@ To inspect the resource recommendations, follow the steps below:
 
  | Type           |Description                              |
  |:---            |:---                                     |
- |`CPU REQUESTS`  |Minimum **CPU** allocated to the workload|
- |`CPU LIMITS`    |Maximum **CPU** allocatable to the workload|
- |`MEM REQUESTS`  |Minimum **Memory (RAM)** allocated to the workload|
- |`MEM LIMITS`    |Minimum **Memory (RAM)** allocatable to the workload|
+ |`CPU REQUESTS`  |**CPU** guaranteed to the workload|
+ |`CPU LIMITS`    |Maximum **CPU** allocatable to the workload, if available|
+ |`MEM REQUESTS`  |**Memory (RAM)** guaranteed to the workload|
+ |`MEM LIMITS`    |Maximum **Memory (RAM)** allocatable to the workload, if available|
 
 6. Hover the cursor over the specific resource of the particular workload to view the recommendation.
 
