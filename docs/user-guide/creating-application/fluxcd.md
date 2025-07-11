@@ -7,7 +7,7 @@ Please make sure to install **Build and Deploy (CI/CD)** integration. To install
 
 {% endhint %}
 
-Devtron supports FluxCD to help you manage application deployments using GitOps. With FluxCD, your Git repository becomes the single source of truth for your Kubernetes apps. Any changes you make in Git are automatically applied to your Kubernetes cluster by FluxCD. Refer the [FluxCD documentation](https://fluxcd.io/flux/) to learn more.
+Devtron supports FluxCD to help you manage application deployments using GitOps. With FluxCD, your Git repository becomes the single source of truth for your Kubernetes apps. Any changes you make in Git are automatically applied to your Kubernetes cluster by FluxCD. Refer to the [FluxCD documentation](https://fluxcd.io/flux/) to learn more.
 
 {% hint style="info" %}
 ### Additional Resources
@@ -27,12 +27,12 @@ Devtron supports FluxCD to help you manage application deployments using GitOps.
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-User must have permissions to:
+The user must have permissions to:
   * Edit the ConfigMaps of 'default-cluster'
   * Restart the pods
 {% endhint %}
 
-To enable deployments through GitOps via FluxCD or if you want to migrate your existing FluxCD application to Devtron, you need to enable two specific feature flags for the `default_cluster` in **Devtron** and then install FluxCD controller on that clusters in which you want to deploy the FluxCD applications. To do so, follow the below steps:
+To enable deployments through GitOps via FluxCD or if you want to migrate your existing FluxCD application to Devtron, you need to enable two specific feature flags for the `default_cluster` in **Devtron** and then install the FluxCD controller on those clusters in which you want to deploy the FluxCD applications. To do so, follow the steps below:
 
 ### Step 1: Enable Feature Flags
 
@@ -96,9 +96,9 @@ To enable deployments through GitOps via FluxCD or if you want to migrate your e
 
       * Windows/Linux: Hold down Ctrl and then press F5.
 
-### Step:2 Install FluxCD Controller
+### Step 2: Install FluxCD Controller
 
-After enabling the feature flags, the next step is to install FluxCD Controller in every cluster (including default cluster) in which you want to deploy the FluxCD applications. To do so follow the below steps:
+After enabling the feature flags, the next step is to install FluxCD Controller in every cluster (including the default cluster) in which you want to deploy the FluxCD applications. To do so, follow the steps below:
 
 1. Navigate to Devtron Resource Browser.
 
@@ -115,4 +115,4 @@ After enabling the feature flags, the next step is to install FluxCD Controller 
 
  ![Figure 8: Installing FluxCD Controller](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-install-controller.gif)
 
-5. After the command executed successfully, you can now deploy or migrate your applications through GitOps (via FluxCD) in that cluster.
+5. After the command is executed successfully, you can deploy or migrate your applications in that cluster through GitOps (via FluxCD).
