@@ -182,3 +182,5 @@ To modify the schedule of the **Resource Recommender** background job, follow th
 5. Restart the `orchestrator` or `devtron` pod to implement the changes.
 
       ![Figure 19: Restarting Pods](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-restart-pod.jpg)
+
+   
