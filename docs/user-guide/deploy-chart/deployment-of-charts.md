@@ -51,8 +51,8 @@ To configure and deploy Helm, follow the instructions below:
     | Method | Description |
     | :--- | :--- |
     | **Helm** | Select this option if you do not want version tracking for deployments and would like to directly deploy charts into the cluster | 
-    | **GitOps (Via Argo CD)** | Select this option if you want Git to track every deployment. As a prerequisite, the  [GitOps (Argo CD)](../../user-guide/integrations/argocd.md) module should be installed in your Devtron instance for this option to be displayed. <br> Refer to [GitOps](../global-configurations/gitops.md) for more information | 
-    | **GitOps (Via Flux CD)** | Select this option if you want Git to track every deployment, just like Argo CD. As a prerequisite, the Flux CD controller should be installed in your preferred cluster to deploy using GitOps (Via Flux CD). <br> Refer to [GitOps](../global-configurations/gitops.md) for more information | 
+    | **GitOps (Via Argo CD)** | Select this option if you want Git to track every deployment via Argo CD. As a prerequisite: <ul><li>The  [GitOps (Argo CD)](../../user-guide/integrations/argocd.md) module should be installed in your Devtron instance for this option to be displayed </li> <li>GitOps should be configured in the Global Configurations page. Refer to [GitOps](../global-configurations/gitops.md) for more information</li></ul> | 
+    | **GitOps (Via Flux CD)** | Select this option if you want Git to track every deployment via Flux CD. As a prerequisite: <ul> <li> The Flux CD controller should be installed in your preferred cluster to deploy using GitOps (Via Flux CD) </li> <li>GitOps should be configured in the Global Configurations page. Refer to [GitOps](../global-configurations/gitops.md) for more information </li> </ul>| 
     
     <!-- 
     The doc link for how to install the Flux CD controller (Arpit's doc) will be linked here as soon as it is published. 
@@ -70,7 +70,7 @@ The deployment method cannot be changed once the chart is deployed.
 
 9. Select the chart values you prefer to use in the **Chart Values** drop-down box. Kindly refer to [Preset Values](#preset-values).
 
-6. Click **Deploy Chart**.
+10. Click **Deploy Chart**.
 
 Once you have deployed a chart, you will be redirected automatically to the **App Details** tab where the deployment status is shown. 
 
