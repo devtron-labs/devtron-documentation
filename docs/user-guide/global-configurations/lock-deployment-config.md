@@ -27,7 +27,7 @@ Whereas, the 'lock deployment configuration' feature goes one step further. It i
 Users need to have super-admin permission to lock deployment keys.
 {% endhint %}
 
-To lock deployment keys, you first need to create a profile and then apply it to the desired apps.
+To lock deployment keys, you first need to create a profile and apply it to the specific deployment templates.
 
 {% hint style="Tip" %}
 ### Who is a Lock Deployment Profile?
@@ -36,25 +36,53 @@ A Lock Deployment profile is a template which specifies which keys in the deploy
 This allows for better control by making sure critical deployment template keys are locked in sensitive environments (production), while giving flexibility to change deployment template keys in other less critical environments (QA, Staging, etc.).
 {% endhint %}
 
-1. Go to **Global Configurations** → **Lock Deployment Configuration**. Click **Configure Lock**.
+### Creating Profile
 
-    ![Figure 2: Configure Lock Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-deployment-config.jpg)
+To create a profile, follow the below steps:
 
-2. (Optional) Click **Refer Values.YAML** to check which keys you wish to lock.
+1. Go to **Global Configurations** → **Lock Deployment Configuration**. Click **+ Create Profile**; a new **Create Profile** page will open.
+
+    ![Figure 2: Creating Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-deployment-config.jpg)
+
+2. Enter the **Name** (Required) and a **Description** (Optional) for the profile.  
+
+3. (Optional) Click **Refer Values.YAML** to check which keys you wish to lock.
+
+     * Select the relevant Chart type and its version to reference the keys.
 
     ![Figure 3: Values.YAML File](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/values-yaml.jpg)
 
-3. Enter the keys inside the editor on the left-hand side, e.g., `autoscaling.MaxReplicas`. Use <a href="https://goessner.net/articles/JsonPath/index.html" target="_blank">JSONpath expressions</a> to enter specific keys, lists, or objects to lock.
+4. Enter the keys inside the editor on the left-hand side, e.g., `autoscaling.MaxReplicas`. Use [JSONpath expressions](https://goessner.net/articles/JsonPath/index.html) to enter specific keys, lists, or objects to lock.
 
     ![Figure 4: Referring Values.YAML File for Locking Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/autoscaling-lock.jpg)
 
-4. Click **Save**. 
+5. Click **Save Changes**. 
 
     ![Figure 5: Saving Locked Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/saving-locked-keys.jpg)
 
-5. A confirmation dialog box would appear. Read it and click **Confirm**.
+6. Profile will be created, and available under the **Profiles** tab.
 
     ![Figure 6: Confirmation Dialog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/confirmation.jpg)
+
+### Applying Profile
+
+After creating a profile, the next step is to apply the profile to the specific deployment templates according to your use case. To apply a profile follow the below steps:
+
+1. Go to **Global Configurations** → **Lock Deployment Configuration**. Click **Apply Profile**; a new **Apply Profile** page will open.
+
+2. Select the profiles which you want to apply from the dropdown under **Select profiles to apply**.
+     
+     * You can select multiple Profiles.
+
+3. Select how you want to apply the profiles under **Apply selected profiles to deployment templates of**.
+
+     * There are 3 options you can choose from
+
+     |Method|Description|
+     |:---|:---|
+     |**Specific deployment templates**|Choose this method if you want to apply profile|
+     |**By match criteria**||
+     |**Global (All deployment templates)**||
 
 ---
 
