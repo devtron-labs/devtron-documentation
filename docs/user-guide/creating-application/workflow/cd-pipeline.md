@@ -504,8 +504,8 @@ You can not only [view your external Flux CD apps](../../applications.md#view-ex
 This feature comes with certain mentioned limitations and expectations. If your use case doesn't fit and goes beyond, feel free to [**open a feature request**](https://github.com/devtron-labs/devtron/issues).
  
 * The Git source type should not be branch HEAD.
-* The target deployment cluster’s endpoint in Devtron must be the same as the one configured in Argo CD.
-* Once onboarded to Devtron, users should manage the application only through Devtron and avoid making changes directly in Git or Argo CD. This is because Devtron might not monitor or reconcile the manual changes you make outside Devtron.
+* The target deployment cluster’s endpoint in Devtron must be the same as the one configured in FluxCD.
+* Once onboarded to Devtron, users should manage the application only through Devtron and avoid making changes directly in Git or FluxCD. This is because Devtron might not monitor or reconcile the manual changes you make outside Devtron.
 {% endhint %}
 
 ---
