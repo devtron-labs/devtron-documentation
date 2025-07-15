@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This document helps you deploy, update, upgrade, disable, and delete charts.
+This document helps you deploy, update, upgrade, disable, and delete Helm charts.
 
 ---
 
@@ -52,11 +52,7 @@ To configure and deploy Helm, follow the instructions below:
     | :--- | :--- |
     | **Helm** | Select this option if you do not want version tracking for deployments and would like to directly deploy charts into the cluster | 
     | **GitOps (Via Argo CD)** | Select this option if you want Git to track every deployment via Argo CD. As a prerequisite: <ul><li>The  [GitOps (Argo CD)](../../user-guide/integrations/argocd.md) module should be installed in your Devtron instance for this option to be displayed </li> <li>GitOps should be configured in the Global Configurations page. Refer to [GitOps](../global-configurations/gitops.md) for more information</li></ul> | 
-    | **GitOps (Via Flux CD)** | Select this option if you want Git to track every deployment via Flux CD. As a prerequisite: <ul> <li> The Flux CD controller should be installed in your preferred cluster to deploy using GitOps (Via Flux CD) </li> <li>GitOps should be configured in the Global Configurations page. Refer to [GitOps](../global-configurations/gitops.md) for more information </li> </ul>| 
-    
-    <!-- 
-    The doc link for how to install the Flux CD controller (Arpit's doc) will be linked here as soon as it is published. 
-    -->
+    | **GitOps (Via Flux CD)** | Select this option if you want Git to track every deployment via Flux CD. As a prerequisite: <ul> <li> The Flux CD controller [should be installed](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-install-controller.gif) in your preferred cluster to deploy using GitOps (Via Flux CD) </li> <li>GitOps should be configured in the Global Configurations page. Refer to [GitOps](../global-configurations/gitops.md) for more information </li> </ul>| 
 
 {% hint style="warning" %}
 
