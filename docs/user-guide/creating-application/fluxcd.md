@@ -141,21 +141,31 @@ You can install FluxCD Controller via two ways:
 
 To install FluxCD controller via Chart Store, follow the below steps.
 
- 1. Add FluxCD controller repository, `https://fluxcd-community.github.io/helm-charts` in the chart repositories (if not already added) in Global Configurations. Refer [Chart Repositories](../global-configurations/chart-repo.md#add-chart-repository) to learn more. 
+ 1. Add FluxCD controller repository, `https://fluxcd-community.github.io/helm-charts` in the chart repositories (if not already added) in Global Configurations. Refer [Chart Repositories](../global-configurations/chart-repo.md#add-chart-repository) to learn more.
+
+       ![Figure 9: Adding FluxCD Chart Repository](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-add-chart-repo.gif) 
 
  2. Add a new environment in the cluster in which you want to deploy the application via FluxCD linked to namespace as `flux-system`. Refer [Clusters and Environments](../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster) to lean more.
 
+       ![Figure 10: Adding Environment linked to 'flux-system' namespace](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-add-env.gif) 
+
  3. Navigate to Chart Store and select the `flux2` chart.
+
+       ![Figure 11: Selecting 'flux2' Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-flux2.jpg) 
 
  4. Click **Configure and Deploy**.
 
- 5. Configure the following configurations
+       ![Figure 12: Deploying 'flux2' Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-deploy-chart.jpg) 
 
-  |Field Name|Description|
-  |:---|:---|
-  |**App Name**|Define a name for the chart.|
-  |**Project**|Select a project from the dropdown|
-  |**Deploy to Environment**|Select the environment which you have created in your preferred cluster linked to `flux-system` namespace.|
+ 5. Configure the following configurations:
+
+       |Field Name|Description|
+       |:---|:---|
+       |**App Name**|Define a name for the chart.|
+       |**Project**|Select a project from the dropdown|
+       |**Deploy to Environment**|Select the environment which you have created in your preferred cluster linked to `flux-system` namespace.|
+
+       ![Figure 13: Configuring 'flux2' Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-chart-config.jpg)  
 
  6. Click **Deploy** and the chart will be deployed.
 
