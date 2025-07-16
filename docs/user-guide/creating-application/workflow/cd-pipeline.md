@@ -39,7 +39,7 @@ This section expects four inputs from you:
 
 {% hint style="warning" %}
 ### FluxCD Deployment Failed
-Make sure that the FluxCD controller is installed in the cluster in which you want to deploy the application. Refer [GitOps (Flux CD)](../../creating-application/fluxcd.md#step2-install-fluxcd-controller) to learn more.
+Make sure that the FluxCD controller is installed in the cluster in which you want to deploy the application. Refer [GitOps (Flux CD)](../../creating-application/fluxcd.md#install-fluxcd-controller) to learn more.
 {% endhint %}
 
 {% hint style="info" %}

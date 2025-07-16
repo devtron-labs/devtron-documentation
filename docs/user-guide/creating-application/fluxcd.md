@@ -38,6 +38,12 @@ To enable deployments through GitOps via FluxCD, you need to enable a specific f
  |**Deployments via FluxCD**|`FEATURE_FLUX_DEPLOYMENTS_ENABLE: " true"`|This Flag will enable deployments through GitOps via FluxCD.<ul><li> After enabling this flag, you also need to install FluxCD controller in order to deploy applications successfully. Refer [Installing FluxCD Controller](#installing-fluxcd-controller) to know more.</li></ul>|
  |**Migrating existing FluxCD applications**|`FEATURE_LINK_EXTERNAL_FLUX_ENABLE: "true"`|This Flag will enable migrations for external FluxCD apps into Devtron.|
 
+ {% hint style="warning" %}
+ ### Deployment Strategies for FluxCD Deployments
+
+ Deployments through GitOps (via FluxCD) are supported only when using the `Deployment` or `Rollout` deployment strategies with the latest chart versions. Other deployment strategies are currently not supported. 
+ {% endhint %}
+
 ### Enabling Feature Flags
 
 1. Navigate to Devtron **Resource Browser**.
