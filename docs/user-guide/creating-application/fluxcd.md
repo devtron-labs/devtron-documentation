@@ -1,4 +1,4 @@
-# GitOps (Flux CD)
+# Enable GitOps Deployments with FluxCD
  
 {% hint style="info" %} 
 ### Prerequisite
