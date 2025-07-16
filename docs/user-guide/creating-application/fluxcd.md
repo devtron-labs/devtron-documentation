@@ -41,7 +41,7 @@ To enable deployments through GitOps via FluxCD, you need to enable a specific f
  {% hint style="warning" %}
  ### Deployment Strategies for FluxCD Deployments
 
- Deployments through GitOps (via FluxCD) are supported only when using the `Deployment` or `Rollout` deployment strategies with the latest chart versions. Other deployment strategies are currently not supported. 
+ Application deployments through GitOps (via FluxCD) are supported only when using the `Deployment` or `Rollout` deployment strategies with the latest chart versions. Other deployment strategies are currently not supported. 
  {% endhint %}
 
 ### Enabling Feature Flags

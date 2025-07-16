@@ -38,8 +38,11 @@ This section expects four inputs from you:
 | Deployment Approach <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a> | How to deploy the application | **Helm**, [GitOps(ArgoCD)](../../integrations/argocd.md) or [Gitops (FluxCD)](../../creating-application/fluxcd.md) <br> Refer [GitOps](../../global-configurations/gitops.md) to learn more  |
 
 {% hint style="warning" %}
-### FluxCD Deployment Failed
-Make sure that the FluxCD controller is installed in the cluster in which you want to deploy the application. Refer [GitOps (Flux CD)](../../creating-application/fluxcd.md#install-fluxcd-controller) to learn more.
+ ### FluxCD Deployment Failed
+ * Make sure that the FluxCD controller is installed in the cluster in which you want to deploy the application. Refer [GitOps (Flux CD)](../../creating-application/fluxcd.md#install-fluxcd-controller) to learn more.
+
+ * Application deployments through GitOps (via FluxCD) are supported only when using the `Deployment` or `Rollout` deployment strategies with the latest chart versions. Other deployment strategies are currently not supported. 
+ 
 {% endhint %}
 
 {% hint style="info" %}
