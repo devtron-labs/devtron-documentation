@@ -176,6 +176,7 @@
     * [Terraform CLI](user-guide/plugins/terraform-cli.md)
     * [Vulnerability Scanning](user-guide/plugins/vulnerability-scanning.md)
 * [Using Devtron Intelligence](user-guide/devtron-intelligence.md)
+* [Enable GitOps Deployments with FluxCD](user-guide/creating-application/fluxcd.md)
 
 ## Resources
 
