@@ -59,21 +59,24 @@ To enable deployments through GitOps via FluxCD, you need to enable a specific f
       ![Figure 3: Selecting 'dashboard-cm'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-dashboard-cm.jpg)
 
 4. Edit the `dashboard-cm` ConfigMap by clicking **Edit live manifest**.
-       1. To enable deployments via FluxCD, check if the below entries are present in the ConfigMap (create one if it doesn't exist) and select **Apply changes**.<br>
 
-             ```yaml
-             FEATURE_FLUX_DEPLOYMENTS_ENABLE: " true"
-             ```
+      1. To enable deployments via FluxCD, check if the below entries are present in the ConfigMap (create one if it doesn't exist) and select **Apply changes**.<br>
 
-       2. To enable migration for external FluxCD applications, check if the below entries are present in the ConfigMap (create one if it doesn't exist) and select **Apply changes**.<br>
+            ```yaml
+            FEATURE_FLUX_DEPLOYMENTS_ENABLE: " true"
+            ```
 
-             ```yaml
-             FEATURE_LINK_EXTERNAL_FLUX_ENABLE: "true"
-             ```
+      2. To enable migration for external FluxCD applications, check if the below entries are present in the ConfigMap (create one if it doesn't exist) and select **Apply changes**.<br>
 
-       ![Figure 4: Editing Live Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-edit-live-manifest.jpg)
+            ```yaml
+            FEATURE_LINK_EXTERNAL_FLUX_ENABLE: "true"
+            ```
+      
+      <br>
+      
+      ![Figure 4: Editing Live Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-edit-live-manifest.jpg)
 
-       ![Figure 5: Adding Feature Flags](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-add-flags.jpg)
+      ![Figure 5: Adding Feature Flags](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-add-flags.jpg)
 
 5. Restart the deployment: 
       1. For OSS Users:
@@ -91,13 +94,10 @@ To enable deployments through GitOps via FluxCD, you need to enable a specific f
                <br>
 
                ![Figure 6: Restarting Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-restart-deployment.gif)
-
       2. For Enterprise Users:
            1. Go to Resource Browser → (Select Cluster in which you have enabled the feature flags) → Workloads → Deployment
 
-           2. Click the checkbox next to the following Deployment workloads and restart them using the ⟳ button:
-
-                * `dashboard`
+           2. Click the checkbox next to the `dashboard` Deployment workloads and restart them using the ⟳ button.
 
                 ![Figure 7: Restart 'dashboard' deployment workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/restart-deployments.jpg)
 
