@@ -76,7 +76,7 @@ After creating a profile, the next step is to apply the profile to the specific 
 
 3. Select how you want to apply the profiles under **Apply selected profiles to deployment templates of**.
 
-     * There are 3 options you can choose from
+     There are 3 options you can choose from
 
      |Method|Description|
      |:---|:---|
@@ -86,7 +86,7 @@ After creating a profile, the next step is to apply the profile to the specific 
  
      #### Specific deployment templates
 
-     This option allows you to apply the Lock Deployment profile to the deployment template of a specific application within a particular environment.
+     This option allows you to apply the lock deployment configuration profile to the deployment template of a specific application within a particular environment.
 
      To do so, follow the below steps;
 
@@ -98,10 +98,30 @@ After creating a profile, the next step is to apply the profile to the specific 
 
          |Filter|Description|
          |:---|:---|
-         |Project|This option allows you to filter the deployment templates based on **Projects**, and it will display all applications available in the selected projects along with their environments.|
-         |Application|This option allows to filter the deployment templates based on **Applications**, and it will display the selected applications along with their environments.|
-         |Cluster||
-         |Environment||
+         |**Project**|This option allows you to filter the deployment templates based on **Projects**, and it will display all applications available in the selected projects along with their environments.|
+         |**Application**|This option allows you to filter the deployment templates based on **Applications**, and it will display the selected applications along with their environments.|
+         |**Cluster**|This option allows you to filter the deployment templates based on **Cluster**, and it will display all applications in the selected clusters along with their environments.|
+         |**Environment**|This option allows you to filter the deployment templates based on **Environments**, and it will display all the applications in the selected Environments.|
+
+     3. Select the applications for which you want to apply the profile.
+
+     #### By Match Criteria 
+ 
+     This option allows you to apply the lock deployment configuration profile to the deployment templates of all the applications matching certain criteria.
+     
+     For example, 
+     
+     * Suppose, you want to apply a lock deployment configuration profile to all applications in a particular project, you can achieve this by selecting that project as the match criteria.
+     
+     * Now, let's say your use case is even more specific, suppose you want to apply the lock deployment configuration profile to all the application's deployment templates in a particular cluster, that also belongs to a specific project and are deployed in a certain environment, then, you can choose your required **Cluster**, **Project** and **Environment** as the match criteria. Devtron will then apply the profile only to those application's deployment templates that meet every single one of the criteria you have selected.
+
+     * If you have selected multiple options in a particular category, let's say you have selected multiple environments and a project as the match criteria, then the profile will apply to all the applications in that particular project that are deployed to any of the environments you have selected as the match criteria. 
+
+     #### Global (All deployment templates)
+
+     This option allows you to apply the lock deployment configuration profile to all the existing and future deployment templates across all the applications.
+
+4. Click **Save Changes** and the selected profiles will apply on the required deployment templates.
 ---
 
 ## Result
