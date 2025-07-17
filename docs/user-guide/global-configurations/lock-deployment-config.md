@@ -27,25 +27,113 @@ Whereas, the 'lock deployment configuration' feature goes one step further. It i
 Users need to have super-admin permission to lock deployment keys.
 {% endhint %}
 
-1. Go to **Global Configurations** → **Lock Deployment Config**. Click **Configure Lock**.
+To lock deployment keys, you first need to create a profile and apply it to the specific deployment templates.
 
-    ![Figure 2: Configure Lock Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-deployment-config.jpg)
+{% hint style="Tip" %}
+### Who is a Lock Deployment Profile?
+A Lock Deployment profile is a template which specifies which keys in the deployment template can be edited or locked. It enables super-admins to manage which deployment template keys other users can modify. By using profiles, super-admins can manage edit access at different levels, such as, global, cluster, environment, application, or a combination of application and environment.
 
-2. (Optional) Click **Refer Values.YAML** to check which keys you wish to lock.
+This allows for better control by making sure critical deployment template keys are locked in sensitive environments (production), while giving flexibility to change deployment template keys in other less critical environments (QA, Staging, etc.).
+{% endhint %}
+
+### Creating Profile
+
+To create a profile, follow the below steps:
+
+1. Go to **Global Configurations** → **Lock Deployment Configuration**. Click **+ Create Profile**; a new **Create Profile** page will open.
+
+    ![Figure 2: Creating Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-deployment-config.jpg)
+
+2. Enter the **Name** (Required) and a **Description** (Optional) for the profile.  
+
+3. (Optional) Click **Refer Values.YAML** to check which keys you wish to lock.
+
+     * Select the relevant Chart type and its version to reference the keys.
 
     ![Figure 3: Values.YAML File](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/values-yaml.jpg)
 
-3. Enter the keys inside the editor on the left-hand side, e.g., `autoscaling.MaxReplicas`. Use <a href="https://goessner.net/articles/JsonPath/index.html" target="_blank">JSONpath expressions</a> to enter specific keys, lists, or objects to lock.
+4. Enter the keys inside the editor on the left-hand side, e.g., `autoscaling.MaxReplicas`. Use [JSONpath expressions](https://goessner.net/articles/JsonPath/index.html) to enter specific keys, lists, or objects to lock.
 
     ![Figure 4: Referring Values.YAML File for Locking Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/autoscaling-lock.jpg)
 
-4. Click **Save**. 
+5. Click **Save Changes**. 
 
     ![Figure 5: Saving Locked Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/saving-locked-keys.jpg)
 
-5. A confirmation dialog box would appear. Read it and click **Confirm**.
+6. Profile will be created, and available under the **Profiles** tab.
 
     ![Figure 6: Confirmation Dialog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/confirmation.jpg)
+
+### Applying Profile
+
+After creating a profile, the next step is to apply the profile to the specific deployment templates according to your use case. To apply a profile follow the below steps:
+
+1. Go to **Global Configurations** → **Lock Deployment Configuration**. Click **Apply Profile**; a new **Apply Profile** page will open.
+
+2. Select the profiles which you want to apply from the dropdown under **Select profiles to apply**.
+     
+     * You can select multiple Profiles.
+
+3. Select how you want to apply the profiles under **Apply selected profiles to deployment templates of**.
+
+     There are 3 options you can choose from
+
+     |Method|Description|
+     |:---|:---|
+     |**Specific deployment templates**|Choose this option if you want to apply profile to specific deployment templates. Refer to [Specific deployment templates](#specific-deployment-templates) to learn more.|
+     |**By match criteria**|Choose this option to apply the profile based on specific criteria, such as applying it to the deployment templates of an entire project.|
+     |**Global (All deployment templates)**|Choose this option if you want to apply profile to all deployment template.|
+ 
+     #### Specific deployment templates
+
+     This option allows you to apply the lock deployment configuration profile to the deployment template of a specific application within a particular environment.
+
+     To do so, follow the below steps;
+
+     1. Select the **Specific deployment templates** option under **Apply selected profiles to deployment templates of**.
+
+     2. Apply a filter from the dropdown to view deployment templates.
+
+         * Deployment templates can be filtered by:
+
+         |Filter|Description|
+         |:---|:---|
+         |**Project**|This option allows you to filter the deployment templates based on **Projects**, and it will display all applications available in the selected projects along with their environments.|
+         |**Application**|This option allows you to filter the deployment templates based on **Applications**, and it will display the selected applications along with their environments.|
+         |**Cluster**|This option allows you to filter the deployment templates based on **Cluster**, and it will display all applications in the selected clusters along with their environments.|
+         |**Environment**|This option allows you to filter the deployment templates based on **Environments**, and it will display all the applications in the selected Environments.|
+
+     3. Select the applications for which you want to apply the profile.
+
+     #### By Match Criteria 
+ 
+     This option allows you to apply the lock deployment configuration profile to the deployment templates of all the applications matching certain criteria. To apply the lock deployment profile, follow the below steps:
+
+     1. Select the **By match criteria** option under **Apply selected profiles to deployment templates of**.
+
+     2. Select the match criteria by applying the filter from the dropdown based on: 
+
+         |Filter|Description|
+         |:---|:---|
+         |**Project**|This option allows you to filter the deployment templates based on **Projects**, and it will display all applications available in the selected projects along with their environments.|
+         |**Application**|This option allows you to filter the deployment templates based on **Applications**, and it will display the selected applications along with their environments.|
+         |**Cluster**|This option allows you to filter the deployment templates based on **Cluster**, and it will display all applications in the selected clusters along with their environments.|
+         |**Environment**|This option allows you to filter the deployment templates based on **Environments**, and it will display all the applications in the selected Environments.|
+
+         For example:
+
+         * Suppose, you want to apply a lock deployment configuration profile to all applications in a particular project, you can achieve this by selecting that project as the match criteria.
+        
+         * Now, let's say your use case is even more specific, suppose you want to apply the lock deployment configuration profile to all the application's deployment templates in a particular cluster, that also belongs to a specific project and are deployed in a certain environment, then, you can choose your required **Cluster**, **Project** and **Environment** as the match criteria. Devtron will then apply the profile only to those application's deployment templates that meet every single one of the criteria you have selected.
+
+         * If you have selected multiple options in a particular category, let's say you have selected multiple environments and a project as the match criteria, then the profile will apply to all the applications in that particular project that are deployed to any of the environments you have selected as the match criteria.
+
+
+     #### Global (All deployment templates)
+
+     This option allows you to apply the lock deployment configuration profile to all the existing and future deployment templates across all the applications. To apply the lock deployment profile to all deployment templates, Select the **Global (All deployment templates)** option under **Apply selected profiles to deployment templates of**.
+
+4. Click **Save Changes** and the selected profiles will apply on the required deployment templates.
 
 ---
 
