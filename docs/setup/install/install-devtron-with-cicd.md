@@ -3,19 +3,18 @@
 In this section, we describe the steps in detail on how you can install Devtron with CI/CD integration.
 
 {% hint style="success" %}
+
 Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
+
 {% endhint %}
 
----
+{% hint style="warning" %}
 
-## Prerequisites
+### Prerequisites
 
-Install [Helm](https://helm.sh/docs/intro/install/), if you have not installed it already.
+* Install [Helm](https://helm.sh/docs/intro/install/), if you have not installed it already.
 
-{% hint style="info" %}
-If you are using EKS version 1.23 or above, you must also install [aws-ebs-csi-driver](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html).
-
-Run the following command to install AWS EBS CSI driver using Helm:
+* If you are using EKS version 1.23 or above, you must also install [aws-ebs-csi-driver](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html). Run the following command to install AWS EBS CSI driver using Helm:
 
 ```bash
 helm repo add aws-ebs-csi-driver \
@@ -24,6 +23,7 @@ helm repo update \
 helm upgrade --install aws-ebs-csi-driver \
 --namespace kube-system aws-ebs-csi-driver/aws-ebs-csi-driver
 ```
+
 {% endhint %}
 
 ---
@@ -43,7 +43,9 @@ helm install devtron devtron/devtron-operator \
 ```
 
 {% hint style="info" %}
-If you want to configure Blob Storage during the installation, refer [configure blob storage duing installation](#configure-blob-storage-during-installation).
+
+If you want to configure Blob Storage during the installation, refer [Configure Blob Storage During Installation](#configure-blob-storage-during-installation).
+
 {% endhint %}
 
 <!-- ---
@@ -60,7 +62,7 @@ If you want to install Devtron for `production deployments`, please refer our [r
 
 ## Configure Blob Storage during Installation
 
-Configuring Blob Storage in your Devtron environment allows you to store build logs and cache.
+Configuring Blob Storage (optional step) in your Devtron environment allows you to store build logs and cache.
 In case, if you do not configure the Blob Storage, then:
 
 - You will not be able to access the build and deployment logs after an hour.
@@ -296,13 +298,22 @@ kubectl -n devtroncd get secret devtron-secret \
 ```
 </details>
 
-
 * If you want to uninstall Devtron or clean Devtron helm installer, refer our [uninstall Devtron](../install/uninstall-devtron.md).
 
-* Related to installaltion, please also refer [FAQ](../install/faq-on-installation.md) section also.
-
+* Related to installation, please also refer [FAQ](../install/faq-on-installation.md) section also.
 
 {% hint style="info" %}
-If you have any questions, please let us know on our Discord channel. [![Join Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)
+
+### Next Recommended Action
+
+When you install Devtron for the first time, it creates a default admin user and password (with unrestricted access to Devtron). You can use it to log in as an administrator.
+
+After the initial login, we recommend you set up any [Single Sign-On (SSO)](../../user-guide/global-configurations/sso-login.md) service like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (e.g., GitHub) to log in to the Dashboard.
+
 {% endhint %}
 
+{% hint style="info" %}
+
+If you have any questions, please let us know on our Discord channel. [![Join Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)
+
+{% endhint %}
