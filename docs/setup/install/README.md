@@ -1,19 +1,57 @@
 # Install Devtron
 
+## Introduction 
 
-Devtron is installed over a Kubernetes cluster. Once you create a Kubernetes cluster, Devtron can be installed standalone or along with CI/CD integration.
+Devtron is installed over a Kubernetes cluster. Once you [Create a Kubernetes Cluster](../getting-started/getting-started.md#create-a-kubernetes-cluster), Devtron can be installed standalone or along with CI/CD integration.
 
 {% hint style="success" %}
-Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
+
+Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Your Free Trial](https://license.devtron.ai/dashboard).
+
 {% endhint %}
 
-Choose one of the options as per your requirements:
+---
 
-| Installation Options | Description | When to choose  |
-| --- | --- | --- |
-| [Devtron with CI/CD](../install/install-devtron-with-cicd.md) | Devtron installation with the CI/CD integration is used to perform CI/CD, security scanning, GitOps, debugging, and observability. | Use this option to install Devtron with `Build and Deploy CI/CD` integration. |
-| [Helm Dashboard by Devtron](../install/install-devtron.md) | The Helm Dashboard by Devtron which is a standalone installation includes functionalities to deploy, observe, manage, and debug existing Helm applications in multiple clusters. You can also install integrations from [Devtron Stack Manager](../../user-guide/integrations/README.md). | Use this option if you are managing the applications via Helm and you want to use Devtron to deploy, observe, manage, and debug the Helm applications. |
-| [Devtron with CI/CD along with GitOps (Argo CD)](../install/install-devtron-with-cicd-with-gitops.md) | With this option, you can install Devtron with CI/CD by enabling GitOps during the installation. You can also install other integrations from [Devtron Stack Manager](../../user-guide/integrations/README.md). |  Use this option to install Devtron with CI/CD by enabling GitOps, which is the most scalable method in terms of version control, collaboration, compliance and infrastructure automation.  |
+{% hint style="warning" %}
+
+### Prerequisites 
+
+Ensure you meet [all the requirements](../getting-started/getting-started.md#prerequisites) for installing Modern Kubernetes Dashboard.
+
+{% endhint %}
+
+## Installation Methods 
+
+Choose one of the following installation methods as per your requirements:
+
+| | Local | MiniKube, MicroK8s, K3s, Kind | Cloud VM (AWS EC2, Azure, GCP) | Air-Gapped Environments | 
+| --- | --- | --- | --- | --- | 
+| **Without Integrations** | [Install without Integrations](../install/install-devtron.md)| [Install without Integrations](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#install-devtron-without-integrations)| [Install without Integrations](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#install-devtron-without-integrations-1) | [Install without Integrations](../install/install-devtron-in-airgapped-environment.md#install-devtron-without-any-integration)| 
+| **With Integrations** | | | | | 
+| CI/CD | [Install with CI/CD](../install/install-devtron-with-cicd.md) | [Install with CI/CD](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#install-devtron-with-cicd)| [Install with CI/CD](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#install-devtron-with-cicd-1) | [Install with CI/CD](../install/install-devtron-in-airgapped-environment.md#installing-devtron-with-cicd-mode) | 
+| GitOps (ArgoCD) | [Install with CI/CD & GitOps (Argo CD)](../install/install-devtron-with-cicd-with-gitops.md)| [Install with CI/CD & GitOps (Argo CD)](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#install-devtron-with-cicd-and-gitops-argo-cd)| [Install with CI/CD & GitOps (Argo CD)](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#install-devtron-with-cicd-and-gitops-argo-cd-1) | [Install with CI/CD & GitOps (Argo CD)](../install/install-devtron-in-airgapped-environment.md#install-devtron-with-cicd-mode-including-argocd)| 
 
 
-**Note**: If you have questions, please let us know on our discord channel. [![Join Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)
+{% hint style="info" %}
+
+If you are planning to install Devtron in production environments, kindly refer to [Production Infra Recommendations](../install/prod-infra.md). 
+
+{% endhint %}
+
+You can also install integrations from the [Devtron Stack Manager](/docs/user-guide/integrations/README.md).
+
+---
+
+## Upgrade Devtron
+
+You can upgrade Devtron in one of the following ways:
+
+* [Upgrade Devtron Using Helm](../upgrade/README.md)
+
+* [Upgrade Devtron from UI](../upgrade/upgrade-devtron-ui.md)
+
+{% hint style="info" %}
+
+If you have questions, please let us know on our Discord channel. [![Join us on Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)
+
+{% endhint %}

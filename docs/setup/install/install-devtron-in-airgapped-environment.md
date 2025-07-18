@@ -5,23 +5,9 @@
 In certain scenarios, you may need to deploy Devtron to a Kubernetes cluster that isn’t connected to the internet. Such air-gapped environments are used for various reasons, particularly in industries with strict regulatory requirements like healthcare, banking, and finance. This is because air-gapped environments aren't exposed to the public internet; therefore, they create a controlled and secure space for handling sensitive data and operations.
 
 {% hint style="success" %}
+
 Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
-{% endhint %}
 
-### Prerequisites
-
-1. Install `podman` or `docker` on the VM from where you're executing the installation commands.
-2. Get the latest image file
-
-```bash
-curl -LO https://raw.githubusercontent.com/devtron-labs/devtron/refs/heads/main/devtron-images.txt.source
-```
-
-3. Set the values of `TARGET_REGISTRY`, `TARGET_REGISTRY_USERNAME`, and `TARGET_REGISTRY_TOKEN`. This registry should be accessible from the VM where you are running the cloning script and the K8s cluster where you’re installing Devtron.
-
-{% hint style="warning" %}
-### Note 
-If you are using Docker, the TARGET_REGISTRY should be in the format `docker.io/<USERNAME>`
 {% endhint %}
 
 ---
@@ -41,8 +27,6 @@ export PLATFORM="linux/amd64"
 ```bash
 export PLATFORM="linux/arm64"
 ```
-
-
 
 1. Set the environment variables
 
@@ -205,6 +189,24 @@ This would download the tar file of the devtron-operator chart, Make sure to rep
 
 ### Install Devtron without any Integration
 
+{% hint style="warning" %}
+
+### Prerequisites 
+
+1. Install `podman` or `docker` on the VM from where you're executing the installation commands.
+
+2. Get the latest image file
+
+```bash
+curl -LO https://raw.githubusercontent.com/devtron-labs/devtron/refs/heads/main/devtron-images.txt.source
+```
+
+3. Set the values of `TARGET_REGISTRY`, `TARGET_REGISTRY_USERNAME`, and `TARGET_REGISTRY_TOKEN`. This registry should be accessible from the VM where you are running the cloning script and the K8s cluster where you’re installing Devtron.
+
+If you are using Docker, the TARGET_REGISTRY should be in the format `docker.io/<USERNAME>`
+
+{% endhint %}
+
 Use the below command to install Devtron without any Integrations
 
 1. Without `imagePullSecrets`:
@@ -216,8 +218,36 @@ Use the below command to install Devtron without any Integrations
     ```bash
     helm install devtron <devtron-chart-file> -n devtroncd --set global.containerRegistry="$TARGET_REGISTRY" --set global.imagePullSecrets[0].name=devtron-imagepull --set-string components.devtron.customOverrides.IS_AIR_GAP_ENVIRONMENT=true
     ```
+{% hint style="info" %}
+
+### Next Recommended Action
+
+When you install Devtron for the first time, it creates a default admin user and password (with unrestricted access to Devtron). You can use it to log in as an administrator.
+
+After the initial login, we recommend you set up any [Single Sign-On (SSO)](../../user-guide/global-configurations/sso-login.md) service like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (e.g., GitHub) to log in to the Dashboard.
+
+{% endhint %}
 
 ### Installing Devtron with CI/CD Mode
+
+{% hint style="warning" %}
+
+### Prerequisites 
+
+1. Install `podman` or `docker` on the VM from where you're executing the installation commands.
+
+2. Get the latest image file
+
+```bash
+curl -LO https://raw.githubusercontent.com/devtron-labs/devtron/refs/heads/main/devtron-images.txt.source
+```
+
+3. Set the values of `TARGET_REGISTRY`, `TARGET_REGISTRY_USERNAME`, and `TARGET_REGISTRY_TOKEN`. This registry should be accessible from the VM where you are running the cloning script and the K8s cluster where you’re installing Devtron.
+
+If you are using Docker, the TARGET_REGISTRY should be in the format `docker.io/<USERNAME>`
+
+{% endhint %}
+
 Use the below command to install Devtron with only the CI/CD module
 
 1. Without `imagePullSecrets`:
@@ -229,8 +259,35 @@ Use the below command to install Devtron with only the CI/CD module
     ```bash
     helm install devtron <devtron-chart-file> -n devtroncd --set installer.modules={cicd} --set global.containerRegistry="$TARGET_REGISTRY" --set global.imagePullSecrets[0].name=devtron-imagepull --set-string components.devtron.customOverrides.IS_AIR_GAP_ENVIRONMENT=true
     ```
+{% hint style="info" %}
+
+### Next Recommended Action
+
+When you install Devtron for the first time, it creates a default admin user and password (with unrestricted access to Devtron). You can use it to log in as an administrator.
+
+After the initial login, we recommend you set up any [Single Sign-On (SSO)](../../user-guide/global-configurations/sso-login.md) service like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (e.g., GitHub) to log in to the Dashboard.
+
+{% endhint %}
 
 ### Install Devtron with CICD Mode including Argocd
+
+{% hint style="warning" %}
+
+### Prerequisites 
+
+1. Install `podman` or `docker` on the VM from where you're executing the installation commands.
+
+2. Get the latest image file
+
+```bash
+curl -LO https://raw.githubusercontent.com/devtron-labs/devtron/refs/heads/main/devtron-images.txt.source
+```
+
+3. Set the values of `TARGET_REGISTRY`, `TARGET_REGISTRY_USERNAME`, and `TARGET_REGISTRY_TOKEN`. This registry should be accessible from the VM where you are running the cloning script and the K8s cluster where you’re installing Devtron.
+
+If you are using Docker, the TARGET_REGISTRY should be in the format `docker.io/<USERNAME>`
+
+{% endhint %}
 
 Use the below command to install Devtron with the CI/CD module and Argo CD
 
@@ -243,8 +300,18 @@ Use the below command to install Devtron with the CI/CD module and Argo CD
     ```bash
     helm install devtron <devtron-chart-file> --create-namespace -n devtroncd --set installer.modules={cicd} --set argo-cd.enabled=true --set global.containerRegistry="$TARGET_REGISTRY" --set argo-cd.global.image.repository="${TARGET_REGISTRY}/argocd" --set argo-cd.redis.image.repository="${TARGET_REGISTRY}/redis" --set global.imagePullSecrets[0].name=devtron-imagepull --set-string components.devtron.customOverrides.IS_AIR_GAP_ENVIRONMENT=true
     ```
+{% hint style="info" %}
+
+### Next Recommended Action
+
+When you install Devtron for the first time, it creates a default admin user and password (with unrestricted access to Devtron). You can use it to log in as an administrator.
+
+After the initial login, we recommend you set up any [Single Sign-On (SSO)](../../user-guide/global-configurations/sso-login.md) service like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (e.g., GitHub) to log in to the Dashboard.
+
+{% endhint %}
 
 ---
 
 ## Next Steps
+
 After installation, refer [Devtron installation documentation](https://docs.devtron.ai/install/install-devtron-with-cicd-with-gitops#devtron-dashboard) for further steps, including obtaining the dashboard URL and the admin password.
