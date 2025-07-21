@@ -12,24 +12,16 @@ Try Devtron Enterprise for free — unlock advanced features built for scale. [S
 
 ---
 
-{% hint style="warning" %}
-
-### Prerequisites 
-
-Ensure you meet [all the requirements](../getting-started/getting-started.md#prerequisites) for installing Modern Kubernetes Dashboard.
-
-{% endhint %}
-
 ## Installation Methods 
 
 Choose one of the following installation methods as per your requirements:
 
 | | Local | MiniKube, MicroK8s, K3s, Kind | Cloud VM (AWS EC2, Azure, GCP) | Air-Gapped Environments | 
 | --- | --- | --- | --- | --- | 
-| **Without Integrations** | [Install without Integrations](../install/install-devtron.md)| [Install without Integrations](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#install-devtron-without-integrations)| [Install without Integrations](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#install-devtron-without-integrations-1) | [Install without Integrations](../install/install-devtron-in-airgapped-environment.md#install-devtron-without-any-integration)| 
+| **Without Integrations** | [Install without Integrations](../install/install-devtron.md)| [Install without Integrations](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#installation-commands)| [Install without Integrations](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#installation-commands-1) | [Install without Integrations](../install/install-devtron-in-airgapped-environment.md#installation-commands)| 
 | **With Integrations** | | | | | 
-| CI/CD | [Install with CI/CD](../install/install-devtron-with-cicd.md) | [Install with CI/CD](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#install-devtron-with-cicd)| [Install with CI/CD](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#install-devtron-with-cicd-1) | [Install with CI/CD](../install/install-devtron-in-airgapped-environment.md#installing-devtron-with-cicd-mode) | 
-| GitOps (ArgoCD) | [Install with CI/CD & GitOps (Argo CD)](../install/install-devtron-with-cicd-with-gitops.md)| [Install with CI/CD & GitOps (Argo CD)](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#install-devtron-with-cicd-and-gitops-argo-cd)| [Install with CI/CD & GitOps (Argo CD)](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#install-devtron-with-cicd-and-gitops-argo-cd-1) | [Install with CI/CD & GitOps (Argo CD)](../install/install-devtron-in-airgapped-environment.md#install-devtron-with-cicd-mode-including-argocd)| 
+| CI/CD | [Install with CI/CD](../install/install-devtron-with-cicd.md) | [Install with CI/CD](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#installation-commands)| [Install with CI/CD](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#installation-commands-1) | [Install with CI/CD](../install/install-devtron-in-airgapped-environment.md#installation-commands) | 
+| GitOps (ArgoCD) | [Install with CI/CD & GitOps (Argo CD)](../install/install-devtron-with-cicd-with-gitops.md)| [Install with CI/CD & GitOps (Argo CD)](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#installation-commands)| [Install with CI/CD & GitOps (Argo CD)](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#installation-commands-1) | [Install with CI/CD & GitOps (Argo CD)](../install/install-devtron-in-airgapped-environment.md#installation-commands)| 
 
 
 {% hint style="info" %}

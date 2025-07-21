@@ -14,7 +14,7 @@ Try Devtron Enterprise for free — unlock advanced features built for scale. [S
 
 ### Prerequisites 
 
-Ensure you meet [all the requirements](../getting-started/getting-started.md#prerequisites) for installing Modern Kubernetes Dashboard.
+Ensure you meet [all the requirements](../getting-started/getting-started.md#prerequisites) for installing Devtron.
 
 {% endhint %}
 
@@ -262,12 +262,6 @@ Please wait until the installation is completed.
 
 When you install Devtron for the first time, it creates a default admin user and password (with unrestricted access to Devtron). You can use that credentials to log in as an administrator. 
 
-After the initial login, we recommend you set up any SSO service like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (let's say, GitHub) to log in to Devtron's dashboard.
-
-The section below will help you understand the process of getting the administrator credentials.
-
-### For Devtron version v0.6.0 and higher
-
 **Username**: `admin` <br>
 **Password**: Run the following command to get the admin password:
 
@@ -275,22 +269,6 @@ The section below will help you understand the process of getting the administra
 kubectl -n devtroncd get secret devtron-secret \
 -o jsonpath='{.data.ADMIN_PASSWORD}' | base64 -d
 ```
-
-<details>
-<summary>For Devtron version less than v0.6.0</summary>
-
-**Username**: `admin` <br>
-**Password**: Run the following command to get the admin password:
-
-```bash
-kubectl -n devtroncd get secret devtron-secret \
--o jsonpath='{.data.ACD_PASSWORD}' | base64 -d
-```
-</details>
-
-* If you want to uninstall Devtron or clean Devtron helm installer, refer our [uninstall Devtron](../install/uninstall-devtron.md).
-
-* Related to installation, please also refer [FAQ](../install/faq-on-installation.md) section also.
 
 {% hint style="info" %}
 

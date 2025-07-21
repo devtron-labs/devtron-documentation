@@ -2,7 +2,7 @@
 
 ## Introduction 
 
-In this section, we describe on how you can install Modern Kubernetes Dashboard by Devtron without any integrations. Integrations can be added later using [Devtron Stack Manager](../../user-guide/stack-manager.md).
+In this section, we describe on how you can install Modern Kubernetes Dashboard without any integrations. Integrations can be added later using [Devtron Stack Manager](../../user-guide/stack-manager.md).
 
 If you want to install Devtron on Minikube, Microk8s, K3s, Kind, refer this [section](./Install-devtron-on-Minikube-Microk8s-K3s-Kind.md).
 
@@ -36,11 +36,11 @@ helm repo update devtron
 ```
 ---
 
-## Install Modern Kubernetes Dashboard by Devtron
+## Install Modern Kubernetes Dashboard
 
 **Note**: This installation command will not install CI/CD integration. For CI/CD, refer [install Devtron with CI/CD](../install/install-devtron-with-cicd.md) section.
 
-Run the following command to install Modern Kubernetes Dashboard by Devtron:
+Run the following command to install Modern Kubernetes Dashboard:
 
 ```bash
 helm install devtron devtron/devtron-operator \
@@ -96,12 +96,6 @@ The hostname `aaff16e9760594a92afa0140dbfd99f7-305259315.us-east-1.elb.amazonaws
 
 When you install Devtron for the first time, it creates a default admin user and password (with unrestricted access to Devtron). You can use that credentials to log in as an administrator. 
 
-After the initial login, we recommend you set up any SSO service like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (let's say, GitHub) to log in to Devtron's dashboard.
-
-The section below will help you understand the process of getting the administrator credentials.
-
-### For Devtron version v0.6.0 and higher
-
 **Username**: `admin` <br>
 **Password**: Run the following command to get the admin password:
 
@@ -109,18 +103,6 @@ The section below will help you understand the process of getting the administra
 kubectl -n devtroncd get secret devtron-secret \
 -o jsonpath='{.data.ADMIN_PASSWORD}' | base64 -d
 ```
- 
-<details>
-<summary>For Devtron version less than v0.6.0</summary>
-
-**Username**: `admin` <br>
-**Password**: Run the following command to get the admin password:
-
-```bash
-kubectl -n devtroncd get secret devtron-secret \
--o jsonpath='{.data.ACD_PASSWORD}' | base64 -d
-```
-</details>
 
 {% hint style="info" %}
 
