@@ -5,7 +5,7 @@
 
 Make sure to install:
 
-1. [Build and Deploy (CI/CD) integration)](../integrations/build-and-deploy-ci-cd.md)
+1. [Build and Deploy (CI/CD) integration](../integrations/build-and-deploy-ci-cd.md)
 
 2. [GitOps (ArgoCD) integration](../integrations/argocd.md)
 
