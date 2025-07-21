@@ -39,7 +39,7 @@ This section expects four inputs from you:
 
 {% hint style="warning" %}
  ### FluxCD Deployment Failed
- * Make sure that the FluxCD controller is installed in the cluster in which you want to deploy the application. Refer [Enable GitOps Deployments with FluxCD](../../creating-application/fluxcd.md#install-fluxcd-controller) to learn more.
+ * Make sure that the FluxCD controller is installed in the cluster in which you want to deploy the application. Refer [Enable GitOps Deployments with FluxCD](../../creating-application/fluxcd.md#installing-fluxcd-controller-only-for-deployments) to learn more.
 
  * Application deployments through GitOps (via FluxCD) are supported only when using the `Deployment` or `Rollout` deployment strategies with the latest chart versions. Other deployment strategies are currently not supported. 
 
