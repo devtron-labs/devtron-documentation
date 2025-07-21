@@ -109,11 +109,11 @@ To enable deployments through GitOps via FluxCD, you need to enable a specific f
 
 After enabling the feature flag for deployments, the next step is to install FluxCD Controller in every cluster (including the default cluster) in which you want to deploy the FluxCD applications. 
 
-You can install FluxCD Controller via two ways:
+You can install FluxCD Controller by any of the following ways:
 
- 1. Install FluxCD controller via Cluster Terminal.
+ 1. [Install FluxCD controller via Cluster Terminal](#install-fluxcd-controller-via-cluster-terminal)(Recommended)
 
- 2. Install FluxCD controller via Chart Store.
+ 2. [Install FluxCD controller via Chart Store](#install-fluxcd-controller-via-chart-store)
 
 
 #### Install FluxCD controller via Cluster Terminal.
