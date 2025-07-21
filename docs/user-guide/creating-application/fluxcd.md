@@ -64,7 +64,7 @@ To enable deployments through GitOps via FluxCD, you need to enable a specific f
       1. To enable deployments via FluxCD, check if the below entries are present in the ConfigMap (create one if it doesn't exist) and select **Apply changes**.<br>
 
             ```yaml
-            FEATURE_FLUX_DEPLOYMENTS_ENABLE: " true"
+            FEATURE_FLUX_DEPLOYMENTS_ENABLE: "true"
             ```
 
       2. To enable migration for external FluxCD applications, check if the below entries are present in the ConfigMap (create one if it doesn't exist) and select **Apply changes**.<br>
