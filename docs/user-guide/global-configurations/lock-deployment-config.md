@@ -70,9 +70,13 @@ After creating a profile, the next step is to apply the profile to the specific 
 
 1. Go to **Global Configurations** → **Lock Deployment Configuration**. Click **Apply Profile**; a new **Apply Profile** page will open.
 
+     ![]()
+
 2. Select the profiles which you want to apply from the dropdown under **Select profiles to apply**.
      
      * You can select multiple Profiles.
+
+     ![]()
 
 3. Select how you want to apply the profiles under **Apply selected profiles to deployment templates of**.
 
@@ -83,6 +87,8 @@ After creating a profile, the next step is to apply the profile to the specific 
      |**Specific deployment templates**|Choose this option if you want to apply profile to specific deployment templates. Refer to [Specific deployment templates](#specific-deployment-templates) to learn more.|
      |**By match criteria**|Choose this option to apply the profile based on specific criteria, such as applying it to the deployment templates of an entire project.|
      |**Global (All deployment templates)**|Choose this option if you want to apply profile to all deployment template.|
+
+     ![]()
  
      #### Specific deployment templates
 
@@ -184,4 +190,3 @@ Only a super-admin, manager, or application admin can edit the configuration val
     ![Figure 14: Proposing Changes to Protected Config](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/proposing-changes.jpg)
 
 The same result can be seen if the user tries to edit environment-specific deployment templates.
-
