@@ -3,11 +3,11 @@
 {% hint style="info" %} 
 ### Prerequisite
 
-Please make sure to install 
+Make sure to install:
 
-1. **Build and Deploy (CI/CD)** integration. To install it, click [here](../integrations/build-and-deploy-ci-cd.md).
+1. **Build and Deploy (CI/CD)** integration. To install it, click [Build and Deploy (CI/CD) integration)](../integrations/build-and-deploy-ci-cd.md).
 
-2. **GitOps (ArgoCD)** integration. To install it, click [here](../integrations/argocd.md).
+2. **GitOps (ArgoCD)** integration. To install it, click [GitOps (ArgoCD) integration](../integrations/argocd.md).
 
 {% endhint %}
 
@@ -31,12 +31,12 @@ The user must have permissions to:
   * Restart the pods
 {% endhint %}
 
-To enable deployments through GitOps via FluxCD, you need to enable a specific feature flag for the `default_cluster` in **Devtron**.
+To enable deployments through GitOps via FluxCD, you need to enable a specific feature flag for the `default_cluster` in Devtron.
 
  |Feature|Flag|Description|
  |:---|:---|:---|
- |**Deployments via FluxCD**|`FEATURE_FLUX_DEPLOYMENTS_ENABLE: " true"`|This Flag will enable deployments through GitOps via FluxCD.<ul><li> After enabling this flag, you also need to install FluxCD controller in order to deploy applications successfully. Refer [Installing FluxCD Controller](#installing-fluxcd-controller) to know more.</li></ul>|
- |**Migrating existing FluxCD applications**|`FEATURE_LINK_EXTERNAL_FLUX_ENABLE: "true"`|This Flag will enable migrations for external FluxCD apps into Devtron.|
+ |**Deployments via FluxCD**|`FEATURE_FLUX_DEPLOYMENTS_ENABLE: " true"`|This flag will enable deployments through GitOps via FluxCD.<ul><li> After enabling this flag, you also need to install FluxCD controller in order to deploy applications successfully. Refer [Installing FluxCD Controller](#installing-fluxcd-controller) to know more.</li></ul>|
+ |**Migrating existing FluxCD applications**|`FEATURE_LINK_EXTERNAL_FLUX_ENABLE: "true"`|This flag will enable migrations for external FluxCD apps into Devtron.|
 
  {% hint style="warning" %}
  ### Deployment Strategies for FluxCD Deployments
@@ -46,7 +46,7 @@ To enable deployments through GitOps via FluxCD, you need to enable a specific f
 
 ### Enabling Feature Flags
 
-1. Navigate to Devtron **Resource Browser**.
+1. Navigate to Devtron's **Resource Browser**.
 
       ![Figure 1: Navigating to Resource Browser](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-resource-browser.jpg)
 
@@ -54,12 +54,13 @@ To enable deployments through GitOps via FluxCD, you need to enable a specific f
      
       ![Figure 2: Selecting 'default_cluster'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-cluster.jpg)
 
-3. Go to Config & Storage → ConfigMap, and select `dashboard-cm` ConfigMap
+3. Go to Config & Storage → ConfigMap, and click `dashboard-cm` ConfigMap
 
-      ![Figure 3: Selecting 'dashboard-cm'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-dashboard-cm.jpg)
+      ![Figure 3: Clicking 'dashboard-cm'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-dashboard-cm.jpg)
 
 4. Edit the `dashboard-cm` ConfigMap by clicking **Edit live manifest**.
 
+      ![Figure 4: Editing Live Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-edit-live-manifest.jpg)
       1. To enable deployments via FluxCD, check if the below entries are present in the ConfigMap (create one if it doesn't exist) and select **Apply changes**.<br>
 
             ```yaml
@@ -73,14 +74,12 @@ To enable deployments through GitOps via FluxCD, you need to enable a specific f
             ```
       
       <br>
-      
-      ![Figure 4: Editing Live Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-edit-live-manifest.jpg)
 
       ![Figure 5: Adding Feature Flags](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-add-flags.jpg)
 
 5. Restart the deployment: 
-      1. For OSS Users:
-          1. Navigate to Devtron Resource Browser.
+      1. **For OSS Users:**
+          1. Navigate to Devtron's Resource Browser.
 
           2. Select the cluster for which you have enabled the feature flags.
 
@@ -91,21 +90,20 @@ To enable deployments through GitOps via FluxCD, you need to enable a specific f
                ```yaml
                kubectl rollout restart deployment dashboard -n devtroncd 
                ```
-               <br>
 
                ![Figure 6: Restarting Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-restart-deployment.gif)
-      2. For Enterprise Users:
-           1. Go to Resource Browser → (Select Cluster in which you have enabled the feature flags) → Workloads → Deployment
+      2. **For Enterprise Users:**
+           1. Go to **Resource Browser** → (select the cluster in which you have enabled the feature flags) → **Workloads** → **Deployment**
 
-           2. Click the checkbox next to the `dashboard` Deployment workloads and restart them using the ⟳ button.
+           2. Click the checkbox next to the `dashboard` Deployment workloads and restart them using the `⟳` button.
 
                 ![Figure 7: Restart 'dashboard' deployment workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/restart-deployments.jpg)
 
 6. Perform a hard refresh of the browser to clear the cache:
 
-      * Mac: Hold down Cmd and Shift and then press R.
+      * **Mac**: Hold down Cmd and Shift and then press R.
 
-      * Windows/Linux: Hold down Ctrl and then press F5.
+      * **Windows/Linux**: Hold down Ctrl and then press F5.
 
 ### Installing FluxCD Controller (Only for Deployments)
 
@@ -120,20 +118,19 @@ You can install FluxCD Controller via two ways:
 
 #### Install FluxCD controller via Cluster Terminal.
 
-1. Navigate to Devtron Resource Browser.
+1. Navigate to Devtron's Resource Browser.
 
 2. Select the cluster for which you have enabled the feature flags.
 
 3. Click the **Terminal** tab.
 
-4. Run the following command to install the FluxCD Controller:<br> 
+4. Run the following command to install the FluxCD Controller:
 
- ```bash
- kubectl apply -f https://github.com/fluxcd/flux2/releases/download/v0.35.0/install.yaml
- ```
- <br>
+      ```yaml
+      kubectl apply -f https://github.com/fluxcd/flux2/releases/download/v0.35.0/install.yaml
+      ```
 
- ![Figure 8: Installing FluxCD Controller](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-install-controller.gif)
+      ![Figure 8: Installing FluxCD Controller](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-install-controller.gif)
 
 5. After the command is executed successfully, you can deploy or migrate your applications in that cluster through GitOps (via FluxCD).
 
@@ -149,7 +146,7 @@ To install FluxCD controller via Chart Store, follow the below steps.
 
        ![Figure 10: Adding Environment linked to 'flux-system' namespace](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-add-env.gif) 
 
- 3. Navigate to Chart Store and select the `flux2` chart.
+ 3. Navigate to **Chart Store** and select the `flux2` chart.
 
        ![Figure 11: Selecting 'flux2' Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-flux2.jpg) 
 
