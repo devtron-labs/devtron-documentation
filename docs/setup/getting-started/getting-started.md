@@ -2,13 +2,13 @@
 
 ## Introduction
 
-Devtron is installed over a Kubernetes cluster. Once you create a Kubernetes cluster, Devtron can be installed standalone or along with integrations. This section includes information about the minimum requirements you need to install and use **Devtron**.
+Devtron is installed over a Kubernetes cluster. Once you create a Kubernetes cluster, Devtron can be installed standalone or along with integrations. This section includes information about the minimum requirements you need to install and use Devtron.
 
 ---
 
 ## Prerequisites
 
-* Create a [Kubernetes cluster, preferably K8s version 1.16 or higher](#create-a-kubernetes-cluster)
+* Create a [Kubernetes cluster](#create-a-kubernetes-cluster)
 
 * [Helm Installation](https://helm.sh/docs/intro/install/)
 
@@ -73,7 +73,7 @@ The minimum requirements for installing `Modern Kubernetes Dashboard by Devtron`
 
 You can install Devtron standalone (Modern Kubernetes Dashboard by Devtron) or along with integrations. Or, you can upgrade Devtron to the latest version.
 
-Refer to [Devtron Installation Methods](../install/README.md) to know install Devtron as per your requirements.
+Refer to [Devtron Installation Options](../install/README.md) to install Devtron as per your requirements.
 
 {% hint style="info" %}
 

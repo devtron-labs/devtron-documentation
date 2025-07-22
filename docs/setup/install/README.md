@@ -12,11 +12,11 @@ Try Devtron Enterprise for free — unlock advanced features built for scale. [S
 
 ---
 
-## Installation Methods 
+## Installation Options 
 
-![Devtron Installation Methods](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/installation-methods.jpg)
+![Devtron Installation Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/installation-methods-v2.jpg)
 
-Choose one of the following installation methods as per your requirement:
+Choose one of the following installation options as per your requirement:
 
 * [Modern Kubernetes Dashboard](../install/install-devtron.md)
 
@@ -26,7 +26,11 @@ Choose one of the following installation methods as per your requirement:
 
 {% hint style="info" %} 
 
-If you are planning to install Devtron in production environments, kindly refer to [Production Infra Recommendations](../install/prod-infra.md). 
+### Note
+
+* If you are planning to install Devtron in production environments, kindly refer to [Production Infra Recommendations](../install/prod-infra.md).
+
+* If you want to install a light-weight desktop client outside your Kubernetes cluster, kindly refer to [Devtron Kubernetes Client](../install/install-devtron-Kubernetes-client.md).
 
 {% endhint %}
 
