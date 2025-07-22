@@ -84,9 +84,9 @@ After creating a profile, the next step is to apply the profile to the specific 
 
      |Method|Description|
      |:---|:---|
-     |**Specific deployment templates**|Choose this option if you want to apply the profile to Specific deployment templates.<ul><li> Refer [Specific Deployment Templates](#specific-deployment-templates) to know more.</li><ul>|
-     |**By match criteria**|Choose this option to apply the profile based on specific criteria, such as applying it to the deployment templates of an entire project. <ul><li> Refer [By match criteria](#by-match-criteria) to know more.</li><ul>|
-     |**Global (All deployment templates)**|Choose this option if you want to apply the profile to all deployment templates. <ul><li> Refer [Global (All Deployment Templates)](#global-all-deployment-templates) to know more.</li><ul>|
+     |**Specific deployment templates**|Choose this option if you want to apply the profile to Specific deployment templates.<ul><li> Refer [Specific Deployment Templates](#specific-deployment-templates) to know more.</li></ul>|
+     |**By match criteria**|Choose this option to apply the profile based on specific criteria, such as applying it to the deployment templates of an entire project. <ul><li> Refer [By match criteria](#by-match-criteria) to know more.</li></ul>|
+     |**Global (All deployment templates)**|Choose this option if you want to apply the profile to all deployment templates. <ul><li> Refer [Global (All Deployment Templates)](#global-all-deployment-templates) to know more.</li></ul>|
 
      ![Figure 9: Selecting Apply Method](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-apply-methods.jpg)
  
