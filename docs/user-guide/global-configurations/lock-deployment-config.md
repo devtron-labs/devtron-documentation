@@ -31,7 +31,7 @@ To lock deployment keys, you must first create a profile and apply it to the spe
 
 {% hint style="Tip" %}
 ### What is a Lock Deployment Profile?
-A Lock Deployment profile is a template that specifies which keys in the deployment template can be edited or locked. It enables super-admins to manage which deployment template keys other users can modify. By using profiles, super-admins can manage edit access at different levels, such as global, cluster, environment, application, or a combination of application and environment.
+A lock deployment configuration profile is a template that specifies which keys in the deployment template cannot be edited by non-super admin users. By using lock deployment configuration profiles, super-admins can manage edit access at different levels, such as global, cluster, environment, application, or a combination of application and environment.
 
 This allows for better control by making sure critical deployment template keys are locked in sensitive environments (production), while giving flexibility to change deployment template keys in other less critical environments (QA, Staging, etc.).
 {% endhint %}
