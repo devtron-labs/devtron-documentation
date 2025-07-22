@@ -62,7 +62,7 @@ If you want to install Devtron for `production deployments`, please refer our [r
 
 ## Configure Blob Storage during Installation
 
-Configuring Blob Storage (optional step) in your Devtron environment allows you to store build logs and cache.
+Configuring Blob Storage in your Devtron environment allows you to store build logs and cache.
 In case, if you do not configure the Blob Storage, then:
 
 - You will not be able to access the build and deployment logs after an hour.

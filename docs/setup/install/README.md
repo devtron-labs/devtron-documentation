@@ -14,33 +14,21 @@ Try Devtron Enterprise for free — unlock advanced features built for scale. [S
 
 ## Installation Methods 
 
-Choose one of the following installation methods as per your requirements:
+![Devtron Installation Methods](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/installation-methods.jpg)
 
-| | Local | MiniKube, MicroK8s, K3s, Kind | Cloud VM (AWS EC2, Azure, GCP) | Air-Gapped Environments | 
-| --- | --- | --- | --- | --- | 
-| **Without Integrations** | [Install without Integrations](../install/install-devtron.md)| [Install without Integrations](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#installation-commands)| [Install without Integrations](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#installation-commands-1) | [Install without Integrations](../install/install-devtron-in-airgapped-environment.md#installation-commands)| 
-| **With Integrations** | | | | | 
-| CI/CD | [Install with CI/CD](../install/install-devtron-with-cicd.md) | [Install with CI/CD](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#installation-commands)| [Install with CI/CD](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#installation-commands-1) | [Install with CI/CD](../install/install-devtron-in-airgapped-environment.md#installation-commands) | 
-| GitOps (ArgoCD) | [Install with CI/CD & GitOps (Argo CD)](../install/install-devtron-with-cicd-with-gitops.md)| [Install with CI/CD & GitOps (Argo CD)](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#installation-commands)| [Install with CI/CD & GitOps (Argo CD)](../install/Install-devtron-on-Minikube-Microk8s-K3s-Kind.md#installation-commands-1) | [Install with CI/CD & GitOps (Argo CD)](../install/install-devtron-in-airgapped-environment.md#installation-commands)| 
+Choose one of the following installation methods as per your requirement:
 
+* [Modern Kubernetes Dashboard](../install/install-devtron.md)
 
-{% hint style="info" %}
+* [Devtron with CI/CD](../install/install-devtron-with-cicd.md)
+
+* [Devtron with CI/CD and GitOps (Argo CD)](../install/install-devtron-with-cicd-with-gitops.md)
+
+{% hint style="info" %} 
 
 If you are planning to install Devtron in production environments, kindly refer to [Production Infra Recommendations](../install/prod-infra.md). 
 
 {% endhint %}
-
-You can also install integrations from the [Devtron Stack Manager](/docs/user-guide/integrations/README.md).
-
----
-
-## Upgrade Devtron
-
-You can upgrade Devtron in one of the following ways:
-
-* [Upgrade Devtron Using Helm](../upgrade/README.md)
-
-* [Upgrade Devtron from UI](../upgrade/upgrade-devtron-ui.md)
 
 {% hint style="info" %}
 
