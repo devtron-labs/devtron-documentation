@@ -16,7 +16,7 @@ This stands true for deployment templates in:
 
 The 'protect configuration' feature is meant to verify the edits by introducing an approval flow for any changes made to the configuration files, i.e., Deployment template, ConfigMaps, and Secrets. Refer [Approval Policy](../global-configurations/approval-policy.md).
 
-Whereas, the 'lock deployment configuration' feature goes one step further. It is meant to prevent any edits to specific keys by non-super-admins. This applies only to deployment templates and is performed at global-level. -->
+Whereas, the 'lock deployment configuration' feature goes one step further. It is meant to prevent any edits to specific keys by non-super-admins. This applies only to deployment templates and is performed at the global level. -->
 
 ---
 
@@ -27,18 +27,18 @@ Whereas, the 'lock deployment configuration' feature goes one step further. It i
 Users need to have super-admin permission to lock deployment keys.
 {% endhint %}
 
-To lock deployment keys, you first need to create a profile and apply it to the specific deployment templates.
+To lock deployment keys, you must first create a profile and apply it to the specific deployment templates.
 
 {% hint style="Tip" %}
 ### What is a Lock Deployment Profile?
-A Lock Deployment profile is a template which specifies which keys in the deployment template can be edited or locked. It enables super-admins to manage which deployment template keys other users can modify. By using profiles, super-admins can manage edit access at different levels, such as, global, cluster, environment, application, or a combination of application and environment.
+A Lock Deployment profile is a template that specifies which keys in the deployment template can be edited or locked. It enables super-admins to manage which deployment template keys other users can modify. By using profiles, super-admins can manage edit access at different levels, such as global, cluster, environment, application, or a combination of application and environment.
 
 This allows for better control by making sure critical deployment template keys are locked in sensitive environments (production), while giving flexibility to change deployment template keys in other less critical environments (QA, Staging, etc.).
 {% endhint %}
 
 ### Creating Profile
 
-To create a profile, follow the below steps:
+To create a profile, follow the steps below:
 
 1. Go to **Global Configurations** → **Lock Deployment Configuration**. Click **+ Create Profile**; a new **Create Profile** page will open.
 
@@ -66,13 +66,13 @@ To create a profile, follow the below steps:
 
 ### Applying Profile
 
-After creating a profile, the next step is to apply the profile to the specific deployment templates according to your use case. To apply a profile follow the below steps:
+After creating a profile, the next step is to apply the profile to the specific deployment templates according to your use case. To apply a profile, follow the steps below:
 
 1. Go to **Global Configurations** → **Lock Deployment Configuration**. Click **Apply Profile**; a new **Apply Profile** page will open.
 
      ![Figure 7: Clicking 'Apply Profile'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-apply-profile.jpg)
 
-2. Select the profiles which you want to apply from the dropdown under **Select profiles to apply**.
+2. Select the profiles that you want to apply from the dropdown under **Select profiles to apply**.
      
      * You can select multiple Profiles.
 
@@ -80,13 +80,13 @@ After creating a profile, the next step is to apply the profile to the specific 
 
 3. Select how you want to apply the profiles under **Apply selected profiles to deployment templates of**.
 
-     There are 3 options you can choose from
+     There are three options you can choose from
 
      |Method|Description|
      |:---|:---|
-     |**Specific deployment templates**|Choose this option if you want to apply profile to Specific deployment templates.<ul><li> Refer [Specific Deployment Templates](#specific-deployment-templates) to know more.</li><ul>|
+     |**Specific deployment templates**|Choose this option if you want to apply the profile to Specific deployment templates.<ul><li> Refer [Specific Deployment Templates](#specific-deployment-templates) to know more.</li><ul>|
      |**By match criteria**|Choose this option to apply the profile based on specific criteria, such as applying it to the deployment templates of an entire project. <ul><li> Refer [By match criteria](#by-match-criteria) to know more.</li><ul>|
-     |**Global (All deployment templates)**|Choose this option if you want to apply profile to all deployment template. <ul><li> Refer [Global (All Deployment Templates)](#global-all-deployment-templates) to know more.</li><ul>|
+     |**Global (All deployment templates)**|Choose this option if you want to apply the profile to all deployment templates. <ul><li> Refer [Global (All Deployment Templates)](#global-all-deployment-templates) to know more.</li><ul>|
 
      ![Figure 9: Selecting Apply Method](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-apply-methods.jpg)
  
@@ -94,7 +94,7 @@ After creating a profile, the next step is to apply the profile to the specific 
 
 This option allows you to apply the lock deployment configuration profile to the deployment template of a specific application within a particular environment.
 
-To do so, follow the below steps:
+To do so, follow the steps below:
 
 1. Select the **Specific deployment templates** option under **Apply selected profiles to deployment templates of**.
 
@@ -115,7 +115,7 @@ To do so, follow the below steps:
 
 ### By Match Criteria 
  
-This option allows you to apply the lock deployment configuration profile to the deployment templates of all the applications matching certain criteria. To apply the lock deployment profile, follow the below steps:
+This option allows you to apply the lock deployment configuration profile to the deployment templates of all the applications matching certain criteria. To apply the lock deployment profile, follow the steps below:
 
 1. Select the **By match criteria** option under **Apply selected profiles to deployment templates of**.
 
@@ -130,13 +130,13 @@ This option allows you to apply the lock deployment configuration profile to the
 
     Let's understand how to use **By match criteria** with the below use cases:<br>
 
-    1. Suppose, you want to apply a lock deployment configuration profile to all applications in a particular project, you can achieve this by selecting that project as the match criteria.
+    1. Suppose you want to apply a lock deployment configuration profile to all applications in a particular project. You can achieve this by selecting that project as the match criteria.
 
         ![Figure 11a: Applying Profile By Match Criteria - Use Case 1](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-match-criteria-use-case-1.gif)
 
         ![Figure 11b: Use Case 1 - Lock Deployment Templates using Single Criteria](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-match-criteria-use-case-1.jpeg)
         
-    2. Now, let's say your use case is even more specific, suppose you want to apply the lock deployment configuration profile to all the applications' deployment templates in a particular cluster, belongs to a specific project and are deployed in a certain environment, then, you can choose your required **Cluster**, **Project** and **Environment** as the match criteria. Devtron will then apply the profile only to those applications' deployment templates that meet every single one of the criteria you have selected.
+    2. Now, let's say your use case is even more specific, suppose you want to apply the lock deployment configuration profile to all the applications' deployment templates in a particular cluster, belongs to a specific project and are deployed in a particular environment, then, you can choose your required **Cluster**, **Project** and **Environment** as the match criteria. Devtron will then apply the profile only to those applications' deployment templates that meet every single one of the criteria you have selected.
 
         ![Figure 12a: Applying Profile By Match Criteria - Use Case 2](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-match-criteria-use-case-2.gif)
 
@@ -158,13 +158,13 @@ To apply the lock deployment profile to all deployment templates, select the **G
  ![Figure 14: Applying Profile for all the Deployment Templates](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-global.gif)
 
 
-4. Click **Save Changes** and the selected profiles will apply on the required deployment templates and will be visible under **Applied Profiles** tab.
+4. Click **Save Changes**, and the selected profiles will apply to the required deployment templates and be visible under the **Applied Profiles** tab.
 
 ---
 
 ## Result
 
-Once the lock deployment configuration profile is applied to the deployment templates, only super admins can edit the locked keys directly.Non-super admin users cannot edit the locked keys for those deployment templates.
+Only super admins can edit the locked keys directly once the lock deployment configuration profile is applied to the deployment templates. Non-super admin users cannot edit the locked keys for those deployment templates.
 
 Let's look at a scenario where a user (non-super-admin) tries to edit the same in an [unprotected](../../user-guide/creating-application/config-approval.md) base deployment template.
 
@@ -177,7 +177,7 @@ Let's look at a scenario where a user (non-super-admin) tries to edit the same i
 
     {% hint style="info" %}
     <span><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/mode.jpg" alt="GUI or YAML Mode"></span> <br />
-    If you select 'Basic' mode instead of 'Advanced (YAML)', all the keys meant for basic mode will be displayed in the GUI even if some are locked. While users can modify these keys, they cannot save the changes made to the locked keys.
+    If you select 'Basic' mode instead of 'Advanced (YAML)', all the keys meant for basic mode will be displayed in the GUI, even if some are locked. While users can modify these keys, they cannot save the changes made to the locked keys.
     {% endhint %}
 
 ### Editing Locked Keys 
@@ -190,7 +190,7 @@ Let's look at a scenario where a user (non-super-admin) tries to edit the same i
 
     ![Figure 17: Saving Edits to Locked Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/changing-values.jpg)
 
-* A modal window will appear on the right highlighting the non-eligible edits.
+* A modal window highlighting the non-eligible edits will appear on the right.
 
     ![Figure 18: Eligible and Non-eligible Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/not-eligible-changes.jpg)
 
@@ -223,13 +223,13 @@ The same result can be seen if the user tries to edit environment-specific deplo
 
 ## Updating an Applied Profile
 
-To update an existing applied profile, follow the below steps:
+To update an existing applied profile, follow the steps below:
 
 1. Go to **Global Configurations** → **Lock Deployment Configuration**. 
 
-2. Click **Applied Profiles** tab and click the `⋮` button next to the preferred applied profile.
+2. Click the **Applied Profiles** tab and click the `⋮` button next to the preferred applied profile.
 
-3. Click **Manage Policy** to add or remove the profiles. If you have applied the profile using match criteria then, you can also click **Edit match criteria** to edit the match criteria.
+3. Click **Manage Policy** to add or remove the profiles. If you have applied the profile using match criteria, then you can also click **Edit match criteria** to edit the match criteria.
 
 4. Click **Save Changes**.
 
@@ -241,11 +241,11 @@ To update an existing applied profile, follow the below steps:
 
 ## Removing an Applied Profile
 
-To remove an applied profile, follow the below steps:
+To remove an applied profile, follow the steps below:
 
 1. Go to **Global Configurations** → **Lock Deployment Configuration**. 
 
-2. Click **Applied Profiles** tab and click the `⋮` button next to the preferred applied profile.
+2. Click the **Applied Profiles** tab and click the `⋮` button next to the preferred applied profile.
 
 3. Click **Delete** and the applied profile will be removed.
 
@@ -282,7 +282,7 @@ To delete a lock deployment configuration file, follow the steps below:
 
 2. Click the **Profiles** tab and then click the delete button next to the preferred profile.
 
-3. A pop window will appear, prompting you to enter the profile name for confirmation. 
+3. A pop-up window will appear, prompting you to enter the profile name for confirmation. 
 
 4. Enter the name of the profile and click **Delete**.
 
