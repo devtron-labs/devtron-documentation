@@ -111,7 +111,9 @@ To do so, follow the steps below:
 
 3. Select the applications for which you want to apply the profile.
 
-     ![Figure 10: Applying Profile for Specific Deployment Templates ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-specific-apps.gif)
+     ![Figure 10a: Applying Profile to Specific Deployment Templates](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-specific-apps.gif)
+
+     ![Figure 10b: Lock Deployment Templates using 'Specific Deployment Templates'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-apply-specific+deployment-template.jpg)
 
 ### By Match Criteria 
  
