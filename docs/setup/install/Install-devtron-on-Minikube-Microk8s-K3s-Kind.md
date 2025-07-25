@@ -1,22 +1,14 @@
 # Install Devtron on Minikube, Microk8s, K3s, Kind, Cloud VMs
 
+## Introduction
+
 You can install and try Devtron on a high-end machine or a Cloud VM. If you install it on a laptop/PC, it may start to respond slowly.
 
 {% hint style="success" %}
+
 Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
+
 {% endhint %}
-
-## Prerequisites
-
-1. 2 vCPUs
-2. 4GB+ of free memory
-3. 20GB+ free disk space
-
-Before you get started, finish the following actions:
-
- * Create a cluster using [Minikube](https://minikube.sigs.k8s.io/docs/start/) or [MicroK8s](https://microk8s.io/docs/tutorials) or [Kind](https://kind.sigs.k8s.io/docs/user/quick-start/) or [K3s](https://rancher.com/docs/k3s/latest/en/installation/).
- * Install [Helm3](https://helm.sh/docs/intro/install/).
- * Install [kubectl](https://kubernetes.io/docs/tasks/tools/).
 
 ---
 
@@ -26,41 +18,124 @@ Before you get started, finish the following actions:
 
 ---
 
+## Add Helm Repo
+
+```bash
+helm repo add devtron https://helm.devtron.ai
+```
+
+---
+
+## Update Helm Repo
+
+```bash
+helm repo update devtron
+```
+
+---
+
 ## For Minikube, MicroK8s, Kind, K3s
+
+{% hint style="warning" %}
+
+### Prerequisites 
+
+Ensure you meet [all the requirements](../getting-started/getting-started.md#prerequisites) for installing Devtron.
+
+{% endhint %}
+
+### Installation Commands
 
 {% tabs %}
 
-{% tab title=" Minikube/MicroK8s/Kind Cluster" %}
+{% tab title="Without Integrations" %}
 
- To install Devtron on **Minikube/MicroK8s/Kind** cluster, run the following command:
+**Minikube/MicroK8s/Kind Cluster**
+
+To install Devtron on **Minikube/MicroK8s/Kind** cluster, run the following command:
 
 ```bash
-helm repo add devtron https://helm.devtron.ai
-
-helm repo update devtron
-
 helm install devtron devtron/devtron-operator \
 --create-namespace --namespace devtroncd \
 --set components.devtron.service.type=NodePort
-
 ```
-{% endtab %}
 
-{% tab title="K3s Cluster" %}
-To install Devtron on **K3s** cluster, run the following command:
+**K3s Cluster**
+
+To install Devtron on **K3s** cluster, run the following commands:
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
+```
 
-helm repo add devtron https://helm.devtron.ai
-
-helm repo update devtron
-
+```bash
 helm install devtron devtron/devtron-operator \
 --create-namespace --namespace devtroncd \
 --set components.devtron.service.type=NodePort
-
 ```
+
+{% endtab %}
+
+{% tab title="With CI/CD" %}
+
+**Minikube/MicroK8s/Kind Cluster**
+
+To install Devtron on **Minikube/MicroK8s/Kind** cluster, run the following command:
+
+```bash
+helm install devtron devtron/devtron-operator \
+--create-namespace --namespace devtroncd \
+--set components.devtron.service.type=NodePort \
+--set installer.modules={cicd}
+```
+
+**K3s Cluster**
+
+To install Devtron on **K3s** cluster, run the following commands:
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
+```
+
+```bash
+helm install devtron devtron/devtron-operator \
+--create-namespace --namespace devtroncd \
+--set components.devtron.service.type=NodePort \
+--set installer.modules={cicd}
+```
+
+{% endtab %}
+
+{% tab title="With CI/CD and GitOps (Argo CD)" %}
+
+**Minikube/MicroK8s/Kind Cluster**
+
+To install Devtron on **Minikube/MicroK8s/Kind** cluster, run the following command:
+
+```bash
+helm install devtron devtron/devtron-operator \
+--create-namespace --namespace devtroncd \
+--set components.devtron.service.type=NodePort \
+--set installer.modules={cicd} \
+--set argo-cd.enabled=true
+```
+
+**K3s Cluster**
+
+To install Devtron on **K3s** cluster, run the following commands:
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
+```
+
+```bash
+helm install devtron devtron/devtron-operator \
+--create-namespace --namespace devtroncd \
+--set components.devtron.service.type=NodePort \
+--set installer.modules={cicd} \
+--set argo-cd.enabled=true
+```
+
 {% endtab %}
 
 {% endtabs %}
@@ -96,12 +171,6 @@ After port-forwarding, you can access the dashboard at this URL: `http://127.0.0
 
 When you install Devtron for the first time, it creates a default admin user and password (with unrestricted access to Devtron). You can use those credentials to log in as an administrator. 
 
-After the initial login, we recommend you set up any SSO service like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (let's say, GitHub) to log in to Devtron's dashboard.
-
-The section below will help you understand the process of getting the administrator credentials.
-
-#### For Devtron version v0.6.0 and higher
-
 **Username**: `admin` <br>
 **Password**: Run the following command to get the admin password:
 
@@ -110,24 +179,31 @@ kubectl -n devtroncd get secret devtron-secret \
 -o jsonpath='{.data.ADMIN_PASSWORD}' | base64 -d
 ```
 
+You can also install integrations from the [Devtron Stack Manager](../../user-guide/integrations/README.md).
 
-<details>
-<summary>For Devtron version less than v0.6.0</summary>
+{% hint style="info" %}
 
-**Username**: `admin` <br>
-**Password**: Run the following command to get the admin password:
+#### Next Recommended Action
 
-```bash
-kubectl -n devtroncd get secret devtron-secret \
--o jsonpath='{.data.ACD_PASSWORD}' | base64 -d
-```
-</details>
+When you install Devtron for the first time, it creates a default admin user and password (with unrestricted access to Devtron). You can use it to log in as an administrator.
+
+After the initial login, we recommend you set up any [Single Sign-On (SSO)](../../user-guide/global-configurations/sso-login.md) service like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (e.g., GitHub) to log in to the Dashboard.
+
+{% endhint %}
 
 ---
 
 ## For Cloud VM (AWS EC2, Azure VM, GCP VM)
 
-It is recommended to use Cloud VM with 2vCPU+, 4GB+ free memory, 20GB+ storage, Compute Optimized VM type & Ubuntu Flavoured OS.
+{% hint style="warning" %}
+
+### Prerequisites 
+
+* Ensure you meet [all the requirements](../getting-started/getting-started.md#prerequisites) for installing Devtron.
+
+* It is recommended to use Cloud VM with 2vCPU+, 4GB+ free memory, 20GB+ storage, Compute Optimized VM type & Ubuntu Flavoured OS.
+
+{% endhint %}
 
 ### Create MicroK8s Cluster
 
@@ -142,18 +218,45 @@ echo "alias helm='microk8s helm3 '" >> .bashrc
 source .bashrc
 ```
 
-### Install Devtron
+### Installation Commands
+
+{% tabs %}
+
+{% tab title="Without Integrations" %}
 
 ```bash
-helm repo add devtron https://helm.devtron.ai
-
-helm repo update devtron
-
 helm install devtron devtron/devtron-operator \
 --create-namespace --namespace devtroncd \
 --set components.devtron.service.type=NodePort 
-
 ```
+
+{% endtab %}
+
+{% tab title="With CI/CD" %}
+
+```bash
+helm install devtron devtron/devtron-operator \
+--create-namespace --namespace devtroncd \
+--set components.devtron.service.type=NodePort \
+--set installer.modules={cicd}
+```
+
+{% endtab %}
+
+{% tab title="With CI/CD and GitOps (Argo CD)" %}
+
+```bash
+helm install devtron devtron/devtron-operator \
+--create-namespace --namespace devtroncd \
+--set components.devtron.service.type=NodePort \
+--set installer.modules={cicd} \
+--set argo-cd.enabled=true
+```
+
+{% endtab %}
+
+{% endtabs %}
+
 ### Get devtron-service Port Number
 
 ```bash
@@ -162,8 +265,20 @@ kubectl get svc -n devtroncd devtron-service -o jsonpath='{.spec.ports[0].nodePo
 
 Make sure that the port used by the devtron-service remain open in the VM's security group or network security group.
 
+You can also install integrations from the [Devtron Stack Manager](../../user-guide/integrations/README.md).
+
 {% hint style="info" %}
-If you want to uninstall Devtron or clean up the Devtron Helm installer, refer [uninstall Devtron](./uninstall-devtron.md).
+
+#### Next Recommended Action
+
+When you install Devtron for the first time, it creates a default admin user and password (with unrestricted access to Devtron). You can use it to log in as an administrator.
+
+After the initial login, we recommend you set up any [Single Sign-On (SSO)](../../user-guide/global-configurations/sso-login.md) service like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (e.g., GitHub) to log in to the Dashboard.
+
 {% endhint %}
 
+{% hint style="info" %}
+
 If you have questions, please let us know on our Discord channel. [![Join Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)
+
+{% endhint %}
