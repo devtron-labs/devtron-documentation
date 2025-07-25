@@ -2,13 +2,12 @@
 
 ## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-The [Deployment Template](../../reference/glossary.md#base-deployment-template) might contain certain configurations intended for the DevOps team (e.g., `ingress`), and not meant for developers to modify. 
+The [Deployment Template](../../reference/glossary.md#base-deployment-template) might contain certain configurations (e.g., `ingress`) that are critical to the stability and security of the applications. To prevent unauthorized or accidental changes to such configurations, Devtron allows super admins to restrict (lock) such critical configurations from modification or deletion.
 
-Therefore, Devtron allows super-admins to restrict such fields from modification or deletion.
+![Figure 1: Preventing Changes to Locked Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/not-eligible-chato do nges.jpg)
 
-![Figure 1: Preventing Changes to Locked Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/not-eligible-changes.jpg)
+These restrictions can be applied for deployment templates in both the:
 
-This stands true for deployment templates in:
 * [Base configuration](../../user-guide/creating-application/deployment-template.md)
 * [Environment-level configuration](../../user-guide/creating-application/environment-overrides.md)
 
@@ -20,20 +19,21 @@ Whereas, the 'lock deployment configuration' feature goes one step further. It i
 
 ---
 
-## Locking Deployment Keys
+## Locking Deployment Configurations
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
 Users need to have super-admin permission to lock deployment keys.
 {% endhint %}
 
-To lock deployment keys, you must first create a profile and apply it to the specific deployment templates.
+To lock deployment configurations, you must first create a profile and apply it to the specific deployment templates.
 
 {% hint style="Tip" %}
 ### What is a Lock Deployment Profile?
-A lock deployment configuration profile is a template that specifies which keys in the deployment template cannot be edited by non-super admin users. By using lock deployment configuration profiles, super-admins can manage edit access at different levels, such as global, cluster, environment, application, or a combination of application and environment.
 
-This allows for better control by making sure critical deployment template keys are locked in sensitive environments (production), while giving flexibility to change deployment template keys in other less critical environments (QA, Staging, etc.).
+A lock deployment configuration profile is a template that specifies which configurations (keys) in the deployment template cannot be edited or deleted by non-super admin users. By using lock deployment configuration profiles, super-admins can manage edit access at different levels, such as global, cluster, environment, application, or a combination of application and environment.
+
+This allows for better control by making sure critical deployment template configurations are locked in sensitive environments (production), while giving flexibility to change deployment template configurations in other less critical environments (QA, Staging, etc.).
 {% endhint %}
 
 ### Creating Profile
@@ -56,6 +56,13 @@ To create a profile, follow the steps below:
 
     ![Figure 4: Referring Values.YAML File for Locking Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/autoscaling-lock.jpg)
 
+    {% hint style=“info” %}
+    ### Locking Keys Outside Refer Values
+
+    You can lock custom configurations (keys) defined in your deployment template, even if they are not listed in the **Refer Values.yaml** section. As long as the key matches your lock rule, it will be locked.
+
+    {% endhint %}
+
 5. Click **Save Changes**. 
 
     ![Figure 5: Saving Locked Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/saving-locked-keys.jpg)
@@ -63,6 +70,17 @@ To create a profile, follow the steps below:
 6. Profile will be created, and available under the **Profiles** tab.
 
     ![Figure 6: Confirmation Dialog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/confirmation.jpg)
+
+{% hint style="Warning" %}
+### Handling Locked Index Ranges
+
+If you have locked a range of configurations using JSONPath (e.g., `ingressInternal.hosts[1:3].paths`), the specified index positions are protected. 
+
+If you want to add a new configuration entry (e.g., a new host), it should be added after the locked range i.e., in case of `ingressInternal.hosts[1:3].paths`, new host configuration entry should be added at the index 4. 
+
+Adding an entry within the locked range may shift the indices and result in validation errors or unintended modifications of locked values.
+
+{% endhint %}
 
 ### Applying Profile
 
@@ -102,16 +120,16 @@ After creating a profile, the next step is to apply the profile to the specific 
 
 ---
 
-## Result
+## Effect of Lock Configuration Profiles on Deployment Templates
 
-Only super admins can edit the locked keys directly once the lock deployment configuration profile is applied to the deployment templates. Non-super admin users cannot edit the locked keys for those deployment templates.
+Only super admins can edit the locked configurations directly once the lock deployment configuration profile is applied to the deployment templates. Non-super admin users cannot edit the locked keys for those deployment templates.
 
 Let's look at a scenario where a user (non-super-admin) tries to edit the same in an [unprotected](../../user-guide/creating-application/config-approval.md) base deployment template.
 
 
-### Viewing Locked Keys
+### Viewing Locked Configurations
 
-* User can hide/unhide the locked keys as shown below.
+* User can hide/unhide the locked configurations as shown below.
 
     ![Figure 12: Hiding Locked Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/hide-locked-keys.gif)
 
@@ -120,7 +138,7 @@ Let's look at a scenario where a user (non-super-admin) tries to edit the same i
     If you select 'Basic' mode instead of 'Advanced (YAML)', all the keys meant for basic mode will be displayed in the GUI, even if some are locked. While users can modify these keys, they cannot save the changes made to the locked keys.
     {% endhint %}
 
-### Editing Locked Keys 
+### Editing Locked Configurations
 
 * Let's assume the user edits one of the locked keys...
 
@@ -232,3 +250,5 @@ To delete a lock deployment configuration file, follow the steps below:
 ### Note 
 Deleting a profile will automatically remove it from the Applied Profiles tab and remove its restrictions from all deployment templates where it was previously applied.
 {% endhint %}
+
+## Use Cases
