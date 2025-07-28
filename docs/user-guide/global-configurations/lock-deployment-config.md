@@ -252,3 +252,47 @@ Deleting a profile will automatically remove it from the Applied Profiles tab an
 {% endhint %}
 
 ## Use Cases
+
+### Locking Resources 
+
+Managing resources configurations (CPU & Memory) is critical for application stability (specifically in production environments).
+
+To prevent accidental or unauthorized changes to resource configurations (CPU & Memory), you can create a lock deployment configuration profile which locks resource configurations, and then you can apply it to the relevant deployment templates.
+
+**Lock Deployment Configuration Profile**
+
+```yaml 
+
+```
+
+![]()
+
+This ensures that only super admins can modify critical resource configurations (increasing CPU or reducing memory) especially in sensitive environments like production.
+
+### Locking Autoscaling
+
+Autoscaling configurations controls how your application scales based on traffic or resource usage. If not managed properly, accidental or unauthorized changes to autoscaling configurations can cause resource overuse resulting in high cost or application instability.
+
+To prevent accidental or unauthorized changes to autoscaling configurations, you can create a lock deployment configuration profile which locks autoscaling configurations, and then you can apply it to the relevant deployment templates.
+
+**Lock Deployment Configuration Profile**
+
+```yaml 
+
+```
+
+![]()
+
+### Locking Ingress
+
+Ingress configuration defines how external traffic is routed to your application. Unauthorized or accidental changes to ingress rules (hostnames or paths), can lead to incorrect routing, broken endpoints, or access to unintended environments.
+
+To prevent accidental or unauthorized changes to ingress configurations, you can create a lock deployment configuration profile which locks ingress configurations, and then you can apply it to the relevant deployment templates.
+
+**Lock Deployment Configuration Profile**
+
+```yaml 
+
+```
+
+![]()
