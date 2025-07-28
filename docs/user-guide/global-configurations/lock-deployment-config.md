@@ -56,12 +56,12 @@ To create a profile, follow the steps below:
 
     ![Figure 4: Referring Values.YAML File for Locking Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/autoscaling-lock.jpg)
 
-    {% hint style=“info” %}
-    ### Locking Keys Outside Refer Values
+{% hint style=“info” %}
+### Locking Keys Outside Refer Values
 
-    You can lock custom configurations (keys) defined in your deployment template, even if they are not listed in the **Refer Values.yaml** section. As long as the key matches your lock rule, it will be locked.
+You can lock custom configurations (keys) defined in your deployment template, even if they are not listed in the **Refer Values.yaml** section. As long as the key matches your lock rule, it will be locked.
 
-    {% endhint %}
+{% endhint %}
 
 5. Click **Save Changes**. 
 
@@ -102,7 +102,7 @@ After creating a profile, the next step is to apply the profile to the specific 
 
      1. **Specific deployment templates**: This option allows you to apply the lock deployment configuration profile to the deployment template of a specific application within a particular environment.
 
-     ![Figure 9: Applying Profile to Specific Deployment Templates](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-specific-apps.gif)
+        ![Figure 9: Applying Profile to Specific Deployment Templates](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-specific-apps.gif)
 
      2. **By match criteria**: This option allows you to use a combination of filters to create criteria. Lock deployment configuration profile will only apply to the deployment templates of the applications fulfilling your criteria (including existing and future ones).
 
