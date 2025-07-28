@@ -251,6 +251,7 @@ To delete a lock deployment configuration file, follow the steps below:
 Deleting a profile will automatically remove it from the Applied Profiles tab and remove its restrictions from all deployment templates where it was previously applied.
 {% endhint %}
 
+<!-- 
 ## Use Cases
 
 ### Locking Resources 
@@ -295,4 +296,4 @@ To prevent accidental or unauthorized changes to ingress configurations, you can
 
 ```
 
-![]()
+![]() -->
