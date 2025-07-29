@@ -1,16 +1,24 @@
 # Install Devtron with CI/CD along with GitOps (Argo CD)
 
+## Introduction
+
 In this section, we describe the steps in detail on how you can install Devtron with CI/CD by enabling GitOps during the installation.
 
 {% hint style="success" %}
+
 Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
+
 {% endhint %}
 
+{% hint style="warning" %}
 
-## Before you begin
+### Prerequisites 
 
-Install [Helm](https://helm.sh/docs/intro/install/) if you have not installed it.
+Ensure you meet [all the requirements](../getting-started/getting-started.md#prerequisites) for installing Devtron.
 
+{% endhint %}
+
+---
 
 ## Install Devtron with CI/CD along with GitOps (Argo CD)
 
@@ -27,7 +35,7 @@ helm install devtron devtron/devtron-operator \
 --set argo-cd.enabled=true
 ```
 
-**Note**: If you want to configure Blob Storage during the installation, refer [configure blob storage duing installation](#configure-blob-storage-during-installation).
+**Note**: If you want to configure Blob Storage during the installation, refer [Configure Blob Storage During Installation](#configure-blob-storage-during-installation).
 
 
 <!-- ## Install Multi-Architecture Nodes (ARM and AMD)
@@ -38,6 +46,7 @@ To install Devtron on clusters with the multi-architecture nodes (ARM and AMD), 
 
 * If you want to install Devtron for `production deployments`, please refer to our recommended overrides for [Devtron Installation](override-default-devtron-installation-configs.md). -->
 
+---
 
 ## Configure Blob Storage during Installation
 
@@ -189,6 +198,7 @@ helm install devtron devtron/devtron-operator \
 {% endtab %}
 {% endtabs %}
 
+---
 
 ## Check Status of Devtron Installation
 
@@ -208,6 +218,7 @@ The command executes with one of the following output messages, indicating the s
 | `Downloaded` | The installer has downloaded all the manifests, and the installation is in progress. |
 | `Applied` | The installer has successfully applied all the manifests, and the installation is completed. |
 
+---
 
 ## Check the installer logs
 
@@ -216,6 +227,8 @@ Run the following command to check the installer logs:
 ```bash
 kubectl logs -f -l app=inception -n devtroncd
 ```
+
+---
 
 ## Devtron dashboard
 
@@ -243,16 +256,11 @@ Please wait until the installation is completed.
 | :--- | :--- | :--- |
 | devtron.yourdomain.com | CNAME | aaff16e9760594a92afa0140dbfd99f7-305259315.us-east-1.elb.amazonaws.com |
 
+---
 
 ## Devtron Admin credentials
 
 When you install Devtron for the first time, it creates a default admin user and password (with unrestricted access to Devtron). You can use that credentials to log in as an administrator. 
-
-After the initial login, we recommend you set up any SSO service like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (let's say, GitHub) to log in to Devtron's dashboard.
-
-The section below will help you understand the process of getting the administrator credentials.
-
-### For Devtron version v0.6.0 and higher
 
 **Username**: `admin` <br>
 **Password**: Run the following command to get the admin password:
@@ -262,23 +270,18 @@ kubectl -n devtroncd get secret devtron-secret \
 -o jsonpath='{.data.ADMIN_PASSWORD}' | base64 -d
 ```
 
+{% hint style="info" %}
 
-<details>
-<summary>For Devtron version less than v0.6.0</summary>
+### Next Recommended Action
 
-**Username**: `admin` <br>
-**Password**: Run the following command to get the admin password:
+When you install Devtron for the first time, it creates a default admin user and password (with unrestricted access to Devtron). You can use it to log in as an administrator.
 
-```bash
-kubectl -n devtroncd get secret devtron-secret \
--o jsonpath='{.data.ACD_PASSWORD}' | base64 -d
-```
-</details>
+After the initial login, we recommend you set up any [Single Sign-On (SSO)](../../user-guide/global-configurations/sso-login.md) service like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (e.g., GitHub) to log in to the Dashboard.
 
+{% endhint %}
 
-* If you want to uninstall Devtron or clean Devtron helm installer, refer our [uninstall Devtron](../install/uninstall-devtron.md).
+{% hint style="info" %}
 
-* Related to installation, please also refer [FAQ](../install/faq-on-installation.md) section also.
+If you have questions, please let us know on our discord channel. [![Join Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)
 
-
-**Note**: If you have questions, please let us know on our discord channel. [![Join Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)
+{% endhint %}
