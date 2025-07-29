@@ -251,7 +251,7 @@ To delete a lock deployment configuration file, follow the steps below:
 Deleting a profile will automatically remove it from the Applied Profiles tab and remove its restrictions from all deployment templates where it was previously applied.
 {% endhint %}
 
-<!-- 
+
 ## Use Cases
 
 ### Locking Resources 
@@ -262,11 +262,12 @@ To prevent accidental or unauthorized changes to resource configurations (CPU & 
 
 **Lock Deployment Configuration Profile**
 
-```yaml 
-
+```yaml
+resources.limits.cpu
+resources.limits.memory
+resources.requests.cpu
+resources.requests.memory
 ```
-
-![]()
 
 This ensures that only super admins can modify critical resource configurations (increasing CPU or reducing memory) especially in sensitive environments like production.
 
@@ -279,10 +280,19 @@ To prevent accidental or unauthorized changes to autoscaling configurations, you
 **Lock Deployment Configuration Profile**
 
 ```yaml 
-
+autoscaling.MaxReplicas
+autoscaling.MinReplicas
+autoscaling.TargetCPUUtilizationPercentage
+autoscaling.TargetMemoryUtilizationPercentage
+autoscaling.annotations
+autoscaling.behavior
+autoscaling.containerResource.TargetCPUUtilizationPercentage
+autoscaling.containerResource.TargetMemoryUtilizationPercentage
+autoscaling.containerResource.enabled
+autoscaling.enabled
+autoscaling.extraMetrics
+autoscaling.labels
 ```
-
-![]()
 
 ### Locking Ingress
 
@@ -293,7 +303,7 @@ To prevent accidental or unauthorized changes to ingress configurations, you can
 **Lock Deployment Configuration Profile**
 
 ```yaml 
-
+ingress
+ingressinternal.hosts
+ingressInternal.hosts[*].pathType
 ```
-
-![]() -->
