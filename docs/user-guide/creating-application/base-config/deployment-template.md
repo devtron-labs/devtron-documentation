@@ -1,46 +1,63 @@
 # Deployment Template
 
-In Devtron, a Deployment Template defines how your application runs by specifying its configuration settings. Devtron uses Helm charts to manage these deployments, allowing you to control everything from resource allocation to environment variables. You can use default deployment charts provided by Devtron or custom deployment charts developed by a super-admin to suit your needs.
+## Introduction 
+
+![Figure 1: Deployment Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/base-config/deployment-template.jpg)
+
+In Devtron, a [Deployment Template](../../../reference/glossary.md#base-deployment-template) defines how your application should run by defining its specifications. Devtron uses [Helm charts](../../../reference/glossary.md#helm-chartspackages) to manage these deployments, allowing you to control everything from [Resource Allocation](../../../reference/glossary.md#resource-allocation) to environment variables. 
+
+You can use default [Deployment Charts](../../../reference/glossary.md#deployment-charts) provided by Devtron or [Custom Deployment Charts](../../global-configurations/deployment-charts.md) developed by a super-admin to suit your needs.
 
 This guide covers how to:
 
 * [Select a Deployment Chart](#select-a-deployment-chart)
+
 * [Choose a Chart Version](#choose-a-chart-version)
+
 * [Configure the Deployment Template](#configure-the-deployment-template)
+
 * [Enable Application Metrics](#enable-application-metrics)
+
 * [Perform a Dry Run](#perform-a-dry-run)
+
 * [Extra: Edit a Protected Deployment Configuration](#edit-a-protected-deployment-template) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
+---
 
 ## Select a Deployment Chart Type
 
 {% hint style="warning" %}
+
 ### Who Can Perform This Action?
+
 Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above to select a chart.
+
 {% endhint %}
 
 1. Go to the **Configurations** page of your application.
 
-  ![Figure 1: Application's 'Configurations' Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/app-config-page.jpg)
+  ![Figure 2: Application's 'Configurations' Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/app-config-page.jpg)
 
 2. Click **Base Configuration** → **Deployment Template**.
 
-  ![Figure 2: Navigating to Base Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/click-baseconfig.gif)
+  ![Figure 3: Navigating to Base Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/click-baseconfig.gif)
 
-3. From the **Chart** dropdown, select a deployment chart. You can choose between [Charts by Devtron](./deployment-template/README.md) or [Custom Charts](../../global-configurations/deployment-charts.md) (if available).
+3. Select the **Chart** drop-down box. The following tabs are displayed:
 
-  ![Figure 3: Charts by Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/select-devtron-chart.gif)
+  * [Charts by Devtron](./deployment-template/README.md) - Displays the default deployment charts provided by Devtron
 
+  * [Custom charts](../../global-configurations/deployment-charts.md) - Displays your custom deployment charts (if available). To create a custom deployment chart, refer to [Deployment Charts](../../global-configurations/deployment-charts.md).
 
-  ![Figure 4: Custom Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/select-custom-chart.gif)
+  ![Figure 4a: Charts by Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/base-config/deployment-charts-devtron.gif)
 
-{% hint style="info" %}
-### Want to create and use your own deployment chart?
-Users with super-admin permissions may upload their own deployment chart in **Global Configurations** → **Deployment Charts**. Refer the [documentation](../../global-configurations/deployment-charts.md) to learn more.
-{% endhint %}
+  ![Figure 4b: Custom Charts](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/base-config/deployment-charts-custom.gif)
 
-{% hint style="warning" %}
-### Note
+{% hint style="danger" %}
+
+### Important Note
+
 After you select and save a chart type for a given application, you won't be able to change it later. Make sure to choose the correct chart type before saving.
+
 {% endhint %}
 
 ---
@@ -48,34 +65,42 @@ After you select and save a chart type for a given application, you won't be abl
 ## Choose a Chart Version
 
 {% hint style="warning" %}
+
 ### Who Can Perform This Action?
+
 Users need to have [Admin role](../../../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above to select a chart version.
+
 {% endhint %}
 
-Devtron maintains multiple chart versions based on the features it support. Additionally, each chart version has a supporting README file you can use for knowing the features and variables.
+Devtron maintains multiple chart versions for each chart type. Additionally, each chart version has a supporting README file that you can use to know more about the features and variables.
 
 ![Figure 5: Accessing the README file](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/readme-version.gif)
 
-Once you [select a deployment chart](#select-a-deployment-chart-type), choose a chart version using which you wish to deploy your application. By default, the latest version of the helm chart is selected.
+Once you [select a deployment chart](#select-a-deployment-chart-type), choose a chart version with which you wish to deploy your application from the **Version** drop-down box. By default, the latest version of the helm chart is selected.
 
-![Figure 6: Picking a Chart Version](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/chart-version.jpg)
+![Figure 6: Choosing the Chart Version](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/chart-version.jpg)
 
 ---
 
 ## Configure the Deployment Template
 
 {% hint style="warning" %}
+
 ### Who Can Perform This Action?
+
 Users need to have [Admin role](../../../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above to configure a deployment template. However, super-admins can lock keys in deployment template to prevent non-super-admins from modifying them. Refer [Lock Deployment Configuration](../../global-configurations/lock-deployment-config.md) to know more.
+
 {% endhint %}
 
-There are two ways of editing a deployment template:
+You can edit a deployment template using the following two ways:
+
 * [Using GUI](#using-gui)
+
 * [Using YAML](#using-yaml)
 
 ### Using GUI
 
-If you are not an advanced user, you may use the simpler **GUI** section to configure your chosen deployment chart.
+If you prefer to use a simple way to configure your chosen deployment chart, select **GUI**.
 
 ![Figure 7: GUI Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/basic-gui.jpg)
 
@@ -107,32 +132,42 @@ If you wish to perform additional configurations, click the **Switch to Advanced
 ![Figure 8: Switch to Advanced (YAML Method)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/yaml-switch.jpg)
 
 {% hint style="info" %}
+
 ### Note
+
 * If you change any values in the **GUI**, then the corresponding values will change in **YAML** too.
+
 * Users who are not super-admins will land on **GUI** section when they visit **Deployment Template** page; whereas super-admins will land on **YAML** section. This is just a default behavior, they can still navigate to the other section if needed.
+
 {% endhint %}
 
 #### Customize the GUI [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 {% hint style="warning" %}
+
 ### Who Can Perform This Action?
-Superadmin can define and apply custom deployment schema.
+
+Only a [Super-Admin](../../global-configurations/user-access.md#assign-super-admin-permissions) can customize the GUI section.
+
 {% endhint %}
 
 By default, the **GUI** section comes with multiple predefined fields as seen earlier [in the table](#using-gui). However, if you wish to display a different set of fields to your team, you can modify the whole section as per your requirement.
 
 This is useful in scenarios where:
+
 * Your team members find it difficult to understand and edit the YAML section.
+
 * You frequently edit certain fields in **YAML**, which you expect to remain easily accessible in **GUI** section.
+
 * You don't require some fields in **GUI** section.
+
 * You need the autonomy to keep the GUI unique for applications/clusters/environments/charts, or display the same GUI everywhere.
 
-{% hint style="info" %}
-### Note
 There are two ways you can customize the GUI, use any one of the following:
+
 1. From [Deployment Charts](../../global-configurations/deployment-charts.md#editing-gui-schema-of-deployment-charts) section
+
 2. Using APIs (explained below)
-{% endhint %}
 
 {% embed url="https://www.youtube.com/watch?v=09VP1I-WvUs" caption="JSON-driven Deployment Schema" %}
 
@@ -197,13 +232,21 @@ PUT {{DEVTRON_BASEURL}}/orchestrator/deployment/template/schema
 {% endcode %}
 
 1. In the `name` field, give a name to your schema, e.g., *schema-1*
+
 2. Enter the `type` as JSON.
-3. The `schema` field is for entering your custom deployment schema. Perform the following steps:
-    * To create a custom schema of your choice, you may use [RJSF JSON Schema Tool](https://rjsf-team.github.io/react-jsonschema-form/). 
-    * Copy the final JSON and stringify it using any free online tool. 
-    * Paste the stringified JSON in the `schema` field of the API request body.
-    * Send the API request. If your schema already exists, use the `PUT` method instead of `POST` in the API call.
-4. The `attributeSelector` object helps you choose the scope at which your custom deployment schema will take effect.
+
+3. The `schema` field is for entering your custom JSON for deployment. When you create a custom JSON for deployment, you can customize the fields that are displayed in the GUI section while configuring the deployment template. Perform the following steps:
+
+  * To create a custom JSON for your deployment, you may use [RJSF JSON Schema Tool](https://rjsf-team.github.io/react-jsonschema-form/). 
+
+  * Copy the final JSON and stringify it using any free online tool. 
+
+  * Paste the stringified JSON in the `schema` field of the API request body.
+
+  * Send the API request. If your schema already exists, use the `PUT` method instead of `POST` in the API call.
+
+4. The `attributeSelector` object helps you choose the scope at which your custom JSON will take effect.
+
     | Priority | Category Scope  | Description                                                                |
     |----------|-----------------|----------------------------------------------------------------------------|
     | 1 (High) | APP_ENV         | Specific to an application and its environment                             |
@@ -216,16 +259,20 @@ PUT {{DEVTRON_BASEURL}}/orchestrator/deployment/template/schema
 
 ### Using YAML
 
-If you are an advanced user wishing to perform additional configurations, you may switch to **YAML** for modifications.
+If you prefer to perform additional configurations in your chosen deployment template, select **YAML**.
 
 ![Figure 9: YAML Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/advanced-yaml.jpg)
 
 Every chart version has its own YAML file that provides specifications for your application. To make it easy to use, we have created templates for the YAML file and added some variables inside the YAML. You can provide or change the values of these variables as per your requirement.
 
 Refer the respective templates to view the YAML details.
+
 * [Deployment](./deployment-template/deployment.md)
+
 * [Rollout Deployment](./deployment-template/rollout-deployment.md)
+
 * [Job & CronJob](./deployment-template/job-and-cronjob.md)
+
 * [StatefulSet](./deployment-template/statefulset.md)
 
 Before saving your configuration in YAML, make sure to [perform a dry run](#perform-a-dry-run).
@@ -250,8 +297,11 @@ Once enabled, you can view the application metrics on the **App Details** page.
 ![Figure 11: Application metrics on 'App Details' page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/app-metric-op.jpg)
 
 {% hint style="info" %}
+
 ### Important
+
 Enabling application metrics adds a sidecar container to your main container, which may require additional configuration. We recommend running a load test in a non-production environment before enabling it in production.
+
 {% endhint %}
 
 ---
@@ -271,8 +321,11 @@ Your configurations will appear in the left pane, while the right pane will disp
 ## Edit a Protected Deployment Template [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 {% hint style="info" %}
+
 ### Who Can Perform This Action?
+
 Only a super-admin, manager, and admin can edit the configuration values. 
+
 {% endhint %}
 
 Any changes made to the deployment template will require approval if an approval policy is enforced. To check if your deployment template is protected, check the stamp/approve symbol as shown below.
@@ -292,13 +345,17 @@ Let's assume you are the application admin and your deployment template in **Bas
     ![Figure 15: Changing Values](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/changed-values-v2.jpg)
 
 {% hint style="info" %}
+
 ### What if the keys are locked from editing?
+
 You cannot modify locked keys in deployment template unless you are a super-admin. Refer [Lock Deployment Configuration](../../global-configurations/lock-deployment-config.md) to know more. 
+
 {% endhint %}
 
 3. Since the deployment configuration is protected, your changes won't be published right away. You can do either of the following:
 
     * **Save as draft** : Selecting this option will save your file as a draft. You and other users can view and edit the saved draft and propose it further for approval.
+
     * **Save & Propose Changes** : Selecting this option will allow you to choose and notify the configuration approver(s) and propose your changes for a review. Moreover, it also has the option to notify all the users having access to the application on Devtron.
 
     Since we are proposing the changes immediately, click **Propose Changes**.
@@ -310,24 +367,35 @@ You cannot modify locked keys in deployment template unless you are a super-admi
     ![Figure 17: Viewing the Approval Status](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/approval-status.jpg)
 
 {% hint style="info" %}
+
 ### Can I approve my own changes?
+
 No, the one who performs the edits cannot approve their own changes. A different user has to review and approve.
+
 {% endhint %}
 
 Only one draft can exist at time and you cannot create multiple drafts. In the top-right corner, you have the option to discard the draft if you don't wish to proceed with the edits you made. 
 
 ![Figure 18: Discarding the Draft](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/discard-draft.jpg)
 
-
 ### Grant Approval for Changes
 
 {% hint style="info" %}
+
 ### Who Can Perform This Action?
+
 Only a different super-admin user or someone (who is not amongst the editors of the draft), having `Configuration approver` access, can approve the changes made to the deployment configuration.
+
 {% endhint %}
 
 Go to the edited configuration file to review and approve the changes as shown below.
 
 ![Figure 19: Approving the Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/approval-screen-v2.jpg)
 
-**Note**: If [SES/SMTP](../../global-configurations/manage-notification.md) is configured in Devtron, the approver gets notified via email. Therefore, the approver can take an action directly from the mail as shown below. Once the approver validates and approves your configuration changes, you can proceed to deploy your application with the updated configuration.
+{% hint style="info" %}
+
+### Note
+
+If [SES/SMTP](../../global-configurations/manage-notification.md) is configured in Devtron, the approver gets notified via email. Therefore, the approver can take an action directly from the mail as shown below. Once the approver validates and approves your configuration changes, you can proceed to deploy your application with the updated configuration.
+
+{% endhint %}

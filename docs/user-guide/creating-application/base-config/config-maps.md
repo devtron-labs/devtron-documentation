@@ -25,7 +25,9 @@ A ConfigMap stores key-value pairs that your applications can use as environment
     ![Figure 3: Naming the ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/created-configmap.gif)
 
 3. **Mount data as** - Select how you want to mount the ConfigMap:
+
     * **Environment Variable** – Select this option if you want to inject Environment Variables in pods using ConfigMap.
+
     * **Data Volume** – Select this option, if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-valume) to know more.
 
 4. Enter data in:
@@ -53,7 +55,7 @@ Use this option if you have a ConfigMap created using the kubectl command. Ensur
 
 ## Mount Data as Data Volume
 
-### Create ConfigMap from File
+### Mount ConfigMap Data
 
 ![Figure 4: Selecting Data Volume Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/cm-data-volume.jpg)
 
@@ -76,9 +78,13 @@ When mounting multiple files to the same location, you can use the **Set Sub Pat
 * If **Set Sub Path** is disabled (unchecked), the system will delete any files already present in the [specified path](#volume-mount-path) and then mount the new files.
 
 {% hint style="info" %}
+
 ### Note
+
 In case of Kubernetes ConfigMap, all keys will be mounted as files on the specified path.
+
 In case of Kubernetes External ConfigMap, manually specify the keys which should be mounted as files.
+
 {% endhint %}
 
 
@@ -150,6 +156,3 @@ You may delete a ConfigMap if not in use anymore. Once a ConfigMap is deleted, i
 Any changes made to the protected base configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../global-configurations/approval-policy.md) is enforced.
 
 {% embed url="https://www.youtube.com/watch?v=gY9LKJSVS-g" %}
-
-
-

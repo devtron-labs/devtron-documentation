@@ -76,6 +76,8 @@ Let's choose YAML mode for now and proceed. If you prefer GUI mode, go to [Overr
 
 ### Using Patch Strategy
 
+Suppose you want to update only one field (e.g., `"username" = "johndoe"`) in a deployment template. Using the patch strategy, you can just update the field to `"username" = "mathew"`. All other fields in the deployment template will remain unchanged.
+
 * Only the fields you explicitly specify are updated.  
 * The patched template will continue to depend on the base configuration, so all other inherited fields remain unchanged and will continue to inherit in future.
 * Best for minor edits.
@@ -88,24 +90,23 @@ Let's choose YAML mode for now and proceed. If you prefer GUI mode, go to [Overr
 | logLevel  | "info"             | *(Not specified)*          | "info" *(Unchanged)* |
 | timeout   | (Not specified)    | 30s                        | 30s (Added)          |
 
-You can achieve this by doing either of the following to achieve the same outcome: 
+If you know the fields you wish to change, simply enter the changed key-value fields along with indentation (if any).
 
-* If you know the fields you wish to change, simply enter the changed key-value fields along with indentation (if any).
+{% embed url="https://www.youtube.com/watch?v=phhv1_2eStI" %}
 
-    {% embed url="https://www.youtube.com/watch?v=phhv1_2eStI" %}
-
-
-* Or you may copy-paste the entire config, and change the fields.
-
+<!--* Or you may copy-paste the entire config, and change the fields.
     {% embed url="https://www.youtube.com/watch?v=4eHM5ZsNoCg" %}
-
+-->
 
 ### Using Replace Strategy 
+
+Suppose you update your deployment chart version (e.g., from `4.0.0` to `4.0.1`). Although the new chart version contains new features and key-value pairs, if you prefer to keep a few configurations unchanged regardless of the new key-value pairs added in the new chart version, you can use the replace strategy.
 
 * The entire configuration is replaced with your new environment-specific settings.
 * The replaced template will no longer depend or inherit from base configuration anymore.
 * Best for a complete override.
 
+<!--
 | Field     | Inherited Configuration | Input (with Replace)    | Final Configuration |
 |-----------|--------------------|------------------------------|---------------------|
 | cpu       | 100m               | 500m                         | 500m                |
@@ -113,6 +114,7 @@ You can achieve this by doing either of the following to achieve the same outcom
 | replicas  | 2                  | *(Not specified)*            | *(Removed)*         |
 | logLevel  | "info"             | *(Not specified)*            | *(Removed)*         |
 | timeout   | (Not specified)    | 30s                          | 30s (Added)         |
+-->
 
 ![Figure 8: Replace Strategy for Deployment Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/replace-dt.gif)
 
