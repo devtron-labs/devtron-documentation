@@ -127,21 +127,98 @@ spec:
 
 ---
 
+## Complex Scoped Variable
+
+In Devtron, Scoped variables usually store simple values like strings or numbers, but, in some cases, you may need to define more detailed configuration in a scoped variable, such as autoscaling configuration or resource configuration. You can achieve this by defining a complex scoped variable.
+
+Complex scoped variables supports YAML configurations to be defined as values. Using complex scoped variables will help you to reuse YAML configuration across multiple applications or environments. Just like scoped variable, complex scoped variables values can be changed based on the context (`category`) such as **Global**, **CLuster**, **Environment**, **Application**, **Environment+Application**.
+
+Here's a truncated template containing the specification of one complex scoped variable defined for different contexts for your understanding:
+
+```yaml
+apiVersion: devtron.ai/v1beta1
+kind: Variable
+spec:
+  - notes: Resource Configuration
+    shortDescription: Complex Scoped Variable
+    isSensitive: false
+    name: resources # Defining name for the variable.
+    values:
+      - category: Application
+        value:  # Insert the YAML configuration block with proper indentation
+          resources:
+            limits:
+              cpu: 100m
+              memory: 100Mi
+            requests:
+              cpu: 100m
+              memory: 100Mi
+        selectors:
+          attributeSelectors:
+            ApplicationName: banking-preprod
+      - category: Env # Defining the variable for an environment.
+        value: 
+          resources:
+            limits:
+              cpu: 75m
+              memory: 75Mi
+            requests:
+              cpu: 50m
+              memory: 50Mi
+        selectors:
+          attributeSelectors:
+            EnvName: devtron-demo # Specifying the environment
+      - category: Env # Defining variable's values for another environment
+        value: 
+          resources:
+            limits:
+              cpu: 200m
+              memory: 200Mi
+            requests:
+              cpu: 100m
+              memory: 100Mi
+        selectors:
+          attributeSelectors:
+            EnvName: banking # Specifying another environment name.
+      - category: Global # Defining Variable's Values for global context.
+        value:
+          resources:
+            limits:
+              cpu: 50m
+              memory: 50Mi
+            requests:
+              cpu: 50m
+              memory: 50Mi
+```
+
+---
 ## How to Edit an Existing Scoped Variable
 
 Only a super-admin can edit existing scoped variables.
 
-### Option-1: Directly edit using the UI
+### Option 1: Directly edit using the UI
 
 ![Figure 6: Editing from UI](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/edit.jpg)
 
 ### Option 2: Reupload the updated YAML file
 
-![Figure 7: Reuploading New File](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/reupload.jpg)
+![Figure 7: Re-uploading New File](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/reupload.jpg)
 
 {% hint style="warning" %}
-Reuploading the YAML file will replace the previous file, so any variable that existed in the previous file but not in the latest one will be lost
+Re-uploading the YAML file will replace the previous file, so any variable that existed in the previous file but not in the latest one will be lost
 {% endhint %}
+
+### Option 3: Edit through 'Environments' tab
+
+The **Environments** tab allows you to view and edit scoped variable values for individual environments. 
+
+  1. Go to the **Environments** tab; you will see a list of all environments and how many scoped variables are defined for each of them. 
+  
+  2. Click the preferred environment name to view or edit. 
+  
+  3. You can edit the variables using the GUI or YAML mode. 
+  
+  **Note:** Any changes you made through this method will also update the saved YAML configuration.
 
 ---
 
@@ -150,17 +227,24 @@ Reuploading the YAML file will replace the previous file, so any variable that e
 Once a variable is defined, it can be used by your authorized users on Devtron. A scoped variable widget would appear only on the screens that support its usage. 
 
 Currently, the widget is shown only on the following screens in [App Configuration](../creating-application/README.md): 
+
 * Workflow Editor → Edit build pipeline → Pre-build stage (tab)
+
 * Workflow Editor → Edit build pipeline → Post-build stage (tab)
+
 * Workflow Editor → Edit deployment pipeline → Post-Deployment stage (tab)
+
 * Workflow Editor → Edit deployment pipeline → Post-Deployment stage (tab)
+
 * Deployment Template
+
 * ConfigMaps
+
 * Secrets
 
 ![Figure 8: Unexpanded Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget1.jpg)
 
-Upon clicking on the widget, a list of variables will be visible. 
+To use a scoped variable, click on the floating widget; a list of variables will be visible. 
 
 ![Figure 9: Expanded Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget-expanded.jpg)
 
@@ -168,7 +252,7 @@ Use the copy button to copy a relevant variable of your choice.
 
 ![Figure 10: Copying a Variable](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/display-value.jpg)
 
-It would appear in the following format upon pasting it within an input field: `@{{variable-name}}`
+It would appear in the following format upon pasting it within an input field: `@{{variable-name}}`. In case you are using a scoped variable in deployment template, you need to encapsulate it in double quotes i.e., `"@{{variable-name}}"`
 
 ![Figure 11: Pasting a Variable](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/paste-value.jpg)
 
@@ -179,9 +263,13 @@ It would appear in the following format upon pasting it within an input field: `
 When multiple values are associated with a scoped variable, the precedence order is as follows, with the highest priority at the top:
 
 1. Environment + App [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
 2. App [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
 3. Environment [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
 4. Cluster [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
 5. Global
 
 ### Example
@@ -211,10 +299,3 @@ There are some system variables that exist by default in Devtron that you can re
 {% hint style="info" %}
 Currently, these variables do not appear in the scoped variable widget, but you may use them. 
 {% endhint %}
-
-
-
-
-
-
-
