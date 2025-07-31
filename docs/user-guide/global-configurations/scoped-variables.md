@@ -146,19 +146,17 @@ spec:
     values:
       - category: Application
         value:  # Insert the YAML configuration block with proper indentation
-          resources:
-            limits:
-              cpu: 100m
-              memory: 100Mi
-            requests:
-              cpu: 100m
-              memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
         selectors:
           attributeSelectors:
             ApplicationName: banking-preprod
       - category: Env # Defining the variable for an environment.
         value: 
-          resources:
             limits:
               cpu: 75m
               memory: 75Mi
@@ -170,25 +168,23 @@ spec:
             EnvName: devtron-demo # Specifying the environment
       - category: Env # Defining variable's values for another environment
         value: 
-          resources:
-            limits:
-              cpu: 200m
-              memory: 200Mi
-            requests:
-              cpu: 100m
-              memory: 100Mi
+          limits:
+            cpu: 200m
+            memory: 200Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
         selectors:
           attributeSelectors:
             EnvName: banking # Specifying another environment name.
       - category: Global # Defining Variable's Values for global context.
         value:
-          resources:
-            limits:
-              cpu: 50m
-              memory: 50Mi
-            requests:
-              cpu: 50m
-              memory: 50Mi
+          limits:
+            cpu: 50m
+            memory: 50Mi
+          requests:
+            cpu: 50m
+            memory: 50Mi
 ```
 
 ---
@@ -214,9 +210,15 @@ The **Environments** tab allows you to view and edit scoped variable values for 
 
   1. Go to the **Environments** tab; you will see a list of all environments and how many scoped variables are defined for each of them. 
   
+    ![Figure 8: Navigating to 'Environment' tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-env-tab.jpg)
+
   2. Click the preferred environment name to view or edit. 
   
   3. You can edit the variables using the GUI or YAML mode. 
+
+    ![Figure 9: Editing in GUI Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-edit-scoped-variable.jpg)
+
+    ![Figure 10: Editing in YAML Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-edit-scoped-variable-yaml.jpg)
   
   **Note:** Any changes you made through this method will also update the saved YAML configuration.
 
@@ -242,19 +244,27 @@ Currently, the widget is shown only on the following screens in [App Configurati
 
 * Secrets
 
-![Figure 8: Unexpanded Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget1.jpg)
+![Figure 11: Unexpanded Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget1.jpg)
 
 To use a scoped variable, click on the floating widget; a list of variables will be visible. 
 
-![Figure 9: Expanded Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget-expanded.jpg)
+![Figure 12: Expanded Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget-expanded.jpg)
 
 Use the copy button to copy a relevant variable of your choice.
 
-![Figure 10: Copying a Variable](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/display-value.jpg)
+![Figure 13: Copying a Variable](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/display-value.jpg)
 
-It would appear in the following format upon pasting it within an input field: `@{{variable-name}}`. In case you are using a scoped variable in deployment template, you need to encapsulate it in double quotes i.e., `"@{{variable-name}}"`
+It would appear in the following format upon pasting it within an input field: `@{{variable-name}}`.
 
-![Figure 11: Pasting a Variable](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/paste-value.jpg)
+![Figure 14: Pasting a Variable](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/paste-value.jpg)
+
+In case you are using a scoped variable in deployment template, you need to encapsulate it in double quotes i.e., `"@{{variable-name}}"`
+
+![Figure 15: Using Scoped Variable in Deployment Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-using-in-deployment-template.jpg)
+
+![Figure 16: Performing a Dry Run](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-dry-run.jpg)
+
+**Note:** Ignore the red underline while using a scoped variable in the deployment template.
 
 ---
 
@@ -274,7 +284,7 @@ When multiple values are associated with a scoped variable, the precedence order
 
 ### Example
 
-![Figure 12: Variable key in Red, Variable value in Green](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/key-values.jpg)
+![Figure 17: Variable key in Red, Variable value in Green](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/key-values.jpg)
 
 
 1. **Environment + App:** This is the most specific scope, and it will take precedence over all other scopes. For example, the value of `DB name` variable for the `app1` application in the `prod` environment would be `app1-p`, even though there is a global `DB name` variable set to `Devtron`. If a variable value for this scope is not defined, the **App** scope will be checked.
