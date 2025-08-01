@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In Devtron, many configuration values such as a database name, memory limit, or service endpoint need to be used in multiple places. Instead of entering the same value repeatedly, you can store it as a scoped variable.
+In Devtron, many configuration values such as a database name, memory limit, or service endpoint need to be used in multiple places. Instead of entering the same value again and again, you can store it as a scoped variable.
 
 A scoped variable (key-value pair) allows you to define a value once and reuse it. The same variable can hold different values based on where it is used; it means, while the key remains the same, its value may change depending on the following context...
 
@@ -14,7 +14,7 @@ A scoped variable (key-value pair) allows you to define a value once and reuse i
 | **Application** | Variable value might differ for each application. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)|
 | **Environment + Application**| Variable value might differ for each application on a specific environment. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)|
 
-...for example, you can create a variable named `db_name` to store the database name and set its value to `dev-db` for development environment and for production environment you can set its value to `prod-db`. At the time of deployment, Devtron will automatically choose the correct value based on the environment.
+...for example, you can create a variable named `db_name` to store the database name and set its value to `dev-db` for development environment, and for production environment you can set its value to `prod-db`, at the time of deployment, Devtron will automatically choose the correct value based on the environment.
 
 **Advantages of using scoped variables**
 
@@ -37,7 +37,7 @@ Depending on your use case, you can do either one of the following:
 
 | Action | Description |
 |:---|:---|
-| **Download the YAML Template and define variables from scratch.** | In case you are defining the Scoped Variables for the first time:<ol><li> Download the YAML template from the Devtron Dashboard in your local system.</li><li> Define your variables.</li><li> Upload it back to the Devtron</li></li> |
+| **Download the YAML Template and define variables from scratch.** | In case you are defining the Scoped Variables for the first time:<ol><li> [Download the YAML template](#download-the-template) from the Devtron Dashboard in your local system.</li><li> [Define your variables](#enter-the-values).</li><li> [Upload it back to the Devtron](#upload-the-template)</li></li> |
 | **Edit the existing saved YAML configuration** | If you wish to add, update or delete the existing scoped variables you can edit the existing saved YAML configuration by the following two ways:<ul><li>Edit using the in-built UI Editor.</li><li> You can download the existing saved configuration as a YAML file in your local system and can modify it in your preferred local editor and then upload the file to implement changes. |
 
 ### Download the Template
@@ -220,17 +220,20 @@ The **Environments** tab allows you to view and edit scoped variable values for 
 
   1. Go to the **Environments** tab; you will see a list of all environments and how many scoped variables are defined for each of them. 
   
-    ![Figure 8: Navigating to 'Environment' tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-env-tab.jpg)
+   ![Figure 8: Navigating to 'Environment' tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-env-tab.jpg)
 
   2. Click the preferred environment name to view or edit. 
   
   3. You can edit the variables using the GUI or YAML mode. 
 
-    ![Figure 9: Editing in GUI Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-edit-scoped-variable.jpg)
+   ![Figure 9: Editing in GUI Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-edit-scoped-variable.jpg)
 
-    ![Figure 10: Editing in YAML Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-edit-scoped-variable-yaml.jpg)
+   ![Figure 10: Editing in YAML Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-edit-scoped-variable-yaml.jpg)
   
-  **Note:** Any changes you made through this method will also update the saved YAML configuration.
+{% hint style="info" %}
+### Note 
+Any changes you made through this method will also update the saved YAML configuration.
+{% endhint %}
 
 ---
 
