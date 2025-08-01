@@ -2,15 +2,19 @@
 
 ## Introduction
 
-In any piece of software or code, variables are used for holding data such as numbers or strings. Variables are created by declaring them, which involves specifying the variable's name and type, followed by assigning it a value.
+In Devtron, many configuration values such as a database name, memory limit, or service endpoint need to be used in multiple places. Instead of entering the same value again and again, you can store it as a scoped variable.
 
-Devtron offers super-admins the capability to define scoped variables (key-value pairs). It means, while the key remains the same, its value may change depending on the following context: 
+A scoped variable (key-value pair) allows you to define a value once and reuse it. The same variable can hold different values based on where it is used; it means, while the key remains the same, its value may change depending on the following context...
 
-* **Global**: Variable value will be universally same throughout Devtron.
-* **Cluster**: Variable value might differ for each Kubernetes cluster. <a href="https://devtron.ai/pricing" target="_blank"> <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg"></a>
-* **Environment**: Variable value might differ for each environment within a cluster, e.g., staging, dev, prod. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
-* **Application**: Variable value might differ for each application. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
-* **Environment + Application**: Variable value might differ for each application on a specific environment. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+|Category|Description|
+|:---|:---|
+|**Global** | Variable value will be universally same throughout Devtron.|
+| **Cluster**| Variable value might differ for each Kubernetes cluster. <a href="https://devtron.ai/pricing" target="_blank"> <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg"></a>|
+| **Environment** | Variable value might differ for each environment within a cluster, e.g., staging, dev, prod. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)|
+| **Application** | Variable value might differ for each application. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)|
+| **Environment + Application**| Variable value might differ for each application on a specific environment. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)|
+
+...for example, you can create a variable named `db_name` to store the database name and set its value to `dev-db` for development environment, and for production environment you can set its value to `prod-db`, at the time of deployment, Devtron will automatically choose the correct value based on the environment.
 
 **Advantages of using scoped variables**
 
@@ -22,7 +26,19 @@ Devtron offers super-admins the capability to define scoped variables (key-value
 
 ## How to Define a Scoped Variable
 
-On Devtron, a super-admin can download a YAML template. It will contain a schema for defining the variables.
+{% hint style="warning" %}
+### Who can Perform this Action?
+ Only super admins can define scoped variables. 
+{% endhint %}
+
+In Devtron, super admins can define scoped variables by using a YAML template. It will contain a schema for defining the scoped variables.
+
+Depending on your use case, you can do either one of the following:
+
+| Action | Description |
+|:---|:---|
+| **Download the YAML Template and define variables from scratch.** | In case you are defining the Scoped Variables for the first time:<ol><li> [Download the YAML template](#download-the-template) from the Devtron Dashboard in your local system.</li><li> [Define your variables](#enter-the-values).</li><li> [Upload it back to the Devtron](#upload-the-template)</li></li> |
+| **Edit the existing saved YAML configuration** | If you wish to add, update or delete the existing scoped variables you can edit the existing saved YAML configuration by the following two ways:<ul><li>Edit using the in-built UI Editor.</li><li> You can download the existing saved configuration as a YAML file in your local system and can modify it in your preferred local editor and then upload the file to implement changes. |
 
 ### Download the Template
 
@@ -38,27 +54,27 @@ On Devtron, a super-admin can download a YAML template. It will contain a schema
 
 The YAML file contains key-value pairs that follow the below schema:
 
-| Field                    | Type    | Description                                                                     |
-| ------------------------ | ------- | ------------------------------------------------------------------------------- |
-| `apiVersion`             | string  | The API version of the resource (comes pre-filled)                              |
-| `kind`                   | string  | The kind of resource (i.e. Variable, comes pre-filled)                          |
-| `spec`                   | object  | The complete specification object containing all the variables                  |
-| `spec.name`              | string  | Unique name of the variable, e.g. *DB_URL*                                      |
-| `spec.shortDescription`  | string  | A short description of the variable (up to 120 characters)                      |
-| `spec.notes`             | string  | Additional details about the variable (will not be shown on UI)                 |
-| `spec.isSensitive`       | boolean | Whether the variable value is confidential (will not be shown on UI if true)    |
-| `spec.values`            | array   | The complete values object containing all the variable values as per context    |
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| `apiVersion` | string  | The API version of the resource (comes pre-filled)|
+| `kind` | string  | The kind of resource (i.e. Variable, comes pre-filled)|
+| `spec` | object  | The complete specification object containing all the variables|
+| `spec.name` | string  | Unique name of the variable, e.g. *DB_URL*|
+| `spec.shortDescription` | string  | A short description of the variable (up to 120 characters)|
+| `spec.notes` | string  | Additional details about the variable (will not be shown on UI)|
+| `spec.isSensitive` | boolean | Whether the variable value is confidential (will not be shown on UI if true)|
+| `spec.values` | array   | The complete values object containing all the variable values as per context|
 
 The `spec.values` array further contains the following elements:
 
-| Field                    | Type    | Description                                                                                          |
-| ------------------------ | ------- | ---------------------------------------------------------------------------------------------------- |
-| `category`                                      | string | The context, e.g., Global, Cluster, Application, Env, ApplicationEnv           |
-| `value`                                         | string | The value of the variable                                                      |
-| `selectors`                                     | object | A set of selectors that restrict the scope of the variable                     |
-| `selectors.attributeSelectors`                  | object | A map of attribute selectors to values                                         |
-| `selectors.attributeSelectors.<selector_key>`   | string | The key of the attribute selector, e.g., *ApplicationName*, *EnvName*, *ClusterName* |
-| `selectors.attributeSelectors.<selector_value>` | string | The value of the attribute selector                                            |
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| `category`| string | The context, e.g., Global, Cluster, Application, Env, ApplicationEnv|
+| `value`| string | The value of the variable|
+| `selectors`| object | A set of selectors that restrict the scope of the variable|
+| `selectors.attributeSelectors`| object | A map of attribute selectors to values|
+| `selectors.attributeSelectors.<selector_key>`| string | The key of the attribute selector, e.g., **ApplicationName**, **EnvName**, **ClusterName** |
+| `selectors.attributeSelectors.<selector_value>` | string | The value of the attribute selector|
 
 
 Here's a truncated template containing the specification of two variables for your understanding:
@@ -98,7 +114,7 @@ spec:
 
 1. Once you save the YAML file, go back to the screen where you downloaded the template.
 
-2. Use the file uploader utility to upload your YAML file.
+2. Click **Upload file to add**, to upload your saved YAML file.
 
     ![Figure 2: Uploading the Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/file-uploader.jpg)
 
@@ -116,50 +132,157 @@ spec:
 
 ---
 
+## Complex Scoped Variables [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
+In Devtron, Scoped variables usually store simple values like strings or numbers, but, in some cases, you may need to define more detailed configuration in a scoped variable, such as autoscaling configuration or resource configuration. You can achieve this by defining a complex scoped variable.
+
+Complex scoped variables supports YAML configurations to be defined as values. Using complex scoped variables will help you to reuse YAML configuration across multiple applications or environments. Just like scoped variable, complex scoped variables values can be changed based on the context (`category`) such as **Global**, **CLuster**, **Environment**, **Application**, **Environment+Application**.
+
+Here's a truncated template containing the specification of one complex scoped variable defined for different contexts for your understanding:
+
+```yaml
+apiVersion: devtron.ai/v1beta1
+kind: Variable
+spec:
+  - notes: Resource Configuration
+    shortDescription: Complex Scoped Variable
+    isSensitive: false
+    name: resources # Defining name for the variable.
+    values:
+      - category: Application
+        value:  # Insert the YAML configuration block with proper indentation
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        selectors:
+          attributeSelectors:
+            ApplicationName: banking-preprod
+      - category: Env # Defining the variable for an environment.
+        value: 
+            limits:
+              cpu: 75m
+              memory: 75Mi
+            requests:
+              cpu: 50m
+              memory: 50Mi
+        selectors:
+          attributeSelectors:
+            EnvName: devtron-demo # Specifying the environment
+      - category: Env # Defining variable's values for another environment
+        value: 
+          limits:
+            cpu: 200m
+            memory: 200Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        selectors:
+          attributeSelectors:
+            EnvName: banking # Specifying another environment name.
+      - category: Global # Defining Variable's Values for global context.
+        value:
+          limits:
+            cpu: 50m
+            memory: 50Mi
+          requests:
+            cpu: 50m
+            memory: 50Mi
+```
+
+---
 ## How to Edit an Existing Scoped Variable
+
+{% hint style="warning" %}
+### Who can Perform this Action?
+ Only super admins can edit scoped variables
+{% endhint %}
 
 Only a super-admin can edit existing scoped variables.
 
-**Option 1**: Directly edit using the UI
+### Option 1: Directly edit using the UI
 
 ![Figure 6: Editing from UI](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/edit.jpg)
 
-**Option 2**: Reupload the updated YAML file
+### Option 2: Reupload the updated YAML file
 
-![Figure 7: Reuploading New File](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/reupload.jpg)
+![Figure 7: Re-uploading New File](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/reupload.jpg)
 
 {% hint style="warning" %}
-Reuploading the YAML file will replace the previous file, so any variable that existed in the previous file but not in the latest one will be lost
+Re-uploading the YAML file will replace the previous file, so any variable that existed in the previous file but not in the latest one will be lost
+{% endhint %}
+
+### Option 3: Edit through 'Environments' tab
+
+The **Environments** tab allows you to view and edit scoped variable values for individual environments. 
+
+  1. Go to the **Environments** tab; you will see a list of all environments and how many scoped variables are defined for each of them. 
+  
+   ![Figure 8: Navigating to 'Environment' tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-env-tab.jpg)
+
+  2. Click the preferred environment name to view or edit. 
+  
+  3. You can edit the variables using the GUI or YAML mode. 
+
+   ![Figure 9: Editing in GUI Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-edit-scoped-variable.jpg)
+
+   ![Figure 10: Editing in YAML Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-edit-scoped-variable-yaml.jpg)
+  
+{% hint style="info" %}
+### Note 
+Any changes you made through this method will also update the saved YAML configuration.
 {% endhint %}
 
 ---
 
 ## How to Use a Scoped Variable
 
+{% hint style="warning" %}
+### Who can Perform this Action?
+ Users need to have Admin permission or above (along with access to the environment and application) to enable to use a scoped variable.
+{% endhint %}
+
 Once a variable is defined, it can be used by your authorized users on Devtron. A scoped variable widget would appear only on the screens that support its usage. 
 
 Currently, the widget is shown only on the following screens in [App Configuration](../creating-application/README.md): 
+
 * Workflow Editor → Edit build pipeline → Pre-build stage (tab)
+
 * Workflow Editor → Edit build pipeline → Post-build stage (tab)
+
 * Workflow Editor → Edit deployment pipeline → Post-Deployment stage (tab)
+
 * Workflow Editor → Edit deployment pipeline → Post-Deployment stage (tab)
+
 * Deployment Template
+
 * ConfigMaps
+
 * Secrets
 
-![Figure 8: Unexpanded Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget1.jpg)
+![Figure 11: Unexpanded Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget1.jpg)
 
-Upon clicking on the widget, a list of variables will be visible. 
+To use a scoped variable, click on the floating widget; a list of variables will be visible. 
 
-![Figure 9: Expanded Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget-expanded.jpg)
+![Figure 12: Expanded Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget-expanded.jpg)
 
 Use the copy button to copy a relevant variable of your choice.
 
-![Figure 10: Copying a Variable](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/display-value.jpg)
+![Figure 13: Copying a Variable](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/display-value.jpg)
 
-It would appear in the following format upon pasting it within an input field: `@{{variable-name}}`
+It would appear in the following format upon pasting it within an input field: `@{{variable-name}}`.
 
-![Figure 11: Pasting a Variable](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/paste-value.jpg)
+![Figure 14: Pasting a Variable](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/paste-value.jpg)
+
+In case you are using a scoped variable in deployment template, you need to encapsulate it in double quotes i.e., `"@{{variable-name}}"`
+
+![Figure 15: Using Scoped Variable in Deployment Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-using-in-deployment-template.jpg)
+
+![Figure 16: Performing a Dry Run](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-dry-run.jpg)
+
+**Note:** Ignore the red underline while using a scoped variable in the deployment template.
 
 ---
 
@@ -168,14 +291,18 @@ It would appear in the following format upon pasting it within an input field: `
 When multiple values are associated with a scoped variable, the precedence order is as follows, with the highest priority at the top:
 
 1. Environment + App [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
 2. App [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
 3. Environment [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
 4. Cluster [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
 5. Global
 
 ### Example
 
-![Figure 12: Variable key in Red, Variable value in Green](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/key-values.jpg)
+![Figure 17: Variable key in Red, Variable value in Green](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/key-values.jpg)
 
 
 1. **Environment + App:** This is the most specific scope, and it will take precedence over all other scopes. For example, the value of `DB name` variable for the `app1` application in the `prod` environment would be `app1-p`, even though there is a global `DB name` variable set to `Devtron`. If a variable value for this scope is not defined, the **App** scope will be checked.
@@ -200,10 +327,3 @@ There are some system variables that exist by default in Devtron that you can re
 {% hint style="info" %}
 Currently, these variables do not appear in the scoped variable widget, but you may use them. 
 {% endhint %}
-
-
-
-
-
-
-
