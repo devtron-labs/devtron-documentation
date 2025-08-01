@@ -26,6 +26,11 @@ A scoped variable (key-value pair) allows you to define a value once and reuse i
 
 ## How to Define a Scoped Variable
 
+{% hint style="warning" %}
+### Who can Perform this Action?
+ Only super admins can define scoped variables. 
+{% endhint %}
+
 In Devtron, super admins can define scoped variables by using a YAML template. It will contain a schema for defining the scoped variables.
 
 Depending on your use case, you can do either one of the following:
@@ -127,7 +132,7 @@ spec:
 
 ---
 
-## Complex Scoped Variable
+## Complex Scoped Variables [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 In Devtron, Scoped variables usually store simple values like strings or numbers, but, in some cases, you may need to define more detailed configuration in a scoped variable, such as autoscaling configuration or resource configuration. You can achieve this by defining a complex scoped variable.
 
@@ -190,6 +195,11 @@ spec:
 ---
 ## How to Edit an Existing Scoped Variable
 
+{% hint style="warning" %}
+### Who can Perform this Action?
+ Only super admins can edit scoped variables
+{% endhint %}
+
 Only a super-admin can edit existing scoped variables.
 
 ### Option 1: Directly edit using the UI
@@ -225,6 +235,11 @@ The **Environments** tab allows you to view and edit scoped variable values for 
 ---
 
 ## How to Use a Scoped Variable
+
+{% hint style="warning" %}
+### Who can Perform this Action?
+ Users need to have Admin permission or above (along with access to the environment and application) to enable to use a scoped variable.
+{% endhint %}
 
 Once a variable is defined, it can be used by your authorized users on Devtron. A scoped variable widget would appear only on the screens that support its usage. 
 
