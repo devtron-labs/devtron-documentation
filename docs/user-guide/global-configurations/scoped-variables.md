@@ -2,19 +2,20 @@
 
 ## Introduction
 
-In Devtron, many configuration values such as a database name, memory limit, or service endpoint need to be used in multiple places. Instead of entering the same value again and again, you can store it as a scoped variable.
+In Devtron, many configuration values such as a database name, memory limit, or service endpoint may need to be used in multiple places. Instead of entering the same value repeatedly, you can store it in a scoped variable.
 
-A scoped variable (key-value pair) allows you to define a value once and reuse it. The same variable can hold different values based on where it is used; it means, while the key remains the same, its value may change depending on the following context...
+A scoped variable (key-value pair) allows you to define a value once and reuse it. The value of the variable will depend on the scopes mentioned below:
 
-|Category|Description|
-|:---|:---|
-|**Global** | Variable value will be universally same throughout Devtron.|
-| **Cluster**| Variable value might differ for each Kubernetes cluster. <a href="https://devtron.ai/pricing" target="_blank"> <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg"></a>|
-| **Environment** | Variable value might differ for each environment within a cluster, e.g., staging, dev, prod. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)|
-| **Application** | Variable value might differ for each application. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)|
-| **Environment + Application**| Variable value might differ for each application on a specific environment. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)|
+| Category                      | Description                                                                                                                                                                                                               |
+| :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Global**                    | Variable value will be universally same throughout Devtron.                                                                                                                                                               |
+| **Cluster**                   | Variable value might differ for each Kubernetes cluster. <a href="https://devtron.ai/pricing" target="_blank"> <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg"></a>  |
+| **Environment**               | Variable value might differ for each environment within a cluster, e.g., staging, dev, prod. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) |
+| **Application**               | Variable value might differ for each application. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)                                            |
+| **Environment + Application** | Variable value might differ for each application on a specific environment. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)                  |
 
-...for example, you can create a variable named `db_name` to store the database name and set its value to `dev-db` for development environment, and for production environment you can set its value to `prod-db`, at the time of deployment, Devtron will automatically choose the correct value based on the environment.
+
+For example, you can create a variable named `db_name` to store the database name and set its value to `dev-db` for development environment, and for production environment you can set its value to `prod-db`, at the time of deployment, Devtron will automatically choose the correct value based on the environment.
 
 **Advantages of using scoped variables**
 
@@ -31,14 +32,14 @@ A scoped variable (key-value pair) allows you to define a value once and reuse i
  Only super admins can define scoped variables. 
 {% endhint %}
 
-In Devtron, super admins can define scoped variables by using a YAML template. It will contain a schema for defining the scoped variables.
+In Devtron, you can define scoped variables by using a YAML template. It will contain a schema for defining the scoped variables.
 
 Depending on your use case, you can do either one of the following:
 
 | Action | Description |
 |:---|:---|
-| **Download the YAML Template and define variables from scratch.** | In case you are defining the Scoped Variables for the first time:<ol><li> [Download the YAML template](#download-the-template) from the Devtron Dashboard in your local system.</li><li> [Define your variables](#enter-the-values).</li><li> [Upload it back to the Devtron](#upload-the-template)</li></li> |
-| **Edit the existing saved YAML configuration** | If you wish to add, update or delete the existing scoped variables you can edit the existing saved YAML configuration by the following two ways:<ul><li>Edit using the in-built UI Editor.</li><li> You can download the existing saved configuration as a YAML file in your local system and can modify it in your preferred local editor and then upload the file to implement changes. |
+| **Download the YAML Template and define variables from scratch** | In case you are defining the Scoped Variables for the first time:<ol><li> [Download the YAML template](#download-the-template) to your local system.</li><li> [Define your variables](#enter-the-values)</li><li> [Upload it back to the Devtron](#upload-the-template)</li></li> |
+| **Edit the existing saved YAML configuration** | If you wish to add, update or delete the existing scoped variables, you can edit the existing saved YAML configuration using any of the following methods:<ul><li>Edit using the in-built UI Editor.</li><li> You can download the existing saved configuration as a YAML file in your local system and can modify it in your preferred local editor and then upload the file to implement changes. |
 
 ### Download the Template
 
@@ -54,27 +55,29 @@ Depending on your use case, you can do either one of the following:
 
 The YAML file contains key-value pairs that follow the below schema:
 
-| Field | Type | Description |
-| :--- | :--- | :--- |
-| `apiVersion` | string  | The API version of the resource (comes pre-filled)|
-| `kind` | string  | The kind of resource (i.e. Variable, comes pre-filled)|
-| `spec` | object  | The complete specification object containing all the variables|
-| `spec.name` | string  | Unique name of the variable, e.g. *DB_URL*|
-| `spec.shortDescription` | string  | A short description of the variable (up to 120 characters)|
-| `spec.notes` | string  | Additional details about the variable (will not be shown on UI)|
-| `spec.isSensitive` | boolean | Whether the variable value is confidential (will not be shown on UI if true)|
-| `spec.values` | array   | The complete values object containing all the variable values as per context|
+| Field                   | Type    | Description                                                                  |
+| :---------------------- | :------ | :--------------------------------------------------------------------------- |
+| `apiVersion`            | string  | The API version of the resource (comes pre-filled)                           |
+| `kind`                  | string  | The kind of resource (i.e. Variable, comes pre-filled)                       |
+| `spec`                  | object  | The complete specification object containing all the variables               |
+| `spec.name`             | string  | Unique name of the variable, e.g. _DB_URL_                                   |
+| `spec.shortDescription` | string  | A short description of the variable (up to 120 characters)                   |
+| `spec.notes`            | string  | Additional details about the variable (will not be shown on UI)              |
+| `spec.isSensitive`      | boolean | Whether the variable value is confidential (will not be shown on UI if true) |
+| `spec.values`           | array   | The complete values object containing all the variable values as per context |
+
 
 The `spec.values` array further contains the following elements:
 
-| Field | Type | Description |
-| :--- | :--- | :--- |
-| `category`| string | The context, e.g., Global, Cluster, Application, Env, ApplicationEnv|
-| `value`| string | The value of the variable|
-| `selectors`| object | A set of selectors that restrict the scope of the variable|
-| `selectors.attributeSelectors`| object | A map of attribute selectors to values|
-| `selectors.attributeSelectors.<selector_key>`| string | The key of the attribute selector, e.g., **ApplicationName**, **EnvName**, **ClusterName** |
-| `selectors.attributeSelectors.<selector_value>` | string | The value of the attribute selector|
+| Field                                           | Type   | Description                                                                                |
+| :---------------------------------------------- | :----- | :----------------------------------------------------------------------------------------- |
+| `category`                                      | string | The context, e.g., Global, Cluster, Application, Env, ApplicationEnv                       |
+| `value`                                         | string | The value of the variable                                                                  |
+| `selectors`                                     | object | A set of selectors that restrict the scope of the variable                                 |
+| `selectors.attributeSelectors`                  | object | A map of attribute selectors to values                                                     |
+| `selectors.attributeSelectors.<selector_key>`   | string | The key of the attribute selector, e.g., **ApplicationName**, **EnvName**, **ClusterName** |
+| `selectors.attributeSelectors.<selector_value>` | string | The value of the attribute selector                                                        |
+
 
 
 Here's a truncated template containing the specification of two variables for your understanding:
@@ -132,20 +135,20 @@ spec:
 
 ---
 
-## Complex Scoped Variables [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Defining YAML values in scoped variables [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-In Devtron, Scoped variables usually store simple values like strings or numbers, but, in some cases, you may need to define more detailed configuration in a scoped variable, such as autoscaling configuration or resource configuration. You can achieve this by defining a complex scoped variable.
+In Devtron, Scoped variables usually store simple values like strings or numbers, but, in some cases, you may need to define more detailed configuration in a scoped variable, such as autoscaling configuration or resource configuration. You can achieve this by defining a YAML snippet as the value of a scoped variable.
 
-Complex scoped variables supports YAML configurations to be defined as values. Using complex scoped variables will help you to reuse YAML configuration across multiple applications or environments. Just like scoped variable, complex scoped variables values can be changed based on the context (`category`) such as **Global**, **CLuster**, **Environment**, **Application**, **Environment+Application**.
+Defining YAML snippets as the value of a scoped variable will help you to reuse YAML configuration across multiple applications or environments. Scoped variables with YAML snippets can be changed based on the context (`category`) such as **Global**, **Cluster**, **Environment**, **Application**, **Environment+Application**.
 
-Here's a truncated template containing the specification of one complex scoped variable defined for different contexts for your understanding:
+Here's a truncated template containing the specification of one scoped variable with a YAML snippet as its value defined for different contexts for your understanding:
 
 ```yaml
 apiVersion: devtron.ai/v1beta1
 kind: Variable
 spec:
   - notes: Resource Configuration
-    shortDescription: Complex Scoped Variable
+    shortDescription: Scoped variable with YAML snippet
     isSensitive: false
     name: resources # Defining name for the variable.
     values:
