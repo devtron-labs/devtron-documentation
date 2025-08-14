@@ -32,7 +32,7 @@ This section expects four inputs from you:
 
 | Setting     | Description                                                | Options                   | 
 | ----------- | ---------------------------------------------------------- | ------------------------- |
-| Environment | Select the environment where you want to deploy your application | (List of available environments)  |
+| Environment | Select the environment where you want to deploy your application. | (List of available environments)  |
 | Namespace   | Automatically populated based on the selected environment | Not Applicable                           |
 | Trigger     | When to execute the deployment pipeline                   | **Automatic**: Deployment triggers automatically when a new image completes the previous stage (build pipeline or another deployment pipeline) <br /> **Manual**: Deployment is not initiated automatically. You can trigger deployment with a desired image. |
 | Deployment Approach <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a> | How to deploy the application | **Helm**, [GitOps(ArgoCD)](../../integrations/argocd.md) or [Gitops (FluxCD)](../../creating-application/fluxcd.md) <br> Refer [GitOps](../../global-configurations/gitops.md) to learn more  |
@@ -52,7 +52,7 @@ This section expects four inputs from you:
 In case you are choosing an [isolated environment](../../global-configurations/cluster-and-environments.md#add-isolated-cluster) for deployment, you will get two additional options to choose from in the 'Deploy to Environment' window ([check snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/create-cd2.jpg)):
   * **Do not push** - A link to download the helm package will be available after the deployment. However, it will not push the helm package to the OCI registry.
   * **Push to registry** - This will generate and [push the helm package to the OCI registry](../../global-configurations/container-registries.md#push-helm-packages). Upon selecting this option, you will get two more fields:
-      * **Registry** - Choose the OCI registry to which the helm chart package must be pushed. Only those registries that have `Push helm packages` enabled will be shown in the dropdown.
+      * **Registry** - Choose the OCI registry to which the helm chart package must be pushed. Only those registries that have [Push helm packages](../../global-configurations/container-registries.md#push-helm-packages) enabled will be shown in the dropdownChoose the OCI registry to which the helm chart package must be pushed. Only those registries that have [Push helm packages](../../global-configurations/container-registries.md#push-helm-packages) enabled will be shown in the dropdown.
       * **Repository** - Enter the repository name. You can find the username from your registry provider account (e.g., Docker Hub).
 
 {% endhint %}
