@@ -58,6 +58,14 @@ To create a profile, follow the steps below:
 
     ![Figure 4: Referring Values.YAML File for Locking Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/autoscaling-lock.jpg)
 
+{% hint style=“warning” %}
+### Locking custom configurations (keys)
+
+Keys are case-sensitive. Use the exact case as defined in the deployment template, otherwise the keys will not be locked.
+
+{% endhint %}
+
+
 {% hint style=“info” %}
 ### Locking custom configurations (keys)
 
@@ -94,7 +102,7 @@ After creating a profile, the next step is to apply the profile to the specific 
 
 2. Click **Apply Profile**; a new **Apply Profile** page will open.
 
-3. Select the profiles that you want to apply from the dropdown under **Select profiles to apply**; You can select multiple Profiles.
+3. Select the profiles that you want to apply from the dropdown under **Select profiles to apply**; you can select multiple profiles.
 
      ![Figure 8: Selecting Lock Deployment Configuration Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-select-profile.jpg)
 
@@ -102,11 +110,11 @@ After creating a profile, the next step is to apply the profile to the specific 
 
      There are three options you can choose from:
 
-     1. **Specific deployment templates**: This option allows you to apply the lock deployment configuration profile to the deployment template of a specific application within a particular environment.
+     1. **Specific deployment templates**: This option allows you to apply the lock deployment configuration profile to the deployment template(s) of specific application(s) within particular environment(s).
 
         ![Figure 9: Applying Profile to Specific Deployment Templates](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-specific-apps.gif)
 
-     2. **By match criteria**: This option allows you to use a combination of filters to create criteria. Lock deployment configuration profile will only apply to the deployment templates of the applications fulfilling your criteria (including existing and future ones).
+     2. **By match criteria**: This option allows you to use a combination of filters to create criteria. Lock deployment configuration profile will only apply to the deployment templates of the applications fulfilling your criteria (including existing and future ones).(Optional) You may also write a note for your other team members to understand the intent and context of your policy.
 
         Let's understand how to use **By match criteria** with the below example:<br>
 
@@ -136,6 +144,12 @@ Let's look at a scenario where a user (non-super-admin) tries to edit the same i
     ![Figure 12: Hiding Locked Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/hide-locked-keys.gif)
 
 ### Editing Locked Configurations
+
+{% hint style="info" %}
+### 
+<span><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/gui-yaml.jpg" width="80" height="26" alt="GUI or YAML Mode"></span> <br />
+If you select 'GUI' mode instead of 'YAML', all the keys meant for GUI mode will be displayed in the GUI even if some are locked. While users can modify these keys, they cannot save the changes made to the locked keys.
+{% endhint %}
 
 * Let's assume the user edits one of the locked keys...
 
