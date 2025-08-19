@@ -19,26 +19,32 @@ For example, you can create a variable named `db_name` to store the database nam
 
 The table below illustrates how Devtron uses scoped variables defined for different scopes
 
-| Scope       | Key     | Values                                                                              |
-| :-----------| :-------|:------------------------------------------------------------------------------------|
-| Global      | DB_NAME |  `central-db`                                                                       |
-| Cluster     | DB_NAME |  **AWS EKS (Cluster):** `eks-db` <br> **GKE (Cluster):** `gke-db`                   |
-| Environment | DB_NAME |  **Dev (Environment):** `dev-db` <br> **Prod (Environment):** `prod-db`             |
-| Application | DB_NAME |  **App1 (Application):** `app1-db` <br> **App2 (Application):** `app2-db`           |
-| Env + App   | DB_NAME |  **Dev + App1:** `dev-app1-db` <br> **Prod + App2:** `prod-app2-db`                 | 
+| Scope       | Variable | Values                                                                              |
+| :-----------| :--------|:------------------------------------------------------------------------------------|
+| Global      | DB_NAME  |  `central-db`                                                                       |
+| Cluster     | DB_NAME  |  **AWS EKS (Cluster):** `eks-db` <br> **GKE (Cluster):** `gke-db`                   |
+| Environment | DB_NAME  |  **Dev (Environment):** `dev-db` <br> **Prod (Environment):** `prod-db`             |
+| Application | DB_NAME  |  **App1 (Application):** `app1-db` <br> **App2 (Application):** `app2-db`           |
+| Env + App   | DB_NAME  |  **Dev + App1:** `dev-app1-db` <br> **Prod + App2:** `prod-app2-db`                 | 
 
 
 ### Precedence of Scoped Variables
 
 If the same variable is defined at more than one scope, Devtron applies the value based on the following precedence order:
 
-| Precedence Order  | Scope                     |
-|:------------------|:--------------------------|
-| 1 (Highest)       | Environment + Application |
-| 2                 | Application               |
-| 3                 | Environment               |
-| 4                 | Cluster                   |
-| 5 (Lowest)        | Global                    |
+| Precedence Order  | Scope                                                                                                                                                  |
+|:------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 (Highest)       | Environment + Application [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) |
+| 2                 | Application [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)               |
+| 3                 | Environment [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)               |
+| 4                 | Cluster [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)                   |
+| 5 (Lowest)        | Global                                                                                                                                                 |
+
+1. **Environment + App:** This is the most specific scope, and it will take precedence over all other scopes. For example, the value of `DB_Name` variable for the `app1` application in the `dev` environment would be `dev-app1-db`, even though there is a global `DB_Name` variable set to `central-db`. If a variable value for this scope is not defined, the **App** scope will be checked.
+2. **Application:** This is the next most specific scope, and it will take precedence over the `Environment`, `Cluster`, and `Global` scopes. For example, the value of `DB_Name` variable for the `app1` application would be `app1-db`, even though the value of `DB_Name` exists in lower scopes. If a variable value for this scope is not defined, the **Environment** scope will be checked.
+3. **Environment:** This is the next most specific scope, and it will take precedence over the `Cluster` and `Global` scopes. For example, the value of `DB_Name` variable in the `prod` environment would be `prod-db`, even though the value of `DB_Name` exists in lower scopes. If a variable value for this scope is not defined, the **Cluster** scope will be checked. 
+4. **Cluster:** This is the next most specific scope, and it will take precedence over the `Global` scope. For example, the value of `DB_Name` variable in the `GKE` cluster would be `gke-db`, even though there is a global `DB_Name` variable set to `central-db`. If a variable value for this scope is not defined, the **Global** scope will be checked. 
+5. **Global:** This is the least specific scope, and it will only be used if no variable values are found in other higher scopes. The value of `DB_Name` variable would be `central-db`.
 
 ### Advantages of using scoped variables
 
@@ -316,33 +322,6 @@ In case you are using a scoped variable in deployment template, you need to enca
 ![Figure 14b: Performing a Dry Run](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-dry-run.jpg)
 
 **Note:** Ignore the red underline while using a scoped variable in the deployment template.
-
----
-
-## Order of Precedence
-
-When multiple values are associated with a scoped variable, the precedence order is as follows, with the highest priority at the top:
-
-1. Environment + App [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
-
-2. App [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
-
-3. Environment [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
-
-4. Cluster [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
-
-5. Global
-
-### Example
-
-![Figure 15: Variable key in Red, Variable value in Green](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/key-values.jpg)
-
-
-1. **Environment + App:** This is the most specific scope, and it will take precedence over all other scopes. For example, the value of `DB name` variable for the `app1` application in the `prod` environment would be `app1-p`, even though there is a global `DB name` variable set to `Devtron`. If a variable value for this scope is not defined, the **App** scope will be checked.
-2. **App:** This is the next most specific scope, and it will take precedence over the `Environment`, `Cluster`, and `Global` scopes. For example, the value of `DB name` variable for the `app1` application would be `project-tahiti`, even though the value of `DB name` exists in lower scopes. If a variable value for this scope is not defined, the **Environment** scope will be checked.
-3. **Environment:** This is the next most specific scope, and it will take precedence over the `Cluster` and `Global` scopes. For example, the value of `DB name` variable in the `prod` environment would be `devtron-prod`, even though the value of `DB name` exists in lower scopes. If a variable value for this scope is not defined, the **Cluster** scope will be checked. 
-4. **Cluster:** This is the next most specific scope, and it will take precedence over the `Global` scope. For example, the value of `DB name` variable in the `gcp-gke` cluster would be `Devtron-gcp`, even though there is a global `DB name` variable set to `Devtron-gcp`. If a variable value for this scope is not defined, the **Global** scope will be checked. 
-5. **Global:** This is the least specific scope, and it will only be used if no variable values are found in other higher scopes. The value of `DB name` variable would be `Devtron`.
 
 ---
 
