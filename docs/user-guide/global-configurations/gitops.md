@@ -2,13 +2,13 @@
 
 ## Introduction
 
-In Devtron, you can either use Helm, GitOps (Argo CD), or GitOps (Flux CD) as your deployment method while deploying your application. When you choose Helm as your preferred deployment method, you are deploying your application directly into the Kubernetes cluster without version tracking of any kind. 
+In Devtron, you can use either Helm, GitOps (Argo CD), or GitOps (Flux CD) as your deployment method while deploying your application. When you choose Helm as your preferred deployment method, you are deploying your application directly into the Kubernetes cluster without version tracking of any kind. 
 
 However, if you choose GitOps - a branch of DevOps that focuses on using Git repositories as a single source of truth - Devtron stores Kubernetes configuration files (e.g., Kubernetes manifests or YAML configs) and the desired state of your applications in Git repositories to track each and every deployment.
 
 ![Figure 1: GitOps Approach](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/gitops-approach.jpg)
 
-Whenever tools like Argo CD or Flux CD recognizes changes in the Git repository, they apply those changes to the Kubernetes cluster automatically. Similarly, if they notice any change in the cluster, they will revert back the cluster to the Git-defined state.
+Whenever tools like Argo CD or Flux CD recognize changes in the Git repository, they apply those changes to the Kubernetes cluster automatically. Similarly, if they notice any change in the cluster, they will revert back the cluster to the Git-defined state.
 
 ---
 
@@ -149,7 +149,7 @@ Fill the following mandatory fields:
 
 1. An AWS Account
 
-2. An AWS IAM user with `AWSCodeCommitPowerUser` permission. Refer to [Create and Configure an IAM User with AWSCodeCommitPowerUser Permission](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html?utm_source=chatgpt.com#setting-up-ssh-unixes-account) for more information
+2. An AWS IAM user with `AWSCodeCommitPowerUser` permission. Refer to [Create and Configure an IAM User with AWSCodeCommitPowerUser Permission](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html#setting-up-gc-account) for more information
 
 {% endhint %}
 
@@ -160,7 +160,7 @@ Fill the following mandatory fields:
 | Field | Description |
 | --- | --- |
 | **SSH Host** | Enter the AWS Code Commit SSH host URL (e.g., `ssh://git-codecommit.ap-south1.amazonaws.com`)|
-| **Enter username** | Enter the username (SSH Key ID), e.g., `APKAEIBAERJR2EXAMPLE`. Refer to [Generating Credentials in AWS Code Commit](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html#setting-up-ssh-unixes-keys) for more information| 
+| **Enter username** | Enter the username (SSH Key ID), e.g., `YPKDKDIERJS9EXAMPLE`. Refer to [Generating Credentials in AWS Code Commit](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html#setting-up-ssh-unixes-keys) for more information| 
 | **SSH Private Key** | Enter the SSH private key. Refer to [Generating SSH Private Key in AWS Code Commit](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html#setting-up-ssh-unixes-keys) for more information | 
 
 Click **Save**. 
@@ -243,13 +243,13 @@ Fill the following mandatory fields:
 
 ![Figure 9: Other GitOps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/other-gitops.jpg)
 
-If you prefer to use GitOps approach using a different platform other than GitHub, GitLab, AWS Code Commit, Azure, or BitBucket, refer to the following table and fill the following mandatory fields:
+If you prefer to use the GitOps approach using a different platform other than the available ones (e.g., Octopus Deploy), refer to the following table and fill in the mandatory fields:
 
 | Field | Description |
 | --- | --- |
-| **SSH Host** | Enter the SSH host URL (e.g., `ssh://git-codecommit.ap-south1.amazonaws.com`) | 
-| **Enter username** | Enter the username (e.g., `APKAEIBAERJR2EXAMPLE`) | 
-| **SSH Private Key** | Enter the SSH private key | 
+| **SSH Host** | Enter the SSH host URL (e.g., `ssh://git@ssh.octopusdeploy.com:acme/test-app.git`) | 
+| **Enter username** | Enter the username (e.g., `git`) | 
+| **SSH Private Key** | Enter the SSH private key (e.g., `M7YtY8cdJKhZ7nYXxgXeqNffv`)| 
 
 Click **Save**. 
 
