@@ -17,7 +17,30 @@ A scoped variable (key-value pair) allows you to define a value once and reuse i
 
 For example, you can create a variable named `db_name` to store the database name and set its value to `dev-db` for development environment, and for production environment you can set its value to `prod-db`, at the time of deployment, Devtron will automatically choose the correct value based on the environment.
 
-**Advantages of using scoped variables**
+The table below illustrates how Devtron uses scoped variables defined for different scopes
+
+| Scope       | Key     | Values                                                                              |
+| :-----------| :-------|:------------------------------------------------------------------------------------|
+| Global      | DB_NAME |  `central-db`                                                                       |
+| Cluster     | DB_NAME |  **AWS EKS (Cluster):** `eks-db` <br> **GKE (Cluster):** `gke-db`                   |
+| Environment | DB_NAME |  **Dev (Environment):** `dev-db` <br> **Prod (Environment):** `prod-db`             |
+| Application | DB_NAME |  **App1 (Application):** `app1-db` <br> **App2 (Application):** `app2-db`           |
+| Env + App   | DB_NAME |  **Dev + App1:** `dev-app1-db` <br> **Prod + App2:** `prod-app2-db`                 | 
+
+
+### Precedence of Scoped Variables
+
+If the same variable is defined at more than one scope, Devtron applies the value based on the following precedence order:
+
+| Precedence Order  | Scope                     |
+|:------------------|:--------------------------|
+| 1 (Highest)       | Environment + Application |
+| 2                 | Application               |
+| 3                 | Environment               |
+| 4                 | Cluster                   |
+| 5 (Lowest)        | Global                    |
+
+### Advantages of using scoped variables
 
 * **Reduces repeatability**: Configuration management team can centrally maintain the static data.
 * **Simplifies bulk edits**: All the places that use a variable get updated when you change the value of the variable.
@@ -137,7 +160,13 @@ spec:
 
 ## Defining YAML values in scoped variables [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-In Devtron, Scoped variables usually store simple values like strings or numbers, but, in some cases, you may need to define more detailed configuration in a scoped variable, such as autoscaling configuration or resource configuration. You can achieve this by defining a YAML snippet as the value of a scoped variable.
+In Devtron, Scoped variables usually store simple values like strings or numbers, for example, if you want to connect multiple applications to the same SonarQube server, you can define a variable for its endpoint URL once instead of entering it everywhere. 
+
+```yaml
+SONAR_ENDPOINT: https://sonarqube.yourcompany.com
+```
+
+But, in some cases, you may need to define more detailed configuration in a scoped variable, such as autoscaling configuration or resource configuration. You can achieve this by defining a YAML snippet as the value of a scoped variable.
 
 Defining YAML snippets as the value of a scoped variable will help you to reuse YAML configuration across multiple applications or environments. Scoped variables with YAML snippets can be changed based on the context (`category`) such as **Global**, **Cluster**, **Environment**, **Application**, **Environment+Application**.
 
@@ -214,6 +243,7 @@ Only a super-admin can edit existing scoped variables.
 ![Figure 7: Re-uploading New File](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/reupload.jpg)
 
 {% hint style="warning" %}
+### Note
 Re-uploading the YAML file will replace the previous file, so any variable that existed in the previous file but not in the latest one will be lost
 {% endhint %}
 
@@ -229,9 +259,9 @@ The **Environments** tab allows you to view and edit scoped variable values for 
   
   3. You can edit the variables using the GUI or YAML mode. 
 
-   ![Figure 9: Editing in GUI Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-edit-scoped-variable.jpg)
+   ![Figure 9a: Editing in GUI Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-edit-scoped-variable.jpg)
 
-   ![Figure 10: Editing in YAML Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-edit-scoped-variable-yaml.jpg)
+   ![Figure 9b: Editing in YAML Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-edit-scoped-variable-yaml.jpg)
   
 {% hint style="info" %}
 ### Note 
@@ -265,25 +295,25 @@ Currently, the widget is shown only on the following screens in [App Configurati
 
 * Secrets
 
-![Figure 11: Unexpanded Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget1.jpg)
+![Figure 10: Unexpanded Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget1.jpg)
 
 To use a scoped variable, click on the floating widget; a list of variables will be visible. 
 
-![Figure 12: Expanded Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget-expanded.jpg)
+![Figure 11: Expanded Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget-expanded.jpg)
 
 Use the copy button to copy a relevant variable of your choice.
 
-![Figure 13: Copying a Variable](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/display-value.jpg)
+![Figure 12: Copying a Variable](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/display-value.jpg)
 
 It would appear in the following format upon pasting it within an input field: `@{{variable-name}}`.
 
-![Figure 14: Pasting a Variable](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/paste-value.jpg)
+![Figure 13: Pasting a Variable](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/paste-value.jpg)
 
 In case you are using a scoped variable in deployment template, you need to encapsulate it in double quotes i.e., `"@{{variable-name}}"`
 
-![Figure 15: Using Scoped Variable in Deployment Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-using-in-deployment-template.jpg)
+![Figure 14a: Using Scoped Variable in Deployment Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-using-in-deployment-template.jpg)
 
-![Figure 16: Performing a Dry Run](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-dry-run.jpg)
+![Figure 14b: Performing a Dry Run](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-dry-run.jpg)
 
 **Note:** Ignore the red underline while using a scoped variable in the deployment template.
 
@@ -305,7 +335,7 @@ When multiple values are associated with a scoped variable, the precedence order
 
 ### Example
 
-![Figure 17: Variable key in Red, Variable value in Green](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/key-values.jpg)
+![Figure 15: Variable key in Red, Variable value in Green](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/key-values.jpg)
 
 
 1. **Environment + App:** This is the most specific scope, and it will take precedence over all other scopes. For example, the value of `DB name` variable for the `app1` application in the `prod` environment would be `app1-p`, even though there is a global `DB name` variable set to `Devtron`. If a variable value for this scope is not defined, the **App** scope will be checked.
