@@ -281,7 +281,7 @@ To get the **Installation Fingerprint**, follow the below steps
 
 4. Your license will be generated. Copy the license key.
 
- ![Figure 13: Copying Generated License Key](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-key-generated.jpg)
+ ![Figure 13: Copying Generated License Key](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterpise-license-key-generated.jpg)
 
 {% hint style="warning" %}
 ### Note
@@ -325,7 +325,7 @@ After the initial login, we recommend you set up any [Single Sign-On (SSO) servi
 
 3. After a successful login, the **Devtron Dashboard** will open, and you can explore all the enterprise features supported by **Freemium** plan.
 
- ![Figure 17: Devtron Dashboard](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-dashbaord.jpg)
+ ![Figure 17: Devtron Dashboard](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterpise-license-dashbaord.jpg)
 
 ---
 
@@ -342,18 +342,31 @@ Ensure your Enterprise Free Trial has no more than one additional cluster connec
 
 1. Open your Devtron dashboard and navigate to **Help** → **About Devtron** → **License**.
 
+    ![Figure 18: 'About Devtron' Help Menu](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-check.gif)
+
 2. Copy the Installation fingerprint.
+
+    ![Figure 19: Copying Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-copy-fingerprint-2.jpg)
 
 3. Navigate to the license dashboard; and you will be automatically redirected to the step 3 (Get License Key).
 
+    ![Figure 20: Devtron License Dashboard](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-2.jpg)
+
 4. Paste the fingerprint you copied earlier and click **Get License Key**.
+
+    ![Figure 21: Pasting Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-paste-fingerprint-2.jpg)
 
 5. Your license will be generated. Copy the license key.
 
+    ![Figure 22: Copying the License Key](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-copy-license-2.jpg)
+    
 6. Navigate back to **Help** → **About Devtron** → **License**, and click **Update License**.
+
+    ![Figure 23: Clicking Update License](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/update-license.jpg)
 
 7. Paste the new license key you copied earlier and click **Activate**; Freemium plan is now activated.
 
+    ![Figure 24: Click Activate](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-paste-license-2.jpg)
 ---
 
 ## Additional Actions
@@ -365,19 +378,19 @@ In Devtron, click the **Help** menu (top-right corner) → **About Devtron** to 
 * Installation fingerprint
 * Enterprise version
 
-![Figure 18: 'About Devtron' Help Menu](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-check.gif)
+![Figure 25: 'About Devtron' Help Menu](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-check.gif)
 
 ### Update License
 
 If you have a new license key, you can update the license key directly within Devtron, from the **About Devtron** page.
 
-![Figure 19: Updating License](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-update-license.jpg)
+![Figure 26: Updating License](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-update-license.jpg)
 
 ### Upgrade License
 
 If you want to add more than one cluster, email us at enterprise@devtron.ai or reach out to your Devtron representative to upgrade your license.
 
-![Figure 20: Upgrade License](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-upgrade.jpg)
+![Figure 27: Upgrade License](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-upgrade.jpg)
 
 ---
 
@@ -396,17 +409,18 @@ If you want to add more than one cluster, email us at enterprise@devtron.ai or r
 
 ## FAQs
 
-1. How many clusters does Freemium support?
+{% details title=“How many clusters does Freemium support?” %}
+Freemium supports two clusters total: the host cluster where Devtron is installed plus one additional connected cluster. For more clusters, upgrade to a paid plan.
+{% enddetails %}
 
-    Freemium supports two clusters total: the host cluster where Devtron is installed plus one additional connected cluster. For more clusters, upgrade to a paid plan.
+{% details title=“Can I convert my existing Devtron OSS setup to Freemium?” %}
+We don’t recommend converting an existing OSS setup. For the best experience, perform a fresh Freemium installation. See: Step 2: Install Devtron.
+{% enddetails %}
 
-2. Can I convert my existing Devtron OSS setup to Freemium?
-    We don’t recommend converting an existing OSS setup. For the best experience, perform a fresh Freemium installation. See: Step 2: Install Devtron.
+{% details title=“Is the Enterprise Free Trial still available?” %}
+No. It’s been replaced by Freemium, which offers Enterprise features free and unlimited in time, with a host + 1 cluster limit.
+{% enddetails %}
 
-3. Is the Enterprise Free Trial still available?
-
-    No. It’s been replaced by Freemium, which offers Enterprise features for free and forever, with a host + 1 cluster limit.
-
-4. I’m on the Enterprise Free Trial. Can I switch to Freemium for free?
-
-    Yes. Generate a Freemium license key from the License Dashboard, then in Devtron open Help → About Devtron → Update License, paste the key, and Activate. No reinstallation required; your setup stays as is.
+{% details title=“I’m on the Enterprise Free Trial. Can I switch to Freemium for free?” %}
+Yes. Generate a Freemium license key from the License Dashboard. In Devtron, open Help → About Devtron → Update License, paste the key, and select Activate. No reinstallation required; your setup remains intact.
+{% enddetails %}
