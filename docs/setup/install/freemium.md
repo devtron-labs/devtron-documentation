@@ -1,6 +1,6 @@
-<!-- ---
+---
 hidden: true
---- -->
+---
 
 # Install Devtron Freemium Plan
 
@@ -409,18 +409,34 @@ If you want to add more than one cluster, email us at enterprise@devtron.ai or r
 
 ## FAQs
 
-{% details title=“How many clusters does Freemium support?” %}
-Freemium supports two clusters total: the host cluster where Devtron is installed plus one additional connected cluster. For more clusters, upgrade to a paid plan.
-{% enddetails %}
+<details>
+<summary><strong>How many clusters does Freemium support?</strong></summary>
 
-{% details title=“Can I convert my existing Devtron OSS setup to Freemium?” %}
-We don’t recommend converting an existing OSS setup. For the best experience, perform a fresh Freemium installation. See: Step 2: Install Devtron.
-{% enddetails %}
+Freemium supports **two clusters total**: the **host cluster** where Devtron is installed **plus one additional connected cluster**.  
+For more clusters, upgrade to a paid plan.
 
-{% details title=“Is the Enterprise Free Trial still available?” %}
-No. It’s been replaced by Freemium, which offers Enterprise features free and unlimited in time, with a host + 1 cluster limit.
-{% enddetails %}
+</details>
 
-{% details title=“I’m on the Enterprise Free Trial. Can I switch to Freemium for free?” %}
-Yes. Generate a Freemium license key from the License Dashboard. In Devtron, open Help → About Devtron → Update License, paste the key, and select Activate. No reinstallation required; your setup remains intact.
-{% enddetails %}
+<details>
+<summary><strong>Can I convert my existing Devtron OSS setup to Freemium?</strong></summary>
+
+We **don’t recommend** converting an existing OSS setup. For the best experience, perform a **fresh Freemium installation**.  
+See: [Step 2: Install Devtron](#step-2-install-devtron).
+
+</details>
+
+<details>
+<summary><strong>Is the Enterprise Free Trial still available?</strong></summary>
+
+No. It’s been replaced by **Freemium**, which offers Enterprise features for **free and forever**, with a **host + 1 cluster** limit.
+
+</details>
+
+<details>
+<summary><strong>I’m on the Enterprise Free Trial. Can I switch to Freemium for free?</strong></summary>
+
+Yes. Generate a **Freemium** license key from the [License Dashboard](https://license.devtron.ai/dashboard/).  
+In Devtron, open **Help → About Devtron → Update License**, paste the key, and select **Activate**.  
+No reinstallation required; your setup remains intact.
+
+</details>
