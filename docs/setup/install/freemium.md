@@ -329,6 +329,33 @@ After the initial login, we recommend you set up any [Single Sign-On (SSO) servi
 
 ---
 
+## Upgrade Enterprise Free Trial to Freemium
+
+Devtron's **Freemium** plan now replaces the **Enterprise Free Trial**. You can switch to Freemium plan at no cost and no reinstallation is required. All your apps, pipelines and config will remain intact.
+
+After upgrade, Freemium plan will apply, i.e., you will be able to enjoy all Devtron enterprise features for free and forever, with the limit of 2 clusters (the host cluster where Devtron runs + 1 additional connected cluster).
+
+{% hint style="warning" %}
+### Mandatory Action Before Upgrading
+Ensure your Enterprise Free Trial has no more than one additional cluster connected (host + 1). If more than one is connected, disconnect the extra clusters before upgrading; otherwise, the upgrade will not proceed.
+{% endhint %}
+
+1. Open your Devtron dashboard and navigate to **Help** → **About Devtron** → **License**.
+
+2. Copy the Installation fingerprint.
+
+3. Navigate to the license dashboard; and you will be automatically redirected to the step 3 (Get License Key).
+
+4. Paste the fingerprint you copied earlier and click **Get License Key**.
+
+5. Your license will be generated. Copy the license key.
+
+6. Navigate back to **Help** → **About Devtron** → **License**, and click **Update License**.
+
+7. Paste the new license key you copied earlier and click **Activate**; Freemium plan is now activated.
+
+---
+
 ## Additional Actions
 
 ### Check License Details
@@ -358,9 +385,28 @@ If you want to add more than one cluster, email us at enterprise@devtron.ai or r
 
 | Issue | What it means | Where is it shown | Solution |
 |-------|----------------|-------------------|----------|
-| **License Claimed** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-claimed-v2.jpg) | Someone from your organization has already availed a license | License Dashboard | Reach out to enterprise@devtron.ai for another trial |
+| **License Claimed** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-claimed-v2.jpg) | Someone from your organization has already availed a license | License Dashboard | Reach out to enterprise@devtron.ai |
 | **Invalid License Key** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/invalid-license-v2.jpg) | The license key is incorrect or partial | Devtron Dashboard Page | Go to the License Dashboard and recheck the license |
 | **License Key No Longer Valid** <br />  [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-no-longer-valid-v2.jpg) | The license key has become invalid for your installation fingerprint | Devtron Dashboard Page | Generate a new license from License Dashboard. |
 | **Invalid Fingerprint** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-invalid-fingerprint-v2.jpg) | The fingerprint is incorrect or partial | License Dashboard (Step-3) | Go to the License Activation Page and verify the fingerprint |
 | **Multiple Cluster Detected** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-multiple-cluster-detected.jpg) | You have added more than one cluster | Devtron Dashboard Page or License Dashboard | Reach out to enterprise@devtron.ai for renewal |
 | **License Key Already Exists for Fingerprint** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-already-exists-v2.jpg) | You cannot generate more than 1 license key for 1 fingerprint | License Dashboard (Step-3)| Contact Support |
+
+---
+
+## FAQs
+
+1. How many clusters does Freemium support?
+
+    Freemium supports two clusters total: the host cluster where Devtron is installed plus one additional connected cluster. For more clusters, upgrade to a paid plan.
+
+2. Can I convert my existing Devtron OSS setup to Freemium?
+    We don’t recommend converting an existing OSS setup. For the best experience, perform a fresh Freemium installation. See: Step 2: Install Devtron.
+
+3. Is the Enterprise Free Trial still available?
+
+    No. It’s been replaced by Freemium, which offers Enterprise features for free and forever, with a host + 1 cluster limit.
+
+4. I’m on the Enterprise Free Trial. Can I switch to Freemium for free?
+
+    Yes. Generate a Freemium license key from the License Dashboard, then in Devtron open Help → About Devtron → Update License, paste the key, and Activate. No reinstallation required; your setup stays as is.
