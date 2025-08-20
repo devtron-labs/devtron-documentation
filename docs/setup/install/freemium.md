@@ -352,19 +352,15 @@ If you want to add more than one cluster, email us at enterprise@devtron.ai or r
 
 ![Figure 20: Upgrade License](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-upgrade.jpg)
 
-In case, you have already added more than one cluster in Devtron Freemium plan, you will encounter the below error screen.
-
-![Figure 21: Multiple Cluster Detected](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-multiple-cluster-detected.jpg)
-
 ---
 
 ## Troubleshoot Issues
 
 | Issue | What it means | Where is it shown | Solution |
 |-------|----------------|-------------------|----------|
-| **License Claimed** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-claimed-v2.jpg) | Someone from your organization has already availed a license | License Dashboard | Reach out to enterprise@devtron.ai for another trial |
+| **License Claimed** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-claimed-v2.jpg) | Someone from your organization has already availed a license | License Dashboard | Reach out to enterprise@devtron.ai for another trial |
 | **Invalid License Key** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/invalid-license-v2.jpg) | The license key is incorrect or partial | Devtron Dashboard Page | Go to the License Dashboard and recheck the license |
 | **License Key No Longer Valid** <br />  [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-no-longer-valid-v2.jpg) | The license key has become invalid for your installation fingerprint | Devtron Dashboard Page | Generate a new license from License Dashboard. |
-| **Invalid Fingerprint** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-invalid-fingerprint-v2.jpg) | The fingerprint is incorrect or partial | License Dashboard (Step-3) | Go to the License Activation Page and verify the fingerprint |
-| **License Has Expired** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-expired-v2.jpg) | You have exhausted the free trial | Devtron Dashboard Page or License Dashboard | Reach out to enterprise@devtron.ai for renewal |
-| **License Key Already Exists for Fingerprint** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-already-exists-v2.jpg) | You cannot generate more than 1 license key for 1 fingerprint | License Dashboard (Step-3)| Contact Support |
+| **Invalid Fingerprint** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-invalid-fingerprint-v2.jpg) | The fingerprint is incorrect or partial | License Dashboard (Step-3) | Go to the License Activation Page and verify the fingerprint |
+| **Multiple Cluster Detected** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-multiple-cluster-detected.jpg) | You have added more than one cluster | Devtron Dashboard Page or License Dashboard | Reach out to enterprise@devtron.ai for renewal |
+| **License Key Already Exists for Fingerprint** <br /> [Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-already-exists-v2.jpg) | You cannot generate more than 1 license key for 1 fingerprint | License Dashboard (Step-3)| Contact Support |
