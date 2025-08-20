@@ -413,7 +413,7 @@ If you want to add more than one cluster, email us at enterprise@devtron.ai or r
 <summary><strong>How many clusters does Freemium support?</strong></summary>
 
 Freemium supports **two clusters total**: the **host cluster** where Devtron is installed **plus one additional connected cluster**.  
-For more clusters, upgrade to a paid plan.
+For more clusters, upgrade to the Enterprise plan.
 
 </details>
 
@@ -421,7 +421,7 @@ For more clusters, upgrade to a paid plan.
 <summary><strong>Can I convert my existing Devtron OSS setup to Freemium?</strong></summary>
 
 We **don’t recommend** converting an existing OSS setup. For the best experience, perform a **fresh Freemium installation**.  
-See: [Step 2: Install Devtron](#step-2-install-devtron).
+Refer [Step 2: Install Devtron](#step-2-install-devtron) for the installation.
 
 </details>
 
