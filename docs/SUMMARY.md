@@ -190,4 +190,5 @@
   * [Pull Helm Charts from OCI Registry](user-guide/use-cases/oci-pull.md)
 * [Telemetry Overview](user-guide/telemetry.md)
 * [Devtron on Graviton](reference/graviton.md)
+* [Command Bar](user-guide/command-bar.md)
 * [Release Notes](https://github.com/devtron-labs/devtron/releases)
