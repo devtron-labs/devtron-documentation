@@ -6,7 +6,7 @@ hidden: true
 
 ## Introduction
 
-With Devtron **Freemium**, you can access all the enterprise features limited to two clusters total i.e., Devtron cluster (the cluster where Devtron is installed) and you can add up to one addition Kubernetes cluster. For your advanced and challenging use cases, you get comprehensive enterprise features including but not limited to:
+With Devtron **Freemium**, you can access all the enterprise features limited to two clusters total i.e., Devtron cluster (the cluster where Devtron is installed) and you can add up to one additional Kubernetes cluster. For your advanced and challenging use cases, you get comprehensive enterprise features including but not limited to:
 
 1. Release orchestration
 2. Resource monitoring 
