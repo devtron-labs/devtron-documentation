@@ -2,11 +2,11 @@
 hidden: true
 ---
 
-# Install Devtron Freemium Plan
+# Install Devtron Freemium
 
 ## Introduction
 
-With the **Freemium** plan of Devtron, you can access all the enterprise features beyond the open-source version limited to a single Kubernetes cluster, i.e., you are only allowed to add one cluster apart from the `default` cluster. For your advanced and challenging use cases, you get comprehensive enterprise features including but not limited to:
+With Devtron **Freemium**, you can access all the enterprise features limited to two clusters total i.e., Devtron cluster (the cluster where Devtron is installed) and you can add up to one addition Kubernetes cluster. For your advanced and challenging use cases, you get comprehensive enterprise features including but not limited to:
 
 1. Release orchestration
 2. Resource monitoring 
@@ -19,17 +19,17 @@ Explore [all the features of Devtron Enterprise Features](https://devtron.ai/pri
 
 {% hint style="info" %}
 ### Already using Devtron's Open Source version?
-This guide is intended for fresh installation of **Devtron Freemium Plan**.  
-If you're currently using the open-source (OSS) version of Devtron, we **do not recommend** converting your existing setup to the Freemium plan.
+This guide is intended for fresh installation of **Devtron Freemium**.  
+If you're currently using the open-source (OSS) version of Devtron, we **do not recommend** upgrading your existing setup to Devtron Freemium.
 
-Instead, we suggest you to perform a fresh installation of Devtron Freemium plan (following the steps below) for the best experience.
+Instead, we suggest you to perform a fresh installation of Devtron Freemium (following the steps below) for the best experience.
 {% endhint %}
 
 ---
 
 ## Step 1: Go to the Devtron License Dashboard
 
-To install Devtron Freemium plan; go to the [Devtron License Dashboard](https://license.devtron.ai/dashboard/).
+To install Devtron Freemium; go to the [Devtron License Dashboard](https://license.devtron.ai/dashboard/).
 <br><br>
 Log in with your work email to access the license dashboard. Devtron provides two login methods to log in to the License Dashboard
 
@@ -45,7 +45,7 @@ Log in with your work email to access the license dashboard. Devtron provides tw
 
 4. After entering the details, click **Next** to proceed to [Step 2: Install Devtron](#step-2-install-devtron).
 
- ![Figure 2: Entering the Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterpise-license-step-1.jpg)
+ ![Figure 2: Entering the Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-step-1.jpg)
 
 ### Method 2: Log In with Email 
 
@@ -76,7 +76,7 @@ You can also log in via **Continue with Email**. This will send a login link to 
 
 4. Go to your provided email inbox and use the login link.
 
-  ![Figure 6: Email with Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-email.jpg)
+  ![Figure 6: Email with Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-email.jpg)
 
   Once logged in, the **Devtron License Dashboard** will open.
 
@@ -84,7 +84,7 @@ You can also log in via **Continue with Email**. This will send a login link to 
 
 6. Click **Next** to proceed to [Step 2: Install Devtron](#step-2-install-devtron).
 
-  ![Figure 7: Entering the Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterpise-license-step-1.jpg)
+  ![Figure 7: Entering the Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-step-1.jpg)
 
 ---
 
@@ -96,7 +96,7 @@ The installation commands for installing **Devtron in Full Mode** (with integrat
 
 Choose your preferred K8s distribution and follow the displayed commands to install **Devtron in Full Mode**.  
 
-![Figure 8: Installing Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterpise-license-step-2.jpg)
+![Figure 8: Installing Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-step-2.jpg)
 
 In case, you want to install Devtron dashboard only, use the commands given in **Devtron without integrations (only dashboard)** tab in [Choose an Installation Option](#id-2.2-choose-an-installation-option) section.
 
@@ -261,7 +261,7 @@ After successfully installing Devtron and obtaining the dashboard URL, click **N
 
 You will now need to enter your Devtron **Installation Fingerprint** to generate a license key.
 
-![Figure 9: Enter Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterpise-license-step-3.jpg)
+![Figure 9: Enter Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-step-3.jpg)
 
 ### Get Devtron installation's fingerprint
 
@@ -269,32 +269,32 @@ To get the **Installation Fingerprint**, follow the below steps
 
 1. Visit your Dashboard URL (which you have obtained in [Step-2.3](#id-2.3-obtain-the-dashboard-url))as shown below.
 
- ![Figure 10: License Activation Screen](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-fingerprint.jpg)
+ ![Figure 10: License Activation Screen](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-fingerprint.jpg)
 
 2. You will see an Installation Fingerprint that uniquely identifies your installation. Copy the fingerprint.
 
- ![Figure 11: Copying Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-copy-fingerprint.jpg)
+ ![Figure 11: Copying Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-copy-fingerprint.jpg)
 
 3. Go back to the **License Dashboard** and paste the fingerprint you copied earlier and click **Get License Key**.
 
- ![Figure 12: Pasting Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterpise-license-paste-fingerprint.jpg)
+ ![Figure 12: Pasting Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-paste-fingerprint.jpg)
 
 4. Your license will be generated. Copy the license key.
 
- ![Figure 13: Copying Generated License Key](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterpise-license-key-generated.jpg)
+ ![Figure 13: Copying Generated License Key](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-key-generated.jpg)
 
 {% hint style="warning" %}
 ### Note
-The license key you generate will be valid only for your Freemium plan installation. It is uniquely mapped to your installation fingerprint.
+The license key you generate will be valid only for your Devtron Freemium installation. It is uniquely mapped to your installation fingerprint.
 {% endhint %}
 
 5. Go back to your **Devtron Dashboard URL** page and paste your license key under **License Key** field and click **Activate**.
 
- ![Figure 14: Pasting License Key and Activating](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-paste-license-key.jpg)
+ ![Figure 14: Pasting License Key and Activating](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-paste-license-key.jpg)
 
-6. **Devtron Freemium Plan** will be activated, and you can log in to **Devtron Dashboard**. 
+6. **Devtron Freemium** will be activated, and you can log in to **Devtron Dashboard**. 
 
- ![Figure 15: Log in as Administrator ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-login.jpg)
+ ![Figure 15: Log in as Administrator ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-login.jpg)
 
 {% hint style="info" %}
 ### Facing Issues?
@@ -307,7 +307,7 @@ Visit the [Troubleshoot](#troubleshoot-issues) section to identify the issue or 
 
 1. After successful license activation, you will see the Devtron login page.
 
- ![Figure 16: Devtron Login Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterpise-license-login-admin.jpg)
+ ![Figure 16: Devtron Login Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-login-admin.jpg)
 
 2. Initially, log in with the administrator credentials. By default, the username is **admin**. Run the following command to get the admin password:
 
@@ -323,21 +323,21 @@ When you install Devtron for the first time, it creates a default admin user and
 After the initial login, we recommend you set up any [Single Sign-On (SSO) service](../../user-guide/global-configurations/sso-login.md) like Google, GitHub, etc., and then add other users (including yourself). Subsequently, all the users can use the same SSO (let's say, GitHub) to log in to the Dashboard.
 {% endhint %}
 
-3. After a successful login, the **Devtron Dashboard** will open, and you can explore all the enterprise features supported by **Freemium** plan.
+3. After a successful login, the **Devtron Dashboard** will open, and you can explore all the enterprise features supported by Devtron **Freemium**.
 
- ![Figure 17: Devtron Dashboard](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterpise-license-dashbaord.jpg)
+ ![Figure 17: Devtron Dashboard](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-dashbaord.jpg)
 
 ---
 
-## Upgrade Enterprise Free Trial to Freemium
+## Convert Enterprise Free Trial to Freemium
 
-Devtron's **Freemium** plan now replaces the **Enterprise Free Trial**. You can switch to Freemium plan at no cost and no reinstallation is required. All your apps, pipelines and config will remain intact.
+You can switch to Devtron Freemium at no cost and no reinstallation is required. All your apps, pipelines and config will remain intact.
 
-After upgrade, Freemium plan will apply, i.e., you will be able to enjoy all Devtron enterprise features for free and forever, with the limit of 2 clusters (the host cluster where Devtron runs + 1 additional connected cluster).
+After upgrade, with Devtron Freemium, you will be able to access all Devtron enterprise features for free and forever, with the limit of 2 clusters (the Devtron cluster where Devtron runs + 1 additional connected cluster).
 
 {% hint style="warning" %}
 ### Mandatory Action Before Upgrading
-Ensure your Enterprise Free Trial has no more than one additional cluster connected (host + 1). If more than one is connected, disconnect the extra clusters before upgrading; otherwise, the upgrade will not proceed.
+Ensure your Enterprise Free Trial has no more than one additional cluster connected (Devtron Cluster + 1 addition connected cluster). If more than one additional cluster is connected, disconnect the extra clusters before upgrading; otherwise, the upgrade will not proceed.
 {% endhint %}
 
 1. Open your Devtron dashboard and navigate to **Help** → **About Devtron** → **License**.
@@ -364,7 +364,7 @@ Ensure your Enterprise Free Trial has no more than one additional cluster connec
 
     ![Figure 23: Clicking Update License](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/update-license.jpg)
 
-7. Paste the new license key you copied earlier and click **Activate**; Freemium plan is now activated.
+7. Paste the new license key you copied earlier and click **Activate**; Devtron Freemium is now activated.
 
     ![Figure 24: Click Activate](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-paste-license-2.jpg)
 ---
@@ -412,8 +412,8 @@ If you want to add more than one cluster, email us at enterprise@devtron.ai or r
 <details>
 <summary><strong>How many clusters does Freemium support?</strong></summary>
 
-Freemium supports **two clusters total**: the **host cluster** where Devtron is installed **plus one additional connected cluster**.  
-For more clusters, upgrade to the Enterprise plan.
+Freemium supports **two clusters total**: the **Devtron cluster** where Devtron is installed **plus one additional connected cluster**.  
+For more clusters, upgrade to the Devtron Enterprise.
 
 </details>
 
@@ -422,13 +422,6 @@ For more clusters, upgrade to the Enterprise plan.
 
 We **don’t recommend** converting an existing OSS setup. For the best experience, perform a **fresh Freemium installation**.  
 Refer [Step 2: Install Devtron](#step-2-install-devtron) for the installation.
-
-</details>
-
-<details>
-<summary><strong>Is the Enterprise Free Trial still available?</strong></summary>
-
-No. It’s been replaced by **Freemium**, which offers Enterprise features for **free and forever**, with a **host + 1 cluster** limit.
 
 </details>
 
