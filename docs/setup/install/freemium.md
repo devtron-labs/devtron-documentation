@@ -433,3 +433,23 @@ In Devtron, open **Help → About Devtron → Update License**, paste the key, a
 No reinstallation required; your setup remains intact.
 
 </details>
+
+<details>
+<summary><strong>I’m on the Enterprise Free Trial. Can I switch to Freemium for free?</strong></summary>
+
+Yes. Generate a **Freemium** license key from the [License Dashboard](https://license.devtron.ai/dashboard/).  
+In Devtron, open **Help → About Devtron → Update License**, paste the key, and select **Activate**.  
+No reinstallation required; your setup remains intact.
+
+</details>
+
+<details>
+<summary><strong>Can I switch from Freemium to the Enterprise without reinstalling Devtron?</strong></summary>
+
+Yes. You don’t need to reinstall.  
+Contact [Devtron Support](https://devtron.ai/enterprise-support) to obtain an Enterprise license key, then update the key in your existing setup.
+
+**Steps:** In Devtron, go to **Help → About Devtron → License → Update License**, paste the Enterprise license key, and select **Activate**.  
+Your apps, pipelines, and settings remain intact.
+</details>
+
