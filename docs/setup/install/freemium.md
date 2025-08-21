@@ -15,7 +15,7 @@ With Devtron **Freemium**, you can access all the enterprise features limited to
 5. Security scans
 6. Policies related to approval, deployment, plugins, tags, infra...and many more. 
 
-Explore [all the features of Devtron Enterprise Features](https://devtron.ai/pricing#compare-plans) for free to their full potential.
+Explore [all the features of Devtron Enterprise](https://devtron.ai/pricing#compare-plans) for free to their full potential.
 
 {% hint style="info" %}
 ### Already using Devtron's Open Source version?
@@ -267,7 +267,7 @@ You will now need to enter your Devtron **Installation Fingerprint** to generate
 
 To get the **Installation Fingerprint**, follow the below steps 
 
-1. Visit your Dashboard URL (which you have obtained in [Step-2.3](#id-2.3-obtain-the-dashboard-url))as shown below.
+1. Visit your Dashboard URL (which you have obtained in [Step-2.3](#id-2.3-obtain-the-dashboard-url)) as shown below.
 
  ![Figure 10: License Activation Screen](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-fingerprint.jpg)
 
