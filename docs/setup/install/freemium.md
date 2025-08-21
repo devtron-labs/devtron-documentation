@@ -325,7 +325,7 @@ After the initial login, we recommend you set up any [Single Sign-On (SSO) servi
 
 3. After a successful login, the **Devtron Dashboard** will open, and you can explore all the enterprise features supported by Devtron **Freemium**.
 
- ![Figure 17: Devtron Dashboard](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-dashbaord.jpg)
+ ![Figure 17: Devtron Dashboard](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-dashboard.jpg)
 
 ---
 
