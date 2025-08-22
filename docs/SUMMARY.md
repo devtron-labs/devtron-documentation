@@ -13,7 +13,7 @@
   * [Uninstall Devtron](setup/install/uninstall-devtron.md)
   * [FAQs](setup/install/faq-on-installation.md)
 * [Install Devtron Freemium](setup/install/freemium.md) 
-* [Install Devtron Enterprise Trial](https://license.devtron.ai/dashboard)  
+* [Install Devtron Enterprise](https://license.devtron.ai/dashboard)  
 * [Devtron Kubernetes Client](setup/install/install-devtron-Kubernetes-client.md)
 * [Production Infra Recommendations](setup/install/prod-infra.md)
 * [Configurations](setup/configurations/configurations-overview.md)
