@@ -162,6 +162,7 @@ redirects:
     user-guide/creating-application/workflow/automated-test: user-guide/creating-application/workflow/README.md
     setup/stack-manager: user-guide/integrations/README.md
     user-guide/command-bar: user-guide/command-bar.md
+    setup/install/enterprise-license: setup/install/freemium.md
+    enterprise-license: setup/install/freemium.md
 
     
-

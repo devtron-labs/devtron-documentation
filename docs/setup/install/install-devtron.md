@@ -8,7 +8,7 @@ If you want to install Devtron on Minikube, Microk8s, K3s, Kind, refer this [sec
 
 {% hint style="success" %}
 
-Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
+Try Devtron Freemium to access all the enterprise features for free and forever, limited to 2 clusters. [Install Devtron Freemium](https://license.devtron.ai/dashboard)
 
 {% endhint %}
 
