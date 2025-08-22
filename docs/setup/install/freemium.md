@@ -298,7 +298,14 @@ The license key you generate will be valid only for your Devtron Freemium instal
 
   * The license key is uniquely mapped to your installation fingerprint.
 
-  * The license is bound to that Kubernetes cluster and cannot be transferred to another cluster.
+{% endhint %}
+
+{% hint style="danger" %}
+### Warning
+
+The license is bound to that Kubernetes cluster and cannot be transferred to another cluster. In case cluster is deleted, you will not be able to claim freemium license on a new cluster. 
+
+In such cases, contact [Devtron Support](support@devtron.ai).
 
 {% endhint %}
 
@@ -456,5 +463,14 @@ Contact [Devtron Support](https://devtron.ai/enterprise-support) to obtain an En
 
 **Steps:** In Devtron, go to **Help → About Devtron → License → Update License**, paste the Enterprise license key, and select **Activate**.  
 Your apps, pipelines, and settings remain intact.
+</details>
+
+<details>
+<summary><strong>Is my Freemium license transferable to another Kubernetes cluster?</strong></summary>
+
+No. The Freemium license is bound to your **current Kubernetes cluster** and **cannot be transferred**.  
+If the cluster is deleted, you won’t be able to claim a Freemium license on a new cluster.
+
+If you need help, contact [Devtron Support](support@devtron.ai).
 </details>
 
