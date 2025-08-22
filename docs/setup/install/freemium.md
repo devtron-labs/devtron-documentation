@@ -6,7 +6,7 @@ hidden: true
 
 ## Introduction
 
-With Devtron **Freemium**, you can access all the enterprise features limited to two clusters total i.e., Devtron cluster (the cluster where Devtron is installed) and you can add up to one additional Kubernetes cluster. For your advanced and challenging use cases, you get comprehensive enterprise features including but not limited to:
+With Devtron **Freemium**, you can access all the enterprise features limited to adding one additional cluster only i.e., Devtron cluster (the cluster where Devtron is installed) and you can add up to one additional Kubernetes cluster. For your advanced and challenging use cases, you get comprehensive enterprise features including but not limited to:
 
 1. Release orchestration
 2. Resource monitoring 
@@ -22,7 +22,7 @@ Explore [all the features of Devtron Enterprise](https://devtron.ai/pricing#comp
 This guide is intended for fresh installation of **Devtron Freemium**.  
 If you're currently using the open-source (OSS) version of Devtron, we **do not recommend** upgrading your existing setup to Devtron Freemium.
 
-Instead, we suggest you to perform a fresh installation of Devtron Freemium (following the steps below) for the best experience.
+Instead, we suggest you to perform a fresh installation of Devtron Freemium on an isolated cluster (following the steps below) for the best experience.
 {% endhint %}
 
 ---
@@ -89,6 +89,13 @@ You can also log in via **Continue with Email**. This will send a login link to 
 ---
 
 ## Step 2: Install Devtron
+
+{% hint style="success" %}
+### Recommendation
+
+We recommend installing Devtron on an isolated Kubernetes cluster, as Devtron Cluster (cluster on which Devtron is installed) has critical system services and should be kept separate from application workloads.
+
+{% endhint %}
 
 After entering the basic details, the next step is to install **Devtron Freemium**. 
 
@@ -285,7 +292,14 @@ To get the **Installation Fingerprint**, follow the below steps
 
 {% hint style="warning" %}
 ### Note
-The license key you generate will be valid only for your Devtron Freemium installation. It is uniquely mapped to your installation fingerprint.
+The license key you generate will be valid only for your Devtron Freemium installation. 
+
+  * Only one Devtron Freemium cluster per organization.
+
+  * The license key is uniquely mapped to your installation fingerprint.
+
+  * The license is bound to that Kubernetes cluster and cannot be transferred to another cluster.
+
 {% endhint %}
 
 5. Go back to your **Devtron Dashboard URL** page and paste your license key under **License Key** field and click **Activate**.
@@ -333,7 +347,7 @@ After the initial login, we recommend you set up any [Single Sign-On (SSO) servi
 
 You can switch to Devtron Freemium at no cost and no reinstallation is required. All your apps, pipelines and config will remain intact.
 
-After upgrade, with Devtron Freemium, you will be able to access all Devtron enterprise features for free and forever, with the limit of 2 clusters (the Devtron cluster where Devtron runs + 1 additional connected cluster).
+After upgrade, with Devtron Freemium, you will be able to access all Devtron enterprise features for free and forever, with the limit of adding one additional connected cluster (the Devtron cluster where Devtron runs + 1 additional connected cluster).
 
 {% hint style="warning" %}
 ### Mandatory Action Before Upgrading
@@ -412,7 +426,7 @@ If you want to add more than one cluster, email us at enterprise@devtron.ai or r
 <details>
 <summary><strong>How many clusters does Freemium support?</strong></summary>
 
-Freemium supports **two clusters total**: the **Devtron cluster** where Devtron is installed **plus one additional connected cluster**.  
+Freemium supports **adding one additional cluster** (the **Devtron cluster** where Devtron is installed and **one additional connected cluster**).
 For more clusters, upgrade to the Devtron Enterprise.
 
 </details>
