@@ -351,7 +351,7 @@ After upgrade, with Devtron Freemium, you will be able to access all Devtron ent
 
 {% hint style="warning" %}
 ### Mandatory Action Before Upgrading
-Ensure your Enterprise Free Trial has no more than one additional cluster connected (Devtron Cluster + 1 addition connected cluster). If more than one additional cluster is connected, disconnect the extra clusters before upgrading; otherwise, the upgrade will not proceed.
+Ensure your Enterprise Free Trial has no more than one additional cluster connected (Devtron Cluster + 1 additional connected cluster). If more than one additional cluster is connected, disconnect the extra clusters before upgrading; otherwise, the upgrade will not proceed.
 {% endhint %}
 
 1. Open your Devtron dashboard and navigate to **Help** → **About Devtron** → **License**.
