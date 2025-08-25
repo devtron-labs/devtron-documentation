@@ -1,18 +1,30 @@
 # Jobs
 
-Job allows manual and automated execution of your source code. Job pipeline will not have CI/CD pipeline as the job is limited to your source code only. You can also configure [preset plugins](../creating-application/workflow/ci-build-pre-post-plugins.md#preset-plugins) in your job pipeline.
+Devtron Jobs provides a streamlined way to execute specific tasks or a set of tasks defined by the user within the user's application environment.
 
-With job, you can execute your source code quickly and easily without going through CI/CD pipelines, which also optimize time.
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/jobs.jpg)
-
-There are two main steps in executing Job:
-
-* [Configurations](configuration-job.md)
-
-* [Trigger Job](triggering-job.md)
-
-In the next section, we will learn on how to create, configure, trigger a job. You can also view the details on the [Overview](overview-job.md) tab and `Run History`.
+To learn more about how Jobs work, see the sections below
 
 
+* [What is Jobs](./what-is-job.md)
 
+* [Creating a Job](./create-job.md)
+
+* [Configurations](./configurations/README.md)
+
+    * [Source Code](./configurations/source-code-job.md)
+
+    * [Workflow Editor](./configurations/workflow-editor-job.md)
+
+    * [ConfigMaps & Secrets](./configurations/configmap-secret/README.md)
+
+      * [ConfigMaps](./configurations/configmap-secret/configmap-job.md)
+
+      * [Secrets](./configurations/configmap-secret/secret-job.md)
+
+    * [Environments Override](./configurations/environment-override-job.md)
+
+* [Trigger Job ](./triggering-job.md)
+
+* [Run History](./run-history-job.md)
+
+* [Job Overview](./overview-job.md)
