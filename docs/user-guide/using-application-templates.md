@@ -20,8 +20,20 @@ You can create an application using an application template by following the bel
 
     | Field                     | Required/Optional | Description                                  |
     | :------------------------ | :---------------- | :------------------------------------------- |
-    | **Project** | Required          | Provide a name for the Application Template  |
-    | **Template ID**           | Required          | Provide an ID for the Application Template   |
+    | **Project**               | Required          | Provide a name for the Application Template  |
+    | **Application Name**      | Required          | Provide an ID for the Application Template   |
     | **Description**           | Optional          | Provide a short for the Application Template |
+    | **Tags**                  | Optional          | Key-value pairs used for identifying and organizing the application and can be propagated as Kubernetes labels. To learn more refer [Tags](#tags) section.|
+    | **Git Account**           | Required          | Provide a Git Account                                                |
+    | **Git Repo URL**          | Required          | Provide the preferred Git Repository                                 |
+    | **Container Registry**    | Required          | Provide a Container Registry                                         |
+    | **Container Repository**  | Optional          | Provide a container repository; desired format: `username/repo-name` |
+    | **Workflows**             | Optional          | Select preferred environments for your workflows                     |
+
+{% hint style="warning" %}
+By default, configurations are inherited from the application which is used to create that application template.
+{% endhint %}
+
+7. Click **Create Application** and the application will be created.
 
 

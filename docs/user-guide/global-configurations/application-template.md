@@ -55,7 +55,7 @@ After creation of Application Template, if you wish, you can modify the configur
 
 ## Using an Application Template
 
-<!-- link need to be added -->
+You can use an application template to create an application. Refer [Creating Application From Template](../using-application-templates.md) to learn more.
 
 ## Deleting an Application Template
 
