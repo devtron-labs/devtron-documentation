@@ -288,7 +288,7 @@ To get the **Installation Fingerprint**, follow the below steps
 
 4. Your license will be generated. Copy the license key.
 
- ![Figure 13: Copying Generated License Key](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-key-generated.jpg)
+ ![Figure 13: Copying Generated License Key](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-key-generated-2.jpg)
 
 {% hint style="warning" %}
 ### Note

@@ -126,7 +126,7 @@
   * [Add Monitoring Dashboards/Graphs](user-guide/resource-browser/monitoring-graphs.md)
   * [Run Kubectl Commands Locally](user-guide/resource-browser/kubectl-local.md) 
 * [Resource Watcher](user-guide/resource-watcher.md) 
-* [Charts](user-guide/deploy-chart/README.md)
+* [Chart Store](user-guide/deploy-chart/README.md)
   * [Deploy Charts](user-guide/deploy-chart/deployment-of-charts.md)
   * [Chart Groups](user-guide/deploy-chart/chart-group.md)
 * [Security](user-guide/security-features.md)
