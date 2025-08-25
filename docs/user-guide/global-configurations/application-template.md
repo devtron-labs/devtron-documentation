@@ -24,6 +24,45 @@ Let's assume you have already created a microservice (Devtron Application) with 
 
 5. Application Template will be created.
 
-## Modifying an Application Template
+## Customizing an Application Template
 
-After creation of Application Template, if you wish, you can modify the configurations of the 
+After creation of Application Template, if you wish, you can modify the configurations of your application template according to your use cases. By default, configurations are inherited from the application which is used to create that application template.
+
+1. Navigate to **Global Configurations** → **Application Templates**.
+
+2. Select your preferred application template.
+
+3. You can customize the following configurations under **Configurations** tab
+
+    | Field                     | Description                                  |
+    | :------------------------ | :------------------------------------------- |
+    | **Git Repository**        | The source code repository linked to the application.|
+    | **Build Configurations**  | Build configuration is used to create and push docker images in the container registry of your application; refer [Build Configurations](../creating-application/docker-build-configuration.md) to learn more.  |
+    | **Base Configurations**   | Base Configurations let you define the following configurations:<ol><li><b>Deployment Template</b>; refer [Base Deployment Template](../creating-application/deployment-template.md) to learn more.</li><li><b>ConfigMaps</b>; refer [ConfigMaps](../creating-application/config-maps.md) to learn more.</li><li><b> Secrets</b>; refer [Secrets](../creating-application/secrets.md) to learn more. |
+    | **CI/CD Workflows**| Define and manage your build and deployment pipelines using Workflow Editor; refer [Workflow Editor](../creating-application/workflow/README.md) to learn more.|
+    | **Environment Overrides** | Environment Overrides lets you define custom configurations for different without changing the base configurations; refer [Environment Overrides](../creating-application/environment-overrides.md) to learn more.|
+
+4. (Optional) You can also define a README for your Application Template
+    1. Click the Edit button in the Readme section.
+
+    2. A Markdown editor will appear where you can write or modify content under the Write tab.
+
+    3. Use standard Markdown syntax to format text, create lists, insert links, and more.
+
+    4. Preview the content using the Preview tab.
+
+    5. Click Save to update the Readme.
+
+## Using an Application Template
+
+<!-- link need to be added -->
+
+## Deleting an Application Template
+
+1. Navigate to **Global Configurations** → **Application Templates**.
+
+2. Select your preferred application template.
+
+3. Click **Delete Template** in the bottom right corner under **Configurations** tab
+
+4. A modal window will appear, click **Delete**; application template will be deleted.
