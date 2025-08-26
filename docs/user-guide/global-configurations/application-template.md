@@ -29,7 +29,7 @@ Users need to have super-admin permission to create Application Templates.
     | :------------------------ | :---------------- | :------------------------------------------- |
     | **Template display name** | Required          | Provide a name for the application template  |
     | **Template ID**           | Required          | Template ID is a unique identifier for application templates, and is uniquely mapped to the application template. <ol><li>Character limit: 3-50</li><li>Only lowercase alphanumeric characters are allowed</li><li>Special Characters: `-`,`_`,`.`</li><li>Template ID should be unique for each application template</li></ol>|
-    | **Description**           | Optional          | Provide a short for the application template |
+    | **Description**           | Optional          | Provide a short description for the application template |
 
 
     ![Figure 3: Entering required details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-details.jpg)
@@ -50,9 +50,9 @@ After creation of Application Template, if you wish, you can modify the configur
     | :------------------------ | :------------------------------------------- |
     | **Git Repository**        | The source code repository linked to the application.|
     | **Build Configurations**  | Build configuration is used to create and push docker images in the container registry of your application; refer [Build Configurations](../creating-application/docker-build-configuration.md) to learn more.  |
-    | **Base Configurations**   | Base Configurations let you define the following configurations:<ol><li><b>Deployment Template</b>; refer [Base Deployment Template](../creating-application/deployment-template.md) to learn more.</li><li><b>ConfigMaps</b>; refer [ConfigMaps](../creating-application/config-maps.md) to learn more.</li><li><b> Secrets</b>; refer [Secrets](../creating-application/secrets.md) to learn more. |
+    | **Base Configurations**   | Base Configurations let you define the following configurations:<ol><li><b>Deployment Template</b>; refer [Base Deployment Template](../creating-application/deployment-template.md) to learn more.</li><li><b>ConfigMaps</b>; refer [ConfigMaps](../creating-application/config-maps.md) to learn more.</li><li><b> Secrets</b>; refer [Secrets](../creating-application/secrets.md) to learn more</li></ol>|
     | **CI/CD Workflows**| Define and manage your build and deployment pipelines using Workflow Editor; refer [Workflow Editor](../creating-application/workflow/README.md) to learn more.|
-    | **Environment Overrides** | Environment Overrides lets you define custom configurations for different without changing the base configurations; refer [Environment Overrides](../creating-application/environment-overrides.md) to learn more.|
+    | **Environment Overrides** | Environment Overrides lets you define custom configurations for different environments without changing the base configurations; refer [Environment Overrides](../creating-application/environment-overrides.md) to learn more.|
 
     ![Figure 4: Customizing Application Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-configurations.jpg)
 

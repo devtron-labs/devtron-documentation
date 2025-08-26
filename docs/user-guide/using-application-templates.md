@@ -2,7 +2,7 @@
 
 ## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-Application templates provide a predefined configuration for creating new applications. You can create an application from an application template to avoid manual configurations(such as build configurations, base configurations, CI/CD workflows, and environment details.)
+Application templates provide a predefined configuration for creating new applications. You can create an application from an application template to avoid manual configurations (such as build configurations, base configurations, CI/CD workflows, and environment details.)
 
 Refer [Application Templates](./global-configurations/application-template.md) to learn more.
 
@@ -39,7 +39,7 @@ You can create an application using an application template by following the bel
     | :----------------------- | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
     | **Project**              | Required          | Select the Project for your Application                                                                                                                    |
     | **Application Name**     | Required          | Enter a name for the Application                                                                                                                           |
-    | **Description**          | Optional          | Provide a short for the Application                                                                                                                        |
+    | **Description**          | Optional          | Provide a short description for the application                                                                                                                        |
     | **Tags**                 | Optional          | Key-value pairs used for identifying and organizing the application and can be propagated as Kubernetes labels. To learn more refer [Tags](#tags) section. |
     | **Git Account**          | Required          | Select a Git Account                                                                                                                                       |
     | **Git Repo URL**         | Required          | Enter the preferred Git Repository                                                                                                                         |
