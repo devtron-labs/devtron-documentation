@@ -35,17 +35,18 @@ You can create an application using an application template by following the bel
 
 6. After selecting the application template, you need to provide the following details
 
-    | Field                     | Required/Optional | Description                                  |
-    | :------------------------ | :---------------- | :------------------------------------------- |
-    | **Project**               | Required          | Provide a name for the Application Template  |
-    | **Application Name**      | Required          | Provide an ID for the Application Template   |
-    | **Description**           | Optional          | Provide a short for the Application Template |
-    | **Tags**                  | Optional          | Key-value pairs used for identifying and organizing the application and can be propagated as Kubernetes labels. To learn more refer [Tags](#tags) section.|
-    | **Git Account**           | Required          | Provide a Git Account                                                |
-    | **Git Repo URL**          | Required          | Provide the preferred Git Repository                                 |
-    | **Container Registry**    | Required          | Provide a Container Registry                                         |
-    | **Container Repository**  | Optional          | Provide a container repository; desired format: `username/repo-name` |
-    | **Workflows**             | Optional          | Select preferred environments for your workflows                     |
+    | Field                    | Required/Optional | Description                                                                                                                                                |
+    | :----------------------- | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | **Project**              | Required          | Select the Project for your Application                                                                                                                    |
+    | **Application Name**     | Required          | Enter a name for the Application                                                                                                                           |
+    | **Description**          | Optional          | Provide a short for the Application                                                                                                                        |
+    | **Tags**                 | Optional          | Key-value pairs used for identifying and organizing the application and can be propagated as Kubernetes labels. To learn more refer [Tags](#tags) section. |
+    | **Git Account**          | Required          | Select a Git Account                                                                                                                                       |
+    | **Git Repo URL**         | Required          | Enter the preferred Git Repository                                                                                                                         |
+    | **Container Registry**   | Required          | Select a Container Registry                                                                                                                                |
+    | **Container Repository** | Optional          | Enter a container repository; desired format: `username/repo-name`                                                                                         |
+    | **Workflows**            | Optional          | Select preferred environments for your workflows                                                                                                           |
+
 
     ![Figure 4a: Entering Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application-from-template/application-template-enter-details-1.jpg)
 

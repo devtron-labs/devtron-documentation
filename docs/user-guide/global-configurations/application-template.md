@@ -28,8 +28,9 @@ Users need to have super-admin permission to create Application Templates.
     | Field                     | Required/Optional | Description                                  |
     | :------------------------ | :---------------- | :------------------------------------------- |
     | **Template display name** | Required          | Provide a name for the application template  |
-    | **Template ID**           | Required          | Template ID is a unique identifier for application templates, and is uniquely mapped to the application template. <ol><li>Character limit: 3-50</li><li>Only lowercase alphanumeric characters are allowed</li><li>Special Characters: `-`,`_`,`.` |
+    | **Template ID**           | Required          | Template ID is a unique identifier for application templates, and is uniquely mapped to the application template. <ol><li>Character limit: 3-50</li><li>Only lowercase alphanumeric characters are allowed</li><li>Special Characters: `-`,`_`,`.`</li><li>Template ID should be unique for each application template</li></ol>|
     | **Description**           | Optional          | Provide a short for the application template |
+
 
     ![Figure 3: Entering required details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-details.jpg)
 
