@@ -67,8 +67,8 @@ Depending on your use case, you can do either one of the following:
 
 | Action | Description |
 |:---|:---|
-| **Download the YAML Template and define variables from scratch** | In case you are defining the Scoped Variables for the first time:<ol><li> [Download the YAML template](#download-the-template) to your local system.</li><li> [Define your variables](#enter-the-values)</li><li> [Upload it back to the Devtron](#upload-the-template)</li></li> |
-| **Edit the existing saved YAML configuration** | If you wish to add, update or delete the existing scoped variables, you can edit the existing saved YAML configuration using any of the following methods:<ul><li>Edit using the in-built UI Editor.</li><li> You can download the existing saved configuration as a YAML file in your local system and can modify it in your preferred local editor and then upload the file to implement changes. |
+| **Download the YAML Template and define variables from scratch** | In case you are defining the Scoped Variables for the first time:<ol><li> [Download the YAML template](#download-the-template) to your local system.</li><li> [Define your variables](#enter-the-values)</li><li> [Upload it back to the Devtron](#upload-the-template)</li></ol> |
+| **Edit the existing saved YAML configuration** | If you wish to add, update or delete the existing scoped variables, you can edit the existing saved YAML configuration using any of the following methods:<ul><li>Edit using the in-built UI Editor.</li><li> You can download the existing saved configuration as a YAML file in your local system and can modify it in your preferred local editor and then upload the file to implement changes.</li></ul>|
 
 ### Download the Template
 
