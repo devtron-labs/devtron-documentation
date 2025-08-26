@@ -12,9 +12,13 @@ Let's assume you have already created a microservice (Devtron Application) with 
 
 2. Click **+ Create Template**; a modal window will appear.
 
+    ![Figure 1: Clicking 'Create Template'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-create-template.jpg)
+
 3. Select the Application from which you want to create the Application Template; you can also search for the preferred application from the search bar.
 
-4. Enter the information required by the following fields and click **Create Template**.
+    ![Figure 2: Selecting Application](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-select-template.jpg)
+
+4. Enter the information required by the following fields.
 
     | Field                     | Required/Optional | Description                                  |
     | :------------------------ | :---------------- | :------------------------------------------- |
@@ -22,7 +26,9 @@ Let's assume you have already created a microservice (Devtron Application) with 
     | **Template ID**           | Required          | Provide an ID for the Application Template   |
     | **Description**           | Optional          | Provide a short for the Application Template |
 
-5. Application Template will be created.
+    ![Figure 3: Entering required details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-details.jpg)
+
+5.  Click **Create Template**; application template will be created.
 
 ## Customizing an Application Template
 
@@ -42,16 +48,24 @@ After creation of Application Template, if you wish, you can modify the configur
     | **CI/CD Workflows**| Define and manage your build and deployment pipelines using Workflow Editor; refer [Workflow Editor](../creating-application/workflow/README.md) to learn more.|
     | **Environment Overrides** | Environment Overrides lets you define custom configurations for different without changing the base configurations; refer [Environment Overrides](../creating-application/environment-overrides.md) to learn more.|
 
+    ![Figure 4: Customizing Application Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-configurations.jpg)
+
+
+
 4. (Optional) You can also define a README for your Application Template
-    1. Click the Edit button in the Readme section.
+    1. Click the **Edit** button in the **Readme** section.
+
+        ![Figure 5: Clicking 'Edit' button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-overview.jpg)
 
     2. A Markdown editor will appear where you can write or modify content under the Write tab.
 
     3. Use standard Markdown syntax to format text, create lists, insert links, and more.
 
-    4. Preview the content using the Preview tab.
+    4. Preview the content using the **Preview** tab.
 
-    5. Click Save to update the Readme.
+    5. Click Save to update the **Readme**.
+
+        ![Figure 6: Creating Readme](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-readme.jpg)
 
 ## Using an Application Template
 
@@ -65,4 +79,8 @@ You can use an application template to create an application. Refer [Creating Ap
 
 3. Click **Delete Template** in the bottom right corner under **Configurations** tab
 
+    ![Figure 7: Deleting Application](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-delete-template.jpg)
+
 4. A modal window will appear, click **Delete**; application template will be deleted.
+
+    ![Figure 8: Confirming Delete Action](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-confirm-delete.jpg)
