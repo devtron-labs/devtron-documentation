@@ -11,6 +11,9 @@ By installing `Devtron Kubernetes Client`, you can access:
 * [Kubernetes Resource Browser](#kubernetes-resource-browser)
 * [Clusters Management Feature](#cluster-management)
 
+{% hint style="success" %}
+Try Devtron Freemium to access all the enterprise features for free and forever, limited to adding one additional cluster. [Install Devtron Freemium](https://license.devtron.ai/dashboard)
+{% endhint %}
 
 ## Here are a few advantages of using Devtron Kubernetes Client:
 
@@ -107,9 +110,3 @@ sh devtron-install.bash stop
 ```bash
 sh devtron-install.bash upgrade
 ```
-
-{% hint style="success" %}
-### Try Devtron Enterprise for Free
-Explore [all capabilities](https://devtron.ai/pricing) of Devtron with its Enterprise version trial ([read more](enterprise-license.md)).
-{% endhint %}
-
