@@ -6,7 +6,7 @@ In this section, we describe the steps in detail on how you can install Devtron 
 
 {% hint style="success" %}
 
-Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
+Try Devtron Freemium to access all the enterprise features for free and forever, limited to adding one additional cluster. [Install Devtron Freemium](https://license.devtron.ai/dashboard)
 
 {% endhint %}
 
