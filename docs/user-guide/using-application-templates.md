@@ -4,6 +4,13 @@ Application templates provide a predefined configuration for creating new applic
 
 Refer [Application Templates](./global-configurations/application-template.md) to learn more.
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+* Users need to have Admin permission or above to create applications from application templates.
+* Users need to have super-admin permissions in order to customize template configurations.
+
+{% endhint %}
+
 You can create an application using an application template by following the below steps:
 
 1. On the Devtron dashboard, select **Applications**.

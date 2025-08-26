@@ -6,6 +6,11 @@ Application Templates in Devtron allows you to create Devtron application quickl
 
 Let's assume you have already created a microservice (Devtron Application) with all the required configurations, Git Repository, Build configurations, CI/CD workflows, deployment configurations, etc. Now, instead of repeating the same setup each time when you create a new microservice, you can create an Application Template from this already configured microservice (Devtron Application). This template can then be used to quickly create new microservices (Devtron applications) with the same trusted setup.
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have super-admin permission to create Application Templates.
+{% endhint %}
+
 ## Creating an Application Template
 
 1. Navigate to **Global Configurations** → **Application Templates**.
