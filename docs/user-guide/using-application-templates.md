@@ -1,5 +1,7 @@
 # Creating Application From Template
 
+## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
 Application templates provide a predefined configuration for creating new applications. You can create an application from an application template to avoid manual configurations(such as build configurations, base configurations, CI/CD workflows, and environment details.)
 
 Refer [Application Templates](./global-configurations/application-template.md) to learn more.
@@ -10,6 +12,8 @@ Refer [Application Templates](./global-configurations/application-template.md) t
 * Users need to have super-admin permissions in order to customize template configurations.
 
 {% endhint %}
+
+## Using Application Templates
 
 You can create an application using an application template by following the below steps:
 
