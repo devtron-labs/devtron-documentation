@@ -58,7 +58,7 @@ By default, configurations are inherited from the application which is used to c
 
 7. Click **Create Application** and the application will be created.
 
-    ![Figure 5: Creating Application From Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application-from-template/application-template-create-template.jpg)
+    ![Figure 5: Creating Application From Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application-from-template/application-template-click-create-application.jpg)
 
 ---
 
