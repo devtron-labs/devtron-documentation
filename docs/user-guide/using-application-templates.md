@@ -12,9 +12,15 @@ You can create an application using an application template by following the bel
 
 3. Select **Custom app** from the drop-down list; a **Create Devtron Application** modal window will appear.
 
+    ![Figure 1: Clicking 'Custom app'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application-from-template/application-template-custom-app.jpg)
+
 4. Select **From template** from the left-side of the modal window; a list of all application templates will appear.
 
+    ![Figure 2: Selecting 'From template'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application-from-template/application-template-from-template.jpg)
+
 5. Select the application template from which you want to create the application; you can also search for the preferred application template from the search bar.
+
+    ![Figure 3: Selecting Application Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application-from-template/application-template-select-template.jpg)
 
 6. After selecting the application template, you need to provide the following details
 
@@ -30,10 +36,39 @@ You can create an application using an application template by following the bel
     | **Container Repository**  | Optional          | Provide a container repository; desired format: `username/repo-name` |
     | **Workflows**             | Optional          | Select preferred environments for your workflows                     |
 
+    ![Figure 4a: Entering Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application-from-template/application-template-enter-details-1.jpg)
+
+    ![Figure 4b: Configuring Code Source, Container Registry and Environments](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application-from-template/application-template-enter-details-2.jpg)
+
 {% hint style="warning" %}
 By default, configurations are inherited from the application which is used to create that application template.
 {% endhint %}
 
 7. Click **Create Application** and the application will be created.
+
+    ![Figure 5: Creating Application From Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application-from-template/application-template-create-template.jpg)
+
+---
+
+## Extras
+
+### Tags
+
+`Tags` are key-value pairs. You can add one or multiple tags in your application. 
+
+**Propagate Tags** 
+When tags are propagated, they are considered as labels to Kubernetes resources. Kubernetes offers integrated support for using these labels to query objects and perform bulk operations e.g., consolidated billing using labels. You can use these tags to filter/identify resources via CLI or in other Kubernetes tools.
+
+![Figure 6: Adding Tags](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application-from-template/application-template-tags.jpg)
+
+1. Click **Add tags to application**
+
+2. Add your preferred **Tags**.
+
+3. Click `+` icon next to **KEY** field to add a new tag.
+
+4. Click the symbol <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg"  height="10"> on the left side of your tag to propagate a tag.<br>`Note`: Dark grey colour in symbol specifies that the tags are propagated.
+
+5. To remove the tags from propagation, click the symbol <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/propagate-dark.jpg" height="10"> again.
 
 
