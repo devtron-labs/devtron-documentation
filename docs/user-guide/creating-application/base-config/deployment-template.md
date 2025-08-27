@@ -30,7 +30,7 @@ This guide covers how to:
 
 ### Who Can Perform This Action?
 
-Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above to select a chart.
+Users need to have [Admin role](../../../user-guide/global-configurations/user-access.md#role-based-access-levels) or above to select a chart.
 
 {% endhint %}
 

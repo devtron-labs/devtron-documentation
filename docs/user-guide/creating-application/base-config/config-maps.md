@@ -153,6 +153,6 @@ You may delete a ConfigMap if not in use anymore. Once a ConfigMap is deleted, i
 
 ## Edit a Protected ConfigMap [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-Any changes made to the protected base configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../global-configurations/approval-policy.md) is enforced.
+Any changes made to the protected base configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../../../user-guide/global-configurations/approval-policy.md) is enforced.
 
 {% embed url="https://www.youtube.com/watch?v=gY9LKJSVS-g" %}
