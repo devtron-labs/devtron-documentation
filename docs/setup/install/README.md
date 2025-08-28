@@ -1,19 +1,41 @@
 # Install Devtron
 
+## Introduction 
 
-Devtron is installed over a Kubernetes cluster. Once you create a Kubernetes cluster, Devtron can be installed standalone or along with CI/CD integration.
+Devtron is installed over a Kubernetes cluster. Once you [Create a Kubernetes Cluster](../getting-started/getting-started.md#create-a-kubernetes-cluster), Devtron can be installed standalone or along with CI/CD integration.
 
 {% hint style="success" %}
-Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
+
+Try Devtron Freemium to access all the enterprise features for free and forever, limited to adding one additional cluster. [Install Devtron Freemium](https://license.devtron.ai/dashboard)
+
 {% endhint %}
 
-Choose one of the options as per your requirements:
+---
 
-| Installation Options | Description | When to choose  |
-| --- | --- | --- |
-| [Devtron with CI/CD](../install/install-devtron-with-cicd.md) | Devtron installation with the CI/CD integration is used to perform CI/CD, security scanning, GitOps, debugging, and observability. | Use this option to install Devtron with `Build and Deploy CI/CD` integration. |
-| [Helm Dashboard by Devtron](../install/install-devtron.md) | The Helm Dashboard by Devtron which is a standalone installation includes functionalities to deploy, observe, manage, and debug existing Helm applications in multiple clusters. You can also install integrations from [Devtron Stack Manager](../../user-guide/integrations/README.md). | Use this option if you are managing the applications via Helm and you want to use Devtron to deploy, observe, manage, and debug the Helm applications. |
-| [Devtron with CI/CD along with GitOps (Argo CD)](../install/install-devtron-with-cicd-with-gitops.md) | With this option, you can install Devtron with CI/CD by enabling GitOps during the installation. You can also install other integrations from [Devtron Stack Manager](../../user-guide/integrations/README.md). |  Use this option to install Devtron with CI/CD by enabling GitOps, which is the most scalable method in terms of version control, collaboration, compliance and infrastructure automation.  |
+## Installation Options 
 
+![Devtron Installation Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/installation-methods-v2.jpg)
 
-**Note**: If you have questions, please let us know on our discord channel. [![Join Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)
+Choose one of the following installation options as per your requirement:
+
+* [Modern Kubernetes Dashboard](../install/install-devtron.md)
+
+* [Devtron with CI/CD](../install/install-devtron-with-cicd.md)
+
+* [Devtron with CI/CD and GitOps (Argo CD)](../install/install-devtron-with-cicd-with-gitops.md)
+
+{% hint style="info" %} 
+
+### Note
+
+* If you are planning to install Devtron in production environments, kindly refer to [Production Infra Recommendations](../install/prod-infra.md).
+
+* If you want to install a light-weight desktop client outside your Kubernetes cluster, kindly refer to [Devtron Kubernetes Client](../install/install-devtron-Kubernetes-client.md).
+
+{% endhint %}
+
+{% hint style="info" %}
+
+If you have questions, please let us know on our Discord channel. [![Join us on Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)
+
+{% endhint %}
