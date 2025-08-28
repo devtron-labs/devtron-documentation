@@ -20,11 +20,11 @@ Users need to have super-admin permission to add a Kubernetes cluster to Devtron
 
 1. Go to **Global Configurations** → **Clusters & Environments** → **Connect Cluster** (button); a **New Cluster** modal window will appear.
 
-![Figure 1: Adding a Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-add-clusters-new.jpg)
+  ![Figure 1: Adding a Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-add-clusters-new.jpg)
 
 2. Select **Connect Cluster**.
 
-![Figure 2: Selecting 'Connect Cluster'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-select-connect-cluster.jpg)
+  ![Figure 2: Selecting 'Connect Cluster'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-select-connect-cluster.jpg)
 
 3. You can choose to add your Kubernetes cluster using either of the following methods:
 
