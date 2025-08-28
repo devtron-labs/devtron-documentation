@@ -13,7 +13,7 @@ A basic `Create deployment pipeline` window will pop up.
 ![Figure 2: Creating CD Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/new-cd-pipeline.jpg)
 
 Here, you get two tabs:
-* [New Deployment](#new-deployment) - Use this option to create new Helm/GitOps deployment.
+* [New Deployment](#new-deployment) - Use this option to create a new Helm/GitOps deployment.
 * [Migrate to Devtron](#migrate-to-devtron) - Use this option if you wish to migrate your existing Helm Release/Argo CD Apps to Devtron.
 
 ---
@@ -30,12 +30,32 @@ The **New Deployment** tab displays the following sections:
 
 This section expects four inputs from you:
 
-| Setting     | Description                                                | Options                   |
+| Setting     | Description                                                | Options                   | 
 | ----------- | ---------------------------------------------------------- | ------------------------- |
 | Environment | Select the environment where you want to deploy your application | (List of available environments)  |
 | Namespace   | Automatically populated based on the selected environment | Not Applicable                           |
 | Trigger     | When to execute the deployment pipeline                   | **Automatic**: Deployment triggers automatically when a new image completes the previous stage (build pipeline or another deployment pipeline) <br /> **Manual**: Deployment is not initiated automatically. You can trigger deployment with a desired image. |
-| Deployment Approach | How to deploy the application | **Helm** or **GitOps** <br /> Refer [GitOps](../../global-configurations/gitops.md)  |
+| Deployment Approach <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a> | How to deploy the application | **Helm**, [GitOps(ArgoCD)](../../integrations/argocd.md) or [Gitops (FluxCD)](../../creating-application/fluxcd.md) <br> Refer [GitOps](../../global-configurations/gitops.md) to learn more  |
+
+{% hint style="warning" %}
+ ### FluxCD Deployment Failed
+ * Make sure that the FluxCD controller is installed in the cluster in which you want to deploy the application. Refer [Enable GitOps Deployments with FluxCD](../../creating-application/fluxcd.md#installing-fluxcd-controller-only-for-deployments) to learn more.
+
+ * Application deployments through GitOps (via FluxCD) are supported only when using the `Deployment` or `Rollout` deployment strategies with the latest chart versions. Other deployment strategies are currently not supported. 
+
+{% endhint %}
+
+{% hint style="info" %}
+
+### Deploying to an Isolated Environment?
+
+In case you are choosing an [isolated environment](../../global-configurations/cluster-and-environments.md#add-isolated-cluster) for deployment, you will get two additional options to choose from in the 'Deploy to Environment' window ([check snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/create-cd2.jpg)):
+  * **Do not push** - A link to download the helm package will be available after the deployment. However, it will not push the helm package to the OCI registry.
+  * **Push to registry** - This will generate and [push the helm package to the OCI registry](../../global-configurations/container-registries.md#push-helm-packages). Upon selecting this option, you will get two more fields:
+      * **Registry** - Choose the OCI registry to which the helm chart package must be pushed. Only those registries that have `Push helm packages` enabled will be shown in the dropdown.
+      * **Repository** - Enter the repository name. You can find the username from your registry provider account (e.g., Docker Hub).
+
+{% endhint %}
 
 ### Deployment Strategy
 
@@ -43,7 +63,7 @@ Devtron supports multiple deployment strategies depending on the [deployment cha
 
 ![Figure 3: Strategies Supported by Chart Type](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/chart-and-strategy.jpg)
 
-Refer [Deployment Strategies](#deployment-strategies) to know more about each strategy in depth.
+Refer to [Deployment Strategies](#deployment-strategies) to know more about each strategy in depth.
 
 The next section is [Advanced Options](#advanced-options) and it comes with additional capabilities. This option is available at the bottom of the `Create deployment pipeline` window. However, if you don't need them, you may proceed with a basic CD pipeline and click **Create Pipeline**. 
 
@@ -92,7 +112,7 @@ If you want to use some configuration files and secrets in pre-deployment stages
 
 4. **Execute tasks in application environment**
 
-These `Pre-deployment CD / Post-deployment CD` pods can be created in your deployment cluster or the devtron build cluster. If your scripts/tasks has some dependency on the deployment environment, you may run these pods in the deployment cluster. Thus, your scripts \(if any\) can interact with the cluster services that may not be publicly exposed.
+These `Pre-deployment CD / Post-deployment CD` pods can be created in your deployment cluster or the Devtron build cluster. If your scripts/tasks have some dependency on the deployment environment, you may run these pods in the deployment cluster. Thus, your scripts \(if any\) can interact with the cluster services that may not be publicly exposed.
 
 Some tasks require extra permissions for the node where Devtron is installed. However, if the node already has the necessary permissions for deploying applications, there is no need to assign them again. Instead, you can enable the **Execute tasks in application environment** option for the pre-CD or post-CD steps. By default, this option is disabled.
 
@@ -110,14 +130,14 @@ Make sure your cluster has [devtron-agent](../../global-configurations/cluster-a
 
 * After the deployment, edit the devtron-cm configmap and add the following key-value pair:
 
-  ```bash
+ ```bash
   ORCH_HOST: <host_url>/orchestrator/webhook/msg/nats
 
   Example:
 
   ORCH_HOST: http://xyz.devtron.com/orchestrator/webhook/msg/nats
 
-  ```
+ ```
 
   `ORCH_HOST` value should be same as of `CD_EXTERNAL_LISTENER_URL` value which is passed in values.yaml.
 
@@ -133,7 +153,7 @@ Make sure your cluster has [devtron-agent](../../global-configurations/cluster-a
 
   ![Figure 9: 'migration-incluster-cd' chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/migration-incluster-chart.jpg)
 
-* Edit the `cluster-name` and `secret name` values within the chart. The `cluster name` refers to the name used when adding the cluster in the global configuration and for which you are going to enable `Execute tasks in application environment` option.
+* Edit the `cluster-name` and `secret name` values within the chart. The `cluster name` refers to the name used when adding the cluster in the global configuration, and for which you are going to enable the `Execute tasks in application environment` option.
 
   ![Figure 10: Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/migration-incluster.jpg)
 
@@ -143,7 +163,7 @@ Make sure your cluster has [devtron-agent](../../global-configurations/cluster-a
 
 #### Pipeline Name
 
-Pipeline name will be auto-generated; however, you are free to modify the name as per your requirement.
+The pipeline name will be auto-generated; however, you are free to modify the name as per your requirement.
 
 <!-- #### Manual Approval for Deployment [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
@@ -167,7 +187,7 @@ To know more about the approval process, refer [Triggering CD](../../deploying-a
 
 #### Deployment Strategies
 
-A deployment strategy is a method of updating, downgrading, or creating new versions of an application. The options you see under deployment strategy depend on the selected chart type (see Fig 3). Below are some deployment configuration-based strategies.
+A deployment strategy is a method of updating, downgrading, or creating new versions of an application. The options you see under deployment strategy depend on the selected chart type (see Fig. 3). Below are some deployment configuration-based strategies.
 
 #### Blue-Green Strategy
 
@@ -325,9 +345,9 @@ Users need to have Admin permission or above (along with access to the environme
 
 ### Post-Deployment Stage
 
-If you need to run any actions for e.g., closure of Jira ticket, load testing or performance testing, you can configure such actions in the post-deployment stages.
+If you need to run any actions, e.g., closure of Jira ticket, load testing, or performance testing, you can configure such actions in the post-deployment stages.
 
-Post-deployment stages are similar to pre-deployment stages. The difference is, pre-deployment executes before the deployment, while post-deployment occurs after.
+Post-deployment stages are similar to pre-deployment stages. The difference is that pre-deployment executes before the deployment, while post-deployment occurs after.
 
 You can use [ConfigMap and Secrets](#configmaps--secrets) in post deployments as well. The option to execute tasks in application environment is available too.
 
@@ -403,10 +423,15 @@ You can not only [view your external Argo CD apps](../../applications.md#view-ex
 {% hint style="warning" %}
 ### Prerequisites
 * Your app should be an Argo Helm app ([read about supported tools](https://argo-cd.readthedocs.io/en/stable/user-guide/application_sources/)).
+
 * It must have a single Git source and a single values file. By default, Devtron expects `app-values.yaml` so make sure it is committed to Git.
+
 * GitOps credentials required to commit in the Git repo should be configured in [Global Configurations](../../global-configurations/gitops.md).
+
 * The cluster containing your external Argo applications should be added to Devtron. Refer [Clusters & Environments](../../global-configurations/cluster-and-environments.md).
+
 * The target deployment cluster, its namespace, and its [environment](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster) should be added to Devtron.
+
 * Your Argo CD app must use the same chart type as your application. If needed, you can upload or select the appropriate chart in **Global Configurations** → **Deployment Charts**. Then save the chart type at [base configuration](../deployment-template.md) of your application.
 
 * The external Argo CD should have auto-sync enabled or an alternative syncing mechanism, as Devtron does not perform manual syncs.
@@ -443,6 +468,57 @@ This feature comes with certain mentioned limitations and expectations. If your 
 If you have configured [GitOps](../gitops-config.md) for your external Argo apps in Devtron, and later install the GitOps (ArgoCD) module from [Devtron Stack Manager](../../integrations/argocd.md) to deploy your Devtron apps/Helm apps via GitOps, you must once again save your GitOps and Cluster configurations after installation. This might prevent potential errors and ensure your GitOps deployments are functional.
 {% endhint %}
 
+### Migrate Flux CD Application
+
+You can not only [view your external Flux CD apps](../../applications.md#view-external-fluxcd-app-listing), but also manage their deployments using Devtron's CI/CD.
+
+{% hint style="warning" %}
+### Prerequisites
+
+ * Your app should be a Flux Helm release.
+ 
+ * The Helm chart values will be referenced from the file (e.g., values.yaml) mentioned in the helm release at `spec.chart.spec.valuesFiles`, otherwise, they will be taken from `spec.extFluxValues`.
+
+   * Devtron only supports [Refer to values inside the chart](https://fluxcd.io/flux/guides/helmreleases/#refer-to-values-inside-the-chart) only.  
+ 
+ * GitOps credentials required to commit in the Git repo should be configured in [Global Configurations](../../global-configurations/gitops.md).
+ 
+ * The cluster containing your external Flux Helm release applications should be added to Devtron. Refer [Clusters & Environments](../../global-configurations/cluster-and-environments.md).
+ 
+ * The target deployment cluster, its namespace, and its [environment](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster) should be added to Devtron.
+ 
+ * The external Flux CD should have auto-sync enabled or an alternative syncing mechanism, as Devtron does not perform manual syncs.
+
+{% endhint %}
+
+1. Click **Flux CD Application** in 'Select type of application to migrate'.
+
+   ![Figure 28: Choosing 'Flux CD Application'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-fluxcd.jpg)
+
+2. Select the external cluster containing your Flux apps, and select the Flux CD application you wish to migrate.
+
+   ![Figure 29: Choosing External Cluster and Flux App from Dropdown](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-app.jpg)
+
+3. The target cluster, its namespace, and environment would be visible. If the environment is not available, click **Add Environment**. This will open a new tab. Once you have [added the environment to your cluster](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster), return and click the refresh button.
+
+   ![Figure 30: Target Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-target-cluster.jpg)
+
+4. Select the trigger (**Automatic/Manual**) and click **Create Pipeline**. 
+
+   ![Figure 31: Creating CD Pipeline for Flux CD App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-how-to-deploy.jpg)
+
+5. Once the pipeline is created, you may go to [Build & Deploy](../../deploying-application/README.md) to trigger the pipelines. Your Flux CD app would be deployed using Devtron.
+
+
+{% hint style="info" %}
+### Limitations
+This feature comes with certain mentioned limitations and expectations. If your use case doesn't fit and goes beyond, feel free to [**open a feature request**](https://github.com/devtron-labs/devtron/issues).
+ 
+* The Git source type should not be branch HEAD.
+* The target deployment cluster’s endpoint in Devtron must be the same as the one configured in FluxCD.
+* Once onboarded to Devtron, users should manage the application only through Devtron and avoid making changes directly in Git or FluxCD. This is because Devtron might not monitor or reconcile the manual changes you make outside Devtron.
+{% endhint %}
+
 ---
 
 ## Updating CD Pipeline
@@ -451,7 +527,7 @@ You can update the deployment stages and the deployment strategy of the CD Pipel
 
 To update a CD Pipeline, go to the `App Configurations` section, Click on `Workflow editor` and then click on the CD Pipeline you want to Update.
 
-![Figure 24: Updating CD Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/ca-workflow-update.gif)
+![Figure 32: Updating CD Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/ca-workflow-update.gif)
 
 Make changes as needed and click on `Update Pipeline` to update this CD Pipeline.
 
@@ -481,7 +557,7 @@ Please follow the steps mentioned below to create sequential pipelines:
 2. To add another CD Pipeline sequentially after previous one, again click on + sign on the last CD pipeline.
 3. Similarly, you can add multiple CD pipelines by clicking + sign of the last CD pipeline, each deploying in different environments.
 
-![Figure 25: Adding Multiple CD Pipelines](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/sequential-workflow.jpg)
+![Figure 33: Adding Multiple CD Pipelines](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/sequential-workflow.jpg)
 
 {% hint style="info" %}
 ### Tip
