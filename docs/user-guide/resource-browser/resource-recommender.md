@@ -80,10 +80,10 @@ To inspect the resource recommendations, follow the steps below:
 
  | Type           |Description                              |
  |:---            |:---                                     |
- |`CPU REQUESTS`  |Minimum **CPU** allocated to the workload|
- |`CPU LIMITS`    |Maximum **CPU** allocatable to the workload|
- |`MEM REQUESTS`  |Minimum **Memory (RAM)** allocated to the workload|
- |`MEM LIMITS`    |Minimum **Memory (RAM)** allocatable to the workload|
+ |`CPU REQUESTS`  |**CPU** guaranteed to the workload|
+ |`CPU LIMITS`    |Maximum **CPU** allocatable to the workload, if available|
+ |`MEM REQUESTS`  |**Memory (RAM)** guaranteed to the workload|
+ |`MEM LIMITS`    |Maximum **Memory (RAM)** allocatable to the workload, if available|
 
 6. Hover the cursor over the specific resource of the particular workload to view the recommendation.
 
@@ -182,3 +182,5 @@ To modify the schedule of the **Resource Recommender** background job, follow th
 5. Restart the `orchestrator` or `devtron` pod to implement the changes.
 
       ![Figure 19: Restarting Pods](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-recommender/resourse-recommender-restart-pod.jpg)
+
+   
