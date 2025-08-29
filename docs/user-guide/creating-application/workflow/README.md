@@ -61,8 +61,8 @@ Apart from configuring advanced options, you can create five types of CI pipelin
 
 * [Deploy Image from External Service](./ci-pipeline.md#id-3.-deploy-image-from-external-service): Choose this if you want to build your image outside Devtron; it will receive a Docker image from an external source via the incoming webhook.
 
-* Sync with Environment [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+* [Sync with Environment](./ci-pipeline.md#id-4.-sync-with-environment) <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a>
 
-* Create a Job
+* [Create a Job](./ci-pipeline.md#id-5.-create-a-job)
 
 ![Figure 6: Selecting an Image Source](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/workflow-ci.jpg)
