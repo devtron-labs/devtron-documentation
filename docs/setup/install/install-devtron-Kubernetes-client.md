@@ -7,7 +7,7 @@ The Devtron Kubernetes Desktop Client is a lightweight dashboard that is install
 The **Devtron Kubernetes Desktop Client** comes packaged with the following modules:
 
 * [Kubernetes Resource Browser](#kubernetes-resource-browser) - To manage all Kubernetes resources in your cluster(s)
-* [Clusters](#clusters) - To manage the clusters you connect from the Devtron Kubernetes Desktop Client
+* [Clusters](#clusters) - To perform troubleshooting and node operations on the cluster(s) you connect from the Devtron Kubernetes Desktop Client
 
 {% hint style="success" %}
 
@@ -90,7 +90,7 @@ If you already have a service account named `cd-user`, executing the above-menti
 
 ## Kubernetes Resource Browser
 
-Kubernetes Resource Browser, in short, is a central interface from which you can view logs, edit live manifests, and even perform CRUD operations (create, read, update, or delete) on resources like pods, deployments, configmaps, jobs, and many more in the cluster(s). For more information, refer to [Resource Browser](../../user-guide/resource-browser/README.md). 
+Kubernetes Resource Browser, in short, is a central interface from which you can view logs, edit live manifests, and even perform CRUD operations (create, read, update, or delete) on resources like pods, deployments, configmaps, jobs, and many more in the cluster(s).  
 
 ![Figure 3: Kubernetes Resource Browser](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/resource-browser.jpg)
 
