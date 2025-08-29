@@ -30,7 +30,7 @@ A [Super-Admin](../../user-guide/global-configurations/user-access.md#assign-sup
 1. Run the following command in your terminal to automatically download the executable file. Devtron Kubernetes Desktop Client will automatically opened in your default browser.
 
    ```bash
-   wget -O devtron-install.bash https://cdn.devtron.ai/k8s-client/devtron-install.bash && [ -f devtron-install.bash ] && sh devtron-install.bash start  
+   wget -O devtron-install.bash https://cdn.devtron.ai/k8s-client/devtron-install.bash && [ -f devtron-install.bash ] && sh devtron-install.bash start
    ```
 {% hint style="info" %}
 
@@ -87,6 +87,18 @@ Upon executing the above-mentioned command, if you encounter an error saying tha
    ```bash
    sh devtron-install.bash stop
    ``` 
+
+{% hint style="info" %}
+
+### Note
+
+The next time, if you wish to run the Devtron Kubernetes Desktop Client again, run the following command in your terminal:
+
+```bash
+sh devtron-install.bash start
+```
+
+{% endhint %}
 
 ---
 
