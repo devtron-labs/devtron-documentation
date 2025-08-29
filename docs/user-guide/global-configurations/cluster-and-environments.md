@@ -55,10 +55,10 @@ Refer to [Get Cluster Credentials](#get-cluster-credentials) to learn the proces
   ![Figure 4: Enter Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-add-cluster-cred.jpg)
 
 2. Complete the remaining steps (optional): 
-  * [Choose Connection Type](#choose-connection-type)
+  * [Choose Connection Type](#choose-method-of-connection)
   * [Use Secure TLS Connection](#use-secure-tls-connection)
   * [Configure Prometheus](#configure-prometheus-enable-application-metrics)
-  * [Assign a Category](#assigning-category-to-a-cluster)
+  * [Assign a Category](#assign-category-to-a-cluster)
 
 {% hint style="tip" %}
 ### Tip
@@ -85,7 +85,7 @@ In case you prefer to add clusters using kubeconfig, follow these steps:
   * [Choose Connection Type](#choose-method-of-connection)
   * [Use Secure TLS Connection](#use-secure-tls-connection)
   * [Configure Prometheus](#configure-prometheus-enable-application-metrics)
-  * [Assign a category](#assigning-category-to-a-cluster)
+  * [Assign a category](#assign-category-to-a-cluster)
 
 {% hint style="warning" %}
 ### Note
@@ -96,7 +96,7 @@ Ensure that the **kubeconfig** file has admin permissions. It is crucial for Dev
 
 Devtron allows you to assign a category (for e.g. Prod, QA, Dev, or Stage) to your clusters. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to the Prod, QA, Dev, or Stage environment.
 
-Before assigning a category, you must first add the category. To add a category, refer to the [Adding a Category](#adding-a-category) section to learn more.
+Before assigning a category, you must first add the category. To add a category, refer to the [Adding a Category](#add-category) section to learn more.
 
 To assign a category to a cluster, follow the steps below:
 
@@ -245,7 +245,7 @@ After adding a cluster to Devtron ([Kubernetes Cluster](#add-kubernetes-cluster)
 
    ![Figure 21: Category Assigned](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-assign-category-category-added-env.jpg)
 
- **Note:** Before assigning a category, you must first add the category. To add a category, refer to [Adding a Category](#adding-a-category) section to learn more.
+ **Note:** Before assigning a category, you must first add the category. To add a category, refer to [Adding a Category](#add-category) section to learn more.
 
 4. **Add/Edit labels to namespace** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) - You can attach labels to your specified namespace in the Kubernetes cluster. Using labels will help you filter and identify resources via CLI or other Kubernetes tools. [Click here](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) to know more about labels.
 
