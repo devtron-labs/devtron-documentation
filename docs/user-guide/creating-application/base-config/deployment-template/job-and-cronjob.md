@@ -6,6 +6,8 @@ This chart deploys Job & CronJob. A Job is a controller object that represents a
  * [Job](#id-1.-job)
  * [CronJob](#id-2.-cronjob)
 
+![Figure 1: Choosing 'Job & CronJob' Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/job-cronjob.jpg)
+
 ## 1. Job
 
 A Job creates one or more Pods and will continue to retry execution of the Pods until a specified number of them successfully terminate. As pods successfully complete, the Job tracks the successful completions. When a specified number of successful completions is reached, the task (ie, Job) is complete. Deleting a Job will clean up the Pods it created. Suspeding a Job will delete its active Pods until the Job is resumed again.
@@ -65,5 +67,6 @@ cronjobConfigs:
 | `kind` | As with all other Kubernetes config, a Job and cronjob needs apiVersion, kind.cronjob and job also needs a section fields which is optional . these fields specify to deploy which job (conjob or job) should be kept. by default, they are set cronjob. |
 
 {% hint style="warning" %}
+### Note
 Super-admins can lock keys in Job & CronJob deployment template to prevent non-super-admins from modifying those locked keys. Refer [Lock Deployment Configuration](../../global-configurations/lock-deployment-config.md) to know more.
 {% endhint %}
