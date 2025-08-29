@@ -30,7 +30,7 @@ Choose one of the following installation options as per your requirement:
 
 * If you are planning to install Devtron in production environments, kindly refer to [Production Infra Recommendations](../install/prod-infra.md).
 
-* If you want to install a light-weight desktop client outside your Kubernetes cluster, kindly refer to [Devtron Kubernetes Desktop Client](../install/install-devtron-Kubernetes-client.md).
+* If you want to install a light-weight desktop client outside your Kubernetes cluster, kindly refer to [Devtron Kubernetes Desktop Client](../install/install-devtron-kubernetes-client.md).
 
 {% endhint %}
 
