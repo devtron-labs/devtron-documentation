@@ -45,7 +45,7 @@ To create a new **Blank Job** in Devtron, follow these steps:
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and applications) to perform environment override.
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#roles-available-for-jobs) or above (along with access to the environment and applications) to perform environment override.
 {% endhint %}
 
 To create a new **Clone Job** in Devtron, follow these steps:

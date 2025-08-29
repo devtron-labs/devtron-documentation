@@ -144,7 +144,7 @@ Let's take an example of a **Shell task** for a job that allows you to back up a
 | `Trigger/Skip condition` | `Trigger If: DB_NAME == prod-db`| Optional| A conditional statement to execute or skip the task|
 | `Script`| Refer the [Script](#script) below| Required| Custom script for executing Job tasks|
 | `Output directory path`  | `/backups`| Optional| Directory path where output files such as logs, errors, etc., will be available after the execution.|
-| `Output variables`| Refer to the [output variable](#output-variables) table| Optional| <p>Output variables  store the output as variables, and these variables can be used as input variables for the next task.</p><ul><li>[Pass/Failure Condition](#pass-fail-condition) (Optional): Conditional statements to determine the success/failure of the task. A failed condition stops the execution of the next task and/or build process</li></ul>|
+| `Output variables`| Refer to the [output variable](#output-variables) table| Optional| <p>Output variables  store the output as variables, and these variables can be used as input variables for the next task.</p><ul><li>[Pass/Failure Condition](#passfail-condition) (Optional): Conditional statements to determine the success/failure of the task. A failed condition stops the execution of the next task and/or build process</li></ul>|
 
 #### Input Variable Table
 

@@ -36,6 +36,6 @@ Refer the [User permissions](../global-configurations/authorization/user-access.
 
 ---
 
-After executing your pipeline, the pipeline will now be in running state, and you can monitor the pipeline execution (such as logs, source, artifacts) in [run-history](./run-history.md) either by navigating to **Run History** tab or by clicking `details` above the **Select Material** of the specific pipeline.
+After executing your pipeline, the pipeline will now be in running state, and you can monitor the pipeline execution (such as logs, source, artifacts) in [run-history](./run-history-job.md) either by navigating to **Run History** tab or by clicking `details` above the **Select Material** of the specific pipeline.
 
 ![Figure 7: Job Status](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-details.jpg)

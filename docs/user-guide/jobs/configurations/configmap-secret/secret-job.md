@@ -46,7 +46,7 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
 
     * [**Environment Variable**](#mount-data-as-environment-variables) – Select this option if you want to inject Secret data(key-value pairs) as Environment Variables in pods using Secret.
 
-    * [**Data Volume**](#mount-data-as-data-volume) – Select this option if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-valume) to know more.
+    * [**Data Volume**](#mount-data-as-data-volume) – Select this option if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-volume) to know more.
 
  ![Figure 5: Mount Data as](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-mount-data.jpg)
 
@@ -208,10 +208,10 @@ Chart version should be > 4.14.0
 ### Purpose
 
 This section is for users who wish to use the following data type while adding secrets in Devtron:
-* [Google Secrets Manager](./eso/gcp-eso.md)
-* [AWS Secrets Manager](./eso/aws-eso.md)
-* [Hashi Corp Vault](./eso/hashicorp-eso.md)
-* [Azure Secrets Manager](./eso/azure-eso.md)
+* [Google Secrets Manager](../../../creating-application/eso/gcp-eso.md)
+* [AWS Secrets Manager](../../../creating-application/eso/aws-eso.md)
+* [Hashi Corp Vault](../../../creating-application/eso/hashicorp-eso.md)
+* [Azure Secrets Manager](../../../creating-application/eso/azure-eso.md)
 
 External Secrets Operator (ESO) is a Kubernetes component that integrates with external secret management systems like AWS Secrets Manager, HashiCorp Vault, Google Secrets Manager, Azure Key Vault, and more. It retrieves secrets from these external sources and injects them into Kubernetes Secrets automatically. Before you can create external secrets in Devtron, you need to install the External Secrets Operator on the target cluster. 
 
@@ -225,7 +225,7 @@ External Secrets Operator (ESO) is a Kubernetes component that integrates with e
 
 {% hint style="info" %}
 ### What if the external-secrets chart is not found?
-Manually add the following chart repository URL in Devtron: `https://charts.external-secrets.io`. Follow this [guide](../../global-configurations/chart-repo.md#add-chart-repository) to know the steps.
+Manually add the following chart repository URL in Devtron: `https://charts.external-secrets.io`. Follow this [guide](../../../global-configurations/chart-repo.md#add-chart-repository) to know the steps.
 {% endhint %}
 
 3. Give a name to the helm app that will be created from the chart. Also, enter the project and environment where you wish to install the chart.

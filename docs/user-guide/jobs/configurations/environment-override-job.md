@@ -82,7 +82,7 @@ If you want to have environment-specific **ConfigMaps & Secrets**, use **Environ
 | logLevel  | "info"             | *(Not specified)*            | *(Removed)*         |
 | timeout   | (Not specified)    | 30s                          | 30s (Added)         |
 
-> To know how to configure ConfigMaps & Secrets refer to the following sections: <ul><li>[ConfigMaps](./config-maps-and-secrets/configmaps.md)</li> <li> [Secrets](./config-maps-and-secrets/secrets.md)</li></ul>
+> To know how to configure ConfigMaps & Secrets refer to the following sections: <ul><li>[ConfigMaps](./configmap-secret/configmap-job.md)</li> <li> [Secrets](./configmap-secret/secret-job.md)</li></ul>
 
 ---
 
@@ -100,9 +100,9 @@ To create additional ConfigMaps & Secrets, follow the given steps
 
  Follow the guide below to create a ConfigMap or Secret:
 
- * [Add ConfigMaps](./config-maps-and-secrets/configmaps.md#add-configmap)
+ * [Add ConfigMaps](./configmap-secret/configmap-job.md)
  
- * [Add Secrets](./config-maps-and-secrets/secrets.md#add-secret)
+ * [Add Secrets](./configmap-secret/secret-job.md)
 
 3. Once created, a new ConfigMap or Secret will be added with a label `Created at environment` under its name, in the left section under ConfigMap or Secret, respectively.
 

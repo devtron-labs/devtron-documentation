@@ -9,7 +9,7 @@ A ConfigMap stores key-value pairs that your jobs can use as environment variabl
 {% hint style="warning" %}
 ### Who Can Perform This Action?
 Users need to have the **Admin role** or the **Super Admin role**.
-Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
+Refer the [User permissions](../../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
 1. Go to **Configurations** → **ConfigMaps & Secrets**.
@@ -38,7 +38,7 @@ Refer the [User permissions](../global-configurations/authorization/user-access.
 
  * [**Environment Variable**](#mount-data-as-environment-variables) – Select this option if you want to inject Environment Variables in pods using ConfigMap.
 
- * [**Data Volume**](#mount-data-as-data-volume) – Select this option if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-valume) to know more.
+ * [**Data Volume**](#mount-data-as-data-volume) – Select this option if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-volume) to know more.
 
  ![Figure 5: Mounting Data as](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-mount-data.jpg)
 
@@ -148,7 +148,7 @@ Refer the [User permissions](../global-configurations/authorization/user-access.
 {% hint style="warning" %}
 ### Who Can Perform This Action?
 Users need to have the **Admin role** or the **Super Admin role**.
-Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
+Refer the [User permissions](../../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
 1. Click your ConfigMap available inside the list of **ConfigMaps** inside **ConfigMaps & Secrets**.
@@ -171,7 +171,7 @@ You cannot change the name of a ConfigMap. Create a new ConfigMap instead.
 {% hint style="warning" %}
 ### Who Can Perform This Action?
 Users need to have the **Admin role** or the **Super Admin role**.
-Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
+Refer the [User permissions](../../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
 You may delete a ConfigMap if not in use anymore. Once a ConfigMap is deleted, it will not be used in future deployments.
