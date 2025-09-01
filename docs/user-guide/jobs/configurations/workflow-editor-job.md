@@ -127,9 +127,59 @@ In Devtron, you can also define a task using a custom script to meet specific re
 
 These Tasks run using container in container approach, which means the specified image is pulled and run inside the job pod, thus providing a complete isolated environment.
 
-5. After selecting the **Task type**, you need to configure task-specific fields based on that **Task type**. Let's look at some examples below to configure both **Shell type** and **Container image** tasks.
+5. After selecting the **Task type**, you need to configure task-specific fields based on that **Task type**. Refer [Examples and Use Cases](#examples-and-use-cases) section to configure both **Shell type** and **Container image** tasks.
 
+6. After configuring the tasks, choose the environment in which you want the job to be executed.
+
+7. Select **Create Pipeline**, and a job pipeline will be created.
+
+### Examples and Use Cases
 #### Example - Shell Task
+
+Let's take an example of a **Shell task** for a job that allows you to extract all the environment variables available to the job pod at runtime and store it as a file.
+
+#### Task Configurations 
+
+|Field| Values for This Example| Required/Optional | Description|
+| :--- | :--- | :--- | :--- |
+| `Task Name`| `export-env-var`| Required| Enter a name for the task|
+| `Task Description`| `This task extract all the environment variables available to the job pod at runtime and saves it as a file` | Optional | Short description for the task|
+| `Task Type` | `Shell`| Optional| Select the preferred task type |
+| `Script`| Refer the [Script](#script) below| Required| Custom script for executing Job tasks|
+| `Output variables`| Refer to the [output variable](#output-variables) table| Optional| <p>Output variables store the output as variables, and these variables can be used as input variables for the next task.|
+
+
+#### Script
+
+{% code title="Custom Script" overflow="wrap" lineNumbers="true" %}
+```bash
+#!/bin/sh
+set -e
+
+ARTIFACT_DIR="/artifacts"
+FILE="$ARTIFACT_DIR/env-vars.txt"
+
+mkdir -p "$ARTIFACT_DIR"
+printenv | sort > "$FILE"
+
+# Verify file exists
+ls -l "$ARTIFACT_DIR"
+
+# Export output variable
+echo "ENV_FILE=$FILE"
+```
+{% endcode %}
+
+#### Output Variables
+
+| Variable           | Type   | Description                                         |
+| ------------------ | ------ | --------------------------------------------------- |
+| `ENV_FILE`         | String | Stores the env variables to be used in other scripts (if needed). |
+
+
+After running this job, you can access the generated file by navigating to **Run History** → **Artifacts**.
+
+#### Use Case - Shell Task
 
 Let's take an example of a **Shell task** for a job that allows you to back up a specific PostgreSQL database and store it as a file.
 
@@ -142,9 +192,9 @@ Let's take an example of a **Shell task** for a job that allows you to back up a
 | `Task Type` | `Shell`| Optional| Select the preferred task type |
 | `Input variables`| Refer the [Input Variable table](#input-variable-table) below | Optional| <p>These variables provide dynamic values to the script at the time of execution and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
 | `Trigger/Skip condition` | `Trigger If: DB_NAME == prod-db`| Optional| A conditional statement to execute or skip the task|
-| `Script`| Refer the [Script](#script) below| Required| Custom script for executing Job tasks|
+| `Script`| Refer the [Script](#script-1) below| Required| Custom script for executing Job tasks|
 | `Output directory path`  | `/backups`| Optional| Directory path where output files such as logs, errors, etc., will be available after the execution.|
-| `Output variables`| Refer to the [output variable](#output-variables) table| Optional| <p>Output variables  store the output as variables, and these variables can be used as input variables for the next task.</p><ul><li>[Pass/Failure Condition](#passfail-condition) (Optional): Conditional statements to determine the success/failure of the task. A failed condition stops the execution of the next task and/or build process</li></ul>|
+| `Output variables`| Refer to the [output variable](#output-variables-1) table| Optional| <p>Output variables  store the output as variables, and these variables can be used as input variables for the next task.</p><ul><li>[Pass/Failure Condition](#passfail-condition) (Optional): Conditional statements to determine the success/failure of the task. A failed condition stops the execution of the next task and/or build process</li></ul>|
 
 #### Input Variable Table
 
@@ -233,6 +283,60 @@ After adding this backup task, you can add more tasks as well, for example, you 
 
 #### Example - Container Image Task
 
+Let's take an example of a **Container Image Task** for a job that test if a given endpoint (URL) is reachable from the job pod and save the result in an artifact.
+
+#### Tasks Configurations
+
+| Field| Values for This Example| Required/Optional | Description|
+| :---|:---|:---|:---|
+| `Task name`| `check-endpoint`| Required|Enter a name for the task|
+| `Description`|`Checks API endpoint`|
+| `Task type`| `Container Image`| Optional| Allows you to execute commands and scripts inside a custom Docker container|
+| `Input variables`| Refer the [Input Variable table](#input-variable-table-1) below | Optional| <p>These variables provide dynamic values to the script and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
+| `Trigger/Skip condition`| `No`| Optional| Execute or skip the task based on the condition provided.|
+| `Container image`| `alpine:3.2.0`| Required| Select an image from the drop-down list or enter a custom value in the format `<image>:<tag>`|
+| `Mount custom code`| Refer below [Mount custom code](#mount-custom-code) section| Optional| <p>Enable to mount the custom code in the container. Enter the script in the box below.</p><ul><li>**Mount above code at** (required): Path where the code should be mounted, i.e., `/run.sh` (for this example only) </li></ul>|
+| `Command`| `sh`| Optional|Mention commands to execute inside the container|
+| `Args`| `/run.sh`| Optional| The arguments to be passed to the command mentioned in the command field|
+| `Port mapping`| `No`| Optional| The port number on which the container listens. The port number exposes the container to outside services.|
+| `Mount code to container`| `yes`| Optional| Mounts the source code (configured git repository) inside the container. The default is "No". If set to "Yes", enter the path where the source should be mounted inside the container.|
+| `Mount directory from host` |`No`| Optional| Mount any directory from the host into the container. This can be used to mount code or even output directories.|
+| `Output directory path`|`/artifacts`| Optional| Directory path where output files such as logs, errors, etc. will be available after the execution.|
+
+#### Input Variable Table
+
+| Variable| Type| Value| Description|
+| :--- | :---| :--- | :--- |
+| `Target_URL`| String | `https://kubernetes.io`| URL that needs to be checked|
+
+#### Mount Custom Code
+
+{% code title="Custom Script" overflow="wrap" lineNumbers="true" %}
+```bash
+#!/bin/sh
+set -e
+
+ARTIFACT_DIR="/artifacts"
+FILE="$ARTIFACT_DIR/status.txt"
+
+mkdir -p "$ARTIFACT_DIR"
+
+apk add --no-cache curl ca-certificates
+
+if curl -fsL --max-time 10 "$TARGET_URL" > /dev/null; then
+  echo "$TARGET_URL is reachable" > "$FILE"
+else
+  echo "$TARGET_URL is NOT reachable" > "$FILE"
+fi
+
+echo "STATUS_FILE=$FILE"
+```
+{% endcode %}
+
+You can provide the URL at runtime, and the after the job execution completed, you can access the generated file by navigating to **Run History** → **Artifacts**.
+
+#### Use Case - Container Image Task
+
 Let's take an example of a **Container Image Task** for a job that provisions an AWS S3 bucket using Terraform. Here, instead of installing dependencies (such as terraform), this task pulls the official terraform image (hashicorp/terraform:1.5.0) in which our task will execute. This means a container will be created inside the job pod and runs terraform commands inside the container, thus avoiding the need to install dependencies manually each time.
 
 #### Tasks Configurations
@@ -242,10 +346,10 @@ Let's take an example of a **Container Image Task** for a job that provisions an
 | `Task name`| `provision-s3-bucket`| Required|Enter a name for the task|
 | `Description`| Provision an S3 bucket with Terraform| Optional| A descriptive message for the task|
 | `Task type`| `Container Image`| Optional| Allows you to execute commands and scripts inside a custom Docker container|
-| `Input variables`| Refer the [Input Variable table](#input-variable-table-1) below | Optional| <p>These variables provide dynamic values to the script and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
+| `Input variables`| Refer the [Input Variable table](#input-variable-table-2) below | Optional| <p>These variables provide dynamic values to the script and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
 | `Trigger/Skip condition`| `TF_ENV == "prod"`| Optional| Execute or skip the task based on the condition provided.|
 | `Container image`| `hashicorp/terraform:1.5.0`| Required| Select an image from the drop-down list or enter a custom value in the format `<image>:<tag>`|
-| `Mount custom code`| Refer below [Mount custom code](#mount-custom-code) section| Optional| <p>Enable to mount the custom code in the container. Enter the script in the box below.</p><ul><li>**Mount above code at** (required): Path where the code should be mounted</li></ul>|
+| `Mount custom code`| Refer below [Mount custom code](#mount-custom-code-1) section| Optional| <p>Enable to mount the custom code in the container. Enter the script in the box below.</p><ul><li>**Mount above code at** (required): Path where the code should be mounted</li></ul>|
 | `Command`| `sh`| Optional|Mention commands to execute inside the container|
 | `Args`| `/run.sh`| Optional| The arguments to be passed to the command mentioned in the command field|
 | `Port mapping`| `No`| Optional| The port number on which the container listens. The port number exposes the container to outside services.|
@@ -339,10 +443,6 @@ variable "region" {
 {% endcode %}
 
 After adding this S3 provisioner task, you can add more tasks as well, for example, you can add a task to add a bucket policy or send a notification to slack or email that s3 bucket is provisioned successfully.
-
-6. After configuring the tasks, choose the environment in which you want the job to be executed.
-
-7. Select **Create Pipeline**, and a job pipeline will be created.
 
 ---
 
