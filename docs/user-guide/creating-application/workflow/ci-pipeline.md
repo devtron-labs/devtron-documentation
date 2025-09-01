@@ -1,7 +1,7 @@
 # CI Pipeline
 
 {% hint style="info" %}
-For Devtron versions older than v0.4.0, please refer to the [CI Pipeline (legacy)](https://docs.devtron.ai/v/v0.4/devtron/user-guide/creating-application/workflow/ci-pipeline-legacy) page.
+For Devtron version older than v0.4.0, please refer to the [CI Pipeline (legacy)](https://docs.devtron.ai/v/v0.4/devtron/user-guide/creating-application/workflow/ci-pipeline-legacy) page.
 {% endhint %}
 
 ## Creating CI Pipeline
@@ -712,7 +712,7 @@ To delete a CI pipeline, follow the steps below.
 
   ![Figure 69: Deleting CD Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-cd-popup.jpg)
 
- In case there are multiple CD pipelines in the workflow, then you need to delete every single one of them in ̀a similar way.
+ In case there are multiple CD pipelines in the workflow, then you need to delete every single one of them in a similar way.
 
 5. After deleting all CD pipelines, click on the build stage, and the **Edit build pipeline** window will open. 
 
