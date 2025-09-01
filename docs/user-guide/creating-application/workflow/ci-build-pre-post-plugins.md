@@ -112,9 +112,71 @@ Similarly, you can configure any task with a preset plugin in Pre/post-build sta
 
  * **Container Image Tasks**: These allow you to execute commands and scripts inside a custom Docker container. Instead of using the default environment provided by Devtron, you can specify your own container image with all dependencies and tools required for the tasks. <br> These Tasks run using container in container approach, which means the specified image is pulled and run inside the App pod, thus providing a completely isolated environment.
 
-4. After selecting the **Task type**, you need to configure task-specific fields based on that **Task type**. Let's look at some examples below to configure both **Shell type** and **Container image** tasks.
+4. After selecting the **Task type**, you need to configure task-specific fields based on that **Task type**. Refer the [Examples and Use cases](#examples-and-use-cases) to configure both **Shell type** and **Container image** tasks.
 
-### Example - Shell Task
+### Examples and Use Cases
+
+#### Example 1 - Shell Task (Post-Build)
+
+Let's take an example of a **Shell task** in the Post-Build stage, that send an email notification immediately after the build stage is completed.
+
+#### Tasks Configurations
+
+|Field| Values for This Example| Required/Optional | Description|
+| :--- | :--- | :--- | :--- |
+| `Task Name`| `email-notifier`| Required| Enter a name for the task|
+| `Task Description`| `This task sends a email after the build is completed` | Optional | Short description for the task|
+| `Task Type` | `Shell`| Optional| Select the preferred task type |
+| `Input variables`| Not required for this example | Optional| <p>These variables provide dynamic values to the script at the time of execution and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
+| `Trigger/Skip condition` | Not required for this example | Optional| A conditional statement to execute or skip the task|
+| `Script`| Refer the [Script](#script) below| Required| Custom script for executing tasks|
+| `Output directory path`  | Not required for this example | Optional| Directory path where output files such as logs, errors, etc. will be available after the execution.|
+| `Output variables`|Not required for this example | Optional| <p>Output variables  store the output as variables, and these variables can be used as input variables for the next task.</p><ul><li>[Pass/Failure Condition](#passfail-condition) (Optional): Conditional statements to determine the success/failure of the task. A failed condition stops the execution of the next task and/or build process</li></ul>|
+
+
+#### Prerequisites
+Make sure to create an App password for the sender's email account to use in the script below. Refer the below video to learn how to create an App password for GMAIL accounts
+
+{% embed url="https://www.youtube.com/watch?v=2Z_J4l2RJ8s" caption="Creating App Password" %}
+
+#### Script
+
+{% code title="Custom Script" overflow="wrap" lineNumbers="true" %}
+```bash
+!/bin/bash
+
+# SMTP server settings for Gmail
+SMTP_SERVER="smtp.gmail.com"
+SMTP_PORT="587"
+SMTP_USERNAME="docs@devtron.ai" # Enter the sender's email
+SMTP_PASSWORD="diey mzec ogfd fzmr" # Enter App Password 
+
+# Recipient email address
+TO="abc@gmail.com"
+
+# Email subject and body
+SUBJECT="Build is completed"
+BODY="Build Stage is successfully completed."
+
+# Construct the email message
+MESSAGE="Subject: $SUBJECT\n\n$BODY"
+
+# Send the email using Curl
+curl --url "smtp://$SMTP_SERVER:$SMTP_PORT" \
+     --ssl-reqd \
+     --mail-from "$SMTP_USERNAME" \
+     --mail-rcpt "$TO" \
+     --user "$SMTP_USERNAME:$SMTP_PASSWORD" \
+     --tlsv1.2 \
+     -T <(echo -e "$MESSAGE")
+
+echo "Email sent to $TO"
+```
+{% endcode %}
+
+After the build stage is completes, this task will sends an email to notify you that the build stage is completed.
+
+#### Example 2 - Shell Task (Pre-Build)
 
 Let's take an example of a **Shell task** in the Pre-Build stage that ensures the database configured is prod-db. If the configured database is anything else, the build should stop.
 
@@ -131,7 +193,7 @@ Let's take an example of a **Shell task** in the Pre-Build stage that ensures th
 | `Task Type` | `Shell`| Optional| Select the preferred task type |
 | `Input variables`| Refer the [Input Variable table](#input-variable-table) below | Optional| <p>These variables provide dynamic values to the script at the time of execution and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
 | `Trigger/Skip condition` | Not required for this example | Optional| A conditional statement to execute or skip the task|
-| `Script`| Refer the [Script](#script) below| Required| Custom script for executing tasks|
+| `Script`| Refer the [Script](#script-1) below| Required| Custom script for executing tasks|
 | `Output directory path`  | Not required for this example | Optional| Directory path where output files such as logs, errors, etc. will be available after the execution.|
 | `Output variables`| Refer to the [output variable](#output-variables) table| Optional| <p>Output variables  store the output as variables, and these variables can be used as input variables for the next task.</p><ul><li>[Pass/Failure Condition](#passfail-condition) (Optional): Conditional statements to determine the success/failure of the task. A failed condition stops the execution of the next task and/or build process</li></ul>|
 
@@ -187,7 +249,7 @@ PASS If: `DB_VALIDATION == pass`
 
 After adding this database validation task, you can add more tasks as well, for example, you can add a follow-up Pre-Build task that runs only if the database is valid.
 
-### Example - Container Image Task
+### Example 3 - Container Image Task
 
 Let's take an example of a **Container Image Task** that verify that the configured database is reachable and accepting connections before executing build stage. This ensures that the build does not proceed if the database configuration is incorrect or unreachable, saving time and resources.
 
@@ -259,7 +321,7 @@ fi
 ```
 {% endcode %}
 
-**Note:** The examples above demonstrate configuring tasks in the Pre-Build stage; you can add tasks in the Post-Build, Pre-Deployment, and Post-Deployment stages in exactly the same way.
+**Note:** The examples above demonstrate configuring tasks in the Pre-Build and Post-Build stages; you can add tasks in the Pre-Deployment, and Post-Deployment stages in exactly the same way.
 
 ---
 
