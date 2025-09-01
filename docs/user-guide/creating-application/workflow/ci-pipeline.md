@@ -69,8 +69,8 @@ Devtron typically uses a Dockerfile from your repository to build container imag
  |:---|:---|:---|
  | `Branch Fixed`| Triggers a CI build whenever changes are pushed to a specified branch.| Requires a predefined branch name.|
  | `Branch Regex`| Allows dynamic branch selection based on a regex pattern| Requires a regex pattern to be defined. For example, if the user sets the Branch Regex as feature-\*, then users can trigger the build from branches such as feature-1450, feature-hot-fix, etc. |
- | `Pull Request` (PR) | Triggers a CI build when a new pull request is created. You can also define filters (such as PR author, title, or branch) to control which pull requests trigger the pipeline. | Requires configuring a webhook configuration for GitHub or Bitbucket.|
- | `Tag Creation`| Triggers a build whenever a new tag is created. You can also define filters (such as author and tag name) to control which tags trigger the pipeline.| Requires webhook configuration for GitHub or Bitbucket.|
+ | `Pull Request` (PR) | Triggers a CI build when a new pull request is created. You can also define filters (such as PR author, title, or branch) to control which pull requests trigger the pipeline. | Requires [configuring a webhook](#configuring-webhook) for GitHub or Bitbucket.|
+ | `Tag Creation`| Triggers a build whenever a new tag is created. You can also define filters (such as author and tag name) to control which tags trigger the pipeline.| [configuring a webhook](#configuring-webhook) for GitHub or Bitbucket.|
 
 
  #### Pull Request Filters
