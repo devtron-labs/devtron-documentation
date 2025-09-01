@@ -127,12 +127,7 @@ Let's take an example of a **Shell task** in the Post-Build stage, that send an 
 | `Task Name`| `email-notifier`| Required| Enter a name for the task|
 | `Task Description`| `This task sends a email after the build is completed` | Optional | Short description for the task|
 | `Task Type` | `Shell`| Optional| Select the preferred task type |
-| `Input variables`| Not required for this example | Optional| <p>These variables provide dynamic values to the script at the time of execution and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
-| `Trigger/Skip condition` | Not required for this example | Optional| A conditional statement to execute or skip the task|
 | `Script`| Refer the [Script](#script) below| Required| Custom script for executing tasks|
-| `Output directory path`  | Not required for this example | Optional| Directory path where output files such as logs, errors, etc. will be available after the execution.|
-| `Output variables`|Not required for this example | Optional| <p>Output variables  store the output as variables, and these variables can be used as input variables for the next task.</p><ul><li>[Pass/Failure Condition](#passfail-condition) (Optional): Conditional statements to determine the success/failure of the task. A failed condition stops the execution of the next task and/or build process</li></ul>|
-
 
 #### Prerequisites
 Make sure to create an App password for the sender's email account to use in the script below. Refer the below video to learn how to create an App password for GMAIL accounts
