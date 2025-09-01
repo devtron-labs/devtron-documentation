@@ -124,7 +124,7 @@ Devtron provides three stages in a CI pipeline: `Pre-Build`, `Build`, and `Post-
 
 `Post-build stage`: The tasks in this stage will be triggered once the build is complete.
 
-This document focuses on configuring the Build Stage. If you want to set up Pre-Build and Post-Build stages, refer to the [Pre/Post Stages](./ci-build-pre-post-plugins.md) to learn more.
+This document focuses on configuring the Build Stage. If you want to set up Pre-Build and Post-Build stages, refer to the [Pre/Post Stages](./pre-post-tasks.md) to learn more.
 
 ### Build Stage
 

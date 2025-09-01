@@ -91,7 +91,7 @@ If your deployment requires prior actions like DB migration, code quality check 
 
 ![Figure 6: Pre-deployment Stage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/cd-predeployment-v2.jpg)
 
-Refer [Pre/Post tasks](./ci-build-pre-post-plugins.md) to configure `Pre-deployment stage` tasks.
+Refer [Pre/Post tasks](./pre-post-tasks.md) to configure `Pre-deployment stage` tasks.
 
 <!-- 1. **Tasks**
 
@@ -351,7 +351,7 @@ Post-deployment stages are similar to pre-deployment stages. The difference is t
 
 You can use [ConfigMap](../config-maps.md) and [Secrets](../secrets.md) in post deployments as well. The option to execute tasks in application environment is available too.
 
-Refer [Pre/Post tasks](./ci-build-pre-post-plugins.md) to configure `Post-deployment stage` tasks.
+Refer [Pre/Post tasks](./pre-post-tasks.md) to configure `Post-deployment stage` tasks.
 
 ![Figure 17: Post-deployment Stage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/cd_post_build.jpg)
 
