@@ -85,7 +85,7 @@
     * [Workflow Editor](user-guide/creating-application/workflow/README.md)
       * [CI Pipeline](user-guide/creating-application/workflow/ci-pipeline.md)
       * [CD Pipeline](user-guide/creating-application/workflow/cd-pipeline.md)
-      * [Pre/Post Stages](user-guide/creating-application/workflow/ci-build-pre-post-plugins.md)
+      * [Pre/Post Stages](user-guide/creating-application/workflow/pre-post-tasks.md)
     * [ConfigMaps](user-guide/creating-application/config-maps.md)
     * [Secrets](user-guide/creating-application/secrets.md)
       * [External Secret Operator (ESO)](user-guide/creating-application/eso/README.md)
