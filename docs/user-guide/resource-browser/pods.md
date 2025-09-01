@@ -2,18 +2,18 @@
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [access to the cluster](../authorization/user-permissions.md#kubernetes-resources-permissions) to view its pods and its data.
+Users need to have [access to the cluster](../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to view its pods and its data.
 {% endhint %}
 
 ## Manifest
 
-Shows you the [configuration](../../reference/glossary.md#manifest) of the selected pod and allows you to edit it. Refer [Edit Manifest](#edit-manifest) to learn more.
+Shows you the [configuration](../../reference/glossary.md#manifest) of the selected pod and allows you to edit it. Refer [Edit Manifest](manage-resources.md#edit-a-manifest) to learn more.
 
 ---
 
 ## Events
 
-Shows you all the activities (create/update/delete) of the selected pod. Refer [View Events](#view-events) to know more.
+Shows you all the activities (create/update/delete) of the selected pod. Refer [View Events](manage-resources.md#view-events) to know more.
 
 ---
 
@@ -43,10 +43,10 @@ In case any of your pod restarts, you can view its details from the pod listing 
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-User needs to be an [admin of the Kubernetes resource](../authorization/user-permissions.md#kubernetes-resources-permissions) to access pod terminal.
+User needs to be an [admin of the Kubernetes resource](../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to access pod terminal.
 {% endhint %}
 
-You can access the terminal within a running container of a pod to view its logs, troubleshoot issues, or execute commands directly. This is different from the [cluster terminal](./terminal.md) you get at node level. 
+You can access the terminal within a running container of a pod to view its logs, troubleshoot issues, or execute commands directly. This is different from the [cluster terminal](cluster-terminal.md) you get at node level. 
 
 ### Launching Ephemeral Container
 

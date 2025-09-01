@@ -276,7 +276,7 @@ The other way is to get the password in the encoded form using the cmd
 
 #### 20. Getting `UPGRADE FAILED: cannot patch "postgresql-postgresql"` while upgrading Devtron to newer versions
 `Debug:`
-1. Make sure to [annotate and label](../setup/upgrade/devtron-upgrade-0.3.x-0.4.x.md#3.-annotate-and-label-all-the-devtron-resources) all the Devtron resources.
+1. Make sure to [annotate and label](../setup/upgrade/devtron-upgrade-0.3.x-0.4.x.md#id-3.-annotate-and-label-all-the-devtron-resources) all the Devtron resources.
 2. Description of error
 ```
 Error: UPGRADE FAILED: cannot patch "postgresql-postgresql" with kind StatefulSet: StatefulSet.apps "postgresql-postgresql" is invalid: spec: Forbidden: updates to statefulset spec for fields other than 'replicas', 'template', 'updateStrategy' and 'minReadySeconds' are forbidden

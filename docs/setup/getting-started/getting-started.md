@@ -14,6 +14,22 @@ Devtron is installed over a Kubernetes cluster. Once you create a Kubernetes clu
 
 * [Recommended Resources](#recommended-resources)
 
+{% hint style="warning" %}
+
+### Are you using EKS version 1.23 or above?
+
+You must also install [aws-ebs-csi-driver](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html). Run the following command to install AWS EBS CSI driver using Helm:
+
+```bash
+helm repo add aws-ebs-csi-driver \
+https://kubernetes-sigs.github.io/aws-ebs-csi-driver \
+helm repo update \
+helm upgrade --install aws-ebs-csi-driver \
+--namespace kube-system aws-ebs-csi-driver/aws-ebs-csi-driver
+```
+
+{% endhint %}
+
 ### Create a Kubernetes Cluster
 
 {% hint style="info" %}
