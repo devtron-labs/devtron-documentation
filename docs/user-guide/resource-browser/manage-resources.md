@@ -59,7 +59,7 @@ You can edit the [manifest](../../reference/glossary.md#manifest) of a Kubernete
 
 {% hint style="info" %}
 ### Note
-The fields displayed in GUI mode will be as per the [GUI schema configured by the operator](../operations/edit-manifest-schema.md) for that resource kind.
+The fields displayed in GUI mode will be as per the GUI schema configured by the operator for that resource kind.
 {% endhint %}
 
 ---
