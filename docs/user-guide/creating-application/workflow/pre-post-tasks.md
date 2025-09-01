@@ -249,7 +249,7 @@ PASS If: `DB_VALIDATION == pass`
 
 After adding this database validation task, you can add more tasks as well, for example, you can add a follow-up Pre-Build task that runs only if the database is valid.
 
-### Example 3 - Container Image Task
+#### Example 3 - Container Image Task
 
 Let's take an example of a **Container Image Task** that verify that the configured database is reachable and accepting connections before executing build stage. This ensures that the build does not proceed if the database configuration is incorrect or unreachable, saving time and resources.
 
