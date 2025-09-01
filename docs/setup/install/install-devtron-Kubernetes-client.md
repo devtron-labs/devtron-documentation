@@ -19,39 +19,28 @@ Try Devtron Freemium to access all the enterprise features for free and forever,
 
 ## Steps
 
-{% hint style="info" %}
-
-### Note
-
-A [Super-Admin](../../user-guide/global-configurations/user-access.md#assign-super-admin-permissions) permission is not required for you to do any operations in the Devtron Kubernetes Desktop Client. 
-
-{% endhint %}
-
 1. Run the following command in your terminal to automatically download the executable file. Devtron Kubernetes Desktop Client will automatically opened in your default browser.
 
    ```bash
    wget -O devtron-install.bash https://cdn.devtron.ai/k8s-client/devtron-install.bash && [ -f devtron-install.bash ] && sh devtron-install.bash start
    ```
-{% hint style="info" %}
-
-### Reopen Devtron Kubernetes Desktop Client
-
-In case you closed the Devtron Kubernetes Desktop Client browser tab by mistake, you can reopen it by executing the following command in your terminal:
-
-```bash
-sh devtron-install.bash open 
-```                           
-{% endhint %}
 
 {% hint style="info" %}
 
-### Delete the Application
+### Desktop Client not opening?
 
-When installing the Devtron Kubernetes Desktop Client, if you encounter any errors, or if the tab opened in your default browser fails to load, or you encounter any issue because of the existence of the application, run the following command to delete the application.
+* In case you closed the Devtron Kubernetes Desktop Client browser tab by mistake, you can reopen it by executing the following command in your terminal:
 
-```bash
-rm -rf .devtron/ 
-```                           
+   ```bash
+   sh devtron-install.bash open 
+   ```     
+
+* When installing the Devtron Kubernetes Desktop Client, if you encounter any errors, or if the tab opened in your default browser fails to load, or you encounter any issue because of the existence of the application, run the following command to delete the application.
+
+   ```bash
+   rm -rf .devtron/ 
+   ```           
+
 {% endhint %}
 
 2. Open your terminal and enter the following command to download and run a bash script for generating the [kubeconfig](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/):
@@ -130,7 +119,7 @@ For the convenience of the user, the Resource Browser page comes with a search b
 
 ![Figure 5: Cluster and Namespace Filters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/filter-boxes.jpg)
 
-### Create a Kubernetes Resource 
+### Create a Resource 
 
 ![Figure 6: Create a Pod](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/creating-resource.gif)
 
@@ -151,15 +140,15 @@ spec:
     - containerPort: 80
 ```
 
-### View a Kubernetes Resource
+### View a Resource
 
 ![Figure 7: View a Pod](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/viewing-resource.gif)
 
-### Update a Kubernetes Resource
+### Update a Resource
 
 ![Figure 8: Update a Live Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/updating-resource.gif)
 
-### Delete a Kubernetes Resource
+### Delete a Resource
 
 ![Figure 9: Delete a Pod](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/deleting-resource.gif)
 
