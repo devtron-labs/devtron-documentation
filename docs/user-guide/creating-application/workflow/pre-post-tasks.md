@@ -149,7 +149,7 @@ Make sure to create an App password for the sender's email account to use in the
 SMTP_SERVER="smtp.gmail.com"
 SMTP_PORT="587"
 SMTP_USERNAME="docs@devtron.ai" # Enter the sender's email
-SMTP_PASSWORD="diey mzec ogfd fzmr" # Enter App Password 
+SMTP_PASSWORD="sample password" # Enter 16 digit App Password
 
 # Recipient email address
 TO="abc@gmail.com"
