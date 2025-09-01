@@ -65,7 +65,7 @@ If you want to install Devtron for `production deployments`, please refer our [r
 Configuring Blob Storage in your Devtron environment allows you to store build logs and cache.
 In case, if you do not configure the Blob Storage, then:
 
-- You will not be able to access the build and deployment logs after an hour.
+- You will not be able to access the build logs after an hour.
 - Build time for commit hash takes longer as cache is not available.
 - Artifact reports cannot be generated in pre/post build and deployment stages.
 
