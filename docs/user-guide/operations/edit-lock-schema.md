@@ -4,6 +4,16 @@
 
 In Devtron, you can create [CRDs](../../reference/glossary.md#crd) for defining lock schema. Your lock schema will be used to determine the fields (in the resource manifest) that cannot be added/updated/deleted by non-superadmins. This is especially useful for preventing unwanted edits to the manifests of pod, deployment, configmap, and many more.
 
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a [Super-Admin](../global-configurations/authorization/user-access.md#grant-super-admin-permission) can configure Lock Schema. 
+
+{% endhint %}
+
+---
+
 ## Editing Lock Schema
 
 1. Go to **Resource Browser** and select your cluster.
@@ -36,17 +46,19 @@ In Devtron, you can create [CRDs](../../reference/glossary.md#crd) for defining 
 
 3. Use the following template and specify the fields/paths you wish to lock in the `lockedPaths` list, also specify the resource kinds in `applyTo`. Once done, click **Apply**.
 
-    {% code title="Lock Schema for ConfigMap" overflow="wrap" lineNumbers="true" %}
-    ```yml
-    apiVersion: crd.devtron.ai/alpha1
-    kind: LockSchema
-    name: devtron-cm-lock-schema
-    spec:
-    applyTo:
-        - group: ""
-        kind: ConfigMap
-        version: v1
-    lockedPaths:
-        - data.ENABLE_CI_JOB
-    ```
-    {% endcode %}
+{% code title="Lock Schema for ConfigMap" overflow="wrap" lineNumbers="true" %}
+
+```yml
+apiVersion: crd.devtron.ai/alpha1
+kind: LockSchema
+name: devtron-cm-lock-schema
+spec:
+applyTo:
+    - group: ""
+    kind: ConfigMap
+    version: v1
+lockedPaths:
+    - data.ENABLE_CI_JOB
+```
+
+{% endcode %}
