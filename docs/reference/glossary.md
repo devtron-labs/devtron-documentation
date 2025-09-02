@@ -66,6 +66,10 @@ An OCI-compliant registry can also store artifacts (such as helm charts). Here, 
 
 Temporarily marking a node as unschedulable, preventing new pods from being assigned to it. In Devtron, you can cordon a node by going to Resource Browser → (choose a cluster) → Nodes → (click on a node) → Cordon (available in blue). [Read More...](../user-guide/resource-browser/nodes.md#cordon-a-node)
 
+### CRD
+
+A Custom Resource Definition (CRD) allows you to add custom resource types to Kubernetes, extending its capabilities to support configurations specific to your application. In Devtron, CRDs enable you to manage these custom resources alongside standard Kubernetes resources, making it easier to handle specialized application requirements within the platform.
+
 ### CronJob
 
 CronJob is used to create Jobs on a repeating schedule. It is commonly used for running periodic tasks with no manual intervention. In Devtron, you can view a list of cronjobs by going to Resource Browser → (choose a cluster) → Workloads → CronJob. [Read More...](../user-guide/creating-application/deployment-template/job-and-cronjob.md#2.-cronjob)
