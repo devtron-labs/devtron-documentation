@@ -114,7 +114,7 @@ To assign a category to a cluster, follow the steps below:
 When adding a new cluster to Devtron, you must choose how Devtron will connect to it. There are three connection options available:  
 
 #### Direct Connection
-Clusters with a directly accessible API server endpoint—either publicly or via private peering—can be added as Direct Connection clusters.  
+Clusters with a directly accessible API server endpoint, either publicly or via private peering, can be added as Direct Connection clusters.  
 * Devtron connects directly without an intermediary.  
 * Recommended when the cluster is publicly accessible or has a direct network route from Devtron.  
 

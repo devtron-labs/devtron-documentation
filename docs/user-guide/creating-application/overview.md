@@ -1,6 +1,6 @@
 # Overview
 
-The Overview page provides a centralized view of an application’s details within Devtron. It allows users to quickly access information about the application, manage tags, view deployment environments, and understand inter-app dependencies — all in a single, organized interface.
+The Overview page provides a centralized view of an application’s details within Devtron. It allows users to quickly access information about the application, manage tags, view deployment environments, and understand inter-app dependencies ,  all in a single, organized interface.
 
 The **Overview** page contains three main sections:
 *	[**About**](#about): Contains application metadata such as name, description, project, creator, tags, and connected code source. It also includes options to manage tags and [Configure PVCs](#configure-persistentvolumeclaim-pvc).
@@ -94,7 +94,7 @@ This section is view-only and does not require any configuration at the applicat
 
 ### Catalog [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-The **Catalog** in the **About** section displays information about your application—such as documentation references, ownership details, and technical specifications. This data is managed using [Devtron’s Catalog Framework](../global-configurations/catalog-framework.md).
+The **Catalog** in the **About** section displays information about your application, such as documentation references, ownership details, and technical specifications. This data is managed using [Devtron’s Catalog Framework](../global-configurations/catalog-framework.md).
 
 ![Figure 6: Catalog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/catalog.jpg)
 
@@ -167,7 +167,7 @@ Once PVC is created and in the Bound state, the next step is to configure it wit
 
 Devtron allows you to define special tags as key-value pairs. These tags act as instructions for Devtron to mount the specified PVC to the Pod where the CI pipeline runs, making the storage available during pipeline execution.
 
-You can choose to mount the PVC for all pipelines in the application or for a specific pipeline, depending on your use case. The configuration remains the same in both cases — the only difference lies in the tag key used to define the scope of the PVC.
+You can choose to mount the PVC for all pipelines in the application or for a specific pipeline, depending on your use case. The configuration remains the same in both cases ,  the only difference lies in the tag key used to define the scope of the PVC.
 
 Follow the steps below to apply the PVC to all or specific pipelines
 1. Navigate to your application’s **Overview** → **About** section.
@@ -259,7 +259,7 @@ To add upstream dependencies:
 
 Downstream dependencies are Devtron applications that rely on current application. These are automatically listed when your app is added as an upstream in another application’s configuration.
 
-You don’t need to configure anything manually for downstream entries — they are system-generated based on how other apps define their upstreams.
+You don’t need to configure anything manually for downstream entries ,  they are system-generated based on how other apps define their upstreams.
 
 For every downstream application listed, a **Map Environment** link appears beside its name.
 

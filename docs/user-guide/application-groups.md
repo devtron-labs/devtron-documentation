@@ -391,7 +391,7 @@ Users can delete a saved filter if they have Admin/Manager access on all applica
 Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to update their branch.
 {% endhint %}
 
-Assume you have a few applications whose [build pipelines](../reference/glossary.md#build-pipeline) fetch from the `main` branch of your code repository. However, you decided to maintain a `master` branch, and you want all the upcoming CI builds to consider the `master` branch as the source. Devtron provides you the option to change the branch at both levels—individual application as well as application group.
+Assume you have a few applications whose [build pipelines](../reference/glossary.md#build-pipeline) fetch from the `main` branch of your code repository. However, you decided to maintain a `master` branch, and you want all the upcoming CI builds to consider the `master` branch as the source. Devtron provides you the option to change the branch at both levels, individual application as well as application group.
 
 1. In the **Build & Deploy** tab of your application group, select the intended applications and click the **Change Branch** button present at the bottom.
 
