@@ -46,7 +46,7 @@ To create a quick workflow with both build and deployment pipelines, follow the 
 
 5. If you want to configure advanced configurations in the build pipeline, such as Custom image tag pattern, Vulnerability Scanning, etc., refer to the [CI Pipeline](./ci-pipeline.md#advanced-options) page to learn more.
 
-6. If you want to configure advanced configurations in the deployment pipeline, such as adding pre/post tasks, Custom image tag pattern, configure different deployment strategies, etc., refer to the [CD Pipeline](./cd-pipeline.mdcd-pipeline.md) page to learn more.
+6. If you want to configure advanced configurations in the deployment pipeline, such as adding pre/post tasks, Custom image tag pattern, configure different deployment strategies, etc., refer to the [CD Pipeline](cd-pipeline.md) page to learn more.
 
 7. If you want, you can also add Pre/Post Tasks in both build and deployment pipelines. To do so, refer to the [Pre/Post tasks](./ci-build-pre-post-plugins.md) page to learn more.
 
