@@ -132,6 +132,8 @@
   * [Cluster Terminal](user-guide/resource-browser/cluster-terminal.md)
   * [Add Monitoring Dashboards/Graphs](user-guide/resource-browser/monitoring-graphs.md)
   * [Run Kubectl Commands Locally](user-guide/resource-browser/kubectl-local.md) 
+  * [Configure GUI Schema](user-guide/operations/edit-gui-schema.md)
+  * [Configure Lock Schema](user-guide/operations/edit-lock-schema.md)
 * [Resource Watcher](user-guide/resource-watcher.md) 
 * [Chart Store](user-guide/deploy-chart/README.md)
   * [Deploy Charts](user-guide/deploy-chart/deployment-of-charts.md)
