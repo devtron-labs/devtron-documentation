@@ -4,6 +4,16 @@
 
 In Devtron, you can create [CRDs](../../reference/glossary.md#crd) for defining the GUI schema. Your GUI schema will be used to determine the fields displayed to the user when they [edit the manifest in GUI mode](../resource-browser/manage-resources.md#edit-using-gui).
 
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a [Super-Admin](../global-configurations/authorization/user-access.md#grant-super-admin-permission) can configure GUI Schema. 
+
+{% endhint %}
+
+---
+
 ## Editing GUI Schema
 
 1. Go to **Resource Browser** and select your cluster.
@@ -36,87 +46,86 @@ In Devtron, you can create [CRDs](../../reference/glossary.md#crd) for defining 
 
 3. Use the following template and define your schema in the `schema` object, also specify the resource kinds in `applyTo`. Once done, click **Apply**.
 
-    {% code title="GUI Schema for Pod Manifest" overflow="wrap" lineNumbers="true" %}
-    ```yml
-    apiVersion: crd.devtron.ai/alpha1
-    kind: GuiSchema
-    metadata:
-    creationTimestamp: 2024-11-08T13:01:00Z
-    generation: 1
-    name: devtron-pod-gui
-    resourceVersion: "216257"
-    uid: 70e91158-288e-4c4a-8448-012e820148ca
-    spec:
-    applyTo:
-        - group: ""
-        kind: Pod
-        version: v1
-    schema: |
-        {
-        "title": "Pod Configuration",
-        "description": "A form to create a Kubernetes pod manifest",
+{% code title="GUI Schema for Pod Manifest" overflow="wrap" lineNumbers="true" %}
+
+```yml
+apiVersion: crd.devtron.ai/alpha1
+kind: GuiSchema
+metadata:
+creationTimestamp: 2024-11-08T13:01:00Z
+generation: 1
+name: devtron-pod-gui
+resourceVersion: "216257"
+uid: 70e91158-288e-4c4a-8448-012e820148ca
+spec:
+applyTo:
+    - group: ""
+    kind: Pod
+    version: v1
+schema: |
+    {
+    "title": "Pod Configuration",
+    "description": "A form to create a Kubernetes pod manifest",
+    "type": "object",
+    "required": [
+        "metadata",
+        "spec"
+    ],
+    "properties": {
+        "metadata": {
+        "type": "object",
+        "properties": {
+            "name": {
+            "type": "string",
+            "title": "Pod Name",
+            "default": "my-pod",
+            "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
+            "description": "Lower case letters, numbers, and hyphens only"
+            }
+        }
+        },
+        "spec": {
         "type": "object",
         "required": [
-            "metadata",
-            "spec"
+            "containers"
         ],
         "properties": {
-            "metadata": {
-            "type": "object",
-            "properties": {
+            "containers": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": [
+                "name",
+                "image"
+                ],
+                "properties": {
                 "name": {
-                "type": "string",
-                "title": "Pod Name",
-                "default": "my-pod",
-                "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
-                "description": "Lower case letters, numbers, and hyphens only"
-                }
-            }
-            },
-            "spec": {
-            "type": "object",
-            "required": [
-                "containers"
-            ],
-            "properties": {
-                "containers": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
+                    "type": "string",
+                    "title": "Container Name",
+                    "default": "container-1",
+                    "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
+                    "description": "Lower case letters, numbers, and hyphens only"
+                },
+                "image": {
+                    "type": "string",
+                    "title": "Container Image",
+                    "description": "Docker image name with optional tag (e.g., nginx:1.14.2)"
+                },
+                "ports": {
+                    "type": "array",
+                    "title": "Container Ports",
+                    "items": {
                     "type": "object",
                     "required": [
-                    "name",
-                    "image"
+                        "containerPort"
                     ],
                     "properties": {
-                    "name": {
-                        "type": "string",
-                        "title": "Container Name",
-                        "default": "container-1",
-                        "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
-                        "description": "Lower case letters, numbers, and hyphens only"
-                    },
-                    "image": {
-                        "type": "string",
-                        "title": "Container Image",
-                        "description": "Docker image name with optional tag (e.g., nginx:1.14.2)"
-                    },
-                    "ports": {
-                        "type": "array",
-                        "title": "Container Ports",
-                        "items": {
-                        "type": "object",
-                        "required": [
-                            "containerPort"
-                        ],
-                        "properties": {
-                            "containerPort": {
-                            "type": "integer",
-                            "title": "Port Number",
-                            "minimum": 1,
-                            "maximum": 65535
-                            }
-                        }
+                        "containerPort": {
+                        "type": "integer",
+                        "title": "Port Number",
+                        "minimum": 1,
+                        "maximum": 65535
                         }
                     }
                     }
@@ -126,5 +135,8 @@ In Devtron, you can create [CRDs](../../reference/glossary.md#crd) for defining 
             }
         }
         }
-    ```
-    {% endcode %}
+    }
+    }
+```
+
+{% endcode %}
