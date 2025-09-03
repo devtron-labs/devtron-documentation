@@ -29,7 +29,7 @@ Users need to have super-admin permission to create Application Templates.
 
     | Field                     | Required/Optional | Description                                  |
     | :------------------------ | :---------------- | :------------------------------------------- |
-    | **Template display name** | Required          | Provide a name for the application template, e.g., `Banking-backend`. <ol><li> Minimum 3 characters are required </li></ol> |
+    | **Template display name** | Required          | Provide a name for the application template, e.g., `Banking-backend`|
     | **Template ID**           | Required          | Template ID is a unique identifier for application templates, and is uniquely mapped to the application template. <ol><li>Character limit: 3-50</li><li>Only lowercase alphanumeric characters are allowed</li><li>Special Characters: `-`,`_`,`.`</li><li>Template ID should be unique for each application template</li></ol>|
     | **Description**           | Optional          | Provide a short description for the application template |
 
@@ -42,7 +42,7 @@ Users need to have super-admin permission to create Application Templates.
 
 ## Customizing an Application Template
 
-After creation of Application Template, if you wish, you can modify the configurations of your application template according to your use cases. By default, configurations are inherited from the application which is used to create that application template.
+After you create an application template, you can view the configurations it inherited (Git, Build, Chart, Pipeline config) from the source application. If you wish, you may modify those configurations according to your use cases.
 
 1. Navigate to **Global Configurations** → **Application Templates**.
 
