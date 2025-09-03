@@ -4,10 +4,12 @@ Application Metrics are the indicators used to evaluate the performance and effi
 
 ## Types of Metrics available in the Devtron platform:
 
-1. **CPU usage:** Overall CPU utilization per pod and aggregated.
-2. **Memory Usage:** Overall memory utilization per pod and aggregated.
-3. **Throughput:** Number of requests processed per minute.
-4. **Latency:** Delay between request and response, measured in percentiles.
+| Metrics           | Description                                                 |
+| :---------------- | :---------------------------------------------------------- |
+| **CPU usage:**    | Overall CPU utilization per pod and aggregated              |
+| **Memory Usage:** | Overall memory utilization per pod and aggregated           |
+| **Throughput:**   | Number of requests processed per minute                     |
+| **Latency:**      | Delay between request and response, measured in percentiles |
 
 ## Setup Application Metrics
 
