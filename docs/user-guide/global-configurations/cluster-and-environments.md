@@ -175,6 +175,91 @@ Click **Save Cluster** to save your cluster on Devtron.
 
 ---
 
+## Create Kubernetes Cluster [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
+### Prerequisite
+
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-permissions) can add an OCI Registry in Devtron.
+
+{% endhint %}
+
+To create an EKS cluster, as a prerequisite, OpenTofu must be installed in your Devtron instance. Follow the steps mentioned below to install OpenTofu:
+
+1. Navigate to **Global Configurations** → **Container/OCI Registry**.
+
+2. Refer the following table and enter the information in the appropriate fields:
+
+  | Field | Value |
+  | :--- | :--- |
+  | **Registry provider** | Other | 
+  | **Registry type** | Public Registry | 
+  | **Name** | `tofu` | 
+  | **Registry URL** | `ghcr.io` | 
+  | **List of repositories** | `flux-iac/charts/tofu-controller` | 
+
+3. Click **Save**. The `tofu-controller` chart will be displayed in the **Chart Store** page.
+
+4. Navigate to **Chart Store** and search for `tofu-controller` in the search box.
+
+5. Select the chart and click **Configure & Deploy**.
+
+6. Enter the app name (e.g., `tofu-controller`) in the **App Name** field. 
+
+7. Select your project in the **Project** drop-down box. 
+
+8. Select the environment where you want to deploy the chart in the **Deploy to Environment** drop-down box.
+
+<!-- Names to be changed; dummy text are used for the time being-->
+
+9. (Values.yaml data to be filled here) - WIP
+
+10. Click **Deploy Chart**. 
+
+Now that OpenTofu is installed, you can go ahead and create a cluster in the **Clusters and Environments** page.
+
+### Steps
+
+Follow the steps mentioned below to create an EKS or Rancher cluster:
+
+1. Navigate to **Global Configurations** → **Clusters & Environments** → **New Cluster** → **Create Kubernetes Cluster**. 
+
+2. Select the type of cluster you'd like to create in the **Cluster Provider** drop-down box based on your requirement.
+
+3. Enter the name of your Kubernetes cluster in the **Name** text box (e.g., `eks-cluster-nonprod` in the case of EKS and `rancher-cluster-qa` in the case of Rancher).
+
+4. Select the region where your cluster is hosted (e.g., `us-east-1` in the case of EKS and `ap-south-3` in the case of Rancher). Refer to [View cluster details using the AWS Management Console](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-manage-view-clusters.html#emr-view-cluster-console) for more information. 
+
+5. Enter the [VPC CIDR](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-cidr-blocks.html) value in the **VPC CIDR** text box. This value determines the number of [pods](../../reference/glossary.md#pod), [nodes](../../reference/glossary.md#nodes), or services your cluster can host (e.g., `10.0.1.6/16`).
+
+6. Select the authentication mode you wish to perform for the cluster:
+
+  * **API_AND_CONFIG_MAP** - Select this if you want to use both the API and the ConfigMap to authenticate who can access the cluster. This option is recommended if you are migrating from the old `aws-auth` ConfigMap method (which is deprecated) to the new API method. <br> Refer to [Grant IAM users access to Kubernetes with EKS access entries](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html) for more information.
+
+  * **API** - Select this if you want to manage access using a single API. This option is recommended as this is the best practice for EKS cluster creation. <br> Refer to [Manage User Access with API](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html) for more information.
+
+  * **CONFIG MAP** - Select this if you want to rely on the original (but deprecated) way of authentication using `aws-auth` ConfigMap. This option is not recommended anymore. <br> Refer to [Grant IAM users access to Kubernetes. with a ConfigMap.
+](https://docs.aws.amazon.com/eks/latest/userguide/auth-configmap.html) for more information.
+
+7. Turn on the **Enable IRSA** (IAM Roles for [Service Accounts](https://kubernetes.io/docs/concepts/security/service-accounts/)) toggle if you want your application to securely connect to other AWS services using a service account.
+
+8. Turn on the **Allow public access** toggle if you want to allow your [EKS control plane](https://docs.aws.amazon.com/eks/latest/best-practices/control-plane.html) endpoint to be accessed publicly from anywhere without the VPC. It is recommended to keep this toggle disabled.
+
+9. Select the team whose tag you want to attach to the cluster resources from the **Team** drop-down box. For example, when you select `qa-team`, it means that the cluster resources (pods, ConfigMaps, etc.) created with this cluster are owned by the QA team.
+
+10. Select the environment in the **Environment** drop-down box. For example, when you select `qa`, it means that this cluster is a part of the QA environment.
+
+11. Select your preferred Kubernetes cluster version in the **Cluster Version** drop-down box. If you are running a live application in a production environment, it is recommended that you select a stable version instead of the latest version.
+
+12. (Optional) Select availability zones (e.g., `us-east-2b` and `ap-west-1a`) if you prefer to distribute your worker nodes across multiple zones to make your cluster highly available. This means that even if one availability zone goes down (e.g., `us-east-2b`), the other zones (e.g., `ap-west-1a`) keep your cluster up and running.
+
+13. (Optional) Enter the private access CIDRs (IP addresses that are allowed to reach the API server) in the **Private access CIDRs** field. If you had turned off the **Allow public access** toggle, then your EKS control plane endpoint would be private. It then becomes crucial to enter the private access CIDRs so that the API server recognizes them and allows them to access the endpoint.
+
+---
+
 ## Add Isolated Cluster [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 {% hint style="warning" %}
