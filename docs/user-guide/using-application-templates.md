@@ -2,7 +2,7 @@
 
 ## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-Application templates provide a predefined configuration for creating new applications. You can create an application from an application template to avoid manual configurations (such as build configurations, base configurations, CI/CD workflows, and environment details.)
+Application templates provide a predefined configuration for creating new applications. You can create an application from an application template and to avoid configuring common configurations (such as build configurations, base configurations, CI/CD workflows, and environment details) repeatedly.
 
 Refer [Application Templates](./global-configurations/application-template.md) to learn more.
 
@@ -12,6 +12,8 @@ Refer [Application Templates](./global-configurations/application-template.md) t
 * Users need to have super-admin permissions in order to customize template configurations.
 
 {% endhint %}
+
+---
 
 ## Using Application Templates
 
@@ -25,7 +27,7 @@ You can create an application using an application template by following the bel
 
     ![Figure 1: Clicking 'Custom app'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application-from-template/application-template-custom-app.jpg)
 
-4. Select **From template** from the left-side of the modal window; a list of all application templates will appear.
+4. Select **From template** from the left-side of the modal window; a list of all [application templates](./global-configurations/application-template.md) will appear.
 
     ![Figure 2: Selecting 'From template'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application-from-template/application-template-from-template.jpg)
 
@@ -37,15 +39,15 @@ You can create an application using an application template by following the bel
 
     | Field                    | Required/Optional | Description                                                                                                                                                |
     | :----------------------- | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | **Project**              | Required          | Select the Project for your Application                                                                                                                    |
+    | **Project**              | Required          | Select the [Project](./global-configurations/projects.md) for your Application                                                                             |
     | **Application Name**     | Required          | Enter a name for the Application                                                                                                                           |
-    | **Description**          | Optional          | Provide a short description for the application                                                                                                                        |
+    | **Description**          | Optional          | Provide a short description for the application                                                                                                            |
     | **Tags**                 | Optional          | Key-value pairs used for identifying and organizing the application and can be propagated as Kubernetes labels. To learn more refer [Tags](#tags) section. |
     | **Git Account**          | Required          | Select a Git Account                                                                                                                                       |
     | **Git Repo URL**         | Required          | Enter the preferred Git Repository                                                                                                                         |
     | **Container Registry**   | Required          | Select a Container Registry                                                                                                                                |
     | **Container Repository** | Optional          | Enter a container repository; desired format: `username/repo-name`                                                                                         |
-    | **Workflows**            | Optional          | Select preferred environments for your workflows                                                                                                           |
+    | **Workflows**            | Optional          | Select preferred environments for your deployment pipeline in your workflows                                                                               |
 
 
     ![Figure 4a: Entering Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application-from-template/application-template-enter-details-1.jpg)

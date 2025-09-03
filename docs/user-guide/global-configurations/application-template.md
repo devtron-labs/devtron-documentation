@@ -4,12 +4,14 @@
 
 Application Templates in Devtron allows you to create Devtron application quickly and consistently. An application template in Devtron is created from an existing application. It captures the configuration (workflows, ConfigMaps, Secrets, Build Configurations, Source Repository, etc.) of that application, so the same setup can be reused to create new applications.
 
-Let's assume you have already created a microservice (Devtron Application) with all the required configurations, Git Repository, Build configurations, CI/CD workflows, deployment configurations, etc. Now, instead of repeating the same setup each time when you create a new microservice, you can create an Application Template from this already configured microservice (Devtron Application). This template can then be used to quickly create new microservices (Devtron applications) with the same trusted setup.
+Let's assume you have already created a microservice (Devtron Application) with all the required configurations, Git Repository, Build configurations, CI/CD workflows, deployment configurations, etc. Now, instead of repeating the same setup to create a similar Devtron app, you can create an Application Template from your existing Devtron app. This template can then be used to quickly create new microservices (Devtron applications) with the same trusted setup.
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
 Users need to have super-admin permission to create Application Templates.
 {% endhint %}
+
+---
 
 ## Creating an Application Template
 
@@ -27,7 +29,7 @@ Users need to have super-admin permission to create Application Templates.
 
     | Field                     | Required/Optional | Description                                  |
     | :------------------------ | :---------------- | :------------------------------------------- |
-    | **Template display name** | Required          | Provide a name for the application template  |
+    | **Template display name** | Required          | Provide a name for the application template, e.g., `Banking-backend`. <ol><li> Minimum 3 characters are required </li></ol> |
     | **Template ID**           | Required          | Template ID is a unique identifier for application templates, and is uniquely mapped to the application template. <ol><li>Character limit: 3-50</li><li>Only lowercase alphanumeric characters are allowed</li><li>Special Characters: `-`,`_`,`.`</li><li>Template ID should be unique for each application template</li></ol>|
     | **Description**           | Optional          | Provide a short description for the application template |
 
@@ -35,6 +37,8 @@ Users need to have super-admin permission to create Application Templates.
     ![Figure 3: Entering required details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-details.jpg)
 
 5.  Click **Create Template**; application template will be created.
+
+---
 
 ## Customizing an Application Template
 
@@ -44,7 +48,7 @@ After creation of Application Template, if you wish, you can modify the configur
 
 2. Select your preferred application template.
 
-3. You can customize the following configurations under **Configurations** tab
+3. You may customize the following configurations under **Configurations** tab
 
     | Field                     | Description                                  |
     | :------------------------ | :------------------------------------------- |
@@ -73,9 +77,13 @@ After creation of Application Template, if you wish, you can modify the configur
 
         ![Figure 6: Creating Readme](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-readme.jpg)
 
+---
+
 ## Using an Application Template
 
 You can use an application template to create an application. Refer [Creating Application From Template](../using-application-templates.md) to learn more.
+
+---
 
 ## Deleting an Application Template
 
@@ -90,3 +98,8 @@ You can use an application template to create an application. Refer [Creating Ap
 4. A modal window will appear, click **Delete**; application template will be deleted.
 
     ![Figure 8: Confirming Delete Action](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-confirm-delete.jpg)
+
+{% hint style="success" %}
+### Note
+Deleting an Application Template does not affect any applications, neither the application used to create that template, nor the applications created using that template.
+{% endhint %}
