@@ -108,6 +108,13 @@ To assign a category to a cluster, follow the steps below:
 
    ![Figure 9: Category Assigned](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-assign-category-category-added-cluster.jpg)
 
+{% hint style="info" %}
+
+### Note
+
+Refer [Get Cluster Credentials](#get-cluster-credentials) to know the process of getting Server URL and bearer token.
+
+{% endhint %}
 
 ### Choose Method of Connection [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
