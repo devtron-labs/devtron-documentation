@@ -186,7 +186,7 @@ If you see `Not Found` on this page, then follow all the given steps or if the p
 
 2. `kubectl run --rm -it --image quay.io/devtron/k8s-utils:tutum-curl curl` Run this command, and it will create a pod for using `curl`
 
-3. Copy the following and change `grafana-password` with your password of Grafana and change the value of `prometheusUrl` with your prometheus endpoint, and run in the pod that we created above in step 2.
+3. Copy the following and change `grafana-password` with your password of Grafana and change the value of `prometheusUrl` with your Prometheus endpoint, and run in the pod that we created above in step 2.
 
     ``` bash
     cat << EOF
