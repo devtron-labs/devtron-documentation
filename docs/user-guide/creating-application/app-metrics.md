@@ -18,14 +18,23 @@ Application Metrics are the indicators used to evaluate the performance and effi
 Application metrics can only be enabled if your application is deployed using Devtron Deployment Charts and not [Custom Deployment Charts](../global-configurations/deployment-charts.md).
 {% endhint %}
 
-### Step-1: Install Grafana Dashboard
+### Step-1: Install Monitoring (Grafana) Integration
 
 #### For OSS and Self Managed Enterprise
 
  To use the Grafana dashboard, you need to first install the integration from the [Devtron Stack Manager](../integrations/README.md). Refer [Monitoring (Grafana) Integration](../integrations/grafana.md) to learn more.
 
+#### For Devtron Managed Enterprise
+
+ If you want to enable Grafana Integration, email us at enterprise@devtron.ai or reach out to your Devtron representative enable it.
+
 
 ### Step-2: Install Prometheus
+
+{% hint style="info" %}
+### Note 
+Ensure GitOps is configured before deploying Prometheus. If not, Prometheus will default to being deployed via Helm.
+{% endhint %}
    
 1. Go to the Chart Store and search for `prometheus`. Use the Prometheus community's `kube-prometheus-stack` chart to deploy Prometheus.
 
@@ -57,6 +66,16 @@ Application metrics can only be enabled if your application is deployed using De
     ![Figure 3: upgradeJob Parameter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-new2.jpg)
       
 4. After enabling the parameter, click `Deploy Chart`.
+
+#### Common Pitfall: Prometheus Deployment Timeout due to Failed CRDs
+
+While deploying `kube-prometheus-stack` chart, the deployment status may show as **Timed out**, and some CustomResourceDefinitions (CRDs) may appear as **Failed**.
+
+**This behavior is expected and do not require any action from you.**
+
+This occurs because certain Prometheus CRDs are large in size, which can lead to temporary sync issues during deployment, but, this does not impact the functionality of the Prometheus components.
+
+ArgoCD handle such cases automatically and the `kube-prometheus-stack` will continue to function as expected.
 
 ### Step-3: Setup Prometheus Endpoint
    
