@@ -55,6 +55,7 @@ You can create an application using an application template by following the bel
     ![Figure 4b: Configuring Code Source, Container Registry and Environments](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application-from-template/application-template-enter-details-2.jpg)
 
 {% hint style="warning" %}
+### Note
 By default, configurations are inherited from the application which is used to create that application template.
 {% endhint %}
 
@@ -75,7 +76,7 @@ When tags are propagated, they are considered as labels to Kubernetes resources.
 
 ![Figure 6: Adding Tags](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application-from-template/application-template-tags.jpg)
 
-1. Click **Add tags to application**
+1. Click **Add tags to application**.
 
 2. Add your preferred **Tags**.
 

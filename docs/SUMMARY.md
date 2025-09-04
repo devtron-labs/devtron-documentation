@@ -73,7 +73,7 @@
 * [Applications](user-guide/applications.md)
   * [Create a New Application](user-guide/create-application.md)
   * [Clone an Existing Application](user-guide/cloning-application.md)
-  * [Creating Application From Template](user-guide/using-application-templates.md)
+  * [Create Application From Template](user-guide/using-application-templates.md)
   * [Deploy a Sample Application](user-guide/Deploy-sample-app/nodejs_app.md)
   * [App Configuration](user-guide/creating-application/README.md)
     * [Git Repository](user-guide/creating-application/git-material.md)
