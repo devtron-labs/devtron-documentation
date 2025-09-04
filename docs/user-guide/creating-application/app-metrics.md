@@ -5,10 +5,10 @@ Application Metrics are the indicators used to evaluate the performance and effi
 ![Figure 1: Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics.jpg)
 ---
 
-## Types of Metrics available in the Devtron platform:
+## Types of Metrics
 
-| Metrics           | Description                                                 |
-| :---------------- | :---------------------------------------------------------- |
+| Metrics          | Description                                                 |
+| :----------------| :---------------------------------------------------------- |
 | **CPU usage**    | Overall CPU utilization per pod and aggregated              |
 | **Memory Usage** | Overall memory utilization per pod and aggregated           |
 | **Throughput**   | Number of requests processed per minute                     |
@@ -16,7 +16,7 @@ Application Metrics are the indicators used to evaluate the performance and effi
 
 ---
 
-## Setup Application Metrics
+## Set Up Application Metrics
 
 {% hint style="warning" %}
 ### Note 
@@ -142,7 +142,7 @@ If your environment is [Overridden](../creating-application/environment-override
 
 ---
 
-## Troubleshooting
+## Troubleshoot Issues
 
 <details>
 <summary><strong>Not able to see deployment metrics on production environment or Not able to enable application-metrics</strong></summary>
