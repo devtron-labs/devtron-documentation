@@ -59,7 +59,9 @@ Ensure GitOps is configured before deploying Prometheus. If not, Prometheus will
 
  Search for the above parameters, and update them as shown (or customize as needed).
 
- ![Figure 2: Prometheus Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app3.jpg)
+ ![Figure 2a: Prometheus Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app3.jpg)
+
+ ![Figure 2b: Prometheus Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-config.jpg)
 
 3. Enable `upgradeJob` parameter to install CRDs:
 
@@ -75,6 +77,10 @@ Ensure GitOps is configured before deploying Prometheus. If not, Prometheus will
 
 While deploying `kube-prometheus-stack` chart, the deployment status may show as **Timed out**, and some CustomResourceDefinitions (CRDs) may appear as **Failed**.
 
+ ![Figure 4a: Deployment Timed Out](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-deployment-timed-out.jpg)
+
+ ![Figure 4b: CRDs Failed](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-crds-failed.jpg)
+
 **This behavior is expected and do not require any action from you.**
 
 This occurs because certain Prometheus CRDs are large in size, which can lead to temporary sync issues during deployment, but, this does not impact the functionality of the Prometheus components.
@@ -87,25 +93,25 @@ ArgoCD handle such cases automatically and the `kube-prometheus-stack` will cont
 
 2. Copy the URL of the `kube-prometheus` service as shown in the image below.
 
-    ![Figure 4: Prometheus Service](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app4.jpg)
+    ![Figure 5: Prometheus Service](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app4.jpg)
 
 3. To set Prometheus as a data source in Grafana, navigate to **Global Configurations → Clusters & Environments**, select your cluster, and edit its settings.
 
-    ![Figure 5: Clusters and Environments](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app5.jpg)
+    ![Figure 6: Clusters and Environments](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app5.jpg)
 
 4. Now to set up the Prometheus endpoint:
     1. Enable the `See metrics for applications in this cluster` option, as shown in the image below.
     2. Paste the copied URL into the Prometheus endpoint field, ensuring it includes `http://`
     3. Click **Update Cluster** to save the changes.
 
-    ![Figure 6: Prometheus Endpoint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app6.jpg)
+    ![Figure 7: Prometheus Endpoint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app6.jpg)
 
 
 ### Step-4: Enable Application Metrics
 
 After adding the endpoint in your preferred cluster, **CPU usage** and **Memory usage** application metrics will be visible in the **App Details** page for all the Devtron apps in that cluster (it may take a few minutes).
 
- ![Figure 7: CPU Usage & Memory Usage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app7.jpg)
+ ![Figure 8: CPU Usage & Memory Usage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app7.jpg)
 
 To enable **Throughput** and **Latency** application metrics in Devtron, follow these steps:
 
@@ -120,11 +126,11 @@ To enable **Throughput** and **Latency** application metrics in Devtron, follow 
 
 3. Enable **Application Metrics** in the Deployment Template as shown below and save the changes.
 
-    ![Figure 8: Enable Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app8.jpg)
+    ![Figure 9: Enable Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app8.jpg)
 
 4. Now, you can track all your application metrics by navigating to **Applications** and going to the **App Details** page of your Devtron App as shown below. 
 
-    ![Figure 9: Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-new3.jpg)
+    ![Figure 10: Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-new3.jpg)
 
 {% hint style="warning" %}
 ### Note 
