@@ -58,7 +58,7 @@ Ensure [GitOps](../global-configurations/gitops.md) is configured before deployi
 
 2. After selecting the chart, configure these values as needed before deployment.
 
-    ```bash
+    ```yaml
     kube-state-metrics: 
         metricLabelsAllowlist:   
         - pods=[*]
@@ -66,7 +66,7 @@ Ensure [GitOps](../global-configurations/gitops.md) is configured before deployi
 
     <br />
 
-    ```bash
+    ```yaml
     serviceMonitorSelectorNilUsesHelmValues: false
     podMonitorSelectorNilUsesHelmValues: false
     ```
@@ -168,7 +168,7 @@ If your environment is [Overridden](../creating-application/environment-override
 <details>
 <summary><strong>Not able to see deployment metrics on production environment or Not able to enable application-metrics</strong></summary>
 
-Update the rollout CRDs to latest version, run the following command:
+Update the rollout CRDs to the latest version, run the following command:
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/devtron-labs/devtron/main/manifests/yamls/rollout.yaml -n devtroncd
@@ -179,48 +179,54 @@ kubectl apply -f https://raw.githubusercontent.com/devtron-labs/devtron/main/man
 <details>
 <summary><strong> Grafana dashboards not visible in App Details page even after adding prometheus endpoint or Graphs showing error panel with id 2 not found</strong></summary>
 
-If the graphs are not visible check if prometheus is configured properly. Then go to Global Configurations > Clusters & Environments > Click on any environment for the cluster where you added prometheus endpoint and simply click `Update`.  
-If the charts are still not visible, try visiting the url: <devtron-url>/grafana?orgId=2  
-If you see `Not Found` on this page, then follow all the given steps or if the page is accessible and you are getting `panel with id 2 not found` then follow from step 6:  
-1. Get grafana password using `kubectl -n devtroncd get secret devtron-secret -o jsonpath='{.data.GRAFANA_PASSWORD}' | base64 -d`
-2. `kubectl run --rm -it --image quay.io/devtron/k8s-utils:tutum-curl curl` Run this command and it will create a pod for using `curl`
-3. Copy the following and change `grafana-password` with your password of grafana and change the value of `prometheusUrl` with your prometheus endpoint
-```
-cat << EOF
-grafanaUrl="http://admin:grafana-password@devtron-grafana.devtroncd/grafana"
-prometheusUrl="http://prometheus.example.com"
+If the graphs are not visible check if Prometheus is configured properly. Then go to **Global Configurations** > **Clusters & Environments** > Click on any environment for the cluster where you added Prometheus endpoint and simply click `Update`.  
+If the charts are still not visible, try visiting the URL: `<devtron-url>/grafana?orgId=2`  
+If you see `Not Found` on this page, then follow all the given steps or if the page is accessible, and you are getting `panel with id 2 not found` then follow from step 6:  
+1. Get Grafana password using `kubectl -n devtroncd get secret devtron-secret -o jsonpath='{.data.GRAFANA_PASSWORD}' | base64 -d`
 
-ORG_ID=$( curl -d '{"name":"devtron-metrics-view"}' -H "Content-Type: application/json" -X POST "${grafanaUrl}/api/orgs" )
+2. `kubectl run --rm -it --image quay.io/devtron/k8s-utils:tutum-curl curl` Run this command, and it will create a pod for using `curl`
 
-echo $ORG_ID
+3. Copy the following and change `grafana-password` with your password of Grafana and change the value of `prometheusUrl` with your prometheus endpoint, and run in the pod that we created above in step 2.
 
-curl -X POST "${grafanaUrl}/api/user/using/2";
+    ``` bash
+    cat << EOF
+    grafanaUrl="http://admin:grafana-password@devtron-grafana.devtroncd/grafana"
+    prometheusUrl="http://prometheus.example.com"
 
-curl -X PUT -H "Content-Type: application/json" -d '{"homeDashboardId":0,"theme":"light","timezone":"browser"}' "${grafanaUrl}/api/org/preferences";
+    ORG_ID=$( curl -d '{"name":"devtron-metrics-view"}' -H "Content-Type: application/json" -X POST "${grafanaUrl}/api/orgs" )
 
-curl "${grafanaUrl}/api/datasources" -H 'content-type: application/json' -H 'x-grafana-org-id: 2' --data '{"name":"Prometheus-devtron-demo","type":"prometheus","access":"proxy","isDefault":true}'
+    echo $ORG_ID
 
-curl "${grafanaUrl}/api/datasources/2" -X PUT \
-    -H 'content-type: application/json' \
-    -H 'x-grafana-org-id: 2' \
-    --data '{"id": 2 ,
-    "orgId": 2,
-    "name":"Prometheus-devtron-demo","type":"prometheus","access":"proxy",
-    "url":${prometheusUrl},
-    "basicAuth":false,"jsonData":{},"version":1}'
-EOF
-```
-and run in the pod that we created above in step 2.
-4. Now visit <devtron-url>/grafana?orgId=2 again and you'll see grafana login page. Login using username `admin` and password from step 1 and check if prometheus url is updated in datasources. If not, update it in the default datasource.
-5. Now from devtron UI, update any of the environment again and it's datasource will be created automatically.
+    curl -X POST "${grafanaUrl}/api/user/using/2";
+
+    curl -X PUT -H "Content-Type: application/json" -d '{"homeDashboardId":0,"theme":"light","timezone":"browser"}' "${grafanaUrl}/api/org/preferences";
+
+    curl "${grafanaUrl}/api/datasources" -H 'content-type: application/json' -H 'x-grafana-org-id: 2' --data '{"name":"Prometheus-devtron-demo","type":"prometheus","access":"proxy","isDefault":true}'
+
+    curl "${grafanaUrl}/api/datasources/2" -X PUT \
+        -H 'content-type: application/json' \
+        -H 'x-grafana-org-id: 2' \
+        --data '{"id": 2 ,
+        "orgId": 2,
+        "name":"Prometheus-devtron-demo","type":"prometheus","access":"proxy",
+        "url":${prometheusUrl},
+        "basicAuth":false,"jsonData":{},"version":1}'
+    EOF
+    ```
+
+4. Now visit `<devtron-url>/grafana?orgId=2` again, and you'll see Grafana login page. Login using username `admin` and password from step 1 and check if Prometheus URL is updated in data sources. If not, update it in the default data source.
+
+5. Now from Devtron UI, update any of the environment again and its data source will be created automatically.
+
 6. In Grafana UI you need to be logged in and Go to Dashboards > Manage then click `Import` and Import the given dashboards one by one.
-```
-https://grafana.com/api/dashboards/13322/revisions/4/download
-https://grafana.com/api/dashboards/13320/revisions/4/download
-https://grafana.com/api/dashboards/13325/revisions/4/download
-https://grafana.com/api/dashboards/13321/revisions/6/download
-```
-After that, your issue should be resolved and you should be able to see all the graphs on UI.
+
+    ```
+    https://grafana.com/api/dashboards/13322/revisions/4/download
+    https://grafana.com/api/dashboards/13320/revisions/4/download
+    https://grafana.com/api/dashboards/13325/revisions/4/download
+    https://grafana.com/api/dashboards/13321/revisions/6/download
+    ```
+After that, your issue should be resolved, and you should be able to see all the graphs on UI.
 
 </details>
 
