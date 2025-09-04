@@ -3,6 +3,7 @@
 Application Metrics are the indicators used to evaluate the performance and efficiency of your application. It can be enabled in the Devtron platform to see your application's metrics.
 
 ![Figure 1: Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics.jpg)
+
 ---
 
 ## Types of Metrics
@@ -27,14 +28,24 @@ Application metrics can only be enabled if your application is deployed using De
 
 #### For OSS and Self-Managed Enterprise
 
- To use the Grafana dashboard, you need to first install the integration from the [Devtron Stack Manager](../integrations/README.md). Refer [Monitoring (Grafana) Integration](../integrations/grafana.md) to learn more.
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Only super admin users can install Devtron integrations.
+{% endhint %}
+
+To use the Grafana dashboard, you need to first install the integration from the [Devtron Stack Manager](../integrations/README.md). Refer [Monitoring (Grafana) Integration](../integrations/grafana.md) to learn more.
 
 #### For Devtron-Managed Enterprise
 
- If you want to enable Grafana Integration, email us at enterprise@devtron.ai or reach out to your Devtron representative.
+If you want to enable Grafana Integration, email us at enterprise@devtron.ai or reach out to your Devtron representative.
 
 
 ### Step 2: Install Prometheus
+
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#devtron-apps-permissions) or above to deploy a chart.
+{% endhint %}
 
 {% hint style="warning" %}
 ### Note 
@@ -80,9 +91,9 @@ Ensure [GitOps](../global-configurations/gitops.md) is configured before deployi
 
 While deploying `kube-prometheus-stack` chart, the deployment status may show as **Timed out**, and some CustomResourceDefinitions (CRDs) may appear as **Failed**.
 
- ![Figure 5a: Deployment Timed Out](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-deployment-timed-out.jpg)
+![Figure 5a: Deployment Timed Out](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-deployment-timed-out-v2.jpg)
 
- ![Figure 5b: CRDs Failed](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-crds-failed.jpg)
+![Figure 5b: CRDs Failed](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-crds-failed.jpg)
 
 **This behavior is expected and do not require any action from you.**
 
@@ -90,7 +101,12 @@ This occurs because certain Prometheus CRDs are large in size, which can lead to
 
 ArgoCD handles such cases automatically and the `kube-prometheus-stack` will continue to function as expected.
 
-### Step 3: Setup Prometheus Endpoint
+### Step 3: Set Up Prometheus Endpoint
+
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Only super admin users can set up Prometheus endpoint in a cluster.
+{% endhint %}
    
 1. Once Prometheus is installed, go to its **App Details** and navigate to **Networking** → **Service** in the K8s resources. Expand the Prometheus server service to see the endpoints. 
 
@@ -112,11 +128,16 @@ ArgoCD handles such cases automatically and the `kube-prometheus-stack` will con
 
 ### Step 4: Enable Application Metrics
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#devtron-apps-permissions) or above to enable application metrics.
+{% endhint %}
+
 After adding the endpoint in your preferred cluster, **CPU usage** and **Memory usage** metrics will be visible in the **App Details** page for all the Devtron apps in that cluster (it may take a few minutes).
 
- ![Figure 9: CPU Usage & Memory Usage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app7.jpg)
+![Figure 9: CPU Usage & Memory Usage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app7.jpg)
 
-To enable **Throughput** and **Latency** metrics, in Devtron, follow these steps:
+To enable **Throughput** and **Latency** metrics in Devtron, follow these steps:
 
 {% hint style=“warning” %}
 ### Note
