@@ -60,4 +60,4 @@ You can monitor the application in the `App Details` section.
 
 Metrics like `CPU Usage`, `Memory Usage`, `Throughput` and `Latency` can be viewed here.
 
-Refer [Application Metrics](./creating-application/app-metrics.md) to know how to enable Application Metrics.
+Refer [Application Metrics](./creating-application/app-metrics.md) to know the process of enabling them.
