@@ -69,7 +69,7 @@ Ensure GitOps is configured before deploying Prometheus. If not, Prometheus will
    
    In the Prometheus Helm chart settings, locate the `upgradeJob` parameter and set it to `true` if it is `false`.
       
-    ![Figure 3: upgradeJob Parameter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-new2.jpg)
+ ![Figure 3: upgradeJob Parameter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-new2.jpg)
       
 4. After enabling the parameter, click `Deploy Chart`.
 
