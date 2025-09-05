@@ -164,5 +164,6 @@ redirects:
     user-guide/command-bar: user-guide/command-bar.md
     setup/install/enterprise-license: setup/install/freemium.md
     enterprise-license: setup/install/freemium.md
+    usage/applications/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/pre-post-tasks.md
 
     
