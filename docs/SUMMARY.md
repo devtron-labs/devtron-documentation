@@ -120,7 +120,7 @@
   * [Release Hub](user-guide/software-distribution-hub/release-hub.md)
 * [Resource Browser](user-guide/resource-browser/README.md)
   * [Overview Page](user-guide/resource-browser/overview.md)
-  * [Compare & Sync Clusters](/docs/user-guide/resource-browser/compare-and-sync.md)
+  * [Compare & Sync Clusters](user-guide/resource-browser/compare-and-sync.md)
   * [Discover and Manage Resources](user-guide/resource-browser/manage-resources.md)
   * [Nodes and Operations](user-guide/resource-browser/nodes.md)
   * [Pod Management and Debugging](user-guide/resource-browser/pods.md)
