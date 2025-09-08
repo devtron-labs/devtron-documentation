@@ -97,11 +97,13 @@ If you’ve defined groups in your Okta Universal Directory, you can create corr
 ![Figure 2: Sample Configuration for Auto -assign Permission](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/okta-sample-config-auto-assign.jpg)
 
 {% hint style="warning" %}
+### Note
 SSO login requires exact matching between Devtron permission group names and AD groups. Any discrepancies or missing groups will prevent successful login.
 
 Once you save the configuration with this feature enabled, existing user permissions will be cleared and the future permissions will be managed through [permission groups](../permission-groups.md) linked to Okta groups.
 {% endhint %}
 
 {% hint style="info" %}
+### Tip
 If your Okta groups permissions aren't reflecting in Devtron, a quick sign-out and sign-in can resolve the issue.
 {% endhint %}
