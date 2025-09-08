@@ -6,6 +6,11 @@ A verified account on [Okta](https://www.okta.com/). Okta activates your account
 
 Here's a reference guide to set up your Okta org and application: [Link](https://developer.okta.com/docs/guides/oie-embedded-common-org-setup/go/main/)
 
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Only super admin users can set up SSO providers.
+{% endhint %}
+
 ## Tutorial
 
 {% embed url="https://www.youtube.com/watch?v=i-7IWkg6Ipk" caption="Okta App Setup" %}
