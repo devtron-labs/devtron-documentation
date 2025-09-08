@@ -74,7 +74,11 @@ For instance, when a resource is displayed in blue in cluster A and in red in cl
 
     ![Figure 8: View All Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/view-all-filterbox.jpg)
 
-7. Click the **Create Resource** option to create a resource in the target cluster.
+### Create Resource
+
+Hover over the resource that you'd like to create in the target cluster and click the **Create Resource** option.
+
+![Figure 9: Create Resource](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/create-resource.jpg)
 
 {% hint style="info" %}
 
@@ -84,16 +88,18 @@ To create resources in bulk, select the check box(es) against the resource(s) or
 
 {% endhint %}
 
-8.  Click the **Compare manifest** option to compare the manifest of the resource in both clusters.
+### Compare Manifest
 
-    ![Figure 9: Compare Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/compare-manifest.jpg)
+1. Hover over the resource and click the **Compare manifest** option to compare the manifest of the resource in both clusters.
 
-9. Click **Edit YAML**. 
+    ![Figure 10: Compare Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/compare-manifest.jpg)
 
-10. Click the **Revert this chunk** option to enforce the values, if required, from the reference cluster to the target cluster.
+2. Click **Edit YAML**. 
 
-    ![Figure 10: Revert this Chunk](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/revert-this-chunk.jpg)
+3. Click the **Revert this chunk** option to enforce the values, if required, from the reference cluster to the target cluster.
 
-11. Select **Apply Changes**.
+    ![Figure 11: Revert this Chunk](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/revert-this-chunk.jpg)
+
+4. Select **Apply Changes**.
 
 When you apply the changes, the Kubernetes resources from your reference cluster are copied to the target cluster. 
