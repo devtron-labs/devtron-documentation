@@ -96,7 +96,7 @@ Similarly, you can configure any task with a preset plugin in Pre/post-build sta
 
 ### Execute Custom Task
 
-1. After adding the task, select **Execute custom Task**.
+1. After adding the task, select **Execute custom task**.
 
 
     * The right-side panel will display the fields that are required to be configured in order to create the task.

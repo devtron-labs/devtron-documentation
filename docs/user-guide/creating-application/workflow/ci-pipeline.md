@@ -6,7 +6,7 @@ Users need to have the **Admin role**, the **Manager role**, or the **Super Admi
 Refer the [User permissions](../../global-configurations/authorization/user-access.md#roles-available-for-devtron-apps).
 {% endhint %}
 
-A Workflow can be created in one of the following ways:
+A workflow can be created in one of the following ways:
 
 * [Build from Source Code](#id-1.-build-from-source-code)
 
@@ -96,7 +96,7 @@ Devtron typically uses a Dockerfile from your repository to build container imag
 
    ![Figure 6: Tag Creation Filters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-tag-creation-filters.jpg)
 
-   Select the appropriate filter and pass the matching condition as a regular expression (`regex`).
+   Select the appropriate filter and pass the matching condition as a regular expression (regex).
 
    {% hint style="info" %}
    Devtron uses the regexp library, view [regexp cheatsheet](https://yourbasic.org/golang/regexp-cheat-sheet/). You can test your custom regex from [here](https://regex101.com/r/lHHuaE/1).
@@ -498,7 +498,7 @@ You can now configure the deployment pipeline, and if you wish, you can also add
 
 If options like **Build and Deploy from Source Code** do not satisfy your use case, you can use **Create a Job** to define a workflow with a custom Build stage and with deployment capabilities.
 
-In this workflow, the build stage is replaced by a Job stage, where you can either use [Preset Plugins](./pre-post-tasks.md#configure-a-task-using-preset-plugins) or define [custom tasks to](./pre-post-tasks.md#execute-custom-task) define custom steps to satisfy your use case. For e.g., you can use a preset plugin to pull the container images required for deployment from a container registry (such as ACR or ECR). 
+In this workflow, the build stage is replaced by a Job stage, where you can either use [Preset Plugins](./pre-post-tasks.md#configure-a-task-using-preset-plugins) or define [custom tasks](./pre-post-tasks.md#execute-custom-task) to define custom steps to satisfy your use case. For e.g., you can use a preset plugin to pull the container images required for deployment from a container registry (such as ACR or ECR). 
 
 This is useful when the image is built externally (for example, in Jenkins) and needs to be brought into Devtron for further processing and deployment. You can configure tasks like scanning, testing, or notifications using preset plugins either in the Job stage or the pre-CD stage, depending on your use case.
 
