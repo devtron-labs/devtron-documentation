@@ -32,9 +32,9 @@ Devtron typically uses a Dockerfile from your repository to build container imag
 
 ### Creating a CI Pipeline
 
-1. From the Applications menu, select your application.
+1. From the **Applications** page, select your application.
 
-2. Go to the **Configurations** page and select **Workflow Editor**.
+2. Go to **Configurations** tab and select **Workflow Editor**.
 
 3. Click **+ New Workflow**.
 
@@ -50,14 +50,14 @@ Devtron typically uses a Dockerfile from your repository to build container imag
 
  | Field Name|Required/Optional| Description|
  | :--- | :--- | :--- |
- | `Pipeline Name`| Required (Auto-Assigned) | Devtron automatically assigns a unique name for the pipeline. If you wish, you can change it in Advanced Options|
- | `Source type`| Required| Source type to trigger the CI. Available options: Branch Fixed, Branch Regex, Pull Request, Tag Creation|
+ | `Pipeline Name`| Required (Auto-Assigned) | Devtron automatically assigns a unique name for the pipeline. If you wish, you can change it in [Advanced Options](#configuring-advanced-options)|
+ | `Source type`| Required| Source type to trigger the CI. **Available options:** `Branch Fixed`, `Branch Regex`, `Pull Request`, `Tag Creation`|
  | `Branch Name`| Required| Branch that triggers the CI build|
  | `Advanced Options` | Optional| Create Pre-Build, Build, and Post-Build tasks <br> Refer the [Configure Advanced options](#configuring-advanced-options) section to configure **Advanced options**. |
 
  ### Understanding Source Types
 
- Devtron provides multiple ways to trigger a build pipeline:
+ Devtron allows you set up different source types for a build pipeline; source types specify the repository events that initiate a build pipeline, such as a change in a branch, pull request creation, or tag creation.
  
  ![Figure 4: Source Types](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-source-type.jpg)
  
@@ -71,7 +71,7 @@ Devtron typically uses a Dockerfile from your repository to build container imag
 
  #### Pull Request Filters
 
- When using Pull Request as a source type, Devtron allows you to filter which PRs should trigger a build using the following filters
+ When using **Pull Request** as a source type, Devtron allows you to filter which PRs should trigger a build using the following filters
 
  ![Figure 5: Pull Request Filters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-pull-request-filters.jpg)
 
@@ -81,17 +81,17 @@ Devtron typically uses a Dockerfile from your repository to build container imag
  Devtron uses the regexp library, view [regexp cheatsheet](https://yourbasic.org/golang/regexp-cheat-sheet/). You can test your custom regex from [here](https://regex101.com/r/lHHuaE/1).
  {% endhint %}
 
- | Filter Key      | Description                                |
- | --------------- | ------------------------------------------ |
- | `Author`        | Author of the PR                           |
- | `Source Branch` | The branch from which the PR originates    |
- | `Target Branch` | The branch to which the PR is being merged |
- | `Title`         | Title of the PR                            |
- | `State`         | Status of the PR (default is `open`)       |
+ | Filter Key      | Description                                                            |
+ | :-------------- | :--------------------------------------------------------------------- |
+ | `Author`        | Author of the PR                                                       |
+ | `Source Branch` | The git branch from which the PR originates, e.g., `feature-login-auth`|
+ | `Target Branch` | The git branch to which the PR is being merged, e.g., `main`           |
+ | `Title`         | Title of the PR                                                        |
+ | `State`         | Status of the PR (default is `open`)                                   |
 
  #### Tag Creation Filters
 
- When using Tag Creation as a source type, Devtron allows you to filter which tags should trigger a build based on the following filters
+ When using **Tag Creation** as a source type, Devtron allows you to filter which tags should trigger a build based on the following filters
 
  ![Figure 6: Tag Creation Filters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-tag-creation-filters.jpg)
 
@@ -128,7 +128,7 @@ This document focuses on configuring the Build Stage. If you want to set up Pre-
 
  ![Figure 8: Advanced Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/advanced-options.jpg)
  
-2. Go to the **Build stage** tab and configure the following fields: 
+2. Go to **Build stage** tab and configure the following fields: 
 
  ![Figure 9: Build stage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-stage-v2.jpg)
 
@@ -396,7 +396,7 @@ In case your Jenkins project is of type `freestyle`, follow the steps below:
 
  ![Figure 36: Selecting Jenkins Project](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-select-project.jpg)
 
-2. Go to the **Configure** → **Environments** and enable the **Use secret text(s) or file(s)** option.
+2. Go to **Configure** → **Environments** and enable the **Use secret text(s) or file(s)** option.
 
  ![Figure 37: Selecting 'Configure'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-configure.jpg)
 
@@ -412,13 +412,13 @@ In case your Jenkins project is of type `freestyle`, follow the steps below:
 
  ![Figure 38b: Credential Binding successful](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-secret-binded.jpg)
 
-6. Go to the **Configure** → **Build Steps**, click **Add build step**, and then select **Execute Shell**.
+6. Go to **Configure** → **Build Steps**, click **Add build step**, and then select **Execute Shell**.
 
  ![Figure 39: Adding Build Step for Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-add-build+task.jpg)
 
 7. Enter the cURL request command as shown below. Make sure to enter the `API token` and `dockerImage` in your cURL command and click **Save**.
 
-    Note: API Token has been referenced from the secret via **Variable Name** (`DEVTRON_TOKEN`) configured in Jenkins credentials using its `ID`
+    **Note:** API Token has been referenced from the secret via **Variable Name** (`DEVTRON_TOKEN`) configured in Jenkins credentials using its `ID`
  
  ![Figure 40: Configuring Webhook Build Step](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-build-task-added.jpg)
 
@@ -429,7 +429,7 @@ In case your Jenkins project is of type `pipeline`, `Multibranch Pipeline`, etc.
  
  ![Figure 41: Selecting Jenkins Project](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-select-project-2.jpg)
 
-2. Go to the **Configure** → **Pipeline**.
+2. Go to **Configure** → **Pipeline**.
 
  ![Figure 42: Selecting 'Configure'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-configure-2.jpg)
 
@@ -441,7 +441,7 @@ In case your Jenkins project is of type `pipeline`, `Multibranch Pipeline`, etc.
 
 The new images that will be built after adding the webhook will be available to Devtron for deployment.
 
-Now, you can access the images on the Devtron dashboard and deploy manually. In case, If you select the **Automatic** deployment option, then your application will be deployed automatically everytime a new image is received.
+Now, you can access the images on the Devtron dashboard and deploy manually. If you select the **Automatic** deployment option, your application deployment will trigger automatically when a new image is received.
 
 ### Integrate with External Sources - GitHub Actions
 
@@ -503,7 +503,7 @@ After adding the API token as a secret, add a new step in your GitHub Action wor
 
 The new images that will be built after adding the webhook will be available to Devtron for deployment.
 
-Now, you can access the images on the Devtron dashboard and deploy manually. In case, If you select the **Automatic** deployment option, then your application will be deployed automatically everytime a new image is received.
+Now, you can access the images on the Devtron dashboard and deploy manually. If you select the **Automatic** deployment option, your application deployment will trigger automatically when a new image is received.
 
 ---
 
@@ -547,7 +547,7 @@ You can now configure the deployment pipeline, and if you wish, you can also add
 
 ---
 
-## 5. Create a job
+## 5. Create a Job
 
 If options like **Build and Deploy from Source Code** do not satisfy your use case, you can use **Create a Job** to define a workflow with a custom CI stage and with deployment capabilities.
 
@@ -772,7 +772,7 @@ If you choose **Pull Request** or **Tag Creation** as the **Source Type**, you m
 
 #### For GitHub
 
-1. Go to the **Settings** → **Webhooks** of your repository.
+1. Go to **Settings** → **Webhooks** of your repository.
 
    ![Figure 76a: Navigating to Repository Settings](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-settings.jpg)
 
