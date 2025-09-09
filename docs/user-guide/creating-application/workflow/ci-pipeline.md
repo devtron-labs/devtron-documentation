@@ -634,18 +634,15 @@ To create a task using the **Pull Images from Container Repository** plugin, fol
 
 3. Search for `Pull Images from Container Repository` in the **Search Plugin** Search bar and select **Pull Images from Container Repository** from the list of plugins. 
 
+   * The right-side panel will display the fields specific to the **Pull Images from Container Repository** plugin, which are required to be configured.
+
+   * The left-side panel will now show a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by default), along with its logo.<br> You can change the task's name using the **Task name** field, but plugin's logo will remain indicating that it is a preset plugin.
+
    ![Figure 64: Search 'Pull Images from Container Repository' plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-pull-images.jpg)
-
- 
- * The right-side panel will display the fields specific to the **Pull Images from Container Repository** plugin, which are required to be configured.
-
- * The left-side panel will now show a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by default), along with its logo.<br> You can change the task's name using the **Task name** field, but plugin's logo will remain indicating that it is a preset plugin.
 
    ![Figure 65: GKE provisioner plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-pull-images-added.jpg)
 
-4. Refer the [Pull Images from Container Repository](../../plugins/pull-images-from-container-repository.md) documentation to configure the **Pull Images from Container Repository** fields with appropriate values.
-
-  > Refer to the ['Plugins' documentation](../../plugins/README.md) to explore and configure any of the available plugins. 
+4. Refer the [Pull Images from Container Repository](../../plugins/pull-images-from-container-repository.md) documentation to configure the **Pull Images from Container Repository** fields with appropriate values. You may explore ['Plugins' documentation](../../plugins/README.md) to configure any of the available plugins. 
 
 5. After configuring the fields successfully, your task will be created. If you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
 
@@ -657,17 +654,17 @@ In the job stage, you can also define a task using a custom script to meet speci
 
 2. Click **+Add Task** from the left side panel, and then select **Execute custom task**.
 
- * The right-side panel will display the fields that are required to be configured in order to create the task.
+   * The right-side panel will display the fields that are required to be configured in order to create the task.
 
- * The left-side panel will now display a task under **Tasks (IN ORDER OF EXECUTION)**.
+   * The left-side panel will now display a task under **Tasks (IN ORDER OF EXECUTION)**.
 
 3. Enter the Task name (required) and Task Description (optional).
 
 4. Select the **Task type**, it can be `Shell` or `Container Image`.
 
- * **Shell Tasks**: These execute shell scripts directly within the job runtime environment. In this type of task, you can define inline scripts or use script files from your configured source code.
+   * **Shell Tasks**: These execute shell scripts directly within the job runtime environment. In this type of task, you can define inline scripts or use script files from your configured source code.
 
- * **Container Image Tasks**: These allow you to execute commands and scripts inside a custom Docker container. Instead of using the default environment provided by Devtron, you can specify you own container image with all dependencies and tools required for the tasks. 
+   * **Container Image Tasks**: These allow you to execute commands and scripts inside a custom Docker container. Instead of using the default environment provided by Devtron, you can specify you own container image with all dependencies and tools required for the tasks. 
 
  These Tasks run using container in container approach, which means the specified image is pulled and run inside the job pod, thus providing a complete isolated environment.
 
@@ -757,13 +754,13 @@ To override a container registry, container image, or target platform:
 
 4. Click **Allow Override** in the **Build Stage**:
 
+   * Select the new container registry from the drop-down list.
+
+   * [Create and build the new container image](../../creating-application/docker-build-configuration.md#build-the-container-image) with different options.
+
+   * Set a [new target platform](../../creating-application/docker-build-configuration.md#set-target-platform-for-the-build) from the drop-down list or enter a new target platform.
+
    ![Figure 74: Selecting Allow Override](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-allow-override.jpg)
-
- * Select the new container registry from the drop-down list.
-
- * [Create and build the new container image](../../creating-application/docker-build-configuration.md#build-the-container-image) with different options.
-
- * Set a [new target platform](../../creating-application/docker-build-configuration.md#set-target-platform-for-the-build) from the drop-down list or enter a new target platform.
 
 5. Select **Update Pipeline**; The override will be effective when the next build is triggered.
 
@@ -803,11 +800,11 @@ If you choose **Pull Request** or **Tag Creation** as the **Source Type**, you m
 
    * For Pull Requests, select **Pull Requests**.
 
-   ![Figure 79: Selecting 'Pull Requests'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-pull.jpg)
+      ![Figure 79: Selecting 'Pull Requests'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-pull.jpg)
 
    * For Tag Creation, select **Branch or tag creation**.
 
-   ![Figure 80: Selecting 'Branch or tag creation'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-branch.jpg)
+      ![Figure 80: Selecting 'Branch or tag creation'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-branch.jpg)
 
 8. Select **Add webhook**.
 

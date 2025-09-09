@@ -275,31 +275,31 @@ To configure the CD pipeline for different deployment strategies, follow the ste
 
 1. Select **Add Strategy** and select the deployment strategies you want to add.
 
-  ![Figure 7: Adding Deployment Strategy ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-add-strategy.jpg)
+    ![Figure 7: Adding Deployment Strategy ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-add-strategy.jpg)
 
-  * In case, you have multiple deployment strategies, you have to choose a default deployment strategy which are configured for the pipeline.
+    * In case, you have multiple deployment strategies, you have to choose a default deployment strategy which are configured for the pipeline.
 
-    ![Figure 8: Selecting Default Deployment Strategy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-set-default.jpg)
- 
-  * If in any scenario such as deploying a hotfix, if you need to use a different deployment strategy other than the default, you can change it from **Build & Deploy** section while triggering the deployment.
+        ![Figure 8: Selecting Default Deployment Strategy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-set-default.jpg)
+  
+    * If in any scenario such as deploying a hotfix, if you need to use a different deployment strategy other than the default, you can change it from **Build & Deploy** section while triggering the deployment.
 
-    **Note:** You can only select the deployment strategies which are configured for that pipeline.
+        **Note:** You can only select the deployment strategies which are configured for that pipeline.
 
-    ![Figure 9: Selecting Deployment Strategy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-build.jpg)
+        ![Figure 9: Selecting Deployment Strategy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-build.jpg)
 
 2. Configure the deployment strategy by selecting the **Settings** icon next to it to edit the strategy template according to your use case.
 
-  ![Figure 10a: Editing Blue Green Strategy Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-rolling-config.jpg)
+    ![Figure 10a: Editing Blue Green Strategy Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-rolling-config.jpg)
 
-  ![Figure 10b: Editing Blue Green Strategy Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-recreate-config.jpg)
+    ![Figure 10b: Editing Blue Green Strategy Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-recreate-config.jpg)
 
-  ![Figure 10c: Editing Canary Strategy Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-canary-config.jpg)
+    ![Figure 10c: Editing Canary Strategy Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-canary-config.jpg)
 
-  ![Figure 10d: Editing Blue Green Strategy Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-blue-green-config.jpg)
+    ![Figure 10d: Editing Blue Green Strategy Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-blue-green-config.jpg)
 
 3. Select **Update Pipeline** to save the configurations.
 
-  ![Figure 11: Selecting Update Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-update-pipeline.jpg)
+    ![Figure 11: Selecting Update Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deployment-update-pipeline.jpg)
 
 
 #### Custom Image Tag Pattern
@@ -310,20 +310,20 @@ This will be utilized only when an existing container image is copied to another
 
 1. Enable the toggle button as shown below.
 
-  ![Figure 12: Enabling Custom Image Tag Pattern](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/cd-image-pattern.jpg)
+    ![Figure 12: Enabling Custom Image Tag Pattern](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/cd-image-pattern.jpg)
 
 2. Click the edit icon.
 
-  ![Figure 13: Edit Icon](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/edit-cd-image-tag.jpg)
+    ![Figure 13: Edit Icon](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/edit-cd-image-tag.jpg)
 
 3. You can write an alphanumeric pattern for your image tag, e.g., **prod-v1.0.{x}**. Here, 'x' is a mandatory variable whose value will incrementally increase with every pre or post deployment trigger (that option is also available to you). You can also define the value of 'x' for the next trigger in case you want to change it. 
 
-  ![Figure 14: Defining Tag Pattern](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/cd-image-tag.jpg)
+    ![Figure 14: Defining Tag Pattern](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/cd-image-tag.jpg)
 
-  {% hint style="warning" %}
-  ### Warning
-  Ensure your custom tag do not start or end with a period (.) or comma (,)
-  {% endhint %}
+    {% hint style="warning" %}
+    ### Warning
+    Ensure your custom tag do not start or end with a period (.) or comma (,)
+    {% endhint %}
 
 4. Click **Update Pipeline**. 
 
@@ -397,15 +397,15 @@ You can not only [view your external Helm apps](../../applications.md#view-exter
 
 2. Select the external cluster containing your Helm releases, and select the Helm release you wish to migrate.
 
-  ![Figure 18: Choosing External Cluster and Helm Release from Dropdown](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/choose-cluster-app.jpg)
+    ![Figure 18: Choosing External Cluster and Helm Release from Dropdown](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/choose-cluster-app.jpg)
 
 3. The target cluster, its namespace, and environment would be visible. If the environment is not available, click **Add Environment**. This will open a new tab. Once you have [added the environment to your cluster](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster), return and click the refresh button.
 
-  ![Figure 19: Adding Environment to Target](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/add-env-helm.jpg)
+    ![Figure 19: Adding Environment to Target](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/add-env-helm.jpg)
 
 4. Select the trigger (**Automatic/Manual**) and click **Create Pipeline**. 
 
-  ![Figure 20: Creating CD Pipeline for Helm Release](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/deploy-mode.jpg)
+    ![Figure 20: Creating CD Pipeline for Helm Release](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/deploy-mode.jpg)
 
 5. Once the pipeline is created, you may go to [Build & Deploy](../../deploying-application/README.md) to trigger the pipelines. Your Helm release would be deployed using Devtron.
 
@@ -445,15 +445,15 @@ You can not only [view your external Argo CD apps](../../applications.md#view-ex
 
 2. Select the external cluster containing your Argo apps, and select the Argo CD application you wish to migrate.
 
-  ![Figure 21: Choosing External Cluster and Argo App from Dropdown](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/choose-cluster-app2.jpg)
+    ![Figure 21: Choosing External Cluster and Argo App from Dropdown](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/choose-cluster-app2.jpg)
 
 3. The target cluster, its namespace, and environment would be visible. If the environment is not available, click **Add Environment**. This will open a new tab. Once you have [added the environment to your cluster](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster), return and click the refresh button.
 
-  ![Figure 22: Adding Environment to Target](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/add-env-argo.jpg)
+    ![Figure 22: Adding Environment to Target](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/add-env-argo.jpg)
 
 4. Select the trigger (**Automatic/Manual**) and click **Create Pipeline**. 
 
-  ![Figure 23: Creating CD Pipeline for Argo CD App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/deploy-mode2.jpg)
+    ![Figure 23: Creating CD Pipeline for Argo CD App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/deploy-mode2.jpg)
 
 5. Once the pipeline is created, you may go to [Build & Deploy](../../deploying-application/README.md) to trigger the pipelines. Your Argo CD app would be deployed using Devtron.
 
@@ -496,19 +496,19 @@ You can not only [view your external Flux CD apps](../../applications.md#view-ex
 
 1. Click **Flux CD Application** in 'Select type of application to migrate'.
 
-  ![Figure 28: Choosing 'Flux CD Application'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-fluxcd.jpg)
+    ![Figure 28: Choosing 'Flux CD Application'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-fluxcd.jpg)
 
 2. Select the external cluster containing your Flux apps, and select the Flux CD application you wish to migrate.
 
-  ![Figure 29: Choosing External Cluster and Flux App from Dropdown](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-app.jpg)
+    ![Figure 29: Choosing External Cluster and Flux App from Dropdown](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-app.jpg)
 
 3. The target cluster, its namespace, and environment would be visible. If the environment is not available, click **Add Environment**. This will open a new tab. Once you have [added the environment to your cluster](../../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster), return and click the refresh button.
 
-  ![Figure 30: Target Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-target-cluster.jpg)
+    ![Figure 30: Target Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-target-cluster.jpg)
 
 4. Select the trigger (**Automatic/Manual**) and click **Create Pipeline**. 
 
-  ![Figure 31: Creating CD Pipeline for Flux CD App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-how-to-deploy.jpg)
+    ![Figure 31: Creating CD Pipeline for Flux CD App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-how-to-deploy.jpg)
 
 5. Once the pipeline is created, you may go to [Build & Deploy](../../deploying-application/README.md) to trigger the pipelines. Your Flux CD app would be deployed using Devtron.
 
@@ -562,7 +562,7 @@ Please follow the steps mentioned below to create sequential pipelines:
 
 3. Similarly, you can add multiple CD pipelines by clicking + sign of the last CD pipeline, each deploying in different environments.
 
-  ![Figure 33: Adding Multiple CD Pipelines](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/sequential-workflow.jpg)
+    ![Figure 33: Adding Multiple CD Pipelines](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/sequential-workflow.jpg)
 
 {% hint style="info" %}
 ### Tip
