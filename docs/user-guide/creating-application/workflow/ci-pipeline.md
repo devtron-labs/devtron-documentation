@@ -18,7 +18,7 @@ A CI Workflow can be created in one of the following ways:
 
 * [Deploy Image from External Service](#id-3.-deploy-image-from-external-service)
 
-* [Sync with Environment](#id-4.-sync-with-environment) <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a>
+* [Sync with Environment](#id-4.-sync-with-environment) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 * [Create a Job](#id-5.-create-a-job)
 
@@ -354,7 +354,7 @@ To configure the Webhook in External CI, follow the steps below.
 
    ![Figure 31: Getting sample cURL request and selecting metadata](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-select-metadata.jpg)
 
-4. Copy the Sample cURL request and integrate it into your External CI (Jenkins) pipeline along with the API token and tag for Docker Image. Refer to [Integrate with External Sources](#integrate-with-external-sources---jenkins) to know more.
+4. Copy the Sample cURL request and integrate it into your External CI (Jenkins) pipeline along with the API token and tag for Docker Image. Refer to [Integrate with External Sources](#integrate-with-external-sources-jenkins) to know more.
 
    ![Figure 32: Copying Sample cURL request](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-copy-curl-cmd.jpg)
 
@@ -514,7 +514,7 @@ Now, you can access the images on the Devtron dashboard and deploy manually. If 
 
 ---
 
-## 4. Sync with Environment
+## 4. Sync with Environment [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 **Sync with Environment** allows you to reuse the deployed container image from one CD workflow in another CD workflow within the same application. 
 
