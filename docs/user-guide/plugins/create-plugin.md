@@ -55,7 +55,7 @@ In the following example, we are creating a plugin named 'Secret Management Vali
 
     * **Task Name** - Give a name to the task, e.g., `Secret Management Validator Task`.
     * **Description** - Write the purpose of the task in brief.
-    * **Task Type** - Choose `Shell` if the task consists of shell commands or choose `Container Image` in case of complex operations that require a specific container environment (refer ['Container Image' task](https://docs.devtron.ai/usage/applications/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins#custom-script-container-image)). 
+    * **Task Type** - Choose `Shell` if the task consists of shell commands or choose `Container Image` in case of complex operations that require a specific container environment (refer ['Container Image' task](../creating-application/workflow/pre-post-tasks.md#example-3---container-image-task)). 
     * **Input Variables** - Add one or more input variables to accept values from the user. Give a name to your input variable along with a description and input type (String/Number/Boolean/Date).
     * **Trigger Skip Condition** - Here you can set conditions to execute or skip the task. You can select **Set trigger conditions** to execute the task, or **Set skip conditions** to skip the task.
     * **Script** - Enter the script to be executed.

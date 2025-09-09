@@ -195,7 +195,7 @@ This feature aims at helping the user clone existing CI/CD pipelines for new tar
 | Configuration Item              | Cloning Behavior                                             |
 |----------------------------------|--------------------------------------------------------------|
 | [**CI Workflow**](../user-guide/creating-application/workflow/ci-pipeline.md)                  | Clones the source’s workflow CI as it is                    |
-| [**Pipeline Configuration**](../user-guide/creating-application/workflow/ci-build-pre-post-plugins.md)       | Cloned, including Pre-CD and Post-CD scripts/plugins        |
+| [**Pipeline Configuration**](../user-guide/creating-application/workflow/pre-post-tasks.md)       | Cloned, including Pre-CD and Post-CD scripts/plugins        |
 | [**Environment Configuration**](../user-guide/creating-application/README.md#app-configuration)    | Cloned, including Deployment Template (DT), ConfigMap (CM), and Secret |
 | [**GitOps Configuration**](../user-guide/creating-application/gitops-config.md)         | Not cloned              |
 | [**Environment Policies**](../user-guide/creating-application/environment-overrides.md)         | Cloned if at pipeline level; ignored if global              |

@@ -208,13 +208,13 @@ In Devtron, you can view a list of Pods by going to Resource Browser → (choose
 
 Actions or processes performed before the actual image-building process in a containerized application's deployment pipeline, e.g., Jira Issue Validator. 
 
-In Devtron, you can configure pre-build actions by going to Applications (choose your app) → App Configuration (tab) → Workflow Editor → (edit build pipeline) → Pre-build stage (tab) → Add task (button). [Read More...](../user-guide/creating-application/workflow/ci-build-pre-post-plugins.md#configuring-pre-post-build-tasks)
+In Devtron, you can configure pre-build actions by going to Applications (choose your app) → App Configuration (tab) → Workflow Editor → (edit build pipeline) → Pre-build stage (tab) → Add task (button). [Read More...](../user-guide/creating-application/workflow/pre-post-tasks.md#creating-prepost-tasks)
 
 ### Post-build
 
 Actions or processes performed after the [image](#image) building process in a containerized application's deployment pipeline, e.g., email notification about build status. 
 
-In Devtron, you can configure post-build actions by going to Applications (choose your app) → App Configuration (tab) → Workflow Editor → (edit build pipeline) → Post-build stage (tab) → Add task (button). [Read More...](../user-guide/creating-application/workflow/ci-build-pre-post-plugins.md#configuring-pre-post-build-tasks)
+In Devtron, you can configure post-build actions by going to Applications (choose your app) → App Configuration (tab) → Workflow Editor → (edit build pipeline) → Post-build stage (tab) → Add task (button). [Read More...](../user-guide/creating-application/workflow/pre-post-tasks.md#creating-prepost-tasks)
 
 ### Pre-deployment
 

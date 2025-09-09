@@ -498,7 +498,7 @@ You can now configure the deployment pipeline, and if you wish, you can also add
 
 If options like **Build and Deploy from Source Code** do not satisfy your use case, you can use **Create a Job** to define a workflow with a custom Build stage and with deployment capabilities.
 
-In this workflow, the build stage is replaced by a Job stage, where you can either use [Preset Plugins](./pre-post-tasks.md#configure-a-task-using-preset-plugins) or define [custom tasks to](./pre-post-tasks.md#execute-custom-script) define custom steps to satisfy your use case. For e.g., you can use a preset plugin to pull the container images required for deployment from a container registry (such as ACR or ECR). 
+In this workflow, the build stage is replaced by a Job stage, where you can either use [Preset Plugins](./pre-post-tasks.md#configure-a-task-using-preset-plugins) or define [custom tasks to](./pre-post-tasks.md#execute-custom-task) define custom steps to satisfy your use case. For e.g., you can use a preset plugin to pull the container images required for deployment from a container registry (such as ACR or ECR). 
 
 This is useful when the image is built externally (for example, in Jenkins) and needs to be brought into Devtron for further processing and deployment. You can configure tasks like scanning, testing, or notifications using preset plugins either in the Job stage or the pre-CD stage, depending on your use case.
 

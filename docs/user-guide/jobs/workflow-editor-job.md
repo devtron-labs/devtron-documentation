@@ -85,7 +85,7 @@ Select the appropriate filter and pass the matching condition as a regular expre
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-pipeline-add-tasks.jpg)
 
-You can also add preset plugins in your job pipeline to execute some standard tasks, such as Code analysis, Load testing, Security scanning etc. Click `Add Task` to add [preset plugins](../creating-application/workflow/ci-build-pre-post-plugins.md#configuring-pre-post-build-tasks).
+You can also add preset plugins in your job pipeline to execute some standard tasks, such as Code analysis, Load testing, Security scanning etc. Click `Add Task` to add [preset plugins](../creating-application/workflow/pre-post-tasks.md#configure-a-task-using-preset-plugins).
 
 
 ## Update Job Pipeline
