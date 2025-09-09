@@ -320,10 +320,10 @@ This will be utilized only when an existing container image is copied to another
 
     ![Figure 14: Defining Tag Pattern](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/cd-image-tag.jpg)
 
-    {% hint style="warning" %}
-    ### Warning
-    Ensure your custom tag do not start or end with a period (.) or comma (,)
-    {% endhint %}
+{% hint style="warning" %}
+### Warning
+Ensure your custom tag do not start or end with a period (.) or comma (,)
+{% endhint %}
 
 4. Click **Update Pipeline**. 
 
