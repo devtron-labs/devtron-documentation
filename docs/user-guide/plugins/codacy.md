@@ -13,7 +13,7 @@ Codacy is an automated code analysis/quality tool that helps developers to ship 
 
     2. Enter a descriptive message for the task in the `Description` field. It is an optional field.
     
-    3. Provide a value for the input variable.<br> Note: The value may be any of the values from the previous build stages, a global variable, or a custom value.</br>
+    3. Provide a value for the input variable.<br> **Note:** The value may be any of the values from the previous build stages, a global variable, or a custom value.</br>
         | Variable | Format | Description |
         | ---- | ---- | ---- |
         | CodacyEndpoint | String | API endpoint for Codacy |

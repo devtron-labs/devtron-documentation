@@ -358,7 +358,7 @@ Some tasks require extra permissions for the node where Devtron is installed. Ho
 
 To enable the `Execute tasks in application environment` option, follow these steps:
 
-1. Go to the chart store and search for the devtron-in-clustercd chart.
+1. Go to the **Chart Store** and search for the `devtron-in-clustercd` chart.
 
   ![Figure 22: 'devtron-in-clustercd' Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/devtron-incluster-chart.jpg)
 
@@ -399,6 +399,6 @@ To enable the `Execute tasks in application environment` option, follow these st
 
 ## What's next
 
-Trigger the [CI pipeline](../../deploying-application/triggering-ci.md)
+* Trigger the [CI pipeline](../../deploying-application/triggering-ci.md)
 
-Trigger the [CD pipeline](../../deploying-application/triggering-cd.md)
+* Trigger the [CD pipeline](../../deploying-application/triggering-cd.md)

@@ -1,9 +1,5 @@
 # CI Pipeline
 
-{% hint style="info" %}
-For Devtron version older than v0.4.0, please refer to the [CI Pipeline (legacy)](https://docs.devtron.ai/v/v0.4/devtron/user-guide/creating-application/workflow/ci-pipeline-legacy) page.
-{% endhint %}
-
 ## Creating CI Pipeline
 
 {% hint style="warning" %}
@@ -28,10 +24,10 @@ Each method has different use-cases that can be tailored according to the needs 
 
 ## 1. Build from Source Code
 
-`Build from Source Code` workflow allows you to build the container image from a source code repository.
+**Build from Source Code** workflow allows you to build the container image from a source code repository.
 
 {% hint style="info" %}
-Devtron typically uses a Dockerfile from your repository to build container images. If you don’t have one, Devtron provides default templates to help you get started. You can also build images without a Dockerfile using Buildpacks.
+Devtron typically uses a Dockerfile from your repository to build container images. If you don’t have one, Devtron provides default templates to help you get started. You can also build images without a Dockerfile using **Buildpacks**.
 {% endhint %}
 
 ### Creating a CI Pipeline
@@ -321,7 +317,7 @@ To create a pipeline form **Deploy Image from External Service**, follow the ste
  |**Environment**|Provide the name of the Environment in which you want to deploy your image.| 
  |**Namespace**|It will display the namespace of that Environment.|
  | **When do you want the pipeline to execute?** | You can deploy either in one of the following ways: <ul><li>`Automatic`: Pipeline triggers automatically when a new container image is received from the previous stage. Users can also trigger the pipeline manually.</ul></li> <ul><li>`Manual`: Users can trigger the pipeline manually.</ul></li>|
- | **Deployment Strategy** | Choose the Deployment Strategy according to your preference. |
+ | **Deployment Strategy** | Choose the [Deployment Strategy](./cd-pipeline.md#deployment-strategies) according to your preference. |
 
 To get the image from an external CI service (let's say Jenkins), you need to configure the Webhook provided by Devtron in your existing External CI pipeline.
 
