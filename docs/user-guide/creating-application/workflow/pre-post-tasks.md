@@ -62,7 +62,7 @@ To create a pre/post task, follow the steps below:
 
     ![Figure 6: Select 'Update Pipeline'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-update-pipeline.jpg)
 
-### Configure a Task using preset plugins
+### Configure a Task using Preset Plugins
 
 In Devtron, preset plugins are pre-defined tasks templates that helps you automate and execute common operations such as provisioning infrastructure, taking backups, exporting container images etc., without writing custom scripts.
 
@@ -94,9 +94,9 @@ To configure a task using the **Codacy** plugin, follow the steps below:
 
 Similarly, you can configure any task with a preset plugin in Pre/post-build stages or pre/post-deployment stages. 
 
-### Execute custom script
+### Execute Custom Task
 
-1. After adding the task, select **Execute custom script**.
+1. After adding the task, select **Execute custom Task**.
 
 
     * The right-side panel will display the fields that are required to be configured in order to create the task.
@@ -105,7 +105,7 @@ Similarly, you can configure any task with a preset plugin in Pre/post-build sta
     
     ![Figure 9: Select 'Execute custom script'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-execute-custom-task.jpg)
 
-2. Enter the Task name(required) and Task Description (optional).
+2. Enter the Task name (required) and Task Description (optional).
 
     ![Figure 10: Configuring Task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-custom-task.jpg)
 

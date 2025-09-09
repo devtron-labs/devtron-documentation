@@ -59,8 +59,8 @@ redirects:
     user-guide/creating-application/deployment-template/job-and-cronjob: usage/applications/creating-application/deployment-template/job-and-cronjob
     user-guide/creating-application/workflow: user-guide/creating-application/workflow/README.md
     user-guide/creating-application/workflow/ci-pipeline: user-guide/creating-application/workflow/ci-pipeline.md
-    user-guide/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/ci-build-pre-post-plugins.md
-    usage/applications/creating-application/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/ci-build-pre-post-plugins.md
+    user-guide/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/pre-post-tasks.md
+    usage/applications/creating-application/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/pre-post-tasks.md
     usage/applications/creating-application/ci-pipeline: user-guide/creating-application/workflow/ci-pipeline.md
     user-guide/creating-application/workflow/cd-pipeline: user-guide/creating-application/workflow/cd-pipeline.md
     user-guide/creating-application/workflow/ci-pipeline-legacy: user-guide/creating-application/workflow/ci-pipeline.md
@@ -165,5 +165,4 @@ redirects:
     setup/install/enterprise-license: setup/install/freemium.md
     enterprise-license: setup/install/freemium.md
     usage/applications/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/pre-post-tasks.md
-
-    
+    usage/applications/creating-application/workflow/ci-pipeline/container-registry-override: user-guide/creating-application/workflow/ci-pipeline.md
