@@ -617,9 +617,9 @@ Follow the below steps if you are getting the above error:
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/empty-values.jpg)
 
-This happens due to a missing [app-values.yaml](../user-guide/global-configurations/deployment-charts.md#3-add-app-values.yaml) file in your deployment chart. 
+This happens due to a missing [app-values.yaml](../user-guide/global-configurations/deployment-charts.md#id-3.-add-app-values.yaml) file in your deployment chart. 
 
-To fix this issue, include an `app-values.yaml` file in your deployment helm chart before uploading the chart. Refer [adding app-values.yaml](../user-guide/global-configurations/deployment-charts.md#3-add-app-values.yaml) to know more.
+To fix this issue, include an `app-values.yaml` file in your deployment helm chart before uploading the chart. Refer [adding app-values.yaml](../user-guide/global-configurations/deployment-charts.md#id-3.-add-app-valuesyaml) to know more.
 
 #### 31. Unable to create a GitOps deployment pipeline or encountering errors with GitOps deployment.
 
