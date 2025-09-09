@@ -23,11 +23,7 @@ Once your Okta org is set up, create an app integration on Okta to get a Client 
 
 2. Click **Create App Integration**.
 
-3. Select **OIDC - OpenID Connect** as the **Sign-in method**.
-
-{% hint style="info" %}
-OIDC stands for OpenID Connect. [Click here](https://www.okta.com/openid-connect/) to read more.
-{% endhint %}
+3. Select **OIDC - OpenID Connect** as the **Sign-in method**. [Click here](https://www.okta.com/openid-connect/) to read more.
 
 4. Select **Web** as the application type and click **Next**.
 
@@ -65,7 +61,7 @@ OIDC stands for OpenID Connect. [Click here](https://www.okta.com/openid-connect
 
 Now your users will be able to log in to Devtron using the Okta authentication method. Note that existing signed-in users will be logged out, and they have to log in again using their OIDC account.
 
-## Auto-assign Permissions
+## Auto-assign Permissions [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 {% hint style="warning" %}
 ### Prerequisites
@@ -98,7 +94,7 @@ If you’ve defined groups in your Okta Universal Directory, you can create corr
 
 {% hint style="warning" %}
 ### Note
-SSO login requires exact matching between Devtron permission group names and AD groups. Any discrepancies or missing groups will prevent successful login.
+SSO login requires exact matching between Devtron permission group names and Okta groups. Any discrepancies or missing groups will prevent successful login.
 
 Once you save the configuration with this feature enabled, existing user permissions will be cleared and the future permissions will be managed through [permission groups](../permission-groups.md) linked to Okta groups.
 {% endhint %}
