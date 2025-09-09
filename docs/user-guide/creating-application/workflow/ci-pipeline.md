@@ -334,7 +334,7 @@ To configure the Webhook in External CI, follow the steps below.
 
 1.  After creating the pipeline, select **Show webhook details** or select **External Source** stage to get the webhook URL and JSON sample payload to be used in the external CI pipeline.
 
-   ![Figure 27: Getting Webhook Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-show-webhook.jpg)
+      ![Figure 27: Getting Webhook Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-show-webhook.jpg)
 
 2. On the **Webhook Details** page, click **Select or auto-generate token with required permissions** to select or generate a `API token`. This token allows external CI services to authenticate with Devtron.
 
