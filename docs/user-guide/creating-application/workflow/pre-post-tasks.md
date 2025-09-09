@@ -38,13 +38,13 @@ To create a pre/post task, follow the steps below:
 
 3. Based on the pipeline you are editing, follow the steps below to add a task:
  
- * **Build pipelines:** On the **Edit build pipeline** window, select the **Pre-Build stage** or **Post-Build stage** tab.
+  * **Build pipelines:** On the **Edit build pipeline** window, select the **Pre-Build stage** or **Post-Build stage** tab.
 
-  ![Figure 2: Pre/Post-build stages](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-edit-build.jpg)
+    ![Figure 2: Pre/Post-build stages](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-edit-build.jpg)
  
- * **Deployment pipelines:** On the **Edit deployment pipeline** window, select the **Pre-Deployment stage** or **Post-Deployment stage** tab.
+  * **Deployment pipelines:** On the **Edit deployment pipeline** window, select the **Pre-Deployment stage** or **Post-Deployment stage** tab.
 
-  ![Figure 3: Pre/Post-deployment stages](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-edit-deploy.jpg)
+    ![Figure 3: Pre/Post-deployment stages](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-edit-deploy.jpg)
 
 4. Select **+ Add task** to add a task.
  
@@ -76,9 +76,9 @@ To configure a task using the **Codacy** plugin, follow the steps below:
 
   ![Figure 7: Searching 'Codacy' plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-search-codacy.jpg)
 
-   * The right-side panel will display the fields specific to the **Codacy** plugin, which are required to be configured.
+  * The right-side panel will display the fields specific to the **Codacy** plugin, which are required to be configured.
 
-   * The left-side panel will now shows a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by default), along with its logo.<br>You can change the task's name using the **Task name** field but plugin's logo will remain indicating that it is a preset plugin.
+  * The left-side panel will now shows a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by default), along with its logo.<br>You can change the task's name using the **Task name** field but plugin's logo will remain indicating that it is a preset plugin.
 
   ![Figure 8: Codacy plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-codacy-plugin.jpg)
 
@@ -98,9 +98,9 @@ Similarly, you can configure any task with a preset plugin in Pre/post-build sta
 
   ![Figure 9: Select 'Execute custom script'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-execute-custom-task.jpg)
 
- * The right-side panel will display the fields that are required to be configured in order to create the task.
+  * The right-side panel will display the fields that are required to be configured in order to create the task.
 
- * The left-side panel will now display a task under **Tasks (IN ORDER OF EXECUTION)**.
+  * The left-side panel will now display a task under **Tasks (IN ORDER OF EXECUTION)**.
 
 2. Enter the Task name(required) and Task Description (optional).
 
@@ -108,9 +108,9 @@ Similarly, you can configure any task with a preset plugin in Pre/post-build sta
 
 3. Select the **Task type**, it can be `Shell` or `Container Image`.
 
- * **Shell Tasks**: These execute shell scripts directly within the application runtime environment. In this type of task, you can define inline scripts or use script files from your configured source code.
+  * **Shell Tasks**: These execute shell scripts directly within the application runtime environment. In this type of task, you can define inline scripts or use script files from your configured source code.
 
- * **Container Image Tasks**: These allow you to execute commands and scripts inside a custom Docker container. Instead of using the default environment provided by Devtron, you can specify your own container image with all dependencies and tools required for the tasks. <br> These Tasks run using container in container approach, which means the specified image is pulled and run inside the App pod, thus providing a completely isolated environment.
+  * **Container Image Tasks**: These allow you to execute commands and scripts inside a custom Docker container. Instead of using the default environment provided by Devtron, you can specify your own container image with all dependencies and tools required for the tasks. <br> These Tasks run using container in container approach, which means the specified image is pulled and run inside the App pod, thus providing a completely isolated environment.
 
 4. After selecting the **Task type**, you need to configure task-specific fields based on that **Task type**. Refer the [Examples and Use cases](#examples-and-use-cases) to configure both **Shell type** and **Container image** tasks.
 
@@ -177,9 +177,9 @@ Let's take an example of a **Shell task** in the Pre-Build stage that ensures th
 
 #### Tasks Configurations
 
-  ![Figure 11a: Configuring Shell Task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-shell-example.jpg)
+![Figure 11a: Configuring Shell Task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-shell-example.jpg)
 
-  ![Figure 11b: Configuring Pass/Fail Condition](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-shell-task-2.jpg)
+![Figure 11b: Configuring Pass/Fail Condition](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-shell-task-2.jpg)
 
 |Field| Values for This Example| Required/Optional | Description|
 | :--- | :--- | :--- | :--- |
@@ -252,9 +252,9 @@ Since we have already configured a shell task to validate the database name, we 
 
 #### Tasks Configurations
 
-  ![Figure 15a: Container Image Task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-container-task.jpg)
+![Figure 15a: Container Image Task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-container-task.jpg)
 
-  ![Figure 15b: Configuring task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-container-task-2.jpg)
+![Figure 15b: Configuring task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-container-task-2.jpg)
 
 | Field| Values for This Example| Required/Optional | Description|
 | :---|:---|:---|:---|
@@ -346,7 +346,7 @@ Make sure you have added [ConfigMaps](../config-maps.md) and [Secrets](../secret
 
 If you want to use some configuration files and secrets in pre-deployment stages or post-deployment stages, then you can use the `ConfigMaps` & `Secrets` options. You will get them as a drop-down in the pre-deployment stage.
 
-  ![Figure 20: ConfigMaps & Secrets](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-cm-secret.jpg)
+![Figure 20: ConfigMaps & Secrets](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-cm-secret.jpg)
 
 ### Execute tasks in an application environment
 
@@ -354,7 +354,7 @@ These `Pre-deployment CD / Post-deployment CD` pods can be created in your deplo
 
 Some tasks require extra permissions for the node where Devtron is installed. However, if the node already has the necessary permissions for deploying applications, there is no need to assign them again. Instead, you can enable the **Execute tasks in application environment** option for the pre-CD or post-CD steps. By default, this option is disabled.
 
-  ![Figure 21: Execute tasks in application environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-execute-tasks.jpg)
+![Figure 21: Execute tasks in application environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-execute-tasks.jpg)
 
 To enable the `Execute tasks in application environment` option, follow these steps:
 
