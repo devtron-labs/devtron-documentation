@@ -1,16 +1,12 @@
 # CI Pipeline
 
----
-
-## Creating CI Pipeline
-
 {% hint style="warning" %}
 ### Who Can Perform This Action?
 Users need to have the **Admin role**, the **Manager role**, or the **Super Admin role**.
 Refer the [User permissions](../../global-configurations/authorization/user-access.md#roles-available-for-devtron-apps).
 {% endhint %}
 
-A CI Workflow can be created in one of the following ways:
+A Workflow can be created in one of the following ways:
 
 * [Build from Source Code](#id-1.-build-from-source-code)
 
@@ -31,6 +27,7 @@ Each method has different use-cases that can be tailored according to the needs 
 **Build from Source Code** workflow allows you to build the container image from a source code repository.
 
 {% hint style="info" %}
+### Note
 Devtron typically uses a Dockerfile from your repository to build container images. If you don’t have one, Devtron provides default templates to help you get started. You can also build images without a Dockerfile using **Buildpacks**.
 {% endhint %}
 
@@ -70,7 +67,7 @@ Devtron typically uses a Dockerfile from your repository to build container imag
    | `Branch Fixed`| Triggers a CI build whenever changes are pushed to a specified branch.| Requires a predefined branch name.|
    | `Branch Regex`| Allows dynamic branch selection based on a regex pattern| Requires a regex pattern to be defined. For example, if the user sets the Branch Regex as feature-\*, then users can trigger the build from branches such as feature-1450, feature-hot-fix, etc. |
    | `Pull Request` (PR) | Triggers a CI build when a new pull request is created. You can also define filters (such as PR author, title, or branch) to control which pull requests trigger the pipeline. | Requires [configuring a webhook](#configuring-webhook) for GitHub or Bitbucket.|
-   | `Tag Creation`| Triggers a build whenever a new tag is created. You can also define filters (such as author and tag name) to control which tags trigger the pipeline.| [configuring a webhook](#configuring-webhook) for GitHub or Bitbucket.|
+   | `Tag Creation`| Triggers a build whenever a new tag is created. You can also define filters (such as author and tag name) to control which tags trigger the pipeline.| [Configuring a webhook](#configuring-webhook) for GitHub or Bitbucket.|
 
 
    #### Pull Request Filters
@@ -79,7 +76,7 @@ Devtron typically uses a Dockerfile from your repository to build container imag
 
    ![Figure 5: Pull Request Filters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-pull-request-filters.jpg)
 
-   Select the appropriate filter and pass the matching condition as a regular expression (`regex`).
+   Select the appropriate filter and pass the matching condition as a regular expression (regex).
 
    {% hint style="info" %}
    Devtron uses the regexp library, view [regexp cheatsheet](https://yourbasic.org/golang/regexp-cheat-sheet/). You can test your custom regex from [here](https://regex101.com/r/lHHuaE/1).
@@ -213,6 +210,7 @@ Refer the [User permissions](../../global-configurations/authorization/user-acce
    ![Figure 17: Entering details of existing pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-create-pipeline.jpg)
 
    {% hint style="warning" %}
+   ### Note
    The user must have at least view access to the application that contains the source pipeline; otherwise, the application will not appear in the **Filter By Application** field.
    {% endhint %}
 
@@ -233,6 +231,7 @@ Refer the [User permissions](../../global-configurations/authorization/user-acce
    ![Figure 20: Creating CD pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-cd.jpg)
 
 {% hint style="warning" %}
+### Note
 Linked CI pipelines can't trigger builds. They rely on the source CI pipeline to build images. Trigger a build in the source CI pipeline to see the images available for deployment in the linked CI pipeline's Deployment stage.
 {% endhint %}
 
@@ -583,7 +582,7 @@ To create a task using the **Pull Images from Container Repository** plugin, fol
 
    ![Figure 62: GKE provisioner plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-pull-images-added.jpg)
 
-4. Refer the [Pull Images from Container Repository](../../plugins/pull-images-from-container-repository.md) documentation to configure the **Pull Images from Container Repository** fields with appropriate values. You may explore ['Plugins' documentation](../../plugins/README.md) to configure any of the available plugins. 
+4. Refer the [Pull Images from Container Repository](../../plugins/pull-images-from-container-repository.md) documentation to configure the **Pull Images from Container Repository** fields with appropriate values. You may explore [Plugins documentation](../../plugins/README.md) to configure any of the available plugins. 
 
 5. After configuring the fields successfully, your task will be created. If you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
 

@@ -1,5 +1,7 @@
 # Workflow Editor
 
+## Introduction
+
 After configuring the **Build Configurations** and **Base Configurations**, the next step is to create a workflow using the Workflow Editor.
 
 In Devtron, a **Workflow** is a logical sequence of different stages(pipelines) used for continuous integration and continuous deployment of an application. 
@@ -52,8 +54,9 @@ To create a quick workflow with both build and deployment pipelines, follow the 
 
 7. If you want, you can also add Pre/Post Tasks in both build and deployment pipelines. To do so, refer to the [Pre/Post tasks](./pre-post-tasks.md) page to learn more.
 
+---
 
-### Types of CI Pipelines
+## Types of CI Pipelines
 
 Apart from configuring advanced options, you can create five types of CI pipelines depending on your use case.
 
