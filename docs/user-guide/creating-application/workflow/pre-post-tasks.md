@@ -28,11 +28,11 @@ You can create one or more tasks. Tasks can be dependent on each other for execu
 
 You can create a task either by selecting one of the available preset plugins or by creating a custom script.
 
-To create a pre/post task, follow the steps below
+To create a pre/post task, follow the steps below:
 
 1. Navigate to **Configurations** → **Workflow Editor** of your Devtron App. 
 
-2. Select the **build** or **deployment** pipeline for configuring the pre/post tasks.
+2. Select the Build or Deployment pipeline for configuring the pre/post tasks.
 
   ![Figure 1: Selecting Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-workflow-editor.jpg)
 
@@ -50,11 +50,11 @@ To create a pre/post task, follow the steps below
  
   ![Figure 4: Adding task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-add-task.jpg)
 
-5. Configure the task using a preset plugin or **Execute custom task**; if you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
+5. Configure the task using a preset plugin or **Execute custom task**. If you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
 
   ![Figure 5: Configuring the task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-configure.jpg)
 
-6. Click **Update Pipeline**; The pre/post task will be executed when you trigger the next build or deployment.
+6. Click **Update Pipeline**. The pre/post task will be executed when you trigger the next build or deployment.
 
   ![Figure 6: Select 'Update Pipeline'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/pre-post-update-pipeline.jpg)
 
@@ -144,7 +144,7 @@ Make sure to create an App password for the sender's email account to use in the
 SMTP_SERVER="smtp.gmail.com"
 SMTP_PORT="587"
 SMTP_USERNAME="docs@devtron.ai" # Enter the sender's email
-SMTP_PASSWORD="sample password" # Enter 16 digit App Password
+SMTP_PASSWORD="sample password" # Enter 16 Character App Password, e.g., 'diey mzec ogfd fzmr' 
 
 # Recipient email address
 TO="abc@gmail.com"

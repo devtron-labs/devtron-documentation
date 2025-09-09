@@ -286,7 +286,7 @@ Refer the [User permissions](../../global-configurations/authorization/user-acce
  ![Figure 23: Creating CD pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-cd.jpg)
 
 {% hint style="warning" %}
-Linked CI pipelines can't trigger builds. They rely on the source CI pipeline to build images. Trigger a build in the source CI pipeline to see the images available for deployment in the linked CI pipeline's CD stage.
+Linked CI pipelines can't trigger builds. They rely on the source CI pipeline to build images. Trigger a build in the source CI pipeline to see the images available for deployment in the linked CI pipeline's Deployment stage.
 {% endhint %}
 
 
@@ -549,9 +549,9 @@ You can now configure the deployment pipeline, and if you wish, you can also add
 
 ## 5. Create a Job
 
-If options like **Build and Deploy from Source Code** do not satisfy your use case, you can use **Create a Job** to define a workflow with a custom CI stage and with deployment capabilities.
+If options like **Build and Deploy from Source Code** do not satisfy your use case, you can use **Create a Job** to define a workflow with a custom Build stage and with deployment capabilities.
 
-In this workflow, the build stage is replaced by a Job stage, where you can either use preset plugins or define custom tasks to define custom steps to satisfy your use case. For e.g., you can use a preset plugin to pull the container images required for deployment from a container registry (such as ACR or ECR). 
+In this workflow, the build stage is replaced by a Job stage, where you can either use [Preset Plugins](./pre-post-tasks.md#configure-a-task-using-preset-plugins) or define [custom tasks to](./pre-post-tasks.md#execute-custom-script) define custom steps to satisfy your use case. For e.g., you can use a preset plugin to pull the container images required for deployment from a container registry (such as ACR or ECR). 
 
 This is useful when the image is built externally (for example, in Jenkins) and needs to be brought into Devtron for further processing and deployment. You can configure tasks like scanning, testing, or notifications using preset plugins either in the Job stage or the pre-CD stage, depending on your use case.
 
@@ -611,7 +611,7 @@ To create a task:
 
  ![Figure 63: Type of tasks](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-add-task.jpg)
 
-#### Pulling images through preset plugin
+#### Pulling Images through Preset Plugin
 
 In Devtron, preset plugins are pre-defined tasks templates that helps you automate and execute common operations such as provisioning infrastructure, taking backups, exporting container images etc., without writing custom scripts.
 
@@ -619,7 +619,7 @@ Devtron provides a set of built-in preset plugins, and you can also create your 
 
 To create a task using the **Pull Images from Container Repository** plugin, follow the steps below:
 
-**Note:** **Pull Images from Container Repository** plugin only supports ECR and ACR. 
+**Note:** **Pull Images from Container Repository** plugin only supports [ECR (Elastic Container Registry)](https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html) and [ACR (Azure Container Registry)](https://learn.microsoft.com/en-us/azure/container-registry/). 
 
 1. After configuring the basic configurations, select the **Tasks to be executed** Tab
 
@@ -654,7 +654,7 @@ In the job stage, you can also define a task using a custom script to meet speci
 
  * The left-side panel will now display a task under **Tasks (IN ORDER OF EXECUTION)**.
 
-3. Enter the Task name(required) and Task Description (optional).
+3. Enter the Task name (required) and Task Description (optional).
 
 4. Select the **Task type**, it can be `Shell` or `Container Image`.
 
@@ -689,16 +689,16 @@ To update a pipeline,
 
 ## Deleting CI Pipeline
 
-To delete a CI pipeline, make sure that there is no CD pipeline attached to it in your workflow; In that case, you must first delete the CD pipeline, and only then you can delete a CI pipeline.
+Before deleting a CI pipeline, make sure that there is no CD pipeline attached to it in your workflow. In that case, you must first delete the CD pipeline, and only then you can delete a CI pipeline.
 
 To delete a CI pipeline, follow the steps below.
 
-1. Navigate to **Configurations** → **Workflow Editor** and choose the pipeline you wish to delete.
+1. Navigate to **Configurations** → **Workflow Editor** and click the pipeline you wish to delete.
 
  ![Figure 67: Selecting Workflow to delete](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-select-workflow.jpg)
 
 
-2. Click on the CD Stage, **Edit deployment pipeline** window will open and select **Delete Pipeline**. 
+2. Click on the Deployment Stage, **Edit deployment pipeline** window will open and select **Delete Pipeline**. 
 
   ![Figure 68: Clicking 'Delete Pipeline'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-cd.jpg)
 
@@ -708,13 +708,13 @@ To delete a CI pipeline, follow the steps below.
 
   ![Figure 69: Deleting CD Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-cd-popup.jpg)
 
- In case there are multiple CD pipelines in the workflow, then you need to delete every single one of them in a similar way.
+ In case there are multiple CD pipelines in the workflow, then you need to delete them individually in a similar way.
 
-5. After deleting all CD pipelines, click on the build stage, and the **Edit build pipeline** window will open. 
+5. After deleting all CD pipelines, click the Build stage, and the **Edit build pipeline** window will open. 
 
  ![Figure 70: Selecting build stage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-select-build.jpg)
 
-6. Select **Delete Pipeline** from the bottom left corner of the window button in the CI Stage, a pop-up will appear prompting you to delete the CI pipeline.
+6. Select **Delete Pipeline** from the bottom left corner of the window button in the Build stage, a pop-up will appear prompting you to delete the CI pipeline.
  
  ![Figure 71: Clicking 'Delete Pipeline'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-CI.jpg)
 
@@ -788,17 +788,17 @@ If you choose **Pull Request** or **Tag Creation** as the **Source Type**, you m
 
 5. In the **Secret** field, enter the secret from Devtron the dashboard when you select the source type as "Pull Request" or "Tag Creation".
 
-6. Under **Which events would you like to trigger this webhook?**, select **Let me select individual events.** to trigger the webhook for specific events.
+6. Under **Which events would you like to trigger this webhook?**, select **Let me select individual events** to trigger the webhook for specific events.
 
    ![Figure 78: Configuring Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-enter-info.jpg)
 
 7. Select the appropriate triggers
 
-   * For Pull Requests select **Pull Requests**.
+   * For Pull Requests, select **Pull Requests**.
 
    ![Figure 79: Selecting 'Pull Requests'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-pull.jpg)
 
-   * For Tag Creation select **Branch or tag creation**.
+   * For Tag Creation, select **Branch or tag creation**.
 
    ![Figure 80: Selecting 'Branch or tag creation'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-branch.jpg)
 
@@ -816,7 +816,7 @@ If you choose **Pull Request** or **Tag Creation** as the **Source Type**, you m
 
    ![Figure 83: Selecting 'Add new webhook'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-add-new-webhook.jpg)
 
-3. Enter optional Name and Description.
+3. You can provide a name and description (optional).
 
 4. In the **URL** field, enter the Webhook URL that you get on selecting the source type as "Pull Request" or "Tag Creation" in the Devtron dashboard.
 
@@ -826,11 +826,11 @@ If you choose **Pull Request** or **Tag Creation** as the **Source Type**, you m
 
 6. Checkmark the appropriate triggers under the **Trigger** section.
 
-   * For Pull Requests select **Merge request events**.
+   * For Pull Requests, select **Merge request events**.
 
    ![Figure 85: Selecting 'Merge request events'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-merge.jpg)
 
-   * For Tag Creation select **Tag push events**
+   * For Tag Creation, select **Tag push events**
 
    ![Figure 86: Selecting 'Tag push events'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-tag.jpg)
 

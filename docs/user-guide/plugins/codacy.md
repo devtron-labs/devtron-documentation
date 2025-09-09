@@ -18,7 +18,7 @@ Codacy is an automated code analysis/quality tool that helps developers to ship 
         | ---- | ---- | ---- |
         | CodacyEndpoint | String | API endpoint for Codacy |
         | GitProvider | String | Git provider for the scanning |
-        | CodacyApiToken | String | API token for Codacy. If it is provided, it will be used, otherwise, it will be picked from the Global secret (CODACY_API_TOKEN). |
+        | CodacyApiToken | String | API token for Codacy. If it is provided, it will be used; otherwise it will be picked from the Global secret (CODACY_API_TOKEN). |
         | Organisation | String | Your Organization for Codacy|
         | RepoName | String | Your Repository name |
         | Branch | String | Your branch name |
