@@ -6,6 +6,8 @@ In Devtron, a **Workflow** is a logical sequence of different stages(pipelines) 
 
  ![Figure 1: Workflow Editor](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/arora1.gif)
 
+---
+
 ## Create Workflow
 
 The **Build and Deploy from Source Code** provides a simple way to create both CI and CD pipelines in one step. It is for users who want to set up a complete workflow quickly using minimal required information, such as the source repository branch and the target environment.

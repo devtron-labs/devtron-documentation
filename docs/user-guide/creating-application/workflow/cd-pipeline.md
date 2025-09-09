@@ -2,6 +2,8 @@
 
 After your CI pipeline is ready, you can start building your CD pipeline. Devtron enables you to design your CD pipeline in a way that fully automates your deployments. Images from CI stage can be deployed to one or more environments through dedicated CD pipelines.
 
+---
+
 ## Creating CD Pipeline
 
 Click the '**+**' sign on CI Pipeline to attach a CD Pipeline to it.

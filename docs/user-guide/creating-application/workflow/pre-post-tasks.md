@@ -16,9 +16,13 @@ Preset plugins are extensions that allow you to enhance and refine the CI/CD wor
 
 Some plugins are specific to build pipelines (used in **Pre-Build** and **Post-Build** stages), and some plugins are specific to deployment pipelines (used in **Pre-Deployment** and **Post-Deployment** stages), and some plugins are versatile and can be used in both build and deployment pipelines, depending on your use case.
 
+---
+
 ## Before you begin
 
 Before you start adding Pre or Post tasks, make sure you have already setup your [Build pipeline](./ci-pipeline.md) or [Deployment pipeline](./cd-pipeline.md).
+
+---
 
 ## Creating Pre/Post Tasks
 
