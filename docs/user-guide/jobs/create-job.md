@@ -20,22 +20,22 @@ To create a new **Blank Job** in Devtron, follow these steps:
 
 1. Navigate to **Devtron Dashboard** → **Jobs**.
 
- ![Figure 1: Job's Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/jobs.jpg)
+    ![Figure 1: Job's Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/jobs.jpg)
 
 2. Click **Create** button in the top-right corner and select **Job** from the drop-down list.
 
- ![Figure 2: Selecting Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/select-create-job-latest.jpg)
+    ![Figure 2: Selecting Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/select-create-job-latest.jpg)
 
 3. The **Create Job** page opens. From the left panel, select **Blank job**, then enter the required details as listed in the table below.
 
- | Fields| Description|
- |:---|:---|
- | `Project`| Select the project from the dropdown.|
- | `Job Name`| User-defined name for the job in Devtron.|
- | `Description` | Enter the description for the job.|
- | `Tags`| Key-value pairs used for identifying and organizing the application and can be propagated as Kubernetes labels. To learn more refer [Tags](#tags) section.|
+    | Fields| Description|
+    |:---|:---|
+    | `Project`| Select the project from the dropdown.|
+    | `Job Name`| User-defined name for the job in Devtron.|
+    | `Description` | Enter the description for the job.|
+    | `Tags`| Key-value pairs used for identifying and organizing the application and can be propagated as Kubernetes labels. To learn more refer [Tags](#tags) section.|
 
- ![Figure 3: Creating Blank Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-page.jpg)
+    ![Figure 3: Creating Blank Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-page.jpg)
 
 4. Click **Create Job**. The job will be created, and you will be automatically redirected to the [Configurations page](/docs/user-guide/jobs/configurations/README.md)to continue setting up the job pipeline.
 
@@ -53,18 +53,18 @@ To create a new **Clone Job** in Devtron, follow these steps:
 1. From the Devtron Dashboard, navigate to **Jobs**.
 2. Click the **Create** button in the top-right corner and select **Job** from the drop-down list.
 
- ![Figure 4: Selecting Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/select-create-job-latest.jpg)
+    ![Figure 4: Selecting Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/select-create-job-latest.jpg)
 
 3. The **Create Job** page opens. From the left panel, select **Clone Job**, then enter the required details as listed in the table below.
 
- | Fields| Description|
- |:---|:--- |
- | `Project`| Select the project from the dropdown.|
- | `Job Name`| User-defined name for the job in Devtron.|
- | `Description`| Enter the description of a job.|
- | `Tags`| Key-value pairs used for identifying and organizing the application and can be propagated as Kubernetes labels. To learn more refer [Tags](#tags) section.|
+    | Fields| Description|
+    |:---|:--- |
+    | `Project`| Select the project from the dropdown.|
+    | `Job Name`| User-defined name for the job in Devtron.|
+    | `Description`| Enter the description of a job.|
+    | `Tags`| Key-value pairs used for identifying and organizing the application and can be propagated as Kubernetes labels. To learn more refer [Tags](#tags) section.|
 
- ![Figure 5: Creating Clone Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-clone-job.jpg)
+    ![Figure 5: Creating Clone Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-clone-job.jpg)
 
 4. Click **Create Job**. The **Clone job** will be created, and you will be automatically redirected to the [Configurations page](/docs/user-guide/jobs/configurations/README.md), where the configuration will be pre-populated based on the selected source job. You may review and modify these settings as required.
 
@@ -78,35 +78,30 @@ Users need to have the **Admin role** or the **Super Admin role**.
 Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
 {% endhint %}
 
-To delete a job:
+To delete a job, you have to first delete any configured pipelines in that job workflow.
 
-1. Navigate to **Jobs** → **Select the job** → **Configurations**.
+1. Navigate to **Jobs** → **Select the job** → **Configurations** → **Workflow Editor**.
 
-2. To delete the job, you have to first delete any configured pipelines in the job workflow.
+2. Select the job pipeline you wish to delete, and an edit job pipeline modal window will appear.
 
- ### Delete Job Pipelines
+    ![Figure 6: Selecting Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-delete-select.jpg)
 
- * Navigate to **Jobs** → **Select the job** → **Configurations** → **Workflow Editor**.
+3. Select **Delete Pipeline** at the bottom left corner of the edit job pipeline modal window to delete the job pipeline.
 
- * Select the job pipeline you wish to delete, and an edit job pipeline modal window will appear.
+    ![Figure 7: Deleting Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-delete-pipeline.jpg)
 
- ![Figure 6: Selecting Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-delete-select.jpg)
+4. A pop-up window will appear asking you to confirm the **Delete Pipeline** action.
 
- * Select **Delete Pipeline** at the bottom left corner of the edit job pipeline modal window to delete the job pipeline.
+    ![Figure 8: Confirming Delete Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-delete-dialog-box.jpg)
 
- ![Figure 7: Deleting Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-delete-pipeline.jpg)
 
- * A pop-up window will appear asking you to confirm the **Delete Pipeline** action.
+5. After deleting any configured pipelines in a job workflow, select **Delete Job** to delete the job.
 
- ![Figure 8: Confirming Delete Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-delete-dialog-box.jpg)
+    ![Figure 9: Deleting Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-delete-job.jpg)
 
-3. Select **Delete Job** to delete the job.
+6. A pop-up window will appear asking you to confirm the **Delete Job** action.
 
- ![Figure 9: Deleting Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-delete-job.jpg)
-
-4. A pop-up window will appear asking you to confirm the **Delete Job** action.
-
- ![Figure 10: Confirming Delete Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-delete-job-dialog.jpg)
+    ![Figure 10: Confirming Delete Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-delete-job-dialog.jpg)
 
 ---
 

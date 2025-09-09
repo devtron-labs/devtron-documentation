@@ -14,23 +14,23 @@ Either you have just executed the job and want to inspect the live execution, or
 
 1. Navigate to the **Run History** tab of your job, and all the executions will appear in a reverse chronological order under the pipeline name. In case you have configured multiple job pipelines within a job, you need to select the pipeline from the **Select Pipeline** dropdown in the top-left corner. 
 
- ![Figure 1: Selecting Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history.jpg)
+    ![Figure 1: Selecting Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history.jpg)
 
 2. Select the specific execution you want to inspect. By default, the latest execution is selected.
 
- ![Figure 2: Selecting Specific Execution](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-select-execution.jpg)
+    ![Figure 2: Selecting Specific Execution](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-select-execution.jpg)
 
 3. After selecting the execution, the right section of the page will display the details about that particular execution.
 
- |Field|Description|
- |:---|:---|
- |`Triggered`|Shows the date, time, user, and commit ID that initiated this run.|
- |`Environment`|Indicates which execution environment (e.g., devtron-ci) was used for this job.|
- |`Execution started`|Timestamp marking when the job actually began running.|
- |`Execution succeeded`|Timestamp marking when the job finished successfully.|
- |`Worker status`|Final outcome of the worker performing the job (e.g., Succeeded or Failed). On failure, the error message is also shown|
+    |Field|Description|
+    |:---|:---|
+    |`Triggered`|Shows the date, time, user, and commit ID that initiated this run.|
+    |`Environment`|Indicates which execution environment (e.g., devtron-ci) was used for this job.|
+    |`Execution started`|Timestamp marking when the job actually began running.|
+    |`Execution succeeded`|Timestamp marking when the job finished successfully.|
+    |`Worker status`|Final outcome of the worker performing the job (e.g., Succeeded or Failed). On failure, the error message is also shown|
 
- ![Figure 3: Execution's details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-details.jpg)
+    ![Figure 3: Execution's details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-details.jpg)
 
 Apart from these details, you can also inspect logs, source code, security, and download artifacts (if any).
 
@@ -40,21 +40,21 @@ Apart from these details, you can also inspect logs, source code, security, and 
  * You can expand/collapse each pipeline stage to view specific logs related to that stage. Use the `Expand/collapse all stages` button near the search bar to expand or collapse all stages at once.
  * Select the fullscreen button in the bottom-right corner to view logs in fullscreen.
 
- ![Figure 4: Logs](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-logs.jpg)
+    ![Figure 4: Logs](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-logs.jpg)
 
 ### Source
- The source tab shows which commit is from the source code (configured Git repository) that is used to execute the job pipeline. 
 
- It shows the following commit details
- |Field|Description|
- |:---|:---|
- |`Repository name & icon` |The Git repo used with its provider logo|
- |`Commit hash`|A short, clickable commit ID (e.g. 443vecd) that opens the full commit details when clicked.|
- |`Commit message`|Commit message used while pushing that commit|
- |`Author`|Name & email of the committer.|
- |`Date & time`|When that commit was authored|
+The source tab shows which commit is from the source code (configured Git repository) that is used to execute the job pipeline. It shows the following commit details:
 
- ![Figure 5: Source](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-source.jpg)
+|Field|Description|
+|:---|:---|
+|`Repository name & icon` |The Git repo used with its provider logo|
+|`Commit hash`|A short, clickable commit ID (e.g. 443vecd) that opens the full commit details when clicked.|
+|`Commit message`|Commit message used while pushing that commit|
+|`Author`|Name & email of the committer.|
+|`Date & time`|When that commit was authored|
+
+![Figure 5: Source](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-source.jpg)
 
 ### Artifacts
 

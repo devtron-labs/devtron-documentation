@@ -14,33 +14,33 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
 
 1. Go to **Configurations** → **ConfigMaps & Secrets**.
 
-![Figure 1: ConfigMaps & Secrets](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap.jpg)
+    ![Figure 1: ConfigMaps & Secrets](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap.jpg)
 
 2. Click the **+** button next to **ConfigMaps**.
 
-![Figure 2: Creating ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-add.jpg)
+    ![Figure 2: Creating ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-add.jpg)
 
 3. Enter a name for the ConfigMap (Once defined, the name cannot be changed later). 
 
-    In case you are using an External Kubernetes ConfigMap, the name should be exactly the same as the name given using the `kubectl create configmap <configmap-name> <data source>` command.
+    **Note**: In case you are using an External Kubernetes ConfigMap, the name should be exactly the same as the name given using the `kubectl create configmap <configmap-name> <data source>` command.
 
-![Figure 3: Entering ConfigMap Name](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-name.jpg)
+    ![Figure 3: Entering ConfigMap Name](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-name.jpg)
 
 4. **Data Type** - Choose between the following data types:
 
- * **Kubernetes ConfigMap**: Select the Data Type as Kubernetes ConfigMap, if you wish to create and use the ConfigMap using Devtron.
+    * **Kubernetes ConfigMap**: Select the Data Type as Kubernetes ConfigMap, if you wish to create and use the ConfigMap using Devtron.
 
- * **Kubernetes External ConfigMap**: Select the Data Type as Kubernetes External ConfigMap if you have already created a ConfigMap using the kubectl command and want to use that in Devtron.
+    * **Kubernetes External ConfigMap**: Select the Data Type as Kubernetes External ConfigMap if you have already created a ConfigMap using the kubectl command and want to use that in Devtron.
 
- ![Figure 4: ConfigMap Data Type](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-type.jpg)
+    ![Figure 4: ConfigMap Data Type](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-type.jpg)
 
 5. After selecting the data type, you can choose how to mount the data of your ConfigMap. Devtron allows you to mount ConfigMap Data in the following ways: <br><br> **Mount data as** - Select how you want to mount the ConfigMap:
 
- * [**Environment Variable**](#mount-data-as-environment-variables) – Select this option if you want to inject Environment Variables in pods using ConfigMap.
+    * [**Environment Variable**](#mount-data-as-environment-variables) – Select this option if you want to inject Environment Variables in pods using ConfigMap.
 
- * [**Data Volume**](#mount-data-as-data-volume) – Select this option if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-volume) to know more.
+    * [**Data Volume**](#mount-data-as-data-volume) – Select this option if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-volume) to know more.
 
- ![Figure 5: Mounting Data as](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-mount-data.jpg)
+    ![Figure 5: Mounting Data as](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-mount-data.jpg)
 
  ### Mount Data as Environment Variables
 
@@ -52,11 +52,11 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
 
  * **GUI mode** – User-friendly interface. Click the **+Add** button and enter the **Key** and **Value** fields without quotes. 
 
- ![Figure 6: Entering Data in 'GUI' Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-env-var-gui.jpg)
+    ![Figure 6: Entering Data in 'GUI' Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-env-var-gui.jpg)
 
  * **YAML mode** – Raw YAML for entering key-value pairs in the format **`key: value`**. Boolean and numeric values must be wrapped in double quotes.
  
- ![Figure 7: Entering Data in 'YAML' Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-env-var-yaml.jpg)
+    ![Figure 7: Entering Data in 'YAML' Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-env-var-yaml.jpg)
 
  #### For Kubernetes External ConfigMap
 
@@ -127,11 +127,11 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
 
  * **GUI mode** – User-friendly interface. Click the **+Add** button and enter the **Key** and **Value** fields without quotes. 
 
- ![Figure 13: Entering Data in 'GUI' Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-vol-gui.jpg)
+    ![Figure 13: Entering Data in 'GUI' Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-vol-gui.jpg)
 
  * **YAML mode** – Raw YAML for entering key-value pairs in the format **`key: value`**. Boolean and numeric values must be wrapped in double quotes.
 
- ![Figure 14: Entering Data in 'YAML' Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-vol-yaml.jpg)
+    ![Figure 14: Entering Data in 'YAML' Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-vol-yaml.jpg)
 
  #### For Kubernetes External ConfigMap
 
@@ -157,7 +157,7 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
 
 3. Click **Save Changes**.
 
-![Figure 16: Updating ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-update.jpg)
+    ![Figure 16: Updating ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-update.jpg)
 
 {% hint style="warning" %}
 ### Note
@@ -190,8 +190,8 @@ You may delete a ConfigMap if not in use anymore. Once a ConfigMap is deleted, i
 
 After configuring ConfigMaps 
 
- * Refer the [Secrets](./secret-job.md) section to configure secrets 
+* Refer the [Secrets](./secret-job.md) section to configure secrets 
  
- * Refer the [Environment Override](../environment-override-job.md) section to configure Environment Overrides.
+* Refer the [Environment Override](../environment-override-job.md) section to configure Environment Overrides.
 
- * Refer the [Trigger Job](../../triggering-job.md) section to trigger the job-pipeline. 
+* Refer the [Trigger Job](../../triggering-job.md) section to trigger the job-pipeline. 

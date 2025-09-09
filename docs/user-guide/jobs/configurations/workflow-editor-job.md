@@ -13,21 +13,21 @@ Refer the [User permissions](../../global-configurations/authorization/user-acce
 
 1. Navigate to the **Workflow Editor** in the left sidebar of the **Configurations** page.
 
- ![Figure 1: Selecting Workflow Editor](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor.jpg)
+  ![Figure 1: Selecting Workflow Editor](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor.jpg)
 
 2. Click **+ Job Pipeline** to create a new Job workflow. A pop-up **Create job workflow** will appear, asking you to enter a name for your Job workflow.
 
- ![Figure 2: Adding Job Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-add-pipeline.jpg)
+  ![Figure 2: Adding Job Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-add-pipeline.jpg)
 
 3. Enter the name for your Job workflow and click on the **Create Workflow** button. A new Job workflow will be created, in which you can add a job pipeline.
 
- ![Figure 3: Entering Job Workflow Name](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-name.jpg)
+  ![Figure 3: Entering Job Workflow Name](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-name.jpg)
 
 4. To add a job pipeline to your workflow, click anywhere in the **Add job pipeline to this workflow** area under the job workflow name. This opens the **Create job pipeline** Window in which you can create and configure your job.
 
- ![Figure 4: Job Workflow Created](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-area.jpg)
+  ![Figure 4: Job Workflow Created](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-area.jpg)
 
- ![Figure 5: Creating Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-create-pipeline.jpg)
+  ![Figure 5: Creating Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-create-pipeline.jpg)
 
 ---
 
@@ -67,11 +67,11 @@ To create a task:
 
 2. Click **Add Task** to add a task in your job pipeline.
 
- ![Figure 7: Adding Task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-add-task.jpg)
+  ![Figure 7: Adding Task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-add-task.jpg)
 
 3. A new task will be added (on the left side of the 'Create job pipeline' window). You can configure the task either by selecting one of the available [preset plugins](#create-task-using-preset-plugins) or by [Executing a custom script](#create-task-using-custom-script)
 
- ![Figure 8: Type of Tasks](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-tasks.jpg)
+  ![Figure 8: Type of Tasks](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-tasks.jpg)
 
 ### Create Task Using Preset Plugins
 
@@ -89,17 +89,15 @@ To create a task using the **GKE Provisioner** plugin, follow the steps below:
 
 3. Search for `GKE Provisioner` in the **Search Plugin** Search bar and select **GKE Provisioner** from the list of plugins. 
 
- ![Figure 9: Searching 'Gke Provisioner' Plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke-search.jpg)
+  * The right-side panel will display the fields specific to the **GKE Provisioner** plugin, which are required to be configured.
 
-   * The right-side panel will display the fields specific to the **GKE Provisioner** plugin, which are required to be configured.
+  * The left-side panel will now shows a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by default), along with its logo.<br>You can change the task's name using the **Task name** field but plugin's logo will remain indicating that it is a preset plugin.
 
-   * The left-side panel will now shows a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by default), along with its logo.<br>You can change the task's name using the **Task name** field but plugin's logo will remain indicating that it is a preset plugin.
+  ![Figure 9: Searching 'Gke Provisioner' Plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke-search.jpg)
 
- ![Figure 10: Gke Provisioner Plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke.jpg)
+  ![Figure 10: Gke Provisioner Plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke.jpg)
 
-4. Refer the [GKE Provisioner](/docs/user-guide/plugins/gke-provisioner.md) documentation to configure the **GKE Provisioner** fields with appropriate values.
-
-> Refer to the [Plugins documentation](/docs/user-guide/plugins/README.md) to explore and configure any of the available plugins. 
+4. Refer the [GKE Provisioner](/docs/user-guide/plugins/gke-provisioner.md) documentation to configure the **GKE Provisioner** fields with appropriate values. You may explore [Plugins documentation](/docs/user-guide/plugins/README.md) to configure any of the available plugins. 
 
 5. After configuring the fields successfully, your task will be created. If you wish, you can add more tasks by clicking on **+ Add task** in the left-side panel.
 
@@ -113,17 +111,17 @@ In Devtron, you can also define a task using a custom script to meet specific re
 
 2. Click **+Add Task** from the left side panel, and then select **Execute custom task**.
 
-   * The right-side panel will display the fields that are required to be configured in order to create the task.
+  * The right-side panel will display the fields that are required to be configured in order to create the task.
 
-   * The left-side panel will now display a task under **Tasks (IN ORDER OF EXECUTION)**.
+  * The left-side panel will now display a task under **Tasks (IN ORDER OF EXECUTION)**.
 
 3. Enter the Task name(required) and Task Description (optional).
 
 4. Select the **Task type**, it can be `Shell` or `Container Image`.
 
-   * **Shell Tasks**: These execute shell scripts directly within the job runtime environment. In this type of task, you can define inline scripts or use script files from your configured source code.
+  * **Shell Tasks**: These execute shell scripts directly within the job runtime environment. In this type of task, you can define inline scripts or use script files from your configured source code.
 
-   * **Container Image Tasks**: These allow you to execute commands and scripts inside a custom Docker container. Instead of using the default environment provided by Devtron, you can specify your own container image with all dependencies and tools required for the tasks. 
+  * **Container Image Tasks**: These allow you to execute commands and scripts inside a custom Docker container. Instead of using the default environment provided by Devtron, you can specify your own container image with all dependencies and tools required for the tasks. 
 
 These Tasks run using container in container approach, which means the specified image is pulled and run inside the job pod, thus providing a complete isolated environment.
 
@@ -209,15 +207,15 @@ Let's take an example of a **Shell task** for a job that allows you to back up a
 
 * You can click `+` icon next to **Variable** header field to add more rows to the input variable table.<br>
 
- ![Figure 12: Variable configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-var-config.jpg)
+  ![Figure 12: Variable configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-var-config.jpg)
 
 * You can click the slider icon next to each variable name to make its value required and add a description for it.
 
- ![Figure 13: Value configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-value-config.jpg)
+  ![Figure 13: Value configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-value-config.jpg)
 
 * You can click the slider icon next to each variable value to add choices, allow custom input, and ask value at runtime.
 
- ![Figure 14: Adding choices](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-choice.jpg)
+  ![Figure 14: Adding choices](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-choice.jpg)
 
 #### Script
 
@@ -368,15 +366,15 @@ Let's take an example of a **Container Image Task** for a job that provisions an
 
 * You can click `+` icon next to **Variable** header field to add more rows to the input variable table.<br>
 
- ![Figure 15: Variable configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-var-config.jpg)
+  ![Figure 15: Variable configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-var-config.jpg)
 
 * You can click the slider icon next to each variable name to make its value required and add a description for it.
 
- ![Figure 16: Value configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-value-config.jpg)
+  ![Figure 16: Value configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-value-config.jpg)
 
 * You can click the slider icon next to each variable value to add choices, allow custom input, and ask value at runtime.
 
- ![Figure 17: Adding choice](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-choice.jpg)
+  ![Figure 17: Adding choice](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-choice.jpg)
 
 #### Mount Custom Code
 
@@ -461,11 +459,11 @@ To update your job pipeline
 
 2. Select the **Job pipeline** you wish to update, a **Edit job pipeline** modal window will appear.
 
- ![Figure 18: Selecting Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-update-select.jpg)
+  ![Figure 18: Selecting Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-update-select.jpg)
 
 3. Change the required configurations as per your requirements and select **Update Pipeline** to update the pipeline
 
- ![Figure 19: Updating Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-update-pipeline.jpg)
+  ![Figure 19: Updating Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-update-pipeline.jpg)
 
 ---
 
@@ -483,11 +481,11 @@ To delete a job pipeline
 
 2. Select the **Job pipeline** you wish to delete, a **Edit job pipeline** modal window will appear.
 
- ![Figure 20: Selecting Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-delete-select.jpg)
+  ![Figure 20: Selecting Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-delete-select.jpg)
 
 3. Select **Delete Pipeline** at the bottom left corner of the **Edit job pipeline** modal window to delete the job pipeline.
 
- ![Figure 21: Deleting Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-delete-pipeline.jpg)
+  ![Figure 21: Deleting Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-delete-pipeline.jpg)
 
 4. A pop-up window will appear asking you to confirm the **Delete Pipeline** action.
 

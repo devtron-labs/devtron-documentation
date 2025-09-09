@@ -48,7 +48,7 @@ Tags are Key-value pairs used for identifying and organizing the application. Us
 
 5. Click **Save**, configured Tags will reflect immediately under **Tags** in **About** Section
 
-![Figure 3: Tags](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-latest-1.jpg)
+    ![Figure 3: Tags](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-latest-1.jpg)
 
 ### Readme
 
