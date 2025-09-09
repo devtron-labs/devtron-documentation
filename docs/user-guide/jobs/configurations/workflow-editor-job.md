@@ -3,7 +3,7 @@
 The **Workflow Editor** in Devtron allows you to create and manage job pipelines.
 It provides a visual interface to create and configure job pipelines, define basic configurations such as trigger types, branch name, and allows you to add **Tasks to be executed** in the desired sequence.
 
-To create and configure the Job Pipeline
+To create and configure the Job Pipeline, follow the steps below:
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
@@ -43,7 +43,7 @@ It includes 2 stages
 
 ### Basic Configurations
 
-This stage allows you to define primary configurations such as Pipeline name, Source Type, Branch Name, and how the job should be triggered. Refer to the following table to configure each field.
+This stage allows you to define primary configurations such as **Pipeline name**, **Source Type**, **Branch Name**, and how the job should be triggered. Refer to the following table to configure each field.
 
 ![Figure 6: Configuring Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-basic-config.jpg)
 
@@ -91,9 +91,9 @@ To create a task using the **GKE Provisioner** plugin, follow the steps below:
 
     * The right-side panel will display the fields specific to the **GKE Provisioner** plugin, which are required to be configured.
 
-      ![Figure 9: Searching 'Gke Provisioner' Plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke-search.jpg)
+      ![Figure 9: Searching 'GKE Provisioner' Plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke-search.jpg)
 
-    * The left-side panel will now shows a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by default), along with its logo.<br>You can change the task's name using the **Task name** field but plugin's logo will remain indicating that it is a preset plugin.
+    * The left-side panel will now show a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by default), along with its logo.<br /> You can change the task's name using the **Task name** field, but plugin's logo will remain indicating that it is a preset plugin.
 
       ![Figure 10: Gke Provisioner Plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke.jpg)
 

@@ -50,35 +50,35 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
 
     ![Figure 5: Mount Data as](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-mount-data.jpg)
 
- ### Mount Data as Environment Variables
+6. Select **Save** to create a Secret.
 
- This will pass your secret data into your Job pod as environment variables, thus making the configuration values directly accessible by your job.
+### Mount Data as Environment Variables
 
- #### For Kubernetes Secret
+This will pass your secret data into your Job pod as environment variables, thus making the configuration values directly accessible by your job.
 
- If you have selected Data type as `Kubernetes Secret` and mount data as `Environment Variable`, then you also need to enter the required data (key-value pairs) in the **Data** field<br><br>Enter data in:
+#### For Kubernetes Secret
 
- * **GUI mode** – User-friendly interface. Click the **+Add** button and enter the **Key** and **Value** fields without quotes. 
+If you have selected Data type as `Kubernetes Secret` and mount data as `Environment Variable`, then you also need to enter the required data (key-value pairs) in the **Data** field<br><br>Enter data in:
+
+* **GUI mode** – User-friendly interface. Click the **+Add** button and enter the **Key** and **Value** fields without quotes. 
 
     ![Figure 6: Entering Data in 'GUI' Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-env-var-gui.jpg)
 
- * **YAML mode** – Raw YAML for entering key-value pairs in the format **`key: value`**. Boolean and numeric values must be wrapped in double quotes.
+* **YAML mode** – Raw YAML for entering key-value pairs in the format **`key: value`**. Boolean and numeric values must be wrapped in double quotes.
 
     ![Figure 7: Entering Data in 'YAML' Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-env-var-yaml.jpg)
 
- ### Mount Existing Kubernetes Secrets
+### Mount Existing Kubernetes Secrets
 
- This option allows you to mount an existing Kubernetes Secret in your job pods. A Secret will not be created by the system so please ensure that the secret with the same name already exists within the namespace. Otherwise, the deployment will fail.
+This option allows you to mount an existing Kubernetes Secret in your job pods. A Secret will not be created by the system, so please ensure that the secret with the same name already exists within the namespace. Otherwise, the deployment will fail.
 
- If you have selected Data type as `Mount Existing Kubernetes Secrets`, then no data is required, as Devtron will fetch the existing Secret data and use it to create a Secret.
+If you have selected Data type as `Mount Existing Kubernetes Secrets`, then no data is required, as Devtron will fetch the existing Secret data and use it to create a Secret.
 
- ![Figure 8: Mounting Existing Kubernetes Secrets for 'Environment Variable'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-mount-existing-env-var.jpg)
- 
----
+![Figure 8: Mounting Existing Kubernetes Secrets for 'Environment Variable'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-mount-existing-env-var.jpg)
 
 ### Mount Data as Data Volume
 
-This option allows you to create a Secret by passing the content of a file. The content could be plain text, json, yaml, bash script, etc.
+This option allows you to create a Secret by passing the content of a file. The content could be plain text, JSON, YAML, bash script, etc.
 
 ![Figure 9: Mounting Data as Data Volume](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/secret-data-vol.jpg)
 
