@@ -1,6 +1,6 @@
-# Compare & Sync Clusters
+# Compare & Sync Clusters 
 
-## Introduction
+## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 The Compare & Sync feature in Devtron allows you to compare two different [clusters](../../reference/glossary.md#cluster) and sync the Kubernetes resources (e.g., pods, ConfigMaps, Secrets, etc.) across them. 
 
