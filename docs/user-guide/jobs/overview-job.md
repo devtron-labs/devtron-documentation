@@ -5,9 +5,10 @@ The Overview page provides a centralized view of a job’s details within Devtro
 ![Figure 1: Job's Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job.jpg)
 
 The **Overview** page contains three main sections:
-*	[**About**](#about): Contains job's metadata such as name, description, project, project, creator, and it also includes options to manage tags.
 
-*	[**Job Pipelines**](#job-pipelines): Displays all job pipelines along with their last status and quick access to associated workflows.
+* [**About**](#about): Contains job's metadata such as name, description, project, project, creator, and it also includes options to manage tags.
+
+* [**Job Pipelines**](#job-pipelines): Displays all job pipelines along with their last status and quick access to associated workflows.
 
 ---
 
