@@ -151,9 +151,9 @@ While deployment, Devtron allows you to manage your **Canary** and **Blue-Green*
 
 To do so, follow the below steps:
 
-1. Go to **Overview** and Click on **Manage Traffic**.
+1. Go to **Overview** and Click on **Manage Traffic**. 
 
-     ![Figure 20: Selecting Managing Traffic](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-manage-traffic.jpg)
+     ![Figure 20: Selecting Managing Traffic](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-click-manage-traffic.jpg)
 
 2. Select the required applications, a side window will appear displaying all the eligible rollouts.
 
@@ -203,7 +203,7 @@ This feature aims at helping the user clone existing CI/CD pipelines for new tar
 | [**Protect Configurations**](../user-guide/creating-application/config-approval.md)       | Cloned (handled at pipeline level)                         |
 | [**Deployment Approvals**](../user-guide/creating-application/workflow/cd-pipeline.md#manual-approval-for-deployment)         | Cloned                                                     |
 | [**Lock Configurations**](../user-guide/global-configurations/lock-deployment-config.md)          | Not cloned                                                 |
-| **Mandatory Plugin**             | Not cloned                                                 |
+| [**Mandatory Plugin**](../user-guide/global-configurations/plugin-policy.md)             | Not cloned                                                 |
 | [**Image Digest Policy**](../user-guide/global-configurations/pull-image-digest.md)          | Cloned at pipeline level; ignored if global                |
 | [**Promotion Policy**](../user-guide/global-configurations/image-promotion-policy.md)             | Not cloned                                                 |
 | [**Deployment Window**](../user-guide/global-configurations/deployment-window.md)            | Not cloned                                                 |
