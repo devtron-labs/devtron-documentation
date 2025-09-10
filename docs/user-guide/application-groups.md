@@ -201,7 +201,7 @@ This feature aims at helping the user clone existing CI/CD pipelines for new tar
 | [**Environment Policies**](../user-guide/creating-application/environment-overrides.md)         | Cloned if at pipeline level; ignored if global              |
 | [**CD Filter**](../user-guide/global-configurations/filter-condition.md)                    | Not cloned (handled globally)                              |
 | [**Protect Configurations**](../user-guide/creating-application/config-approval.md)       | Cloned (handled at pipeline level)                         |
-| [**Deployment Approvals**](../user-guide/creating-application/workflow/cd-pipeline.md#manual-approval-for-deployment)         | Cloned                                                     |
+| [**Deployment Approvals**](../user-guide/creating-application/workflow/cd-pipeline.md)         | Cloned                                                     |
 | [**Lock Configurations**](../user-guide/global-configurations/lock-deployment-config.md)          | Not cloned                                                 |
 | [**Mandatory Plugin**](../user-guide/global-configurations/plugin-policy.md)             | Not cloned                                                 |
 | [**Image Digest Policy**](../user-guide/global-configurations/pull-image-digest.md)          | Cloned at pipeline level; ignored if global                |
@@ -237,7 +237,7 @@ This feature gives you two methods of cloning:
 
 3. From the dropdown, select the target environment for which pipelines should be created for selected applications.
 
-    ![Figure 30: Selecting Target Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/target-env-v2.gif)
+    ![Figure 30: Selecting Target Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-select-env.gif))
 
 4. Select the workflow where you wish to create deployment pipeline: **New Workflow** or **Workflow as source environment**. Refer [Methods of Cloning](#methods-of-cloning) to know which option will fulfill your requirement.
 
@@ -245,7 +245,7 @@ This feature gives you two methods of cloning:
 
 5. Click **Clone in new workflow** or **Clone in source workflow** (depending on the option you selected in the previous step).
 
-    ![Figure 32: Initiating Clone](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-select-env.gif)
+    ![Figure 32: Initiating Clone](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-clone-status.gif)
 
 {% hint style="warning" %}
 ### Note
