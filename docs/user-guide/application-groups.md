@@ -25,10 +25,15 @@ Only one application group would exist for each [environment](../reference/gloss
     ![Figure 3: Sample Application Group](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/app-group-overview-1.jpg)
 
 As you can see, it has similar options as available under [Applications](./applications.md):
+
 * Overview
+
 * Build & Deploy
+
 * Build history
+
 * Deployment history
+
 * Configurations
 
 {% hint style="info" %}
