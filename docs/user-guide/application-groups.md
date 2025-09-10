@@ -282,8 +282,8 @@ Your applications pods would be scaled down and would stop incurring costs.
 
 {% hint style="warning" %}
 ### Note
-The hibernation process will show the status as `Skipped` for the applications which are already hibernated.
-The hibernation process will show the status as `Failed` for the applications which have no deployment history.
+* The hibernation process will show the status as `Skipped` for the applications which are already hibernated.
+* The hibernation process will show the status as `Failed` for the applications which have no deployment history.
 {% endhint %}
 
 #### Unhibernation Process
@@ -304,8 +304,8 @@ Your applications would be up and running in some time.
 
 {% hint style="warning" %}
 ### Note
-The unhibernation process will show the status as `Skipped` for the applications which are already unhibernated.
-The unhibernation process will show the status as `Failed` for the applications which have no deployment history.
+* The unhibernation process will show the status as `Skipped` for the applications which are already unhibernated.
+* The unhibernation process will show the status as `Failed` for the applications which have no deployment history.
 {% endhint %}
 
 ### Restart Workloads
