@@ -24,11 +24,11 @@ Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-
 
 ---
 
-## Compare & Sync Clusters
+## Steps
 
-1. Navigate to **Kubernetes Resource Browser**.
+1. Navigate to **Resource Browser**.
 
-    ![Figure 2: Kubernetes Resource Browser ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/k8s-resource-browser.jpg)
+    ![Figure 2: Resource Browser](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/k8s-resource-browser.jpg)
 
 2. Select the reference cluster (e.g., `default-cluster`) to compare against other clusters.
 
@@ -80,7 +80,13 @@ For instance, when a resource is displayed in blue in cluster A and in red in cl
 
     ![Figure 8: View All Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/view-all-filterbox.jpg)
 
+{% hint style="warning" %}
+
+### Creating a Missing Resource?
+
 Before creating a missing resource or comparing a manifest, it is very important to match the namespaces in both clusters. Otherwise, an error will be displayed. For example, if cluster A has a namespace `devtroncd` and cluster B does not have the same namespace, then you will get an error message while creating a missing resource.
+
+{% endhint %}
 
 Follow the below steps to match the namespaces: 
 
