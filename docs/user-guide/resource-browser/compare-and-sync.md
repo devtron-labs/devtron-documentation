@@ -18,7 +18,7 @@ Refer to [Use Cases](#use-cases) to know more on how this feature can help you.
 
 ### Who Can Perform This Action?
 
-Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-permissions) can compare and sync clusters.
+Only a [Super-Admin](../global-configurations/authorization/user-access.md#grant-super-admin-permission) can compare and sync clusters.
 
 {% endhint %}
 
@@ -30,9 +30,9 @@ Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-
 
     ![Figure 2: Resource Browser](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/k8s-resource-browser.jpg)
 
-2. Select the reference cluster (e.g., `default-cluster`) to compare against other clusters.
+2. Click the reference cluster (e.g., `default-cluster`) to compare against other clusters.
 
-3. Select the **Compare & Sync** button. The **Compare & Sync Clusters** page is displayed.
+3. Click the **Compare & Sync** button. The **Compare & Sync Clusters** page is displayed.
 
     ![Figure 3: Compare & Sync Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/compare-sync-highlighted.jpg)
 
@@ -62,11 +62,11 @@ For instance, when a resource is displayed in blue in cluster A and in red in cl
 
 {% endhint %}
 
-5. Select the filter available at the top left corner of the page. All the resource groups and resource kinds are displayed in the filter box. For example, when you select `ConfigMap` as a resource kind, all the available ConfigMaps in both clusters are displayed.
+5. Click the filter available at the top left corner of the page. All the resource groups and resource kinds are displayed in the filter box. For example, when you select `ConfigMap` as a resource kind, all the available ConfigMaps in both clusters are displayed.
 
     ![Figure 7: Resource Kind Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-group-filterbox.jpg)
 
-6. Select the **View all** drop-down box. This filter allows you to filter the resources based on the following criteria:
+6. Click the **View all** drop-down box. This filter allows you to filter the resources based on the following criteria:
 
     * `View all` - To display all resources from both clusters without any filters.
 
@@ -112,7 +112,7 @@ Hover over the resource that you'd like to create in the target cluster and clic
 
 * To create missing resources in bulk, select the checkboxes against the resources or resource groups and click the **Create Resources** button. All the selected resources will be created in the target cluster.
 
-* Creating missing resources does not guarantee that they would run as expected. It is your responsibility to take care of the dependencies required for making the resources run correctly. 
+* Even after creating missing resources, a few of them may not run as expected unless the dependencies required to run the resources correctly are also met. Therefore, it is recommended that you ensure all the necessary dependencies are taken care of while creating missing resources. 
 
 {% endhint %}
 
@@ -128,7 +128,7 @@ Hover over the resource that you'd like to create in the target cluster and clic
 
     ![Figure 12: Revert this Chunk](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/compare-manifest.gif)
 
-4. Select **Apply Changes**.
+4. Click **Apply Changes**.
 
 When you apply the changes, the Kubernetes resources from your reference cluster are copied to the target cluster. However, you can also make changes bidirectionally i.e., from the target cluster to the reference cluster. You can do so by copy pasting the values from one resource to another. 
 
