@@ -1,5 +1,7 @@
 # Workflow Editor
 
+## Introduction
+
 The **Workflow Editor** in Devtron allows you to create and manage job pipelines.
 It provides a visual interface to create and configure job pipelines, define basic configurations such as trigger types, branch name, and allows you to add **Tasks to be executed** in the desired sequence.
 
