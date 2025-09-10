@@ -15,7 +15,7 @@ A scoped variable (key-value pair) allows you to define a value once and reuse i
 | **Environment + Application** | Variable value might differ for each application on a specific environment. [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)                  |
 
 
-For example, you can create a variable named `db_name` to store the database name and set its value to `https://dev.company.com/mydb` for development environment, and for production environment you can set its value to `https://prod.company.com/mydb`, at the time of deployment, Devtron will automatically choose the correct value based on the environment.
+For example, you can create a variable named `db_host` to store the database host URL and set its value to `https://dev.company.com/mydb` for development environment, and for production environment you can set its value to `https://prod.company.com/mydb`, at the time of deployment, Devtron will automatically choose the correct value based on the environment.
 
 The table below illustrates how Devtron uses scoped variables defined for different scopes
 
@@ -50,7 +50,7 @@ If the same variable is defined at more than one scope, Devtron resolves the val
 
 * **Reduces repeatability**: Configuration management team can centrally maintain the static data.
 
-* **Simplifies bulk edits**: All the places that use a variable will resolves its updated value after the next deployment, without requiring manual edits.
+* **Simplifies bulk edits**: If the variable is being used in **Deployment Template**, **ConfigMap**, or **Secret**, the actual value will be resolved and progressed during the deployment.
 
 * **Keeps data secure**: You can mark a variable as sensitive, so its value is hidden in the UI, reducing the risk of misuse or leakage. Refer [How to Define a Scoped Variable](#how-to-define-a-scoped-variable) to learn more.
 
