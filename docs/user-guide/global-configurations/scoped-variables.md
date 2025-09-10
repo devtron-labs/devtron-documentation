@@ -50,7 +50,7 @@ If the same variable is defined at more than one scope, Devtron resolves the val
 
 * **Reduces repeatability**: Configuration management team can centrally maintain the static data.
 
-* **Simplifies bulk edits**: All the places that use a scoped variable, get updated when you change the value of the variable without requiring manual edits. If the scoped variable is being used in **Deployment Template**, **ConfigMap**, **Secret**, or **Job** the actual value will be resolved and propagated during the deployment.
+* **Simplifies bulk edits**: All the places that use a scoped variable, get updated when you change the value of the variable without requiring manual edits. If the scoped variable is being used in **Deployment Template**, **ConfigMap**, **Secret**, or **Job** the actual value will be resolved and propagated upon next trigger.
 
 * **Keeps data secure**: You can mark a variable as sensitive, so its value is hidden in the UI, reducing the risk of misuse or leakage. Refer [How to Define a Scoped Variable](#how-to-define-a-scoped-variable) to learn more.
 
