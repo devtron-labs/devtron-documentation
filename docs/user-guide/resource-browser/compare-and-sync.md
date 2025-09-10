@@ -2,9 +2,15 @@
 
 ## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-The Compare & Sync feature in Devtron allows you to compare two different [clusters](../../reference/glossary.md#cluster) and sync the Kubernetes resources (e.g., pods, ConfigMaps, Secrets, etc.) across them. 
+The Compare & Sync feature in Devtron allows you to: 
 
-This feature helps you in cluster migrations without the need to recreate all applications and configurations, take a complete backup to ensure consistency across production environments, or sync specific resources such as [ConfigMaps](../../reference/glossary.md#configmaps) and [Secrets](../../reference/glossary.md#secrets) across multiple clusters.
+* Compare two different [clusters](../../reference/glossary.md#cluster)
+
+* Create missing Kubernetes resources (e.g., pods, ConfigMaps, Secrets, etc.) 
+
+* Match the manifests (if required)
+
+Refer to [Use Cases](#use-cases) to know more on how this feature can help you. 
 
 ![Figure 1: Compare & Sync Feature](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/compare-sync-highlighted.jpg)
 
@@ -30,11 +36,11 @@ Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-
 
     ![Figure 3: Compare & Sync Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/compare-sync-highlighted.jpg)
 
-    The **Compare & Sync Clusters** page is primarily divided into two halves. The left side of the page displays the resources of the reference cluster you previously selected (`default-cluster` in this case). The right side of the page displays the resources of the cluster you want to compare against.
+    The **Compare & Sync Clusters** page is primarily divided into two halves. The left side of the page displays the resources of the reference cluster you previously selected (`default-cluster` in this case). The right side of the page displays the resources of the target cluster you want to compare against.
 
     ![Figure 4: Compare & Sync Clusters Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/compare-sync-home.jpg)
 
-4. Select the target cluster that you want to compare with your reference cluster in the **Select Cluster** drop-down box (e.g., `playground-vcluster` in this case). The cluster resources are displayed on the right side of the page.
+4. Select the target cluster in the **Select Cluster** drop-down box (e.g., `playground-vcluster` in this case).
 
     ![Figure 5: Select the Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/select-cluster-option.jpg)
 
@@ -44,13 +50,13 @@ Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-
 
 {% hint style="info" %}
 
-### What Color Represents What?
+### How to Identify Missing Resource(s)?
 
 When the color of the resource is: 
 
 * **Red** - The resource is not available in that particular cluster. 
 
-* **Blue** - The resource is available in that particular cluster, but the [manifest](../../reference/glossary.md#manifest) might differ. It is recommended to compare the manifest once.
+* **Blue** - The resource is available in that particular cluster, but the [manifest](../../reference/glossary.md#manifest) may not be the same. It is recommended to compare the manifest once.
 
 For instance, when a resource is displayed in blue in cluster A and in red in cluster B, it means that the resource available in cluster A is not available in cluster B.
 
@@ -68,23 +74,39 @@ For instance, when a resource is displayed in blue in cluster A and in red in cl
 
     * `Only non-matching` - To only display resources that are present in one cluster but not the other.
 
-    * `View left join` - To display all resources from the reference cluster and only matching resources from the target cluster.
+    * `View left join` - To display all resources from the reference cluster (left-hand side) and only matching resources from the target cluster (right-hand side).
 
-    * `View right join` - To display all resources from the target cluster and only matching resources from the reference cluster.
+    * `View right join` - To display all resources from the target cluster (right-hand side) and only matching resources from the reference cluster (left-hand side).
 
     ![Figure 8: View All Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/view-all-filterbox.jpg)
 
-### Create Resource
+Before creating a missing resource or comparing a manifest, it is very important to match the namespaces in both clusters. Otherwise, an error will be displayed. For example, if cluster A has a namespace `devtroncd` and cluster B does not have the same namespace, then you will get an error message while creating a missing resource.
+
+Follow the below steps to match the namespaces: 
+
+1. Enter `Namespace` in the filter available at the top left corner of the **Compare & Sync Clusters** page. 
+
+2. Compare the namespaces available in the reference cluster (left-hand side) against the namespaces available in the target cluster (right-hand side).
+
+3. Select the namespace(s) for which you prefer to create missing resources for using the checkboxes. 
+
+4. Click the **Create Resources** button. The namespaces will now be matched.
+
+    ![Figure 9: Match Namespaces](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/sync-namespaces.gif)
+
+### Create Missing Resource(s)
 
 Hover over the resource that you'd like to create in the target cluster and click the **Create Resource** option.
 
-![Figure 9: Create Resource](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/create-resource.jpg)
+![Figure 10: Create Resource](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/create-resource.jpg)
 
 {% hint style="info" %}
 
 ### Note
 
-To create resources in bulk, select the check box(es) against the resource(s) or resource group(s) and click the **Create Resources** button. All the selected resources will be created in the target cluster.
+* To create missing resources in bulk, select the checkboxes against the resources or resource groups and click the **Create Resources** button. All the selected resources will be created in the target cluster.
+
+* Creating missing resources does not guarantee that they would run as expected. It is your responsibility to take care of the dependencies required for making the resources run correctly. 
 
 {% endhint %}
 
@@ -92,14 +114,27 @@ To create resources in bulk, select the check box(es) against the resource(s) or
 
 1. Hover over the resource and click the **Compare manifest** option to compare the manifest of the resource in both clusters.
 
-    ![Figure 10: Compare Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/compare-manifest.jpg)
+    ![Figure 11: Compare Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/compare-manifest.jpg)
 
 2. Click **Edit YAML**. 
 
 3. Click the **Revert this chunk** option to enforce the values, if required, from the reference cluster to the target cluster.
 
-    ![Figure 11: Revert this Chunk](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/revert-this-chunk.jpg)
+    ![Figure 12: Revert this Chunk](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/compare-manifest.gif)
 
 4. Select **Apply Changes**.
 
-When you apply the changes, the Kubernetes resources from your reference cluster are copied to the target cluster. 
+When you apply the changes, the Kubernetes resources from your reference cluster are copied to the target cluster. However, you can also make changes bidirectionally i.e., from the target cluster to the reference cluster. You can do so by copy pasting the values from one resource to another. 
+
+---
+
+## Use Cases
+
+The following table highlights the use cases which the Compare and Sync Clusters feature:
+
+| **What you can do** | **How it helps you** |
+|:--- |:--- |
+| **Backup Clusters**| Create backup clusters for disaster recovery (e.g., cluster failure) |
+| **Compare Resources** | Compare and spot missing resources across clusters |
+| **Create Missing Resources** | Create and sync missing resources such as [ConfigMaps](../../reference/glossary.md#configmaps) and [Secrets](../../reference/glossary.md#secrets) across multiple clusters |
+| **Match Manifest** | Compare the resource manifest and match them, if required |
