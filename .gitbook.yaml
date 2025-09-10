@@ -166,3 +166,5 @@ redirects:
     enterprise-license: setup/install/freemium.md
     usage/applications/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/pre-post-tasks.md
     usage/applications/creating-application/workflow/ci-pipeline/container-registry-override: user-guide/creating-application/workflow/ci-pipeline.md
+    usage/jobs/configuration-job: user-guide/jobs/configurations/README.md
+    usage/jobs/workflow-editor-job: user-guide/jobs/configurations/workflow-editor-job.md
