@@ -151,7 +151,7 @@ While deployment, Devtron allows you to manage your **Canary** and **Blue-Green*
 
 To do so, follow the below steps:
 
-1. Go to **Overview** and Click on **Manage Traffic**. 
+1. Go to **Overview** and click **Manage Traffic**. 
 
      ![Figure 20: Selecting Managing Traffic](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-click-manage-traffic.jpg)
 
@@ -231,19 +231,23 @@ This feature gives you two methods of cloning:
 
     ![Figure 28: Source Environment Selection](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups.jpg)
 
-2. Select the applications whose pipelines you wish to clone. A floating widget will appear, and click on the `⋮` menu and then click **Clone Pipeline Config**. <br /> <br /> Alternatively you can also click `⋮` menu next to the application name and click **Clone Pipeline Config** for that particular application.
+2. Select the applications whose pipelines you wish to clone. 
+
+3. A floating widget will appear at the bottom, and click the `⋮` menu and then click **Clone Pipeline Config**.  
+
+    * Alternatively, you may access **Clone Pipeline Config** from the `⋮` menu next to the application name.
 
     ![Figure 29: Choosing Applications](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-click-clone-pipelines.gif)
 
-3. From the dropdown, select the target environment for which pipelines should be created for selected applications.
+4. From the dropdown, select the target environment for which pipelines should be created for selected applications.
 
     ![Figure 30: Selecting Target Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-select-env.gif)
 
-4. Select the workflow where you wish to create deployment pipeline: **New Workflow** or **Workflow as source environment**. Refer [Methods of Cloning](#methods-of-cloning) to know which option will fulfill your requirement.
+5. Select the workflow where you wish to create deployment pipeline: **New Workflow** or **Workflow as source environment**. Refer [Methods of Cloning](#methods-of-cloning) to know which option will fulfill your requirement.
 
     ![Figure 31: Creating CD Pipeline in Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-choose-workflow.jpg)
 
-5. Click **Clone in new workflow** or **Clone in source workflow** (depending on the option you selected in the previous step).
+6. Click **Clone in new workflow** or **Clone in source workflow** (depending on the option you selected in the previous step).
 
     ![Figure 32: Initiating Clone](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-clone-status.gif)
 
@@ -266,15 +270,19 @@ In other words, you can hibernate running applications or unhibernate hibernated
 
 #### Hibernation Process
 
-1. In the `Overview` page of your application group, use the checkboxes to choose the applications you wish to hibernate. A floating widget will appear, click the **Hibernate** button. <br /> <br /> Alternatively you can also click `⋮` menu next to the application name and click **Hibernate** for that particular application.
+1. In the `Overview` page of your application group, use the checkboxes to choose the applications you wish to hibernate. 
+
+2. A floating widget will appear at the bottom, click the **Hibernate** button. 
+
+    * Alternatively, you may access **Hibernate** from the `⋮` menu next to the application name.
 
     ![Figure 33: Selecting Apps to Hibernate](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-click-hibernate.jpg)
 
-2. Confirm the hibernation by clicking **Hibernate**.
+3. Confirm the hibernation by clicking **Hibernate**.
 
     ![Figure 34: Confirming Hibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-confirm-hibernate.jpg)
 
-3. Hibernation will initiate as shown below. You may close the window. 
+4. Hibernation will initiate as shown below. You may close the window. 
 
     ![Figure 35: Initiation Status of Hibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-hibernate-status.jpg)
 
@@ -288,15 +296,19 @@ Your applications pods would be scaled down and would stop incurring costs.
 
 #### Unhibernation Process
 
-1. In the `Overview` page of your application group, use the checkboxes to choose the applications you wish to unhibernate. A floating widget will appear, click the **Unhibernate** button. <br /> <br /> Alternatively you can also click `⋮` menu next to the application name and click **Unhibernate** for a particular application.
+1. In the `Overview` page of your application group, use the checkboxes to choose the applications you wish to unhibernate. 
+
+2. A floating widget will appear at the bottom, click the **Unhibernate** button. 
+
+    * Alternatively, you may access **Unhibernate** from the `⋮` menu next to the application name.
 
     ![Figure 36: Selecting Hibernated Apps to Unhibernate](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-click-unhibernate.jpg)
 
-2. Confirm the unhibernation by clicking **Unhibernate**.
+3. Confirm the unhibernation by clicking **Unhibernate**.
 
     ![Figure 37: Confirming Unhibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-confirm-unhibernate.jpg)
 
-3. Unhibernation will initiate as shown below. You may close the window. 
+4. Unhibernation will initiate as shown below. You may close the window. 
 
     ![Figure 38: Initiation Status of Unhibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-unhibernate-status.jpg)
 
@@ -304,7 +316,7 @@ Your applications would be up and running in some time.
 
 {% hint style="warning" %}
 ### Note
-* The unhibernation process will show the status as `Skipped` for the applications which are already unhibernated.
+* The unhibernation process will show the status as `Skipped` for the applications which are already running.
 * The unhibernation process will show the status as `Failed` for the applications which have no deployment history.
 {% endhint %}
 
@@ -319,11 +331,15 @@ Restarting workloads might be necessary if you want your new code or configurati
 
 Using application group, you can select the workloads (i.e., Pod, Deployment, ReplicaSet, etc.) of specific applications and restart them. 
 
-1. In the `Overview` page of your application group, use the checkboxes to choose the applications you wish to restart. A floating widget will appear, click the **Restart Workloads** button. <br /> <br /> Alternatively you can also click `⋮` menu next to the application name and click **Restart Workload** to restart that particular application's workloads.
+1. In the `Overview` page of your application group, use the checkboxes to choose the applications you wish to restart. 
+
+2. A floating widget will appear, click the **Restart Workloads** button. 
+
+    * Alternatively, you may access **Restart Workload** from the `⋮` menu next to the application name.
 
     ![Figure 39: Selecting Apps to Restart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-click-restart-workloads.jpg)
 
-2. Next to the application, click the workload dropdown to view all the individual workloads of an application. Choose only the ones you wish to restart.
+3. Next to the application, click the workload dropdown to view all the individual workloads of an application. Choose only the ones you wish to restart.
 
     ![Figure 40: Choosing Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/choose-workload.jpg)
 
@@ -331,7 +347,7 @@ Using application group, you can select the workloads (i.e., Pod, Deployment, Re
 
     ![Figure 41: Selecting and Unselecting Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/bulk-restart.gif)
 
-3. Click **Restart Workloads**.
+4. Click **Restart Workloads**.
 
     ![Figure 42: Restarting Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-workloads.jpg)
 
