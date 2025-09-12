@@ -454,33 +454,45 @@ The **Change Image Source** feature in Devtron lets you update the container ima
 
 1. In the **Build & Deploy** tab of your application group, select the preferred workflows and click the **Change Image Source** button present at the bottom.
 
+    ![Figure 51: Clicking 'Change Image Source'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-change-image-source.jpg)
+
 2. Select the preferred Workflow template, and enter the required details as per the workflow template. Currently, **Change Image Source** feature for **Application Groups** is only supported for **Build from Source Code** and **Sync with Environment**.
 
     1. **Build from Source Code**
-        * After selecting **Build from Source Code**, a feasibility check will run. You can click **Create Build Pipeline** only if the application's feasibility is marked as `Can change`.
+        * After selecting **Build from Source Code**, a feasibility check will run. You can click **Create Build Pipeline** only if the application's feasibility shows `Can change`.
+
+            **Note** Application for which the feasibility shows `cannot change` will be skipped.  
             
-            ![Figure 51: Feasibility Window]()
+            ![Figure 52a: Selecting 'Build From Source'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-build-from-source-code.jpg)
+
+            ![Figure 52b: Feasibility Window](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-build-from-source-code-feasibility-window.jpg)
 
         * A pop-up window will open, enter the **Source Type** and **Branch** under **Select code source**. 
             
-            ![Figure 52: Entering Required Details]()
+            ![Figure 53: Entering Required Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-build-from-source-code-details.jpg)
 
-        * Click **Create Pipeline**.
-            
-            ![Figure 53: Clicking Create Pipeline]()
+        * Click **Create Pipeline**; A modal window will appear showing the status of the image source change.
+
+            ![Figure 54: Clicking 'Create Pipeline'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-build-from-source-code-changed.jpg) 
 
     2. **Sync with Environment**
         * After selecting **Sync with Environment**, a modal window will open.
 
-            ![Figure 54: Selecting Sync With Environment]()
+            ![Figure 55: Selecting Sync With Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-sync-with-environment.jpg)
 
         * Select the environment from which you want to sync your workflow, and then click **Next**.
 
-            ![Figure 55: Selecting Environment]()
+            ![Figure 56: Selecting Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-sync-with-environment-select-env.jpg)
 
         * A feasibility check will run. You can click **Change Image Source** only if the application's feasibility is marked as `Can change`.
+            
+            **Note** Application for which the feasibility shows `cannot change` will be skipped.  
 
-            ![Figure 56: Feasibility Window]()
+            ![Figure 57: Feasibility Window](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-sync-with-environment-feasibility.jpg)
 
-3. Image source will be changed for the selected workflows. 
+        * Click **Change Image Source**. A modal window will appear showing the status of the image source change.
+
+            ![Figure 58: Clicking 'Change Image Source'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-sync-with-environment-changed.jpg)
+
+3. The image source is applied to all selected workflows where the feasibility check passed.
         
