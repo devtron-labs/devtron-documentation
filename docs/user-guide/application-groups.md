@@ -144,7 +144,6 @@ Once the deployment is successful, the pipelines will show `Succeeded`.
 Users need to have [Build and deploy permission](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to initiate the deployment
 {% endhint %}
 
-
 ### Managing Traffic
 
 While deployment, Devtron allows you to manage your **Canary** and **Blue-Green** deployments by providing visibility and easy controls to manage how new versions (releases) are shared with users.
@@ -201,6 +200,7 @@ This feature aims at helping the user clone existing CI/CD pipelines for new tar
 | [**Environment Policies**](../user-guide/creating-application/environment-overrides.md)         | Cloned if at pipeline level; ignored if global              |
 | [**CD Filter**](../user-guide/global-configurations/filter-condition.md)                    | Not cloned (handled globally)                              |
 | [**Protect Configurations**](../user-guide/creating-application/config-approval.md)       | Cloned (handled at pipeline level)                         |
+| [**Deployment Approvals**](../user-guide/creating-application/workflow/cd-pipeline.md)         | Not cloned (handled globally)                                                    |
 | [**Lock Configurations**](../user-guide/global-configurations/lock-deployment-config.md)          | Not cloned                                                 |
 | [**Mandatory Plugin**](../user-guide/global-configurations/plugin-policy.md)             | Not cloned                                                 |
 | [**Image Digest Policy**](../user-guide/global-configurations/pull-image-digest.md)          | Cloned at pipeline level; ignored if global                |
@@ -427,3 +427,43 @@ Assume you have a few applications whose [build pipelines](../reference/glossary
 2. Enter the new branch name. If your build pipeline has `Branch Regex` as the Source Type, you must ensure your new branch name matches the regex (regular expression) provided in that build pipeline. Once done, click **Update Branch**.
 
     ![Figure 50: Updating Branch Name](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/update-branch.jpg)
+
+### Changing Image Source
+
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to update their branch.
+{% endhint %}
+
+The **Change Image Source** feature in Devtron lets you update the container image source for an application’s workflow without modifying it.
+
+1. In the **Build & Deploy** tab of your application group, select the intended applications and click the **Change Image Source** button present at the bottom.
+
+2. Select the preferred Workflow template. Currently, **Change Image Source** feature is only supported by **Build from Source Code** and **Sync with Environment**.
+
+    1. **Build from Source Code**
+        * After selecting **Build from Source Code**, a feasibility check will run. You can click **Create Build Pipeline** only if the application's feasibility is marked as `Can change`.
+            
+            ![Figure 51: Feasibility Window]()
+
+        * A pop-up window will open, enter the **Source Type** and **Branch** under **Select code source**. 
+            
+            ![Figure 52: Entering Required Details]()
+
+        * Click **Create Pipeline**.
+            
+            ![Figure 53: Clicking Create Pipeline]()
+
+    2. **Sync with Environment**
+        * After selecting **Sync with Environment**, a modal window will open.
+
+            ![Figure 54: Selecting Sync With Environment]()
+
+        * Select the environment from which you want to sync your workflow, and then click **Next**.
+
+            ![Figure 55: Selecting Environment]()
+
+        * A feasibility check will run. You can click **Change Image Source** only if the application's feasibility is marked as `Can change`.
+
+            ![Figure 56: Feasibility Window]()
+        
