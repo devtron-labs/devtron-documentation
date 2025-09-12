@@ -112,11 +112,26 @@ Users need to have [Admin role](../user-guide/global-configurations/authorizatio
 
 The **Build & Deploy** tab of your application group helps you deploy one or more applications in bulk.
 
-1. Select the applications using the checkboxes and click the **Deploy** button present at the bottom.
+1. Select the applications using the checkboxes.
 
     ![Figure 13: Deploy Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-app-deploy.jpg)
 
-2. Select the desired container image that you want to deploy for respective application.
+2. Before deploying, you can also trigger Pre/Post stages for your applications in bulk.
+
+    * To trigger Pre-deployment stage, click the droupup next to the **Deploy** and select **Trigger Pre-deployment stage** 
+
+    * To trigger Post-deployment stage, click the droupup next to the **Deploy** and select **Trigger Post-deployment stage** 
+
+{% hint style="info" %}
+### Note
+* The dropdup appears only if your workflow has Pre or Post stages configured for the selected environment.  
+* If both stages are configured, the dropup will display options for triggering **Pre-deployment** and **Post-deployment** stages.  
+* If only one stage is configured, the dropup will show the option for triggering that specific stage.  
+{% endhint %}
+
+3. After selecting the applications, click the **Deploy** button present at the bottom. 
+
+4. Select the desired container image that you want to deploy for respective application.
 
     ![Figure 14: Selecting Image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-image-1.jpg)
 
@@ -124,21 +139,21 @@ The **Build & Deploy** tab of your application group helps you deploy one or mor
 
     ![Figure 15: Deploying Apps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-image-2.jpg)
 
-3. If you wish, you can deploy all applications in an Application Group using a single deployment strategy; select the preferred deployment strategy for all the applications and click **Deploy**. <br><br> By default, all applications will be deployed using their respective default strategies.
+5. If you wish, you can deploy all applications in an Application Group using a single deployment strategy; select the preferred deployment strategy for all the applications and click **Deploy**. <br><br> By default, all applications will be deployed using their respective default strategies.
 
     ![Figure 16: Selecting Deployment Strategy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-default-strategy.jpg)
 
- * **Deployment feasibility** page will open; in case for any application, the selected deployment strategy is not configured, you can select one of the configured strategies for that application. <br><br> If you do not select a configured deployment strategy, deployment will be skipped for that particular application.
+    * **Deployment feasibility** page will open; in case for any application, the selected deployment strategy is not configured, you can select one of the configured strategies for that application. <br><br> If you do not select a configured deployment strategy, deployment will be skipped for that particular application.
 
     ![Figure 17: Deployment Feasibility](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-deployment-feasibility.jpg)
 
-4. The deployment will be initiated, following which, you can close the screen as shown below.
+6. The deployment will be initiated, following which, you can close the screen as shown below.
 
     ![Figure 18: Triggered Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/deploy-app.jpg)
 
-Once the deployment is successful, the pipelines will show `Succeeded`.
+7. Once the deployment is successful, the pipelines will show `Succeeded`.
 
-![Figure 19: Successful Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/successful.jpg)
+    ![Figure 19: Successful Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/successful.jpg)
 
 {% hint style="info" %}
 Users need to have [Build and deploy permission](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to initiate the deployment
