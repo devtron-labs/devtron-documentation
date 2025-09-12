@@ -437,9 +437,9 @@ Users need to have [Admin role](../user-guide/global-configurations/authorizatio
 
 The **Change Image Source** feature in Devtron lets you update the container image source for an application’s workflow without modifying it.
 
-1. In the **Build & Deploy** tab of your application group, select the intended applications and click the **Change Image Source** button present at the bottom.
+1. In the **Build & Deploy** tab of your application group, select the preferred workflows and click the **Change Image Source** button present at the bottom.
 
-2. Select the preferred Workflow template. Currently, **Change Image Source** feature is only supported by **Build from Source Code** and **Sync with Environment**.
+2. Select the preferred Workflow template, and enter the required details as per the workflow template. Currently, **Change Image Source** feature for **Application Groups** is only supported for **Build from Source Code** and **Sync with Environment**.
 
     1. **Build from Source Code**
         * After selecting **Build from Source Code**, a feasibility check will run. You can click **Create Build Pipeline** only if the application's feasibility is marked as `Can change`.
@@ -466,4 +466,6 @@ The **Change Image Source** feature in Devtron lets you update the container ima
         * A feasibility check will run. You can click **Change Image Source** only if the application's feasibility is marked as `Can change`.
 
             ![Figure 56: Feasibility Window]()
+
+3. Image source will be changed for the selected workflows. 
         
