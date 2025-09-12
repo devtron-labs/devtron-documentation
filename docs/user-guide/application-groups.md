@@ -218,7 +218,7 @@ This feature aims at helping the user clone existing CI/CD pipelines for new tar
 | [**Environment Policies**](../user-guide/creating-application/environment-overrides.md)         | Cloned if at pipeline level; ignored if global              |
 | [**CD Filter**](../user-guide/global-configurations/filter-condition.md)                    | Not cloned (handled globally)                              |
 | [**Protect Configurations**](../user-guide/creating-application/config-approval.md)       | Cloned (handled at pipeline level)                         |
-| [**Deployment Approvals**](../user-guide/creating-application/workflow/cd-pipeline.md)         | Not cloned (handled globally)                                                    |
+| [**Deployment Approvals**](../user-guide/global-configurations/approval-policy.md)         | Not cloned (handled globally)                                                    |
 | [**Lock Configurations**](../user-guide/global-configurations/lock-deployment-config.md)          | Not cloned                                                 |
 | [**Mandatory Plugin**](../user-guide/global-configurations/plugin-policy.md)             | Not cloned                                                 |
 | [**Image Digest Policy**](../user-guide/global-configurations/pull-image-digest.md)          | Cloned at pipeline level; ignored if global                |
