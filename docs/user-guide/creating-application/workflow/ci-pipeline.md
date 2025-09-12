@@ -871,3 +871,27 @@ If you choose **Pull Request** or **Tag Creation** as the **Source Type**, you m
 7. Select **Save** to save your configurations.
 
    ![Figure 92: Saving Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-save.jpg)
+
+### Changing Image Source
+
+The **Change Image Source** feature in Devtron lets you update the container image source for an application’s workflow without modifying it.
+
+1. In the **Configurations** tab of your application, hover over your preferred workflow name and click **Change Image Source** icon.
+
+    ![Figure 93a: Clicking 'Change Image Source'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/change-image-source-click.jpg)
+
+    ![Figure 93b: Selecting Workflow Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/change-image-source-select-workflow.jpg)
+
+2. Select your preferred workflow template and enter the details required as per the selected workflow template. Refer the following sections as per your workflow template.
+
+   1. [Build from Source Code](#id-1.-build-from-source-code)
+
+   2. [Linked Build Pipeline](#id-2.-linked-build-pipeline)
+
+   3. [Deploy Image from External Service](#id-3.-deploy-image-from-external-service)
+
+   4. [Sync with Environment](#id-4.-sync-with-environment) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
+   5. [Create a Job](#id-5.-create-a-job)
+
+3. Image Source will be changed for the preferred workflow.
