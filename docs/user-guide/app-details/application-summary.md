@@ -1,28 +1,58 @@
 # Application Summary
 
 ## Introduction
-<!-- 
-Contains:
-    1. App summary in general
-    2. Nudges the reader to select the environment 
-    3. Talks about the consequtive two icons 
-    4. How this doc is structured + appropriate links 
-    5. Who can access this page? 
--->
+<!-- Introduction -->
+Devtron helps you to view your application summary (Devtron, Helm, ArgoCD, or FluxCD) using:
+
+* [Cards](#cards-overview) - Where you can see the application status, deployment status, deployed commit, security information and chart used (if it's a Helm application)
+
+* [Application metrics](#application-metrics) - Where you can see the CPU usage, memory usage, throughput and latency related information
+
+![Figure 1: App Details]() <!-- Image should clearly mention what are cards and what is app metrics -->
+<!-- RBAC mentioned -->
+{% hint style="warning" %}
+
+### Who can perform this action?
+
+Anyone with a `View Only` permission can view this page, but only from the level of `Admin` (with specific app permissions) or above can take actions in this page. Refer to [User Permissions](../global-configurations/authorization/user-access.md) for more information. 
+
+{% endhint %}
+<!-- Explaining environment drop-down, deployment method, configuration details -->
+Navigate to **App Details** and select the environment for which you'd like to see the application summary in the **Env** drop-down box. 
+
+The icon next to the **Env** drop-down box denotes the deployment method with which the application is deployed. It can be any of the following: 
+
+* Deployed using Helm
+
+* Deployed using ArgoCD
+
+* Deployed using FluxCD
+
+![Figure 2: Deployment Method]()
+
+Statuses related to manifests (whether they are in sync or not) is denoted by this icon ![](). When you click on this icon, the **Live and desired manifest comparison** page is displayed (read-only) allowing you to compare your manifests and see config drifts, if there are any. 
+
+![Figure 3: Live and Desired Manifest Comparison Page]()
+
 ---
 ## Cards Overview
 
-<!-- [put this across as a table]
-Talks about table containing: 
-    a. application status (list available statuses)
-    b. deployment status (list available statuses)
-    c. deployed commit (avl. only for Devtron apps)
-    d. security (talk about its prerequisite too + avl. only for Devtron apps) 
-    e. chart used (only Helm apps)
+<!-- Questions
+    1. Blackout window (alerting-hit-trail) - what is it? 
+    2. When will code scan, image scan, and kubernetes manifest be displayed? What should I do to get them? 
 -->
+Devtron provides you quick summary of your application via cards. Refer to the following table to know more about cards:
+<!-- Also tell what each status represents + organize them alphabetically -->
+| **Card Name** |**Description**|
+|:------------- |:--------------| 
+| **Application Status** | Tells you the application status i.e., whether it is `Healthy` or `Degraded`. The available application statuses in Devtron are: <br><ul><li>Healthy</li><li>Hibernating</li><li>Missing</li><li>Not Deployed</li><li>Progressing</li><li>Degraded</li></ul> When you click **Details**, all the details about the resource kinds, their statuses, and the message (if any) are displayed in detail. | 
+| **Deployment Status** | Tells you the deployment status i.e., whether it is `Succeeded` or `Failed`. The available deployment statuses in Devtron are: <br><ul><li>Triggered</li><li>Succeeded</li><li>Failed</li><li>Timed Out</li></ul> When you click **Details**, the complete deployment status from when it is deployed by whom to the current status of it are displayed. |
+| **Deployed commit** (available only for Devtron apps) | Displays the commit ID of the deployed image. When you click **Details**, the commit ID, repository name, branch name and the deployed image ID are displayed. |
+| **Blackout Window** | |
+| **Security** (available only for Devtron apps) | Displays the security scan results of the deployed image. <ul><li>For OSS-users, this card will be available only when the `Vulnerability Scanning (Trivy)` module is installed from the Devtron Stack Manager in your Devtron instance. Refer to [Install Trivy Integration](../../user-guide/integrations/vulnerability-scanning/trivy.md#install-trivy-integration) for more information. </li> <li>For Enterprise-users, this card will be displayed by default.</li></ul> When you click **Details**, the security results are displayed in the **Security** page under the following categories: <ul><li>Image Scan - Is displayed when (so and so) is enabled. </li><li>Code Scan - Is displayed when (so and so) is enabled. </li><li>Kubernetes Manifest - Is displayed when (so and so) is enabled. </li></ul> If you want to view or change the security policies, refer to [Security Policies](../security-features/security-policies.md).|
+| **Chart Used** (available only for Helm apps) | Displays the chart used to deploy the application. When you hover over the (**?**) icon in the card, you can directly configure the YAML values by clicking the **Go to Configure** option. |
 ---
 ## Action Buttons
-
 <!-- 
 Covers:
     1. URL (avl. in all apps)
@@ -34,15 +64,15 @@ Covers:
     7. Env configurations (avl. only Devtron app)
     8. Scale workloads (only in Helm, ArgoCD & FluxCD apps)
 -->
+
 ---
 ## External Links 
-
 <!-- We already have a doc for this; check it out -->
+
 ---
 ## Application Metrics
-
 <!-- Provides an overview about application metrics; but links to the appropriate document-->
+
 ---
 ## Next Steps
-
 <!-- Provides an overview about K8s resource management and links to the concerned doc (specifically prepared for App Details) -->
