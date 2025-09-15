@@ -223,41 +223,31 @@ Now that OpenTofu is installed, you can go ahead and create a cluster in the **C
 
 ### Steps
 
-Follow the steps mentioned below to create an EKS or Rancher cluster:
+Navigate to **Global Configurations** → **Clusters & Environments** → **New Cluster** → **Create Kubernetes Cluster**. 
 
-1. Navigate to **Global Configurations** → **Clusters & Environments** → **New Cluster** → **Create Kubernetes Cluster**. 
+Refer the following table (containing **mandatory** fields) and enter the details in the corresponding fields:
 
-2. Select the type of cluster you'd like to create in the **Cluster Provider** drop-down box based on your requirement.
+| Field | Description |
+| :--- | :--- |
+| `Cluster Provider` | Select the type of cluster you'd like to create based on your requirement | 
+| `Name` | Enter the name of your Kubernetes cluster (e.g., `eks-cluster-nonprod` in the case of EKS and `rancher-cluster-qa` in the case of Rancher) | 
+| `Region` | Select the region where your cluster is hosted (e.g., `us-east-1` in the case of EKS and `ap-south-3` in the case of Rancher) <br> Refer to [View cluster details using the AWS Management Console](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-manage-view-clusters.html#emr-view-cluster-console) for more information| 
+| `VPC CIDR` | Enter the [VPC CIDR](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-cidr-blocks.html) value. This value determines the number of [pods](../../reference/glossary.md#pod), [nodes](../../reference/glossary.md#nodes), or services your cluster can host (e.g., `10.0.1.6/16`)| 
+| `Authentication Mode` | Select the authentication mode you wish to perform for the cluster <br> <ul><li> **API_AND_CONFIG_MAP** - Select this if you want to use both the API and the ConfigMap to authenticate who can access the cluster. This option is recommended if you are migrating from the old `aws-auth` ConfigMap method (which is deprecated) to the new API method. <br> Refer to [Grant IAM users access to Kubernetes with EKS access entries](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html) for more information. </li> <li>**API** - Select this if you want to manage access using a single API. This option is recommended as this is the best practice for EKS cluster creation. <br> Refer to [Manage User Access with API](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html) for more information.</li> <li> **CONFIG MAP** - Select this if you want to rely on the original (but deprecated) way of authentication using `aws-auth` ConfigMap. This option is not recommended anymore. <br> Refer to [Grant IAM users access to Kubernetes. with a ConfigMap.](https://docs.aws.amazon.com/eks/latest/userguide/auth-configmap.html) for more information.</li></ul>| 
+| `Enable IRSA` | Turn on this IRSA toggle (IAM Roles for [Service Accounts](https://kubernetes.io/docs/concepts/security/service-accounts/)) if you want your application to securely connect to other AWS services using a service account| 
+| `Allow public access` | Turn on this toggle if you want to allow your [EKS control plane](https://docs.aws.amazon.com/eks/latest/best-practices/control-plane.html) endpoint to be accessed publicly from anywhere without the VPC. It is recommended to keep this toggle disabled |
+| `Cluster Version` | Select your preferred Kubernetes cluster version. If you are running a live application in a production environment, it is recommended that you select a stable version instead of the latest version | 
 
-3. Enter the name of your Kubernetes cluster in the **Name** text box (e.g., `eks-cluster-nonprod` in the case of EKS and `rancher-cluster-qa` in the case of Rancher).
+Refer the following table (containing **optional** fields) and enter the details in the corresponding fields:
 
-4. Select the region where your cluster is hosted (e.g., `us-east-1` in the case of EKS and `ap-south-3` in the case of Rancher). Refer to [View cluster details using the AWS Management Console](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-manage-view-clusters.html#emr-view-cluster-console) for more information. 
+| Field | Description |
+| :--- | :--- |
+| `Team` | Select the team whose tag you want to attach to the cluster resources. For example, when you select `qa-team`, it means that the cluster resources (pods, ConfigMaps, etc.) created with this cluster are owned by the QA team | 
+| `Environment` | Select the environment. For example, when you select `qa`, it means that this cluster is a part of the QA environment | 
+| `Availability Zones` | Select availability zones (e.g., `us-east-2b` and `ap-west-1a`) if you prefer to distribute your worker nodes across multiple zones to make your cluster highly available. <br> This means that even if one availability zone goes down (e.g., `us-east-2b`), the other zones (e.g., `ap-west-1a`) keep your cluster up and running | 
+| `Private access CIDRs` | Enter the private access CIDRs (IP addresses that are allowed to reach the API server). If you had turned off the **Allow public access** toggle, then your EKS control plane endpoint would be private. <br> It then becomes crucial to enter the private access CIDRs so that the API server recognizes them and allows them to access the endpoint | 
 
-5. Enter the [VPC CIDR](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-cidr-blocks.html) value in the **VPC CIDR** text box. This value determines the number of [pods](../../reference/glossary.md#pod), [nodes](../../reference/glossary.md#nodes), or services your cluster can host (e.g., `10.0.1.6/16`).
-
-6. Select the authentication mode you wish to perform for the cluster:
-
-  * **API_AND_CONFIG_MAP** - Select this if you want to use both the API and the ConfigMap to authenticate who can access the cluster. This option is recommended if you are migrating from the old `aws-auth` ConfigMap method (which is deprecated) to the new API method. <br> Refer to [Grant IAM users access to Kubernetes with EKS access entries](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html) for more information.
-
-  * **API** - Select this if you want to manage access using a single API. This option is recommended as this is the best practice for EKS cluster creation. <br> Refer to [Manage User Access with API](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html) for more information.
-
-  * **CONFIG MAP** - Select this if you want to rely on the original (but deprecated) way of authentication using `aws-auth` ConfigMap. This option is not recommended anymore. <br> Refer to [Grant IAM users access to Kubernetes. with a ConfigMap.
-](https://docs.aws.amazon.com/eks/latest/userguide/auth-configmap.html) for more information.
-
-7. Turn on the **Enable IRSA** (IAM Roles for [Service Accounts](https://kubernetes.io/docs/concepts/security/service-accounts/)) toggle if you want your application to securely connect to other AWS services using a service account.
-
-8. Turn on the **Allow public access** toggle if you want to allow your [EKS control plane](https://docs.aws.amazon.com/eks/latest/best-practices/control-plane.html) endpoint to be accessed publicly from anywhere without the VPC. It is recommended to keep this toggle disabled.
-
-9. Select the team whose tag you want to attach to the cluster resources from the **Team** drop-down box. For example, when you select `qa-team`, it means that the cluster resources (pods, ConfigMaps, etc.) created with this cluster are owned by the QA team.
-
-10. Select the environment in the **Environment** drop-down box. For example, when you select `qa`, it means that this cluster is a part of the QA environment.
-
-11. Select your preferred Kubernetes cluster version in the **Cluster Version** drop-down box. If you are running a live application in a production environment, it is recommended that you select a stable version instead of the latest version.
-
-12. (Optional) Select availability zones (e.g., `us-east-2b` and `ap-west-1a`) if you prefer to distribute your worker nodes across multiple zones to make your cluster highly available. This means that even if one availability zone goes down (e.g., `us-east-2b`), the other zones (e.g., `ap-west-1a`) keep your cluster up and running.
-
-13. (Optional) Enter the private access CIDRs (IP addresses that are allowed to reach the API server) in the **Private access CIDRs** field. If you had turned off the **Allow public access** toggle, then your EKS control plane endpoint would be private. It then becomes crucial to enter the private access CIDRs so that the API server recognizes them and allows them to access the endpoint.
-
+Click **Create Cluster**.
 ---
 
 ## Add Isolated Cluster [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
