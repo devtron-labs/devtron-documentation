@@ -303,7 +303,7 @@ The license key you generate will be valid only for your Devtron Freemium instal
 {% hint style="danger" %}
 ### Warning
 
-The license is bound to your Kubernetes cluster and cannot be transferred to another cluster. In case cluster is deleted, you will not be able to claim freemium license on a new cluster. 
+The license is bound to your Kubernetes cluster and cannot be transferred to another cluster. In case cluster is deleted, you cannot claim freemium license on a new cluster. 
 
 In such cases, contact [Devtron Support](support@devtron.ai).
 

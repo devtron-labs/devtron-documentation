@@ -6,7 +6,7 @@ Devtron allows you to connect and manage your existing Kubernetes clusters by ad
 
 You can add any of the following cluster types:
 * [Kubernetes Cluster](#add-kubernetes-cluster) - If you have access to the cluster, use this option.
-* [Isolated Cluster](#add-isolated-cluster) - For airgapped-related use-cases, use this option.
+* [Isolated Cluster](#add-isolated-cluster) - For air-gapped use-cases, use this option.
 
 ---
 

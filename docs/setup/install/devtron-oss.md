@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Devtron OSS is the open-source community edition of Devtron intended for non-enterprise users. 
+Devtron OSS is the open-source edition of Devtron intended for non-enterprise users. 
 
 The table below shows the installation options available in Devtron OSS. Further, there are steps given to install your preferred option in your Kubernetes cluster.
 
