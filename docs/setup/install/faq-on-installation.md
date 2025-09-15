@@ -34,7 +34,7 @@
   kubectl -n devtroncd patch installer installer-devtron --type json -p '[{"op": "remove", "path": "/status"}]'
   ```
 
-  Next, [install Devtron](./install-devtron.md)
+  Next, [install Devtron](./devtron-oss.md)
 </details>
 
 <details>

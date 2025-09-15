@@ -11,7 +11,7 @@ Setting up GitLab SSO enables you to authenticate using your GitLab account, ens
 To configure GitLab SSO in Devtron, you need:
 
 * Super Admin permissions
-    * Only a [Super Admin](../../user-access.md) in Devtron can configure SSO. You can use the [Admin credentials](../../../../setup/install/install-devtron-with-cicd.md) provided during the initial setup, if you’re setting up Devtron for the first time.
+    * Only a [Super Admin](../../user-access.md) in Devtron can configure SSO. You can use the [Admin credentials](../../../../setup/install/devtron-oss.md#install-devtron-oss) provided during the initial setup, if you’re setting up Devtron for the first time.
 
 * A GitLab account to create and manage OAuth credentials. If you do not have a GitLab account, you must create it first on GitLab.
 

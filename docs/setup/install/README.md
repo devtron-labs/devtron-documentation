@@ -1,41 +1,45 @@
 # Install Devtron
 
-## Introduction 
+## Introduction
 
-Devtron is installed over a Kubernetes cluster. Once you [Create a Kubernetes Cluster](../getting-started/getting-started.md#create-a-kubernetes-cluster), Devtron can be installed standalone or along with CI/CD integration.
+Devtron can be installed on any [Kubernetes cluster](../getting-started/getting-started.md#create-a-kubernetes-cluster) of your choice. You can choose between **Devtron OSS** (open-source, free) and **Devtron Enterprise (Freemium)**, which unlocks enterprise features at no cost (limited to 1 additional cluster).
 
-{% hint style="success" %}
-
-Try Devtron Freemium to access all the enterprise features for free and forever, limited to adding one additional cluster. [Install Devtron Freemium](https://license.devtron.ai/dashboard)
-
-{% endhint %}
+| Versions | Description |
+| -------- | ----------- |
+| [Install Devtron OSS](devtron-oss.md)| OSS edition, with optional CI/CD and GitOps modules |
+| [Install Devtron Enterprise (Freemium)](devtron-enterprise-freemium.md) | OSS + enterprise-only features with a free license key for 1 additional cluster |
 
 ---
 
-## Installation Options 
 
-![Devtron Installation Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/installation-methods-v2.jpg)
+## Additional Resources
 
-Choose one of the following installation options as per your requirement:
+<details>
+  <summary>Want to install Devtron in an Air-gapped environment?</summary>
 
-* [Modern Kubernetes Dashboard](../install/install-devtron.md)
+  See the full guide here: [Install Devtron in Air-gapped Environment](./install-devtron-in-airgapped-environment.md)
 
-* [Devtron with CI/CD](../install/install-devtron-with-cicd.md)
+</details>
 
-* [Devtron with CI/CD and GitOps (Argo CD)](../install/install-devtron-with-cicd-with-gitops.md)
+<details>
+  <summary>Want to explore Devtron without installing on your cluster?</summary>
 
-{% hint style="info" %} 
+  * Try [Devtron Sandbox](https://preview.devtron.ai)
+  * Try [Devtron Kubernetes Desktop Client](./install-devtron-Kubernetes-client.md)
 
-### Note
+</details>
 
-* If you are planning to install Devtron in production environments, kindly refer to [Production Infra Recommendations](../install/prod-infra.md).
+<details>
+  <summary>Need help or demo?</summary>
 
-* If you want to install a light-weight desktop client outside your Kubernetes cluster, kindly refer to [Devtron Kubernetes Desktop Client](../install/install-devtron-Kubernetes-client.md).
+  * [Discord community for support](https://discord.gg/jsRG5qx2gp)[![Join Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp). 
+  * [Book time with our team](https://devtron.ai/demo)
 
-{% endhint %}
+</details>
 
-{% hint style="info" %}
+<details>
+  <summary>Looking for advanced setup?</summary>
 
-If you have questions, please let us know on our Discord channel. [![Join us on Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)
+  See [Additional Installation Resources](../../reference/README.md) for production infra recommendations, advanced configs, air-gapped installs, backup, and more.
 
-{% endhint %}
+</details>
