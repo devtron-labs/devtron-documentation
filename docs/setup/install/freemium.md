@@ -469,7 +469,7 @@ Your apps, pipelines, and settings remain intact.
 <summary><strong>Is my Freemium license transferable to another Kubernetes cluster?</strong></summary>
 
 No. The Freemium license is bound to your **current Kubernetes cluster** and **cannot be transferred**.  
-If the cluster is deleted, you won’t be able to claim a Freemium license on a new cluster.
+If the cluster is deleted, you will not be able to claim a Freemium license on a new cluster.
 
 If you need help, contact [Devtron Support](support@devtron.ai).
 </details>

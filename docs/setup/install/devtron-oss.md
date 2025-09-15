@@ -35,9 +35,8 @@ Begin with the **Minimal** version. You can always install CI/CD and GitOps inte
 Install ['AWS EBS CSI' driver](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html) using the following command:
 
 ```bash
-helm repo add aws-ebs-csi-driver \
-https://kubernetes-sigs.github.io/aws-ebs-csi-driver \
-helm repo update \
+helm repo add aws-ebs-csi-driver https://kubernetes-sigs.github.io/aws-ebs-csi-driver
+helm repo update
 helm upgrade --install aws-ebs-csi-driver \
 --namespace kube-system aws-ebs-csi-driver/aws-ebs-csi-driver
 ```
