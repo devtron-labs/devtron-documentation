@@ -177,7 +177,7 @@ Click **Save Cluster** to save your cluster on Devtron.
 
 ## Create Kubernetes Cluster [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-### Prerequisite
+### Prerequisites
 
 {% hint style="warning" %}
 
@@ -187,7 +187,17 @@ Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-
 
 {% endhint %}
 
-To create an EKS cluster, as a prerequisite, OpenTofu must be installed in your Devtron instance. Follow the steps mentioned below to install OpenTofu:
+To create an EKS cluster, as a prerequisite, you need: 
+
+* [OpenTofu](#install-opentofu) (`tofu-controller`) installed in your Devtron instance
+
+* [FluxCD controller](#install-fluxcd-controller) (`flux2`)installed in your Devtron instance
+
+* [Secret](#create-a-secret) containing AWS credentials
+
+#### Install OpenTofu
+
+Follow the steps mentioned below to install OpenTofu:
 
 1. Navigate to **Global Configurations** → **Container/OCI Registry**.
 
@@ -213,13 +223,81 @@ To create an EKS cluster, as a prerequisite, OpenTofu must be installed in your 
 
 8. Select the environment where you want to deploy the chart in the **Deploy to Environment** drop-down box.
 
-<!-- Names to be changed; dummy text are used for the time being-->
+{% hint style="warning" %}
 
-9. (Values.yaml data to be filled here) - WIP
+### Important Note
 
-10. Click **Deploy Chart**. 
+The environment/namespace where you install OpenTofu and FluxCD controller must be the same to create cluster smoothly. 
 
-Now that OpenTofu is installed, you can go ahead and create a cluster in the **Clusters and Environments** page.
+{% endhint %}
+
+9. Click **Deploy Chart**. OpenTofu will be installed in your Devtron instance. 
+
+Now that OpenTofu is installed, you can now [install the FluxCD controller](#install-fluxcd-controller) in your Devtron instance.
+
+#### Install FluxCD Controller
+
+Follow the steps mentioned below to install OpenTofu:
+
+1. Navigate to **Chart Store** and search for `flux2` in the search box.
+
+2. Select the chart and click **Deploy**.
+
+3. Enter the app name (e.g., `tofu2`) in the **App Name** field.
+
+4. Select your project in the **Project** drop-down box. 
+
+5. Select the environment where you want to deploy the chart in the **Deploy to Environment** drop-down box.
+
+{% hint style="warning" %}
+
+### Important Note
+
+The environment/namespace where you install FluxCD controller and OpenTofu must be the same to create cluster smoothly. 
+
+{% endhint %}
+
+6. Click **Deploy Chart**. FluxCD controller will be installed in your Devtron instance. 
+
+Now that FluxCD controller is installed, the final prerequisite is to [create a secret](#create-a-secret) containing your AWS credentials.
+
+#### Create a Secret
+
+Follow the steps mentioned below to create a secret containing your AWS credentials:
+
+1. Navigate to **Resource Browser**. 
+
+2. Select the **default_cluster** and click **Create Resource**. 
+
+3. Copy the below yaml file and paste it in the **Create Kubernetes Resource** page. 
+
+  ```
+  apiVersion: v1
+  data:
+    AWS_ACCESS_KEY_ID: SDKDI382DKD0=
+    AWS_SECRET_ACCESS_KEY: YVZsSIEOwcFRSMjlvM2xaUjSIE823J3PT0=
+  kind: Secret
+  metadata:
+    name: tf-aws-creds
+    namespace: default_cluster
+  type: Opaque
+  ```
+
+{% hint style="warning" %}
+
+### Important Note
+
+* Changing the value for `name` from `tf-aws-creds` to something else will result in not recognizing the secret at all. Therefore, it is recommended that you do not change the value of `name` attribute in the yaml file. 
+
+* The `namespace` where the secret is created should be the same namespace where OpenTofu and FluxCD controller were installed. 
+
+{% endhint %}
+
+4. Enter your AWS access key against the `AWS_ACCESS_KEY_ID` attribute and AWS secret key against the `AWS_SECRET_ACCESS_KEY` attribute. Refer to [Create New Access Keys](https://docs.aws.amazon.com/keyspaces/latest/devguide/create.keypair.html) for more information. 
+
+5. Click **Apply**. The secret will be created. 
+
+Now that all the prerequisites are met, you can go ahead and create a cluster from the **Create Kubernetes Cluster** page. 
 
 ### Steps
 
@@ -248,6 +326,7 @@ Refer the following table (containing **optional** fields) and enter the details
 | `Private access CIDRs` | Enter the private access CIDRs (IP addresses that are allowed to reach the API server). If you had turned off the **Allow public access** toggle, then your EKS control plane endpoint would be private. <br> It then becomes crucial to enter the private access CIDRs so that the API server recognizes them and allows them to access the endpoint | 
 
 Click **Create Cluster**.
+
 ---
 
 ## Add Isolated Cluster [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
