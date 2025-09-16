@@ -12,7 +12,7 @@ The Devtron Resource Browser provides you a central interface to view and manage
 
 First, the Resource Browser shows you a list of clusters added to your Devtron setup. By default, it displays a cluster named '*default_cluster*' after the [initial setup](../../setup/install/install-devtron.md) is successful.
 
-![Figure 1: Devtron Resource Browser - List of Clusters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-browser-db2.jpg)
+![Figure 1: Devtron Resource Browser - List of Clusters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-browser-new.jpg)
 
 In the image above, you can see a visual display of the health status for all clusters connected to Devtron. If any node within a cluster encounters an issue and is not ready, it will be highlighted in red, allowing you to quickly address the problem.
 
@@ -20,7 +20,7 @@ If you are a superadmin, you can connect more clusters by clicking the **Add Clu
 
 You may click a cluster to view and manage all its resources as shown below.
 
-![Figure 2: Resources within Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-list-db.jpg)
+![Figure 2: Resources within Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cluster-resources.jpg)
 
 ---
 
@@ -28,6 +28,7 @@ You may click a cluster to view and manage all its resources as shown below.
 
 * [Overview Page](overview.md)
 * [Discover and Manage Resources](manage-resources.md)
+* [Compare & Sync Clusters](compare-and-sync.md)
 * [Nodes and Operations](nodes.md)
 * [Pod Management and Debugging](pods.md)
 * [Cluster Terminal](cluster-terminal.md)

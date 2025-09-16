@@ -1,6 +1,6 @@
 # Jobs
 
-Job allows manual and automated execution of your source code. Job pipeline will not have CI/CD pipeline as the job is limited to your source code only. You can also configure [preset plugins](../creating-application/workflow/ci-build-pre-post-plugins.md#preset-plugins) in your job pipeline.
+Job allows manual and automated execution of your source code. Job pipeline will not have CI/CD pipeline as the job is limited to your source code only. You can also configure [preset plugins](../creating-application/workflow/pre-post-tasks.md#configure-a-task-using-preset-plugins) in your job pipeline.
 
 With job, you can execute your source code quickly and easily without going through CI/CD pipelines, which also optimize time.
 

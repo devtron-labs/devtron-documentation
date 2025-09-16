@@ -195,7 +195,7 @@ This feature aims at helping the user clone existing CI/CD pipelines for new tar
 | Configuration Item              | Cloning Behavior                                             |
 |----------------------------------|--------------------------------------------------------------|
 | [**CI Workflow**](../user-guide/creating-application/workflow/ci-pipeline.md)                  | Clones the source’s workflow CI as it is                    |
-| [**Pipeline Configuration**](../user-guide/creating-application/workflow/ci-build-pre-post-plugins.md)       | Cloned, including Pre-CD and Post-CD scripts/plugins        |
+| [**Pipeline Configuration**](../user-guide/creating-application/workflow/pre-post-tasks.md)       | Cloned, including Pre-CD and Post-CD scripts/plugins        |
 | [**Environment Configuration**](../user-guide/creating-application/README.md#app-configuration)    | Cloned, including Deployment Template (DT), ConfigMap (CM), and Secret |
 | [**GitOps Configuration**](../user-guide/creating-application/gitops-config.md)         | Not cloned              |
 | [**Environment Policies**](../user-guide/creating-application/environment-overrides.md)         | Cloned if at pipeline level; ignored if global              |
@@ -391,7 +391,7 @@ Users can delete a saved filter if they have Admin/Manager access on all applica
 Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to update their branch.
 {% endhint %}
 
-Assume you have a few applications whose [build pipelines](../reference/glossary.md#build-pipeline) fetch from the `main` branch of your code repository. However, you decided to maintain a `master` branch, and you want all the upcoming CI builds to consider the `master` branch as the source. Devtron provides you the option to change the branch at both levels—individual application as well as application group.
+Assume you have a few applications whose [build pipelines](../reference/glossary.md#build-pipeline) fetch from the `main` branch of your code repository. However, you decided to maintain a `master` branch, and you want all the upcoming CI builds to consider the `master` branch as the source. Devtron provides you the option to change the branch at both levels, individual application as well as application group.
 
 1. In the **Build & Deploy** tab of your application group, select the intended applications and click the **Change Branch** button present at the bottom.
 
