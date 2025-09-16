@@ -205,15 +205,17 @@ Follow the steps mentioned below to install OpenTofu:
 
 2. Refer to the following table and enter the information in the appropriate fields:
 
-  | Field | Value |
-  | :--- | :--- |
-  | **Registry provider** | Other | 
-  | **Registry type** | Public Registry | 
-  | **Name** | `tofu` | 
-  | **Registry URL** | `ghcr.io` | 
-  | **List of repositories** | `flux-iac/charts/tofu-controller` | 
+    | Field | Value |
+    | :--- | :--- |
+    | **Registry provider** | Other | 
+    | **Registry type** | Public Registry | 
+    | **Name** | `tofu` | 
+    | **Registry URL** | `ghcr.io` | 
+    | **List of repositories** | `flux-iac/charts/tofu-controller` | 
 
-  ![Figure 16: Container/OCI Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/container-oci-registry.jpg)
+    <br />
+
+    ![Figure 16: Container/OCI Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/container-oci-registry.jpg)
 
 3. Click **Save**. The `tofu-controller` chart will be displayed in the **Chart Store** page.
 
@@ -221,7 +223,7 @@ Follow the steps mentioned below to install OpenTofu:
 
 5. Select the chart and click **Configure & Deploy**. The following page will be displayed.
 
-  ![Figure 17: Tofu Controller Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/tofu-controller-chart.jpg)
+    ![Figure 17: Tofu Controller Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/tofu-controller-chart.jpg)
 
 6. Enter the app name (e.g., `tofu-controller`) in the **App Name** field. 
 
@@ -247,7 +249,7 @@ Follow the steps mentioned below to install OpenTofu:
 
 1. Navigate to **Chart Store** and search for `flux2` in the search box.
 
-  ![Figure 18: "flux2" Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/flux-cd-chart.jpg)
+    ![Figure 18: "flux2" Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/flux-cd-chart.jpg)
 
 2. Select the chart and click **Deploy**.
 
@@ -289,17 +291,17 @@ Follow the steps mentioned below to create a secret containing your AWS credenti
 
 4. Copy the YAML snippet given below and paste it in the **Create Kubernetes Resource** page.  
 
-```yaml
-apiVersion: v1
-data:
-  AWS_ACCESS_KEY_ID: SDKDI382DKD0=
-  AWS_SECRET_ACCESS_KEY: YVZsSIEOwcFRSMjlvM2xaUjSIE823J3PT0=
-kind: Secret
-metadata:
-  name: tf-aws-creds
-  namespace: your-namespace
-type: Opaque
-```
+    ```yaml
+    apiVersion: v1
+    data:
+      AWS_ACCESS_KEY_ID: SDKDI382DKD0=
+      AWS_SECRET_ACCESS_KEY: YVZsSIEOwcFRSMjlvM2xaUjSIE823J3PT0=
+    kind: Secret
+    metadata:
+      name: tf-aws-creds
+      namespace: your-namespace
+    type: Opaque
+    ```
 
 {% hint style="warning" %}
 
@@ -344,8 +346,12 @@ Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-
   | `Allow public access` | Turn on this toggle if you want to allow your [EKS control plane](https://docs.aws.amazon.com/eks/latest/best-practices/control-plane.html) endpoint to be accessed publicly from anywhere without the VPC. It is recommended to keep this toggle disabled |
   | `Cluster Version` | Select your preferred Kubernetes cluster version. If you are running a live application in a production environment, it is recommended that you select a stable version instead of the latest version | 
 
-  ![Figure 19: Create Kubernetes Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/create-k8s-cluster.jpg)
+  <br />
 
+  ![Figure 19: Create Kubernetes Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/create-k8s-cluster.jpg)
+  
+  <br />
+  
 * Refer the following table (containing **optional** fields) and enter the details in the corresponding fields:
 
   | Field | Description |
