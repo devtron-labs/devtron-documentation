@@ -5,6 +5,7 @@
 Application groups in Devtron streamline the deployment of microservices by enabling you to build and deploy multiple applications simultaneously. This feature is particularly beneficial when your microservices are interdependent, as a change in one service often triggers the need to redeploy others.
 
 {% hint style="info" %}
+### Note
 Only one application group would exist for each [environment](../reference/glossary.md#environment). You cannot group applications belonging to different environments.
 {% endhint %}
 
@@ -32,6 +33,7 @@ As you can see, it has similar options as available under [Applications](./appli
 * Configurations
 
 {% hint style="info" %}
+### Note
 Users need to have [View only permission](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to view all the applications within a group.
 {% endhint %}
 
@@ -61,6 +63,7 @@ Adding [image labels](./deploying-application/image-labels-and-comments.md) can 
 3. Similar to application, you can also [pass build parameters](./deploying-application/triggering-ci.md#passing-build-parameters) in application groups before triggering the build.
 
 {% hint style="info" %}
+### Note
 Passing build parameters feature is only available in <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg">
 {% endhint %}
 
@@ -87,6 +90,7 @@ Passing build parameters feature is only available in <img src="https://devtron-
     ![Figure 11: Triggered Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/build-image.jpg)
 
 {% hint style="info" %}
+### Note
 Users need to have [Build and deploy permission](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to trigger the build
 {% endhint %}
 
@@ -104,6 +108,7 @@ As shown below, you can handle the configurations of more than one application f
 ![Figure 12: Configurations of each App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/configurations.jpg)
 
 {% hint style="info" %}
+### Note
 Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to change their configuration. Please note, you might not be able to change the values of locked keys in deployment template. Refer [Lock Deployment Configuration](./global-configurations/lock-deployment-config.md) to know more.
 {% endhint %}
 
@@ -126,7 +131,7 @@ The **Build & Deploy** tab of your application group helps you deploy one or mor
 
 {% hint style="info" %}
 ### Note
-* The dropdup appears only if your workflow has Pre-deployment stage or Post-deployment stage configured for the selected environment.  
+* The dropup appears only if your workflow has Pre-deployment stage or Post-deployment stage configured for the selected environment.  
 * If both stages are configured, the dropup will display options for triggering **Pre-deployment** and **Post-deployment** stages.  
 * If only one stage is configured, the dropup will show the option for triggering that specific stage.  
 {% endhint %}
@@ -160,6 +165,7 @@ The **Build & Deploy** tab of your application group helps you deploy one or mor
     ![Figure 21: Successful Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/successful.jpg)
 
 {% hint style="info" %}
+### Note
 Users need to have [Build and deploy permission](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to initiate the deployment
 {% endhint %}
 
@@ -288,7 +294,7 @@ In other words, you can hibernate running applications or unhibernate hibernated
 
 #### Hibernation Process
 
-1. In the `Overview` page of your application group, use the checkboxes to choose the applications you wish to hibernate. 
+1. In the **Overview** page of your application group, use the checkboxes to choose the applications you wish to hibernate. 
 
 2. A floating widget will appear at the bottom. Click the **Hibernate** button. 
 
@@ -314,7 +320,7 @@ Your applications pods would be scaled down and would stop incurring costs.
 
 #### Unhibernation Process
 
-1. In the `Overview` page of your application group, use the checkboxes to choose the applications you wish to unhibernate. 
+1. In the **Overview** page of your application group, use the checkboxes to choose the applications you wish to unhibernate. 
 
 2. A floating widget will appear at the bottom. Click the **Unhibernate** button. 
 
@@ -349,7 +355,7 @@ Restarting workloads might be necessary if you want your new code or configurati
 
 Using application group, you can select the workloads (i.e., Pod, Deployment, ReplicaSet, etc.) of specific applications and restart them. 
 
-1. In the `Overview` page of your application group, use the checkboxes to choose the applications you wish to restart. 
+1. In the **Overview** page of your application group, use the checkboxes to choose the applications you wish to restart. 
 
 2. A floating widget will appear, click the **Restart Workloads** button. 
 
@@ -373,7 +379,7 @@ Restarting workloads might take time depending on the number of applications.
 
 ### Filtering Applications
 
-Assume you have multiple applications (maybe 10, 50, 100, or more) showing up in an application group. If you want to limit your operations (build/deploy/other) to a specific set of applications, the filter feature will help you narrow down the list. Thus, you will see only those applications you select from the filter (be it on the `Overview` page, `Build & Deploy` page, and so on.)
+Assume you have multiple applications (maybe 10, 50, 100, or more) showing up in an application group. If you want to limit your operations (build/deploy/other) to a specific set of applications, the filter feature will help you narrow down the list. Thus, you will see only those applications you select from the filter (be it on the **Overview** page, **Build & Deploy** page, and so on.)
 
 1. Click the filter next to the application group as shown below.
 
