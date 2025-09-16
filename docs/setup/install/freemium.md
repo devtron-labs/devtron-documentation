@@ -63,7 +63,7 @@ You can also log in via **Continue with Email**. This will send a login link to 
 
  **Note:** Your login link is valid only for 10 minutes.
 
-  ![Figure 5: Sending Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-resend-email-v2.jpg)
+  ![Figure 5: Sending Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/license-dashboard-resend-email-v2.jpg)
 
 {% hint style="info" %}
 ### Email not received?
