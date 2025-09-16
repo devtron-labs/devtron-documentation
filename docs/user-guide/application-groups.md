@@ -465,7 +465,11 @@ The **Change Image Source** feature in Devtron lets you update the container ima
     1. **Build from Source Code**
         * After selecting **Build from Source Code**, a feasibility check will run. You can click **Create Build Pipeline** only if the application's feasibility shows `Can change`.
 
-            **Note** Application for which the feasibility shows `cannot change` will be skipped.  
+            **Note:** Application for which the feasibility shows `cannot change` will be skipped due to following reasons:
+
+            * `Multi git material found at the source, not allowed to change the source`
+            * `no cd pipeline found for the selected app and env combination`
+            * `invalid request, trying to create self loop, cannot create sync-cd source pipeline with source environment in same workflow`
             
             ![Figure 53a: Selecting 'Build From Source'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-build-from-source-code.jpg)
 
@@ -490,7 +494,11 @@ The **Change Image Source** feature in Devtron lets you update the container ima
 
         * A feasibility check will run. You can click **Change Image Source** only if the application's feasibility is marked as `Can change`.
             
-            **Note:** Application for which the feasibility shows `cannot change` will be skipped.  
+            **Note:** Application for which the feasibility shows `cannot change` will be skipped due to following reasons:
+
+            * `Multi git material found at the source, not allowed to change the source`
+            * `no cd pipeline found for the selected app and env combination`
+            * `invalid request, trying to create self loop, cannot create sync-cd source pipeline with source environment in same workflow`
 
             ![Figure 58: Feasibility Window](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-sync-with-environment-feasibility.jpg)
 
