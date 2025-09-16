@@ -116,16 +116,17 @@ The **Build & Deploy** tab of your application group helps you deploy one or mor
 
     ![Figure 13: Deploy Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-app-deploy.jpg)
 
-2. Before deploying, you can also trigger Pre/Post stages for your applications in bulk.
+2. You can also trigger Pre-deployment stage or Post-deployment stage for your applications in bulk.
 
-    * To trigger Pre-deployment stage, click the droupup next to the **Deploy** and select **Trigger Pre-deployment stage**. 
+    * To trigger Pre-deployment stage, click the droupup next to **Deploy** and select **Trigger Pre-deployment stage**. 
 
-    * To trigger Post-deployment stage, click the droupup next to the **Deploy** and select **Trigger Post-deployment stage**. 
+    * To trigger Post-deployment stage, click the droupup next to **Deploy** and select **Trigger Post-deployment stage**. 
 
     ![Figure 14: Triggering Pre/Post Stages](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-trigger-pre-post.jpg)
+
 {% hint style="info" %}
 ### Note
-* The dropdup appears only if your workflow has Pre or Post stages configured for the selected environment.  
+* The dropdup appears only if your workflow has Pre-deployment stage or Post-deployment stage configured for the selected environment.  
 * If both stages are configured, the dropup will display options for triggering **Pre-deployment** and **Post-deployment** stages.  
 * If only one stage is configured, the dropup will show the option for triggering that specific stage.  
 {% endhint %}
@@ -489,11 +490,11 @@ The **Change Image Source** feature in Devtron lets you update the container ima
 
         * A feasibility check will run. You can click **Change Image Source** only if the application's feasibility is marked as `Can change`.
             
-            **Note** Application for which the feasibility shows `cannot change` will be skipped.  
+            **Note:** Application for which the feasibility shows `cannot change` will be skipped.  
 
             ![Figure 58: Feasibility Window](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-sync-with-environment-feasibility.jpg)
 
-        * Click **Change Image Source**. A modal window will appear showing the status of the image source change.
+        * Click **Change Image Source**. A modal window will appear showing the operation status.
 
             ![Figure 59: Clicking 'Change Image Source'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-sync-with-environment-changed.jpg)
 
