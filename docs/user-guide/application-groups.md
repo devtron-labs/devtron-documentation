@@ -143,11 +143,11 @@ The **Build & Deploy** tab of your application group helps you deploy one or mor
 
     ![Figure 17: Deploying Apps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-image-2.jpg)
 
-5. If you wish, you can deploy all applications in an Application Group using a single deployment strategy, select the preferred deployment strategy for all the applications and click **Deploy**. <br><br> By default, all applications will be deployed using their respective default strategies.
+5. If you wish, you can deploy all applications in an Application Group using a single deployment strategy, select the preferred deployment strategy for all the applications and click **Deploy**. <br /><br /> By default, all applications will be deployed using their respective default strategies.
 
     ![Figure 18: Selecting Deployment Strategy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-default-strategy.jpg)
 
-    * **Deployment feasibility** page will open, in case for any application, the selected deployment strategy is not configured, you can select one of the configured strategies for that application. <br><br> If you do not select a configured deployment strategy, deployment will be skipped for that particular application.
+    * **Deployment feasibility** page will open, in case for any application, the selected deployment strategy is not configured, you can select one of the configured strategies for that application. <br /><br /> If you do not select a configured deployment strategy, deployment will be skipped for that particular application.
 
     ![Figure 19: Deployment Feasibility](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-deployment-feasibility.jpg)
 
@@ -428,7 +428,6 @@ Users can edit a saved filter if they have Admin/Manager access on all applicati
 Users can delete a saved filter if they have Admin/Manager access on all applications in the saved filter.
 
 {% endhint %}
-
 
 ### Changing Branch
 

@@ -54,7 +54,7 @@ Devtron typically uses a Dockerfile from your repository to build container imag
    | `Pipeline Name`| Required (Auto-Assigned) | Devtron automatically assigns a unique name for the pipeline. If you wish, you can change it in [Advanced Options](#configuring-advanced-options)|
    | `Source type`| Required| Source type to trigger the CI. **Available options:** `Branch Fixed`, `Branch Regex`, `Pull Request`, `Tag Creation`|
    | `Branch Name`| Required| Branch that triggers the CI build|
-   | `Advanced Options` | Optional| Create Pre-Build, Build, and Post-Build tasks <br> Refer the [Configure Advanced options](#configuring-advanced-options) section to configure **Advanced options**. |
+   | `Advanced Options` | Optional| Create Pre-Build, Build, and Post-Build tasks <br /> Refer the [Configure Advanced options](#configuring-advanced-options) section to configure **Advanced options**. |
 
    ### Understanding Source Types
 
@@ -218,7 +218,7 @@ Refer the [User permissions](../../global-configurations/authorization/user-acce
    |:---|:---|
    |Filter By Application|Enter the application name in which the source CI pipeline exists.|
    |Source CI pipeline|List all the build pipelines for the selected application. Choose the pipeline that you want to link|
-   |Name|Enter the name for the **Linked Build Pipeline**.<br><ul><li> By default, it takes the name of the source pipeline, if you wish, you can rename it.</li><li> In case the source pipeline exists within the same application, the **Linked Build Pipeline** name must be different from the source pipeline, as Devtron does not allow two pipelines with the same name within a single application.</li></ul>|
+   |Name|Enter the name for the **Linked Build Pipeline**. <br /><ul><li> By default, it takes the name of the source pipeline, if you wish, you can rename it.</li><li> In case the source pipeline exists within the same application, the **Linked Build Pipeline** name must be different from the source pipeline, as Devtron does not allow two pipelines with the same name within a single application.</li></ul>|
 
    ![Figure 18: Pipeline created](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-created.jpg)
 
@@ -538,7 +538,7 @@ This stage allows you to define primary configurations such as Pipeline name, So
 | `Pipeline Name` | Assign a name to your job pipeline|
 | `Source type` | Source type to trigger the job pipeline. Available options: Branch Fixed, Branch Regex, Pull Request, Tag Creation|
 | `Branch Name`| Branch that triggers the CI build|
-| `Use remote cache`| <p>Enable this option to use the Docker cache from previous builds. Docker's layer caching mechanism allows unchanged docker images layers to be reused across pipeline runs, thus drastically reducing execution times<br></p><div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p>The globe toggle, next to <code>Docker Layer Caching</code> means that the configuration is inherited from global<br></p><ul><li>Enabled: Inherits the caching settings defined globally.</li><li> Disabled: Allows you to define a pipeline-level configuration specific to this job.</li></ul></div> |
+| `Use remote cache`| <p>Enable this option to use the Docker cache from previous builds. Docker's layer caching mechanism allows unchanged docker images layers to be reused across pipeline runs, thus drastically reducing execution times<br /></p><div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p>The globe toggle, next to <code>Docker Layer Caching</code> means that the configuration is inherited from global<br /></p><ul><li>Enabled: Inherits the caching settings defined globally.</li><li> Disabled: Allows you to define a pipeline-level configuration specific to this job.</li></ul></div> |
 
 ### Tasks to be executed
 
@@ -576,7 +576,7 @@ To create a task using the **Pull Images from Container Repository** plugin, fol
 
    * The right-side panel will display the fields specific to the **Pull Images from Container Repository** plugin, which are required to be configured.
 
-   * The left-side panel will now show a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by default), along with its logo.<br> You can change the task's name using the **Task name** field, but plugin's logo will remain indicating that it is a preset plugin.
+   * The left-side panel will now show a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by default), along with its logo.<br /> You can change the task's name using the **Task name** field, but plugin's logo will remain indicating that it is a preset plugin.
 
    ![Figure 61: Search 'Pull Images from Container Repository' plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-pull-images.jpg)
 
