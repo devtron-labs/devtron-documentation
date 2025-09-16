@@ -217,7 +217,7 @@ Follow the steps mentioned below to install OpenTofu:
 
     ![Figure 16: Container/OCI Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/container-oci-registry.jpg)
 
-3. Click **Save**. The `tofu-controller` chart will be displayed in the **Chart Store** page.
+3. Click **Save**. The `tofu-controller` chart will be displayed in the [Chart Store](../../user-guide/deploy-chart/README.md) page.
 
 4. Navigate to **Chart Store** and search for `tofu-controller` in the search box.
 
@@ -239,7 +239,9 @@ The environment/namespace where you install OpenTofu must be the same environmen
 
 {% endhint %}
 
-9. Click **Deploy Chart**. OpenTofu will be installed in your Devtron instance. 
+9. Choose either **Helm** or **GitOps** [if configured](../../user-guide/global-configurations/gitops.md) as the deployment method. 
+
+10. Click **Deploy Chart**. OpenTofu will be installed in your Devtron instance. 
 
 Now that OpenTofu is installed, you can [install the FluxCD controller](#install-fluxcd-controller) in your Devtron instance.
 
@@ -247,7 +249,7 @@ Now that OpenTofu is installed, you can [install the FluxCD controller](#install
 
 Follow the steps mentioned below to install OpenTofu:
 
-1. Navigate to **Chart Store** and search for `flux2` in the search box.
+1. Navigate to [Chart Store](../../user-guide/deploy-chart/README.md) and search for `flux2` in the search box.
 
     ![Figure 18: "flux2" Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/flux-cd-chart.jpg)
 
@@ -267,7 +269,9 @@ The environment/namespace where you install the FluxCD controller must be the sa
 
 {% endhint %}
 
-6. Click **Deploy Chart**. FluxCD controller will be installed in your Devtron instance. 
+6. Choose either **Helm** or **GitOps** [if configured](../../user-guide/global-configurations/gitops.md) as the deployment method. 
+
+7. Click **Deploy Chart**. FluxCD controller will be installed in your Devtron instance. 
 
 Now that FluxCD controller is installed, the final prerequisite is to [create a secret](#create-a-secret) containing your AWS credentials.
 
