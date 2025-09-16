@@ -189,7 +189,9 @@ Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-
 
 To create an EKS cluster, as a prerequisite, you need: 
 
-* [OpenTofu](#install-opentofu) (`tofu-controller`) installed in your Devtron instance
+* [OpenTofu](#install-opentofu) (`tofu-controller`) installed in your Devtron instance. 
+  
+  Refer to [Getting Started with OpenTofu](https://opentofu.org/docs/intro/) for more information.
 
 * [FluxCD controller](#install-fluxcd-controller) (`flux2`) installed in your Devtron instance
 
