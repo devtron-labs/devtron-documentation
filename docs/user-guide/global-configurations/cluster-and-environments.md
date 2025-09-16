@@ -187,13 +187,13 @@ Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-
 
 {% endhint %}
 
-To create an EKS cluster, as a prerequisite, you need: 
+To create an EKS cluster, you need: 
 
-* [OpenTofu](#install-opentofu) (`tofu-controller`) installed in your Devtron instance. 
+* [OpenTofu](#install-opentofu) (`tofu-controller`) chart installed in your Devtron instance. 
   
   Refer to [Getting Started with OpenTofu](https://opentofu.org/docs/intro/) for more information.
 
-* [FluxCD controller](#install-fluxcd-controller) (`flux2`) installed in your Devtron instance
+* [FluxCD controller](#install-fluxcd-controller) (`flux2`) chart installed in your Devtron instance
 
 * [Secret](#create-a-secret) containing AWS credentials
 
@@ -275,7 +275,7 @@ Now that FluxCD controller is installed, the final prerequisite is to [create a 
 
 ### Who Can Perform This Action?
 
-Only an [Admin](../../user-guide/global-configurations/authorization/user-access.md#kubernetes-resources-permissions) of the Kubernetes resource can create a Secret. 
+User needs to be an [Admin](../../user-guide/global-configurations/authorization/user-access.md#kubernetes-resources-permissions) of the Kubernetes resource or a [Super-Admin](../../user-guide/global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to create a Secret. 
 
 {% endhint %}
 
@@ -283,11 +283,13 @@ Follow the steps mentioned below to create a secret containing your AWS credenti
 
 1. Navigate to **Resource Browser**. 
 
-2. Select the **default_cluster** and click **Create Resource**. 
+2. Click the **default_cluster**. 
 
-3. Copy the YAML snippet given below and paste it in the **Create Kubernetes Resource** page.  
+3. Click **Create Resource**. 
 
-```
+4. Copy the YAML snippet given below and paste it in the **Create Kubernetes Resource** page.  
+
+```yaml
 apiVersion: v1
 data:
   AWS_ACCESS_KEY_ID: SDKDI382DKD0=
@@ -295,7 +297,7 @@ data:
 kind: Secret
 metadata:
   name: tf-aws-creds
-  namespace: default_cluster
+  namespace: your-namespace
 type: Opaque
 ```
 
@@ -303,15 +305,17 @@ type: Opaque
 
 ### Important Note
 
-* It is recommended to keep the `name` attribute to `tf-aws-creds`. Changing this value will make the secret go unrecognized. 
+* It is recommended to keep the `name` attribute to `tf-aws-creds`. Changing this value might make the secret go unrecognized. 
 
-* The secret must be created in the same `namespace` where OpenTofu and FluxCD controller are installed. 
+* The secret must be created in the same namespace where OpenTofu and FluxCD controller are installed. 
+
+* When creating a secret, kindly ensure that your `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` are encoded in base64. Go to [Devtron Base64 Encoder](https://strings.devtron.ai/base64-encoder) to encode your AWS credentials. 
 
 {% endhint %}
 
-4. Enter your AWS access key against the `AWS_ACCESS_KEY_ID` attribute and AWS secret key against the `AWS_SECRET_ACCESS_KEY` attribute. Refer to [Create New Access Keys](https://docs.aws.amazon.com/keyspaces/latest/devguide/create.keypair.html) for more information. 
+5. Enter your AWS access key against the `AWS_ACCESS_KEY_ID` attribute and AWS secret key against the `AWS_SECRET_ACCESS_KEY` attribute. Refer to [Create New Access Keys](https://docs.aws.amazon.com/keyspaces/latest/devguide/create.keypair.html) for more information. 
 
-5. Click **Apply**. The secret will be created. 
+6. Click **Apply**. The secret will be created. 
 
 Now that all the prerequisites are met, you can proceed to create a cluster from the **Create Kubernetes Cluster** page. 
 
@@ -325,33 +329,33 @@ Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-
 
 {% endhint %}
 
-Navigate to **Global Configurations** → **Clusters & Environments** → **New Cluster** → **Create Kubernetes Cluster**. 
+* Navigate to **Global Configurations** → **Clusters & Environments** → **New Cluster** → **Create Kubernetes Cluster**. 
 
-Refer the following table (containing **mandatory** fields) and enter the details in the corresponding fields:
+* Refer the following table (containing **mandatory** fields) and enter the details in the corresponding fields:
 
-| Field | Description |
-| :--- | :--- |
-| `Cluster Provider` | Select the type of cluster you'd like to create based on your requirement | 
-| `Name` | Enter the name of your Kubernetes cluster (e.g., `eks-cluster-nonprod` in the case of EKS and `rancher-cluster-qa` in the case of Rancher) | 
-| `Region` | Select the region where your cluster is hosted (e.g., `us-east-1` in the case of EKS and `ap-south-3` in the case of Rancher) <br> Refer to [View cluster details using the AWS Management Console](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-manage-view-clusters.html#emr-view-cluster-console) for more information| 
-| `VPC CIDR` | Enter the [VPC CIDR](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-cidr-blocks.html) value. This value determines the number of [pods](../../reference/glossary.md#pod), [nodes](../../reference/glossary.md#nodes), or services your cluster can host (e.g., `10.0.1.6/16`)| 
-| `Authentication Mode` | Select the authentication mode you wish to perform for the cluster <br> <ul><li> **API_AND_CONFIG_MAP** - Select this if you want to use both the API and the ConfigMap to authenticate who can access the cluster. This option is recommended if you are migrating from the old `aws-auth` ConfigMap method (which is deprecated) to the new API method. <br> Refer to [Grant IAM users access to Kubernetes with EKS access entries](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html) for more information. </li> <li>**API** - Select this if you want to manage access using a single API. This option is recommended as this is the best practice for EKS cluster creation. <br> Refer to [Manage User Access with API](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html) for more information.</li> <li> **CONFIG MAP** - Select this if you want to rely on the original (but deprecated) way of authentication using `aws-auth` ConfigMap. This option is not recommended anymore. <br> Refer to [Grant IAM users access to Kubernetes. with a ConfigMap.](https://docs.aws.amazon.com/eks/latest/userguide/auth-configmap.html) for more information.</li></ul>| 
-| `Enable IRSA` | Turn on this IRSA toggle (IAM Roles for [Service Accounts](https://kubernetes.io/docs/concepts/security/service-accounts/)) if you want your application to securely connect to other AWS services using a service account| 
-| `Allow public access` | Turn on this toggle if you want to allow your [EKS control plane](https://docs.aws.amazon.com/eks/latest/best-practices/control-plane.html) endpoint to be accessed publicly from anywhere without the VPC. It is recommended to keep this toggle disabled |
-| `Cluster Version` | Select your preferred Kubernetes cluster version. If you are running a live application in a production environment, it is recommended that you select a stable version instead of the latest version | 
+  | Field | Description |
+  | :--- | :--- |
+  | `Cluster Provider` | Select the type of cluster you'd like to create based on your requirement | 
+  | `Name` | Enter the name of your Kubernetes cluster (e.g., `eks-cluster-nonprod` in the case of EKS and `rancher-cluster-qa` in the case of Rancher) | 
+  | `Region` | Select the region where your cluster is hosted (e.g., `us-east-1` in the case of EKS and `ap-south-3` in the case of Rancher) <br> Refer to [View cluster details using the AWS Management Console](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-manage-view-clusters.html#emr-view-cluster-console) for more information| 
+  | `VPC CIDR` | Enter the [VPC CIDR](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-cidr-blocks.html) value. This value determines the number of [pods](../../reference/glossary.md#pod), [nodes](../../reference/glossary.md#nodes), or services your cluster can host (e.g., `10.0.1.6/16`)| 
+  | `Authentication Mode` | Select the authentication mode you wish to perform for the cluster <br> <ul><li> **API_AND_CONFIG_MAP** - Select this if you want to use both the API and the ConfigMap to authenticate who can access the cluster. This option is recommended if you are migrating from the old `aws-auth` ConfigMap method (which is deprecated) to the new API method. <br> Refer to [Grant IAM users access to Kubernetes with EKS access entries](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html) for more information. </li> <li>**API** - Select this if you want to manage access using a single API. This option is recommended as this is the best practice for EKS cluster creation. <br> Refer to [Manage User Access with API](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html) for more information.</li> <li> **CONFIG MAP** - Select this if you want to rely on the original (but deprecated) way of authentication using `aws-auth` ConfigMap. This option is not recommended anymore. <br> Refer to [Grant IAM users access to Kubernetes. with a ConfigMap.](https://docs.aws.amazon.com/eks/latest/userguide/auth-configmap.html) for more information.</li></ul>| 
+  | `Enable IRSA` | Turn on this IRSA toggle (IAM Roles for [Service Accounts](https://kubernetes.io/docs/concepts/security/service-accounts/)) if you want your application to securely connect to other AWS services using a service account| 
+  | `Allow public access` | Turn on this toggle if you want to allow your [EKS control plane](https://docs.aws.amazon.com/eks/latest/best-practices/control-plane.html) endpoint to be accessed publicly from anywhere without the VPC. It is recommended to keep this toggle disabled |
+  | `Cluster Version` | Select your preferred Kubernetes cluster version. If you are running a live application in a production environment, it is recommended that you select a stable version instead of the latest version | 
 
-![Figure 19: Create Kubernetes Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/create-k8s-cluster.jpg)
+  ![Figure 19: Create Kubernetes Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/create-k8s-cluster.jpg)
 
-Refer the following table (containing **optional** fields) and enter the details in the corresponding fields:
+* Refer the following table (containing **optional** fields) and enter the details in the corresponding fields:
 
-| Field | Description |
-| :--- | :--- |
-| `Team` | Select the team whose tag you want to attach to the cluster resources. For example, when you select `qa-team`, it means that the cluster resources (pods, ConfigMaps, etc.) created with this cluster are owned by the QA team | 
-| `Environment` | Select the environment. For example, when you select `qa`, it means that this cluster is a part of the QA environment | 
-| `Availability Zones` | Select availability zones (e.g., `us-east-2b` and `ap-west-1a`) if you prefer to distribute your worker nodes across multiple zones to make your cluster highly available. <br> This means that even if one availability zone goes down (e.g., `us-east-2b`), the other zones (e.g., `ap-west-1a`) keep your cluster up and running | 
-| `Private access CIDRs` | Enter the private access CIDRs (IP addresses that are allowed to reach the API server). If you had turned off the **Allow public access** toggle, then your EKS control plane endpoint would be private. <br> It then becomes crucial to enter the private access CIDRs so that the API server recognizes them and allows them to access the endpoint | 
+  | Field | Description |
+  | :--- | :--- |
+  | `Team` | Select the team whose tag you want to attach to the cluster resources. For example, when you select `qa-team`, it means that the cluster resources (pods, ConfigMaps, etc.) created with this cluster are owned by the QA team | 
+  | `Environment` | Select the environment. For example, when you select `qa`, it means that this cluster is a part of the QA environment | 
+  | `Availability Zones` | Select availability zones (e.g., `us-east-2b` and `ap-west-1a`) if you prefer to distribute your worker nodes across multiple zones to make your cluster highly available. <br> This means that even if one availability zone goes down (e.g., `us-east-2b`), the other zones (e.g., `ap-west-1a`) keep your cluster up and running | 
+  | `Private access CIDRs` | Enter the private access CIDRs (IP addresses that are allowed to reach the API server). If you had turned off the **Allow public access** toggle, then your EKS control plane endpoint would be private. <br> It then becomes crucial to enter the private access CIDRs so that the API server recognizes them and allows them to access the endpoint | 
 
-Click **Create Cluster**.
+* Click **Create Cluster**.
 
 ---
 
