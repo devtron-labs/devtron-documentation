@@ -143,11 +143,11 @@ The **Build & Deploy** tab of your application group helps you deploy one or mor
 
     ![Figure 17: Deploying Apps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-image-2.jpg)
 
-5. If you wish, you can deploy all applications in an Application Group using a single deployment strategy; select the preferred deployment strategy for all the applications and click **Deploy**. <br><br> By default, all applications will be deployed using their respective default strategies.
+5. If you wish, you can deploy all applications in an Application Group using a single deployment strategy, select the preferred deployment strategy for all the applications and click **Deploy**. <br><br> By default, all applications will be deployed using their respective default strategies.
 
     ![Figure 18: Selecting Deployment Strategy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-default-strategy.jpg)
 
-    * **Deployment feasibility** page will open; in case for any application, the selected deployment strategy is not configured, you can select one of the configured strategies for that application. <br><br> If you do not select a configured deployment strategy, deployment will be skipped for that particular application.
+    * **Deployment feasibility** page will open, in case for any application, the selected deployment strategy is not configured, you can select one of the configured strategies for that application. <br><br> If you do not select a configured deployment strategy, deployment will be skipped for that particular application.
 
     ![Figure 19: Deployment Feasibility](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-deployment-feasibility.jpg)
 
@@ -216,13 +216,13 @@ This feature aims at helping the user clone existing CI/CD pipelines for new tar
 | [**Pipeline Configuration**](../user-guide/creating-application/workflow/pre-post-tasks.md)       | Cloned, including Pre-CD and Post-CD scripts/plugins        |
 | [**Environment Configuration**](../user-guide/creating-application/README.md#app-configuration)    | Cloned, including Deployment Template (DT), ConfigMap (CM), and Secret |
 | [**GitOps Configuration**](../user-guide/creating-application/gitops-config.md)         | Not cloned              |
-| [**Environment Policies**](../user-guide/creating-application/environment-overrides.md)         | Cloned if at pipeline level; ignored if global              |
+| [**Environment Policies**](../user-guide/creating-application/environment-overrides.md)         | Cloned if at pipeline level,ignored if global              |
 | [**CD Filter**](../user-guide/global-configurations/filter-condition.md)                    | Not cloned (handled globally)                              |
 | [**Protect Configurations**](../user-guide/creating-application/config-approval.md)       | Cloned (handled at pipeline level)                         |
 | [**Deployment Approvals**](../user-guide/global-configurations/approval-policy.md)         | Not cloned (handled globally)                                                    |
 | [**Lock Configurations**](../user-guide/global-configurations/lock-deployment-config.md)          | Not cloned                                                 |
 | [**Mandatory Plugin**](../user-guide/global-configurations/plugin-policy.md)             | Not cloned                                                 |
-| [**Image Digest Policy**](../user-guide/global-configurations/pull-image-digest.md)          | Cloned at pipeline level; ignored if global                |
+| [**Image Digest Policy**](../user-guide/global-configurations/pull-image-digest.md)          | Cloned at pipeline level, ignored if global                |
 | [**Promotion Policy**](../user-guide/global-configurations/image-promotion-policy.md)             | Not cloned                                                 |
 | [**Deployment Window**](../user-guide/global-configurations/deployment-window.md)            | Not cloned                                                 |
 | [**Security Policy**](../user-guide/security-features/security-policies.md)              | Not cloned                                                 |
@@ -251,7 +251,7 @@ This feature gives you two methods of cloning:
 
 2. Select the applications whose pipelines you wish to clone. 
 
-3. A floating widget will appear at the bottom, and click the `⋮` menu and then click **Clone Pipeline Config**.  
+3. A floating widget will appear at the bottom. Click the `⋮` menu and then click **Clone Pipeline Config**.  
 
     * Alternatively, you may access **Clone Pipeline Config** from the `⋮` menu next to the application name.
 
@@ -290,7 +290,7 @@ In other words, you can hibernate running applications or unhibernate hibernated
 
 1. In the `Overview` page of your application group, use the checkboxes to choose the applications you wish to hibernate. 
 
-2. A floating widget will appear at the bottom, click the **Hibernate** button. 
+2. A floating widget will appear at the bottom. Click the **Hibernate** button. 
 
     * Alternatively, you may access **Hibernate** from the `⋮` menu next to the application name.
 
@@ -316,7 +316,7 @@ Your applications pods would be scaled down and would stop incurring costs.
 
 1. In the `Overview` page of your application group, use the checkboxes to choose the applications you wish to unhibernate. 
 
-2. A floating widget will appear at the bottom, click the **Unhibernate** button. 
+2. A floating widget will appear at the bottom. Click the **Unhibernate** button. 
 
     * Alternatively, you may access **Unhibernate** from the `⋮` menu next to the application name.
 
@@ -465,11 +465,11 @@ The **Change Image Source** feature in Devtron lets you update the container ima
     1. **Build from Source Code**
         * After selecting **Build from Source Code**, a feasibility check will run. You can click **Create Build Pipeline** only if the application's feasibility shows `Can change`.
 
-            **Note:** Application for which the feasibility shows `cannot change` will be skipped due to following reasons:
+            **Note:** Application for which the feasibility shows `Cannot change` will be skipped due to following reasons:
 
             * `Multi git material found at the source, not allowed to change the source`
-            * `no cd pipeline found for the selected app and env combination`
-            * `invalid request, trying to create self loop, cannot create sync-cd source pipeline with source environment in same workflow`
+            * `No cd pipeline found for the selected app and env combination`
+            * `Invalid request, trying to create self loop, cannot create sync-cd source pipeline with source environment in same workflow`
             
             ![Figure 53a: Selecting 'Build From Source'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-build-from-source-code.jpg)
 
@@ -479,7 +479,7 @@ The **Change Image Source** feature in Devtron lets you update the container ima
             
             ![Figure 54: Entering Required Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-build-from-source-code-details.jpg)
 
-        * Click **Create Pipeline**; A modal window will appear showing the status of the image source change.
+        * Click **Create Pipeline**. A modal window will appear showing the status of the image source change.
 
             ![Figure 55: Clicking 'Create Pipeline'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-build-from-source-code-changed.jpg) 
 
@@ -494,11 +494,11 @@ The **Change Image Source** feature in Devtron lets you update the container ima
 
         * A feasibility check will run. You can click **Change Image Source** only if the application's feasibility is marked as `Can change`.
             
-            **Note:** Application for which the feasibility shows `cannot change` will be skipped due to following reasons:
+            **Note:** Application for which the feasibility shows `Cannot change` will be skipped due to following reasons:
 
             * `Multi git material found at the source, not allowed to change the source`
-            * `no cd pipeline found for the selected app and env combination`
-            * `invalid request, trying to create self loop, cannot create sync-cd source pipeline with source environment in same workflow`
+            * `No cd pipeline found for the selected app and env combination`
+            * `Invalid request, trying to create self loop, cannot create sync-cd source pipeline with source environment in same workflow`
 
             ![Figure 58: Feasibility Window](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-sync-with-environment-feasibility.jpg)
 

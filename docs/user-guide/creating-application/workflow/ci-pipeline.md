@@ -58,7 +58,7 @@ Devtron typically uses a Dockerfile from your repository to build container imag
 
    ### Understanding Source Types
 
-   Devtron allows you set up different source types for a build pipeline; source types specify the repository events that initiate a build pipeline, such as a change in a branch, pull request creation, or tag creation.
+   Devtron allows you set up different source types for a build pipeline, source types specify the repository events that initiate a build pipeline, such as a change in a branch, pull request creation, or tag creation.
    
    ![Figure 4: Source Types](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-source-type.jpg)
    
@@ -138,7 +138,7 @@ This document focuses on configuring the Build Stage. If you want to set up Pre-
    | :---| :--- |:---|
    | `TRIGGER BUILD PIPELINE`| Required| <p>The build execution may be set to:</p><ul><li><code>Automatically</code>(default): Build is triggered automatically as the Git source code changes.</li><li><code>Manually</code>: Build is triggered manually.</li></ul>|
    | DOCKER LAYER CACHING | Optional | Use this to [enable/disable caching of docker image layers](#docker-layer-caching) from your build pipeline |
-   | `Pipeline Name`| Required| Devtron automatically assigns a unique name for the pipeline; if you wish, you can edit it here.|
+   | `Pipeline Name`| Required| Devtron automatically assigns a unique name for the pipeline, if you wish, you can edit it here.|
    | `Scan for Vulnerabilities` | Optional| <p><strong>Prerequisite</strong>: Install either [Clair](../../integrations/vulnerability-scanning/clair.md) or [Trivy](../../integrations/vulnerability-scanning/trivy.md).</p><ul><li>In the **Build** Stage, enable the **Scan for vulnerabilities** toggle.</li><li>Refer: [Vulnerability Scanning](../../integrations/vulnerability-scanning/README.md) to learn more.</li></ul>|
    | `Override Options`| Optional| Allows overriding configurations from earlier stages like CRI configuration, target platform configuration, etc.|
    | `Docker build arguments`|Optional| <p>Override docker build configurations for this pipeline.</p><ul><li><strong>Key</strong>: Field name</li><li><strong>Value</strong>: Field value.</li></ul>|
@@ -197,7 +197,7 @@ Refer the [User permissions](../../global-configurations/authorization/user-acce
 
 1. Navigate to **Configurations** → **Workflow Editor** of your application.
 
-2. Select **+ New Workflow**; a modal window will appear where you can select the type of pipeline you want to create. 
+2. Select **+ New Workflow**, a modal window will appear where you can select the type of pipeline you want to create. 
 
    ![Figure 15: Creating New Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-new-workflow.jpg)
 
@@ -211,14 +211,14 @@ Refer the [User permissions](../../global-configurations/authorization/user-acce
 
    {% hint style="warning" %}
    ### Note
-   The user must have at least view access to the application that contains the source pipeline; otherwise, the application will not appear in the **Filter By Application** field.
+   The user must have at least view access to the application that contains the source pipeline, otherwise, the application will not appear in the **Filter By Application** field.
    {% endhint %}
 
    |Field Name|Description|
    |:---|:---|
    |Filter By Application|Enter the application name in which the source CI pipeline exists.|
    |Source CI pipeline|List all the build pipelines for the selected application. Choose the pipeline that you want to link|
-   |Name|Enter the name for the **Linked Build Pipeline**.<br><ul><li>By default, it takes the name of the source pipeline; if you wish, you can rename it.</li><li>In case the source pipeline exists within the same application, the **Linked Build Pipeline** name must be different from the source pipeline, as Devtron does not allow two pipelines with the same name within a single application.</li></ul>|
+   |Name|Enter the name for the **Linked Build Pipeline**.<br><ul><li> By default, it takes the name of the source pipeline, if you wish, you can rename it.</li><li> In case the source pipeline exists within the same application, the **Linked Build Pipeline** name must be different from the source pipeline, as Devtron does not allow two pipelines with the same name within a single application.</li></ul>|
 
    ![Figure 18: Pipeline created](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-created.jpg)
 
@@ -247,7 +247,7 @@ To create a pipeline form **Deploy Image from External Service**, follow the ste
 
 1. Navigate to **Configurations** → **Workflow Editor** of your application.
 
-2. Select **+ New Workflow**; a modal window will appear where you can select the type of pipeline you want to create.
+2. Select **+ New Workflow**, a modal window will appear where you can select the type of pipeline you want to create.
 
    ![Figure 21: Creating New Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-new-workflow.jpg)
 
@@ -428,7 +428,7 @@ After adding the API token as a secret, add a new step in your GitHub Action wor
 
    ![Figure 46: Selecting workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-select-workflow.jpg)
 
-3. Click the workflow file (`main.yml`) under the workflow name; this will open the workflow file in GitHub.
+3. Click the workflow file (`main.yml`) under the workflow name, this will open the workflow file in GitHub.
 
    ![Figure 47: Selecting 'Workflow File'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-select-workflow-file.jpg)
 
@@ -468,7 +468,7 @@ To create a pipeline form **Sync with Environment**, follow the steps below
 
 1. Navigate to **Configurations** → **Workflow Editor** of your application.
 
-2. Select **+ New Workflow**; a modal window will appear where you can select the type of pipeline you want to create.
+2. Select **+ New Workflow**, a modal window will appear where you can select the type of pipeline you want to create.
 
    ![Figure 51: Creating New Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-new-workflow.jpg)
 
@@ -508,7 +508,7 @@ To create a workflow using **Create a job**, follow the steps below
 
 1. Navigate to **Configurations** → **Workflow Editor** of your application.
 
-2. Select **+ New Workflow**; a modal window will appear where you can select the type of pipeline you want to create.
+2. Select **+ New Workflow**, a modal window will appear where you can select the type of pipeline you want to create.
 
    ![Figure 55: Creating New Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-new-workflow.jpg)
 
@@ -544,7 +544,7 @@ This stage allows you to define primary configurations such as Pipeline name, So
 
 The Stage allows you to define tasks for your job.
 
-You can create one or more tasks. Tasks can be dependent on each other for execution. In other words, the output variable of one task can be used as an input for the next task to execute your job. Tasks will execute in the order they are arranged and can be rearranged by drag-and-drop; however, the order of passing the variables must be followed.
+You can create one or more tasks. Tasks can be dependent on each other for execution. In other words, the output variable of one task can be used as an input for the next task to execute your job. Tasks will execute in the order they are arranged and can be rearranged by drag-and-drop, however, the order of passing the variables must be followed.
 
 To create a task:
 
@@ -750,9 +750,9 @@ If the caching flags in **Global Settings** are set to false, ignoring cache bec
 
 **Override Options** in **Build Stage** lets you override **Build Configurations** for each workflow of the same application. You can configure overrides in the build stage of each workflow.
 
-For example, you might want to push development or testing builds to a separate registry from production builds, but in **Build Configurations** you have configured the production container registry to push build images; This means for all the workflows (testing or production), build images will be pushed to the production container registry by default. 
+For example, you might want to push development or testing builds to a separate registry from production builds, but in **Build Configurations** you have configured the production container registry to push build images. This means for all the workflows (testing or production), build images will be pushed to the production container registry by default. 
 
-To override this Build configuration for the specific workflow (testing workflow), you can use **Override Options** in the **Build Stage** of that workflow that lets you specify different container registries, how to build container images, and target platforms for different workflows of the same application; This means the images built for testing environment can be included to the testing registry and the images for production environment can be included to the production registry. This helps keep environments isolated, improves deployment safety, and makes managing multiple environments easier.
+To override this Build configuration for the specific workflow (testing workflow), you can use **Override Options** in the **Build Stage** of that workflow that lets you specify different container registries, how to build container images, and target platforms for different workflows of the same application. This means the images built for testing environment can be included to the testing registry and the images for production environment can be included to the production registry. This helps keep environments isolated, improves deployment safety, and makes managing multiple environments easier.
 
 #### Creating Build Configuration Override
 
@@ -776,7 +776,7 @@ To override a container registry, container image, or target platform:
 
    ![Figure 75: Selecting Allow Override](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-allow-override.jpg)
 
-5. Select **Update Pipeline**; The override will be effective when the next build is triggered.
+5. Select **Update Pipeline**, The override will be effective when the next build is triggered.
 
 The overridden container registry/container image location/target platform will be reflected on the [Build Configuration](../../creating-application/docker-build-configuration.md) page. You can also see the number of build pipelines for which the container registry/container image location/target platform are overridden.
 
