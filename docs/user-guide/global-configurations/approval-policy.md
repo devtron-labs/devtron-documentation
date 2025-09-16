@@ -170,6 +170,45 @@ If you apply multiple policies together, the user has to meet the approval condi
 
 ---
 
+## Configuring Exceptions
+
+The Exceptions tab allows you to specify users or groups for whom the approval policy will not apply. This is useful in where certain teams, such as an operations team resolving production incidents, need to bypass approvals while the policy continues to apply to all other users.
+
+You can choose to:
+
+* Exclude super-admins from approval permissions.
+    
+* Select specific users or user groups who should be exempt from approvals for deployments or configuration changes.
+
+### Excluding Super Admins
+
+1. Navigate to **Approval Policy** → **Exceptions**.
+
+2. Choose the scope, for which you want super admins to not require approval.
+
+3. Enable the toggle next to **Super admins**.
+
+4. Super-admins will no longer require approvals for the selected scope.
+
+### Excluding Specific Users / User Groups
+
+1. Navigate to **Approval Policy** → **Exceptions**.
+
+2. Choose the scope, for which you want super admins to not require approval.
+
+3. Click the **Add**/**Edit** button next to **Specific Users / User Groups**. A pop-up modal window will appear.
+
+4. You can do either of the following:
+    
+    1. You can select specific **Users** or **API Tokens** from **Add Users** dropdown.
+
+    2. You can select specific **Users Groups** from **Add user groups** dropdown.
+
+5. Click **Save**. The selected users or user groups will no longer require approvals for the selected scope.
+
+
+---
+
 ## Remove Applied Policies
 
 {% hint style="warning" %}
@@ -217,7 +256,7 @@ At least one policy must remain applied to a scope, so you cannot remove all the
 Users need to have super-admin permissions to delete an applied policy.
 {% endhint %}
 
-If you have already applied policies to a scope (e.g., Global, Cluster, Application) and wish to delete all of them from that given scope, follow the steps below. **Note**: This will not [delete the approval policy](#delete-approval-policy) you originally created. Moreover, deployment pipelines may still continue inheriting profiles from higher scopes (e.g., Global, Cluster, Application).
+If you have already applied policies to a scope (e.g., Global, Cluster, Application) and wish to delete all of them from that given scope, follow the steps below. **Note**: This will not [delete the approval policy](#delete-an-approval-policy) you originally created. Moreover, deployment pipelines may still continue inheriting profiles from higher scopes (e.g., Global, Cluster, Application).
 
 1. Go to **Applied Profiles** tab.
 2. Use the filters to find the applied profile(s).
