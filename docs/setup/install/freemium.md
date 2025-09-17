@@ -37,7 +37,7 @@ Log in with your work email to access the license dashboard. Devtron provides tw
 
 1. Log in using **Google**, **GitHub**, or **Microsoft** SSO providers. Personal email accounts such as Gmail, Yahoo are not supported.
 
- ![Figure 1: Selecting SSO Provider](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-sso.jpg)
+ ![Figure 1: Selecting SSO Provider](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-sso-v2.jpg)
 
 2. Once logged in, the **Devtron License Dashboard** will open.
 
@@ -53,17 +53,17 @@ You can also log in via **Continue with Email**. This will send a login link to 
 
 1. Select **Continue with Email** to log in.
 
- ![Figure 3: Selecting 'Continue with Email'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-email.jpg)
+ ![Figure 3: Selecting 'Continue with Email'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-email-v2.jpg)
 
 2.  Enter your work email and select **Send Login Link**
 
-  ![Figure 4: Entering Email](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-enter-email.jpg)
+  ![Figure 4: Entering Email](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-enter-email-v2.jpg)
 
 3. A login link will be sent to the email provided by you. If you do not receive the link, you can resend it after 30 seconds.
 
  **Note:** Your login link is valid only for 10 minutes.
 
-  ![Figure 5: Sending Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-resend-email.jpg)
+  ![Figure 5: Sending Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/license-dashboard-resend-email-v2.jpg)
 
 {% hint style="info" %}
 ### Email not received?
