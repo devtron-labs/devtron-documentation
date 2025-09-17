@@ -192,6 +192,11 @@ You can choose to:
 
     ![Figure 16: Enabling Super Admins Exception](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-super-admin-exception.gif)
 
+{% hint style="info" %}
+### Note
+Super-admins can approve requests even if the super-admin exception toggle is turned off.
+{% endhint %}
+
 ### Excluding Specific Users / User Groups / API Tokens
 
 1. Navigate to **Approval Policy** → **Exceptions**.
