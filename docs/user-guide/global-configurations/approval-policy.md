@@ -227,6 +227,11 @@ Super-admins can approve requests even if the super-admin exception toggle is tu
 
     ![Figure 22: Clicking 'Save'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-save.jpg)
 
+{% hint style="danger" %}
+### Caution
+By default, approvers cannot approve their own deployments or base configuration edits, but, if an approver is added as an exception, this restriction does not apply, and that approver can trigger their own deployments or edit base configurations without any approvals.
+{% endhint %}
+
 After configuring exceptions, super-admins and specific users / user groups can make configuration changes and  trigger deployments without requiring any approval.
 
 #### Triggering Deployments
