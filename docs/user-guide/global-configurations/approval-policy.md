@@ -172,7 +172,7 @@ If you apply multiple policies together, the user has to meet the approval condi
 
 ## Configuring Exceptions
 
-The Exceptions tab allows you to specify users or groups for whom the approval policy will not apply. This is useful in where certain teams, such as an operations team resolving production incidents, need to bypass approvals while the policy continues to apply to all other users.
+The Exceptions tab allows you to specify users or groups for whom the approval policy will not apply. This is useful in cases where certain teams, such as an operations team resolving production incidents, need to bypass approvals while the policy continues to apply to all other users.
 
 You can choose to:
 
@@ -203,7 +203,7 @@ Super-admins can approve requests even if the super-admin exception toggle is tu
 
     ![Figure 17: Exceptions Tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-exceptions.jpg)
 
-2. Choose the scope, for which you want super admins to not require approval.
+2. Choose the scope, for which you want specific users / user groups / API tokens to not require approval.
 
     ![Figure 18: Selecting Scope](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-scope.jpg)
 
