@@ -222,6 +222,20 @@ You can choose to:
 
     ![Figure 22: Clicking 'Save'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-save.jpg)
 
+After configuring exceptions, super-admins and specific users / user groups can make configuration changes and  trigger deployments without requiring any approval.
+
+#### Triggering Deployments
+
+![Figure 23: Deploying an Image without an Approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-deploy-exception.jpg)
+
+#### Editing Base Configurations
+
+![Figure 24a: Editing Deployment Template without an Approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-base-config-exception.gif)
+
+![Figure 24b: Creating/Editing ConfigMap without an Approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-configmap-exception.gif)
+
+![Figure 24c: Creating/Editing Secret without an Approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-secret-exception.gif)
+
 ---
 
 ## Remove Applied Policies
