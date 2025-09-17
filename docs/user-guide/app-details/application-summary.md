@@ -66,24 +66,158 @@ Covers:
     8. Scale workloads (only in Helm, ArgoCD & FluxCD apps)
 -->
 
-### Ingress Host URL
+You can perform a variety of actions right from the **App Details** page using the following action buttons:
 
-You can view the Ingress Host URL and the Load Balancer URL on the **URLs** section on the **App Details**.
+### URLs
 
-You can also copy the Ingress Host URL from the **URLs** instead of searching in the `Manifest`.
+When you click the **URLs** button, the **URLs** page is displayed with the [Ingress Host URL](../../reference/glossary.md#ingress-host-url) and the [Load Balancer URL](../../reference/glossary.md#load-balancer-url) (if available).
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/ingress-url-appdetails.jpg)
+![Figure a: ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/ingress-url-appdetails.jpg)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/ingress-host-url1.jpg)
 
-1. Select **Applications** from the left navigation pane.
-2. After selecting your configured application, select the **App Details**.
-3. Click **URLs**.
-4. You can view or copy the **URL** of the Ingress Host.
+![Figure b: ](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/ingress-host-url1.jpg)
 
-**Note**: 
-* The Ingress Host URL will point to the load balancer of your application.
-* You can also view the `Service` name with the load balancer detail.
+You can directly copy the URLs (Ingress and Load Balancer) from the **URLs** page instead of searching in the manifest. 
+
+The Ingress Host URL will point to the load balancer of your application and you can also view the service name with the load balancer details.
+
+### Hibernate
+
+{% hint style="info" %}
+
+### Note
+
+The **Hibernate** button is available only for Devtron custom applications. 
+
+{% endhint %}
+
+The **Hibernate** button allows you to hibernate (to rest) your application when not in use, by scaling down the pods to nearly zero in that selected environment (e.g., `qa`). The application will automatically un-hibernate when you make a new deployment. 
+
+![Figure : Hibernate Your Application]()
+
+### Restart Workloads 
+
+{% hint style="info" %}
+
+### Note
+
+The **Restart Workloads** button is available only for Devtron custom applications. 
+
+{% endhint %}
+
+When you are facing issues with your application (e.g., crashing of pods) or prefer to use a new configuration, you restart the workloads. When you click the **Restart Workloads** button, the **Restart Workloads** page is displayed.
+
+![Figure : Restart Workloads]()
+
+When you select a workload and click **Restart Workloads**, all the pods for the selected workloads are restarted using the configured deployment strategy (e.g., `Rolling`).
+
+### Rollback
+
+{% hint style="info" %}
+
+### Note
+
+The **Rollback** button is available only for Devtron custom applications. 
+
+{% endhint %}
+
+You can perform a rollback of your deployment directly from the **App Details** page (for Blue-Green & Canary deployment strategies only). When you click the **Rollback** button, the following page is displayed. 
+
+![Figure : Rollback Your Deployment]()
+
+* Select an image from the available list of previously deployed images in that specific environment. 
+
+* Select one of the following deployment configurations in the **Deploy** drop-down box:
+
+    * Last Saved Config
+
+    * Last Deployed Config
+
+    * Config Deployed with Selected Image
+
+* Review configuration difference (if any) by selecting the **Review** option. If there is any config difference, it will be highlighted in this section.
+
+* Choose a deployment strategy in the **Rolling (Default)** drop-down box. 
+
+* Click **Deploy**.
+
+### Swap Traffic 
+
+{% hint style="info" %}
+
+### Note
+
+The **Swap Traffic** button is available only for Devtron custom applications. 
+
+{% endhint %}
+
+Swap Traffic helps you in redirecting the live traffic from one version of your application to another (e.g., `v1.2` to `v1.1`). When something goes wrong with a particular version (e.g., `v1.2`), and you want to immediately redirect the traffic to an older version of the same application (e.g., `v1.1`) without rolling back `v1.2`, you swap traffic.
+
+The key difference between rolling back and swapping traffic is that, when you rollback, you rollback the entire application to its older version. Whereas when you swap traffic, you keep both the versions of the application (the current one and the older one), but just redirect the traffic. 
+
+![Figure : Swap Traffic]()
+
+Click **Swap Traffic** to redirect the live traffic of your application.
+
+### Deploy
+
+{% hint style="info" %}
+
+### Note
+
+The **Deploy** button is available only for Devtron custom applications. 
+
+{% endhint %}
+
+Devtron helps you in deploying images directly from the **App Details** page. When you click the **Deploy** button, the following page is displayed. 
+
+![Figure : Deploy Your Application]()
+
+Follow the below steps to deploy an image:
+
+* Select an image from the available list of previously deployed images in that specific environment. 
+
+* Select one of the following deployment configurations in the **Deploy** drop-down box:
+
+    * Last Saved Config
+
+    * Last Deployed Config
+
+    * Config Deployed with Selected Image
+
+* Review configuration difference (if any) by selecting the **Review** option. If there is any config difference, it will be highlighted in this section.
+
+* Choose a deployment strategy in the **Rolling (Default)** drop-down box. 
+
+* Click **Deploy**.
+
+### Environment Configurations
+
+{% hint style="info" %}
+
+### Note
+
+The **Environment Configuration** button is available only for Devtron custom applications. 
+
+{% endhint %}
+
+You can quickly configure Deployment Templates, ConfigMaps and Secrets for the selected environment directly from the **App Details** page. When you click the **Go to Environment Config** button, the following page is displayed. 
+
+![Figure : Environment Configurations]()
+
+To configure enviroment specific deployment templates, configMaps, secrets, refer to [Environment Overrides](../creating-application/environment-overrides.md#how-to-add-environment-overrides).
+
+### Scale Workloads
+
+{% hint style="info" %}
+
+### Note
+
+The **Scale Workloads** button is available only for Helm, ArgoCD, and FluxCD applications. 
+
+{% endhint %}
+
+<!-- More information to be gathered and updated here -->
 
 ---
 ## External Links 
@@ -95,37 +229,25 @@ Why do I need external links here?
 What can I do with it? 
 
 -->
+You can access your [configured external links](../../user-guide/global-configurations/external-links.md) directly from the **App Details** page. 
 
-### Access an External Link
+![Figure : External Links](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/app-details-external-link.jpg)
 
-The users can access the [configured external links](../../user-guide/global-configurations/external-links.md) on the **App Details** page.
+{% hint style="info" %}
 
-1. Select **Applications** from the left navigation pane.
-2. After selecting a configured application, select the **App Details** tab.
-   
-> **Note**: If you enable `App admins can edit` on the `External Links` page, then only non-super admin users can view the selected links on the `App-Details` page.
+### Note
 
-As shown in the screenshot, the external links appear on the `App-Details` level:
+If you enable `App admins can edit` in the **External Links** page, then only non super admins can view the selected links on the **App Details** page.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/app-details-external-link.jpg)
+{% endhint %}
 
-3. You can hover around an external link (e.g. Grafana) to view the description.
-
-The link opens in a new tab with the context you specified as env variables in the [Add an external link](./global-configurations/../../global-configurations/external-links.md) section.
-
-
-### Manage External Links
-
-On the `App Configuration` page, select `External Links` from the navigation pane.
-You can see the configured external links which can be searched, edited or deleted.
-
-You can also `Add Link` to add a new external link.
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/app-config-external-link.jpg)
+All the external links that you have configured in the **Configurations** tab are displayed in this section. When you hover around an external link (e.g. `Grafana`), a description of the external link is displayed. To know more, refer to [External Links](../global-configurations/external-links.md).
 
 ---
 ## Application Metrics
 <!-- Provides an overview about application metrics; but links to the appropriate document-->
+
+Application metrics helps you in evaluating the performance and efficiency of your application. The Application Metrics section can be enabled by enabling the checkbox **Show application metrics** while configuring the application. Refer to [Application Metrics](../creating-application/app-metrics.md) for more information.  
 
 ---
 ## Next Steps

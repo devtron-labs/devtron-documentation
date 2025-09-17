@@ -144,6 +144,10 @@ Since images are platform-agnostic, you don't have to worry about compiling your
 
 You can also view the list of image builds while preparing your deployment in the `Build & Deploy` tab of your application (provided the CI stage is successful).
 
+### Ingress Host URL 
+
+A web address (e.g., `https://your-company.com`) that people use to access your application via [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/).
+
 ### Job
 
 In Devtron, there is a job that is very similar to Kubernetes job. A Kubernetes job is an object used to create one or more pods to complete a specific task or job and then terminate. 
@@ -155,6 +159,10 @@ If you are a super-admin in Devtron, you can view Jobs in the sidebar.
 Distributes incoming network traffic across multiple instances or nodes to ensure efficient resource utilization and improved performance. In Kubernetes, Load Balancer is a service type. Behind the scenes, the managed Kubernetes service connects to the load balancer service of the respective cloud service provider and creates a load balancer, mapping it to the Kubernetes service. 
 
 GKE and AKS provide the public IP of the Load Balancer as the service endpoint, while in the case of EKS, it provides a non-customizable DNS name.
+
+### Load Balancer URL
+
+A web address (e.g., `http://sdk39dksig3-23kd.us-west-2.elb.amazonaws.com`) that is automatically generated when the [Load Balancer](#load-balancer) is created. When this load balancer URL is accessed by an external system (e.g., applications running outside the cluster), the load balancer then splits the traffic among different pods and services.
 
 ### Manifest
 
