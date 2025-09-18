@@ -106,6 +106,14 @@ Evacuating pods from a node before cordoning it, ensuring that running pods are 
 
 In Devtron, you can drain a node by going to Resource Browser → (choose a cluster) → Nodes → (click on a node) → Drain (available in blue). [Read More...](../user-guide/resource-browser/nodes.md#drain-a-node)
 
+### Endpoints
+
+Endpoints are nothing but the address of your pods. When something inside or outside the cluster (e.g., your browser) wants to connect with your service (e.g., your application), endpoints are the way for Kubernetes to make this happen. To know more, refer to [Endpoints](https://kubernetes.io/docs/reference/kubernetes-api/service-resources/endpoints-v1/).
+
+### EndpointSlice
+
+When a cluster contains more than a hundred pods, for example, EndpointSlice splits the endpoints of the pods into small, managable sizes and helps in keeping track of the endpoints of the pods within a Kubernetes cluster. To know more, refer to [EndpointSlices](https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/).
+
 ### Environment
 
 You can deploy your application to one or more environments (e.g., development, testing, production). In Devtron, Environment = [Cluster](#cluster) + [Namespace](#namespace). For a given application, you cannot have multiple CD pipelines for an environment. For e.g., if an application named 'test-app' is deployed on an environment named 'test-environment', you cannot create another deployment (CD) pipeline for the same app and environment.
@@ -263,6 +271,10 @@ In Devtron, you get the option to add secrets in the `App Configuration` tab of 
 ### Security Context
 
 A Kubernetes resource configuration that defines security settings and permissions for pods and containers. A security context defines privilege and access control settings for a pod or container. [Read More...](../user-guide/creating-application/deployment-template/deployment.md#security-context)
+
+### Service 
+
+When the network addresses of pods changes frequently, it becomes difficult to connect to them directly. A service then acts as a stable access point to your application, and automatically redirects requests to the pods, even when they change over time. To know more, refer to [Service](https://kubernetes.io/docs/concepts/services-networking/service/). 
 
 ### StatefulSet
 

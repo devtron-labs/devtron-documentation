@@ -252,3 +252,4 @@ Application metrics helps you in evaluating the performance and efficiency of yo
 ---
 ## Next Steps
 <!-- Provides an overview about K8s resource management and links to the concerned doc (specifically prepared for App Details) -->
+Devtron also allows you to manage a few of your Kubernetes resource kinds from the **App Details** page. Refer to [App Resource Management](app-resource-management.md) to manage your Kubernetes resources. 
