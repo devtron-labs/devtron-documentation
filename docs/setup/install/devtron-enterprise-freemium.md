@@ -33,7 +33,7 @@ You can choose any of the two methods to sign up: [SSO](#method-1-sign-up-using-
 
 1. Log in using **Google**, **GitHub**, or **Microsoft** SSO providers. Personal email accounts such as Gmail, Yahoo are not supported.
 
-    ![Figure 1: Selecting SSO Provider](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-sso.jpg)
+    ![Figure 1: Selecting SSO Provider](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-sso-v2.jpg)
 
 2. Once logged in, the **Devtron License Dashboard** will open.
 
@@ -45,17 +45,17 @@ Use this method if your email is not associated with any of the SSO options prov
 
 1. Select **Continue with Email** to log in.
 
-    ![Figure 2: Selecting 'Continue with Email'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-email.jpg)
+    ![Figure 2: Selecting 'Continue with Email'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-email-v2.jpg)
 
 2. Enter your work email and select **Send Login Link**
 
-    ![Figure 3: Entering Email](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-enter-email.jpg)
+    ![Figure 3: Entering Email](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-enter-email-v2.jpg)
 
 3. A login link will be sent to the email address provided by you. If you do not receive the link, you can resend it after 30 seconds.
 
     **Note:** Your login link is valid only for 10 minutes.
 
-    ![Figure 4: Sending Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-resend-email.jpg)
+    ![Figure 4: Sending Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/license-dashboard-resend-email-v2.jpg)
 
 {% hint style="info" %}
 ### Did Not Receive Email?
