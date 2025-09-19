@@ -2,7 +2,9 @@
 
 ## Introduction
 
-An ephemeral container runs temporarily in an existing running pod primarily for debugging and troubleshooting purposes. When your pod(s) crash or your application misbehaves, but you can't restart the workloads for various reasons, you create an ephemeral container.  In Devtron, you can create an ephemeral container in the following ways:
+An ephemeral container runs temporarily in an existing running pod primarily for debugging and troubleshooting purposes. When your pod(s) crash or your application misbehaves, but you can't restart the workloads for various reasons, you create an ephemeral container.  
+
+In Devtron, you can create an ephemeral container in the following ways:
 
 * [From App Details Page](#create-from-app-details-page)
 

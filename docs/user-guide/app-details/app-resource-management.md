@@ -4,7 +4,7 @@
 
 You can check for vulnerabilities, analyze logs, create ephemeral containers, and manage a few resource kinds directly from the **App Details** page.
 
-![Figure 1: Resource Management]()
+![Figure 1: Resource Management](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/resource-management.jpg)
 
 ---
 ## K8s Resources
@@ -19,21 +19,20 @@ The following Kubernetes resource kinds are available for you to view and manage
 
 * [EndpointSlice](../../reference/glossary.md#endpointslice) - View the manifest, events of the active EndpointSlice. 
 
-* [Endpoints](../../reference/glossary.md#endpoints) - View the endpoints of your pods, its manifest and events.
+* [Endpoints](../../reference/glossary.md#endpoints) - View the endpoints of your pods, their manifest, and their events.
 
 * [Service](../../reference/glossary.md#service) - View the service health, endpoint and endpointSlice information, and their manifest and events.
-
-![Figure 2: Resource Kinds and Available Actions]()
 
 When you choose a Kubernetes resource kind (e.g., pods), you can perform a few actions against the resource. Refer the following table to know more: 
 
 | **Actions** |**Description**|
 |:------------- |:--------------| 
-| **Logs** | Choose **Logs** when you want to view the logs of running pods (old and new). The logs that you get when you click **Logs** and the logs you get when you go via **Log Analyser** are the same. <br /> Note: **Logs** are available only for the **Pod** resource kind. | 
+| **Logs** | Choose **Logs** when you want to view the logs of running pods (old and new). The logs that you get when you click **Logs** and the logs you get when you go via **Log Analyzer** are the same. <br /> Note: **Logs** are available only for the **Pod** resource kind. | 
 | **Terminal** | Choose **Terminal** when you want to view logs, debug issues, or execute commands directly. Please note that this terminal is different from the cluster terminal that you get on a node level. | 
 | **Events** | Choose **Events** when you want to view all the activities (create/update/delete) of the selected pod. | 
 | **Manifest** | Choose **Manifest** when you want to view or edit the configuration of the selected pod. | 
 
+![Figure 2: Resource Kinds and Available Actions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/available-actions.jpg)
 
 ---
 ### Check Vulnerabilities
@@ -50,7 +49,7 @@ To check vulnerabilities, any one of the following integrations must be installe
 
 {% endhint %}
 
-One of the primary reasons to check for vulnerabilities is that to catch problems in images, or code, or in the Kubernetes manifest before they end up in production. While Code Scan and Kubernetes Manifest scan are a part of Devtron's Enterprise offering, you can however check for vulnerabilities in your images directly from the **App Details** page.
+One of the primary reasons to check for vulnerabilities is to catch problems in images, or code, or in the Kubernetes manifest before they end up in production. While Code Scan and Kubernetes Manifest Scan are a part of Devtron's Enterprise offering, you can, however, check for vulnerabilities in your images directly from the **App Details** page.
 
 Follow the below steps to check for vulnerabilities: 
 
@@ -66,7 +65,9 @@ Follow the below steps to check for vulnerabilities:
 
 3. Click **Check Vulnerabilities**. The **Security** page will be displayed.
 
-    From the **Security** page, you can view the scan results categorised by severity. When you click on the image link, you will get an even detailed scan results including CVE ID (Common Vulnerabilities and Exposures) and package (the specific place where the vulnerability is present) information. To know more, refer to [Security](../../user-guide/security-features.md).
+    ![Figure 3: Security Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/security-page.jpg)
+
+    From the **Security** page, you can view the scan results categorized by severity. When you click on the image link, you will get an even more detailed scan results, including CVE ID (Common Vulnerabilities and Exposures) and package (the specific place where the vulnerability is present) information. To know more, refer to [Security](../../user-guide/security-features.md).
 
 ---
 ## Log Analyzer 
@@ -86,8 +87,6 @@ Log Analyzer in Devtron helps you to manage the logs of multiple pods and servic
 * Download the logs
 
 * Quickly search for and filter the logs based on your requirement
-
-![Figure 3: Log Analyzer]()
 
 To know more about analyzing logs, refer to [Logs](../resource-browser/pods.md#logs).
 
