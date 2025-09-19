@@ -6,17 +6,6 @@ Devtron can be installed on any [Kubernetes cluster](../getting-started/getting-
 
 The following tiers are available in Devtron:
 
-| Edition | Description |
-| -------- | ----------- |
-| [Install Devtron OSS](devtron-oss.md)| OSS edition, with optional CI/CD and GitOps modules |
-| [Install Devtron Enterprise (Freemium)](devtron-freemium.md) | OSS + enterprise-only features with a free license key for 1 additional cluster |
-
----
-
-Devtron can be installed on any [Kubernetes cluster](../getting-started/getting-started.md#create-a-kubernetes-cluster) of your choice.
-
-The following tiers are available in Devtron:
-
 <table>
 	<thead>
 		<tr>
