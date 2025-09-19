@@ -4,7 +4,7 @@
 * [Getting Started](setup/getting-started/getting-started.md)
 * [Install Devtron](setup/install/README.md)
   * [Install Devtron OSS](setup/install/devtron-oss.md)
-  * [Install Devtron Enterprise (Freemium)](setup/install/devtron-enterprise-freemium.md)
+  * [Install Devtron Enterprise (Freemium)](setup/install/devtron-freemium.md)
 * [Install Devtron Freemium](setup/install/freemium.md)
 * [Global Configurations](user-guide/global-configurations/README.md)
   * [Host URL](user-guide/global-configurations/host-url.md)

@@ -7,11 +7,11 @@ Devtron OSS is the open-source edition of Devtron intended for non-enterprise us
 The table below shows the installation options available in Devtron OSS. Further, there are steps given to install your preferred option in your Kubernetes cluster.
 
 
-| Installation Option | What Is Included | When To Use |
-| ------------------- | --------------- | ----------- |
-| [**Minimal (without integrations)**](#tab-minimal) | Dashboard + Resource Browser + Core operator configurations | A unified view of Helm apps, FluxCD apps, ArgoCD apps, and their related K8s resources |
-| [**With CI/CD**](#tab-with-ci-cd) | Everything in Minimal + Build and Deploy (CI/CD) module | You need a complete CI-CD pipeline for your custom apps (a.k.a Devtron Apps) |
-| [**With CI/CD + GitOps (Argo CD)**](#tab-with-ci-cd--gitops-argo-cd) | Everything in CI/CD + GitOps (Argo CD) module | You need automated, Git-driven deployments |
+| Installation Option                                                                                      | What Is Included                                            | When To Use                                                                            |
+| -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [**Minimal (without integrations)**](devtron-oss.md#command-to-install-devtron-without-integrations)     | Dashboard + Resource Browser + Core operator configurations | A unified view of Helm apps, FluxCD apps, ArgoCD apps, and their related K8s resources |
+| [**With CI/CD**](devtron-oss.md#command-to-install-devtron-with-ci-cd)                                   | Everything in Minimal + Build and Deploy (CI/CD) module     | You need a complete CI-CD pipeline for your custom apps (a.k.a Devtron Apps)           |
+| [**With CI/CD + GitOps (Argo CD)**](devtron-oss.md#command-to-install-devtron-with-ci-cd--gitops-argocd) | Everything in CI/CD + GitOps (Argo CD) module               | You need automated, Git-driven deployments                                             |
 
 {% hint style="success" %}
 ### Not Sure What To Choose?
