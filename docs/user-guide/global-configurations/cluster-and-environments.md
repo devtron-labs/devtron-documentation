@@ -6,7 +6,7 @@ Devtron allows you to connect and manage your existing Kubernetes clusters by ad
 
 You can add any of the following cluster types:
 * [Kubernetes Cluster](#add-kubernetes-cluster) - If you have access to the cluster, use this option.
-* [Isolated Cluster](#add-isolated-cluster) - For airgapped-related use-cases, use this option.
+* [Isolated Cluster](#add-isolated-cluster) - For air-gapped use-cases, use this option.
 
 ---
 
@@ -377,7 +377,7 @@ Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have super-admin permission to add an isolated/airgapped cluster to Devtron.
+Users need to have super-admin permission to add an isolated/air-gapped cluster to Devtron.
 {% endhint %}
 
 For air-gapped Kubernetes clusters with restricted inbound and outbound traffic, Devtron enables seamless management using isolated clusters. While these are not actual clusters with API endpoints, they provide a convenient way to deploy applications in such environments.
