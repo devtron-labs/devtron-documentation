@@ -1,5 +1,48 @@
 # App Details
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/terminal-open.jpg)
+## Introduction
 
-[Terminal](terminal.md)
+The **App Details** page is a comprehensive dashboard that provides you a birds-eye view of your application (Devtron, Helm, ArgoCD, FluxCD). With the **App Details** page, you can: 
+
+* See your application status 
+
+* Scan vulnerabilities 
+
+* View application metrics (e.g., CPU usage and memory usage)
+
+* Manage the most widely used Kubernetes resources
+
+* Deploy your application
+
+* Modify environment configurations 
+
+* Rollback deployments and more
+
+![Figure 1: "App Details" Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/app-details-home.jpg)
+
+The **App Details** page is categorized into the following two sections:
+
+* [Application summary](application-summary.md) - Where you can view your application and deployment statuses, application metrics, swap traffic, scale workloads, deploy and more. 
+
+* [Manage Kubernetes resources](app-resource-management.md) - Where you can manage the logs, manifest, events of your Kubernetes resources, and scan for vulnerabilities. 
+
+{% hint style="warning" %}
+
+### Who can perform this action?
+
+Anyone with a `View Only` permission can view this page, but only those at the level of `Admin` (with specific app permissions) or above can take actions on this page. Refer to [User Permissions](../global-configurations/authorization/user-access.md) for more information. 
+
+{% endhint %}
+
+---
+
+## Next Steps
+
+| **What do you want to do** |**Navigate to**|
+|:--------------------------- |:--------------| 
+| View application summary and security details| [Cards Overview](application-summary.md)|
+| Perform quick actions (e.g., Hibernate) | [Action Buttons](application-summary.md#action-buttons) | 
+| Monitor application metrics | [Application Metrics](application-summary.md#application-metrics)| 
+| Rollback a deployment | [Rollback](application-summary.md#rollback)| 
+| Manage Kubernetes resources | [Resource Management](app-resource-management.md)| 
+| Scan for vulnerabilities | [Check vulnerabilities](app-resource-management.md#check-vulnerabilities)| 
