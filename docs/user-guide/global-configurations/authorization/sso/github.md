@@ -11,7 +11,7 @@ Setting up GitHub SSO enables you to authenticate using your GitHub account, ens
 To configure GitHub SSO in Devtron, you need:
 
 * Super Admin permission
-    * Only a [Super-Admin](../user-access.md) in Devtron can configure SSO. However, you can use the [Admin credentials](../../../../setup/install/install-devtron-with-cicd.md) provided during the initial setup, if you’re setting up Devtron for the first time.
+    * Only a [Super-Admin](../user-access.md) in Devtron can configure SSO. However, you can use the [Admin credentials](../../../../setup/install/devtron-oss.md#step-4-log-in-to-devtron) provided during the initial setup, if you’re setting up Devtron for the first time.
 * A GitHub account to create and manage OAuth credentials. If you do not have a GitHub account, you must create it first on GitHub.
 * [Host URL](../../host-url.md) configured on the Host URL screen (**Global Configurations** → **Host URL**).
 

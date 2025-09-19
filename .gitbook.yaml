@@ -3,8 +3,6 @@ root: ./docs/
 redirects:
     setup: README.md
     setup/install: setup/install/README.md
-    setup/install/install-devtron-with-cicd: getting-started/install/install-devtron-with-cicd
-    setup/install/install-devtron: getting-started/install/install-devtron
     setup/install/installation-configuration: getting-started/install/installation-configuration
     setup/install/override-default-devtron-installation-configs: getting-started/install/override-default-devtron-installation-configs
     setup/install/ingress-setup: getting-started/install/ingress-setup
@@ -156,8 +154,8 @@ redirects:
     faqs-and-troubleshooting/devtron-troubleshoot: FAQs/devtron-troubleshoot.md
     usage/applications/creating-application/config-approval: user-guide/global-configurations/approval-policy.md
     user-guide: README.md
-    setup/install/install-devtron-helm-3: setup/install/install-devtron.md
-    setup/install/install-devtron-using-kubectl: setup/install/install-devtron.md
+    setup/install/install-devtron-helm-3: setup/install/README.md
+    setup/install/install-devtron-using-kubectl: setup/install/README.md
     faqs-and-troubleshooting: FAQs/devtron-troubleshoot.md
     user-guide/creating-application/workflow/automated-test: user-guide/creating-application/workflow/README.md
     setup/stack-manager: user-guide/integrations/README.md
@@ -166,3 +164,12 @@ redirects:
     enterprise-license: setup/install/freemium.md
     usage/applications/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/pre-post-tasks.md
     usage/applications/creating-application/workflow/ci-pipeline/container-registry-override: user-guide/creating-application/workflow/ci-pipeline.md
+    setup/install/install-devtron: setup/install/README.md
+    setup/install/install-devtron-with-cicd: setup/install/README.md
+    setup/install/install-devtron-with-cicd-with-gitops: setup/install/README.md
+    setup/install/install-devtron-on-minikube-microk8s-k3s-kind: setup/install/README.md
+    install/install-devtron: setup/install/README.md
+    install/install-devtron-with-cicd: setup/install/README.md
+    install/install-devtron-with-cicd-with-gitops: setup/install/README.md
+    install/install-devtron-on-minikube-microk8s-k3s-kind: setup/install/README.md
+    
