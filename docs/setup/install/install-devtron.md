@@ -4,7 +4,7 @@
 
 In this section, we describe on how you can install Modern Kubernetes Dashboard without any integrations. Integrations can be added later using [Devtron Stack Manager](../../user-guide/stack-manager.md).
 
-If you want to install Devtron on Minikube, Microk8s, K3s, Kind, refer this [section](./Install-devtron-on-Minikube-Microk8s-K3s-Kind.md).
+If you want to install Devtron on Minikube, Microk8s, K3s, Kind, refer this [document](../install/devtron-oss.md).
 
 {% hint style="success" %}
 
@@ -38,7 +38,7 @@ helm repo update devtron
 
 ## Install Modern Kubernetes Dashboard
 
-**Note**: This installation command will not install CI/CD integration. For CI/CD, refer [install Devtron with CI/CD](../install/install-devtron-with-cicd.md) section.
+**Note**: This installation command will not install CI/CD integration. For CI/CD, refer [install Devtron with CI/CD](../install/devtron-oss.md#tab-with-ci-cd) section.
 
 Run the following command to install Modern Kubernetes Dashboard:
 
