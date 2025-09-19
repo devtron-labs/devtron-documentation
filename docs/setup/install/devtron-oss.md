@@ -2,10 +2,9 @@
 
 ## Introduction
 
-Devtron OSS is the open-source edition of Devtron intended for non-enterprise users. 
+Devtron OSS is the open-source edition of Devtron intended for non-enterprise users.
 
 The table below shows the installation options available in Devtron OSS. Further, there are steps given to install your preferred option in your Kubernetes cluster.
-
 
 | Installation Option                                                                                      | What Is Included                                            | When To Use                                                                            |
 | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------- |
@@ -14,23 +13,21 @@ The table below shows the installation options available in Devtron OSS. Further
 | [**With CI/CD + GitOps (Argo CD)**](devtron-oss.md#command-to-install-devtron-with-ci-cd--gitops-argocd) | Everything in CI/CD + GitOps (Argo CD) module               | You need automated, Git-driven deployments                                             |
 
 {% hint style="success" %}
-### Not Sure What To Choose?
-Begin with the **Minimal** version. You can always install CI/CD and GitOps integrations later from [Devtron Stack Manager](../../user-guide/integrations/README.md).
+#### Not Sure What To Choose?
+
+Begin with the **Minimal** version. You can always install CI/CD and GitOps integrations later from [Devtron Stack Manager](../../user-guide/integrations/).
 {% endhint %}
 
----
+***
 
 ## Prerequisites
 
 * Kubernetes cluster v1.16 or later (cloud or local)
-
-* [Helm v3.8+ installed](https://helm.sh/docs/intro/install/)  
-
-* For production cases, fulfill the [Infrastructure Recommendations](https://docs.devtron.ai/prod-infra) 
+* [Helm v3.8+ installed](https://helm.sh/docs/intro/install/)
+* For production cases, fulfill the [Infrastructure Recommendations](prod-infra.md)
 
 {% hint style="warning" %}
-
-### Cluster created on AWS? Is your EKS version 1.23 or above?
+#### Cluster created on AWS? Is your EKS version 1.23 or above?
 
 Install ['AWS EBS CSI' driver](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html) using the following command:
 
@@ -40,25 +37,25 @@ helm repo update
 helm upgrade --install aws-ebs-csi-driver \
 --namespace kube-system aws-ebs-csi-driver/aws-ebs-csi-driver
 ```
-
 {% endhint %}
 
 {% hint style="warning" %}
-### Using K3s?
-K3s does not include a default storage provisioner, so before you run Helm install in [Step 2](#step-2-choose-an-installation-option), apply the Rancher local-path-provisioner to enable dynamic storage:
+#### Using K3s?
+
+K3s does not include a default storage provisioner, so before you run Helm install in [Step 2](devtron-oss.md#step-2-choose-an-installation-option), apply the Rancher local-path-provisioner to enable dynamic storage:
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
 ```
-
 {% endhint %}
 
 {% hint style="info" %}
-### Need Advanced Help?  
-See [Additional Installation Resources](../../reference/README.md) for production infra recommendations, air-gapped installs, blob storage, config overrides, backups, uninstallation, and more.
+#### Need Advanced Help?
+
+See [Additional Installation Resources](../../reference/README.md) for production infra recommendations, air-gapped installs, blob storage, config overrides, backups, and more.
 {% endhint %}
 
----
+***
 
 ## Step 1: Add Devtron Helm Repository
 
@@ -67,37 +64,44 @@ helm repo add devtron https://helm.devtron.ai
 helm repo update devtron
 ```
 
----
+***
 
 ## Step 2: Choose an Installation Option
 
 {% tabs %}
 {% tab title="Minimal (Dashboard Only)" %}
+#### Command to Install Devtron without Integrations
 
-### Command
+{% hint style="warning" %}
+**Prerequisite**: [Add Devtron Helm Repository](#step-1-add-devtron-helm-repository)
+{% endhint %}
 
 ```bash
 helm install devtron devtron/devtron-operator \
 --create-namespace --namespace devtroncd
 ```
-
 {% endtab %}
 
 {% tab title="With CI/CD" %}
+#### Command to Install Devtron with CI/CD
 
-### Command
+{% hint style="warning" %}
+**Prerequisite**: [Add Devtron Helm Repository](#step-1-add-devtron-helm-repository)
+{% endhint %}
 
 ```bash
 helm install devtron devtron/devtron-operator \
 --create-namespace --namespace devtroncd \
 --set installer.modules={cicd}
 ```
-
 {% endtab %}
 
 {% tab title="With CI/CD + GitOps (Argo CD)" %}
+#### Command to Install Devtron with CI/CD + GitOps (ArgoCD)
 
-### Command
+{% hint style="warning" %}
+**Prerequisite**: [Add Devtron Helm Repository](#step-1-add-devtron-helm-repository)
+{% endhint %}
 
 ```bash
 helm install devtron devtron/devtron-operator \
@@ -105,15 +109,16 @@ helm install devtron devtron/devtron-operator \
 --set installer.modules={cicd} \
 --set argo-cd.enabled=true
 ```
-
 {% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
 ### How much time does it take for installation?
-Depending on the option you choose to install, it might take anywhere between 5 to 15 minutes to spin up all the Devtron microservices. 
+
+Depending on the option you choose to install, it might take anywhere between 5 to 15 minutes to spin up all the Devtron microservices.
 
 You may check the installation by running the following command:
+
 ```bash
 kubectl -n devtroncd get installers installer-devtron \
 -o jsonpath='{.status.sync.status}'
@@ -122,30 +127,26 @@ kubectl -n devtroncd get installers installer-devtron \
 `Applied` status indicates that the installer has successfully applied all the downloaded manifests, and the installation is completed.
 {% endhint %}
 
----
+***
 
 ## Step 3: Obtain the Dashboard URL
 
 {% tabs %}
-
 {% tab title="For EKS/AKS/GKE" %}
-
 To access the dashboard on EKS, AKS, or GKE cluster, run the following command:
 
 ```bash
 kubectl get svc -n devtroncd devtron-service -o jsonpath='{.status.loadBalancer.ingress}'
 ```
 
-<mark style="color:purple;">**Dashboard URL**: The LoadBalancer URL displayed in the output</mark>
-
+<mark style="color:purple;">**Dashboard URL**</mark><mark style="color:purple;">: The LoadBalancer URL displayed in the output</mark>
 {% endtab %}
 
 {% tab title="MicroK8s/Kind/K3s (and Cloud VMs)" %}
-
-You have a few different ways to open the Devtron dashboard on local or VM-based clusters.  
+You have a few different ways to open the Devtron dashboard on local or VM-based clusters.\
 Pick the method that works best for you: quick port-forward, persistent NodePort, or remote access via kubeconfig.
 
-### Accessing the Dashboard locally (MicroK8s/Kind/K3s)
+#### Accessing the Dashboard locally (MicroK8s/Kind/K3s)
 
 Run the following command to port-forward the devtron service to port `8000`
 
@@ -153,13 +154,13 @@ Run the following command to port-forward the devtron service to port `8000`
 kubectl -n devtroncd port-forward service/devtron-service 8000:80
 ```
 
-<mark style="color:purple;">**Dashboard URL**: `http://127.0.0.1:8000`</mark>
+<mark style="color:purple;">**Dashboard URL**</mark><mark style="color:purple;">:</mark> <mark style="color:purple;"></mark><mark style="color:purple;">`http://127.0.0.1:8000`</mark>
 
----
+***
 
-### Accessing the Dashboard via NodePort 
+#### Accessing the Dashboard via NodePort
 
-If you prefer NodePort instead of port-forwarding, reinstall Devtron with:  
+If you prefer NodePort instead of port-forwarding, reinstall Devtron with:
 
 ```bash
 --set components.devtron.service.type=NodePort
@@ -171,11 +172,11 @@ Then run the following command to get the port number assigned to the service:
 kubectl get svc -n devtroncd devtron-service -o jsonpath='{.spec.ports[0].nodePort}'
 ```
 
-<mark style="color:purple;">**Dashboard URL**: `http://<HOST_IP>:<NODEPORT>/dashboard`</mark>
+<mark style="color:purple;">**Dashboard URL**</mark><mark style="color:purple;">:</mark> <mark style="color:purple;"></mark><mark style="color:purple;">`http://<HOST_IP>:<NODEPORT>/dashboard`</mark>
 
----
+***
 
-### Accessing the Dashboard locally from a remote VM (Port Forwarding via Kubeconfig)
+#### Accessing the Dashboard locally from a remote VM (Port Forwarding via Kubeconfig)
 
 If Devtron is installed on a remote VM (e.g., AWS EC2, Azure VM, GCP Compute Engine) using MicroK8s, Kind, or K3s, run the following commands one-by-one:
 
@@ -187,31 +188,27 @@ kubectl config use-context <context-name> # Set the correct context.
 kubectl -n devtroncd port-forward service/devtron-service 8000:80
 ```
 
-<mark style="color:purple;">**Dashboard URL**: `http://127.0.0.1:8000`</mark>
-
+<mark style="color:purple;">**Dashboard URL**</mark><mark style="color:purple;">:</mark> <mark style="color:purple;"></mark><mark style="color:purple;">`http://127.0.0.1:8000`</mark>
 {% endtab %}
 
 {% tab title="Minikube" %}
-
 Run the following command:
 
 ```bash
 minikube service devtron-service --namespace devtroncd
 ```
 
-<mark style="color:purple;">**Dashboard URL**: (directly opens in your browser)</mark>
-
+<mark style="color:purple;">**Dashboard URL**</mark><mark style="color:purple;">: (Directly opens in your browser)</mark>
 {% endtab %}
-
 {% endtabs %}
 
----
+***
 
 ## Step 4: Log in to Devtron
 
 1. From your browser, visit the dashboard URL (obtained in the previous step) to view the login page of Devtron.
-
-2. Enter **`admin`** in the username. Run the below command to get its password. 
+2. Enter **`admin`** in the username.&#x20;
+3.  Run the below command to get your password.
 
     ```bash
     kubectl -n devtroncd get secret devtron-secret \
@@ -221,7 +218,7 @@ minikube service devtron-service --namespace devtroncd
 You should see the **Devtron Dashboard** post successful login.
 
 {% hint style="warning" %}
-### Next Recommended Action
+#### Next Recommended Action
+
 After the initial login, we recommend you set up an [Single Sign-On (SSO) service](../../user-guide/global-configurations/sso-login.md) like Google, GitHub, etc., and then [add other members](../../user-guide/global-configurations/authorization/user-access.md#add-users) (including yourself). Thereafter, they can log in using the configured SSO.
 {% endhint %}
-
