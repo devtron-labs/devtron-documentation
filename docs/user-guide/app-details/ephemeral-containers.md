@@ -1,87 +1,51 @@
-# Using Ephemeral Containers in Devtron
+# Using Ephemeral Containers
 
 ## Introduction
 
-Ephemeral container is a special type of container that runs temporarily in an existing Pod to accomplish user-initiated actions such as troubleshooting. It is especially useful when `kubectl exec` is insufficient because a container has crashed or a container image doesn't include debugging utilities.
+An ephemeral container runs temporarily in an existing running pod primarily for debugging and troubleshooting purposes. When your pod(s) crash or your application misbehaves, but you can't restart the workloads for various reasons, you create an ephemeral container.  In Devtron, you can create an ephemeral container in the following ways:
 
-For instance, ephemeral containers help you execute a `curl` request from within pods that typically lack this utility.
+* [From App Details Page](#create-from-app-details-page)
 
-{% hint style="info" %}
-Ephemeral containers are turned on by default in Kubernetes v1.23 and later
+* [From Resource Browser](#create-from-resource-browser)
+
+* [From Cluster Terminal](#create-from-cluster-terminal)
+
+---
+
+## Create From App Details Page
+
+You can quickly create an ephemeral container directly from the **App Details** page of your application. Refer to [Create Ephemeral Containers](app-resource-management.md#create-ephemeral-containers) for more information.
+
+---
+
+## Create From Resource Browser
+
+{% embed url="https://www.youtube.com/watch?v=Ml19i29Ivc4" caption="Launching Ephemeral Containers from Resource Browser" %}
+
+To create an ephemeral container from the Resource Browser, refer to [Launching Ephemeral Container](../resource-browser/pods.md#launching-ephemeral-container). 
+
+---
+
+## Create From Cluster Terminal
+
+{% hint style="warning" %}
+
+This is not a recommended method. However, if you still wish to proceed, then this option is available only if you are an [Admin](../global-configurations/authorization/user-access.md).
+
 {% endhint %}
-
-<hr />
-
-## How to Launch an Ephemeral Container
-
-Wherever you can access pod resources in Devtron, you can launch an ephemeral container as shown below.
-
-### From Devtron (App Details)
-
-{% embed url="https://www.youtube.com/watch?v=TnaHRugYvSI" caption="Launching Ephemeral Container from App Details" %}
-
-1. In the left sidebar, go to **Applications**.
-2. Search and click your application from the list of Devtron Apps.
-3. Go to the **App Details** tab.
-4. Under the **K8 Resources** tab, select **Pod** inside `Workloads`.
-5. Locate the pod you wish to debug. Hover and choose click **Terminal**.
-
-    ![Figure 1: Opening a Terminal](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/terminal.jpg)
-
-6. Click **Launch Ephemeral Container** as shown below.
-
-    ![Figure 2: Launching an Ephemeral Container](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/launch-ec-new.jpg)
-
-7. You get 2 tabs:
-    1. **Basic** - It provides the bare minimum configurations required to launch an ephemeral container.
-
-    ![Figure 3: Basic View](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/basic.jpg)
-
-    It contains 3 mandatory fields:
-
-    * **Container name prefix** - Type a prefix to give to your ephemeral container, for e.g., *debug*. Your container name would look like `debug-jndvs`.
-
-    * **Image** - Choose an image to run from the dropdown. Ephemeral containers need an image to run and provide the capability to debug, such as `curl`. You can use a custom image too.
-    
-    * **Target Container name** - Since a pod can have one or more containers, choose a target container you wish to debug, from the dropdown.
-
-    2. **Advanced** - It is particularly useful for advanced users that wish to use labels or annotations since it provides additional key-value options. Refer [Ephemeral Container Spec](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#ephemeralcontainer-v1-core) to view the supported options.
-    
-    ![Figure 4: Advanced View](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/advanced.jpg)
-    
-    {% hint style="info" %}
-    Devtron ignores the `command` field while launching an ephemeral container
-    {% endhint %}
-    
-8. Click **Launch Container**.
-
-### From Devtron (Resource Browser)
-
-Click [here](../resource-browser/pods.md#launching-ephemeral-container) to know more.
-
-### From Devtron's Cluster Terminal
-
-(*This is not a recommended method. This option is available only if you are an admin.*)
 
 {% embed url="https://www.youtube.com/watch?v=PzB6dFRYe38" caption="Externally Created Ephemeral Container" %}
 
-You can launch an ephemeral container from Kubernetes CLI. For this, you need access to the cluster terminal on Devtron.
+---
 
-<hr />
+## Remove an Ephemeral Container
 
-## Removing an Ephemeral Container
-
-{% embed url="https://www.youtube.com/watch?v=tZID0YU0YUU" caption="Deleting Ephemeral Containers" %}
-
-You can remove an ephemeral container using either **App Details** or **Resource Browser** (from the same screen you used to create the ephemeral container).
+You can remove an ephemeral container from either the **App Details** page or the **Resource Browser**.
 
 {% hint style="info" %}
-You cannot use **App Details** or **Resource Browser** to remove an ephemeral container created using Kubernetes CLI
+
+If you had created an ephemeral container using the Kubernetes CLI, then you will not be able to remove the container from the **App Details** page or the **Resource Browser**.
+
 {% endhint %}
 
-![Figure 5: Removing Ephemeral Container from App Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/delete-ec.jpg)
-
-
-
-
-
+{% embed url="https://www.youtube.com/watch?v=tZID0YU0YUU" caption="Deleting Ephemeral Containers" %}

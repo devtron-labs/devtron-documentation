@@ -2,15 +2,15 @@
 
 ## Introduction
 
-The **App Details** page is a comprehensive dashboard that provides you a birds-eye view of your application. With the **App Details** page, you can: 
+The **App Details** page is a comprehensive dashboard that provides you a birds-eye view of your application (Devtron, Helm, ArgoCD, FluxCD). With the **App Details** page, you can: 
 
-* See your application status (Devtron, Helm, ArgoCD, FluxCD)
+* See your application status 
 
 * Scan vulnerabilities 
 
 * View application metrics (e.g., CPU usage and memory usage)
 
-* Manage a few of your Kubernetes resources directly from the dashboard
+* Manage the most-widely used Kubernetes resources
 
 * Deploy your application
 
@@ -24,7 +24,7 @@ The **App Details** page is categorized into the following two sections:
 
 * [Application summary](application-summary.md) - Where you can view your application and deployment statuses, application metrics, swap traffic, scale workloads, deploy and more. 
 
-* [Manage K8s resources](app-resource-management.md) - Where you can manage the logs, manifest, events of your K8s resources, and scan for vulnerabilities. 
+* [Manage Kubernetes resources](app-resource-management.md) - Where you can manage the logs, manifest, events of your Kubernetes resources, and scan for vulnerabilities. 
 
 ![Figure 2: Two Sections of "App Details" Page]()
 
@@ -42,8 +42,9 @@ Anyone with a `View Only` permission can view this page, but only from the level
 
 | **What do you want to do** |**Navigate to**|
 |:--------------------------- |:--------------| 
-| View application summary and security details| [Cards Overview](application-summary.md#cards-overview)| 
+| View application summary and security details| [Cards Overview](application-summary.md)|
+| Perform quick actions (e.g., Hibernate) | [Action Buttons](application-summary.md#action-buttons) | 
 | Monitor application metrics | [Application Metrics](application-summary.md#application-metrics)| 
-| Rollback a deployment | [Rollback]()| 
-| Manage K8s resources | [Resource Management](app-resource-management.md)| 
+| Rollback a deployment | [Rollback](application-summary.md#rollback)| 
+| Manage Kubernetes resources | [Resource Management](app-resource-management.md)| 
 | Scan for vulnerabilities | [Check vulnerabilities](app-resource-management.md#check-vulnerabilities)| 
