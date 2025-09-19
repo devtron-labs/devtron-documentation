@@ -168,8 +168,11 @@ redirects:
     setup/install/install-devtron-with-cicd: setup/install/README.md
     setup/install/install-devtron-with-cicd-with-gitops: setup/install/README.md
     setup/install/install-devtron-on-minikube-microk8s-k3s-kind: setup/install/README.md
+    setup/install/faq-on-installation: setup/install/faq-on-installation.md
     install/install-devtron: setup/install/README.md
     install/install-devtron-with-cicd: setup/install/README.md
     install/install-devtron-with-cicd-with-gitops: setup/install/README.md
     install/install-devtron-on-minikube-microk8s-k3s-kind: setup/install/README.md
-    
+    install/faq-on-installation: setup/install/faq-on-installation.md
+    prod-infra: setup/install/prod-infra.md
+    configurations-overview: setup/configurations/configurations-overview.md
