@@ -288,7 +288,7 @@ The license key you generate will be valid only for your Devtron Freemium instal
 
 The license is bound to your Kubernetes cluster and cannot be transferred to another cluster. In case cluster is deleted, you cannot claim freemium license on a new cluster.
 
-In such cases, contact [Devtron Support](support@devtron.ai).
+In such cases, contact [Devtron Support](mailto:support@devtron.ai).
 {% endhint %}
 
 5. Go back to your **Devtron Dashboard URL** page and paste your license key under **License Key** field and click **Activate**.
@@ -302,7 +302,7 @@ In such cases, contact [Devtron Support](support@devtron.ai).
 {% hint style="info" %}
 #### Facing Issues?
 
-Visit the [Troubleshoot](freemium.md#troubleshoot-issues) section to identify the issue or connect with [Devtron Support](support@devtron.ai).
+Visit the [Troubleshoot](freemium.md#troubleshoot-issues) section to identify the issue or connect with [Devtron Support](mailto:support@devtron.ai).
 {% endhint %}
 
 ***
@@ -390,7 +390,7 @@ If you have a new license key, you can update the license key directly within De
 
 ### Upgrade License
 
-If you want to add more than one cluster, email us at enterprise@devtron.ai or reach out to your Devtron representative to upgrade your license.
+If you want to add more than one cluster, email us at [enterprise@devtron.ai](mailto:enterprise@devtron.ai) or reach out to your Devtron representative to upgrade your license.
 
 ![Figure 27: Upgrade License](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-upgrade.jpg)
 
@@ -400,7 +400,7 @@ If you want to add more than one cluster, email us at enterprise@devtron.ai or r
 
 | Issue                                                                                                                                                                                                                       | What it means                                                        | Where is it shown                           | Solution                                                     |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ |
-| <p><strong>License Claimed</strong><br><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-claimed-v2.jpg">Snapshot</a></p>                                   | Someone from your organization has already availed a license         | License Dashboard                           | Reach out to enterprise@devtron.ai                           |
+| <p><strong>License Claimed</strong><br><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-claimed-v2.jpg">Snapshot</a></p>                                   | Someone from your organization has already availed a license         | License Dashboard                           | Reach out to [enterprise@devtron.ai](mailto:enterprise@devtron.ai)                           |
 | <p><strong>Invalid License Key</strong><br><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/invalid-license-v2.jpg">Snapshot</a></p>                                       | The license key is incorrect or partial                              | Devtron Dashboard Page                      | Go to the License Dashboard and recheck the license          |
 | <p><strong>License Key No Longer Valid</strong><br><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-no-longer-valid-v2.jpg">Snapshot</a></p>                       | The license key has become invalid for your installation fingerprint | Devtron Dashboard Page                      | Generate a new license from License Dashboard.               |
 | <p><strong>Invalid Fingerprint</strong><br><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-invalid-fingerprint-v2.jpg">Snapshot</a></p>                   | The fingerprint is incorrect or partial                              | License Dashboard (Step-3)                  | Go to the License Activation Page and verify the fingerprint |
@@ -457,6 +457,6 @@ Your apps, pipelines, and settings remain intact.
 No. The Freemium license is bound to your **current Kubernetes cluster** and **cannot be transferred**.\
 If the cluster is deleted, you will not be able to claim a Freemium license on a new cluster.
 
-If you need help, contact [Devtron Support](support@devtron.ai).
+If you need help, contact [Devtron Support](mailto:support@devtron.ai).
 
 </details>
