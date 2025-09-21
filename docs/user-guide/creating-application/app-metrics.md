@@ -37,7 +37,7 @@ To use the Grafana dashboard, you need to first install the integration from the
 
 #### For Devtron-Managed Enterprise
 
-If you want to enable Grafana Integration, email us at enterprise@devtron.ai or reach out to your Devtron representative.
+If you want to enable Grafana Integration, email us at [enterprise@devtron.ai](mailto:enterprise@devtron.ai) or reach out to your Devtron representative.
 
 
 ### Step 2: Install Prometheus

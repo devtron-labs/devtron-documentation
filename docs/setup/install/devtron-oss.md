@@ -8,9 +8,9 @@ The table below shows the installation options available in Devtron OSS. Further
 
 | Installation Option                                                                                      | What Is Included                                            | When To Use                                                                            |
 | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [**Minimal (without integrations)**](devtron-oss.md#command-to-install-devtron-without-integrations)     | Dashboard + Resource Browser + Core operator configurations | A unified view of Helm apps, FluxCD apps, ArgoCD apps, and their related K8s resources |
-| [**With CI/CD**](devtron-oss.md#command-to-install-devtron-with-ci-cd)                                   | Everything in Minimal + Build and Deploy (CI/CD) module     | You need a complete CI-CD pipeline for your custom apps (a.k.a Devtron Apps)           |
-| [**With CI/CD + GitOps (Argo CD)**](devtron-oss.md#command-to-install-devtron-with-ci-cd--gitops-argocd) | Everything in CI/CD + GitOps (Argo CD) module               | You need automated, Git-driven deployments                                             |
+| [**Minimal (without integrations)**](devtron-oss.md#install-devtron-without-integrations)     | Dashboard + Resource Browser + Core operator configurations | A unified view of Helm apps, FluxCD apps, ArgoCD apps, and their related K8s resources |
+| [**With CI/CD**](devtron-oss.md#install-devtron-with-ci-cd)                                   | Everything in Minimal + Build and Deploy (CI/CD) module     | You need a complete CI-CD pipeline for your custom apps (a.k.a Devtron Apps)           |
+| [**With CI/CD + GitOps (Argo CD)**](devtron-oss.md#install-devtron-with-ci-cd--gitops-argocd) | Everything in CI/CD + GitOps (Argo CD) module               | You need automated, Git-driven deployments                                             |
 
 {% hint style="success" %}
 #### Not Sure What To Choose?
@@ -18,7 +18,7 @@ The table below shows the installation options available in Devtron OSS. Further
 Begin with the **Minimal** version. You can always install CI/CD and GitOps integrations later from [Devtron Stack Manager](../../user-guide/integrations/).
 {% endhint %}
 
-***
+---
 
 ## Prerequisites
 
@@ -50,12 +50,12 @@ kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisione
 {% endhint %}
 
 {% hint style="info" %}
-#### Need Advanced Help?
+#### Want to Customize the Installation?
 
-See [Additional Installation Resources](../../reference/README.md) for production infra recommendations, air-gapped installs, blob storage, config overrides, backups, and more.
+See [Additional Installation Resources](../../reference/README.md) for production infra recommendations, air-gapped installs, blob storage, config overrides, StorageClass, Database, Ingress setup, backups, and more.
 {% endhint %}
 
-***
+---
 
 ## Step 1: Add Devtron Helm Repository
 
@@ -64,18 +64,16 @@ helm repo add devtron https://helm.devtron.ai
 helm repo update devtron
 ```
 
-***
+---
 
 ## Step 2: Choose an Installation Option
 
 {% tabs %}
 {% tab title="Minimal (Dashboard Only)" %}
 
-### Command to Install Devtron without Integrations
+### Install Devtron without Integrations
 
-{% hint style="warning" %}
-**Prerequisite**: [Add Devtron Helm Repository](#step-1-add-devtron-helm-repository)
-{% endhint %}
+After you [add Devtron Helm Repository](#step-1-add-devtron-helm-repository) run the command below:
 
 ```bash
 helm install devtron devtron/devtron-operator \
@@ -85,11 +83,9 @@ helm install devtron devtron/devtron-operator \
 
 {% tab title="With CI/CD" %}
 
-### Command to Install Devtron with CI/CD
+### Install Devtron with CI/CD
 
-{% hint style="warning" %}
-**Prerequisite**: [Add Devtron Helm Repository](#step-1-add-devtron-helm-repository)
-{% endhint %}
+After you [add Devtron Helm Repository](#step-1-add-devtron-helm-repository) run the command below:
 
 ```bash
 helm install devtron devtron/devtron-operator \
@@ -100,11 +96,9 @@ helm install devtron devtron/devtron-operator \
 
 {% tab title="With CI/CD + GitOps (Argo CD)" %}
 
-### Command to Install Devtron with CI/CD + GitOps (ArgoCD)
+### Install Devtron with CI/CD + GitOps (ArgoCD)
 
-{% hint style="warning" %}
-**Prerequisite**: [Add Devtron Helm Repository](#step-1-add-devtron-helm-repository)
-{% endhint %}
+After you [add Devtron Helm Repository](#step-1-add-devtron-helm-repository) run the command below:
 
 ```bash
 helm install devtron devtron/devtron-operator \
@@ -118,19 +112,18 @@ helm install devtron devtron/devtron-operator \
 {% hint style="info" %}
 ### How much time does it take for installation?
 
-Depending on the option you choose to install, it might take anywhere between 5 to 15 minutes to spin up all the Devtron microservices.
+It usually takes 5–15 minutes to spin up all Devtron microservices (depending on your installation option).
 
-You may check the installation by running the following command:
+You may check the status by running the command below. If the output is `Applied`, Devtron is installed.
 
 ```bash
 kubectl -n devtroncd get installers installer-devtron \
 -o jsonpath='{.status.sync.status}'
 ```
 
-`Applied` status indicates that the installer has successfully applied all the downloaded manifests, and the installation is completed.
 {% endhint %}
 
-***
+---
 
 ## Step 3: Obtain the Dashboard URL
 
@@ -205,7 +198,7 @@ minikube service devtron-service --namespace devtroncd
 {% endtab %}
 {% endtabs %}
 
-***
+---
 
 ## Step 4: Log in to Devtron
 
@@ -220,7 +213,7 @@ minikube service devtron-service --namespace devtroncd
 
 You should see the **Devtron Dashboard** post successful login.
 
-{% hint style="warning" %}
+{% hint style="success" %}
 #### Next Recommended Action
 
 After the initial login, we recommend you set up an [Single Sign-On (SSO) service](../../user-guide/global-configurations/sso-login.md) like Google, GitHub, etc., and then [add other members](../../user-guide/global-configurations/authorization/user-access.md#add-users) (including yourself). Thereafter, they can log in using the configured SSO.
