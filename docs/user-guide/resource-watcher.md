@@ -94,7 +94,7 @@ Follow the below steps to trigger Devtron job:
 
 1. Select the **Trigger Devtron Job** option.
 
-2. Choose your preferred [Devtron job pipeline](./jobs/workflow-editor-job.md) from the **Run Devtron Job pipeline** drop-down box. The pipelines configured while creating a job are displayed as options in the **Run Devtron Job pipeline** drop-down box. Unless a job pipeline is selected, the watcher will not intercept matching resource changes, even if defined conditions are met.
+2. Choose your preferred [Devtron job pipeline](./jobs/configurations/workflow-editor-job.md) from the **Run Devtron Job pipeline** drop-down box. The pipelines configured while creating a job are displayed as options in the **Run Devtron Job pipeline** drop-down box. Unless a job pipeline is selected, the watcher will not intercept matching resource changes, even if defined conditions are met.
 
 3. Select your preferred environment for the job to run in the **Execute job in environment** drop-down box.
 
