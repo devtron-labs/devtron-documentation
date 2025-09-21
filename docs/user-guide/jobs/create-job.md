@@ -1,42 +1,124 @@
-# Create a New Job
+# Create Job
 
-* On the Devtron dashboard, select **Jobs**.
-* On the upper-right corner of the screen, click **Create**.
-* Select **Job** from the drop-down list.
-* **Create job** page opens.
+In Devtron, jobs can be created in two ways:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/select-create-job-latest.jpg)
+* **Blank Job**: This allows you to create a new job from scratch by manually defining all configurations.
+
+* **Clone Job**: This allows you to create a new job by reusing the configuration of an existing job.
+
+---
+
+## Create a Blank Job
+
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have the **Admin role** or the **Super Admin role**.
+Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
+{% endhint %}
+
+To create a new **Blank Job** in Devtron, follow these steps:
+
+1. Navigate to **Devtron Dashboard** → **Jobs**.
+
+    ![Figure 1: Job's Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/jobs.jpg)
+
+2. Click **Create** button in the top-right corner and select **Job** from the drop-down list.
+
+    ![Figure 2: Selecting Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/select-create-job-latest.jpg)
+
+3. The **Create Job** page opens. From the left panel, select **Blank job**, then enter the required details as listed in the table below.
+
+    | Fields| Description|
+    |:---|:---|
+    | `Project`| Select the project from the dropdown.|
+    | `Job Name`| User-defined name for the job in Devtron.|
+    | `Description` | Enter the description for the job.|
+    | `Tags`| Key-value pairs used for identifying and organizing the application and can be propagated as Kubernetes labels. To learn more refer [Tags](#tags) section.|
+
+    ![Figure 3: Creating Blank Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-page.jpg)
+
+4. Click **Create Job**. The job will be created, and you will be automatically redirected to the [Configurations page](/docs/user-guide/jobs/configurations/README.md)to continue setting up the job pipeline.
+
+---
+
+## Create a Clone Job
+
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#roles-available-for-jobs) or above (along with access to the environment and applications) to perform environment override.
+{% endhint %}
+
+To create a new **Clone Job** in Devtron, follow these steps:
+
+1. From the Devtron Dashboard, navigate to **Jobs**.
+2. Click the **Create** button in the top-right corner and select **Job** from the drop-down list.
+
+    ![Figure 4: Selecting Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/select-create-job-latest.jpg)
+
+3. The **Create Job** page opens. From the left panel, select **Clone Job**, then enter the required details as listed in the table below.
+
+    | Fields| Description|
+    |:---|:--- |
+    | `Project`| Select the project from the dropdown.|
+    | `Job Name`| User-defined name for the job in Devtron.|
+    | `Description`| Enter the description of a job.|
+    | `Tags`| Key-value pairs used for identifying and organizing the application and can be propagated as Kubernetes labels. To learn more refer [Tags](#tags) section.|
+
+    ![Figure 5: Creating Clone Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-clone-job.jpg)
+
+4. Click **Create Job**. The **Clone job** will be created, and you will be automatically redirected to the [Configurations page](/docs/user-guide/jobs/configurations/README.md), where the configuration will be pre-populated based on the selected source job. You may review and modify these settings as required.
+
+---
+
+## Delete Job
+
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have the **Admin role** or the **Super Admin role**.
+Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
+{% endhint %}
+
+To delete a job, you have to first delete any configured pipelines in that job workflow.
+
+1. Navigate to **Jobs** → **Select the job** → **Configurations** → **Workflow Editor**.
+
+2. Select the job pipeline you wish to delete, and an edit job pipeline modal window will appear.
+
+    ![Figure 6: Selecting Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-delete-select.jpg)
+
+3. Select **Delete Pipeline** at the bottom left corner of the edit job pipeline modal window to delete the job pipeline.
+
+    ![Figure 7: Deleting Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-delete-pipeline.jpg)
+
+4. A pop-up window will appear asking you to confirm the **Delete Pipeline** action.
+
+    ![Figure 8: Confirming Delete Job Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-delete-dialog-box.jpg)
 
 
-## Create Job
+5. After deleting any configured pipelines in a job workflow, select **Delete Job** to delete the job.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-page.jpg)
+    ![Figure 9: Deleting Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-delete-job.jpg)
 
+6. A pop-up window will appear asking you to confirm the **Delete Job** action.
 
-Provide below information on the `Create job` page:
+    ![Figure 10: Confirming Delete Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-delete-job-dialog.jpg)
 
-| Fields | Description |
-| --- | --- |
-| **Job Name** | User-defined name for the job in Devtron. |
-| **Description** | Enter the description of a job. |
-| **Registry URL** | This is the URL of your private registry in Quay. E.g. `quay.io` |
-| **Select one of them** |  <ul><li>**Create from scratch** :Select the project from the drop-down list.<br>`Note`: You have to add [project under Global Configurations](../global-configurations/projects.md). Only then, it will appear in the drop-down list here.</li><li>**Clone existing application**: Select an app you want to clone from and the project from the drop-down list.<br>`Note`: You have to add [project under Global Configurations](../global-configurations/projects.md). Only then, it will appear in the drop-down list here.</li></ul> |
+---
 
-**Note**: Do not forget to modify git repositories and corresponding branches to be used for each Job Pipeline if required.
+After creating a job, the next step is to configure the job. Refer to the [Configurations](./configurations/README.md) section to configure the job.
 
+## Extras
 
-### Tags
+### Tags 
 
-`Tags` are key-value pairs. You can add one or multiple tags in your application. 
+Tags are Key-value pairs used for identifying and organizing the application. Users can propagate tags as Kubernetes labels to enable filtering, bulk operations, and integrations with Kubernetes tools. To do so, follow the steps below. 
 
-**Propagate Tags** 
-When tags are propagated, they are considered as labels to Kubernetes resources. Kubernetes offers integrated support for using these labels to query objects and perform bulk operations e.g., consolidated billing using labels. You can use these tags to filter/identify resources via CLI or in other Kubernetes tools.
+1. Click the **Add tags to job** dropdown on the **Create job** page.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/propagate-tags.jpg)
+2. Under the **Tags** section, Click `+` to add a new tag.
 
-* Click `+ Add tag` to add a new tag.
-* Click the symbol <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg"  height="10"> on the left side of your tag to propagate a tag.<br>`Note`: Dark grey colour in symbol specifies that the tags are propagated.
-* To remove the tags from propagation, click the symbol <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/propagate-dark.jpg" height="10"> again.
-* Click `Save`.
+3. You can click `X` icon to delete an existing tag.
 
+4. You can click the **propagation icon** <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg" alt=""> to propagate a tag (turns dark grey when propagated), click again to remove propagation.
 
+![Figure 11: Tags](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-latest-1.jpg)
