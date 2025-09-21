@@ -1,34 +1,41 @@
-# Triggering Job 
+# Triggering Job Pipeline
 
-## Triggering Job Pipeline
+After creating the job pipeline, the next step is to trigger the job pipeline. This is the step where the job will be executed in the selected environment.
 
-The Job Pipeline can be triggered by selecting `Select Material`
+To trigger the job pipeline:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job.jpg)
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have the **Admin role** or the **Super Admin role**.
+Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
+{% endhint %}
 
-Job Pipelines that are set as automatic are always triggered as soon as a new commit is made to the git branch they're sensing. However, Job pipelines can always be manually triggered as and if required.
+1. Navigate to the **Trigger Job** tab of your job, which lists all configured pipelines.
 
-Various commits done in the repository can be seen here along with details like Author, Date etc. Select the commit that you want to trigger and then click on `Run Job` to trigger the job pipeline.
+    ![Figure 1: Triggering job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job.jpg)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-job.jpg)
+2. Click **Select Material** for the job pipeline you wish to execute. A modal window will open, under the **Code-source** tab, this window lists all recent commits along with their hash, author, date, and message from your configured source repository.
 
+    ![Figure 2: Selecting Material for Specific Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-select-material.jpg)
 
-**Refresh** icon, refreshes Git Commits in the job Pipeline and fetches the latest commits from the `Git Repository`.
+3. Select the commit you want to use in the job execution. You can use the search bar to filter the commit hash, and you can also click the kebab menu to reveal excluded commits. If a recent commit isn’t displayed, click the Refresh icon to reload the commit list from your Git repository.
 
-**Ignore Cache** : This option will ignore the previous build cache and create a fresh build. If selected, will take a longer build time than usual. [Click here](../creating-application/workflow/ci-pipeline.md#docker-layer-caching) to read more about controlling cache behavior in Devtron.
+    ![Figure 3: Selecting Commit](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-commit.jpg)
 
-It can be seen that the job pipeline is triggered here and is the _Running_ state.
+4. Select the **Parameters** tab to configure pipeline runtime inputs(if any). The Key and Type columns are read‑only; enter values for each required parameter (denoted by *). Optional parameters can be configured as needed or left blank.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/click-job-details.jpg)
+    ![Figure 4: Configuring Runtime Parameters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-parameter.jpg)
 
-Click your `job pipeline` or click `Run History` to get the details about the job pipeline such as logs, reports etc.
+5. After selecting the commit and configuring runtime parameters, pick the target environment from the **Execute job in** dropdown at the bottom.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-job.jpg)
+    ![Figure 5: Select Environment for Job's Execution](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-execute-env.jpg)
 
-Click `Source code` to view the details such as commit id, Author and commit message of the Git Material that you have selected for the job.
+6. Select **Run Job** to execute your pipeline.
 
-Click `Artifacts` to download the _reports_ of the job, if any.
+    ![Figure 6: Run Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-run-job.jpg)
 
-If you have multiple job pipelines, you can select a pipeline from the drop-down list to view th details of logs, source code, or artifacts.
+---
 
+After executing your pipeline, the pipeline will now be in running state, and you can monitor the pipeline execution (such as logs, source, artifacts) in [run-history](./run-history-job.md) either by navigating to **Run History** tab or by clicking `details` above the **Select Material** of the specific pipeline.
 
+![Figure 7: Job Status](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/trigger-job-details.jpg)
