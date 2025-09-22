@@ -37,7 +37,7 @@ To create a new **Blank Job** in Devtron, follow these steps:
 
     ![Figure 3: Creating Blank Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/create-job-page.jpg)
 
-4. Click **Create Job**. The job will be created, and you will be automatically redirected to the [Configurations page](/docs/user-guide/jobs/configurations/README.md)to continue setting up the job pipeline.
+4. Click **Create Job**. The job will be created, and you will be automatically redirected to the [Configurations page](/docs/user-guide/jobs/configurations/README.md) to continue setting up the job pipeline.
 
 ---
 

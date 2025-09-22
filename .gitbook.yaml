@@ -164,8 +164,10 @@ redirects:
     enterprise-license: setup/install/freemium.md
     usage/applications/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/pre-post-tasks.md
     usage/applications/creating-application/workflow/ci-pipeline/container-registry-override: user-guide/creating-application/workflow/ci-pipeline.md
-    usage/jobs/configuration-job: user-guide/jobs/configurations/README.md
-    usage/jobs/workflow-editor-job: user-guide/jobs/configurations/workflow-editor-job.md
+    usage/jobs/configuration-job: usage/jobs/configurations
+    user-guide/jobs/configuration-job: user-guide/jobs/configurations/README.md
+    usage/jobs/workflow-editor-job: usage/jobs/configurations
+    user-guide/jobs/workflow-editor-job.md: user-guide/jobs/configurations/workflow-editor-job.md
     setup/install/install-devtron: setup/install/README.md
     setup/install/install-devtron-with-cicd: setup/install/README.md
     setup/install/install-devtron-with-cicd-with-gitops: setup/install/README.md
