@@ -170,7 +170,7 @@ If you apply multiple policies together, the user has to meet the approval condi
 
 ---
 
-## Configuring Exceptions
+## Configuring Exceptions (Optional)
 
 The Exceptions tab allows you to specify users or groups for whom the approval policies will not apply. This is useful in cases where certain teams, such as an operations team resolving production incidents, need to bypass approvals while the policies continues to apply to all other users.
 
@@ -244,6 +244,10 @@ You cannot enter a new email ID or token directly.
     2. You can select specific **Users Groups** from **Add user groups** dropdown.
 
         ![Figure 21: Selecting Specific User Groups](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-add-users-group.jpg)
+
+{% hint style="warning" %}
+The dropdown lists all users, user-groups, and API tokens available in Devtron. Some users may have only view permissions or lack build, deploy, or admin permissions. Selecting such users will not bypass approval policies unless they have the required permissions.
+{% endhint %}
 
 5. Click **Save**. The selected users or user groups will no longer require approvals for the selected scope.
 
