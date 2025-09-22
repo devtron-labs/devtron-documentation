@@ -164,8 +164,10 @@ redirects:
     enterprise-license: setup/install/freemium.md
     usage/applications/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/pre-post-tasks.md
     usage/applications/creating-application/workflow/ci-pipeline/container-registry-override: user-guide/creating-application/workflow/ci-pipeline.md
-    usage/jobs/configuration-job: user-guide/jobs/configurations/README.md
-    usage/jobs/workflow-editor-job: user-guide/jobs/configurations/workflow-editor-job.md
+    usage/jobs/configuration-job: user-guide/jobs/configuration-job
+    user-guide/jobs/configuration-job: user-guide/jobs/configurations/README.md
+    usage/jobs/workflow-editor-job: user-guide/jobs/workflow-editor-job
+    user-guide/jobs/workflow-editor-job: user-guide/jobs/configurations/workflow-editor-job.md
     setup/install/install-devtron: setup/install/README.md
     setup/install/install-devtron-with-cicd: setup/install/README.md
     setup/install/install-devtron-with-cicd-with-gitops: setup/install/README.md
@@ -174,7 +176,6 @@ redirects:
     install/install-devtron: setup/install/README.md
     install/install-devtron-with-cicd: setup/install/README.md
     install/install-devtron-with-cicd-with-gitops: setup/install/README.md
-    install/install-devtron-on-minikube-microk8s-k3s-kind: setup/install/README.md
     install/install-devtron-on-minikube-microk8s-k3s-kind: setup/install/README.md
     install/faq-on-installation: setup/install/faq-on-installation.md
     prod-infra: setup/install/prod-infra.md
