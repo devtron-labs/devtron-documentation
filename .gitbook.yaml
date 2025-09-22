@@ -178,3 +178,4 @@ redirects:
     install/faq-on-installation: setup/install/faq-on-installation.md
     prod-infra: setup/install/prod-infra.md
     configurations-overview: setup/configurations/configurations-overview.md
+    usage/jobs/configuration-job: user-guide/jobs/configurations/README.md
