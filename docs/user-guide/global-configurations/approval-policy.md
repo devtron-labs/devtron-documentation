@@ -50,6 +50,13 @@ Users need to have super-admin permissions to create an approval policy.
 
         ![Figure 7: Allowing Specific Users](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/specific-user-approval.gif)
 
+{% hint style="warning" %}
+### Caution
+* The dropdown lists all users available in Devtron. Some users (except super-admins) may not have the necessary approver permissions, i.e, **Config Approver** or **Deployment approver**. These users cannot approve requests until the required permissions are assigned to them. Refer [User Permission](./authorization/user-access.md#roles-available-for-devtron-apps) to lean more.
+
+* Super-admins have approver permissions by default.
+{% endhint %}
+
 {% hint style="info" %}
 ### How do approvals of User Groups work?
 If a user belongs to multiple groups (see Option 2 above), their approval is considered and counted for each group. For example, if you mandate 2 approvals: 1 from DevOps group and 1 from Compliance group; an approval from a common user (belonging to both groups) will count as 2 approvals.
@@ -246,6 +253,7 @@ You cannot enter a new email ID or token directly.
         ![Figure 21: Selecting Specific User Groups](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-add-users-group.jpg)
 
 {% hint style="warning" %}
+### Caution
 The dropdown lists all users, user-groups, and API tokens available in Devtron. Some users may have only view permissions or lack build, deploy, or admin permissions. Selecting such users will not bypass approval policies unless they have the required permissions.
 {% endhint %}
 
@@ -262,6 +270,22 @@ After configuring exceptions, super-admins and specific users / user groups can 
 
 #### Triggering Deployments
 
+{% hint style="warning" %}
+### Do exceptions bypass blackout or maintenance windows?  
+Approval Policy exceptions do not bypass a blackout or a maintenance window:
+
+   * During a blackout window, all deployments are blocked.  
+
+   * Outside a maintenance window, all deployments are blocked.
+
+Super-admins or specific users can deploy only if they are allowed in the blackout or maintenance window configuration. Refer [Deployment Window](../global-configurations/deployment-window.md#configuring-deployment-window) to learn more.
+{% endhint %}
+
+{% hint style="info" %}
+### Note
+An exception user can still follow the normal flow of requesting an image approval and getting it approved, and also has the option to deploy images without approvals.
+{% endhint %}
+
 ![Figure 23a: Deploying an Image without an Approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-deploy-exception.jpg)
 
 ![Figure 23b: Email Notification](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/email-notification-exception.jpg)
@@ -269,6 +293,12 @@ After configuring exceptions, super-admins and specific users / user groups can 
 ![Figure 23c: Deployment History](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/deployment-history-exception-user.jpg)
 
 #### Editing Base Configurations
+
+{% hint style="info" %}
+### Note 
+* An exception user can still follow the normal flow of submitting a configuration change draft for approval, and getting it approved. 
+* Any existing draft is discarded once the exception user updates the configuration using express edit.
+{% endhint %}
 
 ![Figure 24a: Editing Deployment Template without an Approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-base-config-exception.gif)
 
