@@ -243,7 +243,7 @@ You cannot enter a new email ID or token directly.
 
     2. You can select specific **Users Groups** from **Add user groups** dropdown.
 
-        ![Figure 21: Selecting Specific User Groups](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-add-users-groups.jpg)
+        ![Figure 21: Selecting Specific User Groups](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-add-users-group.jpg)
 
 5. Click **Save**. The selected users or user groups will no longer require approvals for the selected scope.
 
@@ -258,7 +258,11 @@ After configuring exceptions, super-admins and specific users / user groups can 
 
 #### Triggering Deployments
 
-![Figure 23: Deploying an Image without an Approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-deploy-exception.jpg)
+![Figure 23a: Deploying an Image without an Approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-deploy-exception.jpg)
+
+![Figure 23b: Email Notification](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/email-notification-exception.jpg)
+
+![Figure 23c: Deployment History](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/deployment-history-exception-user.jpg)
 
 #### Editing Base Configurations
 
