@@ -210,7 +210,7 @@ This section is for users who wish to use the following data type while adding s
 * [Google Secrets Manager](../../../creating-application/eso/gcp-eso.md)
 * [AWS Secrets Manager](../../../creating-application/eso/aws-eso.md)
 * [Hashi Corp Vault](../../../creating-application/eso/hashicorp-eso.md)
-* [Azure Secrets Manager](../../../creating-application/eso/azure-eso.md)
+* Azure Secrets Manager
 
 External Secrets Operator (ESO) is a Kubernetes component that integrates with external secret management systems like AWS Secrets Manager, HashiCorp Vault, Google Secrets Manager, Azure Key Vault, and more. It retrieves secrets from these external sources and injects them into Kubernetes Secrets automatically. Before you can create external secrets in Devtron, you need to install the External Secrets Operator on the target cluster. 
 
