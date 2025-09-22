@@ -172,29 +172,37 @@ If you apply multiple policies together, the user has to meet the approval condi
 
 ## Configuring Exceptions
 
-The Exceptions tab allows you to specify users or groups for whom the approval policy will not apply. This is useful in cases where certain teams, such as an operations team resolving production incidents, need to bypass approvals while the policy continues to apply to all other users.
+The Exceptions tab allows you to specify users or groups for whom the approval policies will not apply. This is useful in cases where certain teams, such as an operations team resolving production incidents, need to bypass approvals while the policies continues to apply to all other users.
 
 You can choose to:
 
-* Exclude super-admins from approval permissions.
-    
-* Select specific users or user groups who should be exempt from approvals for deployments or configuration changes.
+   * Exclude super-admins from approval permissions.
+
+   * Whitelist specific users or user groups who should be exempt from approvals for deployments or configuration changes.
 
 ### Excluding Super Admins
 
+You can configure whether super-admins are required to follow approval policies or bypass them.
+
 1. Navigate to **Approval Policy** → **Exceptions**.
 
-2. Choose the scope, for which you want super admins to not require approval.
+2. Choose the scope, for which you want super admins to not require approval.The available scopes are:
 
-3. Enable the toggle next to **Super admins**.
+    * **Configuration Change:** Exempts the super-admins to edit base configurations such as Deployment Templates, ConfigMaps, or Secrets without requiring approvals.
 
-4. Super-admins will no longer require approvals for the selected scope.
+    * **Deployment:** Exempts the super-admins to deploy images to an environment without requiring approvals.
+
+3. Enable/Disable the toggle next to **Super admins** as per your requirement.
+
+    * When enabled, super-admins can deploy images and edit base configurations without approvals. 
+
+    * When disabled, super-admins follow same approval policies as other users. 
 
     ![Figure 16: Enabling Super Admins Exception](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-super-admin-exception.gif)
 
 {% hint style="info" %}
 ### Note
-Super-admins can approve requests even if the super-admin exception toggle is turned off.
+Super-admins can approve requests even if the toggle is turned off.
 {% endhint %}
 
 ### Excluding Specific Users / User Groups / API Tokens
@@ -203,9 +211,23 @@ Super-admins can approve requests even if the super-admin exception toggle is tu
 
     ![Figure 17: Exceptions Tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-exceptions.jpg)
 
-2. Choose the scope, for which you want specific users / user groups / API tokens to not require approval.
+2. Choose the scope for which specific users / user groups / API tokens do not require approval. The available scopes are:
+
+    * **Configuration Change:** Exempts the selected users, user groups, and API tokens to edit base configurations such as Deployment Templates, ConfigMaps, or Secrets without requiring approvals.
+
+    * **Deployment:** Exempts the selected users, user groups, and API tokens to deploy images to an environment without requiring approvals.
 
     ![Figure 18: Selecting Scope](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-scope.jpg)
+
+{% hint style="info"%}
+### Note
+The list of users is fetched from [User Permissions](../global-configurations/authorization/user-access.md), and the list of [API tokens](../global-configurations/authorization/api-tokens.md) is sourced from API Tokens. 
+
+You cannot enter a new email ID or token directly. 
+   * To add a user, refer [User Permissions](../global-configurations/authorization/user-access.md#add-users). 
+
+   * To create an [API token](../global-configurations/authorization/api-tokens.md#generate-api-token).
+{% endhint %}
 
 3. Click the **Add**/**Edit** button next to **Specific Users / User Groups**. A pop-up modal window will appear.
 
@@ -227,12 +249,12 @@ Super-admins can approve requests even if the super-admin exception toggle is tu
 
     ![Figure 22: Clicking 'Save'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-save.jpg)
 
-{% hint style="danger" %}
+{% hint style="warning" %}
 ### Caution
 By default, approvers cannot approve their own deployments or base configuration edits, but, if an approver is added as an exception, this restriction does not apply, and that approver can trigger their own deployments or edit base configurations without any approvals.
 {% endhint %}
 
-After configuring exceptions, super-admins and specific users / user groups can make configuration changes and  trigger deployments without requiring any approval.
+After configuring exceptions, super-admins and specific users / user groups can make configuration changes and trigger deployments without requiring any approval.
 
 #### Triggering Deployments
 
