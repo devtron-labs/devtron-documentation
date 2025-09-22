@@ -141,15 +141,17 @@ Fill the following mandatory fields:
 | **GitLab Username** | Provide the username of your GitLab account |
 | **Personal Access Token** | Provide your personal access token (PAT). It is used as an alternate password to authenticate your GitLab account. <br />If you do not have one, create a GitLab PAT [here](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html). <br /><br /> **Access Required**: <br /> `api` - Grants complete read/write access to the scoped project API. <br /> `write_repository` - Allows read/write access (pull, push) to the repository.|
 
-### AWS Code Commit
+### AWS Code Commit [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 {% hint style="info" %}
 
 ### Prerequisites
 
-1. An AWS Account
+1. Existing user of AWS CodeCommit ([as AWS stopped adding new customers to it](https://aws.amazon.com/blogs/devops/how-to-migrate-your-aws-codecommit-repository-to-another-git-provider/))
 
-2. An AWS IAM user with `AWSCodeCommitPowerUser` permission. Refer to [Create and Configure an IAM User with AWSCodeCommitPowerUser Permission](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html#setting-up-gc-account) for more information
+2. An AWS IAM user with `AWSCodeCommitPowerUser` permission. Refer to [Create and Configure an IAM User with AWSCodeCommitPowerUser Permission](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html#setting-up-gc-account) for more information.
+
+3. Obtain SSH Key ID and SSH Private Key. Refer to [Generating SSH Private Key in AWS Code Commit](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html) for more information.
 
 {% endhint %}
 
@@ -159,9 +161,9 @@ Fill the following mandatory fields:
 
 | Field | Description |
 | --- | --- |
-| **SSH Host** | Enter the AWS Code Commit SSH host URL (e.g., `ssh://git-codecommit.ap-south1.amazonaws.com`)|
-| **Enter username** | Enter the username (SSH Key ID), e.g., `YPKDKDIERJS9EXAMPLE`. Refer to [Generating Credentials in AWS Code Commit](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html#setting-up-ssh-unixes-keys) for more information| 
-| **SSH Private Key** | Enter the SSH private key. Refer to [Generating SSH Private Key in AWS Code Commit](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html#setting-up-ssh-unixes-keys) for more information | 
+| **SSH Host** | Enter the AWS Code Commit SSH host URL (e.g., `ssh://git-codecommit.ap-south-1.amazonaws.com`)|
+| **Enter username** | Enter the username (SSH Key ID), e.g., `APKDKDIERJS9EXAMPLE`. | 
+| **SSH Private Key** | Enter the SSH private key. | 
 
 Click **Save**. 
 
@@ -239,17 +241,17 @@ Fill the following mandatory fields:
 | **Bitbucket Username*** | Provide the username of your Bitbucket Data Center account |
 | **Password** | Provide the password to authenticate your Bitbucket Data Center account |
 
-### Other GitOps
+### Other GitOps [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 ![Figure 9: Other GitOps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/other-gitops.jpg)
 
-If you prefer to use the GitOps approach using a different platform other than the available ones (e.g., Octopus Deploy), refer to the following table and fill in the mandatory fields:
+If you prefer to use the GitOps approach using a different platform other than the available ones, refer to the following table and fill in the mandatory fields:
 
 | Field | Description |
 | --- | --- |
-| **SSH Host** | Enter the SSH host URL (e.g., `ssh://git@ssh.octopusdeploy.com:acme/test-app.git`) | 
-| **Enter username** | Enter the username (e.g., `git`) | 
-| **SSH Private Key** | Enter the SSH private key (e.g., `M7YtY8cdJKhZ7nYXxgXeqNffv`)| 
+| **SSH Host** | Enter the SSH host URL (e.g., `ssh://git@<host>:<path>/<repo-name>.git`). | 
+| **Enter username** | Enter the username (e.g., `git`). For other GitOps, the username will differ depending on the provider (e.g., personal access token or access key ID). | 
+| **SSH Private Key** | Enter the SSH private key (e.g., `M7YtY8cdJKhZ7nYXxgXeqNffv`) here against the public key added to your GitOps provider. | 
 
 Click **Save**. 
 
