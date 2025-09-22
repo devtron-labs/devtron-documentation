@@ -52,9 +52,11 @@ Users need to have super-admin permissions to create an approval policy.
 
 {% hint style="warning" %}
 ### Caution
-* The dropdown lists all users available in Devtron. Some users (except super-admins) may not have the necessary approver permissions, i.e, **Config Approver** or **Deployment approver**. These users cannot approve requests until the required permissions are assigned to them. Refer [User Permission](./authorization/user-access.md#roles-available-for-devtron-apps) to lean more.
+* The dropdown lists all users available in Devtron. Some users (except super-admins) may not have the necessary approver permissions, i.e, **Config Approver** or **Deployment approver**. These users cannot approve requests until the required permissions are assigned to them.
 
 * Super-admins have approver permissions by default.
+
+* Refer [User Permission](./authorization/user-access.md#roles-available-for-devtron-apps) to lean more.
 {% endhint %}
 
 {% hint style="info" %}
@@ -254,7 +256,7 @@ You cannot enter a new email ID or token directly.
 
 {% hint style="warning" %}
 ### Caution
-The dropdown lists all users, user-groups, and API tokens available in Devtron. Some users may have only view permissions or lack build, deploy, or admin permissions. Selecting such users will not bypass approval policies unless they have the required permissions.
+The dropdown lists all users, user-groups, and API tokens available in Devtron. Some users may have only view permissions or lack build, deploy, or admin permissions. Such users cannot bypass approval policies until the required permissions are assigned.
 {% endhint %}
 
 5. Click **Save**. The selected users or user groups will no longer require approvals for the selected scope.
@@ -274,11 +276,11 @@ After configuring exceptions, super-admins and specific users / user groups can 
 ### Do exceptions bypass blackout or maintenance windows?  
 Approval Policy exceptions do not bypass a blackout or a maintenance window:
 
-   * During a blackout window, all deployments are blocked.  
+   * During a blackout window, exception users cannot trigger deployments, unless they are configured to take action during the blackout window.
 
-   * Outside a maintenance window, all deployments are blocked.
+   * Outside a maintenance window, exception users cannot trigger deployments, unless they are configured to take action outside the maintenance window
 
-Super-admins or specific users can deploy only if they are allowed in the blackout or maintenance window configuration. Refer [Deployment Window](../global-configurations/deployment-window.md#configuring-deployment-window) to learn more.
+Refer [Deployment Window](../global-configurations/deployment-window.md#configuring-deployment-window) to learn more.
 {% endhint %}
 
 {% hint style="info" %}
