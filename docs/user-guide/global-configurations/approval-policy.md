@@ -56,7 +56,7 @@ Users need to have super-admin permissions to create an approval policy.
 
 * Super-admins have approver permissions by default.
 
-* Refer [User Permission](./authorization/user-access.md#roles-available-for-devtron-apps) to lean more.
+* Refer [User Permissions](./authorization/user-access.md#roles-available-for-devtron-apps) to lean more.
 {% endhint %}
 
 {% hint style="info" %}
@@ -256,7 +256,9 @@ You cannot enter a new email ID or token directly.
 
 {% hint style="warning" %}
 ### Caution
-The dropdown lists all users, user-groups, and API tokens available in Devtron. Some users may have only view permissions or lack build, deploy, or admin permissions. Such users cannot bypass approval policies until the required permissions are assigned.
+* The dropdown lists all users and API tokens or user-groups, available in Devtron. Some users and API may have only view permissions or lack build, deploy, or admin permissions. Such users cannot bypass approval policies until the required permissions are assigned.
+
+* Refer [User Permissions](./authorization/user-access.md#roles-available-for-devtron-apps) to lean more.
 {% endhint %}
 
 5. Click **Save**. The selected users or user groups will no longer require approvals for the selected scope.
@@ -279,8 +281,8 @@ Approval Policy exceptions do not bypass a blackout or a maintenance window:
    * During a blackout window, exception users cannot trigger deployments, unless they are configured to take action during the blackout window.
 
    * Outside a maintenance window, exception users cannot trigger deployments, unless they are configured to take action outside the maintenance window
-
-Refer [Deployment Window](../global-configurations/deployment-window.md#configuring-deployment-window) to learn more.
+   
+   * Refer [Deployment Window](../global-configurations/deployment-window.md#configuring-deployment-window) to learn more.
 {% endhint %}
 
 {% hint style="info" %}
