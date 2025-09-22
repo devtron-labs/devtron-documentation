@@ -233,9 +233,9 @@ Super-admins can approve requests even if the toggle is turned off.
 The list of users is fetched from [User Permissions](../global-configurations/authorization/user-access.md), and the list of [API tokens](../global-configurations/authorization/api-tokens.md) is sourced from API Tokens. 
 
 You cannot enter a new email ID or token directly. 
-   * To add a user, refer [User Permissions](../global-configurations/authorization/user-access.md#add-users). 
+   * Refer [Add Users (User Permissions)](../global-configurations/authorization/user-access.md#add-users) to add a new user. 
 
-   * To create an [API token](../global-configurations/authorization/api-tokens.md#generate-api-token).
+   * Refer [API token](../global-configurations/authorization/api-tokens.md#generate-api-token) to create a new API token.
 {% endhint %}
 
 3. Click the **Add**/**Edit** button next to **Specific Users / User Groups**. A pop-up modal window will appear.
