@@ -2,7 +2,7 @@
 
 ## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-When it comes to critical environments (let's say, production), you as a superadmin might want to introduce an approval flow for application deployment or changes made to the configuration files. Enforcing such restrictions will prevent unwanted deployments and direct modifications to sensitive configurations.
+When it comes to critical environments (let's say, production), you as a super-admin might want to introduce an approval flow for application deployment or changes made to the configuration files. Enforcing such restrictions will prevent unwanted deployments and direct modifications to sensitive configurations.
 
 The **Approval Policy** feature in Devtron lets you introduce an approval mechanism whenever your users perform the following actions:
 
@@ -56,7 +56,7 @@ Users need to have super-admin permissions to create an approval policy.
 
 * Super-admins have approver permissions by default.
 
-* Refer [User Permissions](./authorization/user-access.md#roles-available-for-devtron-apps) to lean more.
+* Refer [User Permissions](./authorization/user-access.md#roles-available-for-devtron-apps) to learn more.
 {% endhint %}
 
 {% hint style="info" %}
@@ -258,7 +258,7 @@ You cannot enter a new email ID or token directly.
 ### Caution
 * The dropdown lists all users and API tokens or user-groups, available in Devtron. Some users and API may have only view permissions or lack build, deploy, or admin permissions. Such users cannot bypass approval policies until the required permissions are assigned.
 
-* Refer [User Permissions](./authorization/user-access.md#roles-available-for-devtron-apps) to lean more.
+* Refer [User Permissions](./authorization/user-access.md#roles-available-for-devtron-apps) to learn more.
 {% endhint %}
 
 5. Click **Save**. The selected users or user groups will no longer require approvals for the selected scope.
