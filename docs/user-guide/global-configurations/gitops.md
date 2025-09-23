@@ -2,48 +2,58 @@
 
 ## Introduction
 
-In Devtron, you can either use Helm or GitOps (Argo CD) to deploy your applications and charts. GitOps is a branch of DevOps that focuses on using Git repositories to manage infrastructure and application code deployments.
+In Devtron, you can use either Helm, GitOps (Argo CD), or GitOps (Flux CD) as your deployment method while deploying your application. When you choose Helm as your preferred deployment method, you are deploying your application directly into the Kubernetes cluster without version tracking of any kind. 
 
-If you use the GitOps approach, Devtron will store Kubernetes configuration files and the desired state of your applications in Git repositories.
+However, if you choose GitOps - a branch of DevOps that focuses on using Git repositories as a single source of truth - Devtron stores Kubernetes configuration files (e.g., Kubernetes manifests or YAML configs) and the desired state of your applications in Git repositories to track each and every deployment.
+
+![Figure 1: GitOps Approach](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/gitops-approach.jpg)
+
+Whenever tools like Argo CD or Flux CD recognize changes in the Git repository, they apply those changes to the Kubernetes cluster automatically. Similarly, if they notice any change in the cluster, they will revert back the cluster to the Git-defined state.
 
 ---
 
 ## Steps to Configure GitOps
 
 {% hint style="warning" %}
+
 ### Who Can Perform This Action?
-Users need to have super-admin permission to configure GitOps.
+
+Users need to have [Super-Admin](user-access.md#assign-super-admin-permissions) permission to configure GitOps.
+
 {% endhint %}
 
 1. Go to **Global Configurations** → **GitOps**
 
-   ![Figure 1: Global Configuration - GitOps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/gitops-v1.jpg)
+   ![Figure 2: Global Configuration - GitOps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/gitops-v1.jpg)
 
 2. Select any one of the [supported Git providers](#supported-git-providers) to configure GitOps. 
 
-   ![Figure 2: Selecting a Provider](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/select-provider-v1.jpg)
+   ![Figure 3: Selecting a Provider](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/select-provider-v1.jpg)
 
 {% hint style="warning" %}
 The Git provider you select for configuring GitOps might impact the following sections:
+
    * [Deployment Template](../creating-application/deployment-template.md)
+
    * [Charts](../deploy-chart/README.md)
+
 {% endhint %}
 
 3. Fill all the mandatory fields. Refer [supported Git providers](#supported-git-providers) to know more about the respective fields.
 
-   ![Figure 3: Entering Git Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/git-fields.jpg)
+   ![Figure 4: Entering Git Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/git-fields.jpg)
 
 4. In the **Directory Management in Git** section, you get the following options:
 
-   * **Use default git repository structure**:
+   * **Auto-create git repository for each application**:
    
       This option lets Devtron automatically create a GitOps repository within your organization. The repository name will match your application name, and it cannot be changed. Since Devtron needs admin access to create the repository, ensure the Git credentials you provided in Step 3 have administrator rights.
 
-   * **Allow changing git repository for application**: 
+   * **Ask git repository for each application**: 
    
       Select this option if you wish to use your own GitOps repo. This is ideal if there are any confidentiality/security concerns that prevent you from giving us admin access. Therefore, the onus is on you to create a GitOps repo with your Git provider, and then [add it to the specific application](../creating-application/gitops-config.md) on Devtron. Make sure the Git credentials you provided in Step 3 have at least read/write access. Choosing this option will unlock a [GitOps Configuration](../creating-application/gitops-config.md) page under the [App Configuration](../creating-application/README.md) tab.
 
-   ![Figure 4: Need for User-defined Git Repo](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/user-defined-git.jpg)
+   ![Figure 5: Need for User-defined Git Repo](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/user-defined-git.jpg)
 
 5. Click **Save**/**Update**. A green tick will appear on the active Git provider.
 
@@ -61,13 +71,21 @@ Alternatively, you may use the feature flag **FEATURE_USER_DEFINED_GITOPS_REPO_E
 ![Using Feature Flag](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/dashboard-cm.gif)
 
 1. Go to [Devtron's Resource Browser](../resource-browser/README.md).
+
 2. Select the cluster where Devtron is running, i.e., `default_cluster`.
+
 3. Go to the **Config & Storage** dropdown on the left.
+
 4. Click **ConfigMap**.
+
 5. Use the namespace filter (located on the right-hand side) to select `devtroncd` namespace. Therefore, it will show only the ConfigMaps related to Devtron, and filter out the rest.
+
 6. Find the ConfigMap meant for the dashboard of your Devtron instance, i.e., `dashboard-cm` (with an optional suffix).
+
 7. Click **Edit Live Manifest**.
+
 8. Add the feature flag (with the intended boolean value) within the `data` dictionary 
+
 9. Click **Apply Changes**.
 
 ---
@@ -78,12 +96,15 @@ Below are the Git providers supported in Devtron for storing configuration files
 
 * [GitHub](#github)
 * [GitLab](#gitlab)
+* [AWS Code Commit](#aws-code-commit)
 * [Azure](#azure)
 * [Bitbucket](#bitbucket)
+* [Other GitOps](#other-gitops)
 
 ### GitHub
 
 {% hint style="info" %}
+
 ### Prerequisite
 
 1. A GitHub account
@@ -99,14 +120,16 @@ Fill the following mandatory fields:
 | **GitHub Username** | Provide the username of your GitHub account |
 | **Personal Access Token** | Provide your personal access token (PAT). It is used as an alternate password to authenticate your GitHub account. <br />If you do not have one, create a GitHub PAT [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token). <br /><br /> **Access Required**: <br /> `repo` - Full control of private repositories (able to access commit status, deployment status, and public repositories). <br /> `admin:org` - Full control of organizations and teams (Read and Write access). May not be required if you are using user-defined git repo. <br /> `delete_repo` - Grants delete repo access on private repositories. |
 
-
 ### GitLab
 
 {% hint style="info" %}
+
 ### Prerequisite
 
 1. A GitLab account
+
 2. A GitLab group. If you don't have one, refer [Creating Group in GitLab](#creating-group-in-gitlab).
+
 {% endhint %}
 
 Fill the following mandatory fields:
@@ -118,14 +141,42 @@ Fill the following mandatory fields:
 | **GitLab Username** | Provide the username of your GitLab account |
 | **Personal Access Token** | Provide your personal access token (PAT). It is used as an alternate password to authenticate your GitLab account. <br />If you do not have one, create a GitLab PAT [here](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html). <br /><br /> **Access Required**: <br /> `api` - Grants complete read/write access to the scoped project API. <br /> `write_repository` - Allows read/write access (pull, push) to the repository.|
 
+### AWS Code Commit [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
+{% hint style="info" %}
+
+### Prerequisites
+
+1. Existing user of AWS CodeCommit ([as AWS stopped adding new customers to it](https://aws.amazon.com/blogs/devops/how-to-migrate-your-aws-codecommit-repository-to-another-git-provider/))
+
+2. An AWS IAM user with `AWSCodeCommitPowerUser` permission. Refer to [Create and Configure an IAM User with AWSCodeCommitPowerUser Permission](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html#setting-up-gc-account) for more information.
+
+3. Obtain SSH Key ID and SSH Private Key. Refer to [Generating SSH Private Key in AWS Code Commit](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html) for more information.
+
+{% endhint %}
+
+![Figure 6: AWS Code Commit](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/aws-code-commit.jpg)
+
+Fill the following mandatory fields:
+
+| Field | Description |
+| --- | --- |
+| **SSH Host** | Enter the AWS Code Commit SSH host URL (e.g., `ssh://git-codecommit.ap-south-1.amazonaws.com`)|
+| **Enter username** | Enter the username (SSH Key ID), e.g., `APKDKDIERJS9EXAMPLE`. | 
+| **SSH Private Key** | Enter the SSH private key. | 
+
+Click **Save**. 
 
 ### Azure
 
 {% hint style="info" %}
-### Prerequisite
+
+### Prerequisites
 
 1. An organization on Azure DevOps. If you don't have one, refer [this link](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops#create-an-organization).
+
 2. A project in your Azure DevOps organization. Refer [Creating Project in Azure](#creating-project-in-azure-devops).
+
 {% endhint %}
 
 Fill the following mandatory fields:
@@ -140,20 +191,24 @@ Fill the following mandatory fields:
 ### Bitbucket
 
 Here, you get 2 options:
+
 * [Bitbucket Cloud](#bitbucket-cloud) - Select this if you wish to store GitOps configuration in a web-based Git repository hosting service offered by Bitbucket.
+
 * [Bitbucket Data Center](#bitbucket-data-center) - Select this if you wish to store GitOps configuration in a git repository hosted on a self-managed Bitbucket Data Center (on-prem).
 
 #### Bitbucket Cloud
 
 {% hint style="info" %}
+
 ### Prerequisite
 
 1. A Bitbucket account
+
 2. A workspace in your Bitbucket account. Refer [Creating Workspace in Bitbucket](#creating-workspace-in-bitbucket).
 
 {% endhint %}
 
-![Figure 5: Entering Details of Bitbucket Cloud](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/bitbucket-cloud-v1.jpg)
+![Figure 7: Entering Details of Bitbucket Cloud](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/bitbucket-cloud-v1.jpg)
 
 Fill the following mandatory fields:
 
@@ -168,13 +223,14 @@ Fill the following mandatory fields:
 #### Bitbucket Data Center
 
 {% hint style="info" %}
+
 ### Prerequisite
 
 A Bitbucket Data Center account
 
 {% endhint %}
 
-![Figure 6: Entering Details of Bitbucket Data Center](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/bitbucket-server-v1.jpg)
+![Figure 8: Entering Details of Bitbucket Data Center](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/bitbucket-server-v1.jpg)
 
 Fill the following mandatory fields:
 
@@ -184,6 +240,20 @@ Fill the following mandatory fields:
 | **Bitbucket Project Key** | Enter the Bitbucket project key. Refer [Bitbucket Project Key](https://confluence.atlassian.com/bitbucketserver/creating-projects-776639848.html). |
 | **Bitbucket Username*** | Provide the username of your Bitbucket Data Center account |
 | **Password** | Provide the password to authenticate your Bitbucket Data Center account |
+
+### Other GitOps [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
+![Figure 9: Other GitOps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/other-gitops.jpg)
+
+If you prefer to use the GitOps approach using a different platform other than the available ones, refer to the following table and fill in the mandatory fields:
+
+| Field | Description |
+| --- | --- |
+| **SSH Host** | Enter the SSH host URL (e.g., `ssh://git@<host>:<path>/<repo-name>.git`). | 
+| **Enter username** | Enter the username (e.g., `git`). For other GitOps, the username will differ depending on the provider (e.g., personal access token or access key ID). | 
+| **SSH Private Key** | Enter the SSH private key (e.g., `M7YtY8cdJKhZ7nYXxgXeqNffv`) here against the public key added to your GitOps provider. | 
+
+Click **Save**. 
 
 ---
 
@@ -230,9 +300,9 @@ For more information about the plans available for your team, see [GitHub's prod
 
 ### Creating Project in Azure DevOps
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/azure+devops/azure-new-project-v2.jpg)
+![Figure 10a: New Project Button in Azure DevOps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/azure+devops/azure-new-project-v2.jpg)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/azure+devops/azure-create-new-project-v2.jpg)
+![Figure 10b: Create New Project](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/azure+devops/azure-create-new-project-v2.jpg)
 
 1. Go to Azure DevOps and navigate to Projects.
 2. Select your organization and click `New project`. 
@@ -266,6 +336,3 @@ You can also refer [Azure DevOps - Project Creation](https://docs.microsoft.com/
 ### Additional References
 You can also refer [official Bitbucket Workspace page](https://support.atlassian.com/bitbucket-cloud/docs/what-is-a-workspace/) for more details.
 {% endhint %}
-
-
-
