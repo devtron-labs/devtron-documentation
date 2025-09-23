@@ -256,7 +256,7 @@ You cannot enter a new email ID or token directly.
 
 {% hint style="warning" %}
 ### Caution
-* The dropdown lists all users and API tokens or user-groups, available in Devtron. Some users and API may have only view permissions or lack build, deploy, or admin permissions. Such users cannot bypass approval policies until the required permissions are assigned.
+* The dropdown lists all users and API tokens or user-groups, available in Devtron. Some users or API tokens may have only view permissions or lack build, deploy, or admin permissions. Such users cannot bypass approval policies until the required permissions are assigned.
 
 * Refer [User Permissions](./authorization/user-access.md#roles-available-for-devtron-apps) to learn more.
 {% endhint %}
@@ -278,9 +278,9 @@ After configuring exceptions, super-admins and specific users / user groups can 
 ### Do exceptions bypass blackout or maintenance windows?  
 Approval Policy exceptions do not bypass a blackout or a maintenance window:
 
-   * During a blackout window, exception users cannot trigger deployments, unless they are configured to take action during the blackout window.
+   * During a blackout window, exception users cannot trigger deployments, unless you add them to the list of users, who are allowed to take action during the blackout window.
 
-   * Outside a maintenance window, exception users cannot trigger deployments, unless they are configured to take action outside the maintenance window
+   * Outside a maintenance window, exception users cannot trigger deployments, unless you add them to the list of users, who are allowed to take action outside the maintenance window
    
    * Refer [Deployment Window](../global-configurations/deployment-window.md#configuring-deployment-window) to learn more.
 {% endhint %}
