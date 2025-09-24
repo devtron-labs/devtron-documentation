@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Devtron helps you to view your application summary (Devtron, Helm, ArgoCD, or FluxCD) via [Cards](#cards-overview) and [Application metrics](#application-metrics). It also helps you perform [Quick actions](#action-buttons) and [Manage the most widely used Kubernetes resources](app-resource-management.md) directly from the **App Details** page. 
+Devtron helps you to view your application summary (Devtron, Helm, ArgoCD, or FluxCD) in the form of [cards](#cards-overview) and [Application Metrics](#application-metrics). It also helps you perform [quick actions](#action-buttons) and [manage the most widely used Kubernetes resources](app-resource-management.md) directly from the **App Details** page. 
 
 ![Figure 1: App Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/cards-highlighted.jpg) 
 
@@ -40,7 +40,7 @@ Devtron provides you a quick summary of your application via cards. Refer to the
 | **Card Name** |**Description**|
 |:------------- |:--------------| 
 | **Application Status** | Tells you the application status (e.g., `Healthy` or `Degraded`). The available application statuses in Devtron are: <br><ul><li>Degraded</li><li>Healthy</li><li>Hibernating</li><li>Missing</li><li>Not Deployed</li><li>Progressing</li></ul> When you click **Details**, all the details about the resource kinds, their statuses, and the message (if any) are displayed in detail. | 
-| **Blackout Window** | Tells you whether the application is blacked out (Blackout Window) or allowed only in specific environments (Maintenance Window). This card also displays the upcoming blackout/maintenance window and the remaining time for the blackout/maintenance window to complete. Refer to [Deployment Window](../global-configurations/deployment-window.md) for more information. |
+| **Blackout Window** / **Maintenance Window** | Tells you whether the application deployment is blocked or allowed for the chosen environment. This card also displays the upcoming blackout/maintenance window and the remaining time for the blackout/maintenance window to complete. Refer to [Deployment Window](../global-configurations/deployment-window.md) for more information. |
 | **Chart Used** (available only for Helm apps) | Displays the chart used to deploy the application. When you hover over the (**?**) icon in the card, you can directly configure the YAML values by clicking the **Go to Configure** option. |
 | **Deployed commit** (available only for Devtron apps) | Displays the commit ID of the deployed image. When you click **Details**, the commit ID, repository name, branch name, and the deployed image ID are displayed. |
 | **Deployment Status** | Tells you the deployment status (e.g., `Succeeded` or `Failed`). The available deployment statuses in Devtron are: <br><ul><li>Failed</li><li>Progressing</li><li>Succeeded</li><li>Timed Out</li><li>Triggered</li></ul> When you click **Details**, the complete deployment status, from when it was deployed by whom to the current status of it, is displayed. |
@@ -89,7 +89,7 @@ However, you can manually un-hibernate the application by clicking the **Un-hibe
 
 * The **Restart Workloads** button is available only for Devtron custom applications.
 
-* When there is an ongoing blackout or maintenance window for the application, then the **Restart Workloads** button will be disabled.
+* When there is an ongoing blackout or maintenance window for the application, then the **Restart Workloads** button will be restricted.
 
 {% endhint %}
 
@@ -107,7 +107,7 @@ When you select a workload and click **Restart Workloads**, all the pods for the
 
 * The **Rollback** button is available only for Devtron custom applications.
 
-* When there is an ongoing blackout or maintenance window for the application, you will not be able to rollback your deployment.
+* You will not be able to rollback your deployment during blackout window and outside maintenance window of the application.
 
 {% endhint %}
 
@@ -116,6 +116,14 @@ You can perform a rollback of your deployment directly from the **App Details** 
 ![Figure 6: Rollback Your Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/rollback.jpg)
 
 * Select an image from the available list of previously deployed images in that specific environment. 
+
+{% hint style="info" %}
+
+### Note
+
+When there is an active policy in place for an environment, and there are no approved images, then no images will be displayed in the **Rollback** page.
+
+{% endhint %}
 
 * Select one of the following deployment configurations in the **Deploy** drop-down box:
 
