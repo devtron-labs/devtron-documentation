@@ -171,3 +171,5 @@ After successfully executing all the steps, a new tab named **FluxCD Apps** will
 Click any Flux CD app to view its details as shown below.
 
 ![Figure 8: Flux App Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/app-details-flux.gif)
+
+<!-- Test -->
