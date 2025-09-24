@@ -71,12 +71,6 @@
     * [GitOps Configuration](user-guide/creating-application/gitops-config.md)
     * [Workflow Editor](user-guide/creating-application/workflow/README.md)
       * [CI Pipeline](user-guide/creating-application/workflow/ci-pipeline.md)
-<<<<<<< HEAD
-        * [Pre-Build/Post-Build Stages](user-guide/creating-application/workflow/ci-build-pre-post-plugins.md)
-        * [Override Build Configuration](user-guide/creating-application/container-registry-override.md)
-      * [CD Pipeline](user-guide/creating-application/workflow/cd-pipeline.md)      
-    * [Protect Configuration](user-guide/creating-application/config-approval.md)
-=======
       * [CD Pipeline](user-guide/creating-application/workflow/cd-pipeline.md)
       * [Pre/Post Stages](user-guide/creating-application/workflow/pre-post-tasks.md)
     * [ConfigMaps](user-guide/creating-application/config-maps.md)
@@ -85,7 +79,6 @@
         * [AWS Secrets Manager](user-guide/creating-application/eso/aws-eso.md)
         * [Google Secrets Manager](user-guide/creating-application/eso/gcp-eso.md)
         * [HashiCorp Vault](user-guide/creating-application/eso/hashicorp-eso.md)
->>>>>>> origin/main
     * [Environment Overrides](user-guide/creating-application/environment-overrides.md)
     * [Deleting Application](user-guide/deleting-application.md)
   * [Build and Deploy](user-guide/deploying-application/README.md)
