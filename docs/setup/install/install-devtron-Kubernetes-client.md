@@ -1,115 +1,186 @@
-# Devtron Kubernetes Client
+# Devtron Kubernetes Desktop Client
 
-## Overview
+## Introduction
 
-The Kubernetes client by Devtron is a very lightweight dashboard that can be installed on arm64/amd64-based architectures. It comes with the features such as Kubernetes Resources Browser and Cluster Management that can provide control and observability for resources across clouds and clusters.
+The Devtron Kubernetes Desktop Client is a lightweight dashboard that is installed outside your Kubernetes [cluster](../../reference/glossary.md#cluster) on a `arm64` / `amd64` based architecture to help you manage your Kubernetes resources with a unified view.
 
-Devtron Kubernetes client is an intuitive Kubernetes Dashboard or a command line utility installed outside a Kubernetes cluster. The client can be installed on a desktop running on any Operating Systems and interact with all your Kubernetes clusters and workloads through an API server. It is a binary, packaged in a bash script that you can download and install by using the following set of commands.
+The **Devtron Kubernetes Desktop Client** comes packaged with the following modules:
 
-By installing `Devtron Kubernetes Client`, you can access:
+* [Kubernetes Resource Browser](#kubernetes-resource-browser) - To manage all Kubernetes resources in your cluster(s)
+* [Clusters](#clusters) - To perform troubleshooting and node operations on the cluster(s) you connect from the Devtron Kubernetes Desktop Client
 
-* [Kubernetes Resource Browser](#kubernetes-resource-browser)
-* [Clusters Management Feature](#cluster-management)
+{% hint style="success" %}
 
+Try Devtron Freemium to access all the enterprise features for free and forever, limited to adding one additional cluster. [Install Devtron Freemium](https://license.devtron.ai/dashboard)
 
-## Here are a few advantages of using Devtron Kubernetes Client:
+{% endhint %}
 
-* **Managing Kubernetes Resources at scale**: Clusters vary on business and architectural needs. Organizations tend to build smaller clusters for more decentralization. This practice leads to the creation of multiple clusters and more nodes. Managing them on a CLI requires multiple files, making it difficult to perform resource operations. But with the Devtron Kubernetes Client, you can gain more visibility into K8s resources easily.
+---
 
-* **Unifying information in one place**: When information is scattered across clusters, and you have to type commands with arguments to fetch desired output, the process becomes slow and error-prone. Without a single point of configuration source, the configurations of different config. files diverge, making them even more challenging to restore and track. The Devtron Kubernetes Client unifies all the information and tools into one interface to perform various contextual tasks.
+## Steps
 
-* **Accessibility during an outage for troubleshooting**: As the Devtron Kubernetes Client runs outside a cluster, you can exercise basic control over their failed resources when there is a cluster-level outage. The Client helps to gather essential logs and data to pinpoint the root cause of the issue and reduce the time to restore service.
+1. Run the following command in your terminal to automatically download the executable file. Devtron Kubernetes Desktop Client will automatically opened in your default browser.
 
-* **Avoiding Kubeconfig version mismatch errors**: With the Devtron Kubernetes Client, you can be relieved from maintaining the Kubeconfig versions for the respective clusters (v1.16 - 1.26 i.e, current version) as the Devtron Kubernetes Client performs self kubeconfig version control. Instead of managing multiple kubectl versions manually, it eliminates the chances of errors occurring due to the mismatch in configuration. 
+   ```bash
+   wget -O devtron-install.bash https://cdn.devtron.ai/k8s-client/devtron-install.bash && [ -f devtron-install.bash ] && sh devtron-install.bash start
+   ```
 
+{% hint style="info" %}
 
-## Install Devtron Kubernetes Client
+### Desktop Client not opening?
 
-* Download the bash script using the below URL:
-https://cdn.devtron.ai/k8s-client/devtron-install.bash
+* In case you closed the Devtron Kubernetes Desktop Client browser tab by mistake, you can reopen it by executing the following command in your terminal:
 
-* To automatically download the executable file and to open the dashboard in the respective browser, run the following command:
+   ```bash
+   sh devtron-install.bash open 
+   ```     
 
-```bash
-   sh devtron-install.bash start  
-```
-`Note`: Make sure you place `Devtron-install.bash` in your current directory before you execute the command.
+* When installing the Devtron Kubernetes Desktop Client, if you encounter any errors, or if the tab opened in your default browser fails to load, or you encounter any issue because of the existence of the application, run the following command to delete the application.
 
-* Devtron Kubernetes Client opens in your browser automatically.
+   ```bash
+   rm -rf .devtron/ 
+   ```           
 
-* You must add your cluster to make your cluster visible on the `Kubernetes Resource Browser` and `Clusters` section. To add a cluster, go to the `Global Configurations` and click `Add Cluster`. [Refer documentation on how to add a cluster](../../user-guide/global-configurations/cluster-and-environments.md#add-cluster).
+{% endhint %}
 
-`Note`: You do not need to have a `super admin` permission to add a cluster if you install `Devtron Kubernetes Client`. You can add more than one cluster.
+2. Open your terminal and enter the following command to download and run a bash script for generating the [kubeconfig](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/):
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/global-configs-clusters.jpg)
+   ```bash
+   curl -O https://raw.githubusercontent.com/devtron-labs/utilities/main/kubeconfig-exporter/kubernetes_export_sa.sh && bash kubernetes_export_sa.sh cd-user devtroncd
+   ```
 
+   The cluster credentials are displayed in the output of the command. 
 
-### Kubernetes Resource Browser
+{% hint style="info" %}
 
-`Kubernetes Resource Browser` provides a graphical user interface for interacting and managing all your Kubernetes (k8s) resources across clusters. It also helps you to deploy and manage Kubernetes resources and allows pod operations such as:
-* View real-time logs
-* Check manifest and edit live manifests of k8s resources
-* Executable via terminal
-* View Events
-* Or, delete a resource
+### Important Note
 
-With `Kubernetes Resource browser`, you can also perform the following:
-* Check the real-time health status
-* Search for any workloads
-* Manage multiple clusters and change cluster contexts
-* Deploy multiple K8s manifests through `Create` UI option.
-* Perform resource grouping at the cluster level.
+Upon executing the above-mentioned command, if you encounter an error saying that you already have a service account named `cd-user`, change the service account name in the command from `cd-user` to `cd-user1` or `cd-user2`.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/k8s-resource-browser.jpg)
+{% endhint %}
 
-After your cluster is added via `Global Configurations`, go to the `Kubernetes Resource Browser` page and select your cluster. [Refer Resource Browser documentation for detail and its operations](../../user-guide/resource-browser/README.md).
+3. Fetch the cluster credentials (`Cluster name`, `Server URL`, `Bearer token`) from the terminal and note them aside.
 
-`Note`: You do not need to have a `super admin` permission to access `Kubernetes Resource Browser` if you install `Devtron Kubernetes Client`.
+   ![Figure 1: Fetch Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/cluster-credentials.jpg)
 
+4. Navigate to **Global Configurations** → **Clusters** → **Add cluster** and paste the credentials in their respective fields. 
 
-### Cluster Management
+   ![Figure 2a: Add a Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/global-configs-clusters.jpg)
 
-With the `Devtron Kubernetes Client`, you can manage all your clusters running on-premises or on a cloud. It is a cluster and cloud agnostic platform where you can add as many clusters as you want, be it a lightweight cluster such as k3s/ microk8s or cloud managed clusters like Amazon EKS. 
+   ![Figure 2b: Add Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/adding-cluster.jpg)
 
-It enables you to observe and monitor the cluster health and real-time node conditions. The Cluster management feature provides a summary of nodes with all available labels, annotations, taints, and other parameters such as resource usage. In addition to that, it helps you to perform node operations such as:
+5. Click **Save Cluster**. This cluster will now be displayed in the **Kubernetes Resource Browser** page. Refer [Kubernetes Resource Browser](#kubernetes-resource-browser) or [Clusters](#clusters) in the Devtron Kubernetes Desktop Client for more information. 
 
-* Debug a node
-* Cordon a node
-* Drain a node
-* Taint a node
-* Edit a node config
-* Delete a node
+6. To stop the Devtron Kubernetes Desktop Client, run the following command in your terminal:
 
-With its rich features and intuitive interface, you can easily manage and [debug clusters through cluster terminal access](../../user-guide/resource-browser/cluster-terminal.md) and use any CLI debugging tools like busybox, kubectl, netshoot or any custom CLI tools like k9s.
+   ```bash
+   sh devtron-install.bash stop
+   ``` 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/cluster-terminal.jpg)
+{% hint style="info" %}
 
+### Note
 
-After your cluster is added via `Global Configurations`, go to the `Clusters` page and search or select your cluster. [Refer Clusters documentation for detail and its operations](../../user-guide/global-configurations/cluster-and-environments.md).
-
-
-### Some Peripheral Commands
-
-* In case if you close the browser by mistake, you can open the dashboard by executing the following command. It will open the dashboard through a port in the available web browser and store the Kubernetes client's state.
+The next time, if you wish to run the Devtron Kubernetes Desktop Client again, run the following command in your terminal:
 
 ```bash
-sh devtron-install.bash open 
+sh devtron-install.bash start
 ```
 
-* To stop the dashboard, you can execute the following command:
+{% endhint %}
+
+---
+
+## Kubernetes Resource Browser
+
+Kubernetes Resource Browser, in short, is a central interface from which you can view logs, edit live manifests, and even perform CRUD operations (create, read, update, or delete) on resources like pods, deployments, configmaps, jobs, and many more in the cluster(s).  
+
+On the left side bar, under the **K8s Resources** tab, the Kubernetes resources are grouped into the following categories:
+
+* Workloads
+
+* Config & Storage
+
+* Networking
+
+* RBAC
+
+* Administration
+
+* Other Resources
+
+* Custom Resource
+
+![Figure 3: Kubernetes Resource Browser](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/resource-browser.jpg)
+
+For the convenience of the user, the Resource Browser page comes with a search box and filters to locate resource kinds quickly. 
+
+![Figure 4: Search Bar](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/search-bar.jpg)
+
+![Figure 5: Cluster and Namespace Filters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/filter-boxes.jpg)
+
+### Create a Resource 
+
+![Figure 6: Create a Pod](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/creating-resource.gif)
+
+#### Sample Script for Creating a Pod
 
 ```bash
-sh devtron-install.bash stop
-``` 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-sample-pod
+  labels:
+    app: sampleApp
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+```
 
-* To update the `Devtron Kubernetes Client`, use the following command. It will stop the running dashboard and download the latest executable file and open it in the browser.
+### View a Resource
+
+![Figure 7: View a Pod](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/viewing-resource.gif)
+
+### Update a Resource
+
+![Figure 8: Update a Live Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/updating-resource.gif)
+
+### Delete a Resource
+
+![Figure 9: Delete a Pod](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/deleting-resource.gif)
+
+---
+
+## Clusters
+
+Devtron Kubernetes Desktop Client allows you to add multiple clusters and manage all of them from your local machine. The **Clusters** module allows you to view CPU and Memory metrics like CPU Capacity, Memory Capacity, and much more.
+
+![Figure 10: Clusters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/clusters-metrics.jpg)
+
+### Perform Node Operations
+
+You can perform node operations such as [Cordon](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_cordon/), [Drain](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_drain/), and [Taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) either from the (&#8942;) icon displayed against the cluster name or by clicking the cluster itself.
+
+![Figure 11a: Peform Node Operations Using the (&#8942;) Icon](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/cluster-node-operations.jpg)
+
+![Figure 11b: Peform Node Operations by Clicking the Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/cluster-view.jpg)
+
+### Access Cluster Terminal
+
+At any time, you can debug and troubleshoot any issues in your cluster using the Cluster Terminal. You can access the Cluster Terminal by either clicking **Terminal** option in the Overview page or by clicking the cluster and then clicking the **Debug** option. The same Cluster Terminal will be opened irrespective of the option that you choose. 
+
+![Figure 12a: Terminal Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/terminal-option.jpg)
+
+![Figure 12b: Debug Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/debug-option.jpg)
+
+---
+
+## Upgrade Devtron Kubernetes Desktop Client 
+To upgrade your Devtron Kubernetes Desktop Client, run the following command in your terminal. The Devtron Kubernetes Desktop Client will automatically be stopped, and the downloaded latest executable file will be opened in the default browser.
 
 ```bash
 sh devtron-install.bash upgrade
 ```
-
-{% hint style="success" %}
-### Try Devtron Enterprise for Free
-Explore [all capabilities](https://devtron.ai/pricing) of Devtron with its Enterprise version trial ([read more](enterprise-license.md)).
-{% endhint %}
-

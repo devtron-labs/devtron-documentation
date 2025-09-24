@@ -79,7 +79,7 @@ Devtron is designed to be modular, and its functionality can be easily extended 
 
 ### CI/CD Integration
 
-[Devtron CI/CD with GitOps](#install-devtron-with-cicd-integration) integration is used to automate the builds and deployments and enables the software development teams to focus on meeting the business requirements, code quality, and security.
+[Devtron CI/CD with GitOps](./docs/setup/install/devtron-oss.md#tab-with-ci-cd--gitops-argo-cd) integration is used to automate the builds and deployments and enables the software development teams to focus on meeting the business requirements, code quality, and security.
 
 * Devtron leverages Kubernetes auto-scaling and centralized caching to give you unlimited cost-efficient CI workers.
 * Supports pre-CI and post-CI integrations for code quality monitoring.
@@ -135,7 +135,7 @@ kubectl -n devtroncd get secret devtron-secret -o jsonpath='{.data.ACD_PASSWORD}
 ```
 
 
-Please refer to the document for more information on how to [access the Devtron Dashboard](./docs/setup/install/install-devtron-with-cicd.md/#access-devtron-dashboard).
+Please refer to the document for more information on how to [access the Devtron Dashboard](./docs/setup/install/devtron-oss.md#step-3-obtain-the-dashboard-url).
 
 #### Installation Status
 

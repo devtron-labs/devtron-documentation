@@ -36,7 +36,7 @@ Further resources in the cluster are grouped under the following categories:
 * Other Resources
 * Custom Resource
 
-![Figure 2: Resources within Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-list-db.jpg)
+![Figure 2: Resources within Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cluster-resources.jpg)
 
 ---
 
@@ -59,7 +59,7 @@ You can edit the [manifest](../../reference/glossary.md#manifest) of a Kubernete
 
 {% hint style="info" %}
 ### Note
-The fields displayed in GUI mode will be as per the [GUI schema configured by the operator](../operations/edit-manifest-schema.md) for that resource kind.
+The fields displayed in GUI mode will be as per the GUI schema configured by the operator for that resource kind.
 {% endhint %}
 
 ---

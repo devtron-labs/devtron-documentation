@@ -5,6 +5,7 @@
 Application groups in Devtron streamline the deployment of microservices by enabling you to build and deploy multiple applications simultaneously. This feature is particularly beneficial when your microservices are interdependent, as a change in one service often triggers the need to redeploy others.
 
 {% hint style="info" %}
+### Note
 Only one application group would exist for each [environment](../reference/glossary.md#environment). You cannot group applications belonging to different environments.
 {% endhint %}
 
@@ -32,6 +33,7 @@ As you can see, it has similar options as available under [Applications](./appli
 * Configurations
 
 {% hint style="info" %}
+### Note
 Users need to have [View only permission](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to view all the applications within a group.
 {% endhint %}
 
@@ -61,6 +63,7 @@ Adding [image labels](./deploying-application/image-labels-and-comments.md) can 
 3. Similar to application, you can also [pass build parameters](./deploying-application/triggering-ci.md#passing-build-parameters) in application groups before triggering the build.
 
 {% hint style="info" %}
+### Note
 Passing build parameters feature is only available in <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg">
 {% endhint %}
 
@@ -87,6 +90,7 @@ Passing build parameters feature is only available in <img src="https://devtron-
     ![Figure 11: Triggered Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/build-image.jpg)
 
 {% hint style="info" %}
+### Note
 Users need to have [Build and deploy permission](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to trigger the build
 {% endhint %}
 
@@ -104,6 +108,7 @@ As shown below, you can handle the configurations of more than one application f
 ![Figure 12: Configurations of each App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/configurations.jpg)
 
 {% hint style="info" %}
+### Note
 Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to change their configuration. Please note, you might not be able to change the values of locked keys in deployment template. Refer [Lock Deployment Configuration](./global-configurations/lock-deployment-config.md) to know more.
 {% endhint %}
 
@@ -112,38 +117,57 @@ Users need to have [Admin role](../user-guide/global-configurations/authorizatio
 
 The **Build & Deploy** tab of your application group helps you deploy one or more applications in bulk.
 
-1. Select the applications using the checkboxes and click the **Deploy** button present at the bottom.
+1. Select the applications using the checkboxes.
 
     ![Figure 13: Deploy Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-app-deploy.jpg)
 
-2. Select the desired container image that you want to deploy for respective application.
+2. You can also trigger Pre-deployment stage or Post-deployment stage for your applications in bulk.
 
-    ![Figure 14: Selecting Image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-image-1.jpg)
+    * To trigger Pre-deployment stage, click the droupup next to **Deploy** and select **Trigger Pre-deployment stage**. 
+
+    * To trigger Post-deployment stage, click the droupup next to **Deploy** and select **Trigger Post-deployment stage**. 
+
+    ![Figure 14: Triggering Pre/Post Stages](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-trigger-pre-post.jpg)
+
+{% hint style="info" %}
+### Note
+* The dropup appears only if your workflow has Pre-deployment stage or Post-deployment stage configured for the selected environment.  
+* If both stages are configured, the dropup will display options for triggering **Pre-deployment** and **Post-deployment** stages.  
+* If only one stage is configured, the dropup will show the option for triggering that specific stage.  
+{% endhint %}
+
+3. After selecting the applications, click the **Deploy** button present at the bottom.
+
+    ![Figure 15: Clicking 'Deploy'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-deploy.jpg)
+
+4. Select the desired container image that you want to deploy for respective application.
+
+    ![Figure 16: Selecting Image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-image-1.jpg)
 
     Repeat the step for other applications too.
 
-    ![Figure 15: Deploying Apps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-image-2.jpg)
+    ![Figure 17: Deploying Apps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-image-2.jpg)
 
-3. If you wish, you can deploy all applications in an Application Group using a single deployment strategy; select the preferred deployment strategy for all the applications and click **Deploy**. <br><br> By default, all applications will be deployed using their respective default strategies.
+5. If you wish, you can deploy all applications in an Application Group using a single deployment strategy, select the preferred deployment strategy for all the applications and click **Deploy**. <br /><br /> By default, all applications will be deployed using their respective default strategies.
 
-    ![Figure 16: Selecting Deployment Strategy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-default-strategy.jpg)
+    ![Figure 18: Selecting Deployment Strategy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-default-strategy.jpg)
 
- * **Deployment feasibility** page will open; in case for any application, the selected deployment strategy is not configured, you can select one of the configured strategies for that application. <br><br> If you do not select a configured deployment strategy, deployment will be skipped for that particular application.
+    * **Deployment feasibility** page will open, in case for any application, the selected deployment strategy is not configured, you can select one of the configured strategies for that application. <br /><br /> If you do not select a configured deployment strategy, deployment will be skipped for that particular application.
 
-    ![Figure 17: Deployment Feasibility](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-deployment-feasibility.jpg)
+    ![Figure 19: Deployment Feasibility](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-deployment-feasibility.jpg)
 
-4. The deployment will be initiated, following which, you can close the screen as shown below.
+6. The deployment will be initiated, following which, you can close the screen as shown below.
 
-    ![Figure 18: Triggered Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/deploy-app.jpg)
+    ![Figure 20: Triggered Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/deploy-app.jpg)
 
-Once the deployment is successful, the pipelines will show `Succeeded`.
+7. Once the deployment is successful, the pipelines will show `Succeeded`.
 
-![Figure 19: Successful Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/successful.jpg)
+    ![Figure 21: Successful Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/successful.jpg)
 
 {% hint style="info" %}
+### Note
 Users need to have [Build and deploy permission](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to initiate the deployment
 {% endhint %}
-
 
 ### Managing Traffic
 
@@ -151,9 +175,9 @@ While deployment, Devtron allows you to manage your **Canary** and **Blue-Green*
 
 To do so, follow the below steps:
 
-1. Go to **Overview** and Click on **Manage Traffic**.
+1. Go to **Overview** and click **Manage Traffic**. 
 
-     ![Figure 20: Selecting Managing Traffic](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-manage-traffic.jpg)
+     ![Figure 22: Selecting Managing Traffic](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-click-manage-traffic.jpg)
 
 2. Select the required applications, a side window will appear displaying all the eligible rollouts.
 
@@ -161,23 +185,23 @@ To do so, follow the below steps:
 
  * For **Canary Deployments**, you can either choose to initiate the next step or to initiate the full rollout.
 
-     ![Figure 21: Selecting Action for Canary Deployments](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-canray-options.jpg)
+     ![Figure 23: Selecting Action for Canary Deployments](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-canray-options.jpg)
 
  * For **Blue Green deployments**, you can either choose to **Swap Traffic**, or you can choose Skip & Promote Full. 
 
      * **Swap Traffic**: This will swap the traffic from the current deployment to the application latest deployment.
 
-         ![Figure 22: Selecting 'Swap Traffic'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-blue-green-swap.jpg)
+         ![Figure 24: Selecting 'Swap Traffic'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-blue-green-swap.jpg)
 
      * **Skip & Promote Full**: While deploying, this will directly deploy the whole traffic to application latest deployment.
 
-         ![Figure 23: Selecting 'Skip & Promote Full'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-blue-green-skip.jpg)
+         ![Figure 25: Selecting 'Skip & Promote Full'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-blue-green-skip.jpg)
 
 4. Click **Initiate Eligible Rollouts** to implement the actions.
 
-     ![Figure 24: Clicking 'Initiate Eligible Rollouts'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-initiate-eligible-rollouts.jpg)
+     ![Figure 26a: Clicking 'Initiate Eligible Rollouts'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-initiate-eligible-rollouts.jpg)
      
-     ![Figure 25: Rollout Status](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-rollouts-success.jpg)
+     ![Figure 26b: Rollout Status](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/AG-rollouts-success.jpg)
 
 ---
 
@@ -195,16 +219,16 @@ This feature aims at helping the user clone existing CI/CD pipelines for new tar
 | Configuration Item              | Cloning Behavior                                             |
 |----------------------------------|--------------------------------------------------------------|
 | [**CI Workflow**](../user-guide/creating-application/workflow/ci-pipeline.md)                  | Clones the source’s workflow CI as it is                    |
-| [**Pipeline Configuration**](../user-guide/creating-application/workflow/ci-build-pre-post-plugins.md)       | Cloned, including Pre-CD and Post-CD scripts/plugins        |
+| [**Pipeline Configuration**](../user-guide/creating-application/workflow/pre-post-tasks.md)       | Cloned, including Pre-CD and Post-CD scripts/plugins        |
 | [**Environment Configuration**](../user-guide/creating-application/README.md#app-configuration)    | Cloned, including Deployment Template (DT), ConfigMap (CM), and Secret |
 | [**GitOps Configuration**](../user-guide/creating-application/gitops-config.md)         | Not cloned              |
-| [**Environment Policies**](../user-guide/creating-application/environment-overrides.md)         | Cloned if at pipeline level; ignored if global              |
+| [**Environment Policies**](../user-guide/creating-application/environment-overrides.md)         | Cloned if at pipeline level,ignored if global              |
 | [**CD Filter**](../user-guide/global-configurations/filter-condition.md)                    | Not cloned (handled globally)                              |
 | [**Protect Configurations**](../user-guide/creating-application/config-approval.md)       | Cloned (handled at pipeline level)                         |
-| [**Deployment Approvals**](../user-guide/creating-application/workflow/cd-pipeline.md#manual-approval-for-deployment)         | Cloned                                                     |
+| [**Deployment Approvals**](../user-guide/global-configurations/approval-policy.md)         | Not cloned (handled globally)                                                    |
 | [**Lock Configurations**](../user-guide/global-configurations/lock-deployment-config.md)          | Not cloned                                                 |
-| **Mandatory Plugin**             | Not cloned                                                 |
-| [**Image Digest Policy**](../user-guide/global-configurations/pull-image-digest.md)          | Cloned at pipeline level; ignored if global                |
+| [**Mandatory Plugin**](../user-guide/global-configurations/plugin-policy.md)             | Not cloned                                                 |
+| [**Image Digest Policy**](../user-guide/global-configurations/pull-image-digest.md)          | Cloned at pipeline level, ignored if global                |
 | [**Promotion Policy**](../user-guide/global-configurations/image-promotion-policy.md)             | Not cloned                                                 |
 | [**Deployment Window**](../user-guide/global-configurations/deployment-window.md)            | Not cloned                                                 |
 | [**Security Policy**](../user-guide/security-features/security-policies.md)              | Not cloned                                                 |
@@ -219,33 +243,37 @@ This feature gives you two methods of cloning:
 
 1. **New Workflow**: Creates a new workflow and clones the source CI and CD pipeline. Gives you the flexibility to tweak the cloned CI (e.g., changing code branch for build) too.
 
-    ![Figure 26: New Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/new-workflow-v2.jpg)
+    ![Figure 27: New Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/new-workflow-v2.jpg)
 
 2. **Source Workflow**: Uses the same workflow and clones only the source CD pipeline, thus keeping the original CI pipeline unchanged.
 
-    ![Figure 27: Source Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/source-workflow-v2.jpg)
+    ![Figure 28: Source Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/source-workflow-v2.jpg)
 
 #### Steps to Clone Pipelines
 
 1. Go to **Application Groups** and click the source environment from the list.
 
-    ![Figure 28: Source Environment Selection](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/source-env-selection-v2.jpg)
+    ![Figure 29: Source Environment Selection](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups.jpg)
 
-2. Select the applications whose pipelines you wish to clone and click **Clone Pipeline Config**.
+2. Select the applications whose pipelines you wish to clone. 
 
-    ![Figure 29: Choosing Applications](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/pipeline-clone-v2.gif)
+3. A floating widget will appear at the bottom. Click the `⋮` menu and then click **Clone Pipeline Config**.  
 
-3. From the dropdown, select the target environment for which pipelines should be created for selected applications.
+    * Alternatively, you may access **Clone Pipeline Config** from the `⋮` menu next to the application name.
 
-    ![Figure 30: Selecting Target Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/target-env-v2.gif)
+    ![Figure 30: Choosing Applications](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-click-clone-pipelines.gif)
 
-4. Select the workflow where you wish to create deployment pipeline: **New Workflow** or **Workflow as source environment**. Refer [Methods of Cloning](#methods-of-cloning) to know which option will fulfill your requirement.
+4. From the dropdown, select the target environment for which pipelines should be created for selected applications.
 
-    ![Figure 31: Creating CD Pipeline in Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/clone-type-v2.jpg)
+    ![Figure 31: Selecting Target Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-select-env.gif)
 
-5. Click **Clone in new workflow** or **Clone in source workflow** (depending on the option you selected in the previous step).
+5. Select the workflow where you wish to create deployment pipeline: **New Workflow** or **Workflow as source environment**. Refer [Methods of Cloning](#methods-of-cloning) to know which option will fulfill your requirement.
 
-    ![Figure 32: Initiating Clone](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/clone-progress-v2.gif)
+    ![Figure 32: Creating CD Pipeline in Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-choose-workflow.jpg)
+
+6. Click **Clone in new workflow** or **Clone in source workflow** (depending on the option you selected in the previous step).
+
+    ![Figure 33: Initiating Clone](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-clone-status.gif)
 
 {% hint style="warning" %}
 ### Note
@@ -266,35 +294,55 @@ In other words, you can hibernate running applications or unhibernate hibernated
 
 #### Hibernation Process
 
-1. In the `Overview` page of your application group, use the checkboxes to choose the applications you wish to hibernate, and click the **Hibernate** button.
+1. In the **Overview** page of your application group, use the checkboxes to choose the applications you wish to hibernate. 
 
-    ![Figure 33: Selecting Apps to Hibernate](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/hibernate-apps-v1.jpg)
+2. A floating widget will appear at the bottom. Click the **Hibernate** button. 
 
-2. Confirm the hibernation.
+    * Alternatively, you may access **Hibernate** from the `⋮` menu next to the application name.
 
-    ![Figure 34: Confirming Hibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/confirm-hibernation-v1.jpg)
+    ![Figure 34: Selecting Apps to Hibernate](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-click-hibernate.jpg)
 
-3. Hibernation will initiate as shown below. You may close the window. 
+3. Confirm the hibernation by clicking **Hibernate**.
 
-    ![Figure 35: Initiation Status of Hibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/initiated-hibernation.jpg)
+    ![Figure 35: Confirming Hibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-confirm-hibernate.jpg)
+
+4. Hibernation will initiate as shown below. You may close the window. 
+
+    ![Figure 36: Initiation Status of Hibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-hibernate-status.jpg)
 
 Your applications pods would be scaled down and would stop incurring costs.
 
+{% hint style="warning" %}
+### Note
+* The hibernation process will show the status as `Skipped` for the applications which are already hibernated.
+* The hibernation process will show the status as `Failed` for the applications which have no deployment history.
+{% endhint %}
+
 #### Unhibernation Process
 
-1. In the same `Overview` page, you can use the checkboxes to choose the hibernated applications you wish to unhibernate, and click the **Unhibernate** button.
+1. In the **Overview** page of your application group, use the checkboxes to choose the applications you wish to unhibernate. 
 
-    ![Figure 36: Selecting Hibernated Apps to Unhibernate](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/unhibernate-apps-v1.jpg)
+2. A floating widget will appear at the bottom. Click the **Unhibernate** button. 
 
-2. Confirm the unhibernation.
+    * Alternatively, you may access **Unhibernate** from the `⋮` menu next to the application name.
 
-    ![Figure 37: Confirming Unhibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/confirm-unhibernation-v1.jpg)
+    ![Figure 37: Selecting Hibernated Apps to Unhibernate](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-click-unhibernate.jpg)
 
-3. Unhibernation will initiate as shown below. You may close the window. 
+3. Confirm the unhibernation by clicking **Unhibernate**.
 
-    ![Figure 38: Initiation Status of Unhibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/initiated-unhibernation.jpg)
+    ![Figure 38: Confirming Unhibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-confirm-unhibernate.jpg)
+
+4. Unhibernation will initiate as shown below. You may close the window. 
+
+    ![Figure 39: Initiation Status of Unhibernation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-unhibernate-status.jpg)
 
 Your applications would be up and running in some time.
+
+{% hint style="warning" %}
+### Note
+* The unhibernation process will show the status as `Skipped` for the applications which are already running.
+* The unhibernation process will show the status as `Failed` for the applications which have no deployment history.
+{% endhint %}
 
 ### Restart Workloads
 
@@ -307,51 +355,55 @@ Restarting workloads might be necessary if you want your new code or configurati
 
 Using application group, you can select the workloads (i.e., Pod, Deployment, ReplicaSet, etc.) of specific applications and restart them. 
 
-1. Use the checkboxes to choose the applications whose workloads you wish to restart, and click the **Restart Workload** button.
+1. In the **Overview** page of your application group, use the checkboxes to choose the applications you wish to restart. 
 
-    ![Figure 39: Selecting Apps to Restart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/restart-workloads-v1.jpg)
+2. A floating widget will appear, click the **Restart Workloads** button. 
 
-2. Next to the application, click the workload dropdown to view all the individual workloads of an application. Choose only the ones you wish to restart.
+    * Alternatively, you may access **Restart Workload** from the `⋮` menu next to the application name.
 
-    ![Figure 40: Choosing Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/choose-workload.jpg)
+    ![Figure 40: Selecting Apps to Restart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-click-restart-workloads.jpg)
+
+3. Next to the application, click the workload dropdown to view all the individual workloads of an application. Choose only the ones you wish to restart.
+
+    ![Figure 41: Choosing Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/choose-workload.jpg)
 
     Moreover, you can easily select, deselect, or choose multiple workloads as shown below.
 
-    ![Figure 41: Selecting and Unselecting Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/bulk-restart.gif)
+    ![Figure 42: Selecting and Unselecting Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/bulk-restart.gif)
 
-3. Click **Restart Workloads**.
+4. Click **Restart Workloads**.
 
-    ![Figure 42: Restarting Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-workloads.jpg)
+    ![Figure 43: Restarting Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/select-workloads.jpg)
 
 Restarting workloads might take time depending on the number of applications.
 
 ### Filtering Applications
 
-Assume you have multiple applications (maybe 10, 50, 100, or more) showing up in an application group. If you want to limit your operations (build/deploy/other) to a specific set of applications, the filter feature will help you narrow down the list. Thus, you will see only those applications you select from the filter (be it on the `Overview` page, `Build & Deploy` page, and so on.)
+Assume you have multiple applications (maybe 10, 50, 100, or more) showing up in an application group. If you want to limit your operations (build/deploy/other) to a specific set of applications, the filter feature will help you narrow down the list. Thus, you will see only those applications you select from the filter (be it on the **Overview** page, **Build & Deploy** page, and so on.)
 
 1. Click the filter next to the application group as shown below.
 
-    ![Figure 43: Filter Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/app-filter-1.jpg)
+    ![Figure 44: Filter Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/app-filter-1.jpg)
 
 2. The filter will show all the applications present in the group. Click to select the relevant ones.
 
-    ![Figure 44: All Apps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/app-filter-2.jpg)
+    ![Figure 45: All Apps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/app-filter-2.jpg)
 
 3. The filter narrows down the list of applications as shown below.
 
-    ![Figure 45: Filtered Apps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/app-filter-3.jpg)
+    ![Figure 46: Filtered Apps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/app-filter-3.jpg)
 
 4. (Optional) If required, you can save the filter for future use by clicking **Save selection as filter**.
 
-    ![Figure 46: Saving a Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/save-filter.jpg)
+    ![Figure 47: Saving a Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/save-filter.jpg)
 
 5. Add a name and description to the filter to help you know its purpose, and click **Save**.
 
-    ![Figure 47: Naming a Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/save-filter-2.jpg)
+    ![Figure 48: Naming a Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/save-filter-2.jpg)
 
 Now when you access the application group, your saved filter will be visible on top.
 
-![Figure 48: Saved Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/save-filter-3.jpg)
+![Figure 49: Saved Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/save-filter-3.jpg)
 
 {% hint style="info" %}
 
@@ -383,7 +435,6 @@ Users can delete a saved filter if they have Admin/Manager access on all applica
 
 {% endhint %}
 
-
 ### Changing Branch
 
 {% hint style="warning" %}
@@ -391,12 +442,74 @@ Users can delete a saved filter if they have Admin/Manager access on all applica
 Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to update their branch.
 {% endhint %}
 
-Assume you have a few applications whose [build pipelines](../reference/glossary.md#build-pipeline) fetch from the `main` branch of your code repository. However, you decided to maintain a `master` branch, and you want all the upcoming CI builds to consider the `master` branch as the source. Devtron provides you the option to change the branch at both levels—individual application as well as application group.
+Assume you have a few applications whose [build pipelines](../reference/glossary.md#build-pipeline) fetch from the `main` branch of your code repository. However, you decided to maintain a `master` branch, and you want all the upcoming CI builds to consider the `master` branch as the source. Devtron provides you the option to change the branch at both levels, individual application as well as application group.
 
 1. In the **Build & Deploy** tab of your application group, select the intended applications and click the **Change Branch** button present at the bottom.
 
-    ![Figure 49: Changing Branch](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/change-branch.jpg)
+    ![Figure 50: Changing Branch](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/change-branch.jpg)
 
 2. Enter the new branch name. If your build pipeline has `Branch Regex` as the Source Type, you must ensure your new branch name matches the regex (regular expression) provided in that build pipeline. Once done, click **Update Branch**.
 
-    ![Figure 50: Updating Branch Name](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/update-branch.jpg)
+    ![Figure 51: Updating Branch Name](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/update-branch.jpg)
+
+### Changing Image Source
+
+{% hint style="warning" %}
+### Who Can Perform This Action?
+Users need to have [Admin role](../user-guide/global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and applications) to update their branch.
+{% endhint %}
+
+The **Change Image Source** feature in Devtron lets you update the container image source for an application’s workflow without modifying it.
+
+1. In the **Build & Deploy** tab of your application group, select the preferred workflows and click the **Change Image Source** button present at the bottom.
+
+    ![Figure 52: Clicking 'Change Image Source'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-change-image-source.jpg)
+
+2. Select the preferred Workflow template, and enter the required details as per the workflow template. Currently, **Change Image Source** feature for **Application Groups** is only supported for **Build from Source Code** and **Sync with Environment**.
+
+    1. **Build from Source Code**
+        * After selecting **Build from Source Code**, a feasibility check will run. You can click **Create Build Pipeline** only if the application's feasibility shows `Can change`.
+
+            **Note:** Application for which the feasibility shows `Cannot change` will be skipped due to following reasons:
+
+            * `Multi git material found at the source, not allowed to change the source`
+            * `No cd pipeline found for the selected app and env combination`
+            * `Invalid request, trying to create self loop, cannot create sync-cd source pipeline with source environment in same workflow`
+            
+            ![Figure 53a: Selecting 'Build From Source'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-build-from-source-code.jpg)
+
+            ![Figure 53b: Feasibility Window](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-build-from-source-code-feasibility-window.jpg)
+
+        * A pop-up window will open, enter the **Source Type** and **Branch** under **Select code source**. 
+            
+            ![Figure 54: Entering Required Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-build-from-source-code-details.jpg)
+
+        * Click **Create Pipeline**. A modal window will appear showing the status of the image source change.
+
+            ![Figure 55: Clicking 'Create Pipeline'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-build-from-source-code-changed.jpg) 
+
+    2. **Sync with Environment**
+        * After selecting **Sync with Environment**, a modal window will open.
+
+            ![Figure 56: Selecting Sync With Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-sync-with-environment.jpg)
+
+        * Select the environment from which you want to sync your workflow, and then click **Next**.
+
+            ![Figure 57: Selecting Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-sync-with-environment-select-env.jpg)
+
+        * A feasibility check will run. You can click **Change Image Source** only if the application's feasibility is marked as `Can change`.
+            
+            **Note:** Application for which the feasibility shows `Cannot change` will be skipped due to following reasons:
+
+            * `Multi git material found at the source, not allowed to change the source`
+            * `No cd pipeline found for the selected app and env combination`
+            * `Invalid request, trying to create self loop, cannot create sync-cd source pipeline with source environment in same workflow`
+
+            ![Figure 58: Feasibility Window](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-sync-with-environment-feasibility.jpg)
+
+        * Click **Change Image Source**. A modal window will appear showing the operation status.
+
+            ![Figure 59: Clicking 'Change Image Source'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/application-groups/application-groups-sync-with-environment-changed.jpg)
+
+3. The image source is applied to all selected workflows where the feasibility check passed.
+        

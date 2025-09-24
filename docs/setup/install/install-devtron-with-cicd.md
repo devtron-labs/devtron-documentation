@@ -4,7 +4,7 @@ In this section, we describe the steps in detail on how you can install Devtron 
 
 {% hint style="success" %}
 
-Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
+Try Devtron Freemium to access all the enterprise features for free and forever, limited to adding one additional cluster. [Install Devtron Freemium](https://license.devtron.ai/dashboard)
 
 {% endhint %}
 
@@ -65,7 +65,7 @@ If you want to install Devtron for `production deployments`, please refer our [r
 Configuring Blob Storage in your Devtron environment allows you to store build logs and cache.
 In case, if you do not configure the Blob Storage, then:
 
-- You will not be able to access the build and deployment logs after an hour.
+- You will not be able to access the build logs after an hour.
 - Build time for commit hash takes longer as cache is not available.
 - Artifact reports cannot be generated in pre/post build and deployment stages.
 

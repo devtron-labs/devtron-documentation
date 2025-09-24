@@ -48,7 +48,7 @@ Use our provided [Terraform scripts](https://github.com/devtron-labs/utilities/t
 
 {% hint style="success" %}
 ### Next Step
-Proceed with the [Devtron installation on your cluster](../install/install-devtron.md).
+Proceed with the [Devtron installation on your cluster](../install/devtron-oss.md).
 {% endhint %}
 
 ---

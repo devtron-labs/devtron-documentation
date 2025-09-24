@@ -3,8 +3,6 @@ root: ./docs/
 redirects:
     setup: README.md
     setup/install: setup/install/README.md
-    setup/install/install-devtron-with-cicd: getting-started/install/install-devtron-with-cicd
-    setup/install/install-devtron: getting-started/install/install-devtron
     setup/install/installation-configuration: getting-started/install/installation-configuration
     setup/install/override-default-devtron-installation-configs: getting-started/install/override-default-devtron-installation-configs
     setup/install/ingress-setup: getting-started/install/ingress-setup
@@ -59,34 +57,37 @@ redirects:
     user-guide/creating-application/deployment-template/job-and-cronjob: usage/applications/creating-application/deployment-template/job-and-cronjob
     user-guide/creating-application/workflow: user-guide/creating-application/workflow/README.md
     user-guide/creating-application/workflow/ci-pipeline: user-guide/creating-application/workflow/ci-pipeline.md
-    user-guide/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/ci-build-pre-post-plugins.md
-    usage/applications/creating-application/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/ci-build-pre-post-plugins.md
+    user-guide/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/pre-post-tasks.md
+    usage/applications/creating-application/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/pre-post-tasks.md
     usage/applications/creating-application/ci-pipeline: user-guide/creating-application/workflow/ci-pipeline.md
     user-guide/creating-application/workflow/cd-pipeline: user-guide/creating-application/workflow/cd-pipeline.md
-    user-guide/creating-application/workflow/ci-pipeline-legacy: usage/applications/creating-application/ci-pipeline-legacy
+    user-guide/creating-application/workflow/ci-pipeline-legacy: user-guide/creating-application/workflow/ci-pipeline.md
     user-guide/creating-application/config-maps: usage/applications/creating-application/config-maps
     user-guide/creating-application/secrets: usage/applications/creating-application/secrets
     user-guide/creating-application/environment-overrides: usage/applications/creating-application/environment-overrides
     user-guide/creating-application/app-metrics: usage/applications/app-details/app-metrics
-    user-guide/app-details: usage/applications/app-details
+    usage/app-details: user-guide/creating-application/app-details.md
+    user-guide/app-details: user-guide/creating-application/app-details.md
     user-guide/debugging-deployment-and-monitoring: usage/applications/app-details/debugging-deployment-and-monitoring
     user-guide/cloning-application: usage/applications/cloning-application
-    user-guide/deploying-application: usage/applications/deploying-application
+    user-guide/deploying-application: user-guide/deploying-application/README.md
     user-guide/deploying-application/triggering-ci: usage/applications/deploying-application/triggering-ci
     user-guide/deploying-application/triggering-cd: usage/applications/deploying-application/triggering-cd
     user-guide/deploy-chart: user-guide/deploy-chart/README.md
-    user-guide/deploy-chart/overview-of-charts: usage/deploy-chart/overview-of-charts
     user-guide/deploy-chart/deployment-of-charts: usage/deploy-chart/deployment-of-charts
-    user-guide/deploy-chart/examples: usage/deploy-chart/examples
-    user-guide/deploy-chart/examples/deploying-mysql-helm-chart: usage/deploy-chart/examples/deploying-mysql-helm-chart
-    user-guide/deploy-chart/examples/deploying-mongodb-helm-chart: usage/deploy-chart/examples/deploying-mongodb-helm-chart
+    user-guide/deploy-chart/examples: user-guide/deploy-chart/deployment-of-charts.md
+    usage/deploy-chart/examples: user-guide/deploy-chart/deployment-of-charts.md
+    user-guide/deploy-chart/examples/deploying-mysql-helm-chart: user-guide/deploy-chart/deployment-of-charts.md
+    user-guide/deploy-chart/examples/deploying-mongodb-helm-chart: user-guide/deploy-chart/deployment-of-charts.md
+    usage/deploy-chart/examples/deploying-mongodb-helm-chart: user-guide/deploy-chart/deployment-of-charts.md
+    usage/deploy-chart/examples/deploying-mysql-helm-chart: user-guide/deploy-chart/deployment-of-charts.md
     user-guide/deploy-chart/chart-group: usage/deploy-chart/chart-group
-    user-guide/namespaces-and-environments: getting-started/global-configurations/cluster-and-environments/namespaces-and-environments
+    user-guide/namespaces-and-environments: user-guide/global-configurations/cluster-and-environments.md
     user-guide/security-features: usage/security-features
     user-guide/deleting-application: usage/applications/creating-application/deleting-application
     user-guide/bulk-update: usage/bulk-update
     user-guide/use-cases/devtron-generic-helm-chart-to-run-cron-job-or-one-time-job: resources/use-cases/devtron-generic-helm-chart-to-run-cron-job-or-one-time-job
-    user-guide/use-cases: resources/use-cases
+    user-guide/use-cases: user-guide/use-cases/README.md
     user-guide/use-cases/connect-springboot-with-mysql-database: resources/use-cases/connect-springboot-with-mysql-database
     user-guide/use-cases/connect-expressjs-with-mongodb-database: resources/use-cases/connect-expressjs-with-mongodb-database
     user-guide/use-cases/connect-django-with-mysql-database: resources/use-cases/connect-django-with-mysql-database
@@ -147,5 +148,35 @@ redirects:
     usage/sdh/tenants: user-guide/software-distribution-hub/tenants.md
     usage/sdh/release-hub: user-guide/software-distribution-hub/release-hub.md
     usage/deploy-chart/overview-of-charts: user-guide/deploy-chart/README.md
+    user-guide/deploy-chart/overview-of-charts: user-guide/deploy-chart/README.md
     usage/integrations/clair: user-guide/integrations/vulnerability-scanning/clair.md
     usage/resource-browser/devtron-intelligence: user-guide/devtron-intelligence.md
+    faqs-and-troubleshooting/devtron-troubleshoot: FAQs/devtron-troubleshoot.md
+    usage/applications/creating-application/config-approval: user-guide/global-configurations/approval-policy.md
+    user-guide: README.md
+    setup/install/install-devtron-helm-3: setup/install/README.md
+    setup/install/install-devtron-using-kubectl: setup/install/README.md
+    faqs-and-troubleshooting: FAQs/devtron-troubleshoot.md
+    user-guide/creating-application/workflow/automated-test: user-guide/creating-application/workflow/README.md
+    setup/stack-manager: user-guide/integrations/README.md
+    user-guide/command-bar: user-guide/command-bar.md
+    setup/install/enterprise-license: setup/install/freemium.md
+    enterprise-license: setup/install/freemium.md
+    usage/applications/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins: user-guide/creating-application/workflow/pre-post-tasks.md
+    usage/applications/creating-application/workflow/ci-pipeline/container-registry-override: user-guide/creating-application/workflow/ci-pipeline.md
+    usage/jobs/configuration-job: user-guide/jobs/configuration-job
+    user-guide/jobs/configuration-job: user-guide/jobs/configurations/README.md
+    usage/jobs/workflow-editor-job: user-guide/jobs/workflow-editor-job
+    user-guide/jobs/workflow-editor-job: user-guide/jobs/configurations/workflow-editor-job.md
+    setup/install/install-devtron: setup/install/README.md
+    setup/install/install-devtron-with-cicd: setup/install/README.md
+    setup/install/install-devtron-with-cicd-with-gitops: setup/install/README.md
+    setup/install/install-devtron-on-minikube-microk8s-k3s-kind: setup/install/README.md
+    setup/install/faq-on-installation: setup/install/faq-on-installation.md
+    install/install-devtron: setup/install/README.md
+    install/install-devtron-with-cicd: setup/install/README.md
+    install/install-devtron-with-cicd-with-gitops: setup/install/README.md
+    install/install-devtron-on-minikube-microk8s-k3s-kind: setup/install/README.md
+    install/faq-on-installation: setup/install/faq-on-installation.md
+    prod-infra: setup/install/prod-infra.md
+    configurations-overview: setup/configurations/configurations-overview.md

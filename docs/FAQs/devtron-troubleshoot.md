@@ -276,7 +276,7 @@ The other way is to get the password in the encoded form using the cmd
 
 #### 20. Getting `UPGRADE FAILED: cannot patch "postgresql-postgresql"` while upgrading Devtron to newer versions
 `Debug:`
-1. Make sure to [annotate and label](../setup/upgrade/devtron-upgrade-0.3.x-0.4.x.md#3.-annotate-and-label-all-the-devtron-resources) all the Devtron resources.
+1. Make sure to [annotate and label](../setup/upgrade/devtron-upgrade-0.3.x-0.4.x.md#id-3.-annotate-and-label-all-the-devtron-resources) all the Devtron resources.
 2. Description of error
 ```
 Error: UPGRADE FAILED: cannot patch "postgresql-postgresql" with kind StatefulSet: StatefulSet.apps "postgresql-postgresql" is invalid: spec: Forbidden: updates to statefulset spec for fields other than 'replicas', 'template', 'updateStrategy' and 'minReadySeconds' are forbidden
@@ -617,9 +617,9 @@ Follow the below steps if you are getting the above error:
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/empty-values.jpg)
 
-This happens due to a missing [app-values.yaml](../user-guide/global-configurations/deployment-charts.md#3-add-app-values.yaml) file in your deployment chart. 
+This happens due to a missing [app-values.yaml](../user-guide/global-configurations/deployment-charts.md#id-3.-add-app-values.yaml) file in your deployment chart. 
 
-To fix this issue, include an `app-values.yaml` file in your deployment helm chart before uploading the chart. Refer [adding app-values.yaml](../user-guide/global-configurations/deployment-charts.md#3-add-app-values.yaml) to know more.
+To fix this issue, include an `app-values.yaml` file in your deployment helm chart before uploading the chart. Refer [adding app-values.yaml](../user-guide/global-configurations/deployment-charts.md#id-3.-add-app-valuesyaml) to know more.
 
 #### 31. Unable to create a GitOps deployment pipeline or encountering errors with GitOps deployment.
 

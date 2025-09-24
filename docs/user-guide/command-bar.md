@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Command bar
 ## Why command bar?
 The command bar is designed to enable you to navigate across the devtron dashboard without having to click around the screen.

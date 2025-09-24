@@ -10,7 +10,7 @@ Over here, you can see the status of the app as Healthy. If there are some error
 
 ### Events
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/events.jpg)
+![Figure 1: Inspecting Events](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/events.jpg)
 
 Events of the application are accessible from the bottom left corner.
 
@@ -18,19 +18,19 @@ Events section displays you the events that took place during the deployment of 
 
 ### Logs
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/logs.jpg)
+![Figure 2: Inspecting Logs](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/logs.jpg)
 
 Logs contain the logs of the Pods and Containers deployed which you can use for the process of debugging.
 
 ### Manifest
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/manifest.jpg)
+![Figure 3: Inspecting Manifests](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/manifest.jpg)
 
 The Manifest shows the critical information such as Container-image, restartCount, state, phase, podIP, startTime etc. and status of the pods deployed.
 
 ### Deleting Pods
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/delete-pod.jpg)
+![Figure 4: Deleting Pods](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/delete-pod.jpg)
 
 You might run into a situation where you need to delete Pods. You may need to bounce or restart a pod.
 
@@ -42,27 +42,22 @@ Suppose you want to setup a new environment, you can delete a pod and thereafter
 
 You can view `Application Objects` in this section of `App Details`, such as:
 
-| Key | Description |
-| :--- | :--- |
-| `Workloads` | _ReplicaSet_\(ensures how many replica of pod should be running\), _Status of Pod_\(status of the Pod\) |
-| `Networking` | _Service_\(an abstraction which defines a logical set of Pods\), _Endpoints_\(names of the endpoints that implement a Service\), _Ingress_\(API object that manages external access to the services in a cluster\) |
-| `Config & Storage` | _ConfigMap_\( API object used to store non-confidential data in key-value pairs\) |
-| `Custom Resource` | _Rollout_\(new Pods will be scheduled on Nodes with available resources\), _ServiceMonitor_\(specifies how groups of services should be monitored\) |
+| Key                | Description                                                                                                                                                                                                        |
+| :----------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Workloads`        | _ReplicaSet_\(ensures how many replica of pod should be running\), _Status of Pod_\(status of the Pod\)                                                                                                            |
+| `Networking`       | _Service_\(an abstraction which defines a logical set of Pods\), _Endpoints_\(names of the endpoints that implement a Service\), _Ingress_\(API object that manages external access to the services in a cluster\) |
+| `Config & Storage` | _ConfigMap_\( API object used to store non-confidential data in key-value pairs\)                                                                                                                                  |
+| `Custom Resource`  | _Rollout_\(new Pods will be scheduled on Nodes with available resources\), _ServiceMonitor_\(specifies how groups of services should be monitored\)                                                                |
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/ingress.jpg)
+
+![Figure 5: Viewing Application Objects](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/ingress.jpg)
 
 ## Monitoring
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/monitoring.jpg)
+![Figure 6: Monitoring Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/monitoring.jpg)
 
 You can monitor the application in the `App Details` section.
 
 Metrics like `CPU Usage`, `Memory Usage`, `Throughput` and `Latency` can be viewed here.
 
-| Key | Description |
-| :--- | :--- |
-| `CPU Usage` | Percentage of CPU's cycles used by the app. |
-| `Memory Usage` | Amount of memory used by app. |
-| `Throughput` | Performance of the app. |
-| `Latency` | Delay caused while transmitting the data. |
-
+Refer [Application Metrics](./creating-application/app-metrics.md) to know the process of enabling them.

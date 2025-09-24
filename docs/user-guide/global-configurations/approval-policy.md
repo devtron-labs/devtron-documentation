@@ -2,7 +2,7 @@
 
 ## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-When it comes to critical environments (let's say, production), you as a superadmin might want to introduce an approval flow for application deployment or changes made to the configuration files. Enforcing such restrictions will prevent unwanted deployments and direct modifications to sensitive configurations.
+When it comes to critical environments (let's say, production), you as a super-admin might want to introduce an approval flow for application deployment or changes made to the configuration files. Enforcing such restrictions will prevent unwanted deployments and direct modifications to sensitive configurations.
 
 The **Approval Policy** feature in Devtron lets you introduce an approval mechanism whenever your users perform the following actions:
 
@@ -49,6 +49,15 @@ Users need to have super-admin permissions to create an approval policy.
     * **Option 3**: Choose **Specific Approver** → **Specific Users (dropdown)** to cherry-pick the names of the user(s) who can provide an approval. Here, there is no upper limit to the approvals (unlike the above options), so the user must obtain approvals from all the specific members you add to the policy.
 
         ![Figure 7: Allowing Specific Users](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/specific-user-approval.gif)
+
+{% hint style="warning" %}
+### Caution
+* The dropdown lists all users available in Devtron. Some users (except super-admins) may not have the necessary approver permissions, i.e, **Config Approver** or **Deployment approver**. These users cannot approve requests until the required permissions are assigned to them.
+
+* Super-admins have approver permissions by default.
+
+* Refer [User Permissions](./authorization/user-access.md#roles-available-for-devtron-apps) to learn more.
+{% endhint %}
 
 {% hint style="info" %}
 ### How do approvals of User Groups work?
@@ -170,6 +179,139 @@ If you apply multiple policies together, the user has to meet the approval condi
 
 ---
 
+## Configuring Exceptions (Optional)
+
+The Exceptions tab allows you to specify users or groups for whom the approval policies will not apply. This is useful in cases where certain teams, such as an operations team resolving production incidents, need to bypass approvals while the policies continues to apply to all other users.
+
+You can choose to:
+
+   * Exclude super-admins from approval permissions.
+
+   * Whitelist specific users or user groups who should be exempt from approvals for deployments or configuration changes.
+
+### Excluding Super Admins
+
+You can configure whether super-admins are required to follow approval policies or bypass them.
+
+1. Navigate to **Approval Policy** → **Exceptions**.
+
+2. Choose the scope, for which you want super admins to not require approval.The available scopes are:
+
+    * **Configuration Change:** Exempts the super-admins to edit base configurations such as Deployment Templates, ConfigMaps, or Secrets without requiring approvals.
+
+    * **Deployment:** Exempts the super-admins to deploy images to an environment without requiring approvals.
+
+3. Enable/Disable the toggle next to **Super admins** as per your requirement.
+
+    * When enabled, super-admins can deploy images and edit base configurations without approvals. 
+
+    * When disabled, super-admins follow same approval policies as other users. 
+
+    ![Figure 16: Enabling Super Admins Exception](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-super-admin-exception.gif)
+
+{% hint style="info" %}
+### Note
+Super-admins can approve requests even if the toggle is turned off.
+{% endhint %}
+
+### Excluding Specific Users / User Groups / API Tokens
+
+1. Navigate to **Approval Policy** → **Exceptions**.
+
+    ![Figure 17: Exceptions Tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-exceptions.jpg)
+
+2. Choose the scope for which specific users / user groups / API tokens do not require approval. The available scopes are:
+
+    * **Configuration Change:** Exempts the selected users, user groups, and API tokens to edit base configurations such as Deployment Templates, ConfigMaps, or Secrets without requiring approvals.
+
+    * **Deployment:** Exempts the selected users, user groups, and API tokens to deploy images to an environment without requiring approvals.
+
+    ![Figure 18: Selecting Scope](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-scope.jpg)
+
+{% hint style="info"%}
+### Note
+The list of users is fetched from [User Permissions](../global-configurations/authorization/user-access.md), and the list of [API tokens](../global-configurations/authorization/api-tokens.md) is sourced from API Tokens. 
+
+You cannot enter a new email ID or token directly. 
+   * Refer [Add Users (User Permissions)](../global-configurations/authorization/user-access.md#add-users) to add a new user. 
+
+   * Refer [API token](../global-configurations/authorization/api-tokens.md#generate-api-token) to create a new API token.
+{% endhint %}
+
+3. Click the **Add**/**Edit** button next to **Specific Users / User Groups**. A pop-up modal window will appear.
+
+    ![Figure 19: Clicking 'Add/Edit'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-add-users.jpg)
+
+4. You can do either of the following:
+    
+    1. You can select specific **Users** or **API Tokens** from **Add Users** dropdown.
+
+        ![Figure 20a: Selecting Specific Users](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-add-users-window.jpg)
+
+        ![Figure 20b: Selecting Specific API Tokens](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-add-api-token.jpg)
+
+    2. You can select specific **Users Groups** from **Add user groups** dropdown.
+
+        ![Figure 21: Selecting Specific User Groups](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-add-users-group.jpg)
+
+{% hint style="warning" %}
+### Caution
+* The dropdown lists all users and API tokens or user-groups, available in Devtron. Some users or API tokens may have only view permissions or lack build, deploy, or admin permissions. Such users cannot bypass approval policies until the required permissions are assigned.
+
+* Refer [User Permissions](./authorization/user-access.md#roles-available-for-devtron-apps) to learn more.
+{% endhint %}
+
+5. Click **Save**. The selected users or user groups will no longer require approvals for the selected scope.
+
+    ![Figure 22: Clicking 'Save'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-save.jpg)
+
+{% hint style="warning" %}
+### Caution
+By default, approvers cannot approve their own deployments or base configuration edits, but, if an approver is added as an exception, this restriction does not apply, and that approver can trigger their own deployments or edit base configurations without any approvals.
+{% endhint %}
+
+After configuring exceptions, super-admins and specific users / user groups can make configuration changes and trigger deployments without requiring any approval.
+
+#### Triggering Deployments
+
+{% hint style="warning" %}
+### Do exceptions bypass blackout or maintenance windows?  
+Approval Policy exceptions do not bypass a blackout or a maintenance window:
+
+   * During a blackout window, exception users cannot trigger deployments, unless you add them to the list of users, who are allowed to take action during the blackout window.
+
+   * Outside a maintenance window, exception users cannot trigger deployments, unless you add them to the list of users, who are allowed to take action outside the maintenance window
+   
+   * Refer [Deployment Window](../global-configurations/deployment-window.md#configuring-deployment-window) to learn more.
+{% endhint %}
+
+{% hint style="info" %}
+### Note
+An exception user can still follow the normal flow of requesting an image approval and getting it approved, and also has the option to deploy images without approvals.
+{% endhint %}
+
+![Figure 23a: Deploying an Image without an Approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-deploy-exception.jpg)
+
+![Figure 23b: Email Notification](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/email-notification-exception.jpg)
+
+![Figure 23c: Deployment History](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/deployment-history-exception-user.jpg)
+
+#### Editing Base Configurations
+
+{% hint style="info" %}
+### Note 
+* An exception user can still follow the normal flow of submitting a configuration change draft for approval, and getting it approved. 
+* Any existing draft is discarded once the exception user updates the configuration using express edit.
+{% endhint %}
+
+![Figure 24a: Editing Deployment Template without an Approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-base-config-exception.gif)
+
+![Figure 24b: Creating/Editing ConfigMap without an Approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-configmap-exception.gif)
+
+![Figure 24c: Creating/Editing Secret without an Approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-secret-exception.gif)
+
+---
+
 ## Remove Applied Policies
 
 {% hint style="warning" %}
@@ -191,7 +333,7 @@ If you have already applied policies and wish to remove some of them from a scop
 5. In the **Select profiles to apply** dropdown, click '**x**' next to the policy/policies you wish to remove.
 6. Click **Save Changes**.
  
-    ![Figure 16: Remove Applied Policy from a Scope](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/remove-policy-single.gif)
+    ![Figure 25: Remove Applied Policy from a Scope](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/remove-policy-single.gif)
 
 ### Remove Applied Policies in Bulk
 
@@ -201,7 +343,7 @@ If you have already applied policies and wish to remove some of them from a scop
 4. In the **Remove Approval Policy** dropdown, click '**x**' next to the policy/policies you wish to remove.
 5. Review the changes if needed, and click **Save Changes**.
 
-    ![Figure 17: Removing Policies in Bulk](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/remove-policies-bulk.gif)
+    ![Figure 26: Removing Policies in Bulk](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/remove-policies-bulk.gif)
 
 {% hint style="warning" %}
 ### Note
@@ -217,13 +359,13 @@ At least one policy must remain applied to a scope, so you cannot remove all the
 Users need to have super-admin permissions to delete an applied policy.
 {% endhint %}
 
-If you have already applied policies to a scope (e.g., Global, Cluster, Application) and wish to delete all of them from that given scope, follow the steps below. **Note**: This will not [delete the approval policy](#delete-approval-policy) you originally created. Moreover, deployment pipelines may still continue inheriting profiles from higher scopes (e.g., Global, Cluster, Application).
+If you have already applied policies to a scope (e.g., Global, Cluster, Application) and wish to delete all of them from that given scope, follow the steps below. **Note**: This will not [delete the approval policy](#delete-an-approval-policy) you originally created. Moreover, deployment pipelines may still continue inheriting profiles from higher scopes (e.g., Global, Cluster, Application).
 
 1. Go to **Applied Profiles** tab.
 2. Use the filters to find the applied profile(s).
 3. Click the **Delete** option in the context menu or use the checkboxes to select multiple scopes for deletion.
 
-    ![Figure 18: Deleting Applied Policies (One-by-one or Bulk)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/remove-policies-bulk.gif)
+    ![Figure 27: Deleting Applied Policies (One-by-one or Bulk)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/remove-policies-bulk.gif)
 
 ---
 
@@ -239,7 +381,7 @@ If you no longer require a given approval policy, you may delete it. This action
 1. Go to **Profiles** tab.
 2. Click the delete icon next to the profile you wish to delete.
 
-    ![Figure 19: Deleting Approval Policy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/delete-approval-policy.gif)
+    ![Figure 28: Deleting Approval Policy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/delete-approval-policy.gif)
 
 ---
 
@@ -249,38 +391,38 @@ If you no longer require a given approval policy, you may delete it. This action
 
 Assume you created a policy (shown below) that blocks the deployment of a banking application to an environment unless there are two approvals. No user can trigger the deployment unless the images are approved.
 
-![Figure 20: Example](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/example1.jpg)
+![Figure 29: Example](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/example1.jpg)
 
 1. The user first requests approval of the intended image. Only those with the necessary permissions will show up in the approver list. Moreover, the user can also opt to notify all users apart from the approvers.
 
-    ![Figure 21: Request Approval for Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/request-approval.gif)
+    ![Figure 30: Request Approval for Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/request-approval.gif)
 
 2. Only those with `Image Approver` permissions can then approve the request.
 
-    ![Figure 22: User with 'Image Approver' Permissions granting approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/grant-approval.gif)
+    ![Figure 31: User with 'Image Approver' Permissions granting approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/grant-approval.gif)
 
     If [SES/SMTP](../global-configurations/manage-notification.md) is configured in Devtron, the approver gets notified via email. This enables the approver to take an action directly from the mail, such as `View Request` and `Approve Request`.
 
-    ![Figure 23: Approval via Email](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-request-notify.gif)
+    ![Figure 32: Approval via Email](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-request-notify.gif)
 
 3. The user can then proceed with deploying the approved image.
 
-    ![Figure 24: Deployment of Approved Image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/deploy-approved-image.gif)
+    ![Figure 33: Deployment of Approved Image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/deploy-approved-image.gif)
 
 ### Approving Configuration Change Request
 
 Assume you created a policy (shown below) that prevents direct changes to the configuration files (Deployment Template, ConfigMaps, Secrets) of a banking application unless there is one approval. 
 
-![Figure 25: Example](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/example2.jpg)
+![Figure 34: Example](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/example2.jpg)
 
 1. The user first requests approval for pushing a configuration change in Deployment Template/ConfigMap/Secret.
 
-    ![Figure 26: Request Approval for Configuration Change](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/config-change-request.gif)
+    ![Figure 35: Request Approval for Configuration Change](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/config-change-request.gif)
 
 2. Only those with `Configuration Approver` permissions can then approve the request.
 
-    ![Figure 27: User with 'Configuration Approver' permissions granting approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approve-config-change.gif)
+    ![Figure 36: User with 'Configuration Approver' permissions granting approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approve-config-change.gif)
 
     If [SES/SMTP](../global-configurations/manage-notification.md) is configured in Devtron, the approver gets notified via email. Therefore, the approver can take an action directly from the mail as shown below.
 
-    ![Figure 28: Config Approval via Email](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/config-change-mail.gif)
+    ![Figure 37: Config Approval via Email](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/config-change-mail.gif)

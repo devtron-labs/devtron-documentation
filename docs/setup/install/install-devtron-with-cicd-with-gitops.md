@@ -6,15 +6,25 @@ In this section, we describe the steps in detail on how you can install Devtron 
 
 {% hint style="success" %}
 
-Try Devtron Enterprise for free — unlock advanced features built for scale. [Start Free Trial](https://license.devtron.ai/dashboard)
+Try Devtron Freemium to access all the enterprise features for free and forever, limited to adding one additional cluster. [Install Devtron Freemium](https://license.devtron.ai/dashboard)
 
 {% endhint %}
 
 {% hint style="warning" %}
 
-### Prerequisites 
+### Prerequisites
 
-Ensure you meet [all the requirements](../getting-started/getting-started.md#prerequisites) for installing Devtron.
+* Install [Helm](https://helm.sh/docs/intro/install/), if you have not installed it already.
+
+* If you are using EKS version 1.23 or above, you must also install [aws-ebs-csi-driver](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html). Run the following command to install AWS EBS CSI driver using Helm:
+
+```bash
+helm repo add aws-ebs-csi-driver \
+https://kubernetes-sigs.github.io/aws-ebs-csi-driver \
+helm repo update \
+helm upgrade --install aws-ebs-csi-driver \
+--namespace kube-system aws-ebs-csi-driver/aws-ebs-csi-driver
+```
 
 {% endhint %}
 
@@ -53,7 +63,7 @@ To install Devtron on clusters with the multi-architecture nodes (ARM and AMD), 
 Configuring Blob Storage in your Devtron environment allows you to store build logs and cache.
 In case, if you do not configure the Blob Storage, then:
 
-- You will not be able to access the build and deployment logs after an hour.
+- You will not be able to access the build logs after an hour.
 - Build time for commit hash takes longer as cache is not available.
 - Artifact reports cannot be generated in pre/post build and deployment stages.
 

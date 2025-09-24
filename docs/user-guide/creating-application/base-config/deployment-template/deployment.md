@@ -1127,7 +1127,7 @@ Once all the Deployment template configurations are done, click on `Save` to sav
 
 ### Helm Chart Json Schema 
 
-Helm Chart [json schema](../../../../scripts/devtron-reference-helm-charts/reference-chart_4-11-0/schema.json) is used to validate the deployment template values.
+Helm Chart [json schema](https://github.com/devtron-labs/devtron/blob/main/scripts/devtron-reference-helm-charts/reference-chart_5-1-0/schema.json) is used to validate the deployment template values.
 
 ### Other Validations in Json Schema
 
