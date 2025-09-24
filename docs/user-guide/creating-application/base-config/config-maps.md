@@ -1,19 +1,23 @@
 # ConfigMaps
 
-A ConfigMap stores key-value pairs that your applications can use as environment variables or mounted files. Unlike secrets, ConfigMaps are meant for non-sensitive data. Moreover, you can update configurations without modifying or rebuilding your container images, thus making the deployments more efficient.
+A ConfigMap stores key-value pairs (non-sensitive data) that your applications can use as environment variables or mounted files. You can update configurations without modifying or rebuilding your container images, thus making the deployments more efficient.
 
 ## Add ConfigMap
 
-1. Go to the **Configurations** → **Base Configurations**.
+1. Navigate to the **Applications** page and click on your preferred application. 
+
+2. Go to the **Configurations** → **Base Configurations**.
 
     ![Figure 1: Application's 'Configurations' Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/appconfig-page.jpg)
 
-2. Click the **+** button next to **ConfigMaps**.
+3. Click the **+** button next to **ConfigMaps**.
 
     ![Figure 2: Adding ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/config-map.jpg)
 
-3. **Data Type** - Choose between the following data types:
+4. **Data Type** - Choose between the following data types:
+
     * [Kubernetes ConfigMap](#kubernetes-configmap)
+
     * [Kubernetes External ConfigMap](#kubernetes-external-configmap)
 
 ### Kubernetes ConfigMap
@@ -59,7 +63,7 @@ Use this option if you have a ConfigMap created using the kubectl command. Ensur
 
 ![Figure 4: Selecting Data Volume Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/cm-data-volume.jpg)
 
-In the above example, we have seen how to pass environment variables in your ConfigMap. Additionally, there is an option to create a ConfigMap by passing the content of a file. The content could be a plain text, json, yaml, bash script, etc. You can do so by selecting the `Data Volume` option in **Mount data as**.
+In the above example, we have seen how to pass environment variables in your ConfigMap. Additionally, there is an option to mount a ConfigMap by passing its content to a file. The content could be a plain text, json, yaml, bash script, etc. You can do so by selecting the `Data Volume` option in **Mount data as**.
 
 The key of the ConfigMap should be your filename and the value of the ConfigMap should be your file content. In the below example, you `file.json` is the key, and the json content is the value of that ConfigMap (below the pipe (**|**) symbol). This file will be created on your specified [volume mount path](#volume-mount-path).
 

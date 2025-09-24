@@ -97,8 +97,11 @@ Refer the trigger types from [here](#deploy-to-environment).
 3. **ConfigMaps & Secrets**
 
 {% hint style="info" %}
+
 ### Prerequisites
-Make sure you have added [ConfigMaps](../base-config/config-maps.md) and [Secrets](../base-config/secrets.md) in your app's Configurations.
+
+Make sure you have added [ConfigMaps](../base-config/config-maps.md) and [Secrets](../base-config/secrets.md) in your application configuration.
+
 {% endhint %}
 
 If you want to use some configuration files and secrets in pre-deployment stages or post-deployment stages, then you can use the `ConfigMaps` & `Secrets` options. You will get them as a drop-down in the pre-deployment stage.

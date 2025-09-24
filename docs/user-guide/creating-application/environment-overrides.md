@@ -107,7 +107,6 @@ Suppose you update your deployment chart version (e.g., from `4.0.0` to `4.0.1`)
 * The replaced template will no longer depend or inherit from base configuration anymore.
 * Best for a complete override.
 
-<!--
 | Field     | Inherited Configuration | Input (with Replace)    | Final Configuration |
 |-----------|--------------------|------------------------------|---------------------|
 | cpu       | 100m               | 500m                         | 500m                |
@@ -115,7 +114,6 @@ Suppose you update your deployment chart version (e.g., from `4.0.0` to `4.0.1`)
 | replicas  | 2                  | *(Not specified)*            | *(Removed)*         |
 | logLevel  | "info"             | *(Not specified)*            | *(Removed)*         |
 | timeout   | (Not specified)    | 30s                          | 30s (Added)         |
--->
 
 ![Figure 8: Replace Strategy for Deployment Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/replace-dt.gif)
 
@@ -124,6 +122,15 @@ Suppose you update your deployment chart version (e.g., from `4.0.0` to `4.0.1`)
 {% hint style="info" %}
 ### What if some keys are locked from editing?
 You cannot modify locked keys in an environment's deployment template unless you are a super-admin. Refer [Lock Deployment Configuration](../global-configurations/lock-deployment-config.md) to know more.
+{% endhint %}
+
+### Override Deployment Template using GUI 
+
+{% embed url="https://www.youtube.com/watch?v=Wh5WKvkYNDw" %}
+
+{% hint style="info" %}
+### Want to customize the deployment template values displayed on GUI? [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+The GUI mode shows limited number of fields as specified by the super-admin in the GUI schema. Refer [Customize GUI](../creating-application/base-config/deployment-template.md#customize-basic-gui) to know more.
 {% endhint %}
 
 ---
@@ -144,23 +151,6 @@ You cannot delete a ConfigMap or Secret in **Base Configurations** if you have u
 ### Replace Strategy
 
 {% embed url="https://www.youtube.com/watch?v=lSoj8wwOej0" %}
-
----
-
-## Using GUI Mode for Overridding
-
-The above sections, i.e., [Override Deployment Template](#override-deployment-template) and [Override ConfigMap & Secret](#override-configmap--secret) explained the process of environment override using YAML.
-
-Refer the below tutorial videos to know the process of overriding them using GUI.
-
-### Override Deployment Template using GUI 
-
-{% embed url="https://www.youtube.com/watch?v=Wh5WKvkYNDw" %}
-
-{% hint style="info" %}
-### Want to customize the deployment template values displayed on GUI? [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
-The GUI mode shows limited number of fields as specified by the super-admin in the GUI schema. Refer [Customize GUI](../creating-application/base-config/deployment-template.md#customize-basic-gui) to know more.
-{% endhint %}
 
 ### Override ConfigMaps and Secrets using GUI
 

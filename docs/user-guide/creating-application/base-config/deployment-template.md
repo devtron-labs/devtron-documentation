@@ -155,13 +155,13 @@ By default, the **GUI** section comes with multiple predefined fields as seen ea
 
 This is useful in scenarios where:
 
-* Your team members find it difficult to understand and edit the YAML section.
+  * Your team members find it difficult to understand and edit the YAML section.
 
-* You frequently edit certain fields in **YAML**, which you expect to remain easily accessible in **GUI** section.
+  * You frequently edit certain fields in **YAML**, which you expect to remain easily accessible in **GUI** section.
 
-* You don't require some fields in **GUI** section.
+  * You don't require some fields in **GUI** section.
 
-* You need the autonomy to keep the GUI unique for applications/clusters/environments/charts, or display the same GUI everywhere.
+  * You need the autonomy to keep the GUI unique for applications/clusters/environments/charts, or display the same GUI everywhere.
 
 There are two ways you can customize the GUI, use any one of the following:
 
@@ -235,7 +235,7 @@ PUT {{DEVTRON_BASEURL}}/orchestrator/deployment/template/schema
 
 2. Enter the `type` as JSON.
 
-3. The `schema` field is for entering your custom JSON for deployment. When you create a custom JSON for deployment, you can customize the fields that are displayed in the GUI section while configuring the deployment template. Perform the following steps:
+3. The `schema` field is for entering your custom JSON representing the deployment template's GUI. You can customize the fields that are displayed in the GUI section while configuring the deployment template. Perform the following steps:
 
   * To create a custom JSON for your deployment, you may use [RJSF JSON Schema Tool](https://rjsf-team.github.io/react-jsonschema-form/). 
 
