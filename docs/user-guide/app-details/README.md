@@ -41,8 +41,8 @@ Anyone with a `View Only` permission can view this page, but only those at the l
 | **What do you want to do** |**Navigate to**|
 |:--------------------------- |:--------------| 
 | View application summary and security details| [Cards Overview](application-summary.md)|
-| Perform quick actions (e.g., Hibernate) | [Action Buttons](application-summary.md#action-buttons) | 
+| Perform quick actions (e.g., Hibernate) | [Action Icons](application-summary.md#action-icons) | 
 | Monitor application metrics | [Application Metrics](application-summary.md#application-metrics)| 
 | Rollback a deployment | [Rollback](application-summary.md#rollback)| 
 | Manage Kubernetes resources | [Resource Management](app-resource-management.md)| 
-| Scan for vulnerabilities | [Check vulnerabilities](app-resource-management.md#check-vulnerabilities)| 
+| Scan for vulnerabilities | [Check Vulnerabilities](app-resource-management.md#check-vulnerabilities)| 

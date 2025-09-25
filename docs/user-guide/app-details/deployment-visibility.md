@@ -1,17 +1,6 @@
 # Deployment Visibility & Actions 
 
-{% hint style="info" %}
-### Prerequisites
-The [Deployment Chart Type](../creating-application/deployment-template.md#select-chart-from-default-charts) must be set to Rollout in order to use Blue-Green or Canary strategies.
-
-Deployment Visibility and Actions is only available for Canary and Blue-Green Strategies. Refer to the [Deployment Strategies](../creating-application/workflow/cd-pipeline.md#deployment-strategies) to learn more.
-
-{% endhint %}
-
-{% hint style="warning" %}
-### Who Can Perform This Action?
-Users need to have Build and Deploy or above (along with access to the environment and application).
-{% endhint %}
+## Introduction
 
 Devtron helps you to manage your **Canary** and **Blue-Green** deployments by providing visibility and easy controls to manage how new versions (releases) are shared with users.
 
@@ -29,13 +18,33 @@ Devtron allows you to:
 
 * Easily rollback deployments (if needed).
 
+{% hint style="info" %}
+
+### Prerequisites
+
+The [Deployment Chart Type](../creating-application/deployment-template.md#select-chart-from-default-charts) must be set to Rollout in order to use Blue-Green or Canary strategies.
+
+Deployment Visibility and Actions is only available for Canary and Blue-Green Strategies. Refer to the [Deployment Strategies](../creating-application/workflow/cd-pipeline.md#deployment-strategies) to learn more.
+
+{% endhint %}
+
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Users need to have Build and Deploy or above (along with access to the environment and application).
+
+{% endhint %}
+
+---
+
 ## Visibility & Actions
 
 ### For Canary Deployments
 
 After triggering the deployment, navigate to **App Details**, to get a quick overview of your release rollout status.
 
-You can select the **Manage Traffic** button to view the rollout status and steps involved in the release. 
+You can choose the [Manage Traffic](../application-groups.md#managing-traffic) button to view the rollout status and steps involved in the release. 
 
 If you wish you can also trigger the next release steps (for example 25%, 50%, 75%) or you can also trigger the full rollout at once according to your use case.
 
@@ -52,7 +61,7 @@ Devtron automatically swaps the traffic from the current running release to the 
 
 To do so, follow the steps below:
 
-#### Swap Traffic
+#### Swap Traffic 
 
 1. Navigate to **App Details** of your application.
 

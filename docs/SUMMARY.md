@@ -104,6 +104,7 @@
   * [App Details](user-guide/app-details/README.md)
     * [App Summary](user-guide/app-details/application-summary.md)
     * [Application Metrics](user-guide/creating-application/app-metrics.md)
+    * [Deployment Visibility & Actions](user-guide/app-details/deployment-visibility.md)
     * [App Resource Management](user-guide/app-details/app-resource-management.md)
     * [Using Ephemeral Containers](user-guide/app-details/ephemeral-containers.md)
   * [Application Overview](user-guide/creating-application/overview.md)
