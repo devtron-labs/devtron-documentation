@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Devtron helps you to view your application summary (Devtron, Helm, ArgoCD, or FluxCD) in the form of [cards](#cards-overview) and [Application Metrics](#application-metrics). It also helps you perform [quick actions](#action-icons) and [manage the most widely used Kubernetes resources](app-resource-management.md) directly from the **App Details** page. 
+Devtron helps you to view your application summary in the form of [cards](#cards-overview) and [Application Metrics](#application-metrics). It also helps you perform [quick actions](#action-icons) and [manage the most widely used Kubernetes resources](app-resource-management.md) directly from the **App Details** page. 
 
 ![Figure 1: App Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/cards-highlighted.jpg) 
 
@@ -20,7 +20,7 @@ Follow the below steps to access the **App Details** page:
 
 2. Choose **App Details** and select the environment for which you'd like to see the application summary in the **Env** drop-down box. 
 
-The icon next to the **Env** drop-down box denotes the deployment method with which the application is deployed. It can be any of the following: 
+The icon next to the **Env** drop-down box denotes the application deployment method. It can be any of the following: 
 
 * Deployed using Helm
 
@@ -30,7 +30,7 @@ The icon next to the **Env** drop-down box denotes the deployment method with wh
 
 ![Figure 2: Deployment Method and Manifest Status](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/dep-method-manifest-status.jpg)
 
-Statuses related to manifests (whether they are in sync or not) are denoted by [this](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/manifest-status-icon.jpg) icon. When you click on this icon, the **Live and desired manifest comparison** page is displayed (read-only) allowing you to compare your manifests and see config drifts, if there are any. 
+Manifest status (whether they are in sync or not) is denoted by [this](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/manifest-status-icon.jpg) icon. When you click on this icon, the **Live and desired manifest comparison** page is displayed (read-only) allowing you to compare the manifests and view config drifts (if there are any). 
 
 ---
 ## Cards Overview
@@ -39,14 +39,14 @@ Devtron provides you a quick summary of your application via cards. Refer to the
 
 | **Card Name** |**Description**|
 |:------------- |:--------------| 
-| **Application Status** | Tells you the application status (e.g., `Healthy` or `Degraded`). The available application statuses in Devtron are: <br><ul><li>Degraded</li><li>Healthy</li><li>Hibernating</li><li>Missing</li><li>Not Deployed</li><li>Progressing</li></ul> When you click **Details**, all the details about the resource kinds, their statuses, and the message (if any) are displayed in detail. | 
+| **Application Status** | Tells you the application status (e.g., `Healthy` or `Degraded`). The available application statuses in Devtron are: <br><ul><li>Degraded</li><li>Healthy</li><li>Hibernating</li><li>Missing</li><li>Not Deployed</li><li>Progressing</li></ul> When you click **Details**, all the details about the resource kinds, their statuses, and the message (if any) are displayed. | 
 | **Blackout Window** / **Maintenance Window** ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)| Tells you whether the application deployment is blocked or allowed for the chosen environment. This card also displays the upcoming blackout/maintenance window and the remaining time for the blackout/maintenance window to complete. Refer to [Deployment Window](../global-configurations/deployment-window.md) for more information. |
 | **Chart Used** (available only for Helm apps) | Displays the chart used to deploy the application. When you hover over the (**?**) icon in the card, you can directly configure the YAML values by clicking the **Go to Configure** option. |
 | **Deployed commit** (available only for Devtron apps) | Displays the commit ID of the deployed image. When you click **Details**, the commit ID, repository name, branch name, and the deployed image ID are displayed. |
 | **Deployment Status** | Tells you the deployment status (e.g., `Succeeded` or `Failed`). The available deployment statuses in Devtron are: <br><ul><li>Failed</li><li>Progressing</li><li>Succeeded</li><li>Timed Out</li><li>Triggered</li></ul> When you click **Details**, the complete deployment status, from when it was deployed by whom to the current status of it, is displayed. |
 | **Security** (available only for Devtron and Helm apps) | Displays the following security scan results: <ul><li>Image Scan</li><li>Code Scan ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)</li><li>Manifest Scan ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)</li></ul>Refer to [Security Policies](../security-features/security-policies.md) for more information.|
-| **Canary Strategy** | This card displays the live progress of how many users are being redirected to the new release. Refer to [Canary Deployments](deployment-visibility.md#for-canary-deployments) for more information. | 
-| **Blue Green Strategy** | This card displays the progress of the Blue Green deployment. You can [swap traffic](deployment-visibility.md#swap-traffic) or [skip and promote full](deployment-visibility.md#skip--promote-full) directly from this card as per your requirement. Refer to [Blue Green Deployments](deployment-visibility.md#for-blue-green-deployments) for more information. | 
+| **Canary Strategy** | Displays the live progress of how many users are being redirected to the new release. Refer to [Canary Deployments](deployment-visibility.md#for-canary-deployments) for more information. | 
+| **Blue Green Strategy** | Displays the progress of the Blue Green deployment. You can [swap traffic](deployment-visibility.md#swap-traffic) or [skip and promote full](deployment-visibility.md#skip--promote-full) directly from this card as per your requirement. Refer to [Blue Green Deployments](deployment-visibility.md#for-blue-green-deployments) for more information. | 
 
 ---
 ## Action Icons
