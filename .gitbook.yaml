@@ -66,8 +66,8 @@ redirects:
     user-guide/creating-application/secrets: usage/applications/creating-application/secrets
     user-guide/creating-application/environment-overrides: usage/applications/creating-application/environment-overrides
     user-guide/creating-application/app-metrics: usage/applications/app-details/app-metrics
-    usage/app-details: user-guide/creating-application/app-details.md
-    user-guide/app-details: user-guide/creating-application/app-details.md
+    usage/app-details: user-guide/app-details/README.md
+    user-guide/app-details: user-guide/app-details/README.md
     user-guide/debugging-deployment-and-monitoring: usage/applications/app-details/debugging-deployment-and-monitoring
     user-guide/cloning-application: usage/applications/cloning-application
     user-guide/deploying-application: user-guide/deploying-application/README.md
@@ -168,12 +168,10 @@ redirects:
     user-guide/jobs/configuration-job: user-guide/jobs/configurations/README.md
     usage/jobs/workflow-editor-job: user-guide/jobs/workflow-editor-job
     user-guide/jobs/workflow-editor-job: user-guide/jobs/configurations/workflow-editor-job.md
-    setup/install/install-devtron: setup/install/README.md
     setup/install/install-devtron-with-cicd: setup/install/README.md
     setup/install/install-devtron-with-cicd-with-gitops: setup/install/README.md
     setup/install/install-devtron-on-minikube-microk8s-k3s-kind: setup/install/README.md
     setup/install/faq-on-installation: setup/install/faq-on-installation.md
-    install/install-devtron: setup/install/README.md
     install/install-devtron-with-cicd: setup/install/README.md
     install/install-devtron-with-cicd-with-gitops: setup/install/README.md
     install/install-devtron-on-minikube-microk8s-k3s-kind: setup/install/README.md

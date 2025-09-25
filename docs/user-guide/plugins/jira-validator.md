@@ -9,7 +9,7 @@ The Jira Issue Validator plugin extends the filtering capabilities of the Devtro
 - The API credentials (username, password, and base URL) for your Jira instance. Obtain the API credentials from your Jira admin if required.
 - A pull request raised with your Git provider. Title of pull request must contain the Jira ID.
 - Jira Issue (e.g., REDOC-12)
-- Webhook added to the git repository. [Click here](https://docs.devtron.ai/usage/applications/creating-application/workflow/ci-pipeline#configuring-webhook) to know more.
+- Webhook added to the git repository. [Click here](../creating-application/workflow/ci-pipeline.md#configuring-webhook) to know more.
 
 ---
 
