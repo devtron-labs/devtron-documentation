@@ -7,4 +7,22 @@ It tracks spend on **CPU**, **Memory**, **Storage**, **GPU**, **network**, and h
 
 ## Overview
 
-The **Overview** page provides a summary of infrastructure costs across your Applications, Clusters, Environments, Projects, and Infra Components in Devtron. It highlights overall spend, resource-level distribution, and opportunities for optimization (Potential Savings). 
+The **Overview** page provides a summary of infrastructure costs across your Applications, Clusters, Environments, Projects, and Infra Components in Devtron. It highlights overall spend, resource-level distribution, and opportunities for optimization (Potential Savings).
+
+At the top, you can choose your preferred currency time and time duration to set the context for your usage costs. This makes sure all costs on the **Overview** page are displayed in the correct currency and time range.
+
+<!-- image -->
+
+## At a Glance
+
+The **At a Glance** summarizes the total cost for the selected period and breaks it down by resource type. Each card shows the cost, its share of the total, and a usage trend graph.
+
+|Card|Description|
+|:---|:---|
+|||
+|||
+|||
+|||
+|||
+
+<!-- image -->
