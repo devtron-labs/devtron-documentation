@@ -22,7 +22,7 @@ Devtron allows you to:
 
 ### Prerequisites
 
-The [Deployment Chart Type](../creating-application/deployment-template.md#select-chart-from-default-charts) must be set to Rollout in order to use Blue-Green or Canary strategies.
+The [Deployment Chart Type](../creating-application/deployment-template.md#selecting-a-chart-type) must be set to rollout in order to use Blue-Green or Canary strategies.
 
 Deployment Visibility and Actions is only available for Canary and Blue-Green Strategies. Refer to the [Deployment Strategies](../creating-application/workflow/cd-pipeline.md#deployment-strategies) to learn more.
 

@@ -81,7 +81,7 @@ The next step is to configure Devtron to use these credentials for authenticatio
 
 ![Figure 4: Configuring SSO in Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/configuration-devtron-google-sso.jpg)
 
-In the configuration,&#x20;
+In the configuration,
 
 * Enter the OAuth Credentials:
   * Paste the Client ID obtained from Google Cloud in the `clientID` field.

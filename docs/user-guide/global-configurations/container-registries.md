@@ -239,10 +239,10 @@ If you prefer to delete an OCI registry, follow the instructions below:
 
 3. Click the **Delete** button. The OCI registry will be deleted.
 
-    {% hint style="warning" %}
+{% hint style="warning" %}
 
-    ### Important Note
+### Important Note
 
-    If you used an OCI registry as a chart source, deleting the OCI registry will remove all its associated charts from the Chart Store.
+If you used an OCI registry as a chart source, deleting the OCI registry will remove all its associated charts from the Chart Store.
 
-    {% endhint %}
+{% endhint %}

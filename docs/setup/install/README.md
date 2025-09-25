@@ -80,3 +80,22 @@ See the full guide here: [Install Devtron in Air-gapped Environment](install-dev
 See [Additional Installation Resources](../../reference/README.md) for production infra recommendations, advanced configs, blob storage, air-gapped installs, backup, and more.
 
 </details>
+
+<details>
+
+<summary><strong>Devtron admin credentials</strong></summary>
+
+Post successful installation of Devtron, a login page will be available at the Dashboard URL. 
+
+Use Admin Credentials to log in:
+
+* **Username**: `admin`
+
+* Run the below command to get your password.
+
+	```bash
+	kubectl -n devtroncd get secret devtron-secret \
+	-o jsonpath='{.data.ADMIN_PASSWORD}' | base64 -d
+	```
+
+</details>
