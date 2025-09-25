@@ -53,13 +53,13 @@ To update a chart repository, follow the below steps:
 
 3. Modify the repository as per your requirements.
 
-    {% hint style="info" %}
+{% hint style="info" %}
 
-    ### Peform Dry Run
+### Perform Dry Run
 
-    If you prefer to perform a dry run to validate the chart repository configurations, click **Validate**.
+If you prefer to perform a dry run to validate the chart repository configurations, click **Validate**.
 
-    {% endhint %}
+{% endhint %}
 
 4. Click **Update**.
 

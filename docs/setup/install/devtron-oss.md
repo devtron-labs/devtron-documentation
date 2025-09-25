@@ -203,7 +203,7 @@ minikube service devtron-service --namespace devtroncd
 ## Step 4: Log in to Devtron
 
 1. From your browser, visit the dashboard URL (obtained in the previous step) to view the login page of Devtron.
-2. Enter **`admin`** in the username.&#x20;
+2. Enter **`admin`** in the username.
 3.  Run the below command to get your password.
 
     ```bash

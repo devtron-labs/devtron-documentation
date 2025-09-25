@@ -134,15 +134,15 @@ Follow the below instructions to upgrade a Helm chart:
 
 2. Select your preferred chart from the **Helm Chart** drop-down box.
 
-    {% hint style="info" %}
-
-    ### Note
-
-    When you upgrade your helm chart, ensure that the values are compatible with the new chart.
-
-    {% endhint %}
-
     ![Figure 7: Upgrade Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/upgrade-chart.jpg)
+
+{% hint style="info" %}
+
+### Note
+
+When you upgrade your helm chart, ensure that the values are compatible with the new chart.
+
+{% endhint %}
 
 3. Click **Update And Deploy**. 
 
