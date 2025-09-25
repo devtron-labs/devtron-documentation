@@ -66,8 +66,8 @@ redirects:
     user-guide/creating-application/secrets: usage/applications/creating-application/secrets
     user-guide/creating-application/environment-overrides: usage/applications/creating-application/environment-overrides
     user-guide/creating-application/app-metrics: usage/applications/app-details/app-metrics
-    usage/app-details: user-guide/creating-application/app-details.md
-    user-guide/app-details: user-guide/creating-application/app-details.md
+    usage/app-details: user-guide/app-details/README.md
+    user-guide/app-details: user-guide/app-details/README.md
     user-guide/debugging-deployment-and-monitoring: usage/applications/app-details/debugging-deployment-and-monitoring
     user-guide/cloning-application: usage/applications/cloning-application
     user-guide/deploying-application: user-guide/deploying-application/README.md
