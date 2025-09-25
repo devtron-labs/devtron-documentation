@@ -33,7 +33,7 @@ Let's take an example to understand how to override specific values. Say, you wa
  
 `apiVersion`, `kind`, `metadata.name` in the multiline string is used to match the object which needs to be modified. In this particular case it will look for `apiVersion: extensions/v1beta1`, `kind: Ingress` and `metadata.name: devtron-ingress` and will apply changes mentioned inside `update:` as per the example inside the `metadata:` it will add annotations `owner: app1` and inside `spec.rules.http.host` it will add `http://change-me`.
  
-In case you want to change multiple objects, for eg in `argocd` you want to change the config of `argocd-dex-server` as well as `argocd-redis` then follow the example in [devtron-argocd-override.yaml](https://github.com/devtron-labs/devtron/tree/main/manifests/updates/devtron-argocd-override.yaml).
+In case you want to change multiple objects, for eg in `argocd` you want to change the config of `argocd-dex-server` as well as `argocd-redis` then follow the example in [devtron-argocd-override.yaml](https://github.com/devtron-labs/devtron/blob/main/manifests/updates/devtron-argocd-override.yaml).
  
 Once we have made these changes in our local system we need to apply them to a Kubernetes cluster on which Devtron is installed currently using the below command:
  

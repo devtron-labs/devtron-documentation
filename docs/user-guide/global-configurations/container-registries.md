@@ -44,7 +44,7 @@ You can configure a container registry using any registry provider of your choic
 
 Upon enabling this option, Devtron supports the pushing of helm charts to your OCI registry.  
 
-This is possible through [isolated clusters](../global-configurations/cluster-and-environments.md#add-isolated-cluster) that facilitate airgapped deployments. In other words, it generates a helm package that you can use to deploy your application in air-gapped clusters.
+This is possible through [isolated clusters](../global-configurations/cluster-and-environments.md#add-isolated-cluster) that facilitate air-gapped deployments. In other words, it generates a helm package that you can use to deploy your application in air-gapped clusters.
 
 If you have [configured your CD pipeline](../creating-application/workflow/cd-pipeline.md#deploying-to-an-isolated-environment) to push the helm package to your OCI registry, you can view the pushed helm package in your registry as shown below:
 
