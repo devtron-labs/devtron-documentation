@@ -1,6 +1,6 @@
 # Deployment Visibility & Actions 
 
-## Introduction
+## Introduction ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)
 
 Devtron helps you to manage your **Canary** and **Blue-Green** deployments by providing visibility and easy controls to manage how new versions (releases) are shared with users.
 
@@ -44,7 +44,7 @@ Users need to have Build and Deploy or above (along with access to the environme
 
 After triggering the deployment, navigate to **App Details**, to get a quick overview of your release rollout status.
 
-You can choose the [Manage Traffic](../application-groups.md#managing-traffic) button to view the rollout status and steps involved in the release. 
+You can click the [Manage Traffic](../application-groups.md#managing-traffic) button to view the rollout status and steps involved in the release. 
 
 If you wish you can also trigger the next release steps (for example 25%, 50%, 75%) or you can also trigger the full rollout at once according to your use case.
 
