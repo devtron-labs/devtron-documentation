@@ -256,6 +256,10 @@ Abbreviation for "repository". It could either signify a Git repo, container rep
 
 **Helm repo** - Also known as chart repo. You can add it in Global Configurations.
 
+### Resource Allocation
+
+The process where you allocate resources (e.g., `memory`) to different environments depending on your requirement. For example, you might require `50Mi` memory in a QA environment, whereas the same application might need `100Mi` memory in a production-grade environment.
+
 ### Rollback
 
 The process of reverting a deployment to a previously known working version in case of errors or issues with the current version. 

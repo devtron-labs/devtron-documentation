@@ -287,4 +287,4 @@ In this example, we will edit the Deployment chart type provided by Devtron.
 
     ![Figure 15: Save Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/save-changes.jpg)
 
-Next, if you go to **App Configuration** → **Base Configurations** → **Deployment Template**, you will be able to see the deployment template fields (in GUI) as per your customized schema.
+Next, if you go to **Configurations** → **Base Configurations** → **Deployment Template**, you will be able to see the deployment template fields (in GUI) as per your customized schema.
