@@ -63,19 +63,19 @@ Each bar represents one Application, Cluster, Environment, or Project, and the c
 
 | Filters | What It Shows |
 |:-----------------|:--------------|
-| **Application**  | Each bar represents an application, segmented by CPU, Memory, Storage (PV), GPU, and Network costs. |
-| **Cluster**      | Each bar represents a cluster, segmented by CPU, Memory, Storage (PV), GPU, and Network costs. |
-| **Environment**  | Each bar represents an environment, segmented by CPU, Memory, Storage (PV), GPU, and Network costs. |
-| **Project**      | Each bar represents a project, segmented by CPU, Memory, Storage (PV), GPU, and Network costs. |
+| **Application**  | Each bar represents an application, segmented by CPU, Memory, Storage (PV), GPU, and Network costs |
+| **Cluster**      | Each bar represents a cluster, segmented by CPU, Memory, Storage (PV), GPU, and Network costs |
+| **Environment**  | Each bar represents an environment, segmented by CPU, Memory, Storage (PV), GPU, and Network costs |
+| **Project**      | Each bar represents a project, segmented by CPU, Memory, Storage (PV), GPU, and Network costs |
 
 #### Sorting Criteria
 
 | Sorting Option     | Description |
 |:-------------------|:------------|
-| **Cost: High to Low** | Shows the highest cost items first. |
-| **Cost: Low to High** | Shows the lowest cost items first. |
-| **A to Z**           | Sorts items alphabetically. |
-| **Z to A**           | Sorts items in reverse alphabetical order. |
+| **Cost: High to Low** | Shows the highest cost items first |
+| **Cost: Low to High** | Shows the lowest cost items first |
+| **A to Z**           | Sorts items alphabetically |
+| **Z to A**           | Sorts items in reverse alphabetical order |
 
 ### Cost Trend Graph
 
@@ -87,7 +87,7 @@ Within the bar, each colored segment shows the contribution of the selected cate
 
 #### Time Range  
 
-| Option     | What It Shows |
+| Options    | Description |
 |:-----------|:--------------|
 | **Week**   | Breaks down costs for each week |
 | **Month**  | Aggregates costs by month |
@@ -98,7 +98,7 @@ Within the bar, each colored segment shows the contribution of the selected cate
 
 #### Stack By  
 
-| Option                | What Each Segment Represents |
+| Options                | Description |
 |:----------------------|:------------------------------|
 | **Applications**      | Cost share of each application in the selected time range |
 | **Clusters**          | Cost share of each cluster in the selected time range |
@@ -113,9 +113,9 @@ Each category will show
 
 | Field                  | Description |
 |:-----------------------|:------------|
-| **Name**               | The name of the category (for example, a cluster, application, or environment) with the largest savings opportunities. |
-| **Potential Savings (%)** | The percentage of your current spend that could be saved, for the selected time range. |
-| **Estimated Savings**  | The estimated cost you could save in that category, based on the difference between provisioned and used resources, for the selected time range.|
+| **Name**               | The name of the category (for example, a cluster, application, or environment) with the largest savings opportunities |
+| **Potential Savings (%)** | The percentage of your current spend that could be saved, for the selected time range |
+| **Estimated Savings**  | The estimated cost you could save in that category, based on the difference between provisioned and used resources, for the selected time range|
 
 Clicking on any item in this list takes you to its detailed Cost Breakdown page. Refer [Cost Breakdown]() to learn more.
 
@@ -132,25 +132,25 @@ For the chosen category type, it shows the following:
 | **Potential Savings**       | The percentage of your current spend that could be reduced|
 | **Monthly Savings**         | The estimated savings for one month based on the difference between allocated and used resources |
 | **Annual Savings**          | The projected savings over a year based on the same calculation|
-| **Top 10 Costly Resources** | A ranked list of 10 highest cost resources of the selected category.|
+| **Top 10 Costly Resources** | A ranked list of 10 highest cost resources of the selected category|
 
 <!-- image -->
 
 You will also find a complete list of all the resources for the selected category at the bottom.
 Each row in the list shows the following for the specific resource of the selected category: 
 
-| **Field**              | **Available in Categories**     | **Description**                                                            |
-|------------------------|---------------------------------|--------------------------------------------------------------------       |
+| Field              | Available in Categories     | Description                                                            |
+|:------------------------|:---------------------------------|:--------------------------------------------------------------------       |
 | **Provider**           | Clusters                        | Shows the cloud provider or infrastructure source for each cluster         |
 | **Type**               | Clusters, Environments          | Shows whether each cluster or environment is **Production** or **Non-Production** |
-| **Applications Count** | Environments, Projects          | Shows the number of applications linked to each environment or project. |
-| **Environments**       | Applications                    | Shows the number of environments where each application is deployed. |
-| **Memory Cost**        | All categories                  | Shows the cost of memory usage for each resource in the selected category. |
-| **CPU Cost**           | All categories                  | Shows the cost of CPU usage for each resource in the selected category. |
-| **Storage (PV) Cost**  | All categories                  | Shows the cost of persistent volume (storage) usage for each resource in the selected category. |
-| **GPU Cost**           | All categories                  | Shows the cost of GPU usage for each resource in the selected category. |
-| **Network Cost**       | All categories                  | Shows the cost of network usage for each resource in the selected category. |
-| **Total Cost**         | All categories                  | Shows the total cost of each resource. |
+| **Applications Count** | Environments, Projects          | Shows the number of applications linked to each environment or project |
+| **Environments**       | Applications                    | Shows the number of environments where each application is deployed |
+| **Memory Cost**        | All categories                  | Shows the cost of memory usage for each resource in the selected category |
+| **CPU Cost**           | All categories                  | Shows the cost of CPU usage for each resource in the selected category |
+| **Storage (PV) Cost**  | All categories                  | Shows the cost of persistent volume (storage) usage for each resource in the selected category |
+| **GPU Cost**           | All categories                  | Shows the cost of GPU usage for each resource in the selected category |
+| **Network Cost**       | All categories                  | Shows the cost of network usage for each resource in the selected category |
+| **Total Cost**         | All categories                  | Shows the total cost of each resource |
 | **Potential Savings**  | All categories                  | Shows the cost and percentage of your current spend that could be saved for each resource |
 
 <!-- image -->
