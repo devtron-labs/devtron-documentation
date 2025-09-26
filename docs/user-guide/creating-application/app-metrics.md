@@ -1,5 +1,7 @@
 # Application Metrics
 
+## Introduction
+
 Application Metrics are the indicators used to evaluate the performance and efficiency of your application. It can be enabled in the Devtron platform to see your application's metrics.
 
 ![Figure 1: Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics.jpg)
