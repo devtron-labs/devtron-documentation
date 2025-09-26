@@ -117,8 +117,6 @@ Suppose you update your deployment chart version (e.g., from `4.0.0` to `4.0.1`)
 
 ![Figure 8: Replace Strategy for Deployment Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/replace-dt.gif)
 
-{% embed url="https://www.youtube.com/watch?v=x-ABYU4y-c0" %}
-
 {% hint style="info" %}
 ### What if some keys are locked from editing?
 You cannot modify locked keys in an environment's deployment template unless you are a super-admin. Refer [Lock Deployment Configuration](../global-configurations/lock-deployment-config.md) to know more.
@@ -126,11 +124,26 @@ You cannot modify locked keys in an environment's deployment template unless you
 
 ### Override Deployment Template using GUI 
 
-{% embed url="https://www.youtube.com/watch?v=Wh5WKvkYNDw" %}
+Follow the below steps to override your deployment template using GUI: 
+
+1. Navigate to **Applications** and click on your preferred application. 
+
+2. Go to **Configurations** → **Base Configurations** → **Environment Overrides** and click on your preferred environment to override deployment template.
+
+3. Click on the **No Override** option and then click on **Create Override**. 
+
+4. Click on the **GUI** option. The available fields will be displayed on the right side of the page. 
+
+5. Select your preferred fields and enter the values to override.
+
+6. Click on **Save Changes**.
 
 {% hint style="info" %}
+
 ### Want to customize the deployment template values displayed on GUI? [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
 The GUI mode shows limited number of fields as specified by the super-admin in the GUI schema. Refer [Customize GUI](../creating-application/base-config/deployment-template.md#customize-basic-gui) to know more.
+
 {% endhint %}
 
 ---
@@ -144,8 +157,11 @@ The process to override both ConfigMaps and Secrets is similar to [Override Depl
 ### Patch Strategy
 
 {% hint style="info" %}
+
 ### Impact of Patch strategy on Base Configuration's CM/Secret?
+
 You cannot delete a ConfigMap or Secret in **Base Configurations** if you have used 'Patch' strategy for overridding ConfigMap or Secret at your environment-level. This happens because they are still dependent and inheriting their values from Base Configurations.
+
 {% endhint %}
 
 ### Replace Strategy
@@ -174,4 +190,22 @@ This action will discard the current overrides and the base configuration file (
 
 Any changes made to the protected environment configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../global-configurations/approval-policy.md) is enforced.
 
-{% embed url="https://www.youtube.com/watch?v=_BidCVR3hxY" %}
+Follow the below steps to make changes to a protected environment: 
+
+1. Navigate to **Applications** and click on your preferred application. 
+
+2. Go to **Configurations** → **Base Configurations** → **Environment Overrides** and click on your preferred environment.
+
+3. Click on the **No Override** option and then click on **Create Override**.
+
+4. Make changes to the key-value pairs in the **Patch data** section. 
+
+5. Click **Save Changes**. The **Save as draft** pop-up page will be displayed.
+
+    * **Save as draft** - Select this option if you want to continue making your changes later but save your changes as a draft for now.
+
+    * **Save & Propose changes** - Select this option if you want to save and propose your changes to the approvers. You can then select the approvers to get notified regarding the change from the **Select approvers to notify** drop-down box. 
+
+6. Enter your comments (reason for making the changes) in the **Comment** text box. 
+
+7. Click **Propose Changes**. The corresponding approver will be notified via email regarding your request. 

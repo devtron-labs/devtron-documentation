@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Base configurations help you share common configurations (configMaps) across environments, bootstrap new environments and pipelines, or use scoped variables (placeholders) to templatize your configurations. 
+Base configurations help you share common configurations across environments, bootstrap new environments and pipelines, or use scoped variables (placeholders) to templatize your configurations. 
 
 Base Configurations in Devtron consists of: 
 
@@ -10,7 +10,9 @@ Base Configurations in Devtron consists of:
 
 * [ConfigMaps](../../../reference/glossary.md#configmaps) for managing non-sensitive data (e.g., `username`)
 
-* [Secrets](../../../reference/glossary.md#secrets) for securely handling sensitive information (e.g., `password`, `API key`). In Devtron, these are core settings that dictate the application's behavior
+* [Secrets](../../../reference/glossary.md#secrets) for securely handling sensitive information (e.g., `password`, `API key`). 
+
+In Devtron, these are the core settings that dictate an application's behavior.
 
 ![Figure 1: Base Configurations of Application](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/base-config-main.jpg)
 
