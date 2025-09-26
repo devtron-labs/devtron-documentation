@@ -30,10 +30,10 @@ After you select and save a chart type for a given application, you won't be abl
 
 You can select a default deployment chart from the following options:
 
-1. [Deployment](deployment-template/deployment.md) (Recommended)
-2. [Rollout Deployment](deployment-template/rollout-deployment.md)
-3. [Job & CronJob](deployment-template/job-and-cronjob.md)
-4. [StatefulSet](deployment-template/statefulset.md)
+1. [Deployment](../creating-application/base-config/deployment-template/deployment.md) (Recommended)
+2. [Rollout Deployment](../creating-application/base-config/deployment-template/rollout-deployment.md)
+3. [Job & CronJob](../creating-application/base-config/deployment-template/job-and-cronjob.md)
+4. [StatefulSet](../creating-application/base-config/deployment-template/statefulset.md)
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/select-devtron-chart.gif)
 
@@ -113,10 +113,10 @@ Click **Save Changes**. If you want to do additional configurations, then click 
 Superadmin can define and apply custom deployment schema.
 {% endhint %}
 
-By default, the `Basic (GUI)` section comes with multiple predefined fields as seen earlier [in the table](#2-basic-configuration). However, if you wish to display a different set of fields to your team, you can modify the whole section as per your requirement.
+By default, the `Basic (GUI)` section comes with multiple predefined fields as seen earlier [in the table](#using-basic-gui). However, if you wish to display a different set of fields to your team, you can modify the whole section as per your requirement.
 
 This is useful in scenarios where:
-* Your team members find it difficult to understand and edit the [Advanced (YAML)](#3-advanced-yaml) section.
+* Your team members find it difficult to understand and edit the [Advanced (YAML)](#using-advanced-yaml) section.
 * You frequently edit certain fields in Advanced (YAML), which you expect to remain easily accessible in Basic (GUI) section.
 * You don't require some fields in Basic (GUI) section.
 * You need the autonomy to keep the Basic (GUI) unique for applications/clusters/environments/charts, or display the same Basic (GUI) everywhere.
@@ -214,10 +214,10 @@ If you are an advanced user wishing to perform additional configurations, you ma
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/advanced-yaml.jpg)
 
 Refer the respective templates to view the YAML details.
-* [Deployment](deployment-template/deployment.md)
-* [Rollout Deployment](deployment-template/rollout-deployment.md)
-* [Job & CronJob](deployment-template/job-and-cronjob.md)
-* [StatefulSet](deployment-template/statefulset.md)
+* [Deployment](./base-config/deployment-template/deployment.md)
+* [Rollout Deployment](./base-config/deployment-template/rollout-deployment.md)
+* [Job & CronJob](./base-config/deployment-template/job-and-cronjob.md)
+* [StatefulSet](./base-config/deployment-template/statefulset.md)
 
 ---
 

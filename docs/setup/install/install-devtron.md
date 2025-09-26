@@ -10,8 +10,6 @@ Refer [Install Devtron](./README.md) to know the available tiers and installatio
 
 {% endhint %}
 
-## Devtron Admin Credentials
-
 When you install Devtron for the first time, it creates a default admin user and password (with unrestricted access to Devtron). You can use that credentials to log in as an administrator. 
 
 **Username**: `admin` <br />

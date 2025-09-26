@@ -2,7 +2,7 @@
 
 Secrets allow you to store environment variables and files. With Secrets, you can store and manage sensitive information (e.g., passwords, authentication tokens, and SSH keys) in base64 encrypted form. Embedding this information in secrets is safer and more flexible than putting it verbatim in a pod definition or in a container image. Devtron generally hides the data of secrets, and it is only visible to the users having the edit permission.
 
-Simply put, if a [configMap](../config-maps.md) is a recipe card in the kitchen, then a secret is the locked box containing a special ingredient that only your chef (application) can unlock and use.
+Simply put, if a [ConfigMap](../config-maps.md) is a recipe card in the kitchen, then a secret is the locked box containing a special ingredient that only your chef (application) can unlock and use.
 
 ## Add Secret
 
@@ -153,7 +153,7 @@ You may delete a Secret if not in use anymore. Once a Secret is deleted, it will
 
 ## Edit a Protected Secret [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-Any changes made to the protected base configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../global-configurations/approval-policy.md) is enforced.
+Any changes made to the protected base configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../../../global-configurations/approval-policy.md) is enforced.
 
 {% embed url="https://www.youtube.com/watch?v=pJPX-rJNb_o" %}
 
@@ -169,10 +169,10 @@ Chart version should be > 4.14.0
 ### Purpose
 
 This section is for users who wish to use the following data type while adding secrets in Devtron:
-* [Google Secrets Manager](./eso/gcp-eso.md)
-* [AWS Secrets Manager](./eso/aws-eso.md)
-* [Hashi Corp Vault](./eso/hashicorp-eso.md)
-* [Azure Secrets Manager](./eso/azure-eso.md)
+* [Google Secrets Manager](../eso/gcp-eso.md)
+* [AWS Secrets Manager](../eso/aws-eso.md)
+* [Hashi Corp Vault](../eso/hashicorp-eso.md)
+* Azure Secrets Manager
 
 External Secrets Operator (ESO) is a Kubernetes component that integrates with external secret management systems like AWS Secrets Manager, HashiCorp Vault, Google Secrets Manager, Azure Key Vault, and more. It retrieves secrets from these external sources and injects them into Kubernetes Secrets automatically. Before you can create external secrets in Devtron, you need to install the External Secrets Operator on the target cluster. 
 

@@ -207,9 +207,9 @@ Chart version should be > 4.14.0
 ### Purpose
 
 This section is for users who wish to use the following data type while adding secrets in Devtron:
-* [Google Secrets Manager](../../../creating-application/eso/gcp-eso.md)
-* [AWS Secrets Manager](../../../creating-application/eso/aws-eso.md)
-* [Hashi Corp Vault](../../../creating-application/eso/hashicorp-eso.md)
+* [Google Secrets Manager](../../../creating-application/base-config/eso/gcp-eso.md)
+* [AWS Secrets Manager](../../../creating-application/base-config/eso/aws-eso.md)
+* [Hashi Corp Vault](../../../creating-application/base-config/eso/hashicorp-eso.md)
 * Azure Secrets Manager
 
 External Secrets Operator (ESO) is a Kubernetes component that integrates with external secret management systems like AWS Secrets Manager, HashiCorp Vault, Google Secrets Manager, Azure Key Vault, and more. It retrieves secrets from these external sources and injects them into Kubernetes Secrets automatically. Before you can create external secrets in Devtron, you need to install the External Secrets Operator on the target cluster. 
@@ -233,7 +233,7 @@ Manually add the following chart repository URL in Devtron: `https://charts.exte
 
 4. Click **Deploy Chart**.
 
-After deploying the Chart, refer to the [ESO Documentation](/docs/user-guide/creating-application/eso/README.md) to setup ESO for different providers.
+After deploying the Chart, refer to the [ESO Documentation](/docs/user-guide/creating-application/base-config/eso/README.md) to setup ESO for different providers.
 
 ---
 

@@ -29,7 +29,7 @@ You can select `StatefulSet` chart when you want to use only basic use cases whi
 
 {% hint style="warning" %}
 ### Note
-Super-admins can lock keys in StatefulSet deployment template to prevent non-super-admins from modifying those locked keys. Refer [Lock Deployment Configuration](../../global-configurations/lock-deployment-config.md) to know more.
+Super-admins can lock keys in StatefulSet deployment template to prevent non-super-admins from modifying those locked keys. Refer [Lock Deployment Configuration](../../../global-configurations/lock-deployment-config.md) to know more.
 {% endhint %}
 
 
@@ -974,7 +974,7 @@ If you want to see application metrics like different HTTP status codes metrics,
 
 ![Figure 3: Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/deployment_application_metrics.jpg)
 
-Once all the Deployment template configurations are done, click on `Save` to save your deployment configuration. Now you are ready to create [Workflow](../workflow/README.md) to do CI/CD.
+Once all the Deployment template configurations are done, click on `Save` to save your deployment configuration. Now you are ready to create [Workflow](../../workflow/README.md) to do CI/CD.
 
 ### Helm Chart Json Schema 
 
