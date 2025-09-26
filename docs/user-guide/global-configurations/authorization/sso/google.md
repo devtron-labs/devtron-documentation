@@ -11,7 +11,7 @@ Integrating Google as your Single Sign-On (SSO) provider enables users to authen
 To configure Google SSO in Devtron, you will need:
 
 * Super Admin permissions
-  * Only a [Super-Admin](https://docs.devtron.ai/global-configurations/authorization/user-access) can configure SSO. If you are setting up SSO for the first time, use [Admin Credentials](https://docs.devtron.ai/install/install-devtron#devtron-admin-credentials) instead.
+  * Only a [Super-Admin](../user-access.md#grant-super-admin-permission) can configure SSO. If you are setting up SSO for the first time, use [Admin Credentials](https://docs.devtron.ai/install/install-devtron#devtron-admin-credentials) instead.
 * A Google Cloud account to create and manage OAuth credentials. If you don’t have one, you must create it at the [Google Cloud Console](https://console.cloud.google.com/).
 
 {%endhint%}

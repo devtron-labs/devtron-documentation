@@ -384,7 +384,7 @@ Only one draft can exist at time and you cannot create multiple drafts. In the t
 
 ### Who Can Perform This Action?
 
-Only a different super-admin user or someone (who is not amongst the editors of the draft), having `Configuration approver` access, can approve the changes made to the deployment configuration.
+Only a valid approver or a Super-Admin can approve the changes made to the deployment configuration. Refer to [Approval Policy](../../global-configurations/approval-policy.md) for more information.
 
 {% endhint %}
 
