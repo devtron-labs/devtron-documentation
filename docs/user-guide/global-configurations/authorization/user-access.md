@@ -136,7 +136,7 @@ The role-based access for Devtron Apps are as follows:
 
    * **Artifact Promoter**: You can approve the promotion of [artifacts](../../../reference/glossary.md#artifacts) directly to the target CD pipeline. For example, if your application workflow includes three CD pipelines (e.g., dev, qa, and prod) and someone raises a request to bypass dev and qa and deploy the artifact directly to prod, you can approve and perform this action with the **Artifact promoter** permission.
 
-   * **Config Approver**: You can approve configuration change requests for [Deployment Templates](../../creating-application/deployment-template.md), [ConfigMaps](../../creating-application/config-maps.md), and [Secrets](../../creating-application/secrets.md). However, you cannot self-approve your own proposed changes, even if you have the **Config Approver** permission or even the Super Admin access.
+   * **Config Approver**: You can approve configuration change requests for [Deployment Templates](../../creating-application/base-config/deployment-template.md), [ConfigMaps](../../creating-application/base-config/config-maps.md), and [Secrets](../../creating-application/base-config/secrets.md). However, you cannot self-approve your own proposed changes, even if you have the **Config Approver** permission or even the Super Admin access.
 
    * **Deployment Approver**: You can approve the deployment requests for the selected applications and environments.
 
@@ -404,7 +404,7 @@ When working with multiple collaborators in Devtron, you may need to deactivate 
 
 You can manage a user's active status at three levels:
 * [User-level](#at-user-level)
-* [Permission Group-level](#at-group-level)
+* [Permission Group-level](#at-permission-group-level)
 * [Direct Permissions-level](#at-direct-permissions-level)
 
 

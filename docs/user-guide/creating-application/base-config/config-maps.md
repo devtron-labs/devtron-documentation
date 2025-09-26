@@ -36,7 +36,7 @@ Follow the instructions below to create a Kubernetes ConfigMap:
 
     * **Environment Variable** – Select this option if you want to inject Environment Variables in pods using ConfigMap.
 
-    * **Data Volume** – Select this option, if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-valume) to know more.
+    * **Data Volume** – Select this option, if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-volume) to know more.
 
 4. Enter data in:
    * **GUI mode** – User-friendly interface. Click **+Add** button and enter the **Key** and **Value** fields without quotes. 
@@ -55,7 +55,7 @@ Kubernetes External ConfigMap is usually created to reuse a configMap outside th
 
 2. **Name** - Since you are using Kubernetes External ConfigMap, make sure you give the name of ConfigMap the same as the name given using `kubectl create configmap <configmap-name> <data source>` command, otherwise, it might result in an error during the build.
 
-3. Mount data as: **Environment Variable** or [Data Volume](#mount-data-as-data-valume)
+3. Mount data as: **Environment Variable** or [Data Volume](#mount-data-as-data-volume)
 
 4. Click **Save**.
 

@@ -6,7 +6,7 @@ Base configurations help you share common configurations across environments, bo
 
 Base Configurations in Devtron consists of: 
 
-* A [Deployment Template](../../../reference/glossary.md#base-deployment-template) for defining application specifications
+* A [Deployment Template](../../../reference/glossary.md#deployment-template) for defining application specifications
 
 * [ConfigMaps](../../../reference/glossary.md#configmaps) for managing non-sensitive data (e.g., `username`)
 

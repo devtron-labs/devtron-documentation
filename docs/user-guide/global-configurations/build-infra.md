@@ -38,8 +38,8 @@ You may click it to modify the following:
 |**Build Timeout**|Max. time limit allocated to the build process. See [timeout units](#timeout-units).|
 |**Node Selector** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a> |Node Selector are key-value pair labels to match Pods with Nodes. To learn more, refer to [nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) page.|
 |**Toleration** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a>|A Toleration allow a pod to be scheduled on a Node that has a matching Taint. To learn more, refer to [Taints and Toleration](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) page.|
-|**ConfigMaps** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a>|Key Value pairs to store non-sensitive configurations. Refer to [ConfigMaps](../creating-application/config-maps.md).|
-|**Secrets** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a>|Key Value pairs to store sensitive configurations. Refer to [Secrets](../creating-application/secrets.md).|
+|**ConfigMaps** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a>|Key Value pairs to store non-sensitive configurations. Refer to [ConfigMaps](../creating-application/base-config/config-maps.md).|
+|**Secrets** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a>|Key Value pairs to store sensitive configurations. Refer to [Secrets](../creating-application/base-config/secrets.md).|
 
 {% hint style="info" %}
 ### Note

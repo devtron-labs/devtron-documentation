@@ -115,7 +115,7 @@ Users need to have [Admin role](../user-guide/global-configurations/authorizatio
 
 The **Configurations** tab of your application group allows you to configure the following:
 
-* [Deployment template](../reference/glossary.md#base-deployment-template)
+* [Deployment template](../reference/glossary.md#deployment-template)
 * [ConfigMaps](../reference/glossary.md#configmaps)
 * [Secrets](../reference/glossary.md#secrets)
 

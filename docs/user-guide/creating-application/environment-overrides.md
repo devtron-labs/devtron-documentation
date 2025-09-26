@@ -18,16 +18,16 @@ The Environment Overrides section allows you to customize the **Deployment Templ
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
-Users need to have [Admin role](../global-configurations/authorization/user-access.md#role-based-access-levels) or above (along with access to the environment and applications) to perform environment override.
+Users need to have [Admin role](../global-configurations/authorization/user-access.md#roles-available-for-devtron-apps) or above (along with access to the environment and applications) to perform environment override.
 {% endhint %}
 
 1. In your application, go to **Configurations** → **Environment Overrides**. 
 
-![Figure 2: Accessing Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/config-env-override.jpg)
+    ![Figure 2: Accessing Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/config-env-override.jpg)
 
 2. Select an environment whose configurations you wish to modify.
 
-![Figure 3: Selecting Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/environment-override-v3.jpg)
+    ![Figure 3: Selecting Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/environment-override-v3.jpg)
 
 3. You will get the following options (similar to the **Base Configurations** page):
     * [Deployment Template](#override-deployment-template)
@@ -142,7 +142,7 @@ Follow the below steps to override your deployment template using GUI:
 
 ### Want to customize the deployment template values displayed on GUI? [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-The GUI mode shows limited number of fields as specified by the super-admin in the GUI schema. Refer [Customize GUI](../creating-application/base-config/deployment-template.md#customize-basic-gui) to know more.
+The GUI mode shows limited number of fields as specified by the super-admin in the GUI schema. Refer [Customize GUI](../creating-application/base-config/deployment-template.md#customize-the-gui) to know more.
 
 {% endhint %}
 
@@ -152,7 +152,7 @@ The GUI mode shows limited number of fields as specified by the super-admin in t
 
 If you want to configure your ConfigMap and Secret at the application-level then you can provide them in [ConfigMaps](../creating-application/base-config/config-maps.md) and [Secrets](../creating-application/base-config/secrets.md), but if you want to have environment-specific ConfigMap and Secret, use **Environment Override** to create them. At the time of deployment, it will pick both of them and pass them to your cluster.
 
-The process to override both ConfigMaps and Secrets is similar to [Override Deployment Template](#override-deployment-template). Refer the tutorials below to know the process in YAML mode. In case you wish to use GUI mode, skip to [Overriding in GUI mode](#using-gui-mode-for-overridding).
+The process to override both ConfigMaps and Secrets is similar to [Override Deployment Template](#override-deployment-template). Refer the tutorials below to know the process in YAML mode. In case you wish to use GUI mode, skip to [Overriding in GUI mode](#override-configmaps-and-secrets-using-gui).
 
 ### Patch Strategy
 

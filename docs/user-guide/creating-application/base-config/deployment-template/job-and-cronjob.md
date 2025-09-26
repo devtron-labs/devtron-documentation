@@ -68,5 +68,5 @@ cronjobConfigs:
 
 {% hint style="warning" %}
 ### Note
-Super-admins can lock keys in Job & CronJob deployment template to prevent non-super-admins from modifying those locked keys. Refer [Lock Deployment Configuration](../../global-configurations/lock-deployment-config.md) to know more.
+Super-admins can lock keys in Job & CronJob deployment template to prevent non-super-admins from modifying those locked keys. Refer [Lock Deployment Configuration](../../../global-configurations/lock-deployment-config.md) to know more.
 {% endhint %}

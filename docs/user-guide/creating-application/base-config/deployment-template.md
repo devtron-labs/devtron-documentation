@@ -4,13 +4,13 @@
 
 ![Figure 1: Deployment Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/base-config/deployment-template.jpg)
 
-In Devtron, a [Deployment Template](../../../reference/glossary.md#base-deployment-template) defines how your application should run by defining its specifications. Devtron uses [Helm charts](../../../reference/glossary.md#helm-chartspackages) to manage these deployments, allowing you to control everything from [Resource Allocation](../../../reference/glossary.md#resource-allocation) to environment variables. 
+In Devtron, a [Deployment Template](../../../reference/glossary.md#deployment-template) defines how your application should run by defining its specifications. Devtron uses [Helm charts](../../../reference/glossary.md#helm-chartspackages) to manage these deployments, allowing you to control everything from [Resource Allocation](../../../reference/glossary.md#resource-allocation) to environment variables. 
 
 You can use default [Deployment Charts](../../../reference/glossary.md#deployment-charts) provided by Devtron or [Custom Deployment Charts](../../global-configurations/deployment-charts.md) developed by a super-admin to suit your needs.
 
 This guide covers how to:
 
-* [Select a Deployment Chart](#select-a-deployment-chart)
+* [Select a Deployment Chart](#select-a-deployment-chart-type)
 
 * [Choose a Chart Version](#choose-a-chart-version)
 
@@ -68,7 +68,7 @@ After you select and save a chart type for a given application, you won't be abl
 
 ### Who Can Perform This Action?
 
-Users need to have [Admin role](../../../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above to select a chart version.
+Users need to have [Admin role](../../../user-guide/global-configurations/authorization/user-access.md#roles-available-for-devtron-apps) or above to select a chart version.
 
 {% endhint %}
 
@@ -88,7 +88,7 @@ Once you [select a deployment chart](#select-a-deployment-chart-type), choose a 
 
 ### Who Can Perform This Action?
 
-Users need to have [Admin role](../../../user-guide/global-configurations/authorization/user-access.md#role-based-access-levels) or above to configure a deployment template. However, super-admins can lock keys in deployment template to prevent non-super-admins from modifying them. Refer [Lock Deployment Configuration](../../global-configurations/lock-deployment-config.md) to know more.
+Users need to have [Admin role](../../../user-guide/global-configurations/authorization/user-access.md#roles-available-for-devtron-apps) or above to configure a deployment template. However, super-admins can lock keys in deployment template to prevent non-super-admins from modifying them. Refer [Lock Deployment Configuration](../../global-configurations/lock-deployment-config.md) to know more.
 
 {% endhint %}
 

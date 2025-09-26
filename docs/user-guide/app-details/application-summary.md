@@ -188,7 +188,7 @@ You can quickly configure Deployment Templates, ConfigMaps and Secrets for the s
 
 ![Figure 8: Environment Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/env-config.jpg)
 
-To configure enviroment specific deployment templates, configMaps, secrets, refer to [Environment Overrides](../creating-application/environment-overrides.md#how-to-add-environment-overrides).
+To configure enviroment specific Deployment Templates, ConfigMaps, Secrets, refer to [Environment Overrides](../creating-application/environment-overrides.md#environment-overrides).
 
 ---
 ## External Links 

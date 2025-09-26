@@ -16,13 +16,13 @@ ArgoCD Apps are the micro-services deployed using a [GitOps](#gitops) deployment
 
 If ArgoCD applications are present in your cluster, they will appear in the [ArgoCD Apps listing](../user-guide/applications.md#enabling-argocd-app-listing). 
 
-### Base Deployment Template
+### Deployment Template
 
 A deployment template is a manifest of the application defining its runtime behavior. You can select one of the default deployment charts or custom deployment charts created by super-admin.
 
 It’s a single entry point for you to enter the values, so that when the application is deployed your filled values go to the respective template files (YAML), and accordingly the resources would be created. 
 
-In Devtron, you get the option to select a base deployment template in the `App Configuration` tab at the time of creating an application. [Read More...](../user-guide/creating-application/deployment-template.md)
+In Devtron, you get the option to select a deployment template in the `Configurations` tab at the time of creating an application. [Read More...](../user-guide/creating-application/base-config/deployment-template.md)
 
 ### Build Context
 
@@ -54,7 +54,7 @@ A unique identifier representing a specific version of source code in a Git [rep
 
 Kubernetes objects used to store configuration data as key-value pairs. They allow separation of configuration from application code, making it easier to manage and update settings. 
 
-You can use different ConfigMaps for respective environments too. [Read More...](../user-guide/creating-application/config-maps.md)
+You can use different ConfigMaps for respective environments too. [Read More...](../user-guide/creating-application/base-config/config-maps.md)
 
 ### Container/OCI Registry
 
@@ -72,7 +72,7 @@ A Custom Resource Definition (CRD) allows you to add custom resource types to Ku
 
 ### CronJob
 
-CronJob is used to create Jobs on a repeating schedule. It is commonly used for running periodic tasks with no manual intervention. In Devtron, you can view a list of cronjobs by going to Resource Browser → (choose a cluster) → Workloads → CronJob. [Read More...](../user-guide/creating-application/deployment-template/job-and-cronjob.md#id-2.-cronjob)
+CronJob is used to create Jobs on a repeating schedule. It is commonly used for running periodic tasks with no manual intervention. In Devtron, you can view a list of cronjobs by going to Resource Browser → (choose a cluster) → Workloads → CronJob. [Read More...](../user-guide/creating-application/base-config/deployment-template/job-and-cronjob.md#id-2.-cronjob)
 
 ### Deployment Charts
 
@@ -270,11 +270,11 @@ In Devtron, you can rollback a deployment by going to Applications (choose your 
 
 Kubernetes objects used to store sensitive information, such as passwords and API keys. Secrets are encoded and can be mounted as files or environment variables in pods. 
 
-In Devtron, you get the option to add secrets in the `App Configuration` tab of your application. You can use different secrets for respective environments too. [Read More...](../user-guide/creating-application/secrets.md)
+In Devtron, you get the option to add secrets in the `App Configuration` tab of your application. You can use different secrets for respective environments too. [Read More...](../user-guide/creating-application/base-config/secrets.md)
 
 ### Security Context
 
-A Kubernetes resource configuration that defines security settings and permissions for pods and containers. A security context defines privilege and access control settings for a pod or container. [Read More...](../user-guide/creating-application/deployment-template/deployment.md#security-context)
+A Kubernetes resource configuration that defines security settings and permissions for pods and containers. A security context defines privilege and access control settings for a pod or container. [Read More...](../user-guide/creating-application/base-config/deployment-template/deployment.md#security-context)
 
 ### Service 
 
@@ -284,7 +284,7 @@ When the network addresses of pods changes frequently, it becomes difficult to c
 
 A Kubernetes object designed for managing stateful applications, maintaining stable network identities and storage across pod rescheduling. 
 
-In Devtron, view the list of StatefulSets by going to Resource Browser → (choose a cluster) → Workloads → StatefulSet. [Read More...](../user-guide/creating-application/deployment-template/statefulset.md)
+In Devtron, view the list of StatefulSets by going to Resource Browser → (choose a cluster) → Workloads → StatefulSet. [Read More...](../user-guide/creating-application/base-config/deployment-template/statefulset.md)
 
 ### Target Platform
 

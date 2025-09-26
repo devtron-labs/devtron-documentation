@@ -33,7 +33,7 @@ Users need to have [Super-Admin](user-access.md#assign-super-admin-permissions) 
 {% hint style="warning" %}
 The Git provider you select for configuring GitOps might impact the following sections:
 
-   * [Deployment Template](../creating-application/deployment-template.md)
+   * [Deployment Template](../creating-application/base-config/deployment-template.md)
 
    * [Charts](../deploy-chart/README.md)
 
