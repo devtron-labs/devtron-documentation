@@ -1,8 +1,8 @@
 # Secrets
 
-Secrets and ConfigMaps are both used to store files but there is one major difference between them: ConfigMap stores key-values (non-sensitive information) in normal text format; whereas secrets store them (sensitive information) in base64 encrypted form. Devtron hides the data of secrets for the normal users and it is only visible to the users having edit permission.
+Secrets allow you to store environment variables and files. With Secrets, you can store and manage sensitive information (e.g., passwords, authentication tokens, and SSH keys) in base64 encrypted form. Embedding this information in secrets is safer and more flexible than putting it verbatim in a pod definition or in a container image. Devtron generally hides the data of secrets, and it is only visible to the users having the edit permission.
 
-Secret objects let you store and manage sensitive information, such as passwords, authentication tokens, and ssh keys. Embedding this information in secrets is safer and more flexible than putting it verbatim in a Pod definition or in a container image.
+Simply put, if a [configMap](../config-maps.md) is a recipe card in the kitchen, then a secret is the locked box containing a special ingredient that only your chef (application) can unlock and use.
 
 ## Add Secret
 

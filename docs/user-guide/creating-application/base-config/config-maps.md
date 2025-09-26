@@ -16,11 +16,13 @@ A ConfigMap stores key-value pairs (non-sensitive data) that your applications c
 
 4. **Data Type** - Choose between the following data types:
 
-    * [Kubernetes ConfigMap](#kubernetes-configmap)
+    * [Kubernetes ConfigMap](#kubernetes-configmap) - When you want to create a configMap that is specific to an application and is managed within the cluster
 
-    * [Kubernetes External ConfigMap](#kubernetes-external-configmap)
+    * [Kubernetes External ConfigMap](#kubernetes-external-configmap) - When you want to create a configMap outside the cluster to use it across environments and applications
 
 ### Kubernetes ConfigMap
+
+Kubernetes ConfigMap usually keeps non-sensitive data such as application settings, environment variables, etc. Consider ConfigMap as a recipe card that you have in a kitchen (that specific cluster/environment). Whenever your application (chef) requires instructions, it simply refers to the configMap (recipe card) and uses the specified configuration. Follow the instructions below to create a Kubernetes ConfigMap:
 
 1. Select **Kubernetes ConfigMap** as the Data Type.
 
@@ -45,7 +47,7 @@ A ConfigMap stores key-value pairs (non-sensitive data) that your applications c
 
 ### Kubernetes External ConfigMap
 
-Use this option if you have a ConfigMap created using the kubectl command. Ensure that the External ConfigMap exists and is available to the pod.
+Kubernetes External ConfigMap is usually created to reuse a configMap outside the cluster also (e.g., from another namespace or an application). If Kubernetes ConfigMap is a recipe card kept in the kitchen, then Kubernetes External ConfigMap is a recipe card kept in the library so that other chefs (applications) can also access it whenever they want to. Follow the below steps to create a Kubernetes External ConfigMap:
 
 1. Select **Kubernetes External ConfigMap** as the Data Type.
 
