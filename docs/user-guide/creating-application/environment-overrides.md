@@ -115,8 +115,6 @@ Suppose you update your deployment chart version (e.g., from `4.0.0` to `4.0.1`)
 | logLevel  | "info"             | *(Not specified)*            | *(Removed)*         |
 | timeout   | (Not specified)    | 30s                          | 30s (Added)         |
 
-![Figure 8: Replace Strategy for Deployment Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/replace-dt.gif)
-
 {% hint style="info" %}
 ### What if some keys are locked from editing?
 You cannot modify locked keys in an environment's deployment template unless you are a super-admin. Refer [Lock Deployment Configuration](../global-configurations/lock-deployment-config.md) to know more.
@@ -136,7 +134,9 @@ Follow the below steps to override your deployment template using GUI:
 
 5. Select your preferred fields and enter the values to override.
 
-6. Click on **Save Changes**.
+6. Select your preferred merge strategy from the **Merge Strategy** drop-down box. 
+
+7. Click on **Save Changes**.
 
 {% hint style="info" %}
 
@@ -182,7 +182,7 @@ This action will discard the current overrides and the base configuration file (
 2. Click **Delete Override**.
 3. Confirm the deletion in the dialogbox.
 
-![Figure 9: Delete Override Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/delete-override.gif)
+![Figure 8: Delete Override Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/delete-override.gif)
 
 ---
 
@@ -198,14 +198,16 @@ Follow the below steps to make changes to a protected environment:
 
 3. Click on the **No Override** option and then click on **Create Override**.
 
-4. Make changes to the key-value pairs in the **Patch data** section. 
+4. Select your preferred merge strategy from the **Merge Strategy** drop-down box. 
 
-5. Click **Save Changes**. The **Save as draft** pop-up page will be displayed.
+5. Make changes to the key-value pairs in the **Patch data** section. 
+
+6. Click **Save Changes**. The **Save as draft** pop-up page will be displayed.
 
     * **Save as draft** - Select this option if you want to continue making your changes later but save your changes as a draft for now.
 
     * **Save & Propose changes** - Select this option if you want to save and propose your changes to the approvers. You can then select the approvers to get notified regarding the change from the **Select approvers to notify** drop-down box. 
 
-6. Enter your comments (reason for making the changes) in the **Comment** text box. 
+7. Enter your comments (reason for making the changes) in the **Comment** text box. 
 
-7. Click **Propose Changes**. The corresponding approver will be notified via email regarding your request. 
+8. Click **Propose Changes**. The corresponding approver will be notified via email regarding your request. 
