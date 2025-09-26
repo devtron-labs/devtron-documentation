@@ -62,7 +62,7 @@ In case you are choosing an [isolated environment](../../global-configurations/c
 
 ### Deployment Strategy
 
-Devtron supports multiple deployment strategies depending on the [deployment chart type](../../creating-application/deployment-template.md#selecting-a-chart-type). 
+Devtron supports multiple deployment strategies depending on the [deployment chart type](../../creating-application/base-config/deployment-template.md#select-a-deployment-chart-type). 
 
 ![Figure 3: Strategies Supported by Chart Type](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/chart-and-strategy.jpg)
 
@@ -106,8 +106,11 @@ Refer the trigger types from [here](#deploy-to-environment).
 3. **ConfigMaps & Secrets**
 
 {% hint style="info" %}
+
 ### Prerequisites
-Make sure you have added [ConfigMaps](../config-maps.md) and [Secrets](../secrets.md) in App Configuration.
+
+Make sure you have added [ConfigMaps](../base-config/config-maps.md) and [Secrets](../base-config/secrets.md) in your application configuration.
+
 {% endhint %}
 
 If you want to use some configuration files and secrets in pre-deployment stages or post-deployment stages, then you can use the `ConfigMaps` & `Secrets` options. You will get them as a drop-down in the pre-deployment stage.
@@ -354,7 +357,7 @@ If you need to run any actions, e.g., closure of Jira ticket, load testing, or p
 
 Post-deployment stages are similar to Pre-Deployment stages. The difference is that pre-deployment executes before the deployment, while post-deployment occurs after.
 
-You can use [ConfigMap](../config-maps.md) and [Secrets](../secrets.md) in post deployments as well. The option to execute tasks in application environment is available too.
+You can use [ConfigMap](../base-config/config-maps.md) and [Secrets](../base-config/secrets.md) in post deployments as well. The option to execute tasks in application environment is available too.
 
 Refer [Pre/Post tasks](./pre-post-tasks.md) to configure tasks in `Post-deployment stage`.
 

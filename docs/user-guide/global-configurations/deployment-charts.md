@@ -105,7 +105,7 @@ If your code editor highlights a syntax error (property or EOF error) in the abo
 
 ### 3. Add app-values.yaml
 
-In the root directory of your chart, Devtron expects an `app-values.yaml` file. It uses this file to determine the values to be displayed on the [deployment template](../../reference/glossary.md#base-deployment-template) as shown below. 
+In the root directory of your chart, Devtron expects an `app-values.yaml` file. It uses this file to determine the values to be displayed on the [deployment template](../../reference/glossary.md#deployment-template) as shown below. 
 
 ![Figure 3: Chart Values](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/deployment-template.jpg)
 
@@ -232,7 +232,7 @@ To view the list of available deployment charts, go to  **Global Configurations*
 
 ## Using Deployment Chart in Application
 
-Once you successfully upload a deployment chart, you can start using it as a deployment template for your application. Refer [Deployment Template](../creating-application/deployment-template.md) to know more.
+Once you successfully upload a deployment chart, you can start using it as a deployment template for your application. Refer [Deployment Template](../creating-application/base-config/deployment-template.md) to know more.
 
 ![Figure 10: Using Deployment Charts](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/use-chart.gif)
 
@@ -252,7 +252,7 @@ Only super-admins can edit the GUI schema of deployment charts.
 
 {% hint style="info" %}
 ### Reference
-This section is an extension of [Customize GUI](../creating-application/deployment-template.md#customize-basic-gui) feature. Refer the document to know more about the significance of having a custom GUI schema for your deployment templates.
+This section is an extension of [Customize GUI](../creating-application/base-config/deployment-template.md#using-gui) feature. Refer the document to know more about the significance of having a custom GUI schema for your deployment templates.
 {% endhint %}
 
 You can edit the GUI schema of the following deployment charts:
@@ -287,4 +287,4 @@ In this example, we will edit the Deployment chart type provided by Devtron.
 
     ![Figure 15: Save Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/save-changes.jpg)
 
-Next, if you go to **App Configuration** → **Base Configurations** → **Deployment Template**, you will be able to see the deployment template fields (in GUI) as per your customized schema.
+Next, if you go to **Configurations** → **Base Configurations** → **Deployment Template**, you will be able to see the deployment template fields (in GUI) as per your customized schema.
