@@ -115,6 +115,9 @@ Suppose you update your deployment chart version (e.g., from `4.0.0` to `4.0.1`)
 | logLevel  | "info"             | *(Not specified)*            | *(Removed)*         |
 | timeout   | (Not specified)    | 30s                          | 30s (Added)         |
 
+<!-- Video to be included here
+{% embed url="https://www.youtube.com/" %}
+-->
 {% hint style="info" %}
 ### What if some keys are locked from editing?
 You cannot modify locked keys in an environment's deployment template unless you are a super-admin. Refer [Lock Deployment Configuration](../global-configurations/lock-deployment-config.md) to know more.
@@ -122,21 +125,9 @@ You cannot modify locked keys in an environment's deployment template unless you
 
 ### Override Deployment Template using GUI 
 
-Follow the below steps to override your deployment template using GUI: 
-
-1. Navigate to **Applications** and click on your preferred application. 
-
-2. Go to **Configurations** → **Base Configurations** → **Environment Overrides** and click on your preferred environment to override deployment template.
-
-3. Click on the **No Override** option and then click on **Create Override**. 
-
-4. Click on the **GUI** option. The available fields will be displayed on the right side of the page. 
-
-5. Select your preferred fields and enter the values to override.
-
-6. Select your preferred merge strategy from the **Merge Strategy** drop-down box. 
-
-7. Click on **Save Changes**.
+<!-- Video to be included here
+{% embed url="https://www.youtube.com/" %}
+-->
 
 {% hint style="info" %}
 
@@ -155,6 +146,10 @@ If you want to configure your ConfigMap and Secret at the application-level then
 The process to override both ConfigMaps and Secrets is similar to [Override Deployment Template](#override-deployment-template). Refer the tutorials below to know the process in YAML mode. In case you wish to use GUI mode, skip to [Overriding in GUI mode](#override-configmaps-and-secrets-using-gui).
 
 ### Patch Strategy
+
+<!-- Video to be included here
+{% embed url="https://www.youtube.com/" %}
+-->
 
 {% hint style="info" %}
 
@@ -190,24 +185,6 @@ This action will discard the current overrides and the base configuration file (
 
 Any changes made to the protected environment configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../global-configurations/approval-policy.md) is enforced.
 
-Follow the below steps to make changes to a protected environment: 
-
-1. Navigate to **Applications** and click on your preferred application. 
-
-2. Go to **Configurations** → **Base Configurations** → **Environment Overrides** and click on your preferred environment.
-
-3. Click on the **No Override** option and then click on **Create Override**.
-
-4. Select your preferred merge strategy from the **Merge Strategy** drop-down box. 
-
-5. Make changes to the key-value pairs in the **Patch data** section. 
-
-6. Click **Save Changes**. The **Save as draft** pop-up page will be displayed.
-
-    * **Save as draft** - Select this option if you want to continue making your changes later but save your changes as a draft for now.
-
-    * **Save & Propose changes** - Select this option if you want to save and propose your changes to the approvers. You can then select the approvers to get notified regarding the change from the **Select approvers to notify** drop-down box. 
-
-7. Enter your comments (reason for making the changes) in the **Comment** text box. 
-
-8. Click **Propose Changes**. The corresponding approver will be notified via email regarding your request. 
+<!-- Video to be included here + more info on dependency on approval policy
+{% embed url="https://www.youtube.com/" %}
+-->
