@@ -1,11 +1,6 @@
-# Cost Visibility
+# Overview
+
 ## Introduction
-
-In Devtron, Cost Visibility helps you understand your infrastructure spends. Instead of only using your cloud provider billing dashboards, you can see costs directly within Devtron, broken down by **Applications**, **Clusters**, **Environments**, **Projects**, **Infra Components**.
-
-It tracks spend on **CPU**, **Memory**, **Storage**, **GPU**, **network**, and highlights efficiency along with potential savings. You can view costs in multiple currencies, select daily, monthly, or custom ranges, and navigate from overall spend to specific cost breakdowns.
-
-## Overview
 
 The **Overview** page provides a summary of infrastructure costs across your Applications, Clusters, Environments, Projects, and Infra Components in Devtron. It highlights overall spend, resource-level distribution, and opportunities for optimization (Potential Savings).
 
@@ -118,40 +113,3 @@ Each category will show
 | **Estimated Savings**  | The estimated cost you could save in that category, based on the difference between provisioned and used resources, for the selected time range|
 
 Clicking on any item in this list takes you to its detailed Cost Breakdown page. Refer [Cost Breakdown]() to learn more.
-
-## Cost Breakdown
-
-The Cost Breakdown page helps you analyze costs within a selected category, **Clusters**, **Applications**, **Environments**, or **Projects**.
-
-For the chosen category type, it shows the following:
-
-| Field                       | Description                                                              |
-|:--------------------------- |:----------------------------------------------------------------------------|
-| **Total Cost**              | The actual spend for the selected category type (e.g., all clusters).       |
-| **Recommended Cost**        | The estimated cost calculated from actual resource usage instead of allocated capacity|
-| **Potential Savings**       | The percentage of your current spend that could be reduced|
-| **Monthly Savings**         | The estimated savings for one month based on the difference between allocated and used resources |
-| **Annual Savings**          | The projected savings over a year based on the same calculation|
-| **Top 10 Costly Resources** | A ranked list of 10 highest cost resources of the selected category|
-
-<!-- image -->
-
-You will also find a complete list of all the resources for the selected category at the bottom.
-Each row in the list shows the following for the specific resource of the selected category: 
-
-| Field              | Available in Categories     | Description                                                            |
-|:------------------------|:---------------------------------|:--------------------------------------------------------------------       |
-| **Provider**           | Clusters                        | Shows the cloud provider or infrastructure source for each cluster         |
-| **Type**               | Clusters, Environments          | Shows whether each cluster or environment is **Production** or **Non-Production** |
-| **Applications Count** | Environments, Projects          | Shows the number of applications linked to each environment or project |
-| **Environments**       | Applications                    | Shows the number of environments where each application is deployed |
-| **Memory Cost**        | All categories                  | Shows the cost of memory usage for each resource in the selected category |
-| **CPU Cost**           | All categories                  | Shows the cost of CPU usage for each resource in the selected category |
-| **Storage (PV) Cost**  | All categories                  | Shows the cost of persistent volume (storage) usage for each resource in the selected category |
-| **GPU Cost**           | All categories                  | Shows the cost of GPU usage for each resource in the selected category |
-| **Network Cost**       | All categories                  | Shows the cost of network usage for each resource in the selected category |
-| **Total Cost**         | All categories                  | Shows the total cost of each resource |
-| **Potential Savings**  | All categories                  | Shows the cost and percentage of your current spend that could be saved for each resource |
-
-<!-- image -->
-
