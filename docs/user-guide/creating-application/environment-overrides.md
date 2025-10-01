@@ -101,9 +101,7 @@ If you know the fields you wish to change, simply enter the changed key-value fi
 
 ### Using Replace Strategy 
 
-<!-- Video to be included here
-{% embed url="https://www.youtube.com/" %}
--->
+{% embed url="https://youtu.be/xF0Ar4rHqWo" %}
 
 Suppose you update your deployment chart version (e.g., from `4.0.0` to `4.0.1`). Although the new chart version contains new features and key-value pairs, if you prefer to keep a few configurations unchanged regardless of the new key-value pairs added in the new chart version, you can use the replace strategy.
 
@@ -126,9 +124,7 @@ You cannot modify locked keys in an environment's deployment template unless you
 
 ### Override Deployment Template using GUI 
 
-<!-- Video to be included here
-{% embed url="https://www.youtube.com/" %}
--->
+{% embed url="https://youtu.be/fkF29-H3plk" %}
 
 {% hint style="info" %}
 
@@ -148,9 +144,7 @@ The process to override both ConfigMaps and Secrets is similar to [Override Depl
 
 ### Patch Strategy
 
-<!-- Video to be included here
-{% embed url="https://www.youtube.com/" %}
--->
+{% embed url="https://youtu.be/drqF4N3w8IE" %}
 
 {% hint style="info" %}
 
@@ -186,6 +180,4 @@ This action will discard the current overrides and the base configuration file (
 
 Any changes made to the protected environment configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../global-configurations/approval-policy.md) is enforced.
 
-<!-- Video to be included here
-{% embed url="https://www.youtube.com/" %}
--->
+{% embed url="https://youtu.be/eseckdmpdls" %}
