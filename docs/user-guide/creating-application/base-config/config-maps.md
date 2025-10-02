@@ -161,6 +161,80 @@ You may delete a ConfigMap if not in use anymore. Once a ConfigMap is deleted, i
 
 ## Edit a Protected ConfigMap [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-Any changes made to the protected base configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../../../user-guide/global-configurations/approval-policy.md) is enforced.
+Any changes made to the protected base configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../../../user-guide/global-configurations/approval-policy.md) is enforced. When you want to edit a protected configuration, you can do it in the following ways:
+
+* [Normal Edit](#normal-edit) - Where changes to the protected configuration are made only after getting approval from the approver(s).
+
+* [Express Edit](#express-edit) - Where you bypass the approval process and directly make changes to the protected configuration. 
+
+### Normal Edit
+
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a Super-Admin, Manager, or an Admin can edit the configuration values. Refer to [User Permissions](../../global-configurations/authorization/user-access.md) for more information.
+
+{% endhint %}
 
 {% embed url="https://www.youtube.com/watch?v=gY9LKJSVS-g" %}
+
+Follow the below steps to edit a protected ConfigMap by abiding to the approval policy:
+
+1. Navigate to the **Applications** page and click on your preferred application. 
+
+2. Go to the **Configurations** → **Base Configurations**.
+
+3. Click on **ConfigMaps** and select the ConfigMap you'd like to edit.
+
+4. Modify the values either by using **GUI** or **YAML** editor. 
+
+5. Click **Save Changes**. The Base Configurations pop-up page will be displayed.
+
+    * **Save as draft** - Select this option if you want to continue making your changes later but save your changes as a draft for now.
+
+    * **Propose changes** - Select this option if you want to propose your changes to the approvers. You can then select the approvers to get notified regarding the change from the **Select approvers** to notify drop-down box.
+
+6. Enter your comments (reason for making the changes) in the **Comment** text box.
+
+7. Click **Propose Changes**. The corresponding approver will be notified via email regarding your request.
+
+### Express Edit
+
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a Super-Admin (when the [Super admins toggle](../../global-configurations/approval-policy.md#excluding-super-admins) is enabled in the Exceptions tab) or [specific users / user groups](../../global-configurations/approval-policy.md#excluding-specific-users--user-groups--api-tokens) who are added as exceptions in the Approval Policy can make express edits. Refer to [Approval Policy](../../global-configurations/approval-policy.md) for more information.
+
+{% endhint %}
+
+Express edits allow you to bypass the approval process and make direct edits to the configurations. Follow the below steps to make express edits:
+
+1. Navigate to the **Applications** page and click on your preferred application. 
+
+2. Go to the **Configurations** → **Base Configurations**.
+
+3. Click on **ConfigMaps** and select the ConfigMap you'd like to edit.
+
+4. Click on the **Edit** button.
+
+{% hint style="info" %}
+
+### Note
+
+The **Edit** button will only be displayed if: 
+
+* You are a Super-Admin and the Super admins toggle is enabled in the Approval Policy page
+
+* You are added as an exception in the Approval Policy page. 
+
+Refer to [Approval Policy](../../global-configurations/approval-policy.md) for more information.
+
+{% endhint %}
+
+5. Modify the values either by using **GUI** or **YAML** editor. 
+
+6. Click on **Publish Changes** to direcly publish your changes. 
+
+![Figure 9: Express Edit](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/base-config/express-edit-configmap.gif)
