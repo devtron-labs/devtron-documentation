@@ -101,6 +101,8 @@ If you know the fields you wish to change, simply enter the changed key-value fi
 
 ### Using Replace Strategy 
 
+{% embed url="https://youtu.be/xF0Ar4rHqWo" %}
+
 Suppose you update your deployment chart version (e.g., from `4.0.0` to `4.0.1`). Although the new chart version contains new features and key-value pairs, if you prefer to keep a few configurations unchanged regardless of the new key-value pairs added in the new chart version, you can use the replace strategy.
 
 * The entire configuration is replaced with your new environment-specific settings.
@@ -122,21 +124,7 @@ You cannot modify locked keys in an environment's deployment template unless you
 
 ### Override Deployment Template using GUI 
 
-Follow the below steps to override your deployment template using GUI: 
-
-1. Navigate to **Applications** and click on your preferred application. 
-
-2. Go to **Configurations** → **Base Configurations** → **Environment Overrides** and click on your preferred environment to override deployment template.
-
-3. Click on the **No Override** option and then click on **Create Override**. 
-
-4. Click on the **GUI** option. The available fields will be displayed on the right side of the page. 
-
-5. Select your preferred fields and enter the values to override.
-
-6. Select your preferred merge strategy from the **Merge Strategy** drop-down box. 
-
-7. Click on **Save Changes**.
+{% embed url="https://youtu.be/fkF29-H3plk" %}
 
 {% hint style="info" %}
 
@@ -155,6 +143,8 @@ If you want to configure your ConfigMap and Secret at the application-level then
 The process to override both ConfigMaps and Secrets is similar to [Override Deployment Template](#override-deployment-template). Refer the tutorials below to know the process in YAML mode. In case you wish to use GUI mode, skip to [Overriding in GUI mode](#override-configmaps-and-secrets-using-gui).
 
 ### Patch Strategy
+
+{% embed url="https://youtu.be/drqF4N3w8IE" %}
 
 {% hint style="info" %}
 
@@ -188,26 +178,80 @@ This action will discard the current overrides and the base configuration file (
 
 ## Protected Environment Configurations [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
-Any changes made to the protected environment configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../global-configurations/approval-policy.md) is enforced.
+Any changes made to the protected environment configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../global-configurations/approval-policy.md) is enforced. When you want to edit a protected configuration, you can do it in the following ways:
 
-Follow the below steps to make changes to a protected environment: 
+* [Normal Edit](#normal-edit) - Where changes to the protected configuration are made only after getting approval from the approver(s).
 
-1. Navigate to **Applications** and click on your preferred application. 
+* [Express Edit](#express-edit) - Where you bypass the approval process and directly make changes to the protected configuration. 
 
-2. Go to **Configurations** → **Base Configurations** → **Environment Overrides** and click on your preferred environment.
+### Normal Edit
 
-3. Click on the **No Override** option and then click on **Create Override**.
+{% hint style="warning" %}
 
-4. Select your preferred merge strategy from the **Merge Strategy** drop-down box. 
+### Who Can Perform This Action?
 
-5. Make changes to the key-value pairs in the **Patch data** section. 
+Only a Super-Admin, Manager, or an Admin can edit the configuration values. Refer to [User Permissions](../global-configurations/authorization/user-access.md) for more information.
 
-6. Click **Save Changes**. The **Save as draft** pop-up page will be displayed.
+{% endhint %}
+
+{% embed url="https://youtu.be/eseckdmpdls" %}
+
+Follow the below steps to edit a protected configuration:
+
+1. Navigate to the **Applications** page and click on your preferred application. 
+
+2. Go to the **Configurations** → **Base Configurations**.
+
+3. Click on your preferred configuration (e.g., **ConfigMaps**) and select the ConfigMap you'd like to edit.
+
+4. Modify the values either by using **GUI** or **YAML** editor. 
+
+5. Click **Save Changes**. The Base Configurations pop-up page will be displayed.
 
     * **Save as draft** - Select this option if you want to continue making your changes later but save your changes as a draft for now.
 
-    * **Save & Propose changes** - Select this option if you want to save and propose your changes to the approvers. You can then select the approvers to get notified regarding the change from the **Select approvers to notify** drop-down box. 
+    * **Propose changes** - Select this option if you want to propose your changes to the approvers. You can then select the approvers to get notified regarding the change from the **Select approvers** to notify drop-down box.
 
-7. Enter your comments (reason for making the changes) in the **Comment** text box. 
+6. Enter your comments (reason for making the changes) in the **Comment** text box.
 
-8. Click **Propose Changes**. The corresponding approver will be notified via email regarding your request. 
+7. Click **Propose Changes**. The corresponding approver will be notified via email regarding your request.
+
+### Express Edit
+
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a Super-Admin (when the [Super admins toggle](../global-configurations/approval-policy.md#excluding-super-admins) is enabled in the Exceptions tab) or [specific users / user groups](../global-configurations/approval-policy.md#excluding-specific-users--user-groups--api-tokens) who are added as exceptions in the Approval Policy can make express edits. Refer to [Approval Policy](../global-configurations/approval-policy.md) for more information.
+
+{% endhint %}
+
+Express edits allow you to bypass the approval process and make direct edits to the configurations. Follow the below steps to make express edits:
+
+1. Navigate to the **Applications** page and click on your preferred application. 
+
+2. Go to the **Configurations** → **Base Configurations**.
+
+3. Click on your preferred configuration (e.g., **ConfigMaps**) and select the ConfigMap you'd like to edit.
+
+4. Click on the **Edit** button.
+
+{% hint style="info" %}
+
+### Note
+
+The **Edit** button will only be displayed if: 
+
+* You are a Super-Admin and the Super admins toggle is enabled in the Approval Policy page
+
+* You are added as an exception in the Approval Policy page. 
+
+Refer to [Approval Policy](../global-configurations/approval-policy.md) for more information.
+
+{% endhint %}
+
+5. Modify the values either by using **GUI** or **YAML** editor. 
+
+6. Click on **Publish Changes** to direcly publish your changes. 
+
+![Figure 9: Express Edit](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/base-config/express-edit-env-override.gif)
