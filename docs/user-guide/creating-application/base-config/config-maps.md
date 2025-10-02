@@ -179,7 +179,7 @@ Only a Super-Admin, Manager, or an Admin can edit the configuration values. Refe
 
 {% embed url="https://www.youtube.com/watch?v=gY9LKJSVS-g" %}
 
-Follow the below steps to edit a protected ConfigMap by abiding to the approval policy:
+Follow the below steps to edit a protected ConfigMap:
 
 1. Navigate to the **Applications** page and click on your preferred application. 
 

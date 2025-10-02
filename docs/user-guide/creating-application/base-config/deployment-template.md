@@ -332,7 +332,13 @@ Any changes made to the deployment template will require approval if an approval
 
 ![Figure 13: Checking Protected Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/protected-dt.jpg)
 
-### Request Approval for Changes
+When you want to edit a protected configuration, you can do it in the following ways:
+
+* [Normal Edit](#normal-edit) - Where changes to the protected configuration are made only after getting approval from the approver(s).
+
+* [Express Edit](#express-edit) - Where you bypass the approval process and directly make changes to the protected configuration. 
+
+### Normal Edit
 
 Let's assume you are the application admin and your deployment template in **Base Configurations** is protected from edits.
 
@@ -378,6 +384,46 @@ Only one draft can exist at time and you cannot create multiple drafts. In the t
 
 ![Figure 18: Discarding the Draft](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/discard-draft.jpg)
 
+### Express Edit
+
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a Super-Admin (when the [Super admins toggle](../../global-configurations/approval-policy.md#excluding-super-admins) is enabled in the Exceptions tab) or [specific users / user groups](../../global-configurations/approval-policy.md#excluding-specific-users--user-groups--api-tokens) who are added as exceptions in the Approval Policy can make express edits. Refer to [Approval Policy](../../global-configurations/approval-policy.md) for more information.
+
+{% endhint %}
+
+Express edits allow you to bypass the approval process and make direct edits to the configurations. Follow the below steps to make express edits:
+
+1. Navigate to the **Applications** page and click on your preferred application. 
+
+2. Go to the **Configurations** → **Base Configurations**.
+
+3. Click on **Deployment Template**.
+
+4. Click on the **Edit** button.
+
+{% hint style="info" %}
+
+### Note
+
+The **Edit** button will only be displayed if: 
+
+* You are a Super-Admin and the Super admins toggle is enabled in the Approval Policy page
+
+* You are added as an exception in the Approval Policy page. 
+
+Refer to [Approval Policy](../../global-configurations/approval-policy.md) for more information.
+
+{% endhint %}
+
+5. Modify the values either by using **GUI** or **YAML** editor. 
+
+6. Click on **Publish Changes** to direcly publish your changes. 
+
+![Figure 19: Express Edit a Protected Deployment Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/base-config/express-edit-dt.gif)
+
 ### Grant Approval for Changes
 
 {% hint style="info" %}
@@ -390,7 +436,7 @@ Only a valid approver or a Super-Admin can approve the changes made to the deplo
 
 Go to the edited configuration file to review and approve the changes as shown below.
 
-![Figure 19: Approving the Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/approval-screen-v2.jpg)
+![Figure 20: Approving the Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/approval-screen-v2.jpg)
 
 {% hint style="info" %}
 
