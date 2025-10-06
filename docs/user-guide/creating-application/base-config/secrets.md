@@ -44,7 +44,7 @@ AWS Secret Manager, AWS System Manager and Hashi Corp Vault, for these cases `Na
 
 ## File Permission
 
-File permission will be provide at the configmap level not on the each key of the configmap. it will take 3 digit standard permission for the file.
+File permission will be provided at the ConfigMap level not on the each key of the ConfigMap. it will take 3 digit standard permission for the file.
 
 Click `Save Secret` to save the secret.
 
@@ -80,7 +80,7 @@ You can delete your secret. Click your secret and click the `delete sign` to del
 
 Any changes made to the protected base configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../../../user-guide/global-configurations/approval-policy.md) is enforced. When you want to edit a protected configuration, you can do it in the following ways:
 
-* [Normal Edit](#normal-edit) - Where changes to the protected configuration are made only after getting approval from the approver(s).
+* [Normal Edit](#normal-edit) - Where changes to the protected configuration can be proposed or pushed as a draft, but published only after getting approval from the approver(s).
 
 * [Express Edit](#express-edit) - Where you bypass the approval process and directly make changes to the protected configuration. 
 

@@ -334,7 +334,7 @@ Any changes made to the deployment template will require approval if an approval
 
 When you want to edit a protected configuration, you can do it in the following ways:
 
-* [Normal Edit](#normal-edit) - Where changes to the protected configuration are made only after getting approval from the approver(s).
+* [Normal Edit](#normal-edit) - Where changes to the protected configuration can be proposed or pushed as a draft, but published only after getting approval from the approver(s).
 
 * [Express Edit](#express-edit) - Where you bypass the approval process and directly make changes to the protected configuration. 
 
