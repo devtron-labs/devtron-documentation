@@ -390,7 +390,7 @@ Only one draft can exist at time and you cannot create multiple drafts. In the t
 
 ### Who Can Perform This Action?
 
-Only a Super-Admin (when the [Super admins toggle](../../global-configurations/approval-policy.md#excluding-super-admins) is enabled in the Exceptions tab) or [specific users / user groups](../../global-configurations/approval-policy.md#excluding-specific-users--user-groups--api-tokens) who are added as exceptions in the Approval Policy can make express edits. Refer to [Approval Policy](../../global-configurations/approval-policy.md) for more information.
+Only a Super-Admin (when the [Super admins toggle](../../global-configurations/approval-policy.md#excluding-super-admins) is enabled in the Exceptions tab) or [specific users / user groups](../../global-configurations/approval-policy.md#excluding-specific-users-user-groups-api-tokens) who are added as exceptions in the Approval Policy can make express edits. Refer to [Approval Policy](../../global-configurations/approval-policy.md) for more information.
 
 {% endhint %}
 
