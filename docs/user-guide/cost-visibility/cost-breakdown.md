@@ -10,6 +10,7 @@ At the top of the **Cost Breakdown** page, you can apply filters in the top-righ
 | **Currency**      | Displays all cost values in the currency of your choice.                    |
 | **Time Range**    | Defines the time range for data displayed |
 
+## Inspecting Different Categories
 
 For the chosen category type, it shows the following:
 
@@ -43,6 +44,7 @@ Each row in the list shows the following for the specific resource of the select
 
 <!-- image -->
 
+### Inspecting Specific Resource
 
 Clicking on any resource in the Cost Breakdown list opens its detailed cost breakdown view. Based on the category you will see the following
 
@@ -62,3 +64,46 @@ Clicking on any resource in the Cost Breakdown list opens its detailed cost brea
 |**Cost Breakdown by Deployment**|Applications|Shows the distribution of costs across deployments within the selected application <ul><li>Each bar represents a deployment, segmented by CPU, Memory, GPU, Storage, and Network costs </li></ul>|
 
 <!-- Graphs, GIFs, Images -->
+
+### Custom Views
+
+Custom Views allows you to define your own filtered view of cluster costs. Instead of looking at costs for the entire cluster, you can create a focused view based on propagated tags (for example, filter by team, environment, or application tag).
+
+This feature is available only under the Clusters category.
+
+**Note:** Custom Views are dependent on propagated tags (labels). If tags are not mentioned and propagated in the workloads, some resources may not appear in the view. Ensure that you have added and propagated tags for the workloads you want to include in the custom view.
+
+#### Creating a Custom View
+
+To create a custom view:
+
+1.	Go to **Cost Visibility** → **Cost Breakdown** → **Cluster**.
+
+2.	In the sidebar, click `+` icon next to **Custom Views**.
+
+3.	Enter a **Name** and an optional **Description** for your view.
+
+4.	Enter one or more label-based filters using **Key**, **Operator**, and **Value**.
+
+5.	Click Apply Changes.
+
+Once applied, a Custom View works just like any other category breakdown in Cost Visibility.
+
+### Filters  
+
+| **Field**    | **Description**                                                                 |
+|--------------|---------------------------------------------------------------------------------|
+| **Key**      | The label key applied to your Kubernetes resources (for example, `app`, `team`). |
+| **Operator** | Defines the comparison logic between the key and value.                         |
+| **Value**    | The label value to match against (for example, `logistics`, `prod`).            |
+
+### Operators  
+
+| **Operator** | **Meaning**              | **Example**                                |
+|--------------|--------------------------|--------------------------------------------|
+| `:`          | Equality                 | `app   :   frontend` → selects resources where `app=frontend`. |
+| `!:`         | Inequality               | `team  !:  dev` → excludes resources with `team=dev`. |
+| `~:`         | Contains                 | `name  ~:  api` → selects resources where label contains `api`. |
+| `!~`         | Not Contains             | `app  !~:  test` → excludes resources where label contains `test`. |
+| `<~`         | Contains Prefix          | `env  <~:  prod` → selects resources where label starts with `prod`. |
+| `!<~`        | Not Contains Prefix      | `env  !<~: staging` → excludes resources where label starts with `staging`. |
