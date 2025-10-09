@@ -7,7 +7,7 @@ Devtron deeply integrates with products across the lifecycle of microservices i.
 Devtron helps you to deploy, observe, manage & debug the existing Helm apps in all your clusters.
  
  
-{% embed url="https://www.youtube.com/watch?v=AG8HfTceHxw" caption="Introducing Devtron" %}
+<!-- {% embed url="https://www.youtube.com/watch?v=AG8HfTceHxw" caption="Introducing Devtron" %} -->
  
  
 ## Devtron's Key Features:
