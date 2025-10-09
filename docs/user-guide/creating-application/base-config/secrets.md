@@ -1,15 +1,18 @@
 # Secrets
 
+### Introduction 
+
 Secrets and configmaps both are used to store environment variables but there is one major difference between them: Configmap stores key-values in normal text format while secrets store them in base64 encrypted form. Devtron hides the data of secrets for the normal users and it is only visible to the users having edit permission.
 
 Secret objects let you store and manage sensitive information, such as passwords, authentication tokens, and ssh keys. Embedding this information in secrets is safer and more flexible than putting it verbatim in a Pod definition or in a container image.
 
+---
+
 ## Configure Secret
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg)
+![Figure 1: Configure a Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg)
 
 Click `Add Secret` to add a new secret.
-
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-2.jpg)
 
@@ -22,28 +25,36 @@ Click `Add Secret` to add a new secret.
 | `Use secrets as Data Volume` | Select this option if you want to configure a Data Volume that is accessible to Containers running in a pod. Ensure that you provide a Volume mount path for the same. |
 | `Key-Value` | Provide a key and the corresponding value of the provided key. |
 
+---
+
 ## Volume Mount Path
 
 Specify the volume mount folder path in `Volume Mount Path`, a path where the data volume needs to be mounted. This volume will be accessible to the containers running in a pod.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/secret-volume-mount-path.jpg)
+![Figure 2: Volume Mount Path](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/secret-volume-mount-path.jpg)
+
+---
 
 ## Sub Path
 For multiple files mount at the same location you need to check sub path `bool` field, it will use the file name (key) as sub path. 
 Sub Path feature is not applicable in case of external configmap except
 AWS Secret Manager, AWS System Manager and Hashi Corp Vault, for these cases `Name (Secret key)` as sub path will be picked up automatically. 
 
-## File Permission
-File permission will be provide at the configmap level not on the each key of the configmap. it will take 3 digit standard permission for the file.
+---
 
+## File Permission
+
+File permission will be provided at the ConfigMap level not on the each key of the ConfigMap. it will take 3 digit standard permission for the file.
 
 Click `Save Secret` to save the secret.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-4.jpg)
+![Figure 3: File Permission](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-4.jpg)
 
 You can see the Secret is added.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-5.gif)
+![Figure 4: Add a Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-5.gif)
+
+---
 
 ## Update Secrets
 
@@ -51,15 +62,99 @@ You can update your secrets anytime later, but you cannot change the name of you
 
 To update secrets, click the secret you wish to update.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-6.jpg)
+![Figure 5: Update a Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-6.jpg)
 
 Click `Update Secret` to update your secret.
+
+---
 
 ## Delete Secret
 
 You can delete your secret. Click your secret and click the `delete sign` to delete your secret.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-7.jpg)
+![Figure 6: Delete a Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-7.jpg)
+
+---
+
+## Edit a Protected Secret [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+
+Any changes made to the protected base configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../../../user-guide/global-configurations/approval-policy.md) is enforced. When you want to edit a protected configuration, you can do it in the following ways:
+
+* [Normal Edit](#normal-edit) - Where changes to the protected configuration can be proposed or pushed as a draft, but published only after getting approval from the approver(s).
+
+* [Express Edit](#express-edit) - Where you bypass the approval process and directly make changes to the protected configuration. 
+
+### Normal Edit
+
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a Super-Admin, Manager, or an Admin can edit the configuration values. Refer to [User Permissions](../../global-configurations/authorization/user-access.md) for more information.
+
+{% endhint %}
+
+Follow the below steps to edit a protected Secret:
+
+1. Navigate to the **Applications** page and click on your preferred application. 
+
+2. Go to the **Configurations** → **Base Configurations**.
+
+3. Click on **Secrets** and select the Secret you'd like to edit.
+
+4. Modify the values either by using **GUI** or **YAML** editor. 
+
+5. Click **Save Changes**. The Base Configurations pop-up page will be displayed.
+
+    * **Save as draft** - Select this option if you want to continue making your changes later but save your changes as a draft for now.
+
+    * **Propose changes** - Select this option if you want to propose your changes to the approvers. You can then select the approvers to get notified regarding the change from the **Select approvers** to notify drop-down box.
+
+6. Enter your comments (reason for making the changes) in the **Comment** text box.
+
+7. Click **Propose Changes**. The corresponding approver will be notified via email regarding your request.
+
+### Express Edit
+
+{% hint style="warning" %}
+
+### Who Can Perform This Action?
+
+Only a Super-Admin (when the [Super admins toggle](../../global-configurations/approval-policy.md#excluding-super-admins) is enabled in the Exceptions tab) or [specific users / user groups](../../global-configurations/approval-policy.md#excluding-specific-users--user-groups--api-tokens) who are added as exceptions in the Approval Policy can make express edits. Refer to [Approval Policy](../../global-configurations/approval-policy.md) for more information.
+
+{% endhint %}
+
+Express edits allow you to bypass the approval process and make direct edits to the configurations. Follow the below steps to make express edits:
+
+1. Navigate to the **Applications** page and click on your preferred application. 
+
+2. Go to the **Configurations** → **Base Configurations**.
+
+3. Click on **Secrets** and select the Secret you'd like to edit.
+
+4. Click on the **Edit** button.
+
+{% hint style="info" %}
+
+### Note
+
+The **Edit** button will only be displayed if: 
+
+* You are a Super-Admin and the Super admins toggle is enabled in the Approval Policy page
+
+* You are added as an exception in the Approval Policy page. 
+
+Refer to [Approval Policy](../../global-configurations/approval-policy.md) for more information.
+
+{% endhint %}
+
+5. Modify the values either by using **GUI** or **YAML** editor. 
+
+6. Click on **Publish Changes** to direcly publish your changes. 
+
+![Figure 7: Express Edit a Protected Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/base-config/express-edit-secret.gif)
+
+---
 
 ## Data Types
 
@@ -114,11 +209,11 @@ $ helm install my-release external-secrets/kubernetes-external-secrets --set sec
 
 To add secrets from AWS secret manager, navigate to `Secrets` of the application and follow the steps mentioned below :
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-8.jpg)
+![Figure 8: Create a Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-8.jpg)
 
 1. Click `Add Secret` to add a new secret.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret.jpg)
+![Figure 9: AWS Secrets Manager](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret.jpg)
 
 2. Select `AWS Secret Manager` from dropdown of `Data type`.
 
@@ -145,4 +240,4 @@ To add secrets in AWS secret manager, do the following steps :
 2. Click `Store a new secret`.
 3. Add and save your secret.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-10.jpg)
+![Figure 10: Add Secret in AWS Secret Manager](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-10.jpg)
