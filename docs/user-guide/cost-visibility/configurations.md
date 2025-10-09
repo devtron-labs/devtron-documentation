@@ -9,9 +9,6 @@ The Configurations page lets you manage configurations for Cost Visibility in De
 
 You can select your preferred currency as default. 
 
-<!-- GIF -->
-
-
 ## Enable Cost Tracking
 
 To enable cost visibility for a cluster, follow the below steps:
