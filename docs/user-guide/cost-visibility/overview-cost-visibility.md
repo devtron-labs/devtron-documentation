@@ -21,7 +21,7 @@ The **At a Glance** summarizes the total cost for the selected period and breaks
 | **GPU Cost**     | Shows the cost of GPU resources, their percentage contribution to the total cost, and the cost-trend graph for the selected period of time         |
 | **Network Cost** | Shows the cost of network usage, its percentage contribution to the total cost, and the cost-trend graph for the selected period of time           |
 
-<!-- image -->
+{% embed url="https://app.supademo.com/demo/cmg7svcus10om2nommllm1nu2" %}
 
 ## Potential Savings
  
@@ -34,7 +34,7 @@ The Potential Savings section estimates how much cost can be saved by comparing 
 | **Monthly Savings**    | The estimated savings for one month based on the difference between allocated and used resources |
 | **Annual Savings**     | The projected savings over a year based on the same calculation                                  |
 
-<!-- image -->
+{% embed url="https://app.supademo.com/demo/cmg7qkb510x8w2nomc6d29rir" %}
 
 ## Track Performance
 
@@ -45,6 +45,8 @@ The Track Performance section helps you understand costs in more detail by break
 The Cost Breakdown chart helps you see how costs are distributed across different infrastructure components for the selected time period. 
 
 Each bar represents one Application, Cluster, Environment, or Project, and the colored segments in the bar show the share of different resource types. This makes it easy to compare categories and see which resources are contributing most to their total cost.
+
+{% embed url="https://app.supademo.com/demo/cmgaj0aid3d8l2nomb611rpbl" %}
 
 | Resource Type         | Color Used in Chart  |
 |:--------------------- |:---------------------|
@@ -80,6 +82,8 @@ Each bar represents the total cost for a specific time period (week, month, quar
 
 Within the bar, each colored segment shows the contribution of the selected category (Applications, Clusters, Environments, or Infrastructure Resources). This makes it easier to inspect both the overall cost usage and the relative share of each category over the selected time range.
 
+{% embed url="https://app.supademo.com/demo/cmgg88zje6r362nom7ko7mz4t" %}
+
 #### Time Range  
 
 | Options    | Description |
@@ -112,4 +116,6 @@ Each category will show
 | **Potential Savings (%)** | The percentage of your current spend that could be saved, for the selected time range |
 | **Estimated Savings**  | The estimated cost you could save in that category, based on the difference between provisioned and used resources, for the selected time range|
 
-Clicking on any item in this list takes you to its detailed Cost Breakdown page. Refer [Cost Breakdown]() to learn more.
+Clicking on any item in this list takes you to its detailed Cost Breakdown page. Refer [Cost Breakdown](./cost-breakdown.md) to learn more.
+
+{% embed url="https://app.supademo.com/demo/cmgj316cr0x93krn9l7g4uo7a" %}

@@ -23,8 +23,6 @@ For the chosen category type, it shows the following:
 | **Annual Savings**          | The projected savings over a year based on the same calculation|
 | **Top 10 Costly Resources** | A ranked list of 10 highest cost resources of the selected category|
 
-<!-- image -->
-
 You will also find a complete list of all the resources for the selected category at the bottom.
 Each row in the list shows the following for the specific resource of the selected category: 
 
@@ -42,7 +40,7 @@ Each row in the list shows the following for the specific resource of the select
 | **Total Cost**         | All categories                  | Shows the total cost of each resource |
 | **Potential Savings**  | All categories                  | Shows the cost and percentage of your current spend that could be saved for each resource |
 
-<!-- image -->
+{% embed url="https://app.supademo.com/demo/cmgaokrt93iuk2nomat2gyz7c" %}
 
 ### Inspecting Specific Resource
 
@@ -63,7 +61,7 @@ Clicking on any resource in the Cost Breakdown list opens its detailed cost brea
 |**Cost Breakdown by Resource kind**|All categories|Shows the costs broken down by Kubernetes resource types (e.g., Pod, Deployment, StatefulSet, Job, DaemonSet, Rollout, Container). <ul><li>Each bar represents a resource kind, segmented by CPU, Memory, GPU, Storage, and Network costs </li></ul>|
 |**Cost Breakdown by Deployment**|Applications|Shows the distribution of costs across deployments within the selected application <ul><li>Each bar represents a deployment, segmented by CPU, Memory, GPU, Storage, and Network costs </li></ul>|
 
-<!-- Graphs, GIFs, Images -->
+{% embed url="https://app.supademo.com/demo/cmgga3snk6u0a2nomqwfntj11" %}
 
 ### Custom Views
 
