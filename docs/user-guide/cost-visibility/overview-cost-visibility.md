@@ -6,7 +6,7 @@ The **Overview** page provides a summary of infrastructure costs across your App
 
 At the top, you can choose your preferred currency time and time duration to set the context for your usage costs. This makes sure all costs on the **Overview** page are displayed in the correct currency and time range.
 
-<!-- image -->
+![Figure 1: Cost Visibility Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/cost-visibility/cost-visibility-overview.jpg)
 
 ## At a Glance
 
@@ -50,11 +50,11 @@ Each bar represents one Application, Cluster, Environment, or Project, and the c
 
 | Resource Type         | Color Used in Chart  |
 |:--------------------- |:---------------------|
-| **CPU Cost**          | Light Green          |
-| **Memory Cost**       | Blue                 |
-| **Storage (PV) Cost** | Violet               |
-| **GPU Cost**          | Dark Green           |
-| **Network Cost**      | Orange               |
+| **CPU Cost**          |     LimeGreen     |
+| **Memory Cost**       |        SkyBlue          |
+| **Storage (PV) Cost** |         AquaTeal       |
+| **GPU Cost**          |      Magenta      |
+| **Network Cost**      |         GoldenYellow       |
 
 #### Filters
 

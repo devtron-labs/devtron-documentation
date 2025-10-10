@@ -2,6 +2,8 @@
 
 The Cost Breakdown page helps you analyze costs within a selected category (**Clusters**, **Applications**, **Environments**, or **Projects**), for a specific time range.
 
+![Figure 1: Cost Breakdown Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/cost-visibility/cost-visibility-cost-breakdown.jpg)
+
 At the top of the **Cost Breakdown** page, you can apply filters in the top-right corner to adjust the view.
 
 | Filter           | Description                                                                 |
