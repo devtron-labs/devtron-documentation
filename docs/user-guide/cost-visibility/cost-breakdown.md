@@ -4,7 +4,16 @@ The Cost Breakdown page helps you analyze costs within a selected category (**Cl
 
 ![Figure 1: Cost Breakdown Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/cost-visibility/cost-visibility-cost-breakdown.jpg)
 
-At the top of the **Cost Breakdown** page, you can apply filters in the top-right corner to adjust the view.
+At the top of the **Cost Breakdown** page, you can apply filters in the top-right corner to adjust the view. Selecting the right filters first ensures that the cost data matches your analysis goals and sets the right context for decision-making.
+
+For example, you might want to analyze your most recent infrastructure spend across production clusters. In that case, you can set the Cluster Scope filter to `Production` and select a Time Range of Last 30 Days. This will give you a focused view of active workloads and recent spending trends, without including cost from other clusters.
+
+{% hint style="success" %}
+
+### Use Case
+Imagine your team is reviewing this month’s cloud spends and wants to focus only on production clusters. You open the Cost Breakdown page, set the **Cluster Scope** to `Production`, choose your preferred Currency, and adjust the Time Range to Last 30 Days. Instantly, the data updates to show just the relevant costs, providing you a clear picture of active environments and helps you spot any unusual spending patterns. With these quick filters, your team can focus on costs within the defined scope, ensuring the analysis stays relevant to your current objective.
+
+{% endhint %}
 
 | Filter           | Description                                                                 |
 |------------------|-----------------------------------------------------------------------------|
@@ -14,7 +23,16 @@ At the top of the **Cost Breakdown** page, you can apply filters in the top-righ
 
 ## Inspecting Different Categories
 
-For the chosen category type, it shows the following:
+For the chosen category type (**Clusters**, **Applications**, **Environments**, or **Projects**), it shows the following:
+
+For example, if you select the Cluster category, you can view the total cost across all clusters, the recommended cost based on actual usage, and the potential savings if resources were optimized. This gives you a quick, high-level view of how efficiently each cluster is utilizing its allocated resources.
+
+{% hint style="success" %}
+
+### Use Case
+Imagine your team is analyzing monthly infrastructure expenses for multiple clusters. You notice that the **Total Cost** for one cluster is significantly higher than the others. When you check the **Recommended Cost**, it’s much lower, showing that this cluster is over-provisioned. The Potential Savings metric confirms this, showing how much of your current spend could be reduced by aligning resource allocation with actual usage. With this insight, your team adjusts resource requests to improve overall cost efficiency without impacting performance. By the next billing cycle, costs come down, while the performance remains stable.
+
+{% endhint %}
 
 | Field                       | Description                                                              |
 |:--------------------------- |:----------------------------------------------------------------------------|
@@ -25,7 +43,19 @@ For the chosen category type, it shows the following:
 | **Annual Savings**          | The projected savings over a year based on the same calculation|
 | **Top 10 Costly Resources** | A ranked list of 10 highest cost resources of the selected category|
 
-You will also find a complete list of all the resources for the selected category at the bottom.
+You will also find a complete list of all the resources for the selected category at the bottom, helping you identify where most of your spending is concentrated.
+
+For example, if you’re viewing the Environment category, the list displays each environment along with its CPU, Memory, Storage, GPU, and Network costs. You can quickly compare environments and identify which ones have higher spend or greater potential savings.
+
+{% hint style="success" %}
+
+### Use Case
+Suppose, you’re reviewing costs within the **Environment** category. As you go through the list, you noticed, one environment's **Total Cost** is higher than others.
+You look across its row and notice that both **CPU Cost** and **Memory Cost** are also on the higher side. The Potential Savings column then shows a clear opportunity to optimize usage within that environment. With this focused view, you get a clearer understanding of where your resources are being used most and which environments might need attention, all from a single, organized view. You can then check detailed view for those environments to investigate further.
+
+{% endhint %}
+
+
 Each row in the list shows the following for the specific resource of the selected category: 
 
 | Field              | Available For Categories     | Description                                                            |
@@ -46,7 +76,18 @@ Each row in the list shows the following for the specific resource of the select
 
 ### Inspecting Specific Resource
 
-Clicking on any resource in the Cost Breakdown list opens its detailed cost breakdown view. Based on the category you will see the following
+Clicking on any resource in the Cost Breakdown list opens its detailed cost breakdown view. Based on the category you will see the following:
+
+For example, after identifying a high-cost Environment in the previous section, you can click on that environment to open its detailed breakdown. In the detailed breakdown view of the environment, you can see which Applications contribute most to its total cost, how resource types (like CPU, Memory, and Storage) are distributed.
+
+{% hint style=“success” %}
+
+### Use Case
+
+Continuing from the earlier scenario, you open the detailed cost breakdown for the environment that showed unusually high costs. In the **Top 10 Costly Applications** section, one application clearly dominates the cost chart. You then look at the **Cost Breakdown by Resource Kind** graph, where it becomes clear that most of this cost comes from Memory usage.
+Investigating further, you confirm that a recent update introduced higher memory requests for that application. This explains the cost spike you noticed earlier. With this insight, your team can review and right-size resource allocations to keep the environment’s cost under control while maintaining stable performance.
+
+{% endhint %}
 
 | Field           |Available For Categories | Description |
 |:-----------------|:-------------|:----|
@@ -68,6 +109,27 @@ Clicking on any resource in the Cost Breakdown list opens its detailed cost brea
 ### Custom Views
 
 Custom Views allows you to define your own filtered view of cluster costs. Instead of looking at costs for the entire cluster, you can create a focused view based on propagated tags (for example, filter by team, environment, or application tag).
+
+For example, if your production workloads are labeled with `environment=production`, you can create a Custom View to track cost of production workloads only.
+By creating a Custom View with: 
+
+**Key**: `environment`
+**Operator** : `:`
+**Value** : `production`
+
+This helps you quickly analyze how much your production workloads are costing without manually filtering every time. As long as your workloads have the right labels, Devtron automatically groups and updates the data in your Custom View, giving you a consistent and focused view of your use case.
+
+{% hint style=“success” %}
+
+### Use Case
+
+Imagine your organization runs workloads for multiple teams, frontend, backend, and logistics, all within the same cluster. Each team’s workloads have propagated tags (labels) (for example, workloads of logistic team have `team=logistics` propagated tag).
+
+Your team often needs to check the monthly cloud spend for the logistics workloads, instead of applying filters for workloads every time, you create a Custom View once using that label.
+
+Now, whenever you open Cost Visibility, you simply select the “Logistics Team View” from the sidebar to instantly see total cost, usage patterns, and potential savings specific to that team because the workloads are already labeled, the data stays accurate, and your analysis remains consistent, saving time and effort each time you review costs.
+
+{% endhint %}
 
 This feature is available only under the Clusters category.
 
