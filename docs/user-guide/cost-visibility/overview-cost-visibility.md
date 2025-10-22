@@ -25,6 +25,8 @@ It is **not available** for applications deployed through **Argo CD** or **Flux*
 
 The **At a Glance** summarizes the total cost for the selected period and breaks it down by resource type. Each card shows the cost, its share of the total, and a usage trend graph.
 
+{% embed url="https://app.supademo.com/demo/cmg7svcus10om2nommllm1nu2" %}
+
 | Card             | Description                                                                                      |
 |:---------------- |:------------------------------------------------------------------------------------------------ |
 | **Total Cost**   | Shows the overall infrastructure cost for the selected time period, and the cost-trend graph for the selected period of time |
@@ -39,11 +41,11 @@ The **At a Glance** summarizes the total cost for the selected period and breaks
 Network cost refers to the expenses associated with **data transfer**, including communication between **pods, nodes, and external services** within or across clusters. Refer to [AWS guide on network cost](https://aws.amazon.com/premiumsupport/knowledge-center/eks-cluster-networking-costs/) to learn more.
 {% endhint %}
 
-{% embed url="https://app.supademo.com/demo/cmg7svcus10om2nommllm1nu2" %}
-
 ## Potential Savings
  
 The **Potential Savings** section estimates how much cost can be saved by comparing the resources you have provisioned with the resources you have actually used. It also shows the percentage of current spend that could be saved.
+
+{% embed url="https://app.supademo.com/demo/cmg7qkb510x8w2nomc6d29rir" %}
 
 | Field                  | Description                                                                                      |
 |:---------------------- |:------------------------------------------------------------------------------------------------ |
@@ -51,7 +53,7 @@ The **Potential Savings** section estimates how much cost can be saved by compar
 | **Potential Savings**  | The amount which you could have saved, for the selected time period|
 | **Estimated cost reduction**  | The percentage of your current spend that could be saved, for the selected time period           |
 
-{% embed url="https://app.supademo.com/demo/cmg7qkb510x8w2nomc6d29rir" %}
+
 
 ## Track Performance
 
@@ -61,9 +63,9 @@ The **Track Performance** section helps you understand costs in more detail by b
 
 The **Cost Breakdown** Bar Chart helps you see how costs are distributed across different infrastructure components for the selected time period. 
 
-Each bar represents one [Application](../../reference/glossary.md#devtron-apps), [Cluster](../../reference/glossary.md#cluster), [Environment](../../reference/glossary.md#environment), or [Project](../global-configurations/projects.md), and the colored segments in the bar show the share of different resource types. This makes it easy to compare categories and see which resources are contributing most to their total cost.
-
 {% embed url="https://app.supademo.com/demo/cmgaj0aid3d8l2nomb611rpbl" %}
+
+Each bar represents one [Application](../../reference/glossary.md#devtron-apps), [Cluster](../../reference/glossary.md#cluster), [Environment](../../reference/glossary.md#environment), or [Project](../global-configurations/projects.md), and the colored segments in the bar show the share of different resource types. This makes it easy to compare categories and see which resources are contributing most to their total cost.
 
 #### Color Schema 
 
@@ -106,11 +108,11 @@ Each bar represents one [Application](../../reference/glossary.md#devtron-apps),
 
 The **Cost Trend** line chart helps you understand, how your total and individual resource usage costs change over time. It helps you analyze spending patterns and identify which resources contribute most to your overall cost.
 
+{% embed url="https://app.supademo.com/demo/cmgg88zje6r362nom7ko7mz4t" %}
+
 Each colored line represents a specific resource, CPU, Memory, Storage, Network, or GPU, while the Total line combines all costs. Hovering over any point on the graph displays the exact cost breakdown for that day.
 
 You can change the time range (for example, Last 7 Days, Last 30 Days, or Last 90 Days) to view trends for a specific period.
-
-{% embed url="https://app.supademo.com/demo/cmgg88zje6r362nom7ko7mz4t" %}
 
 #### Time Range  
 

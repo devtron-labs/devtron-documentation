@@ -17,14 +17,14 @@ It contains the following sections:
 
 The At a Glance section helps you quickly understand the overall state of your connected clusters and available resources. It helps you understand your current infrastructure capacity and connectivity status at a single glance.
 
+{% embed url="https://app.supademo.com/demo/cmh0e4sh81naf6nxtlvrh3kwy" %}
+
 | **Card** | **Description** |
 |:----------|:----------------|
 | **Reachable Clusters** | Shows the number of clusters that are currently reachable out of the total clusters connected to Devtron |
 | **Total CPU Capacity** | Displays the total CPU capacity across all reachable clusters, giving you an overview of your available compute power|
 | **Total Memory Capacity** | Displays the total memory capacity across all reachable clusters, helping you keep track of your memory resources |
 
-
-{% embed url="" %}
 
 {% hint style=“info” %}
 If some clusters don’t appear, they might be temporarily unreachable. You can verify their status under Cluster Configuration.
@@ -36,6 +36,8 @@ If some clusters don’t appear, they might be temporarily unreachable. You can 
 
 The **Cluster & Nodes** section helps you monitor the health and stability of your connected clusters and nodes. It gives you visibility into cluster connectivity, node errors, and scheduling readiness, allowing you to quickly spot and resolve any infrastructure level issues before they affect workloads.
 
+{% embed url="https://app.supademo.com/demo/cmh0eklkn1npo6nxta30w3fnb" %}
+
 | **Card** | **Description** |
 |:----------|:----------------|
 | **Cluster Health Status** | Displays the number of clusters which are healthy. A healthy cluster indicates active connectivity, while **Connection Failed** highlights clusters that are currently unreachable|
@@ -46,11 +48,11 @@ The **Cluster & Nodes** section helps you monitor the health and stability of yo
 If you notice connection failures or scheduling issues, verify your cluster connectivity and node configurations under **Cluster Management**.
 {% endhint %}
 
-{% embed url="" %}
-
 ### Cluster Counts
 
 The **Cluster Counts** section gives you visibility into how your clusters are distributed across different cloud providers and Kubernetes versions. It helps you identify where most of your clusters are hosted and which versions are actively running in your infrastructure.
+
+{% embed url="https://app.supademo.com/demo/cmh0f2cp21nuo6nxt0u0xu6ab" %}
 
 There are two views available:
 
@@ -63,12 +65,11 @@ There are two views available:
 You can sort the data **High to Low** or **Low to High** to quickly identify the most used cloud provider or the most common Kubernetes version in your setup.
 {% endhint %}
 
-{% embed url="" %}
-
 ### Cluster Capacity & Resource Allocation
 
-The **Cluster Capacity & Resource Allocation** section provides a detailed view of how CPU and Memory resources are distributed and utilized across all connected clusters.  
-It helps you assess infrastructure efficiency, monitor resource limits, and identify clusters that may be underutilized or overcommitted.
+The **Cluster Capacity & Resource Allocation** section provides a detailed view of how CPU and Memory resources are distributed and utilized across all connected clusters. It helps you assess infrastructure efficiency, monitor resource limits, and identify clusters that may be underutilized or over committed.
+
+{% embed url="https://app.supademo.com/demo/cmh1t50wh0e6rnitlu546ellj" %}
 
 | **Field** | **Description** |
 |:-----------|:----------------|
@@ -84,14 +85,14 @@ You can **sort** the data by:
 If a cluster shows zero utilization or capacity, it may be inactive or disconnected. Verify its status under **Cluster Configuration**.
 {% endhint %}
 
-{% embed url="" %}
-
 ---
 
 ## Node Counts
 
 The **Node Counts** section helps you visualize how nodes are distributed across clusters and autoscaling modes.  
 It provides a quick overview of your cluster node density and helps identify environments with higher or lower capacity.
+
+{% embed url="https://app.supademo.com/demo/cmh1te7ck0ei9nitl41zpx5mg" %}
 
 | **Tab** | **Description** |
 |:----------|:----------------|
@@ -106,15 +107,13 @@ If some clusters show **Not Detected** under autoscaler, it means Devtron could 
 You can verify autoscaling settings in your respective cloud console or cluster configuration.
 {% endhint %}
 
-{% embed url="" %}
-
 ### Cost Visibility
 
 The Cost Breakdown chart helps you see how costs are distributed across different infrastructure components for the selected time period. 
 
 Each bar represents one Application, Cluster, Environment, or Project, and the colored segments in the bar show the share of different resource types. This makes it easy to compare categories and see which resources are contributing most to their total cost.
 
-{% embed url="https://app.supademo.com/demo/cmgaj0aid3d8l2nomb611rpbl" %}
+{% embed url="https://app.supademo.com/demo/cmh1u1s3o0fbmnitleo58pcg3" %}
 
 | Resource Type         | Color Used in Chart  |
 |:--------------------- |:---------------------|
@@ -148,6 +147,8 @@ Each bar represents one Application, Cluster, Environment, or Project, and the c
 
 The Actions & Insights section highlights where you can achieve the highest cost savings. It shows the categories with the largest cost saving opportunities, based on the difference between allocated resources and your actual usage.
 
+{% embed url="https://app.supademo.com/demo/cmh1u9uss0fvjnitlk1tn4lv0" %}
+
 It also shows, which version of Kubernetes your cluster is running, and you can also check the compatibility of the cluster to upgrade to the latest Kubernetes version. You can click **Show All** to expand and view additional clusters that are not immediately visible in the list.
 
 Each item in the **Top saving opportunities** will show
@@ -169,6 +170,3 @@ Clicking on any item in this list takes you to its detailed Cost Breakdown page.
 3. A pop-up modal will appear, select the target version, and click scan cluster.
 
 4. A Page will open, with the summary of all the API-endpoints that are compatible for upgrading. You can also check **Deprecated Fields** (Against current API version), **Resources with no PDB**, **Resources with 0 Disruption PDB**
-
-
-{% embed url="" %}
