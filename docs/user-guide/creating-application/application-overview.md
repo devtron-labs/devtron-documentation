@@ -23,6 +23,8 @@ The **Application Overview** page contains the following sections:
 
 The **At a Glance** section displays the total count of Projects, Devtron Applications, Helm Applications, and Environments, giving you an instant view of your overall applications in Devtron.
 
+{% embed url="https://app.supademo.com/demo/cmgoybsk909t912sxbkjaixtr" %}
+
 | **Card**              | **Description** |
 |------------------------|----------------|
 | **Projects**           | Total number of projects in Devtron |
@@ -30,13 +32,13 @@ The **At a Glance** section displays the total count of Projects, Devtron Applic
 | **Helm Applications**  | Total number of Helm applications across all the clusters|
 | **Environments**       | Total number of Environments in Devtron across all the clusters|
 
-{% embed url="https://app.supademo.com/demo/cmgoybsk909t912sxbkjaixtr" %}
-
 ---
 
 ## Workflow Overview 
 
 The **Workflow Overview** section displays how your CI/CD workflows are functioning in Devtron. It displays important metrics such as the number of build and deployment pipelines, external image sources, and production pipelines. It also shows how many pipelines follow GitOps best practices and have image scanning enabled.
+
+{% embed url="https://app.supademo.com/demo/cmgvkilsc4rpcyzgyfz27ywut" %}
 
 | **Card** | **Description** |
 |-----------|-----------------|
@@ -47,11 +49,11 @@ The **Workflow Overview** section displays how your CI/CD workflows are function
 | **GitOps Compliance (Prod Pipelines)** | Shows how many production pipelines are configured using GitOps for configuration consistency|
 | **Production Pipelines** | Shows the total number of production pipelines defined within your Devtron|
 
-{% embed url="https://app.supademo.com/demo/cmgvkilsc4rpcyzgyfz27ywut" %}
-
 ### Build & Deployment Metrics
 
 The **Build & Deployment Metrics** section helps you assess how efficiently your teams deliver software using Devtron pipelines. It uses the industry standard DORA metrics to measure delivery performance and reliability across production deployment pipelines.
+
+{% embed url="https://app.supademo.com/demo/cmgvm5zcy4scyyzgykhpfbjwn" %}
 
 You can track four key metrics over a selected time range (for example, the last 30 days).
 
@@ -62,8 +64,6 @@ You can track four key metrics over a selected time range (for example, the last
 | **Change Failure Rate** | Indicates the percentage of deployments that result in a failure or rollback. It helps you measure release stability and identify where improvements can reduce disruptions|
 | **Mean Time to Recovery (MTTR)** | Measures how long it takes to recover from a failed deployment. It helps you assess how effectively your team can respond to and fix issues when they occur|
 | **Pipelines Count by Performance** | Categorizes pipelines into **Elite**, **High**, **Medium**, and **Low** performance based on DORA metrics. Helps identify which pipelines are performing well and which may need improvement |
-
-{% embed url="https://app.supademo.com/demo/cmgvm5zcy4scyyzgykhpfbjwn" %}
 
 Each DORA metric in Devtron uses color-coded categories to represent pipeline performance levels. These colors help you quickly interpret how your production deployment pipelines are performing, from **Elite** (best-performing) to **Low** (needs attention).  
 
@@ -102,6 +102,8 @@ Suppose your DevOps team is reviewing delivery performance for the last month. Y
 
 The **Triggers & Build Time** section provides a detailed view of your build and deployment activities in Devtron. It helps you understand how frequently builds and deployments are triggered, how long they take, and how successful they are over time.
 
+{% embed url="https://app.supademo.com/demo/cmgvmh7mo4stnyzgyvk9dr2g7" %}
+
 At the top, you will see three key indicators:
 
 | **Field** | **Description** |
@@ -120,8 +122,6 @@ Below each indicator, you will also find a corresponding graph that visualizes i
 | **This Month**  | Aggregates data for the ongoing month |
 | **Last Month**  | Shows activity from the previous month to help you analyze changes month-over-month|
 | **This Quarter**| Groups workflow data by the current quarter (**Jan-March**, **April-June**, **July-September**, or **October-December**) |
-
-{% embed url="https://app.supademo.com/demo/cmgvmh7mo4stnyzgyvk9dr2g7" %}
 
 ### Build Triggers Graph  
 
