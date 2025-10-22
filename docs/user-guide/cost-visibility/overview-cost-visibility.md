@@ -8,6 +8,19 @@ At the top, you can choose your preferred currency time and time duration to set
 
 ![Figure 1: Cost Visibility Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/cost-visibility/cost-visibility-overview.jpg)
 
+Cost Overview has the following sections:
+
+1. [At a Glance](#at-a-glance)
+2. [Potential Savings](#potential-savings)
+3. [Track Performance](#track-performance)
+4. [Actions and Insights](#actions-and-insights)
+
+{% hint style="info" %}
+### Note
+Cost Visibility is currently supported **only for Devtron and Helm applications**.  
+It is **not available** for applications deployed through **Argo CD** or **Flux**.
+{% endhint %}
+
 ## At a Glance
 
 The **At a Glance** summarizes the total cost for the selected period and breaks it down by resource type. Each card shows the cost, its share of the total, and a usage trend graph.
@@ -21,32 +34,38 @@ The **At a Glance** summarizes the total cost for the selected period and breaks
 | **GPU Cost**     | Shows the cost of GPU resources, their percentage contribution to the total cost, and the cost-trend graph for the selected period of time         |
 | **Network Cost** | Shows the cost of network usage, its percentage contribution to the total cost, and the cost-trend graph for the selected period of time           |
 
+{% hint style="success" %}
+### Tip 
+Network cost refers to the expenses associated with **data transfer**, including communication between **pods, nodes, and external services** within or across clusters. Refer to [AWS guide on network cost](https://aws.amazon.com/premiumsupport/knowledge-center/eks-cluster-networking-costs/) to learn more.
+{% endhint %}
+
 {% embed url="https://app.supademo.com/demo/cmg7svcus10om2nommllm1nu2" %}
 
 ## Potential Savings
  
-The Potential Savings section estimates how much cost can be saved by comparing the resources you have provisioned with the resources you have actually used. It also shows the percentage of current spend that could be saved.
+The **Potential Savings** section estimates how much cost can be saved by comparing the resources you have provisioned with the resources you have actually used. It also shows the percentage of current spend that could be saved.
 
 | Field                  | Description                                                                                      |
 |:---------------------- |:------------------------------------------------------------------------------------------------ |
 | **Recommended Cost**   | The estimated cost calculated from actual resource usage instead of allocated capacity           |
-| **Potential Savings**  | The percentage of your current spend that could be saved, for the selected time period           |
-| **Monthly Savings**    | The estimated savings for one month based on the difference between allocated and used resources |
-| **Annual Savings**     | The projected savings over a year based on the same calculation                                  |
+| **Potential Savings**  | The amount which you could have saved, for the selected time period|
+| **Estimated cost reduction**  | The percentage of your current spend that could be saved, for the selected time period           |
 
 {% embed url="https://app.supademo.com/demo/cmg7qkb510x8w2nomc6d29rir" %}
 
 ## Track Performance
 
-The Track Performance section helps you understand costs in more detail by breaking them down across different views and time ranges. It includes two charts, **Cost Breakdown** and **Cost Trend**.
+The **Track Performance** section helps you understand costs in more detail by breaking them down across different views and time ranges. It includes two charts, **Cost Breakdown** and **Cost Trend**.
 
-### Cost Breakdown Graph
+### Cost Breakdown Bar Chart
 
-The Cost Breakdown chart helps you see how costs are distributed across different infrastructure components for the selected time period. 
+The **Cost Breakdown** Bar Chart helps you see how costs are distributed across different infrastructure components for the selected time period. 
 
-Each bar represents one Application, Cluster, Environment, or Project, and the colored segments in the bar show the share of different resource types. This makes it easy to compare categories and see which resources are contributing most to their total cost.
+Each bar represents one [Application](../../reference/glossary.md#devtron-apps), [Cluster](../../reference/glossary.md#cluster), [Environment](../../reference/glossary.md#environment), or [Project](../global-configurations/projects.md), and the colored segments in the bar show the share of different resource types. This makes it easy to compare categories and see which resources are contributing most to their total cost.
 
 {% embed url="https://app.supademo.com/demo/cmgaj0aid3d8l2nomb611rpbl" %}
+
+#### Color Schema 
 
 | Resource Type         | Color Used in Chart  |
 |:--------------------- |:---------------------|
@@ -60,7 +79,7 @@ Each bar represents one Application, Cluster, Environment, or Project, and the c
 
 | Filters | What It Shows |
 |:-----------------|:--------------|
-| **Application**  | Each bar represents an application, segmented by CPU, Memory, Storage (PV), GPU, and Network costs |
+| **Application**  | Each bar represents an application (Devtron App or Helm App), segmented by CPU, Memory, Storage (PV), GPU, and Network costs |
 | **Cluster**      | Each bar represents a cluster, segmented by CPU, Memory, Storage (PV), GPU, and Network costs |
 | **Environment**  | Each bar represents an environment, segmented by CPU, Memory, Storage (PV), GPU, and Network costs |
 | **Project**      | Each bar represents a project, segmented by CPU, Memory, Storage (PV), GPU, and Network costs |
@@ -74,13 +93,22 @@ Each bar represents one Application, Cluster, Environment, or Project, and the c
 | **A to Z**           | Sorts items alphabetically |
 | **Z to A**           | Sorts items in reverse alphabetical order |
 
-### Cost Trend Graph
+#### Time Range Filters
 
-The Cost Trend chart helps you understand, how your resource usage costs change over time, broken down by the selected category, Applications, Clusters, Environments, or Infrastructure Resources.
+| Options    | Description |
+|:-----------|:--------------|
+| **Last 24 hours**   | Shows cost for the last 24 hours |
+| **Last 7 days**  | Shows cost for last 7 days |
+| **Last 30 days**| Shows cost for the last 30 days | 
+| **last 90 days**   | Shows cost for the last 90 days |
 
-Each bar represents the total cost for a specific time period (week, month, quarter, or year). 
+### Cost Trend Line Chart
 
-Within the bar, each colored segment shows the contribution of the selected category (Applications, Clusters, Environments, or Infrastructure Resources). This makes it easier to inspect both the overall cost usage and the relative share of each category over the selected time range.
+The **Cost Trend** line chart helps you understand, how your total and individual resource usage costs change over time. It helps you analyze spending patterns and identify which resources contribute most to your overall cost.
+
+Each colored line represents a specific resource, CPU, Memory, Storage, Network, or GPU, while the Total line combines all costs. Hovering over any point on the graph displays the exact cost breakdown for that day.
+
+You can change the time range (for example, Last 7 Days, Last 30 Days, or Last 90 Days) to view trends for a specific period.
 
 {% embed url="https://app.supademo.com/demo/cmgg88zje6r362nom7ko7mz4t" %}
 
@@ -88,27 +116,68 @@ Within the bar, each colored segment shows the contribution of the selected cate
 
 | Options    | Description |
 |:-----------|:--------------|
-| **Week**   | Breaks down costs for each week |
-| **Month**  | Aggregates costs by month |
-| **Quarter**| Groups costs into calendar quarters (Q1, Q2, etc.) | 
-| **Year**   | Shows yearly cost trends, useful for long-term analysis |
+| **Last 24 hours**   | Shows cost for the last 24 hours |
+| **Last 7 days**  | Shows cost for last 7 days |
+| **Last 30 days**| Shows cost for the last 30 days | 
+| **last 90 days**   | Shows cost for the last 90 days |
 
-<!-- need to confirm the quarter type -->
+#### Color Schema 
 
-#### Stack By  
+| Resource Type         | Color Used in Chart  |
+|:--------------------- |:---------------------|
+| **CPU Cost**          |     LimeGreen     |
+| **Memory Cost**       |        SkyBlue          |
+| **Storage (PV) Cost** |         AquaTeal       |
+| **GPU Cost**          |      Magenta      |
+| **Network Cost**      |         GoldenYellow       |
 
-| Options                | Description |
-|:----------------------|:------------------------------|
-| **Applications**      | Cost share of each application in the selected time range |
-| **Clusters**          | Cost share of each cluster in the selected time range |
-| **Environments**      | Cost share of each environment (e.g., dev, staging, prod) |
-| **Infrastructure Resources** | Cost share of CPU, Memory, Storage (PV), GPU, and Network, in the selected time range |
+### Most Cost Efficient 
+
+The Most Cost Efficient section helps you identify which resources are utilizing costs most effectively across different scopes, such as Cluster, Application, Environment, or Project.
+
+Each row in the list displays
+
+| **Field** | **Description** |
+|------------|-----------------|
+| **Name** | The name of the selected category (for example, a project, application, cluster, or environment)|
+| **Total Cost** | The total cost incurred by that category within the selected time range |
+| **Cost Efficiency (%)** | Indicates how efficiently the resource utilizes its allocated cost compared to others. Higher values represent better cost efficiency |
+
+You can use the dropdown menus to customize your view:
+
+| **Filter** | **Description** |
+|-------------|-----------------|
+| **Scope Selector** | Lets you choose whether to view cost efficiency by **Cluster**, **Application**, **Environment**, or **Project**. |
+| **Time Range** | Allows you to select the time range, **Last 24 Hours**, **Last 7 Days**, **Last 30 Days**, or **Last 90 Days**. |
+
+
+### Most Expensive
+
+The Most Expensive section highlights the clusters, applications, environments, or projects that contribute the highest costs over a selected time range. This helps you quickly identify where your infrastructure expenses are concentrated and which components may require optimization.
+
+Each row in the list displays:
+
+| **Field** | **Description** |
+|------------|-----------------|
+| **Name** | The name of the selected category, such as a **Cluster**, **Application**, **Environment**, or **Project** |
+| **Cost Type** | The selected cost type, such as **CPU**, **Memory**, **Storage**, **GPU**, **Network**, or **Total Cost** |
+| **Total Cost** | The total cost incurred by that category for the chosen cost type within the specified time period |
+
+You can customize the view using the following filters:
+
+| **Filter** | **Description** |
+|-------------|-----------------|
+| **Scope Selector** | Lets you choose for which category (**Cluster**, **Application**, **Environment**, or **Project**), you want to view the most expensive resources |
+| **Time Range** | Allows you to choose the time period for cost evaluation,  **Last 24 Hours**, **Last 7 Days**, **Last 30 Days**, or **Last 90 Days**. |
+| **Cost Type** | Enables you to filter costs by specific categories such as **CPU Cost**, **Memory Cost**, **Storage Cost**, **GPU Cost**, **Network Cost**, or **Total Cost**. |
 
 ## Actions and Insights
 
 The Actions & Insights section highlights where you can achieve the highest cost savings. It shows the categories with the largest cost saving opportunities, based on the difference between allocated resources and your actual usage.
 
-Each category will show
+It also shows the cost visibility status, which displays the number of clusters where cost visibility is enabled, failed, in progress, or not enabled. This helps you understand for which clusters cost data is currently being tracked and if you want you can enable/disable cost tracking for the cluster by clicking on **Go to configurations** button. Refer [configurations](./configurations.md) to learn more.
+
+Each category in the **Top saving opportunities** will show
 
 | Field                  | Description |
 |:-----------------------|:------------|

@@ -1,19 +1,23 @@
 # Configurations
 
-The Configurations page lets you manage configurations for Cost Visibility in Devtron. You can:
+The **Configurations** page lets you manage configurations for Cost Visibility in Devtron. You can:
 
    * Set the default currency for all cost-related data.
    * Enable or disable cost tracking for your connected clusters.
+
+---
 
 ## Currency (Default)
 
 You can select your preferred currency as default. 
 
+---
+
 ## Enable Cost Tracking
 
 To enable cost visibility for a cluster, follow the below steps:
 
-1. Choose your preferred cluster, and click on **Off/Enabled**, an **Edit Cluster** modal window will open.
+1. Choose your preferred cluster, and click on **Off/Enabled**. An **Edit Cluster** modal window will open.
 
 2. Enable the toggle next to **Enable cost tracking**.
 
@@ -75,7 +79,7 @@ This creates a role called `OpenCostRole` with just enough access to read pricin
 
 ### Step 2: Create a Service Principal
 
-1. Run the command below, again replacing YOUR_SUBSCRIPTION_ID with your subscription ID:
+1. Run the command below, again replacing `YOUR_SUBSCRIPTION_ID` with your subscription ID:
 
 ```bash
 az ad sp create-for-rbac \
@@ -210,7 +214,7 @@ Now go back to the **Edit cluster** modal window, and fill the following fields:
 
 5. Enter Prometheus endpoint of your cluster. Refer [Fetching Prometheus Endpoint](#fetching-prometheus-endpoint) to learn more.
 
-6. Click save.
+6. Click **Save**.
 
 ### Fetching Prometheus Endpoint
 

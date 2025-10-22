@@ -1,14 +1,27 @@
-# Introduction
+# Application Overview
 
-The Application Overview page in Devtron gives you a complete view of your Devtron Applications. It includes information about your projects, applications, environments, and pipelines, all in a single view.
+## Introduction
 
-It helps you understand how your applications are organized, how your workflows are performing, and where you can improve visibility and control by giving you all the information in a single pane of view.
+The **Application Overview** page in Devtron gives you a complete view of your Devtron Applications. It includes information about your projects, applications, environments, and pipelines, all in a single view.
+
+It helps you understand how your applications are organized, how your workflows are performing, thus, giving you better visibility and control in a single pane of view.
 
 ![Figure 1: Application Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/application-overview/application-overview.jpg)
 
+The **Application Overview** page contains the following sections:
+
+1. [At a Glance](#at-a-glance)
+2. [Workflow Overview](#workflow-overview)
+3. [Triggers & Build Time](#triggers--build-time)
+4. [Most & Least Triggered Pipelines](#most--least-triggered-pipelines)
+5. [Cost Visibility](#cost-visibility)
+6. [Best Practices](#best-practices)
+
+---
+
 ## At a Glance
 
-The At a Glance section displays the total count of Projects, Devtron Applications, Helm Applications, and Environments, giving you an instant view of your overall applications in Devtron.
+The **At a Glance** section displays the total count of Projects, Devtron Applications, Helm Applications, and Environments, giving you an instant view of your overall applications in Devtron.
 
 | **Card**              | **Description** |
 |------------------------|----------------|
@@ -19,9 +32,11 @@ The At a Glance section displays the total count of Projects, Devtron Applicatio
 
 {% embed url="https://app.supademo.com/demo/cmgoybsk909t912sxbkjaixtr" %}
 
+---
+
 ## Workflow Overview 
 
-The Workflow Overview section displays how your CI/CD workflows are functioning in Devtron. It displays important metrics such as the number of build and deployment pipelines, external image sources, and production pipelines. It also shows how many pipelines follow GitOps best practices and have image scanning enabled.
+The **Workflow Overview** section displays how your CI/CD workflows are functioning in Devtron. It displays important metrics such as the number of build and deployment pipelines, external image sources, and production pipelines. It also shows how many pipelines follow GitOps best practices and have image scanning enabled.
 
 | **Card** | **Description** |
 |-----------|-----------------|
@@ -36,7 +51,7 @@ The Workflow Overview section displays how your CI/CD workflows are functioning 
 
 ### Build & Deployment Metrics
 
-The Build & Deployment Metrics section helps you assess how efficiently your teams deliver software using Devtron pipelines. It uses the industry standard DORA metrics to measure delivery performance and reliability across production deployment pipelines.
+The **Build & Deployment Metrics** section helps you assess how efficiently your teams deliver software using Devtron pipelines. It uses the industry standard DORA metrics to measure delivery performance and reliability across production deployment pipelines.
 
 You can track four key metrics over a selected time range (for example, the last 30 days).
 
@@ -81,9 +96,11 @@ Suppose your DevOps team is reviewing delivery performance for the last month. Y
 
 {% endhint %}
 
+--- 
+
 ## Triggers & Build Time
 
-The Triggers & Build Time section provides a detailed view of your build and deployment activities in Devtron. It helps you understand how frequently builds and deployments are triggered, how long they take, and how successful they are over time.
+The **Triggers & Build Time** section provides a detailed view of your build and deployment activities in Devtron. It helps you understand how frequently builds and deployments are triggered, how long they take, and how successful they are over time.
 
 At the top, you will see three key indicators:
 
@@ -102,7 +119,7 @@ Below each indicator, you will also find a corresponding graph that visualizes i
 | **Last Week**   | Displays data from the previous week for comparison |
 | **This Month**  | Aggregates data for the ongoing month |
 | **Last Month**  | Shows activity from the previous month to help you analyze changes month-over-month|
-| **This Quarter**| Groups workflow data into the current quarter (Q1, Q2, Q3, or Q4) |
+| **This Quarter**| Groups workflow data by the current quarter (**Jan-March**, **April-June**, **July-September**, or **October-December**) |
 
 {% embed url="https://app.supademo.com/demo/cmgvmh7mo4stnyzgyvk9dr2g7" %}
 
@@ -144,6 +161,8 @@ You open the **Triggers & Build Time** section and notice that build triggers sp
 With these insights, your team can connect the dots between build failures, longer build durations, and delayed deployments, helping you take timely corrective action to keep releases smooth and predictable.  
 {% endhint %}
 
+---
+
 ## Most & Least Triggered Pipelines
 
 This section shows the build and deployment pipelines that were triggered the most and the least within the selected time range.
@@ -165,9 +184,16 @@ The section provides two tabs, **Build Pipelines** and **Deployment Pipelines**,
 | **Time Range** | Allows you to choose a time range such as **Today**, **This Week**, **This Month**, **Last Month**, or **This Quarter** to analyze pipeline activity during that period. |
 | **Sorting Order** | Lets you sort the list **High to Low** or **Low to High** based on trigger count, helping you focus on the busiest or least used pipelines. |
 
+---
+
 ## Cost Visibility
 
-The Cost Visibility section provides a comparison of costs across your applications and build pipelines within Devtron.
+{% hint style="info" %}
+This section provides a quick overview of cost insights within the **Application Overview** dashboard.  
+For a more detailed breakdown of cost and usage across clusters, see the full [Cost Visibility](../cost-visibility/README.md)
+{% endhint %}
+
+The **Cost Visibility** section provides a comparison of costs across your applications and build pipelines within Devtron.
 
 ![Figure 2: Cost Visibility](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/application-overview/application-overview-cost-visibility.jpg)
 
@@ -177,18 +203,20 @@ It shows:
 
  * **Top 10 Costly Build Pipelines**: It shows the list of build pipelines that have the highest cost during image builds.
 
-You can use the time range filter (Last 24 Hours, Last 7 Days, Last 30 Days, or Last 90 Days) to select the preferred time range.
+You can use the time range filter (Last 24 Hours, Last 7 Days, Last 30 Days, or Last 90 Days) to select the preferred time range. 
 
 {% hint style="warning" %}
 
 ### Note
 If a cluster does not have cost tracking enabled, its data will not appear in this section.  
-Enable the **Cost Visibility** module for those clusters to view accurate cost insights.
+Enable the **Cost Visibility** module for those clusters to view accurate cost insights. Refer [Cost Visibility Configurations](../cost-visibility/configurations.md) to learn more.
 {% endhint %}
+
+--- 
 
 ## Best Practices
 
-The Best Practices section helps shows you the percentage of production pipelines for which you have enabled approval policies. It gives you a quick view of how many pipelines have checks in place before important configuration changes or deployments go live.
+The **Best Practices** section helps shows you the percentage of production pipelines for which you have enabled approval policies. It gives you a quick view of how many pipelines have checks in place before important configuration changes or deployments go live.
 
 ![Figure 3: Best Practices](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/application-overview/application-overview-best-practices.jpg)
 

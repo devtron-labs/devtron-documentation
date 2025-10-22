@@ -1,10 +1,10 @@
 # Cost Breakdown
 
-The Cost Breakdown page helps you analyze costs within a selected category (**Clusters**, **Applications**, **Environments**, or **Projects**), for a specific time range.
+While the **Overview** section gives you a quick summary of overall spending, the **Cost Breakdown** page lets you analyze deeper into where those costs come from. It helps you analyze costs within a selected category (**Clusters**, **Applications**, **Environments**, or **Projects**), for a specific time range.
 
 ![Figure 1: Cost Breakdown Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/cost-visibility/cost-visibility-cost-breakdown.jpg)
 
-At the top of the **Cost Breakdown** page, you can apply filters in the top-right corner to adjust the view. Selecting the right filters first ensures that the cost data matches your analysis goals and sets the right context for decision-making.
+At the top of the **Cost Breakdown** page, you can apply filters in the top-right corner to adjust the view. Selecting the right filters helps you to focus on the most relevant cost information for your preferred analysis.
 
 For example, you might want to analyze your most recent infrastructure spend across production clusters. In that case, you can set the Cluster Scope filter to `Production` and select a Time Range of Last 30 Days. This will give you a focused view of active workloads and recent spending trends, without including cost from other clusters.
 
@@ -108,16 +108,16 @@ Investigating further, you confirm that a recent update introduced higher memory
 
 ### Custom Views
 
-Custom Views allows you to define your own filtered view of cluster costs. Instead of looking at costs for the entire cluster, you can create a focused view based on propagated tags (for example, filter by team, environment, or application tag).
+**Custom Views** allows you to define your own filtered view of cluster costs. Instead of looking at costs for the entire cluster, you can create a focused view based on propagated tags (for example, filter by team, environment, or application tag).
 
-For example, if your production workloads are labeled with `environment=production`, you can create a Custom View to track cost of production workloads only.
-By creating a Custom View with: 
+For example, if your production workloads are labeled with `environment=production`, you can create a custom view to track cost of production workloads only.
+By creating a custom view with: 
 
 **Key**: `environment`
 **Operator** : `:`
 **Value** : `production`
 
-This helps you quickly analyze how much your production workloads are costing without manually filtering every time. As long as your workloads have the right labels, Devtron automatically groups and updates the data in your Custom View, giving you a consistent and focused view of your use case.
+This helps you quickly analyze how much your production workloads are costing without manually filtering every time. As long as your workloads have the right labels, Devtron automatically groups and updates the data in your custom view, giving you a consistent and focused view of your use case.
 
 {% hint style=“success” %}
 
@@ -125,7 +125,7 @@ This helps you quickly analyze how much your production workloads are costing wi
 
 Imagine your organization runs workloads for multiple teams, frontend, backend, and logistics, all within the same cluster. Each team’s workloads have propagated tags (labels) (for example, workloads of logistic team have `team=logistics` propagated tag).
 
-Your team often needs to check the monthly cloud spend for the logistics workloads, instead of applying filters for workloads every time, you create a Custom View once using that label.
+Your team often needs to check the monthly cloud spend for the logistics workloads, instead of applying filters for workloads every time, you create a custom view once using that label.
 
 Now, whenever you open Cost Visibility, you simply select the “Logistics Team View” from the sidebar to instantly see total cost, usage patterns, and potential savings specific to that team because the workloads are already labeled, the data stays accurate, and your analysis remains consistent, saving time and effort each time you review costs.
 
@@ -163,8 +163,8 @@ Once applied, a Custom View works just like any other category breakdown in Cost
 
 | **Operator** | **Meaning**              | **Example**                                |
 |--------------|--------------------------|--------------------------------------------|
-| `:`          | Equality                 | `app   :   frontend` → selects resources where `app=frontend`. |
-| `!:`         | Inequality               | `team  !:  dev` → excludes resources with `team=dev`. |
+| `:`          | Equals to                | `app   :   frontend` → selects resources where `app=frontend`. |
+| `!:`         | Not Equals To              | `team  !:  dev` → excludes resources with `team=dev`. |
 | `~:`         | Contains                 | `name  ~:  api` → selects resources where label contains `api`. |
 | `!~`         | Not Contains             | `app  !~:  test` → excludes resources where label contains `test`. |
 | `<~`         | Contains Prefix          | `env  <~:  prod` → selects resources where label starts with `prod`. |
