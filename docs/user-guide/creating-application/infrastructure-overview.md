@@ -160,7 +160,7 @@ Each item in the **Top saving opportunities** will show
 | **Potential Savings (%)** | The percentage of your current spend that could be saved, for the selected time range |
 | **Estimated Savings**  | The estimated cost you could save in that category, based on the difference between provisioned and used resources, for the selected time range|
 
-Clicking on any item in this list takes you to its detailed Cost Breakdown page. Refer [Cost Breakdown](./cost-breakdown.md) to learn more.
+Clicking on any item in this list takes you to its detailed Cost Breakdown page. Refer [Cost Breakdown](../cost-visibility/configurations.md) to learn more.
 
 ### Checking Upgrade Compatibility
 
@@ -182,7 +182,7 @@ Clicking on any item in this list takes you to its detailed Cost Breakdown page.
 Cost data appears only for clusters where **Cost Visibility** is enabled.  
 If a cluster doesn’t show cost insights, verify that the **Cost Visibility** module is active for that cluster. 
 
-Refer [Configurations](./configurations.md) to learn more.
+Refer [Configurations](../cost-visibility/configurations.md) to learn more.
 </details>
 
 <details>
