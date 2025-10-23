@@ -117,11 +117,11 @@ Each bar represents one Application, Cluster, Environment, or Project, and the c
 
 | Resource Type         | Color Used in Chart  |
 |:--------------------- |:---------------------|
-| **CPU Cost**          |     LimeGreen     |
-| **Memory Cost**       |        SkyBlue          |
-| **Storage (PV) Cost** |         AquaTeal       |
-| **GPU Cost**          |      Magenta      |
-| **Network Cost**      |         GoldenYellow       |
+| **CPU Cost**          |     LimeGreen        |
+| **Memory Cost**       |        SkyBlue       |
+| **Storage (PV) Cost** |         AquaTeal     |
+| **GPU Cost**          |      Magenta         |
+| **Network Cost**      |         GoldenYellow |
 
 #### Filters
 

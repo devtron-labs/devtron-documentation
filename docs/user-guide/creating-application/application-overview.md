@@ -235,7 +235,7 @@ The counts displayed in the application overview across **all connected clusters
 
 Disconnected clusters or standalone Helm releases won’t appear until Devtron syncs them.
  
-If still you cannot see your applications, contact [Devtron Support]() for assistant.
+If still you cannot see your applications, contact [Devtron Support](mailto:enterprise@devtron.ai) for assistant.
 </details>
 
 <details>
