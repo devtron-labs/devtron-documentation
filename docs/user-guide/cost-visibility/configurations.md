@@ -35,6 +35,10 @@ To enable cost visibility for Google Cloud in Devtron, you need to generate an A
 
 2. Now go back to the **Edit cluster** modal window, and enter the API key in the **Cloud Provider API Key** field.
 
+{% hint style="info" %}
+If you face any issues while enabling or configuring the **Cost Visibility** module, reach out to [Devtron Support Team](mailto:enterprise@devtron.ai) for assistance.
+{% endhint %}
+
 {% endtab %}
 
 {% tab title="Azure" %} 
@@ -65,7 +69,7 @@ To enable cost visibility for your Azure clusters in Devtron, you need to allow 
 }
  ```
 
-2. Replace YOUR_SUBSCRIPTION_ID with your actual subscription ID.
+2. Replace `YOUR_SUBSCRIPTION_ID` with your actual subscription ID.
 
 3. Save the file as `myrole.json`.
 
@@ -116,11 +120,15 @@ Now go back to the **Edit cluster** modal window, and fill the following fields:
 | Billing Account     | Optional (fill if available)    |
 | Offer ID            | Optional (fill if available)    |
 
+{% hint style="info" %}
+If you face any issues while enabling or configuring the **Cost Visibility** module, reach out to [Devtron Support Team](mailto:enterprise@devtron.ai) for assistance.
+{% endhint %}
+
 {% endtab %}
 
 {% tab title="AWS" %} 
 
-To enable cost visibility for AWS in Devtron, follow the below steps:
+If you have spot node instances in your AWS cluster, then only you need to do the below additional configurations for your AWS cluster, else you can skip the below configurations
 
 ### Step 1: Set up a Spot Instance Data Feed
 
@@ -158,8 +166,10 @@ To enable cost visibility for AWS in Devtron, follow the below steps:
 aws ec2 create-spot-datafeed-subscription \
   --bucket devtron-spot-feed --prefix cost
 ```
+{% hint style="warning" %}
+### Note 
+You can subscribe to the Spot Data Feed for only one S3 bucket at a time. Running the command again updates the feed to the latest bucket.{% endhint %}
 
-**Note:** You can subscribe to the Spot Data Feed for only one S3 bucket at a time. Running the command again updates the feed to the latest bucket.
 
 ### Step 2: Create an IAM Role or Use Access Keys
 
@@ -214,7 +224,16 @@ Now go back to the **Edit cluster** modal window, and fill the following fields:
 
 5. Enter Prometheus endpoint of your cluster. Refer [Fetching Prometheus Endpoint](#fetching-prometheus-endpoint) to learn more.
 
-6. Click **Save**.
+{% hint style="warning" %}
+Prometheus endpoint should be publicly exposed for the cost visibility to work.
+{% endhint %}
+
+6. Click **Save**, cost visibility will be enabled for the cluster.
+
+{% hint style="warning"%}
+### Note
+After enabling cost visibility, you will see your cluster information after 1 hour in cost visibility module.
+{% endhint %}
 
 ### Fetching Prometheus Endpoint
 
@@ -271,7 +290,13 @@ To solve it, refer [Troubleshoot Issues](#common-pitfall-prometheus-deployment-t
 
 {% endhint %}
 
-#### Set Up Prometheus Endpoint
+5. After the chart deployed successfully, you need to make the Prometheus endpoint exposed publicly.
+
+{% hint style="info" %}
+If you face any issues while enabling or configuring the **Cost Visibility** module, please contact the [Devtron Support Team](mailto:support@devtron.ai) for assistance.
+{% endhint %}
+
+<!-- #### Set Up Prometheus Endpoint
 
 {% hint style="warning" %}
 ### Who Can Perform This Action?
@@ -286,6 +311,4 @@ Only super admin users can set up Prometheus endpoint in a cluster.
 
 3. Now enter the Prometheus endpoint:
     1. Paste the copied URL into the Prometheus endpoint field, ensuring it includes `http://`
-    2. Click **Update Cluster** to save the changes.
-
-    ![Figure : Prometheus Endpoint]()
+    2. Click **Update Cluster** to save the changes. -->

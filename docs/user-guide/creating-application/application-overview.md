@@ -117,11 +117,11 @@ Below each indicator, you will also find a corresponding graph that visualizes i
 | Option         | Description |
 |:----------------|:-------------|
 | **Today**       | Shows build and deployment activity for the current day |
-| **This Week**   | Displays data from the current week |
+| **This Week**   | Displays data from the current week (Monday-Sunday) |
 | **Last Week**   | Displays data from the previous week for comparison |
 | **This Month**  | Aggregates data for the ongoing month |
 | **Last Month**  | Shows activity from the previous month to help you analyze changes month-over-month|
-| **This Quarter**| Groups workflow data by the current quarter (**Jan-March**, **April-June**, **July-September**, or **October-December**) |
+| **This Quarter**| Groups workflow data by the current quarter (**April-June**, **July-September**, **October-December**, or **Jan-March**) |
 
 ### Build Triggers Graph  
 
