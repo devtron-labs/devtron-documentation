@@ -184,8 +184,6 @@ Once applied, a Custom View works just like any other category breakdown in Cost
 
 ## FAQs
 
-## FAQs
-
 <details>
 <summary><strong>1. Why does Cost Visibility show data for some clusters but not others?</strong></summary>
 Cost data appears only for clusters where **Cost Visibility** is enabled.  
