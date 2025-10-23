@@ -15,7 +15,7 @@ It contains the following sections:
 
 ## At a Glance
 
-The At a Glance section helps you quickly understand the overall state of your connected clusters and available resources. It helps you understand your current infrastructure capacity and connectivity status at a single glance.
+The **At a Glance** section helps you quickly understand the overall state of your connected clusters and available resources. It helps you understand your current infrastructure capacity and connectivity status at a single glance.
 
 {% embed url="https://app.supademo.com/demo/cmh0e4sh81naf6nxtlvrh3kwy" %}
 
@@ -77,11 +77,12 @@ The **Cluster Capacity & Resource Allocation** section provides a detailed view 
 | **CPU** | Displays the total CPU capacity, along with utilization, requests, and limits for each cluster. This helps you track compute usage and detect over-provisioning |
 | **Memory** | Displays the total memory capacity, along with utilization, requests, and limits for each cluster. It helps you ensure workloads are balanced, and resource allocation is efficient |
 
-You can **sort** the data by:
+You can sort the data by:
 * **Cluster Name** (A to Z or Z to A)
 * **Utilization** (High to Low or Low to High)
 
 {% hint style="info" %}
+### Note
 If a cluster shows zero utilization or capacity, it may be inactive or disconnected. Verify its status under **Cluster Configuration**.
 {% endhint %}
 
@@ -99,7 +100,7 @@ It provides a quick overview of your cluster node density and helps identify env
 | **By Cluster** | This graph displays the total number of nodes within each cluster. Each bar shows the number of clusters within a specific cluster. This view helps you assess how evenly nodes are distributed and whether specific clusters may be over or under-provisioned |
 | **By Autoscaler** | Groups nodes based on their autoscaling configuration (for example, **GKE Automode** or **Not Detected**). Each bar shows the number of nodes within the autoscaling configuration|
 
-You can **sort** the chart data using the dropdown in the top-right corner:
+You can sort the chart data using the dropdown in the top-right corner:
 * **High to Low** or **Low to High**, to focus on clusters with the most or fewest nodes.
 
 {% hint style="info" %}
@@ -145,7 +146,7 @@ Each bar represents one Application, Cluster, Environment, or Project, and the c
 
 ## Actions and Insights
 
-The Actions & Insights section highlights where you can achieve the highest cost savings. It shows the categories with the largest cost saving opportunities, based on the difference between allocated resources and your actual usage.
+The **Actions & Insights** section highlights where you can achieve the highest cost savings. It shows the categories with the largest cost saving opportunities, based on the difference between allocated resources and your actual usage.
 
 {% embed url="https://app.supademo.com/demo/cmh1u9uss0fvjnitlk1tn4lv0" %}
 
@@ -170,3 +171,36 @@ Clicking on any item in this list takes you to its detailed Cost Breakdown page.
 3. A pop-up modal will appear, select the target version, and click scan cluster.
 
 4. A Page will open, with the summary of all the API-endpoints that are compatible for upgrading. You can also check **Deprecated Fields** (Against current API version), **Resources with no PDB**, **Resources with 0 Disruption PDB**
+
+---
+
+## FAQs
+
+<details>
+<summary><strong>1. Why does Cost Visibility show data for some clusters but not others?</strong></summary>
+Cost data appears only for clusters where **Cost Visibility** is enabled.  
+If a cluster doesn’t show cost insights, verify that the **Cost Visibility** module is active for that cluster. 
+
+Refer [Configurations](./configurations.md) to learn more.
+</details>
+
+<details>
+<summary><strong>2. What does **Connection Failed** mean in Cluster Health Status?</strong></summary>
+**Connection Failed** means Devtron could not reach the cluster’s API server or retrieve data from it.  
+This can happen due to:
+* Network or firewall restrictions  
+* Expired or invalid Kubernetes credentials  
+* Misconfigured cluster agent  
+
+Try revalidating credentials or redeploying the Devtron agent to restore connectivity.
+</details>
+
+<details>
+<summary><strong>3. Why does a cluster show **Not Detected** under Autoscaler in Node Counts?</strong></summary>
+This means Devtron couldn’t identify any predefined autoscaling configuration, it can be a custom autoscaler.
+</details>
+
+<details>
+<summary><strong>4. How often is the infrastructure data updated?</strong></summary>
+Infrastructure data (including metrics, cost, and health status) is refreshed automatically every hour.  
+</details>

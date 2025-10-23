@@ -18,7 +18,7 @@ Cost Overview has the following sections:
 {% hint style="info" %}
 ### Note
 Cost Visibility is currently supported **only for Devtron and Helm applications**.  
-It is **not available** for applications deployed through **Argo CD** or **Flux**.
+It is **not available** for applications deployed externally through **Argo CD** or **Flux**.
 {% endhint %}
 
 ## At a Glance
