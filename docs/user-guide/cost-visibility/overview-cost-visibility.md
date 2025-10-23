@@ -108,9 +108,9 @@ Each bar represents one [Application](../../reference/glossary.md#devtron-apps),
 
 The **Cost Trend** line chart helps you understand, how your total and individual resource usage costs change over time. It helps you analyze spending patterns and identify which resources contribute most to your overall cost.
 
-{% embed url="https://app.supademo.com/demo/cmgg88zje6r362nom7ko7mz4t" %}
+{% embed url="https://app.supademo.com/demo/cmh343wdi09qkcdwp0vw8ncaw" %}
 
-Each colored line represents a specific resource, CPU, Memory, Storage, Network, or GPU, while the Total line combines all costs. Hovering over any point on the graph displays the exact cost breakdown for that day.
+Each colored line represents a specific infrastructure component, CPU, Memory, Storage, Network, or GPU, while the Total line combines all costs. Hovering over any point on the graph displays the exact cost breakdown for that day.
 
 You can change the time range (for example, Last 7 Days, Last 30 Days, or Last 90 Days) to view trends for a specific period.
 
@@ -137,6 +137,8 @@ You can change the time range (for example, Last 7 Days, Last 30 Days, or Last 9
 
 The Most Cost Efficient section helps you identify which resources are utilizing costs most effectively across different scopes, such as Cluster, Application, Environment, or Project.
 
+{% embed url="https://app.supademo.com/demo/cmh344vs309sicdwphlwbua6e" %}
+
 Each row in the list displays
 
 | **Field** | **Description** |
@@ -156,6 +158,8 @@ You can use the dropdown menus to customize your view:
 ### Most Expensive
 
 The Most Expensive section highlights the clusters, applications, environments, or projects that contribute the highest costs over a selected time range. This helps you quickly identify where your infrastructure expenses are concentrated and which components may require optimization.
+
+{% embed url="https://app.supademo.com/demo/cmh34ohno0au7cdwpoz8p8bgg" %}
 
 Each row in the list displays:
 
@@ -177,6 +181,8 @@ You can customize the view using the following filters:
 
 The Actions & Insights section highlights where you can achieve the highest cost savings. It shows the categories with the largest cost saving opportunities, based on the difference between allocated resources and your actual usage.
 
+{% embed url="https://app.supademo.com/demo/cmgj316cr0x93krn9l7g4uo7a" %}
+
 It also shows the cost visibility status, which displays the number of clusters where cost visibility is enabled, failed, in progress, or not enabled. This helps you understand for which clusters cost data is currently being tracked and if you want you can enable/disable cost tracking for the cluster by clicking on **Go to configurations** button. Refer [configurations](./configurations.md) to learn more.
 
 Each category in the **Top saving opportunities** will show
@@ -189,4 +195,35 @@ Each category in the **Top saving opportunities** will show
 
 Clicking on any item in this list takes you to its detailed Cost Breakdown page. Refer [Cost Breakdown](./cost-breakdown.md) to learn more.
 
-{% embed url="https://app.supademo.com/demo/cmgj316cr0x93krn9l7g4uo7a" %}
+---
+
+## FAQs
+
+<details>
+<summary><strong>1. Why am I not seeing cost data on the Overview page?</strong></summary>
+Cost Visibility is only supported for **Devtron** and **Helm** applications.  
+If you’re only using **Argo CD** or **Flux** apps, their cost data won’t appear.  
+Also, ensure that **Cost Visibility** is enabled for your cluster, refer [Configurations](./configurations.md) to learn more.
+</details>
+
+<details>
+<summary><strong>2. What should I do if the graphs look empty or incomplete?</strong></summary>
+This usually happens when cost tracking is not enabled for certain clusters or when there’s no activity in the selected time range.  
+Try expanding the time range. 
+</details>
+
+<details>
+<summary><strong>3. Can I compare costs across different clusters or applications?</strong></summary>
+Yes. The **Cost Breakdown**, let you compare spend across **Clusters**, **Applications**, **Environments**, or **Projects**.  
+You can also use filters and sorting options to focus on a specific scope or resource type.
+</details>
+
+<details>
+<summary><strong>4. What does Potential Savings mean in simple terms?</strong></summary>
+It shows how much you could save if your resources were right-sized, i.e, it’s the difference between what you’ve **allocated** and what you actually **use**.
+</details>
+
+<details>
+<summary><strong>5. How often is the cost data updated?</strong></summary>
+Cost data is refreshed **automatically every hour**, based on the latest metrics from Prometheus.
+</details>

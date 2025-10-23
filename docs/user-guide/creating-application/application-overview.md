@@ -226,3 +226,34 @@ These insights help you ensure that the right governance controls are followed, 
 |:-----------|:----------------|
 | **Config Change Approval** | Indicates the percentage of pipelines that require approval before applying configuration changes|
 | **Deployment Approval** | Indicates the percentage of pipelines that require approval before executing a deployment |
+
+## FAQs
+
+<details>
+<summary><strong>1. Why do the counts of Devtron and Helm applications differ from what I see in my dashboards?</strong></summary>
+The counts displayed in the application overview across **all connected clusters**, which are reachable. If some applications are missing, verify that, the clusters where they are deployed are reachable.
+
+Disconnected clusters or standalone Helm releases won’t appear until Devtron syncs them.
+ 
+If still you cannot see your applications, contact [Devtron Support]() for assistant.
+</details>
+
+<details>
+<summary><strong>2. Why do my triggers or build time graphs look empty?</strong></summary>
+Graphs may appear blank if:
+* No builds or deployments were triggered during the selected **Time Range**  
+* Pipelines were recently created and have no activity yet  
+Try expanding the time filter (for example, from **This Week** to **Last 30 Days**) or verifying pipeline execution history.
+</details>
+
+<details>
+<summary><strong>3. Why do I see cost data for some applications but not others?</strong></summary>
+Cost data appears only for applications deployed in clusters where **Cost Visibility** is enabled.  
+If a cluster doesn’t have cost visibility enabled, its data won’t appear.  
+You can enable it under **Cost Visibility** → **Configurations** to start tracking cost for those applications. Refer [Configurations](../cost-visibility/configurations.md) to learn more.
+</details>
+
+<details>
+<summary><strong>4. How frequently are these metrics updated?</strong></summary>
+Metrics on the **Application Overview** page are refreshed automatically every hour.
+</details>

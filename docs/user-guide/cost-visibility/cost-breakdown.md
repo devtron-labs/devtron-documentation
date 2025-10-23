@@ -1,5 +1,7 @@
 # Cost Breakdown
 
+## Introduction
+
 While the **Overview** section gives you a quick summary of overall spending, the **Cost Breakdown** page lets you analyze deeper into where those costs come from. It helps you analyze costs within a selected category (**Clusters**, **Applications**, **Environments**, or **Projects**), for a specific time range.
 
 ![Figure 1: Cost Breakdown Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/cost-visibility/cost-visibility-cost-breakdown.jpg)
@@ -159,7 +161,7 @@ To create a custom view:
 
 Once applied, a Custom View works just like any other category breakdown in Cost Visibility.
 
-### Filters  
+#### Filters  
 
 | **Field**    | **Description**                                                                 |
 |--------------|---------------------------------------------------------------------------------|
@@ -167,7 +169,7 @@ Once applied, a Custom View works just like any other category breakdown in Cost
 | **Operator** | Defines the comparison logic between the key and value.                         |
 | **Value**    | The label value to match against (for example, `logistics`, `prod`).            |
 
-### Operators  
+#### Operators  
 
 | **Operator** | **Meaning**              | **Example**                                |
 |--------------|--------------------------|--------------------------------------------|
