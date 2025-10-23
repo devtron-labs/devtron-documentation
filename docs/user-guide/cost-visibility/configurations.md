@@ -1,4 +1,4 @@
-# Configurations
+# Configurations 
 
 The **Configurations** page lets you manage configurations for Cost Visibility in Devtron. You can:
 
