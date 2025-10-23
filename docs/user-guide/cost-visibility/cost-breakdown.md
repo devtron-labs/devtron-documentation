@@ -186,6 +186,7 @@ Once applied, a Custom View works just like any other category breakdown in Cost
 
 <details>
 <summary><strong>1. Why does Cost Visibility show data for some clusters but not others?</strong></summary>
+
 Cost data appears only for clusters where **Cost Visibility** is enabled.  
 If a cluster doesn’t show cost insights, verify that the **Cost Visibility** module is active for that cluster. 
 
@@ -194,6 +195,7 @@ Refer [Configurations](./configurations.md) to learn more.
 
 <details>
 <summary><strong>2. What does **Connection Failed** mean in Cluster Health Status?</strong></summary>
+
 **Connection Failed** means Devtron could not reach the cluster’s API server or retrieve data from it.  
 This can happen due to:
 * Network or firewall restrictions  
@@ -205,10 +207,12 @@ Try revalidating credentials or redeploying the Devtron agent to restore connect
 
 <details>
 <summary><strong>3. Why does a cluster show **Not Detected** under Autoscaler in Node Counts?</strong></summary>
+
 This means Devtron couldn’t identify any predefined autoscaling configuration, it can be a custom autoscaler.
 </details>
 
 <details>
 <summary><strong>4. How often is the infrastructure data updated?</strong></summary>
+
 Infrastructure data (including metrics, cost, and health status) is refreshed automatically every hour.  
 </details>

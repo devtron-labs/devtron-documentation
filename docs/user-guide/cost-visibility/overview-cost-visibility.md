@@ -201,6 +201,7 @@ Clicking on any item in this list takes you to its detailed Cost Breakdown page.
 
 <details>
 <summary><strong>1. Why am I not seeing cost data on the Overview page?</strong></summary>
+
 Cost Visibility is only supported for **Devtron** and **Helm** applications.  
 If you’re only using **Argo CD** or **Flux** apps, their cost data won’t appear.  
 Also, ensure that **Cost Visibility** is enabled for your cluster, refer [Configurations](./configurations.md) to learn more.
@@ -208,22 +209,26 @@ Also, ensure that **Cost Visibility** is enabled for your cluster, refer [Config
 
 <details>
 <summary><strong>2. What should I do if the graphs look empty or incomplete?</strong></summary>
+
 This usually happens when cost tracking is not enabled for certain clusters or when there’s no activity in the selected time range.  
 Try expanding the time range. 
 </details>
 
 <details>
 <summary><strong>3. Can I compare costs across different clusters or applications?</strong></summary>
+
 Yes. The **Cost Breakdown**, let you compare spend across **Clusters**, **Applications**, **Environments**, or **Projects**.  
 You can also use filters and sorting options to focus on a specific scope or resource type.
 </details>
 
 <details>
 <summary><strong>4. What does Potential Savings mean in simple terms?</strong></summary>
+
 It shows how much you could save if your resources were right-sized, i.e, it’s the difference between what you’ve **allocated** and what you actually **use**.
 </details>
 
 <details>
 <summary><strong>5. How often is the cost data updated?</strong></summary>
+
 Cost data is refreshed **automatically every hour**, based on the latest metrics from Prometheus.
 </details>
