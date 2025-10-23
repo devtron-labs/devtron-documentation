@@ -170,7 +170,7 @@ Clicking on any item in this list takes you to its detailed Cost Breakdown page.
 
 3. A pop-up modal will appear, select the target version, and click scan cluster.
 
-4. A Page will open, with the summary of all the API-endpoints that are compatible for upgrading. You can also check **Deprecated Fields** (Against current API version), **Resources with no PDB**, **Resources with 0 Disruption PDB**
+4. A page will open, with the summary of all the API-endpoints that are compatible for upgrading. You can also check **Deprecated Fields** (Against current API version), **Resources with no PDB**, **Resources with 0 Disruption PDB**
 
 ---
 

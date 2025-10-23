@@ -1,6 +1,6 @@
 # Cost Breakdown
 
-## Introduction
+## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 While the **Overview** section gives you a quick summary of overall spending, the **Cost Breakdown** page lets you analyze deeper into where those costs come from. It helps you analyze costs within a selected category (**Clusters**, **Applications**, **Environments**, or **Projects**), for a specific time range.
 

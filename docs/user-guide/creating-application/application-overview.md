@@ -126,9 +126,9 @@ Below each indicator, you will also find a corresponding graph that visualizes i
 ### Build Triggers Graph  
 
 This graph displays how build triggers change over time.  
-* **Blue line:** Total build triggers  
-* **Green line:** Successful builds  
-* **Red line:** Failed builds  
+* **Blue line** - Total build triggers  
+* **Green line** - Successful builds  
+* **Red line** - Failed builds  
 
 Hover over any point on the graph to view daily build statistics, including total, successful, and failed builds. This helps you identify trends in build frequency and stability.
 
@@ -136,9 +136,9 @@ Hover over any point on the graph to view daily build statistics, including tota
 
 This graph tracks how often deployments are triggered and how many of them succeed or fail.  
 
-* **Blue line:** Total deployments triggered  
-* **Green line:** Successful deployments  
-* **Red line:** Failed deployments  
+* **Blue line** - Total deployments triggered  
+* **Green line** - Successful deployments  
+* **Red line** - Failed deployments  
 
 Hover over a specific date to see deployment counts and outcomes, helping you understand deployment frequency and reliability trends.  
 
@@ -199,9 +199,9 @@ The **Cost Visibility** section provides a comparison of costs across your appli
 
 It shows:
  
- * **Top 10 Costly Applications**: It shows which deployed applications consume the most resources (such as CPU, memory, or storage) across your clusters.
+ * **Top 10 Costly Applications** - It shows which deployed applications consume the most resources (such as CPU, memory, or storage) across your clusters.
 
- * **Top 10 Costly Build Pipelines**: It shows the list of build pipelines that have the highest cost during image builds.
+ * **Top 10 Costly Build Pipelines** - It shows the list of build pipelines that have the highest cost during image builds.
 
 You can use the time range filter (Last 24 Hours, Last 7 Days, Last 30 Days, or Last 90 Days) to select the preferred time range. 
 

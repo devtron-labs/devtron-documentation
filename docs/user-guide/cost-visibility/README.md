@@ -1,5 +1,5 @@
 # Cost Visibility
-## Introduction
+## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 Cost Visibility in Devtron provides a unified view of your Kubernetes infrastructure costs within the Devtron dashboard. It eliminates the need to switch between cloud provider billing consoles by integrating cost insights directly into your DevOps workflow.
 

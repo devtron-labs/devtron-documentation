@@ -246,7 +246,7 @@ Ensure [GitOps](../global-configurations/gitops.md) is configured before deployi
    
 1. Go to the **Chart Store** and search for `prometheus`. Use the Prometheus community's `kube-prometheus-stack` chart to deploy Prometheus.
 
-    ![Figure : Chart Store](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app2.jpg)
+    ![Figure 1: Chart Store](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app2.jpg)
 
 2. After selecting the chart, configure these values as needed before deployment.
 
@@ -267,9 +267,9 @@ Ensure [GitOps](../global-configurations/gitops.md) is configured before deployi
 
     Search for the above parameters, and update them as shown (or customize as needed).
 
-    ![Figure a: Prometheus Chart Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app3.jpg)
+    ![Figure 2a: Prometheus Chart Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app3.jpg)
 
-    ![Figure b: Prometheus Chart Configuration (cont.)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-config.jpg)
+    ![Figure 2b: Prometheus Chart Configuration (cont.)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-config.jpg)
 
 3. Enable `upgradeJob` parameter to install CRDs:
 
@@ -277,7 +277,7 @@ Ensure [GitOps](../global-configurations/gitops.md) is configured before deployi
    
     In the Prometheus Helm chart settings, locate the `upgradeJob` parameter and set it to `true` if it is `false`.
       
-    ![Figure : upgradeJob Parameter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-new2.jpg)
+    ![Figure 3: upgradeJob Parameter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-new2.jpg)
       
 4. After enabling the parameter, click **Deploy Chart**.
 
@@ -307,7 +307,7 @@ Only super admin users can set up Prometheus endpoint in a cluster.
 
 2. Copy the URL of the `kube-prometheus` service as shown in the image below.
 
-    ![Figure : Prometheus Service](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app4.jpg)
+    ![Figure 4: Prometheus Service](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app4.jpg)
 
 3. Now enter the Prometheus endpoint:
     1. Paste the copied URL into the Prometheus endpoint field, ensuring it includes `http://`

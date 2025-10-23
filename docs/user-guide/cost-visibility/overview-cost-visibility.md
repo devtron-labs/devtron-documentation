@@ -135,7 +135,7 @@ You can change the time range (for example, Last 7 Days, Last 30 Days, or Last 9
 
 ### Most Cost Efficient 
 
-The Most Cost Efficient section helps you identify which resources are utilizing costs most effectively across different scopes, such as Cluster, Application, Environment, or Project.
+The **Most Cost Efficient** section helps you identify which resources are utilizing costs most effectively across different scopes, such as Cluster, Application, Environment, or Project.
 
 {% embed url="https://app.supademo.com/demo/cmh344vs309sicdwphlwbua6e" %}
 
@@ -157,7 +157,7 @@ You can use the dropdown menus to customize your view:
 
 ### Most Expensive
 
-The Most Expensive section highlights the clusters, applications, environments, or projects that contribute the highest costs over a selected time range. This helps you quickly identify where your infrastructure expenses are concentrated and which components may require optimization.
+The **Most Expensive** section highlights the clusters, applications, environments, or projects that contribute the highest costs over a selected time range. This helps you quickly identify where your infrastructure expenses are concentrated and which components may require optimization.
 
 {% embed url="https://app.supademo.com/demo/cmh34ohno0au7cdwpoz8p8bgg" %}
 
@@ -179,7 +179,7 @@ You can customize the view using the following filters:
 
 ## Actions and Insights
 
-The Actions & Insights section highlights where you can achieve the highest cost savings. It shows the categories with the largest cost saving opportunities, based on the difference between allocated resources and your actual usage.
+The **Actions & Insights** section highlights where you can achieve the highest cost savings. It shows the categories with the largest cost saving opportunities, based on the difference between allocated resources and your actual usage.
 
 {% embed url="https://app.supademo.com/demo/cmgj316cr0x93krn9l7g4uo7a" %}
 
