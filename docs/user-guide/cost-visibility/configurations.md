@@ -29,6 +29,8 @@ To enable cost visibility for a cluster, follow the below steps:
 
 {% tab title="GCP" %}
 
+### Enable Cost Visibility for GCP
+
 To enable cost visibility for Google Cloud in Devtron, you need to generate an API key and use it to connect Devtron with your GCP account.
 
 1. Generate the API key using standard [Google Cloud API key documentation](https://cloud.google.com/docs/authentication/api-keys#gcloud).
@@ -42,6 +44,8 @@ If you face any issues while enabling or configuring the **Cost Visibility** mod
 {% endtab %}
 
 {% tab title="Azure" %} 
+
+### Enable Cost Visibility for Azure
 
 To enable cost visibility for your Azure clusters in Devtron, you need to allow Devtron to access your billing data securely. This requires two steps:
    1. Create a custom role in Azure with billing access.
@@ -127,6 +131,8 @@ If you face any issues while enabling or configuring the **Cost Visibility** mod
 {% endtab %}
 
 {% tab title="AWS" %} 
+
+### Enable Cost Visibility for AWS
 
 If you have spot node instances in your AWS cluster, then only you need to do the below additional configurations for your AWS cluster, else you can skip the below configurations
 
@@ -286,29 +292,20 @@ Ensure [GitOps](../global-configurations/gitops.md) is configured before deployi
 
 While deploying `kube-prometheus-stack` chart, the deployment status may show as **Timed out**, and some CustomResourceDefinitions (CRDs) may appear as **Failed**.
 
-To solve it, refer [Troubleshoot Issues](#common-pitfall-prometheus-deployment-timeout-due-to-failed-crds)
+![Figure 4a: Deployment Timed Out](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-deployment-timed-out-v2.jpg)
+
+![Figure 4b: CRDs Failed](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-crds-failed.jpg)
+
+**This behavior is expected and do not require any action from you.**
+
+This occurs because certain Prometheus CRDs are large in size, which can lead to temporary sync issues during deployment, but, this does not impact the functionality of the Prometheus components.
+
+ArgoCD handles such cases automatically and the `kube-prometheus-stack` will continue to function as expected.
 
 {% endhint %}
 
 5. After the chart deployed successfully, you need to make the Prometheus endpoint exposed publicly.
 
 {% hint style="info" %}
-If you face any issues while enabling or configuring the **Cost Visibility** module, please contact the [Devtron Support Team](mailto:support@devtron.ai) for assistance.
+If you face any issues while enabling or configuring the **Cost Visibility** module, please contact the [Devtron Support Team](mailto:enterprise@devtron.ai) for assistance.
 {% endhint %}
-
-<!-- #### Set Up Prometheus Endpoint
-
-{% hint style="warning" %}
-### Who Can Perform This Action?
-Only super admin users can set up Prometheus endpoint in a cluster.
-{% endhint %}
-   
-1. Once Prometheus is installed, go to its **App Details** and navigate to **Networking** → **Service** in the K8s resources. Expand the Prometheus server service to see the endpoints. 
-
-2. Copy the URL of the `kube-prometheus` service as shown in the image below.
-
-    ![Figure 4: Prometheus Service](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app4.jpg)
-
-3. Now enter the Prometheus endpoint:
-    1. Paste the copied URL into the Prometheus endpoint field, ensuring it includes `http://`
-    2. Click **Update Cluster** to save the changes. -->

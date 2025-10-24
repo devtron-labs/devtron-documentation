@@ -103,9 +103,41 @@ It provides a quick overview of your cluster node density and helps identify env
 You can sort the chart data using the dropdown in the top-right corner:
 * **High to Low** or **Low to High**, to focus on clusters with the most or fewest nodes.
 
-{% hint style="info" %}
-If some clusters show **Not Detected** under autoscaler, it means Devtron could not identify their scaling configuration.  
-You can verify autoscaling settings in your respective cloud console or cluster configuration.
+### Troubleshooting Autoscaler Detection
+
+Devtron currently supports autoscaler detection for the following autoscalers: **EKS Auto Mode**, **Karpenter**, **CAST AI**, and **GKE Autopilot**.
+If your cluster uses any other autoscaler, it will be categorized as **Not Detected** under the **By Autoscaler** view.
+
+Devtron identifies supported autoscalers using the following Kubernetes node labels:
+
+```bash
+# EKS Auto Mode label
+
+LabelEKSComputeType = "eks.amazonaws.com/compute-type"
+LabelEKSComputeAuto = "auto"
+
+# Karpenter label
+
+LabelKarpenterInitialized = "karpenter.sh/initialized"
+LabelKarpenterTrue        = "true"
+
+# Cast AI label
+
+LabelCastAIManagedBy = "provisioner.cast.ai/managed-by"
+LabelCastAIValue     = "cast.ai"
+
+# GKE label
+
+LabelGKEProvisioning = "cloud.google.com/gke-provisioning"
+LabelGKEAutoPilot    = "spot"
+
+```
+
+{% hint style="success" %}
+### Need support for another autoscaler? 
+
+[Submit a feature request on GitHub](https://github.com/devtron-labs/devtron/issues). Our team regularly reviews community requests, and your feedback helps us prioritize new integrations in upcoming releases.
+
 {% endhint %}
 
 ### Cost Visibility
@@ -160,7 +192,7 @@ Each item in the **Top saving opportunities** will show
 | **Potential Savings (%)** | The percentage of your current spend that could be saved, for the selected time range |
 | **Estimated Savings**  | The estimated cost you could save in that category, based on the difference between provisioned and used resources, for the selected time range|
 
-Clicking on any item in this list takes you to its detailed Cost Breakdown page. Refer [Cost Breakdown](../cost-visibility/configurations.md) to learn more.
+Clicking on any item in this list takes you to its detailed Cost Breakdown page. Refer [Cost Breakdown](../cost-visibility/cost-breakdown.md) to learn more.
 
 ### Checking Upgrade Compatibility
 
