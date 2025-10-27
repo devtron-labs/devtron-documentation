@@ -140,7 +140,7 @@ LabelGKEAutoPilot    = "spot"
 
 {% endhint %}
 
-### Cost Visibility
+### Cost Visibility [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 The Cost Breakdown chart helps you see how costs are distributed across different infrastructure components for the selected time period. 
 

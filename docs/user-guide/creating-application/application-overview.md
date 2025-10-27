@@ -186,7 +186,7 @@ The section provides two tabs, **Build Pipelines** and **Deployment Pipelines**,
 
 ---
 
-## Cost Visibility
+## Cost Visibility [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 {% hint style="info" %}
 This section provides a quick overview of cost insights within the **Application Overview** dashboard.  
@@ -214,7 +214,7 @@ Enable the **Cost Visibility** module for those clusters to view accurate cost i
 
 --- 
 
-## Best Practices
+## Best Practices [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
 
 The **Best Practices** section helps shows you the percentage of production pipelines for which you have enabled approval policies. It gives you a quick view of how many pipelines have checks in place before important configuration changes or deployments go live.
 
