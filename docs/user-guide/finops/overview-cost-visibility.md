@@ -2,6 +2,12 @@ import SupademoEmbed from '@site/src/components/SupademoEmbed';
 
 # Overview
 
+:::warning Prerequisites 
+Make sure that Cost Visibility is enabled for your clusters.  
+If it is not enabled, no cost data or insights will appear on the overview page.  
+Refer to [Cost Visibility Configurations](./configurations.md) for setup instructions.
+::: 
+
 ## Introduction <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 The **Overview** page provides a summary of infrastructure costs across your Applications, Clusters, Environments, Projects, and Infra Components in Devtron. It highlights overall spend, resource-level distribution, and opportunities for optimization (Potential Savings).
@@ -20,35 +26,29 @@ Cost Overview has the following sections:
 ### How is the cost calculated?
 
 * Devtron calculates and updates cost data **every hour** based on the resource usage metrics collected from **Prometheus**.  
-* Prometheus gathers real-time data for **CPU**, **Memory**, **GPU**, **Storage (PV)**, and **Network** from your connected clusters.  
+* Prometheus gathers real-time data for **CPU**, **Memory**, **GPU**, and **Storage (PV)** from your connected clusters.  
 * Devtron then processes this data every hour to display accurate and up-to-date cost insights across your infrastructure.
-
-:::info Note
-Cost Visibility is currently supported **only for Devtron and Helm applications**.  
-It is **not available** for applications deployed externally through **Argo CD** or **Flux**.
-:::
 
 ---
 
 ## At a Glance
 
-The **At a Glance** summarizes the total cost for the selected period and breaks it down by resource type. Each card shows the cost, its share of the total, and a usage trend graph.
+The **At a Glance** displays **Total Cost**, **CPU Cost**, **RAM Cost**, **PV Cost**, and **GPU Cost** cards. Each card shows the  cost of its specific component, its percentage contribution to the overall spend, and a cost trend graph for the selected time period.
 
 <SupademoEmbed id="cmg7svcus10om2nommllm1nu2" /><br />
 
-
-| Card             | Description                                                                                      |
+<!-- | Card             | Description                                                                                      |
 |:---------------- |:------------------------------------------------------------------------------------------------ |
-| **Total Cost**   | Shows the overall infrastructure cost for the selected time period, and the cost-trend graph for the selected period of time |
+| **Total Cost**   | Shows the overall infrastructure cost, and the cost-trend graph for the selected period of time |
 | **CPU Cost**     | Shows the cost of CPU resources, their percentage contribution to the total cost, and the cost-trend graph for the selected period of time |
 | **RAM Cost**     | Shows the cost of memory resources, their percentage contribution to the total cost, and the cost-trend graph for the selected period of time |
 | **PV Cost**      | Shows the cost of persistent volume (storage), its percentage contribution to the total cost, and the cost-trend graph for the selected period of time |
 | **GPU Cost**     | Shows the cost of GPU resources, their percentage contribution to the total cost, and the cost-trend graph for the selected period of time         |
-| **Network Cost** | Shows the cost of network usage, its percentage contribution to the total cost, and the cost-trend graph for the selected period of time           |
+| **Network Cost** | Shows the cost of network usage, its percentage contribution to the total cost, and the cost-trend graph for the selected period of time           | -->
 
-:::success Tip 
+<!-- :::success Tip 
 Network cost refers to the expenses associated with **data transfer**, including communication between **pods, nodes, and external services** within or across clusters. Refer to [AWS guide on network cost](https://aws.amazon.com/premiumsupport/knowledge-center/eks-cluster-networking-costs/) to learn more.
-:::
+::: -->
 
 ---
 
@@ -72,52 +72,6 @@ The **Potential Savings** section estimates how much cost can be saved by compar
 
 The **Track Performance** section helps you understand costs in more detail by breaking them down across different views and time ranges. It includes two charts, **Cost Breakdown** and **Cost Trend**.
 
-### Cost Breakdown Bar Chart
-
-The **Cost Breakdown** Bar Chart helps you see how costs are distributed across different infrastructure components for the selected time period. 
-
-<SupademoEmbed id="cmgaj0aid3d8l2nomb611rpbl" /><br />
-
-
-Each bar represents one [Application](../../reference/glossary.md#devtron-apps), [Cluster](../../reference/glossary.md#cluster), [Environment](../../reference/glossary.md#environment), or [Project](../global-configurations/projects.md), and the colored segments in the bar show the share of different resource types. This makes it easy to compare categories and see which resources are contributing most to their total cost.
-
-#### Color Schema 
-
-| Resource Type         | Color Used in Chart  |
-|:--------------------- |:---------------------|
-| **CPU Cost**          |     LimeGreen     |
-| **Memory Cost**       |        SkyBlue          |
-| **Storage (PV) Cost** |         AquaTeal       |
-| **GPU Cost**          |      Magenta      |
-| **Network Cost**      |         GoldenYellow       |
-
-#### Filters
-
-| Filters | What It Shows |
-|:-----------------|:--------------|
-| **Application**  | Each bar represents an application (Devtron App or Helm App), segmented by CPU, Memory, Storage (PV), GPU, and Network costs |
-| **Cluster**      | Each bar represents a cluster, segmented by CPU, Memory, Storage (PV), GPU, and Network costs |
-| **Environment**  | Each bar represents an environment, segmented by CPU, Memory, Storage (PV), GPU, and Network costs |
-| **Project**      | Each bar represents a project, segmented by CPU, Memory, Storage (PV), GPU, and Network costs |
-
-#### Sorting Criteria
-
-| Sorting Option     | Description |
-|:-------------------|:------------|
-| **Cost: High to Low** | Shows the highest cost items first |
-| **Cost: Low to High** | Shows the lowest cost items first |
-| **A to Z**           | Sorts items alphabetically |
-| **Z to A**           | Sorts items in reverse alphabetical order |
-
-#### Time Range Filters
-
-| Options    | Description |
-|:-----------|:--------------|
-| **Last 24 hours**   | Shows cost for the last 24 hours |
-| **Last 7 days**  | Shows cost for last 7 days |
-| **Last 30 days**| Shows cost for the last 30 days | 
-| **last 90 days**   | Shows cost for the last 90 days |
-
 ### Cost Trend Line Chart
 
 The **Cost Trend** line chart helps you understand, how your total and individual resource usage costs change over time. It helps you analyze spending patterns and identify which resources contribute most to your overall cost.
@@ -125,28 +79,36 @@ The **Cost Trend** line chart helps you understand, how your total and individua
 <SupademoEmbed id="cmh343wdi09qkcdwp0vw8ncaw" /><br />
 
 
-Each colored line represents a specific infrastructure component, CPU, Memory, Storage, Network, or GPU, while the Total line combines all costs. Hovering over any point on the graph displays the exact cost breakdown for that day.
+Each colored line represents a specific infrastructure component, CPU, Memory, Storage, or GPU, while the Total line combines all costs. Hovering over any point on the graph displays the exact cost breakdown for that day.
 
-You can change the time range (for example, Last 7 Days, Last 30 Days, or Last 90 Days) to view trends for a specific period.
+You can change the time range (for example, Last 24 hours, Last 7 Days, Last 30 Days, or Last 90 Days) to view trends for a specific period.
 
-#### Time Range  
+:::info Color Schema 
+You can check the color codes for each cost type directly below the chart in the Devtron UI.  
+Each color label (like CPU Cost, Memory Cost, or GPU Cost) helps you quickly identify which color represents which resource.
+:::
 
-| Options    | Description |
-|:-----------|:--------------|
-| **Last 24 hours**   | Shows cost for the last 24 hours |
-| **Last 7 days**  | Shows cost for last 7 days |
-| **Last 30 days**| Shows cost for the last 30 days | 
-| **last 90 days**   | Shows cost for the last 90 days |
+### Cost Breakdown Bar Chart
 
-#### Color Schema 
+The **Cost Breakdown** Bar Chart helps you see how costs are distributed across different infrastructure components for the selected time period. 
 
-| Resource Type         | Color Used in Chart  |
-|:--------------------- |:---------------------|
-| **CPU Cost**          |     LimeGreen     |
-| **Memory Cost**       |        SkyBlue          |
-| **Storage (PV) Cost** |         AquaTeal       |
-| **GPU Cost**          |      Magenta      |
-| **Network Cost**      |         GoldenYellow       |
+<SupademoEmbed id="cmgaj0aid3d8l2nomb611rpbl" /><br />
+
+
+Each bar represents one [Application](../../reference/glossary.md#devtron-apps), [Cluster](../../reference/glossary.md#cluster), [Environment](../../reference/glossary.md#environment), or [Project](../global-configurations/projects.md), and the colored segments in the bar show the share of different infrastructure components. This makes it easy to compare categories and see which infrastructure components are contributing most to their total cost.
+
+You can:
+
+ * Change the time range (for example, Last 24 hours, Last 7 Days, Last 30 Days, or Last 90 Days) to view trends for a specific period.
+
+ * Filter the cost data by Application, Cluster, Environment, or Project to see how costs are distributed across each scope.
+
+ * Sort the cost data by cost (high to low or low to high) or name (A to Z or Z to A) to quickly find the highest spenders or locate specific items.
+
+:::info Color Schema 
+You can check the color codes for each cost type directly below the chart in the Devtron UI.  
+Each color label (like CPU Cost, Memory Cost, or GPU Cost) helps you quickly identify which color represents which resource.
+:::
 
 ### Most Cost Efficient 
 
@@ -183,7 +145,7 @@ Each row in the list displays:
 | **Field** | **Description** |
 |------------|-----------------|
 | **Name** | The name of the selected category, such as a **Cluster**, **Application**, **Environment**, or **Project** |
-| **Cost Type** | The selected cost type, such as **CPU**, **Memory**, **Storage**, **GPU**, **Network**, or **Total Cost** |
+| **Cost Type** | The selected cost type, such as **CPU**, **Memory**, **Storage**, **GPU**, or **Total Cost** |
 | **Total Cost** | The total cost incurred by that category for the chosen cost type within the specified time period |
 
 You can customize the view using the following filters:
@@ -192,7 +154,7 @@ You can customize the view using the following filters:
 |-------------|-----------------|
 | **Scope Selector** | Lets you choose for which category (**Cluster**, **Application**, **Environment**, or **Project**), you want to view the most expensive resources |
 | **Time Range** | Allows you to choose the time period for cost evaluation,  **Last 24 Hours**, **Last 7 Days**, **Last 30 Days**, or **Last 90 Days**. |
-| **Cost Type** | Enables you to filter costs by specific categories such as **CPU Cost**, **Memory Cost**, **Storage Cost**, **GPU Cost**, **Network Cost**, or **Total Cost**. |
+| **Cost Type** | Enables you to filter costs by specific categories such as **CPU Cost**, **Memory Cost**, **Storage Cost**, **GPU Cost**, or **Total Cost**. |
 
 ---
 

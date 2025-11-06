@@ -48,7 +48,7 @@ Imagine your team is analyzing monthly infrastructure expenses for multiple clus
 
 You will also find a complete list of all the resources for the selected category at the bottom, helping you identify where most of your spending is concentrated.
 
-For example, if you’re viewing the Cluster category, the list displays each cluster along with its CPU, Memory, Storage, GPU, and Network costs. You can quickly compare clusters and identify which ones have higher spend or greater potential savings.
+For example, if you’re viewing the Cluster category, the list displays each cluster along with its CPU, Memory, Storage, and GPU costs. You can quickly compare clusters and identify which ones have higher spend or greater potential savings.
 
 :::success Use Case
 Suppose you’re reviewing costs within the Clusters category. As you go through the list, you notice one cluster’s **Total Cost** is higher than others. You look across its row and notice that both Memory Cost and Storage (PV) Cost are also on the higher side. The **Potential Savings** column then shows a clear opportunity to optimize usage within that cluster. With this focused view, you get a clear understanding of where your resources are being used most and which clusters might need attention, all from a single, organized view. You can then check the detailed view for those clusters to investigate further.
@@ -69,9 +69,9 @@ Each row in the list shows the following for the specific resource of the select
 | **CPU Cost**           | All categories                  | Shows the cost of CPU usage for each resource in the selected category |
 | **Storage (PV) Cost**  | All categories                  | Shows the cost of persistent volume (storage) usage for each resource in the selected category |
 | **GPU Cost**           | All categories                  | Shows the cost of GPU usage for each resource in the selected category |
-| **Network Cost**       | All categories                  | Shows the cost of network usage for each resource in the selected category |
 | **Total Cost**         | All categories                  | Shows the total cost of each resource |
 | **Potential Savings**  | All categories                  | Shows the cost and percentage of your current spend that could be saved for each resource |
+<!-- | **Network Cost**       | All categories                  | Shows the cost of network usage for each resource in the selected category | -->
 
 <SupademoEmbed id="cmgaokrt93iuk2nomat2gyz7c" /><br />
 
@@ -86,24 +86,24 @@ For example, after identifying a high cost Cluster in the previous section, you 
 
 Continuing from the earlier scenario, you open the detailed cost breakdown for the cluster that showed unusually high costs. In the **Top 10 Costly Namespaces** section, one namespace clearly dominates the cost chart. You then look at the Cost Breakdown by Resource Kind graph, where it becomes evident that most of this cost comes from CPU usage.
 
-Investigating further, you discover that a few workloads in that namespace have been consistently running above their requested CPU limits. This explains the cost spike you noticed earlier. With this insight, your team can adjust resource requests and limits for those workloads to optimize cluster performance and reduce unnecessary costs.
+Investigating further, you discover that a few workloads in that namespace are utilizing higher memory than their actual usage. This explains the cost spike you noticed earlier. With this insight, your team can adjust resource requests and limits for those workloads to optimize cluster performance and reduce unnecessary costs.
 
 :::
 
-| Field           |Available For Categories | Description |
-|:-----------------|:-------------|:----|
-| **Total Cost**  | All categories | Shows the overall cost for the selected resource, along with a cost trend graph for the chosen time range |
-| **CPU**    | All categories | Shows the total spend on CPU resources, along with the potential savings |
-| **Memory** | All categories | Shows the total cost for memory resources, along with the potential savings |
-| **Storage**| All categories | Shows the total cost for persistent volume (storage), along with potential savings |
-| **GPU**    | All categories | Shows the total cost for GPU resources, along with potential savings |
-|**Top 10 costly namespace**|Cluster| A ranked list of 10 highest cost namespaces within a specific cluster|
-|**Top 10 costly application**|Environments & Projects|A ranked list of 10 highest cost application within a specific environment or project|
-|**Top 10 costly deployment**|Applications|A ranked list of 10 highest cost deployments within a specific application|
-|**Cost Breakdown by Namespace**|Clusters|Shows the distribution of costs across namespaces within the selected cluster. <ul><li>Each bar represents a namespace, segmented by CPU, Memory, GPU, Storage, and Network costs</li><li> Helps identify which namespaces are responsible for most cost inside a cluster</li></ul> |
-|**Cost Breakdown by Application**|Clusters, Projects, & Environments|Shows the cost distribution across applications in the selected category <ul><li>Each bar represents an application, segmented by CPU, Memory, GPU, Storage, and Network costs </li></ul>|
-|**Cost Breakdown by Resource kind**|All categories|Shows the costs broken down by Kubernetes resource types (e.g., Pod, Deployment, StatefulSet, Job, DaemonSet, Rollout, Container). <ul><li>Each bar represents a resource kind, segmented by CPU, Memory, GPU, Storage, and Network costs </li></ul>|
-|**Cost Breakdown by Deployment**|Applications|Shows the distribution of costs across deployments within the selected application <ul><li>Each bar represents a deployment, segmented by CPU, Memory, GPU, Storage, and Network costs </li></ul>|
+| Field   | Description |
+|:---|:---|
+| **Total Cost**  | Shows the overall cost for the selected resource, along with a cost trend graph for the chosen time range |
+| **CPU**    | Shows the total spend on CPU resources, along with the potential savings |
+| **Memory** | Shows the total cost for memory resources, along with the potential savings |
+| **Storage**| Shows the total cost for persistent volume (storage), along with potential savings |
+| **GPU**    | Shows the total cost for GPU resources, along with potential savings |
+|**Top 10 costly :<ul><li>Namespaces</li><li>Applications</li><li>Deployments</li></ul>**| A ranked list of 10 highest cost **namespaces**, or **applications**, or **deployments** within a specific cluster|
+|**Cost Breakdown by: <ul><li>Namespace</li><li>Application</li><li>Resource Kind</li><li>Deployment</li></ul>**|Shows the distribution of costs across **Namespaces**, or **Applications**, or **Resource Kinds**, or **Deployments** within the selected cluster. <ul><li>Each bar represents a **Namespace**, or **Application**, or **Resource Kind**, or **Deployment**, segmented by CPU, Memory, GPU, and Storage costs</li></ul> |
+<!-- |**Cost Breakdown by Application**|Clusters, Projects, & Environments|Shows the cost distribution across applications in the selected category <ul><li>Each bar represents an application, segmented by CPU, Memory, GPU, and Storage costs </li></ul>|
+|**Cost Breakdown by Resource kind**|All categories|Shows the costs broken down by Kubernetes resource types (e.g., Pod, Deployment, StatefulSet, Job, DaemonSet, Rollout, Container). <ul><li>Each bar represents a resource kind, segmented by CPU, Memory, GPU, and Storage costs </li></ul>|
+|**Cost Breakdown by Deployment**|Applications|Shows the distribution of costs across deployments within the selected application <ul><li>Each bar represents a deployment, segmented by CPU, Memory, GPU, and Storage costs </li></ul>| -->
+<!-- |**Top 10 costly application**|A ranked list of 10 highest cost application within a specific environment or project| -->
+<!-- |**Top 10 costly deployment**|A ranked list of 10 highest cost deployments within a specific application| -->
 
 <SupademoEmbed id="cmgga3snk6u0a2nomqwfntj11" /><br />
 
@@ -154,7 +154,7 @@ To create a custom view:
 
 4.	Enter one or more label-based filters using **Key**, **Operator**, and **Value**.
 
-5.	Click Apply Changes.
+5.	Click **Apply Changes**.
 
 Once applied, a Custom View works just like any other category breakdown in Cost Visibility.
 
