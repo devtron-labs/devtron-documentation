@@ -1,9 +1,8 @@
 # AWS Secrets Manager
 
-{% hint style="warning" %}
-### Prerequisite 
+:::caution Prerequisite 
 Install [External Secret Operator (ESO)](install-eso.md).
-{% endhint %}
+:::
 
 To add secrets from **AWS Secrets Manager**, we need to create a generic Kubernetes secret for AWS authentication.
 

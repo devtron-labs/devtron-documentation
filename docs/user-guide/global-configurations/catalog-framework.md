@@ -1,6 +1,6 @@
 # Catalog Framework
 
-## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Introduction <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 Ideally, all resources such as microservices, clusters, jobs, pods, etc. should contain detailed information so that its users know what each of those resources do, how to use them, as well as all their technical specs. Access to such data makes it easier for engineers to quickly discover and understand the relevant resources.
 
@@ -24,10 +24,9 @@ There are two parts involved in the creation of a desirable resource catalog:
 
 ## Defining a Schema
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Only a super-admin can create/edit a schema.
-{% endhint %}
+:::
 
 
 1. Go to **Global Configurations** → **Catalog Framework**.

@@ -27,7 +27,7 @@ When you choose a Kubernetes resource kind (e.g., pods), you can perform a few a
 
 | **Actions** |**Description**|
 |:------------- |:--------------| 
-| **Logs** | Choose **Logs** when you want to view the logs of running pods (old and new). The logs that you get when you click **Logs** and the logs you get when you go via **Log Analyzer** are the same. <br /> Note: **Logs** are available only for the **Pod** resource kind. | 
+| **Logs** | Choose **Logs** when you want to view the logs of running pods (old and new). The logs that you get when you click **Logs** and the logs you get when you go via **Log Analyzer** are the same. <br/> Note: **Logs** are available only for the **Pod** resource kind. | 
 | **Terminal** | Choose **Terminal** when you want to view logs, debug issues, or execute commands directly. Please note that this terminal is different from the cluster terminal that you get on a node level. | 
 | **Events** | Choose **Events** when you want to view all the activities (create/update/delete) of the selected pod. | 
 | **Manifest** | Choose **Manifest** when you want to view or edit the configuration of the selected pod. | 
@@ -37,17 +37,14 @@ When you choose a Kubernetes resource kind (e.g., pods), you can perform a few a
 ---
 ### Check Vulnerabilities
 
-{% hint style="warning" %}
-
-### Prerequisite
-
+:::caution Prerequisite
 To check vulnerabilities, any one of the following integrations must be installed in your Devtron instance:
 
 * [Clair](../../user-guide/integrations/vulnerability-scanning/clair.md) 
 
 * [Trivy](../../user-guide/integrations/vulnerability-scanning/trivy.md) 
 
-{% endhint %}
+:::
 
 One of the primary reasons to check for vulnerabilities is to catch problems in images, or code, or in the Kubernetes manifest before they end up in production. While Code Scan and Kubernetes Manifest Scan are a part of Devtron's Enterprise offering, you can, however, check for vulnerabilities in your images directly from the **App Details** page.
 
@@ -96,13 +93,12 @@ To know more about analyzing logs, refer to [Logs](../resource-browser/pods.md#l
 
 You create [Ephemeral Containers](https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/) when you want to add a temporary container to a running pod for troubleshooting and debugging purposes. 
 
-{% hint style="info" %}
-
+:::info 
 Ephemeral containers are turned on by default in Kubernetes v1.23 and later
 
-{% endhint %}
+:::
 
-{% embed url="https://www.youtube.com/watch?v=TnaHRugYvSI" caption="Launching Ephemeral Container from App Details" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/TnaHRugYvSI" title="Launching Ephemeral Container from App Details" frameborder="0" allowfullscreen></iframe></div>
 
 Follow the instructions below to create an ephemeral container from the **App Details** page:
 

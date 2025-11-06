@@ -16,15 +16,12 @@ Ensure the [Build and Deploy (CI/CD)](../../user-guide/integrations/build-and-de
 
 ## Create and Deploy a Chart Group
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 * A user with the **Create** permission enabled for [Chart Groups](../global-configurations/authorization/user-access.md#chart-groups-permissions) can create a chart group. However, they will not be able to deploy it.  
 
 * Only a [Super-Admin](../global-configurations/authorization/user-access.md#chart-groups-permissions) can create as well as deploy a chart group. 
 
-{% endhint %}
+:::
 
 To create a chart group, follow the instructions below:
 
@@ -68,15 +65,12 @@ To create a chart group, follow the instructions below:
 
 ## Edit a Chart Group
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 * A user with the **Edit** permission for the specific [Chart Group](../global-configurations/authorization/user-access.md#chart-groups-permissions) can edit that chart group. 
 
 * A [Super-Admin](../global-configurations/authorization/user-access.md#chart-groups-permissions) can also edit a chart group. 
 
-{% endhint %}
+:::
 
 If you want to add/remove a chart to your existing chart group, or change the chart group name, you can edit the chart group. Follow the below instructions to edit a chart group:
 
@@ -96,13 +90,10 @@ If you want to add/remove a chart to your existing chart group, or change the ch
 
 ## Delete a Chart Group
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action? 
-
+:::caution Who Can Perform This Action? 
 Only a [Super-Admin](../global-configurations/authorization/user-access.md#chart-groups-permissions) or a user with the **Create** permission can delete a chart group. 
 
-{% endhint %}
+:::
 
 When you delete a chart group, only the chart group is deleted. Application deployed using that chart group remain unaffected. Follow the below instructions to delete a chart group. 
 
@@ -128,7 +119,7 @@ The **Advanced Options** page enables you to change the chart values, chart conf
 
 3. Select the chart version you'd like to use from the **Chart version** drop-down box. 
 
-4. Select the chart values you'd like to use from the **Values** drop-down box. If you want to configure a preset value for your chart, or use a previously configured one, select **Preset values**. Refer to [Preset Values](deployment-of-charts.md/#preset-values) for more information.
+4. Select the chart values you'd like to use from the **Values** drop-down box. If you want to configure a preset value for your chart, or use a previously configured one, select **Preset values**. Refer to [Preset Values](deployment-of-charts.md#preset-values) for more information.
 
 5. Select the project in the **Project** drop-down box.
 

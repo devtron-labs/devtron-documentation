@@ -1,21 +1,27 @@
+---
+id: application-template
+title: Application Templates
+sidebar_label: Application Templates
+slug: /user-guide/app-management/application-template
+---
+
 # Application Templates 
 
-## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Introduction <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 Application Templates in Devtron allows you to create Devtron application quickly and consistently. An application template in Devtron is created from an existing application. It captures the configuration (workflows, ConfigMaps, Secrets, Build Configurations, Source Repository, etc.) of that application, so the same setup can be reused to create new applications.
 
 Let's assume you have already created a microservice (Devtron Application) with all the required configurations, Git Repository, Build configurations, CI/CD workflows, deployment configurations, etc. Now, instead of repeating the same setup to create a similar Devtron app, you can create an Application Template from your existing Devtron app. This template can then be used to quickly create new microservices (Devtron applications) with the same trusted setup.
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to create Application Templates.
-{% endhint %}
+:::
 
 ---
 
 ## Creating an Application Template
 
-1. Navigate to **Global Configurations** → **Application Templates**.
+1. Navigate to **Application Management** → **Application Templates**.
 
 2. Click **+ Create Template**; a modal window will appear.
 
@@ -44,7 +50,7 @@ Users need to have super-admin permission to create Application Templates.
 
 After you create an application template, you can view the configurations it inherited (Git, Build, Chart, Pipeline config) from the source application. If you wish, you may modify those configurations according to your use cases.
 
-1. Navigate to **Global Configurations** → **Application Templates**.
+1. Navigate to **Application Management** → **Application Templates**.
 
 2. Select your preferred application template.
 
@@ -54,7 +60,7 @@ After you create an application template, you can view the configurations it inh
     | :------------------------ | :------------------------------------------- |
     | **Git Repository**        | The source code repository linked to the application.|
     | **Build Configurations**  | Build configuration is used to create and push docker images in the container registry of your application; refer [Build Configurations](../creating-application/docker-build-configuration.md) to learn more.  |
-    | **Base Configurations**   | Base Configurations let you define the following configurations:<ol><li><b>Deployment Template</b>; refer [Base Deployment Template](../creating-application/base-config/deployment-template.md) to learn more.</li><li><b>ConfigMaps</b>; refer [ConfigMaps](../creating-application/base-config/config-maps.md) to learn more.</li><li><b> Secrets</b>; refer [Secrets](../creating-application/base-config/secrets.md) to learn more</li></ol>|
+    | **Base Configurations**   | Base Configurations let you define the following configurations:<ol><li>**Deployment Template**; refer [Base Deployment Template](../creating-application/base-config/deployment-template.md) to learn more.</li><li>**ConfigMaps**; refer [ConfigMaps](../creating-application/base-config/config-maps.md) to learn more.</li><li>**Secrets**; refer [Secrets](../creating-application/base-config/secrets.md) to learn more</li></ol>|
     | **CI/CD Workflows**| Define and manage your build and deployment pipelines using Workflow Editor; refer [Workflow Editor](../creating-application/workflow/README.md) to learn more.|
     | **Environment Overrides** | Environment Overrides lets you define custom configurations for different environments without changing the base configurations; refer [Environment Overrides](../creating-application/environment-overrides.md) to learn more.|
 
@@ -87,7 +93,7 @@ You can use an application template to create an application. Refer [Creating Ap
 
 ## Deleting an Application Template
 
-1. Navigate to **Global Configurations** → **Application Templates**.
+1. Navigate to **Application Management** → **Application Templates**.
 
 2. Select your preferred application template.
 
@@ -99,7 +105,6 @@ You can use an application template to create an application. Refer [Creating Ap
 
     ![Figure 8: Confirming Delete Action](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-confirm-delete.jpg)
 
-{% hint style="success" %}
-### Note
+:::tip Note
 Deleting an Application Template does not affect any applications, neither the application used to create that template, nor the applications created using that template.
-{% endhint %}
+:::

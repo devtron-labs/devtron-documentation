@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Uninstall Devtron 
 
 To uninstall Devtron, run the following command:
@@ -16,5 +20,4 @@ kubectl delete ns devtroncd devtron-cd devtron-ci devtron-demo argo
 ```
 
 
-**Note**: If you have questions, please let us know on our discord channel. [![Join Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)
-
+**Note**: If you have questions, please let us know on our discord channel. <span className="inline-badge">[![Join us on Discord](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)</span>

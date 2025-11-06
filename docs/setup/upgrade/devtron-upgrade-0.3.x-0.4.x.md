@@ -6,7 +6,7 @@ If you want to check the current version of Devtron you are using, please use th
 kubectl -n devtroncd get installers installer-devtron -o jsonpath='{.status.sync.data}' | grep "^LTAG=" | cut -d"=" -f2-
 ```
 
-## Follow the below mentioned steps to upgrade the Devtron version using Helm
+## Upgrade the Devtron version using Helm
 
 ### 1. Check the devtron release name
 ```bash

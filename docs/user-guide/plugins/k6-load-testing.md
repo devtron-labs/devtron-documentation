@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # K6 Load Testing
 
 K6 is an open-source tool and cloud service that makes load testing easy for developers and QA engineers.
@@ -11,7 +15,7 @@ K6 is an open-source tool and cloud service that makes load testing easy for dev
 
 * Enter a relevant name in the `Task name` field. It is a mandatory field.
 * Enter a descriptive message for the task in the `Description` field. It is an optional field.
-* Provide a value for the input variable.<br> Note: The value may be any of the values from the previous build stages, a global variable, or a custom value.</br>
+* Provide a value for the input variable.<br/> Note: The value may be any of the values from the previous build stages, a global variable, or a custom value.
 
  | Variable | Format | Description |
 | ---- | ---- | ---- |

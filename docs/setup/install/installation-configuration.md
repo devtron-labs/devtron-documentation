@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Installation Configuration
 
 ## Configure Secrets
@@ -124,10 +127,10 @@ In case, if you do not configure the Blob Storage, then:
 You can configure Blob Storage with one of the following Blob Storage providers given below:
 
 **Note**: You can also use the respective following command to switch to another Blob Storage provider. As an example, If you are using MinIO Storage and want to switch to Azure Blob Storage, use the command provided on the Azure Blob Storage tab to switch.
-{% tabs %}
+<Tabs>
 
 
-{% tab title="MinIO Storage" %}
+<TabItem label="MinIO Storage" value="MinIO Storage">
 
 Use the following command to configure MinIO for storing logs and cache.
 
@@ -142,9 +145,9 @@ helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 --set minio.enabled=true
 ```
 
-{% endtab %}
+</TabItem>
 
-{% tab title="AWS S3 Bucket" %}
+<TabItem label="AWS S3 Bucket" value="AWS S3 Bucket">
 Use the following command to configure AWS S3 bucket for storing build logs and cache. Refer to the `AWS specific` parameters on the [Storage for Logs and Cache](#aws-specific) page.
 
 *  **Configure using S3 IAM policy:**
@@ -199,9 +202,9 @@ helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 --set configs.BLOB_STORAGE_S3_ENDPOINT=<endpoint>
 ```
 
-{% endtab %}
+</TabItem>
 
-{% tab title="Azure Blob Storage" %}
+<TabItem label="Azure Blob Storage" value="Azure Blob Storage">
 Use the following command to configure Azure Blob Storage for storing build logs and cache.
 Refer to the `Azure specific` parameters on the [Storage for Logs and Cache](#azure-specific) page.
 
@@ -217,9 +220,9 @@ helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 --set configs.AZURE_BLOB_CONTAINER_CI_CACHE=ci-cache-container
 ```
 
-{% endtab %}
+</TabItem>
 
-{% tab title="Google Cloud Storage" %}
+<TabItem label="Google Cloud Storage" value="Google Cloud Storage">
 Use the following command to configure Google Cloud Storage for storing build logs and cache.
 Refer to the `Google Cloud specific` parameters on the [Storage for Logs and Cache](#google-cloud-storage-specific) page.
 
@@ -235,9 +238,9 @@ helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 --set configs.DEFAULT_BUILD_LOGS_BUCKET=log-bucket
 ```
 
-{% endtab %}
+</TabItem>
 
-{% tab title="S3-compatible Storage" %}
+<TabItem label="S3-compatible Storage" value="S3-compatible Storage">
 Use the following command to configure S3-compatible storage (e.g., Longhorn) for storing build logs and cache.
 
 ```bash
@@ -255,8 +258,8 @@ helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 --set configs.BLOB_STORAGE_S3_ENDPOINT=<endpoint>
 ```
 
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 ---
 
@@ -379,13 +382,12 @@ Before installing Devtron, create the following databases on your external Postg
 4. **casbin** - Authorization and policy database
 5. **clairv4** - (*Optional*) Required only if you are using [Clair](../../user-guide/integrations/vulnerability-scanning/clair.md) for image scanning instead of [Trivy](../../user-guide/integrations/vulnerability-scanning/trivy.md)
 
-{% hint style="warning" %}
-### Not sure how to create a PostgreSQL database?
+:::warning Not sure how to create a PostgreSQL database?
 Here’s how you can create databases using popular providers:
 * [Amazon RDS instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html)
 * [Google Cloud SQL for PostgreSQL](https://cloud.google.com/sql/docs/postgres/create-instance#create-2nd-gen)
 * [Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server)
-{% endhint %}
+:::
 
 #### Database Creation Commands
 
@@ -404,10 +406,9 @@ CREATE DATABASE clairv4;
 
 ### Devtron Configuration for External DB
 
-{% hint style="warning" %}
-### Note
+:::warning Note
 Ensure the [required databases](#database-creation-commands) exist before proceeding.
-{% endhint %}
+:::
 
 When installing Devtron, you can specify your external PostgreSQL by using either of the following:
 * Updating `values.yaml` file

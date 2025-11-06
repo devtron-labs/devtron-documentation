@@ -5,7 +5,7 @@
 * [Where data is sent](#where-data-is-sent)
 
 
-Introduction
+## Introduction
 ============
 
 Devtron collects anonymous telemetry data that helps the Devtron team in understanding how the product is being used and in deciding what to focus on next.
@@ -18,7 +18,7 @@ As a growing community, it is very valuable in helping us make the Devtron a bet
 
 
 
-What data is collected
+## What data is collected
 ======================
 
 Here is a sample event JSON which is collected and sent:
@@ -121,7 +121,7 @@ Here is a sample summary JSON which is available under properties:
 <del>Dashboard sends the `identify` event when user visits the Dashboard for the first time.</del>
 
 
-Where data is sent
+## Where data is sent
 ======================
 
 The data is sent to Posthog server.

@@ -1,6 +1,6 @@
 # Resource Watcher
 
-## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Introduction <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 An incident response if delayed can impact businesses, revenue, and waste valuable engineering time. Devtron's Resource Watcher enables you to perform automated actions upon the occurrence of events:
 
@@ -14,10 +14,9 @@ You can make the Resource Watcher listen to the above events and accordingly run
 
 ## Creating a Watcher
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to create a watcher.
-{% endhint %}
+:::
 
 This page allows you to create a watcher to track events and run a job. It also shows the existing list of watchers (if any).
 
@@ -51,9 +50,9 @@ Here, you can select the [namespaces](../reference/glossary.md#namespace) whose 
 
     ![Figure 5: Choosing Namespaces of Specific Clusters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/specific-cluster.gif)
 
-{% hint style="info" %}
+:::info 
 In both the above options, if you choose 'Specific Namespaces', you can further decide whether to track the namespaces you enter (by clicking 'Include selections') or to track the namespaces except the ones you enter (by clicking 'Exclude selections').
-{% endhint %}
+:::
 
 
 ### Intercept Change in Resources
@@ -74,11 +73,11 @@ Here, you can select the exact Kubernetes resource(s) you wish to track for chan
 
 * Enter a [CEL expression](https://kubernetes.io/docs/reference/using-api/cel/) to catch a specific change in the resource's manifest.
 
-{% hint style="info" %}
+:::info 
 * **If resource is created** - Use 'DEVTRON_FINAL_MANIFEST'
 * **If resource is updated** - Both 'DEVTRON_INITIAL_MANIFEST' and 'DEVTRON_FINAL_MANIFEST' can exist
 * **If resource is deleted** - Use 'DEVTRON_INITIAL_MANIFEST'
-{% endhint %}
+:::
 
 **Example**: `DEVTRON_FINAL_MANIFEST.status.currentReplicas == DEVTRON_FINAL_MANIFEST.spec.maxReplicas`
 
@@ -146,10 +145,9 @@ The watcher is now ready to intercept changes to selected resources and trigger 
 
 ## Viewing Intercepted Changes
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to view intercepted changes.
-{% endhint %}
+:::
 
 ### Details
 

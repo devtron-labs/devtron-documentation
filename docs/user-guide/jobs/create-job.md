@@ -1,4 +1,4 @@
-# Create Job
+# Create a New Job
 
 In Devtron, jobs can be created in two ways:
 
@@ -10,15 +10,14 @@ In Devtron, jobs can be created in two ways:
 
 ## Create a Blank Job
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have the **Admin role** or the **Super Admin role**.
 Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
-{% endhint %}
+:::
 
 To create a new **Blank Job** in Devtron, follow these steps:
 
-1. Navigate to **Devtron Dashboard** → **Jobs**.
+1. Navigate to **Automation & Enablement** → **Jobs**.
 
     ![Figure 1: Job's Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/jobs.jpg)
 
@@ -43,10 +42,9 @@ To create a new **Blank Job** in Devtron, follow these steps:
 
 ## Create a Clone Job
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have [Admin role](../global-configurations/authorization/user-access.md#roles-available-for-jobs) or above (along with access to the environment and applications) to perform environment override.
-{% endhint %}
+:::
 
 To create a new **Clone Job** in Devtron, follow these steps:
 
@@ -72,15 +70,14 @@ To create a new **Clone Job** in Devtron, follow these steps:
 
 ## Delete Job
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have the **Admin role** or the **Super Admin role**.
 Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
-{% endhint %}
+:::
 
 To delete a job, you have to first delete any configured pipelines in that job workflow.
 
-1. Navigate to **Jobs** → **Select the job** → **Configurations** → **Workflow Editor**.
+1. Navigate to **Automation & Enablement** → **Jobs** → **Select the job** → **Configurations** → **Workflow Editor**.
 
 2. Select the job pipeline you wish to delete, and an edit job pipeline modal window will appear.
 
@@ -119,6 +116,6 @@ Tags are Key-value pairs used for identifying and organizing the application. Us
 
 3. You can click `X` icon to delete an existing tag.
 
-4. You can click the **propagation icon** <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg" alt=""> to propagate a tag (turns dark grey when propagated), click again to remove propagation.
+4. You can click the **propagation icon** <span className="inline-badge">![propagation icon](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg)</span> to propagate a tag (turns dark grey when propagated), click again to remove propagation.
 
 ![Figure 11: Tags](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-latest-1.jpg)

@@ -26,15 +26,12 @@ Consider the **App Details** page as the following two sections:
 
 * [Manage Kubernetes resources](app-resource-management.md) - Where you can manage the logs, manifest, and events of your Kubernetes resources and scan for vulnerabilities. 
 
-{% hint style="warning" %}
-
-### Who can perform this action?
-
+:::caution Who can perform this action?
 Anyone with a `View Only` permission can view this page, but only those at the level of `Admin` (with specific app permissions) or above can take actions on this page. 
 
 Refer to [User Permissions](../global-configurations/authorization/user-access.md) for more information. 
 
-{% endhint %}
+:::
 
 ---
 

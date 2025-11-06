@@ -1,17 +1,15 @@
 # Deployment Visibility & Actions 
 
-{% hint style="info" %}
-### Prerequisites
+:::info Prerequisites
 The [Deployment Chart Type](../creating-application/base-config/deployment-template.md#select-a-deployment-chart-type) must be set to Rollout in order to use Blue-Green or Canary strategies.
 
 Deployment Visibility and Actions is only available for Canary and Blue-Green Strategies. Refer to the [Deployment Strategies](../creating-application/workflow/cd-pipeline.md#deployment-strategies) to learn more.
 
-{% endhint %}
+:::
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have Build and Deploy or above (along with access to the environment and application).
-{% endhint %}
+:::
 
 Devtron helps you to manage your **Canary** and **Blue-Green** deployments by providing visibility and easy controls to manage how new versions (releases) are shared with users.
 

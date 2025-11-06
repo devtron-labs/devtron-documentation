@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Cloning Application
 
 Click on `Create New` and the select `Custom app` to create a new application.
@@ -21,7 +25,7 @@ Now click on `Clone App` to clone the selected application.
 
 New application with a duplicate template is created.
 
-{% hint style="warning" %}
+:::caution 
 When cloning an application with GitOps configuration, the configuration itself is not copied. To set up the configuration for your new application, refer [GitOps Configuration](./creating-application/gitops-config.md) guide.
-{% endhint %}
+:::
 

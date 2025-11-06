@@ -1,4 +1,4 @@
-# Security Features
+# Overview
 
 ## Introduction
 
@@ -7,8 +7,8 @@ Devtron provides [DevSecOps](https://devtron.ai/videos/devsecops-policies-as-gua
 One of the key components of DevSecOps is the detection of security risks. Currently, Devtron supports the following types of scanning:
 
 * Image Scan
-* Code Scan [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
-* Kubernetes Manifest Scan [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+* Code Scan <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
+* Kubernetes Manifest Scan <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 ![Figure 1: Security Scan Results](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/security-scan.jpg)
 
@@ -29,7 +29,7 @@ When you commit the code, it's essential to scan it before building a [container
 
 ![Figure 2: Scanning in Pre-CI Stage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/pre-ci.gif)
 
-1. In your application, go to **App Configuration** → **Workflow Editor**.
+1. In your Devtron application, go to **Configurations** (tab) → **Workflow Editor**.
 
 2. Click the CI pipeline of your preferred workflow.
 
@@ -87,7 +87,7 @@ Results of Pre-CD scan will be visible under `Image Scan` and `Kubernetes Manife
 
 ![Figure 8: Pre-CD Scan Results](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/manifest-scan.gif)
 
-### During Helm App Deployment [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+### During Helm App Deployment <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 When you [deploy a helm chart](../user-guide/deploy-chart/deployment-of-charts.md), Devtron will scan the image associated with that helm chart and also the manifests, but unlike Devtron Apps, there is no code scan involved.
 
@@ -121,10 +121,9 @@ You can also check for vulnerabilities within a specific workload such as job, p
 
 ## Scans and Policies
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to enable vulnerability scanning and to define security policies in Devtron.
-{% endhint %}
+:::
 
 Devtron's Security feature has two primary sections:
 

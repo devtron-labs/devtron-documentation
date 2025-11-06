@@ -3,9 +3,9 @@
 ## Introduction
 The **DockerSlim** plugin by Devtron helps you to optimize your container deployments by reducing Docker image size. Now with these lighter Docker images, you can perform faster deployments and enhance overall system efficiency. 
 
-{% hint style="warning" %}
+:::caution 
 Support for Docker buildx images will be added soon.
-{% endhint %}
+:::
 
 ### Prerequisites
 No prerequisites are required for integrating the **DockerSlim** plugin.
@@ -13,15 +13,15 @@ No prerequisites are required for integrating the **DockerSlim** plugin.
 ---
 
 ## Steps
-1. Go to **Applications** → **Devtron Apps**.
+1. Go to **Application Management** → **Applications** → **Devtron Apps** (tab).
 2. Click your application.
-3. Go to **App Configuration** → **Workflow Editor**.
+3. Go to **Configurations** (tab) → **Workflow Editor**.
 4. Click **New Workflow** and navigate to the **Build and Deploy from Source Code**.
 5. Fill the required fields in the **Create build pipeline** window and navigate to the **Post-build stage**.
 
-{% hint style="warning" %}
+:::caution 
 If you have already configured workflow, edit the build pipeline, and navigate to **Post-build stage**.
-{% endhint %}
+:::
 
 6. Under 'TASKS', click the **+ Add task** button.
 7. Click the **DockerSlim** plugin.
@@ -42,9 +42,9 @@ e.g., `The DockerSlim plugin is integrated for reducing the size of Docker image
 
 ### Input Variables
 
-{% hint style="warning" %}
+:::caution 
 At `IncludePathFile` input variable list down the file path of essential files from your Dockerfile. Files for which the path is not listed  at `IncludePathFile` will may be excluded from the Docker image to reduce size.
-{% endhint %}
+:::
 
 | Variable                 | Format       | Description | Sample Value |
 | ------------------------ | ------------ | ----------- | ------------ |

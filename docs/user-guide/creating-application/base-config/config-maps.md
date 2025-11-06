@@ -4,9 +4,9 @@ A ConfigMap stores key-value pairs (non-sensitive data) that your applications c
 
 ## Add ConfigMap
 
-1. Navigate to the **Applications** page and click on your preferred application. 
+1. Go to **Application Management** → **Applications** → **Devtron Apps** (tab) → (Select Your App)
 
-2. Go to the **Configurations** → **Base Configurations**.
+2. Go to **Configurations** (tab) → **Base Configurations**.
 
     ![Figure 1: Application's 'Configurations' Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/appconfig-page.jpg)
 
@@ -42,7 +42,7 @@ Follow the instructions below to create a Kubernetes ConfigMap:
    * **GUI mode** – User-friendly interface. Click **+Add** button and enter the **Key** and **Value** fields without quotes. 
    * **YAML mode** – Raw YAML for entering key-value pairs in the format **`key: value`**. Boolean and numeric values must be wrapped in double quotes.
 
-   {% embed url="https://www.youtube.com/watch?v=QfJqX6KM2lU" %}
+   <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/QfJqX6KM2lU" title="" frameborder="0" allowfullscreen></iframe></div>
 
 5. You may [perform a dry run](#perform-a-dry-run) before clicking **Save**.
 
@@ -85,15 +85,12 @@ When mounting multiple files to the same location, you can use the **Set Sub Pat
 
 * If **Set Sub Path** is disabled (unchecked), the system will delete any files already present in the [specified path](#volume-mount-path) and then mount the new files.
 
-{% hint style="info" %}
-
-### Note
-
+:::info Note
 In case of Kubernetes ConfigMap, all keys will be mounted as files on the specified path.
 
 In case of Kubernetes External ConfigMap, manually specify the keys which should be mounted as files.
 
-{% endhint %}
+:::
 
 
 ### Set File Permission
@@ -137,10 +134,9 @@ Your configurations will appear in the left pane, while the right pane will disp
 2. Modify its values.
 3. Click **Update**.
 
-{% hint style="warning" %}
-### Note
+:::caution Note
 You cannot change the name of a ConfigMap. Create a new ConfigMap instead.
-{% endhint %}
+:::
 
 ![Figure 7: Updating Existing ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/update_configmap.jpg)
 
@@ -159,82 +155,8 @@ You may delete a ConfigMap if not in use anymore. Once a ConfigMap is deleted, i
 
 ---
 
-## Edit a Protected ConfigMap [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Edit a Protected ConfigMap <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-Any changes made to the protected base configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../../../user-guide/global-configurations/approval-policy.md) is enforced. When you want to edit a protected configuration, you can do it in the following ways:
+Any changes made to the protected base configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../../../user-guide/global-configurations/approval-policy.md) is enforced.
 
-* [Normal Edit](#normal-edit) - Where changes to the protected configuration are made only after getting approval from the approver(s).
-
-* [Express Edit](#express-edit) - Where you bypass the approval process and directly make changes to the protected configuration. 
-
-### Normal Edit
-
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
-Only a Super-Admin, Manager, or an Admin can edit the configuration values. Refer to [User Permissions](../../global-configurations/authorization/user-access.md) for more information.
-
-{% endhint %}
-
-{% embed url="https://www.youtube.com/watch?v=gY9LKJSVS-g" %}
-
-Follow the below steps to edit a protected ConfigMap:
-
-1. Navigate to the **Applications** page and click on your preferred application. 
-
-2. Go to the **Configurations** → **Base Configurations**.
-
-3. Click on **ConfigMaps** and select the ConfigMap you'd like to edit.
-
-4. Modify the values either by using **GUI** or **YAML** editor. 
-
-5. Click **Save Changes**. The Base Configurations pop-up page will be displayed.
-
-    * **Save as draft** - Select this option if you want to continue making your changes later but save your changes as a draft for now.
-
-    * **Propose changes** - Select this option if you want to propose your changes to the approvers. You can then select the approvers to get notified regarding the change from the **Select approvers** to notify drop-down box.
-
-6. Enter your comments (reason for making the changes) in the **Comment** text box.
-
-7. Click **Propose Changes**. The corresponding approver will be notified via email regarding your request.
-
-### Express Edit
-
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
-Only a Super-Admin (when the [Super admins toggle](../../global-configurations/approval-policy.md#excluding-super-admins) is enabled in the Exceptions tab) or [specific users / user groups](../../global-configurations/approval-policy.md#excluding-specific-users--user-groups--api-tokens) who are added as exceptions in the Approval Policy can make express edits. Refer to [Approval Policy](../../global-configurations/approval-policy.md) for more information.
-
-{% endhint %}
-
-Express edits allow you to bypass the approval process and make direct edits to the configurations. Follow the below steps to make express edits:
-
-1. Navigate to the **Applications** page and click on your preferred application. 
-
-2. Go to the **Configurations** → **Base Configurations**.
-
-3. Click on **ConfigMaps** and select the ConfigMap you'd like to edit.
-
-4. Click on the **Edit** button.
-
-{% hint style="info" %}
-
-### Note
-
-The **Edit** button will only be displayed if: 
-
-* You are a Super-Admin and the Super admins toggle is enabled in the Approval Policy page
-
-* You are added as an exception in the Approval Policy page. 
-
-Refer to [Approval Policy](../../global-configurations/approval-policy.md) for more information.
-
-{% endhint %}
-
-5. Modify the values either by using **GUI** or **YAML** editor. 
-
-6. Click on **Publish Changes** to direcly publish your changes. 
-
-![Figure 9: Express Edit](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/base-config/express-edit-configmap.gif)
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/gY9LKJSVS-g" title="" frameborder="0" allowfullscreen></iframe></div>

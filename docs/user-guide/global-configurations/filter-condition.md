@@ -1,8 +1,15 @@
+---
+id: filter-condition
+title: Filter Condition
+sidebar_label: Filter Condition
+slug: /user-guide/app-management/policies/filter-condition
+---
+
 # Filter Condition
 
-## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Introduction <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-The [workflows](../creating-application/workflow/) you create in Devtron for managing the CI-CD of your application can be made flexible or restricting with the help of CD filter conditions, for e.g., not all events (such as image builds) generated during the CI stage require progression to the CD stage. Therefore, instead of creating multiple workflows that cater to complex requirements, Devtron provides you the option of defining filters to tailor your workflow according to your specific needs. 
+The [workflows](../creating-application/workflow/README.md) you create in Devtron for managing the CI-CD of your application can be made flexible or restricting with the help of CD filter conditions, for e.g., not all events (such as image builds) generated during the CI stage require progression to the CD stage. Therefore, instead of creating multiple workflows that cater to complex requirements, Devtron provides you the option of defining filters to tailor your workflow according to your specific needs. 
 
 Using filter conditions, you can control the progression of events. Here are a few general examples:
 * Images containing the label "test" should not be eligible for deployment in production environment
@@ -14,12 +21,11 @@ Using filter conditions, you can control the progression of events. Here are a f
 
 ## Steps to Create a Filter
 
-{% hint style="info" %}
-### Prerequisites
+:::info Prerequisites
 You must have application(s) with CI-CD workflow(s) configured
-{% endhint %}
+:::
 
-1. From the left sidebar, go to **Global Configurations** → **Filter Condition**.
+1. From the left sidebar, go to **Application Management** → **Policies** → **Filter Condition**.
 
 2. Add a filter condition.
 
@@ -56,17 +62,17 @@ You must have application(s) with CI-CD workflow(s) configured
 
     ![Figure 5: Selecting Environment(s) from Cluster(s)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/environment-selection.jpg)
 
-{% hint style="info" %}
+:::info 
 Since an application can have more than one environment, the filter conditions apply only to the environment you chose in the **Apply to** section. If you create a filter condition without choosing an application or environment, it will not apply to any of your pipelines.
-{% endhint %}
+:::
 
 6. Click **Save**. You have successfully created a filter.
 
     ![Figure 6: Success Toast](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/filter-created.jpg)
 
-{% hint style="warning" %}
+:::caution 
 If you create filters using CEL expressions that result in a conflict (i.e., passing and failing of the same image), fail will have higher precedence
-{% endhint %}
+:::
 
 ---
 
@@ -113,7 +119,7 @@ Consider another scenario where you wish to make images eligible for deployment 
 
 `gitCommitDetails.filter(gitCommitDetail, gitCommitDetail.startsWith('https://github.com/devtron-labs')).map(repo, gitCommitDetails[repo].branch).exists_one(branch, branch.startsWith('hotfix-'))`
 
-where, `https://github.com/devtron-labs` is a portion of the repo URL <br />
+where, `https://github.com/devtron-labs` is a portion of the repo URL <br/>
 and `hotfix-` is for finding the branch name (say *hotfix-sept-2024*)
 
 Alternatively, if you have a fixed branch (say *hotfix-123*), you may write the following expression:
@@ -122,7 +128,7 @@ Alternatively, if you have a fixed branch (say *hotfix-123*), you may write the 
 
 **Walkthrough Video**:
 
-{% embed url="https://www.youtube.com/watch?v=R8IbZhXhH-k" caption="Filter Condition Example" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/R8IbZhXhH-k" title="Filter Condition Example" frameborder="0" allowfullscreen></iframe></div>
 
 
 ### Fail Condition

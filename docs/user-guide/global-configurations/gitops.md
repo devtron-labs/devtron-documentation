@@ -1,3 +1,10 @@
+---
+id: gitops
+title: GitOps
+sidebar_label: GitOps
+slug: /user-guide/app-management/configurations/gitops
+---
+
 # GitOps
 
 ## Introduction
@@ -14,15 +21,12 @@ Whenever tools like Argo CD or Flux CD recognize changes in the Git repository, 
 
 ## Steps to Configure GitOps
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 Users need to have [Super-Admin](user-access.md#assign-super-admin-permissions) permission to configure GitOps.
 
-{% endhint %}
+:::
 
-1. Go to **Global Configurations** → **GitOps**
+1. Go to **Application Management** → **Configurations** → **GitOps**
 
    ![Figure 2: Global Configuration - GitOps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/gitops-v1.jpg)
 
@@ -30,14 +34,14 @@ Users need to have [Super-Admin](user-access.md#assign-super-admin-permissions) 
 
    ![Figure 3: Selecting a Provider](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/select-provider-v1.jpg)
 
-{% hint style="warning" %}
+:::caution 
 The Git provider you select for configuring GitOps might impact the following sections:
 
    * [Deployment Template](../creating-application/base-config/deployment-template.md)
 
    * [Charts](../deploy-chart/README.md)
 
-{% endhint %}
+:::
 
 3. Fill all the mandatory fields. Refer [supported Git providers](#supported-git-providers) to know more about the respective fields.
 
@@ -61,10 +65,10 @@ The Git provider you select for configuring GitOps might impact the following se
 
 Alternatively, you may use the feature flag **FEATURE_USER_DEFINED_GITOPS_REPO_ENABLE** to enable or disable custom GitOps repo.
 
-{% hint style="info" %}
-**For disabling** - `FEATURE_USER_DEFINED_GITOPS_REPO_ENABLE: "false"` <br />
+:::info 
+**For disabling** - `FEATURE_USER_DEFINED_GITOPS_REPO_ENABLE: "false"` <br/>
 **For enabling** - `FEATURE_USER_DEFINED_GITOPS_REPO_ENABLE: "true"`
-{% endhint %}
+:::
 
 #### How to Use Feature Flag
 
@@ -96,64 +100,55 @@ Below are the Git providers supported in Devtron for storing configuration files
 
 * [GitHub](#github)
 * [GitLab](#gitlab)
-* [AWS Code Commit](#aws-code-commit)
+* [AWS Code Commit](#aws-code-commit-)
 * [Azure](#azure)
 * [Bitbucket](#bitbucket)
-* [Other GitOps](#other-gitops)
+* [Other GitOps](#other-gitops-)
 
 ### GitHub
 
-{% hint style="info" %}
-
-### Prerequisite
-
+:::info Prerequisite
 1. A GitHub account
 2. A GitHub organization. If you don't have one, refer [Creating Organization in GitHub](#creating-organization-in-github).
-{% endhint %}
+:::
 
 Fill the following mandatory fields:
 
 | Field | Description |
 | --- | --- |
 | **Git Host** | Shows the URL of GitHub, e.g., https://github.com/ |
-| **GitHub Organisation Name** | Enter the GitHub organization name. <br />If you do not have one, refer [How to create organization in GitHub](#creating-organization-in-github). |
+| **GitHub Organisation Name** | Enter the GitHub organization name. <br/>If you do not have one, refer [How to create organization in GitHub](#creating-organization-in-github). |
 | **GitHub Username** | Provide the username of your GitHub account |
-| **Personal Access Token** | Provide your personal access token (PAT). It is used as an alternate password to authenticate your GitHub account. <br />If you do not have one, create a GitHub PAT [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token). <br /><br /> **Access Required**: <br /> `repo` - Full control of private repositories (able to access commit status, deployment status, and public repositories). <br /> `admin:org` - Full control of organizations and teams (Read and Write access). May not be required if you are using user-defined git repo. <br /> `delete_repo` - Grants delete repo access on private repositories. |
+| **Personal Access Token** | Provide your personal access token (PAT). It is used as an alternate password to authenticate your GitHub account. <br/>If you do not have one, create a GitHub PAT [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token). <br/><br/> **Access Required**: <br/> `repo` - Full control of private repositories (able to access commit status, deployment status, and public repositories). <br/> `admin:org` - Full control of organizations and teams (Read and Write access). May not be required if you are using user-defined git repo. <br/> `delete_repo` - Grants delete repo access on private repositories. |
 
 ### GitLab
 
-{% hint style="info" %}
-
-### Prerequisite
-
+:::info Prerequisite
 1. A GitLab account
 
 2. A GitLab group. If you don't have one, refer [Creating Group in GitLab](#creating-group-in-gitlab).
 
-{% endhint %}
+:::
 
 Fill the following mandatory fields:
 
 | Field | Description |
 | --- | --- |
 | **Git Host** | Shows the URL of GitLab, e.g., https://gitlab.com/ |
-| **GitLab Group ID** | Enter the GitLab group ID. <br />If you do not have one, refer [GitLab Group ID](#creating-group-in-gitlab).|
+| **GitLab Group ID** | Enter the GitLab group ID. <br/>If you do not have one, refer [GitLab Group ID](#creating-group-in-gitlab).|
 | **GitLab Username** | Provide the username of your GitLab account |
-| **Personal Access Token** | Provide your personal access token (PAT). It is used as an alternate password to authenticate your GitLab account. <br />If you do not have one, create a GitLab PAT [here](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html). <br /><br /> **Access Required**: <br /> `api` - Grants complete read/write access to the scoped project API. <br /> `write_repository` - Allows read/write access (pull, push) to the repository.|
+| **Personal Access Token** | Provide your personal access token (PAT). It is used as an alternate password to authenticate your GitLab account. <br/>If you do not have one, create a GitLab PAT [here](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html). <br/><br/> **Access Required**: <br/> `api` - Grants complete read/write access to the scoped project API. <br/> `write_repository` - Allows read/write access (pull, push) to the repository.|
 
-### AWS Code Commit [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+### AWS Code Commit <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-{% hint style="info" %}
-
-### Prerequisites
-
+:::info Prerequisites
 1. Existing user of AWS CodeCommit ([as AWS stopped adding new customers to it](https://aws.amazon.com/blogs/devops/how-to-migrate-your-aws-codecommit-repository-to-another-git-provider/))
 
 2. An AWS IAM user with `AWSCodeCommitPowerUser` permission. Refer to [Create and Configure an IAM User with AWSCodeCommitPowerUser Permission](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html#setting-up-gc-account) for more information.
 
 3. Obtain SSH Key ID and SSH Private Key. Refer to [Generating SSH Private Key in AWS Code Commit](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html) for more information.
 
-{% endhint %}
+:::
 
 ![Figure 6: AWS Code Commit](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/aws-code-commit.jpg)
 
@@ -169,24 +164,21 @@ Click **Save**.
 
 ### Azure
 
-{% hint style="info" %}
-
-### Prerequisites
-
+:::info Prerequisites
 1. An organization on Azure DevOps. If you don't have one, refer [this link](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops#create-an-organization).
 
 2. A project in your Azure DevOps organization. Refer [Creating Project in Azure](#creating-project-in-azure-devops).
 
-{% endhint %}
+:::
 
 Fill the following mandatory fields:
 
 | Field | Description |
 | --- | --- |
 | **Azure DevOps Organisation Url*** | Enter the Org URL of Azure DevOps. Format should be `https://dev.azure.com/<org-name>`, where `<org-name>` represents the organization name, e.g., [https://dev.azure.com/devtron-test](https://dev.azure.com/devtron-test)|
-| **Azure DevOps Project Name** | Enter the Azure DevOps project name. <br />If you do not have one, refer [Azure DevOps Project Name](#creating-project-in-azure-devops).|
+| **Azure DevOps Project Name** | Enter the Azure DevOps project name. <br/>If you do not have one, refer [Azure DevOps Project Name](#creating-project-in-azure-devops).|
 | **Azure DevOps Username*** | Provide the username of your Azure DevOps account |
-| **Azure DevOps Access Token*** | Provide your Azure DevOps access token. It is used as an alternate password to authenticate your Azure DevOps account. <br />If you do not have one, create a Azure DevOps access token [here](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page). <br /><br /> **Access Required**: <br /> `code` - Grants the ability to read source code and metadata about commits, change sets, branches, and other version control artifacts. [More information on scopes in Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/oauth?view=azure-devops#scopes). |
+| **Azure DevOps Access Token*** | Provide your Azure DevOps access token. It is used as an alternate password to authenticate your Azure DevOps account. <br/>If you do not have one, create a Azure DevOps access token [here](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page). <br/><br/> **Access Required**: <br/> `code` - Grants the ability to read source code and metadata about commits, change sets, branches, and other version control artifacts. [More information on scopes in Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/oauth?view=azure-devops#scopes). |
 
 ### Bitbucket
 
@@ -198,15 +190,12 @@ Here, you get 2 options:
 
 #### Bitbucket Cloud
 
-{% hint style="info" %}
-
-### Prerequisite
-
+:::info Prerequisite
 1. A Bitbucket account
 
 2. A workspace in your Bitbucket account. Refer [Creating Workspace in Bitbucket](#creating-workspace-in-bitbucket).
 
-{% endhint %}
+:::
 
 ![Figure 7: Entering Details of Bitbucket Cloud](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/bitbucket-cloud-v1.jpg)
 
@@ -215,20 +204,17 @@ Fill the following mandatory fields:
 | Field | Description |
 | --- | --- |
 | **Bitbucket Host** | Shows the URL of Bitbucket Cloud, e.g., https://bitbucket.org/ |
-| **Bitbucket Workspace ID** | Enter the Bitbucket workspace ID. <br />If you do not have one, refer [Bitbucket Workspace ID](#creating-workspace-in-bitbucket)|
-| **Bitbucket Project Key** | Enter the Bitbucket project key. <br />If you do not have one, refer [Bitbucket Project Key](https://support.atlassian.com/bitbucket-cloud/docs/group-repositories-into-projects/). <br />Note: If the project is not provided, the repository is automatically assigned to the oldest project in the workspace. |
+| **Bitbucket Workspace ID** | Enter the Bitbucket workspace ID. <br/>If you do not have one, refer [Bitbucket Workspace ID](#creating-workspace-in-bitbucket)|
+| **Bitbucket Project Key** | Enter the Bitbucket project key. <br/>If you do not have one, refer [Bitbucket Project Key](https://support.atlassian.com/bitbucket-cloud/docs/group-repositories-into-projects/). <br/>Note: If the project is not provided, the repository is automatically assigned to the oldest project in the workspace. |
 | **Bitbucket Username*** | Provide the username of your Bitbucket account |
-| **Personal Access Token** | Provide your personal access token (PAT). It is used as an alternate password to authenticate your Bitbucket Cloud account. <br />If you do not have one, create a Bitbucket Cloud PAT [here](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/). <br /><br /> **Access Required**: <br /> `repo` - Full control of repositories (Read, Write, Admin, Delete) access. |
+| **Personal Access Token** | Provide your personal access token (PAT). It is used as an alternate password to authenticate your Bitbucket Cloud account. <br/>If you do not have one, create a Bitbucket Cloud PAT [here](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/). <br/><br/> **Access Required**: <br/> `repo` - Full control of repositories (Read, Write, Admin, Delete) access. |
 
 #### Bitbucket Data Center
 
-{% hint style="info" %}
-
-### Prerequisite
-
+:::info Prerequisite
 A Bitbucket Data Center account
 
-{% endhint %}
+:::
 
 ![Figure 8: Entering Details of Bitbucket Data Center](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/bitbucket-server-v1.jpg)
 
@@ -241,7 +227,7 @@ Fill the following mandatory fields:
 | **Bitbucket Username*** | Provide the username of your Bitbucket Data Center account |
 | **Password** | Provide the password to authenticate your Bitbucket Data Center account |
 
-### Other GitOps [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+### Other GitOps <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 ![Figure 9: Other GitOps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/other-gitops.jpg)
 
@@ -261,11 +247,11 @@ Click **Save**.
 
 ### Creating Organization in GitHub
 
-{% hint style="warning" %}
+:::caution 
 We do **NOT** recommend using GitHub organization that contains your source code.
-{% endhint %}
+:::
 
-{% embed url="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/github/github-gitops-latest.mp4" caption="GitHub" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/github/github-gitops-latest.mp4" title="GitHub" frameborder="0" allowfullscreen></iframe></div>
 
 1. Create a new account on GitHub (if you do not have one).
 2. On the upper-right corner of your GitHub page, click your profile photo, then click **Settings**.
@@ -280,15 +266,14 @@ We do **NOT** recommend using GitHub organization that contains your source code
 
 7. Go to your profile and click **Your organizations** to view all the organizations you created.
 
-{% hint style="info" %}
-### Additional References
+:::info Additional References
 For more information about the plans available for your team, see [GitHub's products](https://docs.github.com/en/get-started/learning-about-github/githubs-products). You can also refer [GitHub organization](https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-organizations) official doc page for more detail.
-{% endhint %}
+:::
 
 
 ### Creating Group in GitLab
 
-{% embed url="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/gitlab/gitops-gitlab-latest1.mp4" caption="GitHub" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/gitlab/gitops-gitlab-latest1.mp4" title="GitHub" frameborder="0" allowfullscreen></iframe></div>
 
 
 1. Create a new account on GitLab (if you do not have one).
@@ -312,15 +297,14 @@ For more information about the plans available for your team, see [GitHub's prod
    * Click **Create**.
    * Azure DevOps displays the project welcome page with the `project name`.
 
-{% hint style="info" %}
-### Additional References
+:::info Additional References
 You can also refer [Azure DevOps - Project Creation](https://docs.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops&tabs=preview-page) official page for more details.
-{% endhint %}
+:::
 
 
 ### Creating Workspace in Bitbucket
 
-{% embed url="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/bitbucket/bitbucket-latest-gitops.mp4" caption="GitHub" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/bitbucket/bitbucket-latest-gitops.mp4" title="GitHub" frameborder="0" allowfullscreen></iframe></div>
 
 1. Create a new individual account on Bitbucket (if you do not have one).
 2. Select your profile and settings avatar on the upper-right corner of the top navigation bar.
@@ -332,7 +316,6 @@ You can also refer [Azure DevOps - Project Creation](https://docs.microsoft.com/
   * Click **Create**.
 6. Your `Workspace name` and `Workspace ID` will be created.
 
-{% hint style="info" %}
-### Additional References
+:::info Additional References
 You can also refer [official Bitbucket Workspace page](https://support.atlassian.com/bitbucket-cloud/docs/what-is-a-workspace/) for more details.
-{% endhint %}
+:::

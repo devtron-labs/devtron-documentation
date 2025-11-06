@@ -6,14 +6,13 @@ A verified account on [Okta](https://www.okta.com/). Okta activates your account
 
 Here's a reference guide to set up your Okta org and application: [Link](https://developer.okta.com/docs/guides/oie-embedded-common-org-setup/go/main/)
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Only super admin users can set up SSO providers.
-{% endhint %}
+:::
 
 ## Tutorial
 
-{% embed url="https://www.youtube.com/watch?v=i-7IWkg6Ipk" caption="Okta App Setup" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/i-7IWkg6Ipk" title="Okta App Setup" frameborder="0" allowfullscreen></iframe></div>
 
 ## Steps on Okta Admin Console
 
@@ -61,11 +60,9 @@ Once your Okta org is set up, create an app integration on Okta to get a Client 
 
 Now your users will be able to log in to Devtron using the Okta authentication method. Note that existing signed-in users will be logged out, and they have to log in again using their OIDC account.
 
-## Auto-assign Permissions [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Auto-assign Permissions <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-{% hint style="warning" %}
-### Prerequisites
-
+:::caution Prerequisites
 In order to auto-assign feature to work
 
 1. A groups claim is configured in the authorization server, so that group information is included in the token. Refer to [Add a groups claim in Okta](https://developer.okta.com/docs/guides/customize-tokens-groups-claim/main/#add-a-groups-claim-for-the-org-authorization-server) to learn more.
@@ -74,7 +71,7 @@ In order to auto-assign feature to work
 
 3. Relevant users are added to these groups. Refer [Add Users to Okta groups](https://support.okta.com/help/s/article/adding-users-to-okta-groups?language=en_US) to learn more.
 
-{% endhint %}
+:::
 
 Since Okta provides centralized user management through its Universal Directory, this feature further simplifies the onboarding process of organizations with a large number of users. It also eliminates repetitive permission assignment by automatically mapping your Okta groups to Devtron’s Permission Groups during single sign-on (SSO) login.
 
@@ -92,14 +89,12 @@ If you’ve defined groups in your Okta Universal Directory, you can create corr
 
 ![Figure 2: Sample Configuration for Auto -assign Permission](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/okta-sample-config-auto-assign.jpg)
 
-{% hint style="warning" %}
-### Note
+:::caution Note
 SSO login requires exact matching between Devtron permission group names and Okta groups. Any discrepancies or missing groups will prevent successful login.
 
 Once you save the configuration with this feature enabled, existing user permissions will be cleared and the future permissions will be managed through [permission groups](../permission-groups.md) linked to Okta groups.
-{% endhint %}
+:::
 
-{% hint style="info" %}
-### Tip
+:::info Tip
 If your Okta groups permissions aren't reflecting in Devtron, a quick sign-out and sign-in can resolve the issue.
-{% endhint %}
+:::

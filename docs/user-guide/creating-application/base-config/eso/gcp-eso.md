@@ -1,9 +1,12 @@
+---
+hide_table_of_contents: true
+---
+
 # Google Secrets Manager
 
-{% hint style="warning" %}
-### Prerequisite 
+:::caution Prerequisite 
 Install [External Secret Operator (ESO)](install-eso.md).
-{% endhint %}
+:::
 
 To add secrets from **Google Secrets Manager**, follow the steps mentioned below :
 

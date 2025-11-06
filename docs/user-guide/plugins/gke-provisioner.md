@@ -3,9 +3,9 @@
 ## Introduction
 This plugin streamlines the creation and configuration of a Google Kubernetes Engine (GKE) cluster on your Google Cloud Platform (GCP). It automates the provisioning process while implementing essential security measures, including a preconfigured firewall that allows access to SSH, HTTP (port 80), 8080, and Kubernetes NodePorts. By automating the GKE provisioning process through this plugin, you can save time, ensure consistency in cluster setup, maintain security standards, and provide a Kubernetes-ready environment for deploying your containerized applications. 
 
-{% hint style="warning" %}
+:::caution 
 The **GKE Provisioner** plugin creates a [Standard GKE Cluster](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster), not an Autopilot GKE cluster.
-{% endhint %}
+:::
 
 ### Prerequisites
 Before integrating the **GKE Provisioner** plugin make sure that you have a GCP account with valid permissions to provision GKE.

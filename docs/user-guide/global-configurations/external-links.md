@@ -49,67 +49,14 @@ Before you begin, configure an application in the Devtron dashboard.
 
 The following fields are provided on the **Add Link** page:
 
-<table>
-    <row>
-        <th>Field</th>
-        <th>Description</th>
-    </row>
-    <tr>
-        <td><b>Link name</b></td>
-        <td>Provide name of the link.</td>
-    </tr>
-    <tr>
-        <td><b>Description</b></td>
-        <td>Description of the link name.</td>
-    </tr>
-    <tr>
-        <td><b>Show link in</b></td>
-        <td> <ul>
-                <li>All apps in specific clusters: Select this option to select the cluster.</li>
-                <li>Specific applications: Select this option to select the application.</li>                
-            </ul></td>
-    </tr>
-    <tr>
-        <td><b>Clusters</b></td>
-        <td>
-            Choose the clusters for which you want to configure the selected external link with.
-            <ul>
-                <li>Select one or more than one cluster to enable the link on the specified clusters.</li>
-                <li>Select All Clusters to enable the link on all the clusters.</li>                
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td><b>Applications</b></td>
-        <td>
-            Choose the application for which you want to configure the selected external link with.
-            <ul>
-                <li>Select one or more than one application to enable the link on the specified application.</li>
-                <li>Select All applications to enable the link on all the applications.<br>Note: If you enable `App admins can edit`, then you can view the selected links on the App-Details page. </li>                
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td><b>URL Template</b></td>
-        <td>
-            The configured URL Template is used by apps deployed on the selected clusters/applications.            
-            By combining one or more of the env variables, a URL with the structure shown below can be created:<br></br>
-            <i>http://www.domain.com/{namespace}/{appName}/details/{appId}/env/{envId}/details/{podName}</i>
-            <br></br>
-            If you include the variables {podName} and {containerName} in the URL template, then the configured links (e.g. Grafana) will be visible only on the pod level and container level respectively.<br></br>
-            The env variables:
-            <ul>
-                <li>{appName}</li>
-                <li>{appId}</li>
-                <li>{envId}</li>
-                <li>{namespace}</li>
-                <li>{podName}: If used, the link will only be visible at the pod level on the [App Details](../app-details/README.md) page.
-                <li>{containerName}: If used, the link will only be visible at the container level on the [App Details](../app-details/README.md) page. </li>
-            </ul>
-            <b>Note: The env variables will be dynamically replaced by the values that you used to configure the link.           
-        </td>
-    </tr>
-</table>
+| Field         | Description |
+|---------------|-------------|
+| **Link name** | Provide name of the link. |
+| **Description** | Description of the link name. |
+| **Show link in** | - All apps in specific clusters: Select this option to select the cluster.<br/>- Specific applications: Select this option to select the application. |
+| **Clusters** | Choose the clusters for which you want to configure the selected external link with.<br/><br/>- Select one or more than one cluster to enable the link on the specified clusters.<br/>- Select All Clusters to enable the link on all the clusters. |
+| **Applications** | Choose the application for which you want to configure the selected external link with.<br/><br/>- Select one or more than one application to enable the link on the specified application.<br/>- Select All applications to enable the link on all the applications.<br/><br/>**Note**: If you enable `App admins can edit`, then you can view the selected links on the App-Details page. |
+| **URL Template** | The configured URL Template is used by apps deployed on the selected clusters/applications.<br/><br/>By combining one or more of the env variables, a URL with the structure shown below can be created:<br/><br/>http://www.domain.com/`{namespace}`/`{appName}`/details/`{appId}`/env/`{envId}`/details/`{podName}`<br/><br/>If you include the variables `{podName}` and `{containerName}` in the URL template, then the configured links (e.g. Grafana) will be visible only on the pod level and container level respectively.<br/><br/>The env variables:<br/>- `{appName}`<br/>- `{appId}`<br/>- `{envId}`<br/>- `{namespace}`<br/>- `{podName}`: If used, the link will only be visible at the pod level on the [App Details](../app-details/README.md) page.<br/>- `{containerName}`: If used, the link will only be visible at the container level on the [App Details](../app-details/README.md) page.<br/><br/>**Note**: The env variables will be dynamically replaced by the values that you used to configure the link. |
 
 
 > Note: To add multiple links, select **+ Add another** at the top-left corner.
@@ -126,7 +73,7 @@ The users (admin and others) can access the configured external link on the [App
 
 On the `External Links` page, the configured external links can be filtered/searched, as well as edited/deleted.
 
-Select `Global Configurations > External links`.
+Go to **Application Management** → **Configurations** → **External links**.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/manage-external-links-v2.jpg)
 

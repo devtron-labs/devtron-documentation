@@ -15,7 +15,7 @@ You must [add your OCI registry](../global-configurations/container-registries.m
 
 ## Tutorial
 
-{% embed url="https://www.youtube.com/watch?v=9imC5MMz9gs" caption="Pulling Charts from an OCI Registry to Devtron" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/9imC5MMz9gs" title="Pulling Charts from an OCI Registry to Devtron" frameborder="0" allowfullscreen></iframe></div>
 
 ---
 
@@ -66,8 +66,8 @@ Or, you may try performing a resync as shown below
 
 The removed chart would no longer appear in the Chart Store.
 
-{% hint style="info" %}
+:::info
 Deleting a chart repo from your OCI registry will not lead to the removal of chart from the Chart Store
-{% endhint %}
+:::
 
 

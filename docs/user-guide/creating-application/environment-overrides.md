@@ -16,12 +16,11 @@ The Environment Overrides section allows you to customize the **Deployment Templ
 
 ## Environment Configurations Page
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have [Admin role](../global-configurations/authorization/user-access.md#roles-available-for-devtron-apps) or above (along with access to the environment and applications) to perform environment override.
-{% endhint %}
+:::
 
-1. In your application, go to **Configurations** → **Environment Overrides**. 
+1. In your Devtron app, go to **Configurations** (tab) → **Environment Overrides**. 
 
     ![Figure 2: Accessing Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/config-env-override.jpg)
 
@@ -61,13 +60,12 @@ As you can see, the Deployment Template for the *banking-final* environment show
     ![Figure 7: Creat Override Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/create-override.gif)
 
 4. In the same tab (now labelled as **Override**), you can choose any one mode for changing the configuration values:
-    * **YAML** - This mode has a YAML based editor intended for advanced users. [Click here](../creating-application/base-config/deployment-template/deployment.md#yaml) to know more about each key-value pair within the `YAML` section.
+    * **YAML** - This mode has a YAML based editor intended for advanced users. [Click here](../creating-application/base-config/deployment-template-types/deployment.md#yaml) to know more about each key-value pair within the `YAML` section.
     * **GUI** - This mode has a user-friendly interface intended for beginner to advanced users. [Click here](../creating-application/base-config/deployment-template.md#using-gui) to know more about each field within the `GUI` section.
 
-{% hint style="info" %}
-### Note
+:::info Note
 Users who are not super-admins will land on GUI mode when they override; whereas super-admins will land on YAML mode. This is just the default behavior, users can still toggle the mode if needed.
-{% endhint %}
+:::
 
 Let's choose YAML mode for now and proceed. If you prefer GUI mode, go to [Override Deployment Template using GUI](#override-deployment-template-using-gui) section.
 
@@ -93,15 +91,13 @@ Suppose you want to update only one field (e.g., `"username" = "johndoe"`) in a 
 
 If you know the fields you wish to change, simply enter the changed key-value fields along with indentation (if any).
 
-{% embed url="https://www.youtube.com/watch?v=phhv1_2eStI" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/phhv1_2eStI" title="" frameborder="0" allowfullscreen></iframe></div>
 
 <!--* Or you may copy-paste the entire config, and change the fields.
-    {% embed url="https://www.youtube.com/watch?v=4eHM5ZsNoCg" %}
+    <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/4eHM5ZsNoCg" title="" frameborder="0" allowfullscreen></iframe></div>
 -->
 
 ### Using Replace Strategy 
-
-{% embed url="https://youtu.be/xF0Ar4rHqWo" %}
 
 Suppose you update your deployment chart version (e.g., from `4.0.0` to `4.0.1`). Although the new chart version contains new features and key-value pairs, if you prefer to keep a few configurations unchanged regardless of the new key-value pairs added in the new chart version, you can use the replace strategy.
 
@@ -117,22 +113,32 @@ Suppose you update your deployment chart version (e.g., from `4.0.0` to `4.0.1`)
 | logLevel  | "info"             | *(Not specified)*            | *(Removed)*         |
 | timeout   | (Not specified)    | 30s                          | 30s (Added)         |
 
-{% hint style="info" %}
-### What if some keys are locked from editing?
+:::info What if some keys are locked from editing?
 You cannot modify locked keys in an environment's deployment template unless you are a super-admin. Refer [Lock Deployment Configuration](../global-configurations/lock-deployment-config.md) to know more.
-{% endhint %}
+:::
 
 ### Override Deployment Template using GUI 
 
-{% embed url="https://youtu.be/fkF29-H3plk" %}
+Follow the below steps to override your deployment template using GUI: 
 
-{% hint style="info" %}
+1. Navigate to **Application Management** → **Applications** and click your Devtron application. 
 
-### Want to customize the deployment template values displayed on GUI? [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+2. Go to **Configurations** (tab) → **Base Configurations** → **Environment Overrides** and click on your preferred environment to override deployment template.
 
-The GUI mode shows limited number of fields as specified by the super-admin in the GUI schema. Refer [Customize GUI](../creating-application/base-config/deployment-template.md#customize-the-gui) to know more.
+3. Click on the **No Override** option and then click on **Create Override**. 
 
-{% endhint %}
+4. Click on the **GUI** option. The available fields will be displayed on the right side of the page. 
+
+5. Select your preferred fields and enter the values to override.
+
+6. Select your preferred merge strategy from the **Merge Strategy** drop-down box. 
+
+7. Click on **Save Changes**.
+
+:::info Want to customize the deployment template values displayed on GUI? <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
+The GUI mode shows limited number of fields as specified by the super-admin in the GUI schema. Refer [Customize GUI](../creating-application/base-config/deployment-template.md#customize-the-gui-) to know more.
+
+:::
 
 ---
 
@@ -144,23 +150,18 @@ The process to override both ConfigMaps and Secrets is similar to [Override Depl
 
 ### Patch Strategy
 
-{% embed url="https://youtu.be/drqF4N3w8IE" %}
-
-{% hint style="info" %}
-
-### Impact of Patch strategy on Base Configuration's CM/Secret?
-
+:::info Impact of Patch strategy on Base Configuration's CM/Secret?
 You cannot delete a ConfigMap or Secret in **Base Configurations** if you have used 'Patch' strategy for overridding ConfigMap or Secret at your environment-level. This happens because they are still dependent and inheriting their values from Base Configurations.
 
-{% endhint %}
+:::
 
 ### Replace Strategy
 
-{% embed url="https://www.youtube.com/watch?v=lSoj8wwOej0" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/lSoj8wwOej0" title="" frameborder="0" allowfullscreen></iframe></div>
 
 ### Override ConfigMaps and Secrets using GUI
 
-{% embed url="https://www.youtube.com/watch?v=UOTKLVuSkDg" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/UOTKLVuSkDg" title="" frameborder="0" allowfullscreen></iframe></div>
 
 ---
 
@@ -176,82 +177,28 @@ This action will discard the current overrides and the base configuration file (
 
 ---
 
-## Protected Environment Configurations [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Protected Environment Configurations <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-Any changes made to the protected environment configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../global-configurations/approval-policy.md) is enforced. When you want to edit a protected configuration, you can do it in the following ways:
+Any changes made to the protected environment configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../global-configurations/approval-policy.md) is enforced.
 
-* [Normal Edit](#normal-edit) - Where changes to the protected configuration are made only after getting approval from the approver(s).
+Follow the below steps to make changes to a protected environment: 
 
-* [Express Edit](#express-edit) - Where you bypass the approval process and directly make changes to the protected configuration. 
+1. Navigate to **Application Management** → **Applications** and click on your preferred application. 
 
-### Normal Edit
+2. Go to **Configurations** (tab) → **Base Configurations** → **Environment Overrides** and click on your preferred environment.
 
-{% hint style="warning" %}
+3. Click on the **No Override** option and then click on **Create Override**.
 
-### Who Can Perform This Action?
+4. Select your preferred merge strategy from the **Merge Strategy** drop-down box. 
 
-Only a Super-Admin, Manager, or an Admin can edit the configuration values. Refer to [User Permissions](../global-configurations/authorization/user-access.md) for more information.
+5. Make changes to the key-value pairs in the **Patch data** section. 
 
-{% endhint %}
-
-{% embed url="https://youtu.be/eseckdmpdls" %}
-
-Follow the below steps to edit a protected configuration:
-
-1. Navigate to the **Applications** page and click on your preferred application. 
-
-2. Go to the **Configurations** → **Base Configurations**.
-
-3. Click on your preferred configuration (e.g., **ConfigMaps**) and select the ConfigMap you'd like to edit.
-
-4. Modify the values either by using **GUI** or **YAML** editor. 
-
-5. Click **Save Changes**. The Base Configurations pop-up page will be displayed.
+6. Click **Save Changes**. The **Save as draft** pop-up page will be displayed.
 
     * **Save as draft** - Select this option if you want to continue making your changes later but save your changes as a draft for now.
 
-    * **Propose changes** - Select this option if you want to propose your changes to the approvers. You can then select the approvers to get notified regarding the change from the **Select approvers** to notify drop-down box.
+    * **Save & Propose changes** - Select this option if you want to save and propose your changes to the approvers. You can then select the approvers to get notified regarding the change from the **Select approvers to notify** drop-down box. 
 
-6. Enter your comments (reason for making the changes) in the **Comment** text box.
+7. Enter your comments (reason for making the changes) in the **Comment** text box. 
 
-7. Click **Propose Changes**. The corresponding approver will be notified via email regarding your request.
-
-### Express Edit
-
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
-Only a Super-Admin (when the [Super admins toggle](../global-configurations/approval-policy.md#excluding-super-admins) is enabled in the Exceptions tab) or [specific users / user groups](../global-configurations/approval-policy.md#excluding-specific-users--user-groups--api-tokens) who are added as exceptions in the Approval Policy can make express edits. Refer to [Approval Policy](../global-configurations/approval-policy.md) for more information.
-
-{% endhint %}
-
-Express edits allow you to bypass the approval process and make direct edits to the configurations. Follow the below steps to make express edits:
-
-1. Navigate to the **Applications** page and click on your preferred application. 
-
-2. Go to the **Configurations** → **Base Configurations**.
-
-3. Click on your preferred configuration (e.g., **ConfigMaps**) and select the ConfigMap you'd like to edit.
-
-4. Click on the **Edit** button.
-
-{% hint style="info" %}
-
-### Note
-
-The **Edit** button will only be displayed if: 
-
-* You are a Super-Admin and the Super admins toggle is enabled in the Approval Policy page
-
-* You are added as an exception in the Approval Policy page. 
-
-Refer to [Approval Policy](../global-configurations/approval-policy.md) for more information.
-
-{% endhint %}
-
-5. Modify the values either by using **GUI** or **YAML** editor. 
-
-6. Click on **Publish Changes** to direcly publish your changes. 
-
-![Figure 9: Express Edit](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/base-config/express-edit-env-override.gif)
+8. Click **Propose Changes**. The corresponding approver will be notified via email regarding your request. 

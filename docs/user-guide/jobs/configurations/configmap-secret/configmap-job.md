@@ -6,13 +6,12 @@ A ConfigMap stores key-value pairs that your jobs can use as environment variabl
 
 ## Add ConfigMap
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have the **Admin role** or the **Super Admin role**.
 Refer the [User permissions](../../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
-{% endhint %}
+:::
 
-1. Go to **Configurations** → **ConfigMaps & Secrets**.
+1. Go to **Configurations** (tab) → **ConfigMaps & Secrets**.
 
     ![Figure 1: ConfigMaps & Secrets](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap.jpg)
 
@@ -34,7 +33,7 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
 
     ![Figure 4: ConfigMap Data Type](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-type.jpg)
 
-5. After selecting the data type, you can choose how to mount the data of your ConfigMap. Devtron allows you to mount ConfigMap Data in the following ways: <br><br> **Mount data as** - Select how you want to mount the ConfigMap:
+5. After selecting the data type, you can choose how to mount the data of your ConfigMap. Devtron allows you to mount ConfigMap Data in the following ways: <br/><br/> **Mount data as** - Select how you want to mount the ConfigMap:
 
     * [**Environment Variable**](#mount-data-as-environment-variables) – Select this option if you want to inject Environment Variables in pods using ConfigMap.
 
@@ -50,7 +49,7 @@ This will pass your ConfigMap data into your Job pod as environment variables, t
 
 #### For Kubernetes ConfigMap
 
-If you have selected Data type as `Kubernetes ConfigMap` and mount data as `Environment Variable`, then you also need to enter the required data (key-value pairs) in the **Data** field<br><br>Enter data in:
+If you have selected Data type as `Kubernetes ConfigMap` and mount data as `Environment Variable`, then you also need to enter the required data (key-value pairs) in the **Data** field<br/><br/>Enter data in:
 
 * **GUI mode** – User-friendly interface. Click the **+Add** button and enter the **Key** and **Value** fields without quotes. 
 
@@ -88,11 +87,10 @@ When mounting multiple files to the same location, you can use the **Set Sub Pat
 
 ![Figure 11: Setting Sub Path](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-vol-set-subpath.jpg)
 
-{% hint style="info" %}
-### Note
+:::info Note
 In case of Kubernetes ConfigMap, all keys will be mounted as files on the specified path.
 In case of Kubernetes External ConfigMap, manually specify the keys that should be mounted as files.
-{% endhint %}
+:::
 
 ### Set File Permission
 
@@ -145,11 +143,10 @@ If you have selected Data type as `Kubernetes External ConfigMap`, then no data 
 
 ## Update ConfigMap
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have the **Admin role** or the **Super Admin role**.
 Refer the [User permissions](../../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
-{% endhint %}
+:::
 
 1. Click your ConfigMap available inside the list of **ConfigMaps** inside **ConfigMaps & Secrets**.
 
@@ -159,20 +156,18 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
 
 ![Figure 16: Updating ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-update.jpg)
 
-{% hint style="warning" %}
-### Note
+:::caution Note
 You cannot change the name of a ConfigMap. Create a new ConfigMap instead.
-{% endhint %}
+:::
 
 ---
 
 ## Delete ConfigMap
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have the **Admin role** or the **Super Admin role**.
 Refer the [User permissions](../../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
-{% endhint %}
+:::
 
 You may delete a ConfigMap if not in use anymore. Once a ConfigMap is deleted, it will not be used in future deployments.
 

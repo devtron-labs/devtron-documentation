@@ -10,7 +10,7 @@ To improve the usage of Kubernetes, several tools are needed to be integrated. B
 
 This is where **Devtron** comes into the picture! 
 
-<p align="center"><img src="../assets/readme-comic.png"></p>
+<p align="center"><img src="../assets/readme-comic.png" /></p>
  
 The need to declaratively manage Kubernetes clusters and application delivery is what is driving **Devtron** on Kubernetes.
  

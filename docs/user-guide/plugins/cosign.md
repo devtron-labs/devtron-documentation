@@ -9,15 +9,15 @@ Before integrating the Cosign plugin, ensure that you have configured the [Cosig
 ---
 
 ## Steps
-1. Go to **Applications** → **Devtron Apps**.
+1. Go to **Application Management** → **Applications** → **Devtron Apps** (tab).
 2. Click your application.
-3. Go to **App Configuration** → **Workflow Editor**.
+3. Go to **Configurations** (tab) → **Workflow Editor**.
 4. Click **New Workflow** and navigate to the **Build and Deploy from Source Code**.
 5. Fill the required fields in the **Create build pipeline** window and navigate to the **Post-build stage**.
 
-{% hint style="warning" %}
+:::caution 
 If you have already configured workflow, edit the build pipeline, and navigate to **Post-build stage**.
-{% endhint %}
+:::
 
 6. Under 'TASKS', click the **+ Add task** button.
 7. Click the **Cosign** plugin.
@@ -44,7 +44,7 @@ e.g., `The Cosign plugin is integrated for  ensuring the authenticity of contain
 |   PostCommand            |    STRING    | Command to run after image is signed by Cosign |    cosign verify $DOCKER_IMAGE                            |
 |   ExtraArguments         |    STRING    | Arguments for Cosign command                   |    --certificate-identity=name@example.com                                      | 
 |   CosignPassword         |    STRING    | Password for Cosign private key                |   S3cur3P@ssw0rd123!                   |
-|   VariableAsPrivateKey   |    STRING    | base64 encoded private-key                     |   @{{COSIGN_PRIVATE_KEY}}   |
+|   VariableAsPrivateKey   |    STRING    | base64 encoded private-key                     |   `@{{COSIGN_PRIVATE_KEY}}`   |
 |   PreCommand             |    STRING    | Command to get the required conditions to execute Cosign command | curl -sLJO https://raw.githubusercontent.com/devtron-labs/sampleRepo/branchName/private             |
 
 ### Trigger/Skip Condition

@@ -8,13 +8,10 @@ This document helps you deploy, update, upgrade, disable, and delete Helm charts
 
 ## Configure and Deploy Charts
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 Only a [Super-Admin or an Admin](../global-configurations/authorization/user-access.md#helm-apps-permissions) can configure and deploy charts. 
 
-{% endhint %}
+:::
 
 To configure and deploy Helm, follow the instructions below:
 
@@ -46,7 +43,7 @@ To configure and deploy Helm, follow the instructions below:
 
     ![Figure 3: Deployment Methods](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-methods.jpg)
 
-    **How do you want to deploy?** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+    **How do you want to deploy?** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
     | Method | Description |
     | :--- | :--- |
@@ -54,13 +51,10 @@ To configure and deploy Helm, follow the instructions below:
     | **GitOps (Via Argo CD)** | Select this option if you want Git to track every deployment via Argo CD. As a prerequisite: <ul><li>The  [GitOps (Argo CD)](../../user-guide/integrations/argocd.md) module should be installed in your Devtron instance for this option to be displayed </li> <li>GitOps should be configured in the Global Configurations page. Refer to [GitOps](../global-configurations/gitops.md) for more information</li></ul> | 
     | **GitOps (Via Flux CD)** | Select this option if you want Git to track every deployment via Flux CD. As a prerequisite: <ul> <li> The Flux CD controller should be installed in your preferred cluster to deploy using GitOps (Via Flux CD). Refer [Enable GitOps Deployments with FluxCD](../creating-application/fluxcd.md#install-fluxcd-controller-via-cluster-terminal) for more information.</li><li>GitOps should be configured in the Global Configurations page. Refer to [GitOps](../global-configurations/gitops.md) for more information.</li> </ul>| 
 
-{% hint style="warning" %}
-
-### Note
-
+:::caution Note
 The deployment method cannot be changed once the chart is deployed. 
 
-{% endhint %}
+:::
 
 8. Select the chart version you prefer to deploy in the **Chart Version** drop-down box.
 
@@ -92,13 +86,10 @@ To check the latest charts and chart versions, follow the instructions below:
 
 ## Update Charts
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 Only a [Super-Admin or an Admin](../global-configurations/authorization/user-access.md#helm-apps-permissions) can update charts. 
 
-{% endhint %}
+:::
 
 When you update a Helm chart, the system actually deploys the selected latest version of a chart (e.g., `12.4.2`) in your environment, just like how you'd install the latest version of an app from the app store.
 
@@ -118,13 +109,10 @@ Follow the below instructions to update a Helm chart:
 
 ## Upgrade Charts
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 Only a [Super-Admin or an Admin](../global-configurations/authorization/user-access.md#helm-apps-permissions) can upgrade charts. 
 
-{% endhint %}
+:::
 
 If the chart you're already using is deprecated or for other business reasons you wish to move from one chart to another (e.g., `stable/mySQL` to `bitnami/mySQL`), consider upgrading your charts. 
 
@@ -136,19 +124,16 @@ Follow the below instructions to upgrade a Helm chart:
 
     ![Figure 7: Upgrade Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/upgrade-chart.jpg)
 
-{% hint style="info" %}
-
-### Note
-
+:::info Note
 When you upgrade your helm chart, ensure that the values are compatible with the new chart.
 
-{% endhint %}
+:::
 
 3. Click **Update And Deploy**. 
 
 ---
 
-## Security Scan [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Security Scan <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 Enabling the **Security scan** toggle scans the image(s) in the chart for vulnerabilities and license risks. To know more about security scan, refer to [Vulnerability Scanning](../plugins/vulnerability-scanning.md).
 
@@ -156,17 +141,14 @@ Enabling the **Security scan** toggle scans the image(s) in the chart for vulner
 
 ## Disable Chart Source
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 Only a [Super-Admin](../global-configurations/authorization/user-access.md#helm-apps-permissions) can disable a chart source in the Chart Store. 
 
-{% endhint %}
+:::
 
 Disabling a Helm chart source (e.g., Bitnami) does not display all associated charts in the Chart Store. When you previously used charts from a particular chart source, but no longer want to use it, you can simply disable the chart source by following the instructions below:
 
-1. Navigate to **Chart Store** → **Source**.
+1. Navigate to **Application Management** → **Chart Store** → **Source**.
 
 2. Disable the toggle next to your preferred chart source (e.g., Bitnami).
 
@@ -180,23 +162,17 @@ You can always enable the chart source again anytime by enabling the toggle next
 
 ## Delete Chart Source
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 Only a [Super-Admin](../global-configurations/authorization/user-access.md#helm-apps-permissions) can delete a chart source in Devtron. 
 
-{% endhint %}
+:::
 
 When you delete a chart source in Devtron, all associated charts will be removed from the Chart Store, and you will no longer be able to view or deploy them. You can consider deleting a chart source when you no longer have any applications running on its charts or when the chart repository is no longer relevant to your business needs.
 
-{% hint style="danger" %}
-
-### Disabling Chart Source vs Deleting Chart Source
-
+:::danger Disabling Chart Source vs Deleting Chart Source
 Disabling charts only hides specific chart repositories and their associated charts from appearing on the Chart Store page. They are not removed from Devtron. However, deleting a chart source removes the chart repository or OCI registry from Devtron entirely, along with all its associated charts.
 
-{% endhint %}
+:::
 
 You can delete a chart source in the following two ways:
 

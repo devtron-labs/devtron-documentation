@@ -11,20 +11,19 @@ For example:
 
 ![Figure 1: Labels and Comments](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/tag-and-comment.jpg)
 
-Such labels and comments will be visible only within Devtron, and will not propagate to your [container registry](../../reference/glossary.md#containeroci-registry) (say Docker Hub), unlike custom [image tag pattern](../creating-application/workflow/ci-pipeline.md#custom-image-tag-pattern). You may use it to simplify the management and [selection of container images](./triggering-cd.md#deploying-approved-image) for deployment.
+Such labels and comments will be visible only within Devtron, and will not propagate to your [container registry](../../reference/glossary.md#containeroci-registry) (say Docker Hub), unlike custom image tag pattern. You may use it to simplify the management and [selection of container images](./triggering-cd.md#deploying-approved-image) for deployment.
 
-{% hint style="warning" %}
+:::caution 
 Tagging labels and comments are supported only for images in workflows with at least one production deployment pipeline. In Devtron, you can go to **Global Configurations** → **Clusters & Environments** to identify a production environment by checking the 'Prod' label.
-{% endhint %}
+:::
 
 ---
 
 ## Adding Labels & Comments
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have [Build & deploy permission](../global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and application) to add labels and comments.
-{% endhint %}
+:::
 
 You can add labels and comments from the following pages:
 
@@ -33,10 +32,10 @@ You can add labels and comments from the following pages:
 * [From Deployment History](#from-deployment-history) (only after deployment)
 * [From App Details](#from-app-details) (only after deployment)
 
-{% hint style="warning" %}
-You can add multiple labels to an image. but each label can be used only once 'per image, per application'. You may use it in an image of other application though. <br />
-Refer [Deleting Labels](#deleting-labels-and-comments) if you commit a mistake while adding labels.
-{% endhint %}
+:::caution 
+You can add multiple labels to an image. but each label can be used only once 'per image, per application'. You may use it in an image of other application though. <br/>
+Refer [Deleting Labels](#deleting-labels--comments) if you commit a mistake while adding labels.
+:::
  
 ### From Build & Deploy
 
@@ -60,10 +59,9 @@ Refer [Deleting Labels](#deleting-labels-and-comments) if you commit a mistake w
 
 ### Soft-Delete Labels
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have [Build & deploy permission](../global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and application) to perform soft deletion of labels.
-{% endhint %}
+:::
 
 This action marks the label as invalid but doesn't delete the label. Therefore, you can recover it again but you cannot reuse it for other image (unless it's a different application).
 
@@ -75,10 +73,9 @@ This action marks the label as invalid but doesn't delete the label. Therefore, 
 
 ### Hard-Delete Labels
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to perform hard deletion of labels.
-{% endhint %}
+:::
 
 This action deletes the label permanently and makes it available for reuse in same/other image of the given application.
 
@@ -90,10 +87,9 @@ This action deletes the label permanently and makes it available for reuse in sa
 
 ### Removing Comments
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have [Build & deploy permission](../global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and application) to remove comments.
-{% endhint %}
+:::
 
 If you wish to permanently remove a comment, do the following:
 

@@ -1,3 +1,10 @@
+---
+id: chart-repo
+title: Chart Repository
+sidebar_label: Chart Repository
+slug: /user-guide/app-management/configurations/chart-repo
+---
+
 # Chart Repository
 
 ## Introduction
@@ -8,13 +15,10 @@ You can add one ore more chart repositories to Devtron. Once added, the charts f
 
 By default, Devtron automatically includes a set of built-in chart repositories during installation.
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 Only a [Super-Admin](../global-configurations/authorization/user-access.md#grant-super-admin-permission) can add, update, delete chart repositories. 
 
-{% endhint %}
+:::
 
 ---
 
@@ -22,7 +26,7 @@ Only a [Super-Admin](../global-configurations/authorization/user-access.md#grant
 
 To add a chart repository, follow the steps below:
 
-1. Navigate to **Global Configurations** → **Chart Repositories**. 
+1. Navigate to **Application Management** → **Configurations** → **Chart Repository**. 
 
 2. Click **Add repository**.
 
@@ -53,13 +57,10 @@ To update a chart repository, follow the below steps:
 
 3. Modify the repository as per your requirements.
 
-{% hint style="info" %}
-
-### Perform Dry Run
-
+:::info Perform Dry Run
 If you prefer to perform a dry run to validate the chart repository configurations, click **Validate**.
 
-{% endhint %}
+:::
 
 4. Click **Update**.
 

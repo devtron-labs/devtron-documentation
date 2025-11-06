@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Types of External Secrets
 
 Apart from the provision to add Secrets, Devtron supports the addition of External Secrets too including:

@@ -34,13 +34,10 @@ Devtron supports the following SSO providers:
 
 Only one SSO configuration can be active at a time. Display of multiple SSO configurations is currently not supported on Devtron's login page. When you create a SSO configuration, for e.g., Google, the Google SSO configuration is made active and will be used by Devtron for authentication.  
 
-{% hint style="warning" %}
-
-### Note
-
+:::caution Note
 If Google SSO is configured in Devtron, for example, and multiple users have logged in using it, changing the SSO configuration from Google to GitHub or any other providers will forcibly sign out all users who were logged in with Google SSO.
 
-{% endhint %}
+:::
 
 ---
 

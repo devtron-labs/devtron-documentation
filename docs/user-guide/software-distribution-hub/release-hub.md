@@ -1,11 +1,10 @@
 # Release Hub
 
-{% hint style="warning" %}
-### Prerequisite
+:::caution Prerequisite
 Create a [Tenant](./tenants.md) before proceeding with any action in Release Hub.
-{% endhint %}
+:::
 
-## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Introduction <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 This section allows you to define [release tracks](./README.md#release-tracks), create and version software releases, add applications, select container images, and deploy releases to specified tenant [installations](./README.md#installations).
 
@@ -13,10 +12,9 @@ This section allows you to define [release tracks](./README.md#release-tracks), 
 
 ## Creating Release Tracks and Versions
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to create release track.
-{% endhint %}
+:::
 
 This involves the creation of release tracks and software versions. A release track helps you organize and keep track of different versions of your software. So if you ship multiple products (say HRMS, Web Builder, Video Editing Tools), you can create separate release tracks for each.
 
@@ -60,10 +58,9 @@ If you are creating your first release, you may proceed with the **Create from s
 
 ## Adding Applications
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to add applications to a release track.
-{% endhint %}
+:::
 
 This involves the inclusion of applications you wish to rollout in the release version created by you.
 
@@ -81,18 +78,17 @@ This involves the inclusion of applications you wish to rollout in the release v
 
     ![Figure 10: Dividing Release in Stages](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/add-release-stage.jpg)
 
-{% hint style="info" %}
-### Importance of Release Stages
-By default, your selected applications will be set to release in one go. However, you can also release them in stages. In other words, you can decide which set of applications should be released first, subsequently which ones to release next, and the ones to release last. <br /><br /> For example, if you're adding a new payment system (backend) and an updated checkout page (frontend), you would release the payment system first to ensure payments can be processed correctly.
-{% endhint %}
+:::info Importance of Release Stages
+By default, your selected applications will be set to release in one go. However, you can also release them in stages. In other words, you can decide which set of applications should be released first, subsequently which ones to release next, and the ones to release last. <br/><br/> For example, if you're adding a new payment system (backend) and an updated checkout page (frontend), you would release the payment system first to ensure payments can be processed correctly.
+:::
 
 5. Use the drag-and-drop feature to move applications from one stage to another.
 
     ![Figure 11: Rearranging the Sequence](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/release-stage-v2.gif)
 
-{% hint style="warning" %}
+:::caution 
 The drag-and-drop feature is designed specifically for moving applications between different release stages. It is not meant to alter the sequence of applications within the same stage.
-{% endhint %}
+:::
 
 6. Once you have finalized the sequence and stages, click **Save Changes**.
 
@@ -100,19 +96,17 @@ The drag-and-drop feature is designed specifically for moving applications betwe
 
 ## Selecting Images
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to select images for selected applications.
-{% endhint %}
+:::
 
 1. Select a workflow available for your application. All the [images](../../reference/glossary.md#image) available in the selected workflow will appear.
 
     ![Figure 12: Selecting Image from Specific Workflow](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/workflow-selection.gif)
 
-{% hint style="info" %}
-### Note
+:::info Note
 Only the images that were built already will appear. If there are no images present, [trigger the CI pipeline](../deploying-application/triggering-ci.md) of the application first to obtain the image.
-{% endhint %}
+:::
 
 2. Click **SELECT** next to the image you wish to deploy from the list.
 
@@ -122,10 +116,9 @@ Only the images that were built already will appear. If there are no images pres
 
 4. Click **Save**.
 
-{% hint style="info" %}
-### Tip
+:::info Tip
 In case you don’t have the correct images ready for any of your applications, you can partially save your changes at this point, and return once they are ready.
-{% endhint %}
+:::
 
 5. You may add release instructions for each application using the in-built Markdown editor. This can be detailed deployment notes and configuration guidelines for the team.
 
@@ -135,23 +128,21 @@ In case you don’t have the correct images ready for any of your applications, 
 
     ![Figure 15: Locking Requirements](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/freeze-requirements.gif)
 
-{% hint style="info" %}
+:::info 
 Once you lock the requirements, Devtron will prevent any unsolicited modifications to your release by anyone (including you). However, you can re-edit it by clicking **Unlock To Edit**.
-{% endhint %}
+:::
 
 ---
 
 ## Deploying Release
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users with build & deploy permission or above (for the application and target environment) can deploy a release.
-{% endhint %}
+:::
 
-{% hint style="info" %}
-### Prerequisite
+:::info Prerequisite
 All your requirements need to be locked and [tenants](./tenants.md) must be configured.
-{% endhint %}
+:::
 
 This involves the deployment of the release to the specified tenant installations.
 
@@ -170,7 +161,7 @@ This involves the deployment of the release to the specified tenant installation
     
 3. Use the checkbox to select the applications belonging to the first release stage. You may use the filters on the left-hand side to make it easier.
 
-    {% embed url="https://www.youtube.com/watch?v=HPYZ4-hhoDM" caption="First Release Stage" %}
+    <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/HPYZ4-hhoDM" title="First Release Stage" frameborder="0" allowfullscreen></iframe></div>
 
 4. Click **Deploy**.
 
@@ -180,11 +171,11 @@ This involves the deployment of the release to the specified tenant installation
 
 5. Once the applications from the first release stage are successfully deployed, select the applications from the subsequent release stage and deploy.
 
-    {% embed url="https://www.youtube.com/watch?v=ioGZP1CCuxI" caption="Last Release Stage" %}
+    <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/ioGZP1CCuxI" title="Last Release Stage" frameborder="0" allowfullscreen></iframe></div>
 
-{% hint style="warning" %}
+:::caution 
 An application can be deployed on the tenant in the next release stage only if other applications in the previous stage are deployed successfully on the given tenant.
-{% endhint %}
+:::
 
 Here we covered the process of performing a production installation on just one tenant. Similarly, you can perform installations on your other tenants (if any).
 

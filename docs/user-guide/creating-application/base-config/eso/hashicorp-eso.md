@@ -1,9 +1,12 @@
+---
+hide_table_of_contents: true
+---
+
 # HashiCorp Vault
 
-{% hint style="warning" %}
-### Prerequisite 
+:::caution Prerequisite 
 Install [External Secret Operator (ESO)](install-eso.md).
-{% endhint %}
+:::
 
 To incorporate secrets from **HashiCorp Vault**, you need to create a generic Kubernetes secret that will be used for vault authentication. This involves creating a Kubernetes secret in the specific namespace where your application will be deployed. 
 The secret should store the base64-encoded password or token obtained from vault. To simplify the process, you can utilize the Devtron generic chart. An example yaml is given below:

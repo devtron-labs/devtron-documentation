@@ -11,14 +11,13 @@ With Devtron Freemium, you can access all the enterprise features limited to 1 c
 * Security scans
 * Policies related to approval, deployment, plugins, tags, infra...and many more.
 
-{% hint style="info" %}
-**Already using Devtron OSS?**
+:::info Already using Devtron OSS?
 
 This guide is intended for fresh installation of **Devtron Freemium**.\
 If you're currently using the [open-source (OSS) version of Devtron](../install/devtron-oss.md), we **do not recommend** upgrading your existing setup to Devtron Freemium.
 
 Instead, we suggest you to perform a fresh installation of Devtron Freemium on a separate cluster (following the steps below) for the best experience.
-{% endhint %}
+:::
 
 ---
 
@@ -52,12 +51,12 @@ Use this method if your email is not associated with any of the SSO options prov
 
     ![Figure 4: Sending Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-resend-email.jpg)
 
-{% hint style="info" %}
+:::info 
 **Did Not Receive Email?**
 
 * Check all sections of the mailbox, including the 'Spam' section.
 * If the email is in the Spam section, mark it as 'Not Spam'.
-{% endhint %}
+:::
 
 4.  Open the email and click **Login to License Dashboard**.
 
@@ -72,12 +71,11 @@ Use this method if your email is not associated with any of the SSO options prov
 
 ## Step 2: Install Devtron
 
-{% hint style="warning" %}
-### Note
+:::warning Note
 We recommend installing Devtron on a separate Kubernetes cluster, since the cluster may run critical system services. Therefore, it should be kept separate from application workloads. Also ensure your `kubeconfig` is properly configured.
 
 See [Additional Installation Resources](../../reference/README.md) for production infra recommendations, air-gapped installs, blob storage, config overrides, StorageClass, Database, Ingress setup, backups, and more.
-{% endhint %}
+:::
 
 The installation commands are directly available on the [Devtron License Dashboard](https://license.devtron.ai/dashboard) for supported K8s distributions.
 
@@ -89,7 +87,7 @@ The installation commands are directly available on the [Devtron License Dashboa
 
 Once Devtron is installed and you have the dashboard URL, click **Next** to proceed to [Step 3: Get License Key](devtron-freemium.md#step-3-get-license-key)
 
-{% hint style="info" %}
+:::info 
 **Using MicroK8s/Kind/K3s/Cloud VMs? Want to Access Dashboard via NodePort? Or Locally from Remote VM?**
 
 * **Access via NodePort**:
@@ -100,7 +98,7 @@ To obtain the Dashboard URL on MicroK8s/Kind/K3s/Cloud VMs using NodePort, run t
 kubectl get svc -n devtroncd devtron-service -o jsonpath='{.spec.ports[0].nodePort}'
 ```
 
-<mark style="color:purple;">**Dashboard URL**</mark><mark style="color:purple;">:</mark> <mark style="color:purple;">`http://<HOST_IP>:<NODEPORT>/dashboard`</mark>
+**Dashboard URL**: `http://<HOST_IP>:<NODEPORT>/dashboard`
 
 ---
 
@@ -114,8 +112,9 @@ kubectl config use-context <context-name> # Set the correct context.
 kubectl -n devtroncd port-forward service/devtron-service 8000:80
 ```
 
-<mark style="color:purple;">**Dashboard URL**</mark><mark style="color:purple;">:</mark> <mark style="color:purple;">`http://127.0.0.1:8000`</mark>
-{% endhint %}
+**Dashboard URL**: `http://127.0.0.1:8000`
+
+:::
 
 ---
 
@@ -142,20 +141,20 @@ To get the **Installation Fingerprint**, follow the below steps:
 
     ![Figure 11: Copying Generated License Key](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-key-generated-2.jpg)
 
-{% hint style="warning" %}
+:::warning 
 **Note**
 
 The license key you generate will be valid only for your Devtron Freemium installation.
 
 * Only one Devtron Freemium cluster per organization.
 * The license key is uniquely mapped to your installation fingerprint.
-{% endhint %}
+:::
 
-{% hint style="danger" %}
+:::danger 
 **Warning**
 
 The license is bound to your Kubernetes cluster and cannot be transferred to another cluster. In case the cluster is deleted, you cannot claim freemium license on a new cluster. In that case, contact [support@devtron.ai](mailto:support@devtron.ai).
-{% endhint %}
+:::
 
 5.  Go back to your **Devtron Dashboard URL** page. Paste your license key under the **License Key** field, and click **Activate**.
 
@@ -165,11 +164,11 @@ The license is bound to your Kubernetes cluster and cannot be transferred to ano
 
     ![Figure 13: Log in as Administrator](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-login.jpg)
 
-{% hint style="info" %}
+:::info 
 **Facing Issues?**
 
 Visit the [Troubleshoot](devtron-freemium.md#troubleshoot-issues) section to identify the issue or connect with [Devtron Support](mailto:support@devtron.ai).
-{% endhint %}
+:::
 
 ---
 
@@ -185,11 +184,9 @@ Visit the [Troubleshoot](devtron-freemium.md#troubleshoot-issues) section to ide
     -o jsonpath='{.data.ADMIN_PASSWORD}' | base64 -d
     ```
 
-{% hint style="success" %}
-### Next Recommended Action
-
+:::success Next Recommended Action
 After the initial login, we recommend you set up an [Single Sign-On (SSO) service](../../user-guide/global-configurations/sso-login.md) like Google, GitHub, etc., and then [add other members](../../user-guide/global-configurations/authorization/user-access.md#add-users) (including yourself). Thereafter, they can log in using the configured SSO.
-{% endhint %}
+:::
 
 3.  After a successful login, the **Devtron Dashboard** will open, and you can explore all the enterprise features supported by Devtron Freemium.
 
@@ -227,12 +224,12 @@ If you want to add more than one cluster, email us at enterprise@devtron.ai or r
 
 | Issue                                                                                                                                                                                                                       | What it means                                                        | Where is it shown                           | Solution                                                     |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ |
-| <p><strong>License Claimed</strong><br><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-claimed-v2.jpg">Snapshot</a></p>                                   | Someone from your organization has already availed a license         | License Dashboard                           | Reach out to enterprise@devtron.ai                           |
-| <p><strong>Invalid License Key</strong><br><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/invalid-license-v2.jpg">Snapshot</a></p>                                       | The license key is incorrect or partial                              | Devtron Dashboard Page                      | Go to the License Dashboard and recheck the license          |
-| <p><strong>License Key No Longer Valid</strong><br><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-no-longer-valid-v2.jpg">Snapshot</a></p>                       | The license key has become invalid for your installation fingerprint | Devtron Dashboard Page                      | Generate a new license from License Dashboard.               |
-| <p><strong>Invalid Fingerprint</strong><br><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-invalid-fingerprint-v2.jpg">Snapshot</a></p>                   | The fingerprint is incorrect or partial                              | License Dashboard (Step-3)                  | Go to the License Activation Page and verify the fingerprint |
-| <p><strong>Multiple Cluster Detected</strong><br><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-multiple-cluster-detected.jpg">Snapshot</a></p>                  | You have added more than one cluster                                 | Devtron Dashboard Page or License Dashboard | Reach out to enterprise@devtron.ai for renewal               |
-| <p><strong>License Key Already Exists for Fingerprint</strong><br><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-already-exists-v2.jpg">Snapshot</a></p> | You cannot generate more than 1 license key for 1 fingerprint        | License Dashboard (Step-3)                  | Contact Support                                              |
+| <p><strong>License Claimed</strong><br/><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-claimed-v2.jpg">Snapshot</a></p>                                   | Someone from your organization has already availed a license         | License Dashboard                           | Reach out to enterprise@devtron.ai                           |
+| <p><strong>Invalid License Key</strong><br/><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/invalid-license-v2.jpg">Snapshot</a></p>                                       | The license key is incorrect or partial                              | Devtron Dashboard Page                      | Go to the License Dashboard and recheck the license          |
+| <p><strong>License Key No Longer Valid</strong><br/><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-no-longer-valid-v2.jpg">Snapshot</a></p>                       | The license key has become invalid for your installation fingerprint | Devtron Dashboard Page                      | Generate a new license from License Dashboard.               |
+| <p><strong>Invalid Fingerprint</strong><br/><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-invalid-fingerprint-v2.jpg">Snapshot</a></p>                   | The fingerprint is incorrect or partial                              | License Dashboard (Step-3)                  | Go to the License Activation Page and verify the fingerprint |
+| <p><strong>Multiple Cluster Detected</strong><br/><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-multiple-cluster-detected.jpg">Snapshot</a></p>                  | You have added more than one cluster                                 | Devtron Dashboard Page or License Dashboard | Reach out to enterprise@devtron.ai for renewal               |
+| <p><strong>License Key Already Exists for Fingerprint</strong><br/><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-already-exists-v2.jpg">Snapshot</a></p> | You cannot generate more than 1 license key for 1 fingerprint        | License Dashboard (Step-3)                  | Contact Support                                              |
 
 ---
 

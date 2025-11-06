@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Deploying Application
 
 Each time you push a change to your application through GitHub, your application goes through a process to be built and deployed.

@@ -1,6 +1,13 @@
+---
+id: lock-deployment-config
+title: Lock Deployment Configuration
+sidebar_label: Lock Deployment Configuration
+slug: /user-guide/app-management/policies/lock-deployment-config
+---
+
 # Lock Deployment Configuration
 
-## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Introduction <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 The [Deployment Template](../../reference/glossary.md#deployment-template) might contain certain configurations (e.g., `ingress`) that are critical to the stability and security of the applications. To prevent unauthorized or accidental changes to such configurations, Devtron allows super admins to restrict (lock) such critical configurations from modification or deletion.
 
@@ -8,7 +15,7 @@ The [Deployment Template](../../reference/glossary.md#deployment-template) might
 
 These restrictions can be applied for deployment templates in both the:
 
-* [Base configuration](../../user-guide/creating-application/deployment-template.md)
+* [Base configuration](../../user-guide/creating-application/base-config/README.md)
 * [Environment-level configuration](../../user-guide/creating-application/environment-overrides.md)
 
 **How is this different from the 'Protect Configuration' feature?**
@@ -21,26 +28,23 @@ Whereas, the 'lock deployment configuration' feature goes one step further. It i
 
 ## Locking Deployment Configurations
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to lock deployment keys.
-{% endhint %}
+:::
 
 To lock deployment configurations, you must first create a profile and apply it to the specific deployment templates.
 
-{% hint style="success" %}
-### What is a Lock Deployment Profile?
-
+:::tip What is a Lock Deployment Profile?
 A lock deployment configuration profile is a template that specifies which configurations (keys) in the deployment template cannot be edited or deleted by non-super admin users. By using lock deployment configuration profiles, super-admins can manage edit access at different levels, such as global, cluster, environment, application, or a combination of application and environment.
 
 This allows for better control by making sure critical deployment template configurations are locked in sensitive environments (production), while giving flexibility to change deployment template configurations in other less critical environments (QA, Staging, etc.).
-{% endhint %}
+:::
 
 ### Creating Profile
 
 To create a profile, follow the steps below:
 
-1. Go to **Global Configurations** → **Lock Deployment Configuration**.
+1. Go to **Application Management** → **Policies** → **Lock Deployment Configuration**.
 
 2. Click **+ Create Profile**; a new **Create Profile** page will open.
 
@@ -58,18 +62,15 @@ To create a profile, follow the steps below:
 
     ![Figure 4: Referring Values.YAML File for Locking Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/autoscaling-lock.jpg)
 
-{% hint style="warning" %}
-### Keys are case-sensitive
+:::caution Keys are case-sensitive
 Use the exact case as defined in the deployment template, otherwise the keys will not be locked.
-{% endhint %}
+:::
 
 
-{% hint style=“info” %}
-### Locking custom configurations (keys)
-
+:::info Locking custom configurations (keys)
 You can lock custom configurations (keys) defined in your deployment template, even if they are not listed in the **Refer values.yaml** section. As long as the key matches your lock rule, it will be locked.
 
-{% endhint %}
+:::
 
 6. Click **Save Changes**. 
 
@@ -79,22 +80,20 @@ You can lock custom configurations (keys) defined in your deployment template, e
 
     ![Figure 6: Confirmation Dialog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/confirmation.jpg)
 
-{% hint style="Warning" %}
-### Handling Locked Index Ranges
-
+:::caution Handling Locked Index Ranges
 If you have locked a range of configurations using JSONPath (e.g., `ingressInternal.hosts[1:3].paths`), the specified index positions are protected. 
 
 If you want to add a new configuration entry (e.g., a new host), it should be added after the locked range i.e., in case of `ingressInternal.hosts[1:3].paths`, new host configuration entry should be added at the index 4. 
 
 Adding an entry within the locked range may shift the indices and result in validation errors or unintended modifications of locked values.
 
-{% endhint %}
+:::
 
 ### Applying Profile
 
 After creating a profile, the next step is to apply the profile to the specific deployment templates according to your use case. To apply a profile, follow the steps below:
 
-1. Go to **Global Configurations** → **Lock Deployment Configuration**.
+1. Go to **Application Management** → **Policies** → **Lock Deployment Configuration**.
 
      ![Figure 7: Clicking 'Apply Profile'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-apply-profile.jpg)
 
@@ -112,9 +111,9 @@ After creating a profile, the next step is to apply the profile to the specific 
 
         ![Figure 9: Applying Profile to Specific Deployment Templates](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-specific-apps.gif)
 
-     2. **By match criteria**: This option allows you to use a combination of filters to create criteria. Lock deployment configuration profile will only apply to the deployment templates of the applications fulfilling your criteria (including existing and future ones).<br>(Optional) You may also write a note for your other team members to understand the intent and context of your policy.
+     2. **By match criteria**: This option allows you to use a combination of filters to create criteria. Lock deployment configuration profile will only apply to the deployment templates of the applications fulfilling your criteria (including existing and future ones).<br/>(Optional) You may also write a note for your other team members to understand the intent and context of your policy.
 
-        Let's understand how to use **By match criteria** with the below example:<br><br>
+        Let's understand how to use **By match criteria** with the below example:<br/><br/>
 
         Suppose you want to apply a lock deployment configuration profile to all applications in a particular project. You can achieve this by selecting that project as the match criteria.
 
@@ -143,11 +142,10 @@ Let's look at a scenario where a user (non-super-admin) tries to edit the same i
 
 ### Editing Locked Configurations
 
-{% hint style="info" %}
-### GUI/YAML Mode
-<span><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/mode1.jpg" alt="GUI or YAML Mode"></span> <br />
+:::info GUI/YAML Mode
+<span className="inline-badge"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/mode1.jpg" alt="GUI or YAML Mode" /></span> <br/>
 If you select 'GUI' mode instead of 'YAML', all the keys meant for GUI mode will be displayed in the GUI even if some are locked. While users can modify these keys, they cannot save the changes made to the locked keys.
-{% endhint %}
+:::
 
 * Let's assume the user edits one of the locked keys...
 
@@ -171,10 +169,9 @@ If you select 'GUI' mode instead of 'YAML', all the keys meant for GUI mode will
 
     ![Figure 17: Saving Eligible Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/saving-allowed-changes.jpg)
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Only a super-admin, manager, or application admin can edit the configuration values. 
-{% endhint %}
+:::
 
 * Once the user clicks the **Save Changes** button, the permissible changes will reflect in the deployment template. 
 
@@ -192,7 +189,7 @@ The same result can be seen if the user tries to edit environment-specific deplo
 
 To manage an existing applied profile, follow the steps below:
 
-1. Go to **Global Configurations** → **Lock Deployment Configuration**. 
+1. Go to **Application Management** → **Policies** → **Lock Deployment Configuration**. 
 
 2. Click the **Applied Profiles** tab and click the `⋮` button next to the preferred applied profile.
 
@@ -208,10 +205,9 @@ To manage an existing applied profile, follow the steps below:
 
 ![Figure 20c: Removing an Applied Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-delete-applied-profile.gif)
 
-{% hint style="warning" %}
-### Note
+:::caution Note
 Removing an applied profile does not delete the lock deployment configuration profile. It only removes the associated restrictions from the deployment templates where the profile was applied.
-{% endhint %}
+:::
 
 ---
 
@@ -219,7 +215,7 @@ Removing an applied profile does not delete the lock deployment configuration pr
 
 To update a lock deployment configuration file, follow the steps below:
 
-1. Go to **Global Configurations** → **Lock Deployment Configuration**. 
+1. Go to **Application Management** → **Policies** → **Lock Deployment Configuration**. 
 
 2. Click the **Profiles** tab and then click the edit button next to the preferred profile.
 
@@ -235,7 +231,7 @@ To update a lock deployment configuration file, follow the steps below:
 
 To delete a lock deployment configuration file, follow the steps below:
 
-1. Go to **Global Configurations** → **Lock Deployment Configuration**. 
+1. Go to **Application Management** → **Policies** → **Lock Deployment Configuration**. 
 
 2. Click the **Profiles** tab and then click the delete button next to the preferred profile.
 
@@ -245,10 +241,9 @@ To delete a lock deployment configuration file, follow the steps below:
 
 ![Figure 22: Deleting Lock Deployment Configuration File](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-delete-profile.gif)
 
-{% hint style="warning" %}
-### Note 
+:::caution Note 
 Deleting a profile will automatically remove it from the Applied Profiles tab and remove its restrictions from all deployment templates where it was previously applied.
-{% endhint %}
+:::
 
 
 ## Use Cases

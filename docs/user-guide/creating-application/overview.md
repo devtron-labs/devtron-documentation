@@ -5,7 +5,7 @@ The Overview page provides a centralized view of an application’s details with
 The **Overview** page contains three main sections:
 *	[**About**](#about): Contains application metadata such as name, description, project, creator, tags, and connected code source. It also includes options to manage tags and [Configure PVCs](#configure-persistentvolumeclaim-pvc).
 *	[**Environments**](#environments): Displays all environments where the application is deployed, along with their current status and quick access to associated workflows.
-*	[**Dependencies**](#dependencies): Shows which Devtron applications this application depends on, and which other Devtron applications depend on it, thus helping visualize microservices dependency.
+*	[**Dependencies**](#dependencies-): Shows which Devtron applications this application depends on, and which other Devtron applications depend on it, thus helping visualize microservices dependency.
 
 ![Figure 1: Overview Tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/overview-latest-1.jpg)
 
@@ -28,11 +28,11 @@ The left side of the **About** section displays essential information about the 
 | :--------- | :--------------- |:--------- |
 | **Application Name** | No |Displays the name of the application (e.g., backend-healthcare-app).|
 | **Short Description**|Yes|A short, optional description to summarize the application's purpose.|
-| **Project** |Yes|Indicates the current project under which the application is organized.<br>You can change the project directly from this section.<ol><li> Click the **Edit** icon next to the current project.</li><li> In the **Change Project** window, select the new project from the dropdown.</li><li>Click **Save**.</li></ol>Changing the project will revoke access for existing users and grant access only to those who have permissions in the newly selected project.|
+| **Project** |Yes|Indicates the current project under which the application is organized.<br/>You can change the project directly from this section.<ol><li> Click the **Edit** icon next to the current project.</li><li> In the **Change Project** window, select the new project from the dropdown.</li><li>Click **Save**.</li></ol>Changing the project will revoke access for existing users and grant access only to those who have permissions in the newly selected project.|
 | **Created on** |No|Shows the exact date and time when the application was created.|
 | **Created by**|No|Displays the email address of the user who created the application.|
 | **Code Source** |No|Shows the connected Git repository or template used for the application.|
-| **Part of release track** |No|Lists all release track names linked to the app.<ul><li>Clicking a release opens its detailed view in the Software Distribution Hub.</li><li>This is an enterprise-only feature available as part of Devtron's SDH offering.</li></ul>|
+| **Part of release track** |No|Lists all release track names linked to the app.<ul><li>Clicking a release opens its detailed view in the Software Release Management.</li><li>This is an enterprise-only feature available as part of Devtron's SDH offering.</li></ul>|
 | **Tags** |Yes| Refer [Manage Tags](#manage-tags) |
 
 
@@ -43,7 +43,7 @@ Tags are key-value pairs used to identify and organize applications effectively.
 1. Click the **Edit** icon next to **Tags**.
 2. On the **Manage Tags** page, click **+ Add tag** to create a new tag.
 3. To delete a tag, click the **X** icon next to it.
-4. To propagate a tag as a Kubernetes label, click the **Propagation** icon ![propagation icon](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg).  
+4. To propagate a tag as a Kubernetes label, click the **Propagation** icon <span className="inline-badge">![propagation icon](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg)</span>.  
    - The icon turns dark grey when propagation is enabled.  
    - Click again if you wish to disable propagation.  
    
@@ -68,11 +68,11 @@ To add or update the **Readme**:
 
 ![Figure 4: Editing Readme](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/readme.jpg)
 
-{% hint style="info" %}
- After saving, the system displays the email address of the user who last updated the README, along with the date and time. This information appears in the header of the Readme section, beside the title.
-{% endhint %}
+:::info 
+After saving, the system displays the email address of the user who last updated the README, along with the date and time. This information appears in the header of the Readme section, beside the title.
+:::
 
-### Deployment Window [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+### Deployment Window <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 The **Deployment Window** in the **About** section displays all Blackout Windows and Maintenance Windows configured for your application’s environments.
 
@@ -86,13 +86,13 @@ You can expand each environment row to view detailed information like window nam
 
 ![Figure 5: Deployment Window](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/deployement-window.jpg)
 
-{% hint style=“info” %}
+:::info 
 This section is view-only and does not require any configuration at the application level.
-{% endhint %}
+:::
 
 > To learn how to configure deployment windows, refer to the [Deployment Window documentation](../global-configurations/deployment-window.md).
 
-### Catalog [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+### Catalog <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 The **Catalog** in the **About** section displays information about your application, such as documentation references, ownership details, and technical specifications. This data is managed using [Devtron’s Catalog Framework](../global-configurations/catalog-framework.md).
 
@@ -110,9 +110,9 @@ When you click the **Edit** icon, a form appears based on the defined schema. As
 
 ![Figure 7: Catalog Form](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/catalog-expanded.jpg)
 
-{% hint style= "info" %}
+:::info 
 The structure and labels in the catalog form are entirely configurable by your platform team via JSON schema in **Catalog Framework**. Field names and sections may vary depending on how the schema was defined by your organization.
-{% endhint %}
+:::
 
 Once saved, this information is displayed in a readable format within the Catalog subsection and is accessible to all users who have permission to view the application.
 
@@ -134,8 +134,7 @@ Before you can configure an Application to use a PVC, you need to make sure the 
 
 The following is a sample PVC YAML configuration. You can modify it as needed based on your storage class, access mode, and resource requirements:
 
-{% code title="pvc.yaml" overflow="wrap" lineNumbers="true" %}
-```bash
+```bash title="pvc.yaml" showLineNumbers
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -149,13 +148,13 @@ spec:
     requests:
       storage: 30Gi
 ```
-{% endcode %}
+
       
 You can apply this configuration using Devtron’s **Resource Browser** 
 
 **Apply using Devtron’s Resource Browser**
 
-1.	Navigate to [Resource Browser](../resource-browser/README.md) in the Devtron sidebar.
+1.	Navigate to **Infrastructure Management** → [Resource Browser](../resource-browser/README.md)..
 2.	Select the Cluster where your CI pipelines run.
 3.	Click **Create Resource**.
 4.	Paste the YAML into the editor and click **Create**.
@@ -188,13 +187,13 @@ Follow the steps below to apply the PVC to all or specific pipelines
 
 | Key | Value|
 |:--- |:---  | 
-|devtron.ai/ci-pvc-<pipeline-name>| cache-pvc |
+|devtron.ai/ci-pvc-`<pipeline-name>`| cache-pvc |
 
 ![Figure 11a: Finding Pipeline name](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/pipeline-name-pvc-1.jpg)
 
 ![Figure 11b: Mounting PVC to a specific pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/pipeline-level-tag.jpg)
 
-> Replace <pipeline-name> with the exact name of the CI pipeline (visible in the Workflow Editor).
+> Replace `<pipeline-name>` with the exact name of the CI pipeline (visible in the Workflow Editor).
 
 4. Click **Save** to apply the tag.
 
@@ -214,7 +213,7 @@ The Environments section provides a detailed view of all environments where the 
 
 ![Figure 12: Environments List](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/environments.jpg)
 
-## Dependencies [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Dependencies <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 The Dependencies section displays the relationship of the current application with other Devtron-managed applications in the form of upstream and downstream dependencies.
 

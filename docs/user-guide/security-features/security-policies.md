@@ -1,12 +1,10 @@
 # Security Policies
 
-{% hint style="info" %}
-### Prerequisite
-
+:::info Prerequisite
 Install any one of the following integrations for scanning vulnerabilities:
 * [Clair](../../user-guide/integrations/vulnerability-scanning/clair.md)
 * [Trivy](../../user-guide/integrations/vulnerability-scanning/trivy.md)
-{% endhint %}
+:::
 
 Devtron's Security Policies feature allows users to define policies based on the severity levels of vulnerabilities, which include `Critical`, `Moderate`, and `Low`. Users have the flexibility to set policies that either block the deployment of container images with vulnerabilities or allow their deployment.
 
@@ -14,10 +12,9 @@ With this feature, users can specify their desired actions for each severity lev
 
 For in-depth instructions, refer to the [Configure Security Policies](#configuring-security-policies) section.
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to define or modify security policies. 
-{% endhint %}
+:::
 
 ---
 

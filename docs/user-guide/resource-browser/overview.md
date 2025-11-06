@@ -25,12 +25,11 @@ This shows errors in the cluster. If no error is present in the cluster, Resourc
 
 ---
 
-## Catalog Framework [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Catalog Framework <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to edit the catalog framework.
-{% endhint %}
+:::
 
 Based on the schema provided in the catalog framework, you can add relevant details for each cluster. Refer [Catalog Framework](../global-configurations/catalog-framework.md) for more details. 
 
@@ -38,16 +37,15 @@ Based on the schema provided in the catalog framework, you can add relevant deta
 
 ## Readme
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to edit the readme file.
-{% endhint %}
+:::
 
 You can also include additional information about your cluster using the Markdown editor.
 
 ---
 
-## Check Compatibility before Cluster Upgrade [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Check Compatibility before Cluster Upgrade <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 Whenever you upgrade your Kubernetes version, the API versions change and your workloads/resources may not be compatible with those API versions. Therefore, the resources need to be upgraded first. This could mean changing the API version of the resources itself or changing their outdated spec.
 
@@ -57,4 +55,4 @@ The **Check Compatibility** feature within Resource Browser scans your cluster a
 
 ### Walkthrough
 
-{% embed url="https://www.youtube.com/watch?v=mJsTN1x1fr0" caption="Check Compatibility before Cluster Upgrade" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/mJsTN1x1fr0" title="Check Compatibility before Cluster Upgrade" frameborder="0" allowfullscreen></iframe></div>

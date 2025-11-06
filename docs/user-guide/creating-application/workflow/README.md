@@ -60,14 +60,14 @@ To create a quick workflow with both build and deployment pipelines, follow the 
 
 Apart from configuring advanced options, you can create five types of CI pipelines depending on your use case.
 
-* [Build from Source Code](./ci-pipeline.md#id-1.-build-from-source-code): Choose this option if you want Devtron to build the image of the source code.
+* [Build from Source Code](./ci-pipeline.md#1-build-from-source-code): Choose this option if you want Devtron to build the image of the source code.
 
-* [Linked Build Pipeline](./ci-pipeline.md#id-2.-linked-build-pipeline): Choose this option if you want to use an image created by an existing CI pipeline in Devtron.
+* [Linked Build Pipeline](./ci-pipeline.md#2-linked-build-pipeline): Choose this option if you want to use an image created by an existing CI pipeline in Devtron.
 
-* [Deploy Image from External Service](./ci-pipeline.md#id-3.-deploy-image-from-external-service): Choose this if you want to build your image outside Devtron; it will receive a Docker image from an external source via the incoming webhook.
+* [Deploy Image from External Service](./ci-pipeline.md#3-deploy-image-from-external-service): Choose this if you want to build your image outside Devtron; it will receive a Docker image from an external source via the incoming webhook.
 
-* [Sync with Environment](./ci-pipeline.md#id-4.-sync-with-environment) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+* [Sync with Environment](./ci-pipeline.md#4-sync-with-environment-) <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-* [Create a Job](./ci-pipeline.md#id-5.-create-a-job)
+* [Create a Job](./ci-pipeline.md#5-create-a-job)
 
 ![Figure 6: Selecting an Image Source](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/workflow-ci.jpg)

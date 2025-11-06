@@ -1,15 +1,15 @@
-# Software Distribution Hub
+# Software Release Management
 
-## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Introduction <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-Software Distribution Hub is a platform that simplifies the packaging, versioning, and delivery of your software products. By using it, you can manage your software release across multiple clients ([tenants](#release-versions)).
+Software Release Management is a platform that simplifies the packaging, versioning, and delivery of your software products. By using it, you can manage your software release across multiple clients ([tenants](#tenants)).
 
-![Figure: Software Distribution Hub](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/sdh-eagle-eye.gif)
+![Figure: Software Release Management](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/sdh-eagle-eye.gif)
 
 
 ### When and Why to Use
 
-Devtron's Software Distribution Hub is designed to be used in scenarios where:
+Devtron's Software Release Management is designed to be used in scenarios where:
 
 * **Tenanted deployment**: You build software solutions for clients (tenants) who require updates deployed to their distinct environments. For every tenant, you may have to deploy a separate instance of your application, which has separate application layer and data layer on their infrastructure.
 
@@ -25,11 +25,11 @@ Devtron's Software Distribution Hub is designed to be used in scenarios where:
 
 ## Advantages
 
-Devtron's Software Distribution Hub goes beyond basic deployment by providing end-to-end release management. Deployments involving manual processes might be prone to human error. However, Software Distribution Hub streamlines the [rollout](#rollout) process by enforcing [requirements](#requirements) for each release, and not just for one environment but multiple tenant environments.
+Devtron's Software Release Management goes beyond basic deployment by providing end-to-end release management. Deployments involving manual processes might be prone to human error. However, Software Release Management streamlines the [rollout](#rollout) process by enforcing [requirements](#requirements) for each release, and not just for one environment but multiple tenant environments.
 
 ### Normal Deployment vs SDH
 
-| Aspect                                     | Normal Deployment                            | Software Distribution Hub                                      |
+| Aspect                                     | Normal Deployment                            | Software Release Management                                      |
 |--------------------------------------------|----------------------------------------------|----------------------------------------------------------------|
 | **Release Management**                     | No versioned deployments                     | Centralizes versioning and deployment into a unified platform  |
 | **Visibility**                             | Limited visibility                           | Comprehensive visibility                                       |
@@ -41,12 +41,12 @@ Devtron's Software Distribution Hub goes beyond basic deployment by providing en
 
 ## Concepts
 
-Devtron's Software Distribution Hub has 2 sections:
+Devtron's Software Release Management has 2 sections:
 
 * [Tenants](./tenants.md)
 * [Release Hub](./release-hub.md)
 
-Feel free to familiarize yourself with the following concepts (terms) before you proceed to Software Distribution Hub.
+Feel free to familiarize yourself with the following concepts (terms) before you proceed to Software Release Management.
 
 ### Tenants
 
@@ -74,5 +74,5 @@ This is a part of [requirements](#requirements) where you decide the stages in w
 
 ### Rollout
 
-It is a process of delivering a new release to the tenant's environment. In Software Distribution Hub, this comes right after you lock the basic requirements of a release (i.e., application selection, release order, image selection, and release instructions).
+It is a process of delivering a new release to the tenant's environment. In Software Release Management, this comes right after you lock the basic requirements of a release (i.e., application selection, release order, image selection, and release instructions).
 

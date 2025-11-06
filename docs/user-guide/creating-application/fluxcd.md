@@ -1,15 +1,13 @@
 # Enable GitOps Deployments with FluxCD
  
-{% hint style="info" %} 
-### Prerequisite
-
+:::info Prerequisite
 Make sure to install:
 
 1. [Build and Deploy (CI/CD) integration](../integrations/build-and-deploy-ci-cd.md)
 
 2. [GitOps (ArgoCD) integration](../integrations/argocd.md)
 
-{% endhint %}
+:::
 
 Devtron supports FluxCD to enable GitOps-based deployments. With FluxCD, you can:
 
@@ -24,12 +22,11 @@ Your Git repository becomes the single source of truth for your Kubernetes workl
 
 ## Installation
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 The user must have permissions to:
   * Edit the ConfigMaps of 'default-cluster'
   * Restart the pods
-{% endhint %}
+:::
 
 To enable deployments through GitOps via FluxCD, you need to enable a specific feature flag for the `default_cluster` in Devtron.
 
@@ -38,11 +35,9 @@ To enable deployments through GitOps via FluxCD, you need to enable a specific f
  |**Deployments via FluxCD**|`FEATURE_FLUX_DEPLOYMENTS_ENABLE: "true"`|This flag will enable deployments through GitOps via FluxCD.<ul><li> After enabling this flag, you also need to install FluxCD controller in order to deploy applications successfully. Refer [Installing FluxCD Controller](#installing-fluxcd-controller-only-for-deployments) to know more.</li></ul>|
  |**Migrating existing FluxCD applications**|`FEATURE_LINK_EXTERNAL_FLUX_ENABLE: "true"`|This flag will enable migrations for external FluxCD apps into Devtron.|
 
- {% hint style="warning" %}
- ### Deployment Strategies for FluxCD Deployments
-
+ :::caution Deployment Strategies for FluxCD Deployments
  Application deployments through GitOps (via FluxCD) are supported only when using the `Deployment` or `Rollout` deployment strategies with the latest chart versions. Other deployment strategies are currently not supported. 
- {% endhint %}
+ :::
 
 ### Enabling Feature Flags
 
@@ -61,25 +56,25 @@ To enable deployments through GitOps via FluxCD, you need to enable a specific f
 4. Edit the `dashboard-cm` ConfigMap by clicking **Edit live manifest**.
 
       ![Figure 4: Editing Live Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-edit-live-manifest.jpg)
-      1. To enable deployments via FluxCD, check if the below entries are present in the ConfigMap (create one if it doesn't exist) and select **Apply changes**.<br>
+      1. To enable deployments via FluxCD, check if the below entries are present in the ConfigMap (create one if it doesn't exist) and select **Apply changes**.<br/>
 
             ```yaml
             FEATURE_FLUX_DEPLOYMENTS_ENABLE: "true"
             ```
 
-      2. To enable migration for external FluxCD applications, check if the below entries are present in the ConfigMap (create one if it doesn't exist) and select **Apply changes**.<br>
+      2. To enable migration for external FluxCD applications, check if the below entries are present in the ConfigMap (create one if it doesn't exist) and select **Apply changes**.<br/>
 
             ```yaml
             FEATURE_LINK_EXTERNAL_FLUX_ENABLE: "true"
             ```
       
-      <br>
+      <br/>
 
       ![Figure 5: Adding Feature Flags](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-add-flags.jpg)
 
 5. Restart the deployment: 
       1. **For OSS Users:**
-          1. Navigate to Devtron's Resource Browser.
+          1. Navigate to Devtron's [Resource Browser](../resource-browser/).
 
           2. Select the cluster for which you have enabled the feature flags.
 
@@ -93,7 +88,7 @@ To enable deployments through GitOps via FluxCD, you need to enable a specific f
 
                ![Figure 6: Restarting Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-restart-deployment.gif)
       2. **For Enterprise Users:**
-           1. Go to **Resource Browser** → (select the cluster in which you have enabled the feature flags) → **Workloads** → **Deployment**
+           1. Go to **Infrastructure Management** → **Resource Browser** → (select the cluster in which you have enabled the feature flags) → **Workloads** → **Deployment**
 
            2. Click the checkbox next to the `dashboard` Deployment workloads and restart them using the `⟳` button.
 

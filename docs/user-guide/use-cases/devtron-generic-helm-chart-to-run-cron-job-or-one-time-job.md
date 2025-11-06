@@ -1,6 +1,10 @@
+---
+hide_table_of_contents: true
+---
+
 # Devtron Generic Helm Chart To Run Cron Job Or One Time Job
 
-**Devtron also supports Job and Cronjob pipelines. If you need to regularly update the image and configurations of your cronjob/job, you should prefer to create a pipeline,To know more about this you can refer the link** [cronjob/job documentation](../creating-application/base-config/deployment-template/job-and-cronjob.md).
+Devtron also supports Job and Cronjob pipelines. If you need to regularly update the image and configurations of your cronjob/job, you should prefer to create a pipeline,To know more about this you can refer the link [cronjob/job documentation](../creating-application/base-config/deployment-template-types/job-and-cronjob.md).
 
 ## Using Devtron-generic-Helm Chart to run Cron Job or One Time job
 

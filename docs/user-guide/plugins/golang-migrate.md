@@ -1,11 +1,15 @@
+---
+hide_table_of_contents: true
+---
+
 # GoLang-migrate
 
 Migrate reads migrations from sources file and applies them in correct order to a database.
 
 **Prerequisite**: Make sure you have SQL files in format used by the golang-migrate tool.
 
-**official-documentation**: https://github.com/golang-migrate/migrate
-**postgres-example**: https://github.com/golang-migrate/migrate/tree/master/database/postgres
+**Official-documentation**: https://github.com/golang-migrate/migrate
+**Postgres-example**: https://github.com/golang-migrate/migrate/tree/master/database/postgres
 
 1. On the **Edit build pipeline** page, select the **Pre-Build Stage** (or Post-Build Stage). or 
 2. Click **+ Add task**.
@@ -14,7 +18,7 @@ Migrate reads migrations from sources file and applies them in correct order to 
 
 * Enter a relevant name in the `Task name` field. It is a mandatory field.
 * Enter a descriptive message for the task in the `Description` field. It is an optional field.
-* Provide a value for the input variable.<br> Note: The value may be any of the values from the previous build stages, a global variable, or a custom value.</br>
+* Provide a value for the input variable.<br/> Note: The value may be any of the values from the previous build stages, a global variable, or a custom value.
 
  | Variable | Format | Description |
 | ---- | ---- | ---- |

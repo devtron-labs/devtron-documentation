@@ -1,12 +1,12 @@
 # GitOps Configuration
 
-{% hint style="warning" %}
-The 'GitOps Configuration' page appears only if the super-admin has enabled 'Allow changing git repository for application' in [Global Configurations → GitOps](../global-configurations/gitops.md).
-{% endhint %}
+:::caution 
+The 'GitOps Configuration' page appears only if the super-admin has enabled 'Allow changing git repository for application' in [Application Management → Configurations → GitOps](../global-configurations/gitops.md).
+:::
 
 ## Introduction
 
-This configuration is an extension of the [GitOps](../global-configurations/gitops.md) settings present in [Global Configurations](../global-configurations/README.md) of Devtron. Therefore, make sure you read it before making any changes to your app configuration.
+This configuration is an extension of the [GitOps](../global-configurations/gitops.md) settings present in [Application Management → Configurations](../global-configurations/README.md) of Devtron. Therefore, make sure you read it before making any changes to your app configuration.
 
 The application-level GitOps configuration offers the flexibility to add a custom Git repo (as opposed to Devtron auto-creating a repo for your application). 
 
@@ -14,14 +14,13 @@ The application-level GitOps configuration offers the flexibility to add a custo
 
 ## Adding Custom Git Repo for GitOps
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have [Admin permission](../global-configurations/authorization/user-access.md#devtron-apps-permissions) or above (along with access to the environment and application) to configure user-defined Git repo.
-{% endhint %}
+:::
 
 ### For Devtron Apps
 
-1. Go to **Applications** → **Devtron Apps** (tab) → (choose your app) → **App Configuration** (tab) → **GitOps Configuration**.
+1. Go to **Application Management** **Applications** → **Devtron Apps** (tab) → (choose your app) → **Configurations** (tab) → **GitOps Configuration**.
 
     ![Figure 1: App-level GitOps Config](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/app-config-gitops.jpg)
 
@@ -34,15 +33,15 @@ Users need to have [Admin permission](../global-configurations/authorization/use
     ![Figure 2: Repo Creation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/gitops-config.jpg)
 
 
-{% hint style="warning" %}
+:::caution 
 GitOps repositories, whether auto-created by Devtron or added manually, are immutable. This means they cannot be modified after creation. The same is true if you have an existing CD pipeline that uses/used GitOps for deployment.
-{% endhint %}
+:::
 
 3. Click **Save**.
 
     ![Figure 3: Saved GitOps Config](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/saved-config.jpg)
 
-**Note**: In case you skipped the GitOps configuration for your application and proceeded towards the [creation of a new CD pipeline](../creating-application/workflow/cd-pipeline.md#creating-cd-pipeline) (that uses GitOps), you will be prompted to configure GitOps as shown below:
+**Note**: In case you skipped the GitOps configuration for your application and proceeded towards the [creation of a new CD pipeline](../creating-application/workflow/cd-pipeline.md) (that uses GitOps), you will be prompted to configure GitOps as shown below:
 
 ![Figure 4: Incomplete GitOps Config](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/gitops-not-configured.jpg)
 
@@ -61,9 +60,10 @@ You can [deploy a helm chart](../deploy-chart/deployment-of-charts.md#configure-
 
 3. After you enter the `App Name`, `Project`, and `Environment`; an option to choose the deployment approach (i.e., Helm or GitOps) would appear. Select **GitOps**.
 
-{% hint style="info" %}
-The option to choose between 'Helm' or 'GitOps' is only available in <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg">
-{% endhint %}
+:::info 
+The option to choose between 'Helm' or 'GitOps' is only available in <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
+
+:::
 
 ![Figure 7a: Deployment Approach](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/deployment-method.jpg)
 
@@ -81,6 +81,6 @@ The option to choose between 'Helm' or 'GitOps' is only available in <img src="h
 
 Next, you may proceed to deploy the chart.
 
-{% hint style="warning" %}
+:::caution 
 Once you deploy a helm app with GitOps, you cannot change its GitOps repo.
-{% endhint %}
+:::

@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Rollback Deployment
 
 
@@ -33,8 +37,8 @@ If you want to roll back from V3 image to V2 image, then you have the following 
 | Configurations | Description |
 | --- | --- |
 | **Last saved config** | Deploy the image with the latest saved configuration. |
-| **Last deployed config** | Deploy the image with the last deployed configuration. [As an example](#rollback-deployment): `The configuration C3`.|
-| **Config deployed with selected image** | Deploy the configuration which was deployed with the selected image. [As an example](#rollback-deployment): `The configuration C2`. |
+| **Last deployed config** | Deploy the image with the last deployed configuration. **Example**: `The configuration C3`.|
+| **Config deployed with selected image** | Deploy the configuration which was deployed with the selected image. **Example**: `The configuration C2`. |
 
 3. Once you select the previously deployed image and the configuration, review the difference between `Last Deployed Configuration` and the selected configuration.
 

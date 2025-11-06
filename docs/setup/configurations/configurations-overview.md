@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Advanced Configurations
 
 You can configure Devtron by using configuration files. Configuration files are YAML files which are user-friendly.

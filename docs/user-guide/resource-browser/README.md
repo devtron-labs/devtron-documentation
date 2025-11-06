@@ -4,11 +4,10 @@
 
 The Devtron Resource Browser provides you a central interface to view and manage all your [Kubernetes objects](../../reference/glossary.md#objects) across clusters.  It helps you perform key actions like viewing logs, editing live manifests, and even creating/deleting resources directly from the user interface. This is especially useful for troubleshooting purposes as it supports multi-cluster too.
 
-{% hint style="info" %}
-### Additional References
+:::info Additional References
 * [Resource browser versus traditional tools like kubectl](https://devtron.ai/blog/managing-kubernetes-resources-across-multiple-clusters)
 * [Why you should use Devtron's Resource Browser](https://devtron.ai/blog/what-is-the-kubernetes-resource-browser-in-devtron)
-{% endhint %}
+:::
 
 First, the Resource Browser shows you a list of clusters added to your Devtron setup. By default, it displays a cluster named '*default_cluster*' after the Devtron setup is successful.
 

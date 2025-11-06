@@ -6,15 +6,15 @@ In this application, you will learn about how to create a Expressjs Application 
 
 Follow the below-mentioned steps, to deploy the application on Devtron using mongoDb Helm Chart.
 
-## **1. Deploy mongoDb Helm Chart**
+## 1. Deploy mongoDb Helm Chart
 
-To deploy mongoDb Helm Chart, you can refer to our documentation on [Deploy mongoDb Helm Chart](../deploy-chart/examples/deploying-mongodb-helm-chart.md)
+To deploy mongoDb Helm Chart, you can refer to our documentation on [Deploy mongoDb Helm Chart](../deploy-chart/deployment-of-charts.md#example).
 
-## **2. Fork the Git Repository**
+## 2. Fork the Git Repository
 
 For this example, we are using the following [GitHub Repo](https://github.com/devtron-labs/DockerNodeMongo), you can clone this repository and make following changes in the files.
 
-### _\*Dockerfile_
+### Dockerfile
 
 This is the Dockerfile. This exposes our expressjs application to port number 8080
 
@@ -28,7 +28,7 @@ CMD node server.js
 EXPOSE 8080
 ```
 
-### _\*db.js File_
+### db.js File
 
 This file will be used to connect to our database. This will include the `service-name` of the mongoDb Helm Chart, that you have deployed in Step1.
 
@@ -44,19 +44,19 @@ module.exports = {
 }
 ```
 
-## **3. Create Application on Devtron**
+## 3. Create Application on Devtron
 
 To learn how to create an application on Devtron, refer to our documentation on [Creating Application](../creating-application/)
 
-### _\*Git Repository_
+### Git Repository
 
 In this example, we are using the url of the forked Git Repository.
 
-### _\*Docker configuration_
+### Docker configuration
 
 Give, the path of the Dockerfile.
 
-### _\*Configure Deployment Template_
+### Configure Deployment Template
 
 Enable `Ingress`, and give the path on which you want to host the application.
 
@@ -64,15 +64,15 @@ Enable `Ingress`, and give the path on which you want to host the application.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/connect-expressjs-with-mongodb-database/use-case-expressjs-ingress-template.jpg)
 
-### _\*Set up the CI/CD Pipelines_
+### Set up the CI/CD Pipelines
 
 Set up the CI/CD pipelines. You can set them to trigger automatically or manually.
 
-### _\*Trigger Pipelines_
+### Trigger Pipelines
 
 Trigger the CI Pipeline, build should be **Successful**, then trigger the CD Pipeline, deployment pipeline will be initiated, after some time the status should be **Healthy**
 
-## **4. Final Step**
+## 4. Final Step
 
 Check the Expressjs app connected to mongodb database, running successfully by hitting your application url.
 

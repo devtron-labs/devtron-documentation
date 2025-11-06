@@ -56,7 +56,7 @@ Before triggering a deployment, if you’ve made any changes to the environment 
 
      ![Figure 9: Triggering The Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/config-diff-deploy.jpg)
 
-## Manual Approval for Deployment [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Manual Approval for Deployment <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 When [manual approval is enabled](../global-configurations/approval-policy.md) for the deployment pipeline configured in the workflow, you are expected to request for an image approval before each deployment. Alternatively, you can deploy images that have already been approved once.
 

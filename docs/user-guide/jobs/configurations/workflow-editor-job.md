@@ -7,11 +7,10 @@ It provides a visual interface to create and configure job pipelines, define bas
 
 To create and configure the Job Pipeline, follow the steps below:
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have the **Admin role** or the **Super Admin role**.
 Refer the [User permissions](../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
-{% endhint %}
+:::
 
 1. Navigate to the **Workflow Editor** in the left sidebar of the **Configurations** page.
 
@@ -55,7 +54,7 @@ This stage allows you to define primary configurations such as **Pipeline name**
 | `Pipeline Name` | Assign a name to your job pipeline|
 | `Source type` | Source type to trigger the job pipeline. Available options: Branch Fixed, Branch Regex, Pull Request, Tag Creation|
 | `Branch Name`| Branch that triggers the CI build|
-| `Use remote cache`| <p>Enable this option to use the Docker cache from previous builds. Docker's layer caching mechanism allows unchanged docker images layers to be reused across pipeline runs, thus drastically reducing execution times<br></p><div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p>The globe toggle, next to <code>Docker Layer Caching</code> means that the configuration is inherited from global<br></p><ul><li>Enabled: Inherits the caching settings defined globally.</li><li>Disabled: Allows you to define a pipeline-level configuration specific to this job.</li></ul></div> |
+| `Use remote cache`| <p>Enable this option to use the Docker cache from previous builds. Docker's layer caching mechanism allows unchanged docker images layers to be reused across pipeline runs, thus drastically reducing execution times<br/></p><div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p>The globe toggle, next to <code>Docker Layer Caching</code> means that the configuration is inherited from global<br/></p><ul><li>Enabled: Inherits the caching settings defined globally.</li><li>Disabled: Allows you to define a pipeline-level configuration specific to this job.</li></ul></div> |
 
 ### Tasks to be Executed
 
@@ -95,7 +94,7 @@ To create a task using the **GKE Provisioner** plugin, follow the steps below:
 
       ![Figure 9: Searching 'GKE Provisioner' Plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke-search.jpg)
 
-    * The left-side panel will now show a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by default), along with its logo.<br /> You can change the task's name using the **Task name** field, but plugin's logo will remain indicating that it is a preset plugin.
+    * The left-side panel will now show a task under **Tasks (IN ORDER OF EXECUTION)**, named after the selected plugin(by default), along with its logo.<br/> You can change the task's name using the **Task name** field, but plugin's logo will remain indicating that it is a preset plugin.
 
       ![Figure 10: Gke Provisioner Plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-gke.jpg)
 
@@ -146,13 +145,12 @@ Let's take an example of a **Shell task** for a job that allows you to extract a
 | `Task Description`| `This task extract all the environment variables available to the job pod at runtime and saves it as a file` | Optional | Short description for the task|
 | `Task Type` | `Shell`| Optional| Select the preferred task type |
 | `Script`| Refer the [Script](#script) below| Required| Custom script for executing Job tasks|
-| `Output variables`| Refer to the [output variable](#output-variables) table| Optional| <p>Output variables store the output as variables, and these variables can be used as input variables for the next task.|
+| `Output variables`| Refer to the [output variable](#output-variables) table| Optional| Output variables store the output as variables, and these variables can be used as input variables for the next task.|
 
 
 #### Script
 
-{% code title="Custom Script" overflow="wrap" lineNumbers="true" %}
-```bash
+```bash title="Custom Script" showLineNumbers
 #!/bin/sh
 set -e
 
@@ -168,7 +166,7 @@ ls -l "$ARTIFACT_DIR"
 # Export output variable
 echo "ENV_FILE=$FILE"
 ```
-{% endcode %}
+
 
 #### Output Variables
 
@@ -190,7 +188,7 @@ Let's take an example of a **Shell task** for a job that allows you to back up a
 | `Task Name`| `pg-backup-task`| Required| Enter a name for the task|
 | `Task Description`| `This task performs a backup of a specific PostgreSQL database and saves it as a file, and stores the file path as an output variable.` | Optional | Short description for the task|
 | `Task Type` | `Shell`| Optional| Select the preferred task type |
-| `Input variables`| Refer the [Input Variable table](#input-variable-table) below | Optional| <p>These variables provide dynamic values to the script at the time of execution and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
+| `Input variables`| Refer the [Input Variable table](#input-variable-table) below | Optional| <p>These variables provide dynamic values to the script at the time of execution and are defined directly in the UI.<br/></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br/>Accepted data types include: STRING</li></ul> |
 | `Trigger/Skip condition` | `Trigger If: DB_NAME == prod-db`| Optional| A conditional statement to execute or skip the task|
 | `Script`| Refer the [Script](#script-1) below| Required| Custom script for executing Job tasks|
 | `Output directory path`  | `/backups`| Optional| Directory path where output files such as logs, errors, etc., will be available after the execution.|
@@ -207,7 +205,7 @@ Let's take an example of a **Shell task** for a job that allows you to back up a
 
 * To add an input variable, click **+ Add Variable** next to the **Input Variable**, a new table appears asking you to enter the variable and its required information.
 
-* You can click `+` icon next to **Variable** header field to add more rows to the input variable table.<br>
+* You can click `+` icon next to **Variable** header field to add more rows to the input variable table.<br/>
 
     ![Figure 12: Variable configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-var-config.jpg)
 
@@ -221,8 +219,7 @@ Let's take an example of a **Shell task** for a job that allows you to back up a
 
 #### Script
 
-{% code title="Custom Script" overflow="wrap" lineNumbers="true" %}
-```bash
+```bash title="Custom Script" showLineNumbers
 #!/bin/sh 
 set -eo pipefail 
 #set -v  ## uncomment this to debug the script 
@@ -230,14 +227,13 @@ set -eo pipefail
 echo "Taking database backup"
 bash ./scripts/backup.sh --db-host "$DB_HOST" --db-user "$DB_USER" --db-name "$DB_NAME" --backup-path "$BACKUP_PATH"
 ```
-{% endcode %}
+
 
 In the above script, instead of writing the entire script for the backup task, we have referenced the `backup.sh` script from the Github Repository configured as Source code. This approach avoids the need to rewrite the same script again and again for each task, thus making it reusable and efficient across multiple jobs.
 
 **backup.sh Script (Stored in Github repository)**
 
-{% code title="backup.sh" overflow="wrap" lineNumbers="true" %}
-```bash
+```bash title="backup.sh" showLineNumbers
 #!/bin/bash
 
 # Input variables for database connection
@@ -265,7 +261,7 @@ else
     exit 1
 fi
 ```
-{% endcode %}
+
 
 #### Output Variables
 
@@ -292,7 +288,7 @@ Let's take an example of a **Container Image Task** for a job that test if a giv
 | `Task name`| `check-endpoint`| Required|Enter a name for the task|
 | `Description`|`Checks API endpoint`|
 | `Task type`| `Container Image`| Optional| Allows you to execute commands and scripts inside a custom Docker container|
-| `Input variables`| Refer the [Input Variable table](#input-variable-table-1) below | Optional| <p>These variables provide dynamic values to the script and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
+| `Input variables`| Refer the [Input Variable table](#input-variable-table-1) below | Optional| <p>These variables provide dynamic values to the script and are defined directly in the UI.<br/></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br/>Accepted data types include: STRING</li></ul> |
 | `Trigger/Skip condition`| `No`| Optional| Execute or skip the task based on the condition provided.|
 | `Container image`| `alpine:3.2.0`| Required| Select an image from the drop-down list or enter a custom value in the format `<image>:<tag>`|
 | `Mount custom code`| Refer below [Mount custom code](#mount-custom-code) section| Optional| <p>Enable to mount the custom code in the container. Enter the script in the box below.</p><ul><li>**Mount above code at** (required): Path where the code should be mounted, i.e., `/run.sh` (for this example only) </li></ul>|
@@ -311,8 +307,7 @@ Let's take an example of a **Container Image Task** for a job that test if a giv
 
 #### Mount Custom Code
 
-{% code title="Custom Script" overflow="wrap" lineNumbers="true" %}
-```bash
+```bash title="Custom Script" showLineNumbers
 #!/bin/sh
 set -e
 
@@ -331,7 +326,7 @@ fi
 
 echo "STATUS_FILE=$FILE"
 ```
-{% endcode %}
+
 
 You can provide the URL at runtime, and the after the job execution completed, you can access the generated file by navigating to **Run History** → **Artifacts**.
 
@@ -346,7 +341,7 @@ Let's take an example of a **Container Image Task** for a job that provisions an
 | `Task name`| `provision-s3-bucket`| Required|Enter a name for the task|
 | `Description`| Provision an S3 bucket with Terraform| Optional| A descriptive message for the task|
 | `Task type`| `Container Image`| Optional| Allows you to execute commands and scripts inside a custom Docker container|
-| `Input variables`| Refer the [Input Variable table](#input-variable-table-2) below | Optional| <p>These variables provide dynamic values to the script and are defined directly in the UI.<br></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br>Accepted data types include: STRING</li></ul> |
+| `Input variables`| Refer the [Input Variable table](#input-variable-table-2) below | Optional| <p>These variables provide dynamic values to the script and are defined directly in the UI.<br/></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br/>Accepted data types include: STRING</li></ul> |
 | `Trigger/Skip condition`| `TF_ENV == "prod"`| Optional| Execute or skip the task based on the condition provided.|
 | `Container image`| `hashicorp/terraform:1.5.0`| Required| Select an image from the drop-down list or enter a custom value in the format `<image>:<tag>`|
 | `Mount custom code`| Refer below [Mount custom code](#mount-custom-code-1) section| Optional| <p>Enable to mount the custom code in the container. Enter the script in the box below.</p><ul><li>**Mount above code at** (required): Path where the code should be mounted</li></ul>|
@@ -366,7 +361,7 @@ Let's take an example of a **Container Image Task** for a job that provisions an
 
 * To add an input variable, click **+ Add Variable** next to the `Input Variable`, a new table appears asking you to enter the variable and its required information.
 
-* You can click `+` icon next to **Variable** header field to add more rows to the input variable table.<br>
+* You can click `+` icon next to **Variable** header field to add more rows to the input variable table.<br/>
 
     ![Figure 15: Variable configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/workflow-editor-var-config.jpg)
 
@@ -380,8 +375,7 @@ Let's take an example of a **Container Image Task** for a job that provisions an
 
 #### Mount Custom Code
 
-{% code title="Custom Script" overflow="wrap" lineNumbers="true" %}
-```bash
+```bash title="Custom Script" showLineNumbers
 #!/bin/sh
 set -eo pipefail
 
@@ -398,14 +392,13 @@ terraform apply -auto-approve \
 # Capture the bucket name output
 echo "S3_BUCKET_NAME=$(terraform output -raw bucket_name)"
 ```
-{% endcode %}
+
 
 In the above script, instead of writing the entire Terraform script for provisioning the S3 bucket, we have stored the script `main.tf` and `variable.tf` in the Github Repository configured as Source code. By enabling `mount code to container`, the source code (configured Git Repository) is now mounted inside the container as well and available at `/sourcecode`. This approach avoids the need to rewrite the same scripts multiple times for each task, thus making the scripts reusable and efficient across multiple jobs.
 
 **main.tf Script (Stored in Github repository)**
 
-{% code title="main.tf" overflow="wrap" lineNumbers="true" %}
-```bash
+```bash title="main.tf" showLineNumbers
 provider "aws" {
   region = var.region
 }
@@ -424,12 +417,11 @@ resource "aws_s3_bucket_versioning" "this" {
   }
 }
 ```
-{% endcode %}
+
 
 **variables.tf Script (Stored in Github repository)**
 
-{% code title="variables.tf" overflow="wrap" lineNumbers="true" %}
-```bash
+```bash title="variables.tf" showLineNumbers
 variable "bucket_name" {
   description = "The name of the S3 bucket"
   type        = string
@@ -440,7 +432,7 @@ variable "region" {
   type        = string
 }
 ```
-{% endcode %}
+
 
 After adding this S3 provisioner task, you can add more tasks as well, for example, you can add a task to add a bucket policy or send a notification to slack or email that s3 bucket is provisioned successfully.
 
@@ -448,16 +440,15 @@ After adding this S3 provisioner task, you can add more tasks as well, for examp
 
 ## Update Job Pipeline
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have the **Admin role** or the **Super Admin role**.
 Refer the [User permissions](../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
-{% endhint %}
+:::
 
 You can update the configurations of an existing Job Pipeline except for the pipeline's name.
 To update your job pipeline
 
-1. Navigate to **Configurations** → **Workflow Editor** of the specific job you want to update.
+1. Navigate to **Configurations** (tab) → **Workflow Editor** of the specific job you want to update.
 
 2. Select the **Job pipeline** you wish to update, a **Edit job pipeline** modal window will appear.
 
@@ -471,15 +462,14 @@ To update your job pipeline
 
 ## Delete Job Pipeline
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have the **Admin role** or the **Super Admin role**.
 Refer the [User permissions](../../global-configurations/authorization/user-access.md#roles-available-for-jobs).
-{% endhint %}
+:::
 
 To delete a job pipeline 
 
-1.  Navigate to **Configurations** → **Workflow Editor** for the job you want to delete.
+1.  Navigate to **Configurations** (tab) → **Workflow Editor** for the job you want to delete.
 
 2. Select the **Job pipeline** you wish to delete, a **Edit job pipeline** modal window will appear.
 

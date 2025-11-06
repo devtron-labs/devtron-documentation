@@ -18,7 +18,7 @@ Therefore, this doc is divided into 2 sections, read the one that caters to your
 
 Follow the below steps if the source code of your application is hosted on a single Git repository.
 
-In your application, go to **App Configuration** → **Git Repository**. You will get the following fields and options:
+In your Devtron app, go to **Configuration** (tab) → **Git Repository**. You will get the following fields and options:
 
 1. [Git Account](#git-account)
 2. [Git Repo URL](#git-repo-url)
@@ -33,9 +33,9 @@ This is a dropdown that shows the list of Git accounts added to your organizatio
 
 ![Figure 2: Selecting Git Account](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/select-git-account.jpg)
 
-{% hint style="info" %}
+:::info 
 If the authentication type of your Git account is anonymous, only public Git repositories in that account will be accessible. Whereas, adding a user auth or SSH key will make both public and private repositories accessible.
-{% endhint %}
+:::
 
 
 ### Git Repo URL
@@ -46,10 +46,10 @@ You can find this URL by clicking on the **Code** button available on your repos
 
 ![Figure 3: Getting Repo URL](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/repo-url.jpg)
 
-{% hint style="info" %}
+:::info 
 * Copy the HTTPS/SSH portion of the URL too
 * Make sure you've added your [Dockerfile](https://docs.docker.com/engine/reference/builder/) in the repo
-{% endhint %}
+:::
 
 
 ### Exclude specific file/folder in this repo
@@ -64,7 +64,7 @@ In other words, if a given commit contains changes only in file(s) present in yo
 
 Devtron allows you to create either an exclusion rule, an inclusion rule, or a combination of both. In case of multiple files or folders, you can list them in new lines. 
 
-To exclude a path, use **!** as the prefix, e.g. `!path/to/file` <br />
+To exclude a path, use **!** as the prefix, e.g. `!path/to/file` <br/>
 To include a path, don't use any prefix, e.g. `path/to/file`
 
 
@@ -74,7 +74,7 @@ To include a path, don't use any prefix, e.g. `path/to/file`
 | Sample Values | Description |
 |---|---|
 | `!README.md` | **Exclusion of a single file in root folder:** <br/> Commits containing changes made only in README.md file will not be shown |
-| `!README.md` <br /> `!index.js` | **Exclusion of multiple files in root folder:** <br/> Commits containing changes made only in README.md or/and index.js files will not be shown |
+| `!README.md` <br/> `!index.js` | **Exclusion of multiple files in root folder:** <br/> Commits containing changes made only in README.md or/and index.js files will not be shown |
 |  `README.md` | **Inclusion of a single file in root folder:** <br/> Commits containing changes made only in README.md file will be shown. Rest all will be excluded. |
 |  `!src/extensions/printer/code2.py` | **Exclusion of a single file in a folder tree:** <br/> Commits containing changes made specifically to code2.py file will not be shown |
 |  `!src/*` | **Exclusion of a single folder and all its files:** <br/> Commits containing changes made specifically to files within src folder will not be shown |
@@ -128,9 +128,9 @@ Repeat the process for every new git repository you add. The clone directory pat
 
 Whenever a change is pushed to any of the configured repositories, CI will be triggered and a new Docker image file will be built (based on the latest commits of the configured repositories). Next, the image will be pushed to the container registry you configured in Devtron.
 
-{% hint style="info" %}
+:::info 
 Even if you add multiple repositories, only one image will be created based on the Dockerfile as shown in the [docker build config](docker-build-configuration.md)
-{% endhint %}
+:::
 
 ### Why do you need Multi-Git support?
 

@@ -79,10 +79,7 @@ To configure the GitHub SSO in Devtron, follow the below steps of instructions:
 
 ---
 
-{% hint style="warning" %}
-
-### Important: Enable User Access After SSO Setup
-
+:::caution Important: Enable User Access After SSO Setup
 Although GitHub SSO is now configured, you will not be able to sign in with GitHub unless you add yourself as a user with the necessary permissions and manage other user permissions as well in Devtron. For detailed steps on managing user permissions, refer to the [User Permissions Documentation](../user-access.md).
 
-{% endhint %}
+:::

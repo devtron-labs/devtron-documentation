@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Pipeline Plugins
 
 Pipeline plugins (a.k.a. preset plugins) are micro tools that allow you to enhance and refine the [CI/CD workflow](../creating-application/workflow/README.md) of your application by adding new features, integrating with external tools, and automating tasks.

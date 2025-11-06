@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Deleting Application
 
 Delete the Application, when you are sure you no longer need it.

@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Host URL
 
 Host URL is the domain address at which your devtron dashboard can be reached.  

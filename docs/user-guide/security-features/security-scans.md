@@ -1,21 +1,18 @@
 # Security Scans
 
-{% hint style="info" %}
-### Prerequisite
-
+:::info Prerequisite
 Install any one of the following integrations for scanning vulnerabilities:
 * [Clair](../../user-guide/integrations/vulnerability-scanning/clair.md)
 * [Trivy](../../user-guide/integrations/vulnerability-scanning/trivy.md)
-{% endhint %}
+:::
 
-Devtron's CI pipeline provides a [**Scan for vulnerabilities**](../creating-application/workflow/ci-pipeline.md#scan-for-vulnerabilities) option as shown below. Once you enable this option, it will automatically scan the image for vulnerabilities.
+Devtron's CI pipeline provides a **Scan for vulnerabilities** option as shown below. Once you enable this option, it will automatically scan the image for vulnerabilities.
 
 ![Figure 1: Scan for vulnerabilities](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/enable-image-scan.jpg)
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have Admin permission or above (along with access to the environment and application) to enable the **Scan for vulnerabilities** option.
-{% endhint %}
+:::
 
 ---
 
@@ -25,10 +22,9 @@ To access the comprehensive security scan reports, follow these steps:
 
 1. In the left sidebar, click **Security** and go to the `Security Scans` tab.
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to view the 'Security Scans' page.
-{% endhint %}
+:::
 
 2. Select the desired application from the available list.
 
@@ -60,9 +56,9 @@ To access security vulnerability details during image deployment in Devtron, fol
 
 In the `Security` tab, you will find the security vulnerability details associated with the image. 
 
-{% hint style="info" %}
+:::info 
 Vulnerability information will only be displayed for images that have undergone vulnerability scanning. If no vulnerabilities were identified during the scan, the **Security** tab will display a zero count, indicating **Security (0)**.
-{% endhint %}
+:::
 
 ---
 

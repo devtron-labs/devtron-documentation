@@ -21,19 +21,17 @@ Application Metrics are the indicators used to evaluate the performance and effi
 
 ## Set Up Application Metrics
 
-{% hint style="warning" %}
-### Note 
+:::caution Note 
 Application metrics can only be enabled if your application is deployed using Devtron Deployment Charts and not [Custom Deployment Charts](../global-configurations/deployment-charts.md).
-{% endhint %}
+:::
 
 ### Step 1: Install Monitoring (Grafana) Integration
 
 #### For OSS and Self-Managed Enterprise
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Only super admin users can install Devtron integrations.
-{% endhint %}
+:::
 
 To use the Grafana dashboard, you need to first install the integration from the [Devtron Stack Manager](../integrations/README.md). Refer [Monitoring (Grafana) Integration](../integrations/grafana.md) to learn more.
 
@@ -44,15 +42,13 @@ If you want to enable Grafana Integration, email us at [enterprise@devtron.ai](m
 
 ### Step 2: Install Prometheus
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have [Admin role](../global-configurations/authorization/user-access.md#devtron-apps-permissions) or above to deploy a chart.
-{% endhint %}
+:::
 
-{% hint style="warning" %}
-### Note 
+:::caution Note 
 Ensure [GitOps](../global-configurations/gitops.md) is configured before deploying Prometheus. If not, Prometheus will default to being deployed via Helm.
-{% endhint %}
+:::
    
 1. Go to the **Chart Store** and search for `prometheus`. Use the Prometheus community's `kube-prometheus-stack` chart to deploy Prometheus.
 
@@ -66,14 +62,14 @@ Ensure [GitOps](../global-configurations/gitops.md) is configured before deployi
         - pods=[*]
     ```
 
-    <br />
+    <br/>
 
     ```yaml
     serviceMonitorSelectorNilUsesHelmValues: false
     podMonitorSelectorNilUsesHelmValues: false
     ```
 
-    <br />
+    <br/>
 
     Search for the above parameters, and update them as shown (or customize as needed).
 
@@ -91,21 +87,18 @@ Ensure [GitOps](../global-configurations/gitops.md) is configured before deployi
       
 4. After enabling the parameter, click **Deploy Chart**.
 
-{% hint style="warning" %}
-### Common Pitfall: Prometheus Deployment Timeout due to Failed CRDs
-
+:::caution Common Pitfall: Prometheus Deployment Timeout due to Failed CRDs
 While deploying `kube-prometheus-stack` chart, the deployment status may show as **Timed out**, and some CustomResourceDefinitions (CRDs) may appear as **Failed**.
 
-To solve it, refer [Troubleshoot Issues](#common-pitfall-prometheus-deployment-timeout-due-to-failed-crds)
+To solve it, refer [Troubleshoot Issues](#troubleshoot-issues)
 
-{% endhint %}
+:::
 
 ### Step 3: Set Up Prometheus Endpoint
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Only super admin users can set up Prometheus endpoint in a cluster.
-{% endhint %}
+:::
    
 1. Once Prometheus is installed, go to its **App Details** and navigate to **Networking** → **Service** in the K8s resources. Expand the Prometheus server service to see the endpoints. 
 
@@ -127,10 +120,9 @@ Only super admin users can set up Prometheus endpoint in a cluster.
 
 ### Step 4: Enable Application Metrics
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have [Admin role](../global-configurations/authorization/user-access.md#devtron-apps-permissions) or above to enable application metrics.
-{% endhint %}
+:::
 
 After adding the endpoint in your preferred cluster, **CPU usage** and **Memory usage** metrics will be visible in the **App Details** page for all the Devtron apps in that cluster (it may take a few minutes).
 
@@ -138,14 +130,13 @@ After adding the endpoint in your preferred cluster, **CPU usage** and **Memory 
 
 To enable **Throughput** and **Latency** metrics in Devtron, follow these steps:
 
-{% hint style=“warning” %}
-### Note
+:::caution Note
 **Throughput** and **Latency** metrics will only display data if there is active traffic (i.e., incoming requests) to your application. If there is no traffic, these metrics will show `No data`.
-{% endhint %}
+:::
     
 1. Open your Devtron app.
 
-2. Go to **Configurations** → **Base Configurations** → **Deployment Template**.
+2. Go to its **Configurations** (tab) → **Base Configurations** → **Deployment Template**.
 
 3. Enable **Application Metrics** in the Deployment Template as shown below and save the changes.
 
@@ -155,10 +146,9 @@ To enable **Throughput** and **Latency** metrics in Devtron, follow these steps:
 
     ![Figure 10: Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-new3.jpg)
 
-{% hint style="warning" %}
-### Note 
+:::caution Note 
 If your environment is [Overridden](../creating-application/environment-overrides.md), you need to enable the Application Metrics at the environment override deployment template instead of the base deployment template.
-{% endhint %}
+:::
 
 ---
 
@@ -194,7 +184,7 @@ kubectl apply -f https://raw.githubusercontent.com/devtron-labs/devtron/main/man
 <details>
 <summary><strong> Grafana dashboards not visible in App Details page even after adding prometheus endpoint or Graphs showing error panel with id 2 not found</strong></summary>
 
-If the graphs are not visible check if Prometheus is configured properly. Then go to **Global Configurations** > **Clusters & Environments** > Click on any environment for the cluster where you added Prometheus endpoint and simply click `Update`.  
+If the graphs are not visible check if Prometheus is configured properly. Then go to **Global Configurations** → **Clusters & Environments** → Click on any environment for the cluster where you added Prometheus endpoint and simply click `Update`.  
 If the charts are still not visible, try visiting the URL: `<devtron-url>/grafana?orgId=2`  
 If you see `Not Found` on this page, then follow all the given steps or if the page is accessible, and you are getting `panel with id 2 not found` then follow from step 6:  
 1. Get Grafana password using `kubectl -n devtroncd get secret devtron-secret -o jsonpath='{.data.GRAFANA_PASSWORD}' | base64 -d`
@@ -233,7 +223,7 @@ If you see `Not Found` on this page, then follow all the given steps or if the p
 
 5. Now from Devtron UI, update any of the environment again and its data source will be created automatically.
 
-6. In Grafana UI you need to be logged in and Go to Dashboards > Manage then click `Import` and Import the given dashboards one by one.
+6. In Grafana UI you need to be logged in and Go to Dashboards → Manage then click `Import` and Import the given dashboards one by one.
 
     ```
     https://grafana.com/api/dashboards/13322/revisions/4/download

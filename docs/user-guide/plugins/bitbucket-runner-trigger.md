@@ -9,15 +9,15 @@ Before integrating the **Bitbucket Runner Trigger** plugin, ensure you have a Bi
 ---
 
 ## Steps
-1. Go to **Applications** → **Devtron Apps**.
+1. Go to **Application Management** → **Applications** → **Devtron Apps** (tab).
 2. Click your application.
-3. Go to **App Configuration** → **Workflow Editor**.
+3. Go to **Configurations** (tab) → **Workflow Editor**.
 4. Click **New Workflow** and navigate to the **Build and Deploy from Source Code**.
 5. Fill the required fields in the **Create build pipeline** window and navigate to the **Pre-Build stage**.
 
-{% hint style="warning" %}
+:::caution 
 If you have already configured workflow, edit the build pipeline, and navigate to **Pre-Build stage**.
-{% endhint %}
+:::
 
 6. Under 'TASKS', click the **+ Add task** button.
 7. Select the **Bitbucket Runner Trigger** plugin.

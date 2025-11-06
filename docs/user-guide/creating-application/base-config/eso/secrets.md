@@ -31,13 +31,13 @@ Simply put, if a [ConfigMap](../config-maps.md) is a recipe card in the kitchen,
 
 3. **Mount data as** - Select how you want to mount the Secret:
     * **Environment Variable** – Select this option if you want to inject Environment Variables in pods using Secret.
-    * **Data Volume** – Select this option, if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-valume) to know more.
+    * **Data Volume** – Select this option, if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-volume) to know more.
 
 4. Enter data in:
    - **GUI mode** – User-friendly interface. Click **+Add** button and enter the **Key** and **Value** fields without quotes. 
    - **YAML mode** – Raw YAML for entering key-value pairs in the format **`key: value`**. Boolean and numeric values must be wrapped in double quotes.
 
-   {% embed url="https://www.youtube.com/watch?v=x6IIr6pDZig" %}
+   <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/x6IIr6pDZig" title="" frameborder="0" allowfullscreen></iframe></div>
 
 5. You may [perform a dry run](#perform-a-dry-run) before clicking **Save**.
 
@@ -49,7 +49,7 @@ Use this option to mount an existing Kubernetes Secret in your application pods.
 
 2. **Name** - Make sure you give the same name as the existing secret. Otherwise, it might result in an error during the build.
 
-3. Mount data as: **Environment Variable** or [Data Volume](#mount-data-as-data-valume)
+3. Mount data as: **Environment Variable** or [Data Volume](#mount-data-as-data-volume)
 
 4. Click **Save**.
 
@@ -81,11 +81,10 @@ When mounting multiple files to the same location, you can use the **Set Sub Pat
 
 * If **Set Sub Path** is disabled (unchecked), the system will delete any files already present in the [specified path](#volume-mount-path) and then mount the new files.
 
-{% hint style="info" %}
-### Note
+:::info Note
 In case of Kubernetes Secrets, all keys will be mounted as files on the specified path.
 In case of External Secrets, manually specify the keys which should be mounted as files.
-{% endhint %}
+:::
 
 
 ### Set File Permission
@@ -129,10 +128,9 @@ Your configurations will appear in the left pane, while the right pane will disp
 2. Modify its values.
 3. Click **Update**.
 
-{% hint style="warning" %}
-### Note
+:::caution Note
 You cannot change the name of a Secret. Create a new Secret instead.
-{% endhint %}
+:::
 
 ![Figure 8: Updating Existing Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/update-secret.jpg)
 
@@ -151,20 +149,19 @@ You may delete a Secret if not in use anymore. Once a Secret is deleted, it will
 
 ---
 
-## Edit a Protected Secret [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Edit a Protected Secret <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 Any changes made to the protected base configurations (Deployment Template, ConfigMap, Secret) will require approval if an [approval policy](../../../global-configurations/approval-policy.md) is enforced.
 
-{% embed url="https://www.youtube.com/watch?v=pJPX-rJNb_o" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/pJPX-rJNb_o" title="" frameborder="0" allowfullscreen></iframe></div>
 
 ---
 
 ## External Secret Operator (ESO)
 
-{% hint style="info" %}
-### Prerequisite
+:::info Prerequisite
 Chart version should be > 4.14.0
-{% endhint %}
+:::
 
 ### Purpose
 
@@ -184,10 +181,9 @@ External Secrets Operator (ESO) is a Kubernetes component that integrates with e
 
     ![Figure 10: Searching External Secrets Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/external-secret.jpg)
 
-{% hint style="info" %}
-### What if external-secrets chart is not found?
+:::info What if external-secrets chart is not found?
 Manually add the following chart repository URL in Devtron: `https://charts.external-secrets.io`. Follow this [guide](../../../global-configurations/chart-repo.md#add-chart-repository) to know the steps.
-{% endhint %}
+:::
 
 3. Give a name to the helm app that will be created from the chart. Also enter the project and environment where you wish to install the chart.
 

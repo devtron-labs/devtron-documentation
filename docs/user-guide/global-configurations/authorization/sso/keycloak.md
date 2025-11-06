@@ -91,10 +91,9 @@ Here, we will obtain the Issuer URL we need while configuring SSO in Devtron.
 
 ### Configuring OIDC SSO
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to configure SSO.
-{% endhint %}
+:::
 
 Here, we will set up an OIDC SSO and enter the values we obtained in the [previous section](#steps-on-keycloak-admin-console).
 
@@ -118,10 +117,9 @@ Here, we will set up an OIDC SSO and enter the values we obtained in the [previo
 
 ### Adding Users
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to add users.
-{% endhint %}
+:::
 
 Here, we will add the user we created in the Keycloak Admin Console. If this step is skipped, the user might not be able to log in to Devtron via Keycloak.
 
@@ -146,7 +144,6 @@ Now, you may log out and test the Keycloak OIDC login method using the [user cre
 
 ![Figure 15b: Keycloak's Login Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/keycloak-login.jpg)
 
-{% hint style="warning" %}
-### Note
+:::caution Note
 Kindly get in touch with us if you encounter any issues while logging out of Keycloak on Devtron as it might be buggy.
-{% endhint %}
+:::

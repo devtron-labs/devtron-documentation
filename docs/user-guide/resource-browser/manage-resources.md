@@ -1,9 +1,8 @@
 # Discover and Manage Resources 
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have [access to the cluster](../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to discover resources.
-{% endhint %}
+:::
 
 ## Search a Resource
 
@@ -11,11 +10,11 @@ You can use the searchbox to browse the resources.
 
 ![Figure 1: Locate Resources using Searchbox](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/discover-resource.gif)
 
-### Filter Resources [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+### Filter Resources <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 Moreover, you can use filters that allow you to quickly filter your workload as per labels, field selectors, or [CEL expression](https://kubernetes.io/docs/reference/using-api/cel/) as shown below.
 
-{% embed url="https://www.youtube.com/watch?v=E-V-ELCXtfs" caption="Filtering Workloads in Devtron" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/E-V-ELCXtfs" title="Filtering Workloads in Devtron" frameborder="0" allowfullscreen></iframe></div>
 
 ### Resource Kinds
 
@@ -42,25 +41,23 @@ Further resources in the cluster are grouped under the following categories:
 
 ## Edit a Manifest 
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 User needs to be an [admin of the Kubernetes resource](../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to edit its manifest. The fields/paths locked by superadmins in the manifest cannot be edited by non-superadmins.
-{% endhint %}
+:::
 
-You can edit the [manifest](../../reference/glossary.md#manifest) of a Kubernetes object. This can be for fixing errors, scaling resources, or changing configuration. Moreover, you can edit a manifest [using YAML](#edit-using-yaml) or [GUI](#edit-using-gui), as per your convenience.
+You can edit the [manifest](../../reference/glossary.md#manifest) of a Kubernetes object. This can be for fixing errors, scaling resources, or changing configuration. Moreover, you can edit a manifest [using YAML](#edit-using-yaml) or [GUI](#edit-using-gui-), as per your convenience.
 
 ### Edit using YAML
 
 ![Figure 3a: Editing Manifest (Using YAML)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest-yaml.gif)
 
-### Edit using GUI [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+### Edit using GUI <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 ![Figure 3b: Editing Manifest (Using GUI)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest-gui.gif)
 
-{% hint style="info" %}
-### Note
+:::info Note
 The fields displayed in GUI mode will be as per the GUI schema configured by the operator for that resource kind.
-{% endhint %}
+:::
 
 ---
 
@@ -70,12 +67,11 @@ You can monitor activities like creation, deletion, updation, scaling, or errors
 
 ![Figure 4a: Viewing All Events](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/events.gif)
 
-### AI-assistance on Events [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+### AI-assistance on Events <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-{% hint style="info" %}
-### How to Configure Devtron Intelligence?
+:::info How to Configure Devtron Intelligence?
 Refer [Devtron Intelligence](../devtron-intelligence.md) to enable this feature.
-{% endhint %}
+:::
 
 For events with warnings, you can take the assistance of AI. Clicking the **Explain** button will help you identify the root cause of the issue along with suggestions to fix those.
 
@@ -85,10 +81,9 @@ For events with warnings, you can take the assistance of AI. Clicking the **Expl
 
 ## Delete a Resource
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 User needs to be an [admin of the Kubernetes resource](../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to delete it.
-{% endhint %}
+:::
 
 You can delete an unwanted resource if it is orphaned and no longer required by your applications.
 
@@ -98,10 +93,9 @@ You can delete an unwanted resource if it is orphaned and no longer required by 
 
 ## Create a Resource
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 User needs to be an [admin of the Kubernetes resources](../global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to create resources.
-{% endhint %}
+:::
 
 You can create one or more [Kubernetes objects](../../reference/glossary.md#objects) in your cluster using YAML. In case you wish to create multiple objects, separate each resource definition by three dashes (---).
 
@@ -113,8 +107,7 @@ In the below example, we have created a simple pod named `nginx`:
 
 Here's one more example that shows the required fields and object specifications for a Kubernetes Deployment:
 
-{% code title="Spec File" overflow="wrap" lineNumbers="true" %}
-```yml
+```yml title="Spec File" showLineNumbers
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -137,11 +130,11 @@ spec:
          ports:
          - containerPort: 80
 ```
-{% endcode %}
+
 
 ---
 
-## Bulk Actions on Resources [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Bulk Actions on Resources <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 You can use the checkbox to select the resources/workloads you wish to delete or restart.
 
@@ -153,7 +146,6 @@ You can use the checkbox to select the resources/workloads you wish to delete or
 
 ![Figure 7b: Restarting Workloads in Bulk](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/bulk-restart-resources.gif)
 
-{% hint style="info" %}
-### Note
+:::info Note
 You can only restart certain workloads such as Deployment, DaemonSet, StatefulSet, etc. and not all resource types.
-{% endhint %}
+:::

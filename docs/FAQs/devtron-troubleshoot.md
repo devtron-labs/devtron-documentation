@@ -1,8 +1,11 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Troubleshooting Guide
 
 We always try to make your experience of using Devtron as smooth as possible but still if you face any issues, follow the troubleshooting guide given below or join our [discord channel](https://discord.gg/jsRG5qx2gp) if you couldn't find the solution for the issue you are facing.
 
-#### 1. How to resolve unauthorized errors, while trying to save global configurations like hostname, GitOps etc. after successful devtron installation
+### 1. How to resolve unauthorized errors, while trying to save global configurations like hostname, GitOps etc. after successful devtron installation
 
 This occurs most of the time because any one or multiple jobs get failed during installation. To resolve this, you'll need to first check which jobs have failed. Follow these steps:
 
@@ -30,7 +33,7 @@ kubectl apply -f migrator.yaml -n devtroncd
 ```
 - It will re-create the failed jobs and you’ll see their pods created again. Just wait for a few minutes until the jobs gets completed then you are good to go. You should be able to save your global configurations now.
 
-#### 2. Not able to see deployment metrics on production environment or Not able to enable application-metrics or Not able to deploy the app after creating a configmap or secret with data-volume option enabled
+### 2. Not able to see deployment metrics on production environment or Not able to enable application-metrics or Not able to deploy the app after creating a configmap or secret with data-volume option enabled
 
 Update the rollout CRDs to latest version, run the following command:
 
@@ -38,7 +41,7 @@ Update the rollout CRDs to latest version, run the following command:
 kubectl apply -f https://raw.githubusercontent.com/devtron-labs/devtron/main/manifests/yamls/rollout.yaml -n devtroncd
 ```
 
-#### 3. SSO Login not working even after entering correct SSO Credentials
+### 3. SSO Login not working even after entering correct SSO Credentials
 
 ```error: user/UserAuthHandler.go:236","msg":"service err, AuthVerification","err":"no token provided```
 
@@ -52,7 +55,7 @@ Delete devtron pod once to reload the configurations using:
 kubectl delete pod -n devtroncd -l app=devtron
 ```
 
-#### 4. Logs are not Visible on UI while running the build and not even able to abort the same
+### 4. Logs are not Visible on UI while running the build and not even able to abort the same
 
 Check if the pods are being created when you start a new build, run the command and look if a new pod is created when you started the build:
 ```bash
@@ -71,10 +74,10 @@ kubectl delete pod -n devtroncd -l app=kubewatch
 ```
 Again wait for 5 minutes and your issue should be resolved
 
-#### 5. Grafana dashboards not visible in App Details page even after adding prometheus endpoint or Graphs showing error panel with id 2 not found
+### 5. Grafana dashboards not visible in App Details page even after adding prometheus endpoint or Graphs showing error panel with id 2 not found
 
-If the graphs are not visible check if prometheus is configured properly. Then go to Global Configurations > Clusters & Environments > Click on any environment for the cluster where you added prometheus endpoint and simply click `Update`.  
-If the charts are still not visible, try visiting the url: <devtron-url>/grafana?orgId=2  
+If the graphs are not visible check if prometheus is configured properly. Then go to Global Configurations → Clusters & Environments → Click on any environment for the cluster where you added prometheus endpoint and simply click `Update`.  
+If the charts are still not visible, try visiting the url: `<devtron-url>`/grafana?orgId=2  
 If you see `Not Found` on this page, then follow all the given steps or if the page is accessible and you are getting `panel with id 2 not found` then follow from step 6:  
 1. Get grafana password using `kubectl -n devtroncd get secret devtron-secret -o jsonpath='{.data.GRAFANA_PASSWORD}' | base64 -d`
 2. `kubectl run --rm -it --image quay.io/devtron/k8s-utils:tutum-curl curl` Run this command and it will create a pod for using `curl`
@@ -105,9 +108,9 @@ curl "${grafanaUrl}/api/datasources/2" -X PUT \
 EOF
 ```
 and run in the pod that we created above in step 2.
-4. Now visit <devtron-url>/grafana?orgId=2 again and you'll see grafana login page. Login using username `admin` and password from step 1 and check if prometheus url is updated in datasources. If not, update it in the default datasource.
+4. Now visit `<devtron-url>`/grafana?orgId=2 again and you'll see grafana login page. Login using username `admin` and password from step 1 and check if prometheus url is updated in datasources. If not, update it in the default datasource.
 5. Now from devtron UI, update any of the environment again and it's datasource will be created automatically.
-6. In Grafana UI you need to be logged in and Go to Dashboards > Manage then click `Import` and Import the given dashboards one by one.
+6. In Grafana UI you need to be logged in and Go to Dashboards → Manage then click `Import` and Import the given dashboards one by one.
 ```
 https://grafana.com/api/dashboards/13322/revisions/4/download
 https://grafana.com/api/dashboards/13320/revisions/4/download
@@ -116,7 +119,7 @@ https://grafana.com/api/dashboards/13321/revisions/6/download
 ```
 After that, your issue should be resolved and you should be able to see all the graphs on UI.
 
-#### 6. Unable to Login Devtron dashboard even if the password is correct
+### 6. Unable to Login Devtron dashboard even if the password is correct
 
 If you are not able to login into Devtron dashboard even after giving the correct password, it is possible that the argocd token of previous session has been stored in the cookies and is not able to override the new token that is generated for the new session. If you are facing this issue, follow the steps below -
 
@@ -139,7 +142,7 @@ If using Chrome -
 4. Now right click on token and click on `delete` option.
 
 If using Safari -
-1. Goto Safari preferences >> Advanced options and check the show develop menu as shown in the image below.
+1. Goto Safari preferences → Advanced options and check the show develop menu as shown in the image below.
 
 ![safari-preferences](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/safari-preferences.png)
 
@@ -153,16 +156,16 @@ If using Safari -
 After clearing `Cookies`, try again to login, you should be able to login now.
 
 
-#### 7. No charts found in Charts Discover Section
+### 7. No charts found in Charts Discover Section
 
-In the Devtron's Discover Chart section, if you are not able to see any charts available, goto `Global Configuration` >> `Chart Repositories` and click on `Refresh Chart` at the top-right as shown in the image below. After clicking the button, it might take 4-5mins to show all the charts in `Discover` section depending upon the chart repositories added.
+In the Devtron's Discover Chart section, if you are not able to see any charts available, go to **Application Management** → **Configurations** → **Chart Repository** and click on `Refresh Chart` at the top-right as shown in the image below. After clicking the button, it might take 4-5mins to show all the charts in `Discover` section depending upon the chart repositories added.
 
 ![charts-not-found](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/refresh-charts.png)
 
 
-#### 8. Not able to update cluster
+### 8. Not able to update cluster
 
-In `Global Configurations` >> `Cluters & Environments`, if you try to update a cluster which has been already added in Devtron, you might get an error as `{"message":"Failed to update datasource. Reload new version and try again"}`. If you are facing such issue, please follow the following steps - 
+In **Global Configurations** → **Clusters & Environments**, if you try to update a cluster which has been already added in Devtron, you might get an error as `{"message":"Failed to update datasource. Reload new version and try again"}`. If you are facing such issue, please follow the following steps - 
 
 1. Edit the changes you want to make in respective cluster
 2. Click on save after making changes and you may get error message stated above.
@@ -171,7 +174,7 @@ In `Global Configurations` >> `Cluters & Environments`, if you try to update a c
 
 [Note: If you already have created some environments in that cluster, it needs to be updated again]
 
-#### 9. Postgresql is in crashloop with error - Failed to pull image
+### 9. Postgresql is in crashloop with error - Failed to pull image
     
 There may be some other pods also in crashloop as they are not able to connect to database. To resolve this issue, you can either [update devtron to latest version](../setup/upgrade/README.md) or run the following commands to fix instantly on the same version you are using: 
 ```bash
@@ -183,17 +186,17 @@ kubectl delete pod -n devtroncd postgresql-postgresql-0
 ```
 You can also delete other pods which are in crashloop after postgresql is up and running so that they can restart and connect to postgresql and Devtron will be up and running again in a few moments.
 
-#### 10. Unable to fetch the latest commit and not able to trigger auto build.
+### 10. Unable to fetch the latest commit and not able to trigger auto build.
 
 To solve this, bounce the git-sensor-0 pod.
 ```bash
 kubectl delete pod -n devtroncd git-sensor-0
 ```
-#### 11. If you have restricted devtron-service to be accessible on certain IPs only and SSO login isn’t working
+### 11. If you have restricted devtron-service to be accessible on certain IPs only and SSO login isn’t working
 
 Whitelist the NAT-gateway IPs of the cluster (There can be multiple NAT-gateways if your cluster is multi-AZ)
 
-#### 12. If CPU metrics are not showing but memory metrics are visible in graphs.
+### 12. If CPU metrics are not showing but memory metrics are visible in graphs.
 
 Do the following:-
 
@@ -203,7 +206,7 @@ Do the following:-
 
 CPU metrics should start showing up in a while.
 
-#### 13. If user not able to upload a file more than specific size. 
+### 13. If user not able to upload a file more than specific size. 
 
 `Please use below annotation in ingress`
 ```bash
@@ -211,22 +214,22 @@ nginx.ingress.kubernetes.io/proxy-body-size: 100m
 ```
 `Note:- `Where m is MiB.
 
-#### 14. If AWS Load balancer controller is unable to provision ALB and getting message in alb controller as unauthorized, attach these IAM policy to  the nodegroup IAM Role.
+### 14. If AWS Load balancer controller is unable to provision ALB and getting message in alb controller as unauthorized, attach these IAM policy to  the nodegroup IAM Role.
 
 [IAM policy](https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.3.1/docs/install/iam_policy.json)
 
-#### 15. When app metrics is not coming on grafana and devtron dashboard, set the value of the following parameter as false in kube prometheus stack values.
+### 15. When app metrics is not coming on grafana and devtron dashboard, set the value of the following parameter as false in kube prometheus stack values.
 
 ```
 serviceMonitorSelectorNilUsesHelmValues: false
 ```
-#### 16. Unable to deploy metrics-server using chart on devtron
+### 16. Unable to deploy metrics-server using chart on devtron
 
 To solve
 
 Disable certificate validation by passing `--kubelet-insecure-tls` argument to metrics server chart.
 
-#### 17. Unable to delete a database from postgres
+### 17. Unable to delete a database from postgres
 `Description of issue`
 
 ERROR: database `<db-name>` is being accessed by other users
@@ -239,7 +242,7 @@ SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg
 ```
 Then run the command to delete database - `drop databases <db-name>`
 
-#### 18. Unable to login with admin password or reset devtron admin password
+### 18. Unable to login with admin password or reset devtron admin password
 
 `Debug`
 
@@ -259,7 +262,7 @@ If you are getting an error message of "invalid username or password" or you wan
 3. Restart argocd dex server to create new admin password for devtron using `kubectl delete po -n devtroncd -l app.kubernetes.io/name=argocd-dex-server`
 4. Run the command given above to get the new admin password
 
-#### 19. After installing Devtron using Helm, getting the admin password does not work.(if using windows)
+### 19. After installing Devtron using Helm, getting the admin password does not work.(if using windows)
 
 `Debug`
 
@@ -274,9 +277,9 @@ The other way is to get the password in the encoded form using the cmd
 `kubectl -n devtroncd get secret devtron-secret -o jsonpath='{.data.ACD_PASSWORD}'`, further decode it into plaintext using an online [encoder decoder](https://www.base64decode.org/).
 
 
-#### 20. Getting `UPGRADE FAILED: cannot patch "postgresql-postgresql"` while upgrading Devtron to newer versions
+### 20. Getting `UPGRADE FAILED: cannot patch "postgresql-postgresql"` while upgrading Devtron to newer versions
 `Debug:`
-1. Make sure to [annotate and label](../setup/upgrade/devtron-upgrade-0.3.x-0.4.x.md#id-3.-annotate-and-label-all-the-devtron-resources) all the Devtron resources.
+1. Make sure to [annotate and label](../setup/upgrade/devtron-upgrade-0.3.x-0.4.x.md#3-annotate-and-label-all-the-devtron-resources) all the Devtron resources.
 2. Description of error
 ```
 Error: UPGRADE FAILED: cannot patch "postgresql-postgresql" with kind StatefulSet: StatefulSet.apps "postgresql-postgresql" is invalid: spec: Forbidden: updates to statefulset spec for fields other than 'replicas', 'template', 'updateStrategy' and 'minReadySeconds' are forbidden
@@ -290,14 +293,14 @@ helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 --set components.postgres.persistence.volumeSize=20Gi
 ```
 
-#### 21. Configure Blob Storage
+### 21. Configure Blob Storage
 
 
 You can configure blob storage with one of the following:
-{% tabs %}
+<Tabs>
 
 
-{% tab title="MinIO storage" %}
+<TabItem label="MinIO storage" value="MinIO storage">
 
 This configuration will use MinIO for storing logs and cache.
 
@@ -311,9 +314,9 @@ helm upgrade devtron devtron/devtron-operator \
 --set minio.enabled=true
 ```
 
-{% endtab %}
+</TabItem>
 
-{% tab title="AWS S3 Bucket" %}
+<TabItem label="AWS S3 Bucket" value="AWS S3 Bucket">
 This configuration will use AWS S3 bucket for storing build logs and cache. Refer to the `AWS specific` parameters on the [Storage for Logs and Cache](../setup/install/installation-configuration.md#aws-specific) page.
 
 *  **Configure using S3 IAM policy:**
@@ -367,9 +370,9 @@ helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 --set configs.BLOB_STORAGE_S3_ENDPOINT=<endpoint>
 ```
 
-{% endtab %}
+</TabItem>
 
-{% tab title="Azure Blob Storage" %}
+<TabItem label="Azure Blob Storage" value="Azure Blob Storage">
 This configuration will use Azure Blob Storage for storing build logs and cache.
 Refer to the `Azure specific` parameters on the [Storage for Logs and Cache](../setup/install/installation-configuration.md#azure-specific) page.
 
@@ -385,9 +388,9 @@ helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 --set configs.AZURE_BLOB_CONTAINER_CI_CACHE=ci-cache-container
 ```
 
-{% endtab %}
+</TabItem>
 
-{% tab title="Google Cloud Storage" %}
+<TabItem label="Google Cloud Storage" value="Google Cloud Storage">
 This configuration will use Google Cloud Storage for storing build logs and cache.
 Refer to the `Google Cloud specific` parameters on the [Storage for Logs and Cache](../setup/install/installation-configuration.md#google-cloud-storage-specific) page.
 
@@ -403,19 +406,19 @@ helm upgrade devtron devtron/devtron-operator --namespace devtroncd \
 --set configs.DEFAULT_BUILD_LOGS_BUCKET: log-bucket
 ```
 
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
-#### 22. Rollout is showing error - <string>:111: attempt to index a non-table object(nil) with key 'stableRS' stack traceback: <string>:111: in main chunk [G]: ?
+### 22. Rollout is showing error - `<string>`:111: attempt to index a non-table object(nil) with key 'stableRS' stack traceback: `<string>`:111: in main chunk [G]: ?
 
 This can occur if you are using or recently upgraded to Kubernetes version 1.22 or above and you are using rollout controller version 0.13.0 from chart `devtron-charts/rollout` or `devtron/rollout`. The issue can be because of CRDs which were updated in later versions of rollout chart.
 
 1. Check which chart repo and version of rollout controller are you using on that cluster from Helm Apps section
-2. Update the rollout chart version to latest and re-deploy. If your rollout controller is deployed from `devtron-charts` helm repo then change the repo to `devtron/rollout` and then update the version to latest. Also, if devtron helm repo is not showing on your devtron then go to Global Configurations > Chart Repositories and add a new repo with the name `devtron` and url `https://helm.devtron.ai`. Wait for few minutes and then charts from devtron repo will be there on your devtron. This should resolve your issue
+2. Update the rollout chart version to latest and re-deploy. If your rollout controller is deployed from `devtron-charts` helm repo then change the repo to `devtron/rollout` and then update the version to latest. Also, if devtron helm repo is not showing on your devtron then go to Application Management → Configurations → Chart Repository and add a new repo with the name `devtron` and url `https://helm.devtron.ai`. Wait for few minutes and then charts from devtron repo will be there on your devtron. This should resolve your issue
 
 
 
-#### 23. How to resolve if Deployment Status shows Failed or Degraded when you pull images from private container registry
+### 23. How to resolve if Deployment Status shows Failed or Degraded when you pull images from private container registry
 
 If the deployment status shows `Failed` or `Degraded`, then the cluster is not able to pull container image from the private registry. In that case, the status of pod shows `ImagePullBackOff`.
 
@@ -441,7 +444,7 @@ To provide the auto-inject credentials to the specific clusters for pulling the 
 
 
 
-#### 24. Devtron Terminal Connection Timeout Issue on GKE Cluster
+### 24. Devtron Terminal Connection Timeout Issue on GKE Cluster
 
 **Problem:**
 
@@ -487,7 +490,7 @@ metadata:
 With these configuration changes, the Devtron dashboard connection should no longer timeout after 30 seconds, allowing for a more stable and consistent connection.
 
 
-#### 25. Refreshing ArgoCD Certificates When Expired
+### 25. Refreshing ArgoCD Certificates When Expired
 
 1. **Edit ArgoCD Secret**
 
@@ -524,7 +527,7 @@ This command deletes the Devtron pod in the `devtroncd` namespace with the label
 Following these steps should allow you to refresh the ArgoCD certificates when they have expired.
 
 
-#### 26. Not able to see commits, throwing exit status 128
+### 26. Not able to see commits, throwing exit status 128
 
 1. **Save the Git Repository Again**
 Wait for few minutes and check the build pipeline if commits are visible or not
@@ -544,7 +547,7 @@ kubectl delete po -n devtroncd -l app=git-sensor
 In case the cloning fails, you can generate the token, update the Git account in Global Configurations, and try to save the git repository again.
 
 
-#### 27. Git-sensor PVC- disk full 
+### 27. Git-sensor PVC- disk full 
 
 **Need to increase the PVC size if you are getting following error:**
 
@@ -575,13 +578,13 @@ spec:
 kubectl delete po -n devtroncd git-sensor-0
 ```
 
-#### 28. Getting 'Invalid JSON Document' while deploying via ArgoCD
+### 28. Getting 'Invalid JSON Document' while deploying via ArgoCD
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/invalid-json.jpg)
 
 As shown above, Rollout object’s sync status is showing `Failed` and throwing an `Invalid JSON Document` error.
 
-This might happen due to manual changes in the Rollout object in the annotation `kubectl.kubernetes.io/last-applied-configuration:` <br /> The value of the above annotation is a JSON. ArgoCD tries to validate that JSON and throws an error if it is invalid.
+This might happen due to manual changes in the Rollout object in the annotation `kubectl.kubernetes.io/last-applied-configuration:` <br/> The value of the above annotation is a JSON. ArgoCD tries to validate that JSON and throws an error if it is invalid.
 
 Below is a sample annotation for your reference.
 
@@ -591,11 +594,11 @@ kubectl.kubernetes.io/last-applied-configuration: | {"apiVersion":"v1","data":{"
 
 You may take the help of JSON validators to identify where the unintended human error has occured in the JSON. Rectifying the same should resolve this issue.
 
-{% hint style="info" %}
+:::info 
 The annotation `kubectl.kubernetes.io/last-applied-configuration:` is automatically added to each object when you run `kubectl apply`. 
-{% endhint %}
+:::
 
-#### 29. Helm Charts provided by Bitnami are not visible in Chart Store. Getting 'tls: handshake failure' while deploying Bitnami Charts.
+### 29. Helm Charts provided by Bitnami are not visible in Chart Store. Getting 'tls: handshake failure' while deploying Bitnami Charts.
 
 `rpc error: code = Unknown desc = Get "https://repo.broadcom.com/bitnami-files/index.yaml": remote error: tls: handshake failure`
 
@@ -603,25 +606,25 @@ Follow the below steps if you are getting the above error:
 
 * Make sure your [Devtron version](https://devtron-public-asset.s3.us-east-2.amazonaws.com/integrations/about-devtron.png) is 0.7.1 ([check how to upgrade](../setup/upgrade/README.md)).
 
-* Navigate to Global Configurations → Chart Repositories → Bitnami
+* Navigate to **Application Management** → **Chart Repository** → **Bitnami**
 
 * Now in the Bitnami repository, uncheck the **Allow Insecure Connection** and update it as shown below.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/bitnami-chart-issue.jpg)
 
-* Go to Chart Store and initiate the Chart Sync.
+* Go to **Application Management** → **Chart Store** and initiate the Chart Sync.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/chart-sync.jpg)
 
-#### 30. The Advanced (YAML) and Basic (GUI) sections are appearing blank in the Base Deployment Template of the application.
+### 30. The Advanced (YAML) and Basic (GUI) sections are appearing blank in the Base Deployment Template of the application.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/empty-values.jpg)
 
-This happens due to a missing [app-values.yaml](../user-guide/global-configurations/deployment-charts.md#id-3.-add-app-values.yaml) file in your deployment chart. 
+This happens due to a missing [app-values.yaml](../user-guide/global-configurations/deployment-charts.md#3-add-app-valuesyaml) file in your deployment chart. 
 
-To fix this issue, include an `app-values.yaml` file in your deployment helm chart before uploading the chart. Refer [adding app-values.yaml](../user-guide/global-configurations/deployment-charts.md#id-3.-add-app-valuesyaml) to know more.
+To fix this issue, include an `app-values.yaml` file in your deployment helm chart before uploading the chart. Refer [adding app-values.yaml](../user-guide/global-configurations/deployment-charts.md#3-add-app-valuesyaml) to know more.
 
-#### 31. Unable to create a GitOps deployment pipeline or encountering errors with GitOps deployment.
+### 31. Unable to create a GitOps deployment pipeline or encountering errors with GitOps deployment.
 
 If the **GitOps** section is already configured for your [external Argo apps](../user-guide/creating-application/workflow/cd-pipeline.md#migrate-argo-cd-application), and later if you install the GitOps (ArgoCD) module from [Devtron Stack Manager](../user-guide/integrations/argocd.md), make sure to save the [GitOps](../user-guide/global-configurations/gitops.md) configuration once again and also the [Cluster](../user-guide/global-configurations/cluster-and-environments.md) configuration. This might prevent potential errors and ensure your GitOps deployments (for Devtron Apps/Helm Apps) are functional.
 

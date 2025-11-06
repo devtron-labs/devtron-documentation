@@ -1,6 +1,6 @@
 # Cluster And Environments
 
-The Global configuration provides a feature of `Cluster & Environment` in which you can add your Kubernetes clusters and environment.
+The Global configuration provides a feature of `Cluster & Environments` in which you can add your Kubernetes clusters and environment.
 
 Select the Cluster & Environment section of global configuration and click on `Add Cluster` to add your cluster.
 
@@ -8,7 +8,7 @@ Select the Cluster & Environment section of global configuration and click on `A
 
 To add a cluster on devtron, you must have superadmin access.
 
-Navigate to the `Global Configurations` → `Clusters and Environments` on devtron and click on `Add Cluster`. Provide the below information to add your kubernetes cluster:
+Navigate to the **Global Configurations** → **Cluster and Environments** on devtron and click on `Add Cluster`. Provide the below information to add your kubernetes cluster:
 
 1. Name
 2. Kubernetes Cluster Info

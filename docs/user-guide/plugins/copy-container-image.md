@@ -56,9 +56,9 @@ The plugin can be used at post CI, pre-CD, and post-CD. Moreover, you can also [
         
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/prod-image.jpg)
 
-{% hint style="info" %}
+:::info 
 You can also filter out specific images (of target repository) from deployment. Refer [Filter Condition](../global-configurations/filter-condition.md) to know the process.
-{% endhint %}
+:::
 
 
 

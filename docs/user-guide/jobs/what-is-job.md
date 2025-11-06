@@ -1,4 +1,8 @@
-# What is Jobs?
+---
+hide_table_of_contents: true
+---
+
+# What is Job?
 
 Devtron Jobs provides a streamlined way to execute specific tasks or a set of tasks defined by the user within the user's application environment.
 

@@ -19,15 +19,13 @@ There are two parts to creating a plugin:
 
 ### Part 1: Create a Custom Task
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Only superadmins can create plugins.
-{% endhint %}
+:::
 
-{% hint style="info" %}
-### Prerequisite
+:::info Prerequisite
 A build or deployment pipeline must exist in the **Workflow Editor** of your app.
-{% endhint %}
+:::
 
 In the following example, we are creating a plugin named 'Secret Management Validator'.
 
@@ -55,7 +53,7 @@ In the following example, we are creating a plugin named 'Secret Management Vali
 
     * **Task Name** - Give a name to the task, e.g., `Secret Management Validator Task`.
     * **Description** - Write the purpose of the task in brief.
-    * **Task Type** - Choose `Shell` if the task consists of shell commands or choose `Container Image` in case of complex operations that require a specific container environment (refer ['Container Image' task](../creating-application/workflow/pre-post-tasks.md#example-3-container-image-task)). 
+    * **Task Type** - Choose `Shell` if the task consists of shell commands or choose `Container Image` in case of complex operations that require a specific container environment (refer ['Container Image' task](../creating-application/workflow/pre-post-tasks.md#example-3---container-image-task)). 
     * **Input Variables** - Add one or more input variables to accept values from the user. Give a name to your input variable along with a description and input type (String/Number/Boolean/Date).
     * **Trigger Skip Condition** - Here you can set conditions to execute or skip the task. You can select **Set trigger conditions** to execute the task, or **Set skip conditions** to skip the task.
     * **Script** - Enter the script to be executed.
@@ -68,10 +66,9 @@ In the following example, we are creating a plugin named 'Secret Management Vali
 
     ![Figure 7: 'Update Pipeline' Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/update-plugin.jpg)
 
-{% hint style="success" %}
-### Next Steps
+:::tip Next Steps
 Go to the **Build & Deploy** tab of your application and run the pipeline having your custom task. If the custom task executes correctly and the script performs as expected, you may proceed to [save your custom task as a plugin](#part-2-convert-custom-task-to-a-plugin).
-{% endhint %} 
+::: 
 
 ---
 
@@ -115,14 +112,13 @@ Go to the **Build & Deploy** tab of your application and run the pipeline having
 
 ## Create a New Version of Plugin
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Only superadmins can create new versions of a plugin.
-{% endhint %}
+:::
 
 You may create incremental versions of your plugin (e.g., `1.0.0` → `1.0.1` or `2.0.0`). The old version(s) of your plugins will still be available to your users.
 
-1. Follow steps 1-7 from the [Create a New Plugin](#create-a-new-plugin) section of this document.
+1. Follow steps 1-7 from the [Create a New Plugin](#part-1-create-a-custom-task) section of this document.
 
 2. From the **New version of existing plugin** tab, select the plugin for which you want to create a new version from the **Existing Plugin** dropdown.
 
@@ -144,10 +140,9 @@ You may create incremental versions of your plugin (e.g., `1.0.0` → `1.0.1` or
 
 <!-- ## API Call
 
-{% hint style="warning" %}
-### Prerequisite
+:::caution Prerequisite
 You will need a [token](../../user-guide/global-configurations/authorization/api-tokens.md) to make API calls
-{% endhint %}
+:::
 
 ```
 POST {{DEVTRON_BASEURL}}/orchestrator/plugin/global
@@ -157,9 +152,7 @@ POST {{DEVTRON_BASEURL}}/orchestrator/plugin/global
 
 <!-- ### Sample Request Body
 
-{% code title="Plugin Request Body" overflow="wrap" lineNumbers="true" %}
-
-```json
+```json title="Plugin Request Body" showLineNumbers
 {
     "name": "Secret Management Validator",
     "description": "The Secret Management Validator plugin integrates with your CI/CD pipeline to automatically detect and prevent the inclusion of secrets or sensitive information in your codebase, ensuring compliance and security.",
@@ -237,7 +230,7 @@ POST {{DEVTRON_BASEURL}}/orchestrator/plugin/global
 }
 
 ```
-{% endcode %}
+
 
 Required fields to edit in the above sample payload are:
 

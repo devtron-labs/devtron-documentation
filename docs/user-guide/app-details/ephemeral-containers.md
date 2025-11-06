@@ -22,7 +22,7 @@ You can quickly create an ephemeral container directly from the **App Details** 
 
 ## Create From Resource Browser
 
-{% embed url="https://www.youtube.com/watch?v=Ml19i29Ivc4" caption="Launching Ephemeral Containers from Resource Browser" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/Ml19i29Ivc4" title="Launching Ephemeral Containers from Resource Browser" frameborder="0" allowfullscreen></iframe></div>
 
 To create an ephemeral container from the Resource Browser, refer to [Launching Ephemeral Container](../resource-browser/pods.md#launching-ephemeral-container). 
 
@@ -30,13 +30,12 @@ To create an ephemeral container from the Resource Browser, refer to [Launching 
 
 ## Create From Cluster Terminal
 
-{% hint style="warning" %}
-
+:::caution 
 This is not a recommended method. However, if you still wish to proceed, then this option is available only if you are an [Admin](../global-configurations/authorization/user-access.md).
 
-{% endhint %}
+:::
 
-{% embed url="https://www.youtube.com/watch?v=PzB6dFRYe38" caption="Externally Created Ephemeral Container" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/PzB6dFRYe38" title="Externally Created Ephemeral Container" frameborder="0" allowfullscreen></iframe></div>
 
 ---
 
@@ -44,10 +43,9 @@ This is not a recommended method. However, if you still wish to proceed, then th
 
 You can remove an ephemeral container from either the **App Details** page or the **Resource Browser**.
 
-{% hint style="info" %}
-
+:::info 
 If you had created an ephemeral container using the Kubernetes CLI, then you will not be able to remove the container from the **App Details** page or the **Resource Browser**.
 
-{% endhint %}
+:::
 
-{% embed url="https://www.youtube.com/watch?v=tZID0YU0YUU" caption="Deleting Ephemeral Containers" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/tZID0YU0YUU" title="Deleting Ephemeral Containers" frameborder="0" allowfullscreen></iframe></div>

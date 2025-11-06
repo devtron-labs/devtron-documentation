@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Clusters and Environments
 
 ## Introduction
@@ -6,16 +9,15 @@ Devtron allows you to connect and manage your existing Kubernetes clusters by ad
 
 You can add any of the following cluster types:
 * [Kubernetes Cluster](#add-kubernetes-cluster) - If you have access to the cluster, use this option.
-* [Isolated Cluster](#add-isolated-cluster) - For air-gapped use-cases, use this option.
+* [Isolated Cluster](#add-isolated-cluster-) - For air-gapped use-cases, use this option.
 
 ---
 
 ## Add Kubernetes Cluster
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to add a Kubernetes cluster to Devtron.
-{% endhint %}
+:::
 
 
 1. Go to **Global Configurations** → **Clusters & Environments** → **Connect Cluster** (button); a **New Cluster** modal window will appear.
@@ -39,31 +41,29 @@ Users need to have super-admin permission to add a Kubernetes cluster to Devtron
 
 ### Add Cluster Using Server URL & Bearer Token
 
-{% hint style="info" %}
-### Note
+:::info Note
 Refer to [Get Cluster Credentials](#get-cluster-credentials) to learn the process of getting the Server URL and bearer token.
-{% endhint %}
+:::
 
 1. To add a Kubernetes cluster on Devtron using Server URL and Bearer Token, provide the following information:
 
   | Field | Description |
   | :--- | :--- |
   | **Name** | Enter the name of your cluster. |
-  | **Server URL** |  Enter the Server URL of your cluster (with https)<br />**Note**: We recommend using a [self-hosted URL](#benefits-of-self-hosted-url) instead of a cloud-hosted URL.  |
+  | **Server URL** |  Enter the Server URL of your cluster (with https)<br/>**Note**: We recommend using a [self-hosted URL](#benefits-of-self-hosted-url) instead of a cloud-hosted URL.  |
   | **Bearer Token** | Paste the bearer token of your cluster |
 
   ![Figure 4: Enter Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-add-cluster-cred.jpg)
 
 2. Complete the remaining steps (optional): 
-  * [Choose Connection Type](#choose-method-of-connection)
+  * [Choose Connection Type](#choose-method-of-connection-)
   * [Use Secure TLS Connection](#use-secure-tls-connection)
   * [Configure Prometheus](#configure-prometheus-enable-application-metrics)
   * [Assign a Category](#assign-category-to-a-cluster)
 
-{% hint style="tip" %}
-### Tip
+:::tip Tip
 If you have a **kubeconfig** file ready, you may skip the above process and refer to [Add Cluster Using Kubeconfig](#add-cluster-using-kubeconfig) instead.
-{% endhint %}
+:::
 
 ### Add Cluster Using Kubeconfig
 
@@ -82,15 +82,14 @@ In case you prefer to add clusters using kubeconfig, follow these steps:
   ![Figure 7: Clicking Save](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-kubeconfig-save-cluster.jpg)
 
 4. Click the saved cluster, and complete the remaining steps (optional): 
-  * [Choose Connection Type](#choose-method-of-connection)
+  * [Choose Connection Type](#choose-method-of-connection-)
   * [Use Secure TLS Connection](#use-secure-tls-connection)
   * [Configure Prometheus](#configure-prometheus-enable-application-metrics)
   * [Assign a category](#assign-category-to-a-cluster)
 
-{% hint style="warning" %}
-### Note
+:::caution Note
 Ensure that the **kubeconfig** file has admin permissions. It is crucial for Devtron to have the necessary administrative privileges; otherwise, it may encounter failures or disruptions during deployments and other operations. Admin permission is essential to ensure the smooth functioning of Devtron and to prevent any potential issues that may arise due to insufficient privileges.
-{% endhint %}
+:::
 
 ### Assign Category to a Cluster
 
@@ -109,7 +108,7 @@ To assign a category to a cluster, follow the steps below:
    ![Figure 9: Category Assigned](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-assign-category-category-added-cluster.jpg)
 
 
-### Choose Method of Connection [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+### Choose Method of Connection <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 When adding a new cluster to Devtron, you must choose how Devtron will connect to it. There are three connection options available:  
 
@@ -120,7 +119,7 @@ Clusters with a directly accessible API server endpoint, either publicly or via 
 
 ![Figure 10: Choosing Direct Connection](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-direct-connection.jpg)  
 
-#### Via Proxy [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+#### Via Proxy <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 For security reasons, some Kubernetes clusters are deployed behind a proxy. In this setup, Devtron routes all communication through the specified proxy URL.  
 * Use this option when network restrictions require traffic to go through a proxy server.  
@@ -129,7 +128,7 @@ For security reasons, some Kubernetes clusters are deployed behind a proxy. In t
 
 ![Figure 11: Choosing 'Via Proxy'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-via-proxy.jpg)  
 
-#### Via SSH Tunnel [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+#### Via SSH Tunnel <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 When a direct connection isn't possible, Devtron can connect to the Kubernetes cluster through an SSH tunnel, ensuring secure and encrypted communication.  
 * Requires:  
@@ -172,24 +171,21 @@ Provide the information in the following fields:
 | Field | Description |
 | :--- | :--- |
 | **Prometheus endpoint** | Provide the URL of your Prometheus |
-| **Authentication Type** | Prometheus supports two authentication types:<ul><li>**Basic**: If you select the `Basic` authentication type, then you must provide the `Username` and `Password` of Prometheus for authentication.</li></ul> <ul><li>**Anonymous**: If you select the `Anonymous` authentication type, then you do not need to provide the `Username` and `Password`.<br />**Note**: The fields `Username` and `Password` will not be available by default.</li></ul> |
+| **Authentication Type** | Prometheus supports two authentication types:<ul><li>**Basic**: If you select the `Basic` authentication type, then you must provide the `Username` and `Password` of Prometheus for authentication.</li></ul> <ul><li>**Anonymous**: If you select the `Anonymous` authentication type, then you do not need to provide the `Username` and `Password`.<br/>**Note**: The fields `Username` and `Password` will not be available by default.</li></ul> |
 | **TLS Key** & **TLS Certificate** | These fields are optional and can be used when you use a customized URL. |
 
 Click **Save Cluster** to save your cluster on Devtron.
 
 ---
 
-## Create Kubernetes Cluster [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Create Kubernetes Cluster <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 ### Prerequisites
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-permissions) can add an OCI Registry in Devtron.
 
-{% endhint %}
+:::
 
 To create an EKS cluster, you need: 
 
@@ -217,7 +213,7 @@ Follow the steps mentioned below to install OpenTofu:
     | **Registry URL** | `ghcr.io` | 
     | **List of repositories** | `flux-iac/charts/tofu-controller` | 
 
-    <br />
+    <br/>
 
     ![Figure 16: Container/OCI Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/container-oci-registry.jpg)
 
@@ -235,13 +231,10 @@ Follow the steps mentioned below to install OpenTofu:
 
 8. Select the environment where you want to deploy the chart in the **Deploy to Environment** drop-down box.
 
-{% hint style="warning" %}
-
-### Important Note
-
+:::caution Important Note
 The environment/namespace where you install OpenTofu must be the same environment/namespace where the FluxCD controller will be installed (the next step) to create the cluster. 
 
-{% endhint %}
+:::
 
 9. Choose either **Helm** or **GitOps** [if configured](../../user-guide/global-configurations/gitops.md) as the deployment method. 
 
@@ -265,13 +258,10 @@ Follow the steps mentioned below to install OpenTofu:
 
 5. Select the environment where you want to deploy the chart in the **Deploy to Environment** drop-down box.
 
-{% hint style="warning" %}
-
-### Important Note
-
+:::caution Important Note
 The environment/namespace where you install the FluxCD controller must be the same environment/namespace where OpenTofu was installed to create the cluster. 
 
-{% endhint %}
+:::
 
 6. Choose either **Helm** or **GitOps** [if configured](../../user-guide/global-configurations/gitops.md) as the deployment method. 
 
@@ -281,13 +271,10 @@ Now that FluxCD controller is installed, the final prerequisite is to [create a 
 
 #### Create a Secret
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 User needs to be an [Admin](../../user-guide/global-configurations/authorization/user-access.md#kubernetes-resources-permissions) of the Kubernetes resource or a [Super-Admin](../../user-guide/global-configurations/authorization/user-access.md#kubernetes-resources-permissions) to create a Secret. 
 
-{% endhint %}
+:::
 
 Follow the steps mentioned below to create a secret containing your AWS credentials:
 
@@ -311,17 +298,14 @@ Follow the steps mentioned below to create a secret containing your AWS credenti
     type: Opaque
     ```
 
-{% hint style="warning" %}
-
-### Important Note
-
+:::caution Important Note
 * It is recommended to keep the `name` attribute to `tf-aws-creds`. Changing this value might make the secret go unrecognized. 
 
 * The secret must be created in the same namespace where OpenTofu and FluxCD controller are installed. 
 
 * When creating a secret, kindly ensure that your `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` are encoded in base64. Go to [Devtron Base64 Encoder](https://strings.devtron.ai/base64-encoder) to encode your AWS credentials. 
 
-{% endhint %}
+:::
 
 5. Enter your AWS access key against the `AWS_ACCESS_KEY_ID` attribute and AWS secret key against the `AWS_SECRET_ACCESS_KEY` attribute. Refer to [Create New Access Keys](https://docs.aws.amazon.com/keyspaces/latest/devguide/create.keypair.html) for more information. 
 
@@ -331,13 +315,10 @@ Now that all the prerequisites are met, you can proceed to create a cluster from
 
 ### Steps
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-permissions) can create a Kubernetes cluster.
 
-{% endhint %}
+:::
 
 * Navigate to **Global Configurations** → **Clusters & Environments** → **New Cluster** → **Create Kubernetes Cluster**. 
 
@@ -347,18 +328,18 @@ Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-
   | :--- | :--- |
   | `Cluster Provider` | Select the type of cluster you'd like to create based on your requirement | 
   | `Name` | Enter the name of your Kubernetes cluster (e.g., `eks-cluster-nonprod` in the case of EKS and `rancher-cluster-qa` in the case of Rancher) | 
-  | `Region` | Select the region where your cluster is hosted (e.g., `us-east-1` in the case of EKS and `ap-south-3` in the case of Rancher) <br> Refer to [View cluster details using the AWS Management Console](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-manage-view-clusters.html#emr-view-cluster-console) for more information| 
+  | `Region` | Select the region where your cluster is hosted (e.g., `us-east-1` in the case of EKS and `ap-south-3` in the case of Rancher) <br/> Refer to [View cluster details using the AWS Management Console](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-manage-view-clusters.html#emr-view-cluster-console) for more information| 
   | `VPC CIDR` | Enter the [VPC CIDR](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-cidr-blocks.html) value. This value determines the number of [pods](../../reference/glossary.md#pod), [nodes](../../reference/glossary.md#nodes), or services your cluster can host (e.g., `10.0.1.6/16`)| 
-  | `Authentication Mode` | Select the authentication mode you wish to perform for the cluster <br> <ul><li> **API_AND_CONFIG_MAP** - Select this if you want to use both the API and the ConfigMap to authenticate who can access the cluster. This option is recommended if you are migrating from the old `aws-auth` ConfigMap method (which is deprecated) to the new API method. <br> Refer to [Grant IAM users access to Kubernetes with EKS access entries](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html) for more information. </li> <li>**API** - Select this if you want to manage access using a single API. This option is recommended as this is the best practice for EKS cluster creation. <br> Refer to [Manage User Access with API](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html) for more information.</li> <li> **CONFIG MAP** - Select this if you want to rely on the original (but deprecated) way of authentication using `aws-auth` ConfigMap. This option is not recommended anymore. <br> Refer to [Grant IAM users access to Kubernetes. with a ConfigMap.](https://docs.aws.amazon.com/eks/latest/userguide/auth-configmap.html) for more information.</li></ul>| 
+  | `Authentication Mode` | Select the authentication mode you wish to perform for the cluster <br/> <ul><li> **API_AND_CONFIG_MAP** - Select this if you want to use both the API and the ConfigMap to authenticate who can access the cluster. This option is recommended if you are migrating from the old `aws-auth` ConfigMap method (which is deprecated) to the new API method. <br/> Refer to [Grant IAM users access to Kubernetes with EKS access entries](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html) for more information. </li> <li>**API** - Select this if you want to manage access using a single API. This option is recommended as this is the best practice for EKS cluster creation. <br/> Refer to [Manage User Access with API](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html) for more information.</li> <li> **CONFIG MAP** - Select this if you want to rely on the original (but deprecated) way of authentication using `aws-auth` ConfigMap. This option is not recommended anymore. <br/> Refer to [Grant IAM users access to Kubernetes. with a ConfigMap.](https://docs.aws.amazon.com/eks/latest/userguide/auth-configmap.html) for more information.</li></ul>| 
   | `Enable IRSA` | Turn on this IRSA toggle (IAM Roles for [Service Accounts](https://kubernetes.io/docs/concepts/security/service-accounts/)) if you want your application to securely connect to other AWS services using a service account| 
   | `Allow public access` | Turn on this toggle if you want to allow your [EKS control plane](https://docs.aws.amazon.com/eks/latest/best-practices/control-plane.html) endpoint to be accessed publicly from anywhere without the VPC. It is recommended to keep this toggle disabled |
   | `Cluster Version` | Select your preferred Kubernetes cluster version. If you are running a live application in a production environment, it is recommended that you select a stable version instead of the latest version | 
 
-  <br />
+  <br/>
 
   ![Figure 19: Create Kubernetes Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/create-k8s-cluster.jpg)
   
-  <br />
+  <br/>
   
 * Refer the following table (containing **optional** fields) and enter the details in the corresponding fields:
 
@@ -366,19 +347,18 @@ Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-
   | :--- | :--- |
   | `Team` | Select the team whose tag you want to attach to the cluster resources. For example, when you select `qa-team`, it means that the cluster resources (pods, ConfigMaps, etc.) created with this cluster are owned by the QA team | 
   | `Environment` | Select the environment. For example, when you select `qa`, it means that this cluster is a part of the QA environment | 
-  | `Availability Zones` | Select availability zones (e.g., `us-east-2b` and `ap-west-1a`) if you prefer to distribute your worker nodes across multiple zones to make your cluster highly available. <br> This means that even if one availability zone goes down (e.g., `us-east-2b`), the other zones (e.g., `ap-west-1a`) keep your cluster up and running | 
-  | `Private access CIDRs` | Enter the private access CIDRs (IP addresses that are allowed to reach the API server). If you had turned off the **Allow public access** toggle, then your EKS control plane endpoint would be private. <br> It then becomes crucial to enter the private access CIDRs so that the API server recognizes them and allows them to access the endpoint | 
+  | `Availability Zones` | Select availability zones (e.g., `us-east-2b` and `ap-west-1a`) if you prefer to distribute your worker nodes across multiple zones to make your cluster highly available. <br/> This means that even if one availability zone goes down (e.g., `us-east-2b`), the other zones (e.g., `ap-west-1a`) keep your cluster up and running | 
+  | `Private access CIDRs` | Enter the private access CIDRs (IP addresses that are allowed to reach the API server). If you had turned off the **Allow public access** toggle, then your EKS control plane endpoint would be private. <br/> It then becomes crucial to enter the private access CIDRs so that the API server recognizes them and allows them to access the endpoint | 
 
 * Click **Create Cluster**.
 
 ---
 
-## Add Isolated Cluster [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Add Isolated Cluster <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to add an isolated/air-gapped cluster to Devtron.
-{% endhint %}
+:::
 
 For air-gapped Kubernetes clusters with restricted inbound and outbound traffic, Devtron enables seamless management using isolated clusters. While these are not actual clusters with API endpoints, they provide a convenient way to deploy applications in such environments.
 
@@ -394,23 +374,21 @@ You have successfully configured an isolated cluster.
 
 ![Figure 22: New Isolated Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-new-isolated-cluster.jpg)
 
-{% hint style="info" %}
-### Note
+:::info Note
 When you deploy to an isolated environment, Devtron automatically packages application manifests and images into a [Helm chart](../../reference/glossary.md#helm-chartspackages). You can then either:
 * Download and install manually in a fully air-gapped setup.
 * Push it to an [OCI registry](../global-configurations/container-registries.md) (provided pushing of helm package is enabled), allowing manifests to be pulled manually or automatically via Devtron on an air-gapped cluster (if pull access to the OCI registry is available).
-{% endhint %}
+:::
 
 ---
 
 ## Add Environment to a Cluster
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to add an environment to a cluster.
-{% endhint %}
+:::
 
-After adding a cluster to Devtron ([Kubernetes Cluster](#add-kubernetes-cluster), [Isolated Cluster](#add-isolated-cluster), and a newly created cluster), initially it has no environments.
+After adding a cluster to Devtron ([Kubernetes Cluster](#add-kubernetes-cluster), [Isolated Cluster](#add-isolated-cluster-), and a newly created cluster), initially it has no environments.
 
 1. Select the Cluster to which you want to add an Environment and click **Add Environment**. Alternatively you can also hover over the cluster and click `+` icon (Add Environment icon); an **Add Environment** modal window appears.
 
@@ -423,12 +401,12 @@ After adding a cluster to Devtron ([Kubernetes Cluster](#add-kubernetes-cluster)
   | Field | Description |
   | :--- | :--- |
   | **Environment Name** | Enter a name for your environment. |
-  | **Enter Namespace** | Enter a namespace corresponding to your environment.<br>**Note**: If this namespace does not exist in your cluster, Devtron will create it. If it already exists, Devtron will map the environment to it.</br> |
+  | **Enter Namespace** | Enter a namespace corresponding to your environment.<br/>**Note**: If this namespace does not exist in your cluster, Devtron will create it. If it already exists, Devtron will map the environment to it. |
   | **Environment Type** | Select your environment type:<ul><li>`Production`</li></ul> <ul><li>`Non-production`</li></ul>Note: Devtron shows deployment metrics (DORA metrics) for environments tagged as `Production` only. |
 
   ![Figure 24: Saving an Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-add-env-fields.jpg)
 
-3. **Assign a Category to environment** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) - Devtron allows you to assign a category (for e.g. Prod, QA, Dev, or Stage) to your environments. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to Prod, QA, Dev, or Stage environment.<br><br>
+3. **Assign a Category to environment** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a> - Devtron allows you to assign a category (for e.g. Prod, QA, Dev, or Stage) to your environments. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to Prod, QA, Dev, or Stage environment.<br/><br/>
  To assign a category to your environment, follow the steps below: 
    1. Select a category from the dropdown under **Assign Category** and click **Update**.
 
@@ -440,7 +418,7 @@ After adding a cluster to Devtron ([Kubernetes Cluster](#add-kubernetes-cluster)
 
  **Note:** Before assigning a category, you must first add the category. To add a category, refer to [Adding a Category](#add-category) section to learn more.
 
-4. **Add/Edit labels to namespace** [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing) - You can attach labels to your specified namespace in the Kubernetes cluster. Using labels will help you filter and identify resources via CLI or other Kubernetes tools. [Click here](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) to know more about labels.
+4. **Add/Edit labels to namespace** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a> - You can attach labels to your specified namespace in the Kubernetes cluster. Using labels will help you filter and identify resources via CLI or other Kubernetes tools. [Click here](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) to know more about labels.
 
   ![Figure 27: Adding Labels to Namespace](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/labels-namespace.gif)
 
@@ -452,10 +430,9 @@ After adding a cluster to Devtron ([Kubernetes Cluster](#add-kubernetes-cluster)
 
 ## Edit Environment
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to edit an environment in a cluster.
-{% endhint %}
+:::
 
 You can also make edits to an existing environment if needed.
 
@@ -484,10 +461,9 @@ You can also make edits to an existing environment if needed.
 
 ## Delete Environment
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to delete an environment from a cluster.
-{% endhint %}
+:::
 
 If an environment is no longer needed, you can delete it by following these steps:  
 
@@ -497,10 +473,9 @@ If an environment is no longer needed, you can delete it by following these step
 
   ![Figure 31: Deleting Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-delete-env.jpg)
 
-{% hint style="warning" %}
-### Important  
+:::caution Important  
 Environment deletion is not allowed if any application has a CD pipeline corresponding to the environment. In such a case, go to [Workflow Editor](../creating-application/workflow/README.md) and delete the deployment pipeline first, and then return to delete the environment. This action is irreversible, so make sure no critical applications or resources depend on the environment before deleting.
-{% endhint %}
+:::
 
 2. A confirmation dialog will appear. Click **Delete** to permanently delete the environment.  
 
@@ -522,12 +497,11 @@ Before assigning a category, you must first add the category. To add a category,
 
 3. Enter the name of the category in the **CATEGORIES** field and provide a description in the **DESCRIPTION** field.
   
- {% hint style="info" %}
- ### Note:
+ :::info Note:
  * The category name must be unique and cannot be changed once defined. It should be a minimum of 3 characters.
  * It can contain alphanumeric characters, but cannot start with a number.
  * The name should be in lowercase only.
- {% endhint %}
+ :::
 
    ![Figure 35: Adding Category](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-add.jpg)
 
@@ -565,26 +539,24 @@ To delete a category, follow the steps below:
 
 ### Get Cluster Credentials
 
-{% hint style="info" %}
-### Prerequisite
+:::info Prerequisite
 [kubectl](https://kubernetes.io/docs/tasks/tools/) must be installed on the bastion.
-{% endhint %}
+:::
 
-{% hint style="info" %}
-### Note
+:::info Note
 We recommend using a self-hosted URL instead of a cloud-hosted URL. Refer to the benefits of a [self-hosted URL](#benefits-of-self-hosted-url).
-{% endhint %}
+:::
 
 You can get the **Server URL** and **Bearer Token** by running the following command, depending on the cluster provider:
 
-{% tabs %}
-{% tab title="k8s Cluster Providers" %}
+<Tabs>
+<TabItem label="k8s Cluster Providers" value="k8s Cluster Providers">
 If you are using EKS, AKS, GKE, Kops, Digital Ocean managed Kubernetes, run the following command to generate the server URL and bearer token:
 ```bash
 curl -O https://raw.githubusercontent.com/devtron-labs/utilities/main/kubeconfig-exporter/kubernetes_export_sa.sh && bash kubernetes_export_sa.sh cd-user  devtroncd
 ```
-{% endtab %}
-{% tab title="Microk8s Cluster" %}
+</TabItem>
+<TabItem label="Microk8s Cluster" value="Microk8s Cluster">
 If you are using a **`microk8s cluster`**, run the following command to generate the server URL and bearer token:
 
 ```bash
@@ -592,8 +564,8 @@ curl -O https://raw.githubusercontent.com/devtron-labs/utilities/main/kubeconfig
 kubernetes_export_sa.sh && bash kubernetes_export_sa.sh cd-user \
 devtroncd
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 ![Figure 41: Generating Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/generate-cluster-credentials.jpg)
 

@@ -26,17 +26,14 @@ When you add a chart repository and/or an OCI registry, the sources along with t
 
 ## Add a Chart Source
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 Only a [Super Admin](../global-configurations/user-access.md#assign-super-admin-permissions) can add a chart source. The **Source** button in the **Chart Store** page is visible only to Super Admins.
 
-{% endhint %}
+:::
 
 To add a chart repository or an OCI registry as a chart source, follow the instructions below:
 
-1. Navigate to **Chart Store** → **Sources**. The **Helm chart sources** section appears, displaying all helm chart sources.
+1. Navigate to **Application Management** → **Chart Store** → **Sources**. The **Helm chart sources** section appears, displaying all helm chart sources.
 
 2. Click the **Add** button. 
 
@@ -58,13 +55,10 @@ To quickly search for a chart, perform any of the following actions:
 
 * Select your preferred chart source(s) using the checkboxes in the **Chart Source** drop-down box. The charts associated with that chart source will be displayed in the All Charts section.
 
-{% hint style="info" %}
-
-### Unable to Find Your Chart?
-
+:::info Unable to Find Your Chart?
 Try performing a resync by clicking the **Resync** button next to each chart source. If the chart is still not displayed, it might be deprecated. Enable the **Show deprecated charts** checkbox in the Filters section. All the deprecated charts will then be displayed in the All Charts section.
 
-{% endhint %}
+:::
 
 ---
 

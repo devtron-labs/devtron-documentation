@@ -1,3 +1,10 @@
+---
+id: deployment-charts
+title: Deployment Charts
+sidebar_label: Deployment Charts
+slug: /user-guide/app-management/configurations/deployment-charts
+---
+
 # Deployment Charts
 
 ## Introduction
@@ -12,7 +19,7 @@ For any use case not addressed by the default Helm charts, you can upload your o
 
 This video contains a quick walkthrough of the steps mentioned in the [Preparing a Deployment Chart](#preparing-a-deployment-chart) section of this page and the subsequent uploading of the deployment chart on Devtron.
 
-{% embed url="https://www.youtube.com/watch?v=jzMZa7bSiyA" caption="How to Upload your Deployment Chart in Devtron" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/jzMZa7bSiyA" title="How to Upload your Deployment Chart in Devtron" frameborder="0" allowfullscreen></iframe></div>
 
 ---
 
@@ -38,10 +45,9 @@ helm create my-custom-chart
 | `Version` | This is the chart version. Update this value for each new version of the chart (Required). |
 | `Description` | Give a description to your chart (Optional). |
 
-{% hint style="info" %}
-### Example of Chart.yaml
+:::info Example of Chart.yaml
 [Click here](https://devtron-public-asset.s3.us-east-2.amazonaws.com/custom-charts/chart-yaml-file.jpg) to view a sample 'Chart.yaml' file.
-{% endhint %}
+:::
 
 ### 2. Create an Image Descriptor Template File
 
@@ -87,10 +93,9 @@ The Image Descriptor Template file is a GO template that produces a valid JSON f
     }
     ```
 
-{% hint style="warning" %}
-### Got a JSON Error?
+:::caution Got a JSON Error?
 If your code editor highlights a syntax error (property or EOF error) in the above JSON, ignore it.
-{% endhint %}
+:::
 
 <!-- | Field | Description |
 | --- | --- |
@@ -118,9 +123,9 @@ However, if you upload the chart without an `app-values.yaml` or with an empty o
 
 ### 4. Add release-values.yaml
 
-The `release-values.yaml` file contains essential values needed for deployment that aren’t covered by [app-values.yaml](#id-3.-add-app-values.yaml). For example:
+The `release-values.yaml` file contains essential values needed for deployment that aren’t covered by [app-values.yaml](#3-add-app-valuesyaml). For example:
 
-* Some dynamic values (such as `IMAGE_TAG` and `IMAGE_REPO` from the [image descriptor JSON file](#id-2.-create-an-image-descriptor-template-file)) are populated here because they are needed for deployment.
+* Some dynamic values (such as `IMAGE_TAG` and `IMAGE_REPO` from the [image descriptor JSON file](#2-create-an-image-descriptor-template-file)) are populated here because they are needed for deployment.
 * You can use `autoPromotionSeconds` to decide how long to keep old pods running once the latest pods of new release are available.
 
 In the root directory of your chart, create a file named `release-values.yaml` with the following command:
@@ -155,10 +160,9 @@ orchestrator.deploymant.algo: 1
 The Helm chart to be uploaded must be packaged as a versioned archive file in the format: `<helm-chart-name>-x.x.x.tgz`. 
 Both `<helm-chart-name>` and `x.x.x` will be automatically fetched from the name and version fields present in the Chart.yaml file, respectively."
 
-{% hint style="warning" %}
-### Note
+:::caution Note
 Ensure you navigate out of the Helm chart folder before packaging it in a '.tgz' format
-{% endhint %}
+:::
 
 Run the following command to package the chart:
 
@@ -172,14 +176,13 @@ The above command will generate a `<helm-chart-name>-x.x.x.tgz` file.
 
 ## Uploading a Deployment Chart
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Only super admin users can upload a deployment chart. A super admin can upload multiple versions of a chart.
-{% endhint %}
+:::
 
 ### Steps
 
-* Go to **Global Configurations** → **Deployment Charts**.
+* Go to **Application Management** → **Configurations** → **Deployment Charts**.
 
     ![Figure 5: Global Configurations - Deployment Charts](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/gc-deployment-charts.jpg)
 
@@ -207,21 +210,20 @@ The following are interpretations of the validation checks performed:
 
 | Validation Status | Description | User Action |
 | :--- | :--- | :--- |
-| **Success** | The files uploaded are validated <br />([View Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/chart-success.jpg))  | Enter a description for the chart and select **Save** or **Cancel upload** |
-| **Unsupported template** | The archive file do not match the [required template](#preparing-a-deployment-chart) <br />([View Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/unsupported-template.jpg)) | **Upload another chart** or **Cancel upload** |
-| **New version detected** | You are uploading a newer version of an existing chart <br />([View Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/new-version.jpg)) | Enter a **Description** and select **Save** to continue uploading, or **Cancel upload** |
-| **Already exists** | There already exists a chart with the same version <br />([View Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/chart-exists.jpg)) | <ul><li>Edit the version and re-upload the same chart using **Upload another chart**.</li><li>Upload a new chart with a new name using  **Upload another chart**</li><li>**Cancel upload**</li></ul> |
+| **Success** | The files uploaded are validated <br/>([View Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/chart-success.jpg))  | Enter a description for the chart and select **Save** or **Cancel upload** |
+| **Unsupported template** | The archive file do not match the [required template](#preparing-a-deployment-chart) <br/>([View Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/unsupported-template.jpg)) | **Upload another chart** or **Cancel upload** |
+| **New version detected** | You are uploading a newer version of an existing chart <br/>([View Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/new-version.jpg)) | Enter a **Description** and select **Save** to continue uploading, or **Cancel upload** |
+| **Already exists** | There already exists a chart with the same version <br/>([View Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/chart-exists.jpg)) | <ul><li>Edit the version and re-upload the same chart using **Upload another chart**.</li><li>Upload a new chart with a new name using  **Upload another chart**</li><li>**Cancel upload**</li></ul> |
 
 ---
 
 ## Viewing Deployment Charts
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Only super-admins can view deployment charts.
-{% endhint %}
+:::
 
-To view the list of available deployment charts, go to  **Global Configurations** → **Deployment Charts** page.
+To view the list of available deployment charts, go to  **Application Management** → **Configurations** → **Deployment Charts** page.
 
 ![Figure 9: Viewing Deployment Charts](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/view-charts.jpg)
 
@@ -236,24 +238,21 @@ Once you successfully upload a deployment chart, you can start using it as a dep
 
 ![Figure 10: Using Deployment Charts](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/use-chart.gif)
 
-{% hint style="warning" %}
-### Note
+:::caution Note
 The deployment strategy for a deployment chart is fetched from the chart template and cannot be configured in the [CD pipeline](../creating-application/workflow/cd-pipeline.md#deployment-strategies).
-{% endhint %}
+:::
 
 ---
 
-## Editing GUI Schema of Deployment Charts [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Editing GUI Schema of Deployment Charts <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Only super-admins can edit the GUI schema of deployment charts.
-{% endhint %}
+:::
 
-{% hint style="info" %}
-### Reference
+:::info Reference
 This section is an extension of [Customize GUI](../creating-application/base-config/deployment-template.md#using-gui) feature. Refer the document to know more about the significance of having a custom GUI schema for your deployment templates.
-{% endhint %}
+:::
 
 You can edit the GUI schema of the following deployment charts:
 1. Default charts provided by Devtron (*Deployment*, *Job & CronJob*, *Rollout Deployment*, and *StatefulSet*)
@@ -261,7 +260,7 @@ You can edit the GUI schema of the following deployment charts:
 
 ### Tutorial
 
-{% embed url="https://www.youtube.com/watch?v=93tGIsM1qC8" caption="JSON-driven Deployment Schema" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/93tGIsM1qC8" title="JSON-driven Deployment Schema" frameborder="0" allowfullscreen></iframe></div>
 
 ### Steps
 
@@ -287,4 +286,4 @@ In this example, we will edit the Deployment chart type provided by Devtron.
 
     ![Figure 15: Save Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/save-changes.jpg)
 
-Next, if you go to **Configurations** → **Base Configurations** → **Deployment Template**, you will be able to see the deployment template fields (in GUI) as per your customized schema.
+Next, if you go to **Configurations** (tab) → **Base Configurations** → **Deployment Template**, you will be able to see the deployment template fields (in GUI) as per your customized schema.

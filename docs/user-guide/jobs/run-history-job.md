@@ -4,11 +4,10 @@ The run history allows you to review every execution of job pipelines. Here you 
 
 ## Accessing Run History for Specific Pipeline
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have the **Admin role** or the **Super Admin role**.
 Refer the [User permissions](../global-configurations/authorization/user-access.md#roles-available-for-jobs).
-{% endhint %}
+:::
 
 Either you have just executed the job and want to inspect the live execution, or you just want to check previous executions of a job pipeline
 

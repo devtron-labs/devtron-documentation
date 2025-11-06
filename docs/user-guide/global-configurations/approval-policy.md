@@ -1,6 +1,13 @@
+---
+id: approval-policy
+title: Approval Policy
+sidebar_label: Approval Policy
+slug: /user-guide/app-management/policies/approval-policy
+---
+
 # Approval Policy
 
-## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Introduction <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 When it comes to critical environments (let's say, production), you as a super-admin might want to introduce an approval flow for application deployment or changes made to the configuration files. Enforcing such restrictions will prevent unwanted deployments and direct modifications to sensitive configurations.
 
@@ -19,12 +26,11 @@ The **Approval Policy** feature in Devtron lets you introduce an approval mechan
 
 ## Create an Approval Policy
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permissions to create an approval policy.
-{% endhint %}
+:::
 
-1. Go to **Global Configurations** → **Approval Policy**.
+1. Go to **Application Management** → **Policies** → **Approval Policy**.
 
     ![Figure 2: Approval Policy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/gc-approval-policy.jpg)
 
@@ -50,31 +56,27 @@ Users need to have super-admin permissions to create an approval policy.
 
         ![Figure 7: Allowing Specific Users](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/specific-user-approval.gif)
 
-{% hint style="warning" %}
-### Caution
+:::caution Caution
 * The dropdown lists all users available in Devtron. Some users (except super-admins) may not have the necessary approver permissions, i.e, **Config Approver** or **Deployment approver**. These users cannot approve requests until the required permissions are assigned to them.
 
 * Super-admins have approver permissions by default.
 
 * Refer [User Permissions](./authorization/user-access.md#roles-available-for-devtron-apps) to learn more.
-{% endhint %}
+:::
 
-{% hint style="info" %}
-### How do approvals of User Groups work?
+:::info How do approvals of User Groups work?
 If a user belongs to multiple groups (see Option 2 above), their approval is considered and counted for each group. For example, if you mandate 2 approvals: 1 from DevOps group and 1 from Compliance group; an approval from a common user (belonging to both groups) will count as 2 approvals.
 
 However, once a group's required approvals are met, extra approvals won’t count. For example, if a request needs 2 Security and 3 QA approvals and already has 2 Security and 2 QA approvals, an approval from a user in both teams will count only for QA. The user appears in both lists but doesn’t add to Security’s count.
-{% endhint %}
+:::
 
-{% hint style="info" %}
-### Can super-admins approve the requests?
+:::info Can super-admins approve the requests?
 Yes, apart from the users having approver access, super-admins can also approve the requests (provided the requests are not their own).
-{% endhint %}
+:::
 
-{% hint style="warning" %}
-### What happens if a specific user mentioned in the policy gets deleted from Devtron or has their permissions revoked?
+:::caution What happens if a specific user mentioned in the policy gets deleted from Devtron or has their permissions revoked?
 Even if the user mentioned in the policy no longer exists, the approval conditions will remain unchanged. Therefore, to prevent unfulfilled approval conditions because of an absent user, it's best to remove that specific user from the policy.
-{% endhint %}
+:::
 
 5. Click **Save Changes**.
 
@@ -82,10 +84,9 @@ Even if the user mentioned in the policy no longer exists, the approval conditio
 
 ## Apply an Approval Policy
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permissions to apply an approval policy.
-{% endhint %}
+:::
 
 1. After you create an approval policy, you can apply it. Click **Apply Profile** on the same screen.
 
@@ -102,7 +103,7 @@ Users need to have super-admin permissions to apply an approval policy.
     ![Figure 10: Choosing Scope](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/select-approval-scope.jpg)
 
 4. Under **Apply to**, you get the following options to choose from: 
-    * **Specific Criteria** - Select this option to apply your policy to specific environment(s) of specific applications. <br />
+    * **Specific Criteria** - Select this option to apply your policy to specific environment(s) of specific applications. <br/>
 
         **Example**: In case of Deployment
 
@@ -112,7 +113,7 @@ Users need to have super-admin permissions to apply an approval policy.
 
         ![Figure 11b: Specific Criteria for 'Configuration Change' Approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/specific-criteria-config.gif)
 
-    * **By match criteria** - Select this option to use a combination of filters to create criteria. Your policy will only apply to target pipelines/configurations fulfilling your criteria (including existing and future ones). (Optional) You may also write a note for your other team members to understand the intent and context of your policy. <br />
+    * **By match criteria** - Select this option to use a combination of filters to create criteria. Your policy will only apply to target pipelines/configurations fulfilling your criteria (including existing and future ones). (Optional) You may also write a note for your other team members to understand the intent and context of your policy. <br/>
 
         **Example**: In case of Deployment
 
@@ -122,7 +123,7 @@ Users need to have super-admin permissions to apply an approval policy.
 
         ![Figure 12b: Match Criteria for 'Configuration Change' Approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/match-criteria-config.gif)
 
-    * **Global** - Select this option to apply your chosen policies to every deployment pipeline or configurations (existing and future) of all applications in all clusters. <br />
+    * **Global** - Select this option to apply your chosen policies to every deployment pipeline or configurations (existing and future) of all applications in all clusters. <br/>
 
         **Example**: In case of Deployment
 
@@ -139,10 +140,9 @@ Users need to have super-admin permissions to apply an approval policy.
 
 ## Apply Multiple Policies
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permissions to apply more policies to a scope.
-{% endhint %}
+:::
 
 As shown in step 2 of [Apply an Approval Policy](#apply-an-approval-policy), you can choose multiple policies and apply them to a scope (e.g., Global, Cluster, Application, Environment, Base Configuration). However, if you have already applied and now you wish to apply more policies to the same scope, you may do so by following either of the below steps:
 
@@ -170,12 +170,11 @@ As shown in step 2 of [Apply an Approval Policy](#apply-an-approval-policy), you
 
     ![Figure 15: Applying More Policy in Bulk](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/add-policies-bulk.gif)
 
-{% hint style="warning" %}
-### How do multiple policies work if applied together?
-If you apply multiple policies together, the user has to meet the approval conditions of all the applied policies. <br />
-**Example 1**: if 'Policy A' demands 3 approvals specifically from John, Jane, and Jessy; and if 'Policy B' requires 1 approval from 'Product User Group', the user will have to get 4 approvals. <br />
+:::caution How do multiple policies work if applied together?
+If you apply multiple policies together, the user has to meet the approval conditions of all the applied policies. <br/>
+**Example 1**: if 'Policy A' demands 3 approvals specifically from John, Jane, and Jessy; and if 'Policy B' requires 1 approval from 'Product User Group', the user will have to get 4 approvals. <br/>
 **Example 2**: if 'Policy A' demands 3 approvals specifically from John, Jane, and Jessy; and if 'Policy B' requires 2 approvals from anyone, the user will still have to get 3 approvals from John, Jane, and Jessy. In short, the stricter conditions from the policies are enforced first and they have to be fulfilled.
-{% endhint %}
+:::
 
 ---
 
@@ -193,7 +192,7 @@ You can choose to:
 
 You can configure whether super-admins are required to follow approval policies or bypass them.
 
-1. Navigate to **Approval Policy** → **Exceptions**.
+1. Navigate to **Application Management** → **Policies** → **Approval Policy** → **Exceptions**.
 
 2. Choose the scope, for which you want super admins to not require approval.The available scopes are:
 
@@ -209,14 +208,13 @@ You can configure whether super-admins are required to follow approval policies 
 
     ![Figure 16: Enabling Super Admins Exception](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-super-admin-exception.gif)
 
-{% hint style="info" %}
-### Note
+:::info Note
 Super-admins can approve requests even if the toggle is turned off.
-{% endhint %}
+:::
 
 ### Excluding Specific Users / User Groups / API Tokens
 
-1. Navigate to **Approval Policy** → **Exceptions**.
+1. Navigate to **Application Management** → **Policies** → **Approval Policy** → **Exceptions**.
 
     ![Figure 17: Exceptions Tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-exceptions.jpg)
 
@@ -228,7 +226,7 @@ Super-admins can approve requests even if the toggle is turned off.
 
     ![Figure 18: Selecting Scope](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-scope.jpg)
 
-{% hint style="info"%}
+:::info 
 ### Note
 The list of users is fetched from [User Permissions](../global-configurations/authorization/user-access.md), and the list of [API tokens](../global-configurations/authorization/api-tokens.md) is sourced from API Tokens. 
 
@@ -236,7 +234,7 @@ You cannot enter a new email ID or token directly.
    * Refer [Add Users (User Permissions)](../global-configurations/authorization/user-access.md#add-users) to add a new user. 
 
    * Refer [API token](../global-configurations/authorization/api-tokens.md#generate-api-token) to create a new API token.
-{% endhint %}
+:::
 
 3. Click the **Add**/**Edit** button next to **Specific Users / User Groups**. A pop-up modal window will appear.
 
@@ -254,28 +252,25 @@ You cannot enter a new email ID or token directly.
 
         ![Figure 21: Selecting Specific User Groups](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-add-users-group.jpg)
 
-{% hint style="warning" %}
-### Caution
+:::caution Caution
 * The dropdown lists all users and API tokens or user-groups, available in Devtron. Some users or API tokens may have only view permissions or lack build, deploy, or admin permissions. Such users cannot bypass approval policies until the required permissions are assigned.
 
 * Refer [User Permissions](./authorization/user-access.md#roles-available-for-devtron-apps) to learn more.
-{% endhint %}
+:::
 
 5. Click **Save**. The selected users or user groups will no longer require approvals for the selected scope.
 
     ![Figure 22: Clicking 'Save'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-save.jpg)
 
-{% hint style="warning" %}
-### Caution
+:::caution Caution
 By default, approvers cannot approve their own deployments or base configuration edits, but, if an approver is added as an exception, this restriction does not apply, and that approver can trigger their own deployments or edit base configurations without any approvals.
-{% endhint %}
+:::
 
 After configuring exceptions, super-admins and specific users / user groups can make configuration changes and trigger deployments without requiring any approval.
 
 #### Triggering Deployments
 
-{% hint style="warning" %}
-### Do exceptions bypass blackout or maintenance windows?  
+:::caution Do exceptions bypass blackout or maintenance windows?  
 Approval Policy exceptions do not bypass a blackout or a maintenance window:
 
    * During a blackout window, exception users cannot trigger deployments, unless you add them to the list of users, who are allowed to take action during the blackout window.
@@ -283,12 +278,11 @@ Approval Policy exceptions do not bypass a blackout or a maintenance window:
    * Outside a maintenance window, exception users cannot trigger deployments, unless you add them to the list of users, who are allowed to take action outside the maintenance window
    
    * Refer [Deployment Window](../global-configurations/deployment-window.md#configuring-deployment-window) to learn more.
-{% endhint %}
+:::
 
-{% hint style="info" %}
-### Note
+:::info Note
 An exception user can still follow the normal flow of requesting an image approval and getting it approved, and also has the option to deploy images without approvals.
-{% endhint %}
+:::
 
 ![Figure 23a: Deploying an Image without an Approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-deploy-exception.jpg)
 
@@ -298,11 +292,10 @@ An exception user can still follow the normal flow of requesting an image approv
 
 #### Editing Base Configurations
 
-{% hint style="info" %}
-### Note 
+:::info Note 
 * An exception user can still follow the normal flow of submitting a configuration change draft for approval, and getting it approved. 
 * Any existing draft is discarded once the exception user updates the configuration using express edit.
-{% endhint %}
+:::
 
 ![Figure 24a: Editing Deployment Template without an Approval](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/approval-policy-base-config-exception.gif)
 
@@ -314,10 +307,9 @@ An exception user can still follow the normal flow of requesting an image approv
 
 ## Remove Applied Policies
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permissions to remove an applied approval policy.
-{% endhint %}
+:::
 
 If you have already applied policies and wish to remove some of them from a scope, follow the steps below. The approval conditions of the removed policy will no longer apply to the given scope, and the conditions of other policies (if applied to the same scope) will remain.
 
@@ -345,19 +337,17 @@ If you have already applied policies and wish to remove some of them from a scop
 
     ![Figure 26: Removing Policies in Bulk](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/approval-policy/remove-policies-bulk.gif)
 
-{% hint style="warning" %}
-### Note
+:::caution Note
 At least one policy must remain applied to a scope, so you cannot remove all the policies from a scope. You may use the [delete procedure](#delete-applied-policies) instead.
-{% endhint %}
+:::
 
 ---
 
 ## Delete Applied Policies
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permissions to delete an applied policy.
-{% endhint %}
+:::
 
 If you have already applied policies to a scope (e.g., Global, Cluster, Application) and wish to delete all of them from that given scope, follow the steps below. **Note**: This will not [delete the approval policy](#delete-an-approval-policy) you originally created. Moreover, deployment pipelines may still continue inheriting profiles from higher scopes (e.g., Global, Cluster, Application).
 
@@ -371,10 +361,9 @@ If you have already applied policies to a scope (e.g., Global, Cluster, Applicat
 
 ## Delete an Approval Policy
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permissions to delete an approval policy.
-{% endhint %}
+:::
 
 If you no longer require a given approval policy, you may delete it. This action will automatically remove its rules enforced earlier for both, deployments and configuration change.
 

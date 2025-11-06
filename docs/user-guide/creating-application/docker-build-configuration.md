@@ -58,8 +58,8 @@ With the option **Create Dockerfile**, you can create a `Dockerfile` from the av
 
 | Field | Description |
 | --- | --- |
-| **Language** | Select the programming language (e.g., `Java`, `Go`, `Python`, `Node` etc.) from the drop-down list you want to create a dockerfile as per compatibility to your system.<br>**Note** We will be adding other programming languages in the future releases.</br>|
-| **Framework** | Select the framework (e.g., `Maven`, `Gradle` etc.) of the selected programming language.<br>**Note** We will be adding other frameworks in the future releases.</br>|
+| **Language** | Select the programming language (e.g., `Java`, `Go`, `Python`, `Node` etc.) from the drop-down list you want to create a dockerfile as per compatibility to your system.<br/>**Note** We will be adding other programming languages in the future releases.|
+| **Framework** | Select the framework (e.g., `Maven`, `Gradle` etc.) of the selected programming language.<br/>**Note** We will be adding other frameworks in the future releases.|
 
 ### Build Docker Image without Dockerfile
 
@@ -71,7 +71,7 @@ With the option **Build without Dockerfile**, you can use Buildpacks to automati
 | --- | --- |
 | **Select repository containing code** | Select your code repository. This repository is the same which you defined on the [Git Repository](../creating-application/git-material.md) section.|
 | **Project Path (Relative)** | In case of monorepo, specify the path of the project from your Git repository.|
-| **Language** | Select the programming language (e.g., `Java`, `Go`, `Python`, `Node`, `Ruby`, `PHP` etc.) from the drop-down list you want to build your container image as per the compatibility to your system.<br> **Note**: We will be adding other programming languages in the future releases.</br>|
+| **Language** | Select the programming language (e.g., `Java`, `Go`, `Python`, `Node`, `Ruby`, `PHP` etc.) from the drop-down list you want to build your container image as per the compatibility to your system.<br/> **Note**: We will be adding other programming languages in the future releases.|
 | **Version** | Select a language version from the drop-down list. If you do not find the version you need, then you can update the language version in `Build Env Arguments`. You can also select **Autodetect** in case if you want `Builder` to detect version by itself or its default version.|
 | **Select a builder** | A builder is an image that contains a set of buildpacks which provide your app's dependencies, a stack, and the OS layer for your app image. Select a buildpack provider from the following options:<ul><li>**Heroku**: It compiles your deployed code and creates a slug, which is a compressed and pre-packaged copy of your app and also the runtime which is optimized for distribution to the dyno (Linux containers) manager. [Learn more](https://devcenter.heroku.com/articles/buildpacks).</li></ul><ul><li>**GCR**: GCR builder is a general purpose builder that creates container images designed to run on most platforms (e.g. Kubernetes / Anthos, Knative / Cloud Run, Container OS, etc.). It auto-detects the language of your source code, and can also build functions compatible with the Google Cloud Function Framework. [Learn more](https://github.com/GoogleCloudPlatform/buildpacks).</li></ul><ul><li>**Paketo**: Paketo buildpacks provide production-ready buildpacks for the most popular languages and frameworks to easily build your apps. Based on your application needs, you can select from `Full`, `Base` and `Tiny`. [Learn more](https://paketo.io/docs/).</li></ul>|
 
@@ -82,7 +82,7 @@ You can add Key/Value pair by clicking **Add argument**.
 
 | Field | Description |
 | --- | --- |
-| **Key** | Define the key parameter as per your selected language and builder. E.g., By default `GOOGLE_RUNTIME_VERSION` for GCR buildpack.<br>**Note**: If you want to define `env arguments` for `PHP` and `Ruby` languages after selecting `Heroku` builder, please make sure to refer respective [Heroku Ruby Support](https://devcenter.heroku.com/articles/ruby-support) and [Heroku PHP Support](https://devcenter.heroku.com/articles/php-support) documentation for runtime information.</br>|
+| **Key** | Define the key parameter as per your selected language and builder. E.g., By default `GOOGLE_RUNTIME_VERSION` for GCR buildpack.<br/>**Note**: If you want to define `env arguments` for `PHP` and `Ruby` languages after selecting `Heroku` builder, please make sure to refer respective [Heroku Ruby Support](https://devcenter.heroku.com/articles/ruby-support) and [Heroku PHP Support](https://devcenter.heroku.com/articles/php-support) documentation for runtime information.|
 | **Value** | Define the value for the specified key. E.g. Version no. |
    
 

@@ -1,6 +1,6 @@
 # Compare & Sync Clusters 
 
-## Introduction [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Introduction <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 The Compare & Sync feature in Devtron allows you to: 
 
@@ -14,13 +14,10 @@ Refer to [Use Cases](#use-cases) to know more on how this feature can help you.
 
 ![Figure 1: Compare & Sync Feature](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/compare-sync-highlighted.jpg)
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 Only a [Super-Admin](../global-configurations/authorization/user-access.md#grant-super-admin-permission) can compare and sync clusters.
 
-{% endhint %}
+:::
 
 ---
 
@@ -48,10 +45,7 @@ Only a [Super-Admin](../global-configurations/authorization/user-access.md#grant
 
     ![Figure 6: Cluster Resources are Displayed](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resources-displayed.jpg)
 
-{% hint style="info" %}
-
-### How to Identify Missing Resource(s)?
-
+:::info How to Identify Missing Resource(s)?
 When the color of the resource is: 
 
 * **Red** - The resource is not available in that particular cluster. 
@@ -60,7 +54,7 @@ When the color of the resource is:
 
 For instance, when a resource is displayed in blue in cluster A and in red in cluster B, it means that the resource available in cluster A is not available in cluster B.
 
-{% endhint %}
+:::
 
 5. Click the filter available at the top left corner of the page. All the resource groups and resource kinds are displayed in the filter box. For example, when you select `ConfigMap` as a resource kind, all the available ConfigMaps in both clusters are displayed.
 
@@ -80,13 +74,10 @@ For instance, when a resource is displayed in blue in cluster A and in red in cl
 
     ![Figure 8: View All Filter](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/view-all-filterbox.jpg)
 
-{% hint style="warning" %}
-
-### Creating a Missing Resource?
-
+:::caution Creating a Missing Resource?
 Before creating a missing resource or comparing a manifest, it is very important to match the namespaces in both clusters. Otherwise, an error will be displayed. For example, if cluster A has a namespace `devtroncd` and cluster B does not have the same namespace, then you will get an error message while creating a missing resource.
 
-{% endhint %}
+:::
 
 Follow the below steps to match the namespaces: 
 
@@ -106,15 +97,12 @@ Hover over the resource that you'd like to create in the target cluster and clic
 
 ![Figure 10: Create Resource](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/create-resource.jpg)
 
-{% hint style="info" %}
-
-### Note
-
+:::info Note
 * To create missing resources in bulk, select the checkboxes against the resources or resource groups and click the **Create Resources** button. All the selected resources will be created in the target cluster.
 
 * Even after creating missing resources, a few of them may not run as expected unless the dependencies required to run the resources correctly are also met. Therefore, it is recommended that you ensure all the necessary dependencies are taken care of while creating missing resources. 
 
-{% endhint %}
+:::
 
 ### Compare Manifest
 

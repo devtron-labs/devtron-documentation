@@ -4,15 +4,15 @@
 
 Django is a free, open-source web framework written in Python programming language. It allows for scalability, re-usability, and rapid development. Django can be connected to different databases like MySQL, PostgreSQL, etc.
 
-### **1. Deploy a mysql Helm Chart**
+### 1. Deploy a mysql Helm Chart
 
-To deploy mysql Helm Chart, you can refer to our documentation on [Deploy mysql Helm Chart](../deploy-chart/examples/deploying-mysql-helm-chart.md)
+To deploy mysql Helm Chart, you can refer to our documentation on [Deploy mysql Helm Chart](../deploy-chart/deployment-of-charts.md#example).
 
-### **2. Fork the Git Repository**
+### 2. Fork the Git Repository
 
 For this example, we are using the following [GitHub Repo](https://github.com/devtron-labs/django-repo.git), you can clone this repository and make following changes in the files.
 
-#### _\*Configure Database Settings_
+#### Configure Database Settings
 
 Go to mysite/settings.py.
 
@@ -33,33 +33,33 @@ The `settings.py` contains the configuration for your SQL database. Make sure th
 }
 ```
 
-### **3. Create Application on Devtron**
+### 3. Create Application on Devtron
 
 To learn how to create an application on Devtron, refer to our documentation on [Creating Application](../creating-application/)
 
-#### _\*Git Repository_
+#### Git Repository
 
 In this example, we are using the url of the forked Git Repository.
 
-#### _\*Docker configuration_
+#### Docker configuration
 
 Give, the path of the Dockerfile.
 
-#### _\*Configure Deployment Template_
+#### Configure Deployment Template
 
 Enable `Ingress`, and give the path on which you want to host the application.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/connect-django-with-mysql-database/use-case-django-ingress-template.jpg)
 
-#### _\*Set up the CI/CD Pipelines_
+#### Set up the CI/CD Pipelines
 
 Set up the CI/CD pipelines. You can set them to trigger automatically or manually.
 
-#### _\*Trigger Pipelines_
+#### Trigger Pipelines
 
 Trigger the CI Pipeline, build should be **Successful**, then trigger the CD Pipeline, deployment pipeline will be initiated, after some time the status should be **Healthy**.
 
-### **4. Final Step**
+### 4. Final Step
 
 Check the Django app connected to mysql database, running successfully by hitting your application url.
 

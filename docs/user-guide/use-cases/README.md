@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Use Cases
 
 _**Welcome, this document consists of Devtron Use Cases**_

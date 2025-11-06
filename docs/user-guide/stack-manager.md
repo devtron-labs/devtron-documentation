@@ -1,21 +1,25 @@
+---
+hide_table_of_contents: true
+---
+
 # Devtron Integrations
  
 Devtron integrations extend the functionality of your Devtron stack.
 
 ## Discover and install integrations
  
-The current release of Devtron supports the Build and Deploy (CI/CD) integration. More integrations will be available soon; to request one, please [submit a ticket](https://github.com/devtron-labs/devtron/issues/new/choose)
+The current release of Devtron supports multiple integrations. To request one, please [submit a ticket](https://github.com/devtron-labs/devtron/issues/new/choose)
 
 > Integrations can be installed by super admins; However other user roles can browse and request super admins to install the required integrations.
 
-> Integrations are updated along with [Devtron updates](setup/../../setup/upgrade-devtron.md).
+> Integrations are updated along with [Devtron updates](setup/../../setup/upgrade/README.md).
 
 Select **Devtron Stack Manager** from the left navigation bar.
 Under **INTEGRATIONS**, select **Discover**.
  
 ![Discover integrations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/integrations/discover-integrations.jpg)
  
-> Although the integrations are installed separately, they cannot be upgraded separately. Integrations update happens automatically with [Devtron upgrade](#upgrade-devtron).
+> Although the integrations are installed separately, they cannot be upgraded separately. Integrations update happens automatically with [Devtron upgrade](../setup/upgrade/README.md).
  
 ### Build and Deploy (CI/CD) integration
  
@@ -35,7 +39,7 @@ Devtron CI/CD integration enables software development teams to automate the bui
 
 #### Installation
 
-1. On the **Devtron Stack Manager > Discover** page, select the **Build and Deploy (CI/CD) integration**.
+1. On the **Devtron Stack Manager** → **Discover** page, select the **Build and Deploy (CI/CD) integration**.
 2. On the **Discover integrations/Build and Deploy (CI/CD) page**, select **Install**.
  
 The installation status may be one of the following:
@@ -49,6 +53,6 @@ The installation status may be one of the following:
 | Installed | The integration is successfully installed and available on the **Installed page**. |
 | Request timed out | The request to install has hit the maximum number of retries. You may retry the installation or [contact support](https://discord.devtron.ai/) for further assistance. |
  
-> A list of installed integrations can be viewed on the **Devtron Stack Manager > Installed** page.
+> A list of installed integrations can be viewed on the **Devtron Stack Manager** → **Installed** page.
  
 To update an installed integration, please [update Devtron](../setup/upgrade/upgrade-devtron-ui.md).

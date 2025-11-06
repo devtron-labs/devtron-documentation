@@ -38,15 +38,13 @@ Further using the Devtron UI, you will be able to:
 * [Edit a Node Config](#edit-a-node-config)
 * [Delete a Node](#delete-a-node)
 
-{% hint style="info" %}
-### Why Are Node Operations Required?
+:::info Why Are Node Operations Required?
 Your applications run on pods, and pods run on nodes. But sometimes, Kubernetes scheduler cannot deploy a pod on a node for several reasons, e.g., node is not ready, node is not reachable, network is unavailable, etc. In such cases, node operations help you manage the nodes better.
-{% endhint %}
+:::
 
-{% hint style="warning" %}
-### Who Can Perform These Actions?
+:::caution Who Can Perform These Actions?
 Users need to have super-admin permission to perform node operations.
-{% endhint %}
+:::
 
 ## Debug a Node
 
@@ -104,7 +102,7 @@ You can also select from the following conditions before draining a node:
 | --- | --- |
 | Grace Period | Period of time in seconds given to each pod to terminate gracefully. If negative, the default value specified in the pod will be used. |
 | Delete empty directory data | Enabling this field will delete the pods using empty directory data when the node is drained. |
-| Disable eviction (use with caution) | Enabling this field will force drain to use delete, even if eviction is supported. This will bypass checking `PodDisruptionBudgets`.<br>Note: Make sure to use with caution.</br> |
+| Disable eviction (use with caution) | Enabling this field will force drain to use delete, even if eviction is supported. This will bypass checking `PodDisruptionBudgets`.<br/>Note: Make sure to use with caution. |
 | Force drain | Enabling this field will force drain a node even if there are pods that do not declare a controller. |
 | Ignore DaemonSets | Enabling this field will ignore DaemonSet-managed pods. |
 
@@ -122,18 +120,13 @@ Taints are `key:value` pairs associated with effect. After you add taints to nod
 
   ![Figure 6b: Tainting a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-taints-db.jpg)
 
-* Enter the `key:value` pairs and select the [taint effect](#taint-effects) from the drop-down list.
+* Enter the `key:value` pairs and select the taint effect from the drop-down list. [Click here](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/#concepts) to read about taint effects.
 
   ![Figure 6c: Adding Taints](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/taint-dialog-db.jpg)
 
 * Click **Save**.
 
 You can also add more taints using **+ Add taint button**, or delete the existing taint by using the delete icon. 
-
-{% hint style="info" %}
-### Additional Reference
-[Click here](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/#concepts) to read about taint effects.
-{% endhint %}
 
 ---
 
@@ -160,6 +153,6 @@ You can also delete a node by clicking the **Delete** button present on the righ
 
 The node will be deleted from the cluster.
 
-{% hint style="info" %}
+:::info 
 You can also access [Cluster Terminal](./cluster-terminal.md) from your node.
-{% endhint %}
+:::

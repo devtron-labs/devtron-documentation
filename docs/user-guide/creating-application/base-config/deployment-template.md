@@ -20,19 +20,16 @@ This guide covers how to:
 
 * [Perform a Dry Run](#perform-a-dry-run)
 
-* [Extra: Edit a Protected Deployment Configuration](#edit-a-protected-deployment-template) [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+* [Extra: Edit a Protected Deployment Configuration](#edit-a-protected-deployment-template-) <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 ---
 
 ## Select a Deployment Chart Type
 
-{% hint style="warning" %}
+:::caution Who Can Perform This Action?
+Users need to have [Admin role](../../../user-guide/global-configurations/user-access.md#user-roles-and-permissions) or above to select a chart.
 
-### Who Can Perform This Action?
-
-Users need to have [Admin role](../../../user-guide/global-configurations/user-access.md#role-based-access-levels) or above to select a chart.
-
-{% endhint %}
+:::
 
 1. Go to the **Configurations** page of your application.
 
@@ -44,7 +41,7 @@ Users need to have [Admin role](../../../user-guide/global-configurations/user-a
 
 3. Select the **Chart** drop-down box. The following tabs are displayed:
 
-  * [Charts by Devtron](./deployment-template/README.md) - Displays the default deployment charts provided by Devtron
+  * [Charts by Devtron](./deployment-template-types/README.md) - Displays the default deployment charts provided by Devtron
 
   * [Custom charts](../../global-configurations/deployment-charts.md) - Displays your custom deployment charts (if available). To create a custom deployment chart, refer to [Deployment Charts](../../global-configurations/deployment-charts.md).
 
@@ -52,25 +49,19 @@ Users need to have [Admin role](../../../user-guide/global-configurations/user-a
 
   ![Figure 4b: Custom Charts](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/base-config/deployment-charts-custom.gif)
 
-{% hint style="danger" %}
-
-### Important Note
-
+:::danger Important Note
 After you select and save a chart type for a given application, you won't be able to change it later. Make sure to choose the correct chart type before saving.
 
-{% endhint %}
+:::
 
 ---
 
 ## Choose a Chart Version
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 Users need to have [Admin role](../../../user-guide/global-configurations/authorization/user-access.md#roles-available-for-devtron-apps) or above to select a chart version.
 
-{% endhint %}
+:::
 
 Devtron maintains multiple chart versions for each chart type. Additionally, each chart version has a supporting README file that you can use to know more about the features and variables.
 
@@ -84,13 +75,10 @@ Once you [select a deployment chart](#select-a-deployment-chart-type), choose a 
 
 ## Configure the Deployment Template
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 Users need to have [Admin role](../../../user-guide/global-configurations/authorization/user-access.md#roles-available-for-devtron-apps) or above to configure a deployment template. However, super-admins can lock keys in deployment template to prevent non-super-admins from modifying them. Refer [Lock Deployment Configuration](../../global-configurations/lock-deployment-config.md) to know more.
 
-{% endhint %}
+:::
 
 You can edit a deployment template using the following two ways:
 
@@ -131,25 +119,19 @@ If you wish to perform additional configurations, click the **Switch to Advanced
 
 ![Figure 8: Switch to Advanced (YAML Method)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/yaml-switch-new.jpg)
 
-{% hint style="info" %}
-
-### Note
-
+:::info Note
 * If you change any values in the **GUI**, then the corresponding values will change in **YAML** too.
 
 * Users who are not super-admins will land on **GUI** section when they visit **Deployment Template** page; whereas super-admins will land on **YAML** section. This is just a default behavior, they can still navigate to the other section if needed.
 
-{% endhint %}
+:::
 
-#### Customize the GUI [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+#### Customize the GUI <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
+:::caution Who Can Perform This Action?
 Only a [Super-Admin](../../global-configurations/user-access.md#assign-super-admin-permissions) can customize the GUI section.
 
-{% endhint %}
+:::
 
 By default, the **GUI** section comes with multiple predefined fields as seen earlier [in the table](#using-gui). However, if you wish to display a different set of fields to your team, you can modify the whole section as per your requirement.
 
@@ -165,11 +147,11 @@ This is useful in scenarios where:
 
 There are two ways you can customize the GUI, use any one of the following:
 
-1. From [Deployment Charts](../../global-configurations/deployment-charts.md#editing-gui-schema-of-deployment-charts) section
+1. From [Deployment Charts](../../global-configurations/deployment-charts.md#editing-gui-schema-of-deployment-charts-) section
 
 2. Using APIs (explained below)
 
-{% embed url="https://www.youtube.com/watch?v=09VP1I-WvUs" caption="JSON-driven Deployment Schema" %}
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/09VP1I-WvUs" title="JSON-driven Deployment Schema" frameborder="0" allowfullscreen></iframe></div>
 
 You can pass a custom JSON (deployment schema) of your choice through the following API. You may need to run the API with the `POST` method if you are doing it for the first time.
 
@@ -177,9 +159,7 @@ You can pass a custom JSON (deployment schema) of your choice through the follow
 PUT {{DEVTRON_BASEURL}}/orchestrator/deployment/template/schema
 ```
 
-{% code title="Sample API Request Body" overflow="wrap" lineNumbers="true" %}
-
-```json
+```json title="Sample API Request Body" showLineNumbers
 {
   "name": "schema-1",
   "type": "JSON",
@@ -229,7 +209,7 @@ PUT {{DEVTRON_BASEURL}}/orchestrator/deployment/template/schema
 }
 
 ```
-{% endcode %}
+
 
 1. In the `name` field, give a name to your schema, e.g., *schema-1*
 
@@ -267,13 +247,13 @@ Every chart version has its own YAML file that provides specifications for your 
 
 Refer the respective templates to view the YAML details.
 
-* [Deployment](./deployment-template/deployment.md)
+* [Deployment](./deployment-template-types/deployment.md)
 
-* [Rollout Deployment](./deployment-template/rollout-deployment.md)
+* [Rollout Deployment](./deployment-template-types/rollout-deployment.md)
 
-* [Job & CronJob](./deployment-template/job-and-cronjob.md)
+* [Job & CronJob](./deployment-template-types/job-and-cronjob.md)
 
-* [StatefulSet](./deployment-template/statefulset.md)
+* [StatefulSet](./deployment-template-types/statefulset.md)
 
 Before saving your configuration in YAML, make sure to [perform a dry run](#perform-a-dry-run).
 
@@ -296,13 +276,10 @@ Once enabled, you can view the application metrics on the **App Details** page.
 
 ![Figure 11: Application metrics on 'App Details' page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/app-metric-op.jpg)
 
-{% hint style="info" %}
-
-### Important
-
+:::info Important
 Enabling application metrics adds a sidecar container to your main container, which may require additional configuration. We recommend running a load test in a non-production environment before enabling it in production.
 
-{% endhint %}
+:::
 
 ---
 
@@ -318,27 +295,18 @@ Your configurations will appear in the left pane, while the right pane will disp
 
 ---
 
-## Edit a Protected Deployment Template [![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg)](https://devtron.ai/pricing)
+## Edit a Protected Deployment Template <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-{% hint style="info" %}
-
-### Who Can Perform This Action?
-
+:::info Who Can Perform This Action?
 Only a super-admin, manager, and admin can edit the configuration values. 
 
-{% endhint %}
+:::
 
 Any changes made to the deployment template will require approval if an approval policy is enforced. To check if your deployment template is protected, check the stamp/approve symbol as shown below.
 
 ![Figure 13: Checking Protected Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/protected-dt.jpg)
 
-When you want to edit a protected configuration, you can do it in the following ways:
-
-* [Normal Edit](#normal-edit) - Where changes to the protected configuration can be proposed or pushed as a draft, but published only after getting approval from the approver(s).
-
-* [Express Edit](#express-edit) - Where you bypass the approval process and directly make changes to the protected configuration. 
-
-### Normal Edit
+### Request Approval for Changes
 
 Let's assume you are the application admin and your deployment template in **Base Configurations** is protected from edits.
 
@@ -350,13 +318,10 @@ Let's assume you are the application admin and your deployment template in **Bas
 
     ![Figure 15: Changing Values](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/changed-values-v2.jpg)
 
-{% hint style="info" %}
-
-### What if the keys are locked from editing?
-
+:::info What if the keys are locked from editing?
 You cannot modify locked keys in deployment template unless you are a super-admin. Refer [Lock Deployment Configuration](../../global-configurations/lock-deployment-config.md) to know more. 
 
-{% endhint %}
+:::
 
 3. Since the deployment configuration is protected, your changes won't be published right away. You can do either of the following:
 
@@ -372,76 +337,27 @@ You cannot modify locked keys in deployment template unless you are a super-admi
 
     ![Figure 17: Viewing the Approval Status](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/approval-status.jpg)
 
-{% hint style="info" %}
-
-### Can I approve my own changes?
-
+:::info Can I approve my own changes?
 No, the one who performs the edits cannot approve their own changes. A different user has to review and approve.
 
-{% endhint %}
+:::
 
 Only one draft can exist at time and you cannot create multiple drafts. In the top-right corner, you have the option to discard the draft if you don't wish to proceed with the edits you made. 
 
 ![Figure 18: Discarding the Draft](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/discard-draft.jpg)
 
-### Express Edit
-
-{% hint style="warning" %}
-
-### Who Can Perform This Action?
-
-Only a Super-Admin (when the [Super admins toggle](../../global-configurations/approval-policy.md#excluding-super-admins) is enabled in the Exceptions tab) or [specific users / user groups](../../global-configurations/approval-policy.md#excluding-specific-users-user-groups-api-tokens) who are added as exceptions in the Approval Policy can make express edits. Refer to [Approval Policy](../../global-configurations/approval-policy.md) for more information.
-
-{% endhint %}
-
-Express edits allow you to bypass the approval process and make direct edits to the configurations. Follow the below steps to make express edits:
-
-1. Navigate to the **Applications** page and click on your preferred application. 
-
-2. Go to the **Configurations** → **Base Configurations**.
-
-3. Click on **Deployment Template**.
-
-4. Click on the **Edit** button.
-
-{% hint style="info" %}
-
-### Note
-
-The **Edit** button will only be displayed if: 
-
-* You are a Super-Admin and the Super admins toggle is enabled in the Approval Policy page
-
-* You are added as an exception in the Approval Policy page. 
-
-Refer to [Approval Policy](../../global-configurations/approval-policy.md) for more information.
-
-{% endhint %}
-
-5. Modify the values either by using **GUI** or **YAML** editor. 
-
-6. Click on **Publish Changes** to direcly publish your changes. 
-
-![Figure 19: Express Edit a Protected Deployment Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/base-config/express-edit-dt.gif)
-
 ### Grant Approval for Changes
 
-{% hint style="info" %}
-
-### Who Can Perform This Action?
-
+:::info Who Can Perform This Action?
 Only a valid approver or a Super-Admin can approve the changes made to the deployment configuration. Refer to [Approval Policy](../../global-configurations/approval-policy.md) for more information.
 
-{% endhint %}
+:::
 
 Go to the edited configuration file to review and approve the changes as shown below.
 
-![Figure 20: Approving the Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/approval-screen-v2.jpg)
+![Figure 19: Approving the Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/approval-screen-v2.jpg)
 
-{% hint style="info" %}
-
-### Note
-
+:::info Note
 If [SES/SMTP](../../global-configurations/manage-notification.md) is configured in Devtron, the approver gets notified via email. Therefore, the approver can take an action directly from the mail as shown below. Once the approver validates and approves your configuration changes, you can proceed to deploy your application with the updated configuration.
 
-{% endhint %}
+:::

@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Configurations
 
 After you have created a Job, the next step is to configure the job. This means specifying the source code and using the Workflow Editor to create and configure the job pipeline, which includes defining tasks such as code scanning, vulnerability checks, or data migrations, and configuring the sequence in which these tasks should be executed.

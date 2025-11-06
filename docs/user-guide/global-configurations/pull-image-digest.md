@@ -1,3 +1,10 @@
+---
+id: pull-image-digest
+title: Pull Image Digest
+sidebar_label: Pull Image Digest
+slug: /user-guide/app-management/policies/pull-image-digest
+---
+
 # Pull Image Digest
 
 ## Introduction
@@ -8,16 +15,15 @@ Though it can be enabled by an application-admin for a given CD Pipeline, Devtro
 
 This helps in better governance and less repetitiveness if you wish to manage pull image digest for multiple applications across environments.
 
-{% hint style="warning" %}
-### Who Can Perform This Action?
+:::caution Who Can Perform This Action?
 Users need to have super-admin permission to enable pull image digest at environment level.
-{% endhint %}
+:::
 
 ---
 
 ## Steps to Enable Pull Image Digest
 
-From the left sidebar, go to **Global Configurations** → **Pull Image Digest**. 
+From the left sidebar, go to **Application Management** → **Policies** → **Pull Image Digest**. 
 
 As a super-admin, you can decide whether you wish to enable pull image digest [for all environments](#for-all-environments) or [for specific environments](#for-specific-environments).
 
