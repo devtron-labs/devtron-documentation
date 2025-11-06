@@ -25,13 +25,13 @@ This shows errors in the cluster. If no error is present in the cluster, Resourc
 
 ---
 
-## Catalog Framework <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
+## Catalog <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 :::caution Who Can Perform This Action?
-Users need to have super-admin permission to edit the catalog framework.
+Users need to have super-admin permission to edit the catalog.
 :::
 
-Based on the schema provided in the catalog framework, you can add relevant details for each cluster. Refer [Catalog Framework](../global-configurations/catalog-framework.md) for more details. 
+Based on the schema defined for the catalog, you can add relevant details for each cluster. You can manage this data using the **Manage Schema** option, which defines the structure of your catalog. Refer the [Manage Schema](../global-configurations/catalog-framework.md#managing-a-schema) documentation to learn more.
 
 ---
 

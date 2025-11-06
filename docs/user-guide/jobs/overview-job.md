@@ -72,11 +72,11 @@ After saving, the system displays the email address of the user who last updated
 
 ### Catalog <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-The **Catalog** in the **About** section displays information about your job, such as Container port, Environment Variables, Arguments, Resources(CPU and RAM). This data is managed using [Devtron’s Catalog Framework](../global-configurations/catalog-framework.md).
+The **Catalog** in the **About** section displays information about your job, such as Container port, Environment Variables, Arguments, Resources(CPU and RAM). You can manage this data using the **Manage Schema** option, which defines the structure of your catalog. Refer the [Manage Schema](../global-configurations/catalog-framework.md#managing-a-schema) documentation to learn more.
 
 ![Figure 6: Catalog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog.jpg)
 
-You can use the **Catalog framework** to maintain information about your job, such as Environment Variables, Resources(CPU and RAM), service documentation, etc. This makes it easier for others to understand, manage, and use your job.
+You can use the **Catalog** to maintain information about your job, such as Environment Variables, Resources(CPU and RAM), service documentation, etc. This makes it easier for others to understand, manage, and use your job.
 
 `Super-Admins` define a custom JSON schema that determines what fields are shown in the catalog form. This schema is specific to each resource type, such as Devtron jobs.
 
@@ -89,7 +89,7 @@ When you click the **Edit** icon, a form appears based on the defined schema. As
 ![Figure 7: Editing Catalog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog-expand.jpg)
 
 :::info 
-The structure and labels in the catalog form are entirely configurable by your platform team via JSON schema in **Catalog Framework**. Field names and sections may vary depending on how the schema was defined by your organization.
+The structure and labels in the catalog form are entirely configurable by your platform team via JSON schema in **Catalog**. Field names and sections may vary depending on how the schema was defined by your organization.
 :::
 
 Once saved, this information is displayed in a readable format within the Catalog subsection and is accessible to all users who have permission to view the job.
