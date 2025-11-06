@@ -51,12 +51,12 @@ The documentation follows a structured hierarchy defined in [`sidebars.js`](./si
 | **Getting Started** | Onboarding and installation instructions for new users. |
 | **Application Management** | Creating, configuring, and managing applications in Devtron. |
 | **Infrastructure Management** | Managing clusters, resources, and node-level operations. |
-| **Automation & Enablement** | Job automation, task configuration, and workflow management. |
-| **Global Configurations** | Managing host URL, GitOps, SSO, permissions, and global policies. |
 | **Software Release Management** | Handling multi-tenant releases and deployment visibility. |
-| **Security & FinOps** | Insights into security scanning and cost visibility. |
-| **Backup & Restore** | Managing application data backups and restoration. |
-| **AI Recommendations** | Features powered by Devtron’s AI system, Athena. |
+| **Cost Visibility** | Insights into FinOps capabilities of Devtron. |
+| **Security** | Insights into security scanning and policies. |
+| **Automation & Enablement** | Job automation, task configuration, and workflow management. |
+| **AI Recommendations** | Features powered by Devtron’s AI system. |
+| **Global Configurations** | Managing host URL, GitOps, SSO, permissions, and global policies. |
 | **Resources** | References, integrations, upgrades, and use cases. |
 
 Each folder contains a `README.md` file that serves as an index page and links to nested topics.
