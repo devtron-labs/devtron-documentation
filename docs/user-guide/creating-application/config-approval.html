@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-user-guide/creating-application/config-approval" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Protect Configuration | Devtron Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://devtron-public-asset.s3.us-east-2.amazonaws.com/cms-assets/img/devtron-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://devtron-public-asset.s3.us-east-2.amazonaws.com/cms-assets/img/devtron-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs-test.devtron.ai/docs/user-guide/creating-application/config-approval"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Protect Configuration | Devtron Docs"><meta data-rh="true" name="description" content="Introduction"><meta data-rh="true" property="og:description" content="Introduction"><link data-rh="true" rel="icon" href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/cms-assets/img/devtron-favicon.png"><link data-rh="true" rel="canonical" href="https://docs-test.devtron.ai/docs/user-guide/creating-application/config-approval"><link data-rh="true" rel="alternate" href="https://docs-test.devtron.ai/docs/user-guide/creating-application/config-approval" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs-test.devtron.ai/docs/user-guide/creating-application/config-approval" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Devtron Docs RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Devtron Docs Atom Feed">
+
+
+
+
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJY45WF21G"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-RJY45WF21G",{anonymize_ip:!0})</script>
+<link rel="preconnect" href="https://www.clarity.ms">
+<script>!function(t,e,n,c,s,a,r){t[n]=t[n]||function(){(t[n].q=t[n].q||[]).push(arguments)},(a=e.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/u0895xsvql",(r=e.getElementsByTagName(c)[0]).parentNode.insertBefore(a,r)}(window,document,"clarity","script")</script>
+
+
+<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.8fdf5883.css">
+<script src="/assets/js/runtime~main.060e21b2.js" defer="defer"></script>
+<script src="/assets/js/main.c05ebf3c.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/cms-assets/img/hlogos/devtron-logo-horizontal-dual.svg"><link rel="preload" as="image" href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/cms-assets/img/hlogos/devtron-logo-horizontal-white.svg"><link rel="preload" as="image" href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/cms-assets/img/hlogos/devtron-logo-horizontal-dual.svg" alt="Devtron Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/cms-assets/img/hlogos/devtron-logo-horizontal-white.svg" alt="Devtron Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a class="navbar__item navbar__link navbar-docs-link" href="/docs">Docs</a><a href="https://devtron.ai" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Website<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a href="https://preview.devtron.ai/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Sandbox<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current="page" class="navbar__link active" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/user-guide/creating-application/config-approval">2.0 🚧</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/docs/user-guide/creating-application/config-approval">2.0 🚧</a></li><li><a class="dropdown__link" href="/docs/devtron/v1.8/user-guide/creating-application/config-approval">1.8</a></li><li><a class="dropdown__link" href="/docs/devtron/v1.7/user-guide/creating-application/config-approval">1.7</a></li></ul></div><div class="navbarSearchContainer_dCNk"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div><a href="https://license.devtron.ai/dashboard" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link shimmer-button-freemium">Get Devtron Freemium<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a href="https://devtron.ai/contact-sales" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link shimmer-button-enterprise">Get Devtron Enterprise<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_x44X"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><span class="theme-doc-version-badge badge badge--secondary">Version: 2.0 🚧</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Protect Configuration</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction-">Introduction <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" class="enterprise-badge-img"></a><a href="#introduction-" class="hash-link" aria-label="Direct link to introduction-" title="Direct link to introduction-" translate="no">​</a></h2>
+<p>Since resources are created according to the configurations you enter, it&#x27;s essential to restrict such configurations from direct modifications. For critical environments like production, it becomes necessary to introduce an approval flow for any edits made to the configuration files.</p>
+<p>In Devtron, these configurations are present in the <strong>App Configuration</strong> tab of your application.</p>
+<p>Any changes made to the following configurations will require approval if enabled:</p>
+<ul>
+<li class="">Deployment Template</li>
+<li class="">ConfigMaps</li>
+<li class="">Secrets</li>
+</ul>
+<p>This stands true for both: base configuration and respective environment-level configuration.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/base-config.jpg" alt="Figure 1a: Protecting Base Configuration" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/env-config.jpg" alt="Figure 1b: Protecting Environment-level Configuration" class="img_ev3q"></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tutorial">Tutorial<a href="#tutorial" class="hash-link" aria-label="Direct link to Tutorial" title="Direct link to Tutorial" translate="no">​</a></h2>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/TVLEbY850hI" title="Protect Configuration and Approval" frameborder="0"></iframe></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="changing-the-configuration-values">Changing the Configuration Values<a href="#changing-the-configuration-values" class="hash-link" aria-label="Direct link to Changing the Configuration Values" title="Direct link to Changing the Configuration Values" translate="no">​</a></h2>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Only a super-admin, manager, and admin can edit the configuration values.</p></div></div>
+<p>Let&#x27;s assume you are the application admin and you wish to edit the deployment template of your environment (as an override).</p>
+<ol>
+<li class="">
+<p>Go to the <code>App Configuration</code> tab.</p>
+</li>
+<li class="">
+<p>In Environment Overrides → (choose your environment) → Deployment Template</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/edit-deployment-template.jpg" alt="Figure 2: Selecting Values to Change" class="img_ev3q"></p>
+</li>
+<li class="">
+<p>You can change the value of a key to a desired value as shown below. Once done, click the <strong>Save Changes…</strong> button.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/changed-values.jpg" alt="Figure 3: Changed Values" class="img_ev3q"></p>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>If you are not a super-admin, you cannot modify the locked keys in deployment template. Refer <a class="" href="/docs/user-guide/app-management/policies/lock-deployment-config">Lock Deployment Configuration</a> to know more.</p></div></div>
+<ol start="4">
+<li class="">
+<p>If the configuration is protected, your changes won&#x27;t be published right away. You can do either of the following:</p>
+<ul>
+<li class=""><strong>Save as draft</strong> : Selecting this option will save your file as a draft. You and other users can view and edit the saved draft and propose it further for approval.</li>
+<li class=""><strong>Save &amp; Propose Changes</strong> : Selecting this option will propose your changes to a configuration approver for a review.</li>
+</ul>
+<p>Since we are proposing the changes immediately, click <strong>Propose Changes</strong>.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/propose-changes.jpg" alt="Figure 4: Proposing Changes" class="img_ev3q"></p>
+</li>
+<li class="">
+<p>You can also view the approver(s) if you wish.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/approver-list-1.jpeg" alt="Figure 5: Viewing the Approver(s)" class="img_ev3q"></p>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>The one who performs the edits cannot approve their own changes. A different user has to review and approve.</p></div></div>
+<p>Only one draft can exist at time and you cannot create multiple drafts. In the top-right corner, you have the option to discard the draft if you don&#x27;t wish to proceed with the edits you made.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="approving-the-configuration">Approving the Configuration<a href="#approving-the-configuration" class="hash-link" aria-label="Direct link to Approving the Configuration" title="Direct link to Approving the Configuration" translate="no">​</a></h2>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Only a different super-admin user or someone (who is not amongst the editors of the draft), having <code>Configuration approver</code> access, can approve the changes made to the configuration files.</p></div></div>
+<p>Go to the edited configuration file to review and approve the changes as shown below.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/approval-screen.jpg" alt="Figure 6: Approving the Changes" class="img_ev3q"></p>
+<p>A super-admin can check whether a user has approval rights by going to <strong>Global Configurations</strong> → <strong>Authorization</strong> (dropdown) → <strong>User Permissions</strong>.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/config-approver-1.jpg" alt="Figure 7: Checking Permissions" class="img_ev3q"></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="deploying-with-new-configuration-values">Deploying with New Configuration Values<a href="#deploying-with-new-configuration-values" class="hash-link" aria-label="Direct link to Deploying with New Configuration Values" title="Direct link to Deploying with New Configuration Values" translate="no">​</a></h2>
+<p>Once the approver validates and approves your configuration changes, you can proceed to deploy your application with the updated configuration.</p>
+<ol>
+<li class="">
+<p>Go to the <strong>Build &amp; Deploy</strong> tab of your application.</p>
+</li>
+<li class="">
+<p>Click <strong>Select Image</strong> in the deployment flow.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/deploy-pipeline.jpg" alt="Figure 8: Build &amp; Deploy Page" class="img_ev3q"></p>
+</li>
+<li class="">
+<p>You can view an indicator at the bottom <code>Config Diff from Last Deployed</code>. Click <strong>Review</strong> to view the changes.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/review-config-diff.jpg" alt="Figure 9: Checking Config Diff" class="img_ev3q"></p>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>If the new configuration is not yet approved, the changes made to the config would not be visible during deployment, it would show <code>No Config Diff from Last Deployed</code> at the bottom. In that case, check whether your changes are present in the live config or not. If your changes are absent, chances are your draft is either pending for approval or rejected (discarded).</p></div></div>
+<ol start="4">
+<li class="">
+<p>Once you have verified the changes, you can click <strong>Deploy</strong>.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/deploy.jpg" alt="Figure 10: Deploying App using New Config" class="img_ev3q"></p>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>If you don&#x27;t wish to deploy with the new changes, you can choose <code>Last deployed config</code> from the available drop-down.</p></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="enablingdisabling-config-protection">Enabling/Disabling Config Protection<a href="#enablingdisabling-config-protection" class="hash-link" aria-label="Direct link to Enabling/Disabling Config Protection" title="Direct link to Enabling/Disabling Config Protection" translate="no">​</a></h2>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Only a super-admin can enable or disable the config protection.</p></div></div>
+<ol>
+<li class="">
+<p>Go to the <code>App Configuration</code> tab.</p>
+</li>
+<li class="">
+<p>Click <code>Protect Configuration</code>.</p>
+</li>
+<li class="">
+<p>Use the toggle button to enable the protection for the configuration of your choice (base/environment level). A protection badge would appear next to the chosen configuration.</p>
+</li>
+</ol>
+<p>Alternatively, unprotecting the configuration will lead to the discarding of unapproved drafts (if any).</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/toggle-protection.jpg" alt="Figure 11a: Disabling Protection" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/unprotect.jpg" alt="Figure 11b: Confirming Action" class="img_ev3q"></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction-" class="table-of-contents__link toc-highlight">Introduction <a></a></a></li><li><a href="#tutorial" class="table-of-contents__link toc-highlight">Tutorial</a></li><li><a href="#changing-the-configuration-values" class="table-of-contents__link toc-highlight">Changing the Configuration Values</a></li><li><a href="#approving-the-configuration" class="table-of-contents__link toc-highlight">Approving the Configuration</a></li><li><a href="#deploying-with-new-configuration-values" class="table-of-contents__link toc-highlight">Deploying with New Configuration Values</a></li><li><a href="#enablingdisabling-config-protection" class="table-of-contents__link toc-highlight">Enabling/Disabling Config Protection</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
+              <div style="text-align: center;">
+                <div style="margin-bottom: 1rem;">
+                  <a href="/" style="display: inline-block;">
+                    <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/cms-assets/img/hlogos/devtron-logo-horizontal-black.svg" alt="Devtron Logo" width="160" class="footer-logo light-mode-only">
+                    <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/cms-assets/img/hlogos/devtron-logo-horizontal-white.svg" alt="Devtron Logo" width="160" class="footer-logo dark-mode-only">
+                  </a>
+                </div>
+                <p class="footer-desc" style="margin: 1rem 0; font-size: 0.95rem;">
+                  Unlock the full value of K8s, and bridge the gap between development and operations team.
+                </p>
+                <div style="margin-bottom: 1rem;">
+                  <a href="https://discord.gg/jsRG5qx2gp" target="_blank" style="margin: 0 8px;">
+                    <img class="footer-icon" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/cms-assets/img/socials/discord.svg" alt="Join Discord" height="24">
+                  </a>
+                  <a href="https://github.com/devtron-labs/devtron" target="_blank" style="margin: 0 8px;">
+                    <img class="footer-icon" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/cms-assets/img/socials/github.svg" alt="GitHub" height="24">
+                  </a>
+                  <a href="https://linkedin.com/company/devtron-labs" target="_blank" style="margin: 0 8px;">
+                    <img class="footer-icon" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/cms-assets/img/socials/linkedin.svg" alt="LinkedIn" height="24">
+                  </a>
+                  <a href="https://x.com/DevtronL" target="_blank" style="margin: 0 8px;">
+                    <img class="footer-icon" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/cms-assets/img/socials/x.svg" alt="X" height="24">
+                  </a>
+                  <a href="https://devtron.ai/blog/" target="_blank" style="margin: 0 8px;">
+                    <img class="footer-icon" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/cms-assets/img/socials/blog.svg" alt="Devtron Blogs" height="24">
+                  </a>
+                </div>
+                <div style="margin-bottom: 1rem;">
+                  <a href="https://devtron.ai/privacy-policy" target="_blank" style="margin: 0 12px;">Privacy</a>
+                  <a href="https://devtron.ai/terms-of-use" target="_blank" style="margin: 0 12px;">Terms</a>
+                  <a href="https://devtron.ai/about" target="_blank" style="margin: 0 12px;">About Us</a>
+                </div>
+              </div>
+            </span></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Devtron Inc.</div></div></div></footer></div>
+</body>
+</html>
