@@ -485,13 +485,13 @@ html[data-theme='dark'] .markdown a:hover {
 }
 
 
+
 .video-wrapper {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 ratio */
-  padding-top: 25px;
-  height: 0;
-  margin: 2rem auto; /* centers the video block */
-  max-width: 85%; /* optional: keep video from stretching too wide */
+  aspect-ratio: 16 / 9; /* modern browsers handle ratio better */
+  margin: 1.5rem auto; /* reduced spacing */
+  max-width: 85%;
+  overflow: hidden;
 }
 
 .video-wrapper iframe {
@@ -500,8 +500,15 @@ html[data-theme='dark'] .markdown a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 4px; /* optional: rounded corners */
+  border: 0;
 }
+
+/* Reduce space between video and next text */
+.video-wrapper + * {
+  margin-top: 0.75rem !important;
+}
+
+
 
 .image-lightbox {
   position: fixed;

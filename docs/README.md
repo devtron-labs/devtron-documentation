@@ -10,6 +10,10 @@ Devtron is an open-source tool integration platform for Kubernetes. It is built 
 
 Devtron is like a control plane for the entire Kubernetes app lifecycle, where CI/CD, infrastructure provisioning, cost visibility, security, and debugging all meet in one unified interface.
 
+## Quick Walkthrough 
+
+<div class="video-wrapper"><iframe width="720" height="380" src="https://www.youtube.com/embed/XB31iE5LNKw" title="Devtron 2.0: Quick Walkthrough" frameborder="0" allowfullscreen></iframe></div>
+
 ---
 
 ## Why Devtron Exists

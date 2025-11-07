@@ -8,7 +8,9 @@ hide_table_of_contents: true
 
 Cost Visibility in Devtron provides a unified view of your Kubernetes infrastructure costs within the Devtron dashboard. It eliminates the need to switch between cloud provider billing consoles by bringing all cost insights into a single interface.
 
-![Figure 1: Cost Visibility Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/cost-visibility/cost-visibility-overview.jpg)
+<!-- ![Figure 1: Cost Visibility Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/cost-visibility/cost-visibility-overview.jpg) -->
+
+<div class="video-wrapper"><iframe width="720" height="380" src="https://www.youtube.com/embed/92ijeh99Umo" title="Devtron 2.0: Quick Walkthrough" frameborder="0" allowfullscreen></iframe></div>
 
 You can view and analyze costs across multiple scopes such as [Clusters](../../reference/glossary.md#cluster), [Projects](../global-configurations/projects.md), [Environments](../../reference/glossary.md#environment), [Applications](../../reference/glossary.md#devtron-apps), and Infrastructure Resources. Devtron automatically tracks the spend on CPU, Memory, Storage, and GPU, giving you a clear picture of how different resources contribute to your overall cost and where most of your spend is concentrated.
 
