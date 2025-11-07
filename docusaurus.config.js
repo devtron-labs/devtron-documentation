@@ -30,8 +30,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'ashokdevtron', // Usually your GitHub org/user name.
-  projectName: 'docs-devtron', // Usually your repo name.
+  organizationName: 'devtron-labs', // Usually your GitHub org/user name.
+  projectName: 'devtron-documentation', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   // onBrokenMarkdownLinks: 'warn',
