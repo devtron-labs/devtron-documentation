@@ -7,22 +7,19 @@ hide_table_of_contents: true
 ---
 
 The **Automation & Enablement** section in Devtron helps teams build automation pipelines beyond standard CI/CD workflows.  
-It enables job creation, configuration, and scheduling for routine operational tasks 
+It enables job creation, configuration, and scheduling for routine operational tasks.
 
 ## Table of Contents
 
-### [Jobs](../jobs/README.md)
-Understand how Devtron’s **Jobs** feature allows you to create and manage automated workflows and one-time tasks. Devtron Jobs are especially useful for automating scripts, infrastructure tasks, or recurring DevOps routines all executed within your existing Kubernetes environments.
-
-#### Key Topics
-* [Create Job](../jobs/create-job.md)  
-* [Configurations](../jobs/configurations/source-code-job.md)  
-  * [Source Code Job](../jobs/configurations/source-code-job.md)  
-  * [Workflow Editor for Job](../jobs/configurations/workflow-editor-job.md)  
-  * [ConfigMaps & Secrets](../jobs/configurations/configmap-secret/README.md)  
-    * [ConfigMap Job](../jobs/configurations/configmap-secret/configmap-job.md)  
-    * [Secret Job](../jobs/configurations/configmap-secret/secret-job.md)  
-  * [Environment Override Job](../jobs/configurations/environment-override-job.md)
-* [Triggering Job](../jobs/triggering-job.md)  
-* [Run History Job](../jobs/run-history-job.md)  
-* [Overview Job](../jobs/overview-job.md)
+* [Jobs](../jobs/README.md)
+  * [Create Job](../jobs/create-job.md)  
+  * [Configurations](../jobs/configurations/source-code-job.md)  
+    * [Source Code Job](../jobs/configurations/source-code-job.md)  
+    * [Workflow Editor for Job](../jobs/configurations/workflow-editor-job.md)  
+    * [ConfigMaps & Secrets](../jobs/configurations/configmap-secret/README.md)  
+      * [ConfigMap Job](../jobs/configurations/configmap-secret/configmap-job.md)  
+      * [Secret Job](../jobs/configurations/configmap-secret/secret-job.md)  
+    * [Environment Override Job](../jobs/configurations/environment-override-job.md)
+  * [Triggering Job](../jobs/triggering-job.md)  
+  * [Run History Job](../jobs/run-history-job.md)  
+  * [Overview Job](../jobs/overview-job.md)
