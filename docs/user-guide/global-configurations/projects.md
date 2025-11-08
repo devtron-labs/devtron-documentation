@@ -2,6 +2,7 @@
 id: projects
 title: Projects
 sidebar_label: Projects
+slug: /user-guide/app-management/projects
 hide_table_of_contents: true
 ---
 

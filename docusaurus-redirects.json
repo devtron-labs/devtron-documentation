@@ -131,7 +131,7 @@
               "/getting-started/global-configurations/projects",
               "/setup/global-configurations/projects"
             ],
-            "to": "/docs/user-guide/global-configurations/projects"
+            "to": "/docs/user-guide/app-management/projects"
           },
           {
             "from": [
@@ -302,7 +302,7 @@
               "/getting-started/global-configurations/image-promotion-policy",
               "/setup/global-configurations/image-promotion-policy"
             ],
-            "to": "/docs/user-guide/global-configurations/image-promotion-policy"
+            "to": "/docs/user-guide/app-management/policies/image-promotion-policy"
           },
           {
             "from": [
@@ -624,7 +624,7 @@
             "from": [
               "/global-configurations/projects"
             ],
-            "to": "/docs/user-guide/global-configurations/projects"
+            "to": "/docs/user-guide/app-management/projects"
           },
           {
             "from": [
@@ -816,7 +816,7 @@
             "from": [
               "/global-configurations/image-promotion-policy"
             ],
-            "to": "/docs/user-guide/global-configurations/image-promotion-policy"
+            "to": "/docs/user-guide/app-management/policies/image-promotion-policy"
           },
           {
             "from": [
@@ -5276,7 +5276,7 @@
               "/devtron/v2.0/getting-started/global-configurations/gitops",
               "/devtron/v2.0/setup/global-configurations/gitops"
             ],
-            "to": "/docs/user-guide/global-configurations/gitops"
+            "to": "/docs/user-guide/app-management/configurations/gitops"
           },
           {
             "from": [
@@ -5284,7 +5284,7 @@
               "/devtron/v2.0/global-configurations/custom-charts",
               "/devtron/v2.0/setup/global-configurations/custom-charts"
             ],
-            "to": "/docs/user-guide/global-configurations/deployment-charts"
+            "to": "/docs/user-guide/app-management/configurations/deployment-charts"
           },
           {
             "from": [
@@ -5299,21 +5299,21 @@
               "/devtron/v2.0/getting-started/global-configurations/external-links",
               "/devtron/v2.0/setup/global-configurations/external-links"
             ],
-            "to": "/docs/user-guide/global-configurations/external-links"
+            "to": "/docs/user-guide/app-management/configurations/external-links"
           },
           {
             "from": [
               "/devtron/v2.0/getting-started/global-configurations/projects",
               "/devtron/v2.0/setup/global-configurations/projects"
             ],
-            "to": "/docs/user-guide/global-configurations/projects"
+            "to": "/docs/user-guide/app-management/projects"
           },
           {
             "from": [
               "/devtron/v2.0/getting-started/global-configurations/manage-notification",
               "/devtron/v2.0/setup/global-configurations/manage-notification"
             ],
-            "to": "/docs/user-guide/global-configurations/manage-notification"
+            "to": "/docs/user-guide/app-management/configurations/manage-notification"
           },
           {
             "from": [
@@ -5328,7 +5328,7 @@
               "/devtron/v2.0/getting-started/global-configurations/git-accounts",
               "/devtron/v2.0/setup/global-configurations/git-accounts"
             ],
-            "to": "/docs/user-guide/global-configurations/git-accounts"
+            "to": "/docs/user-guide/app-management/configurations/git-accounts"
           },
           {
             "from": [
@@ -5343,7 +5343,7 @@
               "/devtron/v2.0/getting-started/global-configurations/chart-repo",
               "/devtron/v2.0/setup/global-configurations/chart-repo"
             ],
-            "to": "/docs/user-guide/global-configurations/chart-repo"
+            "to": "/docs/user-guide/app-management/configurations/chart-repo"
           },
           {
             "from": [
@@ -5449,49 +5449,49 @@
               "/devtron/v2.0/getting-started/global-configurations/scoped-variables",
               "/devtron/v2.0/setup/global-configurations/scoped-variables"
             ],
-            "to": "/docs/user-guide/global-configurations/scoped-variables"
+            "to": "/docs/user-guide/app-management/configurations/scoped-variables"
           },
           {
             "from": [
               "/devtron/v2.0/getting-started/global-configurations/pull-image-digest",
               "/devtron/v2.0/setup/global-configurations/pull-image-digest"
             ],
-            "to": "/docs/user-guide/global-configurations/pull-image-digest"
+            "to": "/docs/user-guide/app-management/policies/pull-image-digest"
           },
           {
             "from": [
               "/devtron/v2.0/getting-started/global-configurations/tags-policy",
               "/devtron/v2.0/setup/global-configurations/tags-policy"
             ],
-            "to": "/docs/user-guide/global-configurations/tags-policy"
+            "to": "/docs/user-guide/app-management/policies/tags-policy"
           },
           {
             "from": [
               "/devtron/v2.0/getting-started/global-configurations/lock-deployment-config",
               "/devtron/v2.0/setup/global-configurations/lock-deployment-config"
             ],
-            "to": "/docs/user-guide/global-configurations/lock-deployment-config"
+            "to": "/docs/user-guide/app-management/policies/lock-deployment-config"
           },
           {
             "from": [
               "/devtron/v2.0/getting-started/global-configurations/image-promotion-policy",
               "/devtron/v2.0/setup/global-configurations/image-promotion-policy"
             ],
-            "to": "/docs/user-guide/global-configurations/image-promotion-policy"
+            "to": "/docs/user-guide/app-management/policies/image-promotion-policy"
           },
           {
             "from": [
               "/devtron/v2.0/getting-started/global-configurations/filter-condition",
               "/devtron/v2.0/setup/global-configurations/filter-condition"
             ],
-            "to": "/docs/user-guide/global-configurations/filter-condition"
+            "to": "/docs/user-guide/app-management/policies/filter-condition"
           },
           {
             "from": [
               "/devtron/v2.0/getting-started/global-configurations/build-infra",
               "/devtron/v2.0/setup/global-configurations/build-infra"
             ],
-            "to": "/docs/user-guide/global-configurations/build-infra"
+            "to": "/docs/user-guide/app-management/configurations/build-infra"
           },
           {
             "from": [
@@ -5793,13 +5793,13 @@
             "from": [
               "/devtron/v2.0/global-configurations/gitops"
             ],
-            "to": "/docs/user-guide/global-configurations/gitops"
+            "to": "/docs/user-guide/app-management/configurations/gitops"
           },
           {
             "from": [
               "/devtron/v2.0/global-configurations/projects"
             ],
-            "to": "/docs/user-guide/global-configurations/projects"
+            "to": "/docs/user-guide/app-management/projects"
           },
           {
             "from": [
@@ -5811,7 +5811,7 @@
             "from": [
               "/devtron/v2.0/global-configurations/git-accounts"
             ],
-            "to": "/docs/user-guide/global-configurations/git-accounts"
+            "to": "/docs/user-guide/app-management/configurations/git-accounts"
           },
           {
             "from": [
@@ -5823,13 +5823,13 @@
             "from": [
               "/devtron/v2.0/global-configurations/chart-repo"
             ],
-            "to": "/docs/user-guide/global-configurations/chart-repo"
+            "to": "/docs/user-guide/app-management/configurations/chart-repo"
           },
           {
             "from": [
               "/devtron/v2.0/global-configurations/deployment-charts"
             ],
-            "to": "/docs/user-guide/global-configurations/deployment-charts"
+            "to": "/docs/user-guide/app-management/configurations/deployment-charts"
           },
           {
             "from": [
@@ -5919,31 +5919,31 @@
             "from": [
               "/devtron/v2.0/global-configurations/manage-notification"
             ],
-            "to": "/docs/user-guide/global-configurations/manage-notification"
+            "to": "/docs/user-guide/app-management/configurations/manage-notification"
           },
           {
             "from": [
               "/devtron/v2.0/global-configurations/application-template"
             ],
-            "to": "/docs/user-guide/global-configurations/application-template"
+            "to": "/docs/user-guide/app-management/application-template"
           },
           {
             "from": [
               "/devtron/v2.0/global-configurations/deployment-window"
             ],
-            "to": "/docs/user-guide/global-configurations/deployment-window"
+            "to": "/docs/user-guide/app-management/policies/deployment-window"
           },
           {
             "from": [
               "/devtron/v2.0/global-configurations/approval-policy"
             ],
-            "to": "/docs/user-guide/global-configurations/approval-policy"
+            "to": "/docs/user-guide/app-management/policies/approval-policy"
           },
           {
             "from": [
               "/devtron/v2.0/global-configurations/external-links"
             ],
-            "to": "/docs/user-guide/global-configurations/external-links"
+            "to": "/docs/user-guide/app-management/configurations/external-links"
           },
           {
             "from": [
@@ -5955,49 +5955,49 @@
             "from": [
               "/devtron/v2.0/global-configurations/scoped-variables"
             ],
-            "to": "/docs/user-guide/global-configurations/scoped-variables"
+            "to": "/docs/user-guide/app-management/configurations/scoped-variables"
           },
           {
             "from": [
               "/devtron/v2.0/global-configurations/plugin-policy"
             ],
-            "to": "/docs/user-guide/global-configurations/plugin-policy"
+            "to": "/docs/user-guide/app-management/policies/plugin-policy"
           },
           {
             "from": [
               "/devtron/v2.0/global-configurations/pull-image-digest"
             ],
-            "to": "/docs/user-guide/global-configurations/pull-image-digest"
+            "to": "/docs/user-guide/app-management/policies/pull-image-digest"
           },
           {
             "from": [
               "/devtron/v2.0/global-configurations/tags-policy"
             ],
-            "to": "/docs/user-guide/global-configurations/tags-policy"
+            "to": "/docs/user-guide/app-management/policies/tags-policy"
           },
           {
             "from": [
               "/devtron/v2.0/global-configurations/filter-condition"
             ],
-            "to": "/docs/user-guide/global-configurations/filter-condition"
+            "to": "/docs/user-guide/app-management/policies/filter-condition"
           },
           {
             "from": [
               "/devtron/v2.0/global-configurations/lock-deployment-config"
             ],
-            "to": "/docs/user-guide/global-configurations/lock-deployment-config"
+            "to": "/docs/user-guide/app-management/policies/lock-deployment-config"
           },
           {
             "from": [
               "/devtron/v2.0/global-configurations/image-promotion-policy"
             ],
-            "to": "/docs/user-guide/global-configurations/image-promotion-policy"
+            "to": "/docs/user-guide/app-management/policies/image-promotion-policy"
           },
           {
             "from": [
               "/devtron/v2.0/global-configurations/build-infra"
             ],
-            "to": "/docs/user-guide/global-configurations/build-infra"
+            "to": "/docs/user-guide/app-management/configurations/build-infra"
           },
           {
             "from": [
