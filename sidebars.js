@@ -282,19 +282,6 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Chart Store',
-          collapsed: true,
-          link: {
-            type: 'doc', // or 'generated-index'
-            id: 'user-guide/deploy-chart/README',
-          },
-          items: [
-            'user-guide/deploy-chart/deployment-of-charts',
-            'user-guide/deploy-chart/chart-group',
-          ],
-        },
-        {
-          type: 'category',
           label: 'Resource Browser',
           collapsed: true,
           link: {
