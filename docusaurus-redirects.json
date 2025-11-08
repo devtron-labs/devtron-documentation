@@ -84,6 +84,13 @@
           },
           {
             "from": [
+              "/user-guide/ai-recommendations/runbook"
+            ],
+            "to": "/docs/user-guide/ai-recommendations/runbook"
+          },
+
+          {
+            "from": [
               "/getting-started/global-configurations",
               "/setup/global-configurations"
             ],
