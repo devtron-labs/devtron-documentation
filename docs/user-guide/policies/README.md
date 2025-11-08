@@ -31,9 +31,9 @@ Enforce the presence of tag before application creation or before deployment to 
 ### 6. [Filter Condition](../global-configurations/filter-condition.md)
 Apply conditional logic to determine which images should be eligible for deployment after the CI stage.
 
-### 7. [Image Promotion](../global-configurations/image-promotion-policy.md)
-Promote verified builds between deployment pipelines (e.g., from staging to production) by skipping intermediate pipelines.
-
-### 8. [Lock Deployment Config](../global-configurations/lock-deployment-config.md)
+### 7. [Lock Deployment Config](../global-configurations/lock-deployment-config.md)
 Lock down deployment configurations to prevent unauthorized modifications or accidental changes to critical base configurations or environment configurations.
+
+### 8. [Image Promotion](../global-configurations/image-promotion-policy.md)
+Promote verified builds between deployment pipelines (e.g., from staging to production) by skipping intermediate pipelines.
 

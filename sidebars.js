@@ -76,7 +76,7 @@ const sidebars = {
         // Applications top
         {
           type: 'category',
-          label: 'Applications',
+          label: 'Devtron Applications',
           collapsed: true,
           link: {
             type: 'doc', // or 'generated-index'
@@ -89,7 +89,7 @@ const sidebars = {
             // App Configuration nested
             {
               type: 'category',
-              label: 'App Configuration',
+              label: 'App Configurations',
               collapsed: true,
               link: {
                 type: 'doc', // or 'generated-index'
@@ -207,22 +207,6 @@ const sidebars = {
 
         // Application Groups
         'user-guide/application-groups',
-
-        // Chart Store section
-        {
-          type: 'category',
-          label: 'Chart Store',
-          collapsed: true,
-          link: {
-            type: 'doc', // or 'generated-index'
-            id: 'user-guide/deploy-chart/README',
-          },
-          items: [
-            'user-guide/deploy-chart/deployment-of-charts',
-            'user-guide/deploy-chart/chart-group',
-          ],
-        },
-
         'user-guide/bulk-update',
         'user-guide/global-configurations/application-template',
         'user-guide/global-configurations/projects',
@@ -239,6 +223,7 @@ const sidebars = {
           items: [
             'user-guide/global-configurations/gitops',
             'user-guide/global-configurations/git-accounts',
+            'user-guide/global-configurations/external-links',
             'user-guide/global-configurations/chart-repo',
             'user-guide/global-configurations/deployment-charts',
             'user-guide/global-configurations/manage-notification',
@@ -262,8 +247,8 @@ const sidebars = {
             'user-guide/global-configurations/pull-image-digest',
             'user-guide/global-configurations/tags-policy',
             'user-guide/global-configurations/filter-condition',
-            'user-guide/global-configurations/image-promotion-policy',
             'user-guide/global-configurations/lock-deployment-config',
+            'user-guide/global-configurations/image-promotion-policy',
           ]
         },
       ],
@@ -280,6 +265,34 @@ const sidebars = {
       },
       items: [
         'user-guide/infra-management/infrastructure-overview',
+        'user-guide/infra-management/other-applications',
+        // Chart Store section
+        {
+          type: 'category',
+          label: 'Chart Store',
+          collapsed: true,
+          link: {
+            type: 'doc', // or 'generated-index'
+            id: 'user-guide/deploy-chart/README',
+          },
+          items: [
+            'user-guide/deploy-chart/deployment-of-charts',
+            'user-guide/deploy-chart/chart-group',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Chart Store',
+          collapsed: true,
+          link: {
+            type: 'doc', // or 'generated-index'
+            id: 'user-guide/deploy-chart/README',
+          },
+          items: [
+            'user-guide/deploy-chart/deployment-of-charts',
+            'user-guide/deploy-chart/chart-group',
+          ],
+        },
         {
           type: 'category',
           label: 'Resource Browser',
@@ -438,6 +451,7 @@ const sidebars = {
       },
       items: [
         'user-guide/ai-recommendations/notifications',
+        'user-guide/ai-recommendations/runbook',
       ],
     },
 

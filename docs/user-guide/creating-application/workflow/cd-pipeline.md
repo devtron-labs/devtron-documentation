@@ -380,7 +380,7 @@ If you already use external Helm or Argo CD for deployment and wish to try out D
 * Your Helm release must use the same chart type as your application. If needed, you can upload or select the appropriate chart in **Application Management** → **Configurations** → **Deployment Charts**, then save the chart type at [base configuration](../base-config/deployment-template.md) of your application.
 :::
 
-You can not only [view your external Helm apps](../../applications.md#view-external-helm-app-listing), but also manage their deployments using Devtron's CI/CD. 
+You can not only [view your external Helm apps](../../infra-management/other-applications.md#view-external-helm-app-listing), but also manage their deployments using Devtron's CI/CD. 
 
 1. Click **Helm Release** in 'Select type of application to migrate'.
 
@@ -409,7 +409,7 @@ This feature comes with certain mentioned limitations and expectations. If your 
 
 ### Migrate Argo CD Application
 
-You can not only [view your external Argo CD apps](../../applications.md#view-external-argocd-app-listing), but also manage their deployments using Devtron's CI/CD.
+You can not only [view your external Argo CD apps](../../infra-management/other-applications.md#view-external-argocd-app-listing), but also manage their deployments using Devtron's CI/CD.
 
 :::caution Prerequisites
 * Your app should be an Argo Helm app ([read about supported tools](https://argo-cd.readthedocs.io/en/stable/user-guide/application_sources/)).
@@ -458,7 +458,7 @@ If you have configured [GitOps](../gitops-config.md) for your external Argo apps
 
 ### Migrate Flux CD Application
 
-You can not only [view your external Flux CD apps](../../applications.md#view-external-fluxcd-app-listing), but also manage their deployments using Devtron's CI/CD.
+You can not only [view your external Flux CD apps](../../infra-management/other-applications.md#view-external-fluxcd-app-listing), but also manage their deployments using Devtron's CI/CD.
 
 :::caution Prerequisites
  * Your app should be a Flux Helm release.

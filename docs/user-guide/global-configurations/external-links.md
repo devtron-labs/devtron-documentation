@@ -1,3 +1,10 @@
+---
+id: external-links
+title: External Links
+sidebar_label: External Links
+slug: /user-guide/app-management/configurations/external-links
+---
+
 # External Links
 
 External Links allow you to connect to the third-party applications within your Devtron dashboard for seamlessly monitoring/debugging/logging/analyzing your applications. You can select from the pre-defined third-party applications such as `Grafana` to link to your application for quick access.

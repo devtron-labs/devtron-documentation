@@ -117,7 +117,7 @@
               "/getting-started/global-configurations/external-links",
               "/setup/global-configurations/external-links"
             ],
-            "to": "/docs/user-guide/global-configurations/external-links"
+            "to": "/docs/user-guide/app-management/configurations/external-links"
           },
           {
             "from": [
@@ -761,7 +761,7 @@
             "from": [
               "/global-configurations/external-links"
             ],
-            "to": "/docs/user-guide/global-configurations/external-links"
+            "to": "/docs/user-guide/app-management/configurations/external-links"
           },
           {
             "from": [

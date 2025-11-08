@@ -1,11 +1,9 @@
 ---
 id: manage-notification
-title: Manage Notifications
-sidebar_label: Manage Notifications
+title: Notifications
+sidebar_label: Notifications
 slug: /user-guide/app-management/configurations/manage-notification
 ---
-
-# Manage Notifications
 
 ## Introduction
 
