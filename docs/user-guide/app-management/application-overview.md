@@ -80,11 +80,11 @@ The meaning for each color vary slightly across different metrics, reflecting ho
 |  | 🟨 **Medium** | Moderately active pipelines | Deployed between once per week and once per month | 1 per week – 1 per month |
 |  | 🟥 **Low** | Infrequently deployed pipelines | Deployed between once per month and once per 6 months | 1 per month – 1 per 6 months |
 | **Mean Lead Time** | 🟪 **Elite** | Top performing pipelines | Mean lead time is less than 1 day | < 1 day |
-|  | 🟩 **High** | High-performing pipelines | Mean lead time is between 1 day and 1 week | 1 day – 1 week |
-|  | 🟨 **Medium** | Moderately efficient pipelines | Mean lead time is between 1 week and 1 month | 1 week – 1 month |
-|  | 🟥 **Low** | Slow pipelines | Mean lead time is between 1 day and 6 months | 1 day – 6 months |
-| **Change Failure Rate** | 🟪 **Elite** | Top performing pipelines | Change failure rate is between 0–15% | 0–15% |
-|  | 🟩 **High** | High-performing pipelines | Change failure rate is between 16–30% | 16–30% |
+|  | 🟩 **High** | High-performing pipelines | Mean lead time is between 1 day and 1 week | 1 day - 1 week |
+|  | 🟨 **Medium** | Moderately efficient pipelines | Mean lead time is between 1 week and 1 month | 1 week - 1 month |
+|  | 🟥 **Low** | Slow pipelines | Mean lead time is between 1 day and 6 months | 1 day - 6 months |
+| **Change Failure Rate** | 🟪 **Elite** | Top performing pipelines | Change failure rate is between 0-15% | 0-15% |
+|  | 🟩 **High** | High-performing pipelines | Change failure rate is between 16-30% | 16-30% |
 |  | 🟨 **Medium** | Moderately stable pipelines | Change failure rate is between 31–45% | 31–45% |
 |  | 🟥 **Low** | Unstable pipelines | Change failure rate is between 46–60% | 46–60% |
 | **Mean Time to Recovery (MTTR)** | 🟪 **Elite** | Top performing pipelines | Mean time to recovery is less than 1 hour | < 1 hour |

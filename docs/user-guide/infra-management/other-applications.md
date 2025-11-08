@@ -7,7 +7,7 @@ Devtron also shows all other apps available in your clusters. The apps are segre
 * [ArgoCD Apps](../../reference/glossary.md#argocd-apps)
 * [FluxCD Apps](../../reference/glossary.md#fluxcd-apps)
 
-![Figure 1: App Types](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/app-types.jpg)
+![Figure 1: App Types](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/other-app-listing.gif)
 
 ---
 

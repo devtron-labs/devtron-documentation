@@ -94,7 +94,7 @@ helm install devtron devtron/devtron-operator \
 ```
 
 :::info How much time does it take for installation?
-It usually takes 5–15 minutes to spin up all Devtron microservices (depending on your installation option).
+It usually takes 5-15 minutes to spin up all Devtron microservices (depending on your installation option).
 
 You may check the status by running the command below. If the output is `Applied`, Devtron is installed.
 

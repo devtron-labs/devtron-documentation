@@ -19,7 +19,7 @@ Devtron is like a control plane for the entire Kubernetes app lifecycle, where C
 ## Why Devtron Exists
 
 Kubernetes is powerful but complex.  
-Organizations often end up juggling 8–12 different tools just to achieve visibility, deployments, and governance. Devtron bridges these gaps by integrating all critical DevOps capabilities into a single coherent experience, without forcing teams to change their existing toolchains.
+Organizations often end up juggling 8-12 different tools just to achieve visibility, deployments, and governance. Devtron bridges these gaps by integrating all critical DevOps capabilities into a single coherent experience, without forcing teams to change their existing toolchains.
 
 With Devtron, you can:
 
@@ -53,11 +53,11 @@ Here’s how you can explore Devtron step-by-step through this documentation:
 
 ## What Makes Devtron Unique
 
-* **Unified DevOps Hub** – Bring CI/CD, observability, cost, and security into one dashboard.  
-* **Deep Kubernetes Integration** – Works seamlessly with Helm, ArgoCD, Prometheus, Grafana, and more.  
-* **Developer-Friendly UI** – No need to memorize kubectl commands because every operation is visual and intuitive.  
-* **Enterprise-Ready** – Built-in RBAC, audit logs, SSO, and multi-cluster management.  
-* **AI-Augmented Decisions** – Get smart recommendations to debug faster and deploy confidently.
+* **Unified DevOps Hub** - Bring CI/CD, observability, cost, and security into one dashboard.  
+* **Deep Kubernetes Integration** - Works seamlessly with Helm, ArgoCD, Prometheus, Grafana, and more.  
+* **Developer-Friendly UI** - No need to memorize kubectl commands because every operation is visual and intuitive.  
+* **Enterprise-Ready** - Built-in RBAC, audit logs, SSO, and multi-cluster management.  
+* **AI-Augmented Decisions** - Get smart recommendations to debug faster and deploy confidently.
 
 ---
 

@@ -360,6 +360,7 @@ const sidebars = {
         id: 'user-guide/security-features',
       },
       items: [
+        'user-guide/security-features/security-overview',
         'user-guide/security-features/security-scans',
         'user-guide/security-features/security-policies',
       ],

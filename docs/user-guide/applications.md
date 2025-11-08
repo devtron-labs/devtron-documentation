@@ -5,9 +5,9 @@ title: Applications
 
 # Applications
 
-:::caution 
+<!-- :::caution 
 Configure [Global Configurations](./global-configurations/README.md) first before creating an application or cloning an existing application.
-:::
+::: -->
 
 ## Introduction
 
@@ -21,7 +21,7 @@ The **Applications** page helps you create and manage your microservices, and it
 
 You can view the app name, its status, environment, namespace, and many more upfront.
 
-![Figure 1: App Types](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/app-types.jpg)
+![Figure 1: App Types](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/creating-application/app-listing-page.jpg)
 
 ### Create Button
 
