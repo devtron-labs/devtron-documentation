@@ -476,11 +476,11 @@ html[data-theme='dark'] .theme-doc-sidebar-item-category-level-1>.menu__list-ite
 }
 
 html[data-theme='dark'] .markdown a {
-  color: #58a6ff; 
+  color: #53b7d2; 
 }
 
 html[data-theme='dark'] .markdown a:hover {
-  color: #58a6ff; 
+  color: #53b7d2; 
   text-decoration: underline;
 }
 
@@ -882,3 +882,53 @@ html[data-theme='dark'] .theme-tabs-container .tabs__item--active {
     overflow-x: visible !important;
   }
 }
+
+
+/* Fix for dark mode table header contrast */
+/* html[data-theme='dark'] .theme-doc-markdown table thead th,
+html[data-theme='dark'] .theme-doc-markdown table thead td {
+  background-color: #2B1F1E !important;
+  color: var(--ifm-font-color-base) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-weight: 600;
+}
+
+
+/* =======================
+   FIX TABLE STRIPING + HEADER CONTRAST
+   ======================= */
+
+/* --- Light Mode (clean, flat table) --- */
+html[data-theme='light'] .theme-doc-markdown table thead th,
+html[data-theme='light'] .theme-doc-markdown table thead td {
+  background-color: #f7f7f7; /* soft neutral header */
+  color: #111;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  font-weight: 600;
+}
+
+html[data-theme='light'] .theme-doc-markdown table tbody tr,
+html[data-theme='light'] .theme-doc-markdown table tbody tr:nth-child(odd),
+html[data-theme='light'] .theme-doc-markdown table tbody tr:nth-child(even),
+html[data-theme='light'] .theme-doc-markdown table tbody td {
+  background-color: #fff !important;
+  color: var(--ifm-font-color-base);
+}
+
+/* --- Dark Mode (remove zebra + better header contrast) --- */
+html[data-theme='dark'] .theme-doc-markdown table thead th,
+html[data-theme='dark'] .theme-doc-markdown table thead td {
+  background-color: #2B1F1E !important;
+  color: var(--ifm-font-color-base) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-weight: 600;
+}
+
+html[data-theme='dark'] .theme-doc-markdown table tbody tr,
+html[data-theme='dark'] .theme-doc-markdown table tbody tr:nth-child(odd),
+html[data-theme='dark'] .theme-doc-markdown table tbody tr:nth-child(even),
+html[data-theme='dark'] .theme-doc-markdown table tbody td {
+  background-color: transparent !important;
+  color: var(--ifm-font-color-base) !important;
+}
+
