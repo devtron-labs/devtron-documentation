@@ -113,7 +113,7 @@ const config = {
     [
       require.resolve('@gracefullight/docusaurus-plugin-microsoft-clarity'),
       { 
-        projectId: 'u0895xsvql' 
+        projectId: 's4gie6k444' 
       },
     ],
 
