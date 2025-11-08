@@ -18,8 +18,8 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.4d2f9f7f.css">
-<script src="/assets/js/runtime~main.ba529e99.js" defer="defer"></script>
-<script src="/assets/js/main.c05ebf3c.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.812479fd.js" defer="defer"></script>
+<script src="/assets/js/main.1d7e5342.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -41,7 +41,7 @@
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="argocd-apps">ArgoCD Apps<a href="#argocd-apps" class="hash-link" aria-label="Direct link to ArgoCD Apps" title="Direct link to ArgoCD Apps" translate="no">​</a></h3>
 <p>ArgoCD Apps are the micro-services deployed using a <a href="#gitops" class="">GitOps</a> deployment tool named <a href="https://argo-cd.readthedocs.io/en/stable/" target="_blank" rel="noopener noreferrer" class="">Argo CD</a>.</p>
-<p>If ArgoCD applications are present in your cluster, they will appear in the <a class="" href="/docs/user-guide/applications#enabling-argocd-app-listing">ArgoCD Apps listing</a>.</p>
+<p>If ArgoCD applications are present in your cluster, they will appear in the <a class="" href="/docs/user-guide/infra-management/other-applications#enabling-argocd-app-listing">ArgoCD Apps listing</a>.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="deployment-template">Deployment Template<a href="#deployment-template" class="hash-link" aria-label="Direct link to Deployment Template" title="Direct link to Deployment Template" translate="no">​</a></h3>
 <p>A deployment template is a manifest of the application defining its runtime behavior. You can select one of the default deployment charts or custom deployment charts created by super-admin.</p>
 <p>It’s a single entry point for you to enter the values, so that when the application is deployed your filled values go to the respective template files (YAML), and accordingly the resources would be created.</p>
@@ -96,10 +96,10 @@
 <p>Your application can have different deployment configurations for respective environments. For e.g., the number of <a href="#replicaset" class="">ReplicaSet</a> could be 2 for staging environment, whereas it could be 5 for production.</p>
 <p>Similarly, the CPU and memory resources can be different for each environment. This is possible through Environment Overrides. <a class="" href="/docs/user-guide/creating-application/environment-overrides">Read More...</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="external-links">External Links<a href="#external-links" class="hash-link" aria-label="Direct link to External Links" title="Direct link to External Links" translate="no">​</a></h3>
-<p>You can add external links related to the application. For e.g., you can add Prometheus, Grafana, and many more to your application by going to Application Management → Configurations → External Links. <a class="" href="/docs/user-guide/global-configurations/external-links">Read More...</a></p>
+<p>You can add external links related to the application. For e.g., you can add Prometheus, Grafana, and many more to your application by going to Application Management → Configurations → External Links. <a class="" href="/docs/user-guide/app-management/configurations/external-links">Read More...</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fluxcd-apps">FluxCD Apps<a href="#fluxcd-apps" class="hash-link" aria-label="Direct link to FluxCD Apps" title="Direct link to FluxCD Apps" translate="no">​</a></h3>
 <p>FluxCD Apps are the micro-services deployed using a <a href="#gitops" class="">GitOps</a> deployment tool named <a href="https://fluxcd.io/" target="_blank" rel="noopener noreferrer" class="">Flux CD</a>.</p>
-<p>If FluxCD applications are present in your cluster, they will appear in the <a class="" href="/docs/user-guide/applications#view-external-fluxcd-app-listing">FluxCD Apps listing</a>.</p>
+<p>If FluxCD applications are present in your cluster, they will appear in the <a class="" href="/docs/user-guide/infra-management/other-applications#view-external-fluxcd-app-listing">FluxCD Apps listing</a>.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="gitops">GitOps<a href="#gitops" class="hash-link" aria-label="Direct link to GitOps" title="Direct link to GitOps" translate="no">​</a></h3>
 <p>A methodology for managing and automating Kubernetes deployments using Git repositories as the source of truth. Changes to the desired state of the cluster are driven by Git commits. <a class="" href="/docs/user-guide/app-management/configurations/gitops">Read More...</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="helm-apps">Helm Apps<a href="#helm-apps" class="hash-link" aria-label="Direct link to Helm Apps" title="Direct link to Helm Apps" translate="no">​</a></h3>
