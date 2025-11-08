@@ -61,19 +61,6 @@ Here’s how you can explore Devtron step-by-step through this documentation:
 
 ---
 
-## At a Glance
-
-| Capability | Description |
-|-------------|-------------|
-| **CI/CD** | Manage continuous integration and deployment pipelines visually. |
-| **Helm Apps** | Deploy and debug existing Helm charts directly from the UI. |
-| **Monitoring** | Get integrated observability with prebuilt dashboards. |
-| **Cost Analysis** | Understand where your cloud spend goes within clusters. |
-| **Security** | Scan images, enforce policies, and prevent risky deployments. |
-| **AI Recommendations** | Identify anomalies and fix issues faster using AI. |
-
----
-
 ## Who Is Devtron For?
 
 * **Developers** - who want fast, reliable deployments without losing control.  
