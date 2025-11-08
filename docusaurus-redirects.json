@@ -666,7 +666,7 @@
             "from": [
               "/global-configurations/authorization/sso-login"
             ],
-            "to": "/docs"
+            "to": "/docs/user-guide/global-configurations/sso-login"
           },
           {
             "from": [
@@ -2391,7 +2391,7 @@
             "from": [
               "/devtron/v1.7/global-configurations/authorization/sso-login"
             ],
-            "to": "/docs/devtron/v1.7"
+            "to": "/docs/devtron/v1.7/user-guide/global-configurations/sso-login"
           },
           {
             "from": [
@@ -4116,7 +4116,7 @@
             "from": [
               "/devtron/v1.8/global-configurations/authorization/sso-login"
             ],
-            "to": "/docs/devtron/v1.8"
+            "to": "/docs/devtron/v1.8/user-guide/global-configurations/sso-login"
           },
           {
             "from": [
@@ -5190,7 +5190,7 @@
             "from": [
               "/devtron/v2.0/setup"
             ],
-            "to": "/docs/devtron/v1.8"
+            "to": "/docs"
           },
           {
             "from": [
@@ -5757,7 +5757,7 @@
             "from": [
               "/devtron/v2.0/getting-started"
             ],
-            "to": "/docs/devtron/v1.8"
+            "to": "/docs"
           },
           {
             "from": [
@@ -5841,7 +5841,7 @@
             "from": [
               "/devtron/v2.0/global-configurations/authorization/sso-login"
             ],
-            "to": "/docs/devtron/v1.8"
+            "to": "/docs/user-guide/global-configurations/sso-login"
           },
           {
             "from": [
@@ -6908,6 +6908,1731 @@
           {
             "from": [
               "/devtron/v2.0/resources/uninstall-devtron"
+            ],
+            "to": "/docs/setup/install/uninstall-devtron"
+          },   
+          {
+            "from": [
+              "/docs/devtron/v2.0/setup"
+            ],
+            "to": "/docs"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/setup/install"
+            ],
+            "to": "/docs/setup/install"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/setup/install/install-devtron-with-cicd"
+            ],
+            "to": "/docs/setup/install/install-devtron"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/setup/install/install-devtron"
+            ],
+            "to": "/docs/setup/install/install-devtron"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/setup/install/installation-configuration"
+            ],
+            "to": "/docs/setup/install/installation-configuration"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/setup/install/override-default-devtron-installation-configs"
+            ],
+            "to": "/docs/setup/install/override-default-devtron-installation-configs"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/setup/install/ingress-setup"
+            ],
+            "to": "/docs/setup/install/ingress-setup"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/setup/upgrade"
+            ],
+            "to": "/docs/setup/upgrade"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/setup/upgrade/upgrade-devtron-ui"
+            ],
+            "to": "/docs/setup/upgrade/upgrade-devtron-ui"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/setup/upgrade/devtron-upgrade-0.4.x-0.4.x"
+            ],
+            "to": "/docs/setup/upgrade/devtron-upgrade-0.4.x-0.4.x"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/setup/upgrade/devtron-upgrade-0.3.x-0.4.x"
+            ],
+            "to": "/docs/setup/upgrade/devtron-upgrade-0.3.x-0.4.x"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/setup/upgrade/devtron-upgrade-0.3.x-0.3.x"
+            ],
+            "to": "/docs/setup/upgrade/devtron-upgrade-0.3.x-0.3.x"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/setup/upgrade/devtron-upgrade-0.2.x-0.3.x"
+            ],
+            "to": "/docs/setup/upgrade/devtron-upgrade-0.2.x-0.3.x"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations",
+              "/docs/devtron/v2.0/setup/global-configurations"
+            ],
+            "to": "/docs/user-guide/global-configurations"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/gitops",
+              "/docs/devtron/v2.0/setup/global-configurations/gitops"
+            ],
+            "to": "/docs/user-guide/app-management/configurations/gitops"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/custom-charts",
+              "/docs/devtron/v2.0/global-configurations/custom-charts",
+              "/docs/devtron/v2.0/setup/global-configurations/custom-charts"
+            ],
+            "to": "/docs/user-guide/app-management/configurations/deployment-charts"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/authorization/user-access",
+              "/docs/devtron/v2.0/setup/global-configurations/authorization/user-access",
+              "/docs/devtron/v2.0/setup/global-configurations/user-access"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/user-access"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/external-links",
+              "/docs/devtron/v2.0/setup/global-configurations/external-links"
+            ],
+            "to": "/docs/user-guide/app-management/configurations/external-links"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/projects",
+              "/docs/devtron/v2.0/setup/global-configurations/projects"
+            ],
+            "to": "/docs/user-guide/app-management/projects"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/manage-notification",
+              "/docs/devtron/v2.0/setup/global-configurations/manage-notification"
+            ],
+            "to": "/docs/user-guide/app-management/configurations/manage-notification"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/sso-login",
+              "/docs/devtron/v2.0/global-configurations/sso-login",
+              "/docs/devtron/v2.0/setup/global-configurations/sso-login"
+            ],
+            "to": "/docs/user-guide/global-configurations/sso-login"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/git-accounts",
+              "/docs/devtron/v2.0/setup/global-configurations/git-accounts"
+            ],
+            "to": "/docs/user-guide/app-management/configurations/git-accounts"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/container-registries",
+              "/docs/devtron/v2.0/getting-started/global-configurations/docker-registries",
+              "/docs/devtron/v2.0/setup/global-configurations/docker-registries"
+            ],
+            "to": "/docs/user-guide/global-configurations/container-registries"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/chart-repo",
+              "/docs/devtron/v2.0/setup/global-configurations/chart-repo"
+            ],
+            "to": "/docs/user-guide/app-management/configurations/chart-repo"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/cluster-and-environments",
+              "/docs/devtron/v2.0/setup/global-configurations/cluster-and-environments"
+            ],
+            "to": "/docs/user-guide/global-configurations/cluster-and-environments"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/authorization",
+              "/docs/devtron/v2.0/setup/global-configurations/authorization"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/authorization/permission-groups",
+              "/docs/devtron/v2.0/setup/global-configurations/authorization/permission-groups"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/permission-groups"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/authorization/api-tokens",
+              "/docs/devtron/v2.0/global-configurations/api-token",
+              "/docs/devtron/v2.0/setup/global-configurations/authorization/api-tokens"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/api-tokens"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/host-url",
+              "/docs/devtron/v2.0/setup/global-configurations/host-url"
+            ],
+            "to": "/docs/user-guide/global-configurations/host-url"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/authorization/sso/google",
+              "/docs/devtron/v2.0/setup/global-configurations/authorization/sso/google"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/google"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/authorization/sso/github",
+              "/docs/devtron/v2.0/setup/global-configurations/authorization/sso/github"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/github"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/authorization/sso/gitlab",
+              "/docs/devtron/v2.0/setup/global-configurations/authorization/sso/gitlab"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/gitlab"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/authorization/sso/microsoft",
+              "/docs/devtron/v2.0/setup/global-configurations/authorization/sso/microsoft"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/microsoft"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/authorization/sso/ldap",
+              "/docs/devtron/v2.0/setup/global-configurations/authorization/sso/ldap"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/ldap"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/authorization/sso/oidc",
+              "/docs/devtron/v2.0/setup/global-configurations/authorization/sso/oidc"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/oidc"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/authorization/sso/openshift",
+              "/docs/devtron/v2.0/setup/global-configurations/authorization/sso/openshift"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/openshift"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/okta",
+              "/docs/devtron/v2.0/setup/global-configurations/okta"
+            ],
+            "to": "/docs/user-guide/global-configurations/sso-login"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/catalog-framework",
+              "/docs/devtron/v2.0/setup/global-configurations/catalog-framework"
+            ],
+            "to": "/docs/user-guide/global-configurations/catalog-framework"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/scoped-variables",
+              "/docs/devtron/v2.0/setup/global-configurations/scoped-variables"
+            ],
+            "to": "/docs/user-guide/app-management/configurations/scoped-variables"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/pull-image-digest",
+              "/docs/devtron/v2.0/setup/global-configurations/pull-image-digest"
+            ],
+            "to": "/docs/user-guide/app-management/policies/pull-image-digest"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/tags-policy",
+              "/docs/devtron/v2.0/setup/global-configurations/tags-policy"
+            ],
+            "to": "/docs/user-guide/app-management/policies/tags-policy"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/lock-deployment-config",
+              "/docs/devtron/v2.0/setup/global-configurations/lock-deployment-config"
+            ],
+            "to": "/docs/user-guide/app-management/policies/lock-deployment-config"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/image-promotion-policy",
+              "/docs/devtron/v2.0/setup/global-configurations/image-promotion-policy"
+            ],
+            "to": "/docs/user-guide/app-management/policies/image-promotion-policy"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/filter-condition",
+              "/docs/devtron/v2.0/setup/global-configurations/filter-condition"
+            ],
+            "to": "/docs/user-guide/app-management/policies/filter-condition"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/global-configurations/build-infra",
+              "/docs/devtron/v2.0/setup/global-configurations/build-infra"
+            ],
+            "to": "/docs/user-guide/app-management/configurations/build-infra"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/creating-application"
+            ],
+            "to": "/docs/user-guide/create-application"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/creating-application/git-material"
+            ],
+            "to": "/docs/user-guide/creating-application/git-material"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/creating-application/docker-build-configuration"
+            ],
+            "to": "/docs/user-guide/creating-application/docker-build-configuration"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/creating-application/deployment-template"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/deployment-template"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/creating-application/deployment-template/rollout-deployment"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/deployment-template-types/rollout-deployment"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/creating-application/deployment-template/job-and-cronjob"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/deployment-template-types/job-and-cronjob"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/creating-application/workflow"
+            ],
+            "to": "/docs/user-guide/creating-application/workflow"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/creating-application/workflow/ci-pipeline"
+            ],
+            "to": "/docs/user-guide/creating-application/workflow/ci-pipeline"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/creating-application/workflow/ci-pipeline-legacy"
+            ],
+            "to": "/docs/user-guide/creating-application/workflow/ci-pipeline"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/creating-application/workflow/cd-pipeline"
+            ],
+            "to": "/docs/user-guide/creating-application/workflow/cd-pipeline"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/creating-application/config-maps"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/config-maps"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/creating-application/secrets"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/secrets"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/creating-application/environment-overrides"
+            ],
+            "to": "/docs/user-guide/creating-application/environment-overrides"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/creating-application/app-metrics"
+            ],
+            "to": "/docs/user-guide/creating-application/app-metrics"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/app-details"
+            ],
+            "to": "/docs/user-guide/app-details"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/debugging-deployment-and-monitoring"
+            ],
+            "to": "/docs/user-guide/debugging-deployment-and-monitoring"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/cloning-application"
+            ],
+            "to": "/docs/user-guide/cloning-application"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/deploying-application"
+            ],
+            "to": "/docs/user-guide/deploying-application"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/deploying-application/triggering-ci"
+            ],
+            "to": "/docs/user-guide/deploying-application/triggering-ci"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/deploying-application/triggering-cd"
+            ],
+            "to": "/docs/user-guide/deploying-application/triggering-cd"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/deploy-chart"
+            ],
+            "to": "/docs/user-guide/deploy-chart"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/deploy-chart/overview-of-charts"
+            ],
+            "to": "/docs/user-guide/deploy-chart"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/deploy-chart/deployment-of-charts"
+            ],
+            "to": "/docs/user-guide/deploy-chart/deployment-of-charts"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/deploy-chart/examples"
+            ],
+            "to": "/docs/user-guide/deploy-chart"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/deploy-chart/examples/deploying-mysql-helm-chart"
+            ],
+            "to": "/docs/user-guide/deploy-chart"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/deploy-chart/examples/deploying-mongodb-helm-chart"
+            ],
+            "to": "/docs/user-guide/deploy-chart"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/deploy-chart/chart-group"
+            ],
+            "to": "/docs/user-guide/deploy-chart/chart-group"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/namespaces-and-environments"
+            ],
+            "to": "/docs/user-guide/namespaces-and-environments"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/security-features"
+            ],
+            "to": "/docs/user-guide/security-features"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/deleting-application"
+            ],
+            "to": "/docs/user-guide/deleting-application"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/bulk-update"
+            ],
+            "to": "/docs/user-guide/bulk-update"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/use-cases/devtron-generic-helm-chart-to-run-cron-job-or-one-time-job"
+            ],
+            "to": "/docs/user-guide/use-cases/devtron-generic-helm-chart-to-run-cron-job-or-one-time-job"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/use-cases"
+            ],
+            "to": "/docs/user-guide/use-cases"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/use-cases/connect-springboot-with-mysql-database"
+            ],
+            "to": "/docs/user-guide/use-cases/connect-springboot-with-mysql-database"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/use-cases/connect-expressjs-with-mongodb-database"
+            ],
+            "to": "/docs/user-guide/use-cases/connect-expressjs-with-mongodb-database"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/use-cases/connect-django-with-mysql-database"
+            ],
+            "to": "/docs/user-guide/use-cases/connect-django-with-mysql-database"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/telemetry"
+            ],
+            "to": "/docs/user-guide/telemetry"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started/install/installation-configuration"
+            ],
+            "to": "/docs/setup/install/installation-configuration"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/use-cases/untitled-3"
+            ],
+            "to": "/docs/user-guide/use-cases/connect-django-with-mysql-database"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/user-guide/creating-application/workflow/ci-pipeline2"
+            ],
+            "to": "/docs/user-guide/creating-application/workflow/ci-pipeline"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/clusters",
+              "/docs/devtron/v2.0/user-guide/clusters"
+            ],
+            "to": "/docs/user-guide/resource-browser"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/authorization/sso-login/okta"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/okta"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/ci-pipeline/ci-build-pre-post-plugins",
+              "/docs/devtron/v2.0/user-guide/creating-application/workflow/ci-pipeline/ci-build-pre-post-plugins"
+            ],
+            "to": "/docs/user-guide/creating-application/workflow/pre-post-tasks"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/getting-started"
+            ],
+            "to": "/docs"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/install"
+            ],
+            "to": "/docs/setup/install"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/install/devtron-oss"
+            ],
+            "to": "/docs/setup/install/devtron-oss"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/install/devtron-freemium"
+            ],
+            "to": "/docs/setup/install/devtron-freemium"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations"
+            ],
+            "to": "/docs/user-guide/global-configurations"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/host-url"
+            ],
+            "to": "/docs/user-guide/global-configurations/host-url"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/gitops"
+            ],
+            "to": "/docs/user-guide/app-management/configurations/gitops"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/projects"
+            ],
+            "to": "/docs/user-guide/app-management/projects"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/cluster-and-environments"
+            ],
+            "to": "/docs/user-guide/global-configurations/cluster-and-environments"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/git-accounts"
+            ],
+            "to": "/docs/user-guide/app-management/configurations/git-accounts"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/container-registries"
+            ],
+            "to": "/docs/user-guide/global-configurations/container-registries"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/chart-repo"
+            ],
+            "to": "/docs/user-guide/app-management/configurations/chart-repo"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/deployment-charts"
+            ],
+            "to": "/docs/user-guide/app-management/configurations/deployment-charts"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/authorization"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/authorization/sso-login"
+            ],
+            "to": "/docs/user-guide/global-configurations/sso-login"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/authorization/sso-login/google"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/google"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/authorization/sso-login/github"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/github"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/authorization/sso-login/gitlab"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/gitlab"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/authorization/sso-login/microsoft"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/microsoft"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/authorization/sso-login/ldap"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/ldap"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/authorization/sso-login/oidc"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/oidc"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/authorization/sso-login/oidc/keycloak"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/keycloak"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/authorization/sso-login/oidc/okta"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/okta"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/authorization/sso-login/openshift"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/sso/openshift"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/authorization/user-access"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/user-access"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/authorization/permission-groups"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/permission-groups"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/authorization/api-tokens"
+            ],
+            "to": "/docs/user-guide/global-configurations/authorization/api-tokens"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/manage-notification"
+            ],
+            "to": "/docs/user-guide/app-management/configurations/manage-notification"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/application-template"
+            ],
+            "to": "/docs/user-guide/app-management/application-template"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/deployment-window"
+            ],
+            "to": "/docs/user-guide/app-management/policies/deployment-window"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/approval-policy"
+            ],
+            "to": "/docs/user-guide/app-management/policies/approval-policy"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/external-links"
+            ],
+            "to": "/docs/user-guide/app-management/configurations/external-links"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/catalog-framework"
+            ],
+            "to": "/docs/user-guide/global-configurations/catalog-framework"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/scoped-variables"
+            ],
+            "to": "/docs/user-guide/app-management/configurations/scoped-variables"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/plugin-policy"
+            ],
+            "to": "/docs/user-guide/app-management/policies/plugin-policy"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/pull-image-digest"
+            ],
+            "to": "/docs/user-guide/app-management/policies/pull-image-digest"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/tags-policy"
+            ],
+            "to": "/docs/user-guide/app-management/policies/tags-policy"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/filter-condition"
+            ],
+            "to": "/docs/user-guide/app-management/policies/filter-condition"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/lock-deployment-config"
+            ],
+            "to": "/docs/user-guide/app-management/policies/lock-deployment-config"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/image-promotion-policy"
+            ],
+            "to": "/docs/user-guide/app-management/policies/image-promotion-policy"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/global-configurations/build-infra"
+            ],
+            "to": "/docs/user-guide/app-management/configurations/build-infra"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications"
+            ],
+            "to": "/docs/user-guide/applications"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/create-application"
+            ],
+            "to": "/docs/user-guide/create-application"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/fluxcd"
+            ],
+            "to": "/docs/user-guide/creating-application/fluxcd"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/using-application-templates"
+            ],
+            "to": "/docs/user-guide/using-application-templates"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application"
+            ],
+            "to": "/docs/user-guide/creating-application"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/git-material"
+            ],
+            "to": "/docs/user-guide/creating-application/git-material"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/docker-build-configuration"
+            ],
+            "to": "/docs/user-guide/creating-application/docker-build-configuration"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/base-config"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/base-config/deployment-template"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/deployment-template"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/base-config/deployment-template-1/deployment"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/deployment-template-types/deployment"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/base-config/deployment-template-1/rollout-deployment"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/deployment-template-types/rollout-deployment"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/base-config/deployment-template-1/job-and-cronjob"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/deployment-template-types/job-and-cronjob"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/base-config/deployment-template-1/statefulset"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/deployment-template-types/statefulset"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/base-config/config-maps"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/config-maps"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/base-config/secrets"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/eso/secrets"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/base-config/eso"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/eso"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/base-config/eso/install-eso"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/eso/install-eso"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/base-config/eso/aws-eso"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/eso/aws-eso"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/base-config/eso/gcp-eso"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/eso/gcp-eso"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/base-config/eso/hashicorp-eso"
+            ],
+            "to": "/docs/user-guide/creating-application/base-config/eso/hashicorp-eso"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/gitops-config"
+            ],
+            "to": "/docs/user-guide/creating-application/gitops-config"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/workflow"
+            ],
+            "to": "/docs/user-guide/creating-application/workflow"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/workflow/ci-pipeline"
+            ],
+            "to": "/docs/user-guide/creating-application/workflow/ci-pipeline"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/workflow/cd-pipeline"
+            ],
+            "to": "/docs/user-guide/creating-application/workflow/cd-pipeline"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/workflow/pre-post-tasks"
+            ],
+            "to": "/docs/user-guide/creating-application/workflow/pre-post-tasks"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/environment-overrides"
+            ],
+            "to": "/docs/user-guide/creating-application/environment-overrides"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/creating-application/deleting-application"
+            ],
+            "to": "/docs/user-guide/deleting-application"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/deploying-application"
+            ],
+            "to": "/docs/user-guide/deploying-application"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/deploying-application/triggering-ci"
+            ],
+            "to": "/docs/user-guide/deploying-application/triggering-ci"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/deploying-application/triggering-cd"
+            ],
+            "to": "/docs/user-guide/deploying-application/triggering-cd"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/deploying-application/rollback-deployment"
+            ],
+            "to": "/docs/user-guide/deploying-application/rollback-deployment"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/deploying-application/image-labels-and-comments"
+            ],
+            "to": "/docs/user-guide/deploying-application/image-labels-and-comments"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/app-details"
+            ],
+            "to": "/docs/user-guide/app-details"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/app-details/application-summary"
+            ],
+            "to": "/docs/user-guide/app-details/application-summary"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/app-details/app-metrics"
+            ],
+            "to": "/docs/user-guide/creating-application/app-metrics"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/app-details/deployment-visibility"
+            ],
+            "to": "/docs/user-guide/app-details/deployment-visibility"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/app-details/app-resource-management"
+            ],
+            "to": "/docs/user-guide/app-details/app-resource-management"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/app-details/ephemeral-containers"
+            ],
+            "to": "/docs/user-guide/app-details/ephemeral-containers"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/applications/overview"
+            ],
+            "to": "/docs/user-guide/creating-application/overview"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/jobs"
+            ],
+            "to": "/docs/user-guide/jobs"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/jobs/what-is-job"
+            ],
+            "to": "/docs/user-guide/jobs/what-is-job"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/jobs/create-job"
+            ],
+            "to": "/docs/user-guide/jobs/create-job"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/jobs/configurations"
+            ],
+            "to": "/docs/user-guide/jobs/configurations"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/jobs/configuration-job"
+            ],
+            "to": "/docs/user-guide/jobs/configurations"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/jobs/workflow-editor-job"
+            ],
+            "to": "/docs/user-guide/jobs/configurations/workflow-editor-job"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/jobs/configurations/source-code-job"
+            ],
+            "to": "/docs/user-guide/jobs/configurations/source-code-job"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/jobs/configurations/workflow-editor-job"
+            ],
+            "to": "/docs/user-guide/jobs/configurations/workflow-editor-job"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/jobs/configurations/configmap-secret"
+            ],
+            "to": "/docs/user-guide/jobs/configurations/configmap-secret"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/jobs/configurations/configmap-secret/configmap-job"
+            ],
+            "to": "/docs/user-guide/jobs/configurations/configmap-secret/configmap-job"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/jobs/configurations/configmap-secret/secret-job"
+            ],
+            "to": "/docs/user-guide/jobs/configurations/configmap-secret/secret-job"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/jobs/configurations/environment-override-job"
+            ],
+            "to": "/docs/user-guide/jobs/configurations/environment-override-job"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/jobs/triggering-job"
+            ],
+            "to": "/docs/user-guide/jobs/triggering-job"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/jobs/run-history-job"
+            ],
+            "to": "/docs/user-guide/jobs/run-history-job"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/jobs/overview-job"
+            ],
+            "to": "/docs/user-guide/jobs/overview-job"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/application-groups"
+            ],
+            "to": "/docs/user-guide/application-groups"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/software-distribution-hub"
+            ],
+            "to": "/docs/user-guide/software-distribution-hub"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/software-distribution-hub/tenants"
+            ],
+            "to": "/docs/user-guide/software-distribution-hub/tenants"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/software-distribution-hub/release-hub"
+            ],
+            "to": "/docs/user-guide/software-distribution-hub/release-hub"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/resource-browser"
+            ],
+            "to": "/docs/user-guide/resource-browser"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/resource-browser/overview"
+            ],
+            "to": "/docs/user-guide/creating-application/overview"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/resource-browser/manage-resources"
+            ],
+            "to": "/docs/user-guide/resource-browser/manage-resources"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/resource-browser/compare-and-sync"
+            ],
+            "to": "/docs/user-guide/resource-browser/compare-and-sync"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/resource-browser/nodes"
+            ],
+            "to": "/docs/user-guide/resource-browser/nodes"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/resource-browser/pods"
+            ],
+            "to": "/docs/user-guide/resource-browser/pods"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/resource-browser/resource-recommender"
+            ],
+            "to": "/docs/user-guide/resource-browser/resource-recommender"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/resource-browser/cluster-terminal"
+            ],
+            "to": "/docs/user-guide/resource-browser/cluster-terminal"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/resource-browser/monitoring-graphs"
+            ],
+            "to": "/docs/user-guide/resource-browser/monitoring-graphs"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/resource-browser/kubectl-local"
+            ],
+            "to": "/docs/user-guide/resource-browser/kubectl-local"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/resource-browser/edit-gui-schema"
+            ],
+            "to": "/docs/user-guide/operations/edit-gui-schema"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/resource-browser/edit-lock-schema"
+            ],
+            "to": "/docs/user-guide/operations/edit-lock-schema"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/resource-watcher"
+            ],
+            "to": "/docs/user-guide/resource-watcher"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/deploy-chart"
+            ],
+            "to": "/docs/user-guide/deploy-chart"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/deploy-chart/deployment-of-charts"
+            ],
+            "to": "/docs/user-guide/deploy-chart/deployment-of-charts"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/deploy-chart/chart-group"
+            ],
+            "to": "/docs/user-guide/deploy-chart/chart-group"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/security-features"
+            ],
+            "to": "/docs/user-guide/security-features"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/security-features/security-scans"
+            ],
+            "to": "/docs/user-guide/security-features/security-scans"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/security-features/security-policies"
+            ],
+            "to": "/docs/user-guide/security-features/security-policies"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/bulk-update"
+            ],
+            "to": "/docs/user-guide/bulk-update"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/integrations"
+            ],
+            "to": "/docs/user-guide/integrations"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/integrations/build-and-deploy-ci-cd"
+            ],
+            "to": "/docs/user-guide/integrations/build-and-deploy-ci-cd"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/integrations/argocd"
+            ],
+            "to": "/docs/user-guide/integrations/argocd"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/integrations/vulnerability-scanning"
+            ],
+            "to": "/docs/user-guide/integrations/vulnerability-scanning"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/integrations/vulnerability-scanning/clair"
+            ],
+            "to": "/docs/user-guide/integrations/vulnerability-scanning/clair"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/integrations/vulnerability-scanning/trivy"
+            ],
+            "to": "/docs/user-guide/integrations/vulnerability-scanning/trivy"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/integrations/notifications"
+            ],
+            "to": "/docs/user-guide/integrations/notifications"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/integrations/grafana"
+            ],
+            "to": "/docs/user-guide/integrations/grafana"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins"
+            ],
+            "to": "/docs/user-guide/plugins"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/create-plugin"
+            ],
+            "to": "/docs/user-guide/plugins/create-plugin"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list"
+            ],
+            "to": "/docs/user-guide/plugins/plugin-list"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/ansible-runner"
+            ],
+            "to": "/docs/user-guide/plugins/ansible-runner"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/bitbucket-runner-trigger"
+            ],
+            "to": "/docs/user-guide/plugins/bitbucket-runner-trigger"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/codacy"
+            ],
+            "to": "/docs/user-guide/plugins/codacy"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/code-scan"
+            ],
+            "to": "/docs/user-guide/plugins/code-scan"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/copacetic"
+            ],
+            "to": "/docs/user-guide/plugins/copacetic"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/container-image-exporter"
+            ],
+            "to": "/docs/user-guide/plugins/container-image-exporter"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/copy-container-image"
+            ],
+            "to": "/docs/user-guide/plugins/copy-container-image"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/cosign"
+            ],
+            "to": "/docs/user-guide/plugins/cosign"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/crane-copy"
+            ],
+            "to": "/docs/user-guide/plugins/crane-copy"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/dependency-track-maven-gradle"
+            ],
+            "to": "/docs/user-guide/plugins/dependency-track-maven-gradle"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/dependency-track-nodejs"
+            ],
+            "to": "/docs/user-guide/plugins/dependency-track-nodejs"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/dependency-track-python"
+            ],
+            "to": "/docs/user-guide/plugins/dependency-track-python"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/devtron-cd-trigger"
+            ],
+            "to": "/docs/user-guide/plugins/devtron-cd-trigger"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/devtron-ci-trigger"
+            ],
+            "to": "/docs/user-guide/plugins/devtron-ci-trigger"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/devtron-job-trigger"
+            ],
+            "to": "/docs/user-guide/plugins/devtron-job-trigger"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/docker-slim"
+            ],
+            "to": "/docs/user-guide/plugins/docker-slim"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/eks-create-cluster"
+            ],
+            "to": "/docs/user-guide/plugins/eks-create-cluster"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/gcs-create-bucket"
+            ],
+            "to": "/docs/user-guide/plugins/gcs-create-bucket"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/github-pull-request-updater"
+            ],
+            "to": "/docs/user-guide/plugins/github-pull-request-updater"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/gke-provisioner"
+            ],
+            "to": "/docs/user-guide/plugins/gke-provisioner"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/golang-migrate"
+            ],
+            "to": "/docs/user-guide/plugins/golang-migrate"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/jenkins"
+            ],
+            "to": "/docs/user-guide/plugins/jenkins"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/jira-validator"
+            ],
+            "to": "/docs/user-guide/plugins/jira-validator"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/jira-updater"
+            ],
+            "to": "/docs/user-guide/plugins/jira-updater"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/k6-load-testing"
+            ],
+            "to": "/docs/user-guide/plugins/k6-load-testing"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/pull-images-from-container-repository"
+            ],
+            "to": "/docs/user-guide/plugins/pull-images-from-container-repository"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/semgrep"
+            ],
+            "to": "/docs/user-guide/plugins/semgrep"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/sonarqube"
+            ],
+            "to": "/docs/user-guide/plugins/sonarqube"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/sonarqube-v1.1.0"
+            ],
+            "to": "/docs/user-guide/plugins/sonarqube-v1.1.0"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/terraform-cli"
+            ],
+            "to": "/docs/user-guide/plugins/terraform-cli"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/plugins/plugin-list/vulnerability-scanning"
+            ],
+            "to": "/docs/user-guide/integrations/vulnerability-scanning"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/usage/devtron-intelligence"
+            ],
+            "to": "/docs/user-guide/devtron-intelligence"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/glossary"
+            ],
+            "to": "/docs/reference/glossary"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/upgrade"
+            ],
+            "to": "/docs/setup/upgrade"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/upgrade/upgrade-devtron-ui"
+            ],
+            "to": "/docs/setup/upgrade/upgrade-devtron-ui"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/upgrade/devtron-upgrade-1.5.0"
+            ],
+            "to": "/docs/setup/upgrade/devtron-upgrade-1.5.0"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/upgrade/devtron-upgrade-0.6.x-0.7.x"
+            ],
+            "to": "/docs/setup/upgrade/devtron-upgrade-0.6.x-0.7.x"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/upgrade/devtron-upgrade-0.5.x-0.6.x"
+            ],
+            "to": "/docs/setup/upgrade/devtron-upgrade-0.5.x-0.6.x"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/upgrade/devtron-upgrade-0.4.x-0.5.x"
+            ],
+            "to": "/docs/setup/upgrade/devtron-upgrade-0.4.x-0.5.x"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/upgrade/devtron-upgrade-0.4.x-0.4.x"
+            ],
+            "to": "/docs/setup/upgrade/devtron-upgrade-0.4.x-0.4.x"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/upgrade/devtron-upgrade-0.3.x-0.4.x"
+            ],
+            "to": "/docs/setup/upgrade/devtron-upgrade-0.3.x-0.4.x"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/upgrade/devtron-upgrade-0.3.x-0.3.x"
+            ],
+            "to": "/docs/setup/upgrade/devtron-upgrade-0.3.x-0.3.x"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/upgrade/devtron-upgrade-0.2.x-0.3.x"
+            ],
+            "to": "/docs/setup/upgrade/devtron-upgrade-0.2.x-0.3.x"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/reference"
+            ],
+            "to": "/docs/reference"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/reference/prod-infra"
+            ],
+            "to": "/docs/setup/install/prod-infra"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/reference/configurations-overview"
+            ],
+            "to": "/docs/setup/configurations/configurations-overview"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/reference/configurations-overview/installation-configuration"
+            ],
+            "to": "/docs/setup/install/installation-configuration"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/reference/configurations-overview/override-default-devtron-installation-configs"
+            ],
+            "to": "/docs/setup/install/override-default-devtron-installation-configs"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/reference/configurations-overview/ingress-setup"
+            ],
+            "to": "/docs/setup/install/ingress-setup"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/reference/install-devtron-in-airgapped-environment"
+            ],
+            "to": "/docs/setup/install/install-devtron-in-airgapped-environment"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/reference/demo-tutorials"
+            ],
+            "to": "/docs/setup/install/demo-tutorials"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/reference/devtron-backup"
+            ],
+            "to": "/docs/setup/install/devtron-backup"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/reference/faq-on-installation"
+            ],
+            "to": "/docs/setup/install/faq-on-installation"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/devtron-troubleshoot"
+            ],
+            "to": "/docs/FAQs/devtron-troubleshoot"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/use-cases"
+            ],
+            "to": "/docs/user-guide/use-cases"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/use-cases/devtron-generic-helm-chart-to-run-cron-job-or-one-time-job"
+            ],
+            "to": "/docs/user-guide/use-cases/devtron-generic-helm-chart-to-run-cron-job-or-one-time-job"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/use-cases/connect-springboot-with-mysql-database"
+            ],
+            "to": "/docs/user-guide/use-cases/connect-springboot-with-mysql-database"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/use-cases/connect-expressjs-with-mongodb-database"
+            ],
+            "to": "/docs/user-guide/use-cases/connect-expressjs-with-mongodb-database"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/use-cases/connect-django-with-mysql-database"
+            ],
+            "to": "/docs/user-guide/use-cases/connect-django-with-mysql-database"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/use-cases/oci-pull"
+            ],
+            "to": "/docs/user-guide/use-cases/oci-pull"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/telemetry"
+            ],
+            "to": "/docs/user-guide/telemetry"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/graviton"
+            ],
+            "to": "/docs/reference/graviton"
+          },
+          {
+            "from": [
+              "/docs/devtron/v2.0/resources/uninstall-devtron"
             ],
             "to": "/docs/setup/install/uninstall-devtron"
           }                                  
