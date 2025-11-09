@@ -490,7 +490,7 @@ html[data-theme='dark'] .markdown a:hover {
   position: relative;
   aspect-ratio: 16 / 9; /* modern browsers handle ratio better */
   margin: 1.5rem auto; /* reduced spacing */
-  max-width: 85%;
+  max-width: 90%;
   overflow: hidden;
 }
 

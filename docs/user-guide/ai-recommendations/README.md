@@ -57,5 +57,5 @@ Maintains a full record of all user and AI-driven actions.
 
 :::tip Additional Resources:
 * [**Watch Devtron's AI Capabilities**](https://youtu.be/a_dgwYxrAD4).
-* **Ask Devtron Expert** - A simple chat interface for queries and analytics (accessible from the top-right of your screen).
 * [**Devtron Intelligence**](../devtron-intelligence.md) - An AI agent that helps you will troubleshooting of workloads.
+* **Ask Devtron Expert** - A simple chat interface for queries and analytics (accessible from the top-right of your screen).
