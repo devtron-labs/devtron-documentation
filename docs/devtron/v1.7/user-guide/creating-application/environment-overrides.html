@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.3394fec0.css">
-<script src="/assets/js/runtime~main.688641b4.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.97d3ed6d.js" defer="defer"></script>
 <script src="/assets/js/main.03b08886.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -109,7 +109,7 @@
 </ul>
 <table><thead><tr><th>Field</th><th>Inherited Configuration</th><th>Input (with Patch)</th><th>Final Configuration</th></tr></thead><tbody><tr><td>cpu</td><td>100m</td><td>500m</td><td>500m</td></tr><tr><td>memory</td><td>256Mi</td><td><em>(Not specified)</em></td><td>256Mi <em>(Unchanged)</em></td></tr><tr><td>replicas</td><td>2</td><td><em>(Not specified)</em></td><td>2 <em>(Unchanged)</em></td></tr><tr><td>logLevel</td><td>&quot;info&quot;</td><td><em>(Not specified)</em></td><td>&quot;info&quot; <em>(Unchanged)</em></td></tr><tr><td>timeout</td><td>(Not specified)</td><td>30s</td><td>30s (Added)</td></tr></tbody></table>
 <p>If you know the fields you wish to change, simply enter the changed key-value fields along with indentation (if any).</p>
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/phhv1_2eStI" title="" frameborder="0"></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/phhv1_2eStI" title="" frameborder="0" allow="fullscreen"></iframe></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="using-replace-strategy">Using Replace Strategy<a href="#using-replace-strategy" class="hash-link" aria-label="Direct link to Using Replace Strategy" title="Direct link to Using Replace Strategy" translate="no">​</a></h3>
 <p>Suppose you update your deployment chart version (e.g., from <code>4.0.0</code> to <code>4.0.1</code>). Although the new chart version contains new features and key-value pairs, if you prefer to keep a few configurations unchanged regardless of the new key-value pairs added in the new chart version, you can use the replace strategy.</p>
 <ul>
@@ -152,9 +152,9 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="patch-strategy">Patch Strategy<a href="#patch-strategy" class="hash-link" aria-label="Direct link to Patch Strategy" title="Direct link to Patch Strategy" translate="no">​</a></h3>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Impact of Patch strategy on Base Configuration&#x27;s CM/Secret?</div><div class="admonitionContent_BuS1"><p>You cannot delete a ConfigMap or Secret in <strong>Base Configurations</strong> if you have used &#x27;Patch&#x27; strategy for overridding ConfigMap or Secret at your environment-level. This happens because they are still dependent and inheriting their values from Base Configurations.</p></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="replace-strategy">Replace Strategy<a href="#replace-strategy" class="hash-link" aria-label="Direct link to Replace Strategy" title="Direct link to Replace Strategy" translate="no">​</a></h3>
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/lSoj8wwOej0" title="" frameborder="0"></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/lSoj8wwOej0" title="" frameborder="0" allow="fullscreen"></iframe></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="override-configmaps-and-secrets-using-gui">Override ConfigMaps and Secrets using GUI<a href="#override-configmaps-and-secrets-using-gui" class="hash-link" aria-label="Direct link to Override ConfigMaps and Secrets using GUI" title="Direct link to Override ConfigMaps and Secrets using GUI" translate="no">​</a></h3>
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/UOTKLVuSkDg" title="" frameborder="0"></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/UOTKLVuSkDg" title="" frameborder="0" allow="fullscreen"></iframe></div>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="delete-override">Delete Override<a href="#delete-override" class="hash-link" aria-label="Direct link to Delete Override" title="Direct link to Delete Override" translate="no">​</a></h2>
 <p>This action will discard the current overrides and the base configuration file (in this example, deployment template) will be restored back for the environment.</p>

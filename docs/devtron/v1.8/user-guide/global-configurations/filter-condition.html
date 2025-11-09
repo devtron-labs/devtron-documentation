@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.3394fec0.css">
-<script src="/assets/js/runtime~main.688641b4.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.97d3ed6d.js" defer="defer"></script>
 <script src="/assets/js/main.03b08886.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -129,7 +129,7 @@ and <code>hotfix-</code> is for finding the branch name (say <em>hotfix-sept-202
 <p>Alternatively, if you have a fixed branch (say <em>hotfix-123</em>), you may write the following expression:</p>
 <p><code>&#x27;hotfix-123&#x27; in gitCommitDetails.filter(gitCommitDetail, gitCommitDetail.startsWith(&#x27;https://github.com/devtron-labs&#x27;)).map(repo, gitCommitDetails[repo].branch)</code></p>
 <p><strong>Walkthrough Video</strong>:</p>
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/R8IbZhXhH-k" title="Filter Condition Example" frameborder="0"></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/R8IbZhXhH-k" title="Filter Condition Example" frameborder="0" allow="fullscreen"></iframe></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fail-condition">Fail Condition<a href="#fail-condition" class="hash-link" aria-label="Direct link to Fail Condition" title="Direct link to Fail Condition" translate="no">​</a></h3>
 <p>Consider a scenario where you wish to exclude an image from deployment if its tag starts with the word <code>trial</code> or ends with the word <code>testing</code></p>
 <p>The CEL Expression should be <code>containerImageTag.startsWith(&quot;trial&quot;) || containerImageTag.endsWith(&quot;testing&quot;)</code></p>
