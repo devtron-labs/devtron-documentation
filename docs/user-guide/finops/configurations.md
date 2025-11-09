@@ -114,15 +114,13 @@ az ad sp create-for-rbac \
 
 Now go back to the **Edit cluster** modal window, and fill the following fields:
 
-| **Field**          | **Value to Provide**            |
-|---------------------|---------------------------------|
-| Subscription ID     | Your Azure subscription ID      |
-| App ID              | Value of `appId` from the output |
-| Display Name        | Value of `displayName` from the output|
-| Password            | Value of `password` from the output |
-| Tenant              | Value of `tenant` from the output |
-| Billing Account     | Optional (fill if available)    |
-| Offer ID            | Optional (fill if available)    |
+* **Subscription ID** - Your Azure subscription ID      
+* **App ID** - Value of `appId` from the output 
+* **Display Name** - Value of `displayName` from the output
+* **Password** - Value of `password` from the output 
+* **Tenant** - Value of `tenant` from the output 
+* **Billing Account** - Optional (fill if available)    
+* **Offer ID** - Optional (fill if available)    
 
 :::info 
 If you face any issues while enabling or configuring the **Cost Visibility** module, reach out to [Devtron Support Team](mailto:enterprise@devtron.ai) for assistance.
@@ -213,15 +211,13 @@ Provide an Access Key and Secret Key with permissions `s3:ListBucket` and `s3:Ge
 
 Now go back to the **Edit cluster** modal window, and fill the following fields:
 
-| **Field**            | **Description**                                                                  |
-|-----------------------|---------------------------------------------------------------------------------|
-| Spot Data Bucket      | Name of the S3 bucket storing Spot Instance Data Feed                           |
-| Spot Data Region      | AWS region of the Spot Data Feed                                                |
-| Spot Data Prefix      | Prefix (if any) used for the Spot Data Feed                                     |
-| Project ID            | Your AWS Account ID                                                             |
-| Access Key            | (Optional) AWS Access Key with S3 read permissions                              |
-| Secret Access Key     | (Optional) AWS Secret Access Key with S3 read permissions                       |
-| IAM Role              | (Recommended) IAM role ARN assigned to the EKS/EC2 cluster for bucket access    |
+* **Spot Data Bucket** - Name of the S3 bucket storing Spot Instance Data Feed                       
+* **Spot Data Region** - AWS region of the Spot Data Feed                                            
+* **Spot Data Prefix** - Prefix (if any) used for the Spot Data Feed                                 
+* **Project ID** - Your AWS Account ID                                                         
+* **Access Key** - (Optional) AWS Access Key with S3 read permissions                          
+* **Secret Access Key** - (Optional) AWS Secret Access Key with S3 read permissions                   
+* **IAM Role** - (Recommended) IAM role ARN assigned to the EKS/EC2 cluster for bucket access
 
 </TabItem>
 
