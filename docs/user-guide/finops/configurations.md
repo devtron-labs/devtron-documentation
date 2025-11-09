@@ -32,8 +32,6 @@ To enable cost visibility for a cluster, follow the below steps:
 
 <TabItem label="GCP" value="GCP">
 
-### Enable Cost Visibility for GCP
-
 To enable cost visibility for Google Cloud in Devtron, you need to generate an API key and use it to connect Devtron with your GCP account.
 
 1. Generate the API key using standard [Google Cloud API key documentation](https://cloud.google.com/docs/authentication/api-keys#gcloud).
@@ -48,8 +46,6 @@ If you face any issues while enabling or configuring the **Cost Visibility** mod
 </TabItem>
 
 <TabItem label="Azure" value="Azure"> 
-
-### Enable Cost Visibility for Azure
 
 To enable cost visibility for your Azure clusters in Devtron, you need to allow Devtron to access your billing data securely. This requires two steps:
    1. Create a custom role in Azure with billing access.
@@ -136,8 +132,6 @@ If you face any issues while enabling or configuring the **Cost Visibility** mod
 </TabItem>
 
 <TabItem label="AWS" value="AWS"> 
-
-### Enable Cost Visibility for AWS
 
 If you have spot node instances in your AWS cluster, then only you need to do the below additional configurations for your AWS cluster, else you can skip the below configurations
 
