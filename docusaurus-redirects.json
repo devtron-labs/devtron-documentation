@@ -3899,7 +3899,8 @@
           },
           {
             "from": [
-              "/devtron/v1.8/user-guide/deploy-chart"
+              "/devtron/v1.8/user-guide/deploy-chart",
+              "/devtron/v0.4/devtron/user-guide/deploy-chart"
             ],
             "to": "/docs/devtron/v1.8/user-guide/deploy-chart"
           },
@@ -3917,7 +3918,8 @@
           },
           {
             "from": [
-              "/devtron/v1.8/user-guide/deploy-chart/examples"
+              "/devtron/v1.8/user-guide/deploy-chart/examples",
+              "/devtron/v0.6/usage/deploy-chart/examples"
             ],
             "to": "/docs/devtron/v1.8/user-guide/deploy-chart"
           },
@@ -4064,7 +4066,8 @@
           {
             "from": [
               "/devtron/v1.8/global-configurations",
-              "/devtron/v0.5/getting-started/global-configurations"
+              "/devtron/v0.5/getting-started/global-configurations",
+              "/devtron/v0.4/devtron/setup/global-configurations/"
             ],
             "to": "/docs/devtron/v1.8/user-guide/global-configurations"
           },
@@ -4347,7 +4350,8 @@
           },
           {
             "from": [
-              "/devtron/v1.8/usage/applications/creating-application/base-config/deployment-template-1/rollout-deployment"
+              "/devtron/v1.8/usage/applications/creating-application/base-config/deployment-template-1/rollout-deployment",
+              "/devtron/v0.7/usage/applications/creating-application/deployment-template/rollout-deployment"
             ],
             "to": "/docs/devtron/v1.8/user-guide/creating-application/base-config/deployment-template-types/rollout-deployment"
           },
@@ -8651,12 +8655,14 @@
           {
             "from": [
               "/devtron/v0.4/devtron/user-guide",
-              "/devtron/0.4"
+              "/devtron/v0.4",
+              "/devtron/v0.4/devtron/setup/"
             ],
             "to": "/docs"
           },    
           {
             "from": [
+              "/devtron/v0.6/install-devtron-kubernetes-client",
               "/devtron/v0.7/install-devtron-kubernetes-client"
             ],
             "to": "/docs/setup/install/install-devtron-Kubernetes-client"

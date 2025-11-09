@@ -1,5 +1,6 @@
 ---
 hidden: true
+hide_table_of_contents: true
 ---
 
 # Get Admin Credentials
