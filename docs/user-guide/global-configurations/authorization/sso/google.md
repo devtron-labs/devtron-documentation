@@ -27,7 +27,7 @@ Before configuring Google as an SSO provider,
   * Click the URL next to **Click to use** in green color. The URL field will be automatically populated with the URL next to **Click to use**; this is essential to generate the correct **Redirect URI**.
   * Copy the **Redirect URI** displayed in this section. You will need to enter this in Google Cloud.
 
- <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/QvufIzUSNpg" title="Getting the Redirect URI" frameborder="0" allowfullscreen></iframe></div>
+ <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/QvufIzUSNpg" title="Getting the Redirect URI" frameborder="0" allow="fullscreen"></iframe></div>
 
 ## Configure OAuth in Google Cloud Console
 

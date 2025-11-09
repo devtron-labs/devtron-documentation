@@ -97,10 +97,10 @@ Suppose you want to update only one field (e.g., `"username" = "johndoe"`) in a 
 
 If you know the fields you wish to change, simply enter the changed key-value fields along with indentation (if any).
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/phhv1_2eStI" title="" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/phhv1_2eStI" title="" frameborder="0" allow="fullscreen"></iframe></div>
 
 <!--* Or you may copy-paste the entire config, and change the fields.
-    <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/4eHM5ZsNoCg" title="" frameborder="0" allowfullscreen></iframe></div>
+    <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/4eHM5ZsNoCg" title="" frameborder="0" allow="fullscreen"></iframe></div>
 -->
 
 ### Using Replace Strategy 
@@ -163,11 +163,11 @@ You cannot delete a ConfigMap or Secret in **Base Configurations** if you have u
 
 ### Replace Strategy
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/lSoj8wwOej0" title="" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/lSoj8wwOej0" title="" frameborder="0" allow="fullscreen"></iframe></div>
 
 ### Override ConfigMaps and Secrets using GUI
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/UOTKLVuSkDg" title="" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/UOTKLVuSkDg" title="" frameborder="0" allow="fullscreen"></iframe></div>
 
 ---
 

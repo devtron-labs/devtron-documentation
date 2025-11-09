@@ -22,7 +22,7 @@ This stands true for both: base configuration and respective environment-level c
 
 ## Tutorial
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/TVLEbY850hI" title="Protect Configuration and Approval" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/TVLEbY850hI" title="Protect Configuration and Approval" frameborder="0" allow="fullscreen"></iframe></div>
 
 ---
 

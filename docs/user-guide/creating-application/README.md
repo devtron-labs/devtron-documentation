@@ -4,7 +4,7 @@ hide_table_of_contents: true
 
 # App Configurations
 
-<!-- <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/9u-pKiWV-tM" title="" frameborder="0" allowfullscreen></iframe></div> -->
+<!-- <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/9u-pKiWV-tM" title="" frameborder="0" allow="fullscreen"></iframe></div> -->
 
 This section helps you define how your application is built, deployed, and managed within Devtron. Each part below guides you through the stages of the app configuration process.
 

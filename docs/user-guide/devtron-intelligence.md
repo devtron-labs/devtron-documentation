@@ -13,7 +13,7 @@ Check out the [Results](#results) section to see where Devtron gives you AI-powe
 
 ### Tutorial
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/WW7skAa0XAs" title="Enabling Devtron Intelligence (AI)" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/WW7skAa0XAs" title="Enabling Devtron Intelligence (AI)" frameborder="0" allow="fullscreen"></iframe></div>
 
 ---
 

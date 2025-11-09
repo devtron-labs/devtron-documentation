@@ -15,7 +15,7 @@ You must [add your OCI registry](../global-configurations/container-registries.m
 
 ## Tutorial
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/9imC5MMz9gs" title="Pulling Charts from an OCI Registry to Devtron" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/9imC5MMz9gs" title="Pulling Charts from an OCI Registry to Devtron" frameborder="0" allow="fullscreen"></iframe></div>
 
 ---
 

@@ -135,7 +135,7 @@ Let's take an example of a **Shell task** in the Post-Build stage, that send an 
 #### Prerequisites
 Make sure to create an App password for the sender's email account to use in the script below. Refer the below video to learn how to create an App password for GMAIL accounts
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/2Z_J4l2RJ8s" title="Creating App Password" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/2Z_J4l2RJ8s" title="Creating App Password" frameborder="0" allow="fullscreen"></iframe></div>
 
 #### Script
 

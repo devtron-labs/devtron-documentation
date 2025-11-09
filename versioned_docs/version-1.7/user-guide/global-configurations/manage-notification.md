@@ -67,7 +67,7 @@ Only [Super-Admins](user-access.md) can create and manage SES configurations.
 
 #### Email (SES) Tutorial
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/WRP1CBHW6Ic" title="Enabling Email Notifications for Devtron CI/CD" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/WRP1CBHW6Ic" title="Enabling Email Notifications for Devtron CI/CD" frameborder="0" allow="fullscreen"></iframe></div>
 
 #### Steps
 
@@ -110,7 +110,7 @@ SMTP credentials (username and password) from your SMTP provider.
 
 #### Email SMTP Tutorial
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/CkPG7wC59hY" title="Enabling Email Notifications for Devtron CI/CD" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/CkPG7wC59hY" title="Enabling Email Notifications for Devtron CI/CD" frameborder="0" allow="fullscreen"></iframe></div>
 
 #### Steps
 
@@ -150,7 +150,7 @@ A Slack account, a Slack channel, and an [Incoming Webhook URL](https://api.slac
 
 #### Slack Tutorial
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/ve1eGqslBqc" title="Enabling Slack Notifications for Devtron CI/CD" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/ve1eGqslBqc" title="Enabling Slack Notifications for Devtron CI/CD" frameborder="0" allow="fullscreen"></iframe></div>
 
 #### Steps
 
@@ -185,7 +185,7 @@ A Webhook URL to receive notifications (e.g., Microsoft Teams Webhook URL, Disco
 
 #### Webhook Tutorial
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/8RQ2dezrVvY" title="Enabling Notifications for Devtron CI/CD using Webhook" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/8RQ2dezrVvY" title="Enabling Notifications for Devtron CI/CD using Webhook" frameborder="0" allow="fullscreen"></iframe></div>
 
 #### Steps
 

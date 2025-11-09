@@ -104,7 +104,7 @@ Ephemeral containers are turned on by default in Kubernetes v1.23 and later
 
 :::
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/TnaHRugYvSI" title="Launching Ephemeral Container from App Details" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/TnaHRugYvSI" title="Launching Ephemeral Container from App Details" frameborder="0" allow="fullscreen"></iframe></div>
 
 Follow the instructions below to create an ephemeral container from the **App Details** page:
 

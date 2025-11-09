@@ -19,7 +19,7 @@ The **Plugin Policy** feature in Devtron lets you enforce the presence of specif
 
 ## Tutorial 
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/Cb25p_n3YTs" title="Using Plugin Policy in Devtron" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/Cb25p_n3YTs" title="Using Plugin Policy in Devtron" frameborder="0" allow="fullscreen"></iframe></div>
 
 ---
 

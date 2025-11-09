@@ -151,7 +151,7 @@ There are two ways you can customize the GUI, use any one of the following:
 
 2. Using APIs (explained below)
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/09VP1I-WvUs" title="JSON-driven Deployment Schema" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/09VP1I-WvUs" title="JSON-driven Deployment Schema" frameborder="0" allow="fullscreen"></iframe></div>
 
 You can pass a custom JSON (deployment schema) of your choice through the following API. You may need to run the API with the `POST` method if you are doing it for the first time.
 

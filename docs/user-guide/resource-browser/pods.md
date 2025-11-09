@@ -22,7 +22,7 @@ Examining your cluster's pods helps you understand the health of your applicatio
 
 Moreover, you can download the pod logs for ease of sharing and troubleshooting as shown in the below video.
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/PP0ZKAZCT58" title="Downloading Pod Logs" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/PP0ZKAZCT58" title="Downloading Pod Logs" frameborder="0" allow="fullscreen"></iframe></div>
 
 ### Pod Last Restart Snapshot <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
@@ -50,7 +50,7 @@ You can access the terminal within a running container of a pod to view its logs
 
 This is a part of [Pod Terminal](#terminal). It is especially useful when `kubectl exec` is insufficient because a container has crashed or a container image doesn't include debugging utilities.
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/Ml19i29Ivc4" title="Launching Ephemeral Containers from Resource Browser" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/Ml19i29Ivc4" title="Launching Ephemeral Containers from Resource Browser" frameborder="0" allow="fullscreen"></iframe></div>
 
 1. In the Resource Browser, select **Pod** within `Workloads`.
 2. Use the searchbar to find and locate the pod you wish to debug. Click the pod.

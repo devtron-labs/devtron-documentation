@@ -12,7 +12,7 @@ As you scale with Kubernetes, you may come across the dilemma of inefficiency:
 
 Devtron’s AI-powered initiative redefines how Site Reliability Engineers (SREs) and DevOps teams interact with their infrastructure. It monitors, reasons, and acts on cost inefficiencies using explainable AI.
 
-<div class="video-wrapper"><iframe width="720" height="380" src="https://www.youtube.com/embed/4iVj5LsLPxc" title="AI Recommendations in Devtron" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="720" height="380" src="https://www.youtube.com/embed/4iVj5LsLPxc" title="AI Recommendations in Devtron" frameborder="0" allow="fullscreen"></iframe></div>
 
 It operates across two modules to implement rightsizing actions:
 

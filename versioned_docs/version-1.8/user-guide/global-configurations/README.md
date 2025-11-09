@@ -45,6 +45,6 @@ Control user access and authentication mechanisms (RBAC).
 
 <!-- You can also refer our YouTube video provided here.
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/4VFjrjtieMI" title="" frameborder="0" allowfullscreen></iframe></div> -->
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/4VFjrjtieMI" title="" frameborder="0" allow="fullscreen"></iframe></div> -->
 
 

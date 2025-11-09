@@ -9,7 +9,7 @@ sidebar_label: Let's deploy a sample App
 Hurray! 
 Your Devtron stack is completely setup. Let's get started by deploying a simple application on it.
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/9u-pKiWV-tM&t=2s" title="Deploy a Kubernetes Node.js micro-service using Devtron" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/9u-pKiWV-tM&t=2s" title="Deploy a Kubernetes Node.js micro-service using Devtron" frameborder="0" allow="fullscreen"></iframe></div>
 
 ## Find out the steps here 
 

@@ -251,7 +251,7 @@ Click **Save**.
 We do **NOT** recommend using GitHub organization that contains your source code.
 :::
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/github/github-gitops-latest.mp4" title="GitHub" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/github/github-gitops-latest.mp4" title="GitHub" frameborder="0" allow="fullscreen"></iframe></div>
 
 1. Create a new account on GitHub (if you do not have one).
 2. On the upper-right corner of your GitHub page, click your profile photo, then click **Settings**.
@@ -273,7 +273,7 @@ For more information about the plans available for your team, see [GitHub's prod
 
 ### Creating Group in GitLab
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/gitlab/gitops-gitlab-latest1.mp4" title="GitHub" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/gitlab/gitops-gitlab-latest1.mp4" title="GitHub" frameborder="0" allow="fullscreen"></iframe></div>
 
 
 1. Create a new account on GitLab (if you do not have one).
@@ -304,7 +304,7 @@ You can also refer [Azure DevOps - Project Creation](https://docs.microsoft.com/
 
 ### Creating Workspace in Bitbucket
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/bitbucket/bitbucket-latest-gitops.mp4" title="GitHub" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/bitbucket/bitbucket-latest-gitops.mp4" title="GitHub" frameborder="0" allow="fullscreen"></iframe></div>
 
 1. Create a new individual account on Bitbucket (if you do not have one).
 2. Select your profile and settings avatar on the upper-right corner of the top navigation bar.

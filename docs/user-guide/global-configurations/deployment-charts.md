@@ -19,7 +19,7 @@ For any use case not addressed by the default Helm charts, you can upload your o
 
 This video contains a quick walkthrough of the steps mentioned in the [Preparing a Deployment Chart](#preparing-a-deployment-chart) section of this page and the subsequent uploading of the deployment chart on Devtron.
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/jzMZa7bSiyA" title="How to Upload your Deployment Chart in Devtron" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/jzMZa7bSiyA" title="How to Upload your Deployment Chart in Devtron" frameborder="0" allow="fullscreen"></iframe></div>
 
 ---
 
@@ -260,7 +260,7 @@ You can edit the GUI schema of the following deployment charts:
 
 ### Tutorial
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/93tGIsM1qC8" title="JSON-driven Deployment Schema" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/93tGIsM1qC8" title="JSON-driven Deployment Schema" frameborder="0" allow="fullscreen"></iframe></div>
 
 ### Steps
 

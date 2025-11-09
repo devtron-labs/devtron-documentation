@@ -28,7 +28,7 @@ You can quickly create an ephemeral container directly from the **App Details** 
 
 ## Create From Resource Browser
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/Ml19i29Ivc4" title="Launching Ephemeral Containers from Resource Browser" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/Ml19i29Ivc4" title="Launching Ephemeral Containers from Resource Browser" frameborder="0" allow="fullscreen"></iframe></div>
 
 To create an ephemeral container from the Resource Browser, refer to [Launching Ephemeral Container](../resource-browser/pods.md#launching-ephemeral-container). 
 
@@ -41,7 +41,7 @@ This is not a recommended method. However, if you still wish to proceed, then th
 
 :::
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/PzB6dFRYe38" title="Externally Created Ephemeral Container" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/PzB6dFRYe38" title="Externally Created Ephemeral Container" frameborder="0" allow="fullscreen"></iframe></div>
 
 ---
 
@@ -54,4 +54,4 @@ If you had created an ephemeral container using the Kubernetes CLI, then you wil
 
 :::
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/tZID0YU0YUU" title="Deleting Ephemeral Containers" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/tZID0YU0YUU" title="Deleting Ephemeral Containers" frameborder="0" allow="fullscreen"></iframe></div>
