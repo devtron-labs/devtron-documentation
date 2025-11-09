@@ -17,8 +17,8 @@
 <script>!function(e,t,n,c,s,a,i){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},(a=t.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/s4gie6k444",(i=t.getElementsByTagName(c)[0]).parentNode.insertBefore(a,i)}(window,document,"clarity","script")</script>
 
 
-<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.1a5dd368.css">
-<script src="/assets/js/runtime~main.97d3ed6d.js" defer="defer"></script>
+<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.a83f7829.css">
+<script src="/assets/js/runtime~main.a14e53b8.js" defer="defer"></script>
 <script src="/assets/js/main.03b08886.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -34,7 +34,8 @@
 <li class="">Code Scan <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" class="enterprise-badge-img"></a></li>
 <li class="">Kubernetes Manifest Scan <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" class="enterprise-badge-img"></a></li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/security-scan.jpg" alt="Figure 1: Security Scan Results" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/security-scan.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Security Scan Results</center></p>
 <p>You can integrate a scanning tool of your choice. By default, Devtron integrates with <a class="" href="/docs/user-guide/integrations/vulnerability-scanning/trivy">Trivy</a> using which you can scan for the following issues:</p>
 <ul>
 <li class="">Vulnerability</li>
@@ -46,7 +47,8 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="where-to-initiate-the-scan">Where to Initiate the Scan<a href="#where-to-initiate-the-scan" class="hash-link" aria-label="Direct link to Where to Initiate the Scan" title="Direct link to Where to Initiate the Scan" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="before-building-artifact">Before Building Artifact<a href="#before-building-artifact" class="hash-link" aria-label="Direct link to Before Building Artifact" title="Direct link to Before Building Artifact" translate="no">​</a></h3>
 <p>When you commit the code, it&#x27;s essential to scan it before building a <a class="" href="/docs/reference/glossary#image">container image</a>. By scanning early, you can catch and fix problems before they become expensive or time-consuming to remediate later.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/pre-ci.gif" alt="Figure 2: Scanning in Pre-CI Stage" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/pre-ci.gif" alt="" class="img_ev3q">
+<center>Figure 2: Scanning in Pre-CI Stage</center></p>
 <ol>
 <li class="">
 <p>In your Devtron application, go to <strong>Configurations</strong> (tab) → <strong>Workflow Editor</strong>.</p>
@@ -68,9 +70,11 @@
 </li>
 </ol>
 <p>Based on the results of the scanner, you can also decide whether your CI should proceed further or not. This is possible through <strong>Pass/Failure Condition</strong> setting in the plugin. In the below example, we are allowing image build only if the no. of high vulnerability is zero.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/pre-ci-condition.gif" alt="Figure 3: Setting a Condition" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/pre-ci-condition.gif" alt="" class="img_ev3q">
+<center>Figure 3: Setting a Condition</center></p>
 <p>Results of Pre-CI scan will be visible under <code>Code Scan</code> in the <strong>App Details</strong> page as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/code-scan.gif" alt="Figure 4: Pre-CI Code Scan Results" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/code-scan.gif" alt="" class="img_ev3q">
+<center>Figure 4: Pre-CI Code Scan Results</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="after-building-container-image">After Building Container Image<a href="#after-building-container-image" class="hash-link" aria-label="Direct link to After Building Container Image" title="Direct link to After Building Container Image" translate="no">​</a></h3>
 <p>Once a container image is ready, you can scan its base image libraries, stale files, compromised licenses, and many more.</p>
 <p>There are 2 options available:</p>
@@ -79,7 +83,8 @@
 <li class="">Comprehensive scan in Post-Build stage</li>
 </ul>
 <p>This section contains the steps for comprehensive scan.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/post-ci.gif" alt="Figure 5: Scanning in Post-CI Stage" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/post-ci.gif" alt="" class="img_ev3q">
+<center>Figure 5: Scanning in Post-CI Stage</center></p>
 <ol>
 <li class="">
 <p>Go to the <strong>Post-build stage</strong> (tab) of your CI pipeline.</p>
@@ -92,10 +97,12 @@
 </li>
 </ol>
 <p>Results of Post-CI scan will be visible under <code>Image Scan</code> in the <strong>App Details</strong> page as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/image-scan-1.gif" alt="Figure 6: Post-CI Image Scan Results" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/image-scan-1.gif" alt="" class="img_ev3q">
+<center>Figure 6: Post-CI Image Scan Results</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="before-triggering-deployment">Before Triggering Deployment<a href="#before-triggering-deployment" class="hash-link" aria-label="Direct link to Before Triggering Deployment" title="Direct link to Before Triggering Deployment" translate="no">​</a></h3>
 <p>There can be a loophole where the original image built in the CI stage gets compromised later (say, in publicly accessible repository). Therefore, you can scan the image and catch issues before deploying it. On top of that, you can also scan manifests to detect misconfigurations and exposed secrets.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/pre-deploy.gif" alt="Figure 7: Scanning in Pre-CD Stage" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/pre-deploy.gif" alt="" class="img_ev3q">
+<center>Figure 7: Scanning in Pre-CD Stage</center></p>
 <ol>
 <li class="">
 <p>Go to the <strong>Pre-Deployment stage</strong> (tab) of your CD pipeline.</p>
@@ -108,11 +115,13 @@
 </li>
 </ol>
 <p>Results of Pre-CD scan will be visible under <code>Image Scan</code> and <code>Kubernetes Manifest</code> in the <strong>App Details</strong> page as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/manifest-scan.gif" alt="Figure 8: Pre-CD Scan Results" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/manifest-scan.gif" alt="" class="img_ev3q">
+<center>Figure 8: Pre-CD Scan Results</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="during-helm-app-deployment-">During Helm App Deployment <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" class="enterprise-badge-img"></a><a href="#during-helm-app-deployment-" class="hash-link" aria-label="Direct link to during-helm-app-deployment-" title="Direct link to during-helm-app-deployment-" translate="no">​</a></h3>
 <p>When you <a class="" href="/docs/user-guide/deploy-chart/deployment-of-charts">deploy a helm chart</a>, Devtron will scan the image associated with that helm chart and also the manifests, but unlike Devtron Apps, there is no code scan involved.</p>
 <p>Results of helm app scan will be visible under <code>Image Scan</code> and <code>Kubernetes Manifest</code> in the <strong>App Details</strong> page as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/helm-app-scan.gif" alt="Figure 9: Helm App Scan Results" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/helm-app-scan.gif" alt="" class="img_ev3q">
+<center>Figure 9: Helm App Scan Results</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="extras">Extras<a href="#extras" class="hash-link" aria-label="Direct link to Extras" title="Direct link to Extras" translate="no">​</a></h3>
 <p>You can also check for vulnerabilities within a specific workload such as job, pod, deployment, etc. There are two ways to perform it:</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="from-app-details">From App Details<a href="#from-app-details" class="hash-link" aria-label="Direct link to From App Details" title="Direct link to From App Details" translate="no">​</a></h4>
@@ -128,7 +137,8 @@
 </li>
 <li class="">
 <p>Click <strong>Check Vulnerabilities</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/app-details-scan.gif" alt="Figure 10: Scanning Workloads - App Details Page" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/app-details-scan.gif" alt="" class="img_ev3q">
+<center>Figure 10: Scanning Workloads - App Details Page</center></p>
 </li>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="from-resource-browser">From Resource Browser<a href="#from-resource-browser" class="hash-link" aria-label="Direct link to From Resource Browser" title="Direct link to From Resource Browser" translate="no">​</a></h4>
@@ -144,7 +154,8 @@
 </li>
 <li class="">
 <p>Access the <strong>Check Vulnerabilities</strong> option from the kebab menu present to your selected workload.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/rb-scan.gif" alt="Figure 11: Scanning Workloads - Resource Browser" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/rb-scan.gif" alt="" class="img_ev3q">
+<center>Figure 11: Scanning Workloads - Resource Browser</center></p>
 </li>
 </ul>
 <hr>

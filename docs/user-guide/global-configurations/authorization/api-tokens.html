@@ -17,8 +17,8 @@
 <script>!function(e,t,n,c,s,a,i){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},(a=t.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/s4gie6k444",(i=t.getElementsByTagName(c)[0]).parentNode.insertBefore(a,i)}(window,document,"clarity","script")</script>
 
 
-<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.1a5dd368.css">
-<script src="/assets/js/runtime~main.97d3ed6d.js" defer="defer"></script>
+<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.a83f7829.css">
+<script src="/assets/js/runtime~main.a14e53b8.js" defer="defer"></script>
 <script src="/assets/js/main.03b08886.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -30,16 +30,19 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="generate-api-token">Generate API Token<a href="#generate-api-token" class="hash-link" aria-label="Direct link to Generate API Token" title="Direct link to Generate API Token" translate="no">​</a></h2>
 <p>To generate API tokens, go to <code>Global Configurations -&gt; Authorization -&gt; API tokens</code> and click <code>Generate New Token</code>.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-1.jpg" alt="" class="img_ev3q"></p>
+<center></center>
 <ul>
 <li class="">Enter a name for the token.</li>
 <li class="">Add Description.</li>
 <li class="">Select an expiration date for the token (7 days, 30 days, 60 days, 90 days, custom and no expiration).</li>
 </ul>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-2.jpg" alt="" class="img_ev3q"></p>
+<center></center>
 <ul>
 <li class="">To select a custom expiration date, select <code>Custom</code> from the drop-down list. In the adjacent field, you can select your custom expiration date for the API token.</li>
 </ul>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-custom.jpg" alt="" class="img_ev3q"></p>
+<center></center>
 <ul>
 <li class="">
 <p>You can assign permission to the token either with:</p>
@@ -54,31 +57,40 @@
 </li>
 </ul>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-specific-permissions-latest1.jpg" alt="" class="img_ev3q"></p>
+<center></center>
 <ul>
 <li class="">Click <code>Generate Token</code>.</li>
 </ul>
 <p>A pop-up window will appear on the screen from where you can copy the API token.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-5.jpg" alt="" class="img_ev3q"></p>
+<center></center>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-api-token">Use API Token<a href="#use-api-token" class="hash-link" aria-label="Direct link to Use API Token" title="Direct link to Use API Token" translate="no">​</a></h2>
 <p>Once Devtron API token has been generated, you can use this token to request Devtron APIs using any API testing tool like Jmeter, Postman, Citrus. Using Postman here as an example.</p>
 <p>Open Postman. Enter the request URL with <code>POST</code> method and under HEADERS, enter the API token as shown in the image below.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-6.jpg" alt="" class="img_ev3q"></p>
+<center></center>
 <p>In the <code>Body</code> section, provide the API payload as shown below and click <code>Send</code>.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-7.jpg" alt="" class="img_ev3q"></p>
+<center></center>
 <p>As soon as you click <code>Send</code>, the created application API will be triggered and a new Devtron app will be created as provided in the payload.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-8.jpg" alt="" class="img_ev3q"></p>
+<center></center>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="update-api-token">Update API Token<a href="#update-api-token" class="hash-link" aria-label="Direct link to Update API Token" title="Direct link to Update API Token" translate="no">​</a></h2>
 <p>To set a new expiration date or to make changes in permissions assigned to the token, we need to update the API token in Devtron.
 To update the API token, click the token name or click on the edit icon.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-9.jpg" alt="" class="img_ev3q"></p>
+<center></center>
 <p>To set a new expiration date, you can regenerate the API token. Any scripts or applications using this token must be updated. To regenerate a token, click <code>Regenerate token</code>.</p>
 <p>A pop-up window will appear on the screen from where you can select a new expiration date.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-10.jpg" alt="" class="img_ev3q"></p>
+<center></center>
 <p>Select a new expiration date and click <code>Regenerate token</code>.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-11.jpg" alt="" class="img_ev3q"></p>
+<center></center>
 <p>This will generate a new token with a new expiration date.</p>
 <p>To update API token permissions, give the permissions as you want to and click  <code>Update Token</code>.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-3.jpg" alt="" class="img_ev3q"></p>
+<center></center>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="delete-api-token">Delete API Token<a href="#delete-api-token" class="hash-link" aria-label="Direct link to Delete API Token" title="Direct link to Delete API Token" translate="no">​</a></h2>
 <p>To delete an API token, click <code>delete</code> icon. Any applications or scripts using this token will no longer be able to access the Devtron API.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/global-configurations/authorization/permission-groups"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Permission Groups</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/reference/resources"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Resources</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#generate-api-token" class="table-of-contents__link toc-highlight">Generate API Token</a></li><li><a href="#use-api-token" class="table-of-contents__link toc-highlight">Use API Token</a></li><li><a href="#update-api-token" class="table-of-contents__link toc-highlight">Update API Token</a></li><li><a href="#delete-api-token" class="table-of-contents__link toc-highlight">Delete API Token</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
               <div style="text-align: center;">

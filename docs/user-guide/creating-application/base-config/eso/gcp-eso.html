@@ -17,8 +17,8 @@
 <script>!function(e,t,n,c,s,a,i){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},(a=t.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/s4gie6k444",(i=t.getElementsByTagName(c)[0]).parentNode.insertBefore(a,i)}(window,document,"clarity","script")</script>
 
 
-<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.1a5dd368.css">
-<script src="/assets/js/runtime~main.97d3ed6d.js" defer="defer"></script>
+<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.a83f7829.css">
+<script src="/assets/js/runtime~main.a14e53b8.js" defer="defer"></script>
 <script src="/assets/js/main.03b08886.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -31,36 +31,46 @@
 <ol>
 <li class="">
 <p>Go to Google cloud console and create a Service Account.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/google-sa.jpg" alt="Figure 1: Create Service Account" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/google-sa-create.jpg" alt="Figure 2: Service Account Creation" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/google-sa.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Create Service Account</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/google-sa-create.jpg" alt="" class="img_ev3q">
+<center>Figure 2: Service Account Creation</center></p>
 </li>
 <li class="">
 <p>Assign roles to the service account.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/google-sa-roles.jpg" alt="Figure 3: Assign Service Account Roles" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/google-sa-roles.jpg" alt="" class="img_ev3q">
+<center>Figure 3: Assign Service Account Roles</center></p>
 </li>
 <li class="">
 <p>Add and create a new key.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/google-key.jpg" alt="Figure 4a: Add Service Account Key" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/google-key-create.jpg" alt="Figure 4b: Create Service Account Key" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/google-key.jpg" alt="" class="img_ev3q">
+<center>Figure 4a: Add Service Account Key</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/google-key-create.jpg" alt="" class="img_ev3q">
+<center>Figure 4b: Create Service Account Key</center></p>
 </li>
 <li class="">
 <p>Create a Kubernetes secret in the namespace in which the application is to be deployed using base64 encoded service account key.</p>
 <p>You can use devtron generic chart for this.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/gcp-auth-generic.jpg" alt="Figure 5: Create Kubernetes Secret" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/gcp-auth-generic.jpg" alt="" class="img_ev3q">
+<center>Figure 5: Create Kubernetes Secret</center></p>
 </li>
 <li class="">
 <p>After creating the generic secret, navigate to <code>Secrets</code> section of the application and click <code>Add Secret</code> to add a new secret.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secrets.jpg" alt="Figure 6: Add New Secret" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secrets.jpg" alt="" class="img_ev3q">
+<center>Figure 6: Add New Secret</center></p>
 </li>
 <li class="">
 <p>Select <code>Google Secrets Manager</code> under <code>External Secret Operator</code> (ESO) from the dropdown of <code>Data type</code>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/gcp-secret-manager-dropdown.jpg" alt="Figure 7: Select Google Secrets Manager" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/gcp-secret-manager-dropdown.jpg" alt="" class="img_ev3q">
+<center>Figure 7: Select Google Secrets Manager</center></p>
 </li>
 <li class="">
 <p>Configure secret.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/gcp-es-configure.jpg" alt="Figure 8: Configure Secret Settings" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/gcp-es-configure.jpg" alt="" class="img_ev3q">
+<center>Figure 8: Configure Secret Settings</center></p>
 <table><thead><tr><th style="text-align:left">Key</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>secretAccessKeySecretRef.name</code></td><td style="text-align:left">Name of secret created that would be used for authentication.</td></tr><tr><td style="text-align:left"><code>secretAccessKeySecretRef.key</code></td><td style="text-align:left">In generic secret created for GCP authentication, variable name in which base64 encoded service account key is stored.</td></tr><tr><td style="text-align:left"><code>ProjectID</code></td><td style="text-align:left">GCP Project ID where secret is created.</td></tr><tr><td style="text-align:left"><code>secretKey</code></td><td style="text-align:left">Key name to store secret.</td></tr><tr><td style="text-align:left"><code>key</code></td><td style="text-align:left">GCP Secrets Manager secret name.</td></tr></tbody></table>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/gcp-secret.jpg" alt="Figure 9: Google Secret Example" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/gcp-secret.jpg" alt="" class="img_ev3q">
+<center>Figure 9: Google Secret Example</center></p>
 </li>
 <li class="">
 <p>Save secret.</p>

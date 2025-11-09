@@ -17,8 +17,8 @@
 <script>!function(e,t,n,c,s,a,i){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},(a=t.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/s4gie6k444",(i=t.getElementsByTagName(c)[0]).parentNode.insertBefore(a,i)}(window,document,"clarity","script")</script>
 
 
-<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.1a5dd368.css">
-<script src="/assets/js/runtime~main.97d3ed6d.js" defer="defer"></script>
+<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.a83f7829.css">
+<script src="/assets/js/runtime~main.a14e53b8.js" defer="defer"></script>
 <script src="/assets/js/main.03b08886.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -30,7 +30,8 @@
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="viewing-recommendations">Viewing Recommendations<a href="#viewing-recommendations" class="hash-link" aria-label="Direct link to Viewing Recommendations" title="Direct link to Viewing Recommendations" translate="no">​</a></h2>
 <p>Go to <strong>AI Recommendations</strong> → <strong>Notifications</strong> to view the list.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/notification-listing.jpg" alt="Figure 1: &#x27;Notification&#x27; Listing" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/notification-listing.jpg" alt="" class="img_ev3q">
+<center>Figure 1: &#x27;Notification&#x27; Listing</center></p>
 <p>Each recommendation item includes:</p>
 <table><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody><tr><td><strong>Read/Unread Indicator</strong></td><td>Represented by a bulb icon on the left. Unread notifications display a red dot indicator 🔴. Once you read or acknowledge it, the red dot disappears.</td></tr><tr><td><strong>Title</strong></td><td>One-line description of what the AI recommends.</td></tr><tr><td><strong>Description</strong></td><td>Shows why the recommendation is suggested to you.</td></tr><tr><td><strong>Category</strong></td><td>Tags representing the scope of improvement: e.g. <code>Cost Optimization</code> or <code>Performance Improvement</code>.</td></tr><tr><td><strong>Priority</strong></td><td>Tags representing the importance of the recommendation item: <code>Low</code>, <code>Medium</code>, <code>High</code>, or <code>Urgent</code>.</td></tr><tr><td><strong>Potential Savings</strong></td><td>The impact or extent of savings (e.g., “80% resource reduction”).</td></tr><tr><td><strong>Cluster</strong></td><td>The affected cluster you have added to Devtron.</td></tr><tr><td><strong>Status</strong></td><td>Action Pending, Completed, Failed, etc. Check <a href="#notification-feed-statuses" class="">all possible statuses and their meaning</a>.</td></tr><tr><td><strong>Processed By</strong></td><td>Associated runbook or automation.</td></tr><tr><td><strong>Timestamp</strong></td><td>Date and time when the recommendation is generated or updated.</td></tr><tr><td><strong>(⋮) Context Menu</strong></td><td><strong>Acknowledge</strong> - To mark as read <br> <strong>Revert Change</strong> - To undo the remediation. Only possible when <code>Status</code> = <code>Completed</code>.</td></tr></tbody></table>
 <p>You can click a recommendation to get its <a href="#detailed-view" class="">Detailed View</a>.</p>
@@ -38,7 +39,8 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="detailed-view">Detailed View<a href="#detailed-view" class="hash-link" aria-label="Direct link to Detailed View" title="Direct link to Detailed View" translate="no">​</a></h2>
 <p>This modal window has two tabs: <a href="#summary" class="">Summary</a> and <a href="#recommended-change" class="">Recommended Change</a>:</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/summary-proposal.jpg" alt="Figure 2: Summary of AI Proposal" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/summary-proposal.jpg" alt="" class="img_ev3q">
+<center>Figure 2: Summary of AI Proposal</center></p>
 <p>Apart from the recommendation details seen earlier, this will show additional information, such as:</p>
 <ul>
 <li class=""><strong>AI Thought Process</strong> -  Displays the line-by-line analysis done by AI before suggesting you the recommendation.</li>
@@ -46,7 +48,8 @@
 </ul>
 <p>The next step is to <a href="#recommended-change" class="">review the recommendation</a>.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="recommended-change">Recommended Change<a href="#recommended-change" class="hash-link" aria-label="Direct link to Recommended Change" title="Direct link to Recommended Change" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/recommended-change.jpg" alt="Figure 3: Diff of Proposed Changes" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/recommended-change.jpg" alt="" class="img_ev3q">
+<center>Figure 3: Diff of Proposed Changes</center></p>
 <p>This tab shows you the configuration diff for you to compare the existing configuration vs recommended change.
 If the recommended change is yet to be acted upon or depending on the <a href="#notification-feed-statuses" class="">current status of notification</a>, you get <strong>Approve</strong> and <strong>Reject</strong> button for accepting/discarding the recommendation. C</p>
 <p>AI automatically generates the runbook corresponding to the recommendation. When the user (superadmin) approves a recommendation, it triggers the corresponding runbook and the remediation takes place.</p>

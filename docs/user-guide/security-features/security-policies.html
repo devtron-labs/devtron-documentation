@@ -17,8 +17,8 @@
 <script>!function(e,t,n,c,s,a,i){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},(a=t.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/s4gie6k444",(i=t.getElementsByTagName(c)[0]).parentNode.insertBefore(a,i)}(window,document,"clarity","script")</script>
 
 
-<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.1a5dd368.css">
-<script src="/assets/js/runtime~main.97d3ed6d.js" defer="defer"></script>
+<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.a83f7829.css">
+<script src="/assets/js/runtime~main.a14e53b8.js" defer="defer"></script>
 <script src="/assets/js/main.03b08886.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -44,7 +44,8 @@
 <li class=""><a href="#configure-environment-security-policy" class="">Environment</a></li>
 <li class=""><a href="#configure-application-security-policy" class="">Application</a></li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/security-feature-global-security-policies.jpg" alt="Figure 1: Security Policies" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/security-feature-global-security-policies.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Security Policies</center></p>
 <p>However, if you define policies at more than one level, the order of precedence would be as follows:</p>
 <ul>
 <li class="">Application + Environment (highest priority)</li>
@@ -63,13 +64,15 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="configure-global-security-policy">Configure Global Security Policy<a href="#configure-global-security-policy" class="hash-link" aria-label="Direct link to Configure Global Security Policy" title="Direct link to Configure Global Security Policy" translate="no">​</a></h2>
 <p>Within the Global Security Policies, there are three options available:</p>
 <table><thead><tr><th>Option</th><th>Description</th></tr></thead><tbody><tr><td>Block always</td><td>Images containing vulnerabilities will be blocked from deployment</td></tr><tr><td>Block if fix is available</td><td>Images containing vulnerabilities will be blocked if a fix is available and has not been applied</td></tr><tr><td>Allow</td><td>Images containing vulnerabilities will be allowed to be deployed regardless of whether a fix is available or not</td></tr></tbody></table>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/global-security-policy-1.jpg" alt="Figure 2: Configuring Global Security Policy" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/global-security-policy-1.jpg" alt="" class="img_ev3q">
+<center>Figure 2: Configuring Global Security Policy</center></p>
 <p>If critical severity levels are blocked in the Global Security Policy, the same blocking will be applied to the Cluster Security Policy. Likewise, allowing critical levels in the global policy automatically allows them in Cluster Security Policies.</p>
 <p>However, users have the flexibility to explicitly modify these policies as desired.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="configure-cluster-security-policy">Configure Cluster Security Policy<a href="#configure-cluster-security-policy" class="hash-link" aria-label="Direct link to Configure Cluster Security Policy" title="Direct link to Configure Cluster Security Policy" translate="no">​</a></h2>
 <p>Cluster Security Policies offer the same three options as <a href="#configure-global-security-policy" class="">Global Security Policies</a> for handling vulnerabilities. However, an extra option called <code>Inherit</code> is available too.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/cluster-security-policy-1.jpg" alt="Figure 3: Configuring Cluster Security Policy" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/cluster-security-policy-1.jpg" alt="" class="img_ev3q">
+<center>Figure 3: Configuring Cluster Security Policy</center></p>
 <p>When <code>Inherit</code> is selected, the policy adopts settings from higher-level options. For example, if critical severity levels are blocked globally, they will also be blocked in Cluster Security Policies. Changing the global policy to allow critical levels will also allow them in Cluster Security Policies. Explicit changes can be made to these policies.</p>
 <p>To block critical vulnerabilities globally but allow them in specific clusters:</p>
 <ol>
@@ -86,7 +89,8 @@
 <li class="">Allow</li>
 <li class="">Inherit</li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/environment-security-policy-1.jpg" alt="Figure 4: Configuring Environment Security Policy" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/environment-security-policy-1.jpg" alt="" class="img_ev3q">
+<center>Figure 4: Configuring Environment Security Policy</center></p>
 <p>The Environment Security Policy inherits its settings from the Cluster Security Policy, following a hierarchical structure where each level inherits the policy from its upper level.</p>
 <p>When you select an environment, it automatically adopts the policy of the associated cluster. For example, if critical-level vulnerabilities are blocked globally but allowed in the Cluster Security Policy, the Environment Security Policy will inherit this allowance. Consequently, critical-level vulnerabilities will also be allowed in the Environment Security Policy.</p>
 <p>However, you have the flexibility to make explicit changes to the policy if needed. This empowers you to customize the policy to align with specific requirements or preferences. Any adjustments made to the environment policy settings will be consistently applied across all applications associated with that environment.</p>
@@ -101,35 +105,43 @@
 </ul>
 <p>However, in the Application Security Policy, the policy is determined by both: Application and Environment</p>
 <p>First, choose an application from the list.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/app-selection.jpg" alt="Figure 5a: Configuring Application Security Policy - Choosing an App" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/app-selection.jpg" alt="" class="img_ev3q">
+<center>Figure 5a: Configuring Application Security Policy - Choosing an App</center></p>
 <p>Next, configure a security policy for that application in the intended environment.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/app-env-v2.jpg" alt="Figure 5b: Configuring Application Security Policy - Choosing an Env" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/app-env-v2.jpg" alt="" class="img_ev3q">
+<center>Figure 5b: Configuring Application Security Policy - Choosing an Env</center></p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="example">Example<a href="#example" class="hash-link" aria-label="Direct link to Example" title="Direct link to Example" translate="no">​</a></h2>
 <ol>
 <li class="">
 <p>Let&#x27;s say, you have defined a policy to block the deployment if critical vulnerabilities are found in a given application.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/blocked-example.jpg" alt="Figure 6: Defining a Block Policy" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/blocked-example.jpg" alt="" class="img_ev3q">
+<center>Figure 6: Defining a Block Policy</center></p>
 </li>
 <li class="">
 <p>Now, go to the <strong>Build &amp; Deploy</strong> tab of that application to select an image.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/select-image.jpg" alt="Figure 7: Selecting an Image" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/select-image.jpg" alt="" class="img_ev3q">
+<center>Figure 7: Selecting an Image</center></p>
 </li>
 <li class="">
 <p>As you can see, security issues were found in the scanned image, hence it is not available for selection. Click <strong>Show Source Info</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/source-info.jpg" alt="Figure 8: Blocked Deployment of Image" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/source-info.jpg" alt="" class="img_ev3q">
+<center>Figure 8: Blocked Deployment of Image</center></p>
 </li>
 <li class="">
 <p>The <code>Security</code> tab shows the critical vulnerabilities and the policy enforced to prevent deployment.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/blocked-deployment.jpg" alt="Figure 9: Detected Vulnerabilities" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/blocked-deployment.jpg" alt="" class="img_ev3q">
+<center>Figure 9: Detected Vulnerabilities</center></p>
 </li>
 </ol>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="block-or-allow-specific-cve-policies">Block or Allow Specific CVE Policies<a href="#block-or-allow-specific-cve-policies" class="hash-link" aria-label="Direct link to Block or Allow Specific CVE Policies" title="Direct link to Block or Allow Specific CVE Policies" translate="no">​</a></h2>
 <p>To block or allow specific Common Vulnerabilities and Exposures (CVE) policies, simply click <strong>Add CVE Policy</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/add-cve-policy-1.jpg" alt="Figure 10: Adding CVE Policy" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/add-cve-policy-1.jpg" alt="" class="img_ev3q">
+<center>Figure 10: Adding CVE Policy</center></p>
 <p>A window will appear where you can enter the CVE ID and select whether to allow or block it.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/cve-popup-v2.jpg" alt="Figure 11: Allowing/Blocking a CVE ID" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/cve-popup-v2.jpg" alt="" class="img_ev3q">
+<center>Figure 11: Allowing/Blocking a CVE ID</center></p>
 <p>This action will determine whether image deployment is allowed or blocked based on the presence of vulnerabilities matching that particular CVE ID. Any other deployment decisions will be made according to the policies set previously.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/security-features/security-scans"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Security Scans</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/automation"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Automation &amp; Enablement</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#configuring-security-policies" class="table-of-contents__link toc-highlight">Configuring Security Policies</a><ul><li><a href="#examples-of-defining-a-policy" class="table-of-contents__link toc-highlight">Examples of Defining a Policy</a></li></ul></li><li><a href="#configure-global-security-policy" class="table-of-contents__link toc-highlight">Configure Global Security Policy</a></li><li><a href="#configure-cluster-security-policy" class="table-of-contents__link toc-highlight">Configure Cluster Security Policy</a></li><li><a href="#configure-environment-security-policy" class="table-of-contents__link toc-highlight">Configure Environment Security Policy</a></li><li><a href="#configure-application-security-policy" class="table-of-contents__link toc-highlight">Configure Application Security Policy</a></li><li><a href="#example" class="table-of-contents__link toc-highlight">Example</a></li><li><a href="#block-or-allow-specific-cve-policies" class="table-of-contents__link toc-highlight">Block or Allow Specific CVE Policies</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
               <div style="text-align: center;">
                 <div style="margin-bottom: 1rem;">

@@ -17,8 +17,8 @@
 <script>!function(e,t,n,c,s,a,i){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},(a=t.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/s4gie6k444",(i=t.getElementsByTagName(c)[0]).parentNode.insertBefore(a,i)}(window,document,"clarity","script")</script>
 
 
-<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.1a5dd368.css">
-<script src="/assets/js/runtime~main.97d3ed6d.js" defer="defer"></script>
+<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.a83f7829.css">
+<script src="/assets/js/runtime~main.a14e53b8.js" defer="defer"></script>
 <script src="/assets/js/main.03b08886.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -51,23 +51,28 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 </li>
 <li class="">
 <p>Click <strong>+ New Workflow</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-1.jpg" alt="Figure 1: Creating New Workflow" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-1.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Creating New Workflow</center></p>
 </li>
 <li class="">
 <p>Select <strong>Build from Source Code</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-2.jpg" alt="Figure 2: &#x27;Selecting Build from Source Code&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/workflow-ci-2.jpg" alt="" class="img_ev3q">
+<center>Figure 2: &#x27;Selecting Build from Source Code&#x27;</center></p>
 </li>
 <li class="">
 <p>In the <strong>Create Build Pipeline</strong> window, enter the following details:</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-v1.jpg" alt="Figure 3: Configuring build pipeline" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ci-pipeline-v1.jpg" alt="" class="img_ev3q">
+<center>Figure 3: Configuring build pipeline</center></p>
 <table><thead><tr><th style="text-align:left">Field Name</th><th style="text-align:left">Required/Optional</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>Pipeline Name</code></td><td style="text-align:left">Required (Auto-Assigned)</td><td style="text-align:left">Devtron automatically assigns a unique name for the pipeline. If you wish, you can change it in <a href="#configuring-advanced-options" class="">Advanced Options</a></td></tr><tr><td style="text-align:left"><code>Source type</code></td><td style="text-align:left">Required</td><td style="text-align:left">Source type to trigger the CI. <strong>Available options:</strong> <code>Branch Fixed</code>, <code>Branch Regex</code>, <code>Pull Request</code>, <code>Tag Creation</code></td></tr><tr><td style="text-align:left"><code>Branch Name</code></td><td style="text-align:left">Required</td><td style="text-align:left">Branch that triggers the CI build</td></tr><tr><td style="text-align:left"><code>Advanced Options</code></td><td style="text-align:left">Optional</td><td style="text-align:left">Create Pre-Build, Build, and Post-Build tasks <br> Refer the <a href="#configuring-advanced-options" class="">Configure Advanced options</a> section to configure <strong>Advanced options</strong>.</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="understanding-source-types">Understanding Source Types<a href="#understanding-source-types" class="hash-link" aria-label="Direct link to Understanding Source Types" title="Direct link to Understanding Source Types" translate="no">​</a></h3>
 <p>Devtron allows you set up different source types for a build pipeline, source types specify the repository events that initiate a build pipeline, such as a change in a branch, pull request creation, or tag creation.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-source-type.jpg" alt="Figure 4: Source Types" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-source-type.jpg" alt="" class="img_ev3q">
+<center>Figure 4: Source Types</center></p>
 <table><thead><tr><th style="text-align:left">Source Type</th><th style="text-align:left">Description</th><th style="text-align:left">Additional Requirements</th></tr></thead><tbody><tr><td style="text-align:left"><code>Branch Fixed</code></td><td style="text-align:left">Triggers a CI build whenever changes are pushed to a specified branch.</td><td style="text-align:left">Requires a predefined branch name.</td></tr><tr><td style="text-align:left"><code>Branch Regex</code></td><td style="text-align:left">Allows dynamic branch selection based on a regex pattern</td><td style="text-align:left">Requires a regex pattern to be defined. For example, if the user sets the Branch Regex as feature-*, then users can trigger the build from branches such as feature-1450, feature-hot-fix, etc.</td></tr><tr><td style="text-align:left"><code>Pull Request</code> (PR)</td><td style="text-align:left">Triggers a CI build when a new pull request is created. You can also define filters (such as PR author, title, or branch) to control which pull requests trigger the pipeline.</td><td style="text-align:left">Requires <a href="#configuring-webhook" class="">configuring a webhook</a> for GitHub or Bitbucket.</td></tr><tr><td style="text-align:left"><code>Tag Creation</code></td><td style="text-align:left">Triggers a build whenever a new tag is created. You can also define filters (such as author and tag name) to control which tags trigger the pipeline.</td><td style="text-align:left"><a href="#configuring-webhook" class="">Configuring a webhook</a> for GitHub or Bitbucket.</td></tr></tbody></table>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pull-request-filters">Pull Request Filters<a href="#pull-request-filters" class="hash-link" aria-label="Direct link to Pull Request Filters" title="Direct link to Pull Request Filters" translate="no">​</a></h4>
 <p>When using <strong>Pull Request</strong> as a source type, Devtron allows you to filter which PRs should trigger a build using the following filters</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-pull-request-filters.jpg" alt="Figure 5: Pull Request Filters" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-pull-request-filters.jpg" alt="" class="img_ev3q">
+<center>Figure 5: Pull Request Filters</center></p>
 <p>Select the appropriate filter and pass the matching condition as a regular expression (regex).</p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div></div>
 </li>
@@ -77,14 +82,16 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <table><thead><tr><th style="text-align:left">Filter Key</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>Author</code></td><td style="text-align:left">Author of the PR</td></tr><tr><td style="text-align:left"><code>Source Branch</code></td><td style="text-align:left">The git branch from which the PR originates, e.g., <code>feature-login-auth</code></td></tr><tr><td style="text-align:left"><code>Target Branch</code></td><td style="text-align:left">The git branch to which the PR is being merged, e.g., <code>main</code></td></tr><tr><td style="text-align:left"><code>Title</code></td><td style="text-align:left">Title of the PR</td></tr><tr><td style="text-align:left"><code>State</code></td><td style="text-align:left">Status of the PR (default is <code>open</code>)</td></tr></tbody></table>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="tag-creation-filters">Tag Creation Filters<a href="#tag-creation-filters" class="hash-link" aria-label="Direct link to Tag Creation Filters" title="Direct link to Tag Creation Filters" translate="no">​</a></h4>
 <p>When using <strong>Tag Creation</strong> as a source type, Devtron allows you to filter which tags should trigger a build based on the following filters</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-tag-creation-filters.jpg" alt="Figure 6: Tag Creation Filters" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-tag-creation-filters.jpg" alt="" class="img_ev3q">
+<center>Figure 6: Tag Creation Filters</center></p>
 <p>Select the appropriate filter and pass the matching condition as a regular expression (regex).</p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Devtron uses the regexp library, view <a href="https://yourbasic.org/golang/regexp-cheat-sheet/" target="_blank" rel="noopener noreferrer" class="">regexp cheatsheet</a>. You can test your custom regex from <a href="https://regex101.com/r/lHHuaE/1" target="_blank" rel="noopener noreferrer" class="">here</a>.</p></div></div>
 <table><thead><tr><th>Filter Key</th><th>Description</th></tr></thead><tbody><tr><td><code>Author</code></td><td>User who created the tag</td></tr><tr><td><code>Tag Name</code></td><td>Name of the tag</td></tr></tbody></table>
 <ol start="6">
 <li class="">
 <p>Click <strong>Create Pipeline</strong> to save the configuration. You can now proceed to trigger the build, or continue below to explore additional configuration options for customizing your pipeline.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-create-pipeline.jpg" alt="Figure 7: Creating pipeline" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-create-pipeline.jpg" alt="" class="img_ev3q">
+<center>Figure 7: Creating pipeline</center></p>
 </li>
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="configuring-advanced-options">Configuring Advanced Options<a href="#configuring-advanced-options" class="hash-link" aria-label="Direct link to Configuring Advanced Options" title="Direct link to Configuring Advanced Options" translate="no">​</a></h3>
@@ -105,16 +112,19 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <ol>
 <li class="">
 <p>In <strong>Create Build Pipeline</strong> window, select <strong>Advanced options</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/advanced-options.jpg" alt="Figure 8: Advanced Options" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/advanced-options.jpg" alt="" class="img_ev3q">
+<center>Figure 8: Advanced Options</center></p>
 </li>
 <li class="">
 <p>Go to <strong>Build stage</strong> tab and configure the following fields:</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-stage-v2.jpg" alt="Figure 9: Build stage" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-stage-v2.jpg" alt="" class="img_ev3q">
+<center>Figure 9: Build stage</center></p>
 <table><thead><tr><th style="text-align:left">Field Name</th><th style="text-align:left">Required/Optional</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>TRIGGER BUILD PIPELINE</code></td><td style="text-align:left">Required</td><td style="text-align:left"><p>The build execution may be set to:</p><ul><li><code>Automatically</code>(default): Build is triggered automatically as the Git source code changes.</li><li><code>Manually</code>: Build is triggered manually.</li></ul></td></tr><tr><td style="text-align:left">DOCKER LAYER CACHING</td><td style="text-align:left">Optional</td><td style="text-align:left">Use this to <a href="#docker-layer-caching-" class="">enable/disable caching of docker image layers</a> from your build pipeline</td></tr><tr><td style="text-align:left"><code>Pipeline Name</code></td><td style="text-align:left">Required</td><td style="text-align:left">Devtron automatically assigns a unique name for the pipeline, if you wish, you can edit it here.</td></tr><tr><td style="text-align:left"><code>Scan for Vulnerabilities</code></td><td style="text-align:left">Optional</td><td style="text-align:left"><p><strong>Prerequisite</strong>: Install either <a class="" href="/docs/user-guide/integrations/vulnerability-scanning/clair">Clair</a> or <a class="" href="/docs/user-guide/integrations/vulnerability-scanning/trivy">Trivy</a>.</p><ul><li>In the <strong>Build</strong> Stage, enable the <strong>Scan for vulnerabilities</strong> toggle.</li><li>Refer: <a class="" href="/docs/user-guide/integrations/vulnerability-scanning">Vulnerability Scanning</a> to learn more.</li></ul></td></tr><tr><td style="text-align:left"><code>Override Options</code></td><td style="text-align:left">Optional</td><td style="text-align:left">Allows overriding configurations from earlier stages like CRI configuration, target platform configuration, etc.</td></tr><tr><td style="text-align:left"><code>Docker build arguments</code></td><td style="text-align:left">Optional</td><td style="text-align:left"><p>Override docker build configurations for this pipeline.</p><ul><li><strong>Key</strong>: Field name</li><li><strong>Value</strong>: Field value.</li></ul></td></tr><tr><td style="text-align:left"><code>Custom Image Tag Pattern</code></td><td style="text-align:left">Optional</td><td style="text-align:left"><p>Enable the Custom Image Tag Pattern toggle.</p><ul><li>Define an alphanumeric pattern (e.g., <code>test-v1.0.<code>{x}</code></code>) where <code><code>{x}</code></code> auto-increments with each build.</li><li>Tags must not start or end with a period (.) or comma (,).</li><li>After configuration, trigger a build by navigating to <strong>Build &amp; Deploy</strong>, selecting the Git commit by clicking on <strong>Select Material</strong>, and clicking <strong>Start Build</strong>.</li><li>The generated image tag will be available in <strong>Build History</strong>, Docker Registry, CD Pipeline (Image Selection)</li></ul> <p> Note: Build will fail if the resulting image tag has already been built in the past. This error might occur when you reset the value of the variable <code>x</code> or when you disable/enable the toggle button for <strong>Custom image tag pattern</strong>.</p></td></tr></tbody></table>
 </li>
 <li class="">
 <p>Click <strong>Create Pipeline</strong> to save the configuration.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-create-pipeline.jpg" alt="Figure 10: Create Pipeline" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-create-pipeline.jpg" alt="" class="img_ev3q">
+<center>Figure 10: Create Pipeline</center></p>
 </li>
 </ol>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="triggering-a-build">Triggering a Build<a href="#triggering-a-build" class="hash-link" aria-label="Direct link to Triggering a Build" title="Direct link to Triggering a Build" translate="no">​</a></h4>
@@ -125,19 +135,23 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 </li>
 <li class="">
 <p>Click <strong>Select Material</strong> in the specific pipeline for which you want to trigger the build.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-select-material.jpg" alt="Figure 11: Selecting Material" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-select-material.jpg" alt="" class="img_ev3q">
+<center>Figure 11: Selecting Material</center></p>
 </li>
 <li class="">
 <p>Choose the <strong>Git commit</strong> to build under <strong>Code Source</strong> tab.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-git-comit.jpg" alt="Figure 12: Selecting Git Commit" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-git-comit.jpg" alt="" class="img_ev3q">
+<center>Figure 12: Selecting Git Commit</center></p>
 </li>
 <li class="">
 <p>Configure runtime parameters (if any) before starting the build under the <strong>Parameters</strong> tab.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-runntime-parameters.jpg" alt="Figure 13: Configuring Runtime Parameters" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-runntime-parameters.jpg" alt="" class="img_ev3q">
+<center>Figure 13: Configuring Runtime Parameters</center></p>
 </li>
 <li class="">
 <p>Click <strong>Start Build</strong>. This will trigger the build process and push the generated container image to the configured container registry for storage, versioning, and later use in the CD pipeline.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-start-build.jpg" alt="Figure 14: Starting Build" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-deploy-start-build.jpg" alt="" class="img_ev3q">
+<center>Figure 14: Starting Build</center></p>
 </li>
 </ol>
 <hr>
@@ -156,24 +170,30 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 </li>
 <li class="">
 <p>Select <strong>+ New Workflow</strong>, a modal window will appear where you can select the type of pipeline you want to create.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-new-workflow.jpg" alt="Figure 15: Creating New Workflow" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-new-workflow.jpg" alt="" class="img_ev3q">
+<center>Figure 15: Creating New Workflow</center></p>
 </li>
 <li class="">
 <p>Select <strong>Linked Build Pipeline</strong>. Another modal window will appear where you can enter the details of the existing pipeline you want to link.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline.jpg" alt="Figure 16: Selecting &#x27;Linked Build Pipeline&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline.jpg" alt="" class="img_ev3q">
+<center>Figure 16: Selecting &#x27;Linked Build Pipeline&#x27;</center></p>
 </li>
 <li class="">
 <p>Enter the details of the existing pipeline you want to link and click <strong>Create Linked CI Pipeline</strong> to create the pipeline.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-create-pipeline.jpg" alt="Figure 17: Entering details of existing pipeline" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-create-pipeline.jpg" alt="" class="img_ev3q">
+<center>Figure 17: Entering details of existing pipeline</center></p>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Note</div><div class="admonitionContent_BuS1"><p>The user must have at least view access to the application that contains the source pipeline, otherwise, the application will not appear in the <strong>Filter By Application</strong> field.</p></div></div>
 <table><thead><tr><th style="text-align:left">Field Name</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left">Filter By Application</td><td style="text-align:left">Enter the application name in which the source CI pipeline exists.</td></tr><tr><td style="text-align:left">Source CI pipeline</td><td style="text-align:left">List all the build pipelines for the selected application. Choose the pipeline that you want to link</td></tr><tr><td style="text-align:left">Name</td><td style="text-align:left">Enter the name for the <strong>Linked Build Pipeline</strong>. <br><ul><li> By default, it takes the name of the source pipeline, if you wish, you can rename it.</li><li> In case the source pipeline exists within the same application, the <strong>Linked Build Pipeline</strong> name must be different from the source pipeline, as Devtron does not allow two pipelines with the same name within a single application.</li></ul></td></tr></tbody></table>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-created.jpg" alt="Figure 18: Pipeline created" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-created.jpg" alt="" class="img_ev3q">
+<center>Figure 18: Pipeline created</center></p>
 <p>Thereafter, the source CI pipeline will indicate the number of Linked CI pipelines. On clicking it, a modal window will appear, which lists all the applications from which the source pipeline is linked, as shown in the image below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linkedci.gif" alt="Figure 19: Linked CI with Child Information" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linkedci.gif" alt="" class="img_ev3q">
+<center>Figure 19: Linked CI with Child Information</center></p>
 </li>
 <li class="">
 <p>After creating a <strong>Linked CI Pipeline</strong>, you can create a CD pipeline. Refer to <a class="" href="/docs/user-guide/creating-application/workflow/cd-pipeline">CD Pipeline</a> page to know more.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-cd.jpg" alt="Figure 20: Creating CD pipeline" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/linked-build-pipeline-cd.jpg" alt="" class="img_ev3q">
+<center>Figure 20: Creating CD pipeline</center></p>
 </li>
 </ol>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Note</div><div class="admonitionContent_BuS1"><p>Linked CI pipelines can&#x27;t trigger builds. They rely on the source CI pipeline to build images. Trigger a build in the source CI pipeline to see the images available for deployment in the linked CI pipeline&#x27;s Deployment stage.</p></div></div>
@@ -188,15 +208,18 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 </li>
 <li class="">
 <p>Select <strong>+ New Workflow</strong>, a modal window will appear where you can select the type of pipeline you want to create.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-new-workflow.jpg" alt="Figure 21: Creating New Workflow" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-new-workflow.jpg" alt="" class="img_ev3q">
+<center>Figure 21: Creating New Workflow</center></p>
 </li>
 <li class="">
 <p>Select <strong>Deploy Image from External Service</strong>, another modal window will appear where you can enter deployment details such as environment, execution mode, and deployment strategy.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image.jpg" alt="Figure 22: Selecting &#x27;Deploy Image from External Service&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image.jpg" alt="" class="img_ev3q">
+<center>Figure 22: Selecting &#x27;Deploy Image from External Service&#x27;</center></p>
 </li>
 <li class="">
 <p>Enter the deployment details and click <strong>Create Pipeline</strong> to create the pipeline.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-create-pipeline.jpg" alt="Figure 23: Entering deployment details" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-create-pipeline.jpg" alt="" class="img_ev3q">
+<center>Figure 23: Entering deployment details</center></p>
 <table><thead><tr><th>Fields</th><th>Description</th></tr></thead><tbody><tr><td><strong>Environment</strong></td><td>Provide the name of the Environment in which you want to deploy your image.</td></tr><tr><td><strong>Namespace</strong></td><td>It will display the namespace of that Environment.</td></tr><tr><td><strong>When do you want the pipeline to execute?</strong></td><td>You can deploy either in one of the following ways: <ul><li><code>Automatic</code>: Pipeline triggers automatically when a new container image is received from the previous stage. Users can also trigger the pipeline manually.</li> <li><code>Manual</code>: Users can trigger the pipeline manually.</li></ul></td></tr><tr><td><strong>Deployment Strategy</strong></td><td>Choose the <a class="" href="/docs/user-guide/creating-application/workflow/cd-pipeline#deployment-strategies">Deployment Strategy</a> according to your preference.</td></tr></tbody></table>
 <p>To get the image from an external CI service (let&#x27;s say Jenkins), you need to configure the Webhook provided by Devtron in your existing External CI pipeline.</p>
 </li>
@@ -206,30 +229,37 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <ol>
 <li class="">
 <p>After creating the pipeline, select <strong>Show webhook details</strong> or select <strong>External Source</strong> stage to get the webhook URL and JSON sample payload to be used in the external CI pipeline.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-show-webhook.jpg" alt="Figure 24: Getting Webhook Details" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-show-webhook.jpg" alt="" class="img_ev3q">
+<center>Figure 24: Getting Webhook Details</center></p>
 </li>
 <li class="">
 <p>On the <strong>Webhook Details</strong> page, click <strong>Select or auto-generate token with required permissions</strong> to select or generate a <code>API token</code>. This token allows external CI services to authenticate with Devtron.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-select-auto-generate.jpg" alt="Figure 25: Clicking &#x27;Select or auto-generate token with required permissions&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-select-auto-generate.jpg" alt="" class="img_ev3q">
+<center>Figure 25: Clicking &#x27;Select or auto-generate token with required permissions&#x27;</center></p>
 <ul>
 <li class="">
 <p>To select an existing API token, choose an API token from the dropdown under <strong>Select API token</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-select-api-token.jpg" alt="Figure 26: Selecting existing API Token" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-select-api-token.jpg" alt="" class="img_ev3q">
+<center>Figure 26: Selecting existing API Token</center></p>
 </li>
 <li class="">
 <p>To generate an API token, select <strong>Auto-generate token</strong> sub tab → Enter a name for the token in the <strong>Token Name</strong> field → Click <strong>Generate token</strong> to generate a token.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-auto-generate-token.jpg" alt="Figure 27a: Generating API Token" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-auto-generate-token-2.jpg" alt="Figure 27b: API Token Generated" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-auto-generate-token.jpg" alt="" class="img_ev3q">
+<center>Figure 27a: Generating API Token</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-auto-generate-token-2.jpg" alt="" class="img_ev3q">
+<center>Figure 27b: API Token Generated</center></p>
 </li>
 </ul>
 </li>
 <li class="">
 <p>After generating an API token, click <strong>Sample cURL request</strong> and select the metadata you want to send to Devtron. Sample JSON and cURL request will be generated accordingly.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-select-metadata.jpg" alt="Figure 28: Getting sample cURL request and selecting metadata" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-select-metadata.jpg" alt="" class="img_ev3q">
+<center>Figure 28: Getting sample cURL request and selecting metadata</center></p>
 </li>
 <li class="">
 <p>Copy the Sample cURL request and integrate it into your External CI (Jenkins) pipeline along with the API token and tag for Docker Image. Refer to <a href="#integrate-with-external-sources---jenkins" class="">Integrate with External Sources</a> to know more.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-copy-curl-cmd.jpg" alt="Figure 29: Copying Sample cURL request" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-copy-curl-cmd.jpg" alt="" class="img_ev3q">
+<center>Figure 29: Copying Sample cURL request</center></p>
 </li>
 <li class="">
 <p>After integrating the webhook, whenever the external CI pipeline is triggered and generates an image, the webhook will automatically send the image details to Devtron for deployment.</p>
@@ -241,14 +271,19 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <ol>
 <li class="">
 <p>Go to <strong>Manage Jenkins</strong> → <strong>Credentials</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-manage-jenkins.jpg" alt="Figure 30a: Selecting &#x27;Manage Jenkins&#x27;" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-credentials.jpg" alt="Figure 30b: Selecting &#x27;Credentials&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-manage-jenkins.jpg" alt="" class="img_ev3q">
+<center>Figure 30a: Selecting &#x27;Manage Jenkins&#x27;</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-credentials.jpg" alt="" class="img_ev3q">
+<center>Figure 30b: Selecting &#x27;Credentials&#x27;</center></p>
 </li>
 <li class="">
 <p>Select <strong>System</strong> under <strong>Stores scoped to Jenkins</strong> → <strong>Global credentials (unrestricted)</strong> → <strong>+Add Credentials</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-system.jpg" alt="Figure 31a: Selecting &#x27;System&#x27; under &#x27;Stores scoped to Jenkins&#x27;" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-global-cred.jpg" alt="Figure 31b: Selecting Global credentials (unrestricted)" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-add-cred.jpg" alt="Figure 31c: Selecting &#x27;Add Credentials&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-system.jpg" alt="" class="img_ev3q">
+<center>Figure 31a: Selecting &#x27;System&#x27; under &#x27;Stores scoped to Jenkins&#x27;</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-global-cred.jpg" alt="" class="img_ev3q">
+<center>Figure 31b: Selecting Global credentials (unrestricted)</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-add-cred.jpg" alt="" class="img_ev3q">
+<center>Figure 31c: Selecting &#x27;Add Credentials&#x27;</center></p>
 </li>
 <li class="">
 <p>Select <code>Secret text</code> in the <strong>Kind</strong> field and select the required <strong>Scope</strong></p>
@@ -264,8 +299,10 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 </li>
 <li class="">
 <p>Select <strong>Create</strong> to create the secret in Jenkins.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-add-secret.jpg" alt="Figure 32a: Adding Credential" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-secret-added.jpg" alt="Figure 32b: Credential Added" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-add-secret.jpg" alt="" class="img_ev3q">
+<center>Figure 32a: Adding Credential</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-secret-added.jpg" alt="" class="img_ev3q">
+<center>Figure 32b: Credential Added</center></p>
 </li>
 </ol>
 <p>After adding the API token as a secret, add a new step/stage in your Jenkins project/pipeline.</p>
@@ -273,11 +310,13 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <ol>
 <li class="">
 <p>Select the Jenkins project in which you want to integrate the Webhook.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-select-project.jpg" alt="Figure 33: Selecting Jenkins Project" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-select-project.jpg" alt="" class="img_ev3q">
+<center>Figure 33: Selecting Jenkins Project</center></p>
 </li>
 <li class="">
 <p>Go to <strong>Configure</strong> → <strong>Environments</strong> and enable the <strong>Use secret text(s) or file(s)</strong> option.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-configure.jpg" alt="Figure 34: Selecting &#x27;Configure&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-configure.jpg" alt="" class="img_ev3q">
+<center>Figure 34: Selecting &#x27;Configure&#x27;</center></p>
 </li>
 <li class="">
 <p>Click <strong>Add</strong> under <strong>Bindings</strong> and select <strong>Secret Text</strong>.</p>
@@ -288,32 +327,39 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <li class="">
 <p>Select the credential&#x27;s <code>ID</code> in <strong>Specific credentials</strong> under <strong>Credentials</strong>.</p>
 <p><strong>Note:</strong> In case you have provided a description for your credential, then instead of the credential <code>ID</code>, the description will be displayed.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-bindings.jpg" alt="Figure 35a: Binding Credential in the project" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-secret-binded.jpg" alt="Figure 35b: Credential Binding successful" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-bindings.jpg" alt="" class="img_ev3q">
+<center>Figure 35a: Binding Credential in the project</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-secret-binded.jpg" alt="" class="img_ev3q">
+<center>Figure 35b: Credential Binding successful</center></p>
 </li>
 <li class="">
 <p>Go to <strong>Configure</strong> → <strong>Build Steps</strong>, click <strong>Add build step</strong>, and then select <strong>Execute Shell</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-add-build+task.jpg" alt="Figure 36: Adding Build Step for Webhook" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-add-build+task.jpg" alt="" class="img_ev3q">
+<center>Figure 36: Adding Build Step for Webhook</center></p>
 </li>
 <li class="">
 <p>Enter the cURL request command as shown below. Make sure to enter the <code>API token</code> and <code>dockerImage</code> in your cURL command and click <strong>Save</strong>.</p>
 <p><strong>Note:</strong> API Token has been referenced from the secret via <strong>Variable Name</strong> (<code>DEVTRON_TOKEN</code>) configured in Jenkins credentials using its <code>ID</code></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-build-task-added.jpg" alt="Figure 47: Configuring Webhook Build Step" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-build-task-added.jpg" alt="" class="img_ev3q">
+<center>Figure 47: Configuring Webhook Build Step</center></p>
 </li>
 </ol>
 <p>In case your Jenkins project is of type <code>pipeline</code>, <code>Multibranch Pipeline</code>, etc., which uses a <strong>Pipeline Script</strong> or <strong>Jenkinsfile</strong>, then you need to add a new stage in the pipeline for configuring the webhook. To do so follow the steps below.</p>
 <ol>
 <li class="">
 <p>Select the Jenkins project in which you want to integrate the Webhook.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-select-project-2.jpg" alt="Figure 38: Selecting Jenkins Project" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-select-project-2.jpg" alt="" class="img_ev3q">
+<center>Figure 38: Selecting Jenkins Project</center></p>
 </li>
 <li class="">
 <p>Go to <strong>Configure</strong> → <strong>Pipeline</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-configure-2.jpg" alt="Figure 39: Selecting &#x27;Configure&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-configure-2.jpg" alt="" class="img_ev3q">
+<center>Figure 39: Selecting &#x27;Configure&#x27;</center></p>
 </li>
 <li class="">
 <p>In case you are using <strong>Pipeline Script</strong>, then modify the script to add a new stage as shown below. If you are using <strong>Pipeline script from SCM</strong>, then modify your Jenkinsfile in the same way.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-add-webhook-stage.jpg" alt="Figure 40: Adding Webhook pipeline stage" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-add-webhook-stage.jpg" alt="" class="img_ev3q">
+<center>Figure 40: Adding Webhook pipeline stage</center></p>
 </li>
 <li class="">
 <p>Click <strong>Save</strong>.</p>
@@ -327,15 +373,18 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <ol>
 <li class="">
 <p>Navigate to <strong>Settings</strong> tab of your repository.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-settings.jpg" alt="Figure 41: Navigating to &#x27;Settings&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-settings.jpg" alt="" class="img_ev3q">
+<center>Figure 41: Navigating to &#x27;Settings&#x27;</center></p>
 </li>
 <li class="">
 <p>Select <strong>Secrets and variables</strong> → <strong>Actions</strong> under <strong>Security</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-secrets.jpg" alt="Figure 42: Selecting &#x27;Actions&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-secrets.jpg" alt="" class="img_ev3q">
+<center>Figure 42: Selecting &#x27;Actions&#x27;</center></p>
 </li>
 <li class="">
 <p>Under <strong>Secrets</strong> tab, select <strong>New repository secret</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-new-secret.jpg" alt="Figure 43: Selecting &#x27;New repository secret&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-new-secret.jpg" alt="" class="img_ev3q">
+<center>Figure 43: Selecting &#x27;New repository secret&#x27;</center></p>
 </li>
 <li class="">
 <p>Enter a name for your secret in the <strong>Name</strong> field.</p>
@@ -345,39 +394,48 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 </li>
 <li class="">
 <p>Select <strong>Add Secret</strong> and the secret will be added to your repository.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-add-secret.jpg" alt="Figure 44a: Entering secret info" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-secret-added.jpg" alt="Figure 44b: Secret Added" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-add-secret.jpg" alt="" class="img_ev3q">
+<center>Figure 44a: Entering secret info</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-secret-added.jpg" alt="" class="img_ev3q">
+<center>Figure 44b: Secret Added</center></p>
 </li>
 </ol>
 <p>After adding the API token as a secret, add a new step in your GitHub Action workflow. To do so, follow the steps below:</p>
 <ol>
 <li class="">
 <p>Navigate to <strong>Actions</strong> tab of your repository.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-actions.jpg" alt="Figure 45: Navigating to Actions" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-actions.jpg" alt="" class="img_ev3q">
+<center>Figure 45: Navigating to Actions</center></p>
 </li>
 <li class="">
 <p>Select your workflow under the <strong>All workflows</strong> section.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-select-workflow.jpg" alt="Figure 46: Selecting workflow" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-select-workflow.jpg" alt="" class="img_ev3q">
+<center>Figure 46: Selecting workflow</center></p>
 </li>
 <li class="">
 <p>Click the workflow file (<code>main.yml</code>) under the workflow name, this will open the workflow file in GitHub.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-select-workflow-file.jpg" alt="Figure 47: Selecting &#x27;Workflow File&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-select-workflow-file.jpg" alt="" class="img_ev3q">
+<center>Figure 47: Selecting &#x27;Workflow File&#x27;</center></p>
 </li>
 <li class="">
 <p>Select the edit icon to add the webhook step in the workflow file.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-edit-icon.jpg" alt="Figure 48: Selecting &#x27;Edit&#x27; Icon" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-edit-icon.jpg" alt="" class="img_ev3q">
+<center>Figure 48: Selecting &#x27;Edit&#x27; Icon</center></p>
 </li>
 <li class="">
 <p>Add the webhook step in the workflow file and select <strong>Commit changes...</strong></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-step-added.jpg" alt="Figure 49a: Adding Webhook Step" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-commit-changes.jpg" alt="Figure 49b: Committing Changes" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-step-added.jpg" alt="" class="img_ev3q">
+<center>Figure 49a: Adding Webhook Step</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-commit-changes.jpg" alt="" class="img_ev3q">
+<center>Figure 49b: Committing Changes</center></p>
 </li>
 <li class="">
 <p>Provide a <strong>Commit message</strong> and an optional description.</p>
 </li>
 <li class="">
 <p>Select <strong>Commit changes</strong>, and the workflow file will be updated with the webhook step.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-commit-changes-2.jpg" alt="Figure 50: Selecting &#x27;Commit changes&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-commit-changes-2.jpg" alt="" class="img_ev3q">
+<center>Figure 50: Selecting &#x27;Commit changes&#x27;</center></p>
 </li>
 </ol>
 <p>The new images that will be built after adding the webhook will be available to Devtron for deployment.</p>
@@ -395,21 +453,26 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 </li>
 <li class="">
 <p>Select <strong>+ New Workflow</strong>, a modal window will appear where you can select the type of pipeline you want to create.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-new-workflow.jpg" alt="Figure 51: Creating New Workflow" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-new-workflow.jpg" alt="" class="img_ev3q">
+<center>Figure 51: Creating New Workflow</center></p>
 </li>
 <li class="">
 <p>Select <strong>Sync with Environment</strong>, another modal window will appear where you need to select the environment in which the source CD pipeline exists.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env.jpg" alt="Figure 52 : Selecting &#x27;Sync with Environment&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env.jpg" alt="" class="img_ev3q">
+<center>Figure 52 : Selecting &#x27;Sync with Environment&#x27;</center></p>
 </li>
 <li class="">
 <p>Select the environment in which the source CD pipeline exists. You can only select one source CD per workflow.</p>
 <p><strong>Note:</strong> The CD pipeline used as a source cannot be deleted while it’s linked.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-select-source-cd.jpg" alt="Figure 53: Selecting Source CD Environment" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-select-source-cd.jpg" alt="" class="img_ev3q">
+<center>Figure 53: Selecting Source CD Environment</center></p>
 </li>
 <li class="">
 <p>Select <strong>Deploy to</strong> in the top right corner to select the environment in which you want to deploy the source CD image.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-deploy-to.jpg" alt="Figure 54a: Selecting &#x27;Deploy To&#x27;" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-select-deploy-env.jpg" alt="Figure 54b: Selecting the Deployment Environment" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-deploy-to.jpg" alt="" class="img_ev3q">
+<center>Figure 54a: Selecting &#x27;Deploy To&#x27;</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/sync-env-select-deploy-env.jpg" alt="" class="img_ev3q">
+<center>Figure 54b: Selecting the Deployment Environment</center></p>
 </li>
 <li class="">
 <p>Select <strong>Create Pipeline</strong> to create a new workflow.</p>
@@ -429,15 +492,18 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 </li>
 <li class="">
 <p>Select <strong>+ New Workflow</strong>, a modal window will appear where you can select the type of pipeline you want to create.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-new-workflow.jpg" alt="Figure 55: Creating New Workflow" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-new-workflow.jpg" alt="" class="img_ev3q">
+<center>Figure 55: Creating New Workflow</center></p>
 </li>
 <li class="">
 <p>Select <strong>Create a job</strong>. This opens the <strong>Create job pipeline</strong> Window in which you can create and configure your job.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci.jpg" alt="Figure 56: Selecting &#x27;Create a job&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci.jpg" alt="" class="img_ev3q">
+<center>Figure 56: Selecting &#x27;Create a job&#x27;</center></p>
 </li>
 <li class="">
 <p>In the <strong>Create job pipeline</strong> window, you can create and configure job pipelines.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-create-job-pipeline.jpg" alt="Figure 57: Create job pipeline" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-create-job-pipeline.jpg" alt="" class="img_ev3q">
+<center>Figure 57: Create job pipeline</center></p>
 </li>
 </ol>
 <p>It includes 2 stages</p>
@@ -451,7 +517,8 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="basic-configurations">Basic Configurations<a href="#basic-configurations" class="hash-link" aria-label="Direct link to Basic Configurations" title="Direct link to Basic Configurations" translate="no">​</a></h3>
 <p>This stage allows you to define primary configurations such as Pipeline name, Source Type, Branch Name, and how the job should be triggered. Refer to the following table to configure each field.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-basic-config.jpg" alt="Figure 58: Configure Basic Configurations" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-basic-config.jpg" alt="" class="img_ev3q">
+<center>Figure 58: Configure Basic Configurations</center></p>
 <table><thead><tr><th style="text-align:left">Field Name</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>Trigger Job Pipeline</code></td><td style="text-align:left"><p>The job execution may be set to:</p><ul><li><code>Automatically</code>: Job execution is triggered automatically as the Git source code changes.</li><li><code>Manually</code>: Build is triggered manually.</li></ul></td></tr><tr><td style="text-align:left"><code>Pipeline Name</code></td><td style="text-align:left">Assign a name to your job pipeline</td></tr><tr><td style="text-align:left"><code>Source type</code></td><td style="text-align:left">Source type to trigger the job pipeline. Available options: Branch Fixed, Branch Regex, Pull Request, Tag Creation</td></tr><tr><td style="text-align:left"><code>Branch Name</code></td><td style="text-align:left">Branch that triggers the CI build</td></tr><tr><td style="text-align:left"><code>Use remote cache</code></td><td style="text-align:left"><p>Enable this option to use the Docker cache from previous builds. Docker&#x27;s layer caching mechanism allows unchanged docker images layers to be reused across pipeline runs, thus drastically reducing execution times<br></p><div data-gb-custom-block="true" data-tag="hint" data-style="info" class="hint hint-info"><p>The globe toggle, next to <code>Docker Layer Caching</code> means that the configuration is inherited from global<br></p><ul><li>Enabled: Inherits the caching settings defined globally.</li><li> Disabled: Allows you to define a pipeline-level configuration specific to this job.</li></ul></div></td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tasks-to-be-executed">Tasks to be executed<a href="#tasks-to-be-executed" class="hash-link" aria-label="Direct link to Tasks to be executed" title="Direct link to Tasks to be executed" translate="no">​</a></h3>
 <p>The Stage allows you to define tasks for your job.</p>
@@ -463,11 +530,13 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 </li>
 <li class="">
 <p>Click <strong>Add Task</strong> to add a task in your job pipeline.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-task-exec.jpg" alt="Figure 59: Add task" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-task-exec.jpg" alt="" class="img_ev3q">
+<center>Figure 59: Add task</center></p>
 </li>
 <li class="">
 <p>A new task will be added (on the left side of the Create job pipeline window), you can configure the task either by selecting one of the available <a href="#pulling-images-through-preset-plugin" class="">preset plugins</a> or by <a href="#create-task-using-custom-script" class="">Executing a custom script</a></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-add-task.jpg" alt="Figure 60: Type of tasks" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-add-task.jpg" alt="" class="img_ev3q">
+<center>Figure 60: Type of tasks</center></p>
 </li>
 </ol>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pulling-images-through-preset-plugin">Pulling Images through Preset Plugin<a href="#pulling-images-through-preset-plugin" class="hash-link" aria-label="Direct link to Pulling Images through Preset Plugin" title="Direct link to Pulling Images through Preset Plugin" translate="no">​</a></h4>
@@ -492,8 +561,10 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <p>The left-side panel will now show a task under <strong>Tasks (IN ORDER OF EXECUTION)</strong>, named after the selected plugin(by default), along with its logo.<br> You can change the task&#x27;s name using the <strong>Task name</strong> field, but plugin&#x27;s logo will remain indicating that it is a preset plugin.</p>
 </li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-pull-images.jpg" alt="Figure 61: Search &#x27;Pull Images from Container Repository&#x27; plugin" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-pull-images-added.jpg" alt="Figure 62: GKE provisioner plugin" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-pull-images.jpg" alt="" class="img_ev3q">
+<center>Figure 61: Search &#x27;Pull Images from Container Repository&#x27; plugin</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/job-ci-pull-images-added.jpg" alt="" class="img_ev3q">
+<center>Figure 62: GKE provisioner plugin</center></p>
 </li>
 <li class="">
 <p>Refer the <a class="" href="/docs/user-guide/plugins/pull-images-from-container-repository">Pull Images from Container Repository</a> documentation to configure the <strong>Pull Images from Container Repository</strong> fields with appropriate values. You may explore <a class="" href="/docs/user-guide/plugins">Plugins documentation</a> to configure any of the available plugins.</p>
@@ -552,7 +623,8 @@ To update a pipeline,</p>
 </li>
 <li class="">
 <p>In the <strong>Edit build pipeline</strong> window, edit the required stages and select <strong>Update Pipeline</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/update-pipeline.jpg" alt="Figure 63: Updating CI pipeline" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/update-pipeline.jpg" alt="" class="img_ev3q">
+<center>Figure 63: Updating CI pipeline</center></p>
 </li>
 </ol>
 <hr>
@@ -562,36 +634,42 @@ To update a pipeline,</p>
 <ol>
 <li class="">
 <p>Navigate to <strong>Configurations</strong> (tab) → <strong>Workflow Editor</strong> and click the pipeline you wish to delete.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-select-workflow.jpg" alt="Figure 64: Selecting Workflow to delete" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-select-workflow.jpg" alt="" class="img_ev3q">
+<center>Figure 64: Selecting Workflow to delete</center></p>
 </li>
 <li class="">
 <p>Click on the Deployment Stage, <strong>Edit deployment pipeline</strong> window will open and select <strong>Delete Pipeline</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-cd.jpg" alt="Figure 65: Clicking &#x27;Delete Pipeline&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-cd.jpg" alt="" class="img_ev3q">
+<center>Figure 65: Clicking &#x27;Delete Pipeline&#x27;</center></p>
 </li>
 <li class="">
 <p>A pop-up will appear asking you to enter the environment name of the deployment.</p>
 </li>
 <li class="">
 <p>Enter the environment name and select <strong>Delete</strong>. The CD pipeline will be deleted.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-cd-popup.jpg" alt="Figure 66: Deleting CD Pipeline" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-cd-popup.jpg" alt="" class="img_ev3q">
+<center>Figure 66: Deleting CD Pipeline</center></p>
 </li>
 </ol>
 <p>In case there are multiple CD pipelines in the workflow, then you need to delete them individually in a similar way.</p>
 <ol start="5">
 <li class="">
 <p>After deleting all CD pipelines, click the Build stage, and the <strong>Edit build pipeline</strong> window will open.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-select-build.jpg" alt="Figure 67: Selecting build stage" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-select-build.jpg" alt="" class="img_ev3q">
+<center>Figure 67: Selecting build stage</center></p>
 </li>
 <li class="">
 <p>Select <strong>Delete Pipeline</strong> from the bottom left corner of the window button in the Build stage, a pop-up will appear prompting you to delete the CI pipeline.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-CI.jpg" alt="Figure 68: Clicking &#x27;Delete Pipeline&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-CI.jpg" alt="" class="img_ev3q">
+<center>Figure 68: Clicking &#x27;Delete Pipeline&#x27;</center></p>
 </li>
 </ol>
 <p>In case your build pipeline is linked to another pipeline through <strong>Linked Build Pipeline</strong>, then you must first delete the linked pipeline in order to delete your pipeline.</p>
 <ol start="7">
 <li class="">
 <p>Select <strong>Delete</strong> and the CI pipeline will be deleted along with its workflow.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-ci-popup.jpg" alt="Figure 69: Deleting CI pipeline" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/delete-pipeline-delete-ci-popup.jpg" alt="" class="img_ev3q">
+<center>Figure 69: Deleting CI pipeline</center></p>
 </li>
 </ol>
 <hr>
@@ -601,8 +679,10 @@ To update a pipeline,</p>
 <ol>
 <li class="">
 <p>In the <strong>Configurations</strong> tab of your application, hover over the intended workflow name and click <strong>Change Image Source</strong> icon.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/change-image-source-click.jpg" alt="Figure 70a: Clicking &#x27;Change Image Source&#x27;" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/change-image-source-select-workflow.jpg" alt="Figure 70b: Selecting Workflow Template" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/change-image-source-click.jpg" alt="" class="img_ev3q">
+<center>Figure 70a: Clicking &#x27;Change Image Source&#x27;</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/change-image-source-select-workflow.jpg" alt="" class="img_ev3q">
+<center>Figure 70b: Selecting Workflow Template</center></p>
 </li>
 <li class="">
 <p>Select the intended workflow template and enter the details required as per the selected workflow template. Refer <a class="" href="/docs/user-guide/creating-application/workflow#types-of-ci-pipelines">Types of workflow templates</a> to learn more.</p>
@@ -633,15 +713,18 @@ To update a pipeline,</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-orchestrator-configmap-global-settings">1. Orchestrator ConfigMap (Global Settings)<a href="#1-orchestrator-configmap-global-settings" class="hash-link" aria-label="Direct link to 1. Orchestrator ConfigMap (Global Settings)" title="Direct link to 1. Orchestrator ConfigMap (Global Settings)" translate="no">​</a></h4>
 <p>Super-admins can define the cache settings in <code>orchestrator-cm</code> globally for all applications and jobs using the following flags:</p>
 <div class="language-shell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-shell codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">DEFAULT_CACHE_FOR_CI_BUILD # for main application build stage </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">DEFAULT_CACHE_FOR_CI_JOB # for CI jobs</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">DEFAULT_CACHE_FOR_JOB # for general jobs</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">DEFAULT_CACHE_FOR_CD_PRE # for pre-deployment stage </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">DEFAULT_CACHE_FOR_CD_POST # for post-deployment stage</span><br></span></code></pre></div></div>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/orchestrator-cm.jpg" alt="Figure 71: Cache behavior at Global-level" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/orchestrator-cm.jpg" alt="" class="img_ev3q">
+<center>Figure 71: Cache behavior at Global-level</center></p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-editing-pipeline">2. Editing Pipeline<a href="#2-editing-pipeline" class="hash-link" aria-label="Direct link to 2. Editing Pipeline" title="Direct link to 2. Editing Pipeline" translate="no">​</a></h4>
 <p>Go to <strong>Workflow Editor</strong> → <strong>Edit Build Pipeline</strong> (Build Stage) → <strong>Docker Layer Caching</strong> (toggle)  → <strong>Use remote cache</strong> (checkbox)</p>
 <p>By default, your build pipeline will inherit the Global Settings. However, you can use the toggle button to override it and decide the caching behavior using the <strong>Use remote cache</strong> checkbox. In other words, cache behavior defined in the pipeline configuration will have higher priority than the global one.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/inherit-global.gif" alt="Figure 72: Cache behavior at Pipeline-level" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/inherit-global.gif" alt="" class="img_ev3q">
+<center>Figure 72: Cache behavior at Pipeline-level</center></p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-during-trigger">3. During Trigger<a href="#3-during-trigger" class="hash-link" aria-label="Direct link to 3. During Trigger" title="Direct link to 3. During Trigger" translate="no">​</a></h4>
 <p>Go to <strong>Build &amp; Deploy</strong> (tab) → <strong>Select Material</strong> → <strong>Ignore Cache</strong> (checkbox)</p>
 <p>You have the option to ignore cache while triggering a build (regardless of the cache settings defined at the pipeline or global level).</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ignore-cache.gif" alt="Figure 73: Cache behavior at Trigger" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/ignore-cache.gif" alt="" class="img_ev3q">
+<center>Figure 73: Cache behavior at Trigger</center></p>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Note</div><div class="admonitionContent_BuS1"><p>If the caching flags in <strong>Global Settings</strong> are set to false, ignoring cache becomes the default behavior even if you don&#x27;t select the &#x27;Ignore Cache&#x27; checkbox during trigger.</p></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="override-build-configuration">Override Build Configuration<a href="#override-build-configuration" class="hash-link" aria-label="Direct link to Override Build Configuration" title="Direct link to Override Build Configuration" translate="no">​</a></h3>
 <p><strong>Override Options</strong> in <strong>Build Stage</strong> lets you override <strong>Build Configurations</strong> for each workflow of the same application. You can configure overrides in the build stage of each workflow.</p>
@@ -658,7 +741,8 @@ To update a pipeline,</p>
 </li>
 <li class="">
 <p>Select the build pipeline of your application.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/select-build-override.jpg" alt="Figure 74: Selecting Build Pipeline" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/select-build-override.jpg" alt="" class="img_ev3q">
+<center>Figure 74: Selecting Build Pipeline</center></p>
 </li>
 <li class="">
 <p>Click <strong>Allow Override</strong> in the <strong>Build Stage</strong>:</p>
@@ -673,26 +757,31 @@ To update a pipeline,</p>
 <p>Set a <a class="" href="/docs/user-guide/creating-application/docker-build-configuration#set-target-platform-for-the-build">new target platform</a> from the drop-down list or enter a new target platform.</p>
 </li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-allow-override.jpg" alt="Figure 75: Selecting Allow Override" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-allow-override.jpg" alt="" class="img_ev3q">
+<center>Figure 75: Selecting Allow Override</center></p>
 </li>
 <li class="">
 <p>Select <strong>Update Pipeline</strong>, The override will be effective when the next build is triggered.</p>
 </li>
 </ol>
 <p>The overridden container registry/container image location/target platform will be reflected on the <a class="" href="/docs/user-guide/creating-application/docker-build-configuration">Build Configuration</a> page. You can also see the number of build pipelines for which the container registry/container image location/target platform are overridden.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-configuration-overridden.jpg" alt="Figure 76: Overrides in Build Configuration" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/build-configuration-overridden.jpg" alt="" class="img_ev3q">
+<center>Figure 76: Overrides in Build Configuration</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="configuring-webhook">Configuring Webhook<a href="#configuring-webhook" class="hash-link" aria-label="Direct link to Configuring Webhook" title="Direct link to Configuring Webhook" translate="no">​</a></h3>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>If you choose <strong>Pull Request</strong> or <strong>Tag Creation</strong> as the <strong>Source Type</strong>, you must first configure the Webhook for GitHub/Bitbucket as a prerequisite step.</p></div></div>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="for-github">For GitHub<a href="#for-github" class="hash-link" aria-label="Direct link to For GitHub" title="Direct link to For GitHub" translate="no">​</a></h4>
 <ol>
 <li class="">
 <p>Go to <strong>Settings</strong> → <strong>Webhooks</strong> of your repository.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-settings.jpg" alt="Figure 77a: Navigating to Repository Settings" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-webhooks.jpg" alt="Figure 77b: Selecting &#x27;Webhooks&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/deploy-image-ga-settings.jpg" alt="" class="img_ev3q">
+<center>Figure 77a: Navigating to Repository Settings</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-webhooks.jpg" alt="" class="img_ev3q">
+<center>Figure 77b: Selecting &#x27;Webhooks&#x27;</center></p>
 </li>
 <li class="">
 <p>Select <strong>Add webhook</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-add-webhook.jpg" alt="Figure 78: Selecting &#x27;Add webhook&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-add-webhook.jpg" alt="" class="img_ev3q">
+<center>Figure 78: Selecting &#x27;Add webhook&#x27;</center></p>
 </li>
 <li class="">
 <p>In the <strong>Payload URL</strong> field, enter the Webhook URL that you get on selecting the source type as &quot;Pull Request&quot; or &quot;Tag Creation&quot; in Devtron the dashboard.</p>
@@ -705,35 +794,41 @@ To update a pipeline,</p>
 </li>
 <li class="">
 <p>Under <strong>Which events would you like to trigger this webhook?</strong>, select <strong>Let me select individual events</strong> to trigger the webhook for specific events.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-enter-info.jpg" alt="Figure 79: Configuring Webhook" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-enter-info.jpg" alt="" class="img_ev3q">
+<center>Figure 79: Configuring Webhook</center></p>
 </li>
 <li class="">
 <p>Select the appropriate triggers</p>
 <ul>
 <li class="">
 <p>For Pull Requests, select <strong>Pull Requests</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-pull.jpg" alt="Figure 80: Selecting &#x27;Pull Requests&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-pull.jpg" alt="" class="img_ev3q">
+<center>Figure 80: Selecting &#x27;Pull Requests&#x27;</center></p>
 </li>
 <li class="">
 <p>For Tag Creation, select <strong>Branch or tag creation</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-branch.jpg" alt="Figure 81: Selecting &#x27;Branch or tag creation&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-branch.jpg" alt="" class="img_ev3q">
+<center>Figure 81: Selecting &#x27;Branch or tag creation&#x27;</center></p>
 </li>
 </ul>
 </li>
 <li class="">
 <p>Select <strong>Add webhook</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-webhook-added.jpg" alt="Figure 82: Selecting &#x27;Add webhook&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-github-webhook-added.jpg" alt="" class="img_ev3q">
+<center>Figure 82: Selecting &#x27;Add webhook&#x27;</center></p>
 </li>
 </ol>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="for-gitlab">For GitLab<a href="#for-gitlab" class="hash-link" aria-label="Direct link to For GitLab" title="Direct link to For GitLab" translate="no">​</a></h4>
 <ol>
 <li class="">
 <p>Navigate to <strong>Setting</strong> → <strong>Webhooks</strong> of your repository.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-settings-webhook.jpg" alt="Figure 83: Navigating to Repository Settings" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-settings-webhook.jpg" alt="" class="img_ev3q">
+<center>Figure 83: Navigating to Repository Settings</center></p>
 </li>
 <li class="">
 <p>Select <strong>Add new webhook</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-add-new-webhook.jpg" alt="Figure 84: Selecting &#x27;Add new webhook&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-add-new-webhook.jpg" alt="" class="img_ev3q">
+<center>Figure 84: Selecting &#x27;Add new webhook&#x27;</center></p>
 </li>
 <li class="">
 <p>You can provide a name and description (optional).</p>
@@ -743,36 +838,43 @@ To update a pipeline,</p>
 </li>
 <li class="">
 <p>In the <strong>Secret token</strong> field, enter the secret from the Devtron dashboard when you select the source type as &quot;Pull Request&quot; or &quot;Tag Creation&quot;.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-enter-info.jpg" alt="Figure 85: Configuring Webhook" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-enter-info.jpg" alt="" class="img_ev3q">
+<center>Figure 85: Configuring Webhook</center></p>
 </li>
 <li class="">
 <p>Checkmark the appropriate triggers under the <strong>Trigger</strong> section.</p>
 <ul>
 <li class="">
 <p>For Pull Requests, select <strong>Merge request events</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-merge.jpg" alt="Figure 86: Selecting &#x27;Merge request events&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-merge.jpg" alt="" class="img_ev3q">
+<center>Figure 86: Selecting &#x27;Merge request events&#x27;</center></p>
 </li>
 <li class="">
 <p>For Tag Creation, select <strong>Tag push events</strong></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-tag.jpg" alt="Figure 87: Selecting &#x27;Tag push events&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-tag.jpg" alt="" class="img_ev3q">
+<center>Figure 87: Selecting &#x27;Tag push events&#x27;</center></p>
 </li>
 </ul>
 </li>
 <li class="">
 <p>Select <strong>Add Webhook</strong> and the webhook will be added to your repository.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-webhook-added.jpg" alt="Figure 88 &#x27;Add Webhook&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-gitlab-webhook-added.jpg" alt="" class="img_ev3q">
+<center>Figure 88<!-- -->:Selecting<!-- --> &#x27;Add Webhook&#x27;</center></p>
 </li>
 </ol>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="for-bitbucket-cloud">For Bitbucket Cloud<a href="#for-bitbucket-cloud" class="hash-link" aria-label="Direct link to For Bitbucket Cloud" title="Direct link to For Bitbucket Cloud" translate="no">​</a></h4>
 <ol>
 <li class="">
 <p>Navigate to the <strong>Repository settings</strong> page of your Bitbucket repository.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-settings.jpg" alt="Figure 89: Navigating to Repository Settings" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-settings.jpg" alt="" class="img_ev3q">
+<center>Figure 89: Navigating to Repository Settings</center></p>
 </li>
 <li class="">
 <p>Select <strong>Webhooks</strong> under <strong>Workflow</strong> section and then select <strong>Add webhook</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-webhook.jpg" alt="Figure 90a: Selecting &#x27;Webhooks&#x27;" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-add-webhook.jpg" alt="Figure 90b: Selecting &#x27;Add webhook&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-webhook.jpg" alt="" class="img_ev3q">
+<center>Figure 90a: Selecting &#x27;Webhooks&#x27;</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-add-webhook.jpg" alt="" class="img_ev3q">
+<center>Figure 90b: Selecting &#x27;Add webhook&#x27;</center></p>
 </li>
 <li class="">
 <p>Enter a <strong>Title</strong> for the webhook.</p>
@@ -782,15 +884,18 @@ To update a pipeline,</p>
 </li>
 <li class="">
 <p>In the <strong>Secret</strong> field, enter the secret from the Devtron dashboard when you select the source type as &quot;Pull Request&quot; or &quot;Tag Creation&quot;.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-enter-info.jpg" alt="Figure 91: Configuring Webhook" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-enter-info.jpg" alt="" class="img_ev3q">
+<center>Figure 91: Configuring Webhook</center></p>
 </li>
 <li class="">
 <p>Select the event triggers for which you want to trigger the webhook under the <strong>Triggers</strong> section.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-trigger.jpg" alt="Figure 92: Selecting triggers" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-trigger.jpg" alt="" class="img_ev3q">
+<center>Figure 92: Selecting triggers</center></p>
 </li>
 <li class="">
 <p>Select <strong>Save</strong> to save your configurations.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-save.jpg" alt="Figure 93: Saving Configurations" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-ci-pipeline/webhooks-bitbucket-save.jpg" alt="" class="img_ev3q">
+<center>Figure 93: Saving Configurations</center></p>
 </li>
 </ol></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/creating-application/workflow"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Workflow Editor</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/creating-application/workflow/cd-pipeline"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">CD Pipeline</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-build-from-source-code" class="table-of-contents__link toc-highlight">1. Build from Source Code</a><ul><li><a href="#creating-a-ci-pipeline" class="table-of-contents__link toc-highlight">Creating a CI Pipeline</a></li><li><a href="#understanding-source-types" class="table-of-contents__link toc-highlight">Understanding Source Types</a></li><li><a href="#configuring-advanced-options" class="table-of-contents__link toc-highlight">Configuring Advanced Options</a></li><li><a href="#build-stage" class="table-of-contents__link toc-highlight">Build Stage</a></li></ul></li><li><a href="#2-linked-build-pipeline" class="table-of-contents__link toc-highlight">2. Linked Build Pipeline</a></li><li><a href="#3-deploy-image-from-external-service" class="table-of-contents__link toc-highlight">3. Deploy Image from External Service</a><ul><li><a href="#configure-webhook-in-external-ci" class="table-of-contents__link toc-highlight">Configure Webhook in External CI</a></li><li><a href="#integrate-with-external-sources---jenkins" class="table-of-contents__link toc-highlight">Integrate with External Sources - Jenkins</a></li><li><a href="#integrate-with-external-sources---github-actions" class="table-of-contents__link toc-highlight">Integrate with External Sources - GitHub Actions</a></li></ul></li><li><a href="#4-sync-with-environment-" class="table-of-contents__link toc-highlight">4. Sync with Environment <a></a></a></li><li><a href="#5-create-a-job" class="table-of-contents__link toc-highlight">5. Create a Job</a><ul><li><a href="#basic-configurations" class="table-of-contents__link toc-highlight">Basic Configurations</a></li><li><a href="#tasks-to-be-executed" class="table-of-contents__link toc-highlight">Tasks to be executed</a></li></ul></li><li><a href="#updating-ci-pipeline" class="table-of-contents__link toc-highlight">Updating CI Pipeline</a></li><li><a href="#deleting-ci-pipeline" class="table-of-contents__link toc-highlight">Deleting CI Pipeline</a></li><li><a href="#extras" class="table-of-contents__link toc-highlight">Extras</a><ul><li><a href="#changing-image-source" class="table-of-contents__link toc-highlight">Changing Image Source</a></li><li><a href="#docker-layer-caching-" class="table-of-contents__link toc-highlight">Docker Layer Caching <a></a></a></li><li><a href="#override-build-configuration" class="table-of-contents__link toc-highlight">Override Build Configuration</a></li><li><a href="#configuring-webhook" class="table-of-contents__link toc-highlight">Configuring Webhook</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
               <div style="text-align: center;">

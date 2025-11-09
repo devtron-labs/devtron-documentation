@@ -17,8 +17,8 @@
 <script>!function(e,t,n,c,s,a,i){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},(a=t.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/s4gie6k444",(i=t.getElementsByTagName(c)[0]).parentNode.insertBefore(a,i)}(window,document,"clarity","script")</script>
 
 
-<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.1a5dd368.css">
-<script src="/assets/js/runtime~main.97d3ed6d.js" defer="defer"></script>
+<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.a83f7829.css">
+<script src="/assets/js/runtime~main.a14e53b8.js" defer="defer"></script>
 <script src="/assets/js/main.03b08886.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -104,7 +104,8 @@
 <ol>
 <li class="">
 <p>Go to the <strong>Chart Store</strong> and search for <code>prometheus</code>. Use the Prometheus community&#x27;s <code>kube-prometheus-stack</code> chart to deploy Prometheus.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app2.jpg" alt="Figure 1: Chart Store" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app2.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Chart Store</center></p>
 </li>
 <li class="">
 <p>After selecting the chart, configure these values as needed before deployment.</p>
@@ -113,22 +114,27 @@
 <div class="language-yaml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-yaml codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token key atrule">serviceMonitorSelectorNilUsesHelmValues</span><span class="token punctuation" style="color:rgb(248, 248, 242)">:</span><span class="token plain"> </span><span class="token boolean important">false</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token key atrule">podMonitorSelectorNilUsesHelmValues</span><span class="token punctuation" style="color:rgb(248, 248, 242)">:</span><span class="token plain"> </span><span class="token boolean important">false</span><br></span></code></pre></div></div>
 <br>
 <p>Search for the above parameters, and update them as shown (or customize as needed).</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app3.jpg" alt="Figure 2a: Prometheus Chart Configuration" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-config.jpg" alt="Figure 2b: Prometheus Chart Configuration (cont.)" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app3.jpg" alt="" class="img_ev3q">
+<center>Figure 2a: Prometheus Chart Configuration</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-config.jpg" alt="" class="img_ev3q">
+<center>Figure 2b: Prometheus Chart Configuration (cont.)</center></p>
 </li>
 <li class="">
 <p>Enable <code>upgradeJob</code> parameter to install CRDs:</p>
 <p>Since Helm does not automatically apply CRDs, you need to enable the <code>upgradeJob</code> parameter in the Helm chart to ensure CRDs are applied before deploying Prometheus.</p>
 <p>In the Prometheus Helm chart settings, locate the <code>upgradeJob</code> parameter and set it to <code>true</code> if it is <code>false</code>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-new2.jpg" alt="Figure 3: upgradeJob Parameter" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-new2.jpg" alt="" class="img_ev3q">
+<center>Figure 3: upgradeJob Parameter</center></p>
 </li>
 <li class="">
 <p>After enabling the parameter, click <strong>Deploy Chart</strong>.</p>
 </li>
 </ol>
 <p>While deploying <code>kube-prometheus-stack</code> chart, the deployment status may show as <strong>Timed out</strong>, and some CustomResourceDefinitions (CRDs) may appear as <strong>Failed</strong>. This behavior is expected and does not require any action from you.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-deployment-timed-out-v2.jpg" alt="Figure 4a: Deployment Timed Out" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-crds-failed.jpg" alt="Figure 4b: CRDs Failed" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-deployment-timed-out-v2.jpg" alt="" class="img_ev3q">
+<center>Figure 4a: Deployment Timed Out</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-crds-failed.jpg" alt="" class="img_ev3q">
+<center>Figure 4b: CRDs Failed</center></p>
 <p>This occurs because certain Prometheus CRDs are large in size, which can lead to temporary sync issues during deployment, but, this does not impact the functionality of the Prometheus components.</p>
 <p>ArgoCD handles such cases automatically and the <code>kube-prometheus-stack</code> will continue to function as expected.</p>
 <ol start="5">

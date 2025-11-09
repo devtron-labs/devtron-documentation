@@ -17,8 +17,8 @@
 <script>!function(e,t,n,c,s,a,i){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},(a=t.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/s4gie6k444",(i=t.getElementsByTagName(c)[0]).parentNode.insertBefore(a,i)}(window,document,"clarity","script")</script>
 
 
-<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.1a5dd368.css">
-<script src="/assets/js/runtime~main.97d3ed6d.js" defer="defer"></script>
+<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.a83f7829.css">
+<script src="/assets/js/runtime~main.a14e53b8.js" defer="defer"></script>
 <script src="/assets/js/main.03b08886.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -31,26 +31,32 @@
 <p>Applications-&gt;AppName-&gt;App Details</p>
 <p>Over here, you can see the status of the app as Healthy. If there are some errors with deployment then the status would not be in a Healthy state.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="events">Events<a href="#events" class="hash-link" aria-label="Direct link to Events" title="Direct link to Events" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/events.jpg" alt="Figure 1: Inspecting Events" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/events.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Inspecting Events</center></p>
 <p>Events of the application are accessible from the bottom left corner.</p>
 <p>Events section displays you the events that took place during the deployment of an app. These events are available until 15 minutes of deployment of the application.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="logs">Logs<a href="#logs" class="hash-link" aria-label="Direct link to Logs" title="Direct link to Logs" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/logs.jpg" alt="Figure 2: Inspecting Logs" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/logs.jpg" alt="" class="img_ev3q">
+<center>Figure 2: Inspecting Logs</center></p>
 <p>Logs contain the logs of the Pods and Containers deployed which you can use for the process of debugging.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="manifest">Manifest<a href="#manifest" class="hash-link" aria-label="Direct link to Manifest" title="Direct link to Manifest" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/manifest.jpg" alt="Figure 3: Inspecting Manifests" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/manifest.jpg" alt="" class="img_ev3q">
+<center>Figure 3: Inspecting Manifests</center></p>
 <p>The Manifest shows the critical information such as Container-image, restartCount, state, phase, podIP, startTime etc. and status of the pods deployed.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="deleting-pods">Deleting Pods<a href="#deleting-pods" class="hash-link" aria-label="Direct link to Deleting Pods" title="Direct link to Deleting Pods" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/delete-pod.jpg" alt="Figure 4: Deleting Pods" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/delete-pod.jpg" alt="" class="img_ev3q">
+<center>Figure 4: Deleting Pods</center></p>
 <p>You might run into a situation where you need to delete Pods. You may need to bounce or restart a pod.</p>
 <p>Deleting a Pod is not an irksome task, it can simply be deleted by Clicking on <code>Delete Pod</code>.</p>
 <p>Suppose you want to setup a new environment, you can delete a pod and thereafter a new pod will be created automatically depending upon the replica count.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="application-objects">Application Objects<a href="#application-objects" class="hash-link" aria-label="Direct link to Application Objects" title="Direct link to Application Objects" translate="no">​</a></h3>
 <p>You can view <code>Application Objects</code> in this section of <code>App Details</code>, such as:</p>
 <table><thead><tr><th style="text-align:left">Key</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>Workloads</code></td><td style="text-align:left"><em>ReplicaSet</em>(ensures how many replica of pod should be running), <em>Status of Pod</em>(status of the Pod)</td></tr><tr><td style="text-align:left"><code>Networking</code></td><td style="text-align:left"><em>Service</em>(an abstraction which defines a logical set of Pods), <em>Endpoints</em>(names of the endpoints that implement a Service), <em>Ingress</em>(API object that manages external access to the services in a cluster)</td></tr><tr><td style="text-align:left"><code>Config &amp; Storage</code></td><td style="text-align:left"><em>ConfigMap</em>( API object used to store non-confidential data in key-value pairs)</td></tr><tr><td style="text-align:left"><code>Custom Resource</code></td><td style="text-align:left"><em>Rollout</em>(new Pods will be scheduled on Nodes with available resources), <em>ServiceMonitor</em>(specifies how groups of services should be monitored)</td></tr></tbody></table>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/ingress.jpg" alt="Figure 5: Viewing Application Objects" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/ingress.jpg" alt="" class="img_ev3q">
+<center>Figure 5: Viewing Application Objects</center></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="monitoring">Monitoring<a href="#monitoring" class="hash-link" aria-label="Direct link to Monitoring" title="Direct link to Monitoring" translate="no">​</a></h2>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/monitoring.jpg" alt="Figure 6: Monitoring Application Metrics" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/monitoring.jpg" alt="" class="img_ev3q">
+<center>Figure 6: Monitoring Application Metrics</center></p>
 <p>You can monitor the application in the <code>App Details</code> section.</p>
 <p>Metrics like <code>CPU Usage</code>, <code>Memory Usage</code>, <code>Throughput</code> and <code>Latency</code> can be viewed here.</p>
 <p>Refer <a class="" href="/docs/user-guide/creating-application/app-metrics">Application Metrics</a> to know the process of enabling them.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#events" class="table-of-contents__link toc-highlight">Events</a></li><li><a href="#logs" class="table-of-contents__link toc-highlight">Logs</a></li><li><a href="#manifest" class="table-of-contents__link toc-highlight">Manifest</a></li><li><a href="#deleting-pods" class="table-of-contents__link toc-highlight">Deleting Pods</a></li><li><a href="#application-objects" class="table-of-contents__link toc-highlight">Application Objects</a></li><li><a href="#monitoring" class="table-of-contents__link toc-highlight">Monitoring</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">

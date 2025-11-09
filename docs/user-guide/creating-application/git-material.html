@@ -17,8 +17,8 @@
 <script>!function(e,t,n,c,s,a,i){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},(a=t.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/s4gie6k444",(i=t.getElementsByTagName(c)[0]).parentNode.insertBefore(a,i)}(window,document,"clarity","script")</script>
 
 
-<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.1a5dd368.css">
-<script src="/assets/js/runtime~main.97d3ed6d.js" defer="defer"></script>
+<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.a83f7829.css">
+<script src="/assets/js/runtime~main.a14e53b8.js" defer="defer"></script>
 <script src="/assets/js/main.03b08886.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -29,7 +29,8 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction">Introduction<a href="#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" translate="no">​</a></h2>
 <p>During the <a class="" href="/docs/user-guide/deploying-application/triggering-ci">CI process</a>, the application source code is pulled from your <a class="" href="/docs/reference/glossary#repo">git repository</a>.</p>
 <p>Devtron also supports multiple Git repositories (be it from one Git account or multiple Git accounts) in a single deployment.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/add-git-repo.jpg" alt="Figure 1: Adding Git Repository" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/add-git-repo.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Adding Git Repository</center></p>
 <p>Therefore, this doc is divided into 2 sections, read the one that caters to your application:</p>
 <ul>
 <li class=""><a href="#single-repo-application" class="">Single Repo Application</a></li>
@@ -52,41 +53,51 @@
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="git-account">Git Account<a href="#git-account" class="hash-link" aria-label="Direct link to Git Account" title="Direct link to Git Account" translate="no">​</a></h3>
 <p>This is a dropdown that shows the list of Git accounts added to your organization on Devtron. If you haven&#x27;t done already, we recommend you to first <a class="" href="/docs/user-guide/app-management/configurations/git-accounts">add your Git account</a> (especially when the repository is private).</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/select-git-account.jpg" alt="Figure 2: Selecting Git Account" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/select-git-account.jpg" alt="" class="img_ev3q">
+<center>Figure 2: Selecting Git Account</center></p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>If the authentication type of your Git account is anonymous, only public Git repositories in that account will be accessible. Whereas, adding a user auth or SSH key will make both public and private repositories accessible.</p></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="git-repo-url">Git Repo URL<a href="#git-repo-url" class="hash-link" aria-label="Direct link to Git Repo URL" title="Direct link to Git Repo URL" translate="no">​</a></h3>
 <p>In this field, you have to provide your code repository’s URL, for e.g., <code>https://github.com/devtron-labs/django-repo</code>.</p>
 <p>You can find this URL by clicking on the <strong>Code</strong> button available on your repository page as shown below:</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/repo-url.jpg" alt="Figure 3: Getting Repo URL" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/repo-url.jpg" alt="" class="img_ev3q">
+<center>Figure 3: Getting Repo URL</center></p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><ul>
 <li class="">Copy the HTTPS/SSH portion of the URL too</li>
 <li class="">Make sure you&#x27;ve added your <a href="https://docs.docker.com/engine/reference/builder/" target="_blank" rel="noopener noreferrer" class="">Dockerfile</a> in the repo</li>
 </ul></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exclude-specific-filefolder-in-this-repo">Exclude specific file/folder in this repo<a href="#exclude-specific-filefolder-in-this-repo" class="hash-link" aria-label="Direct link to Exclude specific file/folder in this repo" title="Direct link to Exclude specific file/folder in this repo" translate="no">​</a></h3>
 <p>Not all repository changes are worth triggering a new <a class="" href="/docs/user-guide/deploying-application/triggering-ci">CI build</a>. If you enable this checkbox, you can define the file(s) or folder(s) whose commits you wish to use in the CI build.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/sample1.jpg" alt="Figure 4: Sample Exclusion Rule" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/sample1.jpg" alt="" class="img_ev3q">
+<center>Figure 4: Sample Exclusion Rule</center></p>
 <p>In other words, if a given commit contains changes only in file(s) present in your exclusion rule, the commit won&#x27;t show up while selecting the <a class="" href="/docs/reference/glossary#material">Git material</a>, which means it will not be eligible for build. However, if a given commit contains changes in other files too (along with the excluded file), the commit won&#x27;t be excluded and it will definitely show up in the list of commits.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/excluded-commit.jpg" alt="Figure 5: Excludes commits made to README.md" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/excluded-commit.jpg" alt="" class="img_ev3q">
+<center>Figure 5: Excludes commits made to README.md</center></p>
 <p>Devtron allows you to create either an exclusion rule, an inclusion rule, or a combination of both. In case of multiple files or folders, you can list them in new lines.</p>
 <p>To exclude a path, use <strong>!</strong> as the prefix, e.g. <code>!path/to/file</code> <br>
 To include a path, don&#x27;t use any prefix, e.g. <code>path/to/file</code></p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="examples">Examples<a href="#examples" class="hash-link" aria-label="Direct link to Examples" title="Direct link to Examples" translate="no">​</a></h4>
 <table><thead><tr><th>Sample Values</th><th>Description</th></tr></thead><tbody><tr><td><code>!README.md</code></td><td><strong>Exclusion of a single file in root folder:</strong> <br> Commits containing changes made only in README.md file will not be shown</td></tr><tr><td><code>!README.md</code> <br> <code>!index.js</code></td><td><strong>Exclusion of multiple files in root folder:</strong> <br> Commits containing changes made only in README.md or/and index.js files will not be shown</td></tr><tr><td><code>README.md</code></td><td><strong>Inclusion of a single file in root folder:</strong> <br> Commits containing changes made only in README.md file will be shown. Rest all will be excluded.</td></tr><tr><td><code>!src/extensions/printer/code2.py</code></td><td><strong>Exclusion of a single file in a folder tree:</strong> <br> Commits containing changes made specifically to code2.py file will not be shown</td></tr><tr><td><code>!src/*</code></td><td><strong>Exclusion of a single folder and all its files:</strong> <br> Commits containing changes made specifically to files within src folder will not be shown</td></tr><tr><td><code>!README.md</code> <br> <code>index.js</code></td><td><strong>Exclusion and inclusion of files:</strong> <br> Commits containing changes made only in README.md will not be shown, but commits made in index.js file will be shown. All other commits apart from the aforementioned files will be excluded.</td></tr><tr><td><code>!README.md</code> <br> <code>README.md</code></td><td><strong>Exclusion and inclusion of conflicting files:</strong> <br> If conflicting paths are defined in the rule, the one defined later will be considered. In this case, commits containing changes made only in README.md will be shown.</td></tr></tbody></table>
 <p>You may use the <strong>Learn how</strong> link (as shown below) to understand the syntax of defining an exclusion or inclusion rule.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/rules.jpg" alt="Figure 6: &#x27;Learn how&#x27; Button" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/rules.jpg" alt="" class="img_ev3q">
+<center>Figure 6: &#x27;Learn how&#x27; Button</center></p>
 <p>Since file paths can be long, Devtron supports regex too for writing the paths. To understand it better, you may click the <strong>How to use</strong> link as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/regex-help.jpg" alt="Figure 7: Regex Support" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/regex-help.jpg" alt="" class="img_ev3q">
+<center>Figure 7: Regex Support</center></p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-to-view-excluded-commits">How to view excluded commits?<a href="#how-to-view-excluded-commits" class="hash-link" aria-label="Direct link to How to view excluded commits?" title="Direct link to How to view excluded commits?" translate="no">​</a></h4>
 <p>As we saw earlier in fig. 4 and 5, commits containing the changes of only <code>README.md</code> file were not displayed, since the file was in the exclusion list.</p>
 <p>However, Devtron gives you the option to view the excluded commits too. There&#x27;s a döner menu at the top-right (beside the <code>Search by commit hash</code> search bar).</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/doner-menu.jpg" alt="Figure 8a: Döner Menu Icon" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/show-exclusions.jpg" alt="Figure 8b: Show Excluded Commits" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/excluded-commits.jpg" alt="Figure 8c: Commits Unavailable for Build" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/doner-menu.jpg" alt="" class="img_ev3q">
+<center>Figure 8a: Döner Menu Icon</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/show-exclusions.jpg" alt="" class="img_ev3q">
+<center>Figure 8b: Show Excluded Commits</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/excluded-commits.jpg" alt="" class="img_ev3q">
+<center>Figure 8c: Commits Unavailable for Build</center></p>
 <p>The <strong>EXCLUDED</strong> label (in red) indicates that the commits contain changes made only to the excluded file, and hence they are unavailable for build.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="set-clone-directory">Set clone directory<a href="#set-clone-directory" class="hash-link" aria-label="Direct link to Set clone directory" title="Direct link to Set clone directory" translate="no">​</a></h3>
 <p>After clicking the checkbox, a field titled <code>clone directory path</code> appears. It is the directory where your code will be cloned for the repository you specified in the previous step.</p>
 <p>This field is optional for a single Git repository application and you can leave the path as default. Devtron assigns a directory by itself when the field is left blank. The default value of this field is <code>./</code></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/clone-directory.jpg" alt="Figure 8: Clone Directory Option" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/clone-directory.jpg" alt="" class="img_ev3q">
+<center>Figure 8: Clone Directory Option</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pull-submodules-recursively">Pull submodules recursively<a href="#pull-submodules-recursively" class="hash-link" aria-label="Direct link to Pull submodules recursively" title="Direct link to Pull submodules recursively" translate="no">​</a></h3>
 <p>This checkbox is optional and is used for pulling <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules" target="_blank" rel="noopener noreferrer" class="">git submodules</a> present in a repo. The submodules will be pulled recursively, and the auth method used for the parent repo will be used for submodules too.</p>
 <hr>

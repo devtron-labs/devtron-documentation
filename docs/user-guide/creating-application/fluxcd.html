@@ -17,8 +17,8 @@
 <script>!function(e,t,n,c,s,a,i){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},(a=t.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/s4gie6k444",(i=t.getElementsByTagName(c)[0]).parentNode.insertBefore(a,i)}(window,document,"clarity","script")</script>
 
 
-<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.1a5dd368.css">
-<script src="/assets/js/runtime~main.97d3ed6d.js" defer="defer"></script>
+<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.a83f7829.css">
+<script src="/assets/js/runtime~main.a14e53b8.js" defer="defer"></script>
 <script src="/assets/js/main.03b08886.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -59,19 +59,23 @@
 <ol>
 <li class="">
 <p>Navigate to Devtron&#x27;s <strong>Resource Browser</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-resource-browser.jpg" alt="Figure 1: Navigating to Resource Browser" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-resource-browser.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Navigating to Resource Browser</center></p>
 </li>
 <li class="">
 <p>Select the <code>default_cluster</code> to enable the feature flags.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-cluster.jpg" alt="Figure 2: Selecting &#x27;default_cluster&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-cluster.jpg" alt="" class="img_ev3q">
+<center>Figure 2: Selecting &#x27;default_cluster&#x27;</center></p>
 </li>
 <li class="">
 <p>Go to Config &amp; Storage → ConfigMap, and click <code>dashboard-cm</code> ConfigMap</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-dashboard-cm.jpg" alt="Figure 3: Clicking &#x27;dashboard-cm&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-select-dashboard-cm.jpg" alt="" class="img_ev3q">
+<center>Figure 3: Clicking &#x27;dashboard-cm&#x27;</center></p>
 </li>
 <li class="">
 <p>Edit the <code>dashboard-cm</code> ConfigMap by clicking <strong>Edit live manifest</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-edit-live-manifest.jpg" alt="Figure 4: Editing Live Manifest" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-edit-live-manifest.jpg" alt="" class="img_ev3q">
+<center>Figure 4: Editing Live Manifest</center></p>
 <ol>
 <li class="">
 <p>To enable deployments via FluxCD, check if the below entries are present in the ConfigMap (create one if it doesn&#x27;t exist) and select <strong>Apply changes</strong>.<br></p>
@@ -83,7 +87,8 @@
 </li>
 </ol>
 <br>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-add-flags.jpg" alt="Figure 5: Adding Feature Flags" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-add-flags.jpg" alt="" class="img_ev3q">
+<center>Figure 5: Adding Feature Flags</center></p>
 </li>
 <li class="">
 <p>Restart the deployment:</p>
@@ -102,7 +107,8 @@
 <li class="">
 <p>Restart the deployment using the following command:</p>
 <div class="language-yaml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-yaml codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">kubectl rollout restart deployment dashboard </span><span class="token punctuation" style="color:rgb(248, 248, 242)">-</span><span class="token plain">n devtroncd </span><br></span></code></pre></div></div>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-restart-deployment.gif" alt="Figure 6: Restarting Deployment" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-restart-deployment.gif" alt="" class="img_ev3q">
+<center>Figure 6: Restarting Deployment</center></p>
 </li>
 </ol>
 </li>
@@ -113,7 +119,8 @@
 </li>
 <li class="">
 <p>Click the checkbox next to the <code>dashboard</code> Deployment workloads and restart them using the <code>⟳</code> button.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/restart-deployments.jpg" alt="Figure 7: Restart &#x27;dashboard&#x27; deployment workloads" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/restart-deployments.jpg" alt="" class="img_ev3q">
+<center>Figure 7: Restart &#x27;dashboard&#x27; deployment workloads</center></p>
 </li>
 </ol>
 </li>
@@ -156,7 +163,8 @@
 <li class="">
 <p>Run the following command to install the FluxCD Controller:</p>
 <div class="language-yaml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-yaml codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">kubectl apply </span><span class="token punctuation" style="color:rgb(248, 248, 242)">-</span><span class="token plain">f https</span><span class="token punctuation" style="color:rgb(248, 248, 242)">:</span><span class="token plain">//github.com/fluxcd/flux2/releases/download/v0.35.0/install.yaml</span><br></span></code></pre></div></div>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-install-controller.gif" alt="Figure 8: Installing FluxCD Controller" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-install-controller.gif" alt="" class="img_ev3q">
+<center>Figure 8: Installing FluxCD Controller</center></p>
 </li>
 <li class="">
 <p>After the command is executed successfully, you can deploy or migrate your applications in that cluster through GitOps (via FluxCD).</p>
@@ -167,24 +175,29 @@
 <ol>
 <li class="">
 <p>Add FluxCD controller repository, <code>https://fluxcd-community.github.io/helm-charts</code> in the chart repositories (if not already added) in Global Configurations. Refer <a class="" href="/docs/user-guide/app-management/configurations/chart-repo#add-chart-repository">Chart Repositories</a> to learn more.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-add-chart-repo.gif" alt="Figure 9: Adding FluxCD Chart Repository" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-add-chart-repo.gif" alt="" class="img_ev3q">
+<center>Figure 9: Adding FluxCD Chart Repository</center></p>
 </li>
 <li class="">
 <p>Add a new environment in the cluster in which you want to deploy the application via FluxCD linked to namespace as <code>flux-system</code>. Refer <a class="" href="/docs/user-guide/global-configurations/cluster-and-environments#add-environment-to-a-cluster">Clusters and Environments</a> to lean more.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-add-env.gif" alt="Figure 10: Adding Environment linked to &#x27;flux-system&#x27; namespace" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-add-env.gif" alt="" class="img_ev3q">
+<center>Figure 10: Adding Environment linked to &#x27;flux-system&#x27; namespace</center></p>
 </li>
 <li class="">
 <p>Navigate to <strong>Chart Store</strong> and select the <code>flux2</code> chart.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-flux2.jpg" alt="Figure 11: Selecting &#x27;flux2&#x27; Chart" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-flux2.jpg" alt="" class="img_ev3q">
+<center>Figure 11: Selecting &#x27;flux2&#x27; Chart</center></p>
 </li>
 <li class="">
 <p>Click <strong>Configure and Deploy</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-deploy-chart.jpg" alt="Figure 12: Deploying &#x27;flux2&#x27; Chart" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-deploy-chart.jpg" alt="" class="img_ev3q">
+<center>Figure 12: Deploying &#x27;flux2&#x27; Chart</center></p>
 </li>
 <li class="">
 <p>Configure the following configurations:</p>
 <table><thead><tr><th style="text-align:left">Field Name</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><strong>App Name</strong></td><td style="text-align:left">Define a name for the chart.</td></tr><tr><td style="text-align:left"><strong>Project</strong></td><td style="text-align:left">Select a project from the dropdown</td></tr><tr><td style="text-align:left"><strong>Deploy to Environment</strong></td><td style="text-align:left">Select the environment which you have created in your preferred cluster linked to <code>flux-system</code> namespace.</td></tr></tbody></table>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-chart-config.jpg" alt="Figure 13: Configuring &#x27;flux2&#x27; Chart" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-chart-config.jpg" alt="" class="img_ev3q">
+<center>Figure 13: Configuring &#x27;flux2&#x27; Chart</center></p>
 </li>
 <li class="">
 <p>Click <strong>Deploy</strong> and the chart will be deployed.</p>

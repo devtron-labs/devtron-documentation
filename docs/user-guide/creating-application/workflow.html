@@ -17,8 +17,8 @@
 <script>!function(e,t,n,c,s,a,i){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},(a=t.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/s4gie6k444",(i=t.getElementsByTagName(c)[0]).parentNode.insertBefore(a,i)}(window,document,"clarity","script")</script>
 
 
-<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.1a5dd368.css">
-<script src="/assets/js/runtime~main.97d3ed6d.js" defer="defer"></script>
+<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.a83f7829.css">
+<script src="/assets/js/runtime~main.a14e53b8.js" defer="defer"></script>
 <script src="/assets/js/main.03b08886.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -29,7 +29,8 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction">Introduction<a href="#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" translate="no">​</a></h2>
 <p>After configuring the <strong>Build Configurations</strong> and <strong>Base Configurations</strong>, the next step is to create a workflow using the Workflow Editor.</p>
 <p>In Devtron, a <strong>Workflow</strong> is a logical sequence of different stages(pipelines) used for continuous integration and continuous deployment of an application.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/arora1.gif" alt="Figure 1: Workflow Editor" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/arora1.gif" alt="" class="img_ev3q">
+<center>Figure 1: Workflow Editor</center></p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="create-workflow">Create Workflow<a href="#create-workflow" class="hash-link" aria-label="Direct link to Create Workflow" title="Direct link to Create Workflow" translate="no">​</a></h2>
 <p>The <strong>Build and Deploy from Source Code</strong> provides a simple way to create both CI and CD pipelines in one step. It is for users who want to set up a complete workflow quickly using minimal required information, such as the source repository branch and the target environment.</p>
@@ -37,24 +38,28 @@
 <ol>
 <li class="">
 <p>Click <strong>New Workflow</strong> in the workflow editor.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-create-workflow.jpg" alt="Figure 2: Selecting &#x27;New Workflow&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-create-workflow.jpg" alt="" class="img_ev3q">
+<center>Figure 2: Selecting &#x27;New Workflow&#x27;</center></p>
 </li>
 <li class="">
 <p>Select <strong>Build and Deploy from Source Code</strong>; a window appears.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-build-deploy-from-source-code.jpg" alt="Figure 3: Selecting &#x27;Build and Deploy from Source Code&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-build-deploy-from-source-code.jpg" alt="" class="img_ev3q">
+<center>Figure 3: Selecting &#x27;Build and Deploy from Source Code&#x27;</center></p>
 </li>
 <li class="">
 <p>Enter the required information in the following fields.</p>
 </li>
 </ol>
 <table><thead><tr><th style="text-align:left">Field Name</th><th style="text-align:left">Required/Optional</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>Source type</code></td><td style="text-align:left">Required</td><td style="text-align:left">Source type to trigger the CI. Available options: Branch Fixed, Branch Regex, Pull Request, Tag Creation</td></tr><tr><td style="text-align:left"><code>Branch Name</code></td><td style="text-align:left">Required</td><td style="text-align:left">Branch that triggers the CI build</td></tr><tr><td style="text-align:left"><code>Environment</code></td><td style="text-align:left">Required</td><td style="text-align:left">Select the environment where you want to deploy your application</td></tr><tr><td style="text-align:left"><code>Namespace</code></td><td style="text-align:left">Required (Auto Filled)</td><td style="text-align:left">Automatically populated based on the selected environment</td></tr></tbody></table>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-cred.jpg" alt="Figure 4: Entering Information" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-cred.jpg" alt="" class="img_ev3q">
+<center>Figure 4: Entering Information</center></p>
 <p><strong>Source Types</strong></p>
 <table><thead><tr><th style="text-align:left">Source Type</th><th style="text-align:left">Description</th><th style="text-align:left">Additional Requirements</th></tr></thead><tbody><tr><td style="text-align:left"><code>Branch Fixed</code></td><td style="text-align:left">Triggers a CI build whenever changes are pushed to a specified branch.</td><td style="text-align:left">Requires a predefined branch name.</td></tr><tr><td style="text-align:left"><code>Branch Regex</code></td><td style="text-align:left">Allows dynamic branch selection based on a regex pattern</td><td style="text-align:left">Requires a regex pattern to be defined. For example, if the user sets the Branch Regex as feature-*, then users can trigger the build from branches such as feature-1450, feature-hot-fix, etc..</td></tr><tr><td style="text-align:left"><code>Pull Request</code> (PR)</td><td style="text-align:left">Triggers a CI build when a new pull request is created. You can also define filters (such as PR author, title, or branch) to control which pull requests trigger the pipeline.</td><td style="text-align:left">Requires configuring a webhook configuration for GitHub or Bitbucket.</td></tr><tr><td style="text-align:left"><code>Tag Creation</code></td><td style="text-align:left">Triggers a build whenever a new tag is created. You can also define filters (such as author and tag name) to control which tags trigger the pipeline.</td><td style="text-align:left">Requires webhook configuration for GitHub or Bitbucket.</td></tr></tbody></table>
 <ol start="4">
 <li class="">
 <p>Click <strong>Create Workflow</strong>; a workflow with both build and deployment pipelines will be created.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-save-workflow.jpg" alt="Figure 5: Clicking &#x27;Create Workflow&#x27;" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-save-workflow.jpg" alt="" class="img_ev3q">
+<center>Figure 5: Clicking &#x27;Create Workflow&#x27;</center></p>
 </li>
 <li class="">
 <p>If you want to configure advanced configurations in the build pipeline, such as Custom image tag pattern, Vulnerability Scanning, etc., refer to the <a class="" href="/docs/user-guide/creating-application/workflow/ci-pipeline#configuring-advanced-options">CI Pipeline</a> page to learn more.</p>
@@ -86,7 +91,8 @@
 <p><a class="" href="/docs/user-guide/creating-application/workflow/ci-pipeline#5-create-a-job">Create a Job</a></p>
 </li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/workflow-ci.jpg" alt="Figure 6: Selecting an Image Source" class="img_ev3q"></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/creating-application/gitops-config"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">GitOps Configuration</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/creating-application/workflow/ci-pipeline"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">CI Pipeline</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#create-workflow" class="table-of-contents__link toc-highlight">Create Workflow</a></li><li><a href="#types-of-ci-pipelines" class="table-of-contents__link toc-highlight">Types of CI Pipelines</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/workflow-ci.jpg" alt="" class="img_ev3q">
+<center>Figure 6: Selecting an Image Source</center></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/creating-application/gitops-config"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">GitOps Configuration</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/creating-application/workflow/ci-pipeline"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">CI Pipeline</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#create-workflow" class="table-of-contents__link toc-highlight">Create Workflow</a></li><li><a href="#types-of-ci-pipelines" class="table-of-contents__link toc-highlight">Types of CI Pipelines</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
               <div style="text-align: center;">
                 <div style="margin-bottom: 1rem;">
                   <a href="/" style="display: inline-block;">

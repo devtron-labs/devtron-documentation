@@ -17,8 +17,8 @@
 <script>!function(e,t,n,c,s,a,i){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},(a=t.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/s4gie6k444",(i=t.getElementsByTagName(c)[0]).parentNode.insertBefore(a,i)}(window,document,"clarity","script")</script>
 
 
-<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.1a5dd368.css">
-<script src="/assets/js/runtime~main.97d3ed6d.js" defer="defer"></script>
+<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.a83f7829.css">
+<script src="/assets/js/runtime~main.a14e53b8.js" defer="defer"></script>
 <script src="/assets/js/main.03b08886.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -36,22 +36,26 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 </li>
 <li class="">
 <p>Select the <strong>Source Code</strong> tab from the left sidebar.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code.jpg" alt="Figure 1: Selecting Source Code" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Selecting Source Code</center></p>
 </li>
 <li class="">
 <p>Under <strong>Add Git Repository</strong>, select the <strong>Git Account</strong> from the dropdown menu. You can also select <code>GitHub Public</code> from the same dropdown to configure a public repository that does not require authentication.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-git-account.jpg" alt="Figure 2: Adding Git Account" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-git-account.jpg" alt="" class="img_ev3q">
+<center>Figure 2: Adding Git Account</center></p>
 </li>
 <li class="">
 <p>Enter the <strong>Repository URL</strong> in the Git Repo <code>URL</code> field, corresponding to the selected Git account. If <code>GitHub Public</code> is selected, you can enter the URL of any public repository, as no authentication is required.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-repo-url.jpg" alt="Figure 3: Adding Git Repository" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-repo-url.jpg" alt="" class="img_ev3q">
+<center>Figure 3: Adding Git Repository</center></p>
 </li>
 <li class="">
 <p>Configure the <a href="#configure-additional-options-optional" class="">Additional Options</a> for the job as per your requirements.</p>
 </li>
 <li class="">
 <p>Click on the <strong>Save</strong> button to save the changes.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-save.jpg" alt="Figure 4: Saving Source Code" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-save.jpg" alt="" class="img_ev3q">
+<center>Figure 4: Saving Source Code</center></p>
 </li>
 </ol>
 <hr>
@@ -64,15 +68,18 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <ol>
 <li class="">
 <p>Check the <strong>Exclude specific file/folder in this repo</strong> checkbox.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-exclude-files.jpg" alt="Figure 5: Excluding Specific File/Folder" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-exclude-files.jpg" alt="" class="img_ev3q">
+<center>Figure 5: Excluding Specific File/Folder</center></p>
 </li>
 <li class="">
 <p>Enter the exclusion or inclusion rules in the <strong>Enter file or folder paths to be included or excluded</strong> field.</p>
 <table><thead><tr><th style="text-align:left">Sample Rules</th><th style="text-align:left">Description</th><th style="text-align:left">Impact on Commits</th></tr></thead><tbody><tr><td style="text-align:left"><code>!README.md</code></td><td style="text-align:left"><strong>Exclusion of a single file in root folder</strong></td><td style="text-align:left">Commits containing changes made only in the README.md file will not be shown</td></tr><tr><td style="text-align:left"><code>!README.md</code> <br> <code>!index.js</code></td><td style="text-align:left"><strong>Exclusion of multiple files in root folder</strong></td><td style="text-align:left">Commits containing changes made only in README.md or/and index.js files will not be shown</td></tr><tr><td style="text-align:left"><code>README.md</code></td><td style="text-align:left"><strong>Inclusion of a single file in root folder</strong></td><td style="text-align:left">Commits containing changes made only in the README.md file will be shown. Rest all will be excluded.</td></tr><tr><td style="text-align:left"><code>!src/extensions/printer/code2.py</code></td><td style="text-align:left"><strong>Exclusion of a single file in a folder tree</strong></td><td style="text-align:left">Commits containing changes made specifically to code2.py file will not be shown</td></tr><tr><td style="text-align:left"><code>!src/*</code></td><td style="text-align:left"><strong>Exclusion of a single folder and all its files:</strong></td><td style="text-align:left">Commits containing changes made specifically to files within the <code>src</code> folder will not be shown</td></tr><tr><td style="text-align:left"><code>!README.md</code> <br> <code>index.js</code></td><td style="text-align:left"><strong>Exclusion and inclusion of files</strong></td><td style="text-align:left">Commits containing changes made only in README.md will not be shown, but commits made in the index.js file will be shown. All other commits apart from the aforementioned files will be excluded.</td></tr><tr><td style="text-align:left"><code>!README.md</code> <br> <code>README.md</code></td><td style="text-align:left"><strong>Exclusion and inclusion of conflicting files</strong></td><td style="text-align:left">If conflicting paths are defined in the rule, the one defined later will be considered. In this case, commits containing changes made only in README.md will be shown.</td></tr></tbody></table>
 <p>You may use the <strong>Learn how</strong> link (as shown below) to understand the syntax of defining an exclusion or inclusion rule.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-learn-how.jpg" alt="Figure 6: &#x27;Learn how&#x27; Button" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-learn-how.jpg" alt="" class="img_ev3q">
+<center>Figure 6: &#x27;Learn how&#x27; Button</center></p>
 <p>Since file paths can be long, Devtron supports regex too for writing the paths. To understand it better, you may click the <strong>How to use</strong> link as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-regex.jpg" alt="Figure 7: Regex Support" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-regex.jpg" alt="" class="img_ev3q">
+<center>Figure 7: Regex Support</center></p>
 </li>
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="set-checkout-path">Set Checkout Path<a href="#set-checkout-path" class="hash-link" aria-label="Direct link to Set Checkout Path" title="Direct link to Set Checkout Path" translate="no">​</a></h3>
@@ -85,13 +92,15 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <li class="">
 <p>Enter the path to the folder you want to check out from the repository in the <strong>Set checkout path</strong> field.</p>
 <table><thead><tr><th style="text-align:left">Sample paths</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>./</code></td><td style="text-align:left">Checkout the repository to the root directory, i.e., the entire repository itself</td></tr><tr><td style="text-align:left"><code>./src</code></td><td style="text-align:left">Checkout the repository to the src folder</td></tr><tr><td style="text-align:left"><code>./src/app</code></td><td style="text-align:left">Checkout the repository to the app folder inside the src folder</td></tr></tbody></table>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-checkout.jpg" alt="Figure 8: Checkout Path" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-checkout.jpg" alt="" class="img_ev3q">
+<center>Figure 8: Checkout Path</center></p>
 </li>
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pull-submodules-recursively">Pull Submodules Recursively<a href="#pull-submodules-recursively" class="hash-link" aria-label="Direct link to Pull Submodules Recursively" title="Direct link to Pull Submodules Recursively" translate="no">​</a></h3>
 <p>This checkbox is used for pulling <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules" target="_blank" rel="noopener noreferrer" class="">git submodules</a> present in a repo. The submodules will be pulled recursively, and the auth method used for the parent repo will be used for submodules too.</p>
 <p>To pull the submodules recursively, check the <strong>Pull submodules recursively</strong> checkbox.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-pull.jpg" alt="Figure 9: Pulling Submodules Recursively" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-pull.jpg" alt="" class="img_ev3q">
+<center>Figure 9: Pulling Submodules Recursively</center></p>
 <hr>
 <p>After configuring <strong>Source Code</strong>, the next step is to create and configure job pipelines.</p>
 <p>Refer to the <a class="" href="/docs/user-guide/jobs/configurations/workflow-editor-job">Workflow editor</a> section to create and configure job pipelines.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/jobs/configurations"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Configurations</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/jobs/configurations/workflow-editor-job"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Workflow Editor</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#configure-additional-options-optional" class="table-of-contents__link toc-highlight">Configure Additional Options (optional)</a><ul><li><a href="#exclude-specific-filefolder-in-this-repo" class="table-of-contents__link toc-highlight">Exclude Specific File/Folder in this Repo</a></li><li><a href="#set-checkout-path" class="table-of-contents__link toc-highlight">Set Checkout Path</a></li><li><a href="#pull-submodules-recursively" class="table-of-contents__link toc-highlight">Pull Submodules Recursively</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">

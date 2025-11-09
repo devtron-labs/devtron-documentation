@@ -17,8 +17,8 @@
 <script>!function(e,t,n,c,s,a,i){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},(a=t.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/s4gie6k444",(i=t.getElementsByTagName(c)[0]).parentNode.insertBefore(a,i)}(window,document,"clarity","script")</script>
 
 
-<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.1a5dd368.css">
-<script src="/assets/js/runtime~main.97d3ed6d.js" defer="defer"></script>
+<script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.a83f7829.css">
+<script src="/assets/js/runtime~main.a14e53b8.js" defer="defer"></script>
 <script src="/assets/js/main.03b08886.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -29,7 +29,8 @@
 <p>You can see the list of nodes available in your cluster. Typically you have several nodes in a cluster; in a learning or resource-limited environment, you might have only one node.</p>
 <p>The components on a typical node include the <code>kubelet</code>, a <code>container runtime</code>, and the <code>kube-proxy</code>.</p>
 <p>If you have multiple nodes, you can search a node by name or label in the search bar. The search result will display the following information about the node. To display a parameter of a node, use <code>Columns</code> on the right side, select the parameter to display from the drop-down list, and click <strong>Apply</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cluster-nodes-db.jpg" alt="Figure 1: Searching and Filtering Nodes" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cluster-nodes-db.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Searching and Filtering Nodes</center></p>
 <table><thead><tr><th>Fields</th><th>Description</th></tr></thead><tbody><tr><td>Node</td><td>Alphanumeric name of the node</td></tr><tr><td>Status</td><td>Status of a node. It can be either <code>Ready</code> or <code>Not Ready</code>.</td></tr><tr><td>Roles</td><td>Shows the roles of a node, e.g., agent</td></tr><tr><td>Errors</td><td>Shows the number of errors in nodes (if any)</td></tr><tr><td>K8s Version</td><td>Shows the version of Kubernetes cluster</td></tr><tr><td>Node Group</td><td>Shows which collection of worker nodes it belongs to</td></tr><tr><td>No. of Pods</td><td>Shows the total number of pods present in the node</td></tr></tbody></table>
 <p>Clicking on a node shows you a number of details such as:</p>
 <ul>
@@ -41,7 +42,8 @@
 <li class="">Labels, Annotations, and Taints</li>
 <li class="">Node IP</li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/node-summary-db.jpg" alt="Figure 2: Checking Node Summary" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/node-summary-db.jpg" alt="" class="img_ev3q">
+<center>Figure 2: Checking Node Summary</center></p>
 <p>Further using the Devtron UI, you will be able to:</p>
 <ul>
 <li class=""><a href="#debug-a-node" class="">Debug a Node</a></li>
@@ -58,25 +60,30 @@
 <ul>
 <li class="">
 <p>Click <strong>Debug</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/debug-db.jpg" alt="Figure 3a: Debugging a Node" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/debug-db.jpg" alt="" class="img_ev3q">
+<center>Figure 3a: Debugging a Node</center></p>
 </li>
 <li class="">
 <p>Debug a node by selecting the terminal shell, i.e., <code>bash</code> or <code>sh</code>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/debug-terminal-db.jpg" alt="Figure 3b: Debug Terminal" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/debug-terminal-db.jpg" alt="" class="img_ev3q">
+<center>Figure 3b: Debug Terminal</center></p>
 </li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="cordon-a-node">Cordon a Node<a href="#cordon-a-node" class="hash-link" aria-label="Direct link to Cordon a Node" title="Direct link to Cordon a Node" translate="no">​</a></h2>
 <p>Cordoning a node means making the node unschedulable. After <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_cordon/" target="_blank" rel="noopener noreferrer" class="">cordoning a node</a>, new pods cannot be scheduled on this node.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon-visual.jpg" alt="Figure 4a: Visual Representation - Cordoning a Node" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon-visual.jpg" alt="" class="img_ev3q">
+<center>Figure 4a: Visual Representation - Cordoning a Node</center></p>
 <ul>
 <li class="">
 <p>Click <strong>Cordon</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon-db.jpg" alt="Figure 4b: Cordoning a Node" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon-db.jpg" alt="" class="img_ev3q">
+<center>Figure 4b: Cordoning a Node</center></p>
 </li>
 <li class="">
 <p>A confirmation dialog box will appear, click <strong>Cordon Node</strong> to proceed.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon-dialog-db.jpg" alt="Figure 4c: Cordon Confirmation" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon-dialog-db.jpg" alt="" class="img_ev3q">
+<center>Figure 4c: Cordon Confirmation</center></p>
 </li>
 </ul>
 <p>The status of the node shows <code>SchedulingDisabled</code> with <code>Unschedulable</code> parameter set as <code>true</code>.</p>
@@ -84,16 +91,19 @@
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="drain-a-node">Drain a Node<a href="#drain-a-node" class="hash-link" aria-label="Direct link to Drain a Node" title="Direct link to Drain a Node" translate="no">​</a></h2>
 <p>Before performing maintenance on a node, <a href="https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/" target="_blank" rel="noopener noreferrer" class="">draining a node</a> evicts all of your pods safely from a node. Safe evictions allow the pod’s containers to gracefully terminate and honour the <code>PodDisruptionBudgets</code> you have specified (if relevant).</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain-visual.jpg" alt="Figure 5a: Visual Representation - Draining a Node" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain-visual.jpg" alt="" class="img_ev3q">
+<center>Figure 5a: Visual Representation - Draining a Node</center></p>
 <p>After the node is drained, all pods (including those managed by DaemonSets) in the node will be automatically drained to other nodes in the cluster, and the drained node will be set to cordoned status.</p>
 <ul>
 <li class="">
 <p>Click <strong>Drain</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain-db.jpg" alt="Figure 5b: Draining a Node" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain-db.jpg" alt="" class="img_ev3q">
+<center>Figure 5b: Draining a Node</center></p>
 </li>
 <li class="">
 <p>A confirmation dialog box will appear, click <strong>Drain Node</strong> to proceed.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain-dialog-db.jpg" alt="Figure 5c: Drain Confirmation" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain-dialog-db.jpg" alt="" class="img_ev3q">
+<center>Figure 5c: Drain Confirmation</center></p>
 </li>
 </ul>
 <p>You can also select from the following conditions before draining a node:</p>
@@ -101,16 +111,19 @@
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="taint-a-node">Taint a Node<a href="#taint-a-node" class="hash-link" aria-label="Direct link to Taint a Node" title="Direct link to Taint a Node" translate="no">​</a></h2>
 <p>Taints are <code>key:value</code> pairs associated with effect. After you add taints to nodes, you can set tolerations on a pod to allow the pod to be scheduled to nodes with certain taints. When you taint a node, it will repel all the pods except those that have a toleration for that taint. A node can have one or many taints associated with it.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/taint-visual.jpg" alt="Figure 6a: Visual Representation - Tainting a Node" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/taint-visual.jpg" alt="" class="img_ev3q">
+<center>Figure 6a: Visual Representation - Tainting a Node</center></p>
 <p><strong>Note</strong>: Make sure to check taint validations before you add a taint.</p>
 <ul>
 <li class="">
 <p>Click <strong>Edit taints</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-taints-db.jpg" alt="Figure 6b: Tainting a Node" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-taints-db.jpg" alt="" class="img_ev3q">
+<center>Figure 6b: Tainting a Node</center></p>
 </li>
 <li class="">
 <p>Enter the <code>key:value</code> pairs and select the taint effect from the drop-down list. <a href="https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/#concepts" target="_blank" rel="noopener noreferrer" class="">Click here</a> to read about taint effects.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/taint-dialog-db.jpg" alt="Figure 6c: Adding Taints" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/taint-dialog-db.jpg" alt="" class="img_ev3q">
+<center>Figure 6c: Adding Taints</center></p>
 </li>
 <li class="">
 <p>Click <strong>Save</strong>.</p>
@@ -120,7 +133,8 @@
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="edit-a-node-config">Edit a Node Config<a href="#edit-a-node-config" class="hash-link" aria-label="Direct link to Edit a Node Config" title="Direct link to Edit a Node Config" translate="no">​</a></h2>
 <p>This allows you to directly edit any node. It will open the editor which contains all the configuration settings in which the default format is YAML. You can edit multiple objects, although changes are applied one at a time.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-config.gif" alt="Figure 7: Editing Node Config" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-config.gif" alt="" class="img_ev3q">
+<center>Figure 7: Editing Node Config</center></p>
 <ul>
 <li class="">Go to the <code>YAML</code> tab and click <strong>Edit YAML</strong>.</li>
 <li class="">Make the changes using the editor.</li>
@@ -130,8 +144,10 @@
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="delete-a-node">Delete a Node<a href="#delete-a-node" class="hash-link" aria-label="Direct link to Delete a Node" title="Direct link to Delete a Node" translate="no">​</a></h2>
 <p>You can also delete a node by clicking the <strong>Delete</strong> button present on the right-hand side.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/delete-node-db.jpg" alt="Figure 8a: Deleting a Node" class="img_ev3q"></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/delete-dialog-db.jpg" alt="Figure 8b: Delete Confirmation" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/delete-node-db.jpg" alt="" class="img_ev3q">
+<center>Figure 8a: Deleting a Node</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/delete-dialog-db.jpg" alt="" class="img_ev3q">
+<center>Figure 8b: Delete Confirmation</center></p>
 <p>The node will be deleted from the cluster.</p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>You can also access <a class="" href="/docs/user-guide/resource-browser/cluster-terminal">Cluster Terminal</a> from your node.</p></div></div></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/resource-browser/compare-and-sync"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Compare &amp; Sync Clusters</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/resource-browser/pods"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Pods</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#debug-a-node" class="table-of-contents__link toc-highlight">Debug a Node</a></li><li><a href="#cordon-a-node" class="table-of-contents__link toc-highlight">Cordon a Node</a></li><li><a href="#drain-a-node" class="table-of-contents__link toc-highlight">Drain a Node</a></li><li><a href="#taint-a-node" class="table-of-contents__link toc-highlight">Taint a Node</a></li><li><a href="#edit-a-node-config" class="table-of-contents__link toc-highlight">Edit a Node Config</a></li><li><a href="#delete-a-node" class="table-of-contents__link toc-highlight">Delete a Node</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
               <div style="text-align: center;">
