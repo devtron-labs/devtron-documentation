@@ -8,13 +8,9 @@ Refer the [User permissions](../../global-configurations/authorization/user-acce
 A workflow can be created in one of the following ways:
 
 * [Build from Source Code](#1-build-from-source-code)
-
 * [Linked Build Pipeline](#2-linked-build-pipeline)
-
 * [Deploy Image from External Service](#3-deploy-image-from-external-service)
-
 * [Sync with Environment](#4-sync-with-environment-) <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
-
 * [Create a Job](#5-create-a-job)
 
 Each method has different use-cases that can be tailored according to the needs of the organization.

@@ -36,7 +36,7 @@ Once your Okta org is set up, create an app integration on Okta to get a Client 
     * Give a name to your application.
     * Select the **Interaction Code** and **Refresh Token** checkbox.
     * Now go to Devtron's Global Configurations → Authorization → SSO Login Services → OIDC.
-    * Copy the redirect URI given in the helper text (might look like: https://xxx.xxx.xxx/xxx/callback).
+    * Copy the redirect URI given in the helper text (might look like: `https://xxx.xxx.xxx/xxx/callback`).
     * Return to the Okta screen, and remove the prefilled value in **Sign-in redirect URIs**.
     * Paste the copied URI in **Sign-in redirect URIs**.
     * Click **Save**.

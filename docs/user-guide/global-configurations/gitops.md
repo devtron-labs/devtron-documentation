@@ -222,7 +222,7 @@ Fill the following mandatory fields:
 
 | Field | Description |
 | --- | --- |
-| **Bitbucket Host** | Enter the URL address of your Bitbucket Data Center, e.g., https://bitbucket.mycompany.com |
+| **Bitbucket Host** | Enter the URL address of your Bitbucket Data Center, e.g., `https://bitbucket.mycompany.com` |
 | **Bitbucket Project Key** | Enter the Bitbucket project key. Refer [Bitbucket Project Key](https://confluence.atlassian.com/bitbucketserver/creating-projects-776639848.html). |
 | **Bitbucket Username*** | Provide the username of your Bitbucket Data Center account |
 | **Password** | Provide the password to authenticate your Bitbucket Data Center account |

@@ -18,6 +18,12 @@
           },
           {
             "from": [
+              "/install/install-devtron"
+            ],
+            "to": "/docs/setup/install/install-devtron"
+          },
+          {
+            "from": [
               "/setup/install/install-devtron-with-cicd"
             ],
             "to": "/docs/setup/install/install-devtron"
@@ -598,7 +604,8 @@
           },
           {
             "from": [
-              "/install/devtron-freemium"
+              "/install/devtron-freemium",
+              "/resources/reference/freemium"
             ],
             "to": "/docs/setup/install/devtron-freemium"
           },
@@ -3623,7 +3630,8 @@
           {
             "from": [
               "/devtron/v1.8/getting-started/global-configurations/cluster-and-environments",
-              "/devtron/v1.8/setup/global-configurations/cluster-and-environments"
+              "/devtron/v1.8/setup/global-configurations/cluster-and-environments",
+              "/devtron/v0.4/devtron/setup/global-configurations/cluster-and-environments"
             ],
             "to": "/docs/devtron/v1.8/user-guide/global-configurations/cluster-and-environments"
           },
@@ -3736,7 +3744,8 @@
           {
             "from": [
               "/devtron/v1.8/getting-started/global-configurations/tags-policy",
-              "/devtron/v1.8/setup/global-configurations/tags-policy"
+              "/devtron/v1.8/setup/global-configurations/tags-policy",
+              "/devtron/v0.6/global-configurations/tags-policy"
             ],
             "to": "/docs/devtron/v1.8/user-guide/global-configurations/tags-policy"
           },
@@ -4054,7 +4063,8 @@
           },
           {
             "from": [
-              "/devtron/v1.8/global-configurations"
+              "/devtron/v1.8/global-configurations",
+              "/devtron/v0.5/getting-started/global-configurations"
             ],
             "to": "/docs/devtron/v1.8/user-guide/global-configurations"
           },
@@ -4066,7 +4076,8 @@
           },
           {
             "from": [
-              "/devtron/v1.8/global-configurations/gitops"
+              "/devtron/v1.8/global-configurations/gitops",
+              "/devtron/v0.4/devtron/setup/global-configurations/gitops"
             ],
             "to": "/docs/devtron/v1.8/user-guide/global-configurations/gitops"
           },
@@ -5080,7 +5091,8 @@
           },
           {
             "from": [
-              "/devtron/v1.8/resources/reference/configurations-overview"
+              "/devtron/v1.8/resources/reference/configurations-overview",
+              "/devtron/v0.6/configurations-overview"
             ],
             "to": "/docs/devtron/v1.8/setup/configurations/configurations-overview"
           },
@@ -8635,7 +8647,20 @@
               "/docs/devtron/v2.0/resources/uninstall-devtron"
             ],
             "to": "/docs/setup/install/uninstall-devtron"
-          }                                  
+          },    
+          {
+            "from": [
+              "/devtron/v0.4/devtron/user-guide",
+              "/devtron/0.4"
+            ],
+            "to": "/docs"
+          },    
+          {
+            "from": [
+              "/devtron/v0.7/install-devtron-kubernetes-client"
+            ],
+            "to": "/docs/setup/install/install-devtron-Kubernetes-client"
+          }                             
         ]
       }
     ]

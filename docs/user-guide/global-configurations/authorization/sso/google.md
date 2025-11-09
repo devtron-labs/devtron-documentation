@@ -49,15 +49,15 @@ Google does not support IP addresses as valid redirect URIs. You must use a vali
 
 Examples of valid URIs:
 
-✅ https://devtron.example.com/api/dex/callback
+✅ `https://devtron.example.com/api/dex/callback`
 
-✅ https://auth.yourcompany.com/callback
+✅ `https://auth.yourcompany.com/callback`
 
 Examples of invalid URIs:
 
-❌ http://localhost:8080/callback
+❌ `http://localhost:8080/callback`
 
-❌ http://192.168.1.10/callback
+❌ `http://192.168.1.10/callback`
 :::
 
 ![Figure 1: Creating OAuth Client](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/creating-oauth-client-google-sso.jpg)
