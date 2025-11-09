@@ -11,7 +11,8 @@ slug: /user-guide/app-management/policies/image-promotion-policy
 
 An ideal deployment workflow may consist of multiple stages (e.g., SIT, UAT, Prod environment).
 
-![Figure 1: Workflow on Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/sample-cd-workflow.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/sample-cd-workflow.jpg)
+<center>Figure 1: Workflow on Devtron</center>
 
 If you have built such a [workflow](../creating-application/workflow/README.md), your CI image will sequentially traverse and deploy to each environment until it reaches the target environment. However, if there's a critical issue you wish to address urgently (through a hotfix) on production, navigating the standard workflow might feel slow and cumbersome.
 
@@ -20,7 +21,8 @@ Therefore, Devtron offers a feature called 'Image Promotion Policy' that allows 
 * [Pre-CD](../creating-application/workflow/cd-pipeline.md#pre-deployment-stage) and [Post-CD](../creating-application/workflow/cd-pipeline.md#post-deployment-stage) of the intermediate stages
 * All [approval nodes](../global-configurations/approval-policy.md) of the intermediate stages
 
-![Figure 2: Promoting an Image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/image-promotion-visual.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/image-promotion-visual.jpg)
+<center>Figure 2: Promoting an Image</center>
 
 
 ---
@@ -106,7 +108,8 @@ If you don't define both pass and fail conditions, all images will be eligible f
 
  * **Checkboxes for who can approve**: As a super-admin, you also have options to control the approval of image promotion and its deployment. These are available in the form of checkboxes.
 
-    ![Figure 3: Controlling Approvals](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/control-approval.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/control-approval.jpg)
+<center>Figure 3: Controlling Approvals</center>
 
 6. Click **Save Changes**.
 
@@ -191,17 +194,20 @@ Here, you can promote images to the target environment(s).
 
 2. Click the **Promote** button next to the workflow in which the you wish to promote the image. Please note, the button will appear only if image promotion is allowed for any environment used in that workflow.
 
-    ![Figure 3: Promote Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/promote-button.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/promote-button.jpg)
+<center>Figure 3: Promote Button</center>
 
 3. In the `Select Image` tab, you will see a list of images. Use the **Show Images from** dropdown to filter the list and choose the image you wish to promote. This can be either be an image from the CI pipeline or one that has successfully passed all stages (e.g., pre, post, if any) of that particular environment.
 
-    ![Figure 4: Selecting an Image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/show-images.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/show-images.jpg)
+<center>Figure 4: Selecting an Image</center>
 
 4. Use the **SELECT** button on the image, and click **Promote to...**
 
 5. Select one or more target environments using the checkbox.
 
-    ![Figure 5: Selecting the Destination Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/selecting-env.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/selecting-env.jpg)
+<center>Figure 5: Selecting the Destination Environment</center>
 
 6. Click **Promote Image**. 
 
@@ -225,7 +231,8 @@ Only the users having [Artifact promoter](./user-access.md#devtron-apps-permissi
 
 3. Go to the `Approval Pending` tab to see the list of images requiring approval. By default, it shows a list of all images whose promotion request is pending with you. 
 
-    ![Figure 6: Checking Pending Approvals](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/pending-approvals.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/pending-approvals.jpg)
+<center>Figure 6: Checking Pending Approvals</center>
 
 :::info 
 All the images will show the source from which it is being promoted, i.e., CI stage or intermediate stage (environment).
@@ -237,11 +244,13 @@ All the images will show the source from which it is being promoted, i.e., CI st
 
 You can also use the **Show requests** dropdown to filter the image promotion requests for a specific target environment.
 
-![Figure 7: Show Env-specific Promotion Requests](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/show-requests.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/show-requests.jpg)
+<center>Figure 7: Show Env-specific Promotion Requests</center>
 
 If there are pending promotion requests, you can approve them as shown below:
 
-![Figure 8: Approving Image Promotion Requests](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/image-promo-approval.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/image-promo-approval.gif)
+<center>Figure 8: Approving Image Promotion Requests</center>
 
 ### Deploying a Promoted Image
 
@@ -255,8 +264,10 @@ However, a promoted image does not automatically qualify as a deployable image. 
 
 In the **Build & Deploy** tab of your application, click **Select Image** for the CD pipeline, and choose your promoted image for deployment.
 
-![Figure 9: Deploying Promoted Image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/deploying-promoted-image.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/deploying-promoted-image.jpg)
+<center>Figure 9: Deploying Promoted Image</center>
 
 You can check the deployment of promoted images in the **Deployment History** of your application. It will also indicate the pipeline from which the image was promoted and deployed to the target environment.
 
-![Figure 10: Deployment History - Checking Image Source](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/promoted-image-deploy-log.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-promotion/promoted-image-deploy-log.jpg)
+<center>Figure 10: Deployment History - Checking Image Source</center>

@@ -13,10 +13,12 @@ The [User permissions](../../global-configurations/authorization/user-access.md)
 Go to **Global Configurations** → **Authorization** → **Permissions groups** → **Add group**.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-1.jpg)
+<center></center>
 
 Enter the `Group Name` and `Description`.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-2.jpg)
+<center></center>
 
 You can either grant [super-admin](../../global-configurations/authorization/user-access.md#grant-super-admin-permission) permission to a user group or specific permissions to manage access for:
 
@@ -37,6 +39,7 @@ The `Devtron Apps` option will be available only if you install [CI/CD integrati
 Provide the information in the following fields:
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-devtron-apps-v2.jpg)
+<center></center>
 
 
 | Dropdown | Description |
@@ -57,6 +60,7 @@ In `Helm Apps` option, you can provide access to a group to manage permission fo
 Provide the information in the following fields:
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-groups-helm-apps-v2.jpg)
+<center></center>
 
 | Dropdown | Description |
 | --- | --- |
@@ -76,6 +80,7 @@ In `Jobs` option, you can provide access to a group to manage permission for job
 Provide the information in the following fields:
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-groups-jobs-v2.jpg)
+<center></center>
 
 | Dropdown | Description |
 | --- | --- |
@@ -101,11 +106,13 @@ Only super admin users will be able to see `Kubernetes Resources` tab and provid
 To provide Kubernetes resource permission, click `Add permission`.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/kubernetes-resources-permission-group-v2.jpg)
+<center></center>
 
 On the `Kubernetes resource permission`, provide the information in the following fields:
 
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/user-permission/kubernetes-resources-permission-page-v2.jpg)
+<center></center>
 
 | Dropdown | Description |
 | --- | --- |
@@ -129,6 +136,7 @@ The `Chart group permission` option will be available only if you install [CI/CD
 :::
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-chart-v2.jpg)
+<center></center>
 
 :::info 
 You can only give users the ability to `create` or `edit`, not both.
@@ -148,10 +156,12 @@ Click **Save** once you have configured all the required permissions for the gro
 You can edit the permission groups by clicking the `downward arrow.`
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/edit-permission-group.jpg)
+<center></center>
 
 Edit the permission group.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/save-permission-group.jpg)
+<center></center>
 
 Once you are done editing the permission group, click **Save**.
 

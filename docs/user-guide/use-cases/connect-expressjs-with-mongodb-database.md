@@ -61,8 +61,10 @@ Give, the path of the Dockerfile.
 Enable `Ingress`, and give the path on which you want to host the application.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/connect-expressjs-with-mongodb-database/use-cases-springboot-view-student-data.jpg)
+<center></center>
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/connect-expressjs-with-mongodb-database/use-case-expressjs-ingress-template.jpg)
+<center></center>
 
 ### Set up the CI/CD Pipelines
 
@@ -83,6 +85,7 @@ _**path**_ will be the one that you have given in Step 3 while configuring the D
 The output of our application would be as follows:
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/connect-expressjs-with-mongodb-database/use-case-expressjs-view-demo-data.jpg)
+<center></center>
 
 You can see that we are getting the JSON response. We have successfully connected our expressjs application to the mongoDb database.
 

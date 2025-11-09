@@ -568,7 +568,7 @@ html[data-theme='dark'] .markdown a:hover {
 .markdown img {
   cursor: zoom-in;
   display: block;             /* ensures it’s not inline */
-  margin: 2rem auto;          /* center image with spacing */
+  margin: 0rem auto;          /* center image with spacing */
   width: 90%;                 /* 80% of content width */
   max-width: 900px;           /* optional: prevents overly large images */
   border-radius: 0px;        /* rounded corners */

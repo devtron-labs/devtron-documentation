@@ -3,6 +3,7 @@
 ## Sample Configuration
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/openshift.jpg)
+<center></center>
 
 ---
 
@@ -14,19 +15,23 @@ Devtron provides a sample configuration out of the box. There are some values th
 
 * clientID
 
-    ![Fetching Client ID](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/secret/openshift-id-secret1.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/secret/openshift-id-secret1.jpg)
+<center>Fetching Client ID</center>
 
 * clientSecret
 
-    ![Fetching Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/secret/openshift-id-secret2.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/secret/openshift-id-secret2.jpg)
+<center>Fetching Secret</center>
 
 ### Values to Provide
 
 * redirectURI (already provided in SSO Login Services by Devtron)
 
-    ![Copying Redirect URI from Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect/openshift-redurl.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect/openshift-redurl.jpg)
+<center>Copying Redirect URI from Devtron</center>
 
-    ![Pasting Redirect URI](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect/openshift-redirect.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect/openshift-redirect.jpg)
+<center>Pasting Redirect URI</center>
 
 ---
 

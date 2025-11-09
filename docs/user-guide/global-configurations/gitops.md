@@ -13,7 +13,8 @@ In Devtron, you can use either Helm, GitOps (Argo CD), or GitOps (Flux CD) as yo
 
 However, if you choose GitOps - a branch of DevOps that focuses on using Git repositories as a single source of truth - Devtron stores Kubernetes configuration files (e.g., Kubernetes manifests or YAML configs) and the desired state of your applications in Git repositories to track each and every deployment.
 
-![Figure 1: GitOps Approach](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/gitops-approach.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/gitops-approach.jpg)
+<center>Figure 1: GitOps Approach</center>
 
 Whenever tools like Argo CD or Flux CD recognize changes in the Git repository, they apply those changes to the Kubernetes cluster automatically. Similarly, if they notice any change in the cluster, they will revert back the cluster to the Git-defined state.
 
@@ -28,11 +29,13 @@ Users need to have [Super-Admin](user-access.md#assign-super-admin-permissions) 
 
 1. Go to **Application Management** → **Configurations** → **GitOps**
 
-   ![Figure 2: Global Configuration - GitOps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/gitops-v1.jpg)
+   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/gitops-v1.jpg)
+<center>Figure 2: Global Configuration - GitOps</center>
 
 2. Select any one of the [supported Git providers](#supported-git-providers) to configure GitOps. 
 
-   ![Figure 3: Selecting a Provider](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/select-provider-v1.jpg)
+   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/select-provider-v1.jpg)
+<center>Figure 3: Selecting a Provider</center>
 
 :::caution 
 The Git provider you select for configuring GitOps might impact the following sections:
@@ -45,7 +48,8 @@ The Git provider you select for configuring GitOps might impact the following se
 
 3. Fill all the mandatory fields. Refer [supported Git providers](#supported-git-providers) to know more about the respective fields.
 
-   ![Figure 4: Entering Git Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/git-fields.jpg)
+   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/git-fields.jpg)
+<center>Figure 4: Entering Git Credentials</center>
 
 4. In the **Directory Management in Git** section, you get the following options:
 
@@ -57,7 +61,8 @@ The Git provider you select for configuring GitOps might impact the following se
    
       Select this option if you wish to use your own GitOps repo. This is ideal if there are any confidentiality/security concerns that prevent you from giving us admin access. Therefore, the onus is on you to create a GitOps repo with your Git provider, and then [add it to the specific application](../creating-application/gitops-config.md) on Devtron. Make sure the Git credentials you provided in Step 3 have at least read/write access. Choosing this option will unlock a [GitOps Configuration](../creating-application/gitops-config.md) page under the [App Configuration](../creating-application/README.md) tab.
 
-   ![Figure 5: Need for User-defined Git Repo](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/user-defined-git.jpg)
+   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/user-defined-git.jpg)
+<center>Figure 5: Need for User-defined Git Repo</center>
 
 5. Click **Save**/**Update**. A green tick will appear on the active Git provider.
 
@@ -72,7 +77,8 @@ Alternatively, you may use the feature flag **FEATURE_USER_DEFINED_GITOPS_REPO_E
 
 #### How to Use Feature Flag
 
-![Using Feature Flag](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/dashboard-cm.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/dashboard-cm.gif)
+<center>Using Feature Flag</center>
 
 1. Go to [Devtron's Resource Browser](../resource-browser/README.md).
 
@@ -150,7 +156,8 @@ Fill the following mandatory fields:
 
 :::
 
-![Figure 6: AWS Code Commit](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/aws-code-commit.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/aws-code-commit.jpg)
+<center>Figure 6: AWS Code Commit</center>
 
 Fill the following mandatory fields:
 
@@ -197,7 +204,8 @@ Here, you get 2 options:
 
 :::
 
-![Figure 7: Entering Details of Bitbucket Cloud](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/bitbucket-cloud-v1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/bitbucket-cloud-v1.jpg)
+<center>Figure 7: Entering Details of Bitbucket Cloud</center>
 
 Fill the following mandatory fields:
 
@@ -216,7 +224,8 @@ A Bitbucket Data Center account
 
 :::
 
-![Figure 8: Entering Details of Bitbucket Data Center](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/bitbucket-server-v1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/bitbucket-server-v1.jpg)
+<center>Figure 8: Entering Details of Bitbucket Data Center</center>
 
 Fill the following mandatory fields:
 
@@ -229,7 +238,8 @@ Fill the following mandatory fields:
 
 ### Other GitOps <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-![Figure 9: Other GitOps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/other-gitops.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/other-gitops.jpg)
+<center>Figure 9: Other GitOps</center>
 
 If you prefer to use the GitOps approach using a different platform other than the available ones, refer to the following table and fill in the mandatory fields:
 
@@ -285,9 +295,11 @@ For more information about the plans available for your team, see [GitHub's prod
 
 ### Creating Project in Azure DevOps
 
-![Figure 10a: New Project Button in Azure DevOps](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/azure+devops/azure-new-project-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/azure+devops/azure-new-project-v2.jpg)
+<center>Figure 10a: New Project Button in Azure DevOps</center>
 
-![Figure 10b: Create New Project](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/azure+devops/azure-create-new-project-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/azure+devops/azure-create-new-project-v2.jpg)
+<center>Figure 10b: Create New Project</center>
 
 1. Go to Azure DevOps and navigate to Projects.
 2. Select your organization and click `New project`. 

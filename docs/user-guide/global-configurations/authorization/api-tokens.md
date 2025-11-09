@@ -7,6 +7,7 @@ API tokens are the access tokens for authentication. Instead of using username a
 To generate API tokens, go to `Global Configurations -> Authorization -> API tokens` and click `Generate New Token`.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-1.jpg)
+<center></center>
 
 * Enter a name for the token.
 * Add Description. 
@@ -14,10 +15,12 @@ To generate API tokens, go to `Global Configurations -> Authorization -> API tok
 
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-2.jpg)
+<center></center>
 
 * To select a custom expiration date, select `Custom` from the drop-down list. In the adjacent field, you can select your custom expiration date for the API token.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-custom.jpg)
+<center></center>
 
 
 * You can assign permission to the token either with:
@@ -28,6 +31,7 @@ To generate API tokens, go to `Global Configurations -> Authorization -> API tok
 
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-specific-permissions-latest1.jpg)
+<center></center>
   
 
 * Click `Generate Token`.
@@ -35,6 +39,7 @@ To generate API tokens, go to `Global Configurations -> Authorization -> API tok
 A pop-up window will appear on the screen from where you can copy the API token.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-5.jpg)
+<center></center>
 
 ## Use API Token
 
@@ -43,15 +48,18 @@ Once Devtron API token has been generated, you can use this token to request Dev
 Open Postman. Enter the request URL with `POST` method and under HEADERS, enter the API token as shown in the image below.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-6.jpg)
+<center></center>
 
 
 In the `Body` section, provide the API payload as shown below and click `Send`.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-7.jpg)
+<center></center>
 
 As soon as you click `Send`, the created application API will be triggered and a new Devtron app will be created as provided in the payload.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-8.jpg)
+<center></center>
 
 
 ## Update API Token
@@ -60,22 +68,26 @@ To set a new expiration date or to make changes in permissions assigned to the t
 To update the API token, click the token name or click on the edit icon.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-9.jpg)
+<center></center>
 
 To set a new expiration date, you can regenerate the API token. Any scripts or applications using this token must be updated. To regenerate a token, click `Regenerate token`. 
 
 A pop-up window will appear on the screen from where you can select a new expiration date.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-10.jpg)
+<center></center>
 
 Select a new expiration date and click `Regenerate token`.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-11.jpg)
+<center></center>
 
 This will generate a new token with a new expiration date.
 
 To update API token permissions, give the permissions as you want to and click  `Update Token`.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/api-token/api-token-3.jpg)
+<center></center>
 
 
 ## Delete API Token

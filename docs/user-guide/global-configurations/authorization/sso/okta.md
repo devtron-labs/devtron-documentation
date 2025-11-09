@@ -56,7 +56,8 @@ Once your Okta org is set up, create an app integration on Okta to get a Client 
 
 ### Sample Configuration
 
-![Figure 1: Sample Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/sample-config-okta.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/sample-config-okta.jpg)
+<center>Figure 1: Sample Configuration</center>
 
 Now your users will be able to log in to Devtron using the Okta authentication method. Note that existing signed-in users will be logged out, and they have to log in again using their OIDC account.
 
@@ -87,7 +88,8 @@ If you’ve defined groups in your Okta Universal Directory, you can create corr
 
 4. Click **Update**.
 
-![Figure 2: Sample Configuration for Auto -assign Permission](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/okta-sample-config-auto-assign.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/okta-sample-config-auto-assign.jpg)
+<center>Figure 2: Sample Configuration for Auto -assign Permission</center>
 
 :::caution Note
 SSO login requires exact matching between Devtron permission group names and Okta groups. Any discrepancies or missing groups will prevent successful login.

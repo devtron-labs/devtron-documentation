@@ -54,13 +54,16 @@ Upon executing the above-mentioned command, if you encounter an error saying tha
 
 3. Fetch the cluster credentials (`Cluster name`, `Server URL`, `Bearer token`) from the terminal and note them aside.
 
-   ![Figure 1: Fetch Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/cluster-credentials.jpg)
+   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/cluster-credentials.jpg)
+<center>Figure 1: Fetch Cluster Credentials</center>
 
 4. Navigate to **Global Configurations** → **Clusters & Environments** → **Add cluster** and paste the credentials in their respective fields. 
 
-   ![Figure 2a: Add a Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/global-configs-clusters.jpg)
+   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/global-configs-clusters.jpg)
+<center>Figure 2a: Add a Cluster</center>
 
-   ![Figure 2b: Add Cluster Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/adding-cluster.jpg)
+   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/adding-cluster.jpg)
+<center>Figure 2b: Add Cluster Credentials</center>
 
 5. Click **Save Cluster**. This cluster will now be displayed in the **Kubernetes Resource Browser** page. Refer [Kubernetes Resource Browser](#kubernetes-resource-browser) or [Clusters](#clusters) in the Devtron Kubernetes Desktop Client for more information. 
 
@@ -101,17 +104,21 @@ On the left side bar, under the **K8s Resources** tab, the Kubernetes resources 
 
 * Custom Resource
 
-![Figure 3: Kubernetes Resource Browser](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/resource-browser.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/resource-browser.jpg)
+<center>Figure 3: Kubernetes Resource Browser</center>
 
 For the convenience of the user, the Resource Browser page comes with a search box and filters to locate resource kinds quickly. 
 
-![Figure 4: Search Bar](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/search-bar.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/search-bar.jpg)
+<center>Figure 4: Search Bar</center>
 
-![Figure 5: Cluster and Namespace Filters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/filter-boxes.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/filter-boxes.jpg)
+<center>Figure 5: Cluster and Namespace Filters</center>
 
 ### Create a Resource 
 
-![Figure 6: Create a Pod](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/creating-resource.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/creating-resource.gif)
+<center>Figure 6: Create a Pod</center>
 
 #### Sample Script for Creating a Pod
 
@@ -132,15 +139,18 @@ spec:
 
 ### View a Resource
 
-![Figure 7: View a Pod](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/viewing-resource.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/viewing-resource.gif)
+<center>Figure 7: View a Pod</center>
 
 ### Update a Resource
 
-![Figure 8: Update a Live Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/updating-resource.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/updating-resource.gif)
+<center>Figure 8: Update a Live Manifest</center>
 
 ### Delete a Resource
 
-![Figure 9: Delete a Pod](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/deleting-resource.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/deleting-resource.gif)
+<center>Figure 9: Delete a Pod</center>
 
 ---
 
@@ -148,23 +158,28 @@ spec:
 
 Devtron Kubernetes Desktop Client allows you to add multiple clusters and manage all of them from your local machine. The **Clusters** module allows you to view CPU and Memory metrics like CPU Capacity, Memory Capacity, and much more.
 
-![Figure 10: Clusters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/clusters-metrics.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/clusters-metrics.jpg)
+<center>Figure 10: Clusters</center>
 
 ### Perform Node Operations
 
 You can perform node operations such as [Cordon](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_cordon/), [Drain](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_drain/), and [Taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) either from the (&#8942;) icon displayed against the cluster name or by clicking the cluster itself.
 
-![Figure 11a: Peform Node Operations Using the (&#8942;) Icon](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/cluster-node-operations.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/cluster-node-operations.jpg)
+<center>Figure 11a: Peform Node Operations Using the (&#8942;) Icon</center>
 
-![Figure 11b: Peform Node Operations by Clicking the Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/cluster-view.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/cluster-view.jpg)
+<center>Figure 11b: Peform Node Operations by Clicking the Cluster</center>
 
 ### Access Cluster Terminal
 
 At any time, you can debug and troubleshoot any issues in your cluster using the Cluster Terminal. You can access the Cluster Terminal by either clicking **Terminal** option in the Overview page or by clicking the cluster and then clicking the **Debug** option. The same Cluster Terminal will be opened irrespective of the option that you choose. 
 
-![Figure 12a: Terminal Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/terminal-option.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/terminal-option.jpg)
+<center>Figure 12a: Terminal Option</center>
 
-![Figure 12b: Debug Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/debug-option.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/debug-option.jpg)
+<center>Figure 12b: Debug Option</center>
 
 ---
 

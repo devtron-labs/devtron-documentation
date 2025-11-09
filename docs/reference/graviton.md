@@ -18,14 +18,18 @@ The utilization of Graviton machines for building Graviton architecture has led 
 **AMD Build**
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resources/graviton/amd/amd-build.png)
+<center></center>
 
-![Resource Utilization on AMD](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resources/graviton/amd/build-amd.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resources/graviton/amd/build-amd.png)
+<center>Resource Utilization on AMD</center>
 
 **ARM Build**
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resources/graviton/arm/arm-build.png)
+<center></center>
 
-![Resource Utilization on ARM](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resources/graviton/arm/build-arm.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resources/graviton/arm/build-arm.png)
+<center>Resource Utilization on ARM</center>
 
 <hr />
 
@@ -47,10 +51,12 @@ We have attached some snapshots of the resource utilization for the critical mic
 **AMD-Based**
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resources/graviton/amd/devtron-amd.png)
+<center></center>
 
 **ARM-Based**
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resources/graviton/arm/devtron-arm.png)
+<center></center>
 
 
 #### 2. argocd-server
@@ -58,30 +64,36 @@ We have attached some snapshots of the resource utilization for the critical mic
 **AMD-Based**
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resources/graviton/amd/amd-argo-server.png)
+<center></center>
 
 **ARM-Based**
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resources/graviton/arm/argocd-server-arm.png)
+<center></center>
 
 #### 3. argocd-application-controller
 
 **AMD-Based**
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resources/graviton/amd/amd-app-controller.png)
+<center></center>
 
 **ARM-Based**
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resources/graviton/arm/app-controller-arm.png)
+<center></center>
 
 #### 4. argocd-repo-server
 
 **AMD-Based**
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resources/graviton/amd/amd-repo-server.png)
+<center></center>
 
 **ARM-Based**
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resources/graviton/arm/repo-server-arm.png)
+<center></center>
 
 
 

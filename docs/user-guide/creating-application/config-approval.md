@@ -14,9 +14,11 @@ Any changes made to the following configurations will require approval if enable
 
 This stands true for both: base configuration and respective environment-level configuration.
 
-![Figure 1a: Protecting Base Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/base-config.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/base-config.jpg)
+<center>Figure 1a: Protecting Base Configuration</center>
 
-![Figure 1b: Protecting Environment-level Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/env-config.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/env-config.jpg)
+<center>Figure 1b: Protecting Environment-level Configuration</center>
 
 ---
 
@@ -38,11 +40,13 @@ Let's assume you are the application admin and you wish to edit the deployment t
 
 2. In Environment Overrides → (choose your environment) → Deployment Template 
 
-    ![Figure 2: Selecting Values to Change](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/edit-deployment-template.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/edit-deployment-template.jpg)
+<center>Figure 2: Selecting Values to Change</center>
 
 3. You can change the value of a key to a desired value as shown below. Once done, click the **Save Changes…** button.
 
-    ![Figure 3: Changed Values](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/changed-values.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/changed-values.jpg)
+<center>Figure 3: Changed Values</center>
 
 :::info 
 If you are not a super-admin, you cannot modify the locked keys in deployment template. Refer [Lock Deployment Configuration](../global-configurations/lock-deployment-config.md) to know more. 
@@ -55,11 +59,13 @@ If you are not a super-admin, you cannot modify the locked keys in deployment te
 
     Since we are proposing the changes immediately, click **Propose Changes**.
 
-    ![Figure 4: Proposing Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/propose-changes.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/propose-changes.jpg)
+<center>Figure 4: Proposing Changes</center>
 
 5. You can also view the approver(s) if you wish.
 
-    ![Figure 5: Viewing the Approver(s)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/approver-list-1.jpeg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/approver-list-1.jpeg)
+<center>Figure 5: Viewing the Approver(s)</center>
 
 :::info 
 The one who performs the edits cannot approve their own changes. A different user has to review and approve.
@@ -77,11 +83,13 @@ Only a different super-admin user or someone (who is not amongst the editors of 
 
 Go to the edited configuration file to review and approve the changes as shown below.
 
-![Figure 6: Approving the Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/approval-screen.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/approval-screen.jpg)
+<center>Figure 6: Approving the Changes</center>
 
 A super-admin can check whether a user has approval rights by going to **Global Configurations** → **Authorization** (dropdown) → **User Permissions**.
 
-![Figure 7: Checking Permissions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/config-approver-1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/config-approver-1.jpg)
+<center>Figure 7: Checking Permissions</center>
 
 
 ---
@@ -94,11 +102,13 @@ Once the approver validates and approves your configuration changes, you can pro
 
 2. Click **Select Image** in the deployment flow. 
 
-    ![Figure 8: Build & Deploy Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/deploy-pipeline.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/deploy-pipeline.jpg)
+<center>Figure 8: Build & Deploy Page</center>
 
 3. You can view an indicator at the bottom `Config Diff from Last Deployed`. Click **Review** to view the changes.
 
-    ![Figure 9: Checking Config Diff](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/review-config-diff.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/review-config-diff.jpg)
+<center>Figure 9: Checking Config Diff</center>
 
 :::info 
 If the new configuration is not yet approved, the changes made to the config would not be visible during deployment, it would show `No Config Diff from Last Deployed` at the bottom. In that case, check whether your changes are present in the live config or not. If your changes are absent, chances are your draft is either pending for approval or rejected (discarded).
@@ -106,7 +116,8 @@ If the new configuration is not yet approved, the changes made to the config wou
 
 4. Once you have verified the changes, you can click **Deploy**.
 
-    ![Figure 10: Deploying App using New Config](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/deploy.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/deploy.jpg)
+<center>Figure 10: Deploying App using New Config</center>
 
 :::info 
 If you don't wish to deploy with the new changes, you can choose `Last deployed config` from the available drop-down.
@@ -128,7 +139,9 @@ Only a super-admin can enable or disable the config protection.
 
 Alternatively, unprotecting the configuration will lead to the discarding of unapproved drafts (if any).
 
-![Figure 11a: Disabling Protection](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/toggle-protection.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/toggle-protection.jpg)
+<center>Figure 11a: Disabling Protection</center>
 
-![Figure 11b: Confirming Action](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/unprotect.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-approval/unprotect.jpg)
+<center>Figure 11b: Confirming Action</center>
 

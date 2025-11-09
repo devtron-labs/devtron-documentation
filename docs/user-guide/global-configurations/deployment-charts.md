@@ -13,7 +13,8 @@ Devtron Apps leverage helm charts to carry out deployment of your images and con
 
 For any use case not addressed by the default Helm charts, you can upload your own Helm chart and use it as a deployment chart in Devtron.
 
-![Figure 1: Deployment Charts](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/gc-deployment-charts.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/gc-deployment-charts.jpg)
+<center>Figure 1: Deployment Charts</center>
 
 ### Tutorial
 
@@ -61,7 +62,8 @@ The Image Descriptor Template file is a GO template that produces a valid JSON f
 
 * Ensure the above file is created in the directory where the main `Chart.yaml` exists (as shown below): 
 
-    ![Figure 2: Filepath of Image Descriptor Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/descriptor-filepath.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/descriptor-filepath.jpg)
+<center>Figure 2: Filepath of Image Descriptor Template</center>
 
 * Paste the following content in `.image_descriptor_template.json` file:
 
@@ -112,13 +114,15 @@ If your code editor highlights a syntax error (property or EOF error) in the abo
 
 In the root directory of your chart, Devtron expects an `app-values.yaml` file. It uses this file to determine the values to be displayed on the [deployment template](../../reference/glossary.md#deployment-template) as shown below. 
 
-![Figure 3: Chart Values](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/deployment-template.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/deployment-template.jpg)
+<center>Figure 3: Chart Values</center>
 
 The `app-values.yaml` file is simply a subset of your `values.yaml` file. Therefore, you can insert specific entries from `values.yaml` that you wish to display.
 
 However, if you upload the chart without an `app-values.yaml` or with an empty one, your deployment template will appear blank (as shown below) or null.
 
-![Figure 4: Blank Chart Values](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/empty-values.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/empty-values.jpg)
+<center>Figure 4: Blank Chart Values</center>
 
 
 ### 4. Add release-values.yaml
@@ -184,19 +188,23 @@ Only super admin users can upload a deployment chart. A super admin can upload m
 
 * Go to **Application Management** → **Configurations** → **Deployment Charts**.
 
-    ![Figure 5: Global Configurations - Deployment Charts](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/gc-deployment-charts.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/gc-deployment-charts.jpg)
+<center>Figure 5: Global Configurations - Deployment Charts</center>
 
 * Click **Upload Chart**.
 
-    ![Figure 6: Upload Chart Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/upload-chart.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/upload-chart.jpg)
+<center>Figure 6: Upload Chart Button</center>
 
 * Click **Select .tgz file** and upload your packaged deployment chart (in **.tgz** format).
 
-    ![Figure 7: Uploading .tgz File](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/select-tgz-file.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/select-tgz-file.jpg)
+<center>Figure 7: Uploading .tgz File</center>
 
 The system initiates the validation of your uploaded chart. You may also click **Cancel upload** if you wish to abort the process.
 
-![Figure 8: Cancelling Upload](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/cancel-upload.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/cancel-upload.jpg)
+<center>Figure 8: Cancelling Upload</center>
 
 ### Validation Checks
 
@@ -225,7 +233,8 @@ Only super-admins can view deployment charts.
 
 To view the list of available deployment charts, go to  **Application Management** → **Configurations** → **Deployment Charts** page.
 
-![Figure 9: Viewing Deployment Charts](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/view-charts.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/view-charts.jpg)
+<center>Figure 9: Viewing Deployment Charts</center>
 
 * You can search a chart by its name, version, or description.
 * You can add new [charts or chart versions](#uploading-a-deployment-chart) by clicking **Upload Chart**.
@@ -236,7 +245,8 @@ To view the list of available deployment charts, go to  **Application Management
 
 Once you successfully upload a deployment chart, you can start using it as a deployment template for your application. Refer [Deployment Template](../creating-application/base-config/deployment-template.md) to know more.
 
-![Figure 10: Using Deployment Charts](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/use-chart.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/use-chart.gif)
+<center>Figure 10: Using Deployment Charts</center>
 
 :::caution Note
 The deployment strategy for a deployment chart is fetched from the chart template and cannot be configured in the [CD pipeline](../creating-application/workflow/cd-pipeline.md#deployment-strategies).
@@ -268,22 +278,27 @@ In this example, we will edit the Deployment chart type provided by Devtron.
 
 1. Click the edit button next to the chart as shown below.
 
-    ![Figure 11: Edit GUI Schema Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/edit-chart-schema.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/edit-chart-schema.jpg)
+<center>Figure 11: Edit GUI Schema Button</center>
 
 2. A GUI schema is available for you to edit in case of Devtron charts. In case of custom charts, you may have to define a GUI schema yourself. To know how to create such GUI schema, refer [RJSF JSON Schema Tool](https://rjsf-team.github.io/react-jsonschema-form/). 
 
-    ![Figure 12: Editable Schema](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/gui-schema.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/gui-schema.jpg)
+<center>Figure 12: Editable Schema</center>
 
 3. You may start editing the schema by excluding existing fields/objects or including more of them. Click the **Refer YAML** button to view all the supported fields.
 
-    ![Figure 13: Refer YAML Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/refer-yaml.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/refer-yaml.gif)
+<center>Figure 13: Refer YAML Button</center>
 
 4. While editing the schema, you may use the **Preview GUI** option for a real-time preview of your changes.
 
-    ![Figure 14: Preview GUI Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/preview-gui.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/preview-gui.gif)
+<center>Figure 14: Preview GUI Button</center>
 
 5. Click **Save Changes**.
 
-    ![Figure 15: Save Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/save-changes.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/save-changes.jpg)
+<center>Figure 15: Save Changes</center>
 
 Next, if you go to **Configurations** (tab) → **Base Configurations** → **Deployment Template**, you will be able to see the deployment template fields (in GUI) as per your customized schema.

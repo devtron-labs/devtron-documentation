@@ -8,7 +8,8 @@ Users need to have [access to the cluster](../global-configurations/authorizatio
 
 You can use the searchbox to browse the resources.
 
-![Figure 1: Locate Resources using Searchbox](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/discover-resource.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/discover-resource.gif)
+<center>Figure 1: Locate Resources using Searchbox</center>
 
 ### Filter Resources <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
@@ -35,7 +36,8 @@ Further resources in the cluster are grouped under the following categories:
 * Other Resources
 * Custom Resource
 
-![Figure 2: Resources within Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cluster-resources.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cluster-resources.jpg)
+<center>Figure 2: Resources within Cluster</center>
 
 ---
 
@@ -49,11 +51,13 @@ You can edit the [manifest](../../reference/glossary.md#manifest) of a Kubernete
 
 ### Edit using YAML
 
-![Figure 3a: Editing Manifest (Using YAML)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest-yaml.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest-yaml.gif)
+<center>Figure 3a: Editing Manifest (Using YAML)</center>
 
 ### Edit using GUI <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-![Figure 3b: Editing Manifest (Using GUI)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest-gui.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest-gui.gif)
+<center>Figure 3b: Editing Manifest (Using GUI)</center>
 
 :::info Note
 The fields displayed in GUI mode will be as per the GUI schema configured by the operator for that resource kind.
@@ -65,7 +69,8 @@ The fields displayed in GUI mode will be as per the GUI schema configured by the
 
 You can monitor activities like creation, deletion, updation, scaling, or errors in the resources involved. Refer [Events](https://kubernetes.io/docs/reference/kubernetes-api/cluster-resources/event-v1/) to learn more.
 
-![Figure 4a: Viewing All Events](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/events.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/events.gif)
+<center>Figure 4a: Viewing All Events</center>
 
 ### AI-assistance on Events <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
@@ -75,7 +80,8 @@ Refer [Devtron Intelligence](../devtron-intelligence.md) to enable this feature.
 
 For events with warnings, you can take the assistance of AI. Clicking the **Explain** button will help you identify the root cause of the issue along with suggestions to fix those.
 
-![Figure 4b: AI-assistance](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/ai-assist-eventfix.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/ai-assist-eventfix.gif)
+<center>Figure 4b: AI-assistance</center>
 
 ---
 
@@ -87,7 +93,8 @@ User needs to be an [admin of the Kubernetes resource](../global-configurations/
 
 You can delete an unwanted resource if it is orphaned and no longer required by your applications.
 
-![Figure 5: Deleting a Resource](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/delete.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/delete.gif)
+<center>Figure 5: Deleting a Resource</center>
 
 ---
 
@@ -103,7 +110,8 @@ Once you select a cluster in Resource Browser, click **+ Create Resource**, and 
 
 In the below example, we have created a simple pod named `nginx`:
 
-![Figure 6: Creating Resources within Cluster](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/create-resource.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/create-resource.gif)
+<center>Figure 6: Creating Resources within Cluster</center>
 
 Here's one more example that shows the required fields and object specifications for a Kubernetes Deployment:
 
@@ -140,11 +148,13 @@ You can use the checkbox to select the resources/workloads you wish to delete or
 
 ### Bulk Delete
 
-![Figure 7a: Deleting Resources in Bulk](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/bulk-delete-resources.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/bulk-delete-resources.gif)
+<center>Figure 7a: Deleting Resources in Bulk</center>
 
 ### Bulk Restart
 
-![Figure 7b: Restarting Workloads in Bulk](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/bulk-restart-resources.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/bulk-restart-resources.gif)
+<center>Figure 7b: Restarting Workloads in Bulk</center>
 
 :::info Note
 You can only restart certain workloads such as Deployment, DaemonSet, StatefulSet, etc. and not all resource types.

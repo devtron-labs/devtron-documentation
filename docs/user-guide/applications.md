@@ -21,7 +21,8 @@ The **Applications** page helps you create and manage your microservices, and it
 
 You can view the app name, its status, environment, namespace, and many more upfront.
 
-![Figure 1: App Types](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/creating-application/app-listing-page.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/creating-application/app-listing-page.jpg)
+<center>Figure 1: App Types</center>
 
 ### Create Button
 

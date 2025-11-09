@@ -2,7 +2,8 @@
 
 You can view all environments associated with an application under the **Environment Overrides** section.
 
-![Figure 1: Environment Overrides Section](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/environment-override-v3.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/environment-override-v3.jpg)
+<center>Figure 1: Environment Overrides Section</center>
 
 The Environment Overrides section allows you to customize the **Deployment Template**, **ConfigMaps**, and **Secrets** for different environments such as development, testing, staging, and production.
 
@@ -22,18 +23,21 @@ Users need to have [Admin role](../global-configurations/authorization/user-acce
 
 1. In your Devtron app, go to **Configurations** (tab) → **Environment Overrides**. 
 
-    ![Figure 2: Accessing Environment Overrides](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/config-env-override.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/config-env-override.jpg)
+<center>Figure 2: Accessing Environment Overrides</center>
 
 2. Select an environment whose configurations you wish to modify.
 
-    ![Figure 3: Selecting Environment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/environment-override-v3.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/environment-override-v3.jpg)
+<center>Figure 3: Selecting Environment</center>
 
 3. You will get the following options (similar to the **Base Configurations** page):
     * [Deployment Template](#override-deployment-template)
     * [ConfigMaps](#override-configmap--secret)
     * [Secrets](#override-configmap--secret)
 
-    ![Figure 4: Configuration Options](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/env-config-screen.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/env-config-screen.gif)
+<center>Figure 4: Configuration Options</center>
 
 
 Let's visit each of the configuration files and see how to override their values for the selected environment (say *banking-final*).
@@ -49,15 +53,18 @@ As you can see, the Deployment Template for the *banking-final* environment show
 
 1. Go to the **Inherited** tab. This will show the inherited configuration in a read-only YAML editor. You cannot edit any values here.
 
-    ![Figure 5: Inherited Deployment Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/inherited-dt.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/inherited-dt.gif)
+<center>Figure 5: Inherited Deployment Template</center>
 
 2. Clicking **No override** to override the inherited configuration (if not done already).
 
-    ![Figure 6: No Override Tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/no-override-tab.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/no-override-tab.gif)
+<center>Figure 6: No Override Tab</center>
 
 3. Click the **Create Override** button.
 
-    ![Figure 7: Creat Override Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/create-override.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/create-override.gif)
+<center>Figure 7: Creat Override Button</center>
 
 4. In the same tab (now labelled as **Override**), you can choose any one mode for changing the configuration values:
     * **YAML** - This mode has a YAML based editor intended for advanced users. [Click here](../creating-application/base-config/deployment-template-types/deployment.md#yaml) to know more about each key-value pair within the `YAML` section.
@@ -173,7 +180,8 @@ This action will discard the current overrides and the base configuration file (
 2. Click **Delete Override**.
 3. Confirm the deletion in the dialogbox.
 
-![Figure 8: Delete Override Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/delete-override.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/environment-overrides/delete-override.gif)
+<center>Figure 8: Delete Override Option</center>
 
 ---
 

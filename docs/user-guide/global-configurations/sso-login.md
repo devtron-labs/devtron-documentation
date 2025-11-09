@@ -14,7 +14,8 @@ Devtron uses Dex to authenticate you against the identity providers such as GitH
 
 To configure SSO in Devtron, navigate to **Global Configurations** → **Authorizations** → **SSO Login Services**. The SSO Login Services page is displayed.
 
-![Figure 1: Supported SSO Providers](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/sso-login-home.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/sso-login-home.jpg)
+<center>Figure 1: Supported SSO Providers</center>
 
 Devtron supports the following SSO providers:
 

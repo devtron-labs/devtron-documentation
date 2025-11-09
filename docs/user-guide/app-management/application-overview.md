@@ -8,7 +8,8 @@ The **Application Overview** page in Devtron gives you a complete view of your D
 
 It helps you understand how your applications are organized, how your workflows are performing, thus, giving you better visibility and control in a single pane of view.
 
-![Figure 1: Application Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/application-overview/application-overview.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/application-overview/application-overview.jpg)
+<center>Figure 1: Application Overview</center>
 
 The **Application Overview** page contains the following sections:
 
@@ -198,7 +199,8 @@ For a more detailed breakdown of cost and usage across clusters, see the full [C
 
 The **Cost Visibility** section provides a comparison of costs across your applications and build pipelines within Devtron.
 
-![Figure 2: Cost Visibility](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/application-overview/application-overview-cost-visibility.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/application-overview/application-overview-cost-visibility.jpg)
+<center>Figure 2: Cost Visibility</center>
 
 It shows:
  
@@ -220,7 +222,8 @@ Enable the **Cost Visibility** module for those clusters to view accurate cost i
 
 The **Best Practices** section helps shows you the percentage of production pipelines for which you have enabled approval policies. It gives you a quick view of how many pipelines have checks in place before important configuration changes or deployments go live.
 
-![Figure 3: Best Practices](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/application-overview/application-overview-best-practices.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/application-overview/application-overview-best-practices.jpg)
+<center>Figure 3: Best Practices</center>
 
 These insights help you ensure that the right governance controls are followed, reducing risks from unreviewed or accidental changes.
 

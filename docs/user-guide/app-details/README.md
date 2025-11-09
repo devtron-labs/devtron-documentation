@@ -18,7 +18,8 @@ The **App Details** page acts as a comprehensive dashboard that provides a bird'
 
 * Rollback deployments and much more
 
-![Figure 1: "App Details" Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/app-details-home.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/app-details-home.jpg)
+<center>Figure 1: "App Details" Page</center>
 
 Consider the **App Details** page as the following two sections:
 

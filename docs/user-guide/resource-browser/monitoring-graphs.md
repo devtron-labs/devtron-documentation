@@ -6,7 +6,8 @@ The Resource Browser allows you to integrate monitoring graphs and dashboards fr
 
 It works similarly to a 'Single Pane of Glass (SPOG)' that displays data coming from different sources in a single unified view.
 
-![Adding Monitoring Visualizations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/monitoring-graphs.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/monitoring-graphs.gif)
+<center>Adding Monitoring Visualizations</center>
 
 ---
 
@@ -22,11 +23,13 @@ It works similarly to a 'Single Pane of Glass (SPOG)' that displays data coming 
 
 2. Click the graph icon as shown below and click the **Add Panel** button.
 
-    ![Adding Monitoring](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/add-graph1.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/add-graph1.jpg)
+<center>Adding Monitoring</center>
 
 3. Give a name to the monitoring dashboard and add the `iframe` code supplied by your graph/dashboard tool.
 
-    ![Adding Monitoring](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/fields-filled.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/fields-filled.jpg)
+<center>Adding Monitoring</center>
 
 4. Click **Save**.
 

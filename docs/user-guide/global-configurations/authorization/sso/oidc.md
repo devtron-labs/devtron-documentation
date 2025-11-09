@@ -3,6 +3,7 @@
 ## Sample Configuration
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/oidc.jpg)
+<center></center>
 
 ---
 
@@ -16,15 +17,18 @@ Devtron provides a sample configuration out of the box. There are some values th
 
 * clientSecret
 
-    ![Fetching Client ID and Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/secret/oidc-id-secret.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/secret/oidc-id-secret.jpg)
+<center>Fetching Client ID and Secret</center>
 
 ### Values to Provide
 
 * redirectURI (provided in SSO Login Services by Devtron)
 
-    ![Copying Redirect URI from Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect/oidc-redurl.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect/oidc-redurl.jpg)
+<center>Copying Redirect URI from Devtron</center>
 
-    ![Pasting Redirect URI](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect/oidc-redirect.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect/oidc-redirect.jpg)
+<center>Pasting Redirect URI</center>
 
 ---
 

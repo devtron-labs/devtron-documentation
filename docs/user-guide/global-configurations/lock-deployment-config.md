@@ -11,7 +11,8 @@ slug: /user-guide/app-management/policies/lock-deployment-config
 
 The [Deployment Template](../../reference/glossary.md#deployment-template) might contain certain configurations (e.g., `ingress`) that are critical to the stability and security of the applications. To prevent unauthorized or accidental changes to such configurations, Devtron allows super admins to restrict (lock) such critical configurations from modification or deletion.
 
-![Figure 1: Preventing Changes to Locked Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/not-eligible-changes.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/not-eligible-changes.jpg)
+<center>Figure 1: Preventing Changes to Locked Keys</center>
 
 These restrictions can be applied for deployment templates in both the:
 
@@ -48,7 +49,8 @@ To create a profile, follow the steps below:
 
 2. Click **+ Create Profile**; a new **Create Profile** page will open.
 
-    ![Figure 2: Creating Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-deployment-config.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-deployment-config.jpg)
+<center>Figure 2: Creating Profile</center>
 
 3. Enter the **Name** (Required) and a **Description** (Optional) for the profile.  
 
@@ -56,11 +58,13 @@ To create a profile, follow the steps below:
 
      * Select the relevant Chart type and its version to reference the keys.
 
-    ![Figure 3: values.yaml File](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/values-yaml.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/values-yaml.jpg)
+<center>Figure 3: values.yaml File</center>
 
 5. Enter the keys inside the editor on the left-hand side, e.g., `autoscaling.MaxReplicas`. Use [JSONpath expressions](https://goessner.net/articles/JsonPath/index.html) to enter specific keys, lists, or objects to lock.
 
-    ![Figure 4: Referring Values.YAML File for Locking Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/autoscaling-lock.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/autoscaling-lock.jpg)
+<center>Figure 4: Referring Values.YAML File for Locking Keys</center>
 
 :::caution Keys are case-sensitive
 Use the exact case as defined in the deployment template, otherwise the keys will not be locked.
@@ -74,11 +78,13 @@ You can lock custom configurations (keys) defined in your deployment template, e
 
 6. Click **Save Changes**. 
 
-    ![Figure 5: Saving Locked Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/saving-locked-keys.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/saving-locked-keys.jpg)
+<center>Figure 5: Saving Locked Keys</center>
 
 7. Profile will be created, and available under the **Profiles** tab.
 
-    ![Figure 6: Confirmation Dialog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/confirmation.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/confirmation.jpg)
+<center>Figure 6: Confirmation Dialog</center>
 
 :::caution Handling Locked Index Ranges
 If you have locked a range of configurations using JSONPath (e.g., `ingressInternal.hosts[1:3].paths`), the specified index positions are protected. 
@@ -95,13 +101,15 @@ After creating a profile, the next step is to apply the profile to the specific 
 
 1. Go to **Application Management** → **Policies** → **Lock Deployment Configuration**.
 
-     ![Figure 7: Clicking 'Apply Profile'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-apply-profile.jpg)
+     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-apply-profile.jpg)
+<center>Figure 7: Clicking 'Apply Profile'</center>
 
 2. Click **Apply Profile**; a new **Apply Profile** page will open.
 
 3. Select the profiles that you want to apply from the dropdown under **Select profiles to apply**; you can select multiple profiles.
 
-     ![Figure 8: Selecting Lock Deployment Configuration Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-select-profile.jpg)
+     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-select-profile.jpg)
+<center>Figure 8: Selecting Lock Deployment Configuration Profile</center>
 
 4. Select how you want to apply the profiles under **Apply selected profiles to deployment templates of**.
 
@@ -109,7 +117,8 @@ After creating a profile, the next step is to apply the profile to the specific 
 
      1. **Specific deployment templates**: This option allows you to apply the lock deployment configuration profile to the deployment template(s) of specific application(s) within particular environment(s).
 
-        ![Figure 9: Applying Profile to Specific Deployment Templates](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-specific-apps.gif)
+        ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-specific-apps.gif)
+<center>Figure 9: Applying Profile to Specific Deployment Templates</center>
 
      2. **By match criteria**: This option allows you to use a combination of filters to create criteria. Lock deployment configuration profile will only apply to the deployment templates of the applications fulfilling your criteria (including existing and future ones).<br/>(Optional) You may also write a note for your other team members to understand the intent and context of your policy.
 
@@ -117,11 +126,13 @@ After creating a profile, the next step is to apply the profile to the specific 
 
         Suppose you want to apply a lock deployment configuration profile to all applications in a particular project. You can achieve this by selecting that project as the match criteria.
 
-        ![Figure 10: Applying Profile By Match Criteria - Use Case 1](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-match-criteria-use-case-1.gif)
+        ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-match-criteria-use-case-1.gif)
+<center>Figure 10: Applying Profile By Match Criteria - Use Case 1</center>
 
      3. **Global (All deployment templates)**: This option allows you to apply the lock deployment configuration profile to all the existing and future deployment templates across all the applications. 
 
-        ![Figure 11: Applying Profile for all the Deployment Templates](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-global.gif)
+        ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-global.gif)
+<center>Figure 11: Applying Profile for all the Deployment Templates</center>
 
 5. Click **Save Changes**, and the selected profiles will apply to the required deployment templates and be visible under the **Applied Profiles** tab.
 
@@ -138,7 +149,8 @@ Let's look at a scenario where a user (non-super-admin) tries to edit the same i
 
 * User can hide/unhide the locked configurations as shown below.
 
-    ![Figure 12: Hiding Locked Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/hide-locked-keys.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/hide-locked-keys.gif)
+<center>Figure 12: Hiding Locked Keys</center>
 
 ### Editing Locked Configurations
 
@@ -149,25 +161,30 @@ If you select 'GUI' mode instead of 'YAML', all the keys meant for GUI mode will
 
 * Let's assume the user edits one of the locked keys...
 
-    ![Figure 13: Editing Locked Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/change-locked-values.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/change-locked-values.gif)
+<center>Figure 13: Editing Locked Keys</center>
 
     ...and saves the changes.
 
-    ![Figure 14: Saving Edits to Locked Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/changing-values.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/changing-values.jpg)
+<center>Figure 14: Saving Edits to Locked Keys</center>
 
 * A modal window highlighting the non-eligible edits will appear on the right.
 
-    ![Figure 15: Eligible and Non-eligible Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/not-eligible-changes.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/not-eligible-changes.jpg)
+<center>Figure 15: Eligible and Non-eligible Changes</center>
 
 ### Editing Unlocked Keys 
 
 * Let's assume the user edits a key that is not locked or adds a new key.
 
-    ![Figure 16: Editing Allowed Keys](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/changing-allowed-values.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/changing-allowed-values.jpg)
+<center>Figure 16: Editing Allowed Keys</center>
 
 * The modal window will highlight the eligible edits. However, it will not let the user save those eligible edits unless the user clicks the checkbox: **Save changes which are eligible for update**.
 
-    ![Figure 17: Saving Eligible Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/saving-allowed-changes.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/saving-allowed-changes.jpg)
+<center>Figure 17: Saving Eligible Changes</center>
 
 :::caution Who Can Perform This Action?
 Only a super-admin, manager, or application admin can edit the configuration values. 
@@ -175,11 +192,13 @@ Only a super-admin, manager, or application admin can edit the configuration val
 
 * Once the user clicks the **Save Changes** button, the permissible changes will reflect in the deployment template. 
 
-    ![Figure 18: Updating Deployment Config](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/updating-changes.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/updating-changes.jpg)
+<center>Figure 18: Updating Deployment Config</center>
 
     However, if it's a [protected template](../../user-guide/creating-application/config-approval.md), the user will require the approval of a [configuration approver](./user-access.md#devtron-apps-permissions) as shown below.
 
-    ![Figure 19: Proposing Changes to Protected Config](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/proposing-changes.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/proposing-changes.jpg)
+<center>Figure 19: Proposing Changes to Protected Config</center>
 
 The same result can be seen if the user tries to edit environment-specific deployment templates.
 
@@ -199,11 +218,14 @@ To manage an existing applied profile, follow the steps below:
 
 5. Click **Save Changes**.
 
-![Figure 20a: Editing Applied Profiles](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-edit-profiles.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-edit-profiles.gif)
+<center>Figure 20a: Editing Applied Profiles</center>
 
-![Figure 20b: Editing Match Criteria](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-edit-match-criteria.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-edit-match-criteria.gif)
+<center>Figure 20b: Editing Match Criteria</center>
 
-![Figure 20c: Removing an Applied Profile](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-delete-applied-profile.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-delete-applied-profile.gif)
+<center>Figure 20c: Removing an Applied Profile</center>
 
 :::caution Note
 Removing an applied profile does not delete the lock deployment configuration profile. It only removes the associated restrictions from the deployment templates where the profile was applied.
@@ -223,7 +245,8 @@ To update a lock deployment configuration file, follow the steps below:
 
 4. Click **Save Changes**.
 
-![Figure 21: Updating Lock Deployment Configuration File](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-edit-profile.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-edit-profile.gif)
+<center>Figure 21: Updating Lock Deployment Configuration File</center>
 
 ---
 
@@ -239,7 +262,8 @@ To delete a lock deployment configuration file, follow the steps below:
 
 4. Enter the name of the profile and click **Delete**.
 
-![Figure 22: Deleting Lock Deployment Configuration File](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-delete-profile.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/lock-config-delete-profile.gif)
+<center>Figure 22: Deleting Lock Deployment Configuration File</center>
 
 :::caution Note 
 Deleting a profile will automatically remove it from the Applied Profiles tab and remove its restrictions from all deployment templates where it was previously applied.

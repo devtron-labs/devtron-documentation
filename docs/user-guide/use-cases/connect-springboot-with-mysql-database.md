@@ -68,6 +68,7 @@ Give, the path of the Dockerfile.
 Enable `Ingress`, and give the path on which you want to host the application.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/connect-expressjs-with-mongodb-database/three.jpg)
+<center></center>
 
 #### Set up the CI/CD Pipelines
 
@@ -104,6 +105,7 @@ _**path**_ will be the one that you have given in Step 3 while configuring the D
 `http://<hostname>/<path>/viewAll`
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/connect-expressjs-with-mongodb-database/use-cases-springboot-view-student-data.jpg)
+<center></center>
 
 **View student's data By student ID**
 
@@ -114,4 +116,5 @@ To view student data by student id, GET Request is:
 _**path**_ will be the one that you have given in Step 3 while configuring the Deployment Template.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/connect-expressjs-with-mongodb-database/use-case-expressjs-view-student-data-with-id.jpg)
+<center></center>
 

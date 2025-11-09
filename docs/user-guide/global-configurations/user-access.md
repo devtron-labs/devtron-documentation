@@ -69,6 +69,7 @@ Go to the left main panel → Global Configurations` → `User Access`
 Click **Add User**, to add one or multiple users.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/gc-user-access-add-user.jpg)
+<center></center>
 
 ### 2. Create User Permissions
 
@@ -100,6 +101,7 @@ In the `Email address` box, you have to provide the mail ID of the user to whom 
 If you check the option `Assign super admin permissions`, the user will get full access to your system and the rest of the options will disappear. Please check [above](#role-based-access-levels) to see permission levels. Only users with super admin permissions can assign super admin permissions to a user.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/add-user-2.jpg)
+<center></center>
 
 Click **Save** and your user will be saved with super admin permissions.
 
@@ -140,6 +142,7 @@ Similarly, you can select `Applications` from the drop-down corresponding to you
 There are four different view access levels/Role available for both User and Group as described [above](#role-based-access-levels):
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/user-access-permission_1.JPG)
+<center></center>
 
 You can add multiple rows, for Devtron app permission.
 
@@ -172,6 +175,7 @@ Similarly, you can select `Applications` from the drop-down corresponding to you
 There are four different view access levels/Role available for both User and Group as described [above](#role-based-access-levels):
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/user-access-permission_helm+app_2.JPG)
+<center></center>
 
 ### Chart Group Permissions
 
@@ -182,6 +186,7 @@ You can also manage the access of users to Chart Groups in your project.
 Click on the checkbox of `Create`, if you want the users to create, view, edit, or delete the chart groups.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/chart+group+permission_create_3.JPG)
+<center></center>
 
 To permit a user to only `edit` the chart groups, check `Specific chart group` from `Edit` drop-down. In the following field, select the chart group for which you want to grant the user edit permission.
 
@@ -190,10 +195,12 @@ Go to `Edit` drop-down, if you want to `allow` or `deny` users to edit the chart
 Select on `Deny` option from the drop-down, if you want to restrict the users to edit the chart groups.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/chart+group+permission_edit_4.JPG)
+<center></center>
 
 Select the `Specific Charts` option from the drop-down and then select the chart groups for which you want to allow users to edit, from the other drop-down menu.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/chart+group+permission_edit+specific+chart_5.JPG)
+<center></center>
 
 Click on `Save`, once you have configured all the required permissions for the users.
 
@@ -208,10 +215,12 @@ Click on `Save`, once you have configured all the required permissions for the u
 You can edit the user permissions, by clicking the `downward arrow`.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/edit+user+permission_dropdown_1.JPG)
+<center></center>
 
 Then you can edit the user permissions here.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/edit+user+permission_devtron+app_2.JPG)
+<center></center>
 
 After you have done editing the user permissions, click **Save**.
 
@@ -228,10 +237,12 @@ You can select the group which you are creating in the `Group permissions` secti
 Go to `Groups` and click **Add Group**, to create a new group.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/Add+group+permission_dashboard_1.JPG)
+<center></center>
 
 Enter the `Group Name` and `Description`.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/group+permission_description_2.JPG)
+<center></center>
 
 ### 2. Create Group Permissions
 
@@ -240,6 +251,7 @@ Once you have given the group name and group description.
 Then, control the access permissions of groups in the Devtron Apps, Helm Apps or Group Chart Permissions section. Manage the Project, Environment, Application, and Role access the same as we discuss in the above users section.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/group+permission_devtron+app_3.JPG)
+<center></center>
 
 You can add multiple rows, for the Devtron Apps and Helm Apps Permissions section.
 
@@ -250,10 +262,12 @@ Once you have finished assigning the appropriate permissions for the listed user
 You can edit the group permissions, by clicking the `downward arrow.`
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/group+permission_dropdown_4.JPG)
+<center></center>
 
 Then you can edit the user permissions here.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/edit+group+permission_devtron+app_5.JPG)
+<center></center>
 
 Once you are done editing the group permissions. Click **Save**.
 

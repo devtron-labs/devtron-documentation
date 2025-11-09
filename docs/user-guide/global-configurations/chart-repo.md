@@ -34,7 +34,8 @@ To add a chart repository, follow the steps below:
 
 3. Provide below information in the following fields:
 
-    ![Figure 1: Add a Chart Repository](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/chart-repo/add-chart-repo.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/chart-repo/add-chart-repo.jpg)
+<center>Figure 1: Add a Chart Repository</center>
 
     | Fields | Description |
     | --- | --- |
@@ -53,7 +54,8 @@ To update a chart repository, follow the below steps:
 
 2. Select the repository you prefer to update.
 
-    ![Figure 2: Update a Chart Repository](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/chart-repo/update-chart-repository.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/chart-repo/update-chart-repository.jpg)
+<center>Figure 2: Update a Chart Repository</center>
 
 3. Modify the repository as per your requirements.
 
@@ -74,7 +76,8 @@ If you are using an chart repository as your chart source and prefer to delete i
 
 1. Navigate back to **Chart Repositories**.
 
-    ![Figure 3: Delete a Chart Repository](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/delete-chart-repos.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/delete-chart-repos.gif)
+<center>Figure 3: Delete a Chart Repository</center>
 
 2. Select your preferred chart repository. 
 

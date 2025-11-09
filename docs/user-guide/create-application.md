@@ -5,6 +5,7 @@
 * Select **Custom app** from the drop-down list.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/create-app-1.jpg)
+<center></center>
 
 A new application can be created from one of the following options:
 
@@ -17,6 +18,7 @@ A new application can be created from one of the following options:
 To create a new application from the custom app, select **Custom app**.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/create-application.jpg)
+<center></center>
 
 * In the **Create application** window, enter an **App Name** and select a **Project**.
 * Select either:<ul><li>**Create from scratch** to create an application from scratch</li>, or<li>**Clone existing application** to clone an existing application.</li></ul>
@@ -32,10 +34,13 @@ To create a new application from the custom app, select **Custom app**.
 When tags are propagated, they are considered as labels to Kubernetes resources. Kubernetes offers integrated support for using these labels to query objects and perform bulk operations e.g., consolidated billing using labels. You can use these tags to filter/identify resources via CLI or in other Kubernetes tools.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/propagate-tags.jpg)
+<center></center>
 
 * Click `+ Add tag` to add a new tag.
-* Click the symbol <span className="inline-badge">![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg)</span> on the left side of your tag to propagate a tag.<br/>`Note`: Dark grey colour in symbol specifies that the tags are propagated.
-* To remove the tags from propagation, click the symbol <span className="inline-badge">![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/propagate-dark.jpg)</span> again.
+* Click the symbol <span className="inline-badge">![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg)
+<center></center></span> on the left side of your tag to propagate a tag.<br/>`Note`: Dark grey colour in symbol specifies that the tags are propagated.
+* To remove the tags from propagation, click the symbol <span className="inline-badge">![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/propagate-dark.jpg)
+<center></center></span> again.
 * Click `Save`.
 
 

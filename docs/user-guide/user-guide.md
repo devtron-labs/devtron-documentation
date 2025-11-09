@@ -8,7 +8,8 @@ Devtron is an open source software delivery workflow for kubernetes written in g
 
 It is designed as a self-serve platform for operationalizing and maintaining applications \(AppOps\) on kubernetes in a developer friendly way.   
    
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/preview.gif)   
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/preview.gif)
+<center></center>   
    
 
 

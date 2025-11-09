@@ -84,7 +84,8 @@ Depending on your use case, you can do either one of the following:
 
 2. Click **Download template**. 
 
-    ![Figure 1: Downloading the Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/template-downloader.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/template-downloader.jpg)
+<center>Figure 1: Downloading the Template</center>
 
 3. Open the downloaded template using any code editor (say VS Code). 
 
@@ -156,19 +157,23 @@ spec:
 
 2. Click **Upload file to add**, to upload your saved YAML file.
 
-    ![Figure 2: Uploading the Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/file-uploader.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/file-uploader.jpg)
+<center>Figure 2: Uploading the Template</center>
 
 3. The content of the file will be uploaded for you to review and edit. Click **Review Changes**.
 
-    ![Figure 3: Reviewing the YAML file](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/file-preview.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/file-preview.jpg)
+<center>Figure 3: Reviewing the YAML file</center>
 
 4. You may check the changes between the last saved file and the current one before clicking **Save**.
 
-    ![Figure 4: Saving the file](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/save.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/save.jpg)
+<center>Figure 4: Saving the file</center>
 
 5. Click the **Variable List** tab to view the variables. Check the [How to Use a Scoped Variable](#how-to-use-a-scoped-variable) section to know more.
 
-    ![Figure 5: List of Variables](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/variable-list.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/variable-list.jpg)
+<center>Figure 5: List of Variables</center>
 
 ---
 
@@ -249,11 +254,13 @@ Only a super-admin can edit existing scoped variables.
 
 ### Option 1: Directly edit using the UI
 
-![Figure 6: Editing from UI](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/edit.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/edit.jpg)
+<center>Figure 6: Editing from UI</center>
 
 ### Option 2: Reupload the updated YAML file
 
-![Figure 7: Re-uploading New File](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/reupload.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/reupload.jpg)
+<center>Figure 7: Re-uploading New File</center>
 
 :::caution Note
 Re-uploading the YAML file will replace the previous file, so any variable that existed in the previous file but not in the latest one will be lost
@@ -265,15 +272,18 @@ The **Environments** tab allows you to view and edit scoped variable values for 
 
   1. Go to the **Environments** tab; you will see a list of all environments and how many scoped variables are defined for each of them. 
   
-   ![Figure 8: Navigating to 'Environment' tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-env-tab.jpg)
+   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-env-tab.jpg)
+<center>Figure 8: Navigating to 'Environment' tab</center>
 
   2. Click the preferred environment name to view or edit. 
   
   3. You can edit the variables using the GUI or YAML mode. 
 
-   ![Figure 9a: Editing in GUI Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-edit-scoped-variable.jpg)
+   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-edit-scoped-variable.jpg)
+<center>Figure 9a: Editing in GUI Mode</center>
 
-   ![Figure 9b: Editing in YAML Mode](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-edit-scoped-variable-yaml.jpg)
+   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-edit-scoped-variable-yaml.jpg)
+<center>Figure 9b: Editing in YAML Mode</center>
   
 :::info Note 
 Any changes you made through this method will also update the saved YAML configuration.
@@ -305,25 +315,31 @@ Currently, the widget is shown only on the following screens in [App Configurati
 
 * Secrets
 
-![Figure 10: Unexpanded Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget1.jpg)
+<center>Figure 10: Unexpanded Widget</center>
 
 To use a scoped variable, click on the floating widget; a list of variables will be visible. 
 
-![Figure 11: Expanded Widget](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget-expanded.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/widget-expanded.jpg)
+<center>Figure 11: Expanded Widget</center>
 
 Use the copy button to copy a relevant variable of your choice.
 
-![Figure 12: Copying a Variable](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/display-value.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/display-value.jpg)
+<center>Figure 12: Copying a Variable</center>
 
 It would appear in the following format upon pasting it within an input field: `@{{variable-name}}`.
 
-![Figure 13: Pasting a Variable](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/paste-value.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/paste-value.jpg)
+<center>Figure 13: Pasting a Variable</center>
 
 In case you are using a scoped variable in deployment template, you need to encapsulate it in double quotes i.e., `"@{{variable-name}}"`
 
-![Figure 14a: Using Scoped Variable in Deployment Template](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-using-in-deployment-template.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-using-in-deployment-template.jpg)
+<center>Figure 14a: Using Scoped Variable in Deployment Template</center>
 
-![Figure 14b: Performing a Dry Run](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-dry-run.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/scoped-variables/scoped-variable-dry-run.jpg)
+<center>Figure 14b: Performing a Dry Run</center>
 
 **Note:** Ignore the red underline while using a scoped variable in the deployment template.
 

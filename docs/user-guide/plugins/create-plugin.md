@@ -31,23 +31,28 @@ In the following example, we are creating a plugin named 'Secret Management Vali
 
 1. Go to **Applications** and select your app from the **Devtron Apps** tab.
 
-    ![Figure 1: Choosing your App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/select-devtron-app.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/select-devtron-app.jpg)
+<center>Figure 1: Choosing your App</center>
 
 2. From the **Configurations** tab, go to **Workflow Editor**.
 
-    ![Figure 2: Workflow Editor](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/workflow-editor.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/workflow-editor.jpg)
+<center>Figure 2: Workflow Editor</center>
 
 3. Click any pipeline (build/deployment pipeline).
 
-    ![Figure 3: Selecting Pipeline](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/select-pipeline.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/select-pipeline.jpg)
+<center>Figure 3: Selecting Pipeline</center>
 
 4. Go to the **Pre** or **Post** stage of your pipeline, e.g., `Pre-build stage`.
 
-    ![Figure 4: Selecting Stage](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/pre-build-stage.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/pre-build-stage.jpg)
+<center>Figure 4: Selecting Stage</center>
 
 5. Click **+ Add Task** to create a plugin from scratch or click an existing task.
 
-    ![Figure 5: Adding a Task](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/execute-custom-task.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/execute-custom-task.jpg)
+<center>Figure 5: Adding a Task</center>
 
 6. On the **Execute Custom Task** page, fill the following details:
 
@@ -60,11 +65,13 @@ In the following example, we are creating a plugin named 'Secret Management Vali
     * **Output directory path** - Enter the directory where your script will write/produce output files (e.g., test report, zip files).
     * **Output Variables** - Similar to input variables, you can create variables whose values will be generated as output after task execution.
 
-    ![Figure 6: 'Execute Custom Task' Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/custom-task-page.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/custom-task-page.jpg)
+<center>Figure 6: 'Execute Custom Task' Page</center>
 
 7. Click **Update Pipeline**.
 
-    ![Figure 7: 'Update Pipeline' Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/update-plugin.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/update-plugin.jpg)
+<center>Figure 7: 'Update Pipeline' Button</center>
 
 :::tip Next Steps
 Go to the **Build & Deploy** tab of your application and run the pipeline having your custom task. If the custom task executes correctly and the script performs as expected, you may proceed to [save your custom task as a plugin](#part-2-convert-custom-task-to-a-plugin).
@@ -76,7 +83,8 @@ Go to the **Build & Deploy** tab of your application and run the pipeline having
 
 1. Go to your custom task that you have tried and tested, and click **Save as Plugin**.
 
-    ![Figure 8: 'Save as Plugin' Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/save-as-plugin.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/save-as-plugin.jpg)
+<center>Figure 8: 'Save as Plugin' Option</center>
 
 2. In the **New plugin** tab, fill the following details:
 
@@ -90,23 +98,28 @@ Go to the **Build & Deploy** tab of your application and run the pipeline having
     | **Description** | Enter a brief description of your plugin explaining what the plugin does |
     | **Tags** | Select one or more tags from the list or create your own tag. This tag helps in identifying and classifying the plugin, e.g., `Compliance` `Secrets` `Security`.|
 
-    ![Figure 8: Entering New Plugin Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/new-plugin-tab.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/new-plugin-tab.jpg)
+<center>Figure 8: Entering New Plugin Details</center>
 
 3. You have the option of marking the input variables (defined in step 6 earlier) as mandatory/optional. Enabling the toggle will make the input variable mandatory for your users.
 
-    ![Figure 9: Marking Variables as Mandatory or Optional](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/mandatory-optional.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/mandatory-optional.jpg)
+<center>Figure 9: Marking Variables as Mandatory or Optional</center>
 
 4. Since you created the plugin from a custom task, you get an option to replace the original task with your plugin (in the task list).
 
-    ![Figure 10: Replace Task with Plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/replace-with-plugin.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/replace-with-plugin.jpg)
+<center>Figure 10: Replace Task with Plugin</center>
 
 5. Click **Create Plugin Version**.
 
-    ![Figure 11: 'Create Plugin Version' Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/create-plugin-version.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/create-plugin-version.jpg)
+<center>Figure 11: 'Create Plugin Version' Button</center>
 
 6. Your new plugin would appear in the list of plugins.
 
-    ![Figure 12: List of Plugins](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/plugin-list-visible.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/plugin-list-visible.jpg)
+<center>Figure 12: List of Plugins</center>
 
 ---
 
@@ -122,11 +135,13 @@ You may create incremental versions of your plugin (e.g., `1.0.0` → `1.0.1` or
 
 2. From the **New version of existing plugin** tab, select the plugin for which you want to create a new version from the **Existing Plugin** dropdown.
 
-    ![Figure 13: Selecting Existing Plugin for Versioning](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/existing-plugin-select.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/existing-plugin-select.jpg)
+<center>Figure 13: Selecting Existing Plugin for Versioning</center>
 
 3. Specify the new version in the **New version** field.
 
-    ![Figure 14: Creating New Version](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/new-plugin-version.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/new-plugin-version.jpg)
+<center>Figure 14: Creating New Version</center>
 
 4. Verify the details in the remaining fields that got auto-populated from your existing plugin and modify if required.
 
@@ -134,7 +149,8 @@ You may create incremental versions of your plugin (e.g., `1.0.0` → `1.0.1` or
 
 6. You can view and use the available plugin versions as shown below.
 
-    ![Figure 15: Selecting a Version](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/plugin-versions.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/plugin-versions.jpg)
+<center>Figure 15: Selecting a Version</center>
 
 
 
@@ -258,11 +274,13 @@ Fields of a plugin steps are:
 
 Your new plugin will appear under **Shared Plugins** depending on which stage you have created it for: pre/post build (`pluginStage = CI`), pre/post deployment (`pluginStage = CD`), or both (`pluginStage = CI_CD`)
 
-![New Shared Plugin](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/shared-plugin.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/shared-plugin.jpg)
+<center>New Shared Plugin</center>
 
 The variables defined in the `pluginStepVariable` array would appear as shown below.
 
-![Plugin Fields](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/plugin-fields.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/create-plugin/plugin-fields.jpg)
+<center>Plugin Fields</center>
 
 ---
 

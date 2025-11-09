@@ -14,11 +14,13 @@ You can configure a container registry using any registry provider of your choic
 
 1. From the left sidebar, go to **Global Configurations** → **Container/OCI Registry**.
 
-    ![Figure 1: Container/OCI Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/add-registry.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/add-registry.jpg)
+<center>Figure 1: Container/OCI Registry</center>
 
 2. Click **Add Registry**.
 
-    ![Figure 2: Add a Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/add-container-registry-1.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/add-container-registry-1.jpg)
+<center>Figure 2: Add a Registry</center>
 
 3. Choose a provider from the **Registry provider** dropdown. View the [Supported Registry Providers](#supported-registry-providers).
 
@@ -48,9 +50,11 @@ This is possible through [isolated clusters](../global-configurations/cluster-an
 
 If you have [configured your CD pipeline](../creating-application/workflow/cd-pipeline.md) to push the helm package to your OCI registry, you can view the pushed helm package in your registry as shown below:
 
-![Figure 3a: OCI Registry Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/pushed-artifacts.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/pushed-artifacts.jpg)
+<center>Figure 3a: OCI Registry Page</center>
 
-![Figure 3b: Pushed Helm Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/helm-chart.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/helm-chart.jpg)
+<center>Figure 3b: Pushed Helm Chart</center>
 
 :::info Prerequisite
 
@@ -190,14 +194,16 @@ If you select **Use Registry Credentials**, the clusters will be auto-injected w
 
 Click **Save**.
 
-![Figure 4: Using Registry Credentials](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/use-registry-credentials-1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/use-registry-credentials-1.jpg)
+<center>Figure 4: Using Registry Credentials</center>
 
 
 ### Specify Image Pull Secret
 
 You can create a Secret by providing credentials on the command line.
 
-![Figure 5: Using Image Pull Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/specify-image-pull-secret-1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/specify-image-pull-secret-1.jpg)
+<center>Figure 5: Using Image Pull Secret</center>
 
 Create this Secret and name it `regcred` (let's say):
 
@@ -227,7 +233,8 @@ If you prefer to delete an OCI registry, follow the instructions below:
 
 1. Navigate back to **Container/OCI Registry** page. 
 
-    ![Figure 6: Delete an OCI Registry](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/delete-oci-registry.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/delete-oci-registry.jpg)
+<center>Figure 6: Delete an OCI Registry</center>
 
 2. Select your preferred OCI registry. 
 

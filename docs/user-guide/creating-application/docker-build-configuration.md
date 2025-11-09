@@ -13,12 +13,14 @@ For **build configuration**, you must provide information in the sections as giv
 * [Advanced Options](#advanced-options)
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/docker-build-configuration/build-configuration-latest1.jpg)
+<center></center>
 
 ## Store Container Image
 
 The following fields are provided on the **Store Container Image** section:
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/docker-build-configuration/store-container-registry.jpg)
+<center></center>
 
 | Field | Description |
 | --- | --- |
@@ -28,6 +30,7 @@ The following fields are provided on the **Store Container Image** section:
 **If you are using docker hub account, you need to enter the repository name along with your username. For example - If my username is *kartik579* and repo name is *devtron-trial*, then enter kartik579/devtron-trial instead of only devtron-trial.**
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/docker-build-configuration/docker-configuration-docker-hub.jpg)
+<center></center>
 
 
 ## Build the Container Image
@@ -44,6 +47,7 @@ You can choose one of the following options to build your container image:
 A `Dockerfile` is a text document that contains all the commands which you can call on the command line to build an image.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/docker-build-configuration/i-have-a-dockerfile.jpg)
+<center></center>
 
 | Field | Description |
 | --- | --- |
@@ -55,6 +59,7 @@ A `Dockerfile` is a text document that contains all the commands which you can c
 With the option **Create Dockerfile**, you can create a `Dockerfile` from the available templates. You can edit any selected Dockerfile template as per your build configuration requirements.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/docker-build-configuration/create-dockerfile.jpg)
+<center></center>
 
 | Field | Description |
 | --- | --- |
@@ -66,6 +71,7 @@ With the option **Create Dockerfile**, you can create a `Dockerfile` from the av
 With the option **Build without Dockerfile**, you can use Buildpacks to automatically build the image for your preferred language and framework.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/docker-build-configuration/build-without-dockerfile.jpg)
+<center></center>
 
 | Field | Description |
 | --- | --- |
@@ -95,9 +101,11 @@ You can add Key/Value pair by clicking **Add argument**.
 
 Using this option, you can build images for a specific or multiple **architectures and operating systems (target platforms)**. You can select the target platform from the drop-down list or can type to select a customized target platform.
 
-![Select target platform from drop-down](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/docker-build-configuration/set-target-platform.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/docker-build-configuration/set-target-platform.jpg)
+<center>Select target platform from drop-down</center>
 
-![Select custom target platform](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/docker-build-configuration/set-target-platform-2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/docker-build-configuration/set-target-platform-2.jpg)
+<center>Select custom target platform</center>
 
 Before selecting a customized target platform, please ensure that the architecture and the operating system are supported by the `registry type` you are using, otherwise build will fail. Devtron uses BuildX to build images for multiple target Platforms, which requires higher CI worker resources. To allocate more resources, you can increase value of the following parameters in the `devtron-cm` configmap in `devtroncd` namespace.
 
@@ -121,6 +129,7 @@ The Target Platform feature might not work in minikube & microk8s clusters as of
    * Value
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/docker-build-configuration/docker-build-arguments.jpg)
+<center></center>
 
 These fields will contain the key parameter and the value for the specified key for your [docker build](https://docs.docker.com/engine/reference/commandline/build/#options). This field is Optional. If required, this can be overridden at [CI step](../deploying-application/triggering-ci.md).
 

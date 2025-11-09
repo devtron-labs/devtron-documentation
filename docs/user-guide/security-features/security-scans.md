@@ -8,7 +8,8 @@ Install any one of the following integrations for scanning vulnerabilities:
 
 Devtron's CI pipeline provides a **Scan for vulnerabilities** option as shown below. Once you enable this option, it will automatically scan the image for vulnerabilities.
 
-![Figure 1: Scan for vulnerabilities](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/enable-image-scan.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/enable-image-scan.jpg)
+<center>Figure 1: Scan for vulnerabilities</center>
 
 :::caution Who Can Perform This Action?
 Users need to have Admin permission or above (along with access to the environment and application) to enable the **Scan for vulnerabilities** option.
@@ -28,11 +29,13 @@ Users need to have super-admin permission to view the 'Security Scans' page.
 
 2. Select the desired application from the available list.
 
-    ![Figure 3: Application Security Scans](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/security-scans.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/security-scans.jpg)
+<center>Figure 3: Application Security Scans</center>
 
     This action provides a detailed overview of the application's security scan, including CVE IDs, severity levels of vulnerabilities, and more, as shown below.
 
-    ![Figure 4: Detailed Scan Report](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/security-scans-report.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/security-scans-report.jpg)
+<center>Figure 4: Detailed Scan Report</center>
 
 Each vulnerability is identified by a **CVE ID** and categorized based on **Severity**, **Package**, **Current Version**, and **Fixed In Version**.
 
@@ -52,7 +55,8 @@ To access security vulnerability details during image deployment in Devtron, fol
 1. Click **Show Source Info** option for the desired image during the deployment process.
 2. Navigate to the `Security` tab.
 
-![Figure 5: Vulnerability Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/show-vulnerabilities-before-deployment.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/show-vulnerabilities-before-deployment.jpg)
+<center>Figure 5: Vulnerability Details</center>
 
 In the `Security` tab, you will find the security vulnerability details associated with the image. 
 
@@ -68,9 +72,11 @@ Devtron offers the capability to identify vulnerabilities even after an image ha
 
 With this capability, Devtron empowers users to stay informed about the security vulnerabilities present in their deployed images.
 
-![Figure 6: App Details Tab](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/vulnerability-app-details-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/vulnerability-app-details-v2.jpg)
+<center>Figure 6: App Details Tab</center>
 
 Clicking the 'Details' link in the security vulnerabilities report (shown above) reveals detailed information about those found within the deployed image.
 
-![Figure 7: Detailed List of Vulnerabilities](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/detailed-vulnerability-app-details-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/detailed-vulnerability-app-details-v2.jpg)
+<center>Figure 7: Detailed List of Vulnerabilities</center>
 

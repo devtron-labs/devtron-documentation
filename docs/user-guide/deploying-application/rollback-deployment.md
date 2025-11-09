@@ -27,8 +27,10 @@ If you want to roll back from V3 image to V2 image, then you have the following 
 
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/rollback-deployment/rollback-icon.jpg)
+<center></center>
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/rollback-deployment/select-config-to-deploy.jpg)
+<center></center>
 
 1. Select `Rollback` in your deployed pipeline.
 
@@ -45,6 +47,7 @@ If you want to roll back from V3 image to V2 image, then you have the following 
 4. Click `Deploy`.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/rollback-deployment/config-diff.jpg)
+<center></center>
 
 The selected previously deployed image will be deployed.
 

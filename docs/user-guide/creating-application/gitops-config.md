@@ -22,7 +22,8 @@ Users need to have [Admin permission](../global-configurations/authorization/use
 
 1. Go to **Application Management** **Applications** → **Devtron Apps** (tab) → (choose your app) → **Configurations** (tab) → **GitOps Configuration**.
 
-    ![Figure 1: App-level GitOps Config](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/app-config-gitops.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/app-config-gitops.jpg)
+<center>Figure 1: App-level GitOps Config</center>
 
 2. Assuming a GitOps repo was not added to your application earlier, you get 2 options:
 
@@ -30,7 +31,8 @@ Users need to have [Admin permission](../global-configurations/authorization/use
  
     * **Commit manifests to a desired repository** - Select this option if you wish to add a custom repo that is already created with your [Git provider](../global-configurations/gitops.md#supported-git-providers). Enter its link in the `Git Repo URL` field.
 
-    ![Figure 2: Repo Creation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/gitops-config.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/gitops-config.jpg)
+<center>Figure 2: Repo Creation</center>
 
 
 :::caution 
@@ -39,11 +41,13 @@ GitOps repositories, whether auto-created by Devtron or added manually, are immu
 
 3. Click **Save**.
 
-    ![Figure 3: Saved GitOps Config](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/saved-config.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/saved-config.jpg)
+<center>Figure 3: Saved GitOps Config</center>
 
 **Note**: In case you skipped the GitOps configuration for your application and proceeded towards the [creation of a new CD pipeline](../creating-application/workflow/cd-pipeline.md) (that uses GitOps), you will be prompted to configure GitOps as shown below:
 
-![Figure 4: Incomplete GitOps Config](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/gitops-not-configured.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/gitops-not-configured.jpg)
+<center>Figure 4: Incomplete GitOps Config</center>
 
 
 ### For Helm Apps
@@ -52,11 +56,13 @@ You can [deploy a helm chart](../deploy-chart/deployment-of-charts.md#configure-
 
 1. Select the helm chart from the [Chart Store](../deploy-chart/README.md).
 
-    ![Figure 5: Choosing a Helm Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/chart-selection.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/chart-selection.jpg)
+<center>Figure 5: Choosing a Helm Chart</center>
 
 2. Click **Configure & Deploy**.
 
-    ![Figure 6: Configure & Deploy Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/configure-deploy.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/configure-deploy.jpg)
+<center>Figure 6: Configure & Deploy Button</center>
 
 3. After you enter the `App Name`, `Project`, and `Environment`; an option to choose the deployment approach (i.e., Helm or GitOps) would appear. Select **GitOps**.
 
@@ -65,19 +71,23 @@ The option to choose between 'Helm' or 'GitOps' is only available in <a href="ht
 
 :::
 
-![Figure 7a: Deployment Approach](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/deployment-method.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/deployment-method.jpg)
+<center>Figure 7a: Deployment Approach</center>
 
-![Figure 7b: Selecting GitOps Method](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/select-gitops.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/select-gitops.jpg)
+<center>Figure 7b: Selecting GitOps Method</center>
 
 4. A modal window will appear for you to enter a Git repository. Just like [Devtron Apps](#for-devtron-apps) (step 2), you get two options:
     * Auto-create repository
     * Commit manifests to a desired repository
 
-    ![Figure 8: Adding a Repo](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/git-repository-helm-app.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/git-repository-helm-app.jpg)
+<center>Figure 8: Adding a Repo</center>
 
 5. Enter your custom Git Repo URL, and click **Save**.
 
-    ![Figure 9: Saved GitOps Config for Helm App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/custom-git-repo-helm-apps.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/gitops/custom-git-repo-helm-apps.jpg)
+<center>Figure 9: Saved GitOps Config for Helm App</center>
 
 Next, you may proceed to deploy the chart.
 

@@ -35,6 +35,7 @@ Only single SSO login configuration can be active at one time. Whenever you crea
 Except for the domain substring, URL and redirectURI should be the same as in the screenshots.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/sso-login.jpg)
+<center></center>
 
 Select `Save` to create and activate SSO login.
 

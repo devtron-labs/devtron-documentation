@@ -6,7 +6,8 @@ The components on a typical node include the `kubelet`, a `container runtime`, a
 
 If you have multiple nodes, you can search a node by name or label in the search bar. The search result will display the following information about the node. To display a parameter of a node, use `Columns` on the right side, select the parameter to display from the drop-down list, and click **Apply**.
 
-![Figure 1: Searching and Filtering Nodes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cluster-nodes-db.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cluster-nodes-db.jpg)
+<center>Figure 1: Searching and Filtering Nodes</center>
 
 | Fields | Description |
 | --- | --- |
@@ -28,7 +29,8 @@ Clicking on a node shows you a number of details such as:
 * Labels, Annotations, and Taints
 * Node IP
 
-![Figure 2: Checking Node Summary](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/node-summary-db.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/node-summary-db.jpg)
+<center>Figure 2: Checking Node Summary</center>
 
 Further using the Devtron UI, you will be able to:
 * [Debug a Node](#debug-a-node)
@@ -52,11 +54,13 @@ You can debug a node via [Cluster Terminal](./cluster-terminal.md) by selecting 
 
 * Click **Debug**.
 
-  ![Figure 3a: Debugging a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/debug-db.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/debug-db.jpg)
+<center>Figure 3a: Debugging a Node</center>
 
 * Debug a node by selecting the terminal shell, i.e., `bash` or `sh`.
 
-  ![Figure 3b: Debug Terminal](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/debug-terminal-db.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/debug-terminal-db.jpg)
+<center>Figure 3b: Debug Terminal</center>
 
 ---
 
@@ -64,15 +68,18 @@ You can debug a node via [Cluster Terminal](./cluster-terminal.md) by selecting 
 
 Cordoning a node means making the node unschedulable. After [cordoning a node](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_cordon/), new pods cannot be scheduled on this node.
 
-![Figure 4a: Visual Representation - Cordoning a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon-visual.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon-visual.jpg)
+<center>Figure 4a: Visual Representation - Cordoning a Node</center>
 
 * Click **Cordon**.
 
-  ![Figure 4b: Cordoning a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon-db.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon-db.jpg)
+<center>Figure 4b: Cordoning a Node</center>
 
 * A confirmation dialog box will appear, click **Cordon Node** to proceed.
 
-  ![Figure 4c: Cordon Confirmation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon-dialog-db.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cordon-dialog-db.jpg)
+<center>Figure 4c: Cordon Confirmation</center>
 
 The status of the node shows `SchedulingDisabled` with `Unschedulable` parameter set as `true`.
 
@@ -84,17 +91,20 @@ Similarly, you can uncordon a node by clicking `Uncordon`. After a node is uncor
 
 Before performing maintenance on a node, [draining a node](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/) evicts all of your pods safely from a node. Safe evictions allow the pod’s containers to gracefully terminate and honour the `PodDisruptionBudgets` you have specified (if relevant).
 
-![Figure 5a: Visual Representation - Draining a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain-visual.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain-visual.jpg)
+<center>Figure 5a: Visual Representation - Draining a Node</center>
 
 After the node is drained, all pods (including those managed by DaemonSets) in the node will be automatically drained to other nodes in the cluster, and the drained node will be set to cordoned status.
 
 * Click **Drain**.
 
-  ![Figure 5b: Draining a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain-db.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain-db.jpg)
+<center>Figure 5b: Draining a Node</center>
 
 * A confirmation dialog box will appear, click **Drain Node** to proceed.
 
-  ![Figure 5c: Drain Confirmation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain-dialog-db.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/drain-dialog-db.jpg)
+<center>Figure 5c: Drain Confirmation</center>
 
 You can also select from the following conditions before draining a node:
 
@@ -112,17 +122,20 @@ You can also select from the following conditions before draining a node:
 
 Taints are `key:value` pairs associated with effect. After you add taints to nodes, you can set tolerations on a pod to allow the pod to be scheduled to nodes with certain taints. When you taint a node, it will repel all the pods except those that have a toleration for that taint. A node can have one or many taints associated with it.
 
-![Figure 6a: Visual Representation - Tainting a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/taint-visual.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/taint-visual.jpg)
+<center>Figure 6a: Visual Representation - Tainting a Node</center>
 
 **Note**: Make sure to check taint validations before you add a taint.
 
 * Click **Edit taints**.
 
-  ![Figure 6b: Tainting a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-taints-db.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-taints-db.jpg)
+<center>Figure 6b: Tainting a Node</center>
 
 * Enter the `key:value` pairs and select the taint effect from the drop-down list. [Click here](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/#concepts) to read about taint effects.
 
-  ![Figure 6c: Adding Taints](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/taint-dialog-db.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/taint-dialog-db.jpg)
+<center>Figure 6c: Adding Taints</center>
 
 * Click **Save**.
 
@@ -134,7 +147,8 @@ You can also add more taints using **+ Add taint button**, or delete the existin
 
 This allows you to directly edit any node. It will open the editor which contains all the configuration settings in which the default format is YAML. You can edit multiple objects, although changes are applied one at a time.
 
-![Figure 7: Editing Node Config](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-config.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-config.gif)
+<center>Figure 7: Editing Node Config</center>
 
 * Go to the `YAML` tab and click **Edit YAML**.
 * Make the changes using the editor.
@@ -147,9 +161,11 @@ This allows you to directly edit any node. It will open the editor which contain
 
 You can also delete a node by clicking the **Delete** button present on the right-hand side.
 
-![Figure 8a: Deleting a Node](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/delete-node-db.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/delete-node-db.jpg)
+<center>Figure 8a: Deleting a Node</center>
 
-![Figure 8b: Delete Confirmation](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/delete-dialog-db.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/delete-dialog-db.jpg)
+<center>Figure 8b: Delete Confirmation</center>
 
 The node will be deleted from the cluster.
 

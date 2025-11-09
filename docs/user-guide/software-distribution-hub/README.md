@@ -4,7 +4,8 @@
 
 Software Release Management is a platform that simplifies the packaging, versioning, and delivery of your software products. By using it, you can manage your software release across multiple clients ([tenants](#tenants)).
 
-![Figure: Software Release Management](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/sdh-eagle-eye.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/sdh-eagle-eye.gif)
+<center>Figure: Software Release Management</center>
 
 
 ### When and Why to Use

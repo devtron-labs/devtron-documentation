@@ -8,7 +8,8 @@ The **Notifications** screen lists AI-generated recommendations for your Kuberne
 
 Go to **AI Recommendations** → **Notifications** to view the list.
 
-![Figure 1: 'Notification' Listing](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/notification-listing.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/notification-listing.jpg)
+<center>Figure 1: 'Notification' Listing</center>
 
 Each recommendation item includes:
 
@@ -36,7 +37,8 @@ This modal window has two tabs: [Summary](#summary) and [Recommended Change](#re
 
 ### Summary
 
-![Figure 2: Summary of AI Proposal](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/summary-proposal.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/summary-proposal.jpg)
+<center>Figure 2: Summary of AI Proposal</center>
 
 Apart from the recommendation details seen earlier, this will show additional information, such as:
 
@@ -47,7 +49,8 @@ The next step is to [review the recommendation](#recommended-change).
 
 ### Recommended Change
 
-![Figure 3: Diff of Proposed Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/recommended-change.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/recommended-change.jpg)
+<center>Figure 3: Diff of Proposed Changes</center>
 
 This tab shows you the configuration diff for you to compare the existing configuration vs recommended change.
 If the recommended change is yet to be acted upon or depending on the [current status of notification](#notification-feed-statuses), you get **Approve** and **Reject** button for accepting/discarding the recommendation. C

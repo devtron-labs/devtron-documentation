@@ -4,7 +4,8 @@
 
 You can check for vulnerabilities, analyze logs, create ephemeral containers, and manage a few resource kinds directly from the **App Details** page.
 
-![Figure 1: Resource Management](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/resource-management.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/resource-management.jpg)
+<center>Figure 1: Resource Management</center>
 
 ---
 ## K8s Resources
@@ -32,7 +33,8 @@ When you choose a Kubernetes resource kind (e.g., pods), you can perform a few a
 | **Events** | Choose **Events** when you want to view all the activities (create/update/delete) of the selected pod. | 
 | **Manifest** | Choose **Manifest** when you want to view or edit the configuration of the selected pod. | 
 
-![Figure 2: Resource Kinds and Available Actions](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/available-actions.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/available-actions.jpg)
+<center>Figure 2: Resource Kinds and Available Actions</center>
 
 ---
 ### Check Vulnerabilities
@@ -62,7 +64,8 @@ Follow the below steps to check for vulnerabilities:
 
 3. Click **Check Vulnerabilities**. The **Security** page will be displayed.
 
-    ![Figure 3: Security Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/security-page.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/security-page.jpg)
+<center>Figure 3: Security Page</center>
 
     From the **Security** page, you can view the scan results categorized by severity. When you click on the image link, you will get an even more detailed scan results, including CVE ID (Common Vulnerabilities and Exposures) and package (the specific place where the vulnerability is present) information. To know more, refer to [Security](../../user-guide/security-features.md).
 
@@ -110,15 +113,18 @@ Follow the instructions below to create an ephemeral container from the **App De
 
 4. Locate the pod you wish to debug. Hover over and click **Terminal**.
 
-    ![Figure 4: Opening a Terminal](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/terminal.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/terminal.jpg)
+<center>Figure 4: Opening a Terminal</center>
 
 5. Click **Launch Ephemeral Container**. The **Launch ephemeral container on pod** page is displayed.
 
-    ![Figure 5: Launching an Ephemeral Container](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/launch-ec-new.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/launch-ec-new.jpg)
+<center>Figure 5: Launching an Ephemeral Container</center>
 
 6. Choose **Basic** to create a bare minimum ephemeral container: 
 
-    ![Figure 6: Basic View](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/basic.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/basic.jpg)
+<center>Figure 6: Basic View</center>
 
     * Enter a prefix to your ephemeral container, for e.g., *debug* in the **Container name prefix** field.
 
@@ -128,7 +134,8 @@ Follow the instructions below to create an ephemeral container from the **App De
 
 7. Choose **Advanced** if you wish to use labels or annotations to create an ephemeral container since it provides additional key-value options. Refer [Ephemeral Container Spec](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#ephemeralcontainer-v1-core) to view the supported options.
 
-    ![Figure 7: Advanced View](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/advanced.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/advanced.jpg)
+<center>Figure 7: Advanced View</center>
     
 8. Click **Launch Container**.
 

@@ -52,11 +52,13 @@ Go to the left main panel -&gt; `Select Global Configurations` -&gt; Select `Use
 Click on `Add User`, to add one or multiple users.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/hyperion/user-guide/global-configurations/user-access/hyperion-gc-add-user.jpg)
+<center></center>
 
 ### 2. Search the existing User
 Click on `Search Box`, and type your user's email
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/hyperion/user-guide/global-configurations/user-access/hyperion-gc-search-user.jpg)
+<center></center>
 
 ### 3. Create User Permissions
 
@@ -83,6 +85,7 @@ In the `Email address` box, you have to provide the mail ID of the user to whom 
 If you check the option `Assign super admin permissions`, the user will get full access to your system and the rest of the options will disappear.  Please check [above](#access-levels) to see permission levels.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/hyperion/user-guide/global-configurations/user-access/hyperion-gc-assign-superuser.jpg)
+<center></center>
 
 Click on `Save` and your user will be saved with super admin permissions.
 
@@ -96,6 +99,7 @@ If you don’t want to assign super admin permissions then you have to provide t
 This is used to assign user to a particular group and user inherits all the permissions granted to this group. The Group permissions section contains a drop-down of all existing groups on which you have access. This is optional field and more than one groups can be selected for a user.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/hyperion/user-guide/global-configurations/user-access/hyperion-gc-assign-groups-user.jpg)
+<center></center>
 
 We will discuss how to create groups in the later section.
 
@@ -126,6 +130,7 @@ Similarly, you can select `Applications` from the drop-down corresponding to you
 There are there different view access levels available for both User and Group as described [above](#access-levels):
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/hyperion/user-guide/global-configurations/user-access/hyperion-gc-user-permission.jpg)
+<center></center>
 
 You can add multiple rows, for Helm Apps.
 
@@ -136,10 +141,12 @@ Once you have finished assigning the appropriate permissions for the listed user
 You can edit the user permissions, by clicking on the `downward arrow`.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/hyperion/user-guide/global-configurations/user-access/hyperion-gc-user-edit-arrow.jpg)
+<center></center>
 
 Then you can edit the user permissions here.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/hyperion/user-guide/global-configurations/user-access/hyperion-gc-user-edit-permission.jpg)
+<center></center>
 
 After you have done editing the user permissions. Click on `Save`.
 
@@ -156,10 +163,12 @@ You can select the group which you are creating in the `Group permissions` secti
 Click on `Add Group`, to create a new group.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/hyperion/user-guide/global-configurations/user-access/hyperion-gc-group.jpg)
+<center></center>
 
 Enter the `Group Name` and `Description`.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/hyperion/user-guide/global-configurations/user-access/hyperion-gc-group-name-desc.jpg)
+<center></center>
 
 ### 2. Create Group Permissions
 
@@ -168,6 +177,7 @@ Once you have given the group name and group description.
 Then, control the access permissions of groups in the Helm Apps section. Manage the Project, Environment, Application, and Permission access the same as we discuss in the above users section.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/hyperion/user-guide/global-configurations/user-access/hyperion-gc-group-add-permission.jpg)
+<center></center>
 
 You can add multiple rows, for the Helm Apps section.
 
@@ -178,10 +188,12 @@ Once you have finished assigning the appropriate permissions for the listed user
 You can edit the group permissions, by clicking on the `downward arrow.`
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/hyperion/user-guide/global-configurations/user-access/hyperion-gc-group-edit-arow.jpg)
+<center></center>
 
 Then you can edit the group permissions here.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/hyperion/user-guide/global-configurations/user-access/hyperion-gc-group-edit-permission.jpg)
+<center></center>
 
 Once you are done editing the group permissions. Click on `Save`.
 

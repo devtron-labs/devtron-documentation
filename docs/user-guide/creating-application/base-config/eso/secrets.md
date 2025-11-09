@@ -8,11 +8,13 @@ Simply put, if a [ConfigMap](../config-maps.md) is a recipe card in the kitchen,
 
 1. Go to the **Configurations** → **Base Configurations**.
 
-    ![Figure 1: Application's 'Configurations' Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/appconfig-page.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/appconfig-page.jpg)
+<center>Figure 1: Application's 'Configurations' Page</center>
 
 2. Click the **+** button next to **Secrets**.
 
-    ![Figure 2: Add Button](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg)
+<center>Figure 2: Add Button</center>
 
 3. **Data Type** - Choose between the following data types:
     * [Kubernetes Secret](#kubernetes-secret)
@@ -27,7 +29,8 @@ Simply put, if a [ConfigMap](../config-maps.md) is a recipe card in the kitchen,
 
 2. **Name** - Provide a name to your Secret (cannot be changed later).
 
-    ![Figure 3: Naming the Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-2.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-2.jpg)
+<center>Figure 3: Naming the Secret</center>
 
 3. **Mount data as** - Select how you want to mount the Secret:
     * **Environment Variable** – Select this option if you want to inject Environment Variables in pods using Secret.
@@ -61,17 +64,20 @@ Use this option to mount an existing Kubernetes Secret in your application pods.
 
 In the above example, we have seen how to pass environment variables in your Secret. Additionally, there is an option to mount a Secret by passing its content to a file. The content could be a plain text, json, yaml, bash script, etc. You can do so by selecting the `Data Volume` option in **Mount data as**.
 
-![Figure 4: Naming the Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/secret-data-volume.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/secret-data-volume.jpg)
+<center>Figure 4: Naming the Secret</center>
 
 The key of the Secret should be your filename and the value of the Secret should be your file content. In the below example, you `file.json` is the key, and the json content is the value of that Secret (below the pipe (**|**) symbol). This file will be created on your specified [volume mount path](#volume-mount-path).
 
-![Figure 5: Adding File Content](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/filecontent-secret.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/filecontent-secret.jpg)
+<center>Figure 5: Adding File Content</center>
 
 ### Volume Mount Path
 
 Enter the folder path where the data volume should be mounted for it to be accessible to the containers running in a pod. Your keys will be mounted as files to that volume.
 
-![Figure 6: Selecting Data Volume Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/secret-volume-mount-path.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/secret-volume-mount-path.jpg)
+<center>Figure 6: Selecting Data Volume Option</center>
 
 ### Set Sub Path
 
@@ -116,7 +122,8 @@ Before saving your configured Secret, you can use the **Dry Run** option (as sho
 
 This feature helps you verify your configurations, detect issues, and ensure correctness.
 
-![Figure 7: Performing a Dry Run](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/dry-run-secret.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/dry-run-secret.gif)
+<center>Figure 7: Performing a Dry Run</center>
 
 Your configurations will appear in the left pane, while the right pane will display a section named `Manifest generated from merged` showing the computed Kubernetes manifest.
 
@@ -132,7 +139,8 @@ Your configurations will appear in the left pane, while the right pane will disp
 You cannot change the name of a Secret. Create a new Secret instead.
 :::
 
-![Figure 8: Updating Existing Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/update-secret.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/update-secret.jpg)
+<center>Figure 8: Updating Existing Secret</center>
 
 ---
 
@@ -145,7 +153,8 @@ You may delete a Secret if not in use anymore. Once a Secret is deleted, it will
 3. Click **Delete**.
 4. Confirm the deletion in the dialogbox.
 
-![Figure 9: Deleting Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/delete-secret.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/delete-secret.jpg)
+<center>Figure 9: Deleting Secret</center>
 
 ---
 
@@ -179,7 +188,8 @@ External Secrets Operator (ESO) is a Kubernetes component that integrates with e
 
 2. Search for the `external-secrets` chart.
 
-    ![Figure 10: Searching External Secrets Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/external-secret.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/external-secret.jpg)
+<center>Figure 10: Searching External Secrets Chart</center>
 
 :::info What if external-secrets chart is not found?
 Manually add the following chart repository URL in Devtron: `https://charts.external-secrets.io`. Follow this [guide](../../../global-configurations/chart-repo.md#add-chart-repository) to know the steps.
@@ -187,7 +197,8 @@ Manually add the following chart repository URL in Devtron: `https://charts.exte
 
 3. Give a name to the helm app that will be created from the chart. Also enter the project and environment where you wish to install the chart.
 
-    ![Figure 11: Adding Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/ext-secret-fields.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/ext-secret-fields.jpg)
+<center>Figure 11: Adding Details</center>
 
 4. Click **Deploy Chart**.
 

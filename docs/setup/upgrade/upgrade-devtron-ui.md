@@ -6,7 +6,8 @@ hide_table_of_contents: true
  
 Devtron can be updated from the **Devtron Stack Manager → About Devtron** section.
  
-![Upgrade Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/integrations/about-devtron.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/integrations/about-devtron.png)
+<center>Upgrade Devtron</center>
  
 * Select **Update to Devtron**
  

@@ -8,7 +8,8 @@ A [Runbook](./runbook.md) is a predefined action that Devtron runs to apply a ch
 
 Whenever AI detects an optimization opportunity, it automatically generates a corresponding runbook to carry out the recommended change once approved. These runbooks are auto-linked from [Notifications](notifications.md) of **AI Recommendations**.
 
-![Figure 1: Runbook Listing](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/runbook-listing.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/runbook-listing.jpg)
+<center>Figure 1: Runbook Listing</center>
 
 :::info Example of Remediation Action
 When AI recommends a cost optimization such as reducing memory allocation, the linked runbook carries out that change.  
@@ -32,7 +33,8 @@ Follow this section only if you wish to create a runbook different than the one 
 
 2. Click **Create Runbook**.  
 
-  ![Figure 2: Creating New Runbook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/create-runbook.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/create-runbook.jpg)
+<center>Figure 2: Creating New Runbook</center>
 
 3. Enter the following details:  
    * **Name** - Example: `update-resource-limits`  
@@ -51,7 +53,8 @@ Follow this section only if you wish to create a runbook different than the one 
 
 You can edit your runbooks here. Each runbook follows a YAML structure that defines its metadata, tags, and executable steps. 
 
-![Figure 3: Edit Runbook Spec](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/edit-runbook-spec.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/edit-runbook-spec.jpg)
+<center>Figure 3: Edit Runbook Spec</center>
 
 Use the YAML editor in Devtron to paste and modify this structure.
 
@@ -231,7 +234,8 @@ To notify other systems or trigger automated workflows upon completion of a Devt
 
 Before execution, every AI-generated runbook requires an approval decision. You can approve or reject its execution for specific clusters and different durations.
 
-![Figure 4: Approve or Reject Runbook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/runbook-approval.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/runbook-approval.gif)
+<center>Figure 4: Approve or Reject Runbook</center>
 
 When you take an action, Devtron applies the following logic:
 
@@ -269,7 +273,8 @@ Every Runbook logs:
 * User, timestamp, and resource  
 * Full JSON payload for traceability
 
-![Figure 5: Audit Log](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/runbook-audit-log.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/ai-recommendations/runbook-audit-log.gif)
+<center>Figure 5: Audit Log</center>
 
 You can access this under **AI Recommendations** → **Runbooks** → **Audit Logs**.
 

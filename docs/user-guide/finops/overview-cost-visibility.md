@@ -14,7 +14,8 @@ The **Overview** page provides a summary of infrastructure costs across your App
 
 At the top, you can choose your preferred currency time and time duration to set the context for your usage costs. This makes sure all costs on the **Overview** page are displayed in the correct currency and time range.
 
-![Figure 1: Cost Visibility Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/cost-visibility/cost-visibility-overview.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/cost-visibility/cost-visibility-overview.jpg)
+<center>Figure 1: Cost Visibility Overview</center>
 
 Cost Overview has the following sections:
 

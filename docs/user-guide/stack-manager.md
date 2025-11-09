@@ -17,7 +17,8 @@ The current release of Devtron supports multiple integrations. To request one, p
 Select **Devtron Stack Manager** from the left navigation bar.
 Under **INTEGRATIONS**, select **Discover**.
  
-![Discover integrations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/integrations/discover-integrations.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/integrations/discover-integrations.jpg)
+<center>Discover integrations</center>
  
 > Although the integrations are installed separately, they cannot be upgraded separately. Integrations update happens automatically with [Devtron upgrade](../setup/upgrade/README.md).
  

@@ -14,6 +14,7 @@ Git Accounts allow you to connect your code source with Devtron. You will be abl
 To add git account, go to the `Git accounts` section of `Global Configurations`. Click **Add git account**.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/git-accounts/git-accounts.jpg)
+<center></center>
 
 Provide the information in the following fields to add your git account:
 
@@ -37,9 +38,11 @@ To update the git account:
 Updates can only be made within one Authentication type or one protocol type, i.e. HTTPS (Anonymous or User Auth) & SSH. You can update from `Anonymous` to `User Auth` & vice versa, but not from `Anonymous` or `User Auth` to `SSH` and vice versa.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/git-accounts/update-git-accounts.jpg)
+<center></center>
 
 Note:
 * You can enable or disable a git account. Enabled git accounts will be available on the Configurations (tab) → [Git repository](../creating-application/git-material.md).
 
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/git-accounts/git-account-enable-disable.jpg)
+<center></center>

@@ -15,16 +15,19 @@ You can use Devtron's generic helm chart to run the CronJobs or one time Job.
 Select the `devtron-charts/devtron-generic-helm` chart from the Devtron Chart Store.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/devtron-generic-helm-chart-to-run-cron-job-or-one-time-job/use-case-chart-store.jpg)
+<center></center>
 
 Select the Chart Version and the Chart Value of the Chart.
 
 And, then click on `Deploy`
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/devtron-generic-helm-chart-to-run-cron-job-or-one-time-job/use-case-deploy-chart.jpg)
+<center></center>
 
 **Configure devtron-generic-helm chart**
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/devtron-generic-helm-chart-to-run-cron-job-or-one-time-job/gc-4.jpg)
+<center></center>
 
 Click on **Deploy Chart**
 

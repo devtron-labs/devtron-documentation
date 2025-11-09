@@ -6,7 +6,8 @@ After configuring the **Build Configurations** and **Base Configurations**, the 
 
 In Devtron, a **Workflow** is a logical sequence of different stages(pipelines) used for continuous integration and continuous deployment of an application. 
 
- ![Figure 1: Workflow Editor](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/arora1.gif)
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/arora1.gif)
+<center>Figure 1: Workflow Editor</center>
 
 ---
 
@@ -18,11 +19,13 @@ To create a quick workflow with both build and deployment pipelines, follow the 
 
 1. Click **New Workflow** in the workflow editor.
 
-     ![Figure 2: Selecting 'New Workflow'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-create-workflow.jpg)
+     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-create-workflow.jpg)
+<center>Figure 2: Selecting 'New Workflow'</center>
 
 2. Select **Build and Deploy from Source Code**; a window appears.
 
-     ![Figure 3: Selecting 'Build and Deploy from Source Code'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-build-deploy-from-source-code.jpg)
+     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-build-deploy-from-source-code.jpg)
+<center>Figure 3: Selecting 'Build and Deploy from Source Code'</center>
 
 3. Enter the required information in the following fields.
 
@@ -33,7 +36,8 @@ To create a quick workflow with both build and deployment pipelines, follow the 
  | `Environment` | Required |Select the environment where you want to deploy your application |
  | `Namespace`| Required (Auto Filled)| Automatically populated based on the selected environment | 
 
-   ![Figure 4: Entering Information](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-cred.jpg)
+   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-cred.jpg)
+<center>Figure 4: Entering Information</center>
 
  **Source Types**
 
@@ -46,7 +50,8 @@ To create a quick workflow with both build and deployment pipelines, follow the 
  
 4. Click **Create Workflow**; a workflow with both build and deployment pipelines will be created.
 
-     ![Figure 5: Clicking 'Create Workflow'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-save-workflow.jpg)
+     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-save-workflow.jpg)
+<center>Figure 5: Clicking 'Create Workflow'</center>
 
 5. If you want to configure advanced configurations in the build pipeline, such as Custom image tag pattern, Vulnerability Scanning, etc., refer to the [CI Pipeline](./ci-pipeline.md#configuring-advanced-options) page to learn more.
 
@@ -70,4 +75,5 @@ Apart from configuring advanced options, you can create five types of CI pipelin
 
 * [Create a Job](./ci-pipeline.md#5-create-a-job)
 
-![Figure 6: Selecting an Image Source](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/workflow-ci.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/workflow-ci.jpg)
+<center>Figure 6: Selecting an Image Source</center>

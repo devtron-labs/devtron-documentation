@@ -47,9 +47,11 @@ The Jira Issue Updater plugin extends the capabilities of Devtron CI by allowing
 
 ## Results
 
-![Figure 1: Build Log](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/jira/jira-updater-log.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/jira/jira-updater-log.jpg)
+<center>Figure 1: Build Log</center>
 
-![Figure 2: Comments added by the Plugin on the Jira Issue](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/jira/jira-updater.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/jira/jira-updater.jpg)
+<center>Figure 2: Comments added by the Plugin on the Jira Issue</center>
 
 
 

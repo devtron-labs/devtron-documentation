@@ -9,7 +9,8 @@ Devtron Intelligence is an AI assistant that helps you troubleshoot issues faste
 
 Check out the [Results](#results) section to see where Devtron gives you AI-powered explanation for troubleshooting.
 
-![Figure 1: Devtron Intelligence for AI-assisted Debugging](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/devtron-ai-assist-v3.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/devtron-ai-assist-v3.gif)
+<center>Figure 1: Devtron Intelligence for AI-assisted Debugging</center>
 
 ### Tutorial
 
@@ -84,7 +85,8 @@ kubectl create secret generic ai-secret \
 #  --from-literal=AnthropicKey='anthropic-key-here'
 ```
 
-  ![Figure 2: Creating Secret using Cluster Terminal](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/secret-using-kubectl.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/secret-using-kubectl.jpg)
+<center>Figure 2: Creating Secret using Cluster Terminal</center>
 
 
 ### 3. Deploy AI Agent Chart
@@ -205,7 +207,8 @@ additionalEnvVars:
 
 </Tabs>
 
-![Figure 3: Chart Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/chart-config-v4.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/chart-config-v4.jpg)
+<center>Figure 3: Chart Configuration</center>
 
 6. Click the **Deploy Chart** button.
 
@@ -215,7 +218,8 @@ additionalEnvVars:
 
 2. Locate the service entry with the URL in the format: `<service-name>.<namespace>:<port>`. Note the values of `serviceName`, `namespace`, and `port` for the next step.
 
-![Figure 4: Service Endpoint of AI Agent Helm App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/service-endpoint-v3.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/service-endpoint-v3.jpg)
+<center>Figure 4: Service Endpoint of AI Agent Helm App</center>
 
 
 ### 5. Update ConfigMaps
@@ -232,7 +236,8 @@ additionalEnvVars:
       CLUSTER_CHAT_CONFIG: '{"<targetClusterID>": {"serviceName": "", "namespace": "", "port": ""}}'
       ```
 
-      ![Figure 5: Entry in 'orchestrator-cm' or 'devtron-cm' ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/devtron-cm-v3.jpg)
+      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/devtron-cm-v3.jpg)
+<center>Figure 5: Entry in 'orchestrator-cm' or 'devtron-cm' ConfigMap</center>
 
     * **dashboard-cm**
     
@@ -242,7 +247,8 @@ additionalEnvVars:
       FEATURE_AI_INTEGRATION_ENABLE: "true"
       ```
 
-      ![Figure 6: Entry in 'dashboard-cm' ConfigMap](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/dashboard-cm-v3.jpg)
+      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/dashboard-cm-v3.jpg)
+<center>Figure 6: Entry in 'dashboard-cm' ConfigMap</center>
 
 
 ### 6. Restart Pods
@@ -253,7 +259,8 @@ additionalEnvVars:
     * `devtron`
     * `dashboard`
 
-    ![Figure 7: Restart 'devtron' and 'dashboard' deployment workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/restart-deployments.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/restart-deployments.jpg)
+<center>Figure 7: Restart 'devtron' and 'dashboard' deployment workloads</center>
 
 
 ### 7. Perform Hard Refresh
@@ -272,35 +279,42 @@ Devtron supports **Explain** option at the following screens (only for specific 
 
 **Path**: Infrastructure Management → Resource Browser → (Select Cluster) → Workloads → Pod
 
-![Figure 8a: AI Explain for Pod Issues](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/explain-with-ai.jpg) 
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/explain-with-ai.jpg)
+<center>Figure 8a: AI Explain for Pod Issues</center> 
 
-![Figure 8b: AI-assisted Troubleshooting](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/ai-explanation.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/ai-explanation.jpg)
+<center>Figure 8b: AI-assisted Troubleshooting</center>
 
 ### Pod Last Restart Snapshot
 
 **Path**: Infrastructure Management → Resource Browser → (Select Cluster) → Workloads → Pod → Pod Last Restart Snapshot
 
-![Figure 9: AI Explain for Pod Restart Snapshot](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/pod-restart-explain.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/pod-restart-explain.jpg)
+<center>Figure 9: AI Explain for Pod Restart Snapshot</center>
 
 ### Event Errors
 
 **Path**: Infrastructure Management → Resource Browser → (Select Cluster) → Events
 
-![Figure 10: AI Explain for Event Errors](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/events-explain.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/events-explain.jpg)
+<center>Figure 10: AI Explain for Event Errors</center>
 
 ### App Details - Application Status
 
 **Path**: Application Management → Applications → (Select Application) → App Details → Application Status Drawer
 
-![Figure 11a: AI Explain at Application Status](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/appstatus-drawer-explain1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/appstatus-drawer-explain1.jpg)
+<center>Figure 11a: AI Explain at Application Status</center>
 
-![Figure 11b: AI Explain at Application Status Drawer](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/appstatus-drawer-explain2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/appstatus-drawer-explain2.jpg)
+<center>Figure 11b: AI Explain at Application Status Drawer</center>
 
 ### App Details - K8s Resources
 
 **Path**: Application Management → Applications → (Select Application) → App Details → K8s Resources (tab) → Workloads
 
-![Figure 12: AI Explain at K8s Resources (tab)](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/app-workload-explain.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/app-workload-explain.jpg)
+<center>Figure 12: AI Explain at K8s Resources (tab)</center>
 
 
 

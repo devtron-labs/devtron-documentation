@@ -29,7 +29,8 @@ You can define policies at the following levels:
 * [Environment](#configure-environment-security-policy)
 * [Application](#configure-application-security-policy)
 
-![Figure 1: Security Policies](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/security-feature-global-security-policies.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/security-feature-global-security-policies.jpg)
+<center>Figure 1: Security Policies</center>
 
 However, if you define policies at more than one level, the order of precedence would be as follows:
 
@@ -57,7 +58,8 @@ Within the Global Security Policies, there are three options available:
 | Block if fix is available  | Images containing vulnerabilities will be blocked if a fix is available and has not been applied |
 | Allow | Images containing vulnerabilities will be allowed to be deployed regardless of whether a fix is available or not |
 
-![Figure 2: Configuring Global Security Policy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/global-security-policy-1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/global-security-policy-1.jpg)
+<center>Figure 2: Configuring Global Security Policy</center>
 
 If critical severity levels are blocked in the Global Security Policy, the same blocking will be applied to the Cluster Security Policy. Likewise, allowing critical levels in the global policy automatically allows them in Cluster Security Policies.
 
@@ -69,7 +71,8 @@ However, users have the flexibility to explicitly modify these policies as desir
 
 Cluster Security Policies offer the same three options as [Global Security Policies](#configure-global-security-policy) for handling vulnerabilities. However, an extra option called `Inherit` is available too.
 
-![Figure 3: Configuring Cluster Security Policy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/cluster-security-policy-1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/cluster-security-policy-1.jpg)
+<center>Figure 3: Configuring Cluster Security Policy</center>
 
 When `Inherit` is selected, the policy adopts settings from higher-level options. For example, if critical severity levels are blocked globally, they will also be blocked in Cluster Security Policies. Changing the global policy to allow critical levels will also allow them in Cluster Security Policies. Explicit changes can be made to these policies.
 
@@ -90,7 +93,8 @@ Environment Security Policies, like [Cluster Security Policies](#configure-clust
 * Allow
 * Inherit
 
-![Figure 4: Configuring Environment Security Policy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/environment-security-policy-1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/environment-security-policy-1.jpg)
+<center>Figure 4: Configuring Environment Security Policy</center>
 
 The Environment Security Policy inherits its settings from the Cluster Security Policy, following a hierarchical structure where each level inherits the policy from its upper level.
 
@@ -113,11 +117,13 @@ However, in the Application Security Policy, the policy is determined by both: A
 
 First, choose an application from the list.
 
-![Figure 5a: Configuring Application Security Policy - Choosing an App](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/app-selection.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/app-selection.jpg)
+<center>Figure 5a: Configuring Application Security Policy - Choosing an App</center>
 
 Next, configure a security policy for that application in the intended environment.
 
-![Figure 5b: Configuring Application Security Policy - Choosing an Env](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/app-env-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/app-env-v2.jpg)
+<center>Figure 5b: Configuring Application Security Policy - Choosing an Env</center>
 
 ---
 
@@ -125,19 +131,23 @@ Next, configure a security policy for that application in the intended environme
 
 1. Let's say, you have defined a policy to block the deployment if critical vulnerabilities are found in a given application.
 
-    ![Figure 6: Defining a Block Policy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/blocked-example.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/blocked-example.jpg)
+<center>Figure 6: Defining a Block Policy</center>
 
 2. Now, go to the **Build & Deploy** tab of that application to select an image.
 
-    ![Figure 7: Selecting an Image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/select-image.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/select-image.jpg)
+<center>Figure 7: Selecting an Image</center>
 
 3. As you can see, security issues were found in the scanned image, hence it is not available for selection. Click **Show Source Info**.
 
-    ![Figure 8: Blocked Deployment of Image](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/source-info.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/source-info.jpg)
+<center>Figure 8: Blocked Deployment of Image</center>
 
 4. The `Security` tab shows the critical vulnerabilities and the policy enforced to prevent deployment.
 
-    ![Figure 9: Detected Vulnerabilities](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/blocked-deployment.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/blocked-deployment.jpg)
+<center>Figure 9: Detected Vulnerabilities</center>
 
 ---
 
@@ -145,11 +155,13 @@ Next, configure a security policy for that application in the intended environme
 
 To block or allow specific Common Vulnerabilities and Exposures (CVE) policies, simply click **Add CVE Policy**.
 
-![Figure 10: Adding CVE Policy](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/add-cve-policy-1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/add-cve-policy-1.jpg)
+<center>Figure 10: Adding CVE Policy</center>
 
 A window will appear where you can enter the CVE ID and select whether to allow or block it.
 
-![Figure 11: Allowing/Blocking a CVE ID](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/cve-popup-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/new/cve-popup-v2.jpg)
+<center>Figure 11: Allowing/Blocking a CVE ID</center>
 
 This action will determine whether image deployment is allowed or blocked based on the presence of vulnerabilities matching that particular CVE ID. Any other deployment decisions will be made according to the policies set previously.
 

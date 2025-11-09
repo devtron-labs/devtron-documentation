@@ -4,7 +4,8 @@
 
 Devtron helps you to view your application summary in the form of [cards](#cards-overview) and [Application Metrics](#application-metrics). It also helps you perform [quick actions](#action-icons) and [manage the most widely used Kubernetes resources](app-resource-management.md) directly from the **App Details** page. 
 
-![Figure 1: App Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/cards-highlighted.jpg) 
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/cards-highlighted.jpg)
+<center>Figure 1: App Details</center> 
 
 :::caution Who can perform this action?
 Anyone with a `View Only` permission can view this page, but only those at the level of `Admin` (with specific app permissions) or above can take actions on this page. Refer to [User Permissions](../global-configurations/authorization/user-access.md) for more information. 
@@ -25,7 +26,8 @@ The icon next to the **Env** drop-down box denotes the application deployment me
 
 * Deployed using FluxCD
 
-![Figure 2: Deployment Method and Manifest Status](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/dep-method-manifest-status.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/dep-method-manifest-status.jpg)
+<center>Figure 2: Deployment Method and Manifest Status</center>
 
 Manifest status (whether they are in sync or not) is denoted by [this](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/manifest-status-icon.jpg) icon. When you click on this icon, the **Live and desired manifest comparison** page is displayed (read-only) allowing you to compare the manifests and view config drifts (if there are any). 
 
@@ -53,9 +55,11 @@ You can perform a variety of actions right from the **App Details** page using t
 
 When you click the **URLs** icon, the **URLs** page is displayed with the [Ingress Host URL](../../reference/glossary.md#ingress-host-url) and the [Load Balancer URL](../../reference/glossary.md#load-balancer-url) (if available).
 
-![Figure 3a: URLs icon](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/urls-apppage.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/urls-apppage.jpg)
+<center>Figure 3a: URLs icon</center>
 
-![Figure 3b: URLs Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/ingress-host-url1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/ingress-host-url1.jpg)
+<center>Figure 3b: URLs Page</center>
 
 You can directly copy the URLs (Ingress and Load Balancer) from the **URLs** page instead of searching in the manifest. 
 
@@ -74,7 +78,8 @@ The **Hibernate** icon (**Scale Workloads**, in the case of a Helm app) allows y
 
 However, you can manually unhibernate the application by clicking the **Unhibernate** icon. 
 
-![Figure 4: Hibernate Your Application](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/hibernate.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/hibernate.jpg)
+<center>Figure 4: Hibernate Your Application</center>
 
 ### Restart Workloads 
 
@@ -87,7 +92,8 @@ However, you can manually unhibernate the application by clicking the **Unhibern
 
 When you are facing issues with your application (e.g., crashing of pods) or prefer to use a new configuration, you restart the workloads. When you click the **Restart Workloads** icon, the **Restart Workloads** page is displayed.
 
-![Figure 5: Restart Workloads](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/restart-workloads.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/restart-workloads.jpg)
+<center>Figure 5: Restart Workloads</center>
 
 When you select a workload and click **Restart Workloads**, all the pods for the selected workloads are restarted using the configured deployment strategy (e.g., `Rolling`).
 
@@ -102,7 +108,8 @@ When you select a workload and click **Restart Workloads**, all the pods for the
 
 You can perform a rollback of your deployment directly from the **App Details** page. When you click the **Rollback** icon, the following page is displayed. 
 
-![Figure 6: Rollback Your Deployment](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/rollback.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/rollback.jpg)
+<center>Figure 6: Rollback Your Deployment</center>
 
 * Select an image from the available list of previously deployed images in that specific environment. 
 
@@ -136,7 +143,8 @@ When there is an active policy in place for an environment, and there are no app
 
 Devtron helps you in deploying images directly from the **App Details** page. When you click the **Deploy** button, the following page is displayed. 
 
-![Figure 7: Deploy Your Application](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deploy.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/deploy.jpg)
+<center>Figure 7: Deploy Your Application</center>
 
 Follow the below steps to deploy an image:
 
@@ -165,7 +173,8 @@ The **Environment Configuration** icon is available only for Devtron custom appl
 
 You can quickly configure Deployment Templates, ConfigMaps and Secrets for the selected environment directly from the **App Details** page. When you click the **Go to Environment Config** icon, the following page is displayed. 
 
-![Figure 8: Environment Configurations](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/env-config.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-details/env-config.jpg)
+<center>Figure 8: Environment Configurations</center>
 
 To configure enviroment specific Deployment Templates, ConfigMaps, Secrets, refer to [Environment Overrides](../creating-application/environment-overrides.md).
 
@@ -174,7 +183,8 @@ To configure enviroment specific Deployment Templates, ConfigMaps, Secrets, refe
 
 All your [external links configured](../../user-guide/global-configurations/external-links.md) in the **Configurations** tab are displayed in the **App Details** page. When you hover around an external link (e.g. `Grafana`), a description of the external link is displayed. To know more, refer to [External Links](../global-configurations/external-links.md).
 
-![Figure 9: External Links](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/app-details-external-link.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/app-details-external-link.jpg)
+<center>Figure 9: External Links</center>
 
 :::info Note
 If you enable `App admins can edit` in the **External Links** page, then only non super admins can view the selected links on the **App Details** page.
@@ -186,7 +196,8 @@ If you enable `App admins can edit` in the **External Links** page, then only no
 
 Application metrics help you in evaluating the performance and efficiency of your application. The Application Metrics section can be enabled by enabling the checkbox **Show application metrics** while configuring the application. Refer to [Application Metrics](../creating-application/app-metrics.md) for more information.
 
-![Figure 10: Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics.jpg)
+<center>Figure 10: Application Metrics</center>
 
 ---
 ## Next Steps

@@ -10,17 +10,20 @@ Create a Kubernetes secret in the namespace in which the application is to be de
 
 **Note**: You don't have to create the Kubernetes secret every time you create external secret for the respective namespace.
 
-![Figure 1: Create Kubernetes Secret for AWS Authentication](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret-generic-chart.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret-generic-chart.jpg)
+<center>Figure 1: Create Kubernetes Secret for AWS Authentication</center>
 
 After creating the generic secret, navigate to `Secrets` section of the application and follow the steps mentioned below :
 
 1. Click `Add Secret` to add a new secret
 
-    ![Figure 2: Add a New Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg)
+<center>Figure 2: Add a New Secret</center>
 
 2. Select `AWS Secret Manager` under `External Secret Operator` (ESO) from the dropdown of `Data type`
 
-    ![Figure 3: Select AWS Secrets Manager](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret-manager-dropdown.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret-manager-dropdown.jpg)
+<center>Figure 3: Select AWS Secrets Manager</center>
 
 3. Configure the secret.
 
@@ -35,9 +38,11 @@ After creating the generic secret, navigate to `Secrets` section of the applicat
     | `key` | AWS Secrets Manager secret name |
     | `property` | AWS Secrets Manager secret key |
 
-    ![Figure 4: Configure AWS Secret Settings](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-eso.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-eso.jpg)
+<center>Figure 4: Configure AWS Secret Settings</center>
 
-    ![Figure 5: AWS External Secret Configuration](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-external-secret.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-external-secret.jpg)
+<center>Figure 5: AWS External Secret Configuration</center>
 
 
 4. Save the secret.
@@ -55,19 +60,22 @@ To setup ESO AWS secrets manager with Devtron using ClusterSecretsStore, follow 
 
 Create a Kubernetes secret in any namespace using base64 encoded AWS access-key and secret-access-key. You can use the devtron generic chart for this.
 
-![Figure 6: Use Generic Chart](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret-generic-chart.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret-generic-chart.jpg)
+<center>Figure 6: Use Generic Chart</center>
 
 **2. Create a `ClusterSecretStore`**
 
 Create a `ClusterSecretStore` using the secret created for AWS authentication in step 1.
 
-![Figure 7: Create ClusterSecretStore](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/clustersecretstore-yaml.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/clustersecretstore-yaml.jpg)
+<center>Figure 7: Create ClusterSecretStore</center>
 
 **3. Create a secret in the application using ESO AWS Secrets Manager**
 
 Go to the application where you want to create an external secret. Navigate to secrets section under application configuration and create a secret using ESO AWS Secrets Manager.
 
-![Figure 8: Create Secret](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/app-secret-clustersecretstore.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/app-secret-clustersecretstore.jpg)
+<center>Figure 8: Create Secret</center>
 
 <!-- ----------
 ### AWS Secret Manager
@@ -85,8 +93,10 @@ $ helm install my-release external-secrets/kubernetes-external-secrets --set sec
 #### Adding Secrets From AWS Secret Manager
 To add secrets from AWS secret manager, navigate to `Secrets` of the application and follow the steps mentioned below :
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg)
+<center></center>
 1. Click `Add Secret` to add a new secret.
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret.jpg)
+<center></center>
 2. Select `AWS Secret Manager` from dropdown of `Data type`.
 3. Provide a name to your secret.
 4. Select how you want to use the secret. You may leave it selected as environment variable and also you may leave `Role ARN` empty.
@@ -103,4 +113,5 @@ To add secrets in AWS secret manager, do the following steps :
 1. Go to AWS secret manager console.
 2. Click `Store a new secret`.
 3. Add and save your secret.
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-10.jpg) -->
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-10.jpg)
+<center></center> -->

@@ -128,7 +128,8 @@ If using Firefox -
 2. Navigate to storage tab in inspect.
 3. Click on url where Devtron has been installed under `Cookies` tab and you could see an argocd token with its value, something similar to below image.
 
-![inspect-cookies](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/argocd-cookie.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/argocd-cookie.png)
+<center>inspect-cookies</center>
 
 4. Now right click on token, and click on `Delete All Session Cookies` option.
 
@@ -137,19 +138,22 @@ If using Chrome -
 2. Navigate to Application tab, and under `Storage` tab click on `Cookies`.
 3. Click on url under `Cookie` and you would be able tto see an argocd token with its value, as shown in the image below.
 
-![chrome-cookie](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/chrome-cookie.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/chrome-cookie.png)
+<center>chrome-cookie</center>
 
 4. Now right click on token and click on `delete` option.
 
 If using Safari -
 1. Goto Safari preferences → Advanced options and check the show develop menu as shown in the image below.
 
-![safari-preferences](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/safari-preferences.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/safari-preferences.png)
+<center>safari-preferences</center>
 
 2. Now goto login page of Devtron and press `option+command+I`. It will open inspect element.
 3. Then navigate to `Storage`, click on `Cookies` and you would be able to see an argocd token with its value as shown in the image below.
 
-![safari-cookie](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/safari-cookie.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/safari-cookie.png)
+<center>safari-cookie</center>
 
 4. Now right click on token and select `delete` option.
 
@@ -160,7 +164,8 @@ After clearing `Cookies`, try again to login, you should be able to login now.
 
 In the Devtron's Discover Chart section, if you are not able to see any charts available, go to **Application Management** → **Configurations** → **Chart Repository** and click on `Refresh Chart` at the top-right as shown in the image below. After clicking the button, it might take 4-5mins to show all the charts in `Discover` section depending upon the chart repositories added.
 
-![charts-not-found](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/refresh-charts.png)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/refresh-charts.png)
+<center>charts-not-found</center>
 
 
 ### 8. Not able to update cluster
@@ -430,17 +435,20 @@ The failure of deployment can be one of the following reasons:
 You can resolve the `ImagePullBackOff` issue by clicking **How to resolve?** on the **App Details** page.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/how-to-resolve-latest1.png)
+<center></center>
 
 
 To provide the auto-inject credentials to the specific clusters for pulling the image from the private repository, click **Manage Access** which will take you to the **Container Registries** page. 
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/manage-access-latest.jpg)
+<center></center>
 
 1. On the **Container Registries** page, select the docker registry and click **Manage**.
 2. In the **Auto-inject credentials to clusters**, click **Confirm to edit** to select the specific cluster or all clusters for which you want to auto-inject the credentials to and click **Save**.
 3. Redeploy the application after allowing the access.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/auto-inject-to-clusters.jpg)
+<center></center>
 
 
 
@@ -552,6 +560,7 @@ In case the cloning fails, you can generate the token, update the Git account in
 **Need to increase the PVC size if you are getting following error:**
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/git-sensor-pvc.png)
+<center></center>
 
 **Need to check the `Storageclass` by which PVC was provisioned.**
 
@@ -581,6 +590,7 @@ kubectl delete po -n devtroncd git-sensor-0
 ### 28. Getting 'Invalid JSON Document' while deploying via ArgoCD
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/invalid-json.jpg)
+<center></center>
 
 As shown above, Rollout object’s sync status is showing `Failed` and throwing an `Invalid JSON Document` error.
 
@@ -611,14 +621,17 @@ Follow the below steps if you are getting the above error:
 * Now in the Bitnami repository, uncheck the **Allow Insecure Connection** and update it as shown below.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/bitnami-chart-issue.jpg)
+<center></center>
 
 * Go to **Application Management** → **Chart Store** and initiate the Chart Sync.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/chart-sync.jpg)
+<center></center>
 
 ### 30. The Advanced (YAML) and Basic (GUI) sections are appearing blank in the Base Deployment Template of the application.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/empty-values.jpg)
+<center></center>
 
 This happens due to a missing [app-values.yaml](../user-guide/global-configurations/deployment-charts.md#3-add-app-valuesyaml) file in your deployment chart. 
 

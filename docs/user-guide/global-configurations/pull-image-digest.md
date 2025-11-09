@@ -33,11 +33,13 @@ This is for enabling pull image digest for deployment to all environments.
 
 1. Enable the toggle button next to `Pull image digest for all existing & future environments`.
 
-    ![Figure 1: Enabling for all Env](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-digest/global-toggle.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-digest/global-toggle.jpg)
+<center>Figure 1: Enabling for all Env</center>
 
 2. Click **Save Changes**.
 
-    ![Figure 2: Saving Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-digest/save-global-pull.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-digest/save-global-pull.jpg)
+<center>Figure 2: Saving Changes</center>
 
 
 ### For Specific Environments
@@ -46,13 +48,15 @@ This is for enabling pull image digest for specific environments. Therefore, onl
 
 1. Use the checkbox to choose one or more environments present within the list of clusters you have on Devtron.
 
-    ![Figure 3: Selecting Environments](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-digest/environment-selection.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-digest/environment-selection.jpg)
+<center>Figure 3: Selecting Environments</center>
 
 2. Click **Save Changes**.
 
 Once you enable pull image digest for a given environment in Global Configurations, users won't be able to modify the [image digest setting in the CD pipeline](../creating-application/workflow/cd-pipeline.md#pull-container-image-with-image-digest). The toggle button would appear disabled for that environment as shown below.
 
-![Figure 4: Non-editable Option](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-digest/disabled-pull-digest.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-digest/disabled-pull-digest.jpg)
+<center>Figure 4: Non-editable Option</center>
     
 
 

@@ -2,7 +2,8 @@
 
 The Overview page provides a centralized view of a job’s details within Devtron. It allows users to quickly access information about the job, manage tags, and view job pipelines all in a single, organized interface.
 
-![Figure 1: Job's Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job.jpg)
+<center>Figure 1: Job's Overview</center>
 
 The **Overview** page contains three main sections:
 
@@ -22,7 +23,8 @@ The **About** section allows you to:
 
 The left side of the **About** section displays essential information about the job.
 
-![Figure 2: Job's Basic Info](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-about-left.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-about-left.jpg)
+<center>Figure 2: Job's Basic Info</center>
 
 The table below captures all the key elements presented in this section, along with their descriptions and whether they can be edited by the user.
 
@@ -45,17 +47,20 @@ Tags are Key-value pairs used for identifying and organizing the application. Us
 
 3. You can click `X` icon to delete an existing tag.
 
-4. You can click the **propagation icon** <span className="inline-badge">![propagation icon](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg)</span> to propagate a tag (turns dark grey when propagated), click again to remove propagation.
+4. You can click the **propagation icon** <span className="inline-badge">![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg)
+<center>propagation icon</center></span> to propagate a tag (turns dark grey when propagated), click again to remove propagation.
 
 5. Click **Save**, configured Tags will reflect immediately under **Tags** in **About** Section
 
-    ![Figure 3: Tags](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-latest-1.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-latest-1.jpg)
+<center>Figure 3: Tags</center>
 
 ### Readme
 
 The right side of the **About** section contains a **README** area where you can maintain job-specific notes or documentation. The `Readme` supports Markdown formatting, making it easy to include formatted text, instructions, or important context related to the application.
 
-![Figure 4: Readme](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-readme.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-readme.jpg)
+<center>Figure 4: Readme</center>
 
 To add or update the **Readme**:
 1.	Click the **Edit** button in the Readme section.
@@ -64,7 +69,8 @@ To add or update the **Readme**:
 4.	Preview the content using the **Preview** tab.
 5.	Click **Save** to update the README.
 
-![Figure 5: Editing Readme](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-readme-edit.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-readme-edit.jpg)
+<center>Figure 5: Editing Readme</center>
 
 :::info 
 After saving, the system displays the email address of the user who last updated the README, along with the date and time. This information appears in the header of the Readme section, beside the title.
@@ -74,7 +80,8 @@ After saving, the system displays the email address of the user who last updated
 
 The **Catalog** in the **About** section displays information about your job, such as Container port, Environment Variables, Arguments, Resources(CPU and RAM). You can manage this data using the **Manage Schema** option, which defines the structure of your catalog. Refer the [Manage Schema](../global-configurations/catalog-framework.md#managing-a-schema) documentation to learn more.
 
-![Figure 6: Catalog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog.jpg)
+<center>Figure 6: Catalog</center>
 
 You can use the **Catalog** to maintain information about your job, such as Environment Variables, Resources(CPU and RAM), service documentation, etc. This makes it easier for others to understand, manage, and use your job.
 
@@ -86,7 +93,8 @@ When you click the **Edit** icon, a form appears based on the defined schema. As
 *	Arguments
 *   Resources(CPU and RAM)
 
-![Figure 7: Editing Catalog](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog-expand.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog-expand.jpg)
+<center>Figure 7: Editing Catalog</center>
 
 :::info 
 The structure and labels in the catalog form are entirely configurable by your platform team via JSON schema in **Catalog**. Field names and sections may vary depending on how the schema was defined by your organization.
@@ -94,7 +102,8 @@ The structure and labels in the catalog form are entirely configurable by your p
 
 Once saved, this information is displayed in a readable format within the Catalog subsection and is accessible to all users who have permission to view the job.
 
-![Figure 8: Catalog Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog-saved.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog-saved.jpg)
+<center>Figure 8: Catalog Overview</center>
 
 ---
 
@@ -109,4 +118,5 @@ The Job Pipelines section provides a detailed view of all job pipelines. For eac
 | Run in environment | Displays the name of the environment in which the job is executed. |
 | Last Run At| Displays how long ago the job was last triggered.|
 
-![Figure 9: Job Pipelines](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-job-pipelines.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-job-pipelines.jpg)
+<center>Figure 9: Job Pipelines</center>

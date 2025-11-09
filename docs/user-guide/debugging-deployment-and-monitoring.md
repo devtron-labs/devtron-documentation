@@ -10,7 +10,8 @@ Over here, you can see the status of the app as Healthy. If there are some error
 
 ### Events
 
-![Figure 1: Inspecting Events](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/events.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/events.jpg)
+<center>Figure 1: Inspecting Events</center>
 
 Events of the application are accessible from the bottom left corner.
 
@@ -18,19 +19,22 @@ Events section displays you the events that took place during the deployment of 
 
 ### Logs
 
-![Figure 2: Inspecting Logs](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/logs.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/logs.jpg)
+<center>Figure 2: Inspecting Logs</center>
 
 Logs contain the logs of the Pods and Containers deployed which you can use for the process of debugging.
 
 ### Manifest
 
-![Figure 3: Inspecting Manifests](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/manifest.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/manifest.jpg)
+<center>Figure 3: Inspecting Manifests</center>
 
 The Manifest shows the critical information such as Container-image, restartCount, state, phase, podIP, startTime etc. and status of the pods deployed.
 
 ### Deleting Pods
 
-![Figure 4: Deleting Pods](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/delete-pod.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/delete-pod.jpg)
+<center>Figure 4: Deleting Pods</center>
 
 You might run into a situation where you need to delete Pods. You may need to bounce or restart a pod.
 
@@ -50,11 +54,13 @@ You can view `Application Objects` in this section of `App Details`, such as:
 | `Custom Resource`  | _Rollout_\(new Pods will be scheduled on Nodes with available resources\), _ServiceMonitor_\(specifies how groups of services should be monitored\)                                                                |
 
 
-![Figure 5: Viewing Application Objects](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/ingress.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/ingress.jpg)
+<center>Figure 5: Viewing Application Objects</center>
 
 ## Monitoring
 
-![Figure 6: Monitoring Application Metrics](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/monitoring.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/debugging-deployment-and-monitoring/monitoring.jpg)
+<center>Figure 6: Monitoring Application Metrics</center>
 
 You can monitor the application in the `App Details` section.
 

@@ -6,7 +6,8 @@ import SupademoEmbed from '@site/src/components/SupademoEmbed';
 
 While the **Overview** section gives you a quick summary of overall spending, the **Cost Breakdown** page lets you analyze deeper into where those costs come from. It helps you analyze costs within a selected category (**Clusters**, **Applications**, **Environments**, or **Projects**), for a specific time range.
 
-![Figure 1: Cost Breakdown Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/cost-visibility/cost-visibility-cost-breakdown.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/cost-visibility/cost-visibility-cost-breakdown.jpg)
+<center>Figure 1: Cost Breakdown Overview</center>
 
  You can apply filters in the top-right corner to adjust the view. Selecting the right filters helps you to focus on the most relevant cost information for your preferred analysis.
 

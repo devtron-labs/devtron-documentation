@@ -22,7 +22,8 @@ This page allows you to create a watcher to track events and run a job. It also 
 
 1. Click **+ Create Watcher**. 
 
-    ![Figure 1: Watchers - Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/watchers-page.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/watchers-page.jpg)
+<center>Figure 1: Watchers - Page</center>
 
 2. Creating a watcher consists of 4 parts, fill all the sections one by one:
     * [Basic Details](#basic-details)
@@ -30,13 +31,15 @@ This page allows you to create a watcher to track events and run a job. It also 
     * [Intercept Change in Resources](#intercept-change-in-resources)
     * [Execute Runbook](#execute-runbook)
 
-    ![Figure 2: Create Watcher - Window](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/create-watcher-window.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/create-watcher-window.jpg)
+<center>Figure 2: Create Watcher - Window</center>
 
 ### Basic Details
 
 Here, you can give a name and description to your watcher.
 
-![Figure 3: Adding Name and Description of Watcher](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/basic-details.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/basic-details.gif)
+<center>Figure 3: Adding Name and Description of Watcher</center>
 
 ### Namespaces to Watch
 
@@ -44,11 +47,13 @@ Here, you can select the [namespaces](../reference/glossary.md#namespace) whose 
 
 * You can watch the namespace(s) across **All Clusters** (existing and future). 
 
-    ![Figure 4: Choosing Namespaces of all Clusters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/all-cluster.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/all-cluster.gif)
+<center>Figure 4: Choosing Namespaces of all Clusters</center>
 
 * Or you can watch namespace(s) of **Specific Clusters**.
 
-    ![Figure 5: Choosing Namespaces of Specific Clusters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/specific-cluster.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/specific-cluster.gif)
+<center>Figure 5: Choosing Namespaces of Specific Clusters</center>
 
 :::info 
 In both the above options, if you choose 'Specific Namespaces', you can further decide whether to track the namespaces you enter (by clicking 'Include selections') or to track the namespaces except the ones you enter (by clicking 'Exclude selections').
@@ -59,7 +64,8 @@ In both the above options, if you choose 'Specific Namespaces', you can further 
 
 Here, you can select the exact Kubernetes resource(s) you wish to track for changes (in the namespace(s) you selected in the previous step).
 
-![Figure 6: Picking Resources to Track](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/intercept-changes.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/intercept-changes.gif)
+<center>Figure 6: Picking Resources to Track</center>
 
 * You can choose the resource from the **Resource kind(s) to watch** dropdown. Enter the Group/Version/Kind (GVK) if it's a custom resource definition (CRD), for e.g., `install.istio.io/v1apha1/IstioOperator`
 
@@ -87,7 +93,8 @@ Here, you can select the exact Kubernetes resource(s) you wish to track for chan
 
 The **Trigger Devtron Job** option allows you to choose a Devtron job pipeline that triggers a job (e.g., executing a script, emailing your stakeholders, etc.) whenever the watcher intercepts any changes.
 
-![Figure 7: Trigger Devtron Job](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/trigger-job.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/trigger-job.gif)
+<center>Figure 7: Trigger Devtron Job</center>
 
 Follow the below steps to trigger Devtron job: 
 
@@ -109,13 +116,15 @@ Follow the below steps to trigger Devtron job:
 
 The watcher is now ready to intercept changes to selected resources and execute the configured job.
 
-![Figure 8: Intercepted Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/intercepted-changes-job.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/intercepted-changes-job.jpg)
+<center>Figure 8: Intercepted Changes</center>
 
 #### Trigger Webhook
 
 The Trigger Webhook option allows you to configure a [Webhook](https://hookdeck.com/webhooks/guides/what-are-webhooks-how-they-work) URL along with the payload (data) to be sent whenever the webhook is triggered. For example, to receive notifications in Slack, you can provide the Slack webhook URL and define the payload accordingly.
 
-![Figure 9: Trigger Webhook](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/run-webhook.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/run-webhook.gif)
+<center>Figure 9: Trigger Webhook</center>
 
 Follow the below steps to trigger webhook:
 
@@ -139,7 +148,8 @@ Follow the below steps to trigger webhook:
 
 The watcher is now ready to intercept changes to selected resources and trigger the webhook.
 
-![Figure 10: Intercepted Changes](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/intercepted-changes.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/intercepted-changes.jpg)
+<center>Figure 10: Intercepted Changes</center>
 
 ---
 
@@ -153,7 +163,8 @@ Users need to have super-admin permission to view intercepted changes.
 
 This page allows you to view the changes to Kubernetes resources that you have selected for tracking changes. 
 
-![Figure 11: Intercepted Changes - Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/intercepted-changes-page.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/intercepted-changes-page.jpg)
+<center>Figure 11: Intercepted Changes - Page</center>
 
 It comes with the following items to help you locate the resource, where the event has been intercepted:
 
@@ -178,19 +189,23 @@ You get the following details in the results shown on the page.
 
 You can check the changes in manifest by clicking **View Manifest** in `Change In Resource` column.
 
-![Figure 12a: Created Resource Manifest - Final Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/view-manifest-v1.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/view-manifest-v1.gif)
+<center>Figure 12a: Created Resource Manifest - Final Manifest</center>
 
 
-![Figure 12b: Updated Resource - Initial and Final Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/view-manifest-v2.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/view-manifest-v2.gif)
+<center>Figure 12b: Updated Resource - Initial and Final Manifest</center>
 
 
-![Figure 12c: Deleted Resource - Initial Manifest](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/view-manifest.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/view-manifest.gif)
+<center>Figure 12c: Deleted Resource - Initial Manifest</center>
 
 ### Job Execution Log
 
 You can check the logs of the job executed when the Resource Watcher intercepts any change by clicking **logs**.
 
-![Figure 13: Job Progress](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/job-exec-log.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/job-exec-log.gif)
+<center>Figure 13: Job Progress</center>
 
 ---
 

@@ -38,13 +38,15 @@ Log in with your work email to access the license dashboard. Devtron provides tw
 
 1. Log in using **Google**, **GitHub**, or **Microsoft** SSO providers. Personal email accounts such as Gmail, Yahoo are not supported.
 
-![Figure 1: Selecting SSO Provider](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-sso.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-sso.jpg)
+<center>Figure 1: Selecting SSO Provider</center>
 
 2. Once logged in, the **Devtron License Dashboard** will open.
 3. Under **Tell Us About You**, enter some basic details to help us improve your Devtron Experience.
 4. After entering the details, click **Next** to proceed to [Step 2: Install Devtron](freemium.md#step-2-install-devtron).
 
-![Figure 2: Entering the Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-step-1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-step-1.jpg)
+<center>Figure 2: Entering the Details</center>
 
 ### Method 2: Log In with Email
 
@@ -52,17 +54,20 @@ You can also log in via **Continue with Email**. This will send a login link to 
 
 1. Select **Continue with Email** to log in.
 
-![Figure 3: Selecting 'Continue with Email'](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-email.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-email.jpg)
+<center>Figure 3: Selecting 'Continue with Email'</center>
 
 2. Enter your work email and select **Send Login Link**
 
-![Figure 4: Entering Email](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-enter-email.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-enter-email.jpg)
+<center>Figure 4: Entering Email</center>
 
 3. A login link will be sent to the email provided by you. If you do not receive the link, you can resend it after 30 seconds.
 
 **Note:** Your login link is valid only for 10 minutes.
 
-![Figure 5: Sending Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-resend-email.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-dashboard-resend-email.jpg)
+<center>Figure 5: Sending Login Link</center>
 
 :::info Email not received?
 * Check all sections of the mailbox, including the Spam section.
@@ -71,14 +76,16 @@ You can also log in via **Continue with Email**. This will send a login link to 
 
 4. Go to your provided email inbox and use the login link.
 
-![Figure 6: Email with Login Link](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-email.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-email.jpg)
+<center>Figure 6: Email with Login Link</center>
 
 Once logged in, the **Devtron License Dashboard** will open.
 
 5. Under **Tell Us About You**, enter a few basic details to help us improve your Devtron Experience.
 6. Click **Next** to proceed to [Step 2: Install Devtron](freemium.md#step-2-install-devtron).
 
-![Figure 7: Entering the Details](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-step-1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-step-1.jpg)
+<center>Figure 7: Entering the Details</center>
 
 ---
 
@@ -94,7 +101,8 @@ The installation commands for installing **Devtron in Full Mode** (with integrat
 
 Choose your preferred K8s distribution and follow the displayed commands to install **Devtron in Full Mode**.
 
-![Figure 8: Installing Devtron](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-step-2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-step-2.jpg)
+<center>Figure 8: Installing Devtron</center>
 
 In case, you want to install Devtron dashboard only, use the commands given in **Devtron without integrations (only dashboard)** tab in [Choose an Installation Option](freemium.md#22-choose-an-installation-option) section.
 
@@ -245,7 +253,8 @@ After successfully installing Devtron and obtaining the dashboard URL, click **N
 
 You will now need to enter your Devtron **Installation Fingerprint** to generate a license key.
 
-![Figure 9: Enter Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-step-3.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-step-3.jpg)
+<center>Figure 9: Enter Installation Fingerprint</center>
 
 ### Get Devtron installation's fingerprint
 
@@ -253,19 +262,23 @@ To get the **Installation Fingerprint**, follow the below steps
 
 1. Visit your Dashboard URL (which you have obtained in [Step-2.3](freemium.md#23-obtain-the-dashboard-url)) as shown below.
 
-![Figure 10: License Activation Screen](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-fingerprint.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-fingerprint.jpg)
+<center>Figure 10: License Activation Screen</center>
 
 2. You will see an Installation Fingerprint that uniquely identifies your installation. Copy the fingerprint.
 
-![Figure 11: Copying Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-copy-fingerprint.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-copy-fingerprint.jpg)
+<center>Figure 11: Copying Installation Fingerprint</center>
 
 3. Go back to the **License Dashboard** and paste the fingerprint you copied earlier and click **Get License Key**.
 
-![Figure 12: Pasting Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-paste-fingerprint.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-paste-fingerprint.jpg)
+<center>Figure 12: Pasting Installation Fingerprint</center>
 
 4. Your license will be generated. Copy the license key.
 
-![Figure 13: Copying Generated License Key](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-key-generated-2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-key-generated-2.jpg)
+<center>Figure 13: Copying Generated License Key</center>
 
 :::warning Note
 The license key you generate will be valid only for your Devtron Freemium installation.
@@ -282,11 +295,13 @@ In such cases, contact [Devtron Support](mailto:support@devtron.ai).
 
 5. Go back to your **Devtron Dashboard URL** page and paste your license key under **License Key** field and click **Activate**.
 
-![Figure 14: Pasting License Key and Activating](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-paste-license-key.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-paste-license-key.jpg)
+<center>Figure 14: Pasting License Key and Activating</center>
 
 6. **Devtron Freemium** will be activated, and you can log in to **Devtron Dashboard**.
 
-![Figure 15: Log in as Administrator](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-login.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-login.jpg)
+<center>Figure 15: Log in as Administrator</center>
 
 :::info Facing Issues?
 Visit the [Troubleshoot](freemium.md#troubleshoot-issues) section to identify the issue or connect with [Devtron Support](mailto:support@devtron.ai).
@@ -298,7 +313,8 @@ Visit the [Troubleshoot](freemium.md#troubleshoot-issues) section to identify th
 
 1. After successful license activation, you will see the Devtron login page.
 
-![Figure 16: Devtron Login Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-login-admin.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-login-admin.jpg)
+<center>Figure 16: Devtron Login Page</center>
 
 2. Initially, log in with the administrator credentials. By default, the username is **admin**. Run the following command to get the admin password:
 
@@ -315,7 +331,8 @@ After the initial login, we recommend you set up any [Single Sign-On (SSO) servi
 
 3. After a successful login, the **Devtron Dashboard** will open, and you can explore all the enterprise features supported by Devtron Freemium.
 
-![Figure 17: Devtron Dashboard](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-dashboard.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-dashboard.jpg)
+<center>Figure 17: Devtron Dashboard</center>
 
 ---
 
@@ -331,25 +348,32 @@ Ensure your Enterprise Free Trial has no more than one additional cluster connec
 
 1.  Open your Devtron dashboard and navigate to **Help** → **About Devtron** → **License**.
 
-    ![Figure 18: 'About Devtron' Help Menu](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-check.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-check.gif)
+<center>Figure 18: 'About Devtron' Help Menu</center>
 2.  Copy the Installation fingerprint.
 
-    ![Figure 19: Copying Installation Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-copy-fingerprint-2.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-copy-fingerprint-2.jpg)
+<center>Figure 19: Copying Installation Fingerprint</center>
 3.  Navigate to the license dashboard; and you will be automatically redirected to the step 3 (Get License Key).
 
-    ![Figure 20: Devtron License Dashboard](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-2.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-2.jpg)
+<center>Figure 20: Devtron License Dashboard</center>
 4.  Paste the fingerprint you copied earlier and click **Get License Key**.
 
-    ![Figure 21: Pasting Fingerprint](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-paste-fingerprint-2.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-paste-fingerprint-2.jpg)
+<center>Figure 21: Pasting Fingerprint</center>
 5.  Your license will be generated. Copy the license key.
 
-    ![Figure 22: Copying the License Key](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-copy-license-2.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-copy-license-2.jpg)
+<center>Figure 22: Copying the License Key</center>
 6.  Navigate back to **Help** → **About Devtron** → **License**, and click **Update License**.
 
-    ![Figure 23: Clicking Update License](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/update-license.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/update-license.jpg)
+<center>Figure 23: Clicking Update License</center>
 7.  Paste the new license key you copied earlier and click **Activate**; Devtron Freemium is now activated.
 
-    ![Figure 24: Click Activate](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-paste-license-2.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-paste-license-2.jpg)
+<center>Figure 24: Click Activate</center>
 
 ---
 
@@ -363,19 +387,22 @@ In Devtron, click the **Help** menu (top-right corner) → **About Devtron** to 
 * Installation fingerprint
 * Enterprise version
 
-![Figure 25: 'About Devtron' Help Menu](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-check.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-check.gif)
+<center>Figure 25: 'About Devtron' Help Menu</center>
 
 ### Update License
 
 If you have a new license key, you can update the license key directly within Devtron, from the **About Devtron** page.
 
-![Figure 26: Updating License](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-update-license.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-update-license.jpg)
+<center>Figure 26: Updating License</center>
 
 ### Upgrade License
 
 If you want to add more than one cluster, email us at [enterprise@devtron.ai](mailto:enterprise@devtron.ai) or reach out to your Devtron representative to upgrade your license.
 
-![Figure 27: Upgrade License](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-upgrade.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-upgrade.jpg)
+<center>Figure 27: Upgrade License</center>
 
 ---
 

@@ -8,7 +8,8 @@ hide_table_of_contents: true
 
 Cost Visibility in Devtron provides a unified view of your Kubernetes infrastructure costs within the Devtron dashboard. It eliminates the need to switch between cloud provider billing consoles by bringing all cost insights into a single interface.
 
-<!-- ![Figure 1: Cost Visibility Overview](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/cost-visibility/cost-visibility-overview.jpg) -->
+<!-- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/cost-visibility/cost-visibility-overview.jpg)
+<center>Figure 1: Cost Visibility Overview</center> -->
 
 <div class="video-wrapper"><iframe width="720" height="380" src="https://www.youtube.com/embed/92ijeh99Umo" title="Devtron 2.0: Quick Walkthrough" frameborder="0" allow="fullscreen"></iframe></div>
 
