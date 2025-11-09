@@ -36,8 +36,7 @@ See the full guide here: [Install Devtron in Air-gapped Environment](install-dev
 
 <summary><strong>Need help or demo?</strong></summary>
 
-* [Discord community for support](https://discord.gg/jsRG5qx2gp) <span className="inline-badge">[![](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)
-<center>Join us on Discord</center>](https://discord.gg/jsRG5qx2gp)</span>
+* [Discord community for support](https://discord.gg/jsRG5qx2gp) <span className="inline-badge">[![](https://img.shields.io/badge/Join%20us%20on-Discord-e01563.svg)](https://discord.gg/jsRG5qx2gp)</span>
 * [Book time with our team](https://devtron.ai/demo)
 
 </details>

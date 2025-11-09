@@ -609,6 +609,10 @@ html[data-theme='dark'] .markdown a:hover {
   vertical-align: middle;
   margin: 0 !important;
   max-width: fit-content !important;
+  cursor: pointer;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 /* Smooth separation between main content and footer */

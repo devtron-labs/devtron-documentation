@@ -87,10 +87,8 @@ When tags are propagated, they are considered as labels to Kubernetes resources.
 
 3. Click `+` icon next to **KEY** field to add a new tag.
 
-4. Click the symbol <span className="inline-badge">![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg)
-<center></center></span> on the left side of your tag to propagate a tag.<br/>`Note`: Dark grey colour in symbol specifies that the tags are propagated.
+4. Click the symbol <span className="inline-badge">![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg) </span> on the left side of your tag to propagate a tag.<br/>`Note`: Dark grey colour in symbol specifies that the tags are propagated.
 
-5. To remove the tags from propagation, click the symbol <span className="inline-badge">![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/propagate-dark.jpg)
-<center></center></span> again.
+5. To remove the tags from propagation, click the symbol <span className="inline-badge">![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/propagate-dark.jpg) </span> again.
 
 
