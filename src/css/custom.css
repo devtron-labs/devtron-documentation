@@ -918,7 +918,7 @@ html[data-theme='light'] .theme-doc-markdown table tbody td {
 /* --- Dark Mode (remove zebra + better header contrast) --- */
 html[data-theme='dark'] .theme-doc-markdown table thead th,
 html[data-theme='dark'] .theme-doc-markdown table thead td {
-  background-color: #2B1F1E !important;
+  background-color: #2d2d2d !important;
   color: var(--ifm-font-color-base) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   font-weight: 600;
@@ -932,3 +932,6 @@ html[data-theme='dark'] .theme-doc-markdown table tbody td {
   color: var(--ifm-font-color-base) !important;
 }
 
+html[data-theme='dark'] [class*="searchBar_"] [class*="dropdownMenu_"] [class*="suggestion_"][class*="cursor_"] {
+  background-color: #626060 !important;
+}
