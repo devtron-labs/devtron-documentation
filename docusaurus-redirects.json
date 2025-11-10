@@ -5310,7 +5310,8 @@
           {
             "from": [
               "/devtron/v2.0/getting-started/global-configurations/external-links",
-              "/devtron/v2.0/setup/global-configurations/external-links"
+              "/devtron/v2.0/setup/global-configurations/external-links",
+              "/docs/devtron/v2.0/user-guide/global-configurations/external-links"
             ],
             "to": "/docs/user-guide/app-management/configurations/external-links"
           },
@@ -8648,7 +8649,21 @@
               "/docs/devtron/v2.0/resources/uninstall-devtron"
             ],
             "to": "/docs/setup/install/uninstall-devtron"
-          },    
+          },   
+          {
+            "from": [
+              "/devtron/v2.0/user-guide/finops/overview-cost-visibility",
+              "/user-guide/finops/overview-cost-visibility"
+            ],
+            "to": "/docs/user-guide/finops/overview-cost-visibility"
+          },  
+          {
+            "from": [
+              "/devtron/v2.0/user-guide/infra-management/infrastructure-overview",
+              "/user-guide/infra-management/infrastructure-overview"
+            ],
+            "to": "/docs/user-guide/infra-management/infrastructure-overview"
+          },   
           {
             "from": [
               "/devtron/v0.4/devtron/user-guide",
