@@ -27,7 +27,7 @@ Before configuring Google as an SSO provider,
   * Click the URL next to **Click to use** in green color. The URL field will be automatically populated with the URL next to **Click to use**; this is essential to generate the correct **Redirect URI**.
   * Copy the **Redirect URI** displayed in this section. You will need to enter this in Google Cloud.
 
- <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/QvufIzUSNpg" title="Getting the Redirect URI" frameborder="0" allow="fullscreen"></iframe></div>
+ <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/YOSa0wiS9Z0" title="Getting the Redirect URI" frameborder="0" allow="fullscreen"></iframe></div>
 
 ## Configure OAuth in Google Cloud Console
 
@@ -60,17 +60,17 @@ Examples of invalid URIs:
 ❌ `http://192.168.1.10/callback`
 :::
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/creating-oauth-client-google-sso.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/google/google-sso-creating-oauth-client.jpg)
 <center>Figure 1: Creating OAuth Client</center>
 
 You can see a new client ID is created in the **APIs & Services** → **Credentials**, under **OAuth 2.0 Client IDs** section. To obtain Client ID and Client Secret, click on the name (devtron-sso in our case) of the **OAuth 2.0 Client IDs**
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/client-id-created-google-sso.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/google/google-sso-client-id-created.jpg)
 <center>Figure 2: Client ID Created</center>
 
 Copy the Client ID and Client Secret, as they will be required in Devtron’s SSO configuration.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/client-id-and-secret-google-sso.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/google/google-sso-client-id-and-secret.jpg)
 <center>Figure 3: Get the Client ID and Client Secret</center>
 
 For a detailed step-by-step guide, refer to Google’s official documentation: [Get Google API Client ID](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid).
@@ -81,7 +81,7 @@ The next step is to configure Devtron to use these credentials for authenticatio
 
 ## Configuration
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/configuration-devtron-google-sso.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/google/google-sso-config.jpg)
 <center>Figure 4: Configuring SSO in Devtron</center>
 
 In the configuration,
@@ -107,15 +107,16 @@ To ensure users can log in:
 * Go to **Global Configurations** → **Authorization** → **User Permissions**.
 * Click **Add User**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/config-user-permissions-google-sso.jpg)
-<center>Figure 5: Configuring User Permissions</center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/google/google-sso-add-user.jpg)
+<center>Figure 5: Adding User with required permissions</center>
 
 * Enter their email (matching their Google account).
 * Assign the required role.
 * Click **Save** to complete the setup.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/adding-user-google-sso.jpg)
-<center>Figure 6: Adding User with required permissions</center>
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/google/google-sso-config-user.jpg)
+<center>Figure 6: Configuring User Permissions</center>
 
 Once saved, Devtron will use Google OAuth for authentication, allowing users to log in using their Google accounts.
 

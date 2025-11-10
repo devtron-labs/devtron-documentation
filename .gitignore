@@ -23,3 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 checkEmptyOrHeadingFiles.mjs
+
+# VS Code Files
+/.vscode
+docs/user-guide/creating-application/.vscode
+docs/user-guide/jobs/.vscode
