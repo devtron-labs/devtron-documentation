@@ -53,7 +53,7 @@ The next step is to [review the recommendation](#recommended-change).
 <center>Figure 3: Diff of Proposed Changes</center>
 
 This tab shows you the configuration diff for you to compare the existing configuration vs recommended change.
-If the recommended change is yet to be acted upon or depending on the [current status of notification](#notification-feed-statuses), you get **Approve** and **Reject** button for accepting/discarding the recommendation. C
+If the recommended change is yet to be acted upon or depending on the [current status of notification](#notification-feed-statuses), you get **Approve** and **Reject** button for accepting/discarding the recommendation.
 
 AI automatically generates the runbook corresponding to the recommendation. When the user (superadmin) approves a recommendation, it triggers the corresponding runbook and the remediation takes place.
 
