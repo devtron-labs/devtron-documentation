@@ -1,0 +1,9 @@
+{
+    "cSpell.words": [
+        "Devtron",
+        "Kubeconfig"
+    ],
+    "markdown.validate.ignoredLinks": [
+        "../../../creating-application/eso/azure-eso.md"
+    ]
+}
