@@ -1,3 +1,7 @@
+---
+slug: /user-guide/bulk-update
+---
+
 # Bulk Edit
 
 The **Bulk Edit** feature allows you to update **Deployment Templates**, **ConfigMaps**, and **Secrets** across multiple applications in a single operation.  
