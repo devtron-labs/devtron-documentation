@@ -12,7 +12,7 @@ This is useful when you need to apply configuration changes, such as updating re
 
 ## Table of Contents
 
-* [**Bulk Update (v1beta1)**](./bulk-edit.md) - This is the standard bulk edit version available for all users.
-* [**Bulk Update (v1beta2)**](./bulk-edit-ent.md) - This is the latest version of **Bulk Edit**, available only to Enterprise users.
+* [**Bulk Update (v1beta1)**](./bulk-update/bulk-edit.md) - This is the standard bulk edit version available for all users.
+* [**Bulk Update (v1beta2)**](./bulk-update/bulk-edit-ent.md) - This is the latest version of **Bulk Edit**, available only to Enterprise users.
 
 

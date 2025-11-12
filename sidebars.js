@@ -213,7 +213,7 @@ const sidebars = {
           collapsed: true,
           link: {
             type: 'doc', // or 'generated-index'
-            id: 'user-guide/bulk-update/README',
+            id: 'user-guide/bulk-update',
           },
           items: [
             'user-guide/bulk-update/bulk-edit',
