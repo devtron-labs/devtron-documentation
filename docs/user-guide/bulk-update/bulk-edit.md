@@ -1,10 +1,11 @@
-# Bulk Updates
+# Bulk Edit (v1beta1)
+
 This feature helps you to update Deployment Template, ConfigMaps & Secrets for multiple apps in one go! You can filter the apps on the basis of environments, global flag, and app names(we provide support for both substrings included and excluded in the app name).
 ## Overview
 
 Need to make some common changes across multiple devtron applications?
 **Bulk Edit** allows you to do that.<br/>
-Eg. You can change the value for `MaxReplicas` in Deployment Templates of multiple Devtron applications or you can add key-value pairs in multiple ConfigMaps & Secrets. However, you might not be able to change the values of locked keys. Refer [Lock Deployment Configuration](./global-configurations/lock-deployment-config.md) to know more.
+Eg. You can change the value for `MaxReplicas` in Deployment Templates of multiple Devtron applications or you can add key-value pairs in multiple ConfigMaps & Secrets. However, you might not be able to change the values of locked keys. Refer [Lock Deployment Configuration](../global-configurations/lock-deployment-config.md) to know more.
 
 ## Support
 Bulk edit is currently supported for:

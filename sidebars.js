@@ -207,7 +207,19 @@ const sidebars = {
 
         // Application Groups
         'user-guide/application-groups',
-        'user-guide/bulk-update',
+        {
+          type: 'category',
+          label: 'Bulk Edit',
+          collapsed: true,
+          link: {
+            type: 'doc', // or 'generated-index'
+            id: 'user-guide/bulk-update/README',
+          },
+          items: [
+            'user-guide/bulk-update/bulk-edit',
+            'user-guide/bulk-update/bulk-edit-ent',
+          ]
+        },
         'user-guide/global-configurations/application-template',
         'user-guide/global-configurations/projects',
 

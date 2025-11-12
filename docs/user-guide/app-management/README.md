@@ -55,7 +55,7 @@ Deploy and manage Helm charts.
 - [Chart Deployment](../deploy-chart/deployment-of-charts.md)  
 - [Chart Groups](../deploy-chart/chart-group.md)
 
-### 5. [Bulk Updates](../bulk-update.md)
+### 5. [Bulk Updates](../bulk-update/README.md)
 Apply bulk configuration or template updates across applications.
 
 ### 6. [Configurations](../app-configurations/README.md)
