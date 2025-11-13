@@ -32,7 +32,7 @@ Getting the redirectURI from Devtron is a crucial component of the authenticatio
 
 3. Click the URL suggested in green color next to the **Click to use** label to update the **URL** field. 
 
-When you populate **URL** field, the redirectURI (or callbackURI) is updated automatically in the purple block displayed at the top of the SSO Login Service screen. This redirectURI is essential, as it is required while setting up the OAuth credentials in GitHub.
+    When you populate **URL** field, the redirectURI (or callbackURI) is updated automatically in the purple block displayed at the top of the SSO Login Service screen. This redirectURI is essential, as it is required while setting up the OAuth credentials in GitHub.
 
 4. Copy the redirectURI from the purple block.
 
