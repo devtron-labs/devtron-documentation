@@ -17,7 +17,7 @@ By regularly reviewing this dashboard, you can proactively manage risks and main
 
 This section provides a snapshot of the key vulnerability metrics in your environment.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/glance.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-overview/glance.jpg)
 <center>Figure 1: 'At a Glance' Section</center>
 
 | Metric | Description | Example |
@@ -34,7 +34,7 @@ Use this section to understand overall exposure and prioritize fixable items fir
 
 The **Severity Insights** section helps you understand the nature and age of vulnerabilities in prod and non-prod deployments.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/severity-insights.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-overview/severity-insights.jpg)
 <center>Figure 2: 'Severity Insights' Section</center>
 
 * **Severity Distribution:** Pie chart showing proportions of Critical, High, Medium, Low, and Unknown severity.  
@@ -54,7 +54,7 @@ These visuals help you identify aging vulnerabilities, observe trends, and measu
 
 The **Deployment Security Status** section highlights the current security health of your active deployments and pipelines.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-status.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-overview/security-status.jpg)
 <center>Figure 3: 'Severity Insights' Section</center>
 
 | Indicator | Description | Example |

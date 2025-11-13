@@ -10,8 +10,8 @@ Host URL is the domain address at which your devtron dashboard can be reached.
 
 To add host URL, go to the `Host URL` section of `Global Configurations`.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/gitops/host-url-latest.jpg)
-<center></center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/host-url/host-url.jpg)
+<center>Figure 1: Host URL</center>
 
 On the **Host URL** page:
 
