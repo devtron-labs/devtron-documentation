@@ -25,18 +25,18 @@ Using filter conditions, you can control the progression of events. Here are a f
 You must have application(s) with CI-CD workflow(s) configured
 :::
 
-1. From the left sidebar, go to **Application Management** → **Policies** → **Filter Condition**.
+1. From the left sidebar, go to **Application Management** → **Policies** → **Filter Conditions**.
 
 2. Add a filter condition.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/add-filter.jpg)
-<center>Figure 1: Creating Our First Filter</center>
+    <center>Figure 1: Creating Our First Filter</center>
 
 3. In the **Define Filter condition** section, you get the following fields:
     * **Filter For**: Choose the pipeline upon which the filter should apply. Currently, you can use filter conditions for CD pipelines only. Support for CI pipelines is underway.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/define-filter-page.jpg)
-<center>Figure 2: 'Define Filter Condition' section</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/define-filter-condition.jpg)
+    <center>Figure 2: 'Define Filter Condition' section</center>
 
     * **Filter Name**: Give a name to the filter.
     * **Description**: (Optional) Add a description to the filter, preferably explaining what it does.
@@ -51,8 +51,8 @@ You must have application(s) with CI-CD workflow(s) configured
 
         Click **View filter criteria** to check the supported criteria. You get a copy button and a description of each criterion upon hovering. Moreover, you can go to **CEL expression** to learn more about the rules and supported syntax. Check [Examples](#examples) to know more.
 
-        ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/filter-criteria.jpg)
-<center>Figure 3: List of Supported Values</center>
+        ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/view-filter-criteria.jpg)
+        <center>Figure 3: List of Supported Values</center>
 
 4. Click **Next**.
 

@@ -29,7 +29,7 @@ Users need to have super-admin permission to create tag policy.
 
 2. Click **+ Add Tag**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/add-tags.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/add-tag.jpg)
     <center>Figure 3: 'Add Tag' Button</center>
 
 3. **Suggested tags/Mandatory tags** - You can either suggest tags or make them mandatory when creating applications:
@@ -45,7 +45,7 @@ Users need to have super-admin permission to create tag policy.
 4. **Select Project(s)** - To mandate a tag, you must provide a project where this policy should apply. All applications in the project will require the mandatory tag to be entered. Whereas, suggested tags are shown as suggestions globally (i.e., for all apps).
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/select-projects.jpg)
-<center>Figure 5: Selecting One or More Projects</center>
+    <center>Figure 5: Selecting One or More Projects</center>
 
 5. **Tag Key** - Enter the key from the key-value pair (tag), e.g., *Business Unit*, *Team*, *Owner*.
 
