@@ -4,8 +4,8 @@
 * On the upper-right corner of the screen, click **Create**.
 * Select **Custom app** from the drop-down list.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/create-app-1.jpg)
-<center></center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/create-button.jpg)
+<center>Figure 1: Create Button</center>
 
 A new application can be created from one of the following options:
 
