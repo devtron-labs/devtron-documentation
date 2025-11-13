@@ -6,8 +6,8 @@ hide_table_of_contents: true
 
 Click on `Create New` and the select `Custom app` to create a new application.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/cloning-application/custom-app.jpg)
-<center></center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/create-button.jpg)
+<center>Figure 1: Create Button</center>
 
  As soon you click on `Custom app`, you will get a popup window on screen where you have to enter `app name` and `project` for the application. there are two radio buttons present on the popup window, one is for `Blank app` and another one is for `Clone an existing app`. For cloning an existing application, select the second one. After this, one more drop-down will appear on the window from which you can select the application that you want to clone. For this, you will have to type minimum three character to see the matching results in the drop-down. After typing the matching characters, select the application that you want to clone. You also can add additional information about the application (eg. `created by`, `Created on`) using `tags` (only key:value allowed). 
 

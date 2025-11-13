@@ -6,7 +6,7 @@ During the [CI process](../deploying-application/triggering-ci.md), the applicat
 
 Devtron also supports multiple Git repositories (be it from one Git account or multiple Git accounts) in a single deployment.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/add-git-repo.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/add-git-repo.jpg)
 <center>Figure 1: Adding Git Repository</center>
 
 Therefore, this doc is divided into 2 sections, read the one that caters to your application:
@@ -32,7 +32,7 @@ In your Devtron app, go to **Configuration** (tab) → **Git Repository**. You w
 
 This is a dropdown that shows the list of Git accounts added to your organization on Devtron. If you haven't done already, we recommend you to first [add your Git account](../global-configurations/git-accounts.md) (especially when the repository is private).
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/select-git-account.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/select-git-account.jpg)
 <center>Figure 2: Selecting Git Account</center>
 
 :::info 
@@ -46,7 +46,7 @@ In this field, you have to provide your code repository’s URL, for e.g., `http
 
 You can find this URL by clicking on the **Code** button available on your repository page as shown below:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/repo-url.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/repo-url.jpg)
 <center>Figure 3: Getting Repo URL</center>
 
 :::info 
@@ -59,12 +59,12 @@ You can find this URL by clicking on the **Code** button available on your repos
 
 Not all repository changes are worth triggering a new [CI build](../deploying-application/triggering-ci.md). If you enable this checkbox, you can define the file(s) or folder(s) whose commits you wish to use in the CI build.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/sample1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/exclude-files.jpg)
 <center>Figure 4: Sample Exclusion Rule</center>
 
 In other words, if a given commit contains changes only in file(s) present in your exclusion rule, the commit won't show up while selecting the [Git material](../../reference/glossary.md#material), which means it will not be eligible for build. However, if a given commit contains changes in other files too (along with the excluded file), the commit won't be excluded and it will definitely show up in the list of commits.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/excluded-commit.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/excluded-commit.jpg)
 <center>Figure 5: Excludes commits made to README.md</center>
 
 Devtron allows you to create either an exclusion rule, an inclusion rule, or a combination of both. In case of multiple files or folders, you can list them in new lines. 
@@ -87,15 +87,10 @@ To include a path, don't use any prefix, e.g. `path/to/file`
 |  `!README.md` <br/> `README.md` | **Exclusion and inclusion of conflicting files:** <br/> If conflicting paths are defined in the rule, the one defined later will be considered. In this case, commits containing changes made only in README.md will be shown. |
 
 
-You may use the **Learn how** link (as shown below) to understand the syntax of defining an exclusion or inclusion rule.
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/rules.jpg)
-<center>Figure 6: 'Learn how' Button</center>
-
 Since file paths can be long, Devtron supports regex too for writing the paths. To understand it better, you may click the **How to use** link as shown below.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/regex-help.jpg)
-<center>Figure 7: Regex Support</center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/regex-help.jpg)
+<center>Figure 6: Regex Support</center>
 
 #### How to view excluded commits?
 
@@ -103,13 +98,13 @@ As we saw earlier in fig. 4 and 5, commits containing the changes of only `READM
 
 However, Devtron gives you the option to view the excluded commits too. There's a döner menu at the top-right (beside the `Search by commit hash` search bar).
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/doner-menu.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/doner-menu.jpg)
 <center>Figure 8a: Döner Menu Icon</center>
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/show-exclusions.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/show-exclusions.jpg)
 <center>Figure 8b: Show Excluded Commits</center>
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/excluded-commits.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/excluded-commits.jpg)
 <center>Figure 8c: Commits Unavailable for Build</center>
 
 The **EXCLUDED** label (in red) indicates that the commits contain changes made only to the excluded file, and hence they are unavailable for build.
@@ -121,7 +116,7 @@ After clicking the checkbox, a field titled `clone directory path` appears. It i
 
 This field is optional for a single Git repository application and you can leave the path as default. Devtron assigns a directory by itself when the field is left blank. The default value of this field is `./`
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/git-material/clone-directory.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/clone-directory.jpg)
 <center>Figure 8: Clone Directory Option</center>
 
 
