@@ -102,10 +102,10 @@ You can add Key/Value pair by clicking **Add argument**.
 Using this option, you can build images for a specific or multiple **architectures and operating systems (target platforms)**. You can select the target platform from the drop-down list or can type to select a customized target platform.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/set-target-platform.jpg)
-<center>Figure 7: Selecting Target Platform from Drop-down</center>
+<center>Figure 7a: Selecting Target Platform from Drop-down</center>
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/set-target-platform-2.jpg)
-<center>Figure 8: Entering Custom Target Platform</center>
+<center>Figure 7b: Entering Custom Target Platform</center>
 
 Before selecting a customized target platform, please ensure that the architecture and the operating system are supported by the `registry type` you are using, otherwise build will fail. Devtron uses BuildX to build images for multiple target Platforms, which requires higher CI worker resources. To allocate more resources, you can increase value of the following parameters in the `devtron-cm` configmap in `devtroncd` namespace.
 
@@ -129,7 +129,7 @@ The Target Platform feature might not work in minikube & microk8s clusters as of
    * Value
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/docker-build-arguments.jpg)
-<center>Figure 9: Entering Docker Build Arguments</center>
+<center>Figure 8: Entering Docker Build Arguments</center>
 
 These fields will contain the key parameter and the value for the specified key for your [docker build](https://docs.docker.com/engine/reference/commandline/build/#options). This field is Optional. If required, this can be overridden at [CI step](../deploying-application/triggering-ci.md).
 
