@@ -135,7 +135,7 @@ Next, configure a security policy for that application in the intended environme
 
 ## Example
 
-1. Let's say, you have defined a policy to block the deployment if critical vulnerabilities are found in a given application.
+1. Let's say, you have defined a policy to block the deployment if critical or high vulnerabilities are found in a given application.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-policies/blocked-example.jpg)
 <center>Figure 6: Defining a Block Policy</center>
