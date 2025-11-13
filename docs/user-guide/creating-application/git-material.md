@@ -99,13 +99,13 @@ As we saw earlier in fig. 4 and 5, commits containing the changes of only `READM
 However, Devtron gives you the option to view the excluded commits too. There's a döner menu at the top-right (beside the `Search by commit hash` search bar).
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/doner-menu.jpg)
-<center>Figure 8a: Döner Menu Icon</center>
+<center>Figure 7a: Döner Menu Icon</center>
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/show-exclusions.jpg)
-<center>Figure 8b: Show Excluded Commits</center>
+<center>Figure 7b: Show Excluded Commits</center>
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/excluded-commits.jpg)
-<center>Figure 8c: Commits Unavailable for Build</center>
+<center>Figure 7c: Commits Unavailable for Build</center>
 
 The **EXCLUDED** label (in red) indicates that the commits contain changes made only to the excluded file, and hence they are unavailable for build.
 
