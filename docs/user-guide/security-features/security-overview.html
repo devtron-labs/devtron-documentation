@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.843efe5b.css">
-<script src="/assets/js/runtime~main.ff47d389.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.89da6ce6.js" defer="defer"></script>
 <script src="/assets/js/main.f6a37972.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -36,14 +36,14 @@
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="at-a-glance">At a Glance<a href="#at-a-glance" class="hash-link" aria-label="Direct link to At a Glance" title="Direct link to At a Glance" translate="no">​</a></h2>
 <p>This section provides a snapshot of the key vulnerability metrics in your environment.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/glance.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-overview/glance.jpg" alt="" class="img_ev3q">
 <center>Figure 1: &#x27;At a Glance&#x27; Section</center></p>
 <table><thead><tr><th>Metric</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><strong>Total Vulnerabilities</strong></td><td>Total number of vulnerabilities found in active deployments.</td><td>Example: 428 vulnerabilities detected across all running apps.</td></tr><tr><td><strong>Fixable Vulnerabilities</strong></td><td>Vulnerabilities that already have fixes or upgrades available.</td><td>Example: 209 vulnerabilities can be fixed by updating the base image or library.</td></tr><tr><td><strong>Zero-day Vulnerabilities</strong></td><td>Newly discovered issues that may not yet have patches.</td><td>Example: 219 zero-day vulnerabilities were detected last week.</td></tr></tbody></table>
 <p>Use this section to understand overall exposure and prioritize fixable items first.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="severity-insights">Severity Insights<a href="#severity-insights" class="hash-link" aria-label="Direct link to Severity Insights" title="Direct link to Severity Insights" translate="no">​</a></h2>
 <p>The <strong>Severity Insights</strong> section helps you understand the nature and age of vulnerabilities in prod and non-prod deployments.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/severity-insights.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-overview/severity-insights.jpg" alt="" class="img_ev3q">
 <center>Figure 2: &#x27;Severity Insights&#x27; Section</center></p>
 <ul>
 <li class="">
@@ -63,7 +63,7 @@
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="deployment-security-status">Deployment Security Status<a href="#deployment-security-status" class="hash-link" aria-label="Direct link to Deployment Security Status" title="Direct link to Deployment Security Status" translate="no">​</a></h2>
 <p>The <strong>Deployment Security Status</strong> section highlights the current security health of your active deployments and pipelines.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-status.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-overview/security-status.jpg" alt="" class="img_ev3q">
 <center>Figure 3: &#x27;Severity Insights&#x27; Section</center></p>
 <table><thead><tr><th>Indicator</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><strong>Active Deployments with Vulnerabilities</strong></td><td>Percentage of deployments that contain at least one known vulnerability.</td><td>Example: 25.7% of all running deployments have vulnerabilities.</td></tr><tr><td><strong>Active Deployments with Unscanned Images</strong></td><td>Percentage of deployments where image scans have not been performed.</td><td>Example: 70.5% of deployments use unscanned images, which can hide potential risks.</td></tr><tr><td><strong>Workflows with Scanning not Enabled</strong></td><td>Percentage of CI/CD workflows that are missing security scanning steps.</td><td>Example: 74.3% of pipelines don’t have scanning enabled.</td></tr><tr><td><strong>Blocked Deployments</strong></td><td>Count of deployments automatically blocked by security policies over a period of time (upto 90 days)</td><td>Example: 1 deployment was blocked in the past 30 days due to a failed security check.</td></tr></tbody></table>
 <p>Use these indicators to verify that scanning coverage is consistent and your automated policies are functioning as expected.</p>

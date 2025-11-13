@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.843efe5b.css">
-<script src="/assets/js/runtime~main.ff47d389.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.89da6ce6.js" defer="defer"></script>
 <script src="/assets/js/main.f6a37972.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -35,12 +35,12 @@
 <ol>
 <li class="">
 <p>From the left sidebar, go to <strong>Global Configurations</strong> → <strong>Container/OCI Registry</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/add-registry.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/container-registries/add-registry.jpg" alt="" class="img_ev3q">
 <center>Figure 1: Container/OCI Registry</center></p>
 </li>
 <li class="">
 <p>Click <strong>Add Registry</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/add-container-registry-1.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/container-registries/add-container-registry.jpg" alt="" class="img_ev3q">
 <center>Figure 2: Add a Registry</center></p>
 </li>
 <li class="">
@@ -65,9 +65,9 @@
 <p>Upon enabling this option, Devtron supports the pushing of helm charts to your OCI registry.</p>
 <p>This is possible through <a class="" href="/docs/user-guide/global-configurations/cluster-and-environments#add-isolated-cluster-">isolated clusters</a> that facilitate air-gapped deployments. In other words, it generates a helm package that you can use to deploy your application in air-gapped clusters.</p>
 <p>If you have <a class="" href="/docs/user-guide/creating-application/workflow/cd-pipeline">configured your CD pipeline</a> to push the helm package to your OCI registry, you can view the pushed helm package in your registry as shown below:</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/pushed-artifacts.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/container-registries/pushed-artifacts.jpg" alt="" class="img_ev3q">
 <center>Figure 3a: OCI Registry Page</center></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/helm-chart.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/container-registries/helm-chart.jpg" alt="" class="img_ev3q">
 <center>Figure 3b: Pushed Helm Chart</center></p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Prerequisite</div><div class="admonitionContent_BuS1"><p>OCI registry with <code>Use as chart repository</code> option enabled.</p></div></div>
 <p>Unlike Helm repos, OCI registries do not have an index file to discover all the charts. If you have helm packages pushed to your OCI registry, you can that registry as a chart repository.</p>
@@ -124,11 +124,11 @@ The ECR provides resource-based permissions to the private repositories using AW
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-registry-credentials">Use Registry Credentials<a href="#use-registry-credentials" class="hash-link" aria-label="Direct link to Use Registry Credentials" title="Direct link to Use Registry Credentials" translate="no">​</a></h3>
 <p>If you select <strong>Use Registry Credentials</strong>, the clusters will be auto-injected with the registry credentials of your registry type. As an example, If you select <code>Docker</code> as Registry Type, then the clusters will be auto-injected with the <code>username</code> and <code>password/token</code> which you use on the Docker Hub account.</p>
 <p>Click <strong>Save</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/use-registry-credentials-1.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/container-registries/use-registry-credentials-1.jpg" alt="" class="img_ev3q">
 <center>Figure 4: Using Registry Credentials</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="specify-image-pull-secret">Specify Image Pull Secret<a href="#specify-image-pull-secret" class="hash-link" aria-label="Direct link to Specify Image Pull Secret" title="Direct link to Specify Image Pull Secret" translate="no">​</a></h3>
 <p>You can create a Secret by providing credentials on the command line.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/specify-image-pull-secret-1.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/container-registries/specify-image-pull-secret-1.jpg" alt="" class="img_ev3q">
 <center>Figure 5: Using Image Pull Secret</center></p>
 <p>Create this Secret and name it <code>regcred</code> (let&#x27;s say):</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">kubectl create -n &lt;namespace&gt; secret docker-registry regcred --docker-server=&lt;your-registry-server&gt; --docker-username=&lt;your-name&gt; --docker-password=&lt;your-pword&gt; --docker-email=&lt;your-email&gt;</span><br></span></code></pre></div></div>
@@ -148,7 +148,7 @@ The ECR provides resource-based permissions to the private repositories using AW
 <ol>
 <li class="">
 <p>Navigate back to <strong>Container/OCI Registry</strong> page.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/delete-oci-registry.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/container-registries/delete-oci-registry.jpg" alt="" class="img_ev3q">
 <center>Figure 6: Delete an OCI Registry</center></p>
 </li>
 <li class="">

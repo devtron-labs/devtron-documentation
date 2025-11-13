@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.843efe5b.css">
-<script src="/assets/js/runtime~main.ff47d389.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.89da6ce6.js" defer="defer"></script>
 <script src="/assets/js/main.f6a37972.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -51,20 +51,22 @@
 <ol>
 <li class="">
 <p>Navigate to <strong>Global Configurations</strong> → <strong>Authorization</strong> → <strong>SSO Login Services</strong>. The SSO Login Service page is displayed.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/gitlab/gitlab-sso.jpg" alt="" class="img_ev3q">
-<center>Figure 1: Global Configurations</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/gitlab/gitlab-sso-select-gitlab.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Select Gitlab</center></p>
 </li>
 <li class="">
 <p>Select <strong>GitLab</strong> from the list of available SSO login services.</p>
 </li>
 <li class="">
-<p>Click the URL suggested in green color next to the <strong>Click to use</strong> label to update the <strong>URL</strong> field. Update the <strong>URL</strong> field only if the host URL displayed in the <strong>URL</strong> field is incorrect.</p>
+<p>Click the URL suggested in green color next to the <strong>Click to use</strong> label to update the <strong>URL</strong> field.</p>
+<p>When you populate <strong>URL</strong> field, the redirectURI (or callbackURI) is updated automatically in the purple block displayed at the top of the SSO Login Service screen. This redirectURI is essential, as it is required while setting up the OAuth credentials in GitHub.</p>
 </li>
 <li class="">
-<p>Click the <strong>Save</strong> button.</p>
+<p>Copy the redirectURI from the purple block.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/gitlab/gitlab-sso-redirect-uri.jpg" alt="" class="img_ev3q">
+<center>Figure 2: Copy Redirect URI</center></p>
 </li>
 </ol>
-<p>When you populate the Host URL in the <strong>URL</strong> text box, the redirectURI (or callbackURI) is updated automatically in the purple block at the top of the SSO Login Service screen. This redirectURI is essential, as it is required while setting up the OAuth credentials in GitLab.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="configuring-oauth-in-gitlab">Configuring OAuth in GitLab<a href="#configuring-oauth-in-gitlab" class="hash-link" aria-label="Direct link to Configuring OAuth in GitLab" title="Direct link to Configuring OAuth in GitLab" translate="no">​</a></h2>
 <p>Open Authentication (OAuth) allows you to authorize one application to sign in to another without the need for passwords. Configuring OAuth credentials in GitLab involves creating a GitLab OAuth Client ID and Client Secret, which will then be used in Devtron for authentication.</p>
@@ -75,8 +77,8 @@
 </li>
 <li class="">
 <p>Select your preferred OAuth app and click <strong>Edit</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/gitlab/gitlab-oauth-applist.jpg" alt="" class="img_ev3q">
-<center>Figure 2: GitLab OAuth Applications List</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/gitlab/gitlab-sso-oauth-applist.jpg" alt="" class="img_ev3q">
+<center>Figure 3: GitLab OAuth Applications List</center></p>
 </li>
 <li class="">
 <p>Update the <strong>Redirect URI</strong> field with the redirectURI created in Devtron.</p>
@@ -86,8 +88,8 @@
 </li>
 <li class="">
 <p>Click the <strong>Save Application</strong> button. The following page is displayed.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/gitlab/gitlab-oauth-edit-page.jpg" alt="" class="img_ev3q">
-<center>Figure 3: GitLab OAuth Application</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/gitlab/gitlab-sso-edit-page.jpg" alt="" class="img_ev3q">
+<center>Figure 4: GitLab OAuth Application</center></p>
 <p>The client ID is displayed in the <strong>Application ID</strong> field.</p>
 </li>
 <li class="">
@@ -103,8 +105,8 @@
 </li>
 <li class="">
 <p>Select the <strong>Configuration</strong> section available next to the <strong>URL</strong> field.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/gitlab/configuration-gitlab.jpg" alt="" class="img_ev3q">
-<center>Figure 4: GitLab SSO Configuraion</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/gitlab/gitlab-sso-config.jpg" alt="" class="img_ev3q">
+<center>Figure 5: GitLab SSO Configuration</center></p>
 </li>
 <li class="">
 <p>Update the <code>clientID</code> attribute with the Client ID generated in the OAuth application on GitLab.</p>
@@ -119,8 +121,8 @@
 <p>Click <strong>Update</strong> button to save the configuration. GitLab SSO is now successfully configured.</p>
 </li>
 </ol>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/gitlab/gitlab-sso-login.gif" alt="" class="img_ev3q">
-<center>Figure 5: Login with GitLab</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/gitlab/gitlab-sso-in-action.jpg" alt="" class="img_ev3q">
+<center>Figure 6: Login with GitLab</center></p>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Important Note</div><div class="admonitionContent_BuS1"><p>Although GitLab SSO is now configured, you will not be able to sign in with GitLab unless you add yourself as a user with the necessary permissions and manage other user permissions as well in Devtron. It is highly recommended to create <a class="" href="/docs/user-guide/global-configurations/authorization/user-access">User Permissions</a>.</p></div></div>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="references">References<a href="#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References" translate="no">​</a></h2>

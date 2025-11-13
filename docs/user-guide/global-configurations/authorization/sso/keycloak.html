@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.843efe5b.css">
-<script src="/assets/js/runtime~main.ff47d389.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.89da6ce6.js" defer="defer"></script>
 <script src="/assets/js/main.f6a37972.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -32,14 +32,35 @@
 <li class="">Create a new <a href="https://www.keycloak.org/getting-started/getting-started-kube#_create_a_realm" target="_blank" rel="noopener noreferrer" class="">realm in Keycloak</a> for your application.</li>
 </ul>
 <hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="get-the-redirecturi-from-devtron">Get the redirectURI from Devtron<a href="#get-the-redirecturi-from-devtron" class="hash-link" aria-label="Direct link to Get the redirectURI from Devtron" title="Direct link to Get the redirectURI from Devtron" translate="no">​</a></h2>
+<ol>
+<li class="">
+<p>Navigate to <strong>Global Configurations</strong> → <strong>Authorization</strong> → <strong>SSO Login Services</strong>. The SSO Login Service page is displayed.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/keycloak/select-oidc.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Select OIDC</center></p>
+</li>
+<li class="">
+<p>Select <strong>OIDC</strong> from the list of available SSO login services.</p>
+</li>
+<li class="">
+<p>Click the URL suggested in green color next to the <strong>Click to use</strong> label to update the <strong>URL</strong> field.</p>
+<p>When you populate <strong>URL</strong> field, the redirectURI (or callbackURI) is updated automatically in the purple block displayed at the top of the SSO Login Service screen. This redirectURI is essential, as it is required while setting up the OAuth credentials in GitHub.</p>
+</li>
+<li class="">
+<p>Copy the redirectURI from the purple block.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/keycloak/copy-redirect-uri.jpg" alt="" class="img_ev3q">
+<center>Figure 2: Copy Redirect URI</center></p>
+</li>
+</ol>
+<hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="steps-on-keycloak-admin-console">Steps on Keycloak Admin Console<a href="#steps-on-keycloak-admin-console" class="hash-link" aria-label="Direct link to Steps on Keycloak Admin Console" title="Direct link to Steps on Keycloak Admin Console" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="creating-a-client">Creating a Client<a href="#creating-a-client" class="hash-link" aria-label="Direct link to Creating a Client" title="Direct link to Creating a Client" translate="no">​</a></h3>
 <p>Here, we will add Devtron as a client for using Keycloak SSO.</p>
 <ol>
 <li class="">
 <p>In the Admin Console, go to <strong>Clients</strong> and click <strong>Create client</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/create-client.gif" alt="" class="img_ev3q">
-<center>Figure 1: Creating Client on Keycloak</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/keycloak/create-client.gif" alt="" class="img_ev3q">
+<center>Figure 3: Creating Client on Keycloak</center></p>
 </li>
 <li class="">
 <p>Within <strong>General Settings</strong>:</p>
@@ -47,24 +68,23 @@
 <li class="">Enter <code>devtron</code> in the <strong>Client ID</strong> field. We will use this ID while configuring SSO later in Devtron.</li>
 <li class="">Enter <code>Devtron</code> in the <strong>Name</strong> field.</li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/client-id.jpg" alt="" class="img_ev3q">
-<center>Figure 2: Client ID and Name</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/keycloak/client-id.jpg" alt="" class="img_ev3q">
+<center>Figure 4: Client ID and Name</center></p>
 </li>
 <li class="">
 <p>Within <strong>Capability config</strong>, turn on <strong>Client Authentication</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/enable-client-auth.gif" alt="" class="img_ev3q">
-<center>Figure 3: Enabling Client Authentication Toggle</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/keycloak/enable-client-auth.gif" alt="" class="img_ev3q">
+<center>Figure 5: Enabling Client Authentication Toggle</center></p>
 </li>
 <li class="">
-<p>Within <strong>Login settings</strong>, enter <code>https://&lt;DEVTRON_BASE_URL&gt;/orchestrator/api/dex/callback</code> in the following fields.</p>
+<p>Within <strong>Login settings</strong>, enter the <code>redirectURI</code> you have copied earlier in the following fields.</p>
 <ul>
 <li class=""><strong>Valid redirect URIs</strong></li>
 <li class=""><strong>Valid post logout redirect URIs</strong></li>
 <li class=""><strong>Web origins</strong></li>
 </ul>
-<p><a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/base-url.jpg" target="_blank" rel="noopener noreferrer" class="">Click here</a> to know where to find <code>DEVTRON_BASE_URL</code>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/redirect-url.gif" alt="" class="img_ev3q">
-<center>Figure 4: Entering Callback/Redirect URIs</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/keycloak/redirect-url.gif" alt="" class="img_ev3q">
+<center>Figure 6: Entering Callback/Redirect URIs</center></p>
 </li>
 <li class="">
 <p>Click <strong>Save</strong>.</p>
@@ -75,8 +95,8 @@
 <ol>
 <li class="">
 <p>Go to the <strong>Credentials</strong> tab of the client you created.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/client-secret.gif" alt="" class="img_ev3q">
-<center>Figure 5: Obtaining Client Secret</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/keycloak/client-secret.gif" alt="" class="img_ev3q">
+<center>Figure 7: Obtaining Client Secret</center></p>
 </li>
 <li class="">
 <p>Use the copy button next to the <strong>Client Secret</strong> field and paste it somewhere for future reference.</p>
@@ -90,16 +110,16 @@
 </li>
 <li class="">
 <p>Give a username (e.g., <em>usertest</em>) in the <strong>Username</strong> field and enter the user&#x27;s email address (e.g., <em><a href="mailto:usertest@example.com" target="_blank" rel="noopener noreferrer" class="">usertest@example.com</a></em>) in the <strong>Email</strong> field.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/create-user.gif" alt="" class="img_ev3q">
-<center>Figure 6: Creating User Data</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/keycloak/create-user.gif" alt="" class="img_ev3q">
+<center>Figure 8: Creating User Data</center></p>
 </li>
 <li class="">
 <p>Click <strong>Create</strong>. Your user creation will be successful.</p>
 </li>
 <li class="">
 <p>Go to the <strong>Credentials</strong> tab of the user you created.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/set-user-password.gif" alt="" class="img_ev3q">
-<center>Figure 7: Adding User Password</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/keycloak/set-user-password.gif" alt="" class="img_ev3q">
+<center>Figure 9: Adding User Password</center></p>
 </li>
 <li class="">
 <p>Click <strong>Set password</strong>.</p>
@@ -119,13 +139,13 @@
 </li>
 <li class="">
 <p>In the <strong>General</strong> tab, scroll down to the <strong>Endpoints</strong> field, and click the <strong>OpenID Endpoint Configuration</strong> link.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/endpoint-config.gif" alt="" class="img_ev3q">
-<center>Figure 8: OpenID Endpoint Configuration Link</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/keycloak/endpoint-config.gif" alt="" class="img_ev3q">
+<center>Figure 10: OpenID Endpoint Configuration Link</center></p>
 </li>
 <li class="">
 <p>This will open a new page, copy the value of the key named <code>issuer</code>, and paste it somewhere for future reference.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/issuer-url.jpg" alt="" class="img_ev3q">
-<center>Figure 9: Locating Issuer URL</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/keycloak/issuer-url.jpg" alt="" class="img_ev3q">
+<center>Figure 11: Locating Issuer URL</center></p>
 </li>
 </ol>
 <hr>
@@ -136,13 +156,6 @@
 <ol>
 <li class="">
 <p>Go to <strong>Global Configurations</strong> → <strong>SSO Login Services</strong> → <strong>OIDC</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/oidc.jpg" alt="" class="img_ev3q">
-<center>Figure 10: Choosing OIDC SSO</center></p>
-</li>
-<li class="">
-<p>Below the URL field, take the help of the <strong>Click to use</strong> option to populate the exact URL if the displayed one is incorrect.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/click-to-use.jpg" alt="" class="img_ev3q">
-<center>Figure 11: Populating Correct Orchestrator URL</center></p>
 </li>
 <li class="">
 <p>In the <strong>Configuration</strong> editor, do the following:</p>
@@ -152,7 +165,7 @@
 <li class="">In the <code>clientSecret</code> field, paste the secret you got under <a href="#getting-client-secret" class="">client credentials tab</a>.</li>
 <li class="">In the <code>redirectURI</code> field, make sure to enter the same redirect URI you gave in step 4 of <a href="#creating-a-client" class="">client creation</a>.</li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/keycloak-sso-config.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/keycloak/keycloak-sso-config.jpg" alt="" class="img_ev3q">
 <center>Figure 12: Sample Keycloak SSO Config</center></p>
 </li>
 <li class="">
@@ -168,12 +181,12 @@
 </li>
 <li class="">
 <p>Click <strong>+ Add Users</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/add-user.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/keycloak/add-user.jpg" alt="" class="img_ev3q">
 <center>Figure 13: Adding Users to Devtron</center></p>
 </li>
 <li class="">
 <p>In the <strong>Email addresses</strong> field, enter the email address of the user you created in Keycloak.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/add-email.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/keycloak/add-email.jpg" alt="" class="img_ev3q">
 <center>Figure 14: Entering User Data and Permissions</center></p>
 </li>
 <li class="">
@@ -184,11 +197,11 @@
 </li>
 </ol>
 <p>Now, you may log out and test the Keycloak OIDC login method using the <a href="#creating-users" class="">user credentials</a>. Clicking the <strong>Login with Oidc</strong> button will land you on Keycloak&#x27;s login page.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/login-oidc.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/keycloak/login-oidc.jpg" alt="" class="img_ev3q">
 <center>Figure 15a: Login using OIDC method</center></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/keycloak/keycloak-login.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/keycloak/keycloak-login.jpg" alt="" class="img_ev3q">
 <center>Figure 15b: Keycloak&#x27;s Login Page</center></p>
-<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Note</div><div class="admonitionContent_BuS1"><p>Kindly get in touch with us if you encounter any issues while logging out of Keycloak on Devtron as it might be buggy.</p></div></div></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/global-configurations/authorization/sso/oidc"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">OIDC</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/global-configurations/authorization/sso/okta"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Okta</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#prerequisites" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#steps-on-keycloak-admin-console" class="table-of-contents__link toc-highlight">Steps on Keycloak Admin Console</a><ul><li><a href="#creating-a-client" class="table-of-contents__link toc-highlight">Creating a Client</a></li><li><a href="#getting-client-secret" class="table-of-contents__link toc-highlight">Getting Client Secret</a></li><li><a href="#creating-users" class="table-of-contents__link toc-highlight">Creating Users</a></li><li><a href="#retrieving-issuer-url" class="table-of-contents__link toc-highlight">Retrieving Issuer URL</a></li></ul></li><li><a href="#steps-on-devtron" class="table-of-contents__link toc-highlight">Steps on Devtron</a><ul><li><a href="#configuring-oidc-sso" class="table-of-contents__link toc-highlight">Configuring OIDC SSO</a></li><li><a href="#adding-users" class="table-of-contents__link toc-highlight">Adding Users</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
+<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Note</div><div class="admonitionContent_BuS1"><p>Kindly get in touch with us if you encounter any issues while logging out of Keycloak on Devtron as it might be buggy.</p></div></div></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/global-configurations/authorization/sso/oidc"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">OIDC</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/global-configurations/authorization/sso/okta"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Okta</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#prerequisites" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#get-the-redirecturi-from-devtron" class="table-of-contents__link toc-highlight">Get the redirectURI from Devtron</a></li><li><a href="#steps-on-keycloak-admin-console" class="table-of-contents__link toc-highlight">Steps on Keycloak Admin Console</a><ul><li><a href="#creating-a-client" class="table-of-contents__link toc-highlight">Creating a Client</a></li><li><a href="#getting-client-secret" class="table-of-contents__link toc-highlight">Getting Client Secret</a></li><li><a href="#creating-users" class="table-of-contents__link toc-highlight">Creating Users</a></li><li><a href="#retrieving-issuer-url" class="table-of-contents__link toc-highlight">Retrieving Issuer URL</a></li></ul></li><li><a href="#steps-on-devtron" class="table-of-contents__link toc-highlight">Steps on Devtron</a><ul><li><a href="#configuring-oidc-sso" class="table-of-contents__link toc-highlight">Configuring OIDC SSO</a></li><li><a href="#adding-users" class="table-of-contents__link toc-highlight">Adding Users</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
               <div style="text-align: center;">
                 <div style="margin-bottom: 1rem;">
                   <a href="/" style="display: inline-block;">
