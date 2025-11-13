@@ -6,8 +6,6 @@ hide_table_of_contents: true
 
 Access can be granted to a user via:
 
-* [SSO Login Services](../sso-login.md)
-
 * [User Permissions](user-access.md)
 
 * [Permission Groups](permission-groups.md)
