@@ -22,15 +22,15 @@ The **Tags Policy** feature in Devtron allows you to enforce a tag that must be 
 Users need to have super-admin permission to create tag policy.
 :::
 
-1. Go to **Global Configurations** → **Tags Policy**.
+1. Go to **Application Management** → **Policies** → **Tags Policy**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/gc-tags-policy.jpg)
-<center>Figure 2: Tags Policy</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/tags-policy-nav.jpg)
+    <center>Figure 2: Tags Policy</center>
 
 2. Click **+ Add Tag**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/add-tags-gc.jpg)
-<center>Figure 3: 'Add Tag' Button</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/add-tag.jpg)
+    <center>Figure 3: 'Add Tag' Button</center>
 
 3. **Suggested tags/Mandatory tags** - You can either suggest tags or make them mandatory when creating applications:
     * If you want the person creating an application to compulsarily provide a tag, use `Mandatory tags`. Mandatory tags have two consequences:
@@ -40,12 +40,12 @@ Users need to have super-admin permission to create tag policy.
     * If you just want to offer tag suggestions, use `Suggested tags`. These will appear as [dropdown suggestions](#appearance-of-suggested-tags) when adding tags to applications globally, and users can optionally use them if needed.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/suggested-mandatory.gif)
-<center>Figure 4: Creating Suggested or Mandatory Tag</center>
+    <center>Figure 4: Creating Suggested or Mandatory Tag</center>
 
 4. **Select Project(s)** - To mandate a tag, you must provide a project where this policy should apply. All applications in the project will require the mandatory tag to be entered. Whereas, suggested tags are shown as suggestions globally (i.e., for all apps).
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/select-projects.jpg)
-<center>Figure 5: Selecting One or More Projects</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/select-projects.jpg)
+    <center>Figure 5: Selecting One or More Projects</center>
 
 5. **Tag Key** - Enter the key from the key-value pair (tag), e.g., *Business Unit*, *Team*, *Owner*.
 

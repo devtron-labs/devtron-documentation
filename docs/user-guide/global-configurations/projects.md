@@ -14,12 +14,17 @@ Refer [user access](../global-configurations/authorization/user-access.md) for m
 
 ## Add Project
 
-1. To add a project name, go to the `Projects` section of `Global Configurations`. 
-2. Click `Add Project`.
-3. Provide a project name in the field and click `Save`.
+1. Go to **Application Management** → **Projects**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/projects/global-configs-projects.jpg)
-<center></center>
+2. Click **Add Project**.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/projects/add-project.jpg)
+<center>Figure 1: Adding a Project</center>
+
+3. Provide a project name in the field and click **Save**.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/projects/save-project.jpg)
+<center>Figure 2: Saving a Project</center>
 
 
 

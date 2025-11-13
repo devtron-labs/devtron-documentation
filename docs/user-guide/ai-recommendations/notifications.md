@@ -53,7 +53,7 @@ The next step is to [review the recommendation](#recommended-change).
 <center>Figure 3: Diff of Proposed Changes</center>
 
 This tab shows you the configuration diff for you to compare the existing configuration vs recommended change.
-If the recommended change is yet to be acted upon or depending on the [current status of notification](#notification-feed-statuses), you get **Approve** and **Reject** button for accepting/discarding the recommendation. C
+If the recommended change is yet to be acted upon or depending on the [current status of notification](#notification-feed-statuses), you get **Approve** and **Reject** button for accepting/discarding the recommendation.
 
 AI automatically generates the runbook corresponding to the recommendation. When the user (superadmin) approves a recommendation, it triggers the corresponding runbook and the remediation takes place.
 
@@ -73,8 +73,6 @@ Each recommendation in the notification feed reflects one of the following backe
 
 | Status | Description | User Action |
 |---------|--------------|-------------|
-| **PENDING_DISCOVERY** | The engine is analyzing data to determine whether a recommendation is needed. | No action. System state only. |
-| **RECOMMENDATION_DISCOVERED** | The engine has detected a valid recommendation and identified the suggested change. | **Approve / Reject** buttons become available once validation is complete. |
 | **ACTION_REQUIRED** | The engine requires user approval before executing the recommendation. | **Approve / Reject** available. |
 | **READY_FOR_TRIGGER** | All preconditions are met, and the recommendation can be triggered or executed. | May show **Approve** if still pending confirmation; otherwise system-handled. |
 | **ACTION_IN_PROGRESS** | The remediation (runbook) linked to the recommendation is currently executing. | No action because execution is underway. |

@@ -4,8 +4,8 @@
 * On the upper-right corner of the screen, click **Create**.
 * Select **Custom app** from the drop-down list.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/create-app-1.jpg)
-<center></center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/create-button.jpg)
+<center>Figure 1: Create Button</center>
 
 A new application can be created from one of the following options:
 
@@ -17,13 +17,13 @@ A new application can be created from one of the following options:
 
 To create a new application from the custom app, select **Custom app**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/create-application.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/create-application.jpg)
 <center></center>
 
 * In the **Create application** window, enter an **App Name** and select a **Project**.
 * Select either:<ul><li>**Create from scratch** to create an application from scratch</li>, or<li>**Clone existing application** to clone an existing application.</li></ul>
-* If you select **Create from scratch**, select the project from the drop-down list.<br/>`Note`: You have to add [project under Global Configurations](./global-configurations/projects.md). Only then, it will appear in the drop-down list here.
-* If you select **Clone existing application**, select an app you want to clone from and the project from the drop-down list.<br/>`Note`: You have to add [project under Global Configurations](./global-configurations/projects.md). Only then, it will appear in the drop-down list here.
+* If you select **Create from scratch**, select the project from the drop-down list.<br/>`Note`: You have to [add a project](./global-configurations/projects.md). Only then, it will appear in the drop-down list here.
+* If you select **Clone existing application**, select an app you want to clone from and the project from the drop-down list.<br/>`Note`: You have to [add a project](./global-configurations/projects.md). Only then, it will appear in the drop-down list here.
 
 
 ## Tags
