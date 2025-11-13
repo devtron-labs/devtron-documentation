@@ -79,10 +79,13 @@ For a detailed step-by-step guide, refer to Google’s official documentation: [
 
 The next step is to configure Devtron to use these credentials for authentication. For this, navigate back to **Global Configurations → SSO Login Services**, here you can already find a configuration template.
 
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/google/google-sso-config.jpg)
+<center>Figure 4: Navigating Back to Devtron</center>
+
 ## Configuration
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/google/google-sso-config.jpg)
-<center>Figure 4: Configuring SSO in Devtron</center>
+<center>Figure 5: Configuring SSO in Devtron</center>
 
 In the configuration,
 
@@ -108,7 +111,7 @@ To ensure users can log in:
 * Click **Add User**.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/google/google-sso-add-user.jpg)
-<center>Figure 5: Adding User with required permissions</center>
+<center>Figure 6: Adding User with required permissions</center>
 
 * Enter their email (matching their Google account).
 * Assign the required role.
@@ -116,7 +119,7 @@ To ensure users can log in:
 
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/google/google-sso-config-user.jpg)
-<center>Figure 6: Configuring User Permissions</center>
+<center>Figure 7: Configuring User Permissions</center>
 
 Once saved, Devtron will use Google OAuth for authentication, allowing users to log in using their Google accounts.
 
