@@ -12,12 +12,12 @@ The [User permissions](../../global-configurations/authorization/user-access.md)
 
 Go to **Global Configurations** → **Authorization** → **Permissions groups** → **Add group**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/permission-group/permission-group-create.jpg)
 <center></center>
 
 Enter the `Group Name` and `Description`.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/permission-group/permission-group-name-description.jpg)
 <center></center>
 
 You can either grant [super-admin](../../global-configurations/authorization/user-access.md#grant-super-admin-permission) permission to a user group or specific permissions to manage access for:
@@ -38,7 +38,7 @@ The `Devtron Apps` option will be available only if you install [CI/CD integrati
 
 Provide the information in the following fields:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-devtron-apps-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/permission-group/permission-group-devtron-apps.jpg)
 <center></center>
 
 
@@ -59,7 +59,7 @@ In `Helm Apps` option, you can provide access to a group to manage permission fo
 
 Provide the information in the following fields:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-groups-helm-apps-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/permission-group/permission-group-helm-apps.jpg)
 <center></center>
 
 | Dropdown | Description |
@@ -79,7 +79,7 @@ In `Jobs` option, you can provide access to a group to manage permission for job
 
 Provide the information in the following fields:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-groups-jobs-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/permission-group/permission-group-jobs.jpg)
 <center></center>
 
 | Dropdown | Description |
@@ -105,13 +105,13 @@ Only super admin users will be able to see `Kubernetes Resources` tab and provid
 
 To provide Kubernetes resource permission, click `Add permission`.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/kubernetes-resources-permission-group-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/permission-group/permission-group-kubernetes-resources.jpg)
 <center></center>
 
 On the `Kubernetes resource permission`, provide the information in the following fields:
 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/user-access/user-permission/kubernetes-resources-permission-page-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/permission-group/permission-group-kubernetes-resources-1.jpg)
 <center></center>
 
 | Dropdown | Description |
@@ -135,7 +135,7 @@ In `Chart group permission` option, you can manage the access of groups for Char
 The `Chart group permission` option will be available only if you install [CI/CD integration](../../integrations/build-and-deploy-ci-cd.md).
 :::
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/permission-group-chart-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/permission-group/permission-group-chart.jpg)
 <center></center>
 
 :::info 
@@ -155,12 +155,12 @@ Click **Save** once you have configured all the required permissions for the gro
 
 You can edit the permission groups by clicking the `downward arrow.`
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/edit-permission-group.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/permission-group/permission-group-edit.jpg)
 <center></center>
 
 Edit the permission group.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/permission-group/save-permission-group.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/permission-group/permission-group-save.jpg)
 <center></center>
 
 Once you are done editing the permission group, click **Save**.
