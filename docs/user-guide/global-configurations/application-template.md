@@ -23,15 +23,18 @@ Users need to have super-admin permission to create Application Templates.
 
 1. Navigate to **Application Management** → **Application Templates**.
 
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-templates-nav.jpg)
+    <center>Figure 1: Navigating to Application Templates</center>
+
 2. Click **+ Create Template**; a modal window will appear.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-create-template.jpg)
-<center>Figure 1: Clicking 'Create Template'</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-template-create-template.jpg)
+    <center>Figure 2: Clicking 'Create Template'</center>
 
 3. Select the Application from which you want to create the Application Template; you can also search for the preferred application from the search bar.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-select-template.jpg)
-<center>Figure 2: Selecting Application</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-template-select-template.jpg)
+    <center>Figure 3: Selecting Application</center>
 
 4. Enter the information required by the following fields.
 
@@ -42,8 +45,8 @@ Users need to have super-admin permission to create Application Templates.
     | **Description**           | Optional          | Provide a short description for the application template |
 
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-details.jpg)
-<center>Figure 3: Entering required details</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-template-details.jpg)
+    <center>Figure 4: Entering required details</center>
 
 5.  Click **Create Template**; application template will be created.
 
@@ -67,16 +70,16 @@ After you create an application template, you can view the configurations it inh
     | **CI/CD Workflows**| Define and manage your build and deployment pipelines using Workflow Editor; refer [Workflow Editor](../creating-application/workflow/README.md) to learn more.|
     | **Environment Overrides** | Environment Overrides lets you define custom configurations for different environments without changing the base configurations; refer [Environment Overrides](../creating-application/environment-overrides.md) to learn more.|
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-configurations.jpg)
-<center>Figure 4: Customizing Application Template</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-template-configurations.jpg)
+    <center>Figure 5: Customizing Application Template</center>
 
 
 
 4. (Optional) You can also define a README for your Application Template
     1. Click the **Edit** button in the **Readme** section.
 
-        ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-overview.jpg)
-<center>Figure 5: Clicking 'Edit' button</center>
+        ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-template-overview.jpg)
+        <center>Figure 6: Clicking 'Edit' button</center>
 
     2. A Markdown editor will appear where you can write or modify content under the Write tab.
 
@@ -86,8 +89,8 @@ After you create an application template, you can view the configurations it inh
 
     5. Click Save to update the **Readme**.
 
-        ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-readme.jpg)
-<center>Figure 6: Creating Readme</center>
+        ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-template-readme.jpg)
+        <center>Figure 7: Creating Readme</center>
 
 ---
 
@@ -105,13 +108,13 @@ You can use an application template to create an application. Refer [Creating Ap
 
 3. Click **Delete Template** in the bottom right corner under **Configurations** tab
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-delete-template.jpg)
-<center>Figure 7: Deleting Application</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-template-delete-template.jpg)
+    <center>Figure 8: Deleting Application</center>
 
 4. A modal window will appear, click **Delete**; application template will be deleted.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-confirm-delete.jpg)
-<center>Figure 8: Confirming Delete Action</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-template-confirm-delete.jpg)
+    <center>Figure 9: Confirming Delete Action</center>
 
 :::tip Note
 Deleting an Application Template does not affect any applications, neither the application used to create that template, nor the applications created using that template.
