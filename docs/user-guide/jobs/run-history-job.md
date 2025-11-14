@@ -13,12 +13,12 @@ Either you have just executed the job and want to inspect the live execution, or
 
 1. Navigate to the **Run History** tab of your job, and all the executions will appear in a reverse chronological order under the pipeline name. In case you have configured multiple job pipelines within a job, you need to select the pipeline from the **Select Pipeline** dropdown in the top-left corner. 
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/run-history.jpg)
 <center>Figure 1: Selecting Pipeline</center>
 
 2. Select the specific execution you want to inspect. By default, the latest execution is selected.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-select-execution.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/run-history-select-execution.jpg)
 <center>Figure 2: Selecting Specific Execution</center>
 
 3. After selecting the execution, the right section of the page will display the details about that particular execution.
@@ -31,7 +31,7 @@ Either you have just executed the job and want to inspect the live execution, or
     |`Execution succeeded`|Timestamp marking when the job finished successfully.|
     |`Worker status`|Final outcome of the worker performing the job (e.g., Succeeded or Failed). On failure, the error message is also shown|
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-details.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/run-history-details.jpg)
 <center>Figure 3: Execution's details</center>
 
 Apart from these details, you can also inspect logs, source code, security, and download artifacts (if any).
@@ -42,7 +42,7 @@ Apart from these details, you can also inspect logs, source code, security, and 
  * You can expand/collapse each pipeline stage to view specific logs related to that stage. Use the `Expand/collapse all stages` button near the search bar to expand or collapse all stages at once.
  * Select the fullscreen button in the bottom-right corner to view logs in fullscreen.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-logs.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/run-history-logs.jpg)
 <center>Figure 4: Logs</center>
 
 ### Source
@@ -57,7 +57,7 @@ The source tab shows which commit is from the source code (configured Git reposi
 |`Author`|Name & email of the committer.|
 |`Date & time`|When that commit was authored|
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/run-history-source.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/run-history-source.jpg)
 <center>Figure 5: Source</center>
 
 ### Artifacts

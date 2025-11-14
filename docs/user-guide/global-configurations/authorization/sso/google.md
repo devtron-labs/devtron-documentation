@@ -79,7 +79,7 @@ For a detailed step-by-step guide, refer to Google’s official documentation: [
 
 The next step is to configure Devtron to use these credentials for authentication. For this, navigate back to **Global Configurations → SSO Login Services**, here you can already find a configuration template.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/google/google-sso-config.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/google/google-sso-gc.jpg)
 <center>Figure 4: Navigating Back to Devtron</center>
 
 ## Configuration
