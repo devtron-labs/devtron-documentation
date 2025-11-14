@@ -11,7 +11,7 @@ Git Accounts allow you to connect your code source with Devtron. You will be abl
 
 ## Add Git Account
 
-To add git account, go to the `Git accounts` section of `Global Configurations`. Click **Add git account**.
+Navigate to **Application Management** → **Configurations** → **Git Accounts**, and click **Add git account**.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/git-accounts/git-accounts.jpg)
 <center>Figure 1: Navigate to Git Accounts</center>

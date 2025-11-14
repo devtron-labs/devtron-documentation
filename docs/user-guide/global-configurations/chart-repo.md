@@ -28,14 +28,17 @@ To add a chart repository, follow the steps below:
 
 1. Navigate to **Application Management** → **Configurations** → **Chart Repository**. 
 
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/chart-repo/chart-repo-nav.jpg)
+    <center>Figure 1: Adding a Chart Repository</center>
+
 2. Click **Add repository**.
 
 <!-- **Note**: Only public chart repositories can be connected as of now via Devtron. -->
 
 3. Provide below information in the following fields:
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/chart-repo/add-chart-repo.jpg)
-<center>Figure 1: Add a Chart Repository</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/chart-repo/chart-repo-fields.jpg)
+    <center>Figure 2: Entering Repository Details</center>
 
     | Fields | Description |
     | --- | --- |
@@ -50,12 +53,12 @@ To add a chart repository, follow the steps below:
 
 To update a chart repository, follow the below steps: 
 
-1. Navigate back to **Chart Repositories* page.
+1. Navigate back to **Chart Repositories** page.
 
 2. Select the repository you prefer to update.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/chart-repo/update-chart-repository.jpg)
-<center>Figure 2: Update a Chart Repository</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/chart-repo/update-chart-repository.jpg)
+    <center>Figure 3: Updating a Chart Repository</center>
 
 3. Modify the repository as per your requirements.
 
@@ -76,8 +79,8 @@ If you are using an chart repository as your chart source and prefer to delete i
 
 1. Navigate back to **Chart Repositories**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/delete-chart-repos.gif)
-<center>Figure 3: Delete a Chart Repository</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/chart-repo/delete-chart-repos.gif)
+    <center>Figure 4: Deleting a Chart Repository</center>
 
 2. Select your preferred chart repository. 
 

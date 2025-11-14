@@ -30,7 +30,7 @@ Users need to have [Super-Admin](user-access.md#assign-super-admin-permissions) 
 1. Go to **Application Management** → **Configurations** → **GitOps**
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/gitops/gitops-nav.jpg)
-   <center>Figure 2: Global Configuration - GitOps</center>
+   <center>Figure 2: Configurations - GitOps</center>
 
 2. Select any one of the [supported Git providers](#supported-git-providers) to configure GitOps. 
 
