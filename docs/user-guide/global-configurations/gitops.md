@@ -78,7 +78,7 @@ Alternatively, you may use the feature flag **FEATURE_USER_DEFINED_GITOPS_REPO_E
 #### How to Use Feature Flag
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/gitops/dashboard-cm.gif)
-<center>Using Feature Flag</center>
+<center>Figure 6: Using Feature Flag</center>
 
 1. Go to [Devtron's Resource Browser](../resource-browser/README.md).
 
@@ -157,7 +157,7 @@ Fill the following mandatory fields:
 :::
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/gitops/aws-code-commit.jpg)
-<center>Figure 6: AWS Code Commit</center>
+<center>Figure 7: AWS Code Commit</center>
 
 Fill the following mandatory fields:
 
@@ -205,7 +205,7 @@ Here, you get 2 options:
 :::
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/gitops/bitbucket-cloud.jpg)
-<center>Figure 7: Entering Details of Bitbucket Cloud</center>
+<center>Figure 8: Entering Details of Bitbucket Cloud</center>
 
 Fill the following mandatory fields:
 
@@ -225,7 +225,7 @@ A Bitbucket Data Center account
 :::
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/gitops/bitbucket-server.jpg)
-<center>Figure 8: Entering Details of Bitbucket Data Center</center>
+<center>Figure 9: Entering Details of Bitbucket Data Center</center>
 
 Fill the following mandatory fields:
 
@@ -239,7 +239,7 @@ Fill the following mandatory fields:
 ### Other GitOps <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/gitops/other-gitops.jpg)
-<center>Figure 9: Other GitOps</center>
+<center>Figure 10: Other GitOps</center>
 
 If you prefer to use the GitOps approach using a different platform other than the available ones, refer to the following table and fill in the mandatory fields:
 
@@ -296,10 +296,10 @@ For more information about the plans available for your team, see [GitHub's prod
 ### Creating Project in Azure DevOps
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/gitops/azure+devops/azure-new-project.jpg)
-<center>Figure 10a: New Project Button in Azure DevOps</center>
+<center>Figure 11a: New Project Button in Azure DevOps</center>
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/gitops/azure+devops/azure-create-new-project.jpg)
-<center>Figure 10b: Create New Project</center>
+<center>Figure 11b: Create New Project</center>
 
 1. Go to Azure DevOps and navigate to Projects.
 2. Select your organization and click `New project`. 
