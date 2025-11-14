@@ -2,7 +2,7 @@
 
 The Overview page provides a centralized view of a job’s details within Devtron. It allows users to quickly access information about the job, manage tags, and view job pipelines all in a single, organized interface.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-job.jpg)
 <center>Figure 1: Job's Overview</center>
 
 The **Overview** page contains three main sections:
@@ -23,7 +23,7 @@ The **About** section allows you to:
 
 The left side of the **About** section displays essential information about the job.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-about-left.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-job-about-left.jpg)
 <center>Figure 2: Job's Basic Info</center>
 
 The table below captures all the key elements presented in this section, along with their descriptions and whether they can be edited by the user.
@@ -59,7 +59,7 @@ Tags are Key-value pairs used for identifying and organizing the application. Us
 
 The right side of the **About** section contains a **README** area where you can maintain job-specific notes or documentation. The `Readme` supports Markdown formatting, making it easy to include formatted text, instructions, or important context related to the application.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-readme.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-job-readme.jpg)
 <center>Figure 4: Readme</center>
 
 To add or update the **Readme**:
@@ -69,7 +69,7 @@ To add or update the **Readme**:
 4.	Preview the content using the **Preview** tab.
 5.	Click **Save** to update the README.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-readme-edit.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-job-readme-edit.jpg)
 <center>Figure 5: Editing Readme</center>
 
 :::info 
@@ -80,7 +80,7 @@ After saving, the system displays the email address of the user who last updated
 
 The **Catalog** in the **About** section displays information about your job, such as Container port, Environment Variables, Arguments, Resources(CPU and RAM). You can manage this data using the **Manage Schema** option, which defines the structure of your catalog. Refer the [Manage Schema](../global-configurations/catalog-framework.md#managing-a-schema) documentation to learn more.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-job-catalog.jpg)
 <center>Figure 6: Catalog</center>
 
 You can use the **Catalog** to maintain information about your job, such as Environment Variables, Resources(CPU and RAM), service documentation, etc. This makes it easier for others to understand, manage, and use your job.
@@ -93,7 +93,7 @@ When you click the **Edit** icon, a form appears based on the defined schema. As
 *	Arguments
 *   Resources(CPU and RAM)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog-expand.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-job-catalog-expand.jpg)
 <center>Figure 7: Editing Catalog</center>
 
 :::info 
@@ -102,7 +102,7 @@ The structure and labels in the catalog form are entirely configurable by your p
 
 Once saved, this information is displayed in a readable format within the Catalog subsection and is accessible to all users who have permission to view the job.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-catalog-saved.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-job-catalog-saved.jpg)
 <center>Figure 8: Catalog Overview</center>
 
 ---
@@ -118,5 +118,5 @@ The Job Pipelines section provides a detailed view of all job pipelines. For eac
 | Run in environment | Displays the name of the environment in which the job is executed. |
 | Last Run At| Displays how long ago the job was last triggered.|
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/overview-job-job-pipelines.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-job-job-pipelines.jpg)
 <center>Figure 9: Job Pipelines</center>
