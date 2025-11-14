@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.843efe5b.css">
-<script src="/assets/js/runtime~main.288f139a.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.8b526233.js" defer="defer"></script>
 <script src="/assets/js/main.f6a37972.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -52,19 +52,24 @@
 <p><strong>Note</strong>: External links can only be added/managed by a super admin, but non-super admin users can <a class="" href="/docs/user-guide/app-details">access the configured external links</a> on the <code>App Configuration</code> page.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="add-an-external-link">Add an External Link<a href="#add-an-external-link" class="hash-link" aria-label="Direct link to Add an External Link" title="Direct link to Add an External Link" translate="no">​</a></h2>
 <ol>
-<li class="">On the Devtron dashboard, go to the <code>Global Configurations</code> from the left navigation pane.</li>
-<li class="">Select <code>External links</code>.</li>
+<li class="">
+<p>Navigate to <strong>Application Management</strong> → <strong>Configurations</strong> → <strong>External Links</strong></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/external-links/external-links-nav.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Navigating to External Links</center></p>
+</li>
+<li class="">
+<p>Select <strong>Add Link</strong>.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/external-links/external-add-link.jpg" alt="" class="img_ev3q">
+<center>Figure 2: Adding External Link</center></p>
+</li>
+<li class="">
+<p>Select the external link (e.g. Grafana) which you want to link to your application from Webpage.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/external-links/all-applications.jpg" alt="" class="img_ev3q">
+<center>Figure 3a: Selecting all apps to show the External Link</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/external-links/specific-applications.jpg" alt="" class="img_ev3q">
+<center>Figure 3b: Selecting specific apps to show the External Link</center></p>
+</li>
 </ol>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/external-links-v2.jpg" alt="" class="img_ev3q"></p>
-<center></center>
-<ol start="3">
-<li class="">Select <strong>Add Link</strong>.</li>
-<li class="">On the <code>Add Link</code> page, select the external link (e.g. Grafana) which you want to link to your application from Webpage.</li>
-</ol>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/external-add-link.jpg" alt="" class="img_ev3q"></p>
-<center></center>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/external-link-specific-applications.jpg" alt="" class="img_ev3q"></p>
-<center></center>
 <p>The following fields are provided on the <strong>Add Link</strong> page:</p>
 <table><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody><tr><td><strong>Link name</strong></td><td>Provide name of the link.</td></tr><tr><td><strong>Description</strong></td><td>Description of the link name.</td></tr><tr><td><strong>Show link in</strong></td><td>- All apps in specific clusters: Select this option to select the cluster.<br>- Specific applications: Select this option to select the application.</td></tr><tr><td><strong>Clusters</strong></td><td>Choose the clusters for which you want to configure the selected external link with.<br><br>- Select one or more than one cluster to enable the link on the specified clusters.<br>- Select All Clusters to enable the link on all the clusters.</td></tr><tr><td><strong>Applications</strong></td><td>Choose the application for which you want to configure the selected external link with.<br><br>- Select one or more than one application to enable the link on the specified application.<br>- Select All applications to enable the link on all the applications.<br><br><strong>Note</strong>: If you enable <code>App admins can edit</code>, then you can view the selected links on the App-Details page.</td></tr><tr><td><strong>URL Template</strong></td><td>The configured URL Template is used by apps deployed on the selected clusters/applications.<br><br>By combining one or more of the env variables, a URL with the structure shown below can be created:<br><br><code>http://www.domain.com/{namespace}/{appName}/details/{appId}/env/{envId}/details/{podName}</code><br><br>If you include the variables <code>{podName}</code> and <code>{containerName}</code> in the URL template, then the configured links (e.g. Grafana) will be visible only on the pod level and container level respectively.<br><br>The env variables:<br>- <code>{appName}</code><br>- <code>{appId}</code><br>- <code>{envId}</code><br>- <code>{namespace}</code><br>- <code>{podName}</code>: If used, the link will only be visible at the pod level on the <a class="" href="/docs/user-guide/app-details">App Details</a> page.<br>- <code>{containerName}</code>: If used, the link will only be visible at the container level on the <a class="" href="/docs/user-guide/app-details">App Details</a> page.<br><br><strong>Note</strong>: The env variables will be dynamically replaced by the values that you used to configure the link.</td></tr></tbody></table>
 <blockquote>
@@ -77,8 +82,8 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="manage-external-links">Manage External links<a href="#manage-external-links" class="hash-link" aria-label="Direct link to Manage External links" title="Direct link to Manage External links" translate="no">​</a></h2>
 <p>On the <code>External Links</code> page, the configured external links can be filtered/searched, as well as edited/deleted.</p>
 <p>Go to <strong>Application Management</strong> → <strong>Configurations</strong> → <strong>External links</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/external-links/manage-external-links-v2.jpg" alt="" class="img_ev3q"></p>
-<center></center>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/external-links/manage-external-links.jpg" alt="" class="img_ev3q">
+<center>Figure 4: Managing External Links</center></p>
 <ul>
 <li class="">Filter and search the links based on the link&#x27;s name or a user-defined name.</li>
 <li class="">Edit a link by selecting the edit icon next to an external link.</li>

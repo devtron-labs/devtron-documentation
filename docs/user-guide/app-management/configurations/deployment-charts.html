@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.843efe5b.css">
-<script src="/assets/js/runtime~main.288f139a.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.8b526233.js" defer="defer"></script>
 <script src="/assets/js/main.f6a37972.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -29,7 +29,7 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction">Introduction<a href="#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" translate="no">​</a></h2>
 <p>Devtron Apps leverage helm charts to carry out deployment of your images and configuration. Devtron includes predefined Helm charts (e.g., Deployment, Rollout, StatefulSet) that cover majority of your use cases.</p>
 <p>For any use case not addressed by the default Helm charts, you can upload your own Helm chart and use it as a deployment chart in Devtron.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/gc-deployment-charts.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/deployment-charts.jpg" alt="" class="img_ev3q">
 <center>Figure 1: Deployment Charts</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tutorial">Tutorial<a href="#tutorial" class="hash-link" aria-label="Direct link to Tutorial" title="Direct link to Tutorial" translate="no">​</a></h3>
 <p>This video contains a quick walkthrough of the steps mentioned in the <a href="#preparing-a-deployment-chart" class="">Preparing a Deployment Chart</a> section of this page and the subsequent uploading of the deployment chart on Devtron.</p>
@@ -55,7 +55,7 @@
 </li>
 <li class="">
 <p>Ensure the above file is created in the directory where the main <code>Chart.yaml</code> exists (as shown below):</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/descriptor-filepath.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/descriptor-filepath.jpg" alt="" class="img_ev3q">
 <center>Figure 2: Filepath of Image Descriptor Template</center></p>
 </li>
 <li class="">
@@ -68,11 +68,11 @@
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Got a JSON Error?</div><div class="admonitionContent_BuS1"><p>If your code editor highlights a syntax error (property or EOF error) in the above JSON, ignore it.</p></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-add-app-valuesyaml">3. Add app-values.yaml<a href="#3-add-app-valuesyaml" class="hash-link" aria-label="Direct link to 3. Add app-values.yaml" title="Direct link to 3. Add app-values.yaml" translate="no">​</a></h3>
 <p>In the root directory of your chart, Devtron expects an <code>app-values.yaml</code> file. It uses this file to determine the values to be displayed on the <a class="" href="/docs/reference/glossary#deployment-template">deployment template</a> as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/deployment-template.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/deployment-template-view.jpg" alt="" class="img_ev3q">
 <center>Figure 3: Chart Values</center></p>
 <p>The <code>app-values.yaml</code> file is simply a subset of your <code>values.yaml</code> file. Therefore, you can insert specific entries from <code>values.yaml</code> that you wish to display.</p>
 <p>However, if you upload the chart without an <code>app-values.yaml</code> or with an empty one, your deployment template will appear blank (as shown below) or null.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/empty-values.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/empty-values.jpg" alt="" class="img_ev3q">
 <center>Figure 4: Blank Chart Values</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-add-release-valuesyaml">4. Add release-values.yaml<a href="#4-add-release-valuesyaml" class="hash-link" aria-label="Direct link to 4. Add release-values.yaml" title="Direct link to 4. Add release-values.yaml" translate="no">​</a></h3>
 <p>The <code>release-values.yaml</code> file contains essential values needed for deployment that aren’t covered by <a href="#3-add-app-valuesyaml" class="">app-values.yaml</a>. For example:</p>
@@ -98,22 +98,22 @@ Both <code>&lt;helm-chart-name&gt;</code> and <code>x.x.x</code> will be automat
 <ul>
 <li class="">
 <p>Go to <strong>Application Management</strong> → <strong>Configurations</strong> → <strong>Deployment Charts</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/gc-deployment-charts.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/deployment-charts-nav.jpg" alt="" class="img_ev3q">
 <center>Figure 5: Global Configurations - Deployment Charts</center></p>
 </li>
 <li class="">
 <p>Click <strong>Upload Chart</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/upload-chart.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/upload-chart.jpg" alt="" class="img_ev3q">
 <center>Figure 6: Upload Chart Button</center></p>
 </li>
 <li class="">
 <p>Click <strong>Select .tgz file</strong> and upload your packaged deployment chart (in <strong>.tgz</strong> format).</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/select-tgz-file.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/select-tgz-file.jpg" alt="" class="img_ev3q">
 <center>Figure 7: Uploading .tgz File</center></p>
 </li>
 </ul>
 <p>The system initiates the validation of your uploaded chart. You may also click <strong>Cancel upload</strong> if you wish to abort the process.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/cancel-upload.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/cancel-upload.jpg" alt="" class="img_ev3q">
 <center>Figure 8: Cancelling Upload</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="validation-checks">Validation Checks<a href="#validation-checks" class="hash-link" aria-label="Direct link to Validation Checks" title="Direct link to Validation Checks" translate="no">​</a></h3>
 <p>In the uploading process, your file will be validated against the following criteria:</p>
@@ -123,12 +123,12 @@ Both <code>&lt;helm-chart-name&gt;</code> and <code>x.x.x</code> will be automat
 <li class=""><code>.image_descriptor_template.json</code> file should be present.</li>
 </ul>
 <p>The following are interpretations of the validation checks performed:</p>
-<table><thead><tr><th style="text-align:left">Validation Status</th><th style="text-align:left">Description</th><th style="text-align:left">User Action</th></tr></thead><tbody><tr><td style="text-align:left"><strong>Success</strong></td><td style="text-align:left">The files uploaded are validated <br>(<a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/chart-success.jpg" target="_blank" rel="noopener noreferrer" class="">View Snapshot</a>)</td><td style="text-align:left">Enter a description for the chart and select <strong>Save</strong> or <strong>Cancel upload</strong></td></tr><tr><td style="text-align:left"><strong>Unsupported template</strong></td><td style="text-align:left">The archive file do not match the <a href="#preparing-a-deployment-chart" class="">required template</a> <br>(<a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/unsupported-template.jpg" target="_blank" rel="noopener noreferrer" class="">View Snapshot</a>)</td><td style="text-align:left"><strong>Upload another chart</strong> or <strong>Cancel upload</strong></td></tr><tr><td style="text-align:left"><strong>New version detected</strong></td><td style="text-align:left">You are uploading a newer version of an existing chart <br>(<a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/new-version.jpg" target="_blank" rel="noopener noreferrer" class="">View Snapshot</a>)</td><td style="text-align:left">Enter a <strong>Description</strong> and select <strong>Save</strong> to continue uploading, or <strong>Cancel upload</strong></td></tr><tr><td style="text-align:left"><strong>Already exists</strong></td><td style="text-align:left">There already exists a chart with the same version <br>(<a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/chart-exists.jpg" target="_blank" rel="noopener noreferrer" class="">View Snapshot</a>)</td><td style="text-align:left"><ul><li>Edit the version and re-upload the same chart using <strong>Upload another chart</strong>.</li><li>Upload a new chart with a new name using  <strong>Upload another chart</strong></li><li><strong>Cancel upload</strong></li></ul></td></tr></tbody></table>
+<table><thead><tr><th style="text-align:left">Validation Status</th><th style="text-align:left">Description</th><th style="text-align:left">User Action</th></tr></thead><tbody><tr><td style="text-align:left"><strong>Success</strong></td><td style="text-align:left">The files uploaded are validated <br>(<a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/chart-success.jpg" target="_blank" rel="noopener noreferrer" class="">View Snapshot</a>)</td><td style="text-align:left">Enter a description for the chart and select <strong>Save</strong> or <strong>Cancel upload</strong></td></tr><tr><td style="text-align:left"><strong>Unsupported template</strong></td><td style="text-align:left">The archive file do not match the <a href="#preparing-a-deployment-chart" class="">required template</a> <br>(<a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/unsupported-template.jpg" target="_blank" rel="noopener noreferrer" class="">View Snapshot</a>)</td><td style="text-align:left"><strong>Upload another chart</strong> or <strong>Cancel upload</strong></td></tr><tr><td style="text-align:left"><strong>New version detected</strong></td><td style="text-align:left">You are uploading a newer version of an existing chart <br>(<a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/new-version.jpg" target="_blank" rel="noopener noreferrer" class="">View Snapshot</a>)</td><td style="text-align:left">Enter a <strong>Description</strong> and select <strong>Save</strong> to continue uploading, or <strong>Cancel upload</strong></td></tr><tr><td style="text-align:left"><strong>Already exists</strong></td><td style="text-align:left">There already exists a chart with the same version <br>(<a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/chart-exists.jpg" target="_blank" rel="noopener noreferrer" class="">View Snapshot</a>)</td><td style="text-align:left"><ul><li>Edit the version and re-upload the same chart using <strong>Upload another chart</strong>.</li><li>Upload a new chart with a new name using  <strong>Upload another chart</strong></li><li><strong>Cancel upload</strong></li></ul></td></tr></tbody></table>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="viewing-deployment-charts">Viewing Deployment Charts<a href="#viewing-deployment-charts" class="hash-link" aria-label="Direct link to Viewing Deployment Charts" title="Direct link to Viewing Deployment Charts" translate="no">​</a></h2>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Who Can Perform This Action?</div><div class="admonitionContent_BuS1"><p>Only super-admins can view deployment charts.</p></div></div>
 <p>To view the list of available deployment charts, go to  <strong>Application Management</strong> → <strong>Configurations</strong> → <strong>Deployment Charts</strong> page.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/view-charts.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/view-charts.jpg" alt="" class="img_ev3q">
 <center>Figure 9: Viewing Deployment Charts</center></p>
 <ul>
 <li class="">You can search a chart by its name, version, or description.</li>
@@ -137,7 +137,7 @@ Both <code>&lt;helm-chart-name&gt;</code> and <code>x.x.x</code> will be automat
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="using-deployment-chart-in-application">Using Deployment Chart in Application<a href="#using-deployment-chart-in-application" class="hash-link" aria-label="Direct link to Using Deployment Chart in Application" title="Direct link to Using Deployment Chart in Application" translate="no">​</a></h2>
 <p>Once you successfully upload a deployment chart, you can start using it as a deployment template for your application. Refer <a class="" href="/docs/user-guide/creating-application/base-config/deployment-template">Deployment Template</a> to know more.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/use-chart.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/use-chart.gif" alt="" class="img_ev3q">
 <center>Figure 10: Using Deployment Charts</center></p>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Note</div><div class="admonitionContent_BuS1"><p>The deployment strategy for a deployment chart is fetched from the chart template and cannot be configured in the <a class="" href="/docs/user-guide/creating-application/workflow/cd-pipeline#deployment-strategies">CD pipeline</a>.</p></div></div>
 <hr>
@@ -156,27 +156,27 @@ Both <code>&lt;helm-chart-name&gt;</code> and <code>x.x.x</code> will be automat
 <ol>
 <li class="">
 <p>Click the edit button next to the chart as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/edit-chart-schema.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/edit-chart-schema.jpg" alt="" class="img_ev3q">
 <center>Figure 11: Edit GUI Schema Button</center></p>
 </li>
 <li class="">
 <p>A GUI schema is available for you to edit in case of Devtron charts. In case of custom charts, you may have to define a GUI schema yourself. To know how to create such GUI schema, refer <a href="https://rjsf-team.github.io/react-jsonschema-form/" target="_blank" rel="noopener noreferrer" class="">RJSF JSON Schema Tool</a>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/gui-schema.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/gui-schema.jpg" alt="" class="img_ev3q">
 <center>Figure 12: Editable Schema</center></p>
 </li>
 <li class="">
 <p>You may start editing the schema by excluding existing fields/objects or including more of them. Click the <strong>Refer YAML</strong> button to view all the supported fields.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/refer-yaml.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/refer-yaml.gif" alt="" class="img_ev3q">
 <center>Figure 13: Refer YAML Button</center></p>
 </li>
 <li class="">
 <p>While editing the schema, you may use the <strong>Preview GUI</strong> option for a real-time preview of your changes.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/preview-gui.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/preview-gui.gif" alt="" class="img_ev3q">
 <center>Figure 14: Preview GUI Button</center></p>
 </li>
 <li class="">
 <p>Click <strong>Save Changes</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/save-changes.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/deployment-charts/save-changes.jpg" alt="" class="img_ev3q">
 <center>Figure 15: Save Changes</center></p>
 </li>
 </ol>

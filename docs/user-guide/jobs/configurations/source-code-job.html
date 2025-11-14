@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.843efe5b.css">
-<script src="/assets/js/runtime~main.288f139a.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.8b526233.js" defer="defer"></script>
 <script src="/assets/js/main.f6a37972.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -36,17 +36,17 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 </li>
 <li class="">
 <p>Select the <strong>Source Code</strong> tab from the left sidebar.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/source-code.jpg" alt="" class="img_ev3q">
 <center>Figure 1: Selecting Source Code</center></p>
 </li>
 <li class="">
 <p>Under <strong>Add Git Repository</strong>, select the <strong>Git Account</strong> from the dropdown menu. You can also select <code>GitHub Public</code> from the same dropdown to configure a public repository that does not require authentication.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-git-account.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/source-code-git-account.jpg" alt="" class="img_ev3q">
 <center>Figure 2: Adding Git Account</center></p>
 </li>
 <li class="">
 <p>Enter the <strong>Repository URL</strong> in the Git Repo <code>URL</code> field, corresponding to the selected Git account. If <code>GitHub Public</code> is selected, you can enter the URL of any public repository, as no authentication is required.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-repo-url.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/source-code-repo-url.jpg" alt="" class="img_ev3q">
 <center>Figure 3: Adding Git Repository</center></p>
 </li>
 <li class="">
@@ -54,7 +54,7 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 </li>
 <li class="">
 <p>Click on the <strong>Save</strong> button to save the changes.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-save.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/source-code-save.jpg" alt="" class="img_ev3q">
 <center>Figure 4: Saving Source Code</center></p>
 </li>
 </ol>
@@ -68,17 +68,17 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <ol>
 <li class="">
 <p>Check the <strong>Exclude specific file/folder in this repo</strong> checkbox.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-exclude-files.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/source-code-exclude-files.jpg" alt="" class="img_ev3q">
 <center>Figure 5: Excluding Specific File/Folder</center></p>
 </li>
 <li class="">
 <p>Enter the exclusion or inclusion rules in the <strong>Enter file or folder paths to be included or excluded</strong> field.</p>
 <table><thead><tr><th style="text-align:left">Sample Rules</th><th style="text-align:left">Description</th><th style="text-align:left">Impact on Commits</th></tr></thead><tbody><tr><td style="text-align:left"><code>!README.md</code></td><td style="text-align:left"><strong>Exclusion of a single file in root folder</strong></td><td style="text-align:left">Commits containing changes made only in the README.md file will not be shown</td></tr><tr><td style="text-align:left"><code>!README.md</code> <br> <code>!index.js</code></td><td style="text-align:left"><strong>Exclusion of multiple files in root folder</strong></td><td style="text-align:left">Commits containing changes made only in README.md or/and index.js files will not be shown</td></tr><tr><td style="text-align:left"><code>README.md</code></td><td style="text-align:left"><strong>Inclusion of a single file in root folder</strong></td><td style="text-align:left">Commits containing changes made only in the README.md file will be shown. Rest all will be excluded.</td></tr><tr><td style="text-align:left"><code>!src/extensions/printer/code2.py</code></td><td style="text-align:left"><strong>Exclusion of a single file in a folder tree</strong></td><td style="text-align:left">Commits containing changes made specifically to code2.py file will not be shown</td></tr><tr><td style="text-align:left"><code>!src/*</code></td><td style="text-align:left"><strong>Exclusion of a single folder and all its files:</strong></td><td style="text-align:left">Commits containing changes made specifically to files within the <code>src</code> folder will not be shown</td></tr><tr><td style="text-align:left"><code>!README.md</code> <br> <code>index.js</code></td><td style="text-align:left"><strong>Exclusion and inclusion of files</strong></td><td style="text-align:left">Commits containing changes made only in README.md will not be shown, but commits made in the index.js file will be shown. All other commits apart from the aforementioned files will be excluded.</td></tr><tr><td style="text-align:left"><code>!README.md</code> <br> <code>README.md</code></td><td style="text-align:left"><strong>Exclusion and inclusion of conflicting files</strong></td><td style="text-align:left">If conflicting paths are defined in the rule, the one defined later will be considered. In this case, commits containing changes made only in README.md will be shown.</td></tr></tbody></table>
 <p>You may use the <strong>Learn how</strong> link (as shown below) to understand the syntax of defining an exclusion or inclusion rule.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-learn-how.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/source-code-learn-how.jpg" alt="" class="img_ev3q">
 <center>Figure 6: &#x27;Learn how&#x27; Button</center></p>
 <p>Since file paths can be long, Devtron supports regex too for writing the paths. To understand it better, you may click the <strong>How to use</strong> link as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-regex.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/source-code-regex.jpg" alt="" class="img_ev3q">
 <center>Figure 7: Regex Support</center></p>
 </li>
 </ol>
@@ -92,14 +92,14 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <li class="">
 <p>Enter the path to the folder you want to check out from the repository in the <strong>Set checkout path</strong> field.</p>
 <table><thead><tr><th style="text-align:left">Sample paths</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>./</code></td><td style="text-align:left">Checkout the repository to the root directory, i.e., the entire repository itself</td></tr><tr><td style="text-align:left"><code>./src</code></td><td style="text-align:left">Checkout the repository to the src folder</td></tr><tr><td style="text-align:left"><code>./src/app</code></td><td style="text-align:left">Checkout the repository to the app folder inside the src folder</td></tr></tbody></table>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-checkout.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/source-code-checkout.jpg" alt="" class="img_ev3q">
 <center>Figure 8: Checkout Path</center></p>
 </li>
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pull-submodules-recursively">Pull Submodules Recursively<a href="#pull-submodules-recursively" class="hash-link" aria-label="Direct link to Pull Submodules Recursively" title="Direct link to Pull Submodules Recursively" translate="no">​</a></h3>
 <p>This checkbox is used for pulling <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules" target="_blank" rel="noopener noreferrer" class="">git submodules</a> present in a repo. The submodules will be pulled recursively, and the auth method used for the parent repo will be used for submodules too.</p>
 <p>To pull the submodules recursively, check the <strong>Pull submodules recursively</strong> checkbox.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/source-code-pull.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/source-code-pull.jpg" alt="" class="img_ev3q">
 <center>Figure 9: Pulling Submodules Recursively</center></p>
 <hr>
 <p>After configuring <strong>Source Code</strong>, the next step is to create and configure job pipelines.</p>

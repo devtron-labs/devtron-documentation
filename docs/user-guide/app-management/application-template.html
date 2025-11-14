@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.843efe5b.css">
-<script src="/assets/js/runtime~main.288f139a.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.8b526233.js" defer="defer"></script>
 <script src="/assets/js/main.f6a37972.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -35,22 +35,24 @@
 <ol>
 <li class="">
 <p>Navigate to <strong>Application Management</strong> → <strong>Application Templates</strong>.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-templates-nav.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Navigating to Application Templates</center></p>
 </li>
 <li class="">
 <p>Click <strong>+ Create Template</strong>; a modal window will appear.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-create-template.jpg" alt="" class="img_ev3q">
-<center>Figure 1: Clicking &#x27;Create Template&#x27;</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-template-create-template.jpg" alt="" class="img_ev3q">
+<center>Figure 2: Clicking &#x27;Create Template&#x27;</center></p>
 </li>
 <li class="">
 <p>Select the Application from which you want to create the Application Template; you can also search for the preferred application from the search bar.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-select-template.jpg" alt="" class="img_ev3q">
-<center>Figure 2: Selecting Application</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-template-select-template.jpg" alt="" class="img_ev3q">
+<center>Figure 3: Selecting Application</center></p>
 </li>
 <li class="">
 <p>Enter the information required by the following fields.</p>
 <table><thead><tr><th style="text-align:left">Field</th><th style="text-align:left">Required/Optional</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><strong>Template display name</strong></td><td style="text-align:left">Required</td><td style="text-align:left">Provide a name for the application template, e.g., <code>Banking-backend</code></td></tr><tr><td style="text-align:left"><strong>Template ID</strong></td><td style="text-align:left">Required</td><td style="text-align:left">Template ID is a unique identifier for application templates, and is uniquely mapped to the application template. <ol><li>Character limit: 3-50</li><li>Only lowercase alphanumeric characters are allowed</li><li>Special Characters: <code>-</code>,<code>_</code>,<code>.</code></li><li>Template ID should be unique for each application template</li></ol></td></tr><tr><td style="text-align:left"><strong>Description</strong></td><td style="text-align:left">Optional</td><td style="text-align:left">Provide a short description for the application template</td></tr></tbody></table>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-details.jpg" alt="" class="img_ev3q">
-<center>Figure 3: Entering required details</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-template-details.jpg" alt="" class="img_ev3q">
+<center>Figure 4: Entering required details</center></p>
 </li>
 <li class="">
 <p>Click <strong>Create Template</strong>; application template will be created.</p>
@@ -69,16 +71,16 @@
 <li class="">
 <p>You may customize the following configurations under <strong>Configurations</strong> tab</p>
 <table><thead><tr><th style="text-align:left">Field</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><strong>Git Repository</strong></td><td style="text-align:left">The source code repository linked to the application.</td></tr><tr><td style="text-align:left"><strong>Build Configurations</strong></td><td style="text-align:left">Build configuration is used to create and push docker images in the container registry of your application; refer <a class="" href="/docs/user-guide/creating-application/docker-build-configuration">Build Configurations</a> to learn more.</td></tr><tr><td style="text-align:left"><strong>Base Configurations</strong></td><td style="text-align:left">Base Configurations let you define the following configurations:<ol><li><strong>Deployment Template</strong>; refer <a class="" href="/docs/user-guide/creating-application/base-config/deployment-template">Base Deployment Template</a> to learn more.</li><li><strong>ConfigMaps</strong>; refer <a class="" href="/docs/user-guide/creating-application/base-config/config-maps">ConfigMaps</a> to learn more.</li><li><strong>Secrets</strong>; refer <a class="" href="/docs/user-guide/creating-application/base-config/secrets">Secrets</a> to learn more</li></ol></td></tr><tr><td style="text-align:left"><strong>CI/CD Workflows</strong></td><td style="text-align:left">Define and manage your build and deployment pipelines using Workflow Editor; refer <a class="" href="/docs/user-guide/creating-application/workflow">Workflow Editor</a> to learn more.</td></tr><tr><td style="text-align:left"><strong>Environment Overrides</strong></td><td style="text-align:left">Environment Overrides lets you define custom configurations for different environments without changing the base configurations; refer <a class="" href="/docs/user-guide/creating-application/environment-overrides">Environment Overrides</a> to learn more.</td></tr></tbody></table>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-configurations.jpg" alt="" class="img_ev3q">
-<center>Figure 4: Customizing Application Template</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-template-configurations.jpg" alt="" class="img_ev3q">
+<center>Figure 5: Customizing Application Template</center></p>
 </li>
 <li class="">
 <p>(Optional) You can also define a README for your Application Template</p>
 <ol>
 <li class="">
 <p>Click the <strong>Edit</strong> button in the <strong>Readme</strong> section.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-overview.jpg" alt="" class="img_ev3q">
-<center>Figure 5: Clicking &#x27;Edit&#x27; button</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-template-overview.jpg" alt="" class="img_ev3q">
+<center>Figure 6: Clicking &#x27;Edit&#x27; button</center></p>
 </li>
 <li class="">
 <p>A Markdown editor will appear where you can write or modify content under the Write tab.</p>
@@ -91,8 +93,8 @@
 </li>
 <li class="">
 <p>Click Save to update the <strong>Readme</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-readme.jpg" alt="" class="img_ev3q">
-<center>Figure 6: Creating Readme</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-template-readme.jpg" alt="" class="img_ev3q">
+<center>Figure 7: Creating Readme</center></p>
 </li>
 </ol>
 </li>
@@ -111,13 +113,13 @@
 </li>
 <li class="">
 <p>Click <strong>Delete Template</strong> in the bottom right corner under <strong>Configurations</strong> tab</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-delete-template.jpg" alt="" class="img_ev3q">
-<center>Figure 7: Deleting Application</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-template-delete-template.jpg" alt="" class="img_ev3q">
+<center>Figure 8: Deleting Application</center></p>
 </li>
 <li class="">
 <p>A modal window will appear, click <strong>Delete</strong>; application template will be deleted.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/application-templates/application-template-confirm-delete.jpg" alt="" class="img_ev3q">
-<center>Figure 8: Confirming Delete Action</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/app-templates/application-template-confirm-delete.jpg" alt="" class="img_ev3q">
+<center>Figure 9: Confirming Delete Action</center></p>
 </li>
 </ol>
 <div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Note</div><div class="admonitionContent_BuS1"><p>Deleting an Application Template does not affect any applications, neither the application used to create that template, nor the applications created using that template.</p></div></div></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/bulk-update/bulk-edit-ent"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Bulk Edit (v1beta2)</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/app-management/projects"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Projects</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction-" class="table-of-contents__link toc-highlight">Introduction <a></a></a></li><li><a href="#creating-an-application-template" class="table-of-contents__link toc-highlight">Creating an Application Template</a></li><li><a href="#customizing-an-application-template" class="table-of-contents__link toc-highlight">Customizing an Application Template</a></li><li><a href="#using-an-application-template" class="table-of-contents__link toc-highlight">Using an Application Template</a></li><li><a href="#deleting-an-application-template" class="table-of-contents__link toc-highlight">Deleting an Application Template</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">

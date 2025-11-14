@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.843efe5b.css">
-<script src="/assets/js/runtime~main.288f139a.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.8b526233.js" defer="defer"></script>
 <script src="/assets/js/main.f6a37972.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -34,18 +34,18 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <ol>
 <li class="">
 <p>Go to <strong>Configurations</strong> (tab) → <strong>ConfigMaps &amp; Secrets</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap.jpg" alt="" class="img_ev3q">
 <center>Figure 1: ConfigMaps &amp; Secrets</center></p>
 </li>
 <li class="">
 <p>Click the <strong>+</strong> button next to <strong>ConfigMaps</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-add.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-add.jpg" alt="" class="img_ev3q">
 <center>Figure 2: Creating ConfigMap</center></p>
 </li>
 <li class="">
 <p>Enter a name for the ConfigMap (Once defined, the name cannot be changed later).</p>
 <p><strong>Note</strong>: In case you are using an External Kubernetes ConfigMap, the name should be exactly the same as the name given using the <code>kubectl create configmap &lt;configmap-name&gt; &lt;data source&gt;</code> command.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-name.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-name.jpg" alt="" class="img_ev3q">
 <center>Figure 3: Entering ConfigMap Name</center></p>
 </li>
 <li class="">
@@ -58,7 +58,7 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <p><strong>Kubernetes External ConfigMap</strong>: Select the Data Type as Kubernetes External ConfigMap if you have already created a ConfigMap using the kubectl command and want to use that in Devtron.</p>
 </li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-type.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-data-type.jpg" alt="" class="img_ev3q">
 <center>Figure 4: ConfigMap Data Type</center></p>
 </li>
 <li class="">
@@ -71,7 +71,7 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <p><a href="#mount-data-as-data-volume" class=""><strong>Data Volume</strong></a> – Select this option if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to <a href="#mount-data-as-data-volume" class="">Data Volume</a> to know more.</p>
 </li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-mount-data.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-mount-data.jpg" alt="" class="img_ev3q">
 <center>Figure 5: Mounting Data as</center></p>
 </li>
 <li class="">
@@ -85,24 +85,24 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <ul>
 <li class=""><strong>GUI mode</strong> – User-friendly interface. Click the <strong>+Add</strong> button and enter the <strong>Key</strong> and <strong>Value</strong> fields without quotes.</li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-env-var-gui.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-env-var-gui.jpg" alt="" class="img_ev3q">
 <center>Figure 6: Entering Data in &#x27;GUI&#x27; Mode</center></p>
 <ul>
 <li class=""><strong>YAML mode</strong> – Raw YAML for entering key-value pairs in the format <strong><code>key: value</code></strong>. Boolean and numeric values must be wrapped in double quotes.</li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-env-var-yaml.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-env-var-yaml.jpg" alt="" class="img_ev3q">
 <center>Figure 7: Entering Data in &#x27;YAML&#x27; Mode</center></p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="for-kubernetes-external-configmap">For Kubernetes External ConfigMap<a href="#for-kubernetes-external-configmap" class="hash-link" aria-label="Direct link to For Kubernetes External ConfigMap" title="Direct link to For Kubernetes External ConfigMap" translate="no">​</a></h4>
 <p>If you have selected Data type as <code>Kubernetes External ConfigMap</code>, then no data is required, as devtron will fetch the external ConfigMap data and use it to create a ConfigMap.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-external-env.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-data-external-env.jpg" alt="" class="img_ev3q">
 <center>Figure 8: Kubernetes External ConfigMap for &#x27;Environment Variable&#x27;</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mount-data-as-data-volume">Mount Data as Data Volume<a href="#mount-data-as-data-volume" class="hash-link" aria-label="Direct link to Mount Data as Data Volume" title="Direct link to Mount Data as Data Volume" translate="no">​</a></h3>
 <p>This option allows you to create a ConfigMap by passing the content of a file. The content could be plain text, json, yaml, bash script, etc.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-vol.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-data-vol.jpg" alt="" class="img_ev3q">
 <center>Figure 9: Mounting Data as Data Volume</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="volume-mount-path">Volume Mount Path<a href="#volume-mount-path" class="hash-link" aria-label="Direct link to Volume Mount Path" title="Direct link to Volume Mount Path" translate="no">​</a></h3>
 <p>Enter the folder path where the data volume should be mounted for it to be accessible to the containers running in a pod. Your keys will be mounted as files to that volume.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-vol-mount-path.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-data-vol-mount-path.jpg" alt="" class="img_ev3q">
 <center>Figure 10: Volume Mount Path</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="set-sub-path">Set Sub Path<a href="#set-sub-path" class="hash-link" aria-label="Direct link to Set Sub Path" title="Direct link to Set Sub Path" translate="no">​</a></h3>
 <p>When mounting multiple files to the same location, you can use the <strong>Set Sub Path</strong> option to control how the files are handled. This setting allows you to control whether existing files are overwritten or preserved when mounting new files.</p>
@@ -114,13 +114,13 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <p>If <strong>Set Sub Path</strong> is disabled (unchecked), the system will delete any files already present in the <a href="#volume-mount-path" class="">specified path</a> and then mount the new files.</p>
 </li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-vol-set-subpath.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-data-vol-set-subpath.jpg" alt="" class="img_ev3q">
 <center>Figure 11: Setting Sub Path</center></p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Note</div><div class="admonitionContent_BuS1"><p>In case of Kubernetes ConfigMap, all keys will be mounted as files on the specified path.
 In case of Kubernetes External ConfigMap, manually specify the keys that should be mounted as files.</p></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="set-file-permission">Set File Permission<a href="#set-file-permission" class="hash-link" aria-label="Direct link to Set File Permission" title="Direct link to Set File Permission" translate="no">​</a></h3>
 <p>The <strong>Set File Permission</strong> option applies permissions at the ConfigMap level, not to individual keys within the ConfigMap. Enabling this option will let you enter a 3-digit standard permission value to control access to the file.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-vol-set-file-per.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-data-vol-set-file-per.jpg" alt="" class="img_ev3q">
 <center>Figure 12: Setting File Permission</center></p>
 <p>The 3-digit numeric value represents the permission settings for the file:</p>
 <ul>
@@ -143,16 +143,16 @@ In case of Kubernetes External ConfigMap, manually specify the keys that should 
 <ul>
 <li class=""><strong>GUI mode</strong> – User-friendly interface. Click the <strong>+Add</strong> button and enter the <strong>Key</strong> and <strong>Value</strong> fields without quotes.</li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-vol-gui.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-data-vol-gui.jpg" alt="" class="img_ev3q">
 <center>Figure 13: Entering Data in &#x27;GUI&#x27; Mode</center></p>
 <ul>
 <li class=""><strong>YAML mode</strong> – Raw YAML for entering key-value pairs in the format <strong><code>key: value</code></strong>. Boolean and numeric values must be wrapped in double quotes.</li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-vol-yaml.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-data-vol-yaml.jpg" alt="" class="img_ev3q">
 <center>Figure 14: Entering Data in &#x27;YAML&#x27; Mode</center></p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="for-kubernetes-external-configmap-1">For Kubernetes External ConfigMap<a href="#for-kubernetes-external-configmap-1" class="hash-link" aria-label="Direct link to For Kubernetes External ConfigMap" title="Direct link to For Kubernetes External ConfigMap" translate="no">​</a></h4>
 <p>If you have selected Data type as <code>Kubernetes External ConfigMap</code>, then no data is required as devtron will fetch the external ConfigMap along with any volumes attach with it and use it to create a ConfigMap.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-data-external-data-vol.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-data-external-data-vol.jpg" alt="" class="img_ev3q">
 <center>Figure 15: Kubernetes External ConfigMap for &#x27;Data Volume&#x27;</center></p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="update-configmap">Update ConfigMap<a href="#update-configmap" class="hash-link" aria-label="Direct link to Update ConfigMap" title="Direct link to Update ConfigMap" translate="no">​</a></h2>
@@ -169,7 +169,7 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <p>Click <strong>Save Changes</strong>.</p>
 </li>
 </ol>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-update.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-update.jpg" alt="" class="img_ev3q">
 <center>Figure 16: Updating ConfigMap</center></p>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Note</div><div class="admonitionContent_BuS1"><p>You cannot change the name of a ConfigMap. Create a new ConfigMap instead.</p></div></div>
 <hr>
@@ -191,7 +191,7 @@ Refer the <a class="" href="/docs/user-guide/global-configurations/authorization
 <p>Confirm the deletion in the dialog box.</p>
 </li>
 </ol>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/create-job/configmap-delete.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-delete.jpg" alt="" class="img_ev3q">
 <center>Figure 17: Deleting ConfigMap</center></p>
 <hr>
 <p>After configuring ConfigMaps</p>
