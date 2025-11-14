@@ -133,7 +133,7 @@ Tags are Key-value pairs used for identifying and organizing the application. Us
 3. You can click `X` icon to delete an existing tag.
 
 4. You can click the **propagation icon** <span className="inline-badge">![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg)
-<center>propagation icon</center></span> to propagate a tag (turns dark grey when propagated), click again to remove propagation.
+</span> to propagate a tag (turns dark grey when propagated), click again to remove propagation.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/overview/manage-tags-latest-1.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/manage-tags.jpg)
 <center>Figure 12: Tags</center>
