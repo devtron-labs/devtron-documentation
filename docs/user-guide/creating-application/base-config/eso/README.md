@@ -11,7 +11,7 @@ Apart from the provision to add Secrets, Devtron supports the addition of Extern
 * [HashiCorp Vault](hashicorp-eso.md)
 * Azure Secrets Manager
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/external-secrets-list.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/external-secrets-list.jpg)
 <center>List of External Secrets</center>
 
 However make sure to install [ESO chart](install-eso.md) to your cluster before adding any of the above external secrets.

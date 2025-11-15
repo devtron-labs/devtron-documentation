@@ -30,21 +30,21 @@ Once you have created the generic secret, follow these steps in the application'
 
 To add a new secret to the application, go to the **Configurations** page of the application. Then, navigate to the left pane and select the `Secrets` option and click the **Add Secret** button.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/hc-add-secret.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/add-secret.jpg)
 <center>Figure 1: Add a New Secret</center>
 
 **2. Select `HashiCorp Vault` as the External Secret Operator**
 
 After clicking the **Add Secret** button, select `HashiCorp Vault` from the dropdown menu for the `Data type` option. Provide a name for the secret you are creating, and then proceed to configure the external secret as described in the next step.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/hc-secret-type.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/hc-secret-type.jpg)
 <center>Figure 2: Select HashiCorp Vault as External Secret Operator</center>
 
 **3. Configure the secret**
 
 To configure the external secret that will be fetched from HashiCorp Vault for your application, you will need to provide specific details using the following key-value pairs:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/hc-secret-configure.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/hc-secret-configure.jpg)
 <center>Figure 3: Configure HashiCorp Vault Secret Settings</center>
 
 
@@ -58,10 +58,10 @@ To configure the external secret that will be fetched from HashiCorp Vault for y
 | `key` | Enter the name of the secret in Vault |
 | `property` | Specify the key within the Vault secret |
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/tokenSecretRef.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/tokenSecretRef.jpg)
 <center>Figure 4: Token Secret Reference Configuration</center>
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/hc-eso.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/hc-eso.jpg)
 <center>Figure 5: HashiCorp Vault ESO Secret Example</center>
 
 **4. Save the secret**
