@@ -4,32 +4,47 @@ Secrets and configmaps both are used to store environment variables but there is
 
 Secret objects let you store and manage sensitive information, such as passwords, authentication tokens, and ssh keys. Embedding this information in secrets is safer and more flexible than putting it verbatim in a Pod definition or in a container image.
 
-## Configure Secret
+## Add Secret
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg)
-<center></center>
+1. Go to **Application Management** → **Devtron Applications** → (Select Your App)
 
-Click `Add Secret` to add a new secret.
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/devtron-apps-nav.jpg)
+    <center>Figure 1: Navigating to App Configurations</center>
 
+2. Go to **Configurations** (tab) → **Base Configurations**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-2.jpg)
-<center></center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/appconfig-page.jpg)
+    <center>Figure 2: Application's 'Configurations' Page</center>
 
-| Key | Description |
-| :--- | :--- |
-| `Name` | Provide a name to your Secret |
-| `Data Type` | Provide the Data Type of your secret. To know about different Data Types available click on [Data Types](secrets.md#data-types) |
-| `Data Volume` | Specify if there is a need to add a volume that is accessible to the Containers running in a pod. |
-| `Use secrets as Environment Variable` | Select this option if you want to inject Environment Variables in your pods using Secrets. |
-| `Use secrets as Data Volume` | Select this option if you want to configure a Data Volume that is accessible to Containers running in a pod. Ensure that you provide a Volume mount path for the same. |
-| `Key-Value` | Provide a key and the corresponding value of the provided key. |
+3. Click the **+** button next to **ConfigMaps**.
+
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/add-secret.jpg)
+    <center>Figure 3: Adding Secret</center>
+
+    | Key | Description |
+    | :--- | :--- |
+    | `Name` | Provide a name to your Secret |
+    | `Data Type` | Provide the Data Type of your secret. To know about different Data Types available click on [Data Types](secrets.md#data-types) |
+    | `Data Volume` | Specify if there is a need to add a volume that is accessible to the Containers running in a pod. |
+    | `Use secrets as Environment Variable` | Select this option if you want to inject Environment Variables in your pods using Secrets. |
+    | `Use secrets as Data Volume` | Select this option if you want to configure a Data Volume that is accessible to Containers running in a pod. Ensure that you provide a Volume mount path for the same. |
+    | `Key-Value` | Provide a key and the corresponding value of the provided key. |
+
+4. Enter data in:
+   * **GUI mode** – User-friendly interface. Click **+Add** button and enter the **Key** and **Value** fields without quotes. 
+   * **YAML mode** – Raw YAML for entering key-value pairs in the format **`key: value`**. Boolean and numeric values must be wrapped in double quotes.
+
+   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/created-secret.gif)
+    <center>Figure 4: Entering the Details</center>
+
+5. You may [perform a dry run](#perform-a-dry-run) before clicking **Save**.
 
 ## Volume Mount Path
 
 Specify the volume mount folder path in `Volume Mount Path`, a path where the data volume needs to be mounted. This volume will be accessible to the containers running in a pod.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/secret-volume-mount-path.jpg)
-<center></center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/secret-volume-mount-path.jpg)
+<center>Figure 5: Entering Volume Mount Path</center>
 
 ## Sub Path
 For multiple files mount at the same location you need to check sub path `bool` field, it will use the file name (key) as sub path. 
@@ -40,24 +55,14 @@ AWS Secret Manager, AWS System Manager and Hashi Corp Vault, for these cases `Na
 File permission will be provide at the configmap level not on the each key of the configmap. it will take 3 digit standard permission for the file.
 
 
-Click `Save Secret` to save the secret.
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-4.jpg)
-<center></center>
-
-You can see the Secret is added.
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-5.gif)
-<center></center>
-
 ## Update Secrets
 
 You can update your secrets anytime later, but you cannot change the name of your secrets. If you want to change your name of secrets then you have to create a new secret.
 
 To update secrets, click the secret you wish to update.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-6.jpg)
-<center></center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/update-secret.jpg)
+<center>Figure 6: Updating Existing Secret</center>
 
 Click `Update Secret` to update your secret.
 
@@ -65,8 +70,8 @@ Click `Update Secret` to update your secret.
 
 You can delete your secret. Click your secret and click the `delete sign` to delete your secret.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-7.jpg)
-<center></center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/delete-secret.jpg)
+<center>Figure 7: Deleting a Secret</center>
 
 ## Data Types
 
@@ -121,15 +126,15 @@ $ helm install my-release external-secrets/kubernetes-external-secrets --set sec
 
 To add secrets from AWS secret manager, navigate to `Secrets` of the application and follow the steps mentioned below :
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-8.jpg)
-<center></center>
-
 1. Click `Add Secret` to add a new secret.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret.jpg)
-<center></center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/add-secret.jpg)
+    <center>Figure 8: Adding New Secret</center>
 
 2. Select `AWS Secret Manager` from dropdown of `Data type`.
+
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/aws-secret.jpg)
+    <center>Figure 9: Choosing AWS Secrets Manager</center>
 
 3. Provide a name to your secret.
 
@@ -154,5 +159,5 @@ To add secrets in AWS secret manager, do the following steps :
 2. Click `Store a new secret`.
 3. Add and save your secret.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-10.jpg)
-<center></center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/aws-side-secret.jpg)
+    <center>Figure 10: Storing Secret in AWS Secrets Manager</center>
