@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.843efe5b.css">
-<script src="/assets/js/runtime~main.2e96afd4.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.6fb3cc0e.js" defer="defer"></script>
 <script src="/assets/js/main.f6a37972.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -30,26 +30,26 @@
 <p>To add secrets from <strong>AWS Secrets Manager</strong>, we need to create a generic Kubernetes secret for AWS authentication.</p>
 <p>Create a Kubernetes secret in the namespace in which the application is to be deployed using base64 encoded AWS access-key and secret-access-key. You can use a Devtron generic chart for it.</p>
 <p><strong>Note</strong>: You don&#x27;t have to create the Kubernetes secret every time you create external secret for the respective namespace.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret-generic-chart.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/aws-secret-generic-chart.jpg" alt="" class="img_ev3q">
 <center>Figure 1: Create Kubernetes Secret for AWS Authentication</center></p>
 <p>After creating the generic secret, navigate to <code>Secrets</code> section of the application and follow the steps mentioned below :</p>
 <ol>
 <li class="">
 <p>Click <code>Add Secret</code> to add a new secret</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/add-secret.jpg" alt="" class="img_ev3q">
 <center>Figure 2: Add a New Secret</center></p>
 </li>
 <li class="">
 <p>Select <code>AWS Secret Manager</code> under <code>External Secret Operator</code> (ESO) from the dropdown of <code>Data type</code></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret-manager-dropdown.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/aws-secret.jpg" alt="" class="img_ev3q">
 <center>Figure 3: Select AWS Secrets Manager</center></p>
 </li>
 <li class="">
 <p>Configure the secret.</p>
 <table><thead><tr><th style="text-align:left">Key</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>region</code></td><td style="text-align:left">AWS region in which secret is created</td></tr><tr><td style="text-align:left"><code>accessKeyIDSecretRef.name</code></td><td style="text-align:left">Name of secret created that would be used for authentication</td></tr><tr><td style="text-align:left"><code>accessKeyIDSecretRef.key</code></td><td style="text-align:left">In generic secret created for AWS authentication, variable name in which base64 encoded AWS access-key is stored</td></tr><tr><td style="text-align:left"><code>secretAccessKeySecretRef.name</code></td><td style="text-align:left">Name of secret created that would be used for authentication</td></tr><tr><td style="text-align:left"><code>secretAccessKeySecretRef.key</code></td><td style="text-align:left">In generic secret created for AWS authentication, variable name in which base64 encoded secret-access-key is stored</td></tr><tr><td style="text-align:left"><code>secretKey</code></td><td style="text-align:left">Key name to store secret</td></tr><tr><td style="text-align:left"><code>key</code></td><td style="text-align:left">AWS Secrets Manager secret name</td></tr><tr><td style="text-align:left"><code>property</code></td><td style="text-align:left">AWS Secrets Manager secret key</td></tr></tbody></table>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-eso.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/aws-eso.jpg" alt="" class="img_ev3q">
 <center>Figure 4: Configure AWS Secret Settings</center></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-external-secret.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/aws-external-secret.jpg" alt="" class="img_ev3q">
 <center>Figure 5: AWS External Secret Configuration</center></p>
 </li>
 <li class="">
@@ -62,15 +62,15 @@
 <p>To setup ESO AWS secrets manager with Devtron using ClusterSecretsStore, follow the mentined steps:</p>
 <p><strong>1. Create a secret for AWS authentication</strong></p>
 <p>Create a Kubernetes secret in any namespace using base64 encoded AWS access-key and secret-access-key. You can use the devtron generic chart for this.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/aws-secret-generic-chart.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/aws-secret-generic-chart.jpg" alt="" class="img_ev3q">
 <center>Figure 6: Use Generic Chart</center></p>
 <p><strong>2. Create a <code>ClusterSecretStore</code></strong></p>
 <p>Create a <code>ClusterSecretStore</code> using the secret created for AWS authentication in step 1.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/clustersecretstore-yaml.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/clustersecretstore-yaml.jpg" alt="" class="img_ev3q">
 <center>Figure 7: Create ClusterSecretStore</center></p>
 <p><strong>3. Create a secret in the application using ESO AWS Secrets Manager</strong></p>
 <p>Go to the application where you want to create an external secret. Navigate to secrets section under application configuration and create a secret using ESO AWS Secrets Manager.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/app-secret-clustersecretstore.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/app-secret-clustersecretstore.jpg" alt="" class="img_ev3q">
 <center>Figure 8: Create Secret</center></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/creating-application/base-config/eso/install-eso"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Install ESO</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/creating-application/base-config/eso/gcp-eso"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Google Secrets Manager</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#eso-aws-secrets-manager-setup-with-devtron-using-clustersecretsstore" class="table-of-contents__link toc-highlight">ESO AWS secrets Manager Setup with Devtron using ClusterSecretsStore</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
               <div style="text-align: center;">
                 <div style="margin-bottom: 1rem;">

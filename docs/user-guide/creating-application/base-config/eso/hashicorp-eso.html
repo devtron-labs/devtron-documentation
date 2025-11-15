@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.843efe5b.css">
-<script src="/assets/js/runtime~main.2e96afd4.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.6fb3cc0e.js" defer="defer"></script>
 <script src="/assets/js/main.f6a37972.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -34,20 +34,20 @@ The secret should store the base64-encoded password or token obtained from vault
 <p>Once you have created the generic secret, follow these steps in the application&#x27;s Secrets section:</p>
 <p><strong>1. Create a new secret</strong></p>
 <p>To add a new secret to the application, go to the <strong>Configurations</strong> page of the application. Then, navigate to the left pane and select the <code>Secrets</code> option and click the <strong>Add Secret</strong> button.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/hc-add-secret.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/add-secret.jpg" alt="" class="img_ev3q">
 <center>Figure 1: Add a New Secret</center></p>
 <p><strong>2. Select <code>HashiCorp Vault</code> as the External Secret Operator</strong></p>
 <p>After clicking the <strong>Add Secret</strong> button, select <code>HashiCorp Vault</code> from the dropdown menu for the <code>Data type</code> option. Provide a name for the secret you are creating, and then proceed to configure the external secret as described in the next step.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/hc-secret-type.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/hc-secret-type.jpg" alt="" class="img_ev3q">
 <center>Figure 2: Select HashiCorp Vault as External Secret Operator</center></p>
 <p><strong>3. Configure the secret</strong></p>
 <p>To configure the external secret that will be fetched from HashiCorp Vault for your application, you will need to provide specific details using the following key-value pairs:</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/hc-secret-configure.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/hc-secret-configure.jpg" alt="" class="img_ev3q">
 <center>Figure 3: Configure HashiCorp Vault Secret Settings</center></p>
 <table><thead><tr><th style="text-align:left">Key</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>vault.server</code></td><td style="text-align:left">Server is the connection address for the Vaultserver, e.g: &quot;<a href="https://vault.example.com:8200" target="_blank" rel="noopener noreferrer" class="">https://vault.example.com:8200</a>&quot;</td></tr><tr><td style="text-align:left"><code>vault.path</code></td><td style="text-align:left">Specify the path where the secret is stored in Vault</td></tr><tr><td style="text-align:left"><code>tokenSecretRef.name</code></td><td style="text-align:left">Enter the name of the secret that will be used for authentication</td></tr><tr><td style="text-align:left"><code>tokenSecretRef.key</code></td><td style="text-align:left">Specify the key name within the secret that contains the token</td></tr><tr><td style="text-align:left"><code>secretKey</code></td><td style="text-align:left">Provide a name for the secret in Kubernetes</td></tr><tr><td style="text-align:left"><code>key</code></td><td style="text-align:left">Enter the name of the secret in Vault</td></tr><tr><td style="text-align:left"><code>property</code></td><td style="text-align:left">Specify the key within the Vault secret</td></tr></tbody></table>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/tokenSecretRef.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/tokenSecretRef.jpg" alt="" class="img_ev3q">
 <center>Figure 4: Token Secret Reference Configuration</center></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/hc-eso.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/hc-eso.jpg" alt="" class="img_ev3q">
 <center>Figure 5: HashiCorp Vault ESO Secret Example</center></p>
 <p><strong>4. Save the secret</strong></p>
 <p>After configuring the external secret from HashiCorp Vault, proceed to save the secret by clicking the <strong>Save</strong> button.</p>
