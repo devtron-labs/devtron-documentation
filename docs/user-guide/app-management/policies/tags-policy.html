@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.843efe5b.css">
-<script src="/assets/js/runtime~main.6fb3cc0e.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.25705adb.js" defer="defer"></script>
 <script src="/assets/js/main.f6a37972.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -29,7 +29,7 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction-">Introduction <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" class="enterprise-badge-img"></a><a href="#introduction-" class="hash-link" aria-label="Direct link to introduction-" title="Direct link to introduction-" translate="no">​</a></h2>
 <p>Managing resources in Kubernetes often requires categorizing and grouping resources for better visibility and analysis. A common use case is cost allocation. By analyzing Kubernetes labels, teams can identify which departments consume the most resources. However, this is only possible if the relevant tags are propagated as Kubernetes labels.</p>
 <p>The <strong>Tags Policy</strong> feature in Devtron allows you to enforce a tag that must be provided before application creation or before deployment to an environment. For example, you can create a tag named <code>team</code> and if it is propagated as labels to Kubernetes resources, you can easily audit the team-wise usage and resource consumption by its tag. Additionally, you can enforce deployment-specific rules for your applications if required tags are missing.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/mandatory-tag.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/mandatory-tag.gif" alt="" class="img_ev3q">
 <center>Figure 1: How Tags Policy Works</center></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="adding-tag-policy">Adding Tag Policy<a href="#adding-tag-policy" class="hash-link" aria-label="Direct link to Adding Tag Policy" title="Direct link to Adding Tag Policy" translate="no">​</a></h2>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Who Can Perform This Action?</div><div class="admonitionContent_BuS1"><p>Users need to have super-admin permission to create tag policy.</p></div></div>
@@ -58,7 +58,7 @@
 <p>If you just want to offer tag suggestions, use <code>Suggested tags</code>. These will appear as <a href="#appearance-of-suggested-tags" class="">dropdown suggestions</a> when adding tags to applications globally, and users can optionally use them if needed.</p>
 </li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/suggested-mandatory.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/suggested-mandatory.gif" alt="" class="img_ev3q">
 <center>Figure 4: Creating Suggested or Mandatory Tag</center></p>
 </li>
 <li class="">
@@ -68,12 +68,12 @@
 </li>
 <li class="">
 <p><strong>Tag Key</strong> - Enter the key from the key-value pair (tag), e.g., <em>Business Unit</em>, <em>Team</em>, <em>Owner</em>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/tag-key.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/tag-key.gif" alt="" class="img_ev3q">
 <center>Figure 6: Entering Tag Key</center></p>
 </li>
 <li class="">
 <p><strong>Value Choices</strong> - Here, you can create a list of values for the key-value pair (tag). A tag value can be a free text or you can restrict it to a set of values for the user to choose from.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/value-choices.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/value-choices.gif" alt="" class="img_ev3q">
 <center>Figure 7: Creating List of Choices</center></p>
 </li>
 </ol>
@@ -81,7 +81,7 @@
 <ol start="7">
 <li class="">
 <p><strong>Description</strong> - Write a brief description explaining the significance of the tag.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/tag-description.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/tag-description.gif" alt="" class="img_ev3q">
 <center>Figure 8: Adding Description for the Tag</center></p>
 </li>
 <li class="">
@@ -92,18 +92,18 @@
 <li class=""><strong>Block deployment stages of non-prod enviroments</strong> - Use this option if you want to prevent the user from deploying an existing application to <a class="" href="/docs/user-guide/global-configurations/cluster-and-environments#add-environment-to-a-cluster">non-production environments</a>, if mandatory tags are not configured.</li>
 <li class=""><strong>Block deployment stages of all environments</strong> - This will prevent the user from deploying an existing application to all environments if mandatory tags are not configured.</li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/allow-block.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/allow-block.gif" alt="" class="img_ev3q">
 <center>Figure 9: Deciding Deployment Restrictions</center></p>
 </li>
 <li class="">
 <p><strong>Propagate Tag</strong> - By default, tags assigned to applications in Devtron are not automatically propagated to Kubernetes resources as labels. For more information on how labels function in Kubernetes, refer to the <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/" target="_blank" rel="noopener noreferrer" class="">Kubernetes Labels Documentation</a>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/propagate-tag.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/propagate-tag.gif" alt="" class="img_ev3q">
 <center>Figure 10a: Propagating Tags</center></p>
 <br>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/propagation-enable-disable.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/propagation-enable-disable.jpg" alt="" class="img_ev3q">
 <center>Figure 10b: Enabling/Disabling Propagation</center></p>
 <br>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/inject-tags.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/inject-tags.jpg" alt="" class="img_ev3q">
 <center>Figure 10c: How Tag Propagation Works</center></p>
 </li>
 </ol>
@@ -114,7 +114,7 @@
 <ol start="10">
 <li class="">
 <p>(Optional) Click the <strong><code>+</code></strong> option to create more suggested tags or more mandatory tags in one go.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/add-more-tags.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/add-more-tags.jpg" alt="" class="img_ev3q">
 <center>Figure 11: Adding More Tag</center></p>
 </li>
 <li class="">
@@ -135,21 +135,21 @@
 <li class="">Enable/Disable the propagation of tags</li>
 </ul>
 <p>Once done, click <strong>Update</strong> to apply the changes.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/edit-tags.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/edit-tags.gif" alt="" class="img_ev3q">
 <center>Figure 12: Editing a Tag</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="editing-in-bulk">Editing in Bulk<a href="#editing-in-bulk" class="hash-link" aria-label="Direct link to Editing in Bulk" title="Direct link to Editing in Bulk" translate="no">​</a></h3>
 <p>You may use the checkboxes to add/remove projects from multiple tags at once as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/add-remove-projects.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/add-remove-projects.gif" alt="" class="img_ev3q">
 <center>Figure 13: Adding/Removing projects in Bulk</center></p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="deleting-a-tag">Deleting a Tag<a href="#deleting-a-tag" class="hash-link" aria-label="Direct link to Deleting a Tag" title="Direct link to Deleting a Tag" translate="no">​</a></h2>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Who Can Perform This Action?</div><div class="admonitionContent_BuS1"><p>Users need to have super-admin permission to delete tags.</p></div></div>
 <p>If you delete a &#x27;Suggested Tag&#x27;, it will no longer show up as a suggestion to your users while adding tags. If it&#x27;s a &#x27;Mandatory Tag&#x27;, the deployment rules (if any, associated with that tag) will no longer be enforced.</p>
 <p>However, this action will not delete the applied tag from existing applications.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/delete-tag.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/delete-tag.gif" alt="" class="img_ev3q">
 <center>Figure 14: Deleting a Tag</center></p>
 <p>If you wish to delete multiple tags, you may use the checkboxes to select the tags and delete them from the floating widget as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/bulk-delete-tags.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/bulk-delete-tags.gif" alt="" class="img_ev3q">
 <center>Figure 15: Deleting Multiple Tags</center></p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="results">Results<a href="#results" class="hash-link" aria-label="Direct link to Results" title="Direct link to Results" translate="no">​</a></h2>
@@ -157,36 +157,36 @@
 <ul>
 <li class="">
 <p>The mandatory tag is available for users to configure after they select the project in the app creation page. It is marked by a red asterisk.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/mandatory-tag-result1.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/mandatory-tag-result.gif" alt="" class="img_ev3q">
 <center>Figure 16: Mandatory Tag - App Creation Page</center></p>
 </li>
 <li class="">
 <p>For an existing application, users can configure it from the <strong>Overview</strong> page of the application.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/mandatory-tag-overview.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/mandatory-tag-overview.gif" alt="" class="img_ev3q">
 <center>Figure 17: Mandatory Tag - Overview Page</center></p>
 </li>
 <li class="">
 <p>In a project where mandatory tags are enabled, if the user does not provide values for the mandatory tags, the user cannot create an app in that project.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/mandatory-tag-result3.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/mandatory-tag-save.gif" alt="" class="img_ev3q">
 <center>Figure 18: App creation not allowed</center></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="appearance-of-suggested-tags">Appearance of Suggested Tags<a href="#appearance-of-suggested-tags" class="hash-link" aria-label="Direct link to Appearance of Suggested Tags" title="Direct link to Appearance of Suggested Tags" translate="no">​</a></h3>
 <p>Users can see a dropdown list of your suggested tags while creating a new app or on the <strong>Overview</strong> page of an existing application.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/suggested-tag-result.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/suggested-tag-result.gif" alt="" class="img_ev3q">
 <center>Figure 19: Suggested Tags in Dropdown</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="impact-on-deployment-pipelines">Impact on Deployment Pipelines<a href="#impact-on-deployment-pipelines" class="hash-link" aria-label="Direct link to Impact on Deployment Pipelines" title="Direct link to Impact on Deployment Pipelines" translate="no">​</a></h3>
 <p>If an existing application belongs to a project where mandatory tags are enabled along with deployment restrictions, if the user does not provide values for the mandatory tags, they cannot deploy that app to the intended environment (check step 9 of <a href="#adding-tag-policy" class="">adding tags</a>).</p>
 <p>The same is true for auto-triggering deployment pipelines. A new image available after the build stage will not auto-trigger the deployment pipeline due to the missing mandatory tags.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/deployment-impact.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/deployment-impact.gif" alt="" class="img_ev3q">
 <center>Figure 20: Deployment Restriction</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="impact-on-application-group">Impact on Application Group<a href="#impact-on-application-group" class="hash-link" aria-label="Direct link to Impact on Application Group" title="Direct link to Impact on Application Group" translate="no">​</a></h3>
 <p>Similarly, if deployment restrictions apply due to missing mandatory tags, users cannot deploy apps to the intended environment from the <a class="" href="/docs/user-guide/application-groups">Application Group</a>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/application-group-impact.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/application-group-impact.gif" alt="" class="img_ev3q">
 <center>Figure 21: Deployment Restriction in Application Group</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="impact-on-release">Impact on Release<a href="#impact-on-release" class="hash-link" aria-label="Direct link to Impact on Release" title="Direct link to Impact on Release" translate="no">​</a></h3>
 <p>If a user attempts to <a class="" href="/docs/user-guide/software-distribution-hub/release-hub#deploying-release">deploy a release</a> that contains applications with missing mandatory tags, the deployment will be blocked if restrictions apply.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/mandatory-tags/release-blocked.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/release-blocked.gif" alt="" class="img_ev3q">
 <center>Figure 22: Deployment Restriction in Release (SDH)</center></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/app-management/policies/pull-image-digest"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Pull Image Digest</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/app-management/policies/filter-condition"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Filter Condition</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction-" class="table-of-contents__link toc-highlight">Introduction <a></a></a></li><li><a href="#adding-tag-policy" class="table-of-contents__link toc-highlight">Adding Tag Policy</a></li><li><a href="#editing-a-tag" class="table-of-contents__link toc-highlight">Editing a Tag</a><ul><li><a href="#editing-in-bulk" class="table-of-contents__link toc-highlight">Editing in Bulk</a></li></ul></li><li><a href="#deleting-a-tag" class="table-of-contents__link toc-highlight">Deleting a Tag</a></li><li><a href="#results" class="table-of-contents__link toc-highlight">Results</a><ul><li><a href="#appearance-of-mandatory-tags" class="table-of-contents__link toc-highlight">Appearance of Mandatory Tags</a></li><li><a href="#appearance-of-suggested-tags" class="table-of-contents__link toc-highlight">Appearance of Suggested Tags</a></li><li><a href="#impact-on-deployment-pipelines" class="table-of-contents__link toc-highlight">Impact on Deployment Pipelines</a></li><li><a href="#impact-on-application-group" class="table-of-contents__link toc-highlight">Impact on Application Group</a></li><li><a href="#impact-on-release" class="table-of-contents__link toc-highlight">Impact on Release</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
               <div style="text-align: center;">
                 <div style="margin-bottom: 1rem;">
