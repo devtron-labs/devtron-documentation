@@ -37,7 +37,7 @@ Secret objects let you store and manage sensitive information, such as passwords
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/created-secret.gif)
     <center>Figure 4: Entering the Details</center>
 
-5. You may [perform a dry run](#perform-a-dry-run) before clicking **Save**.
+5. You may perform a dry run before clicking **Save**.
 
 ## Volume Mount Path
 
