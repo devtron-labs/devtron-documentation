@@ -2,7 +2,7 @@
 
 The StatefulSet chart in Devtron allows you to deploy and manage stateful applications. StatefulSet is a Kubernetes resource that provides guarantees about the ordering and uniqueness of Pods during deployment and scaling. 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/select-statefulset.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-types/select-statefulset.jpg)
 <center>Figure 1: Choosing 'StatefulSet' Chart</center>
 
 It supports only `ONDELETE` and `ROLLINGUPDATE` deployment strategy.
@@ -973,7 +973,7 @@ It gives the realtime metrics of the deployed applications
 
 If you want to see application metrics like different HTTP status codes metrics, application throughput, latency, response time. Enable the Application metrics from below the deployment template Save button. After enabling it, you should be able to see all metrics on App detail page. By default it remains disabled.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-metrics.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-types/app-metrics.jpg)
 <center>Figure 3: Application Metrics</center>
 
 Once all the Deployment template configurations are done, click on `Save` to save your deployment configuration. Now you are ready to create [Workflow](../../workflow/README.md) to do CI/CD.
