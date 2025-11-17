@@ -55,7 +55,7 @@ To create a new **Clone Job** in Devtron, follow these steps:
 
 2. Click the **Create** button in the top-right corner and select **Job** from the drop-down list.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/select-create-job-latest.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/select-create-job.jpg)
 <center>Figure 4: Selecting Job</center>
 
 3. The **Create Job** page opens. From the left panel, select **Clone Job** and then choose a job to clone. 
