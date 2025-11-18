@@ -23,7 +23,7 @@ Whenever tools like Argo CD or Flux CD recognize changes in the Git repository, 
 ## Steps to Configure GitOps
 
 :::caution Who Can Perform This Action?
-Users need to have [Super-Admin](user-access.md#assign-super-admin-permissions) permission to configure GitOps.
+Users need to have [Super-Admin](./authorization/user-access.md#grant-super-admin-permission) permission to configure GitOps.
 
 :::
 

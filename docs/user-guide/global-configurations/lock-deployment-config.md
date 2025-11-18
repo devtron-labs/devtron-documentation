@@ -195,7 +195,7 @@ Only a super-admin, manager, or application admin can edit the configuration val
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/updating-changes.jpg)
 <center>Figure 18: Updating Deployment Config</center>
 
-    However, if it's a [protected template](../../user-guide/creating-application/config-approval.md), the user will require the approval of a [configuration approver](./user-access.md#devtron-apps-permissions) as shown below.
+    However, if it's a [protected template](../../user-guide/creating-application/config-approval.md), the user will require the approval of a [configuration approver](./authorization/user-access.md#devtron-apps-permissions) as shown below.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/lock-dt/proposing-changes.jpg)
 <center>Figure 19: Proposing Changes to Protected Config</center>

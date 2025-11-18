@@ -28,7 +28,7 @@ This guide covers how to:
 ## Select a Deployment Chart Type
 
 :::caution Who Can Perform This Action?
-Users need to have [Admin role](../../../user-guide/global-configurations/user-access.md#user-roles-and-permissions) or above to select a chart.
+Users need to have [Admin role](../../../user-guide/global-configurations/authorization/user-access.md#roles-available-for-devtron-apps) or above to select a chart.
 
 :::
 
@@ -138,7 +138,7 @@ If you wish to perform additional configurations, click the **Switch to Advanced
 #### Customize the GUI <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 :::caution Who Can Perform This Action?
-Only a [Super-Admin](../../global-configurations/user-access.md#assign-super-admin-permissions) can customize the GUI section.
+Only a [Super-Admin](../../global-configurations/authorization/user-access.md#grant-super-admin-permission) can customize the GUI section.
 
 :::
 

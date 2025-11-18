@@ -29,7 +29,7 @@ When you add a chart repository and/or an OCI registry, the sources along with t
 ## Add a Chart Source
 
 :::caution Who Can Perform This Action?
-Only a [Super Admin](../global-configurations/user-access.md#assign-super-admin-permissions) can add a chart source. The **Source** button in the **Chart Store** page is visible only to Super Admins.
+Only a [Super Admin](../global-configurations/authorization/user-access.md#grant-super-admin-permission) can add a chart source. The **Source** button in the **Chart Store** page is visible only to Super Admins.
 
 :::
 

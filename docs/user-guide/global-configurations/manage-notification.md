@@ -54,7 +54,7 @@ You can configure notifications in Devtron in the following four ways:
 ### Email SES Configuration
 
 :::caution Who Can Perform This Action?
-Only [Super-Admins](user-access.md) can create and manage SES configurations.
+Only [Super-Admins](./authorization/user-access.md) can create and manage SES configurations.
 
 :::
 
@@ -96,7 +96,7 @@ Now that the Email (SES) configuration is set up, you can proceed to [Add Notifi
 ### Email SMTP Configuration
 
 :::caution Who Can Perform This Action?
-Only [Super-Admins](user-access.md) can create and manage SMTP configurations.
+Only [Super-Admins](./authorization/user-access.md) can create and manage SMTP configurations.
 
 :::
 
@@ -141,7 +141,7 @@ Now that the Email (SMTP) configuration is set up, you can proceed to [Add Notif
 ### Slack Configuration
 
 :::caution Who Can Perform This Action?
-Only [Super-Admins](user-access.md) can create and manage Slack configurations.
+Only [Super-Admins](./authorization/user-access.md) can create and manage Slack configurations.
 
 :::
 
@@ -177,7 +177,7 @@ Now that the Slack configuration is set up, you can proceed to [Add Notification
 ### Webhook Configuration
 
 :::caution Who Can Perform This Action?
-Only [Super-Admins](user-access.md) can create and manage Webhook configurations.
+Only [Super-Admins](./authorization/user-access.md) can create and manage Webhook configurations.
 :::
 
 
