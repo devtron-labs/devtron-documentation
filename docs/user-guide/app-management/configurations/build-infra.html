@@ -18,8 +18,8 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.843efe5b.css">
-<script src="/assets/js/runtime~main.c856fb89.js" defer="defer"></script>
-<script src="/assets/js/main.d164e724.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.be9b860f.js" defer="defer"></script>
+<script src="/assets/js/main.adda3213.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -34,17 +34,17 @@
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="configure-build-infra">Configure Build Infra<a href="#configure-build-infra" class="hash-link" aria-label="Direct link to Configure Build Infra" title="Direct link to Configure Build Infra" translate="no">​</a></h2>
 <p>From the left sidebar, go to <strong>Application Management</strong> → <strong>Configurations</strong> → <strong>Build Infra</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/gc-build-infra.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/build-infra-nav.jpg" alt="" class="img_ev3q">
 <center>Figure 1: Global Configurations - Build Infra</center></p>
 <p>Under <strong>Profiles</strong> tab, you will see the <a href="#global-profile" class="">Global Profile</a> and a list of <a href="#creating-custom-profile-" class="">Custom Profiles</a> (if they exist). Setting up profiles makes it easier for you to manage the build infra configurations, ensuring its reusability in the long term.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="global-profile">Global Profile<a href="#global-profile" class="hash-link" aria-label="Direct link to Global Profile" title="Direct link to Global Profile" translate="no">​</a></h3>
 <p>This contains the default infra configuration applicable to all the applications, be it large or small.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/default-profile.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/global-profile.jpg" alt="" class="img_ev3q">
 <center>Figure 2: Global Profile</center></p>
 <p>You may click it to modify the following:</p>
-<table><thead><tr><th style="text-align:left">Field</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><strong>CPU</strong></td><td style="text-align:left">Processor core allocated to the build process. See <a href="#cpu-units" class="">CPU units</a>.</td></tr><tr><td style="text-align:left"><strong>Memory</strong></td><td style="text-align:left">RAM allocated to the build process. See <a href="#memory-units" class="">memory units</a>.</td></tr><tr><td style="text-align:left"><strong>Build Timeout</strong></td><td style="text-align:left">Max. time limit allocated to the build process. See <a href="#timeout-units" class="">timeout units</a>.</td></tr><tr><td style="text-align:left"><strong>Node Selector</strong> <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a></td><td style="text-align:left">Node Selector are key-value pair labels to match Pods with Nodes. To learn more, refer to <a href="https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector" target="_blank" rel="noopener noreferrer" class="">nodeSelector</a> page.</td></tr><tr><td style="text-align:left"><strong>Toleration</strong> <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a></td><td style="text-align:left">A Toleration allow a pod to be scheduled on a Node that has a matching Taint. To learn more, refer to <a href="https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/" target="_blank" rel="noopener noreferrer" class="">Taints and Toleration</a> page.</td></tr><tr><td style="text-align:left"><strong>ConfigMaps</strong> <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a></td><td style="text-align:left">Key Value pairs to store non-sensitive configurations. Refer to <a class="" href="/docs/user-guide/creating-application/base-config/config-maps">ConfigMaps</a>.</td></tr><tr><td style="text-align:left"><strong>Secrets</strong> <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12"></a></td><td style="text-align:left">Key Value pairs to store sensitive configurations. Refer to <a class="" href="/docs/user-guide/creating-application/base-config/secrets">Secrets</a>.</td></tr></tbody></table>
+<table><thead><tr><th style="text-align:left">Field</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><strong>CPU</strong></td><td style="text-align:left">Processor core allocated to the build process. See <a href="#cpu-units" class="">CPU units</a>.</td></tr><tr><td style="text-align:left"><strong>Memory</strong></td><td style="text-align:left">RAM allocated to the build process. See <a href="#memory-units" class="">memory units</a>.</td></tr><tr><td style="text-align:left"><strong>Build Timeout</strong></td><td style="text-align:left">Max. time limit allocated to the build process. See <a href="#timeout-units" class="">timeout units</a>.</td></tr><tr><td style="text-align:left"><strong>Node Selector</strong> <a href="https://devtron.ai/pricing" target="_blank"> <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" alt="Enterprise Feature" class="enterprise-badge-img"></a></td><td style="text-align:left">Node Selector are key-value pair labels to match Pods with Nodes. To learn more, refer to <a href="https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector" target="_blank" rel="noopener noreferrer" class="">nodeSelector</a> page.</td></tr><tr><td style="text-align:left"><strong>Toleration</strong> <a href="https://devtron.ai/pricing" target="_blank"> <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" alt="Enterprise Feature" class="enterprise-badge-img"></a></td><td style="text-align:left">A Toleration allow a pod to be scheduled on a Node that has a matching Taint. To learn more, refer to <a href="https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/" target="_blank" rel="noopener noreferrer" class="">Taints and Toleration</a> page.</td></tr><tr><td style="text-align:left"><strong>ConfigMaps</strong> <a href="https://devtron.ai/pricing" target="_blank"> <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" alt="Enterprise Feature" class="enterprise-badge-img"></a></td><td style="text-align:left">Key Value pairs to store non-sensitive configurations. Refer to <a class="" href="/docs/user-guide/creating-application/base-config/config-maps">ConfigMaps</a>.</td></tr><tr><td style="text-align:left"><strong>Secrets</strong> <a href="https://devtron.ai/pricing" target="_blank"> <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" alt="Enterprise Feature" class="enterprise-badge-img"></a></td><td style="text-align:left">Key Value pairs to store sensitive configurations. Refer to <a class="" href="/docs/user-guide/creating-application/base-config/secrets">Secrets</a>.</td></tr></tbody></table>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Note</div><div class="admonitionContent_BuS1"><p>ConfigMaps and Secrets defined here will be used at the time of build, not during deployment.</p></div></div>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/default-infra-config.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/default-infra-config.jpg" alt="" class="img_ev3q">
 <center>Figure 3: Editing Global Profile</center></p>
 <p>Furthermore, CPU and Memory have 2 fields each:</p>
 <table><thead><tr><th style="text-align:left">Field</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><strong>Request</strong></td><td style="text-align:left">This field is use to specify the minimum guaranteed amount of CPU/Memory resources your application needs for its CI build. In our example, we required 1500m or 1.5 cores CPU along with 6 GB of RAM.</td></tr><tr><td style="text-align:left"><strong>Limit</strong></td><td style="text-align:left">This field is use to set the maximum amount of CPU/Memory resources the build process can use, even if there is a lot available in the cluster.</td></tr></tbody></table>
@@ -53,27 +53,27 @@
 <ol>
 <li class="">
 <p>Click <strong>Create Profile</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/create-new-profile.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/create-new-profile.jpg" alt="" class="img_ev3q">
 <center>Figure 4: Creating Custom Profile</center></p>
 </li>
 <li class="">
 <p>Enter a name for the profile along with a brief description (optional) and click <strong>Create</strong> button.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/new-profile-fields.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/new-profile-fields.jpg" alt="" class="img_ev3q">
 <center>Figure 5: Entering Details</center></p>
 </li>
 <li class="">
 <p>Your custom profile will appear under the list of custom profiles as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/build-infra-profile-created.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/build-infra-profile-created.jpg" alt="" class="img_ev3q">
 <center>Figure 6: Profile Created</center></p>
 </li>
 <li class="">
 <p>Click on your custom profile; a new page will open displaying the custom runner configuration which is inherited from global profile by default.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/filled-profile-fields.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/filled-profile-fields.jpg" alt="" class="img_ev3q">
 <center>Figure 7: Editing Profile</center></p>
 </li>
 <li class="">
 <p>To modify a specific configuration, click the <strong>edit</strong> icon next to that configuration, and turn off the <strong>Inherit</strong> toggle; this will stop that configuration from being inherited from global profile.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/new-profile-listed.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/new-profile-listed.jpg" alt="" class="img_ev3q">
 <center>Figure 8: Configuring Profile</center></p>
 </li>
 <li class="">
@@ -134,46 +134,46 @@
 <ol>
 <li class="">
 <p>Go to the <strong>Applications</strong> tab.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/applications-tab.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/applications-tab.jpg" alt="" class="img_ev3q">
 <center>Figure 9: Applications Tab</center></p>
 </li>
 <li class="">
 <p>Choose an application and click the dropdown below it.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-dropdown.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/profile-dropdown.jpg" alt="" class="img_ev3q">
 <center>Figure 10: Profile Dropdown</center></p>
 </li>
 <li class="">
 <p>Choose the profile you wish to apply from the dropdown.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-selection.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/profile-selection.jpg" alt="" class="img_ev3q">
 <center>Figure 11: Selecting a Profile</center></p>
 </li>
 <li class="">
 <p>Click <strong>Change</strong> to apply the profile to your application.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/confirm-profile-change.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/confirm-profile-change.jpg" alt="" class="img_ev3q">
 <center>Figure 12: Confirming Profile Change</center></p>
 </li>
 </ol>
 <div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Tip</div><div class="admonitionContent_BuS1"><p>If you missed creating a profile but selected your application(s), you can use the &#x27;Create Profile&#x27; button. This will quickly open a new tab for creating a profile. Once done, you can return and click the refresh icon as shown below.</p></div></div>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/quick-profile-creation.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/quick-profile-creation.jpg" alt="" class="img_ev3q">
 <center>Figure 13: Quick Profile Creation</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="performing-bulk-action">Performing Bulk Action<a href="#performing-bulk-action" class="hash-link" aria-label="Direct link to Performing Bulk Action" title="Direct link to Performing Bulk Action" translate="no">​</a></h3>
 <p>If you wish to apply a profile to multiple applications at once, you can do that too.</p>
 <p>Simply use the checkboxes to select the applications. You can do this even if there are many applications spanning multiple pages. You will see a draggable floating widget as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/floating-widget.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/floating-widget.jpg" alt="" class="img_ev3q">
 <center>Figure 14: Floating Widget</center></p>
 <p>Select the profile you wish to apply from the dropdown and confirm the changes.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-selection-bulk.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/profile-selection-bulk.jpg" alt="" class="img_ev3q">
 <center>Figure 15: Selecting a Profile</center></p>
 <p>Once you apply a profile, it will show the count of applications attached to it.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-applicable-count.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/profile-applicable-count.jpg" alt="" class="img_ev3q">
 <center>Figure 16: Count of Applications</center></p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="editing-or-deleting-profile">Editing or Deleting Profile<a href="#editing-or-deleting-profile" class="hash-link" aria-label="Direct link to Editing or Deleting Profile" title="Direct link to Editing or Deleting Profile" translate="no">​</a></h2>
 <p>You can edit or delete a custom profile using the respective icons as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/edit-delete-icons-v2.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/edit-delete.jpg" alt="" class="img_ev3q">
 <center>Figure 17: Edit and Delete Icons</center></p>
 <p>If you delete a profile attached to one or more applications, the <a href="#global-profile" class="">global profile</a> will apply from the next build.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/delete-dialog.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/delete-dialog.jpg" alt="" class="img_ev3q">
 <center>Figure 18: Confirm Profile Deletion</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="need-more-options">Need More Options?<a href="#need-more-options" class="hash-link" aria-label="Direct link to Need More Options?" title="Direct link to Need More Options?" translate="no">​</a></h3>
 <p>If you need extra control on the build infra configuration apart from CPU, memory, and build timeout, feel free to open a <a href="https://github.com/devtron-labs/devtron/issues" target="_blank" rel="noopener noreferrer" class="">GitHub issue</a> for us to help you.</p>
