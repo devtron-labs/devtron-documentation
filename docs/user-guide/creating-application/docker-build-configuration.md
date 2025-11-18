@@ -12,14 +12,14 @@ For **build configuration**, you must provide information in the sections as giv
 * [Build the Container Image](#build-the-container-image)
 * [Advanced Options](#advanced-options)
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-configuration-section.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-configurations/build-configuration-section.jpg)
 <center>Figure 1: Build Configuration Section</center>
 
 ## Store Container Image
 
 The following fields are provided on the **Store Container Image** section:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/store-container-registry.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-configurations/store-container-registry.jpg)
 <center>Figure 2: Entering Docker Repo Details</center>
 
 | Field | Description |
@@ -29,7 +29,7 @@ The following fields are provided on the **Store Container Image** section:
 
 > If you are using Docker Hub account, you need to enter the repository name along with your username. For example, if your username is *nightdocker* and repo name is *banking-nxt-frontend*, then enter `nightdocker/banking-nxt-frontend` instead of only `banking-nxt-frontend`.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/docker-repo.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-configurations/docker-repo.jpg)
 <center>Figure 3: Example Docker Repo</center>
 
 
@@ -46,7 +46,7 @@ You can choose one of the following options to build your container image:
 
 A `Dockerfile` is a text document that contains all the commands which you can call on the command line to build an image.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/i-have-a-dockerfile.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-configurations/i-have-a-dockerfile.jpg)
 <center>Figure 4: Marking Dockerfile as Available</center>
 
 | Field | Description |
@@ -58,7 +58,7 @@ A `Dockerfile` is a text document that contains all the commands which you can c
 
 With the option **Create Dockerfile**, you can create a `Dockerfile` from the available templates. You can edit any selected Dockerfile template as per your build configuration requirements.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/create-dockerfile.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-configurations/create-dockerfile.jpg)
 <center>Figure 5: Creating a Dockerfile</center>
 
 | Field | Description |
@@ -70,7 +70,7 @@ With the option **Create Dockerfile**, you can create a `Dockerfile` from the av
 
 With the option **Build without Dockerfile**, you can use Buildpacks to automatically build the image for your preferred language and framework.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-without-dockerfile.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-configurations/build-without-dockerfile.jpg)
 <center>Figure 6: Building without Dockerfile</center>
 
 | Field | Description |
@@ -101,10 +101,10 @@ You can add Key/Value pair by clicking **Add argument**.
 
 Using this option, you can build images for a specific or multiple **architectures and operating systems (target platforms)**. You can select the target platform from the drop-down list or can type to select a customized target platform.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/set-target-platform.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-configurations/set-target-platform.jpg)
 <center>Figure 7a: Selecting Target Platform from Drop-down</center>
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/set-target-platform-2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-configurations/set-target-platform-2.jpg)
 <center>Figure 7b: Entering Custom Target Platform</center>
 
 Before selecting a customized target platform, please ensure that the architecture and the operating system are supported by the `registry type` you are using, otherwise build will fail. Devtron uses BuildX to build images for multiple target Platforms, which requires higher CI worker resources. To allocate more resources, you can increase value of the following parameters in the `devtron-cm` configmap in `devtroncd` namespace.
@@ -128,7 +128,7 @@ The Target Platform feature might not work in minikube & microk8s clusters as of
    * Key
    * Value
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/docker-build-arguments.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-configurations/docker-build-arguments.jpg)
 <center>Figure 8: Entering Docker Build Arguments</center>
 
 These fields will contain the key parameter and the value for the specified key for your [docker build](https://docs.docker.com/engine/reference/commandline/build/#options). This field is Optional. If required, this can be overridden at [CI step](../deploying-application/triggering-ci.md).

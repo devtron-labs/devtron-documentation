@@ -2,7 +2,7 @@
 
 ## Introduction 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/deployment-template.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/deployment-template.jpg)
 <center>Figure 1: Deployment Template</center>
 
 In Devtron, a [Deployment Template](../../../reference/glossary.md#deployment-template) defines how your application should run by defining its specifications. Devtron uses [Helm charts](../../../reference/glossary.md#helm-chartspackages) to manage these deployments, allowing you to control everything from [Resource Allocation](../../../reference/glossary.md#resource-allocation) to environment variables. 
@@ -34,12 +34,12 @@ Users need to have [Admin role](../../../user-guide/global-configurations/user-a
 
 1. Go to the **Configurations** page of your application.
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-config-page.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/app-config-page.jpg)
 <center>Figure 2: Application's 'Configurations' Page</center>
 
 2. Click **Base Configuration** → **Deployment Template**.
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/click-baseconfig.gif)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/click-baseconfig.gif)
 <center>Figure 3: Navigating to Base Configurations</center>
 
 3. Select the **Chart** drop-down box. The following tabs are displayed:
@@ -48,10 +48,10 @@ Users need to have [Admin role](../../../user-guide/global-configurations/user-a
 
   * [Custom charts](../../global-configurations/deployment-charts.md) - Displays your custom deployment charts (if available). To create a custom deployment chart, refer to [Deployment Charts](../../global-configurations/deployment-charts.md).
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/deployment-charts-devtron.gif)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/deployment-charts-devtron.gif)
 <center>Figure 4a: Charts by Devtron</center>
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/deployment-charts-custom.gif)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/deployment-charts-custom.gif)
 <center>Figure 4b: Custom Charts</center>
 
 :::danger Important Note
@@ -70,12 +70,12 @@ Users need to have [Admin role](../../../user-guide/global-configurations/author
 
 Devtron maintains multiple chart versions for each chart type. Additionally, each chart version has a supporting README file that you can use to know more about the features and variables.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/readme-version.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/readme-version.gif)
 <center>Figure 5: Accessing the README file</center>
 
 Once you [select a deployment chart](#select-a-deployment-chart-type), choose a chart version with which you wish to deploy your application from the **Version** drop-down box. By default, the latest version of the helm chart is selected.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/chart-version.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/chart-version.jpg)
 <center>Figure 6: Choosing the Chart Version</center>
 
 ---
@@ -97,7 +97,7 @@ You can edit a deployment template using the following two ways:
 
 If you prefer to use a simple way to configure your chosen deployment chart, select **GUI**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/basic-gui.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/basic-gui.jpg)
 <center>Figure 7: GUI Option</center>
 
 By default, the following fields are commonly available for you to modify in the **GUI** section of most charts:
@@ -125,7 +125,7 @@ By default, the following fields are commonly available for you to modify in the
 
 If you wish to perform additional configurations, click the **Switch to Advanced** button or **YAML** button. Or [perform a dry run](#perform-a-dry-run) before saving your configuration.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/yaml-switch.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/yaml-switch.jpg)
 <center>Figure 8: Switch to Advanced (YAML Method)</center>
 
 :::info Note
@@ -250,7 +250,7 @@ PUT {{DEVTRON_BASEURL}}/orchestrator/deployment/template/schema
 
 If you prefer to perform additional configurations in your chosen deployment template, select **YAML**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/yaml-switch.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/yaml-switch.jpg)
 <center>Figure 9: YAML Option</center>
 
 Every chart version has its own YAML file that provides specifications for your application. To make it easy to use, we have created templates for the YAML file and added some variables inside the YAML. You can provide or change the values of these variables as per your requirement.
@@ -280,12 +280,12 @@ The availability of application metrics depends on the selected chart type and v
 
 To enable this, turn on the **Show application metrics** toggle.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/show-application-metrics.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/show-application-metrics.jpg)
 <center>Figure 10: Enabling Application Metrics</center>
 
 Once enabled, you can view the application metrics on the **App Details** page.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-metrics.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/app-metrics.jpg)
 <center>Figure 11: Application metrics on 'App Details' page</center>
 
 :::info Important
@@ -300,7 +300,7 @@ Before saving your configured deployment template, you can use the **Dry Run** o
 
 This feature helps you verify your configurations, detect issues, and ensure correctness before actual deployment.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/dry-run-dt.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/dry-run-dt.gif)
 <center>Figure 12: Show application metrics</center>
 
 Your configurations will appear in the left pane, while the right pane will display a section named `Manifest generated from merged` showing the computed Kubernetes manifests, each representing a separate resource after merging all your changes.
@@ -316,7 +316,7 @@ Only a super-admin, manager, and admin can edit the configuration values.
 
 Any changes made to the deployment template will require approval if an approval policy is enforced. To check if your deployment template is protected, check the stamp/approve symbol as shown below.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/protected-dt.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/protected-dt.jpg)
 <center>Figure 13: Checking Protected Configuration</center>
 
 ### Request Approval for Changes
@@ -325,12 +325,12 @@ Let's assume you are the application admin and your deployment template in **Bas
 
 1. In the YAML editor of the deployment template, modify the values. 
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/edit-deployment-template.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/edit-deployment-template.jpg)
 <center>Figure 14: Selecting Values to Change</center>
 
 2. You can change the value of a key to a desired value as shown below. Once done, click the **Save Changes** button.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/changed-values.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/changed-values.jpg)
 <center>Figure 15: Changing Values</center>
 
 :::info What if the keys are locked from editing?
@@ -346,12 +346,12 @@ You cannot modify locked keys in deployment template unless you are a super-admi
 
     Since we are proposing the changes immediately, click **Propose Changes**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/propose-changes.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/propose-changes.gif)
 <center>Figure 16: Proposing Changes</center>
 
 4. You can also view the approval status if you wish.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/approval-status.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/approval-status.jpg)
 <center>Figure 17: Viewing the Approval Status</center>
 
 :::info Can I approve my own changes?
@@ -361,7 +361,7 @@ No, the one who performs the edits cannot approve their own changes. A different
 
 Only one draft can exist at time and you cannot create multiple drafts. In the top-right corner, you have the option to discard the draft if you don't wish to proceed with the edits you made. 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/discard-draft.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/discard-draft.jpg)
 <center>Figure 18: Discarding the Draft</center>
 
 ### Grant Approval for Changes
@@ -373,7 +373,7 @@ Only a valid approver or a Super-Admin can approve the changes made to the deplo
 
 Go to the edited configuration file to review and approve the changes as shown below.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/approval-screen.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-template/approval-screen.jpg)
 <center>Figure 19: Approving the Changes</center>
 
 :::info Note

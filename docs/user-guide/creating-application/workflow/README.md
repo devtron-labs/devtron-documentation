@@ -6,7 +6,7 @@ After configuring the **Build Configurations** and **Base Configurations**, the 
 
 In Devtron, a **Workflow** is a logical sequence of different stages(pipelines) used for continuous integration and continuous deployment of an application. 
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/workflow-intro.gif)
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/ci-pipeline/workflow-intro.gif)
 <center>Figure 1: Workflow Editor</center>
 
 ---
