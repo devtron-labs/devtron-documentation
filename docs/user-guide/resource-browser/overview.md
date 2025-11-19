@@ -1,6 +1,6 @@
 # Overview
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-browser-overview.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/overview/resource-browser-overview.jpg)
 <center>Figure 1: Resource Browser - Overview Page</center>
 
 ## Resource Utilization
@@ -52,7 +52,7 @@ Whenever you upgrade your Kubernetes version, the API versions change and your w
 
 The **Check Compatibility** feature within Resource Browser scans your cluster and automatically identifies all such resources/workloads that need manual intervention before proceeding with an actual cluster upgrade.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/check-compatibility.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/overview/check-compatibility.jpg)
 <center>Figure 2: Checking Compatibility</center>
 
 ### Walkthrough
