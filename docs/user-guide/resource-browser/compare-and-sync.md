@@ -12,7 +12,7 @@ The Compare & Sync feature in Devtron allows you to:
 
 Refer to [Use Cases](#use-cases) to know more on how this feature can help you. 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/compare-sync-highlighted.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/compare-sync/compare-sync-highlighted.jpg)
 <center>Figure 1: Compare & Sync Feature</center>
 
 :::caution Who Can Perform This Action?
@@ -26,29 +26,29 @@ Only a [Super-Admin](../global-configurations/authorization/user-access.md#grant
 
 1. Navigate to **Resource Browser**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/k8s-resource-browser.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/compare-sync/k8s-resource-browser.jpg)
 <center>Figure 2: Resource Browser</center>
 
 2. Click the reference cluster (e.g., `default-cluster`) to compare against other clusters.
 
 3. Click the **Compare & Sync** button. The **Compare & Sync Clusters** page is displayed.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/compare-sync-highlighted.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/compare-sync/compare-sync-highlighted.jpg)
 <center>Figure 3: Compare & Sync Button</center>
 
     The **Compare & Sync Clusters** page is primarily divided into two halves. The left side of the page displays the resources of the reference cluster you previously selected (`default-cluster` in this case). The right side of the page displays the resources of the target cluster you want to compare against.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/compare-sync-home.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/compare-sync/compare-sync-home.jpg)
 <center>Figure 4: Compare & Sync Clusters Page</center>
 
 4. Select the target cluster in the **Select Cluster** drop-down box (e.g., `playground-vcluster` in this case).
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/select-cluster-option.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/compare-sync/select-cluster-option.jpg)
 <center>Figure 5: Select the Cluster</center>
 
     Once you select the clusters that you want to compare, all the resources associated with those clusters are listed in the **Compare & Sync Clusters** page.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resources-displayed.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/compare-sync/resources-displayed.jpg)
 <center>Figure 6: Cluster Resources are Displayed</center>
 
 :::info How to Identify Missing Resource(s)?
@@ -64,7 +64,7 @@ For instance, when a resource is displayed in blue in cluster A and in red in cl
 
 5. Click the filter available at the top left corner of the page. All the resource groups and resource kinds are displayed in the filter box. For example, when you select `ConfigMap` as a resource kind, all the available ConfigMaps in both clusters are displayed.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/resource-group-filterbox.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/compare-sync/resource-group-filterbox.jpg)
 <center>Figure 7: Resource Kind Filter</center>
 
 6. Click the **View all** drop-down box. This filter allows you to filter the resources based on the following criteria:
@@ -79,7 +79,7 @@ For instance, when a resource is displayed in blue in cluster A and in red in cl
 
     * `View right join` - To display all resources from the target cluster (right-hand side) and only matching resources from the reference cluster (left-hand side).
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/view-all-filterbox.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/compare-sync/view-all-filterbox.jpg)
 <center>Figure 8: View All Filter</center>
 
 :::caution Creating a Missing Resource?
@@ -97,14 +97,14 @@ Follow the below steps to match the namespaces:
 
 4. Click the **Create Resources** button. The namespaces will now be matched.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/sync-namespaces.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/compare-sync/sync-namespaces.gif)
 <center>Figure 9: Match Namespaces</center>
 
 ### Create Missing Resource(s)
 
 Hover over the resource that you'd like to create in the target cluster and click the **Create Resource** option.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/create-resource.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/compare-sync/create-resource.jpg)
 <center>Figure 10: Create Resource</center>
 
 :::info Note
@@ -118,14 +118,14 @@ Hover over the resource that you'd like to create in the target cluster and clic
 
 1. Hover over the resource and click the **Compare manifest** option to compare the manifest of the resource in both clusters.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/compare-manifest.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/compare-sync/compare-manifest.jpg)
 <center>Figure 11: Compare Manifest</center>
 
 2. Click **Edit YAML**. 
 
 3. Click the **Revert this chunk** option to enforce the values, if required, from the reference cluster to the target cluster.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/compare-manifest.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/compare-sync/compare-manifest.gif)
 <center>Figure 12: Revert this Chunk</center>
 
 4. Click **Apply Changes**.
