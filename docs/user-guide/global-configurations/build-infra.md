@@ -25,7 +25,7 @@ Users need to have super-admin permission to configure Build Infra.
 
 From the left sidebar, go to **Application Management** → **Configurations** → **Build Infra**. 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/gc-build-infra.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/build-infra-nav.jpg)
 <center>Figure 1: Global Configurations - Build Infra</center>
 
 Under **Profiles** tab, you will see the [Global Profile](#global-profile) and a list of [Custom Profiles](#creating-custom-profile-) (if they exist). Setting up profiles makes it easier for you to manage the build infra configurations, ensuring its reusability in the long term.
@@ -34,7 +34,7 @@ Under **Profiles** tab, you will see the [Global Profile](#global-profile) and a
 
 This contains the default infra configuration applicable to all the applications, be it large or small.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/default-profile.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/global-profile.jpg)
 <center>Figure 2: Global Profile</center>
 
 You may click it to modify the following:
@@ -44,16 +44,16 @@ You may click it to modify the following:
 |**CPU**|Processor core allocated to the build process. See [CPU units](#cpu-units).|
 |**Memory**|RAM allocated to the build process. See [memory units](#memory-units).|
 |**Build Timeout**|Max. time limit allocated to the build process. See [timeout units](#timeout-units).|
-|**Node Selector** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12" /></a> |Node Selector are key-value pair labels to match Pods with Nodes. To learn more, refer to [nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) page.|
-|**Toleration** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12" /></a>|A Toleration allow a pod to be scheduled on a Node that has a matching Taint. To learn more, refer to [Taints and Toleration](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) page.|
-|**ConfigMaps** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12" /></a>|Key Value pairs to store non-sensitive configurations. Refer to [ConfigMaps](../creating-application/base-config/config-maps.md).|
-|**Secrets** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" height="12" /></a>|Key Value pairs to store sensitive configurations. Refer to [Secrets](../creating-application/base-config/secrets.md).|
+|**Node Selector** <a href="https://devtron.ai/pricing" target="_blank"> <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" alt="Enterprise Feature" className="enterprise-badge-img" /></a> |Node Selector are key-value pair labels to match Pods with Nodes. To learn more, refer to [nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) page.|
+|**Toleration** <a href="https://devtron.ai/pricing" target="_blank"> <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" alt="Enterprise Feature" className="enterprise-badge-img" /></a>|A Toleration allow a pod to be scheduled on a Node that has a matching Taint. To learn more, refer to [Taints and Toleration](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) page.|
+|**ConfigMaps** <a href="https://devtron.ai/pricing" target="_blank"> <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" alt="Enterprise Feature" className="enterprise-badge-img" /></a>|Key Value pairs to store non-sensitive configurations. Refer to [ConfigMaps](../creating-application/base-config/config-maps.md).|
+|**Secrets** <a href="https://devtron.ai/pricing" target="_blank"> <img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" alt="Enterprise Feature" className="enterprise-badge-img" /></a>|Key Value pairs to store sensitive configurations. Refer to [Secrets](../creating-application/base-config/secrets.md).|
 
 :::info Note
 ConfigMaps and Secrets defined here will be used at the time of build, not during deployment.
 :::
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/default-infra-config.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/default-infra-config.jpg)
 <center>Figure 3: Editing Global Profile</center>
 
 Furthermore, CPU and Memory have 2 fields each:
@@ -70,28 +70,28 @@ Instead of global profile, you can create custom profiles having different infra
 
 1. Click **Create Profile**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/create-new-profile.jpg)
-<center>Figure 4: Creating Custom Profile</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/create-new-profile.jpg)
+    <center>Figure 4: Creating Custom Profile</center>
 
 2. Enter a name for the profile along with a brief description (optional) and click **Create** button.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/new-profile-fields.jpg)
-<center>Figure 5: Entering Details</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/new-profile-fields.jpg)
+    <center>Figure 5: Entering Details</center>
 
 3. Your custom profile will appear under the list of custom profiles as shown below.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/build-infra-profile-created.jpg)
-<center>Figure 6: Profile Created</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/build-infra-profile-created.jpg)
+    <center>Figure 6: Profile Created</center>
    
 4. Click on your custom profile; a new page will open displaying the custom runner configuration which is inherited from global profile by default.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/filled-profile-fields.jpg)
-<center>Figure 7: Editing Profile</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/filled-profile-fields.jpg)
+    <center>Figure 7: Editing Profile</center>
 
 5. To modify a specific configuration, click the **edit** icon next to that configuration, and turn off the **Inherit** toggle; this will stop that configuration from being inherited from global profile.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/new-profile-listed.jpg)
-<center>Figure 8: Configuring Profile</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/new-profile-listed.jpg)
+    <center>Figure 8: Configuring Profile</center>
 
 6. Modify the resources according to your use case and click **Save**.
 
@@ -149,30 +149,30 @@ Once you create a profile, attach it to the intended applications, or else the [
 
 1. Go to the **Applications** tab.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/applications-tab.jpg)
-<center>Figure 9: Applications Tab</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/applications-tab.jpg)
+    <center>Figure 9: Applications Tab</center>
 
 2. Choose an application and click the dropdown below it.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-dropdown.jpg)
-<center>Figure 10: Profile Dropdown</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/profile-dropdown.jpg)
+    <center>Figure 10: Profile Dropdown</center>
 
 3. Choose the profile you wish to apply from the dropdown.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-selection.jpg)
-<center>Figure 11: Selecting a Profile</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/profile-selection.jpg)
+    <center>Figure 11: Selecting a Profile</center>
 
 4. Click **Change** to apply the profile to your application.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/confirm-profile-change.jpg)
-<center>Figure 12: Confirming Profile Change</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/confirm-profile-change.jpg)
+    <center>Figure 12: Confirming Profile Change</center>
 
 
 :::tip Tip
 If you missed creating a profile but selected your application(s), you can use the 'Create Profile' button. This will quickly open a new tab for creating a profile. Once done, you can return and click the refresh icon as shown below.
 :::
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/quick-profile-creation.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/quick-profile-creation.jpg)
 <center>Figure 13: Quick Profile Creation</center>
 
 ### Performing Bulk Action
@@ -181,17 +181,17 @@ If you wish to apply a profile to multiple applications at once, you can do that
 
 Simply use the checkboxes to select the applications. You can do this even if there are many applications spanning multiple pages. You will see a draggable floating widget as shown below.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/floating-widget.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/floating-widget.jpg)
 <center>Figure 14: Floating Widget</center>
 
 Select the profile you wish to apply from the dropdown and confirm the changes.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-selection-bulk.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/profile-selection-bulk.jpg)
 <center>Figure 15: Selecting a Profile</center>
 
 Once you apply a profile, it will show the count of applications attached to it.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/profile-applicable-count.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/profile-applicable-count.jpg)
 <center>Figure 16: Count of Applications</center>
 
 ---
@@ -200,12 +200,12 @@ Once you apply a profile, it will show the count of applications attached to it.
 
 You can edit or delete a custom profile using the respective icons as shown below.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/edit-delete-icons-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/edit-delete.jpg)
 <center>Figure 17: Edit and Delete Icons</center>
 
 If you delete a profile attached to one or more applications, the [global profile](#global-profile) will apply from the next build.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/build-infra/delete-dialog.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/delete-dialog.jpg)
 <center>Figure 18: Confirm Profile Deletion</center>
 
 

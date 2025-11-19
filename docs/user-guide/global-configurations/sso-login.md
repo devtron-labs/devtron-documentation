@@ -2,9 +2,9 @@
 
 ## Introduction
 
-After successful installation of Devtron, when you login for the first time with the [Admin Credentials](../../setup/install/devtron-oss.md#step-4-log-in-to-devtron) provided during the initial setup, you will have [Super-Admin](user-access.md) privileges with unrestricted access to all Devtron resources including configuring SSO and creating new user permissions.
+After successful installation of Devtron, when you login for the first time with the [Admin Credentials](../../setup/install/devtron-oss.md#step-4-log-in-to-devtron) provided during the initial setup, you will have [Super-Admin](./authorization/user-access.md) privileges with unrestricted access to all Devtron resources including configuring SSO and creating new user permissions.
 
-Therefore, we highly recommend that you also create and manage necessary [User Permissions](user-access.md) for other users immediately after configuring the SSO, to ensure secure and streamlined access to Devtron. 
+Therefore, we highly recommend that you also create and manage necessary [User Permissions](./authorization/user-access.md) for other users immediately after configuring the SSO, to ensure secure and streamlined access to Devtron. 
 
 Devtron uses Dex to authenticate you against the identity providers such as GitHub, GitLab, Google, Microsoft, LDAP, OIDC, and OpenShift.
 

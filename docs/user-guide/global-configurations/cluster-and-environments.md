@@ -197,7 +197,7 @@ Click **Save Cluster** to save your cluster on Devtron.
 ### Prerequisites
 
 :::caution Who Can Perform This Action?
-Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-permissions) can add an OCI Registry in Devtron.
+Only a [Super-Admin](../global-configurations/authorization/user-access.md#grant-super-admin-permission) can add an OCI Registry in Devtron.
 
 :::
 
@@ -333,7 +333,7 @@ Now that all the prerequisites are met, you can proceed to create a cluster from
 ### Steps
 
 :::caution Who Can Perform This Action?
-Only a [Super-Admin](../global-configurations/user-access.md#assign-super-admin-permissions) can create a Kubernetes cluster.
+Only a [Super-Admin](../global-configurations/authorization/user-access.md#grant-super-admin-permission) can create a Kubernetes cluster.
 
 :::
 
