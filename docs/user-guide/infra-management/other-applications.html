@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.843efe5b.css">
-<script src="/assets/js/runtime~main.0bc567d7.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.2e3744f5.js" defer="defer"></script>
 <script src="/assets/js/main.adda3213.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -46,7 +46,7 @@
 </li>
 <li class="">
 <p>Use the <strong>Cluster</strong> selection dropdown to choose the external cluster(s). You will see your external Helm apps under the <strong>Helm Apps</strong> tab.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/external-helm-apps.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/external-helm-apps.jpg" alt="" class="img_ev3q">
 <center>Figure 2: Helm App List</center></p>
 </li>
 </ol>
@@ -61,7 +61,7 @@
 <li class="">Apps deployed using <a class="" href="/docs/reference/glossary#gitops">GitOps</a> on Devtron</li>
 <li class="">Other Argo CD apps present in your cluster</li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/app-details-argo.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/app-details-argo.gif" alt="" class="img_ev3q">
 <center>Figure 3: ArgoCD App List</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="advantages">Advantages<a href="#advantages" class="hash-link" aria-label="Direct link to Advantages" title="Direct link to Advantages" translate="no">​</a></h3>
 <p>Devtron also bridges the gap for ArgoCD users by providing additional features as follows:</p>
@@ -118,7 +118,7 @@
 </li>
 <li class="">
 <p>Select the cluster(s) from the dropdown to view the Argo CD apps available in the chosen cluster(s).</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/argo-cluster-selection.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/argo-cluster-selection.jpg" alt="" class="img_ev3q">
 <center>Figure 4: Cluster Selection for Argo CD Listing</center></p>
 </li>
 </ol>
@@ -127,7 +127,7 @@
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Who Can Perform This Action?</div><div class="admonitionContent_BuS1"><p>Users need super-admin permission to view/enable/disable the FluxCD listing.</p></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="preface-1">Preface<a href="#preface-1" class="hash-link" aria-label="Direct link to Preface" title="Direct link to Preface" translate="no">​</a></h3>
 <p>Flux CD doesn&#x27;t have any official dashboard; however, Devtron supports the listing of your <a href="https://fluxcd.io/" target="_blank" rel="noopener noreferrer" class="">Flux CD</a> apps in one dashboard. Here, the <a href="#advantages" class="">advantages</a> are same as those of <a href="#view-external-argocd-app-listing" class="">ArgoCD app listing</a>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-listing.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/fluxcd-listing.jpg" alt="" class="img_ev3q">
 <center>Figure 5: FluxCD App List and Details</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisite-1">Prerequisite<a href="#prerequisite-1" class="hash-link" aria-label="Direct link to Prerequisite" title="Direct link to Prerequisite" translate="no">​</a></h3>
 <p>The cluster in which Flux CD apps exist should be added in <strong>Global Configurations</strong> → <strong>Clusters and Environments</strong></p>
@@ -138,14 +138,14 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="enabling-fluxcd-app-listing">Enabling FluxCD App Listing<a href="#enabling-fluxcd-app-listing" class="hash-link" aria-label="Direct link to Enabling FluxCD App Listing" title="Direct link to Enabling FluxCD App Listing" translate="no">​</a></h3>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Tip</div><div class="admonitionContent_BuS1"><p>You may refer the steps mentioned in the <a href="#enabling-argocd-app-listing" class="">Enabling ArgoCD App Listing</a> section since the procedure is similar.</p></div></div>
 <p>Using Devtron&#x27;s Resource Browser, add the <a href="#feature-flag-1" class="">feature flag</a> in the Dashboard ConfigMap as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/flux-feature-flag.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/flux-feature-flag.jpg" alt="" class="img_ev3q">
 <center>Figure 6: Editing Dashboard ConfigMap</center></p>
 <p>After successfully executing all the steps, a new tab named <strong>FluxCD Apps</strong> will be visible. Select the cluster(s) from the dropdown to view the Flux CD apps available in the chosen cluster(s).</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/cluster-selection.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/cluster-selection.jpg" alt="" class="img_ev3q">
 <center>Figure 7: Selecting Cluster</center></p>
 <p>(Optional) Once you choose cluster(s), you may use the <strong>Template Type</strong> dropdown to further filter your Flux CD app listing based on its type, i.e., <a href="https://fluxcd.io/flux/components/kustomize/kustomizations/" target="_blank" rel="noopener noreferrer" class="">Kustomization</a> or <a href="https://fluxcd.io/flux/components/helm/helmreleases/" target="_blank" rel="noopener noreferrer" class="">Helmrelease</a>.</p>
 <p>Click any Flux CD app to view its details as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/app-details-flux.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/app-details-flux.gif" alt="" class="img_ev3q">
 <center>Figure 8: Flux App Details</center></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/infra-management/infrastructure-overview"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Infrastructure Overview</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/deploy-chart"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Chart Store</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#view-external-helm-app-listing" class="table-of-contents__link toc-highlight">View External Helm App Listing</a></li><li><a href="#view-external-argocd-app-listing" class="table-of-contents__link toc-highlight">View External ArgoCD App Listing</a><ul><li><a href="#preface" class="table-of-contents__link toc-highlight">Preface</a></li><li><a href="#advantages" class="table-of-contents__link toc-highlight">Advantages</a></li><li><a href="#prerequisite" class="table-of-contents__link toc-highlight">Prerequisite</a></li><li><a href="#feature-flag" class="table-of-contents__link toc-highlight">Feature Flag</a></li><li><a href="#enabling-argocd-app-listing" class="table-of-contents__link toc-highlight">Enabling ArgoCD App Listing</a></li></ul></li><li><a href="#view-external-fluxcd-app-listing" class="table-of-contents__link toc-highlight">View External FluxCD App Listing</a><ul><li><a href="#preface-1" class="table-of-contents__link toc-highlight">Preface</a></li><li><a href="#prerequisite-1" class="table-of-contents__link toc-highlight">Prerequisite</a></li><li><a href="#feature-flag-1" class="table-of-contents__link toc-highlight">Feature Flag</a></li><li><a href="#enabling-fluxcd-app-listing" class="table-of-contents__link toc-highlight">Enabling FluxCD App Listing</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
               <div style="text-align: center;">
                 <div style="margin-bottom: 1rem;">
