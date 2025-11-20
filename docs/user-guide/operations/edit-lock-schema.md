@@ -17,22 +17,22 @@ Only a [Super-Admin](../global-configurations/authorization/user-access.md#grant
 
 2. Use the searchbox labelled 'Jump to Kind' and search for `LockSchema`.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/search-lock-schema.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/configure-lock-schema/search-lock-schema.gif)
 <center>Figure 1: Searching Lock Schema</center>
 
 3. Click the Lock Schema you wish to edit. In case no Lock Schema exists, you may [create a Lock Schema](#create-your-own-lock-schema) for your resource kind.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/click-lock-schema.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/configure-lock-schema/click-lock-schema.gif)
 <center>Figure 2: Click Lock Schema</center>
 
 4. Click **Edit Live Manifest** to modify the YAML.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest-lock.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/configure-lock-schema/edit-live-manifest-lock.gif)
 <center>Figure 3: Edit Live Manifest</center>
 
 5. Locate the `lockedPaths` list and specify the fields/paths you wish to lock from unwanted edits by non-superadmins in the manifest.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/locate-lockedpaths.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/configure-lock-schema/locate-lockedpaths.jpg)
 <center>Figure 4: Modifying Schema</center>
 
 6. Click **Apply Changes**.
