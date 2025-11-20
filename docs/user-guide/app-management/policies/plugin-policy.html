@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.843efe5b.css">
-<script src="/assets/js/runtime~main.2e3744f5.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.55f0a5b3.js" defer="defer"></script>
 <script src="/assets/js/main.adda3213.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -29,7 +29,7 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction-">Introduction <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" class="enterprise-badge-img"></a><a href="#introduction-" class="hash-link" aria-label="Direct link to introduction-" title="Direct link to introduction-" translate="no">​</a></h2>
 <p>Your <a class="" href="/docs/user-guide/creating-application/workflow">application workflow</a> should follow certain standards and precautions to ensure reliability and a smooth release. For example, mandating load testing for production deployments might help you identify performance bottlenecks early rather than face possible outages, unhappy users, or revenue loss.</p>
 <p>The <strong>Plugin Policy</strong> feature in Devtron lets you enforce the presence of specific <a class="" href="/docs/user-guide/plugins">plugins</a> at various stages in your application&#x27;s build and deployment pipelines, such as <a class="" href="/docs/reference/glossary#pre-build">pre-build</a>, <a class="" href="/docs/reference/glossary#post-build">post-build</a>, <a class="" href="/docs/reference/glossary#pre-deployment">pre-deployment</a>, or <a class="" href="/docs/reference/glossary#post-deployment">post-deployment</a>. Therefore, if the required plugins do not exist in the specified stage(s), you can decide the action (whether to allow or block the pipeline trigger).</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/plugin-policy/plugin-policy-main.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/plugin-policy/plugin-policy-main.gif" alt="" class="img_ev3q">
 <center>Figure 1: How Plugin Policy Works</center></p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tutorial">Tutorial<a href="#tutorial" class="hash-link" aria-label="Direct link to Tutorial" title="Direct link to Tutorial" translate="no">​</a></h2>
@@ -39,18 +39,18 @@
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Who Can Perform This Action?</div><div class="admonitionContent_BuS1"><p>Users need to have super-admin permission to create a plugin policy.</p></div></div>
 <ol>
 <li class="">
-<p>Go to<strong>Application Management</strong> → <strong>Policies</strong> → <strong>Plugin Policy</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/plugin-policy/gc-plugin-policy.jpg" alt="" class="img_ev3q">
+<p>Go to <strong>Application Management</strong> → <strong>Policies</strong> → <strong>Plugin Policy</strong>.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/plugin-policy/plugin-policy-nav.jpg" alt="" class="img_ev3q">
 <center>Figure 2: Plugin Policy</center></p>
 </li>
 <li class="">
 <p>Click <strong>+ Create Profile</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/plugin-policy/create-profile-button.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/plugin-policy/create-profile-button.jpg" alt="" class="img_ev3q">
 <center>Figure 3: Create Profile Button</center></p>
 </li>
 <li class="">
 <p>Give a name to the profile, e.g., <em><code>check-jira</code></em>, and add a description (optional) preferably explaining what it does.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/plugin-policy/pipeline-type.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/plugin-policy/pipeline-type.jpg" alt="" class="img_ev3q">
 <center>Figure 4: Choosing a Pipeline Type</center></p>
 </li>
 <li class="">
@@ -61,12 +61,12 @@
 <ol start="5">
 <li class="">
 <p>Under <strong>Mandatory Plugin(s)</strong>, click <strong>Add Plugin</strong>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/plugin-policy/add-plugin-button.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/plugin-policy/add-plugin-button.jpg" alt="" class="img_ev3q">
 <center>Figure 5: &#x27;Add Plugin&#x27; Option</center></p>
 </li>
 <li class="">
 <p>A list of plugins will appear for you to choose from. Select one or more plugins to make them mandatory for the pipeline you selected in step 4.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/plugin-policy/choose-plugins.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/plugin-policy/choose-plugins.gif" alt="" class="img_ev3q">
 <center>Figure 6: Finding and Choosing Plugins</center></p>
 </li>
 </ol>
@@ -77,13 +77,13 @@
 </li>
 <li class="">
 <p>Use the dropdown menu to choose the stage (pre or post) at which you wish to enforce your chosen plugin(s). You can select mixed stages too.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/plugin-policy/choose-stage.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/plugin-policy/choose-stage.gif" alt="" class="img_ev3q">
 <center>Figure 7: Finding and Choosing Plugins</center></p>
 <p>Here, <code>Pre</code> means before and <code>Post</code> means after.</p>
 </li>
 <li class="">
 <p>Decide the action that the system should take in case your policy is not followed by the intended pipelines in your application workflow.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/plugin-policy/take-action.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/plugin-policy/take-action.jpg" alt="" class="img_ev3q">
 <center>Figure 8: Taking Action</center></p>
 <ul>
 <li class=""><strong>Allow respective triggers with warning</strong> - This will allow the non-compliant pipeline to run. However, it will display an &#x27;Action required&#x27; warning at the intended stage (pre/post) of the pipeline in the application&#x27;s workflow.</li>
@@ -101,12 +101,12 @@
 <ol>
 <li class="">
 <p>After you create a policy, you can apply it. Click <strong>Apply Profile</strong> on the same screen.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/plugin-policy/apply-plugin-policy.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/plugin-policy/apply-plugin-policy.jpg" alt="" class="img_ev3q">
 <center>Figure 9: Apply Profile Button</center></p>
 </li>
 <li class="">
 <p>From the <strong>Select profiles to apply</strong> dropdown, choose the policy you wish to apply. You also have the option to select more than one policy (if they exist) using the checkbox.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/plugin-policy/select-profiles.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/plugin-policy/select-profiles.jpg" alt="" class="img_ev3q">
 <center>Figure 10: Selecting Profiles</center></p>
 </li>
 <li class="">
@@ -115,7 +115,7 @@
 <li class=""><strong>Global</strong> - Select this option to apply your chosen policies to all application workflows across all clusters.</li>
 <li class=""><strong>By Match Criteria</strong> - Select this option to use a combination of filters to decide the target pipelines fulfilling your criteria. Your policy will only apply to such target pipelines.</li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/plugin-policy/select-scope.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/plugin-policy/select-scope.jpg" alt="" class="img_ev3q">
 <center>Figure 11: Choosing Scope</center></p>
 </li>
 <li class="">
@@ -129,12 +129,12 @@
 <li class="">Branch regex</li>
 </ul>
 <p>Once you select the criteria, choose the value displayed to you in the dropdown list as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/plugin-policy/match-criteria.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/plugin-policy/match-criteria.gif" alt="" class="img_ev3q">
 <center>Figure 12: Deciding Matching Criteria for Pipelines</center></p>
 </li>
 <li class="">
 <p>(Optional) You may also write a note for your other team members to understand the intent and context of your policy.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/plugin-policy/leave-note.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/plugin-policy/leave-note.gif" alt="" class="img_ev3q">
 <center>Figure 13: Deciding Matching Criteria for Pipelines</center></p>
 </li>
 <li class="">
@@ -142,16 +142,16 @@
 </li>
 </ol>
 <p>Once you apply the plugin policy, you can view the pipelines that are not adhering to your policy as shown below. Clicking on the non-compliant pipeline will take you directly to the application workflow prompting you to take action.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/plugin-policy/non-compliant-pipelines.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/plugin-policy/non-compliant-pipelines.gif" alt="" class="img_ev3q">
 <center>Figure 14: Non-compliant Pipelines</center></p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="results">Results<a href="#results" class="hash-link" aria-label="Direct link to Results" title="Direct link to Results" translate="no">​</a></h2>
-<p>Since we created a policy that blocks the trigger of non-compliant deployment pipelines, no user can trigger the deployment unless the mandatory plugins are configured as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/plugin-policy/blocked-deployment.gif" alt="" class="img_ev3q">
-<center>Figure 15: Blocked Non-compliant CD Pipeline</center></p>
-<p>On the other hand, if you selected <strong>Build pipeline</strong> in step 4 of <a href="#creating-a-plugin-policy" class="">Creating Plugin Policy</a>, the build trigger would get blocked as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/plugin-policy/blocked-build.gif" alt="" class="img_ev3q">
-<center>Figure 16: Blocked Non-compliant CI Pipeline</center></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/app-management/policies/approval-policy"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Approval Policy</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/app-management/policies/pull-image-digest"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Pull Image Digest</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction-" class="table-of-contents__link toc-highlight">Introduction <a></a></a></li><li><a href="#tutorial" class="table-of-contents__link toc-highlight">Tutorial</a></li><li><a href="#creating-a-plugin-policy" class="table-of-contents__link toc-highlight">Creating a Plugin Policy</a></li><li><a href="#applying-a-plugin-policy" class="table-of-contents__link toc-highlight">Applying a Plugin Policy</a></li><li><a href="#results" class="table-of-contents__link toc-highlight">Results</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
+<p>Since we created a policy that blocks the trigger of non-compliant build pipelines, no user can trigger the build unless the mandatory plugins are configured as shown below.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/plugin-policy/blocked-build.gif" alt="" class="img_ev3q">
+<center>Figure 15: Blocked Non-compliant CI Pipeline</center></p>
+<p>On the other hand, if you selected <strong>Deployment pipeline</strong> in step 4 of <a href="#creating-a-plugin-policy" class="">Creating Plugin Policy</a>, the deployment trigger would get blocked as shown below.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/plugin-policy/blocked-deployment.gif" alt="" class="img_ev3q">
+<center>Figure 16: Blocked Non-compliant CD Pipeline</center></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/app-management/policies/approval-policy"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Approval Policy</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/app-management/policies/pull-image-digest"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Pull Image Digest</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction-" class="table-of-contents__link toc-highlight">Introduction <a></a></a></li><li><a href="#tutorial" class="table-of-contents__link toc-highlight">Tutorial</a></li><li><a href="#creating-a-plugin-policy" class="table-of-contents__link toc-highlight">Creating a Plugin Policy</a></li><li><a href="#applying-a-plugin-policy" class="table-of-contents__link toc-highlight">Applying a Plugin Policy</a></li><li><a href="#results" class="table-of-contents__link toc-highlight">Results</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
               <div style="text-align: center;">
                 <div style="margin-bottom: 1rem;">
                   <a href="/" style="display: inline-block;">
