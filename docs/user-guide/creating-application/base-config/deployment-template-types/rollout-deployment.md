@@ -79,14 +79,14 @@ But `ConfigMap` and `Secret` are the preferred way to inject env variables. You 
 
 It is a centralized storage, specific to k8s namespace where key-value pairs are stored in plain text.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/configure-configmap.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-types/configure-configmap.jpg)
 <center>Figure 2: ConfigMap</center>
 
 ### Secret
 
 It is a centralized storage, specific to k8s namespace where we can store the key-value pairs in plain text as well as in encrypted(`Base64`) form.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/created-secret.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-types/created-secret.jpg)
 <center>Figure 3: Secret</center>
 
 `IMP` All key-values of `Secret` and `CofigMap` will reflect to your application.

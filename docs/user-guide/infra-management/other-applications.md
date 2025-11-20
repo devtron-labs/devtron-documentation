@@ -28,7 +28,7 @@ External Helm apps are Helm applications deployed outside of Devtron.
 
 2. Use the **Cluster** selection dropdown to choose the external cluster(s). You will see your external Helm apps under the **Helm Apps** tab.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/external-helm-apps.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/external-helm-apps.jpg)
 <center>Figure 2: Helm App List</center>
 
 ---
@@ -52,7 +52,7 @@ With Devtron, you get an entire Argo CD app listing in one place. This listing i
 * Apps deployed using [GitOps](../../reference/glossary.md#gitops) on Devtron
 * Other Argo CD apps present in your cluster
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/app-details-argo.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/app-details-argo.gif)
 <center>Figure 3: ArgoCD App List</center>
 
 ### Advantages
@@ -102,7 +102,7 @@ The cluster in which Argo CD apps exist should be added in **Global Configuratio
 
 11. Select the cluster(s) from the dropdown to view the Argo CD apps available in the chosen cluster(s).
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/argocd/argo-cluster-selection.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/argo-cluster-selection.jpg)
 <center>Figure 4: Cluster Selection for Argo CD Listing</center>
 
 ---
@@ -117,7 +117,7 @@ Users need super-admin permission to view/enable/disable the FluxCD listing.
 
 Flux CD doesn't have any official dashboard; however, Devtron supports the listing of your [Flux CD](https://fluxcd.io/) apps in one dashboard. Here, the [advantages](#advantages) are same as those of [ArgoCD app listing](#view-external-argocd-app-listing).
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/fluxcd-listing.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/fluxcd-listing.jpg)
 <center>Figure 5: FluxCD App List and Details</center>
 
 ### Prerequisite
@@ -135,17 +135,17 @@ You may refer the steps mentioned in the [Enabling ArgoCD App Listing](#enabling
 
 Using Devtron's Resource Browser, add the [feature flag](#feature-flag-1) in the Dashboard ConfigMap as shown below.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/flux-feature-flag.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/flux-feature-flag.jpg)
 <center>Figure 6: Editing Dashboard ConfigMap</center>
 
 After successfully executing all the steps, a new tab named **FluxCD Apps** will be visible. Select the cluster(s) from the dropdown to view the Flux CD apps available in the chosen cluster(s).
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/cluster-selection.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/cluster-selection.jpg)
 <center>Figure 7: Selecting Cluster</center>
 
 (Optional) Once you choose cluster(s), you may use the **Template Type** dropdown to further filter your Flux CD app listing based on its type, i.e., [Kustomization](https://fluxcd.io/flux/components/kustomize/kustomizations/) or [Helmrelease](https://fluxcd.io/flux/components/helm/helmreleases/).
 
 Click any Flux CD app to view its details as shown below.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/fluxcd/app-details-flux.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/app-details-flux.gif)
 <center>Figure 8: Flux App Details</center>
