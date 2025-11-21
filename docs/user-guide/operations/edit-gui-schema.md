@@ -17,22 +17,22 @@ Only a [Super-Admin](../global-configurations/authorization/user-access.md#grant
 
 2. Use the searchbox labelled 'Jump to Kind' and search for `Guischema`.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/search-gui-schema.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/configure-gui-schema/search-gui-schema.gif)
 <center>Figure 1: Searching GUI Schema</center>
 
 3. Click the GUI schema you wish to edit. In case no GUI schema exists, you may [create a GUI schema](#create-your-own-gui-schema) for your resource kind.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/click-schema.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/configure-gui-schema/click-schema.gif)
 <center>Figure 2: Click GUI Schema</center>
 
 4. Click **Edit Live Manifest** to modify the YAML.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/edit-live-manifest.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/configure-gui-schema/edit-live-manifest.gif)
 <center>Figure 3: Edit Live Manifest</center>
 
 5. Locate the `schema` object and customize it according to your requirements.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/locate-schema.gif)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/configure-gui-schema/locate-schema.gif)
 <center>Figure 4: Modifying Schema</center>
 
 6. Click **Apply Changes**.

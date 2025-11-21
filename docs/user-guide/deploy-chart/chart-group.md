@@ -29,8 +29,11 @@ To create a chart group, follow the instructions below:
 
 2. Click the **Create Group** button. The **Create Chart Group** page is displayed. 
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/create-chart-group.jpg)
-<center>Figure 1: Create Chart Group</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/chart-group/create-chart-groups.jpg)
+<center>Figure 1a: Create Chart Group</center>
+
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/chart-group/create-chart-groups-1.jpg)
+<center>Figure 1b: Create Chart Group</center>
 
 3. Enter your preferred chart group name in the **Name** field. 
 
@@ -40,20 +43,23 @@ To create a chart group, follow the instructions below:
 
 6. Select your preferred charts from the list of charts available in the **Edit group** page. 
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/edit-group.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/chart-group/select-charts.jpg)
 <center>Figure 2: Edit Group</center>
 
 7. Click **Save**. The chart group is now saved. 
 
 8. Navigate back to the chart group page.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deploy-to.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/chart-group/deploy-to.jpg)
 <center>Figure 3: Chart Group</center>
 
 9. Click on the **Deploy to...** button. The **Deploy Selected Charts** screen is displayed.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deploy-selected-charts.jpg)
-<center>Figure 4: Deploy Selected Charts</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/chart-group/deploy-selected-charts.jpg)
+<center>Figure 4a: Deploy Selected Charts</center>
+
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/chart-group/deploy-selected-charts-1.jpg)
+<center>Figure 4b: Deploy Selected Charts</center>
 
 10. Select the project in the **Project** drop-down box.
 
@@ -63,7 +69,7 @@ To create a chart group, follow the instructions below:
 
     If you prefer to change the chart values in the `.yaml` file or change chart configurations, click **Advanced Options**. Refer to [Advanced Options](#advanced-options) for more information.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deployment-initiated.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/chart-group/deployment-initiated.jpg)
 <center>Figure 5: Deployment Initiated</center>
 
 ---
@@ -81,16 +87,22 @@ If you want to add/remove a chart to your existing chart group, or change the ch
 
 1. Select your preferred chart group in the **Chart Store**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/deploy-to.jpg)
-<center>Figure 6: Edit a Chart Group</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/chart-group/select-chart-group-edit.jpg)
+<center>Figure 6: Select a Chart Group</center>
 
 2. Click the **Edit** button. The **Edit group** page is displayed. 
+
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/chart-group/chart-group-edit.jpg)
+<center>Figure 7: Edit a Chart Group</center>
 
 3. Add or remove charts based on your needs from the list of charts available in the **Edit group** page. 
 
 4. Enter your new chart group name (if required) in the **Group name** field.
 
 5. Click **Save** to save the changes. 
+
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/chart-group/chart-group-save-edit.jpg)
+<center>Figure 8: Save a Chart Group</center>
 
 ---
 
@@ -105,8 +117,8 @@ When you delete a chart group, only the chart group is deleted. Application depl
 
 1. Select your preferred chart group in the **Chart Store**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/delete-chart-group.gif)
-<center>Figure 7: Delete a Chart Group</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/chart-group/delete-chart-group.gif)
+<center>Figure 9: Delete a Chart Group</center>
 
 2. Click the **Delete** button. A pop-up window will appear, asking for confirmation to delete the chart group.
 
@@ -118,8 +130,8 @@ When you delete a chart group, only the chart group is deleted. Application depl
 
 The **Advanced Options** page enables you to change the chart values, chart configurations, use preset values (if already configured) for your charts. 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploy-chart/advanced-options.jpg)
-<center>Figure 8: Advanced Options</center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/chart-group/advanced-options.jpg)
+<center>Figure 10: Advanced Options</center>
 
 1. Enter your preferred application name in the **App name** field.
 

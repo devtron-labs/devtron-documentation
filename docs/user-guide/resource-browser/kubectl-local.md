@@ -4,8 +4,8 @@
 
 If you wish to run kubectl commands from your local system, you need to have access to your cluster. Traditionally, the kubeconfig file (`./kube/config`) helps you connect with the cluster from your local system.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/kubeconfig.jpg)
-<center>Figure 21: Kubeconfig File</center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/kubectl-local/kubeconfig.jpg)
+<center>Figure 1: Kubeconfig File</center>
 
 ---
 
@@ -33,8 +33,8 @@ Devtron helps in reducing the challenges and simplifying the maintenance of kube
 
 If you are not a super-admin and can't generate a token yourself, you can find the session token (argocd.token) using the Developer Tools available in your web browser as shown below.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/argocd-token-v1.gif)
-<center>Figure 22: Using Session Token</center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/kubectl-local/argocd-token.gif)
+<center>Figure 2: Using Session Token</center>
 
 There are 2 methods of getting kubeconfig in your system:
 * [Quick Method](#quick-method)
@@ -44,8 +44,8 @@ There are 2 methods of getting kubeconfig in your system:
 
 1. In Resource Browser, hover on the cluster name and click the `Get kubeconfig` icon. 
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/getkubeconfig.gif)
-<center>Figure 23: Get Kubeconfig</center>
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/kubectl-local/getkubeconfig.gif)
+<center>Figure 3: Get Kubeconfig</center>
 
 2. Copy the commands and run them on your terminal.
 
@@ -83,8 +83,8 @@ There are 2 methods of getting kubeconfig in your system:
   | `<cluster_name>`      | Name of the cluster (or cluster ID) | devtron-cluster  | [Applications Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/applications-page.jpg)  |
   | `<devtron_token>`     | API token or session token          | \-               | [Authorization Page](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/authorization-page.jpg) |
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/kubeconfig.gif)
-<center>Figure 23: Editing Kubeconfig File</center>
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/kubectl-local/kubeconfig.gif)
+<center>Figure 4: Editing Kubeconfig File</center>
 
 3. Test the connection to the cluster by running any kubectl command, e.g., `kubectl get ns` or `kubectl get po -A`
 
@@ -100,5 +100,5 @@ Assume your applications are running in a Kubernetes cluster on cloud. Now, if y
 
 Once you have successfully connected to the cluster, you may run the port-forward command. Refer [kubectl port-forward](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_port-forward/) to see a few examples.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/port-forward.gif)
-<center>Figure 24: Example - Port Forwarding</center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/kubectl-local/port-forward.gif)
+<center>Figure 5: Example - Port Forwarding</center>
