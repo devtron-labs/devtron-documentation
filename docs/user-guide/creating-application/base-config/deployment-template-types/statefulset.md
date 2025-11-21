@@ -7,7 +7,7 @@ The StatefulSet chart in Devtron allows you to deploy and manage stateful applic
 
 It supports only `ONDELETE` and `ROLLINGUPDATE` deployment strategy.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/deployment-template/sts-strategy.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/base-configurations/deployment-types/sts-strategy.jpg)
 <center>Figure 2: Selecting Deployment Strategy</center>
 
 
