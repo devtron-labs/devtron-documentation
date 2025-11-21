@@ -25,6 +25,9 @@ Users need to have super-admin permission to enable pull image digest at environ
 
 From the left sidebar, go to **Application Management** → **Policies** → **Pull Image Digest**. 
 
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/image-digest/pull-image-digest-nav.jpg)
+<center>Figure 1: Enabling for all Env</center>
+
 As a super-admin, you can decide whether you wish to enable pull image digest [for all environments](#for-all-environments) or [for specific environments](#for-specific-environments).
 
 ### For all Environments
@@ -33,13 +36,13 @@ This is for enabling pull image digest for deployment to all environments.
 
 1. Enable the toggle button next to `Pull image digest for all existing & future environments`.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-digest/global-toggle.jpg)
-<center>Figure 1: Enabling for all Env</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/image-digest/global-toggle.jpg)
+    <center>Figure 2: Enabling for all Env</center>
 
 2. Click **Save Changes**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-digest/save-global-pull.jpg)
-<center>Figure 2: Saving Changes</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/image-digest/save-global-pull.jpg)
+    <center>Figure 3: Saving Changes</center>
 
 
 ### For Specific Environments
@@ -48,15 +51,15 @@ This is for enabling pull image digest for specific environments. Therefore, onl
 
 1. Use the checkbox to choose one or more environments present within the list of clusters you have on Devtron.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-digest/environment-selection.jpg)
-<center>Figure 3: Selecting Environments</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/image-digest/environment-selection.jpg)
+    <center>Figure 4: Selecting Environments</center>
 
 2. Click **Save Changes**.
 
 Once you enable pull image digest for a given environment in Global Configurations, users won't be able to modify the [image digest setting in the CD pipeline](../creating-application/workflow/cd-pipeline.md#pull-container-image-with-image-digest). The toggle button would appear disabled for that environment as shown below.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/image-digest/disabled-pull-digest.jpg)
-<center>Figure 4: Non-editable Option</center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/image-digest/disabled-pull-digest.jpg)
+<center>Figure 5: Non-editable Option</center>
     
 
 
