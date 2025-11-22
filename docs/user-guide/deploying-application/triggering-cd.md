@@ -4,17 +4,17 @@ After the [CI pipeline](./triggering-ci.md) is complete, you can trigger the CD 
 
 1. Go to the `Build & Deploy` tab of your application and click **Select Image** in the CD pipeline.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/select-image.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/select-image.jpg)
 <center>Figure 1: 'Select Image' Button</center>
 
 2. Select an image for deployment.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/deploy-v2.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/deploy-v2.jpg)
 <center>Figure 2: Selecting an Image for Deployment</center>
 
  However, if an image is already deployed, you can identify it by the tag `Active on <Environment name>`.
 
- ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/active-tag.jpg)
+ ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/active-tag.jpg)
 <center>Figure 3: Currently Deployed Image</center>
 
 3. If in any scenario, such as deploying a hotfix, if you need to use a different deployment strategy other than the default, you can select a different deployment strategy. 
@@ -34,38 +34,38 @@ Before triggering a deployment, if you’ve made any changes to the environment 
 
 1. Click the **Config Diff** button to review the changes; a modal window will appear.
 
-     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/config-diff-click.jpg)
+     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/config-diff-click.jpg)
 <center>Figure 5: Clicking 'Config Diff' button</center>
 
 2. You can compare configuration differences for various resources, including the **Deployment template**, **Pipeline Configurations**, **ConfigMaps**, and **Secrets**.
 
 3. To compare changes for a specific resource, select it from the left side of the modal window under **Deployment Configurations**. 
 
-     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/config-diff-modal.jpg)
+     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/config-diff-modal.jpg)
 <center>Figure 6: Selecting Resource</center> 
 
 4. The right panel displays a side-by-side comparison between the **Last Deployed** and **Last Saved** configurations for the selected resource. You can review the configuration differences for each resource before triggering the deployment.
 
-     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/config-diff-deployment-template.jpg)
+     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/config-diff-deployment-template.jpg)
 <center>Figure 7a: Comparing Deployment Template</center> 
 
-     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/config-diff-pipeline-config.jpg)
+     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/config-diff-pipeline-config.jpg)
 <center>Figure 7b: Comparing Pipeline Configurations</center> 
 
-     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/config-diff-configmap.jpg)
+     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/config-diff-configmap.jpg)
 <center>Figure 7c: Comparing ConfigMaps</center> 
 
-     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/config-diff-secret.jpg)
+     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/config-diff-secret.jpg)
 <center>Figure 7d: Comparing Secrets</center> 
 
 5. After reviewing, select whether you want to trigger the deployment with **Last Saved Config** (new configurations) or **Last Deploy Config** (old configurations).
 
-     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/config-diff-select-config.jpg)
+     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/config-diff-select-config.jpg)
 <center>Figure 8: Selecting Configuration For Deployment</center>
 
 6. Select **Deploy** to trigger the deployment.
 
-     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/config-diff-deploy.jpg)
+     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/config-diff-deploy.jpg)
 <center>Figure 9: Triggering The Deployment</center>
 
 ## Manual Approval for Deployment <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
@@ -74,7 +74,7 @@ When [manual approval is enabled](../global-configurations/approval-policy.md) f
 
 If no approved images are available or the current image is already deployed, you won't see any images for deployment when clicking **Select Image**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/no-approved-image-v2.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/no-approved-image-v2.jpg)
 <center>Figure 10: No Approved Image</center>
 
 ### Requesting for Image Approval
@@ -85,17 +85,17 @@ To request an image approval, follow these steps:
 
 1. Navigate to the `Build & Deploy` page, and click the **Approval for deployment** icon.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/deployment-approval-button-v2.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/deployment-approval-button-v2.jpg)
 <center>Figure 11: Approval Button</center>
 
 2. Click the **Request Approval** button present on the image for which you want to request an approval and click **Submit Request**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/request-approval-v2.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/request-approval-v2.jpg)
 <center>Figure 12: Requesting Approval</center>
 
     In case you have configured [SES or SMTP on Devtron](../global-configurations/manage-notification.md#configurations), you can directly choose the approver(s) from the list of approvers as shown below.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/approver-list-v2.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/approver-list-v2.jpg)
 <center>Figure 13: Choosing Approvers</center>
 
     The users you selected will receive an approval request via email. Any user with 'Image approver' permission alongwith access to the given application and given environment would be able to approve the image.
@@ -105,13 +105,19 @@ To request an image approval, follow these steps:
 
 * In case you wish to cancel the image approval request, you can do so from the `Approval pending` tab as shown in the below image.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/cancel-approval.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/cancel-approval.jpg)
 <center>Figure 14: Cancelling Request</center>
 
 * If you've received an approval but no longer want the image to be deployable, you can let the approval expire.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/expire-approval.jpg)
-<center>Figure 15: Expiring an Approval</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/expire-approval.jpg)
+<center>Figure 15a: Expiring an Approval</center>
+
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/expire-approval-1.jpg)
+<center>Figure 15b: Expiring an Approval</center>
+
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/expire-approval-2.jpg)
+<center>Figure 15c: Expiring an Approval</center>
 
 ### Accepting Image Approval Request
 
@@ -121,25 +127,22 @@ Users with `Approver` permission (for the specific application and environment) 
 
 In case [SES](../global-configurations/manage-notification.md#email-ses-configuration) or [SMTP](../global-configurations/manage-notification.md#email-smtp-configuration) was configured in Devtron, and the user chose the approvers while raising an image approval request, the approvers would receive an email notification as shown below:
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/email-notification.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/email-notification.jpg)
 <center>Figure 16: Email Notification to the Approver</center>
 
 To approve an image approval request, follow these steps:
 
 1. Go to the `Build & Deploy` page and click the `Approval for deployment` button.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/deployment-approval-button-v2.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/deployment-approval-button-v2.jpg)
 <center>Figure 17: Approval Button</center>
 
 2. Switch to the `Approval pending` tab. Here, you will get a list of images that are awaiting approval.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/approval-pending-tab.jpg)
-<center>Figure 18: List of Pending Approvals</center>
-
 3. Click **Approve** followed by **Approve Request** button.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/approve-request-v2.jpg)
-<center>Figure 19: Approving a Request</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/approve-request-v2.jpg)
+<center>Figure 18: Approving a Request</center>
 
 ### Deploying Approved Image
 
@@ -147,25 +150,25 @@ Users need to have [Build & deploy permission](../global-configurations/authoriz
 
 In case the super-admin has set the minimum number of approval to more than 1 (in [Approval Policy](../global-configurations/approval-policy.md)), you must wait for all approvals before deploying the image. In other words, partially approved image will not be eligible for deployment.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/approval-count-v2.jpg)
-<center>Figure 20: Approval Count</center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/approval-count-v2.jpg)
+<center>Figure 19: Approval Count</center>
 
 To deploy an approved image, follow these steps:
 
 1. Navigate to the `Build & Deploy` tab and click **Select Image**. 
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/select-image.jpg)
-<center>Figure 21: Select Image Button</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/select-image-1.jpg)
+<center>Figure 20: Select Image Button</center>
 
 2. You will find all the approved images listed under the `Approved images` section. From the list, you can select the desired image and deploy it to your environment.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/approved-images-v2.jpg)
-<center>Figure 22: List of Approved Images</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/approved-images-v2.jpg)
+<center>Figure 21: List of Approved Images</center>
 
 3. You can view the status of current deployment in the `App Details` tab. 
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/triggering-cd/app-status-v2.jpg)
-<center>Figure 23: 'App Details' Screen</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-cd/app-status-v2.jpg)
+<center>Figure 22: 'App Details' Screen</center>
 
 The status initially appears as `Progressing` for approximately 1-2 minutes, and then gradually transitions to `Healthy` state based on the deployment strategy.
 

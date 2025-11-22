@@ -26,11 +26,11 @@ If you want to roll back from V3 image to V2 image, then you have the following 
 | Last saved config | V2 | C4 |
 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/rollback-deployment/rollback-icon.jpg)
-<center></center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/rollback/rollback-icon.jpg)
+<center>Figure 1: Clicking Rollback Button</center>
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/rollback-deployment/select-config-to-deploy.jpg)
-<center></center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/rollback/select-config-to-deploy.jpg)
+<center>Figure 2: Selecting Configuration</center>
 
 1. Select `Rollback` in your deployed pipeline.
 
@@ -46,8 +46,8 @@ If you want to roll back from V3 image to V2 image, then you have the following 
 
 4. Click `Deploy`.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/rollback-deployment/config-diff.jpg)
-<center></center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/rollback/config-diff.jpg)
+<center>Figure 3: Configuration Difference</center>
 
 The selected previously deployed image will be deployed.
 
