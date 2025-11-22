@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.843efe5b.css">
-<script src="/assets/js/runtime~main.956ff0dc.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.eb4645ad.js" defer="defer"></script>
 <script src="/assets/js/main.adda3213.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -41,19 +41,21 @@
 <ol>
 <li class="">
 <p>From the left sidebar, go to <strong>Application Management</strong> → <strong>Policies</strong> → <strong>Filter Conditions</strong>.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/filter-condition-nav.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Navigating to Filter Conditions section</center></p>
 </li>
 <li class="">
 <p>Add a filter condition.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/add-filter.jpg" alt="" class="img_ev3q">
-<center>Figure 1: Creating Our First Filter</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/add-filter-condition.jpg" alt="" class="img_ev3q">
+<center>Figure 2: Creating Our First Filter</center></p>
 </li>
 <li class="">
 <p>In the <strong>Define Filter condition</strong> section, you get the following fields:</p>
 <ul>
 <li class=""><strong>Filter For</strong>: Choose the pipeline upon which the filter should apply. Currently, you can use filter conditions for CD pipelines only. Support for CI pipelines is underway.</li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/define-filter-condition.jpg" alt="" class="img_ev3q">
-<center>Figure 2: &#x27;Define Filter Condition&#x27; section</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/define-filter-condition.jpg" alt="" class="img_ev3q">
+<center>Figure 3: &#x27;Define Filter Condition&#x27; section</center></p>
 <ul>
 <li class="">
 <p><strong>Filter Name</strong>: Give a name to the filter.</p>
@@ -77,8 +79,8 @@
 <li class=""><strong>imageLabels</strong>: The label(s) you assign to an image in the CD pipeline, e.g., [&quot;PROD&quot;,&quot;Stage&quot;]. It returns an array of strings.</li>
 </ul>
 <p>Click <strong>View filter criteria</strong> to check the supported criteria. You get a copy button and a description of each criterion upon hovering. Moreover, you can go to <strong>CEL expression</strong> to learn more about the rules and supported syntax. Check <a href="#examples" class="">Examples</a> to know more.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/view-filter-criteria.jpg" alt="" class="img_ev3q">
-<center>Figure 3: List of Supported Values</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/view-filter-criteria.jpg" alt="" class="img_ev3q">
+<center>Figure 4: List of Supported Values</center></p>
 </li>
 </ul>
 </li>
@@ -90,49 +92,49 @@
 <ul>
 <li class=""><strong>Application</strong>: Choose one or more applications to which your filter condition must apply.</li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/app-selection.jpg" alt="" class="img_ev3q">
-<center>Figure 4: Selecting Application(s)</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/app-selection.jpg" alt="" class="img_ev3q">
+<center>Figure 5: Selecting Application(s)</center></p>
 <ul>
 <li class=""><strong>Environment</strong>: Choose one or more environments to which your filter condition must apply.</li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/environment-selection.jpg" alt="" class="img_ev3q">
-<center>Figure 5: Selecting Environment(s) from Cluster(s)</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/environments-selection.jpg" alt="" class="img_ev3q">
+<center>Figure 6: Selecting Environment(s) from Cluster(s)</center></p>
 </li>
 </ol>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Since an application can have more than one environment, the filter conditions apply only to the environment you chose in the <strong>Apply to</strong> section. If you create a filter condition without choosing an application or environment, it will not apply to any of your pipelines.</p></div></div>
 <ol start="6">
 <li class="">
 <p>Click <strong>Save</strong>. You have successfully created a filter.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/filter-created.jpg" alt="" class="img_ev3q">
-<center>Figure 6: Success Toast</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/filter-created.jpg" alt="" class="img_ev3q">
+<center>Figure 7: Success Toast</center></p>
 </li>
 </ol>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>caution</div><div class="admonitionContent_BuS1"><p>If you create filters using CEL expressions that result in a conflict (i.e., passing and failing of the same image), fail will have higher precedence</p></div></div>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="examples">Examples<a href="#examples" class="hash-link" aria-label="Direct link to Examples" title="Direct link to Examples" translate="no">​</a></h2>
 <p>Here&#x27;s a sample pipeline we will be using for our explanation of <a href="#pass-condition" class="">pass condition</a> and <a href="#fail-condition" class="">fail condition</a>.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/sample-workflow.jpg" alt="" class="img_ev3q">
-<center>Figure 7: Sample Pipeline</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/sample-workflow.jpg" alt="" class="img_ev3q">
+<center>Figure 8: Sample Pipeline</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pass-condition">Pass Condition<a href="#pass-condition" class="hash-link" aria-label="Direct link to Pass Condition" title="Direct link to Pass Condition" translate="no">​</a></h3>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="scenario-1">Scenario 1<a href="#scenario-1" class="hash-link" aria-label="Direct link to Scenario 1" title="Direct link to Scenario 1" translate="no">​</a></h4>
-<p>Consider a scenario where you wish to make an image eligible for deployment only if its tag version is greater than <code>v0.0.7</code></p>
-<p>The CEL Expression should be <code>containerImageTag &gt; &quot;v0.0.7&quot;</code></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/pass-condition-1.jpg" alt="" class="img_ev3q">
-<center>Figure 8: CEL Expression for Pass Condition</center></p>
+<p>Consider a scenario where you wish to make an image eligible for deployment if its tag version is not <code>v0.0.7</code></p>
+<p>The CEL Expression should be <code>containerImageTag != &quot;v0.0.7&quot;</code></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/pass-condition-1.jpg" alt="" class="img_ev3q">
+<center>Figure 9: CEL Expression for Pass Condition</center></p>
 <p>Go to the <strong>Build &amp; Deploy</strong> tab. The filter condition was created specifically for <code>test</code> environment, therefore the filter condition would be evaluated only at the relevant CD pipeline, i.e., <code>test</code></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/pass-env.jpg" alt="" class="img_ev3q">
-<center>Figure 9: Build &amp; Deploy tab</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/pass-env.jpg" alt="" class="img_ev3q">
+<center>Figure 10: Build &amp; Deploy tab</center></p>
 <p>Click <strong>Select Image</strong> for the <code>test</code> CD pipeline. The first tab <strong>Eligible images</strong> shows the list and count of images that have satisfied the pass condition since their tag versions were greater than <code>v0.0.7</code>. Hence, they are marked eligible for deployment.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/eligible-list-1.jpg" alt="" class="img_ev3q">
-<center>Figure 10: List of Eligible Images</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/eligible-list-1.jpg" alt="" class="img_ev3q">
+<center>Figure 11: List of Eligible Images</center></p>
 <p>The second tab <strong>Latest images</strong> shows the latest builds (up to 10 images) irrespective of whether they have satisfied the filter condition(s) or not. The ones that have not satisfied the filter conditions get marked as <code>Excluded</code>. In other words, they are not eligible for deployment.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/latest-list-1.jpg" alt="" class="img_ev3q">
-<center>Figure 11: List of Latest Images</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/latest-list-1.jpg" alt="" class="img_ev3q">
+<center>Figure 12: List of Latest Images</center></p>
 <p>Clicking the filter icon at the top-left shows the filter condition(s) applied to the <code>test</code> CD pipeline.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/filter-icon-pass-1.jpg" alt="" class="img_ev3q">
-<center>Figure 12a: Filter Icon</center></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/conditions-applied-1.jpg" alt="" class="img_ev3q">
-<center>Figure 12b: Conditions Applied</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/filter-icon-pass-1.jpg" alt="" class="img_ev3q">
+<center>Figure 13a: Filter Icon</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/conditions-applied-1.jpg" alt="" class="img_ev3q">
+<center>Figure 13b: Conditions Applied</center></p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="scenario-2">Scenario 2<a href="#scenario-2" class="hash-link" aria-label="Direct link to Scenario 2" title="Direct link to Scenario 2" translate="no">​</a></h4>
 <p>Consider another scenario where you wish to make images eligible for deployment only if the application&#x27;s git branch starts with the word <code>hotfix</code> and also if its repo URL matches your specified condition.</p>
 <p><strong>CEL Expression</strong>:</p>
@@ -146,22 +148,22 @@ and <code>hotfix-</code> is for finding the branch name (say <em>hotfix-sept-202
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fail-condition">Fail Condition<a href="#fail-condition" class="hash-link" aria-label="Direct link to Fail Condition" title="Direct link to Fail Condition" translate="no">​</a></h3>
 <p>Consider a scenario where you wish to exclude an image from deployment if its tag starts with the word <code>trial</code> or ends with the word <code>testing</code></p>
 <p>The CEL Expression should be <code>containerImageTag.startsWith(&quot;trial&quot;) || containerImageTag.endsWith(&quot;testing&quot;)</code></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/test-filter-1.jpg" alt="" class="img_ev3q">
-<center>Figure 13: CEL Expression for Fail Condition</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/test-filter-1.jpg" alt="" class="img_ev3q">
+<center>Figure 14: CEL Expression for Fail Condition</center></p>
 <p>Go to the <strong>Build &amp; Deploy</strong> tab. The filter condition was created specifically for <code>devtron-demo</code> environment, therefore the filter condition would be evaluated only at the relevant CD pipeline, i.e., <code>devtron-demo</code></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/fail-filter.jpg" alt="" class="img_ev3q">
-<center>Figure 14: Build &amp; Deploy tab</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/fail-filter.jpg" alt="" class="img_ev3q">
+<center>Figure 15: Build &amp; Deploy tab</center></p>
 <p>Click <strong>Select Image</strong> for the <code>devtron-demo</code> CD pipeline. The first tab <strong>Eligible images</strong> shows the list and count of images that have not met the fail condition. Hence, they are marked eligible for deployment.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/eligible-list-3.jpg" alt="" class="img_ev3q">
-<center>Figure 15: List of Eligible Images</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/eligible-list-3.jpg" alt="" class="img_ev3q">
+<center>Figure 16: List of Eligible Images</center></p>
 <p>The second tab <strong>Latest images</strong> shows the latest builds (up to 10 images) irrespective of whether they have satisfied the filter condition(s) or not. The ones that have satisfied the filter conditions get marked as <code>Excluded</code>. In other words, they are not eligible for deployment.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/latest-list-2.jpg" alt="" class="img_ev3q">
-<center>Figure 16: List of Latest Images</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/latest-list-2.jpg" alt="" class="img_ev3q">
+<center>Figure 17: List of Latest Images</center></p>
 <p>Clicking the filter icon at the top-left shows the filter condition(s) applied to the <code>devtron-demo</code> CD pipeline.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/doner-menu-fail-1.jpg" alt="" class="img_ev3q">
-<center>Figure 17a: Filter Menu Icon</center></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/filters/conditions-applied-3.jpg" alt="" class="img_ev3q">
-<center>Figure 17b: Conditions Applied</center></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/app-management/policies/tags-policy"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Tags Policy</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/app-management/policies/lock-deployment-config"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Lock Deployment Configuration</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction-" class="table-of-contents__link toc-highlight">Introduction <a></a></a></li><li><a href="#steps-to-create-a-filter" class="table-of-contents__link toc-highlight">Steps to Create a Filter</a></li><li><a href="#examples" class="table-of-contents__link toc-highlight">Examples</a><ul><li><a href="#pass-condition" class="table-of-contents__link toc-highlight">Pass Condition</a></li><li><a href="#fail-condition" class="table-of-contents__link toc-highlight">Fail Condition</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/doner-menu-fail-1.jpg" alt="" class="img_ev3q">
+<center>Figure 18a: Filter Menu Icon</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/filter-conditions/conditions-applied-3.jpg" alt="" class="img_ev3q">
+<center>Figure 18b: Conditions Applied</center></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/app-management/policies/tags-policy"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Tags Policy</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/app-management/policies/lock-deployment-config"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Lock Deployment Configuration</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction-" class="table-of-contents__link toc-highlight">Introduction <a></a></a></li><li><a href="#steps-to-create-a-filter" class="table-of-contents__link toc-highlight">Steps to Create a Filter</a></li><li><a href="#examples" class="table-of-contents__link toc-highlight">Examples</a><ul><li><a href="#pass-condition" class="table-of-contents__link toc-highlight">Pass Condition</a></li><li><a href="#fail-condition" class="table-of-contents__link toc-highlight">Fail Condition</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
               <div style="text-align: center;">
                 <div style="margin-bottom: 1rem;">
                   <a href="/" style="display: inline-block;">
