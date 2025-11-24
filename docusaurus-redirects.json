@@ -449,7 +449,7 @@
             "from": [
               "/user-guide/deploy-chart/overview-of-charts"
             ],
-            "to": "/docs/user-guide/deploy-chart"
+            "to": "/docs/user-guide/deploy-chart/deployment-of-charts"
           },
           {
             "from": [
@@ -2177,7 +2177,7 @@
               "/devtron/v1.7/user-guide/deploy-chart/overview-of-charts",
               "/devtron/v1.7/usage/deploy-chart/overview-of-charts"
             ],
-            "to": "/docs/devtron/v1.7/user-guide/deploy-chart"
+            "to": "/docs/devtron/v1.7/user-guide/deploy-chart/deployment-of-charts"
           },
           {
             "from": [
@@ -3907,7 +3907,7 @@
               "/devtron/v1.8/user-guide/deploy-chart/overview-of-charts",
               "/devtron/v1.8/usage/deploy-chart/overview-of-charts"
             ],
-            "to": "/docs/devtron/v1.8/user-guide/deploy-chart"
+            "to": "/docs/devtron/v1.8/user-guide/deploy-chart/deployment-of-charts"
           },
           {
             "from": [
@@ -5640,7 +5640,7 @@
               "/devtron/v2.0/user-guide/deploy-chart/overview-of-charts",
               "/devtron/v2.0/usage/deploy-chart/overview-of-charts"
             ],
-            "to": "/docs/user-guide/deploy-chart"
+            "to": "/docs/user-guide/deploy-chart/deployment-of-charts"
           },
           {
             "from": [
@@ -7366,7 +7366,7 @@
               "/docs/devtron/v2.0/user-guide/deploy-chart/overview-of-charts",
               "/docs/devtron/v2.0/usage/deploy-chart/overview-of-charts"
             ],
-            "to": "/docs/user-guide/deploy-chart"
+            "to": "/docs/user-guide/deploy-chart/deployment-of-charts"
           },
           {
             "from": [
