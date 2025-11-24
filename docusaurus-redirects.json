@@ -7363,7 +7363,8 @@
           },
           {
             "from": [
-              "/docs/devtron/v2.0/user-guide/deploy-chart/overview-of-charts"
+              "/docs/devtron/v2.0/user-guide/deploy-chart/overview-of-charts",
+              "/docs/devtron/v2.0/usage/deploy-chart/overview-of-charts"
             ],
             "to": "/docs/user-guide/deploy-chart"
           },
