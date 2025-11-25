@@ -9,7 +9,7 @@ For example:
 * Add `hotfix image only` label to indicate a one-time patch on production.
 * Comments like `This image is buggy and shouldn't be used for deployment` to caution other users from deploying an unwanted image.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/tag-and-comment.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/tag-and-comment.jpg)
 <center>Figure 1: Labels and Comments</center>
 
 Such labels and comments will be visible only within Devtron, and will not propagate to your [container registry](../../reference/glossary.md#containeroci-registry) (say Docker Hub), unlike custom image tag pattern. You may use it to simplify the management and [selection of container images](./triggering-cd.md#deploying-approved-image) for deployment.
@@ -40,22 +40,22 @@ Refer [Deleting Labels](#deleting-labels--comments) if you commit a mistake whil
  
 ### From Build & Deploy
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/tag-build.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/tag-build.gif)
 <center>Figure 2: Adding Labels and Comments - 'Build & Deploy' Page</center>
 
 ### From Build History
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/tag-build-history.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/tag-build-history.gif)
 <center>Figure 3: Adding Labels and Comments - 'Build History' Page</center>
 
 ### From Deployment History
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/tag-deployment-history.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/tag-deployment-history.gif)
 <center>Figure 4: Adding Labels and Comments - 'Deployment History' Page</center>
 
 ### From App Details
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/tag-app-details.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/tag-app-details.gif)
 <center>Figure 5: Adding Labels and Comments - 'App Details' Page</center>
 
 ---
@@ -74,7 +74,7 @@ This action marks the label as invalid but doesn't delete the label. Therefore, 
 2. Use the (-) icon to strike off the label. This icon is available on the left-side of a label.
 3. Click **Save**. 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/soft-delete-tag.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/soft-delete-tag.gif)
 <center>Figure 6: Soft Deletion of a Label</center>
 
 ### Hard-Delete Labels
@@ -89,7 +89,7 @@ This action deletes the label permanently and makes it available for reuse in sa
 2. Use the (x) icon to permanently remove the label. This icon is available on the right-side of a label.
 3. Click **Save**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/hard-delete-tag.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/hard-delete-tag.gif)
 <center>Figure 7: Hard Deletion of a Label</center>
 
 ### Removing Comments
@@ -104,7 +104,7 @@ If you wish to permanently remove a comment, do the following:
 2. Empty the content of an existing comment.
 3. Click **Save**.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/remove-comment.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/remove-comment.gif)
 <center>Figure 8: Removing a Comment</center>
 
 ---
@@ -113,7 +113,7 @@ If you wish to permanently remove a comment, do the following:
 
 If you use [Application Groups](../application-groups.md) to deploy in bulk, image labels (if added) will be available as filters for you to quickly locate the container image.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/ag-image-filter.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/ag-image-filter.gif)
 <center>Figure 9: Application Groups - Filter by Image Label</center>
 
 This will be helpful in scenarios (say release package) where you wish to deploy multiple applications at once, and you have already labelled the intended images of the respective applications.
