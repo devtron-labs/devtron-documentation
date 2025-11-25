@@ -3,20 +3,19 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import { 
-  BookOpen, 
-  Download, 
-  Box, 
-  Server, 
-  Package, 
-  DollarSign, 
-  Shield, 
-  Zap, 
-  Database, 
-  Brain, 
-  Settings, 
-  FileText 
-} from 'lucide-react';
+import AI from '../components/icons/ic-ai.svg';
+import ApplicationManagement from '../components/icons/ic-application-management.svg';
+import Automation from '../components/icons/ic-bot.svg';
+import GettingStarted from '../components/icons/ic-bulb.svg';
+import CostVisibility from '../components/icons/ic-cost-visibility.svg';
+import StorageOps from '../components/icons/ic-database-backup.svg';
+import GlobalConfigurations from '../components/icons/ic-gear.svg';
+import InfraManagement from '../components/icons/ic-infrastructure-management.svg';
+import InstallDevtron from '../components/icons/ic-install.svg';
+import Security from '../components/icons/ic-shield-check.svg';
+import SoftwareReleaseManagement from '../components/icons/ic-software-release-management.svg';
+import Resources from '../components/icons/ic-resources.svg';
+// import GlobalOverview from '../components/icons/ic-global-overview.svg';
 import styles from './index.module.css';
 
 // Icon component wrapper
@@ -28,84 +27,84 @@ const IconWrapper = ({ Icon, className }) => (
 const features = [
   {
     title: 'Getting Started',
-    Icon: BookOpen,
+    Icon: GettingStarted,
     description: 'Learn the basics and get up and running with Devtron quickly.',
     link: '/docs',
     color: '#4F46E5',
   },
   {
     title: 'Install Devtron',
-    Icon: Download,
+    Icon: InstallDevtron,
     description: 'Choose from OSS, Freemium, or Enterprise installation options.',
     link: '/docs/setup/install',
     color: '#7C3AED',
   },
   {
     title: 'Application Management',
-    Icon: Box,
+    Icon: ApplicationManagement,
     description: 'Create, configure, and deploy applications with ease.',
     link: '/docs/user-guide/app-management',
     color: '#2563EB',
   },
   {
     title: 'Infrastructure Management',
-    Icon: Server,
+    Icon: InfraManagement,
     description: 'Browse resources, manage clusters, and monitor your infrastructure.',
     link: '/docs/user-guide/infra-management',
     color: '#0891B2',
   },
   {
     title: 'Software Release Management',
-    Icon: Package,
+    Icon: SoftwareReleaseManagement,
     description: 'Manage tenants and distribute releases efficiently.',
     link: '/docs/user-guide/software-distribution-hub',
     color: '#059669',
   },
   {
     title: 'Cost Visibility',
-    Icon: DollarSign,
+    Icon: CostVisibility,
     description: 'Track and optimize your infrastructure costs.',
     link: '/docs/user-guide/finops',
     color: '#10B981',
   },
   {
     title: 'Security',
-    Icon: Shield,
+    Icon: Security,
     description: 'Implement security scans and policies for your applications.',
     link: '/docs/user-guide/security-features',
     color: '#DC2626',
   },
   {
     title: 'Automation & Enablement',
-    Icon: Zap,
+    Icon: Automation,
     description: 'Automate workflows and create jobs for your pipelines.',
     link: '/docs/user-guide/automation',
     color: '#F59E0B',
   },
   {
     title: 'Backup & Restore',
-    Icon: Database,
+    Icon: StorageOps,
     description: 'Protect your data with backup and restore capabilities.',
     link: '/docs/user-guide/storageops/backup-and-restore',
     color: '#8B5CF6',
   },
   {
     title: 'AI Recommendations',
-    Icon: Brain,
+    Icon: AI,
     description: 'Get intelligent recommendations for your applications.',
     link: '/docs/user-guide/ai-recommendations',
     color: '#EC4899',
   },
   {
     title: 'Global Configurations',
-    Icon: Settings,
+    Icon: GlobalConfigurations,
     description: 'Configure clusters, authorization, and system-wide settings.',
     link: '/docs/user-guide/global-configurations',
     color: '#6366F1',
   },
   {
     title: 'Resources',
-    Icon: FileText,
+    Icon: Resources,
     description: 'Access glossary, FAQs, integrations, and upgrade guides.',
     link: '/docs/reference/resources',
     color: '#64748B',
