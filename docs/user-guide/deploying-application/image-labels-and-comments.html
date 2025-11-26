@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.596d72d5.css">
-<script src="/assets/js/runtime~main.c166ecaf.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.3fb73f12.js" defer="defer"></script>
 <script src="/assets/js/main.fa6f18ce.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -34,7 +34,7 @@
 <li class="">Add <code>hotfix image only</code> label to indicate a one-time patch on production.</li>
 <li class="">Comments like <code>This image is buggy and shouldn&#x27;t be used for deployment</code> to caution other users from deploying an unwanted image.</li>
 </ul>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/tag-and-comment.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/tag-and-comment.jpg" alt="" class="img_ev3q">
 <center>Figure 1: Labels and Comments</center></p>
 <p>Such labels and comments will be visible only within Devtron, and will not propagate to your <a class="" href="/docs/reference/glossary#containeroci-registry">container registry</a> (say Docker Hub), unlike custom image tag pattern. You may use it to simplify the management and <a class="" href="/docs/user-guide/deploying-application/triggering-cd#deploying-approved-image">selection of container images</a> for deployment.</p>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>caution</div><div class="admonitionContent_BuS1"><p>Tagging labels and comments are supported only for images in workflows with at least one production deployment pipeline. In Devtron, you can go to <strong>Global Configurations</strong> → <strong>Clusters &amp; Environments</strong> to identify a production environment by checking the &#x27;Prod&#x27; label.</p></div></div>
@@ -51,16 +51,16 @@
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>caution</div><div class="admonitionContent_BuS1"><p>You can add multiple labels to an image. but each label can be used only once &#x27;per image, per application&#x27;. You may use it in an image of other application though. <br>
 Refer <a href="#deleting-labels--comments" class="">Deleting Labels</a> if you commit a mistake while adding labels.</p></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="from-build--deploy">From Build &amp; Deploy<a href="#from-build--deploy" class="hash-link" aria-label="Direct link to From Build &amp; Deploy" title="Direct link to From Build &amp; Deploy" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/tag-build.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/tag-build.gif" alt="" class="img_ev3q">
 <center>Figure 2: Adding Labels and Comments - &#x27;Build &amp; Deploy&#x27; Page</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="from-build-history">From Build History<a href="#from-build-history" class="hash-link" aria-label="Direct link to From Build History" title="Direct link to From Build History" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/tag-build-history.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/tag-build-history.gif" alt="" class="img_ev3q">
 <center>Figure 3: Adding Labels and Comments - &#x27;Build History&#x27; Page</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="from-deployment-history">From Deployment History<a href="#from-deployment-history" class="hash-link" aria-label="Direct link to From Deployment History" title="Direct link to From Deployment History" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/tag-deployment-history.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/tag-deployment-history.gif" alt="" class="img_ev3q">
 <center>Figure 4: Adding Labels and Comments - &#x27;Deployment History&#x27; Page</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="from-app-details">From App Details<a href="#from-app-details" class="hash-link" aria-label="Direct link to From App Details" title="Direct link to From App Details" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/tag-app-details.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/tag-app-details.gif" alt="" class="img_ev3q">
 <center>Figure 5: Adding Labels and Comments - &#x27;App Details&#x27; Page</center></p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="deleting-labels--comments">Deleting Labels &amp; Comments<a href="#deleting-labels--comments" class="hash-link" aria-label="Direct link to Deleting Labels &amp; Comments" title="Direct link to Deleting Labels &amp; Comments" translate="no">​</a></h2>
@@ -72,7 +72,7 @@ Refer <a href="#deleting-labels--comments" class="">Deleting Labels</a> if you c
 <li class="">Use the (-) icon to strike off the label. This icon is available on the left-side of a label.</li>
 <li class="">Click <strong>Save</strong>.</li>
 </ol>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/soft-delete-tag.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/soft-delete-tag.gif" alt="" class="img_ev3q">
 <center>Figure 6: Soft Deletion of a Label</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hard-delete-labels">Hard-Delete Labels<a href="#hard-delete-labels" class="hash-link" aria-label="Direct link to Hard-Delete Labels" title="Direct link to Hard-Delete Labels" translate="no">​</a></h3>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Who Can Perform This Action?</div><div class="admonitionContent_BuS1"><p>Users need to have super-admin permission to perform hard deletion of labels.</p></div></div>
@@ -82,7 +82,7 @@ Refer <a href="#deleting-labels--comments" class="">Deleting Labels</a> if you c
 <li class="">Use the (x) icon to permanently remove the label. This icon is available on the right-side of a label.</li>
 <li class="">Click <strong>Save</strong>.</li>
 </ol>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/hard-delete-tag.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/hard-delete-tag.gif" alt="" class="img_ev3q">
 <center>Figure 7: Hard Deletion of a Label</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="removing-comments">Removing Comments<a href="#removing-comments" class="hash-link" aria-label="Direct link to Removing Comments" title="Direct link to Removing Comments" translate="no">​</a></h3>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Who Can Perform This Action?</div><div class="admonitionContent_BuS1"><p>Users need to have <a class="" href="/docs/user-guide/global-configurations/authorization/user-access#devtron-apps-permissions">Build &amp; deploy permission</a> or above (along with access to the environment and application) to remove comments.</p></div></div>
@@ -92,12 +92,12 @@ Refer <a href="#deleting-labels--comments" class="">Deleting Labels</a> if you c
 <li class="">Empty the content of an existing comment.</li>
 <li class="">Click <strong>Save</strong>.</li>
 </ol>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/remove-comment.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/remove-comment.gif" alt="" class="img_ev3q">
 <center>Figure 8: Removing a Comment</center></p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="extra-use-case">Extra Use Case<a href="#extra-use-case" class="hash-link" aria-label="Direct link to Extra Use Case" title="Direct link to Extra Use Case" translate="no">​</a></h2>
 <p>If you use <a class="" href="/docs/user-guide/application-groups">Application Groups</a> to deploy in bulk, image labels (if added) will be available as filters for you to quickly locate the container image.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/deploying-application/tag-comment/ag-image-filter.gif" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/image-tags/ag-image-filter.gif" alt="" class="img_ev3q">
 <center>Figure 9: Application Groups - Filter by Image Label</center></p>
 <p>This will be helpful in scenarios (say release package) where you wish to deploy multiple applications at once, and you have already labelled the intended images of the respective applications.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/deploying-application/rollback-deployment"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Rollback Deployment</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/app-details"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">App Details</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#adding-labels--comments" class="table-of-contents__link toc-highlight">Adding Labels &amp; Comments</a><ul><li><a href="#from-build--deploy" class="table-of-contents__link toc-highlight">From Build &amp; Deploy</a></li><li><a href="#from-build-history" class="table-of-contents__link toc-highlight">From Build History</a></li><li><a href="#from-deployment-history" class="table-of-contents__link toc-highlight">From Deployment History</a></li><li><a href="#from-app-details" class="table-of-contents__link toc-highlight">From App Details</a></li></ul></li><li><a href="#deleting-labels--comments" class="table-of-contents__link toc-highlight">Deleting Labels &amp; Comments</a><ul><li><a href="#soft-delete-labels" class="table-of-contents__link toc-highlight">Soft-Delete Labels</a></li><li><a href="#hard-delete-labels" class="table-of-contents__link toc-highlight">Hard-Delete Labels</a></li><li><a href="#removing-comments" class="table-of-contents__link toc-highlight">Removing Comments</a></li></ul></li><li><a href="#extra-use-case" class="table-of-contents__link toc-highlight">Extra Use Case</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
               <div style="text-align: center;">
