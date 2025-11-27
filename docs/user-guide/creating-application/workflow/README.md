@@ -7,7 +7,7 @@ After configuring the **Build Configurations** and **Base Configurations**, the 
 In Devtron, a **Workflow** is a logical sequence of different stages(pipelines) used for continuous integration and continuous deployment of an application. 
 
  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/ci-pipeline/workflow-intro.gif)
-<center>Figure 1: Workflow Editor</center>
+     <center>Figure 1: Workflow Editor</center>
 
 ---
 
@@ -20,12 +20,12 @@ To create a quick workflow with both build and deployment pipelines, follow the 
 1. Click **New Workflow** in the workflow editor.
 
      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-create-workflow.jpg)
-<center>Figure 2: Selecting 'New Workflow'</center>
+     <center>Figure 2: Selecting 'New Workflow'</center>
 
 2. Select **Build and Deploy from Source Code**; a window appears.
 
      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-build-deploy-from-source-code.jpg)
-<center>Figure 3: Selecting 'Build and Deploy from Source Code'</center>
+     <center>Figure 3: Selecting 'Build and Deploy from Source Code'</center>
 
 3. Enter the required information in the following fields.
 
@@ -37,7 +37,7 @@ To create a quick workflow with both build and deployment pipelines, follow the 
  | `Namespace`| Required (Auto Filled)| Automatically populated based on the selected environment | 
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-cred.jpg)
-<center>Figure 4: Entering Information</center>
+     <center>Figure 4: Entering Information</center>
 
  **Source Types**
 
@@ -51,7 +51,7 @@ To create a quick workflow with both build and deployment pipelines, follow the 
 4. Click **Create Workflow**; a workflow with both build and deployment pipelines will be created.
 
      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow/build-deploy-new-save-workflow.jpg)
-<center>Figure 5: Clicking 'Create Workflow'</center>
+     <center>Figure 5: Clicking 'Create Workflow'</center>
 
 5. If you want to configure advanced configurations in the build pipeline, such as Custom image tag pattern, Vulnerability Scanning, etc., refer to the [CI Pipeline](./ci-pipeline.md#configuring-advanced-options) page to learn more.
 

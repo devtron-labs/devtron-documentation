@@ -21,5 +21,3 @@ Under **INTEGRATIONS**, select **Discover**.
 <center>Discover integrations</center>
  
 > Although the integrations are installed separately, they cannot be upgraded separately. Integrations update happens automatically with [Devtron upgrade](../../setup/upgrade/README.md).
- 
-

@@ -65,13 +65,13 @@ To do so, follow the steps below:
 2. During Blue-Green deployment, click the **Swap Traffic** button to shift the traffic to application's new release.
 
       ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/deployment-visibility/deployment-awating-swap.jpg)
-<center>Figure 3: Selecting Swap Traffic</center>
+      <center>Figure 3: Selecting Swap Traffic</center>
 
 3. Enter the name of the environment and select **Swap Traffic**
 
       ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/deployment-visibility/deployment-swap-live-traffic.jpg)
-<center>Figure 4: Swap Traffic Pop Up</center>
-
+      <center>Figure 4: Swap Traffic Pop Up</center>
+      
 4. This will route the end user traffic from the current running release to the new release on a particular environment.
 
 
@@ -86,12 +86,12 @@ To do so, follow the below steps:
 2. During Blue-Green deployment, click the **Skip & Promote Full** button to shift the traffic to application's new deployment.
 
       ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/deployment-visibility/deployment-skip-and-promote.jpg)
-<center>Figure 5: Selecting 'Skip & Promote Full'</center>
+      <center>Figure 5: Selecting 'Skip & Promote Full'</center>
 
 3. Enter the name of the environment and select **Promote to Full**.
 
       ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/deployment-visibility/deployment-skip-and-promote-2.jpg)
-<center>Figure 6: Promote to Full Pop Up</center>
+      <center>Figure 6: Promote to Full Pop Up</center>
 
 4. This will skip the Blue-Green Strategy and route the end user traffic from the current running release to the new release on a particular environment.
 
@@ -110,21 +110,21 @@ To perform a rollback from App Details follow the below steps:
   * In case of Canary deployments, select **Rollback** under **Canary Strategy**.
 
       ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/deployment-visibility/deployment-rollback.jpg)
-<center>Figure 7: Selecting Rollback For Canary Deployment</center>
+      <center>Figure 7: Selecting Rollback For Canary Deployment</center>
 
   * In case of Blue Green deployments, select **Rollback** under **Blue Green Strategy**.
 
       ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/deployment-visibility/deployment-rollback-blue-green.jpg)
-<center>Figure 8: Selecting Rollback For Blue Green Deployment</center>
+      <center>Figure 8: Selecting Rollback For Blue Green Deployment</center>
 
 3. Select the image to which you want your release to be rolled back and click **Deploy** to rollback the release.
 
       ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/deployment-visibility/deployment-rollback-select-image.jpg)
-<center>Figure 9: Selecting the Image</center>
+      <center>Figure 9: Selecting the Image</center>
 
 4. If you wish, you can select a different deployment strategy other than the default according to the use case.
 
       ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/deployment-visibility/deployment-rollback-deploy-strag.jpg)
-<center>Figure 10: Selecting Deployment Strategy</center>
+      <center>Figure 10: Selecting Deployment Strategy</center>
 
 5. The application will be rolled back to the previous release (image) using the selected deployment strategy.

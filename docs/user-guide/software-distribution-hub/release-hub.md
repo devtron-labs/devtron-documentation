@@ -21,7 +21,7 @@ This involves the creation of release tracks and software versions. A release tr
 1. Click **+ Release Track**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/add-track.jpg)
-<center>Figure 1: Creating New Release Track</center>
+    <center>Figure 1: Creating New Release Track</center>
 
 2. Give a name to the track, e.g., `numero`
 
@@ -30,22 +30,22 @@ This involves the creation of release tracks and software versions. A release tr
 4. Click **Create Release Track**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/track-creation.jpg)
-<center>Figure 2: Entering Track Details</center>
+    <center>Figure 2: Entering Track Details</center>
 
 5. Click **+ Create Release**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/create-release.jpg)
-<center>Figure 3: Creating New Release</center>
+    <center>Figure 3: Creating New Release</center>
 
 6. Select a track (e.g., *numero*) from the **Release Track** dropdown.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/track-selection.jpg)
-<center>Figure 4: Choosing Release Track</center>
+    <center>Figure 4: Choosing Release Track</center>
 
 7. Enter a [semantic version](https://semver.org/) in **Release Version** field, e.g., `1.0.0`
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/semantic-versioning.jpg)
-<center>Figure 5: Versioning the Release</center>
+    <center>Figure 5: Versioning the Release</center>
 
 8. (Optional) Give a name to the release, e.g., `numero-beta`. If you don’t provide one, the name will be same as release version (i.e., 1.0.0).
 
@@ -54,12 +54,12 @@ This involves the creation of release tracks and software versions. A release tr
 10. Click **Create Release**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/release-version.jpg)
-<center>Figure 6: Saving Release Details</center>
+    <center>Figure 6: Saving Release Details</center>
 
 If you are creating your first release, you may proceed with the **Create from scratch** option. However, for subsequent versions of your release (say 1.0.1), you may clone an existing release (e.g., 1.0.0) as shown below. Please note, you can only clone releases belonging to the same track.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/clone-release.jpg)
-<center>Figure 7: Cloning an Existing Release</center>
+    <center>Figure 7: Cloning an Existing Release</center>
 
 ---
 
@@ -74,19 +74,19 @@ This involves the inclusion of applications you wish to rollout in the release v
 1. Click **+ Add Application** button present within the release you created.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/add-apps.jpg)
-<center>Figure 8: Adding Apps to Release</center>
+    <center>Figure 8: Adding Apps to Release</center>
 
 2. Click the **Search and add applications** dropdown.
 
 3. Use the checkbox to add applications from your projects.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/search-apps.gif)
-<center>Figure 9: Choosing Applications</center>
+    <center>Figure 9: Choosing Applications</center>
 
 4. Click **Add Release Stage**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/add-release-stage.jpg)
-<center>Figure 10: Dividing Release in Stages</center>
+    <center>Figure 10: Dividing Release in Stages</center>
 
 :::info Importance of Release Stages
 By default, your selected applications will be set to release in one go. However, you can also release them in stages. In other words, you can decide which set of applications should be released first, subsequently which ones to release next, and the ones to release last. <br/><br/> For example, if you're adding a new payment system (backend) and an updated checkout page (frontend), you would release the payment system first to ensure payments can be processed correctly.
@@ -95,7 +95,7 @@ By default, your selected applications will be set to release in one go. However
 5. Use the drag-and-drop feature to move applications from one stage to another.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/release-stage-v2.gif)
-<center>Figure 11: Rearranging the Sequence</center>
+    <center>Figure 11: Rearranging the Sequence</center>
 
 :::caution 
 The drag-and-drop feature is designed specifically for moving applications between different release stages. It is not meant to alter the sequence of applications within the same stage.
@@ -114,7 +114,7 @@ Users need to have super-admin permission to select images for selected applicat
 1. Select a workflow available for your application. All the [images](../../reference/glossary.md#image) available in the selected workflow will appear.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/workflow-selection.gif)
-<center>Figure 12: Selecting Image from Specific Workflow</center>
+    <center>Figure 12: Selecting Image from Specific Workflow</center>
 
 :::info Note
 Only the images that were built already will appear. If there are no images present, [trigger the CI pipeline](../deploying-application/triggering-ci.md) of the application first to obtain the image.
@@ -125,7 +125,7 @@ Only the images that were built already will appear. If there are no images pres
 3. Repeat the above steps for other applications you added in the release.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/image-selections.gif)
-<center>Figure 13: Repeating Steps for Other Applications</center>
+    <center>Figure 13: Repeating Steps for Other Applications</center>
 
 4. Click **Save**.
 
@@ -136,12 +136,12 @@ In case you don’t have the correct images ready for any of your applications, 
 5. You may add release instructions for each application using the in-built Markdown editor. This can be detailed deployment notes and configuration guidelines for the team.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/release-instructions-v2.gif)
-<center>Figure 14: Adding Release Instructions</center>
+    <center>Figure 14: Adding Release Instructions</center>
 
 6. Before locking the requirements, make sure the release order is correct, add applications if needed, and include environments in tenants (if not done already). Once you have finalized them, click **Lock Requirements**. 
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/freeze-requirements.gif)
-<center>Figure 15: Locking Requirements</center>
+    <center>Figure 15: Locking Requirements</center>
 
 :::info 
 Once you lock the requirements, Devtron will prevent any unsolicited modifications to your release by anyone (including you). However, you can re-edit it by clicking **Unlock To Edit**.
@@ -164,18 +164,18 @@ This involves the deployment of the release to the specified tenant installation
 1. Go to the **Rollout Release** tab.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/rollout-release.jpg)
-<center>Figure 16: Rollout Release Page</center>
+    <center>Figure 16: Rollout Release Page</center>
 
 2. Your release needs to be marked as ready to proceed further. If it isn’t, you can mark it **Ready for release** from this screen.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/ready-release.gif)
-<center>Figure 17: Marking a Release as Ready</center>
+    <center>Figure 17: Marking a Release as Ready</center>
 
 
     Optionally, you can also do so by changing the status from **Draft** state to **Ready for release** within your release track. 
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/ready-for-release.jpg)
-<center>Figure 18: Alternative Way of Marking</center>
+    <center>Figure 18: Alternative Way of Marking</center>
     
 3. Use the checkbox to select the applications belonging to the first release stage. You may use the filters on the left-hand side to make it easier.
 
@@ -186,7 +186,7 @@ This involves the deployment of the release to the specified tenant installation
     If the application workflow has pre-deployment/post-deployment stage, you get a dropdown where you can specifically trigger either pre-deployment, deployment, or post-deployment stage.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/trigger-deployment.gif)
-<center>Figure 19: Pre/Post Deployment</center>
+    <center>Figure 19: Pre/Post Deployment</center>
 
 5. Once the applications from the first release stage are successfully deployed, select the applications from the subsequent release stage and deploy.
 
@@ -224,17 +224,17 @@ Apart from the rollout status, you can also see the release status:
 * If the applications are partially released, the release status shows `Partially released`.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/partial-release.jpg)
-<center>Figure 21: Partial Release</center>
+    <center>Figure 21: Partial Release</center>
 
 * If all the applications in a release are successfully deployed, the release status shows `Completely Released`.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/complete-release.jpg)
-<center>Figure 22: Full Release</center>
+    <center>Figure 22: Full Release</center>
 
 * Alternatively, you can view the release status directly in the release track too.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/complete-release-2.jpg)
-<center>Figure 23: Alternative Way of Checking Status</center>
+    <center>Figure 23: Alternative Way of Checking Status</center>
 
 ### Putting a Release on Hold
 
@@ -287,6 +287,3 @@ Based on the schema provided in the catalog, you can add relevant details for re
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/release-catalog.jpg)
 <center>Figure 27: Release Catalog</center>
-
-
-

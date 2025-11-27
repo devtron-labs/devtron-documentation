@@ -28,7 +28,7 @@ You must [add your OCI registry](../global-configurations/container-registries.m
 3. In the **List of repositories**, add the chart repo(s). The format should be `username/chartname`. You can find the username from your registry provider account.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/container-config.jpg)
-<center>Figure 1: Adding Chart Repos</center>
+    <center>Figure 1: Adding Chart Repos</center>
 
 4. Click **Save** or **Update**.
 
@@ -37,24 +37,24 @@ You must [add your OCI registry](../global-configurations/container-registries.m
 6. You can find your chart(s) either by using the search bar or by selecting your chart source.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/chart-search.jpg)
-<center>Figure 2: Searching your Chart</center>
+    <center>Figure 2: Searching your Chart</center>
 
 You have successfully pulled your charts to the chart store.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/chart-list.jpg)
-<center>Figure 3: Uploaded Helm Charts</center>
+    <center>Figure 3: Uploaded Helm Charts</center>
 
 ### Unable to find your Charts?
 
 Deprecated charts won't show up in the Chart Store unless you enable the **Show deprecated charts** filter as shown below
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/deprecated.jpg)
-<center>Figure 4: Checking Deprecated Charts</center>
+    <center>Figure 4: Checking Deprecated Charts</center>
 
 Or, you may try performing a resync as shown below
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/chart-sync.jpg)
-<center>Figure 5: Performing a Resync</center>
+    <center>Figure 5: Performing a Resync</center>
 
 ---
 
@@ -66,7 +66,7 @@ Or, you may try performing a resync as shown below
 2. In the **List of repositories** field, remove the unwanted chart repo.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-pull/remove-chart-repo.jpg)
-<center>Figure 6: Removing a Chart Repo</center>
+    <center>Figure 6: Removing a Chart Repo</center>
 
 3. Click **Update**.
 
@@ -75,5 +75,3 @@ The removed chart would no longer appear in the Chart Store.
 :::info
 Deleting a chart repo from your OCI registry will not lead to the removal of chart from the Chart Store
 :::
-
-

@@ -5,7 +5,7 @@ Regular backups for Devtron PostgreSQL and ArgoCD are crucial components of a di
 1. Go to the devtron chart store and search for `devtron-backups` chart.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/backup/backup-chart-search.jpg)
-<center></center>
+<center>Figure 1: Search Chart</center>
 
 2. Select the `devtron-backups` and click `Configure & Deploy`.
 3. Now follow either of the options described below according to your Cloud provider.
@@ -20,7 +20,7 @@ To store Devtron backups on AWS S3, please follow these steps:
 4. Configure the `devtron-backups` chart for AWS S3 by selecting the appropriate options:
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/backup/aws-backup-config.jpg)
-<center>AWS Backup Configuration</center>
+<center>Figure 2: AWS Backup Configuration</center>
 
 5. Deploy the chart, and the Devtron backup will be automatically uploaded to the AWS S3 bucket at the scheduled intervals.
 
@@ -33,12 +33,12 @@ To store Devtron backups on Azure Containers, please follow these steps:
 3. Navigate to Security + Networking → Access Key section in Azure and copy the Access Key:
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/backup/azure-sa-key.jpg)
-<center>Azure Storage Account Key</center>
+<center>Figure 3: Azure Storage Account Key</center>
 
 4. Configure the `devtron-backups` chart for Azure Containers by providing the Access Key:
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/backup/azure-backup-config.jpg)
-<center>Azure Backup Configuration</center>
+<center>Figure 4: Azure Backup Configuration</center>
 
 5. Before deploying the backup chart, ensure that `AWS.enabled` is set to `false`. This will ensure that Devtron backup will be automatically uploaded to the configured Azure containers on the scheduled intervals.
 

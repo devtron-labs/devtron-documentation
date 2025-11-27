@@ -36,4 +36,3 @@ Lock down deployment configurations to prevent unauthorized modifications or acc
 
 ### 8. [Image Promotion](../global-configurations/image-promotion-policy.md)
 Promote verified builds between deployment pipelines (e.g., from staging to production) by skipping intermediate pipelines.
-

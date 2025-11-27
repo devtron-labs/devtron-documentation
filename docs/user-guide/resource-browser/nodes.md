@@ -55,12 +55,12 @@ You can debug a node via [Cluster Terminal](./cluster-terminal.md) by selecting 
 * Click **Debug**.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/nodes/debug-db.jpg)
-<center>Figure 3a: Debugging a Node</center>
+  <center>Figure 3a: Debugging a Node</center>
 
 * Debug a node by selecting the terminal shell, i.e., `bash` or `sh`.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/nodes/debug-terminal-db.jpg)
-<center>Figure 3b: Debug Terminal</center>
+  <center>Figure 3b: Debug Terminal</center>
 
 ---
 
@@ -74,12 +74,12 @@ Cordoning a node means making the node unschedulable. After [cordoning a node](h
 * Click **Cordon**.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/nodes/cordon-db.jpg)
-<center>Figure 4b: Cordoning a Node</center>
+  <center>Figure 4b: Cordoning a Node</center>
 
 * A confirmation dialog box will appear, click **Cordon Node** to proceed.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/nodes/cordon-dialog-db.jpg)
-<center>Figure 4c: Cordon Confirmation</center>
+  <center>Figure 4c: Cordon Confirmation</center>
 
 The status of the node shows `SchedulingDisabled` with `Unschedulable` parameter set as `true`.
 
@@ -99,12 +99,12 @@ After the node is drained, all pods (including those managed by DaemonSets) in t
 * Click **Drain**.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/nodes/drain-db.jpg)
-<center>Figure 5b: Draining a Node</center>
+  <center>Figure 5b: Draining a Node</center>
 
 * A confirmation dialog box will appear, click **Drain Node** to proceed.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/nodes/drain-dialog-db.jpg)
-<center>Figure 5c: Drain Confirmation</center>
+  <center>Figure 5c: Drain Confirmation</center>
 
 You can also select from the following conditions before draining a node:
 
@@ -130,12 +130,12 @@ Taints are `key:value` pairs associated with effect. After you add taints to nod
 * Click **Edit taints**.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/nodes/edit-taints-db.jpg)
-<center>Figure 6b: Tainting a Node</center>
+  <center>Figure 6b: Tainting a Node</center>
 
 * Enter the `key:value` pairs and select the taint effect from the drop-down list. [Click here](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/#concepts) to read about taint effects.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/nodes/taint-dialog-db.jpg)
-<center>Figure 6c: Adding Taints</center>
+  <center>Figure 6c: Adding Taints</center>
 
 * Click **Save**.
 

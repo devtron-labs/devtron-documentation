@@ -53,6 +53,3 @@ The GitHub Pull Request Updater plugin will not be generating an output variable
 
 
 Click **Update Pipeline**.
-
-
-

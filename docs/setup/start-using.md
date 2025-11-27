@@ -15,4 +15,3 @@ Please use [this spring boot app](https://github.com/nishant-d/demo.git) repo fo
 ### deploy helm chart
 
 for deploying helm chart follow [helm chart installation guide](../user-guide/deploy-chart/)
-

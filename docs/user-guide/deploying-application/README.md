@@ -13,4 +13,3 @@ There are two main steps for building and deploying applications:
 * [Triggering CD](triggering-cd.md)
 
 You can also rollback the deployment. Refer [Rollback Deployment](rollback-deployment.md) for detail.
-

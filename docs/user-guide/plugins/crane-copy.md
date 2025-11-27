@@ -53,6 +53,3 @@ Here you can set conditions to execute or skip the task. You can select `Set tri
 CraneCopy will not be generating an output variable.
 
 Click **Update Pipeline**.
-
-
-

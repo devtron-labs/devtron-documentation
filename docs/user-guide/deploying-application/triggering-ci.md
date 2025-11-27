@@ -45,17 +45,17 @@ If you wish to pass runtime parameters for a build job, you can provide key-valu
 1. Go to the **Parameters** tab available on the screen where you select the commit.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-ci/build-parameter-tab.jpg)
-<center>Figure 3: Parameters</center>
+    <center>Figure 3: Parameters</center>
 
 2. Click **+ Add parameter**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-ci/add-parameter.jpg)
-<center>Figure 4: Clicking Add Parameters</center>
+    <center>Figure 4: Clicking Add Parameters</center>
 
 3. Enter your key-value pair as shown below. 
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/build-and-deploy/triggering-ci/key-value.jpg)
-<center>Figure 5: Entering Parameters</center>
+    <center>Figure 5: Entering Parameters</center>
 
     <br/> Similarly, you may add more than one key-value pair by using the **+ Add Parameter** button.
 

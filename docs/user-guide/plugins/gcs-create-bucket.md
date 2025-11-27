@@ -64,6 +64,3 @@ Here you can define when a task should be marked as passed or failed. You can se
 
 
 Click **Update Pipeline**.
-
-
-

@@ -11,4 +11,3 @@ Unlike [custom scripts](../creating-application/workflow/pre-post-tasks.md#execu
 Some plugins are meant for pre-build/post-build, while some are meant for pre-deployment/post-deployment.
 
 From this section, you can know more about the individual plugins and its purpose.
-

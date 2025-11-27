@@ -54,7 +54,7 @@ Ensure [GitOps](../global-configurations/gitops.md) is configured before deployi
 1. Go to the **Chart Store** and search for `prometheus`. Use the Prometheus community's `kube-prometheus-stack` chart to deploy Prometheus.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/app-metrics/kube-prometheus-chart.jpg)
-<center>Figure 2: Chart Store</center>
+    <center>Figure 2: Chart Store</center>
 
 2. After selecting the chart, configure these values as needed before deployment.
 
@@ -76,10 +76,10 @@ Ensure [GitOps](../global-configurations/gitops.md) is configured before deployi
     Search for the above parameters, and update them as shown (or customize as needed).
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/app-metrics/configure-chart.jpg)
-<center>Figure 3a: Prometheus Chart Configuration</center>
+    <center>Figure 3a: Prometheus Chart Configuration</center>
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/app-metrics/configure-chart-1.jpg)
-<center>Figure 3b: Prometheus Chart Configuration (cont.)</center>
+    <center>Figure 3b: Prometheus Chart Configuration (cont.)</center>
 
 3. Enable `upgradeJob` parameter to install CRDs:
 
@@ -88,7 +88,7 @@ Ensure [GitOps](../global-configurations/gitops.md) is configured before deployi
     In the Prometheus Helm chart settings, locate the `upgradeJob` parameter and set it to `true` if it is `false`.
       
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/app-metrics/configure-chart-2.jpg)
-<center>Figure 4: upgradeJob Parameter</center>
+    <center>Figure 4: upgradeJob Parameter</center>
       
 4. After enabling the parameter, click **Deploy Chart**.
 
@@ -110,12 +110,12 @@ Only super admin users can set up Prometheus endpoint in a cluster.
 2. Copy the URL of the `kube-prometheus` service as shown in the image below.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/app-metrics/endpoint.jpg)
-<center>Figure 5: Prometheus Service</center>
+    <center>Figure 5: Prometheus Service</center>
 
 3. To set Prometheus as a data source in Grafana, navigate to **Global Configurations** → **Clusters & Environments**, select your cluster, and edit its settings.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/app-metrics/select-cluster.jpg)
-<center>Figure 6: Clusters and Environments</center>
+    <center>Figure 6: Clusters and Environments</center>
 
 4. Now to set up the Prometheus endpoint:
     1. Enable the `See metrics for applications in this cluster` option, as shown in the image below.
@@ -123,7 +123,7 @@ Only super admin users can set up Prometheus endpoint in a cluster.
     3. Click **Update Cluster** to save the changes.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/app-metrics/enable-app-metrics.jpg)
-<center>Figure 7: Prometheus Endpoint</center>
+    <center>Figure 7: Prometheus Endpoint</center>
 
 
 ### Step 4: Enable Application Metrics
@@ -150,12 +150,12 @@ To enable **Throughput** and **Latency** metrics in Devtron, follow these steps:
 3. Enable **Application Metrics** in the Deployment Template as shown below and save the changes.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/app-metrics/show-app-metrics.jpg)
-<center>Figure 9: Enable Application Metrics</center>
+    <center>Figure 9: Enable Application Metrics</center>
 
 4. Now, you can track all your application metrics by navigating to **Applications** and going to the **App Details** page of your Devtron App as shown below. 
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/app-metrics/app-new3.jpg)
-<center>Figure 10: Application Metrics</center>
+    <center>Figure 10: Application Metrics</center>
 
 :::caution Note 
 If your environment is [Overridden](../creating-application/environment-overrides.md), you need to enable the Application Metrics at the environment override deployment template instead of the base deployment template.

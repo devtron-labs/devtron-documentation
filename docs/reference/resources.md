@@ -21,4 +21,3 @@ This section groups reference material, troubleshooting notes, upgrade/install r
 * **[Graviton](./graviton)** - Information on the Graviton reference (architecture / compatibility).
 * **[Release Notes](https://github.com/devtron-labs/devtron/releases)** - Official release notes and changelog (external).
 * **[Uninstall Devtron](../setup/install/uninstall-devtron)** - Steps to remove Devtron from a cluster.
-

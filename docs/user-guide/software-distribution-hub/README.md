@@ -76,4 +76,3 @@ This is a part of [requirements](#requirements) where you decide the stages in w
 ### Rollout
 
 It is a process of delivering a new release to the tenant's environment. In Software Release Management, this comes right after you lock the basic requirements of a release (i.e., application selection, release order, image selection, and release instructions).
-

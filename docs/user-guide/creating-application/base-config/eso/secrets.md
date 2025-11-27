@@ -9,12 +9,12 @@ Simply put, if a [ConfigMap](../config-maps.md) is a recipe card in the kitchen,
 1. Go to the **Configurations** → **Base Configurations**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/config-maps/appconfig-page.jpg)
-<center>Figure 1: Application's 'Configurations' Page</center>
+    <center>Figure 1: Application's 'Configurations' Page</center>
 
 2. Click the **+** button next to **Secrets**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/add-secret.jpg)
-<center>Figure 2: Add Button</center>
+    <center>Figure 2: Add Button</center>
 
 3. **Data Type** - Choose between the following data types:
     * [Kubernetes Secret](#kubernetes-secret)
@@ -30,7 +30,7 @@ Simply put, if a [ConfigMap](../config-maps.md) is a recipe card in the kitchen,
 2. **Name** - Provide a name to your Secret (cannot be changed later).
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/creating-applications-secrets-2.jpg)
-<center>Figure 3: Naming the Secret</center>
+    <center>Figure 3: Naming the Secret</center>
 
 3. **Mount data as** - Select how you want to mount the Secret:
     * **Environment Variable** – Select this option if you want to inject Environment Variables in pods using Secret.
@@ -189,7 +189,7 @@ External Secrets Operator (ESO) is a Kubernetes component that integrates with e
 2. Search for the `external-secrets` chart.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/external-secret.jpg)
-<center>Figure 10: Searching External Secrets Chart</center>
+    <center>Figure 10: Searching External Secrets Chart</center>
 
 :::info What if external-secrets chart is not found?
 Manually add the following chart repository URL in Devtron: `https://charts.external-secrets.io`. Follow this [guide](../../../global-configurations/chart-repo.md#add-chart-repository) to know the steps.
@@ -198,7 +198,7 @@ Manually add the following chart repository URL in Devtron: `https://charts.exte
 3. Give a name to the helm app that will be created from the chart. Also enter the project and environment where you wish to install the chart.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/secrets/ext-secret-fields.jpg)
-<center>Figure 11: Adding Details</center>
+    <center>Figure 11: Adding Details</center>
 
 4. Click **Deploy Chart**.
 

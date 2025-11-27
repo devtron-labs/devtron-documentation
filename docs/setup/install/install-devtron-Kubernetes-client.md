@@ -55,15 +55,15 @@ Upon executing the above-mentioned command, if you encounter an error saying tha
 3. Fetch the cluster credentials (`Cluster name`, `Server URL`, `Bearer token`) from the terminal and note them aside.
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/cluster-credentials.jpg)
-<center>Figure 1: Fetch Cluster Credentials</center>
+   <center>Figure 1: Fetch Cluster Credentials</center>
 
 4. Navigate to **Global Configurations** → **Clusters & Environments** → **Add cluster** and paste the credentials in their respective fields. 
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/global-configs-clusters.jpg)
-<center>Figure 2a: Add a Cluster</center>
+   <center>Figure 2a: Add a Cluster</center>
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/install+devtron+K8s+client/adding-cluster.jpg)
-<center>Figure 2b: Add Cluster Credentials</center>
+   <center>Figure 2b: Add Cluster Credentials</center>
 
 5. Click **Save Cluster**. This cluster will now be displayed in the **Kubernetes Resource Browser** page. Refer [Kubernetes Resource Browser](#kubernetes-resource-browser) or [Clusters](#clusters) in the Devtron Kubernetes Desktop Client for more information. 
 

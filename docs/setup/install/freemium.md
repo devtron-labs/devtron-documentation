@@ -349,31 +349,31 @@ Ensure your Enterprise Free Trial has no more than one additional cluster connec
 1.  Open your Devtron dashboard and navigate to **Help** → **About Devtron** → **License**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-check.gif)
-<center>Figure 18: 'About Devtron' Help Menu</center>
+    <center>Figure 18: 'About Devtron' Help Menu</center>
 2.  Copy the Installation fingerprint.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-copy-fingerprint-2.jpg)
-<center>Figure 19: Copying Installation Fingerprint</center>
+    <center>Figure 19: Copying Installation Fingerprint</center>
 3.  Navigate to the license dashboard; and you will be automatically redirected to the step 3 (Get License Key).
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-2.jpg)
-<center>Figure 20: Devtron License Dashboard</center>
+    <center>Figure 20: Devtron License Dashboard</center>
 4.  Paste the fingerprint you copied earlier and click **Get License Key**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-paste-fingerprint-2.jpg)
-<center>Figure 21: Pasting Fingerprint</center>
+    <center>Figure 21: Pasting Fingerprint</center>
 5.  Your license will be generated. Copy the license key.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-copy-license-2.jpg)
-<center>Figure 22: Copying the License Key</center>
+    <center>Figure 22: Copying the License Key</center>
 6.  Navigate back to **Help** → **About Devtron** → **License**, and click **Update License**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/update-license.jpg)
-<center>Figure 23: Clicking Update License</center>
+    <center>Figure 23: Clicking Update License</center>
 7.  Paste the new license key you copied earlier and click **Activate**; Devtron Freemium is now activated.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-paste-license-2.jpg)
-<center>Figure 24: Click Activate</center>
+    <center>Figure 24: Click Activate</center>
 
 ---
 

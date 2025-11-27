@@ -15,22 +15,22 @@ The plugin can be used at post CI, pre-CD, and post-CD. Moreover, you can also [
 2. Select **Workflow Editor** and click your deployment pipeline.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/cd-pipeline.jpg)
-<center></center>
+    <center>Figure 1: CD Pipeline</center>
 
 3. In this example, we will be adding the plugin in pre-CD stage; therefore, go to **Pre-Deployment stage** tab of your deployment pipeline and click **Add task**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/pre-deployment-tab.jpg)
-<center></center>
+    <center>Figure 2: Pre Deployment Tab</center>
 
 4. From the list of plugins, choose **Copy container image**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/copy-container-image.jpg)
-<center></center>
+    <center>Figure 3: Copy Container Image</center>
 
 5. Add the image destination in the field given for **DESTINATION_INFO** variable. The format is `registry-name | username/repository-name`.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/image-destination.jpg)
-<center></center>
+    <center>Figure 4: Image Destination</center>
 
     * **registry-name** is the name you gave to your container registry while adding it in [Global Configuration → OCI/Container Registry](../global-configurations/container-registries.md#add-container-registry).
 
@@ -43,40 +43,28 @@ The plugin can be used at post CI, pre-CD, and post-CD. Moreover, you can also [
 7. Go to the **Build & Deploy** tab of your application and click **Select Image** in the pre-deployment stage.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/select-image-for-cd.jpg)
-<center></center>
+    <center>Figure 5: Select Image</center>
 
 8. Choose a CI image that you wish to copy to the destination and click **Trigger Stage**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/trigger-pre-cd.jpg)
-<center></center>
+    <center>Figure 6: Trigger Pre-CD</center>
 
 9. The copying process will initiate, and once it is successful, the [tag for the copied image](../creating-application/workflow/cd-pipeline.md#custom-image-tag-pattern) would reflect at all relevant screens:
 
     * **Destination Repository**
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/docker-destination-image.jpg)
-<center></center>
+    <center>Figure 7: Docker Destination Image</center>
 
     * **CD Pipeline (Image Selection)**
     
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/cd-image.jpg)
-<center></center>
+    <center>Figure 8: CD Image</center>
         
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/workflow-cd-pipeline/prod-image.jpg)
-<center></center>
+    <center>Figure 9: Prod Image</center>
 
 :::info 
 You can also filter out specific images (of target repository) from deployment. Refer [Filter Condition](../global-configurations/filter-condition.md) to know the process.
 :::
-
-
-
-
-
-
-
-
-
-
-
-

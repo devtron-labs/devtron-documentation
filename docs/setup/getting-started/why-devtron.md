@@ -17,9 +17,3 @@ The need to declaratively manage Kubernetes clusters and application delivery is
 Devtron is an open-source modular product that provides a `seamless` and `implementation-agnostic uniform interface`, that can be integrated with both open-source and commercial tools across the entire application lifecycle.
 
 With Devtron, you can efficiently handle security, stability, cost, and more in a unified experience.
- 
-
-
- 
- 
-
