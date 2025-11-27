@@ -40,5 +40,3 @@ When tags are propagated, they are considered as labels to Kubernetes resources.
 * Click the symbol <span className="inline-badge">![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/donot-propagate.jpg) </span> on the left side of your tag to propagate a tag.<br/>`Note`: Dark grey colour in symbol specifies that the tags are propagated.
 * To remove the tags from propagation, click the symbol <span className="inline-badge">![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/propagate-dark.jpg) </span> again.
 * Click `Save`.
-
-

@@ -29,7 +29,7 @@ External Helm apps are Helm applications deployed outside of Devtron.
 2. Use the **Cluster** selection dropdown to choose the external cluster(s). You will see your external Helm apps under the **Helm Apps** tab.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/external-helm-apps.jpg)
-<center>Figure 2: Helm App List</center>
+    <center>Figure 2: Helm App List</center>
 
 ---
 
@@ -103,7 +103,7 @@ The cluster in which Argo CD apps exist should be added in **Global Configuratio
 11. Select the cluster(s) from the dropdown to view the Argo CD apps available in the chosen cluster(s).
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/applications/argo-cluster-selection.jpg)
-<center>Figure 4: Cluster Selection for Argo CD Listing</center>
+    <center>Figure 4: Cluster Selection for Argo CD Listing</center>
 
 ---
 

@@ -15,7 +15,4 @@ One of the advantages that Kubernetes provides is the ability to manage various 
 Environments in Devtron can be accessed from `Global Configurations-&gt;Clusters & Environments`
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/namespaces-and-environments/environments-2.jpg)
-<center></center>
-
-
-
+<center>Figure 1: Cluster and Environments</center>

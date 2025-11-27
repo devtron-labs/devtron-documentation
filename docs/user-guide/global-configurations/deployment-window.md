@@ -354,6 +354,3 @@ Let's say you have 10 applications in your application group, and a blackout win
 <center>Figure 33: Partial Deployment of Application Group</center>
 
 The same stands true for other bulk actions like hibernate, unhibernate, and restart workloads.
-
-
-

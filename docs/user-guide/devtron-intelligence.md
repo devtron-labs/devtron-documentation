@@ -315,14 +315,3 @@ Devtron supports **Explain** option at the following screens (only for specific 
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/app-workload-explain.jpg)
 <center>Figure 12: AI Explain at K8s Resources (tab)</center>
-
-
-
-
-
-
-
-
-
-
-

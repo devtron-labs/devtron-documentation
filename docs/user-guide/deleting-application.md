@@ -29,4 +29,3 @@ Similarly, delete all the workflows in the application.
 
 
 Now, Click on `Delete Application` to delete the application.
-

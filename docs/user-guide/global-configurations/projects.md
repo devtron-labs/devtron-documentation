@@ -25,6 +25,3 @@ Refer [user access](../global-configurations/authorization/user-access.md) for m
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/projects/save-project.jpg)
 <center>Figure 2: Saving a Project</center>
-
-
-
