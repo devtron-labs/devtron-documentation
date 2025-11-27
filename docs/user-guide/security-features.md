@@ -10,7 +10,7 @@ One of the key components of DevSecOps is the detection of security risks. Curre
 * Code Scan <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 * Kubernetes Manifest Scan <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/security-scan.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-scan.jpg)
 <center>Figure 1: Security Scan Results</center>
 
 You can integrate a scanning tool of your choice. By default, Devtron integrates with [Trivy](./integrations/vulnerability-scanning/trivy.md) using which you can scan for the following issues:
@@ -28,7 +28,7 @@ You can integrate a scanning tool of your choice. By default, Devtron integrates
 
 When you commit the code, it's essential to scan it before building a [container image](../reference/glossary.md#image). By scanning early, you can catch and fix problems before they become expensive or time-consuming to remediate later. 
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/pre-ci.gif)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/pre-ci.gif)
 <center>Figure 2: Scanning in Pre-CI Stage</center>
 
 1. In your Devtron application, go to **Configurations** (tab) → **Workflow Editor**.
@@ -43,15 +43,15 @@ When you commit the code, it's essential to scan it before building a [container
 
 6. Click **Update Pipeline**.
 
-Based on the results of the scanner, you can also decide whether your CI should proceed further or not. This is possible through **Pass/Failure Condition** setting in the plugin. In the below example, we are allowing image build only if the no. of high vulnerability is zero.
+<!-- Based on the results of the scanner, you can also decide whether your CI should proceed further or not. This is possible through **Pass/Failure Condition** setting in the plugin. In the below example, we are allowing image build only if the no. of high vulnerability is zero.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/pre-ci-condition.gif)
-<center>Figure 3: Setting a Condition</center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/pre-ci-condition.gif)
+<center>Figure 3: Setting a Condition</center> -->
 
 Results of Pre-CI scan will be visible under `Code Scan` in the **App Details** page as shown below.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/code-scan.gif)
-<center>Figure 4: Pre-CI Code Scan Results</center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/code-scan.gif)
+<center>Figure 3: Pre-CI Code Scan Results</center>
 
 ### After Building Container Image
 
@@ -63,8 +63,8 @@ There are 2 options available:
 
 This section contains the steps for comprehensive scan.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/post-ci.gif)
-<center>Figure 5: Scanning in Post-CI Stage</center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/post-ci.gif)
+<center>Figure 4: Scanning in Post-CI Stage</center>
 
 1. Go to the **Post-build stage** (tab) of your CI pipeline.
 
@@ -74,15 +74,15 @@ This section contains the steps for comprehensive scan.
 
 Results of Post-CI scan will be visible under `Image Scan` in the **App Details** page as shown below.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/image-scan-1.gif)
-<center>Figure 6: Post-CI Image Scan Results</center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/image-scan-1.gif)
+<center>Figure 5: Post-CI Image Scan Results</center>
 
 ### Before Triggering Deployment
 
 There can be a loophole where the original image built in the CI stage gets compromised later (say, in publicly accessible repository). Therefore, you can scan the image and catch issues before deploying it. On top of that, you can also scan manifests to detect misconfigurations and exposed secrets.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/pre-deploy.gif)
-<center>Figure 7: Scanning in Pre-CD Stage</center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/pre-deploy.gif)
+<center>Figure 6: Scanning in Pre-CD Stage</center>
 
 1. Go to the **Pre-Deployment stage** (tab) of your CD pipeline.
 
@@ -92,8 +92,8 @@ There can be a loophole where the original image built in the CI stage gets comp
 
 Results of Pre-CD scan will be visible under `Image Scan` and `Kubernetes Manifest` in the **App Details** page as shown below.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/manifest-scan.gif)
-<center>Figure 8: Pre-CD Scan Results</center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/image-scan-1.gif)
+<center>Figure 7: Pre-CD Scan Results</center>
 
 ### During Helm App Deployment <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
@@ -101,8 +101,8 @@ When you [deploy a helm chart](../user-guide/deploy-chart/deployment-of-charts.m
 
 Results of helm app scan will be visible under `Image Scan` and `Kubernetes Manifest` in the **App Details** page as shown below.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/helm-app-scan.gif)
-<center>Figure 9: Helm App Scan Results</center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/helm-app-scan.gif)
+<center>Figure 8: Helm App Scan Results</center>
 
 ### Extras
 
@@ -115,8 +115,8 @@ You can also check for vulnerabilities within a specific workload such as job, p
 * On the right-hand side, click the kebab menu (3 vertical dots).
 * Click **Check Vulnerabilities**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/app-details-scan.gif)
-<center>Figure 10: Scanning Workloads - App Details Page</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/app-details-scan.gif)
+    <center>Figure 9: Scanning Workloads - App Details Page</center>
 
 #### From Resource Browser
 
@@ -125,8 +125,8 @@ You can also check for vulnerabilities within a specific workload such as job, p
 * Click a workload within the **Workloads** dropdown.
 * Access the **Check Vulnerabilities** option from the kebab menu present to your selected workload.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/security-features/rb-scan.gif)
-<center>Figure 11: Scanning Workloads - Resource Browser</center>
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/rb-scan.gif)
+    <center>Figure 10: Scanning Workloads - Resource Browser</center>
 
 ---
 
@@ -141,4 +141,3 @@ Devtron's Security feature has two primary sections:
 1. [**Security Scans**](./security-features/security-scans.md) - You can view the vulnerabilities detected across your applications.
 
 2. [**Security Policies**](./security-features/security-policies.md) - This allows you to define guardrails to block or allow the deployment of container images depending on the vulnerabilities detected.
-
