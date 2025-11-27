@@ -64,4 +64,3 @@ Here you can set conditions to execute or skip the task. You can select `Set tri
 |   GkeKubeconfigFilePath | STRING        | File path of the generated GKE cluster kubeconfig |   
 
 Click **Update Pipeline**.
-

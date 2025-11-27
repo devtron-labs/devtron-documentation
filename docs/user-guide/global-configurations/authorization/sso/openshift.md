@@ -3,7 +3,7 @@
 ## Sample Configuration
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/openshift.jpg)
-<center></center>
+<center>Figure 1: Sample Configuration</center>
 
 ---
 
@@ -16,22 +16,22 @@ Devtron provides a sample configuration out of the box. There are some values th
 * clientID
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/secret/openshift-id-secret1.jpg)
-<center>Fetching Client ID</center>
+    <center>Figure 2: Fetching Client ID</center>
 
 * clientSecret
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/secret/openshift-id-secret2.jpg)
-<center>Fetching Secret</center>
+    <center>Figure 3: Fetching Secret</center>
 
 ### Values to Provide
 
 * redirectURI (already provided in SSO Login Services by Devtron)
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect/openshift-redurl.jpg)
-<center>Copying Redirect URI from Devtron</center>
+    <center>Figure 4: Copying Redirect URI from Devtron</center>
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect/openshift-redirect.jpg)
-<center>Pasting Redirect URI</center>
+    <center>Figure 5: Pasting Redirect URI</center>
 
 ---
 
@@ -40,10 +40,3 @@ Devtron provides a sample configuration out of the box. There are some values th
 * [View Openshift Documentation](https://docs.openshift.com/container-platform/4.14/authentication/configuring-oauth-clients.html)
 
 * [View Dex IdP Documentation](https://dexidp.io/docs/connectors/openshift/)
-
-
-
-
-
-
-

@@ -18,12 +18,12 @@ After creating the generic secret, navigate to `Secrets` section of the applicat
 1. Click `Add Secret` to add a new secret
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/add-secret.jpg)
-<center>Figure 2: Add a New Secret</center>
+    <center>Figure 2: Add a New Secret</center>
 
 2. Select `AWS Secret Manager` under `External Secret Operator` (ESO) from the dropdown of `Data type`
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/aws-secret.jpg)
-<center>Figure 3: Select AWS Secrets Manager</center>
+    <center>Figure 3: Select AWS Secrets Manager</center>
 
 3. Configure the secret.
 
@@ -39,10 +39,10 @@ After creating the generic secret, navigate to `Secrets` section of the applicat
     | `property` | AWS Secrets Manager secret key |
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/aws-eso.jpg)
-<center>Figure 4: Configure AWS Secret Settings</center>
+    <center>Figure 4: Configure AWS Secret Settings</center>
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/aws-external-secret.jpg)
-<center>Figure 5: AWS External Secret Configuration</center>
+    <center>Figure 5: AWS External Secret Configuration</center>
 
 
 4. Save the secret.
@@ -93,10 +93,10 @@ $ helm install my-release external-secrets/kubernetes-external-secrets --set sec
 #### Adding Secrets From AWS Secret Manager
 To add secrets from AWS secret manager, navigate to `Secrets` of the application and follow the steps mentioned below :
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/add-secret.jpg)
-<center></center>
+<center>Figure 9: Add Secret</center>
 1. Click `Add Secret` to add a new secret.
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/aws-secret.jpg)
-<center></center>
+<center>Figure 10: Aws Secret</center>
 2. Select `AWS Secret Manager` from dropdown of `Data type`.
 3. Provide a name to your secret.
 4. Select how you want to use the secret. You may leave it selected as environment variable and also you may leave `Role ARN` empty.
@@ -114,4 +114,4 @@ To add secrets in AWS secret manager, do the following steps :
 2. Click `Store a new secret`.
 3. Add and save your secret.
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/secrets/creating-applications-secrets-10.jpg)
-<center></center> -->
+<center>Figure 11: Application Secrets</center> -->

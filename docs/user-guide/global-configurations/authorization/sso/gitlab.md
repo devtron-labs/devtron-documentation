@@ -26,7 +26,7 @@ Getting the redirectURI from Devtron is a crucial component of the authenticatio
 1. Navigate to **Global Configurations** → **Authorization** → **SSO Login Services**. The SSO Login Service page is displayed.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/gitlab/gitlab-sso-select-gitlab.jpg)
-<center>Figure 1: Select Gitlab</center>
+    <center>Figure 1: Select Gitlab</center>
 
 2. Select **GitLab** from the list of available SSO login services.
 
@@ -37,7 +37,7 @@ Getting the redirectURI from Devtron is a crucial component of the authenticatio
 4. Copy the redirectURI from the purple block.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/gitlab/gitlab-sso-redirect-uri.jpg)
-<center>Figure 2: Copy Redirect URI</center>
+    <center>Figure 2: Copy Redirect URI</center>
 
 ---
 
@@ -52,7 +52,7 @@ Open Authentication (OAuth) allows you to authorize one application to sign in t
 2. Select your preferred OAuth app and click **Edit**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/gitlab/gitlab-sso-oauth-applist.jpg)
-<center>Figure 3: GitLab OAuth Applications List</center>
+    <center>Figure 3: GitLab OAuth Applications List</center>
 
 3. Update the **Redirect URI** field with the redirectURI created in Devtron.
 
@@ -61,7 +61,7 @@ Open Authentication (OAuth) allows you to authorize one application to sign in t
 5. Click the **Save Application** button. The following page is displayed.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/gitlab/gitlab-sso-edit-page.jpg)
-<center>Figure 4: GitLab OAuth Application</center>
+    <center>Figure 4: GitLab OAuth Application</center>
 
     The client ID is displayed in the **Application ID** field.
 
@@ -78,7 +78,7 @@ To configure the GitLab SSO in Devtron, follow the below steps of instructions:
 2. Select the **Configuration** section available next to the **URL** field.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/gitlab/gitlab-sso-config.jpg)
-<center>Figure 5: GitLab SSO Configuration</center>
+    <center>Figure 5: GitLab SSO Configuration</center>
 
 3. Update the `clientID` attribute with the Client ID generated in the OAuth application on GitLab.
 

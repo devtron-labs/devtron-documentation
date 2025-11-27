@@ -291,7 +291,3 @@ In Devtron, view the list of StatefulSets by going to Infrastructure Management 
 The operating system and architecture for which the [container image](#image) will be built, e.g., ubuntu/arm64, linux/amd64. The image will only be compatible to run only on the target platform chosen in the build configuration. 
 
 In Devtron, you can choose the target platform by going to Application Management → Applications (choose your app) → App Configuration (tab) → Build Configuration → (create build pipeline) → (click `Allow Override` button) → Target platform for the build (section). [Read More...](../user-guide/creating-application/docker-build-configuration.md)
-
-
-
-

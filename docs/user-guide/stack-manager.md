@@ -18,7 +18,7 @@ Select **Devtron Stack Manager** from the left navigation bar.
 Under **INTEGRATIONS**, select **Discover**.
  
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/integrations/discover-integrations.jpg)
-<center>Discover integrations</center>
+<center>Figure 1: Discover integrations</center>
  
 > Although the integrations are installed separately, they cannot be upgraded separately. Integrations update happens automatically with [Devtron upgrade](../setup/upgrade/README.md).
  

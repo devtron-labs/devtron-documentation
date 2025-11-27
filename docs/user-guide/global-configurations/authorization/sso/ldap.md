@@ -3,7 +3,7 @@
 ## Sample Configuration
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/ldap.jpg)
-<center></center>
+<center>Figure 1: LDAP Configurations</center>
 
 ---
 
@@ -28,7 +28,7 @@ Devtron provides a sample configuration out of the box. Here are some values you
 Since LDAP supports creation of User Groups, this feature simplifies the onboarding process of organizations having a large headcount of users. It also eliminates repetitive permission assignment by automatically mapping your LDAP User groups to Devtron's [Permission Groups](../permission-groups.md) during single sign-on (SSO) login.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/secret/auto-grant-ldap.jpg)
-<center>Enabling Permission Auto-assignment</center>
+<center>Figure 2: Enabling Permission Auto-assignment</center>
 
 If you've created user groups in LDAP, you can create corresponding permission groups in Devtron with the same names. When members of those user groups first log in to Devtron, they'll automatically inherit the permissions from their Devtron permission group. This means you can't manually adjust or add [individual permissions for users](../user-access.md) mapped to a permission group.
 
@@ -41,12 +41,3 @@ Once you save the configuration with this auto-assign feature enabled, existing 
 :::info 
 If you're missing some permissions that you know you should have, try logging out and signing back in to Devtron. This will refresh your permissions based on your latest LDAP user group.
 :::
-
-
-
-
-
-
-
-
-

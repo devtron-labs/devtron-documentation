@@ -56,6 +56,3 @@ Here you can set conditions to execute or skip the task. You can select `Set tri
 Devtron Job Trigger will not be generating an output variable.
 
 Click **Update Pipeline**.
-
-
-

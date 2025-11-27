@@ -44,5 +44,3 @@ No input variables are required for the Code Scan plugin.
 Code Scan will not be generating an output variable.
 
 Click **Update Pipeline**.
-
-

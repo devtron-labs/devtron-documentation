@@ -14,19 +14,19 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
 1. Go to **Configurations** (tab) → **ConfigMaps & Secrets**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap.jpg)
-<center>Figure 1: ConfigMaps & Secrets</center>
+    <center>Figure 1: ConfigMaps & Secrets</center>
 
 2. Click the **+** button next to **ConfigMaps**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-add.jpg)
-<center>Figure 2: Creating ConfigMap</center>
+    <center>Figure 2: Creating ConfigMap</center>
 
 3. Enter a name for the ConfigMap (Once defined, the name cannot be changed later). 
 
     **Note**: In case you are using an External Kubernetes ConfigMap, the name should be exactly the same as the name given using the `kubectl create configmap <configmap-name> <data source>` command.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-name.jpg)
-<center>Figure 3: Entering ConfigMap Name</center>
+    <center>Figure 3: Entering ConfigMap Name</center>
 
 4. **Data Type** - Choose between the following data types:
 
@@ -35,7 +35,7 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
     * **Kubernetes External ConfigMap**: Select the Data Type as Kubernetes External ConfigMap if you have already created a ConfigMap using the kubectl command and want to use that in Devtron.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-data-type.jpg)
-<center>Figure 4: ConfigMap Data Type</center>
+    <center>Figure 4: ConfigMap Data Type</center>
 
 5. After selecting the data type, you can choose how to mount the data of your ConfigMap. Devtron allows you to mount ConfigMap Data in the following ways: <br/><br/> **Mount data as** - Select how you want to mount the ConfigMap:
 
@@ -44,7 +44,7 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
     * [**Data Volume**](#mount-data-as-data-volume) – Select this option if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-volume) to know more.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/configmap-mount-data.jpg)
-<center>Figure 5: Mounting Data as</center>
+    <center>Figure 5: Mounting Data as</center>
 
 6. Select **Save** to create a ConfigMap.
 

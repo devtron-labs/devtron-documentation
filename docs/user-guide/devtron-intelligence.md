@@ -86,7 +86,7 @@ kubectl create secret generic ai-secret \
 ```
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/secret-using-kubectl.jpg)
-<center>Figure 2: Creating Secret using Cluster Terminal</center>
+  <center>Figure 2: Creating Secret using Cluster Terminal</center>
 
 
 ### 3. Deploy AI Agent Chart
@@ -237,7 +237,7 @@ additionalEnvVars:
       ```
 
       ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/devtron-cm-v3.jpg)
-<center>Figure 5: Entry in 'orchestrator-cm' or 'devtron-cm' ConfigMap</center>
+      <center>Figure 5: Entry in 'orchestrator-cm' or 'devtron-cm' ConfigMap</center>
 
     * **dashboard-cm**
     
@@ -248,7 +248,7 @@ additionalEnvVars:
       ```
 
       ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/dashboard-cm-v3.jpg)
-<center>Figure 6: Entry in 'dashboard-cm' ConfigMap</center>
+      <center>Figure 6: Entry in 'dashboard-cm' ConfigMap</center>
 
 
 ### 6. Restart Pods
@@ -260,7 +260,7 @@ additionalEnvVars:
     * `dashboard`
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/restart-deployments.jpg)
-<center>Figure 7: Restart 'devtron' and 'dashboard' deployment workloads</center>
+    <center>Figure 7: Restart 'devtron' and 'dashboard' deployment workloads</center>
 
 
 ### 7. Perform Hard Refresh
@@ -315,14 +315,3 @@ Devtron supports **Explain** option at the following screens (only for specific 
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/app-workload-explain.jpg)
 <center>Figure 12: AI Explain at K8s Resources (tab)</center>
-
-
-
-
-
-
-
-
-
-
-

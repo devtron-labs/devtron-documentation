@@ -71,7 +71,7 @@ However, users have the flexibility to explicitly modify these policies as desir
 
 Cluster Security Policies offer the same three options as [Global Security Policies](#configure-global-security-policy) for handling vulnerabilities. However, an extra option called `Inherit` is available too.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-policies/security-policy-select-cluster.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-policies/security-policy-select-cluster.jpg)
 <center>Figure 3a: Selecting Cluster</center>
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-policies/cluster-security-policy.jpg)
@@ -138,25 +138,25 @@ Next, configure a security policy for that application in the intended environme
 1. Let's say, you have defined a policy to block the deployment if critical or high vulnerabilities are found in a given application.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-policies/blocked-example.jpg)
-<center>Figure 6: Defining a Block Policy</center>
+    <center>Figure 6: Defining a Block Policy</center>
 
 2. Now, go to the **Build & Deploy** tab of that application to select an image.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-policies/select-image.jpg)
-<center>Figure 7: Selecting an Image</center>
+    <center>Figure 7: Selecting an Image</center>
 
 3. As you can see, security issues were found in the scanned image, hence it is not available for selection. Click **Show Source Info**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-policies/source-info.jpg)
-<center>Figure 8: Blocked Deployment of Image</center>
+    <center>Figure 8: Blocked Deployment of Image</center>
 
 4. The `Security` tab shows the critical vulnerabilities and the policy enforced to prevent deployment.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-policies/security-tab.jpg)
-<center>Figure 9a: Detected Vulnerabilities</center>
+    <center>Figure 9a: Detected Vulnerabilities</center>
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-policies/blocked-deployment.jpg)
-<center>Figure 9b: Detected Vulnerabilities</center>
+    <center>Figure 9b: Detected Vulnerabilities</center>
 
 ---
 
@@ -173,7 +173,3 @@ A window will appear where you can enter the CVE ID and select whether to allow 
 <center>Figure 11: Allowing/Blocking a CVE ID</center>
 
 This action will determine whether image deployment is allowed or blocked based on the presence of vulnerabilities matching that particular CVE ID. Any other deployment decisions will be made according to the policies set previously.
-
-
-
-

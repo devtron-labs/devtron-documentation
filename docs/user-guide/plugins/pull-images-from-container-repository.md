@@ -50,5 +50,3 @@ Here you can set conditions to execute or skip the task. You can select `Set tri
 Pull images from container repository will not be generating an output variable.
 
 Click **Update Pipeline**.
-
-

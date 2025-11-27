@@ -3,7 +3,7 @@
 ## Sample Configuration
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/microsoft.jpg)
-<center></center>
+<center>Figure 1: Sample Configurations</center>
 
 ---
 
@@ -18,22 +18,22 @@ Devtron provides a sample configuration out of the box. There are some values th
 * tenantID (required only if you want to use Azure AD for auto-assigning permissions)
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/secret/ms-id-secret1.jpg)
-<center>Fetching Client ID and Tenant ID</center>
+    <center>Figure 2: Fetching Client ID and Tenant ID</center>
 
 * clientSecret
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/secret/ms-id-secret2.jpg)
-<center>Fetching Secret</center>
+    <center>Figure 3: Fetching Secret</center>
 
 ### Values to Provide
 
 * redirectURI (provided in SSO Login Services by Devtron)
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect/microsoft-redurl.jpg)
-<center>Copying Redirect URI from Devtron</center>
+    <center>Figure 4: Copying Redirect URI from Devtron</center>
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect/ms-redirect.jpg)
-<center>Pasting Redirect URI</center>
+    <center>Figure 5: Pasting Redirect URI</center>
 
 ---
 
@@ -55,7 +55,7 @@ Since Microsoft supports <a href="https://learn.microsoft.com/en-us/windows-serv
 , this feature further simplifies the onboarding process of organizations having a large headcount of users. It also eliminates repetitive permission assignment by automatically mapping your Azure AD groups to Devtron's [Permission Groups](../permission-groups.md) during single sign-on (SSO) login.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/secret/auto-grant.jpg)
-<center>Enabling Permission Auto-assignment</center>
+<center>Figure 6: Enabling Permission Auto-assignment</center>
 
 If you've defined groups in your Active Directory, you can create corresponding permission groups in Devtron with the same names. When members of those Active Directory groups first log in to Devtron, they'll automatically inherit the permissions from their Devtron permission group. This means you can't manually adjust or add [individual permissions for users](../user-access.md) mapped to a permission group.
 
@@ -68,9 +68,3 @@ Once you save the configuration with this feature enabled, existing user permiss
 :::info 
 If your AD permissions aren't reflecting in Devtron, a quick sign-out and sign-in can resolve the issue.
 :::
-
-
-
-
-
-

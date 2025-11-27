@@ -23,12 +23,12 @@ Users need to have super-admin permission to add a Kubernetes cluster to Devtron
 1. Go to **Global Configurations** → **Clusters & Environments** → **Connect Cluster** (button); a **New Cluster** modal window will appear.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-add-clusters-new.jpg)
-<center>Figure 1: Adding a Cluster</center>
+  <center>Figure 1: Adding a Cluster</center>
 
 2. Select **Connect Cluster**.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-select-connect-cluster.jpg)
-<center>Figure 2: Selecting 'Connect Cluster'</center>
+  <center>Figure 2: Selecting 'Connect Cluster'</center>
 
 3. You can choose to add your Kubernetes cluster using either of the following methods:
 
@@ -38,7 +38,7 @@ Users need to have super-admin permission to add a Kubernetes cluster to Devtron
   | [Kubeconfig](#add-cluster-using-kubeconfig)                              | Use `Kubeconfig` file to add a cluster.           |
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-choosing-method.jpg)
-<center>Figure 3: Choosing a Method</center>
+  <center>Figure 3: Choosing a Method</center>
 
 4. Click **Save Cluster** and your cluster will be connected to Devtron.
 
@@ -57,7 +57,7 @@ Refer to [Get Cluster Credentials](#get-cluster-credentials) to learn the proces
   | **Bearer Token** | Paste the bearer token of your cluster |
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-add-cluster-cred.jpg)
-<center>Figure 4: Enter Cluster Credentials</center>
+  <center>Figure 4: Enter Cluster Credentials</center>
 
 2. Complete the remaining steps (optional): 
   * [Choose Connection Type](#choose-method-of-connection-)
@@ -76,17 +76,17 @@ In case you prefer to add clusters using kubeconfig, follow these steps:
 1. Copy and paste your kubeconfig file into the editor. Alternatively, you may browse and select the file as well.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-add-cluster-kubeconfig.jpg)
-<center>Figure 5: Choosing Kubeconfig Option</center>
+  <center>Figure 5: Choosing Kubeconfig Option</center>
 
 2. Click the **Get Cluster** button. This action will display the cluster details alongside the kubeconfig. 
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-get-cluster.jpg)
-<center>Figure 6: Get Cluster List from Kubeconfig</center>
+  <center>Figure 6: Get Cluster List from Kubeconfig</center>
 
 3. If your kubeconfig file lists multiple clusters, they will be displayed in the window. Use the checkboxes to select the desired cluster(s) and click **Save**.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-kubeconfig-save-cluster.jpg)
-<center>Figure 7: Clicking Save</center>
+  <center>Figure 7: Clicking Save</center>
 
 4. Click the saved cluster, and complete the remaining steps (optional): 
   * [Choose Connection Type](#choose-method-of-connection-)
@@ -109,12 +109,12 @@ To assign a category to a cluster, follow the steps below:
 1. Select a category from the dropdown under **Assign Category** and click **Update Cluster**.
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-assign-category-cluster.jpg)
-<center>Figure 8: Assigning Category</center>
+  <center>Figure 8: Assigning Category</center>
 
 2. The selected category will be assigned to the cluster.
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-assign-category-category-added-cluster.jpg)
-<center>Figure 9: Category Assigned</center>
+  <center>Figure 9: Category Assigned</center>
 
 
 ### Choose Method of Connection <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
@@ -230,7 +230,7 @@ Follow the steps mentioned below to install OpenTofu:
     <br/>
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/container-oci-registry.jpg)
-<center>Figure 16: Container/OCI Registry</center>
+    <center>Figure 16: Container/OCI Registry</center>
 
 3. Click **Save**. The `tofu-controller` chart will be displayed in the [Chart Store](../../user-guide/deploy-chart/README.md) page.
 
@@ -239,7 +239,7 @@ Follow the steps mentioned below to install OpenTofu:
 5. Select the chart and click **Configure & Deploy**. The following page will be displayed.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/tofu-controller-chart.jpg)
-<center>Figure 17: Tofu Controller Chart</center>
+    <center>Figure 17: Tofu Controller Chart</center>
 
 6. Enter the app name (e.g., `tofu-controller`) in the **App Name** field. 
 
@@ -265,7 +265,7 @@ Follow the steps mentioned below to install OpenTofu:
 1. Navigate to [Chart Store](../../user-guide/deploy-chart/README.md) and search for `flux2` in the search box.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/flux-cd-chart.jpg)
-<center>Figure 18: "flux2" Chart</center>
+    <center>Figure 18: "flux2" Chart</center>
 
 2. Select the chart and click **Deploy**.
 
@@ -355,7 +355,7 @@ Only a [Super-Admin](../global-configurations/authorization/user-access.md#grant
   <br/>
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/create-k8s-cluster.jpg)
-<center>Figure 19: Create Kubernetes Cluster</center>
+  <center>Figure 19: Create Kubernetes Cluster</center>
   
   <br/>
   
@@ -383,12 +383,12 @@ For air-gapped Kubernetes clusters with restricted inbound and outbound traffic,
 1. On the **New Cluster** modal window, select **Add Isolated Cluster**.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-select-isolated-cluster.jpg)
-<center>Figure 20: Selecting Isolated Cluster</center>
+  <center>Figure 20: Selecting Isolated Cluster</center>
 
 2. Add a cluster name (e.g. *banking-airgapped-cluster*) and click **Save Cluster**.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-isolated-cluster-save.jpg)
-<center>Figure 21: Saving Isolated Cluster</center>
+  <center>Figure 21: Saving Isolated Cluster</center>
 
 You have successfully configured an isolated cluster.
 
@@ -414,10 +414,10 @@ After adding a cluster to Devtron ([Kubernetes Cluster](#add-kubernetes-cluster)
 1. Select the Cluster to which you want to add an Environment and click **Add Environment**. Alternatively you can also hover over the cluster and click `+` icon (Add Environment icon); an **Add Environment** modal window appears.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-add-environment-option.jpg)
-<center>Figure 23a: Adding an Environment</center>
+  <center>Figure 23a: Adding an Environment</center>
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-click-add-environment.jpg)
-<center>Figure 23b: Clicking 'Add Environment'</center>
+  <center>Figure 23b: Clicking 'Add Environment'</center>
 
 2. Fill the following details within the **Add Environment** modal window.
 
@@ -428,31 +428,31 @@ After adding a cluster to Devtron ([Kubernetes Cluster](#add-kubernetes-cluster)
   | **Environment Type** | Select your environment type:<ul><li>`Production`</li></ul> <ul><li>`Non-production`</li></ul>Note: Devtron shows deployment metrics (DORA metrics) for environments tagged as `Production` only. |
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-add-env-fields.jpg)
-<center>Figure 24: Saving an Environment</center>
+  <center>Figure 24: Saving an Environment</center>
 
 3. **Assign a Category to environment** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a> - Devtron allows you to assign a category (for e.g. Prod, QA, Dev, or Stage) to your environments. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to Prod, QA, Dev, or Stage environment.<br/><br/>
  To assign a category to your environment, follow the steps below: 
    1. Select a category from the dropdown under **Assign Category** and click **Update**.
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-assign-category-env.jpg)
-<center>Figure 25: Assigning Category</center>
+    <center>Figure 25: Assigning Category</center>
 
    2. The selected category will be assigned to the environment.
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-assign-category-category-added-env.jpg)
-<center>Figure 26: Category Assigned</center>
+    <center>Figure 26: Category Assigned</center>
 
  **Note:** Before assigning a category, you must first add the category. To add a category, refer to [Adding a Category](#add-category) section to learn more.
 
 4. **Add/Edit labels to namespace** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a> - You can attach labels to your specified namespace in the Kubernetes cluster. Using labels will help you filter and identify resources via CLI or other Kubernetes tools. [Click here](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) to know more about labels.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/labels-namespace.gif)
-<center>Figure 27: Adding Labels to Namespace</center>
+  <center>Figure 27: Adding Labels to Namespace</center>
 
 5. Click **Save**. Your new environment will be visible in your cluster as shown below.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/added-env.jpg)
-<center>Figure 28: Newly Created Environment in the Cluster</center>
+  <center>Figure 28: Newly Created Environment in the Cluster</center>
 
 ---
 
@@ -502,7 +502,7 @@ If an environment is no longer needed, you can delete it by following these step
 2. Hover over the environment you wish to remove, and click the **delete** icon.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-delete-env.jpg)
-<center>Figure 31: Deleting Environment</center>
+  <center>Figure 31: Deleting Environment</center>
 
 :::caution Important  
 Environment deletion is not allowed if any application has a CD pipeline corresponding to the environment. In such a case, go to [Workflow Editor](../creating-application/workflow/README.md) and delete the deployment pipeline first, and then return to delete the environment. This action is irreversible, so make sure no critical applications or resources depend on the environment before deleting.
@@ -511,7 +511,7 @@ Environment deletion is not allowed if any application has a CD pipeline corresp
 2. A confirmation dialog will appear. Click **Delete** to permanently delete the environment.  
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-confirm-delete-env.jpg)
-<center>Figure 32: Confirming Environment Deletion</center>
+    <center>Figure 32: Confirming Environment Deletion</center>
 
 ---
 
@@ -522,12 +522,12 @@ Before assigning a category, you must first add the category. To add a category,
 1. Go to **Global Configurations**. 
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-global-config.jpg)
-<center>Figure 33: Navigating to Global Configurations</center>
+  <center>Figure 33: Navigating to Global Configurations</center>
 
 2. Select **Clusters and Environments** and click **Manage Categories**, a modal window will open.
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-manage-categories.jpg)
-<center>Figure 34: Clicking Manage Categories</center>
+  <center>Figure 34: Clicking Manage Categories</center>
 
 3. Enter the name of the category in the **CATEGORIES** field and provide a description in the **DESCRIPTION** field.
   
@@ -538,17 +538,17 @@ Before assigning a category, you must first add the category. To add a category,
  :::
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-add.jpg)
-<center>Figure 35: Adding Category</center>
+  <center>Figure 35: Adding Category</center>
 
 4. If you wish to add more categories, click **Add Category**, a new row will appear, enter the name and description of the new category.
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-add-category.jpg)
-<center>Figure 36: Adding More Categories</center>
+  <center>Figure 36: Adding More Categories</center>
 
 5. Click **Update** and your categories will be added.
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-update.jpg)
-<center>Figure 37: Categories Added</center>
+  <center>Figure 37: Categories Added</center>
 
 
 ## Delete Category
@@ -558,19 +558,19 @@ To delete a category, follow the steps below:
 1. Go to **Global Configurations**. 
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-global-config.jpg)
-<center>Figure 38: Navigating to Global Configurations</center>
+  <center>Figure 38: Navigating to Global Configurations</center>
 
 2. Select **Clusters and Environments** and click **Manage Categories**, a modal window will open.
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-manage-categories.jpg)
-<center>Figure 39: Clicking Manage Categories</center>
+  <center>Figure 39: Clicking Manage Categories</center>
 
 3. Select the `x` icon next to the categories you want to delete.
 
    **Note**: You cannot delete a category if it is assigned to a cluster or environment.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/assign-category-x-icon.jpg)
-<center>Figure 40: Clicking 'x' icon</center>
+  <center>Figure 40: Clicking 'x' icon</center>
 
 4. Click **Update** to delete the categories.
 ---

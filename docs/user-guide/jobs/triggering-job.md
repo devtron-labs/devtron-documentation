@@ -16,32 +16,32 @@ Refer the [User permissions](../global-configurations/authorization/user-access.
 1. Navigate to the **Trigger Job** tab of your job, which lists all configured pipelines.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/trigger-job.jpg)
-<center>Figure 1: Triggering job</center>
+    <center>Figure 1: Triggering job</center>
 
 2. Click **Select Material** for the job pipeline you wish to execute. A modal window will open, under the **Code-source** tab, this window lists all recent commits along with their hash, author, date, and message from your configured source repository.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/trigger-job-select-material.jpg)
-<center>Figure 2: Selecting Material for Specific Pipeline</center>
+    <center>Figure 2: Selecting Material for Specific Pipeline</center>
 
 3. Select the commit you want to use in the job execution. You can use the search bar to filter the commit hash, and you can also click the kebab menu to reveal excluded commits. If a recent commit isn’t displayed, click the Refresh icon to reload the commit list from your Git repository.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/trigger-job-commit.jpg)
-<center>Figure 3: Selecting Commit</center>
+    <center>Figure 3: Selecting Commit</center>
 
 4. Select the **Parameters** tab to configure pipeline runtime inputs(if any). The Key and Type columns are read‑only; enter values for each required parameter (denoted by *). Optional parameters can be configured as needed or left blank.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/trigger-job-parameter.jpg)
-<center>Figure 4: Configuring Runtime Parameters</center>
+    <center>Figure 4: Configuring Runtime Parameters</center>
 
 5. After selecting the commit and configuring runtime parameters, pick the target environment from the **Execute job in** dropdown at the bottom.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/trigger-job-execute-env.jpg)
-<center>Figure 5: Select Environment for Job's Execution</center>
+    <center>Figure 5: Select Environment for Job's Execution</center>
 
 6. Select **Run Job** to execute your pipeline.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/trigger-job-run-job.jpg)
-<center>Figure 6: Run Job</center>
+    <center>Figure 6: Run Job</center>
 
 ---
 

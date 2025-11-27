@@ -53,4 +53,4 @@ helm upgrade devtron devtron/devtron-operator -n devtroncd --reuse-values -f htt
 ## Expected Command Output
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/command-output.jpg)
-<center>Command Output</center>
+<center>Figure 1: Command Output</center>

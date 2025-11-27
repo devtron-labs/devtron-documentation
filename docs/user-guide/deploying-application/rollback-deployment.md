@@ -54,6 +54,3 @@ The selected previously deployed image will be deployed.
 **Note**: 
 - There will be no difference in the configuration if you select `Last deployed config` from the list.
 - When you select `Config deployed with selected image` and  if the configuration is missing in the selected previously deployed image, it will show as `Config Not Available`. In such cases, you can select either `Last saved config` or `Last deployed config`.
-
-
-

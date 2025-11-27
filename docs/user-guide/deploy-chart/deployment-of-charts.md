@@ -22,7 +22,7 @@ To configure and deploy Helm, follow the instructions below:
 3. Select your preferred chart. The chart page is displayed.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/deploy-chart/select-chart.jpg)
-<center>Figure 1: Discover a Chart</center>
+    <center>Figure 1: Discover a Chart</center>
 
     | Section | Description |
     | :--- | :--- |
@@ -35,7 +35,7 @@ To configure and deploy Helm, follow the instructions below:
     To predefine configurations and make future deployments across environments easier, refer to [Preset Values](#preset-values).
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/deploy-chart/deploy-chart.jpg)
-<center>Figure 2: Deploy Chart</center>
+    <center>Figure 2: Deploy Chart</center>
 
 5. Enter your application name in the **App Name** field. 
 
@@ -44,7 +44,7 @@ To configure and deploy Helm, follow the instructions below:
 7. Select the environment where you want to deploy the chart in the **Deploy to Environment** drop-down box. When you select an environment, the **How do you want to deploy?** section is displayed.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/deploy-chart/deployment-methods.jpg)
-<center>Figure 3: Deployment Methods</center>
+    <center>Figure 3: Deployment Methods</center>
 
     **How do you want to deploy?** <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
@@ -83,7 +83,7 @@ To check the latest charts and chart versions, follow the instructions below:
 1. Navigate to the **Configure** tab of your helm application.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/deploy-chart/refetch-charts.jpg)
-<center>Figure 5: Update Charts</center>
+    <center>Figure 5: Update Charts</center>
 
 2. Click **Refetch Charts**. All the latest charts are displayed in the **Helm Chart** drop-down box and all the latest versions of a chart will be displayed in the **Chart Version** drop-down box.
 
@@ -107,7 +107,7 @@ Follow the below instructions to update a Helm chart:
     You can also compare the existing configured values of the previous chart version with the default values of the newer chart version by clicking the **Compare Values** button in the top-right corner of the page.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/deploy-chart/compare-values.jpg)
-<center>Figure 6: Compare Values</center>
+    <center>Figure 6: Compare Values</center>
 
 3. Click **Update And Deploy**.
 
@@ -129,7 +129,7 @@ Follow the below instructions to upgrade a Helm chart:
 2. Select your preferred chart from the **Helm Chart** drop-down box.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/deploy-chart/update-chart.jpg)
-<center>Figure 7: Upgrade Chart</center>
+    <center>Figure 7: Upgrade Chart</center>
 
 :::info Note
 When you upgrade your helm chart, ensure that the values are compatible with the new chart.
@@ -160,7 +160,7 @@ Disabling a Helm chart source (e.g., Bitnami) does not display all associated ch
 2. Disable the toggle next to your preferred chart source (e.g., Bitnami).
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/deploy-chart/disable-charts.jpg)
-<center>Figure 8: Disable chart repository</center>
+    <center>Figure 8: Disable chart repository</center>
 
 The chart source (e.g., Bitnami) will no longer be displayed in the **Chart Source** drop-down box, and all its associated charts will no longer be displayed in the **All Charts** section of the **Chart Store** page.
 
@@ -203,12 +203,12 @@ To predefine the configurations for a chart, follow the instructions below:
 1. Click the **Preset Values** button. 
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/deploy-chart/preset-value-tab.jpg)
-<center>Figure 9: Preset Values</center>
+    <center>Figure 9: Preset Values</center>
 
 2. Enter your preferred preset value name in the **Name** field. 
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/deploy-chart/preset-values.jpg)
-<center>Figure 10: Editing Preset Values</center>
+    <center>Figure 10: Editing Preset Values</center>
 
 3. Select the chart version for which you'd like to create a preset value from the **Chart Version** drop-down box. 
 
@@ -229,7 +229,7 @@ A preset value for the selected chart version is now created and will be display
 1. Navigate to **Chart Store**. 
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/deploy-chart/discover-chart.jpg)
-<center>Figure 11: Chart Store</center> 
+    <center>Figure 11: Chart Store</center> 
 
 2. Enter `mySQL` in the search bar at the top-left corner of the **Chart Store** page.
 
@@ -242,12 +242,12 @@ Once you have clicked on the `bitnami/mySQL`, follow the set of instructions bel
 1. Read the **README.md** file to know more about the chart configurations. 
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/deploy-chart/readme.jpg)
-<center>Figure 12: Configure and Deploy Chart</center> 
+    <center>Figure 12: Configure and Deploy Chart</center> 
 
 2. Refer to the tables below and fill in the details:
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/chart-store/deploy-chart/configure-values.jpg)
-<center>Figure 13: Configure Values</center>
+    <center>Figure 13: Configure Values</center>
 
     | Key | Description |
     | :--- | :--- |

@@ -31,4 +31,3 @@ New application with a duplicate template is created.
 :::caution 
 When cloning an application with GitOps configuration, the configuration itself is not copied. To set up the configuration for your new application, refer [GitOps Configuration](./creating-application/gitops-config.md) guide.
 :::
-

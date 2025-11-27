@@ -17,7 +17,7 @@ This involves the creation of new organizations where you wish to deploy s/w upd
 1. Click **+ Add Tenant**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/tenants-tab.jpg)
-<center>Figure 1: Adding a Tenant</center>
+    <center>Figure 1: Adding a Tenant</center>
 
 2. Enter a name in **Tenant display name** field, e.g., `flareup.xyz`. Once set, you can rename it later (if needed).
 
@@ -26,7 +26,7 @@ This involves the creation of new organizations where you wish to deploy s/w upd
 4. (Optional) Add a description of the tenant.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/add-tenant.jpg)
-<center>Figure 2: Saving Tenant Details</center>
+    <center>Figure 2: Saving Tenant Details</center>
 
 5. Click **Save**.
 
@@ -43,19 +43,19 @@ This involves setting up [installation](./README.md#installations) for different
 1. Click the tenant you created.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/tenant-list.jpg)
-<center>Figure 3: Clicking Your Tenant</center>
+    <center>Figure 3: Clicking Your Tenant</center>
 
 2. Click **+ Add Installation**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/add-installation.jpg)
-<center>Figure 4: Adding an Installation</center>
+    <center>Figure 4: Adding an Installation</center>
 
 3. Enter a name in **Installation display name** field, e.g., `Flareup Prod`
 
 4. Enter an **Installation ID**, e.g., `flareup-prod-1`
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/installation-creation.jpg)
-<center>Figure 5: Entering Installation ID</center>
+    <center>Figure 5: Entering Installation ID</center>
 
 5. Click **Save**.
 
@@ -72,12 +72,12 @@ This involves mapping customer's environments to the tenant installation so that
 1. Click **Map Environment**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/map-environment.jpg)
-<center>Figure 6: Map Environment Button</center>
+    <center>Figure 6: Map Environment Button</center>
 
 2. Use the checkbox to choose the environments to map to the tenant installation. Note that, you cannot map an environment that is already mapped to another tenant installation.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/map-environments.jpg)
-<center>Figure 7: Mapping Environment to Your Installation</center>
+    <center>Figure 7: Mapping Environment to Your Installation</center>
 
     Here, we have mapped `doc1` and `doc2` environments to the production installation. 
 

@@ -24,7 +24,7 @@ Getting the redirectURI from Devtron is a crucial component of the authenticatio
 1. Navigate to **Global Configurations** → **Authorization** → **SSO Login Services**. The SSO Login Service page is displayed.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/github/github-sso-select-github.jpg)
-<center>Figure 1: Select Github</center>
+    <center>Figure 1: Select Github</center>
 
 2. Select **GitHub** from the list of available SSO login services.
 
@@ -35,7 +35,7 @@ Getting the redirectURI from Devtron is a crucial component of the authenticatio
 4. Copy the redirectURI from the purple block.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/github/github-sso-redirect-uri.jpg)
-<center>Figure 2: Copy Redirect URI</center>
+    <center>Figure 2: Copy Redirect URI</center>
 
 
 ---
@@ -51,7 +51,7 @@ Open Authentication (OAuth) allows you to authorize one application to sign in t
 2. Select your preferred OAuth app and click **Edit**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/github/github-sso-oauth-application.jpg)
-<center>Figure 3: Client ID and Client Secret</center>
+    <center>Figure 3: Client ID and Client Secret</center>
 
 3. Click the **Generate a new client secret** button to create a new client secret. The client secret is created and displayed in the **Client Secrets** section. The Client ID is created by default and can be found in the **Client ID** field.
 
@@ -72,7 +72,7 @@ To configure the GitHub SSO in Devtron, follow the below steps of instructions:
 2. Select the **Configuration** section available below the **URL** field.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/github/github-sso-config.jpg)
-<center>Figure 4: Configuration Section</center>
+    <center>Figure 4: Configuration Section</center>
 
 3. Update the `clientID` attribute with the Client ID generated in the OAuth application on GitHub.
 

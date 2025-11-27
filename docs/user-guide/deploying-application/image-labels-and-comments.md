@@ -117,4 +117,3 @@ If you use [Application Groups](../application-groups.md) to deploy in bulk, ima
 <center>Figure 9: Application Groups - Filter by Image Label</center>
 
 This will be helpful in scenarios (say release package) where you wish to deploy multiple applications at once, and you have already labelled the intended images of the respective applications.
-

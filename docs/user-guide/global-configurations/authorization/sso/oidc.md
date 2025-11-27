@@ -3,7 +3,7 @@
 ## Sample Configuration
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/oidc.jpg)
-<center></center>
+<center>Figure 1: Sample Configuration</center>
 
 ---
 
@@ -18,17 +18,17 @@ Devtron provides a sample configuration out of the box. There are some values th
 * clientSecret
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/secret/oidc-id-secret.jpg)
-<center>Fetching Client ID and Secret</center>
+    <center>Figure 2: Fetching Client ID and Secret</center>
 
 ### Values to Provide
 
 * redirectURI (provided in SSO Login Services by Devtron)
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect/oidc-redurl.jpg)
-<center>Copying Redirect URI from Devtron</center>
+    <center>Figure 3: Copying Redirect URI from Devtron</center>
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/sso-login-service/redirect/oidc-redirect.jpg)
-<center>Pasting Redirect URI</center>
+    <center>Figure 4: Pasting Redirect URI</center>
 
 ---
 
@@ -41,15 +41,3 @@ Devtron provides a sample configuration out of the box. There are some values th
 * [Configure Okta SSO](../sso/okta.md)
 
 * [View Dex IdP Documentation](https://dexidp.io/docs/connectors/oidc/)
-
-
-
-
-
-
-
-
-
-
-
-

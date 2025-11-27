@@ -24,7 +24,7 @@ To access the comprehensive security scan reports, follow these steps:
 1. In the left sidebar, click **Security** and go to the `Security Scans` tab.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-scans/security-scans-gc.jpg)
-<center>Figure 3: Navigate to Security Scans</center>
+    <center>Figure 3: Navigate to Security Scans</center>
 
 :::caution Who Can Perform This Action?
 Users need to have super-admin permission to view the 'Security Scans' page.
@@ -33,12 +33,12 @@ Users need to have super-admin permission to view the 'Security Scans' page.
 2. Select the desired application from the available list.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-scans/security-scans.jpg)
-<center>Figure 4: Application Security Scans</center>
+    <center>Figure 4: Application Security Scans</center>
 
     This action provides a detailed overview of the application's security scan, including CVE IDs, severity levels of vulnerabilities, and more, as shown below.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-scans/security-scans-report.jpg)
-<center>Figure 5: Detailed Scan Report</center>
+    <center>Figure 5: Detailed Scan Report</center>
 
 Each vulnerability is identified by a **CVE ID** and categorized based on **Severity**, **Package**, **Current Version**, and **Fixed In Version**.
 
@@ -82,4 +82,3 @@ Clicking the 'Details' link in the security vulnerabilities report (shown above)
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/security-scans/detailed-vulnerability-app-details.jpg)
 <center>Figure 8: Detailed List of Vulnerabilities</center>
-

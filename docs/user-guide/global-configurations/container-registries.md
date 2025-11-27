@@ -15,12 +15,12 @@ You can configure a container registry using any registry provider of your choic
 1. From the left sidebar, go to **Global Configurations** → **Container/OCI Registry**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/container-registries/add-registry.jpg)
-<center>Figure 1: Container/OCI Registry</center>
+    <center>Figure 1: Container/OCI Registry</center>
 
 2. Click **Add Registry**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/container-registries/add-container-registry.jpg)
-<center>Figure 2: Add a Registry</center>
+    <center>Figure 2: Add a Registry</center>
 
 3. Choose a provider from the **Registry provider** dropdown. View the [Supported Registry Providers](#supported-registry-providers).
 
@@ -234,7 +234,7 @@ If you prefer to delete an OCI registry, follow the instructions below:
 1. Navigate back to **Container/OCI Registry** page. 
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/container-registries/delete-oci-registry.jpg)
-<center>Figure 6: Delete an OCI Registry</center>
+    <center>Figure 6: Delete an OCI Registry</center>
 
 2. Select your preferred OCI registry. 
 

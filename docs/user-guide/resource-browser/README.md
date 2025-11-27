@@ -37,4 +37,3 @@ You may click a cluster to view and manage all its resources as shown below.
 * [Cluster Terminal](cluster-terminal.md)
 * [Add Monitoring Dashboards/Graphs](monitoring-graphs.md)
 * [Run Kubectl Commands Locally](kubectl-local.md)
-

@@ -9,7 +9,7 @@ Devtron is an open source software delivery workflow for kubernetes written in g
 It is designed as a self-serve platform for operationalizing and maintaining applications \(AppOps\) on kubernetes in a developer friendly way.   
    
  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/preview.gif)
-<center></center>   
+ <center>Figure 1: Dashboard</center>   
    
 
 
@@ -86,4 +86,3 @@ Check out our [contributing guidelines](https://github.com/devtron-labs/devtron-
 ## Vulnerability Reporting
 
 We at Devtron take security and our users' trust very seriously. If you believe you have found a security issue in Devtron, please responsibly disclose by contacting us at security@devtron.ai.
-

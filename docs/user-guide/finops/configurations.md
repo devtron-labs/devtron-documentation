@@ -249,7 +249,7 @@ Ensure [GitOps](../global-configurations/gitops.md) is configured before deployi
 1. Go to the **Chart Store** and search for `prometheus`. Use the Prometheus community's `kube-prometheus-stack` chart to deploy Prometheus.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app2.jpg)
-<center>Figure 1: Chart Store</center>
+    <center>Figure 1: Chart Store</center>
 
 2. After selecting the chart, configure these values as needed before deployment.
 
@@ -271,10 +271,10 @@ Ensure [GitOps](../global-configurations/gitops.md) is configured before deployi
     Search for the above parameters, and update them as shown (or customize as needed).
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app3.jpg)
-<center>Figure 2a: Prometheus Chart Configuration</center>
+    <center>Figure 2a: Prometheus Chart Configuration</center>
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-config.jpg)
-<center>Figure 2b: Prometheus Chart Configuration (cont.)</center>
+    <center>Figure 2b: Prometheus Chart Configuration (cont.)</center>
 
 3. Enable `upgradeJob` parameter to install CRDs:
 
@@ -283,17 +283,17 @@ Ensure [GitOps](../global-configurations/gitops.md) is configured before deployi
     In the Prometheus Helm chart settings, locate the `upgradeJob` parameter and set it to `true` if it is `false`.
       
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-new2.jpg)
-<center>Figure 3: upgradeJob Parameter</center>
+    <center>Figure 3: upgradeJob Parameter</center>
       
 4. After enabling the parameter, click **Deploy Chart**.
 
   While deploying `kube-prometheus-stack` chart, the deployment status may show as **Timed out**, and some CustomResourceDefinitions (CRDs) may appear as **Failed**. This behavior is expected and does not require any action from you.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-deployment-timed-out-v2.jpg)
-<center>Figure 4a: Deployment Timed Out</center>
+    <center>Figure 4a: Deployment Timed Out</center>
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/creating-application/app-metrics/app-metrics-crds-failed.jpg)
-<center>Figure 4b: CRDs Failed</center>
+    <center>Figure 4b: CRDs Failed</center>
 
   This occurs because certain Prometheus CRDs are large in size, which can lead to temporary sync issues during deployment, but, this does not impact the functionality of the Prometheus components.
 

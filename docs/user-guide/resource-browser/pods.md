@@ -62,7 +62,7 @@ This is a part of [Pod Terminal](#terminal). It is especially useful when `kubec
     1. **Basic** - It provides the bare minimum configurations required to launch an ephemeral container.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/infra-management/resource-browser+/pods/basic.jpg)
-<center>Figure 2: Basic Tab</center>
+    <center>Figure 2: Basic Tab</center>
 
     It contains 3 mandatory fields:
 

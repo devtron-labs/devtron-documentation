@@ -50,19 +50,19 @@ Users need to have super-admin permission to create tag policy.
 5. **Tag Key** - Enter the key from the key-value pair (tag), e.g., *Business Unit*, *Team*, *Owner*.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/tag-key.gif)
-<center>Figure 6: Entering Tag Key</center>
+    <center>Figure 6: Entering Tag Key</center>
 
 6. **Value Choices** - Here, you can create a list of values for the key-value pair (tag). A tag value can be a free text or you can restrict it to a set of values for the user to choose from.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/value-choices.gif)
-<center>Figure 7: Creating List of Choices</center>
+    <center>Figure 7: Creating List of Choices</center>
 
 You may enable **Allow Custom Input** to give the user a choice to enter their own value if it is unavailable in the list. Or you may skip creating the list of choices altogether so that your user can enter their own value. 
 
 7. **Description** - Write a brief description explaining the significance of the tag.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/tag-description.gif)
-<center>Figure 8: Adding Description for the Tag</center>
+    <center>Figure 8: Adding Description for the Tag</center>
 
 8. **Allow/Block Deployments** - Mandatory tags additionally let you define what should happen if users do not configure them in the intended projects:
     * **Allow deployments** - Use this option if you want to allow the user to deploy an existing application where mandatory tags are not configured yet.
@@ -71,22 +71,22 @@ You may enable **Allow Custom Input** to give the user a choice to enter their o
     * **Block deployment stages of all environments** - This will prevent the user from deploying an existing application to all environments if mandatory tags are not configured.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/allow-block.gif)
-<center>Figure 9: Deciding Deployment Restrictions</center>
+    <center>Figure 9: Deciding Deployment Restrictions</center>
 
 9. **Propagate Tag** - By default, tags assigned to applications in Devtron are not automatically propagated to Kubernetes resources as labels. For more information on how labels function in Kubernetes, refer to the [Kubernetes Labels Documentation](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/).
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/propagate-tag.gif)
-<center>Figure 10a: Propagating Tags</center> 
+    <center>Figure 10a: Propagating Tags</center> 
 
     <br/>
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/propagation-enable-disable.jpg)
-<center>Figure 10b: Enabling/Disabling Propagation</center> 
+    <center>Figure 10b: Enabling/Disabling Propagation</center> 
     
     <br/>
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/inject-tags.jpg)
-<center>Figure 10c: How Tag Propagation Works</center>
+    <center>Figure 10c: How Tag Propagation Works</center>
 
 :::Info Changing Propagation in Suggested Tags vs. Mandatory Tags
 **In suggested tags**: When you enable/disable tag propagation, users can still disable/enable it during app creation, ensuring its tags propagate to associated Kubernetes resources.
@@ -97,7 +97,7 @@ You may enable **Allow Custom Input** to give the user a choice to enter their o
 10. (Optional) Click the **`+`** option to create more suggested tags or more mandatory tags in one go.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/add-more-tags.jpg)
-<center>Figure 11: Adding More Tag</center>
+    <center>Figure 11: Adding More Tag</center>
 
 11. Click **Save** to create the tag(s).
 
@@ -160,17 +160,17 @@ If you wish to delete multiple tags, you may use the checkboxes to select the ta
 * The mandatory tag is available for users to configure after they select the project in the app creation page. It is marked by a red asterisk.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/mandatory-tag-result.gif)
-<center>Figure 16: Mandatory Tag - App Creation Page</center>
+    <center>Figure 16: Mandatory Tag - App Creation Page</center>
 
 * For an existing application, users can configure it from the **Overview** page of the application.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/mandatory-tag-overview.gif)
-<center>Figure 17: Mandatory Tag - Overview Page</center>
+    <center>Figure 17: Mandatory Tag - Overview Page</center>
 
 * In a project where mandatory tags are enabled, if the user does not provide values for the mandatory tags, the user cannot create an app in that project.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/mandatory-tag-save.gif)
-<center>Figure 18: App creation not allowed</center>
+    <center>Figure 18: App creation not allowed</center>
 
 ### Appearance of Suggested Tags
 

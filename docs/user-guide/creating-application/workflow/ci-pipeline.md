@@ -94,7 +94,7 @@ Devtron uses the regexp library, view [regexp cheatsheet](https://yourbasic.org/
    When using **Tag Creation** as a source type, Devtron allows you to filter which tags should trigger a build based on the following filters
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/ci-pipeline/build-deploy-tag-creation-filters.jpg)
-<center>Figure 6: Tag Creation Filters</center>
+   <center>Figure 6: Tag Creation Filters</center>
 
    Select the appropriate filter and pass the matching condition as a regular expression (regex).
 
@@ -110,7 +110,7 @@ Devtron uses the regexp library, view [regexp cheatsheet](https://yourbasic.org/
 6. Click **Create Pipeline** to save the configuration. You can now proceed to trigger the build, or continue below to explore additional configuration options for customizing your pipeline.
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/ci-pipeline/build-deploy-create-pipeline.jpg)
-<center>Figure 7: Creating pipeline</center>
+   <center>Figure 7: Creating pipeline</center>
 
 ### Configuring Advanced Options
 
@@ -289,7 +289,7 @@ To configure the Webhook in External CI, follow the steps below.
 1.  After creating the pipeline, select **Show webhook details** or select **External Source** stage to get the webhook URL and JSON sample payload to be used in the external CI pipeline.
 
       ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/ci-pipeline/deploy-image-show-webhook.jpg)
-   <center>Figure 24: Getting Webhook Details</center>
+      <center>Figure 24: Getting Webhook Details</center>
 
 2. On the **Webhook Details** page, click **Select or auto-generate token with required permissions** to select or generate a `API token`. This token allows external CI services to authenticate with Devtron.
 
@@ -299,15 +299,15 @@ To configure the Webhook in External CI, follow the steps below.
    * To select an existing API token, choose an API token from the dropdown under **Select API token**.
 
       ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/ci-pipeline/deploy-image-select-api-token.jpg)
-   <center>Figure 26: Selecting existing API Token</center>
+      <center>Figure 26: Selecting existing API Token</center>
 
    * To generate an API token, select **Auto-generate token** sub tab → Enter a name for the token in the **Token Name** field → Click **Generate token** to generate a token.
 
       ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/ci-pipeline/deploy-image-auto-generate-token.jpg)
-   <center>Figure 27a: Generating API Token</center>
+      <center>Figure 27a: Generating API Token</center>
 
       ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/ci-pipeline/deploy-image-auto-generate-token-2.jpg)
-   <center>Figure 27b: API Token Generated</center>
+      <center>Figure 27b: API Token Generated</center>
 
 3. After generating an API token, click **Sample cURL request** and select the metadata you want to send to Devtron. Sample JSON and cURL request will be generated accordingly.
 
@@ -748,10 +748,10 @@ The **Change Image Source** feature in Devtron lets you update the container ima
 1. In the **Configurations** tab of your application, hover over the intended workflow name and click **Change Image Source** icon.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/ci-pipeline/change-image-source-click.jpg)
-   <center>Figure 70a: Clicking 'Change Image Source'</center>
+    <center>Figure 70a: Clicking 'Change Image Source'</center>
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/ci-pipeline/change-image-source-select-workflow.jpg)
-   <center>Figure 70b: Selecting Workflow Template</center>
+    <center>Figure 70b: Selecting Workflow Template</center>
 
 2. Select the intended workflow template and enter the details required as per the selected workflow template. Refer [Types of workflow templates](../workflow/README.md#types-of-ci-pipelines) to learn more.
 
@@ -976,4 +976,3 @@ If you choose **Pull Request** or **Tag Creation** as the **Source Type**, you m
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/ci-pipeline/webhooks-bitbucket-save.jpg)
    <center>Figure 93: Saving Configurations</center>
-

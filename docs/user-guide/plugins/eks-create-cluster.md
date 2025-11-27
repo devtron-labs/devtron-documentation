@@ -68,4 +68,3 @@ Here you can set conditions to execute or skip the task. You can select `Set tri
 
 
 Click **Update Pipeline**.
-

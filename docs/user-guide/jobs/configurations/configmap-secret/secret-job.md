@@ -16,19 +16,19 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
 1. Go to the **Configurations** (tab) → **Base Configurations**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/secret.jpg)
-<center>Figure 1: ConfigMaps & Secrets</center>
+    <center>Figure 1: ConfigMaps & Secrets</center>
 
 2. Click the **+** button next to **Secrets**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/secret-add.jpg)
-<center>Figure 2: Creating Secret</center>
+    <center>Figure 2: Creating Secret</center>
 
 3. Enter a name for the Secret (Once defined, the name cannot be changed later). 
 
     **Note:** In case you are mounting an existing Kubernetes Secret, the name should be exactly the same as the name given using the `kubectl create secret <secret-name> <data source>` command.
     
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/secret-name.jpg)
-<center>Figure 3: Entering Secret Name</center>
+    <center>Figure 3: Entering Secret Name</center>
 
 4. **Data Type** - Choose between the following data types:
 
@@ -41,7 +41,7 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
     **Note:** `external-secrets` helm chart should be installed before setting up ESO; otherwise, the External Secret Operator (ESO) will not appear. Refer to the [External Secret Operator (ESO)](#external-secret-operator-eso) section to set up ESO 
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/secret-data-type.jpg)
-<center>Figure 4: Secret Data Type</center>
+    <center>Figure 4: Secret Data Type</center>
     
     **Note**: Devtron automatically converts secrets from various data types to Kubernetes Secrets. Regardless of the original data type, once the conversion is complete, the Pods can access the secrets in the same way as native Kubernetes Secrets.
 
@@ -52,7 +52,7 @@ Refer the [User permissions](../../../global-configurations/authorization/user-a
     * [**Data Volume**](#mount-data-as-data-volume) – Select this option if you want to configure a Data Volume that is accessible to Containers running in a pod and provide a Volume mount path. Go to [Data Volume](#mount-data-as-data-volume) to know more.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/secret-mount-data.jpg)
-<center>Figure 5: Mount Data as</center>
+    <center>Figure 5: Mount Data as</center>
 
 6. Select **Save** to create a Secret.
 
@@ -67,12 +67,12 @@ If you have selected Data type as `Kubernetes Secret` and mount data as `Environ
 * **GUI mode** – User-friendly interface. Click the **+Add** button and enter the **Key** and **Value** fields without quotes. 
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/secret-env-var-gui.jpg)
-<center>Figure 6: Entering Data in 'GUI' Mode</center>
+    <center>Figure 6: Entering Data in 'GUI' Mode</center>
 
 * **YAML mode** – Raw YAML for entering key-value pairs in the format **`key: value`**. Boolean and numeric values must be wrapped in double quotes.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/secret-env-var-yaml.jpg)
-<center>Figure 7: Entering Data in 'YAML' Mode</center>
+    <center>Figure 7: Entering Data in 'YAML' Mode</center>
 
 ### Mount Existing Kubernetes Secrets
 
@@ -149,12 +149,12 @@ Enter data in:
 * **GUI mode** – User-friendly interface. Click the **+Add** button and enter the **Key** and **Value** fields without quotes. 
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/secret-data-vol-gui.jpg)
-<center>Figure 13: Entering Data in 'GUI' Mode</center>
+    <center>Figure 13: Entering Data in 'GUI' Mode</center>
 
 * **YAML mode** – Raw YAML for entering key-value pairs in the format **`key: value`**. Boolean and numeric values must be wrapped in double quotes.
  
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/secret-data-vol-yaml.jpg)
-<center>Figure 14: Entering Data in 'YAML' Mode</center>
+    <center>Figure 14: Entering Data in 'YAML' Mode</center>
 
 #### For Mount Existing Kubernetes Secrets
 
@@ -230,12 +230,12 @@ External Secrets Operator (ESO) is a Kubernetes component that integrates with e
 1. Go to the **Infrastructure Management** → **Chart Store**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/secret-chart-store-nav.jpg)
-<center>Figure 18: Searching External Secrets Chart</center>
+    <center>Figure 18: Searching External Secrets Chart</center>
 
 2. Search for the `external-secrets` chart.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/secret-external-secret-chart.jpg)
-<center>Figure 19: Searching External Secrets Chart</center>
+    <center>Figure 19: Searching External Secrets Chart</center>
 
 :::info What if the external-secrets chart is not found?
 Manually add the following chart repository URL in Devtron: `https://charts.external-secrets.io`. Follow this [guide](../../../global-configurations/chart-repo.md#add-chart-repository) to know the steps.
@@ -244,12 +244,12 @@ Manually add the following chart repository URL in Devtron: `https://charts.exte
 3. A page displaying the complete information for the `external-secrets` chart will open. Click **Deploy Chart**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/secret-external-secret-chart-deploy-chart.jpg)
-<center>Figure 20: Information Page</center>
+    <center>Figure 20: Information Page</center>
 
 4. Give a name to the helm app that will be created from the chart. Also, enter the project and environment where you wish to install the chart.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/secret-external-secret-chart-config.jpg)
-<center>Figure 21: Adding Details</center>
+    <center>Figure 21: Adding Details</center>
 
 4. Click **Deploy**.
 
