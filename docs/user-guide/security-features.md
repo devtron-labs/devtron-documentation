@@ -116,7 +116,7 @@ You can also check for vulnerabilities within a specific workload such as job, p
 * Click **Check Vulnerabilities**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/app-details-scan.gif)
-<center>Figure 9: Scanning Workloads - App Details Page</center>
+    <center>Figure 9: Scanning Workloads - App Details Page</center>
 
 #### From Resource Browser
 
@@ -126,7 +126,7 @@ You can also check for vulnerabilities within a specific workload such as job, p
 * Access the **Check Vulnerabilities** option from the kebab menu present to your selected workload.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/security/rb-scan.gif)
-<center>Figure 10: Scanning Workloads - Resource Browser</center>
+    <center>Figure 10: Scanning Workloads - Resource Browser</center>
 
 ---
 
@@ -141,4 +141,3 @@ Devtron's Security feature has two primary sections:
 1. [**Security Scans**](./security-features/security-scans.md) - You can view the vulnerabilities detected across your applications.
 
 2. [**Security Policies**](./security-features/security-policies.md) - This allows you to define guardrails to block or allow the deployment of container images depending on the vulnerabilities detected.
-
