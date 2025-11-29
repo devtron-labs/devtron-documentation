@@ -13,7 +13,7 @@ To troubleshoot a cluster or a specific node in a cluster, click the terminal ic
 
 * You will see the user-defined name for the cluster in Devtron. E.g. `default-cluster`.
 * Select the node you wish to troubleshoot from the `Node` drop-down. E.g. `demo-new`.
-* Select the namespace from the drop-down list which you have added in the [Clusters & Environments](../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster) section.
+* Select the namespace from the drop-down list which you have added in the [Clusters & Environments](../global-configurations/clusters/manage-environments.md#add-environment-to-a-cluster) section.
 * Select the image from the drop-down list which includes all CLI utilities or you can use a custom image, which is publicly available.
 * Select the terminal shell from the drop-down list (e.g. `sh`, `bash`) to troubleshoot a node.
 

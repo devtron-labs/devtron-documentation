@@ -486,7 +486,20 @@ const sidebars = {
           ],
         },
         'user-guide/global-configurations/host-url',
-        'user-guide/global-configurations/cluster-and-environments',
+        {
+          type: 'category',
+          label: 'Cluster and Environments',
+          collapsed: true,
+          link: {
+            type: 'doc', // or 'generated-index'
+            id: 'user-guide/global-configurations/cluster-and-environments',
+          },
+          items: [
+            'user-guide/global-configurations/clusters/add-clusters',
+            'user-guide/global-configurations/clusters/manage-environments',
+            'user-guide/global-configurations/clusters/manage-categories',
+          ],
+        },
         'user-guide/global-configurations/container-registries',
         // Authorization nested
         {
