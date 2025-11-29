@@ -18,8 +18,8 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.596d72d5.css">
-<script src="/assets/js/runtime~main.2d1427ff.js" defer="defer"></script>
-<script src="/assets/js/main.fa6f18ce.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.c9b56ca7.js" defer="defer"></script>
+<script src="/assets/js/main.e8ea30c3.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -94,7 +94,7 @@
 <li class="">Click on url where Devtron has been installed under <code>Cookies</code> tab and you could see an argocd token with its value, something similar to below image.</li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/argocd-cookie.png" alt="" class="img_ev3q">
-<center>inspect-cookies</center></p>
+<center>Figure 1: Inspect-cookies</center></p>
 <ol start="4">
 <li class="">Now right click on token, and click on <code>Delete All Session Cookies</code> option.</li>
 </ol>
@@ -105,7 +105,7 @@
 <li class="">Click on url under <code>Cookie</code> and you would be able tto see an argocd token with its value, as shown in the image below.</li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/chrome-cookie.png" alt="" class="img_ev3q">
-<center>chrome-cookie</center></p>
+<center>Figure 2: Chrome-cookie</center></p>
 <ol start="4">
 <li class="">Now right click on token and click on <code>delete</code> option.</li>
 </ol>
@@ -114,13 +114,13 @@
 <li class="">Goto Safari preferences → Advanced options and check the show develop menu as shown in the image below.</li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/safari-preferences.png" alt="" class="img_ev3q">
-<center>safari-preferences</center></p>
+<center>Figure 3: Safari-preferences</center></p>
 <ol start="2">
 <li class="">Now goto login page of Devtron and press <code>option+command+I</code>. It will open inspect element.</li>
 <li class="">Then navigate to <code>Storage</code>, click on <code>Cookies</code> and you would be able to see an argocd token with its value as shown in the image below.</li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/safari-cookie.png" alt="" class="img_ev3q">
-<center>safari-cookie</center></p>
+<center>Figure 4: Safari-cookie</center></p>
 <ol start="4">
 <li class="">Now right click on token and select <code>delete</code> option.</li>
 </ol>
@@ -128,7 +128,7 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-no-charts-found-in-charts-discover-section">7. No charts found in Charts Discover Section<a href="#7-no-charts-found-in-charts-discover-section" class="hash-link" aria-label="Direct link to 7. No charts found in Charts Discover Section" title="Direct link to 7. No charts found in Charts Discover Section" translate="no">​</a></h3>
 <p>In the Devtron&#x27;s Discover Chart section, if you are not able to see any charts available, go to <strong>Application Management</strong> → <strong>Configurations</strong> → <strong>Chart Repository</strong> and click on <code>Refresh Chart</code> at the top-right as shown in the image below. After clicking the button, it might take 4-5mins to show all the charts in <code>Discover</code> section depending upon the chart repositories added.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/refresh-charts.png" alt="" class="img_ev3q">
-<center>charts-not-found</center></p>
+<center>Figure 5: Charts-not-found</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="8-not-able-to-update-cluster">8. Not able to update cluster<a href="#8-not-able-to-update-cluster" class="hash-link" aria-label="Direct link to 8. Not able to update cluster" title="Direct link to 8. Not able to update cluster" translate="no">​</a></h3>
 <p>In <strong>Global Configurations</strong> → <strong>Clusters &amp; Environments</strong>, if you try to update a cluster which has been already added in Devtron, you might get an error as <code>{&quot;message&quot;:&quot;Failed to update datasource. Reload new version and try again&quot;}</code>. If you are facing such issue, please follow the following steps -</p>
 <ol>
@@ -232,18 +232,18 @@ Refer to the <code>Google Cloud specific</code> parameters on the <a class="" hr
 <li class="">Provided credentials may be invalid.</li>
 </ul>
 <p>You can resolve the <code>ImagePullBackOff</code> issue by clicking <strong>How to resolve?</strong> on the <strong>App Details</strong> page.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/how-to-resolve-latest1.png" alt="" class="img_ev3q"></p>
-<center></center>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/how-to-resolve-latest1.png" alt="" class="img_ev3q">
+<center>Figure 6: Deployment Status Failed</center></p>
 <p>To provide the auto-inject credentials to the specific clusters for pulling the image from the private repository, click <strong>Manage Access</strong> which will take you to the <strong>Container Registries</strong> page.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/manage-access-latest.jpg" alt="" class="img_ev3q"></p>
-<center></center>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/manage-access-latest.jpg" alt="" class="img_ev3q">
+<center>Figure 7: Manage Access</center></p>
 <ol>
 <li class="">On the <strong>Container Registries</strong> page, select the docker registry and click <strong>Manage</strong>.</li>
 <li class="">In the <strong>Auto-inject credentials to clusters</strong>, click <strong>Confirm to edit</strong> to select the specific cluster or all clusters for which you want to auto-inject the credentials to and click <strong>Save</strong>.</li>
 <li class="">Redeploy the application after allowing the access.</li>
 </ol>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/auto-inject-to-clusters.jpg" alt="" class="img_ev3q"></p>
-<center></center>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/auto-inject-to-clusters.jpg" alt="" class="img_ev3q">
+<center>Figure 8: Auto Inject to Clusters</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="24-devtron-terminal-connection-timeout-issue-on-gke-cluster">24. Devtron Terminal Connection Timeout Issue on GKE Cluster<a href="#24-devtron-terminal-connection-timeout-issue-on-gke-cluster" class="hash-link" aria-label="Direct link to 24. Devtron Terminal Connection Timeout Issue on GKE Cluster" title="Direct link to 24. Devtron Terminal Connection Timeout Issue on GKE Cluster" translate="no">​</a></h3>
 <p><strong>Problem:</strong></p>
 <p>When connecting to the pod or cluster terminal from the Devtron dashboard on an ingress with gce class in a GKE cluster, the connection gets disconnected after every 30 seconds. This issue is caused by the default timeoutSec value of 30 seconds in the <code>backendConfig</code>.</p>
@@ -308,8 +308,8 @@ Wait for few minutes and check the build pipeline if commits are visible or not<
 <p>In case the cloning fails, you can generate the token, update the Git account in Global Configurations, and try to save the git repository again.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="27-git-sensor-pvc--disk-full">27. Git-sensor PVC- disk full<a href="#27-git-sensor-pvc--disk-full" class="hash-link" aria-label="Direct link to 27. Git-sensor PVC- disk full" title="Direct link to 27. Git-sensor PVC- disk full" translate="no">​</a></h3>
 <p><strong>Need to increase the PVC size if you are getting following error:</strong></p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/git-sensor-pvc.png" alt="" class="img_ev3q"></p>
-<center></center>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/git-sensor-pvc.png" alt="" class="img_ev3q">
+<center>Figure 9: Git Sensor PVC</center></p>
 <p><strong>Need to check the <code>Storageclass</code> by which PVC was provisioned.</strong></p>
 <p>Run the following command:</p>
 <div class="language-yaml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-yaml codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">kubectl get storageclass</span><br></span></code></pre></div></div>
@@ -321,8 +321,8 @@ Wait for few minutes and check the build pipeline if commits are visible or not<
 <p><strong>Increase the PVC size as per your requirement. This will resolve the issue. If not, then try to bounce the pod using the following command.</strong></p>
 <div class="language-yaml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-yaml codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">kubectl delete po </span><span class="token punctuation" style="color:rgb(248, 248, 242)">-</span><span class="token plain">n devtroncd git</span><span class="token punctuation" style="color:rgb(248, 248, 242)">-</span><span class="token plain">sensor</span><span class="token punctuation" style="color:rgb(248, 248, 242)">-</span><span class="token number">0</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="28-getting-invalid-json-document-while-deploying-via-argocd">28. Getting &#x27;Invalid JSON Document&#x27; while deploying via ArgoCD<a href="#28-getting-invalid-json-document-while-deploying-via-argocd" class="hash-link" aria-label="Direct link to 28. Getting &#x27;Invalid JSON Document&#x27; while deploying via ArgoCD" title="Direct link to 28. Getting &#x27;Invalid JSON Document&#x27; while deploying via ArgoCD" translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/invalid-json.jpg" alt="" class="img_ev3q"></p>
-<center></center>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/invalid-json.jpg" alt="" class="img_ev3q">
+<center>Figure 10: Invalid JSON</center></p>
 <p>As shown above, Rollout object’s sync status is showing <code>Failed</code> and throwing an <code>Invalid JSON Document</code> error.</p>
 <p>This might happen due to manual changes in the Rollout object in the annotation <code>kubectl.kubernetes.io/last-applied-configuration:</code> <br> The value of the above annotation is a JSON. ArgoCD tries to validate that JSON and throws an error if it is invalid.</p>
 <p>Below is a sample annotation for your reference.</p>
@@ -341,20 +341,18 @@ Wait for few minutes and check the build pipeline if commits are visible or not<
 </li>
 <li class="">
 <p>Now in the Bitnami repository, uncheck the <strong>Allow Insecure Connection</strong> and update it as shown below.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/bitnami-chart-issue.jpg" alt="" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/bitnami-chart-issue.jpg" alt="" class="img_ev3q">
+<center>Figure 11: Bitnami Chart Issue</center></p>
 </li>
-</ul>
-<center></center>
-<ul>
 <li class="">
 <p>Go to <strong>Application Management</strong> → <strong>Chart Store</strong> and initiate the Chart Sync.</p>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/chart-sync.jpg" alt="" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/chart-sync.jpg" alt="" class="img_ev3q">
+<center>Figure 12: Chart Sync</center></p>
 </li>
 </ul>
-<center></center>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="30-the-advanced-yaml-and-basic-gui-sections-are-appearing-blank-in-the-base-deployment-template-of-the-application">30. The Advanced (YAML) and Basic (GUI) sections are appearing blank in the Base Deployment Template of the application.<a href="#30-the-advanced-yaml-and-basic-gui-sections-are-appearing-blank-in-the-base-deployment-template-of-the-application" class="hash-link" aria-label="Direct link to 30. The Advanced (YAML) and Basic (GUI) sections are appearing blank in the Base Deployment Template of the application." title="Direct link to 30. The Advanced (YAML) and Basic (GUI) sections are appearing blank in the Base Deployment Template of the application." translate="no">​</a></h3>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/empty-values.jpg" alt="" class="img_ev3q"></p>
-<center></center>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/empty-values.jpg" alt="" class="img_ev3q">
+<center>Figure 13: Empty Values</center></p>
 <p>This happens due to a missing <a class="" href="/docs/user-guide/app-management/configurations/deployment-charts#3-add-app-valuesyaml">app-values.yaml</a> file in your deployment chart.</p>
 <p>To fix this issue, include an <code>app-values.yaml</code> file in your deployment helm chart before uploading the chart. Refer <a class="" href="/docs/user-guide/app-management/configurations/deployment-charts#3-add-app-valuesyaml">adding app-values.yaml</a> to know more.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="31-unable-to-create-a-gitops-deployment-pipeline-or-encountering-errors-with-gitops-deployment">31. Unable to create a GitOps deployment pipeline or encountering errors with GitOps deployment.<a href="#31-unable-to-create-a-gitops-deployment-pipeline-or-encountering-errors-with-gitops-deployment" class="hash-link" aria-label="Direct link to 31. Unable to create a GitOps deployment pipeline or encountering errors with GitOps deployment." title="Direct link to 31. Unable to create a GitOps deployment pipeline or encountering errors with GitOps deployment." translate="no">​</a></h3>

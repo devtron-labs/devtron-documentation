@@ -18,8 +18,8 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.596d72d5.css">
-<script src="/assets/js/runtime~main.2d1427ff.js" defer="defer"></script>
-<script src="/assets/js/main.fa6f18ce.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.c9b56ca7.js" defer="defer"></script>
+<script src="/assets/js/main.e8ea30c3.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -58,7 +58,7 @@
 <p>Application deployments through GitOps (via FluxCD) are supported only when using the <code>Deployment</code> or <code>Rollout</code> deployment strategies with the latest chart versions. Other deployment strategies are currently not supported.</p>
 </li>
 </ul></div></div>
-<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Deploying to an Isolated Environment?</div><div class="admonitionContent_BuS1"><p>In case you are choosing an <a class="" href="/docs/user-guide/global-configurations/cluster-and-environments#add-isolated-cluster-">isolated environment</a> for deployment, you will get two additional options to choose from in the &#x27;Deploy to Environment&#x27; window (<a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/create-cd2.jpg" target="_blank" rel="noopener noreferrer" class="">check snapshot</a>):</p><ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Deploying to an Isolated Environment?</div><div class="admonitionContent_BuS1"><p>In case you are choosing an <a class="" href="/docs/user-guide/global-configurations/clusters/add-clusters#add-isolated-cluster-">isolated environment</a> for deployment, you will get two additional options to choose from in the &#x27;Deploy to Environment&#x27; window (<a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/use-cases/oci-push/create-cd2.jpg" target="_blank" rel="noopener noreferrer" class="">check snapshot</a>):</p><ul>
 <li class=""><strong>Do not push</strong> - A link to download the helm package will be available after the deployment. However, it will not push the helm package to the OCI registry.</li>
 <li class=""><strong>Push to registry</strong> - This will generate and <a class="" href="/docs/user-guide/global-configurations/container-registries#push-helm-packages">push the helm package to the OCI registry</a>. Upon selecting this option, you will get two more fields:<!-- -->
 <ul>
@@ -222,7 +222,7 @@
 <center>Figure 18: Choosing External Cluster and Helm Release from Dropdown</center></p>
 </li>
 <li class="">
-<p>The target cluster, its namespace, and environment would be visible. If the environment is not available, click <strong>Add Environment</strong>. This will open a new tab. Once you have <a class="" href="/docs/user-guide/global-configurations/cluster-and-environments#add-environment-to-a-cluster">added the environment to your cluster</a>, return and click the refresh button.</p>
+<p>The target cluster, its namespace, and environment would be visible. If the environment is not available, click <strong>Add Environment</strong>. This will open a new tab. Once you have <a class="" href="/docs/user-guide/global-configurations/clusters/manage-environments#add-environment-to-a-cluster">added the environment to your cluster</a>, return and click the refresh button.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/cd-pipeline/add-env-helm.jpg" alt="" class="img_ev3q">
 <center>Figure 19: Adding Environment to Target</center></p>
 </li>
@@ -256,7 +256,7 @@
 <p>The cluster containing your external Argo applications should be added to Devtron. Refer <a class="" href="/docs/user-guide/global-configurations/cluster-and-environments">Clusters &amp; Environments</a>.</p>
 </li>
 <li class="">
-<p>The target deployment cluster, its namespace, and its <a class="" href="/docs/user-guide/global-configurations/cluster-and-environments#add-environment-to-a-cluster">environment</a> should be added to Devtron.</p>
+<p>The target deployment cluster, its namespace, and its <a class="" href="/docs/user-guide/global-configurations/clusters/manage-environments#add-environment-to-a-cluster">environment</a> should be added to Devtron.</p>
 </li>
 <li class="">
 <p>Your Argo CD app must use the same chart type as your application. If needed, you can upload or select the appropriate chart in <strong>Application Management</strong> → <strong>Configurations</strong> → <strong>Deployment Charts</strong>. Then save the chart type at <a class="" href="/docs/user-guide/creating-application/base-config/deployment-template">base configuration</a> of your application.</p>
@@ -275,7 +275,7 @@
 <center>Figure 21: Choosing External Cluster and Argo App from Dropdown</center></p>
 </li>
 <li class="">
-<p>The target cluster, its namespace, and environment would be visible. If the environment is not available, click <strong>Add Environment</strong>. This will open a new tab. Once you have <a class="" href="/docs/user-guide/global-configurations/cluster-and-environments#add-environment-to-a-cluster">added the environment to your cluster</a>, return and click the refresh button.</p>
+<p>The target cluster, its namespace, and environment would be visible. If the environment is not available, click <strong>Add Environment</strong>. This will open a new tab. Once you have <a class="" href="/docs/user-guide/global-configurations/clusters/manage-environments#add-environment-to-a-cluster">added the environment to your cluster</a>, return and click the refresh button.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/cd-pipeline/add-env-argo.jpg" alt="" class="img_ev3q">
 <center>Figure 22: Adding Environment to Target</center></p>
 </li>
@@ -313,7 +313,7 @@
 <p>The cluster containing your external Flux Helm release applications should be added to Devtron. Refer <a class="" href="/docs/user-guide/global-configurations/cluster-and-environments">Clusters &amp; Environments</a>.</p>
 </li>
 <li class="">
-<p>The target deployment cluster, its namespace, and its <a class="" href="/docs/user-guide/global-configurations/cluster-and-environments#add-environment-to-a-cluster">environment</a> should be added to Devtron.</p>
+<p>The target deployment cluster, its namespace, and its <a class="" href="/docs/user-guide/global-configurations/clusters/manage-environments#add-environment-to-a-cluster">environment</a> should be added to Devtron.</p>
 </li>
 <li class="">
 <p>The external Flux CD should have auto-sync enabled or an alternative syncing mechanism, as Devtron does not perform manual syncs.</p>
@@ -329,7 +329,7 @@
 <center>Figure 24: Choosing &#x27;Flux CD Application&#x27;</center></p>
 </li>
 <li class="">
-<p>The target cluster, its namespace, and environment would be visible. If the environment is not available, click <strong>Add Environment</strong>. This will open a new tab. Once you have <a class="" href="/docs/user-guide/global-configurations/cluster-and-environments#add-environment-to-a-cluster">added the environment to your cluster</a>, return and click the refresh button.</p>
+<p>The target cluster, its namespace, and environment would be visible. If the environment is not available, click <strong>Add Environment</strong>. This will open a new tab. Once you have <a class="" href="/docs/user-guide/global-configurations/clusters/manage-environments#add-environment-to-a-cluster">added the environment to your cluster</a>, return and click the refresh button.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/cd-pipeline/fluxcd-add-env.jpg" alt="" class="img_ev3q">
 <center>Figure 25: Choosing External Cluster and Flux App from Dropdown</center></p>
 </li>

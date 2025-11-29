@@ -18,8 +18,8 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.596d72d5.css">
-<script src="/assets/js/runtime~main.2d1427ff.js" defer="defer"></script>
-<script src="/assets/js/main.fa6f18ce.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.c9b56ca7.js" defer="defer"></script>
+<script src="/assets/js/main.e8ea30c3.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -30,8 +30,8 @@
 <ol>
 <li class="">Go to the devtron chart store and search for <code>devtron-backups</code> chart.</li>
 </ol>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/backup/backup-chart-search.jpg" alt="" class="img_ev3q"></p>
-<center></center>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/backup/backup-chart-search.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Search Chart</center></p>
 <ol start="2">
 <li class="">Select the <code>devtron-backups</code> and click <code>Configure &amp; Deploy</code>.</li>
 <li class="">Now follow either of the options described below according to your Cloud provider.</li>
@@ -45,7 +45,7 @@
 <li class="">Configure the <code>devtron-backups</code> chart for AWS S3 by selecting the appropriate options:</li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/backup/aws-backup-config.jpg" alt="" class="img_ev3q">
-<center>AWS Backup Configuration</center></p>
+<center>Figure 2: AWS Backup Configuration</center></p>
 <ol start="5">
 <li class="">Deploy the chart, and the Devtron backup will be automatically uploaded to the AWS S3 bucket at the scheduled intervals.</li>
 </ol>
@@ -57,12 +57,12 @@
 <li class="">Navigate to Security + Networking → Access Key section in Azure and copy the Access Key:</li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/backup/azure-sa-key.jpg" alt="" class="img_ev3q">
-<center>Azure Storage Account Key</center></p>
+<center>Figure 3: Azure Storage Account Key</center></p>
 <ol start="4">
 <li class="">Configure the <code>devtron-backups</code> chart for Azure Containers by providing the Access Key:</li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/backup/azure-backup-config.jpg" alt="" class="img_ev3q">
-<center>Azure Backup Configuration</center></p>
+<center>Figure 4: Azure Backup Configuration</center></p>
 <ol start="5">
 <li class="">Before deploying the backup chart, ensure that <code>AWS.enabled</code> is set to <code>false</code>. This will ensure that Devtron backup will be automatically uploaded to the configured Azure containers on the scheduled intervals.</li>
 </ol>
