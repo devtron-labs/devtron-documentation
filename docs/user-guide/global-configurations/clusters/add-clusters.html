@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.596d72d5.css">
-<script src="/assets/js/runtime~main.c9b56ca7.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.b4d74f80.js" defer="defer"></script>
 <script src="/assets/js/main.e8ea30c3.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -90,7 +90,7 @@
 <li class=""><a href="#choose-method-of-connection-" class="">Choose Connection Type</a></li>
 <li class=""><a href="#use-secure-tls-connection" class="">Use Secure TLS Connection</a></li>
 <li class=""><a href="#configure-prometheus-enable-application-metrics" class="">Configure Prometheus</a></li>
-<li class=""><a href="#assign-category-to-a-cluster" class="">Assign a category</a></li>
+<li class=""><a href="#assign-category-to-a-cluster" class="">Assign a Category</a></li>
 </ul>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Note</div><div class="admonitionContent_BuS1"><p>Ensure that the <strong>kubeconfig</strong> file has admin permissions. It is crucial for Devtron to have the necessary administrative privileges; otherwise, it may encounter failures or disruptions during deployments and other operations. Admin permission is essential to ensure the smooth functioning of Devtron and to prevent any potential issues that may arise due to insufficient privileges.</p></div></div>
 <hr>
@@ -121,7 +121,7 @@
 <table><thead><tr><th style="text-align:left">Field</th><th style="text-align:left">Value</th></tr></thead><tbody><tr><td style="text-align:left"><strong>Registry provider</strong></td><td style="text-align:left">Other</td></tr><tr><td style="text-align:left"><strong>Registry type</strong></td><td style="text-align:left">Public Registry</td></tr><tr><td style="text-align:left"><strong>Name</strong></td><td style="text-align:left"><code>tofu</code></td></tr><tr><td style="text-align:left"><strong>Registry URL</strong></td><td style="text-align:left"><code>ghcr.io</code></td></tr><tr><td style="text-align:left"><strong>List of repositories</strong></td><td style="text-align:left"><code>flux-iac/charts/tofu-controller</code></td></tr></tbody></table>
 <br>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/container-oci-registry.jpg" alt="" class="img_ev3q">
-<center>Figure 16: Container/OCI Registry</center></p>
+<center>Figure 8: Container/OCI Registry</center></p>
 </li>
 <li class="">
 <p>Click <strong>Save</strong>. The <code>tofu-controller</code> chart will be displayed in the <a class="" href="/docs/user-guide/deploy-chart">Chart Store</a> page.</p>
@@ -132,7 +132,7 @@
 <li class="">
 <p>Select the chart and click <strong>Configure &amp; Deploy</strong>. The following page will be displayed.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/tofu-controller-chart.jpg" alt="" class="img_ev3q">
-<center>Figure 17: Tofu Controller Chart</center></p>
+<center>Figure 9: Tofu Controller Chart</center></p>
 </li>
 <li class="">
 <p>Enter the app name (e.g., <code>tofu-controller</code>) in the <strong>App Name</strong> field.</p>
@@ -160,7 +160,7 @@
 <li class="">
 <p>Navigate to <a class="" href="/docs/user-guide/deploy-chart">Chart Store</a> and search for <code>flux2</code> in the search box.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/flux-cd-chart.jpg" alt="" class="img_ev3q">
-<center>Figure 18: &quot;flux2&quot; Chart</center></p>
+<center>Figure 10: &quot;flux2&quot; Chart</center></p>
 </li>
 <li class="">
 <p>Select the chart and click <strong>Deploy</strong>.</p>
@@ -234,7 +234,7 @@
 <table><thead><tr><th style="text-align:left">Field</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>Cluster Provider</code></td><td style="text-align:left">Select the type of cluster you&#x27;d like to create based on your requirement</td></tr><tr><td style="text-align:left"><code>Name</code></td><td style="text-align:left">Enter the name of your Kubernetes cluster (e.g., <code>eks-cluster-nonprod</code> in the case of EKS and <code>rancher-cluster-qa</code> in the case of Rancher)</td></tr><tr><td style="text-align:left"><code>Region</code></td><td style="text-align:left">Select the region where your cluster is hosted (e.g., <code>us-east-1</code> in the case of EKS and <code>ap-south-3</code> in the case of Rancher) <br> Refer to <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-manage-view-clusters.html#emr-view-cluster-console" target="_blank" rel="noopener noreferrer" class="">View cluster details using the AWS Management Console</a> for more information</td></tr><tr><td style="text-align:left"><code>VPC CIDR</code></td><td style="text-align:left">Enter the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-cidr-blocks.html" target="_blank" rel="noopener noreferrer" class="">VPC CIDR</a> value. This value determines the number of <a class="" href="/docs/reference/glossary#pod">pods</a>, <a class="" href="/docs/reference/glossary#nodes">nodes</a>, or services your cluster can host (e.g., <code>10.0.1.6/16</code>)</td></tr><tr><td style="text-align:left"><code>Authentication Mode</code></td><td style="text-align:left">Select the authentication mode you wish to perform for the cluster <br> <ul><li> <strong>API_AND_CONFIG_MAP</strong> - Select this if you want to use both the API and the ConfigMap to authenticate who can access the cluster. This option is recommended if you are migrating from the old <code>aws-auth</code> ConfigMap method (which is deprecated) to the new API method. <br> Refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html" target="_blank" rel="noopener noreferrer" class="">Grant IAM users access to Kubernetes with EKS access entries</a> for more information. </li> <li><strong>API</strong> - Select this if you want to manage access using a single API. This option is recommended as this is the best practice for EKS cluster creation. <br> Refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html" target="_blank" rel="noopener noreferrer" class="">Manage User Access with API</a> for more information.</li> <li> <strong>CONFIG MAP</strong> - Select this if you want to rely on the original (but deprecated) way of authentication using <code>aws-auth</code> ConfigMap. This option is not recommended anymore. <br> Refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/auth-configmap.html" target="_blank" rel="noopener noreferrer" class="">Grant IAM users access to Kubernetes. with a ConfigMap.</a> for more information.</li></ul></td></tr><tr><td style="text-align:left"><code>Enable IRSA</code></td><td style="text-align:left">Turn on this IRSA toggle (IAM Roles for <a href="https://kubernetes.io/docs/concepts/security/service-accounts/" target="_blank" rel="noopener noreferrer" class="">Service Accounts</a>) if you want your application to securely connect to other AWS services using a service account</td></tr><tr><td style="text-align:left"><code>Allow public access</code></td><td style="text-align:left">Turn on this toggle if you want to allow your <a href="https://docs.aws.amazon.com/eks/latest/best-practices/control-plane.html" target="_blank" rel="noopener noreferrer" class="">EKS control plane</a> endpoint to be accessed publicly from anywhere without the VPC. It is recommended to keep this toggle disabled</td></tr><tr><td style="text-align:left"><code>Cluster Version</code></td><td style="text-align:left">Select your preferred Kubernetes cluster version. If you are running a live application in a production environment, it is recommended that you select a stable version instead of the latest version</td></tr></tbody></table>
 <br>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/create-k8s-cluster.jpg" alt="" class="img_ev3q">
-<center>Figure 19: Create Kubernetes Cluster</center></p>
+<center>Figure 11: Create Kubernetes Cluster</center></p>
 <br>
 </li>
 <li class="">
@@ -253,15 +253,15 @@
 <li class="">On the <strong>New Cluster</strong> modal window, select <strong>Add Isolated Cluster</strong>.</li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-select-isolated-cluster.jpg" alt="" class="img_ev3q">
-<center>Figure 20: Selecting Isolated Cluster</center></p>
+<center>Figure 12: Selecting Isolated Cluster</center></p>
 <ol start="2">
 <li class="">Add a cluster name (e.g. <em>banking-airgapped-cluster</em>) and click <strong>Save Cluster</strong>.</li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-isolated-cluster-save.jpg" alt="" class="img_ev3q">
-<center>Figure 21: Saving Isolated Cluster</center></p>
+<center>Figure 13: Saving Isolated Cluster</center></p>
 <p>You have successfully configured an isolated cluster.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-new-isolated-cluster.jpg" alt="" class="img_ev3q">
-<center>Figure 22: New Isolated Cluster</center></p>
+<center>Figure 14: New Isolated Cluster</center></p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Note</div><div class="admonitionContent_BuS1"><p>When you deploy to an isolated environment, Devtron automatically packages application manifests and images into a <a class="" href="/docs/reference/glossary#helm-chartspackages">Helm chart</a>. You can then either:</p><ul>
 <li class="">Download and install manually in a fully air-gapped setup.</li>
 <li class="">Push it to an <a class="" href="/docs/user-guide/global-configurations/container-registries">OCI registry</a> (provided pushing of helm package is enabled), allowing manifests to be pulled manually or automatically via Devtron on an air-gapped cluster (if pull access to the OCI registry is available).</li>
@@ -276,12 +276,12 @@
 <li class="">
 <p>Select a category from the dropdown under <strong>Assign Category</strong> and click <strong>Update Cluster</strong>.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-assign-category-cluster.jpg" alt="" class="img_ev3q">
-<center>Figure 8: Assigning Category</center></p>
+<center>Figure 15: Assigning Category</center></p>
 </li>
 <li class="">
 <p>The selected category will be assigned to the cluster.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-assign-category-category-added-cluster.jpg" alt="" class="img_ev3q">
-<center>Figure 9: Category Assigned</center></p>
+<center>Figure 16: Category Assigned</center></p>
 </li>
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="choose-method-of-connection-">Choose Method of Connection <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" class="enterprise-badge-img"></a><a href="#choose-method-of-connection-" class="hash-link" aria-label="Direct link to choose-method-of-connection-" title="Direct link to choose-method-of-connection-" translate="no">​</a></h3>
@@ -293,7 +293,7 @@
 <li class="">Recommended when the cluster is publicly accessible or has a direct network route from Devtron.</li>
 </ul>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-direct-connection.jpg" alt="" class="img_ev3q">
-<center>Figure 10: Choosing Direct Connection</center></p>
+<center>Figure 17: Choosing Direct Connection</center></p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="via-proxy-">Via Proxy <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" class="enterprise-badge-img"></a><a href="#via-proxy-" class="hash-link" aria-label="Direct link to via-proxy-" title="Direct link to via-proxy-" translate="no">​</a></h4>
 <p>For security reasons, some Kubernetes clusters are deployed behind a proxy. In this setup, Devtron routes all communication through the specified proxy URL.</p>
 <ul>
@@ -302,7 +302,7 @@
 <li class=""><strong>Limitation</strong>: Deployments via <a class="" href="/docs/reference/glossary#gitops">GitOps (ArgoCD)</a> are not recommended for clusters connected via proxy.</li>
 </ul>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-via-proxy.jpg" alt="" class="img_ev3q">
-<center>Figure 11: Choosing &#x27;Via Proxy&#x27;</center></p>
+<center>Figure 18: Choosing &#x27;Via Proxy&#x27;</center></p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="via-ssh-tunnel-">Via SSH Tunnel <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" class="enterprise-badge-img"></a><a href="#via-ssh-tunnel-" class="hash-link" aria-label="Direct link to via-ssh-tunnel-" title="Direct link to via-ssh-tunnel-" translate="no">​</a></h4>
 <p>When a direct connection isn&#x27;t possible, Devtron can connect to the Kubernetes cluster through an SSH tunnel, ensuring secure and encrypted communication.</p>
 <ul>
@@ -322,18 +322,18 @@
 <li class=""><strong>Limitation</strong>: Deployments via <a class="" href="/docs/reference/glossary#gitops">GitOps (ArgoCD)</a> are <strong>not recommended</strong> for clusters connected via SSH Tunnel.</li>
 </ul>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-via-ssh.jpg" alt="" class="img_ev3q">
-<center>Figure 12: Choosing &#x27;Via SSH Tunnel&#x27;</center></p>
+<center>Figure 19: Choosing &#x27;Via SSH Tunnel&#x27;</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-secure-tls-connection">Use Secure TLS Connection<a href="#use-secure-tls-connection" class="hash-link" aria-label="Direct link to Use Secure TLS Connection" title="Direct link to Use Secure TLS Connection" translate="no">​</a></h3>
 <p>For a secure cluster connection, you can opt for TLS connection, where you need to provide Certificate Authority Data, a TLS Key, and a TLS Certificate.</p>
 <p>If your cluster is managed (e.g., <a href="https://aws.amazon.com/eks/" target="_blank" rel="noopener noreferrer" class="">EKS</a>, <a href="https://learn.microsoft.com/en-us/azure/aks/" target="_blank" rel="noopener noreferrer" class="">AKS</a>, <a href="https://cloud.google.com/kubernetes-engine" target="_blank" rel="noopener noreferrer" class="">GKE</a>), you might need to download these certificates from your cloud provider’s dashboard or API.</p>
 <table><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody><tr><td><strong>Certificate Authority (CA) Data</strong></td><td>The CA certificate (see: <a href="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/kubeconfig-entry.jpg" target="_blank" rel="noopener noreferrer" class="">example</a>) used to verify the Kubernetes API server’s identity.</td></tr><tr><td><strong>TLS Key</strong></td><td>The private key associated with the client certificate for authentication.</td></tr><tr><td><strong>TLS Certificate</strong></td><td>The client certificate used to authenticate with the Kubernetes API server.</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-secure-tls.jpg" alt="" class="img_ev3q">
-<center>Figure 13: Using Secure TLS Connection</center></p>
+<center>Figure 20: Using Secure TLS Connection</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="configure-prometheus-enable-application-metrics">Configure Prometheus (Enable Application Metrics)<a href="#configure-prometheus-enable-application-metrics" class="hash-link" aria-label="Direct link to Configure Prometheus (Enable Application Metrics)" title="Direct link to Configure Prometheus (Enable Application Metrics)" translate="no">​</a></h3>
 <p>If you want to see application metrics against the applications deployed in the cluster, Prometheus must be deployed in the cluster. Prometheus is a powerful tool to provide graphical insight into your application behavior.</p>
 <p>Enable application metrics to configure Prometheus as shown below. In case it is not available, make sure to install the <strong>Monitoring (Grafana)</strong> integration from <a class="" href="/docs/user-guide/stack-manager">Devtron Stack Manager</a> to configure Prometheus.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-enable-app-metrics.jpg" alt="" class="img_ev3q">
-<center>Figure 14: Enabling Application Metrics</center></p>
+<center>Figure 21: Enabling Application Metrics</center></p>
 <p>Provide the information in the following fields:</p>
 <table><thead><tr><th style="text-align:left">Field</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><strong>Prometheus endpoint</strong></td><td style="text-align:left">Provide the URL of your Prometheus</td></tr><tr><td style="text-align:left"><strong>Authentication Type</strong></td><td style="text-align:left">Prometheus supports two authentication types:<ul><li><strong>Basic</strong>: If you select the <code>Basic</code> authentication type, then you must provide the <code>Username</code> and <code>Password</code> of Prometheus for authentication.</li></ul> <ul><li><strong>Anonymous</strong>: If you select the <code>Anonymous</code> authentication type, then you do not need to provide the <code>Username</code> and <code>Password</code>.<br><strong>Note</strong>: The fields <code>Username</code> and <code>Password</code> will not be available by default.</li></ul></td></tr><tr><td style="text-align:left"><strong>TLS Key</strong> &amp; <strong>TLS Certificate</strong></td><td style="text-align:left">These fields are optional and can be used when you use a customized URL.</td></tr></tbody></table>
 <p>Click <strong>Save Cluster</strong> to save your cluster on Devtron.</p>
@@ -343,7 +343,7 @@
 <p>You can get the <strong>Server URL</strong> and <strong>Bearer Token</strong> by running the following command, depending on the cluster provider:</p>
 <div class="theme-tabs-container tabs-container tabList__CuJ"><ul role="tablist" aria-orientation="horizontal" class="tabs"><li role="tab" tabindex="0" aria-selected="true" class="tabs__item tabItem_LNqP tabs__item--active">k8s Cluster Providers</li><li role="tab" tabindex="-1" aria-selected="false" class="tabs__item tabItem_LNqP">Microk8s Cluster</li></ul><div class="margin-top--md"><div role="tabpanel" class="tabItem_Ymn6"><p>If you are using EKS, AKS, GKE, Kops, Digital Ocean managed Kubernetes, run the following command to generate the server URL and bearer token:</p><div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">curl -O https://raw.githubusercontent.com/devtron-labs/utilities/main/kubeconfig-exporter/kubernetes_export_sa.sh &amp;&amp; bash kubernetes_export_sa.sh cd-user  devtroncd</span><br></span></code></pre></div></div></div><div role="tabpanel" class="tabItem_Ymn6" hidden=""><p>If you are using a <strong><code>microk8s cluster</code></strong>, run the following command to generate the server URL and bearer token:</p><div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">curl -O https://raw.githubusercontent.com/devtron-labs/utilities/main/kubeconfig-exporter/kubernetes_export_sa.sh &amp;&amp; sed -i &#x27;s/kubectl/microk8s kubectl/g&#x27; \</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">kubernetes_export_sa.sh &amp;&amp; bash kubernetes_export_sa.sh cd-user \</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">devtroncd</span><br></span></code></pre></div></div></div></div></div>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/generate-cluster-credentials.jpg" alt="" class="img_ev3q">
-<center>Figure 41: Generating Cluster Credentials</center></p>
+<center>Figure 22: Generating Cluster Credentials</center></p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="benefits-of-self-hosted-url">Benefits of Self-hosted URL<a href="#benefits-of-self-hosted-url" class="hash-link" aria-label="Direct link to Benefits of Self-hosted URL" title="Direct link to Benefits of Self-hosted URL" translate="no">​</a></h4>
 <ul>
 <li class="">

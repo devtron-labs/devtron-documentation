@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.596d72d5.css">
-<script src="/assets/js/runtime~main.c9b56ca7.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.b4d74f80.js" defer="defer"></script>
 <script src="/assets/js/main.e8ea30c3.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -34,15 +34,15 @@
 <li class="">Select the cluster to which you want to add an Environment and click <strong>Add Environment</strong>. Alternatively you can also hover over the cluster and click <code>+</code> icon (Add Environment icon); an <strong>Add Environment</strong> modal window appears.</li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-add-environment-option.jpg" alt="" class="img_ev3q">
-<center>Figure 23a: Adding an Environment</center></p>
+<center>Figure 1a: Adding an Environment</center></p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-click-add-environment.jpg" alt="" class="img_ev3q">
-<center>Figure 23b: Clicking &#x27;Add Environment&#x27;</center></p>
+<center>Figure 1b: Clicking &#x27;Add Environment&#x27;</center></p>
 <ol start="2">
 <li class="">Fill the following details within the <strong>Add Environment</strong> modal window.</li>
 </ol>
 <table><thead><tr><th style="text-align:left">Field</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><strong>Environment Name</strong></td><td style="text-align:left">Enter a name for your environment.</td></tr><tr><td style="text-align:left"><strong>Enter Namespace</strong></td><td style="text-align:left">Enter a namespace corresponding to your environment.<br><strong>Note</strong>: If this namespace does not exist in your cluster, Devtron will create it. If it already exists, Devtron will map the environment to it.</td></tr><tr><td style="text-align:left"><strong>Environment Type</strong></td><td style="text-align:left">Select your environment type:<ul><li><code>Production</code></li></ul> <ul><li><code>Non-production</code></li></ul>Note: Devtron shows deployment metrics (DORA metrics) for environments tagged as <code>Production</code> only.</td></tr></tbody></table>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-add-env-fields.jpg" alt="" class="img_ev3q">
-<center>Figure 24: Saving an Environment</center></p>
+<center>Figure 2: Saving an Environment</center></p>
 <ol start="3">
 <li class="">
 <p><strong>Assign a Category to environment</strong> <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" class="enterprise-badge-img"></a> - Devtron allows you to assign a category (for e.g. Prod, QA, Dev, or Stage) to your environments. This enables category-based filtering in the UI, allowing you to determine whether an application is deployed to Prod, QA, Dev, or Stage environment.<br><br>
@@ -51,12 +51,12 @@ To assign a category to your environment, follow the steps below:</p>
 <li class="">Select a category from the dropdown under <strong>Assign Category</strong> and click <strong>Update</strong>.</li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-assign-category-env.jpg" alt="" class="img_ev3q">
-<center>Figure 25: Assigning Category</center></p>
+<center>Figure 3: Assigning Category</center></p>
 <ol start="2">
 <li class="">The selected category will be assigned to the environment.</li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-assign-category-category-added-env.jpg" alt="" class="img_ev3q">
-<center>Figure 26: Category Assigned</center></p>
+<center>Figure 4: Category Assigned</center></p>
 </li>
 </ol>
 <p><strong>Note:</strong> Before assigning a category, you must first add the category. To add a category, refer to <a class="" href="/docs/user-guide/global-configurations/clusters/manage-categories#add-category">Adding a Category</a> section to learn more.</p>
@@ -64,12 +64,12 @@ To assign a category to your environment, follow the steps below:</p>
 <li class=""><strong>Add/Edit labels to namespace</strong> <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" class="enterprise-badge-img"></a> - You can attach labels to your specified namespace in the Kubernetes cluster. Using labels will help you filter and identify resources via CLI or other Kubernetes tools. <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/" target="_blank" rel="noopener noreferrer" class="">Click here</a> to know more about labels.</li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/labels-namespace.gif" alt="" class="img_ev3q">
-<center>Figure 27: Adding Labels to Namespace</center></p>
+<center>Figure 5: Adding Labels to Namespace</center></p>
 <ol start="5">
 <li class="">Click <strong>Save</strong>. Your new environment will be visible in your cluster as shown below.</li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/added-env.jpg" alt="" class="img_ev3q">
-<center>Figure 28: Newly Created Environment in the Cluster</center></p>
+<center>Figure 6: Newly Created Environment in the Cluster</center></p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="edit-environment">Edit Environment<a href="#edit-environment" class="hash-link" aria-label="Direct link to Edit Environment" title="Direct link to Edit Environment" translate="no">​</a></h2>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Who Can Perform This Action?</div><div class="admonitionContent_BuS1"><p>Users need to have super-admin permission to edit an environment in a cluster.</p></div></div>
@@ -83,7 +83,7 @@ To assign a category to your environment, follow the steps below:</p>
 </li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-edit-env.jpg" alt="" class="img_ev3q">
-<center>Figure 29: Editing Environment in the Cluster</center></p>
+<center>Figure 7: Editing Environment in the Cluster</center></p>
 <ol start="3">
 <li class="">Edit the environment fields.</li>
 </ol>
@@ -92,7 +92,7 @@ To assign a category to your environment, follow the steps below:</p>
 <li class="">Click <strong>Update</strong> to save your changes.</li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-update-env.jpg" alt="" class="img_ev3q">
-<center>Figure 30: Updating Environment in the Cluster</center></p>
+<center>Figure 8: Updating Environment in the Cluster</center></p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="delete-environment">Delete Environment<a href="#delete-environment" class="hash-link" aria-label="Direct link to Delete Environment" title="Direct link to Delete Environment" translate="no">​</a></h2>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Who Can Perform This Action?</div><div class="admonitionContent_BuS1"><p>Users need to have super-admin permission to delete an environment from a cluster.</p></div></div>
@@ -106,13 +106,13 @@ To assign a category to your environment, follow the steps below:</p>
 </li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-delete-env.jpg" alt="" class="img_ev3q">
-<center>Figure 31: Deleting Environment</center></p>
+<center>Figure 9: Deleting Environment</center></p>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Important</div><div class="admonitionContent_BuS1"><p>Environment deletion is not allowed if any application has a CD pipeline corresponding to the environment. In such a case, go to <a class="" href="/docs/user-guide/creating-application/workflow">Workflow Editor</a> and delete the deployment pipeline first, and then return to delete the environment. This action is irreversible, so make sure no critical applications or resources depend on the environment before deleting.</p></div></div>
 <ol start="2">
 <li class="">A confirmation dialog will appear. Click <strong>Delete</strong> to permanently delete the environment.</li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-confirm-delete-env.jpg" alt="" class="img_ev3q">
-<center>Figure 32: Confirming Environment Deletion</center></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/global-configurations/clusters/add-clusters"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Add Clusters</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/global-configurations/clusters/manage-categories"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Manage Categories</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#add-environment-to-a-cluster" class="table-of-contents__link toc-highlight">Add Environment to a Cluster</a></li><li><a href="#edit-environment" class="table-of-contents__link toc-highlight">Edit Environment</a></li><li><a href="#delete-environment" class="table-of-contents__link toc-highlight">Delete Environment</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
+<center>Figure 10: Confirming Environment Deletion</center></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/global-configurations/clusters/add-clusters"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Add Clusters</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/global-configurations/clusters/manage-categories"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Manage Categories</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#add-environment-to-a-cluster" class="table-of-contents__link toc-highlight">Add Environment to a Cluster</a></li><li><a href="#edit-environment" class="table-of-contents__link toc-highlight">Edit Environment</a></li><li><a href="#delete-environment" class="table-of-contents__link toc-highlight">Delete Environment</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
               <div style="text-align: center;">
                 <div style="margin-bottom: 1rem;">
                   <a href="/" style="display: inline-block;">
