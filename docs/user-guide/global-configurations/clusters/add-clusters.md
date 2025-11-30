@@ -84,7 +84,7 @@ In case you prefer to add clusters using kubeconfig, follow these steps:
   * [Choose Connection Type](#choose-method-of-connection-)
   * [Use Secure TLS Connection](#use-secure-tls-connection)
   * [Configure Prometheus](#configure-prometheus-enable-application-metrics)
-  * [Assign a category](#assign-category-to-a-cluster)
+  * [Assign a Category](#assign-category-to-a-cluster)
 
 :::caution Note
 Ensure that the **kubeconfig** file has admin permissions. It is crucial for Devtron to have the necessary administrative privileges; otherwise, it may encounter failures or disruptions during deployments and other operations. Admin permission is essential to ensure the smooth functioning of Devtron and to prevent any potential issues that may arise due to insufficient privileges.
@@ -129,7 +129,7 @@ Follow the steps mentioned below to install OpenTofu:
     <br/>
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/container-oci-registry.jpg)
-    <center>Figure 16: Container/OCI Registry</center>
+    <center>Figure 8: Container/OCI Registry</center>
 
 3. Click **Save**. The `tofu-controller` chart will be displayed in the [Chart Store](../../../user-guide/deploy-chart/README.md) page.
 
@@ -138,7 +138,7 @@ Follow the steps mentioned below to install OpenTofu:
 5. Select the chart and click **Configure & Deploy**. The following page will be displayed.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/tofu-controller-chart.jpg)
-    <center>Figure 17: Tofu Controller Chart</center>
+    <center>Figure 9: Tofu Controller Chart</center>
 
 6. Enter the app name (e.g., `tofu-controller`) in the **App Name** field. 
 
@@ -163,7 +163,7 @@ Follow the steps mentioned below to install OpenTofu:
 1. Navigate to [Chart Store](../../../user-guide/deploy-chart/README.md) and search for `flux2` in the search box.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/flux-cd-chart.jpg)
-    <center>Figure 18: "flux2" Chart</center>
+    <center>Figure 10: "flux2" Chart</center>
 
 2. Select the chart and click **Deploy**.
 
@@ -251,7 +251,7 @@ Only a [Super-Admin](../../global-configurations/authorization/user-access.md#gr
   <br/>
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/create-k8s-cluster.jpg)
-  <center>Figure 19: Create Kubernetes Cluster</center>
+  <center>Figure 11: Create Kubernetes Cluster</center>
   
   <br/>
   
@@ -279,17 +279,17 @@ For air-gapped Kubernetes clusters with restricted inbound and outbound traffic,
 1. On the **New Cluster** modal window, select **Add Isolated Cluster**.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-select-isolated-cluster.jpg)
-  <center>Figure 20: Selecting Isolated Cluster</center>
+  <center>Figure 12: Selecting Isolated Cluster</center>
 
 2. Add a cluster name (e.g. *banking-airgapped-cluster*) and click **Save Cluster**.
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-isolated-cluster-save.jpg)
-  <center>Figure 21: Saving Isolated Cluster</center>
+  <center>Figure 13: Saving Isolated Cluster</center>
 
 You have successfully configured an isolated cluster.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-new-isolated-cluster.jpg)
-<center>Figure 22: New Isolated Cluster</center>
+<center>Figure 14: New Isolated Cluster</center>
 
 :::info Note
 When you deploy to an isolated environment, Devtron automatically packages application manifests and images into a [Helm chart](../../../reference/glossary.md#helm-chartspackages). You can then either:
@@ -312,12 +312,12 @@ To assign a category to a cluster, follow the steps below:
 1. Select a category from the dropdown under **Assign Category** and click **Update Cluster**.
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-assign-category-cluster.jpg)
-  <center>Figure 8: Assigning Category</center>
+  <center>Figure 15: Assigning Category</center>
 
 2. The selected category will be assigned to the cluster.
 
    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-assign-category-category-added-cluster.jpg)
-  <center>Figure 9: Category Assigned</center>
+  <center>Figure 16: Category Assigned</center>
 
 
 ### Choose Method of Connection <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
@@ -330,7 +330,7 @@ Clusters with a directly accessible API server endpoint, either publicly or via 
 * Recommended when the cluster is publicly accessible or has a direct network route from Devtron.  
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-direct-connection.jpg)
-<center>Figure 10: Choosing Direct Connection</center>  
+<center>Figure 17: Choosing Direct Connection</center>  
 
 #### Via Proxy <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
@@ -340,7 +340,7 @@ For security reasons, some Kubernetes clusters are deployed behind a proxy. In t
 * **Limitation**: Deployments via [GitOps (ArgoCD)](../../../reference/glossary.md#gitops) are not recommended for clusters connected via proxy.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-via-proxy.jpg)
-<center>Figure 11: Choosing 'Via Proxy'</center>  
+<center>Figure 18: Choosing 'Via Proxy'</center>  
 
 #### Via SSH Tunnel <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
@@ -355,7 +355,7 @@ When a direct connection isn't possible, Devtron can connect to the Kubernetes c
 * **Limitation**: Deployments via [GitOps (ArgoCD)](../../../reference/glossary.md#gitops) are **not recommended** for clusters connected via SSH Tunnel.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-via-ssh.jpg)
-<center>Figure 12: Choosing 'Via SSH Tunnel'</center>  
+<center>Figure 19: Choosing 'Via SSH Tunnel'</center>  
 
 
 ### Use Secure TLS Connection
@@ -371,7 +371,7 @@ If your cluster is managed (e.g., [EKS](https://aws.amazon.com/eks/), [AKS](http
 | **TLS Certificate** | The client certificate used to authenticate with the Kubernetes API server. |
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-secure-tls.jpg)
-<center>Figure 13: Using Secure TLS Connection</center>
+<center>Figure 20: Using Secure TLS Connection</center>
 
 
 ### Configure Prometheus (Enable Application Metrics)
@@ -381,7 +381,7 @@ If you want to see application metrics against the applications deployed in the 
 Enable application metrics to configure Prometheus as shown below. In case it is not available, make sure to install the **Monitoring (Grafana)** integration from [Devtron Stack Manager](../../stack-manager.md) to configure Prometheus.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-enable-app-metrics.jpg)
-<center>Figure 14: Enabling Application Metrics</center>
+<center>Figure 21: Enabling Application Metrics</center>
 
 Provide the information in the following fields:
 
@@ -424,7 +424,7 @@ devtroncd
 </Tabs>
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/generate-cluster-credentials.jpg)
-<center>Figure 41: Generating Cluster Credentials</center>
+<center>Figure 22: Generating Cluster Credentials</center>
 
 #### Benefits of Self-hosted URL
 
