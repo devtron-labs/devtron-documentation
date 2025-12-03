@@ -66,8 +66,8 @@ You may enable **Allow Custom Input** to give the user a choice to enter their o
 
 8. **Allow/Block Deployments** - Mandatory tags additionally let you define what should happen if users do not configure them in the intended projects:
     * **Allow deployments** - Use this option if you want to allow the user to deploy an existing application where mandatory tags are not configured yet.
-    * **Block deployment stages of prod environments** - Use this option if you want to prevent the user from deploying an existing application to [production environments](../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster), if mandatory tags are not configured. 
-    * **Block deployment stages of non-prod enviroments** - Use this option if you want to prevent the user from deploying an existing application to [non-production environments](../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster), if mandatory tags are not configured. 
+    * **Block deployment stages of prod environments** - Use this option if you want to prevent the user from deploying an existing application to [production environments](../global-configurations/clusters/manage-environments.md#add-environment-to-a-cluster), if mandatory tags are not configured. 
+    * **Block deployment stages of non-prod enviroments** - Use this option if you want to prevent the user from deploying an existing application to [non-production environments](../global-configurations/clusters/manage-environments.md#add-environment-to-a-cluster), if mandatory tags are not configured. 
     * **Block deployment stages of all environments** - This will prevent the user from deploying an existing application to all environments if mandatory tags are not configured.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/tags-policy/allow-block.gif)

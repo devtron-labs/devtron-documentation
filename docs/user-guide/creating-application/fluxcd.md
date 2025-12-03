@@ -145,7 +145,7 @@ To install FluxCD controller via Chart Store, follow the below steps.
        ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/resources/gitops-flux-cd/fluxcd-add-chart-repo.gif)
       <center>Figure 9: Adding FluxCD Chart Repository</center> 
 
- 2. Add a new environment in the cluster in which you want to deploy the application via FluxCD linked to namespace as `flux-system`. Refer [Clusters and Environments](../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster) to lean more.
+ 2. Add a new environment in the cluster in which you want to deploy the application via FluxCD linked to namespace as `flux-system`. Refer [Clusters and Environments](../global-configurations/clusters/manage-environments.md#add-environment-to-a-cluster) to lean more.
 
        ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/resources/gitops-flux-cd/fluxcd-add-env.gif)
       <center>Figure 10: Adding Environment linked to 'flux-system' namespace</center> 

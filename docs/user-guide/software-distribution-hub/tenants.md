@@ -67,7 +67,7 @@ This involves setting up [installation](./README.md#installations) for different
 Users need to have super-admin permission to map environments.
 :::
 
-This involves mapping customer's environments to the tenant installation so that your updates are deployed to the correct environments. If you haven't created an environment yet, refer [Clusters & Environments](../global-configurations/cluster-and-environments.md#add-environment-to-a-cluster).
+This involves mapping customer's environments to the tenant installation so that your updates are deployed to the correct environments. If you haven't created an environment yet, refer [Clusters & Environments](../global-configurations/clusters/manage-environments.md#add-environment-to-a-cluster).
 
 1. Click **Map Environment**.
 
