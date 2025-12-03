@@ -1,0 +1,350 @@
+/* --- GLOBAL LAYOUT STABILITY --- */
+/* 1. FORCE SCROLLBAR: Prevents the page from jumping left/right when results load */
+html {
+  overflow-y: scroll !important;
+}
+
+/* MAIN WRAPPER */
+.ts-wrapper {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ts-wrapper * {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+.ts-header {
+  margin-bottom: 1.5rem;
+}
+
+.ts-header h1 {
+  font-size: 2rem; 
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-font-color-base);
+}
+
+/* SEARCH BOX */
+.ts-search {
+  width: 100%;
+  max-width: 420px;
+  padding: 10px 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  transition: border-color 0.2s ease;
+}
+
+.ts-search:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+}
+
+/* LAYOUT - THE WIDTH FIX IS HERE */
+.ts-layout {
+  display: grid;
+  /* CRITICAL FIX: 'minmax(0, 1fr)' prevents the column from expanding 
+     to fit long logs. Standard '1fr' would blow out the width. */
+  grid-template-columns: 230px minmax(0, 1fr); 
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* SIDEBAR */
+.ts-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: sticky;
+  top: 80px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+/* CATEGORY BUTTONS */
+.ts-category-btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  color: var(--ifm-font-color-base);
+  font-weight: 500;
+}
+
+.ts-category-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ACTIVE STATE: LIGHT MODE */
+.ts-category-btn.active {
+  background-color: #f0f8ff; 
+  color: #0066cc;            
+  border: 1px solid #1976d2; 
+  font-weight: 600;
+}
+
+/* ACTIVE STATE: DARK MODE (Clean Blue/Grey instead of Gold) */
+html[data-theme='dark'] .ts-category-btn.active {
+  background-color: rgba(122, 138, 222, 0.15); /* Soft Blue Tint */
+  color: var(--ifm-color-primary-lightest);    /* Soft Blue Text */
+  border: 1px solid var(--ifm-color-primary-lightest);
+}
+
+html[data-theme='dark'] .ts-category-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* MAIN CONTENT AREA */
+.ts-main {
+  width: 100%;
+  /* CRITICAL FIX: Allows the flex container to shrink below its content size */
+  min-width: 0; 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ts-result-count {
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* --- CARD COMPONENT --- */
+
+.ts-card {
+  width: 100%;
+  /* CRITICAL FIX: Ensures card never exceeds parent width */
+  max-width: 100%; 
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  background: var(--ifm-background-surface-color);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+/* CARD HOVER: LIGHT MODE */
+.ts-card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 4px 12px rgba(13, 26, 102, 0.15);
+}
+
+/* CARD HOVER: DARK MODE (Soft Blue instead of Gold) */
+html[data-theme='dark'] .ts-card:hover {
+  border-color: var(--ifm-color-primary-lightest); 
+  box-shadow: 0 4px 16px rgba(122, 138, 222, 0.15);
+}
+
+/* --- HEADER: FIXED HEIGHT --- */
+.ts-card-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  
+  /* STRICT HEIGHT - Ensures all cards are identical size */
+  height: 90px !important;
+  min-height: 90px !important;
+  max-height: 90px !important;
+  
+  overflow: hidden;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  background: transparent;
+}
+
+/* LEFT SIDE */
+.ts-card-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  height: 100%;
+}
+
+.ts-card-category {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ts-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  line-height: 1.35;
+  
+  /* Truncate at 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* CHEVRON */
+.ts-chevron {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: var(--ifm-font-color-base);
+}
+
+.ts-chevron.open {
+  transform: rotate(90deg);
+  opacity: 1;
+}
+
+/* Chevron in Dark Mode (Soft Blue) */
+html[data-theme='dark'] .ts-card.open .ts-chevron {
+  color: var(--ifm-color-primary-lightest);
+}
+
+/* --- BODY ANIMATION & CONTENT --- */
+
+.ts-card-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease-out, opacity 0.25s ease;
+  opacity: 0;
+  width: 100%;
+}
+
+.ts-card-body.open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.ts-card-body-inner {
+  overflow: hidden;
+  /* CRITICAL: Allows shrinking below content size */
+  min-width: 0; 
+}
+
+.ts-card-content {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  margin-top: 0.5rem;
+  
+  /* --- THE NUCLEAR WRAPPING FIX --- */
+  width: 100%;
+  max-width: 100%; /* Never let content exceed card width */
+  
+  /* 1. Force text to wrap at any character if the line is full */
+  overflow-wrap: anywhere !important; 
+  
+  /* 2. Force long words (hashes/URLs) to break */
+  word-break: break-word !important;
+  
+  /* 3. Ensure standard whitespace rules don't prevent wrapping */
+  white-space: normal !important;
+}
+
+/* --- FIX FOR CODE BLOCKS (Likely culprit for SSO logs) --- */
+.ts-card-content pre, 
+.ts-card-content code {
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  font-size: 0.9em;
+  
+  /* CRITICAL: Overwrite default code styling that prevents wrapping */
+  white-space: pre-wrap !important;  /* Allows wrapping but keeps formatting */
+  word-break: break-all !important;  /* Force breaks in long error codes */
+  overflow-wrap: anywhere !important;
+  max-width: 100%;
+}
+
+/* HEADINGS */
+.ts-card-content h4 {
+  margin: 1.2rem 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ifm-color-emphasis-800); 
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* HEADINGS IN DARK MODE (Clean White) */
+html[data-theme='dark'] .ts-card-content h4 {
+  color: var(--ifm-font-color-base); 
+  opacity: 0.9;
+}
+
+.ts-card-content p, 
+.ts-card-content li {
+  line-height: 1.6;
+  color: var(--ifm-font-color-base);
+  margin-bottom: 0.5rem;
+}
+
+/* IMAGES */
+.ts-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.ts-images img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .ts-layout {
+    grid-template-columns: 1fr;
+  }
+  .ts-categories {
+    position: static;
+    max-height: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  }
+  .ts-category-btn {
+    flex: 0 0 auto;
+    border: 1px solid var(--ifm-color-emphasis-200);
+  }
+  .ts-card-header {
+    height: auto !important;
+    min-height: 80px !important;
+    max-height: none !important;
+    padding: 1rem;
+  }
+}
+
+.ts-add-btn-disabled {
+  padding: 8px 12px;
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-600);
+  border: none;
+  border-radius: 6px;
+  cursor: not-allowed;
+  font-size: 0.85rem;
+  font-weight: 600;
+}

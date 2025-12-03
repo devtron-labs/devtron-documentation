@@ -1,0 +1,499 @@
+[
+  {
+    "id": "unauthorized-global-configurations",
+    "category": "Installation",
+    "title": "How to resolve unauthorized errors while saving global configurations",
+    "summary": "Unauthorized errors usually happen when installation jobs fail.",
+    "problem": "This occurs most of the time because one or more Devtron installation jobs fail.",
+    "rootCause": "Incomplete installation jobs or failed migrator execution.",
+    "steps": [
+      "Run: `kubectl get jobs -n devtroncd` and check for jobs with 0/1 completions.",
+      "Check pods of incomplete jobs: `kubectl get pods -n devtroncd`.",
+      "If pods are still running, wait; if not, delete the incomplete jobs: `kubectl delete jobs <job1> <job2> -n devtroncd`.",
+      "Download migrator: `wget https://raw.githubusercontent.com/devtron-labs/devtron/main/manifests/yamls/migrator.yaml`.",
+      "Edit migrator.yaml and remove creation of `postgresql-migrator` secret.",
+      "Apply YAML: `kubectl apply -f migrator.yaml -n devtroncd`.",
+      "Wait for recreated jobs to complete and retry saving configuration."
+    ],
+    "images": []
+  },
+  {
+    "id": "rollout-crd-update-required",
+    "category": "Application Metrics",
+    "title": "Not able to see deployment metrics or application-metrics not visible",
+    "summary": "Missing or outdated Rollout CRDs cause metrics visibility issues.",
+    "problem": "Deployment metrics or application metrics fail to appear.",
+    "rootCause": "Rollout CRDs are outdated on the cluster.",
+    "steps": [
+      "Apply updated Rollout CRDs:",
+      "`kubectl apply -f https://raw.githubusercontent.com/devtron-labs/devtron/main/manifests/yamls/rollout.yaml -n devtroncd`"
+    ],
+    "images": []
+  },
+  {
+    "id": "sso-login-not-working",
+    "category": "SSO",
+    "title": "SSO Login not working even after entering correct credentials",
+    "summary": "SSO login may fail due to missing tokens or Dex issues.",
+    "problem": "Login fails with errors related to token absence or incorrect OIDC config.",
+    "rootCause": "Stale or invalid tokens, Dex failing to refresh configuration.",
+    "steps": [
+      "Delete Devtron pod: `kubectl delete pod -n devtroncd -l app=devtron`.",
+      "Wait for pod restart and retry login."
+    ],
+    "images": []
+  },
+  {
+    "id": "logs-not-visible-build",
+    "category": "CI/CD",
+    "title": "Logs are not visible in UI while running the build",
+    "summary": "Build logs do not appear and abort fails.",
+    "problem": "No logs are visible and builds cannot be aborted.",
+    "rootCause": "kubewatch or NATS-based log forwarding components malfunction.",
+    "steps": [
+      "Check CI pods: `kubectl get pods -n devtron-ci`.",
+      "If pods are created, delete kubewatch and devtron pods:",
+      "`kubectl delete pod -n devtroncd -l app=devtron`",
+      "`kubectl delete pod -n devtroncd -l app=kubewatch`",
+      "If still unresolved, delete:",
+      "`kubectl delete pod -n devtroncd devtron-nats-0`",
+      "`kubectl delete pod -n devtroncd devtron-stan-0`",
+      "`kubectl delete pod -n devtroncd -l app=devtron`",
+      "`kubectl delete pod -n devtroncd -l app=kubewatch`",
+      "Trigger a new build."
+    ],
+    "images": []
+  },
+  {
+    "id": "grafana-dashboards-not-visible",
+    "category": "Metrics",
+    "title": "Grafana dashboards not visible or panel errors appear",
+    "summary": "Grafana dashboards may not load if org/settings are not correct.",
+    "problem": "Dashboards show panel errors or 404.",
+    "rootCause": "Grafana org settings or Prometheus datasource mismatch.",
+    "steps": [
+      "Check Prometheus configuration.",
+      "Open `<devtron-url>/grafana?orgId=2`.",
+      "If 'Not Found', follow Grafana org recreation steps.",
+      "Run setup commands inside curl utility pod to reconfigure datasources.",
+      "Revisit Grafana and ensure datasource and dashboards exist.",
+      "Update environment from Devtron UI to sync datasources."
+    ],
+    "images": [
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/argocd-cookie.png",
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/chrome-cookie.png",
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/safari-preferences.png",
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/safari-cookie.png"
+    ]
+  },
+  {
+    "id": "unable-to-login-dashboard",
+    "category": "Login",
+    "title": "Unable to login Devtron dashboard even after entering correct password",
+    "summary": "Browser cookies preserve old ArgoCD tokens, blocking new login.",
+    "problem": "Login fails despite correct password.",
+    "rootCause": "Stale argocd token stored in browser cookies.",
+    "steps": [
+      "Open browser developer tools.",
+      "Delete ArgoCD cookie as per your browser:",
+      "Firefox → Storage → Cookies → Delete All Session Cookies.",
+      "Chrome → Application → Cookies → Delete token.",
+      "Safari → Enable Develop menu → Storage → Cookies → Delete token.",
+      "Retry login."
+    ],
+    "images": [
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/argocd-cookie.png",
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/chrome-cookie.png",
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/safari-preferences.png",
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/safari-cookie.png"
+    ]
+  },
+  {
+    "id": "charts-not-found",
+    "category": "Charts",
+    "title": "No charts found in Discover section",
+    "summary": "Charts may not load due to stale repo index.",
+    "problem": "Discover section shows empty chart list.",
+    "rootCause": "Chart repositories not refreshed.",
+    "steps": [
+      "Go to Application Management → Configurations → Chart Repository.",
+      "Click 'Refresh Chart'.",
+      "Wait 4–5 minutes for charts to sync."
+    ],
+    "images": [
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/refresh-charts.png"
+    ]
+  },
+
+  {
+    "id": "cluster-update-fail",
+    "category": "Cluster & Infrastructure",
+    "title": "Not able to update cluster",
+    "summary": "Cluster update may fail due to stale Devtron pod state.",
+    "problem": "Updating cluster throws datasource reload errors.",
+    "rootCause": "Devtron pod caching issues.",
+    "steps": [
+      "Edit cluster settings and click Save.",
+      "If error appears, delete Devtron pod:",
+      "`kubectl -ndevtroncd delete po -l app=devtron`",
+      "Refresh Devtron UI and try again."
+    ],
+    "images": []
+  },
+
+  {
+    "id": "postgres-crashloop",
+    "category": "Database",
+    "title": "Postgresql is in crashloop with error - Failed to pull image",
+    "summary": "Image version mismatch forces PostgreSQL to fail.",
+    "problem": "Postgres goes into CrashLoopBackOff.",
+    "rootCause": "Incorrect or outdated PostgreSQL image.",
+    "steps": [
+      "Patch StatefulSet with new images:",
+      "`kubectl patch ...`",
+      "Delete Postgres pod so it restarts with new image."
+    ],
+    "images": []
+  },
+
+  {
+    "id": "commit-not-visible-cannot-trigger-build",
+    "category": "CI/CD",
+    "title": "Unable to fetch the latest commit and auto-build not working",
+    "summary": "Git sensor may be stuck.",
+    "problem": "Devtron is not showing new commits.",
+    "rootCause": "Git sensor pod malfunction.",
+    "steps": [
+      "Save Git repository again.",
+      "Check logs: `kubectl logs -n devtroncd -l app=git-sensor`",
+      "Bounce git-sensor pod:",
+      "`kubectl delete pod -n devtroncd git-sensor-0`"
+    ],
+    "images": []
+  },
+
+  {
+    "id": "restricted-service-sso",
+    "category": "SSO",
+    "title": "SSO login isn’t working when devtron-service is IP restricted",
+    "summary": "NAT gateway IPs may be blocked.",
+    "problem": "SSO fails in clusters with IP-restricted service.",
+    "rootCause": "NAT gateway IP ranges not whitelisted.",
+    "steps": [
+      "Whitelist NAT gateway IPs of the cluster."
+    ],
+    "images": []
+  },
+
+  {
+    "id": "cpu-metrics-missing",
+    "category": "Metrics",
+    "title": "CPU metrics not showing but memory metrics visible",
+    "summary": "Grafana query filter hides CPU metrics.",
+    "problem": "CPU graphs remain empty.",
+    "rootCause": "`image!=\"\"` filter blocks CPU metric results.",
+    "steps": [
+      "Login to Grafana.",
+      "Edit CPU graphs.",
+      "Remove filter `image!=\"\"`.",
+      "Save dashboard."
+    ],
+    "images": []
+  },
+
+  {
+    "id": "file-upload-size-restriction",
+    "category": "Configurations",
+    "title": "User unable to upload a file above certain size",
+    "summary": "Ingress body size limit restricts uploads.",
+    "problem": "Uploads fail for larger files.",
+    "rootCause": "Ingress `proxy-body-size` limit.",
+    "steps": [
+      "Add annotation:",
+      "`nginx.ingress.kubernetes.io/proxy-body-size: 100m`"
+    ],
+    "images": []
+  },
+
+  {
+    "id": "aws-lb-controller-unauthorized",
+    "category": "AWS",
+    "title": "AWS Load Balancer controller unauthorized",
+    "summary": "IAM policy missing on nodegroup role.",
+    "problem": "ALB provisioning fails with unauthorized error.",
+    "rootCause": "Nodegroup IAM role missing permissions.",
+    "steps": [
+      "Attach required IAM policy:",
+      "https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.3.1/docs/install/iam_policy.json"
+    ],
+    "images": []
+  },
+
+  {
+    "id": "app-metrics-not-visible-grafana",
+    "category": "Metrics",
+    "title": "App metrics not visible in Grafana or Devtron dashboard",
+    "summary": "Prometheus helm values need update.",
+    "problem": "Metrics fail to appear for workloads.",
+    "rootCause": "Kube-prometheus stack value mismatch.",
+    "steps": [
+      "Set `serviceMonitorSelectorNilUsesHelmValues: false` in Prometheus chart values."
+    ],
+    "images": []
+  },
+
+  {
+    "id": "metrics-server-deploy-failure",
+    "category": "Kubernetes",
+    "title": "Unable to deploy metrics-server via chart",
+    "summary": "TLS validation blocks metrics-server deployment.",
+    "problem": "Metrics-server installation fails.",
+    "rootCause": "Certificate validation requiring secure kubelet endpoint.",
+    "steps": [
+      "Disable certificate validation:",
+      "Add `--kubelet-insecure-tls` to metrics-server chart values."
+    ],
+    "images": []
+  },
+
+  {
+    "id": "postgres-delete-db-failed",
+    "category": "Database",
+    "title": "Unable to delete a database in Postgres",
+    "summary": "Active sessions prevent DB deletion.",
+    "problem": "Database shows 'being accessed by other users' error.",
+    "rootCause": "Open backend connections.",
+    "steps": [
+      "Terminate sessions:",
+      "`SELECT pg_terminate_backend(pg_stat_activity.pid)...`",
+      "Delete DB using: `drop database <db>`"
+    ],
+    "images": []
+  },
+
+  {
+    "id": "reset-admin-password",
+    "category": "Login",
+    "title": "Unable to login with admin password or reset password",
+    "summary": "Admin password may be outdated or corrupted.",
+    "problem": "Login fails or new admin password is needed.",
+    "rootCause": "ADMIN_PASSWORD fields in secret outdated.",
+    "steps": [
+      "Backup devtron-secret.",
+      "Edit secret and remove ADMIN_PASSWORD keys.",
+      "Restart Dex server.",
+      "Retrieve new admin password."
+    ],
+    "images": []
+  },
+
+  {
+    "id": "windows-base64-error",
+    "category": "Windows",
+    "title": "Admin password retrieval fails on Windows",
+    "summary": "Windows lacks base64 CLI tools.",
+    "problem": "'base64 not recognized' error appears.",
+    "rootCause": "Windows missing base64 binary.",
+    "steps": [
+      "Install base64 utility OR",
+      "Get encoded password:",
+      "`kubectl -n devtroncd get secret devtron-secret -o jsonpath='{.data.ACD_PASSWORD}'`",
+      "Use online base64 decoder."
+    ],
+    "images": []
+  },
+
+  {
+    "id": "postgres-upgrade-failed",
+    "category": "Upgrade",
+    "title": "UPGRADE FAILED: cannot patch PostgreSQL StatefulSet",
+    "summary": "Upgrade fails due to forbidden StatefulSet spec updates.",
+    "problem": "StatefulSet cannot be patched due to immutable fields.",
+    "rootCause": "Annotations or volume size mismatch.",
+    "steps": [
+      "Ensure all Devtron resources are annotated/labeled.",
+      "Add parameter:",
+      "`--set components.postgres.persistence.volumeSize=20Gi`",
+      "Retry upgrade."
+    ],
+    "images": []
+  },
+
+  {
+    "id": "blob-storage-configuration",
+    "category": "Storage",
+    "title": "Configure Blob Storage",
+    "summary": "Configure MinIO, AWS S3, Azure, or GCP for logs and cache.",
+    "problem": "Blob storage not configured or misconfigured.",
+    "rootCause": "Missing or incorrect provider-specific values.",
+    "steps": [
+      "Follow provider-specific configuration instructions (MinIO, AWS, Azure, GCP)."
+    ],
+    "images": []
+  },
+
+  {
+    "id": "rollout-error-stableRS",
+    "category": "Rollouts",
+    "title": "Rollout error: attempt to index a non-table object(nil)",
+    "summary": "Occurs when using Kubernetes 1.22+ with outdated Rollout CRDs.",
+    "problem": "Rollout controller throws lua runtime errors.",
+    "rootCause": "Old CRDs incompatible with K8s >=1.22.",
+    "steps": [
+      "Check rollout chart version.",
+      "Update to `devtron/rollout` latest chart.",
+      "Ensure Devtron helm repo is added."
+    ],
+    "images": []
+  },
+
+  {
+    "id": "imagepullbackoff-private-registry",
+    "category": "Application Deployment",
+    "title": "Resolve ImagePullBackOff when pulling from private registry",
+    "summary": "Deployments fail if registry credentials are incorrect.",
+    "problem": "Pod status shows ImagePullBackOff.",
+    "rootCause": "Invalid or missing registry credentials.",
+    "steps": [
+      "Use 'How to resolve?' from Devtron UI.",
+      "Go to Manage Access → select cluster.",
+      "Redeploy application."
+    ],
+    "images": [
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/how-to-resolve-latest1.png",
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/manage-access-latest.jpg",
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/container-registries/auto-inject-to-clusters.jpg"
+    ]
+  },
+
+  {
+    "id": "terminal-timeout-gke",
+    "category": "GKE",
+    "title": "Devtron terminal disconnects every 30 seconds on GKE",
+    "summary": "GKE ingress backendConfig timeout limit causes terminal disconnections.",
+    "problem": "Terminal disconnects frequently.",
+    "rootCause": "`timeoutSec` in BackendConfig defaults to 30 seconds.",
+    "steps": [
+      "Create BackendConfig YAML with higher timeout.",
+      "Apply BackendConfig.",
+      "Annotate Devtron service with backend-config name."
+    ],
+    "images": []
+  },
+
+  {
+    "id": "argocd-cert-refresh",
+    "category": "ArgoCD",
+    "title": "Refreshing ArgoCD certificates when expired",
+    "summary": "Expired TLS certificates break ArgoCD connectivity.",
+    "problem": "ArgoCD certs expire, causing login or GitOps failures.",
+    "rootCause": "Old tls.crt/tls.key in argocd-secret.",
+    "steps": [
+      "Edit `argocd-secret` and remove tls data.",
+      "Delete ArgoCD server pod.",
+      "Delete Devtron pod."
+    ],
+    "images": []
+  },
+
+  {
+    "id": "exit-status-128",
+    "category": "Git",
+    "title": "Not able to see commits, throwing exit status 128",
+    "summary": "Git sensor pod cannot fetch repository.",
+    "problem": "Exit status 128 shown in git-sensor logs.",
+    "rootCause": "Token invalid or Git sensor pod locked.",
+    "steps": [
+      "Save Git repository again.",
+      "Check git-sensor logs.",
+      "Bounce git-sensor pod."
+    ],
+    "images": []
+  },
+
+  {
+    "id": "git-sensor-pvc-full",
+    "category": "Storage",
+    "title": "Git-sensor PVC disk full",
+    "summary": "PVC runs out of space, blocking Git operations.",
+    "problem": "Git-sensor shows disk full error.",
+    "rootCause": "PVC too small or volumeExpansion disabled.",
+    "steps": [
+      "Check storageclass attributes.",
+      "Ensure allowVolumeExpansion = true.",
+      "Edit PVC to increase size.",
+      "Bounce git-sensor pod."
+    ],
+    "images": [
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/git-sensor-pvc.png"
+    ]
+  },
+
+  {
+    "id": "invalid-json-argocd",
+    "category": "ArgoCD",
+    "title": "Invalid JSON Document error during ArgoCD sync",
+    "summary": "ArgoCD fails due to malformed last-applied-configuration annotation.",
+    "problem": "Rollout sync fails with 'Invalid JSON Document'.",
+    "rootCause": "Manually edited or corrupted JSON annotation.",
+    "steps": [
+      "Copy annotation value.",
+      "Validate via JSON validator.",
+      "Fix malformed JSON.",
+      "Apply corrected configuration."
+    ],
+    "images": [
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/invalid-json.jpg"
+    ]
+  },
+
+  {
+    "id": "bitnami-chart-handshake-failure",
+    "category": "Charts",
+    "title": "Bitnami charts not visible, tls handshake failure",
+    "summary": "TLS handshake failure prevents Bitnami index retrieval.",
+    "problem": "'tls: handshake failure' when syncing Bitnami charts.",
+    "rootCause": "Insecure flag erroneously enabled.",
+    "steps": [
+      "Devtron version must be >=0.7.1.",
+      "Go to Chart Repository → Bitnami.",
+      "Disable 'Allow Insecure Connection'.",
+      "Sync charts again."
+    ],
+    "images": [
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/bitnami-chart-issue.jpg",
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-troubleshooting/chart-sync.jpg"
+    ]
+  },
+
+  {
+    "id": "empty-values-yaml",
+    "category": "Deployment Charts",
+    "title": "Advanced (YAML) and Basic (GUI) appear blank in Base Deployment Template",
+    "summary": "Missing app-values.yaml causes UI sections to be empty.",
+    "problem": "Deployment template fields show empty values.",
+    "rootCause": "Chart missing required `app-values.yaml`.",
+    "steps": [
+      "Add `app-values.yaml` to your deployment chart.",
+      "Upload chart again."
+    ],
+    "images": [
+      "https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/deployment-charts/empty-values.jpg"
+    ]
+  },
+
+  {
+    "id": "gitops-deployment-errors",
+    "category": "GitOps",
+    "title": "Unable to create GitOps deployment pipeline",
+    "summary": "Existing external Argo apps require resaving GitOps settings.",
+    "problem": "GitOps pipeline creation fails.",
+    "rootCause": "GitOps and Cluster configuration not re-saved after enabling module.",
+    "steps": [
+      "Save GitOps configuration again.",
+      "Save Cluster configuration again.",
+      "Retry creating pipeline."
+    ],
+    "images": []
+  }
+]

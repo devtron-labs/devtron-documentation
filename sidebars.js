@@ -519,6 +519,12 @@ const sidebars = {
         'reference/glossary',
         'FAQs/devtron-troubleshoot',
         {
+          type: 'link',
+          label: 'Troubleshooting Guide',
+          href: '/troubleshooting-guide', // must match filename in src/pages
+        },
+        
+        {
           type: 'category',
           label: 'Upgrade Devtron',
           collapsed: true,
