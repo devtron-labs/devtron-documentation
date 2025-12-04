@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # <--- CHECK THIS: Change to 'master' if your branch is named master
+      - docv2-site  # <--- CHECK THIS: Change to 'master' if your branch is named master
 
 permissions:
   contents: write
