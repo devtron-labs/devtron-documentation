@@ -273,7 +273,18 @@ const STYLES = `
   .ts-modal-footer {
     padding: 1.5rem; border-top: 1px solid var(--ifm-color-emphasis-200);
     display: flex; justify-content: flex-end; gap: 1rem;
+    align-items: center;
     background: var(--ifm-color-emphasis-100);
+  }
+
+  .ts-batch-indicator {
+    margin-right: auto; 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+    color: var(--ifm-color-success);
+    background: var(--ifm-color-emphasis-200);
+    padding: 4px 8px;
+    border-radius: 4px;
   }
 
   /* BUTTONS */
@@ -290,6 +301,21 @@ const STYLES = `
   .ts-btn-secondary:hover {
     border-color: var(--ifm-color-emphasis-800) !important;
     background-color: var(--ifm-color-emphasis-200) !important;
+  }
+
+  /* Save & Add Another (Distinct Secondary) */
+  .ts-btn-add {
+    border: 1px solid var(--ifm-color-primary) !important;
+    color: var(--ifm-color-primary) !important;
+  }
+  .ts-btn-add:hover {
+    background-color: var(--ifm-color-emphasis-200) !important;
+  }
+  [data-theme='dark'] .ts-btn-add {
+    color: #fff !important; border-color: #fff !important;
+  }
+  [data-theme='dark'] .ts-btn-add:hover {
+    background-color: rgba(255,255,255,0.1) !important;
   }
 
   .ts-btn-primary {
@@ -320,6 +346,9 @@ const STYLES = `
     .ts-btn { width: auto; white-space: nowrap; border: 1px solid var(--ifm-color-emphasis-200); }
     .ts-header-row { height: auto !important; min-height: 80px; padding: 1rem; }
     .ts-modal { max-height: 100vh; border-radius: 0; height: 100%; }
+    .ts-modal-footer { flex-direction: column; gap: 0.5rem; }
+    .ts-batch-indicator { margin-right: 0; margin-bottom: 0.5rem; width: 100%; text-align: center; }
+    .ts-btn-action { width: 100%; }
   }
 `;
 
@@ -337,7 +366,7 @@ const ArrowIcon = () => (
   </svg>
 );
 
-// --- HELPER COMPONENT: MARKDOWN INPUT WITH PREVIEW & HELPER TEXT ---
+// --- HELPER COMPONENT: MARKDOWN INPUT ---
 const MarkdownInput = ({ label, name, value, onChange, placeholder, helperText, isSteps = false, isImages = false }) => {
   const [mode, setMode] = useState('write'); 
 
@@ -407,6 +436,7 @@ export default function TroubleshootingGuide() {
   const [openItems, setOpenItems] = useState({});
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCustomCategory, setIsCustomCategory] = useState(false);
+  const [batch, setBatch] = useState([]); // --- BATCH STATE ---
 
   // --- FORM STATE ---
   const [formData, setFormData] = useState({
@@ -444,14 +474,16 @@ export default function TroubleshootingGuide() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // --- HELPER: Process Form Data into Object ---
+  const getFaqObject = () => {
+    if (!formData.title || !formData.problem) return null; // Minimal validation
+
     const stepsArray = formData.steps.split('\n').filter(line => line.trim() !== '');
     const imagesArray = formData.images
       ? formData.images.split(',').map(img => img.trim()).filter(img => img !== '')
       : [];
 
-    const jsonSnippet = {
+    return {
       id: formData.title.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
       category: formData.category,
       title: formData.title,
@@ -461,16 +493,50 @@ export default function TroubleshootingGuide() {
       steps: stepsArray,
       images: imagesArray
     };
+  };
 
-    const jsonString = JSON.stringify(jsonSnippet, null, 2);
+  // --- HANDLER: Add to Batch ---
+  const handleAddToBatch = () => {
+    if (!formData.title || !formData.problem || !formData.steps) {
+      alert("Please fill in all required fields (Title, Problem, Steps).");
+      return;
+    }
+    const obj = getFaqObject();
+    if (obj) {
+      setBatch(prev => [...prev, obj]);
+      // Reset form but keep category
+      setFormData(prev => ({ ...prev, title: "", problem: "", rootCause: "", steps: "", images: "" }));
+    }
+  };
+
+  // --- HANDLER: Submit All ---
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Combine batch + current form (if filled)
+    let finalBatch = [...batch];
+    if (formData.title && formData.problem && formData.steps) {
+      const currentObj = getFaqObject();
+      if (currentObj) finalBatch.push(currentObj);
+    }
+
+    if (finalBatch.length === 0) {
+      alert("Please fill in the form or add items to the batch first.");
+      return;
+    }
+
+    // Generate JSON string
+    const jsonString = finalBatch.map(item => JSON.stringify(item, null, 2)).join(",\n");
 
     navigator.clipboard.writeText("\n" + jsonString + ",\n").then(() => {
-      alert("✅ Data copied to clipboard!\n\nRedirecting to GitHub...\n\n1. Wait for file to load.\n2. Paste (Ctrl+V) right after the opening bracket ' [ ' at the VERY TOP of the file.\n3. Click 'Propose changes'.");
+      alert(`✅ ${finalBatch.length} FAQ(s) copied to clipboard!\n\nRedirecting to GitHub...\n\n1. Wait for file to load.\n2. Paste (Ctrl+V) right after the opening bracket ' [ ' at the VERY TOP of the file.\n3. Click 'Propose changes'.`);
       const githubEditUrl = `https://github.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/edit/${GITHUB_CONFIG.branch}/${GITHUB_CONFIG.filePath}`;
       window.open(githubEditUrl, '_blank');
       
+      // Reset everything
       setIsModalOpen(false);
       setIsCustomCategory(false);
+      setBatch([]);
       setFormData({ title: "", category: "Installation", problem: "", rootCause: "", steps: "", images: "" });
     }).catch(err => {
       alert("Failed to copy data.");
@@ -565,48 +631,10 @@ export default function TroubleshootingGuide() {
                   <div style={{ display: 'grid', gridTemplateRows: isOpen ? '1fr' : '0fr', transition: 'grid-template-rows 0.3s ease' }}>
                     <div style={{ overflow: 'hidden', minWidth: 0 }}>
                       <div className="ts-content ts-md">
-                        
-                        {/* MARKDOWN: PROBLEM */}
-                        {item.problem && (
-                          <>
-                            <h4>Problem</h4>
-                            <ReactMarkdown>{item.problem}</ReactMarkdown>
-                          </>
-                        )}
-
-                        {/* MARKDOWN: ROOT CAUSE */}
-                        {item.rootCause && (
-                          <>
-                            <h4>Root Cause</h4>
-                            <ReactMarkdown>{item.rootCause}</ReactMarkdown>
-                          </>
-                        )}
-
-                        {/* MARKDOWN: STEPS */}
-                        {item.steps && item.steps.length > 0 && (
-                          <>
-                            <h4>Resolution</h4>
-                            <ol style={{ paddingLeft: '1.2rem', margin: 0 }}>
-                              {item.steps.map((step, idx) => (
-                                <li key={idx}>
-                                  <ReactMarkdown>{step}</ReactMarkdown>
-                                </li>
-                              ))}
-                            </ol>
-                          </>
-                        )}
-
-                        {/* IMAGES */}
-                        {item.images && item.images.length > 0 && (
-                          <>
-                            <h4>Screenshots</h4>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '0.5rem' }}>
-                              {item.images.map((imgSrc, idx) => (
-                                <img key={idx} src={imgSrc} alt="Troubleshooting" style={{ width: '100%', borderRadius: '6px', border: '1px solid var(--ifm-color-emphasis-200)' }} />
-                              ))}
-                            </div>
-                          </>
-                        )}
+                        {item.problem && (<><h4>Problem</h4><ReactMarkdown>{item.problem}</ReactMarkdown></>)}
+                        {item.rootCause && (<><h4>Root Cause</h4><ReactMarkdown>{item.rootCause}</ReactMarkdown></>)}
+                        {item.steps && item.steps.length > 0 && (<><h4>Resolution</h4><ol style={{ paddingLeft: '1.2rem', margin: 0 }}>{item.steps.map((step, idx) => (<li key={idx}><ReactMarkdown>{step}</ReactMarkdown></li>))}</ol></>)}
+                        {item.images && item.images.length > 0 && (<><h4>Screenshots</h4><div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '0.5rem' }}>{item.images.map((imgSrc, idx) => (<img key={idx} src={imgSrc} alt="Troubleshooting" style={{ width: '100%', borderRadius: '6px', border: '1px solid var(--ifm-color-emphasis-200)' }} />))}</div></>)}
                       </div>
                     </div>
                   </div>
@@ -628,7 +656,7 @@ export default function TroubleshootingGuide() {
               <form onSubmit={handleSubmit}>
                 <div className="ts-modal-body">
                   
-                  {/* --- CATEGORY SELECTOR (Fixed Alignment) --- */}
+                  {/* --- CATEGORY SELECTOR --- */}
                   <div className="ts-form-group">
                     <div className="ts-form-header">
                       <label className="ts-label">Category</label>
@@ -678,47 +706,20 @@ export default function TroubleshootingGuide() {
                     <input required name="title" className="ts-input" placeholder="e.g. Pipeline failing with error 403" value={formData.title} onChange={handleInputChange} />
                   </div>
 
-                  <MarkdownInput 
-                    label="Problem Description"
-                    name="problem"
-                    value={formData.problem}
-                    onChange={handleInputChange}
-                    placeholder="What is the error? (Markdown supported)"
-                  />
-
-                  <MarkdownInput 
-                    label="Root Cause (Optional)"
-                    name="rootCause"
-                    value={formData.rootCause}
-                    onChange={handleInputChange}
-                    placeholder="Why did this happen? (Markdown supported)"
-                  />
-
-                  <MarkdownInput 
-                    label="Resolution Steps"
-                    name="steps"
-                    value={formData.steps}
-                    onChange={handleInputChange}
-                    placeholder="Step 1...&#10;Step 2... (One step per line)"
-                    isSteps={true}
-                    helperText="💡 Enter each step on a new line. You can use Markdown (e.g. `code`, **bold**)."
-                  />
-
-                  <MarkdownInput 
-                    label="Screenshot URLs (Optional)"
-                    name="images"
-                    value={formData.images}
-                    onChange={handleInputChange}
-                    placeholder="https://example.com/img1.png, https://example.com/img2.png"
-                    isImages={true}
-                    helperText="💡 Paste image URLs separated by commas. Switch to Preview to see them."
-                  />
+                  <MarkdownInput label="Problem Description" name="problem" value={formData.problem} onChange={handleInputChange} placeholder="What is the error? (Markdown supported)" />
+                  <MarkdownInput label="Root Cause (Optional)" name="rootCause" value={formData.rootCause} onChange={handleInputChange} placeholder="Why did this happen? (Markdown supported)" />
+                  <MarkdownInput label="Resolution Steps" name="steps" value={formData.steps} onChange={handleInputChange} placeholder="Step 1...&#10;Step 2... (One step per line)" isSteps={true} helperText="💡 Enter each step on a new line." />
+                  <MarkdownInput label="Screenshot URLs (Optional)" name="images" value={formData.images} onChange={handleInputChange} placeholder="https://example.com/img1.png, https://example.com/img2.png" isImages={true} helperText="💡 Paste image URLs separated by commas." />
 
                 </div>
 
                 <div className="ts-modal-footer">
+                  {batch.length > 0 && <span className="ts-batch-indicator">{batch.length} FAQ{batch.length > 1 ? 's' : ''} in batch</span>}
                   <button type="button" className="ts-btn-action ts-btn-secondary" onClick={() => setIsModalOpen(false)}>Cancel</button>
-                  <button type="submit" className="ts-btn-action ts-btn-primary">Submit to GitHub</button>
+                  <button type="button" className="ts-btn-action ts-btn-add" onClick={handleAddToBatch}>Save & Add Another</button>
+                  <button type="submit" className="ts-btn-action ts-btn-primary">
+                    {batch.length > 0 ? `Submit All (${batch.length + (formData.title ? 1 : 0)})` : "Submit to GitHub"}
+                  </button>
                 </div>
               </form>
             </div>
