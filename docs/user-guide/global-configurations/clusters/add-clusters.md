@@ -12,29 +12,29 @@ Users need to have super-admin permission to add a Kubernetes cluster to Devtron
 :::
 
 
-1. Go to **Global Configurations** → **Clusters & Environments** → **Connect Cluster** (button); a **New Cluster** modal window will appear.
+1. Go to **Global Configurations** → **Clusters & Environments** → **Add Cluster**.
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-add-clusters-new.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-add-clusters-new.jpg)
   <center>Figure 1: Adding a Cluster</center>
 
-2. Select **Connect Cluster**.
+2. Select **Connect Kubernetes Cluster**.
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-select-connect-cluster.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-select-connect-cluster.jpg)
   <center>Figure 2: Selecting 'Connect Cluster'</center>
 
 3. You can choose to add your Kubernetes cluster using either of the following methods:
 
-  | Method                                                                   | Description                                       |
-  | :----------------------------------------------------------------------- | :------------------------------------------------ |
-  | [Server URL & Bearer Token](#add-cluster-using-server-url--bearer-token) | Use Server URL and Bearer Token to add a cluster. |
-  | [Kubeconfig](#add-cluster-using-kubeconfig)                              | Use `Kubeconfig` file to add a cluster.           |
+    | Method                                                                   | Description                                       |
+    | :----------------------------------------------------------------------- | :------------------------------------------------ |
+    | [Server URL & Bearer Token](#method-1-add-cluster-using-server-url--bearer-token) | Use Server URL and Bearer Token to add a cluster. |
+    | [Kubeconfig](#method-2-add-cluster-using-kubeconfig)                              | Use `Kubeconfig` file to add a cluster.           |
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-choosing-method.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-choosing-method.jpg)
   <center>Figure 3: Choosing a Method</center>
 
 4. Click **Save Cluster** and your cluster will be connected to Devtron.
 
-### Add Cluster Using Server URL & Bearer Token
+### Method 1: Add Cluster Using Server URL & Bearer Token
 
 :::info Note
 Refer to [Get Cluster Credentials](#get-cluster-credentials) to learn the process of getting the Server URL and bearer token.
@@ -48,43 +48,43 @@ Refer to [Get Cluster Credentials](#get-cluster-credentials) to learn the proces
   | **Server URL** |  Enter the Server URL of your cluster (with https)<br/>**Note**: We recommend using a [self-hosted URL](#benefits-of-self-hosted-url) instead of a cloud-hosted URL.  |
   | **Bearer Token** | Paste the bearer token of your cluster |
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-add-cluster-cred.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-add-cluster-cred.jpg)
   <center>Figure 4: Enter Cluster Credentials</center>
 
 2. Complete the remaining steps (optional): 
-  * [Choose Connection Type](#choose-method-of-connection-)
-  * [Use Secure TLS Connection](#use-secure-tls-connection)
-  * [Configure Prometheus](#configure-prometheus-enable-application-metrics)
-  * [Assign a Category](#assign-category-to-a-cluster)
+    * [Choose Connection Type](#choose-method-of-connection-)
+    * [Use Secure TLS Connection](#use-secure-tls-connection)
+    * [Configure Prometheus](#configure-prometheus-enable-application-metrics)
+    * [Assign a Category](#assign-category-to-a-cluster)
 
 :::tip Tip
-If you have a **kubeconfig** file ready, you may skip the above process and refer to [Add Cluster Using Kubeconfig](#add-cluster-using-kubeconfig) instead.
+If you have a **kubeconfig** file ready, you may skip the above process and refer to [Add Cluster Using Kubeconfig](#method-2-add-cluster-using-kubeconfig) instead.
 :::
 
-### Add Cluster Using Kubeconfig
+### Method 2: Add Cluster Using Kubeconfig
 
 In case you prefer to add clusters using kubeconfig, follow these steps: 
 
 1. Copy and paste your kubeconfig file into the editor. Alternatively, you may browse and select the file as well.
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-add-cluster-kubeconfig.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-add-cluster-kubeconfig.jpg)
   <center>Figure 5: Choosing Kubeconfig Option</center>
 
 2. Click the **Get Cluster** button. This action will display the cluster details alongside the kubeconfig. 
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-get-cluster.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-get-cluster.jpg)
   <center>Figure 6: Get Cluster List from Kubeconfig</center>
 
 3. If your kubeconfig file lists multiple clusters, they will be displayed in the window. Use the checkboxes to select the desired cluster(s) and click **Save**.
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-kubeconfig-save-cluster.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-kubeconfig-save-cluster.jpg)
   <center>Figure 7: Clicking Save</center>
 
 4. Click the saved cluster, and complete the remaining steps (optional): 
-  * [Choose Connection Type](#choose-method-of-connection-)
-  * [Use Secure TLS Connection](#use-secure-tls-connection)
-  * [Configure Prometheus](#configure-prometheus-enable-application-metrics)
-  * [Assign a Category](#assign-category-to-a-cluster)
+    * [Choose Connection Type](#choose-method-of-connection-)
+    * [Use Secure TLS Connection](#use-secure-tls-connection)
+    * [Configure Prometheus](#configure-prometheus-enable-application-metrics)
+    * [Assign a Category](#assign-category-to-a-cluster)
 
 :::caution Note
 Ensure that the **kubeconfig** file has admin permissions. It is crucial for Devtron to have the necessary administrative privileges; otherwise, it may encounter failures or disruptions during deployments and other operations. Admin permission is essential to ensure the smooth functioning of Devtron and to prevent any potential issues that may arise due to insufficient privileges.
@@ -102,9 +102,7 @@ Only a [Super-Admin](../../global-configurations/authorization/user-access.md#gr
 
 To create an EKS cluster, you need: 
 
-* [OpenTofu](#install-opentofu) (`tofu-controller`) chart installed in your Devtron instance. 
-  
-  Refer to [Getting Started with OpenTofu](https://opentofu.org/docs/intro/) for more information.
+* [OpenTofu](#install-opentofu) (`tofu-controller`) chart installed in your Devtron instance. Refer to [Getting Started with OpenTofu](https://opentofu.org/docs/intro/) for more information.
 
 * [FluxCD controller](#install-fluxcd-controller) (`flux2`) chart installed in your Devtron instance
 
@@ -128,7 +126,7 @@ Follow the steps mentioned below to install OpenTofu:
 
     <br/>
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/container-oci-registry.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/container-oci-registry.jpg)
     <center>Figure 8: Container/OCI Registry</center>
 
 3. Click **Save**. The `tofu-controller` chart will be displayed in the [Chart Store](../../../user-guide/deploy-chart/README.md) page.
@@ -137,7 +135,7 @@ Follow the steps mentioned below to install OpenTofu:
 
 5. Select the chart and click **Configure & Deploy**. The following page will be displayed.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/tofu-controller-chart.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/tofu-controller-chart.jpg)
     <center>Figure 9: Tofu Controller Chart</center>
 
 6. Enter the app name (e.g., `tofu-controller`) in the **App Name** field. 
@@ -162,7 +160,7 @@ Follow the steps mentioned below to install OpenTofu:
 
 1. Navigate to [Chart Store](../../../user-guide/deploy-chart/README.md) and search for `flux2` in the search box.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/flux-cd-chart.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/flux-cd-chart.jpg)
     <center>Figure 10: "flux2" Chart</center>
 
 2. Select the chart and click **Deploy**.
@@ -250,7 +248,7 @@ Only a [Super-Admin](../../global-configurations/authorization/user-access.md#gr
 
   <br/>
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/create-k8s-cluster.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/create-k8s-cluster.jpg)
   <center>Figure 11: Create Kubernetes Cluster</center>
   
   <br/>
@@ -278,17 +276,17 @@ For air-gapped Kubernetes clusters with restricted inbound and outbound traffic,
 
 1. On the **New Cluster** modal window, select **Add Isolated Cluster**.
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-select-isolated-cluster.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-select-isolated-cluster.jpg)
   <center>Figure 12: Selecting Isolated Cluster</center>
 
 2. Add a cluster name (e.g. *banking-airgapped-cluster*) and click **Save Cluster**.
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-isolated-cluster-save.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-isolated-cluster-save.jpg)
   <center>Figure 13: Saving Isolated Cluster</center>
 
 You have successfully configured an isolated cluster.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-new-isolated-cluster.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-new-isolated-cluster.jpg)
 <center>Figure 14: New Isolated Cluster</center>
 
 :::info Note
@@ -311,12 +309,12 @@ To assign a category to a cluster, follow the steps below:
 
 1. Select a category from the dropdown under **Assign Category** and click **Update Cluster**.
 
-   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-assign-category-cluster.jpg)
+   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-assign-category-cluster.jpg)
   <center>Figure 15: Assigning Category</center>
 
 2. The selected category will be assigned to the cluster.
 
-   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-assign-category-category-added-cluster.jpg)
+   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-assign-category-category-added-cluster.jpg)
   <center>Figure 16: Category Assigned</center>
 
 
@@ -329,8 +327,11 @@ Clusters with a directly accessible API server endpoint, either publicly or via 
 * Devtron connects directly without an intermediary.  
 * Recommended when the cluster is publicly accessible or has a direct network route from Devtron.  
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-direct-connection.jpg)
-<center>Figure 17: Choosing Direct Connection</center>  
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-direct-connection-1.jpg)
+<center>Figure 17a: Choosing Direct Connection</center>  
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-direct-connection-2.jpg)
+<center>Figure 17b: Choosing Direct Connection</center>  
 
 #### Via Proxy <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
@@ -339,7 +340,7 @@ For security reasons, some Kubernetes clusters are deployed behind a proxy. In t
 * Requires specifying a **Proxy URL** (e.g., `http://proxy.example.org:3128`).  
 * **Limitation**: Deployments via [GitOps (ArgoCD)](../../../reference/glossary.md#gitops) are not recommended for clusters connected via proxy.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-via-proxy.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-via-proxy.jpg)
 <center>Figure 18: Choosing 'Via Proxy'</center>  
 
 #### Via SSH Tunnel <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
@@ -354,7 +355,7 @@ When a direct connection isn't possible, Devtron can connect to the Kubernetes c
     * Both Password & SSH Private Key  
 * **Limitation**: Deployments via [GitOps (ArgoCD)](../../../reference/glossary.md#gitops) are **not recommended** for clusters connected via SSH Tunnel.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-via-ssh.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-via-ssh.jpg)
 <center>Figure 19: Choosing 'Via SSH Tunnel'</center>  
 
 
@@ -366,13 +367,18 @@ If your cluster is managed (e.g., [EKS](https://aws.amazon.com/eks/), [AKS](http
 
 | Field | Description |
 |--------|------------|
-| **Certificate Authority (CA) Data** | The CA certificate (see: [example](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/kubeconfig-entry.jpg)) used to verify the Kubernetes API server’s identity. |
+| **Certificate Authority (CA) Data** | The CA certificate (see: [example](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/kubeconfig-entry.jpg)) used to verify the Kubernetes API server’s identity. |
 | **TLS Key** | The private key associated with the client certificate for authentication. |
 | **TLS Certificate** | The client certificate used to authenticate with the Kubernetes API server. |
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-secure-tls.jpg)
-<center>Figure 20: Using Secure TLS Connection</center>
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-secure-tls-1.jpg)
+<center>Figure 20a: Using Secure TLS Connection</center>
 
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-secure-tls-2.jpg)
+<center>Figure 20b: Using Secure TLS Connection</center>
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-secure-tls-3.jpg)
+<center>Figure 20c: Using Secure TLS Connection</center>
 
 ### Configure Prometheus (Enable Application Metrics)
 
@@ -380,7 +386,7 @@ If you want to see application metrics against the applications deployed in the 
 
 Enable application metrics to configure Prometheus as shown below. In case it is not available, make sure to install the **Monitoring (Grafana)** integration from [Devtron Stack Manager](../../stack-manager.md) to configure Prometheus.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/cluster-env-enable-app-metrics.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-env-enable-app-metrics.jpg)
 <center>Figure 21: Enabling Application Metrics</center>
 
 Provide the information in the following fields:
@@ -423,7 +429,7 @@ devtroncd
 </TabItem>
 </Tabs>
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/global-configurations/cluster-and-environments/generate-cluster-credentials.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/generate-cluster-credentials.jpg)
 <center>Figure 22: Generating Cluster Credentials</center>
 
 #### Benefits of Self-hosted URL
