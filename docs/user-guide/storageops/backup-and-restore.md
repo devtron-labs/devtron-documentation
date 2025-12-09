@@ -157,20 +157,3 @@ After creating a backup schedule, you can view it under **Backup Schedules** tab
 | **Cron** | The cron expression defining how frequently the backup runs (for example, *Every 6 hours*)|
 | **Last Backup** | The timestamp of the last backup triggered by this schedule|
 | **Last Skipped** | Displays when the schedule last skipped a run (if applicable)|
-
-<!-- ---
-
-## Restoring Backup
-
-To restore a backup, 
-
-1. Navigate to **Backup and Schedule** → **Backups**. You will find the list of all backups.
-
-2. Click on the backup name that you want to restore, a new page will open containing details of the backup.
-
-3. Click **Restore Backup** and the restoration will be initiated. -->
-
-<!-- --- -->
-
-
-
