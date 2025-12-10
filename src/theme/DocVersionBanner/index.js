@@ -22,14 +22,14 @@ import {
 function UnreleasedVersionLabel({siteTitle, versionMetadata}) {
   return (
     <Translate
-      id="theme.docs.versions.unreleasedVersionLabel.custom"
-      description="Label shown when the user is browsing an unreleased doc version"
+      id="theme.docs.versions.unreleasedVersionLabel"
+      description="The label used to tell the user that he's browsing an unreleased doc version"
       values={{
         siteTitle,
         versionLabel: <b>{versionMetadata.label}</b>,
       }}>
       {
-        'This page is part of unreleased documentation for {siteTitle} {versionLabel}. Content here may change before the official release.'
+        'This is unreleased documentation for {siteTitle} {versionLabel} version.'
       }
     </Translate>
   );
@@ -38,14 +38,14 @@ function UnreleasedVersionLabel({siteTitle, versionMetadata}) {
 function UnmaintainedVersionLabel({siteTitle, versionMetadata}) {
   return (
     <Translate
-      id="theme.docs.versions.unmaintainedVersionLabel.custom"
-      description="Label shown when the user is browsing an older unmaintained doc version"
+      id="theme.docs.versions.unmaintainedVersionLabel"
+      description="The label used to tell the user that he's browsing an unmaintained doc version"
       values={{
         siteTitle,
         versionLabel: <b>{versionMetadata.label}</b>,
       }}>
       {
-        'You are viewing documentation for an older Devtron release ({versionLabel}).'
+        'You are viewing documentation for an older Devtron release [{versionLabel}].'
       }
     </Translate>
   );
@@ -65,16 +65,16 @@ function BannerLabel(props) {
 function LatestVersionSuggestionLabel({versionLabel, to, onClick}) {
   return (
     <Translate
-      id="theme.docs.versions.latestVersionSuggestionLabel.custom"
-      description="Label encouraging the user to check the latest stable docs"
+      id="theme.docs.versions.latestVersionSuggestionLabel"
+      description="The label used to tell the user to check the latest version"
       values={{
         versionLabel,
         latestVersionLink: (
           <b>
             <Link to={to} onClick={onClick}>
               <Translate
-                id="theme.docs.versions.latestVersionLinkLabel.custom"
-                description="Link text for the latest version suggestion">
+                id="theme.docs.versions.latestVersionLinkLabel"
+                description="The label used for the latest version suggestion link label">
                 latest version
               </Translate>
             </Link>
@@ -82,7 +82,7 @@ function LatestVersionSuggestionLabel({versionLabel, to, onClick}) {
         ),
       }}>
       {
-        'Check the {latestVersionLink} ({versionLabel}).'
+        'Check the {latestVersionLink} [{versionLabel}].'
       }
     </Translate>
   );
@@ -110,25 +110,21 @@ function DocVersionBannerEnabled({className, versionMetadata}) {
         'alert alert--warning margin-bottom--md',
       )}
       role="alert">
-
-      {/* One-line banner */}
-      <span style={{ whiteSpace: 'nowrap' }}>
+      <div className="doc-version-banner__content">
         <BannerLabel siteTitle={siteTitle} versionMetadata={versionMetadata} />{' '}
         <LatestVersionSuggestionLabel
           versionLabel={latestVersionSuggestion.label}
           to={latestVersionSuggestedDoc.path}
           onClick={() => savePreferredVersionName(latestVersionSuggestion.name)}
         />
-      </span>
-
+      </div>
     </div>
   );
 }
 
-
 export default function DocVersionBanner({className}) {
   const versionMetadata = useDocsVersion();
-  if (versionMetadata && versionMetadata.banner) {
+  if (versionMetadata.banner) {
     return (
       <DocVersionBannerEnabled
         className={className}
