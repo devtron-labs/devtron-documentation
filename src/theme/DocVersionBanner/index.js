@@ -45,7 +45,7 @@ function UnmaintainedVersionLabel({siteTitle, versionMetadata}) {
         versionLabel: <b>{versionMetadata.label}</b>,
       }}>
       {
-        'You are viewing documentation for an older Devtron release [{versionLabel}].'
+        'You are viewing documentation for an older Devtron release ({versionLabel}).'
       }
     </Translate>
   );
@@ -82,7 +82,7 @@ function LatestVersionSuggestionLabel({versionLabel, to, onClick}) {
         ),
       }}>
       {
-        'Check the {latestVersionLink} [{versionLabel}].'
+        'Check the {latestVersionLink} ({versionLabel}).'
       }
     </Translate>
   );
