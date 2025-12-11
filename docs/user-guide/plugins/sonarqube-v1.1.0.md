@@ -12,7 +12,7 @@ Configuring `Sonarqube-v1.1.0` in pre-build or post build task enhances your wor
 2. Click **+ Add task**.
 3. Select **Sonarqube v1.1.0** from **PRESET PLUGINS**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/plugins/sonarqube/sonarqube.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/plugins/sonarqube-v1.1.0/sonarqube-v1.1.0.jpg)
     <center>Figure 1: sonarqube-v1.1.0</center>
 
 * Enter a relevant name in the `Task name` field. It is a mandatory field.

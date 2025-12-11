@@ -12,7 +12,7 @@ Configuring `Sonarqube` in pre-build or post build task enhances your workflow w
 2. Click **+ Add task**.
 3. Select **Sonarqube** from **PRESET PLUGINS**.
 
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/plugins/sonarqube-v1.1.0/sonarqube-v1.1.0.jpg)
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/plugins/sonarqube/sonarqube.jpg)
     <center>Figure 1: Sonarqube</center>
 
 * Enter a relevant name in the `Task name` field. It is a mandatory field.
