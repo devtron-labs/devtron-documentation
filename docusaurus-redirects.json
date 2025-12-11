@@ -600,7 +600,8 @@
           {
             "from": [
               "/install/devtron-freemium",
-              "/resources/reference/freemium"
+              "/resources/reference/freemium",
+              "/enterprise-license"
             ],
             "to": "/docs/setup/install/devtron-freemium"
           },
