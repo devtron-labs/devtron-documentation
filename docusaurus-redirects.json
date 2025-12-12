@@ -25,6 +25,7 @@
           },
           {
             "from": [
+              "/install/install-devtron-with-cicd",
               "/setup/install/install-devtron-with-cicd"
             ],
             "to": "/docs/setup/install/devtron-oss"
@@ -1753,7 +1754,8 @@
           },
           {
             "from": [
-              "/devtron/v1.7/setup/install/install-devtron-with-cicd"
+              "/devtron/v1.7/setup/install/install-devtron-with-cicd",
+              "/devtron/v1.7/install/install-devtron-with-cicd"
             ],
             "to": "/docs/devtron/v1.7/setup/install/devtron-oss"
           },
@@ -3480,7 +3482,8 @@
           },
           {
             "from": [
-              "/devtron/v1.8/setup/install/install-devtron-with-cicd"
+              "/devtron/v1.8/setup/install/install-devtron-with-cicd",
+              "/devtron/v1.8/install/install-devtron-with-cicd"
             ],
             "to": "/docs/devtron/v1.8/setup/install/devtron-oss"
           },
@@ -5216,13 +5219,15 @@
           },
           {
             "from": [
-              "/devtron/v2.0/setup/install/install-devtron-with-cicd"
+              "/devtron/v2.0/setup/install/install-devtron-with-cicd",
+              "/devtron/v2.0/install/install-devtron-with-cicd"
             ],
             "to": "/docs/setup/install/devtron-oss"
           },
           {
             "from": [
-              "/devtron/v2.0/setup/install/install-devtron"
+              "/devtron/v2.0/setup/install/install-devtron",
+              "/devtron/v2.0/install/install-devtron"
             ],
             "to": "/docs/setup/install/install-devtron"
           },
@@ -6943,13 +6948,15 @@
           },
           {
             "from": [
-              "/docs/devtron/v2.0/setup/install/install-devtron-with-cicd"
+              "/docs/devtron/v2.0/setup/install/install-devtron-with-cicd",
+              "/docs/devtron/v2.0/install/install-devtron-with-cicd"
             ],
             "to": "/docs/setup/install/install-devtron"
           },
           {
             "from": [
-              "/docs/devtron/v2.0/setup/install/install-devtron"
+              "/docs/devtron/v2.0/setup/install/install-devtron",
+              "/docs/devtron/v2.0/install/install-devtron"
             ],
             "to": "/docs/setup/install/install-devtron"
           },
