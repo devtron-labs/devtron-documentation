@@ -2334,7 +2334,8 @@
           },
           {
             "from": [
-              "/devtron/v1.7/install/devtron-freemium"
+              "/devtron/v1.7/install/devtron-freemium",
+              "/devtron/v1.7/enterprise-license"
             ],
             "to": "/docs/devtron/v1.7/setup/install/devtron-freemium"
           },
@@ -4070,7 +4071,8 @@
           },
           {
             "from": [
-              "/devtron/v1.8/install/devtron-freemium"
+              "/devtron/v1.8/install/devtron-freemium",
+              "/devtron/v1.8/enterprise-license"
             ],
             "to": "/docs/devtron/v1.8/setup/install/devtron-freemium"
           },
@@ -5808,7 +5810,8 @@
           },
           {
             "from": [
-              "/devtron/v2.0/install/devtron-freemium"
+              "/devtron/v2.0/install/devtron-freemium",
+              "/devtron/v2.0/enterprise-license"
             ],
             "to": "/docs/setup/install/devtron-freemium"
           },
