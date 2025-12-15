@@ -12,11 +12,11 @@ Devtron supports two types of locations for storing backup data:
 
 A **Storage Location** defines where Devtron stores backup files, manifests, and metadata.  
 
-### Adding Storage Location
-
 To add a storage location, navigate to **Data Protection Management** → **Backup Locations** → **Storage Locations**.
 
-#### Provider Configuration
+### Provider Configuration
+
+#### Basic Details
 
 | **Field** | **Required / Optional** | **Description** |
 |-----------|-------------------------|-------------------|
@@ -29,58 +29,135 @@ These fields are for provider-specific advanced settings.
 
 | **Field** | **Required / Optional** | **Sample Value** | **Description** |
 |-----------|-------------------------|-------------------|------------------|
-| **Key** | Optional | `region`. | Lets you pass extra configuration to the storage provider. For most standard GCP, AWS, or Azure object storage setups you can leave this empty. Use it only if your provider documentation mentions additional keys. |
+| **Key** | Optional | `region` | Lets you pass extra configuration to the storage provider. For most standard GCP, AWS, or Azure object storage setups you can leave this empty. Use it only if your provider documentation mentions additional keys. |
 | **Value** | Optional |  `us-east-1` for a `region` key. | The value that applies to the configuration key. You can add multiple key–value pairs if needed. |
-| **CA Certificate** | Optional | Paste a PEM-encoded CA certificate, if your object storage uses a custom or internal CA. | Used to trust a custom TLS certificate for the storage endpoint. Leave this empty when using standard cloud providers (GCP, AWS, Azure) with their default certificates. |
+| **CA Certificate** | Optional | A base64 encoded CA bundle to be used when verifying TLS connections |
 
 #### Credentials
 
-This section defines **how Devtron authenticates with your cloud storage provider** to access the backup bucket. Without valid credentials, Devtron won’t be able to read from or write to your storage location.
+This section defines how Devtron authenticates with your cloud storage provider to access the backup bucket. Without valid credentials, Devtron won’t be able to read from or write to your storage location. 
 
-You can either select an existing Kubernetes secret** or create a new secret directly from Devtron UI.
+To configure credentials, first **enable the Credentials toggle**. You can either reuse an existing secret or create a new one directly from the Devtron UI.
+
+#### Option 1: Select Secret
+
+Use this option if the required credentials are **already stored as a Kubernetes secret**.
+
+| Field | Required | What to Enter | Description |
+|------|----------|---------------|-------------|
+| Secret Name | Yes | Name of an existing Kubernetes secret | The secret must already exist and contain valid cloud provider credentials. |
+| Secret Key | Yes | Key inside the secret (for example, `cloud`) | This key should point to the credential data stored inside the secret. |
+
+#### Option 2: Create New Secret
+
+Use this option if you want to add credentials for the first time while configuring the storage location.
+
+| Field | Required | What to Enter | Description |
+|------|----------|---------------|-------------|
+| Secret Name | Yes | A unique name (for example, `gcp-backup-secret`) | This name will be used to create a new Kubernetes secret in the cluster. |
+| Secret Key | Yes | A key name (for example, `cloud`) | The key under which the credential data will be stored. |
+| Credential Data | Yes | Full credential payload | Paste the cloud provider credentials here (for example, a GCP service account JSON). |
+
+### Object Storage Details
+
+After configuring the **credentials**, the next step is to specify which storage bucket for which you set up the credentials. Enter the following details to point Devtron to the correct storage bucket.c
+
+| Field | Required | What to Enter | Description |
+|------|----------|---------------|-------------|
+| **Storage Bucket** | Yes | Name of the object storage bucket | Enter the name of the bucket that will store backups, for example `devtron-backups-prod`. This bucket must already exist and be accessible using the configured credentials |
+| **Bucket Path Prefix** | Optional | Folder path inside the bucket | Specify a path within the bucket, such as `cluster-1/backups`, to organize backups by cluster or environment. If left empty, backups are stored at the root of the bucket |
+| **Access Mode** | Yes | `Read and Write` or `Read Only` | Defines how Devtron can use this bucket with the provided credentials |
+
+### Sync & Validation
+
+After configuring the storage bucket, you can optionally define how Devtron syncs and validates this storage location. These configurations help Devtron stay up to date with backups stored in the bucket and ensure the location remains accessible.
+
+| Field | Required | What to Enter | Description |
+|------|----------|---------------|-------------|
+| **Backup Sync Period** | Optional | Duration (for example, `5m`, `1h`) | Defines how often Devtron syncs backup information from this storage location. This helps Devtron discover new or updated backups present in the bucket |
+| **Validation Frequency** | Optional | Duration (for example, `10m`, `2h`) | Defines how often Devtron validates the object storage location to check connectivity and access using the configured credentials |
+
+### Configuring Default Storage Location
+
+If you want a storage location to be used as the default location for backups, enable the **Set as Default** toggle. When enabled, Devtron automatically selects this storage location for new backups and backup schedules, unless a different location is explicitly chosen during configuration.
+
+---
 
 ## Volume Snapshot Locations
 
-The **Volume Snapshot Locations** tab lists all configured snapshot endpoints where persistent volume data is stored.  
-These locations are specific to each cloud provider (AWS, Azure, GCP) and are used whenever you enable snapshot-based backups.
+A **Volume Snapshot Location** defines where Devtron stores and manages volume-level snapshots for persistent volumes. These snapshots are used to restore application data backed by persistent volumes during a restore operation.
 
-| **Column** | **Description** |
-|-------------|-----------------|
-| **Name** | Displays the name of the configured snapshot location. Click the name to view or edit its details. |
-| **Provider** | Indicates the cloud provider (AWS, Azure, or GCP) used for snapshot storage. |
-| **Added By** | Shows the user who created the snapshot location configuration. |
+To add a volume snapshot location, navigate to **Data Protection Management** → **Backup Locations** → **Volume Snapshot Locations**.
 
-You can use the **Search** or **Filter** options to quickly locate existing snapshot locations.  
-Click **Add** to configure a new snapshot location.
+### Basic Details
+
+| **Field** | **Required / Optional** | **Description** |
+|-----------|-------------------------|------------------|
+| **Provider** | Required | Select the cloud provider where your persistent volumes are provisioned, such as **GCP**, **AWS**, or **Azure** |
+| **Volume Snapshot Location Name** | Required | A descriptive name for the snapshot location, for example `gcp-prod-snapshots` or `aws-ebs-snapshots`|
+
+### Configuration Fields
+
+These fields allow you to pass **provider-specific configuration** required for snapshot operations.
+
+| **Field** | **Required / Optional** | **Sample Value** | **Description** |
+|-----------|-------------------------|------------------|------------------|
+| **Key** | Optional | `region` | Used to pass additional configuration required by the snapshot provider|
+| **Value** | Optional | `us-central1` | The value corresponding to the configuration key. Multiple key–value pairs can be added if required |
+
+### Credentials
+
+This section defines how Devtron authenticates with your cloud storage provider to access the volume snapshot bucket. Without valid credentials, Devtron won’t be able to read from or write to your volume snapshot location. 
+
+To configure credentials, first **enable the Credentials toggle**. You can either reuse an existing secret or create a new one directly from the Devtron UI.
+
+#### Option 1: Select Secret
+
+Use this option if the required credentials are **already stored as a Kubernetes secret**.
+
+| Field | Required | What to Enter | Description |
+|------|----------|---------------|-------------|
+| Secret Name | Yes | Name of an existing Kubernetes secret | The secret must already exist and contain valid cloud provider credentials |
+| Secret Key | Yes | Key inside the secret (for example, `cloud`) | This key should point to the credential data stored inside the secret |
+
+#### Option 2: Create New Secret
+
+Use this option if you want to add credentials for the first time while configuring the storage location.
+
+| Field | Required | What to Enter | Description |
+|------|----------|---------------|-------------|
+| Secret Name | Yes | A unique name (for example, `gcp-backup-secret`) | This name will be used to create a new Kubernetes secret in the cluster |
+| Secret Key | Yes | A key name (for example, `cloud`) | The key under which the credential data will be stored |
+| Credential Data | Yes | Full credential payload | Paste the cloud provider credentials here (for example, a GCP service account JSON) |
 
 ---
 
-### Adding a Volume Snapshot Location
+## Updating Backup Locations 
 
-When you click **Add**, a configuration form appears. This form lets you specify provider details, configuration parameters, and credentials.
+To update the configuration of an existing storage location or volume snapshot location, follow the steps below
 
-| **Field** | **Required/Optional** | **Description** |
-|------------|-----------------------|-----------------|
-| **Provider** | Required | Choose the cloud provider where snapshots will be stored. Supported options: **AWS**, **Azure**, **GCP**. |
-| **Volume Snapshot Location Name** | Required | Provide a unique, descriptive name for the snapshot location. |
-| **Configuration Fields** | Optional | Add provider-specific parameters (such as region, resource group, or project ID) as key–value pairs. |
-| **Credentials** | Required | Choose how to authenticate with your cloud provider: <ul><li>**Select Secret** – Use an existing secret.</li><li>**Create New Secret** – Add credentials directly in the form.</li></ul> |
+1. Go to **Data Protection Management** → **Backup Locations**.
+
+2. Open the **Storage Locations** or **Volume Snapshot Locations** tab.
+
+3. Hover over the **Storage Location** or **Volume Snapshot Location** you want to update, and then click the **Edit** icon. 
+
+4. Modify the required fields.
+
+5. Click **Save** to apply the changes.
 
 ---
 
-## Provider-Specific Configuration
+## Deleting Backup Locations 
 
-### AWS
+To Delete the configuration of an existing storage location or volume snapshot location, follow the steps below
 
-For **AWS**, Devtron uses **Amazon Elastic Block Store (EBS)** to create volume snapshots.
+1. Go to **Data Protection Management** → **Backup Locations**.
 
-| **Field** | **Description** |
-|------------|-----------------|
-| **Key** | `region` |
-| **Value** | Specify the AWS region where snapshots should be created (for example, `us-east-1`). |
-| **Credentials** | Provide IAM access credentials with permissions for EBS and EC2 operations. |
+2. Open the **Storage Locations** or **Volume Snapshot Locations** tab.
 
-**Example Configuration**
-```yaml
-Key: region
-Value: us-east-1
+3. Hover over the **Storage Location** or **Volume Snapshot Location** you want to delete, and then click the **Delete** icon. 
+
+4. A pop-up window will appear. Enter the name of the **Storage Location** or **Volume Snapshot Location**. 
+
+5. Click **Delete** to apply the changes.
