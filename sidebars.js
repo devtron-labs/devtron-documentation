@@ -306,6 +306,7 @@ const sidebars = {
             'user-guide/resource-browser/compare-and-sync',
             'user-guide/resource-browser/nodes',
             'user-guide/resource-browser/pods',
+            'user-guide/resource-browser/scoop-config',
             'user-guide/resource-browser/resource-recommender',
             'user-guide/resource-browser/cluster-terminal',
             'user-guide/resource-browser/monitoring-graphs',
