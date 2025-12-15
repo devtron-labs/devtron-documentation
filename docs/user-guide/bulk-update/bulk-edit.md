@@ -18,17 +18,20 @@ Bulk edit is currently supported for:
 
 1. Click on the `Bulk Edit` option in the main navigation. This is where you can write and execute scripts to perform bulk updates in Devtron objects.
  
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/bulk-edit/bulk-update-empty.jpg)
-  <center>Figure 1: Bulk Edit</center>
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/bulk-edit/bulk-edit-nav.jpg)
+  <center>Figure 1: Navigating to Bulk Edit</center>
 
-2. To help you get started, a script template is provided under the `See Samples` section.
+2. To help you get started, click **Refer Sample Payload** to view a script template.
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/bulk-edit/bulk-update-readme.jpg)
-  <center>Figure 2: Update Readme</center>
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/bulk-edit/bulk-edit-sample-payload.jpg)
+  <center>Figure 2a: Refer Sample Payload</center>
 
-3. Copy and Paste the `Sample Script` in the code editor and make desired changes. Refer `Payload Configuration` in the Readme to understand the parameters.
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/bulk-edit/bulk-edit-readme.jpg)
+  <center>Figure 2b: Sample Script</center>
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/bulk-edit/bulk-update-script.jpg)
+3. Copy and Paste the sample script in the code editor and make desired changes. Refer `Payload Configuration` in the Readme to understand the parameters.
+
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/bulk-edit/bulk-edit-script.jpg)
   <center>Figure 3: Bulk Update Script</center>
 
 ### Example
@@ -93,15 +96,15 @@ The following tables list the configurable parameters of the Payload component i
 
 <br/>
 
-4. Once you have modified the script, you can click on the `Show Impacted Objects` button to see the names of all applications that will be modified when the script is `Run`.
+4. Once you have modified the script, you can click on the **Show Impacted Objects** button to see the names of all applications that will be modified when the script is executed.
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/bulk-edit/bulk-update-impactobj.jpg)
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/bulk-edit/bulk-edit-impactobj.jpg)
   <center>Figure 4: Impact Object</center>
 
-5. Click on the `Run` button to execute the script. Status/Output of the script execution will be shown in the `Output` section of the bottom drawer.
+5. Click on the **Execute** button to execute the script. Status/Output of the script execution will be shown in the `Output` tab of the bottom drawer.
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/bulk-edit/bulk-update-run.jpg)
-  <center>Figure 5: Bulk Update Run</center>
+  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/bulk-edit/bulk-edit-run.jpg)
+  <center>Figure 5: Executing Bulk Edit</center>
 
 
 
