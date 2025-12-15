@@ -18,7 +18,7 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.596d72d5.css">
-<script src="/assets/js/runtime~main.23224288.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.a1dad707.js" defer="defer"></script>
 <script src="/assets/js/main.56d2fc24.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -42,17 +42,19 @@ Eg. You can change the value for <code>MaxReplicas</code> in Deployment Template
 <ol>
 <li class="">Click on the <code>Bulk Edit</code> option in the main navigation. This is where you can write and execute scripts to perform bulk updates in Devtron objects.</li>
 </ol>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/bulk-edit/bulk-update-empty.jpg" alt="" class="img_ev3q">
-<center>Figure 1: Bulk Edit</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/bulk-edit/bulk-edit-nav.jpg" alt="" class="img_ev3q">
+<center>Figure 1: Navigating to Bulk Edit</center></p>
 <ol start="2">
-<li class="">To help you get started, a script template is provided under the <code>See Samples</code> section.</li>
+<li class="">To help you get started, click <strong>Refer Sample Payload</strong> to view a script template.</li>
 </ol>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/bulk-edit/bulk-update-readme.jpg" alt="" class="img_ev3q">
-<center>Figure 2: Update Readme</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/bulk-edit/bulk-edit-sample-payload.jpg" alt="" class="img_ev3q">
+<center>Figure 2a: Refer Sample Payload</center></p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/bulk-edit/bulk-edit-readme.jpg" alt="" class="img_ev3q">
+<center>Figure 2b: Sample Script</center></p>
 <ol start="3">
-<li class="">Copy and Paste the <code>Sample Script</code> in the code editor and make desired changes. Refer <code>Payload Configuration</code> in the Readme to understand the parameters.</li>
+<li class="">Copy and Paste the sample script in the code editor and make desired changes. Refer <code>Payload Configuration</code> in the Readme to understand the parameters.</li>
 </ol>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/bulk-edit/bulk-update-script.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/bulk-edit/bulk-edit-script.jpg" alt="" class="img_ev3q">
 <center>Figure 3: Bulk Update Script</center></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example">Example<a href="#example" class="hash-link" aria-label="Direct link to Example" title="Direct link to Example" translate="no">​</a></h3>
 <p>Example below will select all applications having <code>abc and xyz</code> present in their name and out of those will exclude applications having <code>abcd and xyza</code> in their name. Since global flag is false and envId 23 is provided, it will make changes in envId 23 and not in global deployment template for this application.</p>
@@ -67,15 +69,15 @@ task.</p>
 <table><thead><tr><th>Parameter</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>includes.names </code></td><td>Will filter apps having exact string or similar substrings</td><td><code>[&quot;app%&quot;,&quot;%abc&quot;, &quot;xyz&quot;]</code> (will include all apps having <code>&quot;app%&quot;</code> <strong>OR</strong> <code>&quot;%abc&quot;</code> as one of their substring, example - app1, app-test, test-abc etc. <strong>OR</strong> application with name xyz)</td></tr><tr><td><code>excludes.names</code></td><td>Will filter apps not having exact string or similar substrings.</td><td><code>[&quot;%z&quot;,&quot;%y&quot;, &quot;abc&quot;]</code>       (will filter out all apps having <code>&quot;%z&quot;</code> <strong>OR</strong> <code>&quot;%y&quot;</code> as one of their substring, example - appz, test-app-y etc. <strong>OR</strong> application with name abc)</td></tr><tr><td><code>envIds</code></td><td>List of envIds to be updated for the selected applications.</td><td><code>[1,2,3]</code></td></tr><tr><td><code>global</code></td><td>Flag to update global deployment template of applications.</td><td><code>true</code>,<code>false</code></td></tr><tr><td><code>deploymentTemplate.spec.patchJson</code></td><td>String having the update operation(you can apply more than one changes at a time). It supports <a href="http://jsonpatch.com/" target="_blank" rel="noopener noreferrer" class="">JSON patch </a> specifications for update.</td><td><code>&#x27;[ { &quot;op&quot;: &quot;add&quot;, &quot;path&quot;: &quot;/MaxSurge&quot;, &quot;value&quot;: 1 }, { &quot;op&quot;: &quot;replace&quot;, &quot;path&quot;: &quot;/GracePeriod&quot;, &quot;value&quot;: &quot;30&quot; }]&#x27;</code></td></tr><tr><td><code>configMap.spec.names</code></td><td>Names of all ConfigMaps to be updated.</td><td><code>configmap1</code>,<code>configmap2</code>,<code>configmap3</code></td></tr><tr><td><code>secret.spec.names</code></td><td>Names of all Secrets to be updated.</td><td><code>secret1</code>,<code>secret2</code></td></tr><tr><td><code>configMap.spec.patchJson</code> / <code>secret.spec.patchJson</code></td><td>String having the update operation for ConfigMaps/Secrets(you can apply more than one changes at a time). It supports <a href="http://jsonpatch.com/" target="_blank" rel="noopener noreferrer" class="">JSON patch </a> specifications for update.</td><td><code>&#x27;[{ &quot;op&quot;: &quot;add&quot;, &quot;path&quot;: &quot;/{key}&quot;, &quot;value&quot;: &quot;{value}&quot; },{&quot;op&quot;: &quot;replace&quot;,&quot;path&quot;:&quot;/{key}&quot;,&quot;value&quot;: &quot;{value}&quot;}]&#x27;</code>(Replace the <code>{key}</code> part to the key you want to perform operation on &amp; the <code>{value}</code>is the key&#x27;s corresponding value</td></tr></tbody></table>
 <br>
 <ol start="4">
-<li class="">Once you have modified the script, you can click on the <code>Show Impacted Objects</code> button to see the names of all applications that will be modified when the script is <code>Run</code>.</li>
+<li class="">Once you have modified the script, you can click on the <strong>Show Impacted Objects</strong> button to see the names of all applications that will be modified when the script is executed.</li>
 </ol>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/bulk-edit/bulk-update-impactobj.jpg" alt="" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/bulk-edit/bulk-edit-impactobj.jpg" alt="" class="img_ev3q">
 <center>Figure 4: Impact Object</center></p>
 <ol start="5">
-<li class="">Click on the <code>Run</code> button to execute the script. Status/Output of the script execution will be shown in the <code>Output</code> section of the bottom drawer.</li>
+<li class="">Click on the <strong>Execute</strong> button to execute the script. Status/Output of the script execution will be shown in the <code>Output</code> tab of the bottom drawer.</li>
 </ol>
-<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/bulk-edit/bulk-update-run.jpg" alt="" class="img_ev3q">
-<center>Figure 5: Bulk Update Run</center></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/bulk-update"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Bulk Edit</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/bulk-update/bulk-edit-ent"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Bulk Edit (v1beta2)</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#support" class="table-of-contents__link toc-highlight">Support</a></li><li><a href="#steps" class="table-of-contents__link toc-highlight">Steps:</a><ul><li><a href="#example" class="table-of-contents__link toc-highlight">Example</a></li><li><a href="#sample-script" class="table-of-contents__link toc-highlight">Sample Script</a></li><li><a href="#payload-configuration" class="table-of-contents__link toc-highlight">Payload Configuration</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/bulk-edit/bulk-edit-run.jpg" alt="" class="img_ev3q">
+<center>Figure 5: Executing Bulk Edit</center></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/bulk-update"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Bulk Edit</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/bulk-update/bulk-edit-ent"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Bulk Edit (v1beta2)</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#support" class="table-of-contents__link toc-highlight">Support</a></li><li><a href="#steps" class="table-of-contents__link toc-highlight">Steps:</a><ul><li><a href="#example" class="table-of-contents__link toc-highlight">Example</a></li><li><a href="#sample-script" class="table-of-contents__link toc-highlight">Sample Script</a></li><li><a href="#payload-configuration" class="table-of-contents__link toc-highlight">Payload Configuration</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
               <div style="text-align: center;">
                 <div style="margin-bottom: 1rem;">
                   <a href="/" style="display: inline-block;">
