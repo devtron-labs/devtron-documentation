@@ -47,10 +47,10 @@ The Jira Issue Validator plugin extends the filtering capabilities of the Devtro
 
 **Case 1**: If Jira issue exists and the same is found in the PR title
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/jira/jira-issue-validator.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/plugins/jira-validator/jira-issue-validator.jpg)
 <center>Figure 1: Jira Issue Match</center>
 
 **Case 2**: If Jira issue is not found
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/plugins/jira/issue-validation-failed.jpg)
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/plugins/jira-validator/issue-validation-failed.jpg)
 <center>Figure 2: Error in Finding Jira Issue</center>

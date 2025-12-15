@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
+import { useLocation } from '@docusaurus/router';
 
 export default function Root({ children }) {
+  const location = useLocation();
+
   useEffect(() => {
     // function to classify images
     function markSnapshotImages() {
@@ -65,6 +68,22 @@ export default function Root({ children }) {
       observer.disconnect();
     };
   }, []);
+  
+  useEffect(() => {
+    if (!location.hash) return;
+
+    // Clean the hash: remove ?utm_* junk
+    const cleanId = location.hash
+      .replace('#', '')
+      .split('?')[0];
+
+    if (!cleanId) return;
+
+    const element = document.getElementById(cleanId);
+    if (element) {
+      element.scrollIntoView();
+    }
+  }, [location.pathname]);
 
   return <>{children}</>;
 }
