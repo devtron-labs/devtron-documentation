@@ -99,6 +99,13 @@ In the configuration,
   * Copy the Redirect URI displayed in Devtron and paste the value in the `redirectURI` field.
 * Click **Update** to save the configuration, once saved, Google SSO is successfully configured
 
+:::tip Common error: "Some required field are missing"
+
+If you see this error while saving the Google SSO configuration, ensure that you have set the **URL** field above the configuration editor.
+
+Click the **Click to use** link shown below the URL field to auto-populate the correct Devtron URL, or manually enter it before saving.
+:::
+
 :::caution 
 Although Google SSO is now set up, users will not be able to sign in unless they are explicitly added to Devtron with the necessary permissions.
 :::

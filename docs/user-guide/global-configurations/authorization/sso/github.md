@@ -85,6 +85,13 @@ To configure the GitHub SSO in Devtron, follow the below steps of instructions:
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/sso-login-services/github/github-sso-in-action.jpg)
 <center>Figure 5: Sign in with GitHub</center>
 
+:::tip Common error: "Some required field are missing"
+
+If you see this error while saving the GitHub SSO configuration, ensure that you have set the **URL** field above the configuration editor.
+
+Click the **Click to use** link shown below the URL field to auto-populate the correct Devtron URL, or manually enter it before saving.
+:::
+
 ---
 
 :::caution Important: Enable User Access After SSO Setup

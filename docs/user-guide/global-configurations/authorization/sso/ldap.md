@@ -7,13 +7,39 @@
 
 ---
 
+
+
 ## Values to fetch from LDAP
 
 Devtron provides a sample configuration out of the box. Here are some values you need to fetch from your LDAP.
 
-* bindDN
-* bindPW
-* baseDN
+| Field                                | Required | What it is / Where to get it                                                                                   | Example                                       |
+| ------------------------------------ | -------- | -------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| `host`                               | Yes      | LDAP server hostname with port                                                                                 | `ad.example.com:636`                          |
+| `insecureNoSSL`                      | No       | Disable SSL when connecting to LDAP                                                                            | `false`                                       |
+| `insecureSkipVerify`                 | No       | Skip TLS certificate verification                                                                              | `true`                                        |
+| `bindDN`                             | Yes      | DN of the LDAP service account used by Devtron to query users and groups. This is **not** the user logging in. | `cn=Administrator,cn=users,dc=example,dc=com` |
+| `bindPW`                             | Yes      | Password of the bindDN account                                                                                 | `admin0!`                                     |
+| `usernamePrompt`                     | No       | Label shown on the login screen for LDAP users                                                                 | `Email Address`                               |
+| `userSearch.baseDN`                  | Yes      | Directory path under which Devtron searches for LDAP users                                                     | `cn=Users,dc=example,dc=com`                  |
+| `userSearch.filter`                  | No       | LDAP filter to restrict user search results                                                                    | `(objectClass=person)`                        |
+| `userSearch.username`                | Yes      | LDAP attribute used as the login username                                                                      | `userPrincipalName`                           |
+| `userSearch.idAttr`                  | No       | Unique identifier attribute for users                                                                          | `DN`                                          |
+| `userSearch.emailAttr`               | No       | Attribute used to fetch user email                                                                             | `userPrincipalName`                           |
+| `userSearch.nameAttr`                | No       | Attribute used to fetch user display name                                                                      | `cn`                                          |
+| `groupSearch.baseDN`                 | No       | Directory path under which LDAP groups are searched. Required when auto-assign permissions is enabled.         | `cn=Users,dc=example,dc=com`                  |
+| `groupSearch.filter`                 | No       | LDAP filter to fetch groups                                                                                    | `(objectClass=group)`                         |
+| `groupSearch.userMatchers.userAttr`  | No       | User attribute used to match group membership                                                                  | `DN`                                          |
+| `groupSearch.userMatchers.groupAttr` | No       | Group attribute that contains user references                                                                  | `member`                                      |
+| `groupSearch.nameAttr`               | No       | Attribute used to fetch group names                                                                            | `cn`                                          |
+
+:::tip Common error: "Some required field are missing"
+
+If you see this error while saving the LDAP configuration, ensure that you have set the **URL** field above the configuration editor.
+
+Click the **Click to use** link shown below the URL field to auto-populate the correct Devtron URL, or manually enter it before saving.
+:::
+
 
 ---
 
