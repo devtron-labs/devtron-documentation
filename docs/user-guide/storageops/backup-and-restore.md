@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# Backup & Restore
+# Backup & Schedules
 ## Introduction <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 The **Backup & Restore** feature in Devtron helps you protect your Kubernetes workloads and data by allowing you to back up and restore your **clusters**, **namespaces**, or **specific resources** directly from the Devtron UI. 
@@ -18,6 +18,9 @@ You can
  Whether you are preparing for disaster recovery, migrating environments, or ensuring business continuity, Devtron makes the process simple, reliable, and transparent while giving you complete visibility and control.
 
 ---
+:::caution Prerequisites
+Before creating a backup, make sure that at least one **Backup Storage Location** is configured and available. If no storage location is configured, backups cannot be created. Refer [Backup Locations](./backup-locations.md) to learn more.
+:::
 
 ## Creating Backup
 
