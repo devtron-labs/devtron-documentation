@@ -85,7 +85,7 @@ const features = [
     title: 'Backup & Restore',
     Icon: StorageOps,
     description: 'Protect your data with backup and restore capabilities.',
-    link: '/docs/user-guide/storageops/backup-and-restore',
+    link: '/docs/user-guide/storageops/backup',
     color: '#8B5CF6',
   },
   {

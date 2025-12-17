@@ -438,7 +438,7 @@ const sidebars = {
       },
       items: [
         'user-guide/storageops/overview',
-        'user-guide/storageops/backup-and-restore',
+        'user-guide/storageops/backup',
         'user-guide/storageops/restores',
         'user-guide/storageops/backup-locations',
       ],

@@ -16,7 +16,7 @@ With StorageOps, you can:
 
 ---
 
-Refer [Backup & Schedules](./backup-and-restore.md) page to create a backup/ backup schedule. 
+Refer [Backup & Schedules](./backup.md) page to create a backup/ backup schedule. 
 
 Refer [Restores](./restores.md) page to restore from a backup/ backup schedule.
 
