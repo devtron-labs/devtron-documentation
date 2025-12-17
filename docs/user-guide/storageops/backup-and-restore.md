@@ -133,8 +133,8 @@ When you create a backup from a schedule, Devtron reuses the same configuration 
 
 | **Field** | **Required / Optional** | **Description** |
 |----------|--------------------------|-----------------|
-| **Backup Name** | Required | Specify a unique name for the backup that will be created from the selected schedule. |
-| **Schedule** | Required | Select an existing backup schedule. All configurations from this schedule will be used to create the backup. |
+| **Backup Name** | Required | Specify a unique name for the backup that will be created from the selected schedule |
+| **Schedule** | Required | Select an existing backup schedule. All configurations from this schedule will be used to create the backup |
 
 ---
 
@@ -171,3 +171,8 @@ After creating a backup schedule, you can view it under **Backup Schedules** tab
 | **Cron** | The cron expression defining how frequently the backup runs (for example, *Every 6 hours*)|
 | **Last Backup** | The timestamp of the last backup triggered by this schedule|
 | **Last Skipped** | Displays when the schedule last skipped a run (if applicable)|
+
+## Delete Backups and Backup Schedules
+
+To delete a backup or backup schedule, click the delete icon next to it. The selected backup or schedule will be deleted.
+

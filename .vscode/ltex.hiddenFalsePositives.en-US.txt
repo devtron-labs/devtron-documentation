@@ -1,0 +1,1 @@
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QBackup Name Required Specify a unique name for the backup that will be created from the selected schedule\nSchedule Required Select an existing backup schedule.\\E$"}
