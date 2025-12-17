@@ -3,7 +3,7 @@ hide_table_of_contents: true
 ---
 
 # Backup & Restore
-## Introduction
+## Introduction <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
 The **Backup & Restore** feature in Devtron helps you protect your Kubernetes workloads and data by allowing you to back up and restore your **clusters**, **namespaces**, or **specific resources** directly from the Devtron UI. 
 
@@ -20,6 +20,10 @@ You can
 ---
 
 ## Creating Backup
+
+:::caution Who Can Perform This Action?
+Users need to have super-admin permission to create a backup.
+:::
 
 You can create a backup in Devtron to capture the current state of your Kubernetes clusters, namespaces, and resources.
 
@@ -104,7 +108,13 @@ If you already have a backup schedule, you can create a backup from it without g
 
 3. Click **Create Backup**, and the backup creation process will start.
 
+---
+
 ## Creating Backup Schedule
+
+:::caution Who Can Perform This Action?
+Users need to have super-admin permission to create a backup.
+:::
 
 A **Backup Schedule** helps you automate backups at regular intervals without having to manually create them every time.  
 It uses the same configuration options available in [Creating a Backup](#creating-backup), with a few additional fields that define when and how often the backup should run.  
@@ -140,6 +150,10 @@ When you create a backup from a schedule, Devtron reuses the same configuration 
 
 ## Viewing Backups and Backup Schedules
 
+:::caution Who Can Perform This Action?
+Users need to have view permission to view backups.
+:::
+
 ### Backups 
 
 After you initiated the backup, you can find it under **Backup** tab. This tab shows all the backups weather they are created manually or via a backup-schedule.
@@ -173,6 +187,10 @@ After creating a backup schedule, you can view it under **Backup Schedules** tab
 | **Last Skipped** | Displays when the schedule last skipped a run (if applicable)|
 
 ## Delete Backups and Backup Schedules
+
+:::caution Who Can Perform This Action?
+Users need to have super-admin permission to delete backups.
+:::
 
 To delete a backup or backup schedule, click the delete icon next to it. The selected backup or schedule will be deleted.
 

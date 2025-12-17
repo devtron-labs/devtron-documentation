@@ -1,5 +1,7 @@
 # Backup Locations
 
+## Introduction <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
+
 The **Backup Locations** section lets you configure and manage where your cluster data is stored.  
 Devtron supports two types of locations for storing backup data:
 
@@ -9,6 +11,10 @@ Devtron supports two types of locations for storing backup data:
 | **Storage Locations** | Used to store backup files and metadata. |
 
 ## Storage Locations
+
+:::caution Who Can Perform This Action?
+Users need to have super-admin permission to add backup locations.
+:::
 
 A **Storage Location** defines where Devtron stores backup files, manifests, and metadata.  
 
@@ -84,6 +90,10 @@ If you want a storage location to be used as the default location for backups, e
 ---
 
 ## Volume Snapshot Locations
+
+:::caution Who Can Perform This Action?
+Users need to have super-admin permission to add backup locations.
+:::
 
 A **Volume Snapshot Location** defines where Devtron stores and manages volume-level snapshots for persistent volumes. These snapshots are used to restore application data backed by persistent volumes during a restore operation.
 

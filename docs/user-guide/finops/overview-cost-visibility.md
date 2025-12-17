@@ -34,7 +34,7 @@ Cost Overview has the following sections:
 
 ## At a Glance
 
-The **At a Glance** displays **Total Cost**, **CPU Cost**, **RAM Cost**, **PV Cost**, and **GPU Cost** cards. Each card shows the  cost of its specific component, its percentage contribution to the overall spend, and a cost trend graph for the selected time period.
+The **At a Glance** displays **Total Cost**, **CPU Cost**, **RAM Cost**, **PV Cost**, and **GPU Cost** cards. Each card shows the cost of its specific component, its percentage contribution to the overall spend, and a cost trend graph for the selected time period.
 
 <SupademoEmbed id="cmg7svcus10om2nommllm1nu2" /><br />
 
