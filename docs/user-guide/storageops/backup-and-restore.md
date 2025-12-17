@@ -51,9 +51,12 @@ You can create a backup in Devtron to capture the current state of your Kubernet
     | **Select Cluster to Backup** | Required | Choose the Kubernetes cluster where the backup will be performed|
     | **Namespaces to Backup** | Required | Define which namespaces to include in the backup <ul><li>**All Namespaces** – Backs up all the namespaces in the cluster</li><li> **All Production Environments** - Backs up namespaces tagged as production</li><li> **All Non-Production Environments** - Backs up namespaces tagged as npn-production </li><li>**Specific Namespaces** - Select specific namespaces manually</li></ul> |
     | **Resources to Backup** | Optional | Choose which Kubernetes resources to include<br /> <ul><li>**All Resources** – Includes all resources</li><li> **Specific Resources** – Select **Global**, **Cluster**, or **Namespace** scoped resources</li></ul> |
-    | **Included Resources** | Optional | Specify resource kinds to include, such as `deployments` or `configmaps` |
-    | **Excluded Resources** | Optional | Specify resource kinds to exclude, such as `secrets` or `events` |
-    |**Item Operation Timeout**|Required |Defines how long Devtron should wait for asynchronous plugin operations to complete before timing out|
+    | **Included Resources** <br />(Applicable for Specific Namespaces/Resources) | Optional | Specify namespaces or resource kinds to include, such as `deployments` or `configmaps` |
+    | **Excluded Resources** <br />(Applicable for Specific Namespaces/Resources) | Optional | Specify namespaces or resource kinds to exclude, such as `secrets` or `events` |
+    | **Backup TTL** | Optional | Defines how long the backup should be retained before it becomes eligible for garbage collection. You can specify a numeric value along with a time unit such as seconds, minutes, or hours |
+    | **Ordered Resources** | Optional | Allows you to define the order in which Kubernetes resources are backed up by specifying key value pairs. Resources listed here are processed in the defined order during backup creation|
+    | **Resources Policy** | Optional | Specifies the resource policies that the backup should follow. You can either select an existing ConfigMap containing the policy or provide the policy directly as YAML |
+    | **Filter resources using label selectors** | Optional | Filters resources included in the backup using Kubernetes label selectors. Labels within the same group are evaluated using AND logic, while separate groups are evaluated using OR logic. Operators supported are `Equals`, `In`, `NotIn`,`Exists`,`DoesNotExist` |
 
     #### 3. Storage & Snapshot Location
 
@@ -121,6 +124,17 @@ After selecting **Create Backup Schedule**, a modal window opens where you can s
 | **Skip Upcoming Backup** | Optional | Skips the next scheduled backup but keeps the schedule active |
 | **Delete Backups on Schedule Deletion** | Optional | Automatically deletes backups created by this schedule when the schedule itself is removed |
 | **Backup TTL** | Optional | Defines how long each backup should be retained before it’s automatically deleted |
+
+## Create Backup From Schedule
+
+If you do not want to wait for the scheduled backup to run, you can use **From Schedule** option to create an on-demand backup using an existing backup schedule.
+
+When you create a backup from a schedule, Devtron reuses the same configuration already defined in the selected schedule and triggers the backup right away. This ensures the backup follows the same scope, policies, and storage settings without requiring you to configure them again.
+
+| **Field** | **Required / Optional** | **Description** |
+|----------|--------------------------|-----------------|
+| **Backup Name** | Required | Specify a unique name for the backup that will be created from the selected schedule. |
+| **Schedule** | Required | Select an existing backup schedule. All configurations from this schedule will be used to create the backup. |
 
 ---
 
