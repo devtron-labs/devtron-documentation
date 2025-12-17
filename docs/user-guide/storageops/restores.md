@@ -37,11 +37,13 @@ To restore a backup, you can create a restore:
     | **Specific Namespaces** | Optional | Select specific namespaces to restore. You can use regex to match multiple namespaces. |
     | **Included Namespaces** | Optional (visible only when **Specific Namespaces** is selected) | Select one or more namespaces to include in the restore process. Only these namespaces will be restored from the backup. <br /> You can also provide regex expressions to include namespaces that follow a specific naming pattern. |
     | **Excluded Namespaces** | Optional (visible only when **Specific Namespaces** is selected) | Select namespaces that should be excluded from the restore process, even if they exist in the backup. <br /> You can also provide regex expressions to exclude namespaces that follow a specific naming pattern.  |
+    | **Filter resources using label selectors** | Optional | Filters resources included in the restore using Kubernetes label selectors. Labels within the same group are evaluated using AND logic, while separate groups are evaluated using OR logic. Operators supported are `Equals`, `In`, `NotIn`,`Exists`,`DoesNotExist` |
 
     ### 3. Restore Settings
 
     | **Field** | **Required/Optional** | **Description** |
     |------------|-----------------------|-----------------|
+    | **Resource Status** | Optional | Specify which Kubernetes resources should be included or excluded in the restore status. Resources must be provided in the format `resourceKind.group`, such as `storageclasses.storage.k8s.io` |
     | **Namespace Mapping** | Optional | Map source namespaces to new target namespaces. For example, restore `prod` → `stage-prod` |
     | **Include Cluster Resources** | Optional | Defines whether cluster-scoped resources should be restored. You can choose: <ul><li>**Auto (Recommended):** Automatically determines which cluster resources to include, based on context</li><li>**Include all:** Restores all cluster-scoped resources from the backup</li><li>**Exclude all:** Skips all cluster-scoped resources, restoring only namespace-scoped resources</li></ul> |
     | **Restore Volumes** | Optional | Enables restoring persistent volumes from snapshots taken during the backup. Toggle this on if you need your application data to be restored along with configurations|
