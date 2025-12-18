@@ -158,9 +158,9 @@ export const journeyData = {
 
     {
       day: 5,
-      title: "Debug and Recover Applications Using Resource Browser",
+      title: "Debug and Monitor Kubernetes Workloads Using Resource Browser",
       description:
-        "Investigate failures and restore applications using visual Kubernetes insights",
+        "Investigate failures and logs using visual Kubernetes insights",
       duration: "75 mins",
       difficulty: "Intermediate",
       targets: [
