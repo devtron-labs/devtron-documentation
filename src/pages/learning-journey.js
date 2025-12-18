@@ -1,5 +1,4 @@
 /**
- * 14-Day Devtron Learning Journey
  * src/pages/learning-journey.js
  */
 

@@ -1,9 +1,7 @@
 /**
  * 14-Day Devtron Learning Journey - Styles
- * Add this to your src/css/custom.css or import separately
  */
 
-/* CSS Variables - Customize these to match your Docusaurus theme */
 :root {
     --journey-primary: #6366f1;
     --journey-primary-light: #818cf8;

@@ -1,10 +1,5 @@
-/**
- * 14-Day Devtron Learning Journey - Course Content
- * Enterprise-first, capability-driven onboarding
- */
-
 export const journeyData = {
-  title: "14-Day Devtron Mastery Journey",
+  title: "14-Day Devtron Mastery",
   subtitle: "Experience Devtron Freemium",
   description:
     "Go from a Beginner to a Pro in just 2 weeks",
