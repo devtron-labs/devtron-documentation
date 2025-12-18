@@ -177,7 +177,7 @@ export const journeyData = {
 
     {
       day: 6,
-      title: "Infrastructure Management",
+      title: "Manage Infra and Resources",
       description:
         "Safely scale CI/CD workloads and resources",
       duration: "60 mins",
