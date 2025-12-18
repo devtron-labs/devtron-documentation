@@ -5,13 +5,13 @@
 
 export const journeyData = {
   title: "14-Day Devtron Mastery Journey",
-  subtitle: "Build, Release, Govern, and Operate at Scale",
+  subtitle: "Experience Devtron Freemium",
   description:
-    "Experience Devtron as a production-grade platform. Over 14 days, deploy real applications, solve real problems, and unlock Enterprise capabilities as solutions.",
+    "Go from a Beginner to a Pro in just 2 weeks",
   days: [
     {
       day: 0,
-      title: "Bootstrap Devtron Freemium",
+      title: "Install Devtron Freemium",
       description:
         "One-time setup to unlock all Devtron Enterprise capabilities during the trial",
       duration: "10–15 mins",
@@ -21,18 +21,18 @@ export const journeyData = {
         "Access Devtron UI successfully",
         "Verify cluster connectivity"
       ],
-      videos: [
-        {
-          title: "Introduction to Devtron",
-          url: "https://youtube.com/watch?v=example1",
-          duration: "12:30"
-        },
-        {
-          title: "Dashboard Walkthrough",
-          url: "https://youtube.com/watch?v=example2",
-          duration: "18:45"
-        }
-      ],
+      // videos: [
+      //   {
+      //     title: "Introduction to Devtron",
+      //     url: "https://youtube.com/watch?v=example1",
+      //     duration: "12:30"
+      //   },
+      //   {
+      //     title: "Dashboard Walkthrough",
+      //     url: "https://youtube.com/watch?v=example2",
+      //     duration: "18:45"
+      //   }
+      // ],
       resources: [
         {
           title: "Devtron Freemium Installation Guide",
@@ -52,6 +52,20 @@ export const journeyData = {
         "Create an application in Devtron",
         "Configure CI and CD pipelines",
         "Deploy the application successfully"
+      ],
+      resources: [
+        {
+          title: "Create Devtron App",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/create-application"
+        },
+        {
+          title: "Configure Devtron App",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/creating-application"
+        },
+        {
+          title: "Deploy Devtron App",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/deploying-application"
+        },
       ]
     },
 
@@ -66,26 +80,53 @@ export const journeyData = {
         "Manage runtime configuration",
         "Use diff view before deployment",
         "Roll back to a previous stable version"
+      ],
+      resources: [
+        {
+          title: "Hibernate Devtron App",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/app-details/application-summary#hibernate"
+        },
+        {
+          title: "Rollback Deployment Devtron App",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/app-details/application-summary#rollback"
+        },
+        {
+          title: "Environment Configurations",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/app-details/application-summary#environment-configurations"
+        },
       ]
     },
 
     {
       day: 3,
-      title: "Promote Releases Across Multiple Environments",
-      description:
-        "Move releases from development to production without rebuilding artifacts",
+      title: "Security Scanning and Policies",
+      description: "Shift security left and enforce policies across apps, environments, and clusters",
       duration: "75 mins",
-      difficulty: "Intermediate",
+      difficulty: "Advanced",
       targets: [
-        "Create Dev, UAT, and Prod environments",
-        "Promote images across environments",
-        "Compare and filter environment changes"
+        "Enable vulnerability scanning",
+        "Configure security policies",
+        "Apply policy enforcement in pipelines",
+      ],
+      resources: [
+        {
+          title: "Security Features",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/security-features"
+        },
+        {
+          title: "Security Scanning",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/security-features/security-scans"
+        },
+        {
+          title: "Security Policies",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/security-features/security-policies"
+        },
       ]
     },
 
     {
       day: 4,
-      title: "Orchestrate Multi-Application Releases with SDH",
+      title: "Perform Bulk Operations and Orchestrate Releases",
       description:
         "Release multiple microservices together using synchronized deployment orchestration",
       duration: "75 mins",
@@ -94,6 +135,24 @@ export const journeyData = {
         "Create multiple microservices",
         "Group applications logically",
         "Deploy applications together using SDH"
+      ],
+      resources: [
+        {
+          title: "Application Groups",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/application-groups"
+        },
+        {
+          title: "Software Distribution Hub",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/software-distribution-hub"
+        },
+        {
+          title: "Bulk Edit",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/bulk-update"
+        },
+        {
+          title: "Jobs",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/jobs"
+        },
       ]
     },
 
@@ -108,20 +167,44 @@ export const journeyData = {
         "Inspect Kubernetes resources visually",
         "Debug using logs and terminal access",
         "Reset environments safely"
+      ],
+      resources: [
+        {
+          title: "Resource Browser",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/resource-browser"
+        },
+        {
+          title: "Resource Watcher",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/resource-watcher"
+        },
       ]
     },
 
     {
       day: 6,
-      title: "Scale Builds Using Dedicated Build Infrastructure",
+      title: "Infrastructure Management",
       description:
-        "Safely scale CI workloads using isolated and configurable build infrastructure",
+        "Safely scale CI/CD workloads and resources",
       duration: "60 mins",
       difficulty: "Intermediate",
       targets: [
         "Configure build infrastructure",
         "Assign builds to dedicated build nodes",
         "Understand build isolation and scaling"
+      ],
+      resources: [
+        {
+          title: "Build Infra",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/build-infra"
+        },
+        {
+          title: "Configure Deployment Template",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/creating-application/base-config/deployment-template#configure-the-deployment-template"
+        },
+        {
+          title: "Resource Recommender",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/resource-browser/resource-recommender"
+        },
       ]
     },
 
@@ -136,6 +219,20 @@ export const journeyData = {
         "Configure approval policies",
         "Define deployment windows",
         "Lock deployment configurations"
+      ],
+      resources: [
+        {
+          title: "Approval Policy",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/approval-policy"
+        },
+        {
+          title: "Deployment Window",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/deployment-window"
+        },
+        {
+          title: "Lock Deployment Configurations",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/lock-deployment-config"
+        },
       ]
     },
 
@@ -150,6 +247,20 @@ export const journeyData = {
         "Promote images safely across environments",
         "Deploy images using digests",
         "Apply tag-based deployment rules"
+      ],
+      resources: [
+        {
+          title: "Image Promotion Policy",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/image-promotion-policy"
+        },
+        {
+          title: "Pull Image Digest",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/pull-image-digest"
+        },
+        {
+          title: "Tags Policy",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/tags-policy"
+        },
       ]
     },
 
@@ -164,6 +275,24 @@ export const journeyData = {
         "Add pre and post build plugins",
         "Apply plugin policies",
         "Restrict unsafe or unapproved pipeline behavior"
+      ],
+      resources: [
+        {
+          title: "Pre-build/Post-build and Pre-deployment/Post-deployment Stages",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/creating-application/workflow/pre-post-tasks"
+        },
+        {
+          title: "Create Your Plugin",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/plugins/create-plugin"
+        },
+        {
+          title: "Pipeline Plugins",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/plugins/plugin-list"
+        },
+        {
+          title: "Plugin Policy",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/plugin-policy"
+        },
       ]
     },
 
@@ -178,6 +307,24 @@ export const journeyData = {
         "Enable GitOps mode",
         "Integrate Devtron with ArgoCD",
         "Understand sync and drift detection"
+      ],
+      resources: [
+        {
+          title: "GitOps",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/gitops"
+        },
+        {
+          title: "GitOps Config",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/creating-application/gitops-config"
+        },
+        {
+          title: "GitOps Deployment using Flux",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/creating-application/fluxcd"
+        },
+        {
+          title: "Migrate ArgoCD Apps",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/creating-application/workflow/cd-pipeline#migrate-argo-cd-application"
+        },
       ]
     },
 
@@ -192,6 +339,24 @@ export const journeyData = {
         "Add and manage Kubernetes clusters",
         "Enable or disable environments",
         "Control environment lifecycle operations"
+      ],
+      resources: [
+        {
+          title: "Add Existing Kubernetes Cluster",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/cluster-and-environments#add-kubernetes-cluster"
+        },
+        {
+          title: "Create Kubernetes Cluster",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/cluster-and-environments#create-kubernetes-cluster-"
+        },
+        {
+          title: "Add Isolated Cluster",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/cluster-and-environments#add-isolated-cluster-"
+        },
+        {
+          title: "Environments",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/cluster-and-environments#add-environment-to-a-cluster"
+        },
       ]
     },
 
@@ -205,7 +370,21 @@ export const journeyData = {
       targets: [
         "Enable Single Sign-On",
         "Configure RBAC for users and teams",
-        "Understand break-glass and kubectl access"
+        "Understand kubectl access"
+      ],
+      resources: [
+        {
+          title: "SSO Login Services",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/sso-login"
+        },
+        {
+          title: "User Permissions",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/authorization/user-access"
+        },
+        {
+          title: "Running Kubectl Locally to Access Clusters",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/resource-browser/kubectl-local"
+        },
       ]
     },
 
@@ -220,6 +399,12 @@ export const journeyData = {
         "Deploy applications via Helm charts",
         "Explore the Devtron Chart Store",
         "Use chart groups and preset values"
+      ],
+      resources: [
+        {
+          title: "Chart Store",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/deploy-chart"
+        },
       ]
     },
 
@@ -234,6 +419,28 @@ export const journeyData = {
         "Configure notifications",
         "Optimize resource usage",
         "Review production readiness best practices"
+      ],
+      resources: [
+        {
+          title: "Notifications",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/manage-notification"
+        },
+        {
+          title: "Monitoring Graphs",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/resource-browser/monitoring-graphs"
+        },
+        {
+          title: "Application Metrics",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/creating-application/app-metrics"
+        },
+        {
+          title: "Configure Lock Schema",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/operations/edit-lock-schema"
+        },
+        {
+          title: "Configure GUI Schema",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/operations/edit-gui-schema"
+        },
       ]
     }
   ]

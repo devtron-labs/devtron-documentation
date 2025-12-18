@@ -941,3 +941,10 @@ html[data-theme='dark'] .theme-doc-markdown table tbody td {
 html[data-theme='dark'] [class*="searchBar_"] [class*="dropdownMenu_"] [class*="suggestion_"][class*="cursor_"] {
   background-color: #626060 !important;
 }
+
+/* learning-journey.css */
+
+.journey-day-card {
+  scroll-margin-top: 3rem; /* adjust to your header height */
+}
+
