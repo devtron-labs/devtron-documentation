@@ -1,5 +1,5 @@
 export const journeyData = {
-  title: "14-Day Devtron Mastery",
+  title: "Devtron Mastery in 14 Days",
   subtitle: "Experience Devtron Freemium",
   description:
     "Go from a Beginner to a Pro in just 2 weeks",
