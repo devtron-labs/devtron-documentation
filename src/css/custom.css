@@ -29,6 +29,8 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 } */
 
+@import "./learning-journey.css";
+
 :root {
   --ifm-color-primary: #0d1a66;        /* Very dark navy blue */
   --ifm-color-primary-dark: #0B1659;
