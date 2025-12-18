@@ -1,58 +1,25 @@
 /**
  * 14-Day Devtron Learning Journey - Course Content
- * Edit this file to update course content for each day
+ * Enterprise-first, capability-driven onboarding
  */
 
 export const journeyData = {
   title: "14-Day Devtron Mastery Journey",
-  subtitle: "From Beginner to Pro User",
-  description: "Master Devtron Freemium and all the enterprise features in just 14 days with our structured learning path",
+  subtitle: "Build, Release, Govern, and Operate at Scale",
+  description:
+    "Experience Devtron as a production-grade platform. Over 14 days, deploy real applications, solve real problems, and unlock Enterprise capabilities as solutions.",
   days: [
     {
       day: 0,
-      title: "Devtron Freemium Installation",
-      description: "One-time setup to experience all Devtron Enterprise Features",
+      title: "Bootstrap Devtron Freemium",
+      description:
+        "One-time setup to unlock all Devtron Enterprise capabilities during the trial",
       duration: "10–15 mins",
       difficulty: "Beginner",
       targets: [
-        "Install Devtron Freemium on a cluster",
-        "Verify Devtron UI access",
-        "Familiarize yourself with core navigation"
-      ],
-      videos: [
-        {
-          title: "What is Devtron and how it works",
-          url: "https://youtube.com/watch?v=example1",
-          duration: "12:30"
-        },
-        {
-          title: "Installing Devtron on Kubernetes",
-          url: "https://youtube.com/watch?v=example2",
-          duration: "18:45"
-        }
-      ],
-      resources: [
-        {
-          title: "Devtron Installation Guide",
-          url: "https://docs.devtron.ai/setup/install"
-        }
-      ]
-    },    
-    {
-      day: 1,
-      title: "Getting Started with Devtron",
-      description: "Set up your environment and understand the Devtron dashboard",
-      duration: "45 mins",
-      difficulty: "Beginner",
-      objectives: [
-        "Understand what Devtron is and its core benefits",
-        "Navigate the Devtron dashboard confidently",
-        "Set up your first Devtron environment"
-      ],
-      targets: [
-        "Complete Devtron installation",
-        "Explore all dashboard sections",
-        "Connect your first cluster"
+        "Install Devtron Freemium on a Kubernetes cluster",
+        "Access Devtron UI successfully",
+        "Verify cluster connectivity"
       ],
       videos: [
         {
@@ -68,335 +35,206 @@ export const journeyData = {
       ],
       resources: [
         {
-          title: "Devtron Documentation",
-          url: "https://docs.devtron.ai"
+          title: "Devtron Freemium Installation Guide",
+          url: "https://docs.devtron.ai/docs/setup/install/devtron-freemium"
         }
       ]
     },
+
+    {
+      day: 1,
+      title: "Create and Deploy Your First Application with CI-CD",
+      description:
+        "Create, build, and deploy your first application using Devtron’s unified CI-CD",
+      duration: "60 mins",
+      difficulty: "Beginner",
+      targets: [
+        "Create an application in Devtron",
+        "Configure CI and CD pipelines",
+        "Deploy the application successfully"
+      ]
+    },
+
     {
       day: 2,
-      title: "Understanding Applications",
-      description: "Learn how to create and manage applications in Devtron",
-      duration: "60 mins",
+      title: "Configure, Compare, and Roll Back Application Changes",
+      description:
+        "Understand how configuration changes affect deployments and recover safely",
+      duration: "75 mins",
       difficulty: "Beginner",
-      objectives: [
-        "Create your first application in Devtron",
-        "Understand application configurations",
-        "Learn about Git repository integration"
-      ],
       targets: [
-        "Create a sample application",
-        "Configure Git source",
-        "Set up build configuration"
-      ],
-      videos: [
-        {
-          title: "Creating Your First App",
-          url: "https://youtube.com/watch?v=example3",
-          duration: "15:00"
-        }
-      ],
-      resources: []
+        "Manage runtime configuration",
+        "Use diff view before deployment",
+        "Roll back to a previous stable version"
+      ]
     },
+
     {
       day: 3,
-      title: "CI/CD Pipelines Basics",
-      description: "Build your first continuous integration pipeline",
+      title: "Promote Releases Across Multiple Environments",
+      description:
+        "Move releases from development to production without rebuilding artifacts",
       duration: "75 mins",
-      difficulty: "Beginner",
-      objectives: [
-        "Understand CI/CD concepts in Devtron",
-        "Create a basic CI pipeline",
-        "Trigger your first build"
-      ],
+      difficulty: "Intermediate",
       targets: [
-        "Configure CI pipeline",
-        "Run successful build",
-        "View build logs and artifacts"
-      ],
-      videos: [
-        {
-          title: "CI Pipeline Deep Dive",
-          url: "https://youtube.com/watch?v=example4",
-          duration: "22:00"
-        }
-      ],
-      resources: []
+        "Create Dev, UAT, and Prod environments",
+        "Promote images across environments",
+        "Compare and filter environment changes"
+      ]
     },
+
     {
       day: 4,
-      title: "Deployment Configurations",
-      description: "Master deployment templates and configurations",
-      duration: "60 mins",
+      title: "Orchestrate Multi-Application Releases with SDH",
+      description:
+        "Release multiple microservices together using synchronized deployment orchestration",
+      duration: "75 mins",
       difficulty: "Intermediate",
-      objectives: [
-        "Understand deployment templates",
-        "Configure environment variables",
-        "Set up resource limits"
-      ],
       targets: [
-        "Customize deployment template",
-        "Add environment variables",
-        "Configure health checks"
-      ],
-      videos: [
-        {
-          title: "Deployment Templates Explained",
-          url: "https://youtube.com/watch?v=example5",
-          duration: "20:00"
-        }
-      ],
-      resources: []
+        "Create multiple microservices",
+        "Group applications logically",
+        "Deploy applications together using SDH"
+      ]
     },
+
     {
       day: 5,
-      title: "Environment Management",
-      description: "Set up and manage multiple environments",
-      duration: "60 mins",
+      title: "Debug and Recover Applications Using Resource Browser",
+      description:
+        "Investigate failures and restore applications using visual Kubernetes insights",
+      duration: "75 mins",
       difficulty: "Intermediate",
-      objectives: [
-        "Create development, staging, and production environments",
-        "Understand environment overrides",
-        "Manage environment-specific configurations"
-      ],
       targets: [
-        "Set up 3 environments",
-        "Configure environment overrides",
-        "Deploy to different environments"
-      ],
-      videos: [
-        {
-          title: "Multi-Environment Setup",
-          url: "https://youtube.com/watch?v=example6",
-          duration: "18:00"
-        }
-      ],
-      resources: []
+        "Inspect Kubernetes resources visually",
+        "Debug using logs and terminal access",
+        "Reset environments safely"
+      ]
     },
+
     {
       day: 6,
-      title: "CD Pipelines & Workflows",
-      description: "Create sophisticated deployment workflows",
-      duration: "75 mins",
+      title: "Scale Builds Using Dedicated Build Infrastructure",
+      description:
+        "Safely scale CI workloads using isolated and configurable build infrastructure",
+      duration: "60 mins",
       difficulty: "Intermediate",
-      objectives: [
-        "Build CD pipelines with multiple stages",
-        "Configure manual and automatic triggers",
-        "Implement approval workflows"
-      ],
       targets: [
-        "Create multi-stage CD pipeline",
-        "Set up approval gates",
-        "Test end-to-end deployment"
-      ],
-      videos: [
-        {
-          title: "Advanced CD Workflows",
-          url: "https://youtube.com/watch?v=example7",
-          duration: "25:00"
-        }
-      ],
-      resources: []
+        "Configure build infrastructure",
+        "Assign builds to dedicated build nodes",
+        "Understand build isolation and scaling"
+      ]
     },
+
     {
       day: 7,
-      title: "Secrets & ConfigMaps",
-      description: "Securely manage application secrets and configurations",
-      duration: "60 mins",
-      difficulty: "Intermediate",
-      objectives: [
-        "Understand Kubernetes secrets in Devtron",
-        "Create and manage ConfigMaps",
-        "Integrate external secret managers"
-      ],
+      title: "Enforce Release Governance with Core Policies",
+      description:
+        "Introduce control and predictability into releases using policy enforcement",
+      duration: "75 mins",
+      difficulty: "Advanced",
       targets: [
-        "Create application secrets",
-        "Use ConfigMaps in deployments",
-        "Mount secrets as files"
-      ],
-      videos: [
-        {
-          title: "Secrets Management",
-          url: "https://youtube.com/watch?v=example8",
-          duration: "16:00"
-        }
-      ],
-      resources: []
+        "Configure approval policies",
+        "Define deployment windows",
+        "Lock deployment configurations"
+      ]
     },
+
     {
       day: 8,
-      title: "Monitoring & Observability",
-      description: "Set up monitoring and understand application metrics",
+      title: "Control Image Integrity and Promotion",
+      description:
+        "Ensure only trusted images are promoted and deployed across environments",
       duration: "75 mins",
-      difficulty: "Intermediate",
-      objectives: [
-        "Navigate the App Details page",
-        "Understand pod logs and metrics",
-        "Set up basic alerting"
-      ],
+      difficulty: "Advanced",
       targets: [
-        "Monitor a running application",
-        "Analyze pod metrics",
-        "Debug using logs"
-      ],
-      videos: [
-        {
-          title: "Observability in Devtron",
-          url: "https://youtube.com/watch?v=example9",
-          duration: "20:00"
-        }
-      ],
-      resources: []
+        "Promote images safely across environments",
+        "Deploy images using digests",
+        "Apply tag-based deployment rules"
+      ]
     },
+
     {
       day: 9,
-      title: "Helm Charts & Chart Store",
-      description: "Deploy applications using Helm charts",
-      duration: "60 mins",
+      title: "Extend and Restrict CI-CD Using Plugins and Advanced Policies",
+      description:
+        "Customize pipelines while retaining control using plugins and policy enforcement",
+      duration: "75 mins",
       difficulty: "Advanced",
-      objectives: [
-        "Understand Helm chart basics",
-        "Deploy from Chart Store",
-        "Customize Helm values"
-      ],
       targets: [
-        "Deploy a Helm chart app",
-        "Modify chart values",
-        "Upgrade deployed charts"
-      ],
-      videos: [
-        {
-          title: "Helm Charts in Devtron",
-          url: "https://youtube.com/watch?v=example10",
-          duration: "22:00"
-        }
-      ],
-      resources: []
+        "Add pre and post build plugins",
+        "Apply plugin policies",
+        "Restrict unsafe or unapproved pipeline behavior"
+      ]
     },
+
     {
       day: 10,
-      title: "Security & RBAC",
-      description: "Implement role-based access control",
+      title: "Adopt GitOps with ArgoCD Integration",
+      description:
+        "Operate deployments using Git as the source of truth with Devtron and ArgoCD",
       duration: "75 mins",
       difficulty: "Advanced",
-      objectives: [
-        "Understand Devtron's permission model",
-        "Create user groups and roles",
-        "Implement least-privilege access"
-      ],
-      targets: [
-        "Set up user groups",
-        "Configure role permissions",
-        "Test access controls"
-      ],
-      videos: [
-        {
-          title: "RBAC Deep Dive",
-          url: "https://youtube.com/watch?v=example11",
-          duration: "24:00"
-        }
-      ],
-      resources: []
-    },
-    {
-      day: 11,
-      title: "GitOps & ArgoCD Integration",
-      description: "Implement GitOps workflows with Devtron",
-      duration: "75 mins",
-      difficulty: "Advanced",
-      objectives: [
-        "Understand GitOps principles",
-        "Configure GitOps in Devtron",
-        "Sync applications from Git"
-      ],
       targets: [
         "Enable GitOps mode",
-        "Configure Git sync",
-        "Implement drift detection"
-      ],
-      videos: [
-        {
-          title: "GitOps with Devtron",
-          url: "https://youtube.com/watch?v=example12",
-          duration: "28:00"
-        }
-      ],
-      resources: []
+        "Integrate Devtron with ArgoCD",
+        "Understand sync and drift detection"
+      ]
     },
+
     {
-      day: 12,
-      title: "Advanced CI Features",
-      description: "Master pre/post build scripts and custom pipelines",
+      day: 11,
+      title: "Manage Clusters and Environment Lifecycle",
+      description:
+        "Operate Devtron across multiple clusters and environments at scale",
       duration: "60 mins",
       difficulty: "Advanced",
-      objectives: [
-        "Write custom pre-build scripts",
-        "Implement post-build actions",
-        "Configure build plugins"
-      ],
       targets: [
-        "Add pre-build script",
-        "Configure build plugins",
-        "Optimize build times"
-      ],
-      videos: [
-        {
-          title: "Advanced CI Techniques",
-          url: "https://youtube.com/watch?v=example13",
-          duration: "20:00"
-        }
-      ],
-      resources: []
+        "Add and manage Kubernetes clusters",
+        "Enable or disable environments",
+        "Control environment lifecycle operations"
+      ]
     },
+
     {
-      day: 13,
-      title: "Debugging & Troubleshooting",
-      description: "Master debugging techniques for production issues",
+      day: 12,
+      title: "Control Access with SSO and RBAC",
+      description:
+        "Secure platform access across teams using authentication and authorization",
       duration: "75 mins",
       difficulty: "Advanced",
-      objectives: [
-        "Use ephemeral containers for debugging",
-        "Analyze resource utilization",
-        "Troubleshoot common deployment issues"
-      ],
       targets: [
-        "Debug a failing deployment",
-        "Use terminal access",
-        "Resolve resource issues"
-      ],
-      videos: [
-        {
-          title: "Production Debugging",
-          url: "https://youtube.com/watch?v=example14",
-          duration: "26:00"
-        }
-      ],
-      resources: []
+        "Enable Single Sign-On",
+        "Configure RBAC for users and teams",
+        "Understand break-glass and kubectl access"
+      ]
     },
+
+    {
+      day: 13,
+      title: "Deploy Applications Using Helm and Chart Store",
+      description:
+        "Deploy and manage applications using Helm charts and reusable configurations",
+      duration: "60 mins",
+      difficulty: "Advanced",
+      targets: [
+        "Deploy applications via Helm charts",
+        "Explore the Devtron Chart Store",
+        "Use chart groups and preset values"
+      ]
+    },
+
     {
       day: 14,
-      title: "Best Practices & Optimization",
-      description: "Production-ready deployments and team workflows",
-      duration: "90 mins",
+      title: "Run Devtron Confidently in Production",
+      description:
+        "Complete the journey by operating Devtron effectively in real production setups",
+      duration: "60 mins",
       difficulty: "Advanced",
-      objectives: [
-        "Implement deployment best practices",
-        "Optimize resource utilization",
-        "Set up team collaboration workflows"
-      ],
       targets: [
-        "Review and optimize existing apps",
-        "Document team workflows",
-        "Complete certification checklist"
-      ],
-      videos: [
-        {
-          title: "Devtron Best Practices",
-          url: "https://youtube.com/watch?v=example15",
-          duration: "30:00"
-        }
-      ],
-      resources: []
+        "Configure notifications",
+        "Optimize resource usage",
+        "Review production readiness best practices"
+      ]
     }
   ]
 };
