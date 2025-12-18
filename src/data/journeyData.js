@@ -13,7 +13,7 @@ export const journeyData = {
       day: 0,
       title: "Install Devtron Freemium",
       description:
-        "One-time setup to unlock all Devtron Enterprise capabilities during the trial",
+        "Get all Enterprise features unlocked for one cluster",
       duration: "10–15 mins",
       difficulty: "Beginner",
       targets: [
