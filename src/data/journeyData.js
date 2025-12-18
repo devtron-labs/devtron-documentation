@@ -21,18 +21,18 @@ export const journeyData = {
         "Access Devtron UI successfully",
         "Verify cluster connectivity"
       ],
-      // videos: [
-      //   {
-      //     title: "Introduction to Devtron",
-      //     url: "https://youtube.com/watch?v=example1",
-      //     duration: "12:30"
-      //   },
-      //   {
-      //     title: "Dashboard Walkthrough",
-      //     url: "https://youtube.com/watch?v=example2",
-      //     duration: "18:45"
-      //   }
-      // ],
+      videos: [
+        {
+          title: "Introduction to Devtron",
+          url: "https://youtube.com/watch?v=example1",
+          duration: "12:30"
+        },
+        {
+          title: "Dashboard Walkthrough",
+          url: "https://youtube.com/watch?v=example2",
+          duration: "18:45"
+        }
+      ],
       resources: [
         {
           title: "Devtron Freemium Installation Guide",
