@@ -303,6 +303,7 @@
             "user-guide/resource-browser/resource-recommender",
             "user-guide/resource-browser/cluster-terminal",
             "user-guide/resource-browser/monitoring-graphs",
+            "user-guide/resource-browser/kubectl-local",
             "user-guide/operations/edit-gui-schema",
             "user-guide/operations/edit-lock-schema"
           ]
