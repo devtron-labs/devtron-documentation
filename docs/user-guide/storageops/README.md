@@ -2,7 +2,7 @@
 
 The **Backup & Restore** feature in Devtron helps you protect your Kubernetes workloads when things don’t go as planned.
 
-Whether you are dealing with an unexpected failure, testing a recovery process, or preparing for a cluster or environment change. **Backuo & Restore** feature make backups and restores **predictable, visible, and easy to manage**.
+Whether you are dealing with an unexpected failure, testing a recovery process, or preparing for a cluster or environment change. **Backup & Restore** feature make backups and restores **predictable, visible, and easy to manage**.
 
 With StorageOps, you can:
 
