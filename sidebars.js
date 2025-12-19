@@ -427,19 +427,22 @@ const sidebars = {
       ],
     },
 
-    // Backup & Restore
-    // {
-    //   type: 'category',
-    //   label: 'Backup & Restore',
-    //   collapsed: true,
-    //   link: {
-    //     type: 'doc',
-    //     id: 'user-guide/storageops/README',
-    //   },
-    //   items: [
-    //     'user-guide/storageops/backup-and-restore',
-    //   ],
-    // },
+    //Backup & Restore
+    {
+      type: 'category',
+      label: 'Backup & Restore',
+      collapsed: true,
+      link: {
+        type: 'doc',
+        id: 'user-guide/storageops/README',
+      },
+      items: [
+        'user-guide/storageops/overview',
+        'user-guide/storageops/backup',
+        'user-guide/storageops/restores',
+        'user-guide/storageops/backup-locations',
+      ],
+    },
 
     // AI Recommendations
     {

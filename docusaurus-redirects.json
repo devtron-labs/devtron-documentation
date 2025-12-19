@@ -32,6 +32,12 @@
           },
           {
             "from": [
+              "/user-guide/storageops/backup-and-restore"
+            ],
+            "to": "/docs/user-guide/storageops/backup"
+          },
+          {
+            "from": [
               "/setup/install/installation-configuration"
             ],
             "to": "/docs/setup/install/installation-configuration"
@@ -5244,6 +5250,13 @@
               "/devtron/v2.0/install/install-devtron"
             ],
             "to": "/docs/setup/install/install-devtron"
+          },
+          {
+            "from": [
+              "/devtron/v2.0/user-guide/storageops/backup-and-restore",
+              "/docs/devtron/v2.0/user-guide/storageops/backup-and-restore"
+            ],
+            "to": "/docs/user-guide/storageops/backup"
           },
           {
             "from": [
