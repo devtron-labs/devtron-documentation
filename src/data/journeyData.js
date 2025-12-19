@@ -94,6 +94,26 @@ export const journeyData = {
 
     {
       day: 3,
+      title: "Deploy Applications Using Helm and Chart Store",
+      description:
+        "Deploy and manage applications using Helm charts and reusable configurations",
+      duration: "60 mins",
+      difficulty: "Advanced",
+      targets: [
+        "Deploy applications via Helm charts",
+        "Explore the Devtron Chart Store",
+        "Use chart groups and preset values"
+      ],
+      resources: [
+        {
+          title: "Chart Store",
+          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/deploy-chart"
+        },
+      ]
+    },
+
+    {
+      day: 4,
       title: "Security Scanning and Policies",
       description: "Shift security left and enforce policies across apps, environments, and clusters",
       duration: "75 mins",
@@ -120,7 +140,7 @@ export const journeyData = {
     },
 
     {
-      day: 4,
+      day: 5,
       title: "Perform Bulk Operations and Orchestrate Releases",
       description:
         "Release multiple microservices together using synchronized deployment orchestration",
@@ -152,7 +172,7 @@ export const journeyData = {
     },
 
     {
-      day: 5,
+      day: 6,
       title: "Debug and Monitor Kubernetes Workloads Using Resource Browser",
       description:
         "Investigate failures and logs using visual Kubernetes insights",
@@ -176,7 +196,7 @@ export const journeyData = {
     },
 
     {
-      day: 6,
+      day: 7,
       title: "Manage Infra and Resources",
       description:
         "Safely scale CI/CD workloads and resources",
@@ -204,7 +224,7 @@ export const journeyData = {
     },
 
     {
-      day: 7,
+      day: 8,
       title: "Enforce Release Governance with Core Policies",
       description:
         "Introduce control and predictability into releases using policy enforcement",
@@ -232,7 +252,7 @@ export const journeyData = {
     },
 
     {
-      day: 8,
+      day: 9,
       title: "Control Image Integrity and Promotion",
       description:
         "Ensure only trusted images are promoted and deployed across environments",
@@ -260,7 +280,7 @@ export const journeyData = {
     },
 
     {
-      day: 9,
+      day: 10,
       title: "Extend and Restrict CI-CD Using Plugins and Advanced Policies",
       description:
         "Customize pipelines while retaining control using plugins and policy enforcement",
@@ -292,7 +312,7 @@ export const journeyData = {
     },
 
     {
-      day: 10,
+      day: 11,
       title: "Adopt GitOps with ArgoCD Integration",
       description:
         "Operate deployments using Git as the source of truth with Devtron and ArgoCD",
@@ -324,39 +344,31 @@ export const journeyData = {
     },
 
     {
-      day: 11,
+      day: 12,
       title: "Manage Clusters and Environment Lifecycle",
       description:
-        "Operate Devtron across multiple clusters and environments at scale",
+        "Operate Devtron across environments at scale",
       duration: "60 mins",
       difficulty: "Advanced",
       targets: [
-        "Add and manage Kubernetes clusters",
+        "Manage Kubernetes clusters",
         "Enable or disable environments",
         "Control environment lifecycle operations"
       ],
       resources: [
         {
-          title: "Add Existing Kubernetes Cluster",
-          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/cluster-and-environments#add-kubernetes-cluster"
-        },
-        {
-          title: "Create Kubernetes Cluster",
-          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/cluster-and-environments#create-kubernetes-cluster-"
-        },
-        {
           title: "Add Isolated Cluster",
           url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/cluster-and-environments#add-isolated-cluster-"
         },
         {
-          title: "Environments",
+          title: "Manage Environments",
           url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/global-configurations/cluster-and-environments#add-environment-to-a-cluster"
         },
       ]
     },
 
     {
-      day: 12,
+      day: 13,
       title: "Control Access with SSO and RBAC",
       description:
         "Secure platform access across teams using authentication and authorization",
@@ -379,26 +391,6 @@ export const journeyData = {
         {
           title: "Running Kubectl Locally to Access Clusters",
           url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/resource-browser/kubectl-local"
-        },
-      ]
-    },
-
-    {
-      day: 13,
-      title: "Deploy Applications Using Helm and Chart Store",
-      description:
-        "Deploy and manage applications using Helm charts and reusable configurations",
-      duration: "60 mins",
-      difficulty: "Advanced",
-      targets: [
-        "Deploy applications via Helm charts",
-        "Explore the Devtron Chart Store",
-        "Use chart groups and preset values"
-      ],
-      resources: [
-        {
-          title: "Chart Store",
-          url: "https://docs.devtron.ai/docs/devtron/v1.8/user-guide/deploy-chart"
         },
       ]
     },
