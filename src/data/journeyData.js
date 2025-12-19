@@ -147,9 +147,9 @@ export const journeyData = {
       duration: "75 mins",
       difficulty: "Intermediate",
       targets: [
-        "Create multiple microservices",
+        "Manage multiple microservices in bulk",
         "Group applications logically",
-        "Deploy applications together using SDH"
+        "Perform release management using SDH"
       ],
       resources: [
         {
