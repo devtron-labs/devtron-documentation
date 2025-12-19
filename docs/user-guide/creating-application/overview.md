@@ -176,7 +176,7 @@ You can apply this configuration using Devtron’s **Resource Browser**
 
 Once PVC is created and in the Bound state, the next step is to configure it within your application using tags from the **About** section.
 
-Devtron allows you to define special tags as key-value pairs. These tags act as instructions for Devtron to mount the specified PVC to the Pod where the CI pipeline runs, making the storage available during pipeline execution.
+Devtron allows you to define special tag as key-value pair. This tag act as instructions for Devtron to mount the specified PVC to the Pod where the CI pipeline runs, making the storage available during pipeline execution.
 
 You can choose to mount the PVC for all pipelines in the application or for a specific pipeline, depending on your use case. The configuration remains the same in both cases, the only difference lies in the tag key used to define the scope of the PVC.
 

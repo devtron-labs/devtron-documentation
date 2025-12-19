@@ -55,12 +55,54 @@ Tags are Key-value pairs used for identifying and organizing the application. Us
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/manage-tags.jpg)
     <center>Figure 3: Tags</center>
 
+### Configure nodeSelector For Job Workloads
+
+In some cases, you want your job workloads to run only on specific nodes, such as nodes with SSDs, high memory, or isolated workloads.
+
+Devtron allows you to configure a node selector using a special tag `devtron.ai/node-selector`. This tag acts as an instruction for Devtron to apply the nodeSelector to the Pods created for your job workloads.
+
+#### Apply nodeSelector for Job Workloads
+
+Before applying the `nodeSelector`, make sure you know the label assigned to the nodes where you want your CI builds to run as this label is used as the value for the `devtron.ai/node-selector` tag.
+
+Once you have identified the label, follow the steps below to apply the `nodeSelector`:
+
+1. Navigate to your **Automation & Enablement** → **Jobs**.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-nodeselector-jobs.jpg)
+<center>Figure 4: Navigating To Jobs</center>
+
+2. Select your preferred job, and navigate to **Overview** tab.
+
+3. Click the **Edit** icon next to the Tags section.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-nodeselector-edit-tag.jpg)
+<center>Figure 5: Editing Tags</center>
+
+4. Add the following key-value tag:
+
+| Key | Value|
+|:--- |:---  | 
+|`devtron.ai/node-selector` | `{"<label-key>": "<label-value>"}` |
+
+**Example**
+
+| Key | Value|
+|:--- |:---  | 
+|`devtron.ai/node-selector` | `{"purpose": "ci"}` |
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-nodeselector-tag-job.jpg)
+<center>Figure 6: Configuring nodeSelector Tag</center>
+
+4. Click **Save** to apply the configuration
+
+
 ### Readme
 
 The right side of the **About** section contains a **README** area where you can maintain job-specific notes or documentation. The `Readme` supports Markdown formatting, making it easy to include formatted text, instructions, or important context related to the application.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-job-readme.jpg)
-<center>Figure 4: Readme</center>
+<center>Figure 7: Readme</center>
 
 To add or update the **Readme**:
 1.	Click the **Edit** button in the Readme section.
@@ -70,7 +112,7 @@ To add or update the **Readme**:
 5.	Click **Save** to update the README.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-job-readme-edit.jpg)
-<center>Figure 5: Editing Readme</center>
+<center>Figure 8: Editing Readme</center>
 
 :::info 
 After saving, the system displays the email address of the user who last updated the README, along with the date and time. This information appears in the header of the Readme section, beside the title.
@@ -81,7 +123,7 @@ After saving, the system displays the email address of the user who last updated
 The **Catalog** in the **About** section displays information about your job, such as Container port, Environment Variables, Arguments, Resources(CPU and RAM). You can manage this data using the **Manage Schema** option, which defines the structure of your catalog. Refer the [Manage Schema](../global-configurations/catalog-framework.md#managing-a-schema) documentation to learn more.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-job-catalog.jpg)
-<center>Figure 6: Catalog</center>
+<center>Figure 9: Catalog</center>
 
 You can use the **Catalog** to maintain information about your job, such as Environment Variables, Resources(CPU and RAM), service documentation, etc. This makes it easier for others to understand, manage, and use your job.
 
@@ -94,7 +136,7 @@ When you click the **Edit** icon, a form appears based on the defined schema. As
 *   Resources(CPU and RAM)
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-job-catalog-expand.jpg)
-<center>Figure 7: Editing Catalog</center>
+<center>Figure 10: Editing Catalog</center>
 
 :::info 
 The structure and labels in the catalog form are entirely configurable by your platform team via JSON schema in **Catalog**. Field names and sections may vary depending on how the schema was defined by your organization.
@@ -103,7 +145,7 @@ The structure and labels in the catalog form are entirely configurable by your p
 Once saved, this information is displayed in a readable format within the Catalog subsection and is accessible to all users who have permission to view the job.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-job-catalog-saved.jpg)
-<center>Figure 8: Catalog Overview</center>
+<center>Figure 11: Catalog Overview</center>
 
 ---
 
@@ -119,4 +161,4 @@ The Job Pipelines section provides a detailed view of all job pipelines. For eac
 | Last Run At| Displays how long ago the job was last triggered.|
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-job-job-pipelines.jpg)
-<center>Figure 9: Job Pipelines</center>
+<center>Figure 12: Job Pipelines</center>
