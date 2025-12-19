@@ -7,8 +7,6 @@ hide_table_of_contents: true
 
 The **Backup & Restore** feature in Devtron helps you protect your Kubernetes workloads and data by allowing you to back up and restore your **clusters**, **namespaces**, or **specific resources** directly from the Devtron UI. 
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/3r0E-rXT8v4" title="" frameborder="0" allow="fullscreen"></iframe></div>
-
 You can 
 
  * Create on-demand or scheduled backups
