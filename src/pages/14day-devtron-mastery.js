@@ -7,6 +7,7 @@ import Layout from '@theme/Layout';
 import { journeyData } from '../data/journeyData';
 import '../css/learning-journey.css';
 
+const ALWAYS_COMPLETED_DAYS = new Set([0]);
 const STORAGE_KEY = 'devtron-journey-progress';
 
 /* Icons */
@@ -81,7 +82,7 @@ function DayCard({ day, isExpanded, isCompleted, onToggle, onComplete }) {
           </div>
         </div>
 
-        {isExpanded && !isCompleted && (
+        {isExpanded && !isCompleted && day.day !== 0 && (
           <button
             className="journey-complete-inline-btn"
             onClick={(e) => {
@@ -180,10 +181,13 @@ export default function LearningJourney() {
   useEffect(() => {
     setIsClient(true);
     const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      setCompletedDays(new Set(JSON.parse(saved)));
-    }
+  
+    const restored = saved ? new Set(JSON.parse(saved)) : new Set();
+    ALWAYS_COMPLETED_DAYS.forEach(d => restored.add(d));
+  
+    setCompletedDays(restored);
   }, []);
+  
 
   useEffect(() => {
     if (!isClient) return;
@@ -191,12 +195,16 @@ export default function LearningJourney() {
   }, [completedDays, isClient]);
 
   const resetProgress = () => {
-    const confirmed = window.confirm('This will reset your entire 14-day progress. Are you sure?');
+    const confirmed = window.confirm(
+      'This will reset your entire 14-day progress (except setup). Are you sure?'
+    );
     if (!confirmed) return;
-
-    setCompletedDays(new Set());
+  
+    const nextCompleted = new Set(ALWAYS_COMPLETED_DAYS);
+  
+    setCompletedDays(nextCompleted);
     setExpandedDays(new Set([1]));
-    localStorage.removeItem(STORAGE_KEY);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([...nextCompleted]));
   };
 
   const toggleDay = (dayNum) => {
@@ -223,7 +231,7 @@ export default function LearningJourney() {
   };
 
   const nextIncompleteDay = journeyData.days.find(
-    (d) => !completedDays.has(d.day)
+    (d) => d.day !== 0 && !completedDays.has(d.day)
   );
 
   const currentDay = nextIncompleteDay ? nextIncompleteDay.day : null;
@@ -247,7 +255,10 @@ export default function LearningJourney() {
                   <div key={day.day} className="journey-progress-item">
                     <button
                       className={`journey-checkbox ${isCompleted ? 'completed' : ''} ${isCurrent ? 'current' : ''}`}
-                      onClick={() => markDayComplete(day.day)}
+                      onClick={() => {
+                        if (day.day === 0) return;
+                        markDayComplete(day.day);
+                      }}
                     >
                       {isCompleted && <CheckIcon />}
                     </button>
