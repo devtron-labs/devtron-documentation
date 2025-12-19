@@ -173,9 +173,9 @@ export const journeyData = {
 
     {
       day: 6,
-      title: "Debug and Monitor Kubernetes Workloads Using Resource Browser",
+      title: "Debug and Monitor Kubernetes Workloads",
       description:
-        "Investigate failures and logs using visual Kubernetes insights",
+        "Investigate logs and resources using Resource Browser and monitor using Resource Watcher",
       duration: "75 mins",
       difficulty: "Intermediate",
       targets: [
@@ -199,7 +199,7 @@ export const journeyData = {
       day: 7,
       title: "Manage Infra and Resources",
       description:
-        "Safely scale CI/CD workloads and resources",
+        "Optimize and safely scale CI/CD workloads and resources",
       duration: "60 mins",
       difficulty: "Intermediate",
       targets: [

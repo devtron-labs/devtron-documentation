@@ -147,7 +147,7 @@ function DayCard({ day, isExpanded, isCompleted, onToggle, onComplete }) {
             <div className="journey-section">
               <h4 className="journey-section-title">
                 <BookIcon />
-                Additional Resources
+                Resources
               </h4>
               <div className="journey-resources">
                 {day.resources.map((resource, index) => (
