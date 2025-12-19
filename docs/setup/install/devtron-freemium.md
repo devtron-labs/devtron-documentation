@@ -33,7 +33,9 @@ You can choose any of the two methods to sign up: [SSO](devtron-freemium.md#meth
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-sso-v2.jpg)
     <center>Figure 1: Selecting SSO Provider</center>
+
 2. Once logged in, the **Devtron License Dashboard** will open.
+
 3. Under **Tell Us About You**, fill the required basic details, and click **Next** to proceed to [Step 2: Install Devtron](devtron-freemium.md#step-2-install-devtron).
 
 ### Method 2: Sign up using Work Email
@@ -44,10 +46,12 @@ Use this method if your email is not associated with any of the SSO options prov
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-email-v2.jpg)
     <center>Figure 2: Selecting 'Continue with Email'</center>
+
 2.  Enter your work email and select **Send Login Link**
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-license-dashboard-enter-email-v2.jpg)
     <center>Figure 3: Entering Email</center>
+
 3.  A login link will be sent to the email address provided by you. If you do not receive the link, you can resend it after 30 seconds.
 
     **Note:** Your login link will be valid only for 10 minutes.
@@ -76,6 +80,31 @@ Use this method if your email is not associated with any of the SSO options prov
 ---
 
 ## Step 2: Install Devtron
+
+For convenience, Devtron Freemium offers you three installation options:
+
+* [**Option 1**: Install on own K8s Cluster](#option-1-install-on-own-k8s-cluster)
+* [**Option 2**: Install via AWS Marketplace](#option-2-install-via-aws-marketplace)
+* [**Option 3**: Devtron Cloud (SaaS)](#option-3-devtron-cloud-saas)
+
+The below table will help you identify the right option for you.
+
+
+| If you want to…                           | Install on Own K8s Cluster | Via AWS Marketplace | Devtron Cloud (SaaS) |
+| ----------------------------------------- | -------------------------- | --------------- | -------------------- |
+| Get started in minutes with zero setup    | ❌                          | ❌               | ✅                    |
+| Use Devtron long term                     | ✅                          | ✅               | ❌                    |
+| Evaluate Devtron quickly                  | ❌                          | ❌               | ✅                    |
+| Run Devtron inside your own cloud account | ✅                          | ✅               | ❌                    |
+| Use Devtron for production workloads      | ✅                          | ✅               | ❌                    |
+| Pay nothing for Devtron                   | ✅                          | ✅               | ❌ (30-day trial)     |
+
+### Option 1: Install on own K8s Cluster
+
+Choose this option if you want Devtron installed in your Kubernetes cluster.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/option1.jpg)
+<center>Figure 7: Choosing 'Install on own K8s Cluster'</center>
 
 :::warning Note
 We recommend installing Devtron on a separate Kubernetes cluster, since the cluster may run critical system services. Therefore, it should be kept separate from application workloads. Also ensure your `kubeconfig` is properly configured.
@@ -122,6 +151,45 @@ kubectl -n devtroncd port-forward service/devtron-service 8000:80
 
 :::
 
+### Option 2: Install via AWS Marketplace
+
+Choose this option if you want Devtron preinstalled inside your AWS account with minimal setup effort. It will launch a preconfigured Devtron instance from AWS Marketplace.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/option2.jpg)
+<center>Figure 8: Choosing 'Install via AWS Marketplace'</center>
+
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/1rWIvXsd7zo" title="Enabling Devtron Intelligence (AI)" frameborder="0" allow="fullscreen"></iframe></div>
+
+:::caution 
+Since the instance runs inside your AWS account and infrastructure, you might incur infra costs.
+:::
+
+### Option 3: Devtron Cloud (SaaS)
+
+Choose this option if you want to try Devtron without setting up any Kubernetes cluster. You will directly get the credentials to log in to Devtron. This is a 30-day trial meant for fair usage and not production workloads.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/option3.jpg)
+<center>Figure 9: Choosing 'Devtron Cloud (SaaS)'</center>
+
+* Click **Launch Devtron**. 
+
+    Devtron will provision the SaaS instance within a couple of minutes. The Dashboard URL and credentials will be shown on screen.
+
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/url-and-creds.jpg)
+    <center>Figure 10: Enter Installation Fingerprint</center>
+
+* Click **Go to Devtron Dashboard** to open the Devtron login page. 
+
+    The username will be `admin`. Enter the password shown to you in the above step.
+
+:::caution 
+Instance will automatically hibernate after 72 hours of inactivity.
+:::
+
+:::tip 
+Step 3 (given below) will not be applicable for **Devtron Cloud (SaaS)** as you already get the license key and credentials here.
+:::
+
 ---
 
 ## Step 3: Get License Key
@@ -129,7 +197,7 @@ kubectl -n devtroncd port-forward service/devtron-service 8000:80
 You will now need to enter your Devtron **Installation Fingerprint** to generate a license key.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-step-3.jpg)
-<center>Figure 7: Enter Installation Fingerprint</center>
+<center>Figure 11: Enter Installation Fingerprint</center>
 
 ### Get Devtron installation's fingerprint
 
@@ -138,19 +206,21 @@ To get the **Installation Fingerprint**, follow the below steps:
 1.  Visit the Dashboard URL obtained in Step 2.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-fingerprint.jpg)
-    <center>Figure 8: License Activation Screen</center>
+    <center>Figure 12: License Activation Screen</center>
 2.  You will see an installation fingerprint that uniquely identifies your installation. Copy the fingerprint.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-copy-fingerprint.jpg)
-    <center>Figure 9: Copying Installation Fingerprint</center>
+    <center>Figure 13: Copying Installation Fingerprint</center>
+
 3.  Go back to the **License Dashboard** and paste the fingerprint you copied earlier and click **Get License Key**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-paste-fingerprint.jpg)
-    <center>Figure 10: Pasting Installation Fingerprint</center>
+    <center>Figure 14: Pasting Installation Fingerprint</center>
+
 4.  Your license will be generated. Copy the license key.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-key-generated-2.jpg)
-    <center>Figure 11: Copying Generated License Key</center>
+    <center>Figure 15: Copying Generated License Key</center>
 
 :::warning 
 **Note**
@@ -170,12 +240,12 @@ The license is bound to your Kubernetes cluster and cannot be transferred to ano
 5.  Go back to your **Devtron Dashboard URL** page. Paste your license key under the **License Key** field, and click **Activate**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-paste-license-key.jpg)
-    <center>Figure 12: Pasting License Key and Activating</center>
+    <center>Figure 16: Pasting License Key and Activating</center>
 
 6.  Devtron Freemium will be activated, and you can log in to **Devtron Dashboard**.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-login.jpg)
-    <center>Figure 13: Log in as Administrator</center>
+    <center>Figure 17: Log in as Administrator</center>
 
 :::info 
 **Facing Issues?**
@@ -190,7 +260,7 @@ Visit the [Troubleshoot](devtron-freemium.md#troubleshoot-issues) section to ide
 1.  After successful license activation, you will see the Devtron login page.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/enterprise-license-login-admin.jpg)
-    <center>Figure 14: Devtron Login Page</center>
+    <center>Figure 18: Devtron Login Page</center>
 2.  Initially, log in with the administrator credentials. By default, the username is **admin**. Run the following command to get the admin password:
 
     ```bash
@@ -205,7 +275,7 @@ After the initial login, we recommend you set up an [Single Sign-On (SSO) servic
 3.  After a successful login, the **Devtron Dashboard** will open, and you can explore all the enterprise features supported by Devtron Freemium.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-enterprise-license-dashboard.jpg)
-    <center>Figure 15: Devtron Dashboard</center>
+    <center>Figure 19: Devtron Dashboard</center>
 
 ---
 
@@ -220,21 +290,21 @@ In Devtron, click the **Help** menu (top-right corner) → **About Devtron** to 
 * Enterprise version
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/ent-trial/license-check.gif)
-<center>Figure 16: 'About Devtron' Help Menu</center>
+<center>Figure 20: 'About Devtron' Help Menu</center>
 
 ### Update License
 
 If you have a new license key, you can update the license key directly within Devtron, from the **About Devtron** page.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-update-license.jpg)
-<center>Figure 17: Updating License</center>
+<center>Figure 21: Updating License</center>
 
 ### Upgrade License
 
 If you want to add more than one cluster, email us at enterprise@devtron.ai or reach out to your Devtron representative to upgrade your license.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/freemium-upgrade.jpg)
-<center>Figure 18: Upgrade License</center>
+<center>Figure 22: Upgrade License</center>
 
 ---
 
