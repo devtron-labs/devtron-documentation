@@ -345,13 +345,13 @@ export const journeyData = {
 
     {
       day: 12,
-      title: "Manage Clusters and Environment Lifecycle",
+      title: "Manage Cluster and Environment Lifecycle",
       description:
         "Operate Devtron across environments at scale",
       duration: "60 mins",
       difficulty: "Advanced",
       targets: [
-        "Manage Kubernetes clusters",
+        "Manage Kubernetes cluster",
         "Enable or disable environments",
         "Control environment lifecycle operations"
       ],
