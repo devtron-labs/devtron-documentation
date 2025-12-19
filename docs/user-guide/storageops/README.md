@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Backup & Restore
 
 The **Backup & Restore** feature in Devtron helps you protect your Kubernetes workloads when things don’t go as planned.
