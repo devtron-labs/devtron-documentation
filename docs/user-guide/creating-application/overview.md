@@ -215,53 +215,6 @@ Follow the steps below to apply the PVC to all or specific pipelines
 
 After saving, Devtron will automatically mount the PVC into your CI pipeline Pod, allowing it to use the configured persistent storage for caching purposes. No further manual configuration is required.
 
-### Configure nodeSelector For CI Builds
-
-In some cases, you want your CI builds to run only on specific nodes, such as nodes with SSDs, high memory, or isolated workloads.
-
-Devtron allows you to configure a node selector using a special tag `devtron.ai/node-selector`. This tag acts as an instruction for Devtron to apply the nodeSelector to the Pods created for your CI pipeline builds.
-
-:::note CI pipelines vs application workloads
-The `devtron.ai/node-selector` tag applies only to Pods created for CI pipeline builds and Devtron Jobs. It does not affect application workload Pods running in the cluster.
-
-If you want to control which nodes your application workloads run on, configure the `nodeSelector` in the deployment template under **Application Configuration**.
-:::
-
-#### Apply nodeSelector for CI Builds
-
-Before applying the `nodeSelector`, make sure you know the label assigned to the nodes where you want your CI builds to run as this label is used as the value for the `devtron.ai/node-selector` tag.
-
-Once you have identified the label, follow the steps below to apply the `nodeSelector`:
-
-1. Navigate to your **Application Management** → **Devtron Applications**.
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/nodeselector-devtron-apps.jpg)
-<center>Figure 13: Navigating to Devtron Applications</center>
-
-2. Select your preferred application, and navigate to **Overview** tab.
-
-3. Click the **Edit** icon next to the Tags section.
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/nodeselector-edit-tags.jpg)
-<center>Figure 14: Editing Tags</center>
-
-4. Add the following key-value tag:
-
-| Key | Value|
-|:--- |:---  | 
-|`devtron.ai/node-selector` | `{"<label-key>": "<label-value>"}` |
-
-**Example**
-
-| Key | Value|
-|:--- |:---  | 
-|`devtron.ai/node-selector` | `{"purpose": "ci"}` |
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/nodeselector-tag.jpg)
-<center>Figure 15: Configuring `nodeSelector` Tag</center>
-
-4. Click **Save** to apply the configuration
-
 ---
 
 ## Environments

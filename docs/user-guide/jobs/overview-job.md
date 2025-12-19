@@ -72,7 +72,7 @@ Once you have identified the label, follow the steps below to apply the `nodeSel
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/automation-and-enablement/jobs/overview-nodeselector-jobs.jpg)
 <center>Figure 4: Navigating To Jobs</center>
 
-2. Select your preferred application, and navigate to **Overview** tab.
+2. Select your preferred job, and navigate to **Overview** tab.
 
 3. Click the **Edit** icon next to the Tags section.
 
