@@ -153,7 +153,7 @@ kubectl -n devtroncd port-forward service/devtron-service 8000:80
 
 ### Option 2: Install via AWS Marketplace
 
-Choose this option if you want Devtron preinstalled inside your AWS account with minimal setup effort. It will launch a preconfigured Devtron instance from AWS Marketplace.
+Choose this option if you want a Devtron instance inside your AWS account with minimal setup effort. It will launch a preconfigured Devtron instance from AWS Marketplace.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/option2.jpg)
 <center>Figure 8: Choosing 'Install via AWS Marketplace'</center>
