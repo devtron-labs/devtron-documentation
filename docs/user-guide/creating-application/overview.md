@@ -176,7 +176,7 @@ You can apply this configuration using Devtron’s **Resource Browser**
 
 Once PVC is created and in the Bound state, the next step is to configure it within your application using tags from the **About** section.
 
-Devtron allows you to define special tags as key-value pairs. These tags act as instructions for Devtron to mount the specified PVC to the Pod where the CI pipeline runs, making the storage available during pipeline execution.
+Devtron allows you to define special tag as key-value pair. This tag act as instructions for Devtron to mount the specified PVC to the Pod where the CI pipeline runs, making the storage available during pipeline execution.
 
 You can choose to mount the PVC for all pipelines in the application or for a specific pipeline, depending on your use case. The configuration remains the same in both cases, the only difference lies in the tag key used to define the scope of the PVC.
 
@@ -215,6 +215,53 @@ Follow the steps below to apply the PVC to all or specific pipelines
 
 After saving, Devtron will automatically mount the PVC into your CI pipeline Pod, allowing it to use the configured persistent storage for caching purposes. No further manual configuration is required.
 
+### Configure nodeSelector For CI Builds
+
+In some cases, you want your CI builds to run only on specific nodes, such as nodes with SSDs, high memory, or isolated workloads.
+
+Devtron allows you to configure a node selector using a special tag `devtron.ai/node-selector`. This tag acts as an instruction for Devtron to apply the nodeSelector to the Pods created for your CI pipeline builds.
+
+:::note CI pipelines vs application workloads
+The `devtron.ai/node-selector` tag applies only to Pods created for CI pipeline builds and Devtron Jobs. It does not affect application workload Pods running in the cluster.
+
+If you want to control which nodes your application workloads run on, configure the `nodeSelector` in the deployment template under **Application Configuration**.
+:::
+
+#### Apply nodeSelector for CI Builds
+
+Before applying the `nodeSelector`, make sure you know the label assigned to the nodes where you want your CI builds to run as this label is used as the value for the `devtron.ai/node-selector` tag.
+
+Once you have identified the label, follow the steps below to apply the `nodeSelector`:
+
+1. Navigate to your **Application Management** → **Devtron Applications**.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/nodeselector-devtron-apps.jpg)
+<center>Figure 13: Navigating to Devtron Applications</center>
+
+2. Select your preferred application, and navigate to **Overview** tab.
+
+3. Click the **Edit** icon next to the Tags section.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/nodeselector-edit-tags.jpg)
+<center>Figure 14: Editing Tags</center>
+
+4. Add the following key-value tag:
+
+| Key | Value|
+|:--- |:---  | 
+|`devtron.ai/node-selector` | `{"<label-key>": "<label-value>"}` |
+
+**Example**
+
+| Key | Value|
+|:--- |:---  | 
+|`devtron.ai/node-selector` | `{"purpose": "ci"}` |
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/nodeselector-tag.jpg)
+<center>Figure 15: Configuring `nodeSelector` Tag</center>
+
+4. Click **Save** to apply the configuration
+
 ---
 
 ## Environments
@@ -230,7 +277,7 @@ The Environments section provides a detailed view of all environments where the 
 | **Deployed At**|Indicates who deployed the application and when, it is shown as the email ID of the user along with a relative timestamp (e.g.,9 days ago).|
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/environments.jpg)
-<center>Figure 13: Environments List</center>
+<center>Figure 16: Environments List</center>
 
 ---
 
@@ -249,28 +296,28 @@ To add upstream dependencies:
 1. Click the **Add Dependency** button in the **Dependencies** section. If dependencies already exist, click the **Edit Dependency** button on the right instead.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/add-dependencies.jpg)
-<center>Figure 14: Dependencies Section</center>
+<center>Figure 17: Dependencies Section</center>
 
 2. In the right-side panel, under Upstream Dependency, click **+ Add Dependency**.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/add-dependencies-part-2.jpg)
-<center>Figure 15: Adding Dependency</center>
+<center>Figure 18: Adding Dependency</center>
 
 3. Use the search bar to find and select one or more applications that your app depends on.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/add-dependencies-part-3.jpg)
-<center>Figure 16: Selecting dependency</center>
+<center>Figure 19: Selecting dependency</center>
 
 4. Click **Map Environments** to associate each selected application with a specific environment.
   * This helps Devtron understand where your dependencies are running. By mapping environments, you can view the correct deployment details (like image, commit, and status) for each dependency.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/add-dependencies-part-4.jpg)
-<center>Figure 17: Mapping Environments</center>
+<center>Figure 20: Mapping Environments</center>
 
 5. Once you’ve mapped the environments, click **Save** to confirm and apply the upstream dependencies.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/add-dependencies-part-5.jpg)
-<center>Figure 18: Selecting environments for each dependency</center>
+<center>Figure 21: Selecting environments for each dependency</center>
 
 6. After saving:
   *	The selected applications will appear under **Dependent Applications** above your current application as Upstream Dependencies.
@@ -279,7 +326,7 @@ To add upstream dependencies:
   * Any applications that have added your app as an upstream will automatically be listed below your app as Downstream Dependencies.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/add-dependencies-part-6.jpg)
-<center>Figure 19: Dependencies List</center>
+<center>Figure 22: Dependencies List</center>
 
 ### Downstream Dependencies
 
