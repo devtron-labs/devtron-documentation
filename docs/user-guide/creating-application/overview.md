@@ -230,7 +230,7 @@ The Environments section provides a detailed view of all environments where the 
 | **Deployed At**|Indicates who deployed the application and when, it is shown as the email ID of the user along with a relative timestamp (e.g.,9 days ago).|
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/environments.jpg)
-<center>Figure 16: Environments List</center>
+<center>Figure 13: Environments List</center>
 
 ---
 
@@ -249,28 +249,28 @@ To add upstream dependencies:
 1. Click the **Add Dependency** button in the **Dependencies** section. If dependencies already exist, click the **Edit Dependency** button on the right instead.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/add-dependencies.jpg)
-<center>Figure 17: Dependencies Section</center>
+<center>Figure 14: Dependencies Section</center>
 
 2. In the right-side panel, under Upstream Dependency, click **+ Add Dependency**.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/add-dependencies-part-2.jpg)
-<center>Figure 18: Adding Dependency</center>
+<center>Figure 15: Adding Dependency</center>
 
 3. Use the search bar to find and select one or more applications that your app depends on.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/add-dependencies-part-3.jpg)
-<center>Figure 19: Selecting dependency</center>
+<center>Figure 16: Selecting dependency</center>
 
 4. Click **Map Environments** to associate each selected application with a specific environment.
   * This helps Devtron understand where your dependencies are running. By mapping environments, you can view the correct deployment details (like image, commit, and status) for each dependency.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/add-dependencies-part-4.jpg)
-<center>Figure 20: Mapping Environments</center>
+<center>Figure 17: Mapping Environments</center>
 
 5. Once you’ve mapped the environments, click **Save** to confirm and apply the upstream dependencies.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/add-dependencies-part-5.jpg)
-<center>Figure 21: Selecting environments for each dependency</center>
+<center>Figure 18: Selecting environments for each dependency</center>
 
 6. After saving:
   *	The selected applications will appear under **Dependent Applications** above your current application as Upstream Dependencies.
@@ -279,7 +279,7 @@ To add upstream dependencies:
   * Any applications that have added your app as an upstream will automatically be listed below your app as Downstream Dependencies.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/overview/add-dependencies-part-6.jpg)
-<center>Figure 22: Dependencies List</center>
+<center>Figure 19: Dependencies List</center>
 
 ### Downstream Dependencies
 
