@@ -25,7 +25,7 @@ kubectl -n devtroncd get secret devtron-secret \
 
 ## Using Devtron Cloud (SaaS)?
 
-If you are using the 30-day trial version of [Devtron Cloud (SaaS)](../install/devtron-freemium.md), follow the steps below to get the credentials.
+If you are using the 30-day trial version of [Devtron Cloud (SaaS)](../install/devtron-freemium.md#option-3-devtron-cloud-saas), follow the steps below to get the credentials.
 
 1. Go to [Devtron's License Dashboard](https://license.devtron.ai/dashboard/) and sign in using SSO or registered email address used at the time of installation.
 
