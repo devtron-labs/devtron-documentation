@@ -158,7 +158,7 @@ Choose this option if you want a Devtron instance inside your AWS account with m
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/install-devtron/freemium/option2.jpg)
 <center>Figure 8: Choosing 'Install via AWS Marketplace'</center>
 
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/1rWIvXsd7zo" title="Enabling Devtron Intelligence (AI)" frameborder="0" allow="fullscreen"></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/BtXUjoV7STc" title="Enabling Devtron Intelligence (AI)" frameborder="0" allow="fullscreen"></iframe></div>
 
 :::caution 
 Since the instance runs inside your AWS account and infrastructure, you might incur infra costs.
