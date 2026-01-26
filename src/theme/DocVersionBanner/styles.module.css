@@ -1,0 +1,81 @@
+.banner {
+  background: linear-gradient(180deg, #fff6e6 0%, #fff3d9 100%);
+  border: 1px solid #f0d9a8;
+  padding: 16px 18px;
+  border-radius: 10px;
+  margin: 12px 0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+  font-size: 15px;
+  overflow: hidden;
+}
+
+/* avoid moving text with margin, use padding so text spacing is stable */
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-left: 8px; /* small offset if you need space from left edge */
+}
+
+.text {
+  color: #5b4218;
+  line-height: 1.5;
+  font-size: 15px;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: break-word; /* milder than 'anywhere' */
+  word-break: normal;        /* avoid breaking inside punctuation */
+  padding-right: 8px;
+  margin: 2px 0;
+}
+
+.actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  margin: 2px 0;
+}
+
+.cta {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #e6c88a;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
+/* ensure the banner content is inline, vertically centered, and has no p margins */
+.doc-version-banner__content {
+  display: flex;
+  gap: 0.5rem;        /* small space between the two label pieces */
+  align-items: center; 
+  flex-wrap: wrap;    /* allows the sentence to wrap gracefully on small screens */
+  margin: 0;           /* remove any default margins */
+  line-height: 1.4;    /* optional, keeps vertical rhythm tidy */
+}
+
+/* In case Translate or children render <p>, force them to behave inline */
+.doc-version-banner__content p {
+  margin: 0;
+  display: inline;
+}
+
+/* if Docusaurus uses a left decorative bar that overflows, make sure padding lines up */
+.theme-docs .docs-version-banner,
+.docs .docs-version-banner,
+.alert.docs-version-banner {
+  /* adjust padding if you still see misalignment */
+  padding-left: 1rem;
+}
+
+/* optional: make the whole banner text smaller on narrow screens */
+@media (max-width: 520px) {
+  .doc-version-banner__content {
+    font-size: 0.95rem;
+  }
+}

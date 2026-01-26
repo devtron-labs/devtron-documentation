@@ -238,10 +238,22 @@ spec:
 
 Add the operation to be performed on the selected Deployment Templates, ConfigMaps, and Secrets.
 
+:::caution Supported operations vary by config type
+The supported operations depend on the type of config being edited.
+
+| Config Type            | Supported Actions |
+|------------------------|---------------------------|
+| Deployment Templates   | `update` only             |
+| ConfigMaps             | `create`, `update`, `delete` |
+| Secrets                | `create`, `update`, `delete` |
+:::
+
 
 ### On Deployment Templates 
 
-Supports only using `action: update`, `field: values` or `field: version`, and corresponding `patchJson` or `chartVersion`.
+:::info
+Deployment Templates support only `action: update`, along with `field: values` or `field: version`, and the corresponding `patchJson` or `chartVersion`.
+:::
 
 #### Example 1 - Configure memory to `250Mi`
 

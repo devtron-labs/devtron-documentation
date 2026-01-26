@@ -29,6 +29,8 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 } */
 
+@import "./learning-journey.css";
+
 :root {
   --ifm-color-primary: #0d1a66;        /* Very dark navy blue */
   --ifm-color-primary-dark: #0B1659;
@@ -939,3 +941,10 @@ html[data-theme='dark'] .theme-doc-markdown table tbody td {
 html[data-theme='dark'] [class*="searchBar_"] [class*="dropdownMenu_"] [class*="suggestion_"][class*="cursor_"] {
   background-color: #626060 !important;
 }
+
+/* learning-journey.css */
+
+.journey-day-card {
+  scroll-margin-top: 3rem; /* adjust to your header height */
+}
+

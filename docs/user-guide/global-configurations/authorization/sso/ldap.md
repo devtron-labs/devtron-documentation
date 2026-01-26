@@ -7,13 +7,27 @@
 
 ---
 
+
+
 ## Values to fetch from LDAP
 
 Devtron provides a sample configuration out of the box. Here are some values you need to fetch from your LDAP.
 
-* bindDN
-* bindPW
-* baseDN
+| Field                                | Explanation | Example                                       |
+| ------------------------------------ | ----------- | --------------------------------------------- |
+| `host`                               | LDAP server hostname with port                                                                                 | `ad.example.com:636`                          |                                      |
+| `bindDN`                             | DN of the LDAP service account used by Devtron to query users and groups. This is not the user logging in. | `cn=Administrator,cn=users,dc=example,dc=com` |
+| `bindPW`                             | Password of the bindDN account                                                                                 | `admin0!`                                     |
+| `userSearch.baseDN`                  | Directory path under which Devtron searches for LDAP users                                                     | `cn=Users,dc=example,dc=com`                  |
+| `userSearch.username`                | LDAP attribute used as the login username                                                                      | `userPrincipalName`                           |
+
+:::tip Common error: "Some required field are missing"
+
+If you see this error while saving the LDAP configuration, ensure that you have set the **URL** field above the configuration editor.
+
+Click the **Click to use** link shown below the URL field to auto-populate the correct Devtron URL, or manually enter it before saving.
+:::
+
 
 ---
 

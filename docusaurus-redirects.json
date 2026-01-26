@@ -25,9 +25,16 @@
           },
           {
             "from": [
+              "/install/install-devtron-with-cicd",
               "/setup/install/install-devtron-with-cicd"
             ],
             "to": "/docs/setup/install/devtron-oss"
+          },
+          {
+            "from": [
+              "/user-guide/storageops/backup-and-restore"
+            ],
+            "to": "/docs/user-guide/storageops/backup"
           },
           {
             "from": [
@@ -600,7 +607,8 @@
           {
             "from": [
               "/install/devtron-freemium",
-              "/resources/reference/freemium"
+              "/resources/reference/freemium",
+              "/enterprise-license"
             ],
             "to": "/docs/setup/install/devtron-freemium"
           },
@@ -1632,25 +1640,29 @@
           },
           {
             "from": [
-              "/resources/reference/configurations-overview"
+              "/resources/reference/configurations-overview",
+              "/configurations-overview"
             ],
             "to": "/docs/setup/configurations/configurations-overview"
           },
           {
             "from": [
-              "/resources/reference/configurations-overview/installation-configuration"
+              "/resources/reference/configurations-overview/installation-configuration",
+              "/configurations-overview/installation-configuration"
             ],
             "to": "/docs/setup/install/installation-configuration"
           },
           {
             "from": [
-              "/resources/reference/configurations-overview/override-default-devtron-installation-configs"
+              "/resources/reference/configurations-overview/override-default-devtron-installation-configs",
+              "/configurations-overview/override-default-devtron-installation-configs"
             ],
             "to": "/docs/setup/install/override-default-devtron-installation-configs"
           },
           {
             "from": [
-              "/resources/reference/configurations-overview/ingress-setup"
+              "/resources/reference/configurations-overview/ingress-setup",
+              "/configurations-overview/ingress-setup"
             ],
             "to": "/docs/setup/install/ingress-setup"
           },
@@ -1752,7 +1764,8 @@
           },
           {
             "from": [
-              "/devtron/v1.7/setup/install/install-devtron-with-cicd"
+              "/devtron/v1.7/setup/install/install-devtron-with-cicd",
+              "/devtron/v1.7/install/install-devtron-with-cicd"
             ],
             "to": "/docs/devtron/v1.7/setup/install/devtron-oss"
           },
@@ -2327,7 +2340,8 @@
           },
           {
             "from": [
-              "/devtron/v1.7/install/devtron-freemium"
+              "/devtron/v1.7/install/devtron-freemium",
+              "/devtron/v1.7/enterprise-license"
             ],
             "to": "/docs/devtron/v1.7/setup/install/devtron-freemium"
           },
@@ -3359,25 +3373,29 @@
           },
           {
             "from": [
-              "/devtron/v1.7/resources/reference/configurations-overview"
+              "/devtron/v1.7/resources/reference/configurations-overview",
+              "/devtron/v1.7/configurations-overview"
             ],
             "to": "/docs/devtron/v1.7/setup/configurations/configurations-overview"
           },
           {
             "from": [
-              "/devtron/v1.7/resources/reference/configurations-overview/installation-configuration"
+              "/devtron/v1.7/resources/reference/configurations-overview/installation-configuration",
+              "/devtron/v1.7/configurations-overview/installation-configuration"
             ],
             "to": "/docs/devtron/v1.7/setup/install/installation-configuration"
           },
           {
             "from": [
-              "/devtron/v1.7/resources/reference/configurations-overview/override-default-devtron-installation-configs"
+              "/devtron/v1.7/resources/reference/configurations-overview/override-default-devtron-installation-configs",
+              "/devtron/v1.7/configurations-overview/override-default-devtron-installation-configs"
             ],
             "to": "/docs/devtron/v1.7/setup/install/override-default-devtron-installation-configs"
           },
           {
             "from": [
-              "/devtron/v1.7/resources/reference/configurations-overview/ingress-setup"
+              "/devtron/v1.7/resources/reference/configurations-overview/ingress-setup",
+              "/devtron/v1.7/configurations-overview/ingress-setup"
             ],
             "to": "/docs/devtron/v1.7/setup/install/ingress-setup"
           },
@@ -3479,7 +3497,8 @@
           },
           {
             "from": [
-              "/devtron/v1.8/setup/install/install-devtron-with-cicd"
+              "/devtron/v1.8/setup/install/install-devtron-with-cicd",
+              "/devtron/v1.8/install/install-devtron-with-cicd"
             ],
             "to": "/docs/devtron/v1.8/setup/install/devtron-oss"
           },
@@ -4058,7 +4077,8 @@
           },
           {
             "from": [
-              "/devtron/v1.8/install/devtron-freemium"
+              "/devtron/v1.8/install/devtron-freemium",
+              "/devtron/v1.8/enterprise-license"
             ],
             "to": "/docs/devtron/v1.8/setup/install/devtron-freemium"
           },
@@ -5095,25 +5115,29 @@
           {
             "from": [
               "/devtron/v1.8/resources/reference/configurations-overview",
+              "/devtron/v1.8/configurations-overview",
               "/devtron/v0.6/configurations-overview"
             ],
             "to": "/docs/devtron/v1.8/setup/configurations/configurations-overview"
           },
           {
             "from": [
-              "/devtron/v1.8/resources/reference/configurations-overview/installation-configuration"
+              "/devtron/v1.8/resources/reference/configurations-overview/installation-configuration",
+              "/devtron/v1.8/configurations-overview/installation-configuration"
             ],
             "to": "/docs/devtron/v1.8/setup/install/installation-configuration"
           },
           {
             "from": [
-              "/devtron/v1.8/resources/reference/configurations-overview/override-default-devtron-installation-configs"
+              "/devtron/v1.8/resources/reference/configurations-overview/override-default-devtron-installation-configs",
+              "/devtron/v1.8/configurations-overview/override-default-devtron-installation-configs"
             ],
             "to": "/docs/devtron/v1.8/setup/install/override-default-devtron-installation-configs"
           },
           {
             "from": [
-              "/devtron/v1.8/resources/reference/configurations-overview/ingress-setup"
+              "/devtron/v1.8/resources/reference/configurations-overview/ingress-setup",
+              "/devtron/v1.8/configurations-overview/ingress-setup"
             ],
             "to": "/docs/devtron/v1.8/setup/install/ingress-setup"
           },
@@ -5215,15 +5239,24 @@
           },
           {
             "from": [
-              "/devtron/v2.0/setup/install/install-devtron-with-cicd"
+              "/devtron/v2.0/setup/install/install-devtron-with-cicd",
+              "/devtron/v2.0/install/install-devtron-with-cicd"
             ],
             "to": "/docs/setup/install/devtron-oss"
           },
           {
             "from": [
-              "/devtron/v2.0/setup/install/install-devtron"
+              "/devtron/v2.0/setup/install/install-devtron",
+              "/devtron/v2.0/install/install-devtron"
             ],
             "to": "/docs/setup/install/install-devtron"
+          },
+          {
+            "from": [
+              "/devtron/v2.0/user-guide/storageops/backup-and-restore",
+              "/docs/devtron/v2.0/user-guide/storageops/backup-and-restore"
+            ],
+            "to": "/docs/user-guide/storageops/backup"
           },
           {
             "from": [
@@ -5790,7 +5823,8 @@
           },
           {
             "from": [
-              "/devtron/v2.0/install/devtron-freemium"
+              "/devtron/v2.0/install/devtron-freemium",
+              "/devtron/v2.0/enterprise-license"
             ],
             "to": "/docs/setup/install/devtron-freemium"
           },
@@ -6822,25 +6856,29 @@
           },
           {
             "from": [
-              "/devtron/v2.0/resources/reference/configurations-overview"
+              "/devtron/v2.0/resources/reference/configurations-overview",
+              "/devtron/v2.0/configurations-overview"
             ],
             "to": "/docs/setup/configurations/configurations-overview"
           },
           {
             "from": [
-              "/devtron/v2.0/resources/reference/configurations-overview/installation-configuration"
+              "/devtron/v2.0/resources/reference/configurations-overview/installation-configuration",
+              "/devtron/v2.0/configurations-overview/installation-configuration"
             ],
             "to": "/docs/setup/install/installation-configuration"
           },
           {
             "from": [
-              "/devtron/v2.0/resources/reference/configurations-overview/override-default-devtron-installation-configs"
+              "/devtron/v2.0/resources/reference/configurations-overview/override-default-devtron-installation-configs",
+              "/devtron/v2.0/configurations-overview/override-default-devtron-installation-configs"
             ],
             "to": "/docs/setup/install/override-default-devtron-installation-configs"
           },
           {
             "from": [
-              "/devtron/v2.0/resources/reference/configurations-overview/ingress-setup"
+              "/devtron/v2.0/resources/reference/configurations-overview/ingress-setup",
+              "/devtron/v2.0/configurations-overview/ingress-setup"
             ],
             "to": "/docs/setup/install/ingress-setup"
           },
@@ -6942,13 +6980,15 @@
           },
           {
             "from": [
-              "/docs/devtron/v2.0/setup/install/install-devtron-with-cicd"
+              "/docs/devtron/v2.0/setup/install/install-devtron-with-cicd",
+              "/docs/devtron/v2.0/install/install-devtron-with-cicd"
             ],
             "to": "/docs/setup/install/install-devtron"
           },
           {
             "from": [
-              "/docs/devtron/v2.0/setup/install/install-devtron"
+              "/docs/devtron/v2.0/setup/install/install-devtron",
+              "/docs/devtron/v2.0/install/install-devtron"
             ],
             "to": "/docs/setup/install/install-devtron"
           },
@@ -8548,25 +8588,29 @@
           },
           {
             "from": [
-              "/docs/devtron/v2.0/resources/reference/configurations-overview"
+              "/docs/devtron/v2.0/resources/reference/configurations-overview",
+              "/docs/devtron/v2.0/configurations-overview"
             ],
             "to": "/docs/setup/configurations/configurations-overview"
           },
           {
             "from": [
-              "/docs/devtron/v2.0/resources/reference/configurations-overview/installation-configuration"
+              "/docs/devtron/v2.0/resources/reference/configurations-overview/installation-configuration",
+              "/docs/devtron/v2.0/configurations-overview/installation-configuration"
             ],
             "to": "/docs/setup/install/installation-configuration"
           },
           {
             "from": [
-              "/docs/devtron/v2.0/resources/reference/configurations-overview/override-default-devtron-installation-configs"
+              "/docs/devtron/v2.0/resources/reference/configurations-overview/override-default-devtron-installation-configs",
+              "/docs/devtron/v2.0/configurations-overview/override-default-devtron-installation-configs"
             ],
             "to": "/docs/setup/install/override-default-devtron-installation-configs"
           },
           {
             "from": [
-              "/docs/devtron/v2.0/resources/reference/configurations-overview/ingress-setup"
+              "/docs/devtron/v2.0/resources/reference/configurations-overview/ingress-setup",
+              "/docs/devtron/v2.0/configurations-overview/ingress-setup"
             ],
             "to": "/docs/setup/install/ingress-setup"
           },

@@ -7,6 +7,9 @@ The **Clusters and Environments** section helps you connect Kubernetes clusters 
 
 This section provides a clear guide for onboarding clusters, structuring environments, and keeping them all organized.
 
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/clusterenv/cluster-environment-nav.jpg)
+<center>Figure 1: Navigating to Clusters & Environments</center>
+
 ---
 
 ## Table of Contents

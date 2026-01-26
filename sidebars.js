@@ -306,6 +306,7 @@ const sidebars = {
             'user-guide/resource-browser/compare-and-sync',
             'user-guide/resource-browser/nodes',
             'user-guide/resource-browser/pods',
+            'user-guide/resource-browser/scoop-config',
             'user-guide/resource-browser/resource-recommender',
             'user-guide/resource-browser/cluster-terminal',
             'user-guide/resource-browser/monitoring-graphs',
@@ -426,19 +427,22 @@ const sidebars = {
       ],
     },
 
-    // Backup & Restore
-    // {
-    //   type: 'category',
-    //   label: 'Backup & Restore',
-    //   collapsed: true,
-    //   link: {
-    //     type: 'doc',
-    //     id: 'user-guide/storageops/README',
-    //   },
-    //   items: [
-    //     'user-guide/storageops/backup-and-restore',
-    //   ],
-    // },
+    //Backup & Restore
+    {
+      type: 'category',
+      label: 'Backup & Restore',
+      collapsed: true,
+      link: {
+        type: 'doc',
+        id: 'user-guide/storageops/README',
+      },
+      items: [
+        'user-guide/storageops/overview',
+        'user-guide/storageops/backup',
+        'user-guide/storageops/restores',
+        'user-guide/storageops/backup-locations',
+      ],
+    },
 
     // AI Recommendations
     {
