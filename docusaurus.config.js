@@ -231,6 +231,7 @@ const config = {
                   <a href="https://devtron.ai/terms-of-use" target="_blank" style="margin: 0 12px;">Terms</a>
                   <a href="https://devtron.ai/about" target="_blank" style="margin: 0 12px;">About Us</a>
                 </div>
+                <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=4c5f80c3-9137-4a53-8420-b2326c0b02aa" alt="" />
               </div>
             `,
           },
