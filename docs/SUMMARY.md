@@ -47,6 +47,7 @@
 
 ## Usage
 
+* [Tron CLI](cli/README.md)
 * [Applications](user-guide/applications.md)
   * [Create a New Application](user-guide/create-application.md)
   * [Clone an Existing Application](user-guide/cloning-application.md)
