@@ -534,6 +534,7 @@ const sidebars = {
       },
       items: [
         'reference/glossary',
+        'cli/README',
         'FAQs/devtron-troubleshoot',
         {
           type: 'category',
