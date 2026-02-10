@@ -9,6 +9,7 @@ This section groups reference material, troubleshooting notes, upgrade/install r
 ## Quick links
 
 * **[Glossary](./glossary)** - Definitions for Devtron terminology and common concepts used across the docs.
+* **[Tron CLI](../cli/README.md)** - Automate Devtron application and configuration tasks using the CLI.
 * **[Troubleshooting Guide](../FAQs/devtron-troubleshoot)** - Common issues and troubleshooting steps.
 * **[Upgrade Devtron](../setup/upgrade)** - Guides for upgrading Devtron releases and the UI. Also includes version-specific notes.
 * **[Additional installation resources](README.md)** - Extra installation references and environment notes.
