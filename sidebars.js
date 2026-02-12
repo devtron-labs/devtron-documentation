@@ -537,6 +537,11 @@ const sidebars = {
         'cli/README',
         'FAQs/devtron-troubleshoot',
         {
+          type: 'link',
+          label: 'Troubleshooting Guide',
+          href: '/troubleshooting-guide',
+        },
+        {
           type: 'category',
           label: 'Upgrade Devtron',
           collapsed: true,
