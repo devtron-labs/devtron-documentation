@@ -162,6 +162,7 @@
     * [Jira Issue Validator](user-guide/plugins/jira-validator.md)
     * [Jira Issue Updater](user-guide/plugins/jira-updater.md)
     * [K6 Load Testing](user-guide/plugins/k6-load-testing.md)
+    * [Mail Master](user-guide/plugins/mail-master.md)
     * [Pull images from container repository](user-guide/plugins/pull-images-from-container-repository.md)
     * [Semgrep](user-guide/plugins/semgrep.md)
     * [SonarQube](user-guide/plugins/sonarqube.md)
