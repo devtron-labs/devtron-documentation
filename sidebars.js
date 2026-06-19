@@ -309,6 +309,7 @@ const sidebars = {
             'user-guide/resource-browser/scoop-config',
             'user-guide/resource-browser/resource-recommender',
             'user-guide/resource-browser/cluster-terminal',
+            'user-guide/resource-browser/download-content-from-pods',
             'user-guide/resource-browser/monitoring-graphs',
             'user-guide/resource-browser/kubectl-local',
             'user-guide/operations/edit-gui-schema',
