@@ -15,9 +15,9 @@ The permission required depends on how you access the Pod Terminal:
 
 | Access Path | Required Permission |
 |---|---|
-| App Details → Pod → Terminal | **Write** (Build & Deploy) access on the specific application |
-| Resource Browser → Pods → Terminal | [Admin access on the Kubernetes resource](https://docs.devtron.ai/docs/user-guide/global-configurations/authorization/user-access#kubernetes-resources-permissions) |
-| Resource Browser → Cluster Terminal | [Admin access on the Kubernetes resource](https://docs.devtron.ai/docs/user-guide/global-configurations/authorization/user-access#kubernetes-resources-permissions) |
+| App Details → Pod → Terminal | **Admin** access on the specific application |
+| Resource Browser → Pods → Terminal | [Admin access on the Kubernetes resource](https://docs.devtron.ai/docs/user-guide/global-configurations/authorization/permission-groups#kubernetes-resources-permissions) |
+| Resource Browser → Cluster Terminal | [Admin access on the Kubernetes resource](https://docs.devtron.ai/docs/user-guide/global-configurations/authorization/permission-groups#kubernetes-resources-permissions) |
 :::
 
 ## Introduction
@@ -43,8 +43,8 @@ Devtron provides **built-in support** across **three access points** to download
 
 Before you can download content from a pod, ensure the following:
 
-- To download via **App Details**, you have **Write (Build & Deploy)** access on the specific application.
-- To download via **Resource Browser** or **Cluster Terminal**, you have [admin access on the Kubernetes resource](https://docs.devtron.ai/docs/user-guide/global-configurations/authorization/user-access#kubernetes-resources-permissions).
+- To download via **App Details**, you have **Admin** access on the specific application.
+- To download via **Resource Browser** or **Cluster Terminal**, you have [Admin access on the Kubernetes resource](https://docs.devtron.ai/docs/user-guide/global-configurations/authorization/permission-groups#kubernetes-resources-permissions).
 - The pod you want to access is in a **Running** state.
 - The file you want to download exists at a known path inside the container.
 
@@ -236,4 +236,4 @@ You can only download files that are accessible within the container's filesyste
 - [Pod Management and Debugging](https://docs.devtron.ai/docs/user-guide/resource-browser/pods)
 - [Cluster Terminal](https://docs.devtron.ai/docs/user-guide/resource-browser/cluster-terminal)
 - [Launching Ephemeral Container](https://docs.devtron.ai/docs/user-guide/resource-browser/pods#launching-ephemeral-container)
-- [Kubernetes Resources Permissions](https://docs.devtron.ai/docs/user-guide/global-configurations/authorization/user-access#kubernetes-resources-permissions)
+- [Kubernetes Resources Permissions](https://docs.devtron.ai/docs/user-guide/global-configurations/authorization/permission-groups#kubernetes-resources-permissions)
