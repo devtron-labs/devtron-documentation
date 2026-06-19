@@ -17,7 +17,7 @@ The permission required depends on how you access the Pod Terminal:
 |---|---|
 | App Details → Pod → Terminal | **Admin** access on the specific application |
 | Resource Browser → Pods → Terminal | [Admin access on the Kubernetes resource](https://docs.devtron.ai/docs/user-guide/global-configurations/authorization/permission-groups#kubernetes-resources-permissions) |
-| Resource Browser → Cluster Terminal | [Admin access on the Kubernetes resource](https://docs.devtron.ai/docs/user-guide/global-configurations/authorization/permission-groups#kubernetes-resources-permissions) |
+| Resource Browser → Cluster Terminal | [Admin access of all the K8s resources of that cluster](https://docs.devtron.ai/docs/user-guide/global-configurations/authorization/permission-groups#kubernetes-resources-permissions) |
 :::
 
 ## Introduction
