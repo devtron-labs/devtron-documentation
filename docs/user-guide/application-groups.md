@@ -442,7 +442,11 @@ Assume you have multiple applications (maybe 10, 50, 100, or more) showing up in
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/application-groups/app-filter-3.jpg)
     <center>Figure 46: Filtered Apps</center>
 
-4. (Optional) If required, you can save the filter for future use by clicking **Save selection as filter**.
+    :::info Persistent selection
+    Your filter selection is remembered for each application group. When you reopen the group, Devtron automatically reapplies the applications you had filtered, so you don't have to reselect them every time.
+    :::
+
+4. (Optional) If required, you can save the filter for future use as a named selection by clicking **Save selection as filter**. A saved filter lets you select or deselect an entire group of applications in one click whenever you need it.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/application-groups/save-filter.jpg)
     <center>Figure 47: Saving a Filter</center>

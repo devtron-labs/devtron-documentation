@@ -32,6 +32,17 @@ The icon next to the **Env** drop-down box denotes the application deployment me
 Manifest status (whether they are in sync or not) is denoted by [this](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/app-details/app-summary/manifest-status-icon.jpg) icon. When you click on this icon, the **Live and desired manifest comparison** page is displayed (read-only) allowing you to compare the manifests and view config drifts (if there are any). 
 
 ---
+## Filtering Environments
+
+If your application is deployed to several environments, you can narrow down the ones you want to focus on using the environment filter available in the **page header**. This filter is present across all the application pages, including **Overview**, **App Details**, **Build & Deploy**, **Build History**, **Deployment History**, **Deployment Metrics**, and **Configurations**.
+
+Open the filter and multi-select the environments you care about. The application then shows only the selected environments wherever the environment list appears, helping you cut through the noise when an application spans many environments.
+
+:::info Persistent selection
+Your environment selection is saved in your browser's local storage on a per-application basis. The next time you open the same application, Devtron automatically restores the environments you had selected, so you don't have to filter them again.
+:::
+
+---
 ## Cards Overview
 
 Devtron provides you a quick summary of your application via cards. Refer to the following table to know more about cards:
