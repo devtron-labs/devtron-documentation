@@ -102,20 +102,27 @@ const config = {
   ],
 
   plugins: [
-    [
-      require.resolve('@docusaurus/plugin-google-gtag'),
-      {
-        trackingID: 'G-RJY45WF21G',
-        anonymizeIP: true,
-      },
-    ],
-
-    [
-      require.resolve('@gracefullight/docusaurus-plugin-microsoft-clarity'),
-      { 
-        projectId: 's4gie6k444' 
-      },
-    ],
+    // Analytics plugins are loaded only in production. In development the
+    // Google Analytics / Clarity scripts are typically blocked (ad-blockers,
+    // no network), which leaves window.gtag undefined and throws a runtime
+    // error ("window.gtag is not a function") on every page.
+    ...(process.env.NODE_ENV === 'production'
+      ? [
+          [
+            require.resolve('@docusaurus/plugin-google-gtag'),
+            {
+              trackingID: 'G-RJY45WF21G',
+              anonymizeIP: true,
+            },
+          ],
+          [
+            require.resolve('@gracefullight/docusaurus-plugin-microsoft-clarity'),
+            {
+              projectId: 's4gie6k444',
+            },
+          ],
+        ]
+      : []),
 
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
