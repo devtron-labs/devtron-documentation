@@ -128,7 +128,7 @@ You can install FluxCD Controller by any of the following ways:
 4. Run the following command to install the FluxCD Controller:
 
       ```yaml
-      kubectl apply -f https://github.com/fluxcd/flux2/releases/download/v0.35.0/install.yaml
+      kubectl apply -f https://github.com/fluxcd/flux2/releases/download/v2.7.5/install.yaml
       ```
 
       ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/resources/gitops-flux-cd/fluxcd-install-controller.gif)
@@ -174,3 +174,21 @@ To install FluxCD controller via Chart Store, follow the below steps.
  6. Click **Deploy** and the chart will be deployed.
 
 After the chart is successfully deployed, you can deploy applications though GitOps (via FluxCD).
+
+## Limitations
+
+Keep the following limitations in mind when using GitOps deployments via FluxCD:
+
+* **Supported deployment strategies**: Only the `Deployment` and `Rollout` strategies are supported (with the latest chart versions). Other strategies (such as Canary or Blue-Green) are currently not supported.
+
+* **No rollback**: Rolling back a FluxCD deployment to a previous version from within Devtron is not currently supported.
+
+* **No manual sync from Devtron**: There is no manual *sync* or *refresh* action for FluxCD applications in Devtron. Deployments reconcile automatically on FluxCD's reconciliation interval. To force an immediate reconcile, use the FluxCD CLI, for example:
+
+      ```bash
+      flux reconcile helmrelease <app-name> -n <namespace>
+      ```
+
+* **Manual controller setup required**: Devtron does not install the FluxCD controller automatically. You must install it in every target cluster (see [Installing FluxCD Controller](#installing-fluxcd-controller-only-for-deployments)) and enable the required feature flags before you can deploy.
+
+* **Prerequisites**: FluxCD deployments require the [Build and Deploy (CI/CD)](../integrations/build-and-deploy-ci-cd.md) and [GitOps (ArgoCD)](../integrations/argocd.md) integrations to be installed.
