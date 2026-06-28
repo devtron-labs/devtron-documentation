@@ -4,6 +4,16 @@
 
 To enable **Pod Last Restart Snapshot**, you must configure Scoop in your target cluster. Scoop collects pod restart events from your cluster and sends them to Devtron, allowing the platform to display details such as restart reason, timestamp, and pre-restart logs directly in the Pod Listing view.
 
+## Capabilities
+
+Scoop runs as a lightweight service inside your target cluster and provides the following capabilities:
+
+* **Pod restart monitoring** — Tracks application pod restarts and surfaces details such as the restart reason, timestamp, previous-container logs, and node status in the Pod listing view. This powers the **Pod Last Restart Snapshot** feature.
+
+* **Event tracking** — Watches events across Kubernetes resources in the cluster, so you can observe and act on what is happening to your workloads.
+
+* **Resource caching** — Caches Kubernetes resources in the target cluster, reducing Kubernetes API fetch times when you browse resources in the **Resource Browser**. This capability is controlled per cluster by the `enableResourceList` flag (see [Update ConfigMap](#4-update-configmap)).
+
 ## Steps to Configure Scoop
 
 ### 1. Deploying Scoop Chart
@@ -127,7 +137,7 @@ The **orchestrator-cm** ConfigMap will be available only if you have Devtron man
     | **"1" and "2"** | The cluster IDs of your clusters (as seen in the Resource Browser URL). Each ID represents a unique cluster where Scoop is deployed |
     | **serviceName** | The name of the Scoop service you noted from the **Service** tab while checking the endpoint |
     | **passKey** | The value of authentication key (`PASS_KEY`) that you defined (or left as default) during Scoop chart deployment |
-    | **enableResourceList** | A flag that controls whether resource-level details are fetched. Keep it **false** unless you specifically need that data |
+    | **enableResourceList** | Enables Scoop's **resource caching** capability for this cluster. When `true`, the Resource Browser serves cached Kubernetes resources from Scoop (faster listing, fewer direct Kubernetes API calls). When `false` (default), resources are fetched directly from the cluster. This is a **per-cluster** flag — enable it only for the clusters where you want cached resource listing |
     | **namespace** | The namespace of the Scoop service you noted from the **Service** tab while checking the endpoint |
     | **port** | The port number of the Scoop service you noted from the **Service** tab while checking the endpoint |
 
