@@ -362,3 +362,5 @@ There are some system variables that exist by default in Devtron that you can re
 :::info 
 Currently, these variables do not appear in the scoped variable widget, but you may use them. 
 :::
+
+You can reference a predefined variable the same way as any other scoped variable, using `@{{<variable-name>}}` — for example, `@{{DEVTRON_IMAGE}}`. When using it inside a deployment template, encapsulate it in double quotes: `"@{{DEVTRON_IMAGE}}"`.
