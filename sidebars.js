@@ -234,6 +234,7 @@ const sidebars = {
           },
           items: [
             'user-guide/global-configurations/gitops',
+            'user-guide/global-configurations/migrate-gitops-provider',
             'user-guide/global-configurations/git-accounts',
             'user-guide/global-configurations/external-links',
             'user-guide/global-configurations/chart-repo',
