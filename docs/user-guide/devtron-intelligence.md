@@ -16,6 +16,18 @@ Check out the [Results](#results) section to see where Devtron gives you AI-powe
 
 <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/WW7skAa0XAs" title="Enabling Devtron Intelligence (AI)" frameborder="0" allow="fullscreen"></iframe></div>
 
+## Capabilities
+
+Devtron Intelligence is an AI agent that can reason over your Devtron-managed Kubernetes estate and assist you across several areas:
+
+* **Troubleshooting and remediation** — Analyze pod errors, restart snapshots, events, and application status, and suggest remediation steps.
+
+* **Cost insights** — Answer questions about cost breakdown and cost summary for your applications and clusters.
+
+* **Application and resource Q&A** — Query applications, environments, projects, jobs, Helm apps, manifests, and resource utilization in natural language.
+
+* **Documentation search** — Answer product questions grounded in Devtron's documentation.
+
 ---
 
 ## Steps to Configure Devtron Intelligence
