@@ -178,7 +178,6 @@ const sidebars = {
               items: [
                 'user-guide/deploying-application/triggering-ci',
                 'user-guide/deploying-application/triggering-cd',
-                'user-guide/deploying-application/bulk-deployment',
                 'user-guide/deploying-application/rollback-deployment',
                 'user-guide/deploying-application/image-labels-and-comments',
               ],

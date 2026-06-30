@@ -136,7 +136,6 @@ Let's take an example of a **Shell task** in the Post-Build stage, that send an 
 | `Task Name`| `email-notifier`| Required| Enter a name for the task|
 | `Task Description`| `This task sends a email after the build is completed` | Optional | Short description for the task|
 | `Task Type` | `Shell`| Optional| Select the preferred task type |
-| `Git Material`| Not required for this example | Optional| Select the configured Git repository ([Git material](../git-material.md)) for the task. It defines the source code available to the task—both the repository the script file is pulled from and the code checked out/mounted into the task environment. Applicable when one or more Git repositories are configured for the application.|
 | `Script`| Refer the [Script](#script) below| Required| Custom script for executing tasks|
 
 #### Prerequisites
@@ -195,7 +194,6 @@ Let's take an example of a **Shell task** in the Pre-Build stage that ensures th
 | `Task Name`| `check-db-name`| Required| Enter a name for the task|
 | `Task Description`| `This task stops the build if the database name is not 'prod-db'` | Optional | Short description for the task|
 | `Task Type` | `Shell`| Optional| Select the preferred task type |
-| `Git Material`| Not required for this example | Optional| Select the configured Git repository ([Git material](../git-material.md)) for the task. It defines the source code available to the task—both the repository the script file is pulled from and the code checked out/mounted into the task environment. Applicable when one or more Git repositories are configured for the application.|
 | `Input variables`| Refer the [Input Variable table](#input-variable-table) below | Optional| <p>These variables provide dynamic values to the script at the time of execution and are defined directly in the UI.<br/></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br/>Accepted data types include: STRING</li></ul> |
 | `Trigger/Skip condition` | Not required for this example | Optional| A conditional statement to execute or skip the task|
 | `Script`| Refer the [Script](#script-1) below| Required| Custom script for executing tasks|
@@ -270,7 +268,6 @@ Since we have already configured a shell task to validate the database name, we 
 | `Task name`| `verify-db-connectivity`| Required|Enter a name for the task|
 | `Description`| Verify DB connection before build | Optional| A descriptive message for the task|
 | `Task type`| `Container Image`| Optional| Allows you to execute commands and scripts inside a custom Docker container|
-| `Git Material`| `my-app-repo`| Optional| Select the configured Git repository ([Git material](../git-material.md)) for the task. It defines the source code available to the task—both the repository the script file is pulled from and the code checked out/mounted into the task environment. Applicable when one or more Git repositories are configured for the application.|
 | `Input variables`| Refer the [Input Variable table](#input-variable-table-1) below | Optional| <p>These variables provide dynamic values to the script and are defined directly in the UI.<br/></p><ul><li><strong>Variable name</strong>: Alphanumeric chars and (_) only</li><li><strong>Source or input value</strong>: The variable's value can be global, output from the previous task, or a custom value.<br/>Accepted data types include: STRING</li></ul> |
 | `Trigger/Skip condition`| `DB_VALIDATION == pass`| Optional| Execute or skip the task based on the condition provided.|
 | `Container image`| `mysql:8.0`| Required| Select an image from the drop-down list or enter a custom value in the format `<image>:<tag>`|
