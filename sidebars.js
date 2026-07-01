@@ -159,6 +159,7 @@ const sidebars = {
                     'user-guide/creating-application/workflow/ci-pipeline',
                     'user-guide/creating-application/workflow/cd-pipeline',
                     'user-guide/creating-application/workflow/pre-post-tasks',
+                    'user-guide/creating-application/workflow/file-upload-during-build',
                   ],
                 },
                 'user-guide/creating-application/environment-overrides',
