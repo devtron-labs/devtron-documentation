@@ -101,9 +101,9 @@ Instead of global profile, you can create custom profiles having different infra
 
 ## Adding Platform Specific Configurations <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>
 
-Modern applications often need to run on different hardware platforms (architectures), such as `amd64` (x86_64) and `arm64` to support cross-platform compatibility.
+Modern applications often need to run on different hardware platforms (architectures), such as `amd64` (x86_64) and `arm64`, to support cross-platform compatibility.
 
-[Multi-architecture (multi-arch) builds](https://docs.docker.com/build/building/multi-platform/) enables you to build container images that work seamlessly across multiple platforms.
+[Multi-architecture (multi-arch) builds](https://docs.docker.com/build/building/multi-platform/) enable you to build container images that work seamlessly across multiple platforms.
 
 Optimizing your CI builds for each platform ensures:
    
@@ -111,16 +111,23 @@ Optimizing your CI builds for each platform ensures:
    
    * **Resource efficiency**: Prevents over or under-provisioning, saving costs and improving reliability.
 
-Each platform may have unique requirements for resources like CPU and memory, or they may benefit from different configuration of resources. Thus, Devtron allows defining platform specific configurations within a build infra profile. This ensures each build is executed with the right configurations specific to the target platform.
+Each platform may have unique requirements for resources like CPU and memory, or it may benefit from a different configuration of resources. Thus, Devtron allows defining platform specific configurations within a build infra profile. This ensures each build is executed with the right configurations specific to the target platform.
+
+### How the Configurations Are Applied
+
+A build infra profile has two levels of configuration:
+
+* **Runner configuration**: The base CPU, memory, and build timeout for the build (ci-runner) pod. This applies to every build using the profile.
+
+* **Platform specific configuration**: An optional set of resources (CPU and memory) defined for an individual target platform such as `linux/amd64` or `linux/arm64`. When you build for that platform, Devtron uses these resources instead of the base runner configuration.
 
 :::info K8s Driver v/s Container Driver
- **Platform specific configurations** are only supported for builds executed using the k8s driver. 
- 
- When you use the K8s driver, each build for a target platform runs as its own pod within your Kubernetes cluster. This allows you to assign different CPU, memory, and other configurations for each target platform like `amd64` or `arm64`. 
- 
- If you use the container driver, all builds run inside a single CI runner pod and share the same configuration, regardless of the target platform while K8s driver.
+**Platform specific configurations** are only supported for builds executed using the K8s driver.
 
- :::
+When you use the **K8s driver**, each build for a target platform runs as its own pod within your Kubernetes cluster. This allows you to assign different CPU, memory, and other configurations for each target platform, such as `linux/amd64` or `linux/arm64`.
+
+When you use the **container driver**, all platform builds run inside a single CI runner pod and share the same configuration, regardless of the target platform.
+:::
 
 To configure platform specific configurations:
 
@@ -128,16 +135,33 @@ To configure platform specific configurations:
 
 2. Select the profile for which you want to configure platform specific configurations.
 
-3. Check the **Use K8s driver for build** and click **+Add Target Platform**; a modal window will open.
+3. Enable the **Use K8s driver for build** toggle, then click **+ Add Target Platform**; a modal window will open.
 
-4. Under **Select a target platform**, select the platform for which you want to define platform specific configurations.
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/figure-1-k8s-driver.png)
+    <center>Enabling K8s Driver and Adding a Target Platform</center>
+
+4. Under **Select a target platform**, choose the platform for which you want to define platform specific configurations.
      1. You can choose from `linux/amd64` or `linux/arm64`.
 
-     2. You can also type to add a new platform.
+     2. You can also type to add a custom platform.
+
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/figure-2-k8s-driver.png)
+    <center>Selecting a Target Platform</center>
 
 5. Configure the resources for the specific platform and click **Save**.
 
-6. The platform specific configuration will be available below the runner configuration.
+    :::caution
+    For both CPU and Memory, the **Limit** must be greater than or equal to the **Request**. See [CPU units](#cpu-units) and [memory units](#memory-units).
+    :::
+
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/figure-3-k8s-driver.png)
+    <center>Configuring Platform Specific Resources</center>
+
+6. The platform specific configuration will be available below the runner configuration. You can add more target platforms by repeating steps 3–5, and remove a platform using its delete icon.
+
+:::info Note
+If a target platform does not have its own platform specific configuration, the build for that platform falls back to the base runner configuration.
+:::
 
 <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/5nFJfai125U" title="Platform Specific Configurations" frameborder="0" allow="fullscreen"></iframe></div>
 
