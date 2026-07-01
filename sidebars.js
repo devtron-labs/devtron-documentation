@@ -605,6 +605,7 @@ const sidebars = {
               items: [
                 'user-guide/integrations/vulnerability-scanning/clair',
                 'user-guide/integrations/vulnerability-scanning/trivy',
+                'user-guide/integrations/vulnerability-scanning/aws-inspector',
               ],
             },
             'user-guide/integrations/notifications',
