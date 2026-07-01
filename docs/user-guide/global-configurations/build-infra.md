@@ -137,14 +137,16 @@ To configure platform specific configurations:
 
 3. Enable the **Use K8s driver for build** toggle, then click **+ Add Target Platform**; a modal window will open.
 
-    <!-- 📷 IMAGE PLACEHOLDER: Screenshot of a profile with the 'Use K8s driver for build' toggle enabled and the '+ Add Target Platform' button highlighted. -->
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/figure-1-k8s-driver.png)
+    <center>Enabling K8s Driver and Adding a Target Platform</center>
 
 4. Under **Select a target platform**, choose the platform for which you want to define platform specific configurations.
      1. You can choose from `linux/amd64` or `linux/arm64`.
 
      2. You can also type to add a custom platform.
 
-    <!-- 📷 IMAGE PLACEHOLDER: Screenshot of the 'Select a target platform' modal showing linux/amd64, linux/arm64, and the option to type a custom platform. -->
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/figure-2-k8s-driver.png)
+    <center>Selecting a Target Platform</center>
 
 5. Configure the resources for the specific platform and click **Save**.
 
@@ -152,7 +154,8 @@ To configure platform specific configurations:
     For both CPU and Memory, the **Limit** must be greater than or equal to the **Request**. See [CPU units](#cpu-units) and [memory units](#memory-units).
     :::
 
-    <!-- 📷 IMAGE PLACEHOLDER: Screenshot showing CPU and Memory (Request and Limit) fields configured for a target platform. -->
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/figure-3-k8s-driver.png)
+    <center>Configuring Platform Specific Resources</center>
 
 6. The platform specific configuration will be available below the runner configuration. You can add more target platforms by repeating steps 3–5, and remove a platform using its delete icon.
 
