@@ -569,6 +569,7 @@ const sidebars = {
           items: [
             'setup/install/prod-infra',
             'setup/configurations/configurations-overview',
+            'setup/configurations/devtron-configuration-reference',
             'setup/install/installation-configuration',
             'setup/install/override-default-devtron-installation-configs',
             'setup/install/ingress-setup',
