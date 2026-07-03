@@ -143,7 +143,18 @@ Optional chat-agent tuning (defaults shown; set only to override):
 | `CHAT_AGENT_MAX_TOOL_TOKENS` | `50000` | Total token budget across tool responses per request |
 | `CHAT_AGENT_MAX_TOOL_CALLS` | `30` | Max tool calls allowed per LLM turn |
 
-Deploy **athena-worker-engine** the same way, sharing the backend configuration it needs (LLM credentials, `DEVTRON_WORKER_ENGINE_SERVICE_AUTH_TOKEN`, Postgres, and the MCP endpoint).
+**athena-worker-engine**
+
+| Variable | Example / Default | Description |
+|:---|:---|:---|
+| `DEVTRON_WORKER_ENGINE_SERVICE_AUTH_TOKEN` | `<from Secret>` | Shared auth token — must match the value set on `athena-api-server` |
+| `DEVTRON_MCP_API_ENDPOINT` | `http://<mcp-engine-service>.<namespace>/devtron/mcp` | Same `athena-mcp-engine` endpoint as the API server |
+| `LLM_MODEL_ID` | `<provider-or-bedrock-model-id>` | LLM model for the worker |
+| `LLM_TEMPERATURE` | `0.1` | LLM temperature |
+| `PG_ADDR` / `PG_PORT` / `PG_USER` / `PG_PASSWORD` / `PG_DATABASE` | `<pg-host>` / `5432` / `<user>` / `<from Secret>` / `<db>` | Postgres connection |
+| `MAX_CONCURRENT_RECOMMENDATION_TASKS` | `4` | (optional) Max concurrent recommendation tasks |
+| `MAX_REACT_AGENT_ITERATIONS` | `20` | (optional) Max ReAct agent iterations per task |
+| `SUPPORTED_UPDATE_WORKLOAD_KINDS` | `Deployment,StatefulSet,DaemonSet,ReplicaSet` | (optional) Workload kinds the worker may patch during remediation |
 
 After deploying, note the ClusterIP **service endpoints** (format `<service-name>.<namespace>:<port>`) of `athena-api-server` and `athena-mcp-engine` — you will need them for `DEVTRON_MCP_API_ENDPOINT` above and `PROXY_SERVICE_CONFIG` in Step 4.
 
