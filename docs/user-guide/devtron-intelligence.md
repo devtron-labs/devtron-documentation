@@ -283,6 +283,74 @@ Perform a hard refresh of the browser to clear the cache:
 
 ---
 
+## Configure AI Debug Mode and Ask Devtron Expert
+
+In addition to **Explain with AI**, Devtron Intelligence provides:
+
+* **Ask Devtron Expert** — a chatbot side panel where you can ask free-form questions about your applications and Kubernetes issues.
+* **AI Debug Mode** — an autonomous Kubernetes root-cause investigation (powered by Holmes) that opens as a chat when you use **Explain with AI**.
+
+Enabling them requires the additional configuration below, on top of the [Steps to Configure Devtron Intelligence](#steps-to-configure-devtron-intelligence). Perform this in the cluster where the Devtron orchestrator is running.
+
+:::caution Who Can Perform This Action?
+Same as above — you need permission to edit the cluster's ConfigMaps and restart pods.
+:::
+
+### 1. Deploy Redis
+
+The chatbot uses Redis as a shared cache. Deploy a Redis instance in the cluster where the [AI Agent chart](#3-deploy-ai-agent-chart) is installed, and note its connection URL (for example, `redis://<redis-service>.<namespace>:6379`). You will reference it as `REDIS_URL` in the next step.
+
+### 2. Add Backend Environment Variables to the AI Agent Chart
+
+Edit the `ai-agent` Helm app (from [Deploy AI Agent Chart](#3-deploy-ai-agent-chart)) and add the following to the `additionalEnvVars` block in its `values.yaml`, then redeploy:
+
+```yaml
+additionalEnvVars:
+  # ...existing LLM variables from Step 3...
+  - name: HOLMES_ENABLED
+    value: "true"                        ## Enables AI Debug (Holmes) investigations
+  - name: HOLMES_MODEL
+    value: <holmes-llm-model>            ## LLM model Holmes uses for debugging
+  - name: REDIS_URL
+    value: redis://<redis-service>:6379  ## From Step 1
+  - name: CHAT_AGENT_MAX_LLM_TURNS
+    value: "7"                           ## (optional) Max LLM reasoning turns per request
+  - name: CHAT_AGENT_MAX_TOOL_TOKENS
+    value: "50000"                       ## (optional) Total token budget across tool responses per request
+  - name: CHAT_AGENT_MAX_TOOL_CALLS
+    value: "30"                          ## (optional) Max tool calls allowed per LLM turn
+```
+
+### 3. Update ConfigMaps
+
+In the cluster where the Devtron orchestrator is running, go to **Infrastructure Management** → **Resource Browser** → (Select Cluster) → **Config & Storage** → **ConfigMap**, and edit:
+
+* **orchestrator-cm** — enable the chatbot and register the Athena service proxy:
+
+  ```yaml
+  FEATURE_ASK_DEVTRON_EXPERT: "true"
+  PROXY_SERVICE_CONFIG: '{"athena":{"host":"<athena-api-server-service>","port":"80"}}'
+  ```
+
+  | Key | Description |
+  |:---|:---|
+  | `FEATURE_ASK_DEVTRON_EXPERT` | Enables the **Ask Devtron Expert** chatbot (default `false`). |
+  | `PROXY_SERVICE_CONFIG` | Routes requests from the orchestrator to the Athena API server. Replace `<athena-api-server-service>` with the service of the deployed AI Agent chart. |
+
+* **dashboard-cm** — enable AI Debug Mode:
+
+  ```yaml
+  FEATURE_ATHENA_DEBUG_MODE_ENABLE: "true"
+  ```
+
+  When `true`, using **Explain with AI** opens the Holmes debugger as a new chat in the **Ask Devtron** side panel. When `false` (default), the AI response appears in a draggable widget.
+
+### 4. Restart Pods and Hard Refresh
+
+Restart the `devtron` and `dashboard` deployments (see [Restart Pods](#6-restart-pods)), then [perform a hard refresh](#7-perform-hard-refresh) of your browser.
+
+---
+
 ## Results
 
 Devtron supports **Explain** option at the following screens (only for specific scenarios where troubleshooting is possible through AI):
