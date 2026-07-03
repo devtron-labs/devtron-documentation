@@ -372,7 +372,7 @@ Consumed by the **Devtron operator/installer** (not the orchestrator's runtime e
 | Key | Value | Description |
 |-----|-------|-------------|
 | ANNOUNCEMENT_BANNER_MSG | "" | Text shown in a banner at the top of the UI. Leave empty to hide the banner. Useful for maintenance notices or version announcements. |
-| API_BATCH_SIZE | 20 | Number of items fetched per page in batched API calls from the dashboard. |
+| API_BATCH_SIZE | 20 | Number of items fetched per page in batched API calls from the dashboard if HTTP2 is enabled, for HTTP1 the max size can be upto 5 |
 | APPLICATION_METRICS_ENABLED | "true" | Shows the application-metrics button on the app detail page, linking to embedded Grafana dashboards. |
 | CLAIR_TOOL_VERSION | "" | Clair vulnerability scanner version label shown in the UI. |
 | CLUSTER_TERMINAL_CONNECTION_RETRY_COUNT | 7 | Number of times the dashboard retries a dropped cluster-terminal WebSocket connection before showing a connection error. |
@@ -410,6 +410,7 @@ Consumed by the **Devtron operator/installer** (not the orchestrator's runtime e
 | FEATURE_RB_SYNC_CLUSTER_ENABLE | true | Enable the compare/sync-cluster view in the Resource Browser. |
 | FEATURE_DEFAULT_LANDING_RB_ENABLE | false | In EA-only (External App) mode, make the Resource Browser the default landing page after login instead of the app list. |
 | FEATURE_DEFAULT_MERGE_STRATEGY | patch | Default config-override merge strategy at the environment level. Accepts `patch` or `replace`. |
+| FEATURE_DEFAULT_AUTHENTICATED_VIEW_ENABLE | false | When enabled (true), users can only view the pipelines and environments they have permission to access, as determined by the backend. |
 | FEATURE_PROMO_EMBEDDED_IFRAME_URL | "" | URL of an embedded promotional iframe shown in a modal. Empty disables the promo modal. |
 | FEATURE_PROMO_EMBEDDED_MODAL_TITLE | "" | Title text for the embedded promotional modal (used with `FEATURE_PROMO_EMBEDDED_IFRAME_URL`). |
 | FEATURE_PROMO_EMBEDDED_BUTTON_TEXT | "" | Button label that opens the embedded promotional modal. |
