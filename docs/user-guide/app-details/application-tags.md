@@ -11,12 +11,12 @@ This document explains:
 * How tags are used by the **build infrastructure** (CI build pods).
 * **Special and reserved tag handling** — the `devtron.ai/` reserved prefix, and enterprise **Global Tags** (mandatory tags, deployment policies, and value constraints).
 
-{% hint style="info" %}
+:::info
 ### What is OSS vs Enterprise
 * **Application tags** and the **Propagate** flag are available in all editions.
 * **Build Infrastructure profiles** are available in all editions; the **Node Selector**, **Tolerations**, **ConfigMap**, and **Secret** options are **Enterprise-only**.
 * **Global Tags** (mandatory tags, deployment policies, value constraints) are an **Enterprise-only** feature.
-{% endhint %}
+:::
 
 ---
 
@@ -41,9 +41,9 @@ Validation depends on whether the tag is propagated:
   * **Key** must be a *qualified name* (optional DNS-subdomain prefix + name, allowed characters, length limits) and cannot be empty.
   * **Value** must be a valid Kubernetes label value and cannot be empty.
 
-{% hint style="info" %}
+:::info
 If a propagated tag's key or value is not a valid Kubernetes label, Devtron rejects the application create/update with a validation error.
-{% endhint %}
+:::
 
 ---
 
@@ -68,10 +68,10 @@ When you trigger a CI build, the application's tags travel with the build reques
 
 This lets platform teams apply governance, cost-allocation, or scheduling-related labels to the ephemeral build pods, consistently with the deployed workload.
 
-{% hint style="info" %}
+:::info
 ### Tags do not select the build infra profile
 A common misconception is that tags choose *which* build infrastructure profile a build uses. They do **not**. Build infrastructure profiles are selected by **scope/identifiers** (application, project, environment) — see below. Tags only add **labels** to the build pod; they don't change its CPU/memory/node placement.
-{% endhint %}
+:::
 
 ---
 

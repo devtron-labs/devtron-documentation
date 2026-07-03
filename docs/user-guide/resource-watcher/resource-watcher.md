@@ -10,13 +10,13 @@ An incident response if delayed can impact businesses, revenue, and waste valuab
 
 You can make the Resource Watcher listen to the above events and accordingly run a job you wish to get done, for e.g., increasing memory, executing a script, raising a Jira ticket, emailing your stakeholders, sending Slack notifications, and many more. Since manual intervention is absent, the timely response of this auto-remediation system improves your operational efficiency.
 
-{% hint style="info" %}
+:::info
 ### Prerequisites
 * This is an **Enterprise-only** feature.
 * You must have **super-admin** permission to create watchers and view intercepted changes.
 * The **Scoop** component must be running on every cluster you want to watch. Scoop is the per-cluster service that observes resource events, evaluates your filter, and reports intercepted changes back to Devtron. Clusters without Scoop will not produce intercepted events.
 * To run a job on interception, you need at least one **Devtron Job pipeline** already configured (for the Webhook trigger type, a reachable webhook URL).
-{% endhint %}
+:::
 
 ---
 
@@ -46,10 +46,10 @@ You can watch any built-in Kubernetes resource (Deployment, Pod, HPA, StatefulSe
 
 ## Creating a Watcher
 
-{% hint style="warning" %}
+:::warning
 ### Who Can Perform This Action?
 Users need to have super-admin permission to create a watcher.
-{% endhint %}
+:::
 
 This page allows you to create a watcher to track events and run a job. It also shows the existing list of watchers (if any).
 
@@ -85,9 +85,9 @@ Here, you can select the [namespaces](../reference/glossary.md#namespace) whose 
 
     ![Figure 5: Choosing Namespaces of Specific Clusters](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/resource-watcher/specific-cluster.gif)
 
-{% hint style="info" %}
+:::info
 In both the above options, if you choose 'Specific Namespaces', you can further decide whether to track the namespaces you enter (by clicking 'Include selections') or to track the namespaces except the ones you enter (by clicking 'Exclude selections'). You can also scope by environment category such as all production or all non-production environments.
-{% endhint %}
+:::
 
 ### Intercept Change in Resources
 
@@ -109,11 +109,11 @@ Here, you can select the exact Kubernetes resource(s) you wish to track for chan
 | `DEVTRON_INITIAL_MANIFEST` (alias `initial`) | Updated, Deleted | The previous/initial state of the resource |
 | `action` | All | The event type as a string: `CREATED`, `UPDATED`, or `DELETED` |
 
-{% hint style="info" %}
+:::info
 * **If resource is created** - Use 'DEVTRON_FINAL_MANIFEST'
 * **If resource is updated** - Both 'DEVTRON_INITIAL_MANIFEST' and 'DEVTRON_FINAL_MANIFEST' can exist
 * **If resource is deleted** - Use 'DEVTRON_INITIAL_MANIFEST'
-{% endhint %}
+:::
 
 **Example**: `DEVTRON_FINAL_MANIFEST.status.currentReplicas == DEVTRON_FINAL_MANIFEST.spec.maxReplicas`
 
@@ -151,10 +151,10 @@ Finally, click **Create Watcher**. Your watcher is now ready to intercept the ch
 
 ## Viewing Intercepted Changes
 
-{% hint style="warning" %}
+:::warning
 ### Who Can Perform This Action?
 Users need to have super-admin permission to view intercepted changes.
-{% endhint %}
+:::
 
 ### Details
 
