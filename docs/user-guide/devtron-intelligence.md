@@ -20,7 +20,11 @@ Check out the [Results](#results) section to see where Devtron gives you AI-powe
 
 Devtron Intelligence is an AI agent that can reason over your Devtron-managed Kubernetes estate and assist you across several areas:
 
-* **Troubleshooting and remediation** — Analyze pod errors, restart snapshots, events, and application status, and suggest remediation steps.
+* **Explain with AI** — Analyze pod errors, restart snapshots, events, and application status, and get easy-to-understand explanations and remediation steps.
+
+* **AI Debug (autonomous root-cause)** — Investigate Kubernetes issues autonomously (powered by Holmes) and return a detailed root-cause analysis.
+
+* **Ask Devtron Expert (chatbot)** — Ask free-form questions about your applications and Kubernetes issues in a chat side panel.
 
 * **Cost insights** — Answer questions about cost breakdown and cost summary for your applications and clusters.
 
@@ -34,19 +38,20 @@ Devtron Intelligence is an AI agent that can reason over your Devtron-managed Ku
 
 :::caution Who Can Perform This Action?
 User must have permissions to:
-  * Deploy Helm Apps (with environment access)
-  * Edit the ConfigMaps of 'default-cluster'
+  * Deploy applications (with environment access)
+  * Edit the ConfigMaps of the cluster where Devtron is running
   * Restart the pods
 :::
 
+Devtron Intelligence is powered by the **Athena** backend, which runs as independent microservices — `athena-mcp-engine`, `athena-api-server`, and `athena-worker-engine` — plus a **Redis** cache, deployed on the cluster where the Devtron orchestrator runs.
+
 ### 1. Get API Key from LLM
 
-Devtron Intelligence supports all major large language models (LLM) e.g., OpenAI, Gemini, AWS Bedrock, Anthropic and many more.
-
-You can generate an API key for an LLM of your choice. Here, we will generate an API key from [OpenAI](https://platform.openai.com/account/api-keys).
-
+Devtron Intelligence supports all major large language models (LLM), e.g., OpenAI, Gemini, AWS Bedrock, Anthropic, and many more. Generate an API key (or credential) for the LLM of your choice.
 
 ### 2. Create Secret in Devtron
+
+Create a Kubernetes Secret holding your LLM provider credential in the namespace where you will deploy the Athena services. The `athena-api-server` references this Secret for its LLM credentials.
 
 There are 2 methods to create a secret in Devtron, follow the one you prefer:
 * [Method A: Using 'Create Resource'](#method-a-using-create-resource)
@@ -54,258 +59,57 @@ There are 2 methods to create a secret in Devtron, follow the one you prefer:
 
 #### Method A: Using 'Create Resource'
 
-1. Go to [strings.devtron.ai](https://strings.devtron.ai/base64-encoder) and encode your API key in base64. This base64 encoded key will be used while creating a secret in the next step.
+1. Go to [strings.devtron.ai](https://strings.devtron.ai/base64-encoder) and encode your credential in base64.
 
 2. Go to **Infrastructure Management** → **Resource Browser** → (Select Cluster) → **Create Resource**
 
-3. Paste the following YAML and replace the key with your base64-encoded OpenAI key. Also, enter the namespace where the [AI Agent chart](#3-deploy-ai-agent-chart) will be installed:
+3. Paste the following YAML, replace the value with your base64-encoded credential, and set the namespace where the Athena services will be deployed:
 
 ```yaml
 apiVersion: v1
 kind: Secret
 metadata:
   name: ai-secret
-  namespace: <your-env-namespace>  # Namespace where the AI Agent chart will be installed
+  namespace: <your-namespace>  # Namespace where the Athena services will be deployed
 type: Opaque
-data: 
-  ## OpenAiKey: <base64-encoded-openai-key>           # For OpenAI
-  ## GoogleKey: <base64-encoded-google-key>           # For Gemini
-  ## azureOpenAiKey: <base64-encoded-azure-key>       # For Azure OpenAI
-  ## awsAccessKeyId: <base64-encoded-aws-access-key>  # For AWS Bedrock
-  ## awsSecretAccessKey: <base64-encoded-aws-secret>  # For AWS Bedrock
-  ## AnthropicKey: <base64-encoded-anthropic-key>     # For Anthropic
+data:
+  ## Provide the credential key(s) for your LLM provider, for example:
+  ## AWS_BEARER_TOKEN_BEDROCK: <base64-encoded-token>   # For AWS Bedrock
+  ## OPENAI_API_KEY: <base64-encoded-openai-key>        # For OpenAI
+  ## GOOGLE_API_KEY: <base64-encoded-google-key>        # For Gemini
+  ## ANTHROPIC_API_KEY: <base64-encoded-anthropic-key>  # For Anthropic
 ```
 
 #### Method B: Using kubectl command
 
-:::tip 
-Unlike [Method A](#method-a-using-create-resource), this method doesn't require you to encode your LLM Key to Base64 format. 
+:::tip
+Unlike [Method A](#method-a-using-create-resource), this method doesn't require you to base64-encode your credential.
 :::
 
-1. Go to Devtron's [Resource Browser](./resource-browser/README.md) and click the [terminal icon](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/cluster-terminal.gif) next to the cluster where you wish to create the secret. 
+1. Go to Devtron's [Resource Browser](./resource-browser/README.md) and click the terminal icon next to the target cluster.
 
-2. Use the following kubectl command to create a secret.
-    * Replace `my-namespace` with the namespace where the AI Agent chart will be installed.
-    * Use the correct LLM key-name and your key-value after `--from-literal`
+2. Create the secret (use the key name matching your LLM provider):
 
 ```bash
 kubectl create secret generic ai-secret \
-  --namespace=my-namespace \
-  --from-literal=OpenAiKey='openai-key-here' \
-#  --from-literal=GoogleKey='google-key-here' \
-#  --from-literal=azureOpenAiKey='azure-key-here' \
-#  --from-literal=AnthropicKey='anthropic-key-here'
+  --namespace=<your-namespace> \
+  --from-literal=AWS_BEARER_TOKEN_BEDROCK='your-token-here'
+#  --from-literal=OPENAI_API_KEY='openai-key-here'
 ```
 
   ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/secret-using-kubectl.jpg)
   <center>Figure 2: Creating Secret using Cluster Terminal</center>
 
-
-### 3. Deploy AI Agent Chart
-
-:::caution Where should I install the Chart?
-Deploy the chart in the cluster whose workloads you wish to troubleshoot. You may install the chart in multiple clusters (1 agent for 1 cluster). 
-:::
-
-1. Go to Devtron's Chart Store.
-
-2. Search the `ai-agent` chart and click on it.
-
-3. Click the **Configure & Deploy** button.
-
-4. In the left-hand pane:
-
-    * **App Name**: Give your app a name, e.g. `ai-agent-app`
-
-    * **Project**: Select your project
-
-    * **Deploy to environment**: Choose the target environment (should be associated with the same namespace used while creating secret key in [Step 2](#2-create-secret-in-devtron))
-
-    * **Chart Version**: Select the latest chart version.
-
-    * **Chart Values**: Choose the default one for the latest version.
-
-5. In the `values.yaml` file editor, add the appropriate `additionalEnvVars` block based on your LLM provider. Use the tabs below to find the configuration snippet of some well-known LLM providers.
-
-<Tabs>
-
-<TabItem label="OpenAI" value="OpenAI">
-```yaml
-additionalEnvVars:
-  - name: MODEL
-    value: gpt-4o-mini       ## Examples: gpt-4o, gpt-4, gpt-3.5-turbo
-  - name: OPENAI_API_KEY
-    valueFrom: 
-      secretKeyRef:
-        key: OpenAiKey       ## Key of the secret created in Step 2
-        name: ai-secret      ## Name of the secret created in Step 2
-  - name: CLUSTER_NAME
-    value: document-nonprod  ## Name of the target cluster (optional)
-```
-</TabItem>
-
-<TabItem label="Google" value="Google">
-```yaml
-additionalEnvVars:
-  - name: MODEL
-    value: gemini/<gemini_model>   ## Examples: gemini/gemini-1.5-pro, gemini/gemini-2.0-flash
-  - name: GOOGLE_API_KEY
-    valueFrom: 
-      secretKeyRef:
-        key: GoogleKey       ## Key of the secret created in Step 2
-        name: ai-secret      ## Name of the secret created in Step 2
-  - name: CLUSTER_NAME
-    value: document-nonprod  ## Name of the target cluster (optional)
-```
-</TabItem>
-
-<TabItem label="Azure OpenAI" value="Azure OpenAI">
-```yaml
-additionalEnvVars:
-  - name: MODEL
-    value: azure/<DEPLOYMENT_NAME>   ## Replace with your Azure deployment name (keep "azure/" prefix)
-  - name: MODEL_TYPE
-    value: gpt-4o                ## Supported: gpt-4o, gpt-35-turbo, etc.
-  - name: AZURE_API_VERSION
-    value: <API_VERSION>    ## Replace with the version from Azure portal
-  - name: AZURE_API_BASE
-    value: <AZURE_ENDPOINT>  ## Your Azure endpoint e.g. https://my-org.openai.azure.com/
-  - name: AZURE_API_KEY
-    valueFrom:
-      secretKeyRef:
-        key: azureOpenAiKey      ## Key of the secret created in Step 2
-        name: ai-secret          ## Name of the secret created in Step 2
-  - name: CLUSTER_NAME
-    value: document-nonprod  ## Name of the target cluster (optional)
-```
-</TabItem>
-
-<TabItem label="AWS Bedrock" value="AWS Bedrock">
-```yaml
-additionalEnvVars:
-  - name: MODEL
-    value: bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0  ## Replace with your actual Bedrock model name
-  - name: AWS_REGION_NAME
-    value: us-east-1
-  - name: AWS_ACCESS_KEY_ID
-    valueFrom:
-      secretKeyRef:
-        key: awsAccessKeyId      ## Key of the Access Key ID created in Step 2
-        name: ai-secret          ## Name of the secret created in Step 2
-  - name: AWS_SECRET_ACCESS_KEY
-    valueFrom:
-      secretKeyRef:
-        key: awsSecretAccessKey  ## Key of the secret created in Step 2
-        name: ai-secret          ## Name of the secret created in Step 2
-  - name: CLUSTER_NAME
-    value: document-nonprod  ## Name of the target cluster (optional)
-```
-</TabItem>
-
-<TabItem label="Anthropic" value="Anthropic">
-```yaml
-additionalEnvVars:
-  - name: MODEL
-    value: claude-3-sonnet   ## Examples: claude-3-sonnet, claude-3-haiku
-  - name: ANTHROPIC_API_KEY
-    valueFrom: 
-      secretKeyRef:
-        key: AnthropicKey    ## Key of the secret created in Step 2
-        name: ai-secret      ## Name of the secret created in Step 2
-  - name: CLUSTER_NAME
-    value: document-nonprod  ## Name of the target cluster (optional)
-```
-</TabItem>
-
-</Tabs>
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/chart-config-v4.jpg)
-<center>Figure 3: Chart Configuration</center>
-
-6. Click the **Deploy Chart** button.
-
-### 4. Check Service Endpoint
-
-1. In the **App Details** page of the deployed chart, expand **Networking** and click on **Service**.
-
-2. Locate the service entry with the URL in the format: `<service-name>.<namespace>:<port>`. Note the values of `serviceName`, `namespace`, and `port` for the next step.
-
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/service-endpoint-v3.jpg)
-<center>Figure 4: Service Endpoint of AI Agent Helm App</center>
-
-
-### 5. Update ConfigMaps
-
-1. In a new tab, go to **Infrastructure Management** → **Resource Browser** → (Select Cluster) → **Config & Storage** → **ConfigMap**
-
-2. Edit the ConfigMaps:
-
-    * **devtron-cm**
-
-      Ensure the below entry is present in the ConfigMap (create one if it doesn't exist). Here you can define the target cluster and the endpoint where your Devtron AI service is deployed:
-
-      ```yaml
-      CLUSTER_CHAT_CONFIG: '{"<targetClusterID>": {"serviceName": "", "namespace": "", "port": ""}}'
-      ```
-
-      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/devtron-cm-v3.jpg)
-      <center>Figure 5: Entry in 'orchestrator-cm' or 'devtron-cm' ConfigMap</center>
-
-    * **dashboard-cm**
-    
-      To enable AI integration via feature flag, check if the below entry is present in the ConfigMap (create one if it doesn't exist).
-        
-      ```yaml
-      FEATURE_AI_INTEGRATION_ENABLE: "true"
-      ```
-
-      ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/dashboard-cm-v3.jpg)
-      <center>Figure 6: Entry in 'dashboard-cm' ConfigMap</center>
-
-
-### 6. Restart Pods
-
-1. Go to **Infrastructure Management** → **Resource Browser** → (Select Cluster) → **Workloads** → **Deployment**
-
-2. Click the checkbox next to the following **Deployment** workloads and restart them using the **`⟳`** button:
-    * `devtron`
-    * `dashboard`
-
-    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/restart-deployments.jpg)
-    <center>Figure 7: Restart 'devtron' and 'dashboard' deployment workloads</center>
-
-
-### 7. Perform Hard Refresh
-
-Perform a hard refresh of the browser to clear the cache: 
-* **Mac**: Hold down `Cmd` and `Shift` and then press `R`
-* **Windows/Linux**: Hold down `Ctrl` and then press `F5`
-
----
-
-## Configure AI Debug Mode and Ask Devtron Expert
-
-In addition to **Explain with AI**, Devtron Intelligence provides:
-
-* **Ask Devtron Expert** — a chatbot side panel where you can ask free-form questions about your applications and Kubernetes issues.
-* **AI Debug Mode** — an autonomous Kubernetes root-cause investigation (powered by Holmes) that opens as a chat when you use **Explain with AI**.
-
-Enabling them requires the additional configuration below, on top of the [Steps to Configure Devtron Intelligence](#steps-to-configure-devtron-intelligence). Perform this in the cluster where the Devtron orchestrator is running.
-
-:::caution Who Can Perform This Action?
-Same as above — you need permission to edit the cluster's ConfigMaps and restart pods.
-:::
-
-### 1. Deploy the Athena Microservices
+### 3. Deploy the Athena Microservices
 
 Deploy the Athena backend as **independent applications** on the cluster where the Devtron orchestrator runs:
 
 * **athena-mcp-engine** — exposes Devtron operations to the agent at `/devtron/mcp`.
-* **athena-api-server** — the main chat/agent service (also runs the AI Debug capability via Holmes).
+* **athena-api-server** — the main chat/agent service (also runs the AI Debug capability via Holmes, in-process).
 * **athena-worker-engine** — background worker for runbooks/remediation.
-* **Redis** — shared cache used by the chat agent (deploy it as a StatefulSet reachable at the `REDIS_URL` below).
+* **Redis** — shared cache used by the chat agent. Deploy it as a StatefulSet reachable at the `REDIS_URL` below. Without Redis, the agent falls back to an in-process cache (single replica only), so Redis is required when running more than one replica.
 
-Configure each service with the environment variables below. Provide sensitive values (Bedrock and auth tokens) through a **Secret**, not inline, and replace every `<placeholder>` with a value for your environment.
+Configure each service with the environment variables below. Provide sensitive values (LLM credentials, auth tokens) through the **Secret** from Step 2, not inline, and replace every `<placeholder>` with a value for your environment.
 
 **athena-mcp-engine**
 
@@ -321,14 +125,14 @@ Configure each service with the environment variables below. Provide sensitive v
 
 | Variable | Example | Description |
 |:---|:---|:---|
-| `DEVTRON_MCP_API_ENDPOINT` | `http://<mcp-engine-service>.<namespace>/devtron/mcp` | Endpoint of athena-mcp-engine, suffixed with `/devtron/mcp` |
+| `DEVTRON_MCP_API_ENDPOINT` | `http://<mcp-engine-service>.<namespace>/devtron/mcp` | Endpoint of `athena-mcp-engine`, suffixed with `/devtron/mcp` |
 | `REDIS_URL` | `redis://<redis-service>.<namespace>:6379` | Redis shared-cache connection URL |
-| `LLM_MODEL_ID` | `<provider-or-bedrock-model-id>` | Chat LLM model |
+| `LLM_MODEL_ID` | `<provider-or-bedrock-model-id>` | Chat LLM model, e.g. `bedrock/<...>`, `gpt-4o`, `gemini/<...>`, `claude-<...>` |
 | `LLM_TEMPERATURE` | `0.01` | LLM temperature |
 | `HOLMES_ENABLED` | `true` | Enables the AI Debug (Holmes) capability |
 | `HOLMES_MODEL` | `<holmes-llm-model>` | LLM model Holmes uses for debugging |
-| `AWS_BEARER_TOKEN_BEDROCK` | `<secret>` | Bedrock credential (via Secret) — when using AWS Bedrock |
-| `DEVTRON_WORKER_ENGINE_SERVICE_AUTH_TOKEN` | `<secret>` | Shared auth token between the API server and worker engine (via Secret) |
+| LLM credential | `<from Secret>` | Provider credential referenced from the Step 2 Secret (e.g., `AWS_BEARER_TOKEN_BEDROCK`, `OPENAI_API_KEY`) |
+| `DEVTRON_WORKER_ENGINE_SERVICE_AUTH_TOKEN` | `<from Secret>` | Shared auth token between the API server and worker engine |
 | `PG_ADDR` / `PG_PORT` / `PG_USER` / `PG_DATABASE` | `<pg-host>` / `5432` / `<user>` / `<db>` | Postgres connection |
 
 Optional chat-agent tuning (defaults shown; set only to override):
@@ -341,7 +145,9 @@ Optional chat-agent tuning (defaults shown; set only to override):
 
 Deploy **athena-worker-engine** the same way, sharing the backend configuration it needs (LLM credentials, `DEVTRON_WORKER_ENGINE_SERVICE_AUTH_TOKEN`, Postgres, and the MCP endpoint).
 
-### 2. Update ConfigMaps
+After deploying, note the ClusterIP **service endpoints** (format `<service-name>.<namespace>:<port>`) of `athena-api-server` and `athena-mcp-engine` — you will need them for `DEVTRON_MCP_API_ENDPOINT` above and `PROXY_SERVICE_CONFIG` in Step 4.
+
+### 4. Update ConfigMaps
 
 In the cluster where the Devtron orchestrator is running, go to **Infrastructure Management** → **Resource Browser** → (Select Cluster) → **Config & Storage** → **ConfigMap**, and edit:
 
@@ -355,19 +161,32 @@ In the cluster where the Devtron orchestrator is running, go to **Infrastructure
   | Key | Description |
   |:---|:---|
   | `FEATURE_ASK_DEVTRON_EXPERT` | Enables the **Ask Devtron Expert** chatbot (default `false`). |
-  | `PROXY_SERVICE_CONFIG` | Routes requests from the orchestrator to the Athena API server. Replace `<athena-api-server-service>` with the service of the deployed AI Agent chart. |
+  | `PROXY_SERVICE_CONFIG` | Routes requests from the orchestrator to the Athena API server. Replace `<athena-api-server-service>` with the `athena-api-server` service endpoint from Step 3. |
 
-* **dashboard-cm** — enable AI Debug Mode:
+* **dashboard-cm** — enable AI integration and (optionally) AI Debug Mode:
 
   ```yaml
+  FEATURE_AI_INTEGRATION_ENABLE: "true"
   FEATURE_ATHENA_DEBUG_MODE_ENABLE: "true"
   ```
 
-  When `true`, using **Explain with AI** opens the Holmes debugger as a new chat in the **Ask Devtron** side panel. When `false` (default), the AI response appears in a draggable widget.
+  | Key | Description |
+  |:---|:---|
+  | `FEATURE_AI_INTEGRATION_ENABLE` | Master switch that enables the **Explain with AI** buttons across the UI. |
+  | `FEATURE_ATHENA_DEBUG_MODE_ENABLE` | When `true`, using **Explain with AI** opens the Holmes debugger as a new chat in the **Ask Devtron** side panel. When `false` (default), the AI response appears in a draggable widget. |
 
-### 3. Restart Pods and Hard Refresh
+### 5. Restart Pods and Perform Hard Refresh
 
-Restart the `devtron` and `dashboard` deployments (see [Restart Pods](#6-restart-pods)), then [perform a hard refresh](#7-perform-hard-refresh) of your browser.
+1. Go to **Infrastructure Management** → **Resource Browser** → (Select Cluster) → **Workloads** → **Deployment**, and restart the following deployments using the **`⟳`** button:
+    * `devtron`
+    * `dashboard`
+
+    ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/restart-deployments.jpg)
+    <center>Figure 3: Restart 'devtron' and 'dashboard' deployment workloads</center>
+
+2. Perform a hard refresh of the browser to clear the cache:
+    * **Mac**: Hold down `Cmd` and `Shift` and then press `R`
+    * **Windows/Linux**: Hold down `Ctrl` and then press `F5`
 
 ---
 
@@ -380,38 +199,38 @@ Devtron supports **Explain** option at the following screens (only for specific 
 **Path**: Infrastructure Management → Resource Browser → (Select Cluster) → Workloads → Pod
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/explain-with-ai.jpg)
-<center>Figure 8a: AI Explain for Pod Issues</center> 
+<center>Figure 4a: AI Explain for Pod Issues</center> 
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/ai-explanation.jpg)
-<center>Figure 8b: AI-assisted Troubleshooting</center>
+<center>Figure 4b: AI-assisted Troubleshooting</center>
 
 ### Pod Last Restart Snapshot
 
 **Path**: Infrastructure Management → Resource Browser → (Select Cluster) → Workloads → Pod → Pod Last Restart Snapshot
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/pod-restart-explain.jpg)
-<center>Figure 9: AI Explain for Pod Restart Snapshot</center>
+<center>Figure 5: AI Explain for Pod Restart Snapshot</center>
 
 ### Event Errors
 
 **Path**: Infrastructure Management → Resource Browser → (Select Cluster) → Events
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/events-explain.jpg)
-<center>Figure 10: AI Explain for Event Errors</center>
+<center>Figure 6: AI Explain for Event Errors</center>
 
 ### App Details - Application Status
 
 **Path**: Application Management → Applications → (Select Application) → App Details → Application Status Drawer
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/appstatus-drawer-explain1.jpg)
-<center>Figure 11a: AI Explain at Application Status</center>
+<center>Figure 7a: AI Explain at Application Status</center>
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/appstatus-drawer-explain2.jpg)
-<center>Figure 11b: AI Explain at Application Status Drawer</center>
+<center>Figure 7b: AI Explain at Application Status Drawer</center>
 
 ### App Details - K8s Resources
 
 **Path**: Application Management → Applications → (Select Application) → App Details → K8s Resources (tab) → Workloads
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/app-workload-explain.jpg)
-<center>Figure 12: AI Explain at K8s Resources (tab)</center>
+<center>Figure 8: AI Explain at K8s Resources (tab)</center>
