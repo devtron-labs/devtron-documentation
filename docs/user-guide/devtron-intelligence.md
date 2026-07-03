@@ -296,32 +296,52 @@ Enabling them requires the additional configuration below, on top of the [Steps 
 Same as above — you need permission to edit the cluster's ConfigMaps and restart pods.
 :::
 
-### 1. Deploy Redis
+### 1. Deploy the Athena Microservices
 
-The chatbot uses Redis as a shared cache. Deploy a Redis instance in the cluster where the [AI Agent chart](#3-deploy-ai-agent-chart) is installed, and note its connection URL (for example, `redis://<redis-service>.<namespace>:6379`). You will reference it as `REDIS_URL` in the next step.
+Deploy the Athena backend as **independent applications** on the cluster where the Devtron orchestrator runs:
 
-### 2. Add Backend Environment Variables to the AI Agent Chart
+* **athena-mcp-engine** — exposes Devtron operations to the agent at `/devtron/mcp`.
+* **athena-api-server** — the main chat/agent service (also runs the AI Debug capability via Holmes).
+* **athena-worker-engine** — background worker for runbooks/remediation.
+* **Redis** — shared cache used by the chat agent (deploy it as a StatefulSet reachable at the `REDIS_URL` below).
 
-Edit the `ai-agent` Helm app (from [Deploy AI Agent Chart](#3-deploy-ai-agent-chart)) and add the following to the `additionalEnvVars` block in its `values.yaml`, then redeploy:
+Configure each service with the environment variables below. Provide sensitive values (Bedrock and auth tokens) through a **Secret**, not inline, and replace every `<placeholder>` with a value for your environment.
 
-```yaml
-additionalEnvVars:
-  # ...existing LLM variables from Step 3...
-  - name: HOLMES_ENABLED
-    value: "true"                        ## Enables AI Debug (Holmes) investigations
-  - name: HOLMES_MODEL
-    value: <holmes-llm-model>            ## LLM model Holmes uses for debugging
-  - name: REDIS_URL
-    value: redis://<redis-service>:6379  ## From Step 1
-  - name: CHAT_AGENT_MAX_LLM_TURNS
-    value: "7"                           ## (optional) Max LLM reasoning turns per request
-  - name: CHAT_AGENT_MAX_TOOL_TOKENS
-    value: "50000"                       ## (optional) Total token budget across tool responses per request
-  - name: CHAT_AGENT_MAX_TOOL_CALLS
-    value: "30"                          ## (optional) Max tool calls allowed per LLM turn
-```
+**athena-mcp-engine**
 
-### 3. Update ConfigMaps
+| Variable | Example | Description |
+|:---|:---|:---|
+| `DEVTRON_API_ENDPOINT` | `https://<devtron-url>` | Your Devtron server URL |
+| `DOC_RAG_SEARCH_SERVER_URL` | `<doc-search-url>` | Documentation-search (RAG) endpoint |
+| `PG_ADDR` / `PG_PORT` / `PG_USER` / `PG_DATABASE` | `<pg-host>` / `5432` / `<user>` / `<db>` | Postgres connection |
+| `REQUIRED_RECOMMENDATION_DATA_COUNT` | `10` | Minimum data points required for recommendations |
+| `SERVICE_PLATFORM` | `k8s` | Platform identifier |
+
+**athena-api-server**
+
+| Variable | Example | Description |
+|:---|:---|:---|
+| `DEVTRON_MCP_API_ENDPOINT` | `http://<mcp-engine-service>.<namespace>/devtron/mcp` | Endpoint of athena-mcp-engine, suffixed with `/devtron/mcp` |
+| `REDIS_URL` | `redis://<redis-service>.<namespace>:6379` | Redis shared-cache connection URL |
+| `LLM_MODEL_ID` | `<provider-or-bedrock-model-id>` | Chat LLM model |
+| `LLM_TEMPERATURE` | `0.01` | LLM temperature |
+| `HOLMES_ENABLED` | `true` | Enables the AI Debug (Holmes) capability |
+| `HOLMES_MODEL` | `<holmes-llm-model>` | LLM model Holmes uses for debugging |
+| `AWS_BEARER_TOKEN_BEDROCK` | `<secret>` | Bedrock credential (via Secret) — when using AWS Bedrock |
+| `DEVTRON_WORKER_ENGINE_SERVICE_AUTH_TOKEN` | `<secret>` | Shared auth token between the API server and worker engine (via Secret) |
+| `PG_ADDR` / `PG_PORT` / `PG_USER` / `PG_DATABASE` | `<pg-host>` / `5432` / `<user>` / `<db>` | Postgres connection |
+
+Optional chat-agent tuning (defaults shown; set only to override):
+
+| Variable | Default | Description |
+|:---|:---|:---|
+| `CHAT_AGENT_MAX_LLM_TURNS` | `7` | Max LLM reasoning turns per request |
+| `CHAT_AGENT_MAX_TOOL_TOKENS` | `50000` | Total token budget across tool responses per request |
+| `CHAT_AGENT_MAX_TOOL_CALLS` | `30` | Max tool calls allowed per LLM turn |
+
+Deploy **athena-worker-engine** the same way, sharing the backend configuration it needs (LLM credentials, `DEVTRON_WORKER_ENGINE_SERVICE_AUTH_TOKEN`, Postgres, and the MCP endpoint).
+
+### 2. Update ConfigMaps
 
 In the cluster where the Devtron orchestrator is running, go to **Infrastructure Management** → **Resource Browser** → (Select Cluster) → **Config & Storage** → **ConfigMap**, and edit:
 
@@ -345,7 +365,7 @@ In the cluster where the Devtron orchestrator is running, go to **Infrastructure
 
   When `true`, using **Explain with AI** opens the Holmes debugger as a new chat in the **Ask Devtron** side panel. When `false` (default), the AI response appears in a draggable widget.
 
-### 4. Restart Pods and Hard Refresh
+### 3. Restart Pods and Hard Refresh
 
 Restart the `devtron` and `dashboard` deployments (see [Restart Pods](#6-restart-pods)), then [perform a hard refresh](#7-perform-hard-refresh) of your browser.
 
