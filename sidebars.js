@@ -305,6 +305,8 @@ const sidebars = {
             'user-guide/resource-browser/overview',
             'user-guide/resource-browser/manage-resources',
             'user-guide/resource-browser/compare-and-sync',
+            'user-guide/resource-browser/cluster-upgrade-compatibility',
+            'user-guide/resource-browser/silver-surfer-internals',
             'user-guide/resource-browser/nodes',
             'user-guide/resource-browser/pods',
             'user-guide/resource-browser/scoop-config',

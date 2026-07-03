@@ -9,11 +9,11 @@ The **Resource Recommender** analyzes how your workloads actually consume CPU an
 
 Recommendations are generated from historical usage metrics collected by **Prometheus** running on your cluster. The recommender periodically scans supported workloads and stores the latest recommendation alongside the current configuration, so you can compare the two and apply the suggested values.
 
-{% hint style="info" %}
+:::info
 ### Prerequisites
 * This is an **Enterprise-only** feature and must be enabled by a super-admin.
 * The target cluster must have a reachable **Prometheus** endpoint configured. Without it, recommendations cannot be generated.
-{% endhint %}
+:::
 
 ---
 
@@ -45,10 +45,10 @@ Set the following environment variable on the Devtron orchestrator deployment:
 | --- | --- | --- |
 | `FEATURE_RESOURCE_RECOMMENDATION_ENABLE` | `true` | Master switch that turns the Resource Recommender on. Defaults to `false`. |
 
-{% hint style="warning" %}
+:::warning
 ### Who Can Perform This Action?
 Enabling the feature requires changing the orchestrator's installation/configuration values, which is a super-admin / cluster-operator task.
-{% endhint %}
+:::
 
 ---
 
@@ -84,12 +84,12 @@ These control how recommendations are calculated from Prometheus data.
 | `MIN_CPU_REQUEST` | `0.1` | Minimum CPU request (in cores) the recommender will suggest. Set to `0` to disable the floor. |
 | `MIN_MEMORY_REQUEST` | `1.0` | Minimum memory request (in MiB) the recommender will suggest. Set to `0` to disable the floor. |
 
-{% hint style="info" %}
+:::info
 ### Tuning Tips
 * Increase `KRR_MATRIX_TIME_RANGE` (e.g. to `168h` for 7 days) if your workloads have weekly traffic patterns, so peaks are captured.
 * Keep `KRR_IGNORE_OOM=false` and `KRR_IGNORE_CPU_THROTTLING=false` (the defaults) so the recommender accounts for resource starvation events when sizing.
 * Use `MIN_CPU_REQUEST` / `MIN_MEMORY_REQUEST` to prevent the recommender from suggesting unrealistically small values for lightly-used services.
-{% endhint %}
+:::
 
 ---
 
@@ -105,10 +105,10 @@ Recommendations refresh automatically on the configured cron schedule (`KRR_SYNC
   { "clusterId": 1 }
   ```
 
-{% hint style="warning" %}
+:::warning
 ### Who Can Perform This Action?
 Triggering a scan requires **update** permission on the target cluster.
-{% endhint %}
+:::
 
 ### View Recommendation Status
 
