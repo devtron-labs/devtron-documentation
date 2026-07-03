@@ -374,7 +374,6 @@ Consumed by the **Devtron operator/installer** (not the orchestrator's runtime e
 | ANNOUNCEMENT_BANNER_MSG | "" | Text shown in a banner at the top of the UI. Leave empty to hide the banner. Useful for maintenance notices or version announcements. |
 | API_BATCH_SIZE | 20 | Number of items fetched per page in batched API calls from the dashboard. |
 | APPLICATION_METRICS_ENABLED | "true" | Shows the application-metrics button on the app detail page, linking to embedded Grafana dashboards. |
-| CENTRAL_API_ENDPOINT | "" | Central API endpoint for Devtron cloud-hosted services (e.g. license checks). Leave empty for self-hosted installs. |
 | CLAIR_TOOL_VERSION | "" | Clair vulnerability scanner version label shown in the UI. |
 | CLUSTER_TERMINAL_CONNECTION_RETRY_COUNT | 7 | Number of times the dashboard retries a dropped cluster-terminal WebSocket connection before showing a connection error. |
 | CLUSTER_TERMINAL_CONNECTION_POLLING_INTERVAL | 7000 | Wait time (ms) between cluster-terminal reconnect attempts. |
@@ -394,47 +393,25 @@ Consumed by the **Devtron operator/installer** (not the orchestrator's runtime e
 | FEATURE_HIDE_USER_DIRECT_PERMISSIONS_FOR_NON_SUPER_ADMINS | "true" | Hides the User Direct Permissions section in User Management for non-super-admin users. Super admins always see and can modify all permissions. |
 | FEATURE_USER_DEFINED_GITOPS_REPO_ENABLE | false | Allows users to manually specify a GitOps repository URL instead of Devtron auto-creating one. |
 | FORCE_SECURITY_SCANNING | "false" | When `"true"`, security scanning is mandatory for every CI build — users cannot skip it. |
-| GA_ENABLED | "true" | Enables Google Analytics tracking in the dashboard. |
-| GA_TRACKING_ID | G-XXXXXXXX | Google Analytics 4 Measurement ID. Replace with your actual ID. |
 | GLOBAL_API_TIMEOUT | 60000 | Default timeout (ms) for all dashboard API requests. Requests not completed within this window are aborted and show an error. |
-| GTM_ENABLED | "true" | Enables Google Tag Manager in the dashboard. |
-| GTM_ID | "" | GTM container ID (e.g. `GTM-XXXXXXX`). Required when `GTM_ENABLED` is `"true"`. |
 | HELM_APP_DETAILS_POLLING_INTERVAL | 3000 | Polling interval (ms) for Helm application details. |
-| HIDE_DISCORD | "true" | Hides the Discord community button from the UI. |
 | HIDE_DEFAULT_CLUSTER | "true" | Hides the default (in-cluster) cluster from the cluster list. Useful when you don't want users interacting with the cluster Devtron runs on. |
 | HIDE_EXCLUDE_INCLUDE_GIT_COMMITS | "true" | Hides the option to manually include or exclude specific Git commits from a CI build. |
 | HIDE_GITOPS_OR_HELM_OPTION | "false" | Hides the GitOps/Helm deployment type choice in pipeline and Helm-app config. **Must be paired with `IS_INTERNAL_USE=true` in `devtron-cm`** — setting one without the other causes inconsistent UI behavior. |
 | ORGANIZATION_NAME | "" | Organization name shown in the UI header and login page. Leave empty to use default Devtron branding. |
-| POSTHOG_ENABLED | "true" | Enables PostHog product analytics. |
-| POSTHOG_TOKEN | XXXXXXXX | PostHog project API token. Replace with your actual token. |
 | RECOMMEND_SECURITY_SCANNING | "false" | When `"true"`, shows a recommendation nudge to enable security scanning on pipelines where it is not yet configured. Less strict than `FORCE_SECURITY_SCANNING`. |
-| SENTRY_AUTH_TOKEN | "" | Auth token for uploading source maps to Sentry, enabling readable stack traces in error reports. |
-| SENTRY_DSN | '' | Sentry Data Source Name. Required for both error and performance reporting. |
-| SENTRY_ENV | stage | Sentry environment label sent with all events (e.g. `production`, `staging`). |
-| SENTRY_ERROR_ENABLED | false | When `true`, uncaught JavaScript errors in the dashboard are sent to Sentry. |
-| SENTRY_PERFORMANCE_ENABLED | false | When `true`, performance traces (page load times, API latency) are sent to Sentry. |
-| SENTRY_RELEASE_VERSION | "" | Sentry release version tag. When set, Sentry links errors to specific releases for easier debugging. |
-| SENTRY_TRACES_SAMPLE_RATE | 0.2 | Fraction of transactions sent to Sentry for performance monitoring. Range: `0` (none) to `1` (all). |
 | SERVICE_WORKER_TIMEOUT | "1" | How often (minutes) the service worker checks for dashboard updates. Change cautiously — too low a value may interfere with your release cycle. |
 | SIDEBAR_DT_LOGO | "" | URL of a custom logo for the sidebar. Takes effect only when `ORGANIZATION_NAME` is not set. |
 | TRIGGER_API_TIMEOUT | 60000 | Timeout (ms) for deployment trigger API calls (deploy artifact, trigger chart). Can be set higher than `GLOBAL_API_TIMEOUT` for slow deployment environments. |
 | FEATURE_APPLICATION_TEMPLATES_ENABLE | true | Show the Application Templates section under Global Configurations. |
-| FEATURE_IMAGE_PROMOTION_ENABLE | false | Show the Image Promotion Policy section under Global Configurations. |
 | FEATURE_CONFIG_DRIFT_ENABLE | false | Enable config-drift detection and the drift comparison modal on the app details page. |
 | FEATURE_SWAP_TRAFFIC_ENABLE | false | Enable the swap-traffic action on the app details page (e.g. blue-green traffic switch). |
 | FEATURE_CLUSTER_MAP_ENABLE | true | Show the cluster map visualization in the cluster node listing. |
 | FEATURE_RB_SYNC_CLUSTER_ENABLE | true | Enable the compare/sync-cluster view in the Resource Browser. |
-| FEATURE_CODE_MIRROR_ENABLE | true | Use the CodeMirror-based editor for YAML/config editing across the UI. |
-| FEATURE_SCOPED_VARIABLE_ENVIRONMENT_LIST_ENABLE | true | Show the environment-scoped list in the Saved Scoped Variables view. |
 | FEATURE_DEFAULT_LANDING_RB_ENABLE | false | In EA-only (External App) mode, make the Resource Browser the default landing page after login instead of the app list. |
 | FEATURE_DEFAULT_MERGE_STRATEGY | patch | Default config-override merge strategy at the environment level. Accepts `patch` or `replace`. |
-| FEATURE_DEFAULT_AUTHENTICATED_VIEW_ENABLE | false | Advanced: enable the default authenticated view provided by the shared FE common library. Leave `false` unless instructed. |
 | FEATURE_PROMO_EMBEDDED_IFRAME_URL | "" | URL of an embedded promotional iframe shown in a modal. Empty disables the promo modal. |
 | FEATURE_PROMO_EMBEDDED_MODAL_TITLE | "" | Title text for the embedded promotional modal (used with `FEATURE_PROMO_EMBEDDED_IFRAME_URL`). |
 | FEATURE_PROMO_EMBEDDED_BUTTON_TEXT | "" | Button label that opens the embedded promotional modal. |
 | HIDE_RELEASES | false | Hide the Software Distribution Hub / Releases item from the sidebar navigation. |
 | HIDE_RESOURCE_WATCHER | false | Hide the Resource Watcher item from the sidebar navigation. |
-| HIDE_NETWORK_STATUS_INTERFACE | true | Hide the Network Status Interface item from the sidebar navigation. |
-| GATEKEEPER_URL | https://license.devtron.ai/dashboard | URL of the Devtron license/gatekeeper service used for license management. |
-| SYSTEM_CONTROLLER_LISTING_TIMEOUT | 300000 | Timeout (ms) for the system-controller resource listing call. Default is 5 minutes. |
-| K8S_CLIENT | false | Build-time flag (from `VITE_K8S_CLIENT`) that runs the dashboard in standalone Kubernetes-client mode, skipping orchestrator token validation. Not typically set via ConfigMap. |
