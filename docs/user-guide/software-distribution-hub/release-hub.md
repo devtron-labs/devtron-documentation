@@ -426,3 +426,58 @@ Based on the schema provided in the catalog, you can add relevant details for re
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/sdh/release-catalog.jpg)
 <center>Figure 27: Release Catalog</center>
+
+### Release Channels
+
+A **Release Channel** is a subscription mechanism that groups tenant [installations](./README.md#installations) so you can control which software releases each group receives. Instead of targeting individual installations one by one, you subscribe installations to a channel (e.g., `stable`, `beta`, `canary`) and then deliver releases to whole channels at a time.
+
+Release Channels decouple **release management** ("what version exists") from **deployment targeting** ("who gets it"), which is what makes staged rollouts across many tenants manageable.
+
+:::caution Who Can Perform This Action?
+Users need to have super-admin permission to create, update, or delete a release channel.
+:::
+
+**How it works**:
+
+* A [Tenant](./tenants.md) can have multiple installations (e.g., dev / staging / prod).
+* Each installation subscribes to **at most one** Release Channel. If it has none, it is treated as **Not Subscribed** — still targetable, but managed manually.
+* A release (a version within a [release track](./README.md#release-tracks)) is **mapped** to installations. In the requirements step, installations are presented **grouped by their channel**, so you can enable an entire channel's installations as targets at once.
+* During deployment, you can filter the rollout view by channel to see the status for just one group.
+
+A release can target installations in two modes:
+
+* **Broadcast** — all installations are targeted.
+* **Selective** — only the specific installations you mapped (typically chosen by channel).
+
+#### Configuring a Release Channel
+
+Channels are managed from the **Release Channels** list (a drawer within the Release Hub). Each channel supports the following fields:
+
+| Field | Required | Editable later | Notes |
+|-------|----------|----------------|-------|
+| **Display name** | Yes | Yes | Human-friendly name, e.g., `Acme Inc.` |
+| **Release channel ID** | Yes | No (immutable) | Unique identifier, e.g., `acme-inc`. Cannot be changed once set. |
+| **Description** | No | Yes | Free-text; trimmed on save. |
+| **Set as default** | No | Yes | Marks this as the default channel. Only one default is enforced system-wide. |
+
+You can perform the following operations on a channel:
+
+* **Create** — define name, ID, description, and optional default flag.
+* **Edit** — update name, description, and default flag (the ID is locked).
+* **Delete** — removes the channel and **unsubscribes every installation** subscribed to it. Confirmation requires typing the channel name.
+* **List** — a searchable, sortable table showing each channel's name and its subscribed installation count.
+
+:::info Subscribing an Installation to a Channel
+Channel membership is set **on the installation**, not on the channel. When you create or edit a tenant installation (**Tenants → Installations**), pick a Release Channel from the dropdown (or leave it blank for *Not Subscribed*). That selection is what links the installation to the channel.
+:::
+
+#### Filtering by Channel
+
+A **Release Channel filter** is available across the Releases, Tenants/Installations, and Deploy views. It is a multi-select that lists every channel plus a **Not subscribed** option, letting you slice any list down to a single channel's installations.
+
+**When to use**:
+
+* **Stable vs. Beta rings** — Subscribe production installations to `stable` and test installations to `beta`. Ship a release to `beta` first; once validated, map the same release to `stable`.
+* **Staged / canary rollouts** — Use `canary` → `early-adopter` → `production` channels. Release to canary, monitor, then progressively expand to the next channel.
+* **Multi-tenant isolation** — Because each installation subscribes independently, different tenants (and even different environments within one tenant) can run on different release cadences.
+* **Manual / deprecated installations** — Leave an installation *Not Subscribed* when you want to exclude it from automatic channel-based targeting and control its releases by hand.
