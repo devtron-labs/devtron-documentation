@@ -200,6 +200,145 @@ Here we covered the process of performing a production installation on just one 
 
 ---
 
+## Release Configurations
+
+The **Configurations** tab provides visibility into all deployment-related configurations associated with an application in a specific environment within a release. It acts as a release validation checkpoint, ensuring the correct application settings are deployed to the target environment.
+
+It enables release managers, platform engineers, and application owners to:
+
+* Review deployment configurations before rollout.
+* Inspect ConfigMaps and Secrets associated with an application.
+* Understand inherited and overridden configurations.
+* Compare configurations across environments.
+* Validate environment-specific settings.
+* Review deployment templates used during release execution.
+
+### Accessing Release Configurations
+
+1. Open **Release Hub** and select the desired release.
+
+2. Open the **Configurations** tab.
+
+3. Select the **Application** (e.g., `google-api-server`) and the **Environment** (e.g., `stage-dcd`).
+
+All configuration information displayed on the page is contextual to the selected application and environment combination.
+
+### Configuration Actions
+
+#### Compare with...
+
+Allows you to compare configuration values with another environment (e.g., `stage-dcd` vs `production`).
+
+**When to use**:
+
+* To validate promotion readiness.
+* To compare staging vs production settings.
+* To detect configuration drift.
+* To verify release consistency across environments.
+
+#### Deployment Template
+
+Provides access to the deployment template associated with the application. The deployment template defines deployment behavior such as pod configuration, resource limits, replica settings, service configuration, and container specifications.
+
+**When to use**:
+
+* To review the deployment manifest configuration.
+* To verify rollout settings.
+* To validate infrastructure-level deployment behavior.
+
+### Resource Explorer
+
+The left-side resource explorer allows you to browse configuration resources. Supported resource types include:
+
+| Resource Type | Description | Typically Contains |
+|---------------|-------------|--------------------|
+| **ConfigMaps** | Stores non-sensitive configuration values | Service endpoints, feature flags, application settings, runtime parameters |
+| **Secrets** | Stores sensitive information | API keys, access tokens, passwords, authentication credentials |
+
+:::info Note
+Sensitive values within Secrets remain protected and are not exposed by default.
+:::
+
+#### Configuration State Indicators
+
+Each configuration resource displays its inheritance status and current state:
+
+| Indicator | Description |
+|-----------|-------------|
+| **Inheriting** / **Inherited** | The configuration is inherited from a parent configuration source (base configuration). |
+| **No Override** | No environment-specific override exists; the environment uses the inherited value exactly as defined in the parent configuration. |
+| **Dry Run** | Displays configuration in a non-deployment editing mode for review and validation before deployment. |
+
+#### Configuration Source Tracking
+
+The page identifies where a configuration originates (e.g., `Inherited from Base Configuration`), providing traceability by showing the parent source responsible for the active configuration. This enables easier debugging, configuration governance, auditability, and faster root-cause analysis.
+
+### Viewing Configuration Details
+
+* **Data Type** — Displays the Kubernetes resource type (e.g., `Kubernetes ConfigMap`), helping you understand how the configuration is stored within the cluster.
+
+* **Mount Data As** — Displays how configuration values are consumed by the application (e.g., `Environment Variable`). Supported mounting methods may include Environment Variables, Volume Mounts, and Filesystem Mounts, depending on platform configuration.
+
+* **Data** — Displays the actual configuration content with a syntax-highlighted, read-only view, copy support, and environment-specific values. For example:
+
+    ```
+    PG_DATABASE: orchestrator
+    PG_USER: postgres
+    PG_PORT: "5432"
+    SERVICE_NAME: athena-api-server
+    SERVICE_VERSION: 0.2.0
+    LLM_TEMPERATURE: "0.01"
+    ```
+
+#### Variable Reference Support
+
+Configurations may contain variable references (e.g., `LOGFIRE_ACCESS_TOKEN: ${LOGFIRE_ACCESS_TOKEN}`). These placeholders are resolved during deployment or runtime, enabling secure secret handling, environment portability, and reduced configuration duplication.
+
+The page provides a **Show Variable Values** toggle to reveal resolved values, allowing you to verify resolved values, debug configuration issues, and confirm runtime settings.
+
+:::caution Security Consideration
+Access to actual values may be restricted based on user permissions.
+:::
+
+Use the **Copy** action to copy the entire configuration content for configuration review, incident investigation, external validation, or change auditing.
+
+### Scoped Variables
+
+The **Scoped Variables** section displays reusable variables available to the configuration. A scoped variable is a reusable configuration value managed centrally and injected into application configurations. It is environment-aware, dynamically resolved, reusable across applications, and managed independently of application code.
+
+Examples include:
+
+| Variable | Description |
+|----------|-------------|
+| `KedaHttpCurlHit` | Cluster curl endpoint |
+| `KedaScaleDownPeriod` | Cluster scale-down period |
+| `SHARED_DB_HOST` | Shared database host |
+| `DB_NAME` | Database name |
+| `SHARED_SA` | Service account |
+| `ENV_DASHBOARD_URL_PREFIX` | Dashboard URL prefix |
+
+Instead of hardcoding values (e.g., `DATABASE_HOST: my-database-host`), use a scoped variable reference (e.g., `DATABASE_HOST: ${SHARED_ENT_DB_HOST}`). This provides reusability, environment portability, centralized updates, and reduced maintenance.
+
+### Typical Release Validation Workflow
+
+Before rollout:
+
+1. Open the release and navigate to **Configurations**.
+2. Select the **Application** and **Environment**.
+3. Review ConfigMaps and Secrets.
+4. Validate inherited configurations.
+5. Verify scoped variable usage.
+6. Compare with production.
+7. Proceed with rollout.
+
+:::info Best Practices
+* **Review configurations before every release** — Validate all environment-specific values before deployment.
+* **Prefer scoped variables** — Avoid hardcoded infrastructure values.
+* **Use environment comparison** — Compare environments before promotion to production.
+* **Minimize overrides** — Keep configurations inherited whenever possible to reduce drift.
+* **Validate secret references** — Ensure all secret references resolve correctly before rollout.
+:::
+
 ## Extras
 
 ### Viewing Rollout Status
