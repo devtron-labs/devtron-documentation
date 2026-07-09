@@ -18,8 +18,8 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.82d77deb.css">
-<script src="/assets/js/runtime~main.beffa248.js" defer="defer"></script>
-<script src="/assets/js/main.9b7b07ee.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.ab15d001.js" defer="defer"></script>
+<script src="/assets/js/main.cf0a1c6d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -85,8 +85,8 @@
 </ol>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="adding-platform-specific-configurations-">Adding Platform Specific Configurations <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" class="enterprise-badge-img"></a><a href="#adding-platform-specific-configurations-" class="hash-link" aria-label="Direct link to adding-platform-specific-configurations-" title="Direct link to adding-platform-specific-configurations-" translate="no">​</a></h2>
-<p>Modern applications often need to run on different hardware platforms (architectures), such as <code>amd64</code> (x86_64) and <code>arm64</code> to support cross-platform compatibility.</p>
-<p><a href="https://docs.docker.com/build/building/multi-platform/" target="_blank" rel="noopener noreferrer" class="">Multi-architecture (multi-arch) builds</a> enables you to build container images that work seamlessly across multiple platforms.</p>
+<p>Modern applications often need to run on different hardware platforms (architectures), such as <code>amd64</code> (x86_64) and <code>arm64</code>, to support cross-platform compatibility.</p>
+<p><a href="https://docs.docker.com/build/building/multi-platform/" target="_blank" rel="noopener noreferrer" class="">Multi-architecture (multi-arch) builds</a> enable you to build container images that work seamlessly across multiple platforms.</p>
 <p>Optimizing your CI builds for each platform ensures:</p>
 <ul>
 <li class="">
@@ -96,8 +96,18 @@
 <p><strong>Resource efficiency</strong>: Prevents over or under-provisioning, saving costs and improving reliability.</p>
 </li>
 </ul>
-<p>Each platform may have unique requirements for resources like CPU and memory, or they may benefit from different configuration of resources. Thus, Devtron allows defining platform specific configurations within a build infra profile. This ensures each build is executed with the right configurations specific to the target platform.</p>
-<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>K8s Driver v/s Container Driver</div><div class="admonitionContent_BuS1"><p><strong>Platform specific configurations</strong> are only supported for builds executed using the k8s driver.</p><p>When you use the K8s driver, each build for a target platform runs as its own pod within your Kubernetes cluster. This allows you to assign different CPU, memory, and other configurations for each target platform like <code>amd64</code> or <code>arm64</code>.</p><p>If you use the container driver, all builds run inside a single CI runner pod and share the same configuration, regardless of the target platform while K8s driver.</p></div></div>
+<p>Each platform may have unique requirements for resources like CPU and memory, or it may benefit from a different configuration of resources. Thus, Devtron allows defining platform specific configurations within a build infra profile. This ensures each build is executed with the right configurations specific to the target platform.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-the-configurations-are-applied">How the Configurations Are Applied<a href="#how-the-configurations-are-applied" class="hash-link" aria-label="Direct link to How the Configurations Are Applied" title="Direct link to How the Configurations Are Applied" translate="no">​</a></h3>
+<p>A build infra profile has two levels of configuration:</p>
+<ul>
+<li class="">
+<p><strong>Runner configuration</strong>: The base CPU, memory, and build timeout for the build (ci-runner) pod. This applies to every build using the profile.</p>
+</li>
+<li class="">
+<p><strong>Platform specific configuration</strong>: An optional set of resources (CPU and memory) defined for an individual target platform such as <code>linux/amd64</code> or <code>linux/arm64</code>. When you build for that platform, Devtron uses these resources instead of the base runner configuration.</p>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>K8s Driver v/s Container Driver</div><div class="admonitionContent_BuS1"><p><strong>Platform specific configurations</strong> are only supported for builds executed using the K8s driver.</p><p>When you use the <strong>K8s driver</strong>, each build for a target platform runs as its own pod within your Kubernetes cluster. This allows you to assign different CPU, memory, and other configurations for each target platform, such as <code>linux/amd64</code> or <code>linux/arm64</code>.</p><p>When you use the <strong>container driver</strong>, all platform builds run inside a single CI runner pod and share the same configuration, regardless of the target platform.</p></div></div>
 <p>To configure platform specific configurations:</p>
 <ol>
 <li class="">
@@ -107,26 +117,34 @@
 <p>Select the profile for which you want to configure platform specific configurations.</p>
 </li>
 <li class="">
-<p>Check the <strong>Use K8s driver for build</strong> and click <strong>+Add Target Platform</strong>; a modal window will open.</p>
+<p>Enable the <strong>Use K8s driver for build</strong> toggle, then click <strong>+ Add Target Platform</strong>; a modal window will open.</p>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/figure-1-k8s-driver.png" alt="" class="img_ev3q">
+<center>Enabling K8s Driver and Adding a Target Platform</center></p>
 </li>
 <li class="">
-<p>Under <strong>Select a target platform</strong>, select the platform for which you want to define platform specific configurations.</p>
+<p>Under <strong>Select a target platform</strong>, choose the platform for which you want to define platform specific configurations.</p>
 <ol>
 <li class="">
 <p>You can choose from <code>linux/amd64</code> or <code>linux/arm64</code>.</p>
 </li>
 <li class="">
-<p>You can also type to add a new platform.</p>
+<p>You can also type to add a custom platform.</p>
 </li>
 </ol>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/figure-2-k8s-driver.png" alt="" class="img_ev3q">
+<center>Selecting a Target Platform</center></p>
 </li>
 <li class="">
 <p>Configure the resources for the specific platform and click <strong>Save</strong>.</p>
+<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>caution</div><div class="admonitionContent_BuS1"><p>For both CPU and Memory, the <strong>Limit</strong> must be greater than or equal to the <strong>Request</strong>. See <a href="#cpu-units" class="">CPU units</a> and <a href="#memory-units" class="">memory units</a>.</p></div></div>
+<p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/build-infra/figure-3-k8s-driver.png" alt="" class="img_ev3q">
+<center>Configuring Platform Specific Resources</center></p>
 </li>
 <li class="">
-<p>The platform specific configuration will be available below the runner configuration.</p>
+<p>The platform specific configuration will be available below the runner configuration. You can add more target platforms by repeating steps 3–5, and remove a platform using its delete icon.</p>
 </li>
 </ol>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Note</div><div class="admonitionContent_BuS1"><p>If a target platform does not have its own platform specific configuration, the build for that platform falls back to the base runner configuration.</p></div></div>
 <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/5nFJfai125U" title="Platform Specific Configurations" frameborder="0" allow="fullscreen"></iframe></div>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="attaching-profile">Attaching Profile<a href="#attaching-profile" class="hash-link" aria-label="Direct link to Attaching Profile" title="Direct link to Attaching Profile" translate="no">​</a></h2>
@@ -190,7 +208,7 @@
 <li class="">seconds</li>
 <li class="">minutes</li>
 <li class="">hours</li>
-</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/app-management/configurations/scoped-variables"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Scoped Variables</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/policies"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Policies</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#configure-build-infra" class="table-of-contents__link toc-highlight">Configure Build Infra</a><ul><li><a href="#global-profile" class="table-of-contents__link toc-highlight">Global Profile</a></li><li><a href="#creating-custom-profile-" class="table-of-contents__link toc-highlight">Creating Custom Profile <a></a></a></li></ul></li><li><a href="#adding-platform-specific-configurations-" class="table-of-contents__link toc-highlight">Adding Platform Specific Configurations <a></a></a></li><li><a href="#attaching-profile" class="table-of-contents__link toc-highlight">Attaching Profile</a><ul><li><a href="#performing-bulk-action" class="table-of-contents__link toc-highlight">Performing Bulk Action</a></li></ul></li><li><a href="#editing-or-deleting-profile" class="table-of-contents__link toc-highlight">Editing or Deleting Profile</a><ul><li><a href="#need-more-options" class="table-of-contents__link toc-highlight">Need More Options?</a></li></ul></li><li><a href="#extras" class="table-of-contents__link toc-highlight">Extras</a><ul><li><a href="#cpu-units" class="table-of-contents__link toc-highlight">CPU Units</a></li><li><a href="#memory-units" class="table-of-contents__link toc-highlight">Memory Units</a></li><li><a href="#timeout-units" class="table-of-contents__link toc-highlight">Timeout Units</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/app-management/configurations/scoped-variables"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Scoped Variables</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/policies"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Policies</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#configure-build-infra" class="table-of-contents__link toc-highlight">Configure Build Infra</a><ul><li><a href="#global-profile" class="table-of-contents__link toc-highlight">Global Profile</a></li><li><a href="#creating-custom-profile-" class="table-of-contents__link toc-highlight">Creating Custom Profile <a></a></a></li></ul></li><li><a href="#adding-platform-specific-configurations-" class="table-of-contents__link toc-highlight">Adding Platform Specific Configurations <a></a></a><ul><li><a href="#how-the-configurations-are-applied" class="table-of-contents__link toc-highlight">How the Configurations Are Applied</a></li></ul></li><li><a href="#attaching-profile" class="table-of-contents__link toc-highlight">Attaching Profile</a><ul><li><a href="#performing-bulk-action" class="table-of-contents__link toc-highlight">Performing Bulk Action</a></li></ul></li><li><a href="#editing-or-deleting-profile" class="table-of-contents__link toc-highlight">Editing or Deleting Profile</a><ul><li><a href="#need-more-options" class="table-of-contents__link toc-highlight">Need More Options?</a></li></ul></li><li><a href="#extras" class="table-of-contents__link toc-highlight">Extras</a><ul><li><a href="#cpu-units" class="table-of-contents__link toc-highlight">CPU Units</a></li><li><a href="#memory-units" class="table-of-contents__link toc-highlight">Memory Units</a></li><li><a href="#timeout-units" class="table-of-contents__link toc-highlight">Timeout Units</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
               <div style="text-align: center;">
                 <div style="margin-bottom: 1rem;">
                   <a href="/" style="display: inline-block;">

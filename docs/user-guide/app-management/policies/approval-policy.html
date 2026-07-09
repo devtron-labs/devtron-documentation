@@ -18,8 +18,8 @@
 
 
 <script src="/js/reo.js"></script><link rel="stylesheet" href="/assets/css/styles.82d77deb.css">
-<script src="/assets/js/runtime~main.beffa248.js" defer="defer"></script>
-<script src="/assets/js/main.9b7b07ee.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.ab15d001.js" defer="defer"></script>
+<script src="/assets/js/main.cf0a1c6d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -454,33 +454,39 @@
 <p>Only those with <code>Image Approver</code> permissions can then approve the request.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/approval-policy/grant-approval.gif" alt="" class="img_ev3q">
 <center>Figure 31: User with &#x27;Image Approver&#x27; Permissions granting approval</center></p>
+<p>A super-admin can check or modify a user permissions with approval rights by going to Global Configurations → Authorization (dropdown) → User Permissions.</p>
+<p><img decoding="async" loading="lazy" src="https://cdn.devtron.ai/images/user-permissions-deployment-Approver.jpg" alt="" class="img_ev3q">
+<center>Figure 32: Checking Permissions</center></p>
 <p>If <a class="" href="/docs/user-guide/app-management/configurations/manage-notification">SES/SMTP</a> is configured in Devtron, the approver gets notified via email. This enables the approver to take an action directly from the mail, such as <code>View Request</code> and <code>Approve Request</code>.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/approval-policy/approval-request-notify.gif" alt="" class="img_ev3q">
-<center>Figure 32: Approval via Email</center></p>
+<center>Figure 33: Approval via Email</center></p>
 </li>
 <li class="">
 <p>The user can then proceed with deploying the approved image.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/approval-policy/deploy-approved-image.gif" alt="" class="img_ev3q">
-<center>Figure 33: Deployment of Approved Image</center></p>
+<center>Figure 34: Deployment of Approved Image</center></p>
 </li>
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="approving-configuration-change-request">Approving Configuration Change Request<a href="#approving-configuration-change-request" class="hash-link" aria-label="Direct link to Approving Configuration Change Request" title="Direct link to Approving Configuration Change Request" translate="no">​</a></h3>
 <p>Assume you created a policy (shown below) that prevents direct changes to the configuration files (Deployment Template, ConfigMaps, Secrets) of a banking application unless there is one approval.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/approval-policy/example2.jpg" alt="" class="img_ev3q">
-<center>Figure 34: Example</center></p>
+<center>Figure 35: Example</center></p>
 <ol>
 <li class="">
 <p>The user first requests approval for pushing a configuration change in Deployment Template/ConfigMap/Secret.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/approval-policy/config-change-request.gif" alt="" class="img_ev3q">
-<center>Figure 35: Request Approval for Configuration Change</center></p>
+<center>Figure 36: Request Approval for Configuration Change</center></p>
 </li>
 <li class="">
 <p>Only those with <code>Configuration Approver</code> permissions can then approve the request.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/approval-policy/approve-config-change.gif" alt="" class="img_ev3q">
-<center>Figure 36: User with &#x27;Configuration Approver&#x27; permissions granting approval</center></p>
+<center>Figure 37: User with &#x27;Configuration Approver&#x27; permissions granting approval</center></p>
+<p>A super-admin can check or modify a user permissions with approval rights by going to Global Configurations → Authorization (dropdown) → User Permissions.</p>
+<p><img decoding="async" loading="lazy" src="https://cdn.devtron.ai/images/user-permissions-approver.jpg" alt="" class="img_ev3q">
+<center>Figure 38: Checking Permissions</center></p>
 <p>If <a class="" href="/docs/user-guide/app-management/configurations/manage-notification">SES/SMTP</a> is configured in Devtron, the approver gets notified via email. Therefore, the approver can take an action directly from the mail as shown below.</p>
 <p><img decoding="async" loading="lazy" src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/approval-policy/config-change-mail.gif" alt="" class="img_ev3q">
-<center>Figure 37: Config Approval via Email</center></p>
+<center>Figure 39: Config Approval via Email</center></p>
 </li>
 </ol></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/user-guide/app-management/policies/deployment-window"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Deployment Window</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/user-guide/app-management/policies/plugin-policy"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Plugin Policy</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction-" class="table-of-contents__link toc-highlight">Introduction <a></a></a></li><li><a href="#create-an-approval-policy" class="table-of-contents__link toc-highlight">Create an Approval Policy</a></li><li><a href="#apply-an-approval-policy" class="table-of-contents__link toc-highlight">Apply an Approval Policy</a></li><li><a href="#apply-multiple-policies" class="table-of-contents__link toc-highlight">Apply Multiple Policies</a><ul><li><a href="#apply-more-policies-to-a-scope" class="table-of-contents__link toc-highlight">Apply More Policies to a Scope</a></li><li><a href="#apply-more-policies-in-bulk" class="table-of-contents__link toc-highlight">Apply More Policies in Bulk</a></li></ul></li><li><a href="#configuring-exceptions-optional" class="table-of-contents__link toc-highlight">Configuring Exceptions (Optional)</a><ul><li><a href="#excluding-super-admins" class="table-of-contents__link toc-highlight">Excluding Super Admins</a></li><li><a href="#excluding-specific-users--user-groups--api-tokens" class="table-of-contents__link toc-highlight">Excluding Specific Users / User Groups / API Tokens</a></li><li><a href="#note" class="table-of-contents__link toc-highlight">Note</a></li></ul></li><li><a href="#remove-applied-policies" class="table-of-contents__link toc-highlight">Remove Applied Policies</a><ul><li><a href="#remove-policies-applied-to-a-scope" class="table-of-contents__link toc-highlight">Remove Policies Applied to a Scope</a></li><li><a href="#remove-applied-policies-in-bulk" class="table-of-contents__link toc-highlight">Remove Applied Policies in Bulk</a></li></ul></li><li><a href="#delete-applied-policies" class="table-of-contents__link toc-highlight">Delete Applied Policies</a></li><li><a href="#delete-an-approval-policy" class="table-of-contents__link toc-highlight">Delete an Approval Policy</a></li><li><a href="#results" class="table-of-contents__link toc-highlight">Results</a><ul><li><a href="#approving-deployment-request" class="table-of-contents__link toc-highlight">Approving Deployment Request</a></li><li><a href="#approving-configuration-change-request" class="table-of-contents__link toc-highlight">Approving Configuration Change Request</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__links text--center"><div class="footer__links"><span class="footer__link-item">
               <div style="text-align: center;">
