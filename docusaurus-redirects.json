@@ -770,7 +770,8 @@
           },
           {
             "from": [
-              "/global-configurations/approval-policy"
+              "/global-configurations/approval-policy",
+              "/docs/user-guide/creating-application/config-approval"
             ],
             "to": "/docs/user-guide/app-management/policies/approval-policy"
           },
