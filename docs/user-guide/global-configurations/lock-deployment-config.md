@@ -145,7 +145,7 @@ After creating a profile, the next step is to apply the profile to the specific 
 
 Only super admins can edit the locked configurations directly once the lock deployment configuration profile is applied to the deployment templates. Non-super admin users cannot edit the locked keys for those deployment templates.
 
-Let's look at a scenario where a user (non-super-admin) tries to edit the same in an [unprotected](../../user-guide/creating-application/config-approval.md) base deployment template.
+Let's look at a scenario where a user (non-super-admin) tries to edit the same in an [unprotected](./approval-policy.md) base deployment template.
 
 
 ### Viewing Locked Configurations
@@ -190,7 +190,7 @@ Only a super-admin, manager, or application admin can edit the configuration val
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/lock-dt/updating-changes.jpg)
     <center>Figure 17: Updating Deployment Config</center>
 
-    However, if it's a [protected template](../../user-guide/creating-application/config-approval.md), the user will require the approval of a [configuration approver](./authorization/user-access.md#devtron-apps-permissions) as shown below.
+    However, if it's a [protected template](./approval-policy.md), the user will require the approval of a [configuration approver](./authorization/user-access.md#devtron-apps-permissions) as shown below.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/lock-dt/proposing-changes.jpg)
     <center>Figure 18: Proposing Changes to Protected Config</center>

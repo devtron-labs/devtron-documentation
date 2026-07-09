@@ -252,7 +252,7 @@ This feature aims at helping the user clone existing CI/CD pipelines for new tar
 | [**GitOps Configuration**](../user-guide/creating-application/gitops-config.md)         | Not cloned              |
 | [**Environment Policies**](../user-guide/creating-application/environment-overrides.md)         | Cloned if at pipeline level,ignored if global              |
 | [**CD Filter**](../user-guide/global-configurations/filter-condition.md)                    | Not cloned (handled globally)                              |
-| [**Protect Configurations**](../user-guide/creating-application/config-approval.md)       | Cloned (handled at pipeline level)                         |
+| [**Protect Configurations**](../user-guide/global-configurations/approval-policy.md)       | Cloned (handled at pipeline level)                         |
 | [**Deployment Approvals**](../user-guide/global-configurations/approval-policy.md)         | Not cloned (handled globally)                                                    |
 | [**Lock Configurations**](../user-guide/global-configurations/lock-deployment-config.md)          | Not cloned                                                 |
 | [**Mandatory Plugin**](../user-guide/global-configurations/plugin-policy.md)             | Not cloned                                                 |
