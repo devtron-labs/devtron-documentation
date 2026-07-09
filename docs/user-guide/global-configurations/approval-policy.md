@@ -433,34 +433,45 @@ Assume you created a policy (shown below) that blocks the deployment of a bankin
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/approval-policy/grant-approval.gif)
     <center>Figure 31: User with 'Image Approver' Permissions granting approval</center>
 
+     
+    A super-admin can check or modify a user permissions with approval rights by going to Global Configurations → Authorization (dropdown) → User Permissions.
+
+    ![](https://cdn.devtron.ai/images/user-permissions-deployment-Approver.jpg)
+    <center>Figure 32: Checking Permissions</center> 
+
     If [SES/SMTP](../global-configurations/manage-notification.md) is configured in Devtron, the approver gets notified via email. This enables the approver to take an action directly from the mail, such as `View Request` and `Approve Request`.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/approval-policy/approval-request-notify.gif)
-    <center>Figure 32: Approval via Email</center>
+    <center>Figure 33: Approval via Email</center>
 
 3. The user can then proceed with deploying the approved image.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/approval-policy/deploy-approved-image.gif)
-    <center>Figure 33: Deployment of Approved Image</center>
+    <center>Figure 34: Deployment of Approved Image</center>
 
 ### Approving Configuration Change Request
 
 Assume you created a policy (shown below) that prevents direct changes to the configuration files (Deployment Template, ConfigMaps, Secrets) of a banking application unless there is one approval. 
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/approval-policy/example2.jpg)
-<center>Figure 34: Example</center>
+<center>Figure 35: Example</center>
 
 1. The user first requests approval for pushing a configuration change in Deployment Template/ConfigMap/Secret.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/approval-policy/config-change-request.gif)
-    <center>Figure 35: Request Approval for Configuration Change</center>
+    <center>Figure 36: Request Approval for Configuration Change</center>
 
 2. Only those with `Configuration Approver` permissions can then approve the request.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/approval-policy/approve-config-change.gif)
-    <center>Figure 36: User with 'Configuration Approver' permissions granting approval</center>
+    <center>Figure 37: User with 'Configuration Approver' permissions granting approval</center>
+
+    A super-admin can check or modify a user permissions with approval rights by going to Global Configurations → Authorization (dropdown) → User Permissions.
+
+    ![](https://cdn.devtron.ai/images/user-permissions-approver.jpg)
+    <center>Figure 38: Checking Permissions</center> 
 
     If [SES/SMTP](../global-configurations/manage-notification.md) is configured in Devtron, the approver gets notified via email. Therefore, the approver can take an action directly from the mail as shown below.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/approval-policy/config-change-mail.gif)
-    <center>Figure 37: Config Approval via Email</center>
+    <center>Figure 39: Config Approval via Email</center>
