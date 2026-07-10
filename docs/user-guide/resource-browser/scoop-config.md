@@ -14,6 +14,8 @@ Scoop runs as a lightweight service inside your target cluster and provides the 
 
 * **Resource caching** — Caches Kubernetes resources in the target cluster, reducing Kubernetes API fetch times when you browse resources in the **Resource Browser**. This capability is controlled per cluster by the `enableResourceList` flag (see [Update ConfigMap](#4-update-configmap)).
 
+* **Resource Watcher (auto-remediation)** — Scoop performs the in-cluster event watching that powers Devtron's [Resource Watcher](../resource-watcher.md). When you configure a watcher, Devtron registers it with the target cluster's Scoop instance, which intercepts the matching events and triggers the webhook or job you defined. As a result, the **Resource Watcher feature requires Scoop to be deployed in the target cluster**.
+
 ## Steps to Configure Scoop
 
 ### 1. Deploying Scoop Chart
