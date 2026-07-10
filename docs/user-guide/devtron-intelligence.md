@@ -43,120 +43,65 @@ User must have permissions to:
   * Restart the pods
 :::
 
-Devtron Intelligence is powered by the **Athena** backend, which runs as independent microservices — `athena-mcp-engine`, `athena-api-server`, and `athena-worker-engine` — plus a **Redis** cache, deployed on the cluster where the Devtron orchestrator runs.
+Devtron Intelligence is powered by the **Athena** backend, which is deployed by the Devtron enterprise Helm chart on the cluster where the orchestrator runs. When enabled, it brings up three services — **`athena-api`** (the agent/chat service, which also runs the AI Debug capability via Holmes), **`athena-mcp`** (the MCP engine that exposes Devtron operations to the agent), and a background **worker engine** (recommendations and remediation) — backed by a bundled **Redis** cache and a dedicated **`athena`** database in Devtron's PostgreSQL. You enable and configure it through the chart's `devtronEnterprise.athenaApi` values, as described below.
 
 ### 1. Get API Key from LLM
 
 Devtron Intelligence supports all major large language models (LLM), e.g., OpenAI, Gemini, AWS Bedrock, Anthropic, and many more. Generate an API key (or credential) for the LLM of your choice.
 
-### 2. Create Secret in Devtron
+### 2. Provide the LLM Credential
 
-Create a Kubernetes Secret holding your LLM provider credential in the namespace where you will deploy the Athena services. The `athena-api-server` references this Secret for its LLM credentials.
-
-There are 2 methods to create a secret in Devtron, follow the one you prefer:
-* [Method A: Using 'Create Resource'](#method-a-using-create-resource)
-* [Method B: Using kubectl command](#method-b-using-kubectl-command)
-
-#### Method A: Using 'Create Resource'
-
-1. Go to [strings.devtron.ai](https://strings.devtron.ai/base64-encoder) and encode your credential in base64.
-
-2. Go to **Infrastructure Management** → **Resource Browser** → (Select Cluster) → **Create Resource**
-
-3. Paste the following YAML, replace the value with your base64-encoded credential, and set the namespace where the Athena services will be deployed:
+Athena reads your LLM provider credential from the chart's `athenaApi.secrets`. Add it there using the key name your provider expects — the chart renders these into a Kubernetes Secret that `athena-api` consumes:
 
 ```yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: ai-secret
-  namespace: <your-namespace>  # Namespace where the Athena services will be deployed
-type: Opaque
-data:
-  ## Provide the credential key(s) for your LLM provider, for example:
-  ## AWS_BEARER_TOKEN_BEDROCK: <base64-encoded-token>   # For AWS Bedrock
-  ## OPENAI_API_KEY: <base64-encoded-openai-key>        # For OpenAI
-  ## GOOGLE_API_KEY: <base64-encoded-google-key>        # For Gemini
-  ## ANTHROPIC_API_KEY: <base64-encoded-anthropic-key>  # For Anthropic
+devtronEnterprise:
+  athenaApi:
+    secrets:
+      # Use the key that matches your LLM provider (one of):
+      OPENAI_API_KEY: "<your-openai-key>"           # OpenAI
+      # AWS_BEARER_TOKEN_BEDROCK: "<your-token>"    # AWS Bedrock
+      # GEMINI_API_KEY: "<your-gemini-key>"         # Gemini
+      # ANTHROPIC_API_KEY: "<your-anthropic-key>"   # Anthropic
 ```
 
-#### Method B: Using kubectl command
-
-:::tip
-Unlike [Method A](#method-a-using-create-resource), this method doesn't require you to base64-encode your credential.
+:::caution
+Do not commit real credentials to a values file in Git. Supply them at install/upgrade time (for example, a separate secrets values file or your installer's secret store).
 :::
 
-1. Go to Devtron's [Resource Browser](./resource-browser/README.md) and click the terminal icon next to the target cluster.
+:::note
+Athena uses **LiteLLM**, so the credential key name is LiteLLM's standard variable for your provider, selected by the `LLM_MODEL_ID` prefix you set in Step 3 — for example `OPENAI_API_KEY` (OpenAI), `ANTHROPIC_API_KEY` (Anthropic), `GEMINI_API_KEY` (Gemini), or AWS credentials for `bedrock/...` models (`AWS_BEARER_TOKEN_BEDROCK`, or `AWS_ACCESS_KEY_ID` + `AWS_SECRET_ACCESS_KEY` + `AWS_REGION_NAME`).
+:::
 
-2. Create the secret (use the key name matching your LLM provider):
+### 3. Enable and Configure Athena
 
-```bash
-kubectl create secret generic ai-secret \
-  --namespace=<your-namespace> \
-  --from-literal=AWS_BEARER_TOKEN_BEDROCK='your-token-here'
-#  --from-literal=OPENAI_API_KEY='openai-key-here'
+Enable Athena and set your model in the chart's `devtronEnterprise.athenaApi` values (or pass `--set devtron.devtronEnterprise.athenaApi.enabled=true` at install/upgrade time):
+
+```yaml
+devtronEnterprise:
+  athenaApi:
+    enabled: true
+    configs:
+      LLM_MODEL_ID: "<your-model-id>"       # e.g. gpt-4o, claude-<...>, gemini/<...>, bedrock/<...>
+      LLM_TEMPERATURE: "0.01"               # default
+      REDIS_URL: redis://redis.devtroncd    # bundled Redis (default — leave as-is)
+      PG_DATABASE: athena                   # dedicated Athena database (default — leave as-is)
+    secrets:
+      # your LLM credential from Step 2
 ```
 
-  ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/kubernetes-resource-browser/devtron-intelligence/secret-using-kubectl.jpg)
-  <center>Figure 2: Creating Secret using Cluster Terminal</center>
+| Key | Description |
+|:---|:---|
+| `athenaApi.enabled` | Set to `true` to deploy the Athena backend (`athena-api` + `athena-mcp`). Default `false`. |
+| `athenaApi.configs.LLM_MODEL_ID` | The chat/agent model. The format depends on the provider — e.g. `gpt-4o`, `claude-<...>`, `gemini/<...>`, `bedrock/<...>`. |
+| `athenaApi.configs.LLM_TEMPERATURE` | LLM temperature. Default `0.01`. |
+| `athenaApi.configs.REDIS_URL` | Connection to the bundled Redis cache. The chart defaults this to `redis://redis.devtroncd`; leave it unchanged unless you point Athena at an external Redis. |
+| `athenaApi.configs.PG_DATABASE` | The database Athena uses within Devtron's PostgreSQL. Defaults to `athena` and is created automatically. |
 
-### 3. Deploy the Athena Microservices
+Applying these values deploys the `athena-api` and `athena-mcp` services and the Redis cache, and provisions the `athena` database. Wait until their pods are **Running** before continuing.
 
-Deploy the Athena backend as **independent applications** on the cluster where the Devtron orchestrator runs:
-
-* **athena-mcp-engine** — exposes Devtron operations to the agent at `/devtron/mcp`.
-* **athena-api-server** — the main chat/agent service (also runs the AI Debug capability via Holmes, in-process).
-* **athena-worker-engine** — background worker for runbooks/remediation.
-* **Redis** — shared cache used by the chat agent. Deploy it as a StatefulSet reachable at the `REDIS_URL` below. Without Redis, the agent falls back to an in-process cache (single replica only), so Redis is required when running more than one replica.
-
-Configure each service with the environment variables below. Provide sensitive values (LLM credentials, auth tokens) through the **Secret** from Step 2, not inline, and replace every `<placeholder>` with a value for your environment.
-
-**athena-mcp-engine**
-
-| Variable | Example | Description |
-|:---|:---|:---|
-| `DEVTRON_API_ENDPOINT` | `https://<devtron-url>` | Your Devtron server URL |
-| `DOC_RAG_SEARCH_SERVER_URL` | `<doc-search-url>` | Documentation-search (RAG) endpoint |
-| `PG_ADDR` / `PG_PORT` / `PG_USER` / `PG_DATABASE` | `<pg-host>` / `5432` / `<user>` / `<db>` | Postgres connection |
-| `REQUIRED_RECOMMENDATION_DATA_COUNT` | `10` | Minimum data points required for recommendations |
-| `SERVICE_PLATFORM` | `k8s` | Platform identifier |
-
-**athena-api-server**
-
-| Variable | Example | Description |
-|:---|:---|:---|
-| `DEVTRON_MCP_API_ENDPOINT` | `http://<mcp-engine-service>.<namespace>/devtron/mcp` | Endpoint of `athena-mcp-engine`, suffixed with `/devtron/mcp` |
-| `REDIS_URL` | `redis://<redis-service>.<namespace>:6379` | Redis shared-cache connection URL |
-| `LLM_MODEL_ID` | `<provider-or-bedrock-model-id>` | Chat LLM model, e.g. `bedrock/<...>`, `gpt-4o`, `gemini/<...>`, `claude-<...>` |
-| `LLM_TEMPERATURE` | `0.01` | LLM temperature |
-| `HOLMES_ENABLED` | `true` | Enables the AI Debug (Holmes) capability |
-| `HOLMES_MODEL` | `<holmes-llm-model>` | LLM model Holmes uses for debugging |
-| LLM credential | `<from Secret>` | Provider credential referenced from the Step 2 Secret (e.g., `AWS_BEARER_TOKEN_BEDROCK`, `OPENAI_API_KEY`) |
-| `DEVTRON_WORKER_ENGINE_SERVICE_AUTH_TOKEN` | `<from Secret>` | Shared auth token between the API server and worker engine |
-| `PG_ADDR` / `PG_PORT` / `PG_USER` / `PG_DATABASE` | `<pg-host>` / `5432` / `<user>` / `<db>` | Postgres connection |
-
-Optional chat-agent tuning (defaults shown; set only to override):
-
-| Variable | Default | Description |
-|:---|:---|:---|
-| `CHAT_AGENT_MAX_LLM_TURNS` | `7` | Max LLM reasoning turns per request |
-| `CHAT_AGENT_MAX_TOOL_TOKENS` | `50000` | Total token budget across tool responses per request |
-| `CHAT_AGENT_MAX_TOOL_CALLS` | `30` | Max tool calls allowed per LLM turn |
-
-**athena-worker-engine**
-
-| Variable | Example / Default | Description |
-|:---|:---|:---|
-| `DEVTRON_WORKER_ENGINE_SERVICE_AUTH_TOKEN` | `<from Secret>` | Shared auth token — must match the value set on `athena-api-server` |
-| `DEVTRON_MCP_API_ENDPOINT` | `http://<mcp-engine-service>.<namespace>/devtron/mcp` | Same `athena-mcp-engine` endpoint as the API server |
-| `LLM_MODEL_ID` | `<provider-or-bedrock-model-id>` | LLM model for the worker |
-| `LLM_TEMPERATURE` | `0.1` | LLM temperature |
-| `PG_ADDR` / `PG_PORT` / `PG_USER` / `PG_PASSWORD` / `PG_DATABASE` | `<pg-host>` / `5432` / `<user>` / `<from Secret>` / `<db>` | Postgres connection |
-| `MAX_CONCURRENT_RECOMMENDATION_TASKS` | `4` | (optional) Max concurrent recommendation tasks |
-| `MAX_REACT_AGENT_ITERATIONS` | `20` | (optional) Max ReAct agent iterations per task |
-| `SUPPORTED_UPDATE_WORKLOAD_KINDS` | `Deployment,StatefulSet,DaemonSet,ReplicaSet` | (optional) Workload kinds the worker may patch during remediation |
-
-After deploying, note the ClusterIP **service endpoints** (format `<service-name>.<namespace>:<port>`) of `athena-api-server` and `athena-mcp-engine` — you will need them for `DEVTRON_MCP_API_ENDPOINT` above and `PROXY_SERVICE_CONFIG` in Step 4.
+:::note
+How you apply these values depends on how your Devtron is installed. If Devtron manages your cluster for you, ask your Devtron/DevOps contact to enable `athenaApi` with your model and credential instead.
+:::
 
 ### 4. Update ConfigMaps
 
@@ -166,13 +111,13 @@ In the cluster where the Devtron orchestrator is running, go to **Infrastructure
 
   ```yaml
   FEATURE_ASK_DEVTRON_EXPERT: "true"
-  PROXY_SERVICE_CONFIG: '{"athena":{"host":"<athena-api-server-service>","port":"80"}}'
+  PROXY_SERVICE_CONFIG: '{"athena":{"host":"<athena-api-service>","port":"80"}}'
   ```
 
   | Key | Description |
   |:---|:---|
   | `FEATURE_ASK_DEVTRON_EXPERT` | Enables the **Ask Devtron Expert** chatbot (default `false`). |
-  | `PROXY_SERVICE_CONFIG` | Routes requests from the orchestrator to the Athena API server. Replace `<athena-api-server-service>` with the `athena-api-server` service endpoint from Step 3. |
+  | `PROXY_SERVICE_CONFIG` | Routes requests from the orchestrator to the Athena API server. Set `host` to the **`athena-api` Kubernetes Service name** created by the chart in Step 3 — confirm the exact name with `kubectl get svc -n <namespace> \| grep athena`. |
 
 * **dashboard-cm** — enable AI integration and (optionally) AI Debug Mode:
 
