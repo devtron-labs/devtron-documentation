@@ -34,10 +34,6 @@ To enable deployments through GitOps via FluxCD, you need to enable a specific f
  |**Deployments via FluxCD**|`FEATURE_FLUX_DEPLOYMENTS_ENABLE: "true"`|This flag will enable deployments through GitOps via FluxCD.<ul><li> After enabling this flag, you also need to install FluxCD controller in order to deploy applications successfully. Refer [Installing FluxCD Controller](#installing-fluxcd-controller-only-for-deployments) to know more.</li></ul>|
  |**Migrating existing FluxCD applications**|`FEATURE_LINK_EXTERNAL_FLUX_ENABLE: "true"`|This flag will enable migrations for external FluxCD apps into Devtron.|
 
- :::caution Deployment Strategies for FluxCD Deployments
- Application deployments through GitOps (via FluxCD) are supported only when using the `Deployment` or `Rollout` deployment strategies with the latest chart versions. Other deployment strategies are currently not supported. 
-:::
-
 ### Enabling Feature Flags
 
 1. Navigate to Devtron's **Resource Browser**.
@@ -175,13 +171,23 @@ To install FluxCD controller via Chart Store, follow the below steps.
 
 After the chart is successfully deployed, you can deploy applications though GitOps (via FluxCD).
 
+## Advanced Configuration (Optional)
+
+The following **orchestrator** environment variables tune the status-polling and timeout cadence for FluxCD apps. They do **not** enable any feature — the defaults are sensible, so change them only if you have a specific need. Note these are set on the **orchestrator**, not in the `dashboard-cm` ConfigMap used for the feature flags above.
+
+| Env variable | Default | Purpose |
+|---|---|---|
+| `CD_FLUX_PIPELINE_STATUS_CRON_TIME` | `*/2 * * * *` | Cron frequency for checking FluxCD CD-pipeline deployment status |
+| `FLUX_CD_PIPELINE_STATUS_CHECK_ELIGIBLE_TIME` | `120` (sec) | Re-check a pipeline's status only if it was not updated within this window |
+| `FLUX_INSTALLATION_STATUS_CRON_TIME` | `1` (min) | Polling interval for tracking FluxCD installation status |
+| `FLUX_INSTALLATION_DELETE_CRON_TIME` | `1` (min) | Polling interval for tracking FluxCD installation delete status |
+| `FLUX_INSTALLATION_HELM_RELEASE_CRON_TIME` | `30` (sec) | Scan interval for HelmReleases stuck in *Applying* (timeout) or *Pending* (missed event) |
+| `FLUX_APPLY_STATUS_TIMEOUT` | `2` (min) | Duration after which a HelmRelease moves from *Applying* to *TimedOut* |
+| `FLUX_PENDING_STATUS_TIME` | `3` (min) | Duration after which an event is emitted for an install stuck in *Pending* |
+
 ## Limitations
 
 Keep the following limitations in mind when using GitOps deployments via FluxCD:
-
-* **Supported deployment strategies**: Only the `Deployment` and `Rollout` strategies are supported (with the latest chart versions). Other strategies (such as Canary or Blue-Green) are currently not supported.
-
-* **No rollback**: Rolling back a FluxCD deployment to a previous version from within Devtron is not currently supported.
 
 * **No manual sync from Devtron**: There is no manual *sync* or *refresh* action for FluxCD applications in Devtron. Deployments reconcile automatically on FluxCD's reconciliation interval. To force an immediate reconcile, use the FluxCD CLI, for example:
 
