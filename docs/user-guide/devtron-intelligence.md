@@ -41,7 +41,7 @@ These are backed by a bundled **Redis** cache and a dedicated **`athena`** datab
 
 Before you begin, make sure you have:
 
-* **Devtron Enterprise** — Devtron Intelligence (the Athena backend) is an enterprise-only capability.
+* **Devtron Enterprise** — Devtron Intelligence (the Athena backend) is an enterprise-only capability. If you don't have it yet, [install Devtron](../setup/install/README.md) and [activate an Enterprise license](../setup/install/devtron-freemium.md#update-license) first.
 * **An LLM provider API key** — a credential for the model provider you want to use (OpenAI, Anthropic, Gemini, AWS Bedrock, or any other [LiteLLM](https://docs.litellm.ai/)-supported provider).
 * **Access** — the ability to set values on the Devtron enterprise Helm chart (or a DevOps contact who can), plus permission to edit **ConfigMaps** and restart **workloads** on the cluster where the Devtron orchestrator runs.
 
@@ -49,13 +49,15 @@ Before you begin, make sure you have:
 
 ## Steps to Configure Devtron Intelligence
 
+Setting up Devtron Intelligence takes four steps: get an LLM API key, enable Athena while installing/upgrading the enterprise chart, turn the feature on in Devtron, and restart the affected workloads.
+
 ### 1. Get an LLM API Key
 
 Devtron Intelligence supports all major LLM providers (OpenAI, Gemini, AWS Bedrock, Anthropic, and more, via LiteLLM). Generate an API key (or credential) for the provider you want to use — you will supply it to the chart in the next step.
 
 ### 2. Enable and Configure Athena (Enterprise Chart)
 
-Athena is configured **while installing (or upgrading) the Devtron enterprise Helm chart** — there is no separate installer for it. Provide the following under the chart's `devtronEnterprise.athenaApi` values (`enabled: true`, your model, and your LLM credential):
+Athena is configured **while [installing or upgrading](../setup/install/README.md) the Devtron enterprise Helm chart** — there is no separate installer for it. Provide the following under the chart's `devtronEnterprise.athenaApi` values (`enabled: true`, your model, and your LLM credential):
 
 ```yaml
 devtronEnterprise:
