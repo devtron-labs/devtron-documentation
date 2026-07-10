@@ -158,6 +158,7 @@ const sidebars = {
                   items: [
                     'user-guide/creating-application/workflow/ci-pipeline',
                     'user-guide/creating-application/workflow/cd-pipeline',
+                    'user-guide/creating-application/workflow/deployment-approach-helm-vs-gitops',
                     'user-guide/creating-application/workflow/pre-post-tasks',
                     'user-guide/creating-application/workflow/file-upload-during-build',
                   ],
