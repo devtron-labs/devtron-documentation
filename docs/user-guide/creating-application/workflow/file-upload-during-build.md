@@ -17,13 +17,13 @@ When running scripts in a Pre-Build or Post-Build stage, your pipeline may requi
 Devtron supports a **File** type input variable inside **Execute custom task**. When configured, this variable:
 
 - Mounts the uploaded file inside the build container at a path you define (e.g., `/devtroncd`).
-- Optionally enforces the upload at build trigger time using **Ask value at runtime**, blocking the build until the file is provided.
+- Blocks the build at trigger time until the file is uploaded, if the variable is marked as **required** and **Ask value at runtime** is enabled.
 - Supports restrictions on file type and file size.
 
 Your shell script can then read the file directly from the mount path during execution.
 
 :::note
-The **File** type variable is available only within the **Execute custom task** option in Pre-Build and Post-Build stages. It is not available in pre-defined plugin tasks.
+The **File** type variable is available in **Execute custom task** in Pre-Build and Post-Build stages. It is also supported in user-created plugins — if you save a custom task that has a File input variable as a plugin, the File variable carries over and works in that plugin.
 :::
 
 ## Prerequisites
@@ -61,7 +61,7 @@ When you select **File** as the variable type, a configuration panel opens with 
 | **File mount path** | Yes | The absolute path inside the build container where the uploaded file will be available. Default: `/devtroncd`. Your shell script references the file from this path. |
 | **Restrict file type** | No | Comma-separated list of allowed file extensions (e.g., `.env, .json, .tar`). Leave blank to allow all file types. |
 | **Restrict file size** | No | Maximum allowed file size in **KB** or **MB**. Leave blank for no size limit. |
-| **Ask value at runtime** | No | When checked, the file upload becomes **mandatory** at build trigger time. The build is blocked until the user uploads a file. |
+| **Ask value at runtime** | No | When checked along with marking the variable as **required**, the file upload becomes mandatory at build trigger time. The build is blocked until the user uploads a file. |
 
 :::tip
 Enable **Ask value at runtime** if the file is required for every build run. Without it, you can pre-upload a default file at pipeline configuration time — see [Using a Default File](#using-a-default-file-without-ask-value-at-runtime).
