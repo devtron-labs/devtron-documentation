@@ -44,7 +44,7 @@ Before you begin, ensure the following:
 7. Enter a variable name (e.g., `file`).
 8. In the **TYPE** dropdown, select **File**.
 
-<!-- TODO: Add image — Screenshot showing the TYPE dropdown with "File" selected in the Input variables section. Upload to S3: devtron-public-asset/images/devtron-v2/ci-cd/ -->
+![TYPE dropdown with File selected](https://cdn.devtron.ai/images/typeDropdownWithFile.jpg)
 
 :::info
 The **TYPE** dropdown includes: String, Number, Boolean, Date, and **File**.
@@ -54,7 +54,7 @@ The **TYPE** dropdown includes: String, Number, Boolean, Date, and **File**.
 
 When you select **File** as the variable type, a configuration panel opens with the following options:
 
-<!-- TODO: Add image — Screenshot of the File variable configuration panel showing all fields: File mount path, Restrict file type, Restrict file size, Ask value at runtime. Upload to S3: devtron-public-asset/images/devtron-v2/ci-cd/ -->
+![File variable configuration panel](https://cdn.devtron.ai/images/variableConfigurationPanel.png)
 
 | Field | Required | Description |
 |---|---|---|
@@ -104,22 +104,25 @@ Once done, click **Create Pipeline** (or **Update Pipeline** for an existing pip
 
 When you trigger a build for this pipeline, Devtron enforces the file upload if **Ask value at runtime** is enabled.
 
-1. Navigate to **Build & Deploy** and click **Select Material** on your pipeline.
+1. Navigate to **Build and Deploy** and click **Select Material** on your pipeline.
 2. In the **Build Pipeline** modal, go to the **Code Source** tab and select the branch and commit you want to build.
 3. Click **Start Build**.
 
    If the file variable has **Ask value at runtime** enabled and no file has been uploaded, Devtron blocks the build and displays an error: **"Please resolve all the errors before starting the build"**. The **Parameters** tab will be highlighted with a red indicator.
 
-   <!-- TODO: Add image — Screenshot showing the Build Pipeline modal with the Parameters tab highlighted in red when a mandatory file upload is missing. Upload to S3: devtron-public-asset/images/devtron-v2/ci-cd/ -->
+   ![Parameters tab highlighted in red when mandatory file upload is missing](https://cdn.devtron.ai/images/mandatoryFileUploadMissin.png)
 
 4. Click the **Parameters** tab. The **Runtime parameters** table lists your file variable with a `*` asterisk indicating it is required, and the **Value** field outlined in red showing **Upload file...**.
 
-   <!-- TODO: Add image — Screenshot of the Runtime parameters tab showing the file variable row with a red outline and "Upload file..." prompt. Upload to S3: devtron-public-asset/images/devtron-v2/ci-cd/ -->
+   ![Runtime parameters tab showing mandatory file upload prompt](https://cdn.devtron.ai/images/runtimeParametersFile.png)
 
 5. Click **Upload file...** and select the file from your local machine.
 6. Once uploaded, the red indicator clears. Click **Start Build** to proceed.
 
-<!-- TODO: Add video — Short demo of the complete file upload flow at build trigger time. Upload to DevtronHelp YouTube channel and link here. -->
+<video width="100%" controls>
+  <source src="https://cdn.devtron.ai/videos/FIleUploadDuringBuild.mov" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
 ## Using a Default File (Without Ask Value at Runtime)
 
@@ -188,3 +191,4 @@ The uploaded file is available **only for the duration of the build**. It is not
 - [Pre-Build/Post-Build Stages](https://docs.devtron.ai/docs/user-guide/creating-application/workflow/pre-post-tasks)
 - [CI Pipeline](https://docs.devtron.ai/docs/user-guide/creating-application/workflow/ci-pipeline)
 - [Triggering CI](https://docs.devtron.ai/docs/user-guide/deploying-application/triggering-ci)
+- [Runtime Parameters](https://docs.devtron.ai/docs/user-guide/deploying-application/runtime-parameters)
