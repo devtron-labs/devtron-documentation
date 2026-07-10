@@ -3,11 +3,7 @@ canonical: https://docs.devtron.ai/docs/user-guide/creating-application/workflow
 meta-description: Learn how to configure feature flags in Devtron's ConfigMaps to control whether users can choose between Helm and GitOps deployment approaches when creating a deployment pipeline.
 ---
 
-# Choosing a Deployment Approach (Helm or GitOps)
-
-:::info Who Can Perform This Action?
-Users with **Super Admin** permission can modify feature flags in ConfigMaps.
-:::
+# Choosing Deployment Approach (Helm or GitOps)
 
 ## Introduction
 
@@ -19,96 +15,113 @@ When creating a deployment pipeline in Devtron, you can choose how your applicat
 
 By default, this choice is presented as a set of radio buttons in the **Create Deployment Pipeline** dialog. However, this UI can be shown or hidden using feature flags — giving platform admins control over which deployment approach is available to users.
 
+---
+
 ## Prerequisites
 
-Before users can select **GitOps (Via Argo CD)** or **GitOps (Via Flux CD)**, a GitOps repository must be configured. If GitOps is not configured and a user selects a GitOps option, a warning banner will appear in the pipeline dialog with a **Configure →** link.
+:::info Who Can Perform This Action?
+Users need to have [Super-Admin](https://docs.devtron.ai/docs/user-guide/global-configurations/authorization/user-access#grant-super-admin-permission) permission to modify feature flags in ConfigMaps.
+:::
 
-<!-- TODO: Add image — Screenshot of the GitOps not configured warning banner in the Create Deployment Pipeline dialog. Upload to S3: devtron-public-asset/images/devtron-v2/ci-cd/ -->
+Before the GitOps deployment options are available, ensure the following:
+
+1. **GitOps module is installed and enabled** — The GitOps integration (Argo CD or Flux CD) must be installed and enabled in Devtron via **Global Configurations** → **GitOps**. Without this, the GitOps radio button options will not function even if they are visible.
+
+2. **GitOps repository is configured** — Before users can select **GitOps (Via Argo CD)** or **GitOps (Via Flux CD)**, a GitOps repository must be configured. If GitOps is not configured and a user selects a GitOps option, a warning banner — *"GitOps repository is required to deploy using GitOps"* — will appear in the pipeline dialog with a **Configure →** link.
+
+![GitOps not configured warning](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/devtron-apps/gitops/gitops-not-configured.jpg)
+
+:::warning Impact of Missing Prerequisites
+If either of the above prerequisites is not met, the **"How do you want to deploy?"** section will not be functional for GitOps. Even if the radio buttons are visible, selecting a GitOps option will show a warning and block pipeline creation until the repository is configured. In such cases, **Helm is used as the default deployment method**.
+:::
+
+---
 
 ## Feature Flags
 
-Two feature flags work together to control the deployment approach behavior:
+Two feature flags control the visibility of the deployment approach selector:
 
 | Flag | ConfigMap | Default | Effect |
 |---|---|---|---|
-| `HIDE_GITOPS_OR_HELM_OPTION` | `dashboard-cm` | `false` | When set to `true`, hides the **How do you want to deploy?** radio buttons from the deployment pipeline dialog |
-| `IS_INTERNAL_USE` | `orchestrator-cm` | `false` | When set to `true`, skips Devtron's enforcement of a deployment app type — the type is auto-determined based on whether GitOps is configured for the environment |
+| `IS_INTERNAL_USE` | `orchestrator-cm` (Orchestrator) | — | When enabled, controls internal Devtron behaviour related to deployment method selection |
+| `HIDE_GITOPS_OR_HELM_OPTION` | `dashboard-cm` (Dashboard) | `false` | When set to `true`, hides the **How do you want to deploy?** radio buttons from the deployment pipeline dialog |
 
 :::note
-These two flags are designed to be used together. Set `HIDE_GITOPS_OR_HELM_OPTION: "true"` and `IS_INTERNAL_USE: "true"` to hide the deployment type selector from users and let the platform silently determine the right deployment method per environment.
+- Setting `HIDE_GITOPS_OR_HELM_OPTION: "false"` (default) **shows** the Helm / GitOps radio buttons to users, letting them explicitly choose their preferred deployment approach.
+- Setting `HIDE_GITOPS_OR_HELM_OPTION: "true"` **hides** the selector. In this case, Devtron falls back to **Helm** as the default deployment method for all pipelines.
 :::
 
-## How It Works
-
-By default (`IS_INTERNAL_USE: "false"`), Devtron enforces a deployment app type when creating CD pipelines and Helm apps. It automatically overrides the user's selection if needed, in this order:
-
-- Argo CD — if GitOps is configured and allowed for the environment.
-- Helm — if GitOps is not configured or not allowed.
-- Flux CD — as a further fallback.
-
-When `IS_INTERNAL_USE` is set to `"true"`, this enforcement is skipped entirely. The deployment type is no longer forced — instead, it is silently auto-determined:
-
-- If GitOps is configured and allowed for the environment → **Argo CD** is used.
-- Otherwise → **Helm** is used.
-
-This makes the flag suited for managed or enterprise setups where the platform admin wants to control the deployment method centrally, without exposing the choice to individual users.
+---
 
 ## How to Configure the Feature Flags
 
 You can edit the relevant ConfigMaps in two ways:
 
-- [Via Devtron's Resource Browser](#method-1-via-devtrons-resource-browser) — for direct in-cluster edits
-- [Via the Parent Deployment Pipeline](#method-2-via-the-parent-deployment-pipeline) — for enterprise clusters managed via Helm or GitOps
-
 ### Method 1: Via Devtron's Resource Browser
 
-1. Go to **Infrastructure Management → Resource Browser** from the left navigation.
+1. Go to **Resource Browser** from the left navigation.
 2. Select the cluster where Devtron is running — typically `default_cluster`.
-3. In the left panel, navigate to **Config & Storage → ConfigMap**.
-4. Use the namespace filter to select the `devtroncd` namespace.
+3. In the left panel, expand the **Config & Storage** dropdown.
+4. Click **ConfigMap**.
+5. Use the namespace filter on the right to select the `devtroncd` namespace. This filters ConfigMaps to only those belonging to Devtron.
 
-#### Setting `HIDE_GITOPS_OR_HELM_OPTION` in `dashboard-cm`
+#### Editing `dashboard-cm` (for `HIDE_GITOPS_OR_HELM_OPTION`)
 
-1. Find `dashboard-cm` (it may have an optional suffix) and click **Edit Live Manifest**.
-2. Under the `data` section, add or update the flag:
-
-   ```yaml
-   data:
-     HIDE_GITOPS_OR_HELM_OPTION: "false"   # set to "true" to hide the selector
-   ```
-
-3. Click **Apply Changes**.
-
-#### Setting `IS_INTERNAL_USE` in `orchestrator-cm`
-
-1. Find `orchestrator-cm` (it may have an optional suffix) and click **Edit Live Manifest**.
-2. Under the `data` section, add or update the flag:
+6. Find `dashboard-cm` (it may have an optional suffix).
+7. Click **Edit Live Manifest**.
+8. Under the `data` section, add or update the flag:
 
    ```yaml
    data:
-     IS_INTERNAL_USE: "true"
+     HIDE_GITOPS_OR_HELM_OPTION: "false"   # "true" to hide the selector
    ```
 
-3. Click **Apply Changes**.
+9. Click **Apply Changes**.
 
-### Method 2: Via the Parent Deployment Pipeline
+#### Editing `orchestrator-cm` (for `IS_INTERNAL_USE`)
 
-If Devtron itself is managed through a deployment pipeline (e.g., via its own Helm chart or a GitOps-managed app), you can edit the ConfigMap values directly from that parent pipeline's configuration.
+6. Find `orchestrator-cm` (it may have an optional suffix).
+7. Click **Edit Live Manifest**.
+8. Under the `data` section, add or update the flag:
+
+   ```yaml
+   data:
+     IS_INTERNAL_USE: "true"   # set as needed
+   ```
+
+9. Click **Apply Changes**.
+
+---
+
+### Method 2: Via the Parent Deployment Pipeline (Helm Chart / GitOps App)
+
+If Devtron itself is managed as a service through a deployment pipeline (e.g., via its own Helm chart or a GitOps-managed app), you can edit the ConfigMap values directly from that parent pipeline's configuration:
 
 1. Navigate to the parent application that manages the Devtron deployment.
-2. Go to **App Configuration → ConfigMaps**.
+2. Go to **App Configuration** → **ConfigMaps**.
 3. Find `dashboard-cm` or `orchestrator-cm` as applicable.
 4. Click the edit (pencil) icon.
 5. Add or update the relevant flag key-value pair.
-6. Save the changes and trigger a re-deployment for the values to take effect.
+6. Save the changes and trigger a re-deployment if needed for the values to take effect.
 
-:::note
-Changes to ConfigMaps may require a pod restart to take effect. If the change does not reflect immediately, restart the relevant Devtron component (`dashboard` or `orchestrator`) from the Resource Browser under **Workloads → Deployment**.
+:::caution
+Changes to ConfigMaps in a running pod may require a pod restart to take effect, depending on how the application reads its configuration. If the change does not reflect immediately, restart the relevant Devtron component (`dashboard` or `orchestrator`) from the Resource Browser.
 :::
+
+---
+
+## Behaviour Reference
+
+| `HIDE_GITOPS_OR_HELM_OPTION` value | What the user sees | Deployment method used |
+|---|---|---|
+| `false` (default) | Radio buttons for **Helm**, **GitOps (Via Argo CD)**, and **GitOps (Via Flux CD)** are visible | Whichever method the user selects |
+| `true` | The **How do you want to deploy?** section is hidden | **Helm** (always the default fallback) |
+
+---
 
 ## Related Topics
 
-- [GitOps Configuration](https://docs.devtron.ai/docs/user-guide/global-configurations/gitops)
+- [GitOps Configuration](https://docs.devtron.ai/docs/user-guide/app-management/configurations/gitops)
 - [Creating a Deployment Pipeline](https://docs.devtron.ai/docs/user-guide/creating-application/workflow/cd-pipeline)
 - [GitOps Configuration per Application](https://docs.devtron.ai/docs/user-guide/creating-application/gitops-config)
 - [Resource Browser](https://docs.devtron.ai/docs/user-guide/resource-browser)
