@@ -10,8 +10,7 @@ Who Can Perform This Action?
 
 | Action | Required Permission |
 |---|---|
-| Edit the Orchestrator ConfigMap via Helm | Super Admin |
-| Edit the Orchestrator ConfigMap via Parent Management Pipeline | Super Admin / Pipeline access on the management cluster |
+| Enable the flag via Helm upgrade | Super Admin |
 
 ## Introduction[​](#introduction "Direct link to Introduction")
 
@@ -38,7 +37,7 @@ Before enabling this feature, ensure the following:
 
 - You have **Super Admin** access on Devtron.
 - User permissions have already been configured correctly under **Global Configurations → Authorization → User Access**. The flag only filters what is displayed — it relies on permissions being accurately set up beforehand.
-- You are familiar with editing Kubernetes ConfigMaps either through Devtron's **Resource Browser** or a **parent management pipeline**.
+- You are familiar with editing Helm values via the **Helm CLI** 
 
 ## How It Works[​](#how-it-works "Direct link to How It Works")
 
@@ -56,111 +55,51 @@ The flag filters **visibility** only — it does not change underlying permissio
 
 ## Enabling the Flag[​](#enabling-the-flag "Direct link to Enabling the Flag")
 
-There are two ways to edit the Orchestrator ConfigMap, depending on your setup:
+- [Via Helm](#via-helm) — for direct updates using the Helm CLI
 
-- [Via Resource Browser](#via-resource-browser) — for direct in-cluster edits
-- [Via the Parent Management Pipeline](#via-the-parent-management-pipeline) — for enterprise clusters managed via GitOps
+### Via Helm[​](#via-helm "Direct link to Via Helm")
 
-### Via Resource Browser[​](#via-resource-browser "Direct link to Via Resource Browser")
+Use this path when you manage the Devtron installation directly via the Helm CLI.
 
-Use this path when you have direct access to the Devtron cluster through the Resource Browser.
+#### Step 1 — Update the Helm Values[​](#step-1--update-the-helm-values "Direct link to Step 1 — Update the Helm Values")
 
-#### Step 1 — Navigate to the Resource Browser[​](#step-1--navigate-to-the-resource-browser "Direct link to Step 1 — Navigate to the Resource Browser")
-
-Go to **Infrastructure Management → Resource Browser** and select the cluster where Devtron is installed (typically the primary or hub cluster).
-
-#### Step 2 — Locate the Orchestrator ConfigMap[​](#step-2--locate-the-orchestrator-configmap "Direct link to Step 2 — Locate the Orchestrator ConfigMap")
-
-1. In the left panel, navigate to **Config & Storage → ConfigMap**.
-2. Select the namespace where Devtron is installed (e.g., `devtroncd`).
-3. Find and click the ConfigMap named **`devtron-cm`**.
-
-#### Step 3 — Edit the ConfigMap[​](#step-3--edit-the-configmap "Direct link to Step 3 — Edit the ConfigMap")
-
-1. Click the **Edit** (pencil) icon to open the ConfigMap editor.
-2. In the YAML editor, add the following key under the `data` section:
+In your Helm values file for the Devtron chart, add or update the key under `devtron.components.devtron.customOverrides`:
 
 ```yaml
-data:
-  CAN_ONLY_VIEW_PERMITTED_ENV_ORG_LEVEL: "true"
+devtron:
+  components:
+    devtron:
+      customOverrides:
+        CAN_ONLY_VIEW_PERMITTED_ENV_ORG_LEVEL: "true"
 ```
 
 If the key already exists with the value `"false"`, update it to `"true"`.
 
-3. Click **Apply Changes** to save.
+#### Step 2 — Apply the Helm Upgrade[​](#step-2--apply-the-helm-upgrade "Direct link to Step 2 — Apply the Helm Upgrade")
 
-#### Step 4 — Restart the Orchestrator Pod[​](#step-4--restart-the-orchestrator-pod "Direct link to Step 4 — Restart the Orchestrator Pod")
+Run the following command to apply the updated values:
 
-The Orchestrator service reads its configuration at startup. After saving the ConfigMap, you must restart the deployment for the change to take effect. Run the following command:
+```bash
+helm upgrade devtron devtron/devtron-enterprise \
+  --namespace devtroncd \
+  --reuse-values \
+  -f your-values.yaml
+```
+
+:::info
+- Replace `your-values.yaml` with the path to your custom values file.
+- `--reuse-values` ensures all existing Helm values are preserved and only the overrides in your values file are applied.
+:::
+
+#### Step 3 — Restart the Orchestrator Deployment[​](#step-3--restart-the-orchestrator-deployment "Direct link to Step 3 — Restart the Orchestrator Deployment")
+
+After the Helm upgrade, restart the Orchestrator deployment for the ConfigMap change to take effect:
 
 ```bash
 kubectl rollout restart deployment/devtron -n devtroncd
 ```
 
-:::info
-Replace `devtroncd` with your actual Devtron namespace if it differs.
-:::
-
-Once the pod restarts successfully, the flag is active.
-
-### Via the Parent Management Pipeline[​](#via-the-parent-management-pipeline "Direct link to Via the Parent Management Pipeline")
-
-Use this path in **enterprise setups** where the Devtron cluster is itself managed by a parent or hub pipeline — a common GitOps pattern where Devtron's installation is treated as a managed application.
-
-#### Step 1 — Locate the Management Pipeline[​](#step-1--locate-the-management-pipeline "Direct link to Step 1 — Locate the Management Pipeline")
-
-Navigate to the parent application or pipeline that manages the Devtron installation in your enterprise cluster. This is typically a Helm-based deployment pipeline or a GitOps-managed application pointing to Devtron's Helm chart values.
-
-#### Step 2 — Update the Configuration[​](#step-2--update-the-configuration "Direct link to Step 2 — Update the Configuration")
-
-In your Helm values file or the configuration source for the Devtron chart, add or update the following under the Orchestrator configuration block:
-
-```yaml
-orchestrator:
-  env:
-    CAN_ONLY_VIEW_PERMITTED_ENV_ORG_LEVEL: "true"
-```
-
-:::note
-The exact key path may vary depending on how your Helm values are structured. Refer to your enterprise Devtron Helm chart's `values.yaml` for the correct location.
-:::
-
-#### Step 3 — Trigger the Pipeline[​](#step-3--trigger-the-pipeline "Direct link to Step 3 — Trigger the Pipeline")
-
-Commit the change to your configuration repository and trigger the parent pipeline. The pipeline will apply the updated ConfigMap and roll out a restart of the Orchestrator deployment automatically.
-
-## Verifying the Change[​](#verifying-the-change "Direct link to Verifying the Change")
-
-After the Orchestrator pod restarts, verify the flag is working as expected:
-
-1. Log in as a **sub-user** (non-super-admin) who has access to only a subset of environments.
-2. Navigate to any application in **Application Management**.
-3. Open the **Build & Deploy** tab.
-4. Confirm that only the pipelines corresponding to the user's permitted environments are visible. Pipelines for environments they do not have access to should no longer appear.
-
-To cross-check, log in as a **Super Admin** and confirm that all pipelines are still visible for the same application.
-
-## Reverting the Flag[​](#reverting-the-flag "Direct link to Reverting the Flag")
-
-To restore the default behavior (all pipelines visible to all sub-users), either set the flag back to `"false"`:
-
-```yaml
-data:
-  CAN_ONLY_VIEW_PERMITTED_ENV_ORG_LEVEL: "false"
-```
-
-Or remove the key entirely from the `data` section of the ConfigMap.
-
-Then restart the Orchestrator pod as described in [Step 4](#step-4--restart-the-orchestrator-pod).
-
-## Behavior Reference[​](#behavior-reference "Direct link to Behavior Reference")
-
-| User Type | Flag Off (default) | Flag On |
-|---|---|---|
-| Super Admin | Sees all pipelines | Sees all pipelines |
-| Sub-user (View only) | Sees all pipelines | Sees only permitted pipelines |
-| Sub-user (Build and Deploy) | Sees all pipelines | Sees only permitted pipelines |
-| Sub-user (Admin on specific environments) | Sees all pipelines | Sees only permitted pipelines |
+Once the deployment restarts successfully, the flag is active.
 
 ## Troubleshooting[​](#troubleshooting "Direct link to Troubleshooting")
 
@@ -169,8 +108,8 @@ Then restart the Orchestrator pod as described in [Step 4](#step-4--restart-the-
 | Sub-users still see all pipelines after enabling the flag | Orchestrator deployment was not restarted | Run `kubectl rollout restart deployment/devtron -n devtroncd` |
 | Sub-users see no pipelines at all | User has no permissions assigned | Verify user permissions in **Global Configurations → Authorization → User Access** |
 | Super Admin cannot see all pipelines | User is not correctly assigned as Super Admin | Confirm the Super Admin toggle is enabled for the user in **User Access** |
-| Flag key is not being picked up | Wrong ConfigMap or namespace was edited | Confirm you edited `devtron-cm` in the correct Devtron namespace (e.g., `devtroncd`) |
-| Change was lost after a Devtron upgrade | ConfigMap was overwritten during the upgrade | Re-apply the flag post-upgrade, or include it in your Helm values so it persists across upgrades |
+| Flag key is not being picked up | Helm upgrade was not run after updating values, or wrong namespace used | Verify the key exists in your Helm values file and re-run `helm upgrade` with the correct namespace |
+| Change was lost after a Devtron upgrade | Flag was set directly on the ConfigMap instead of via Helm values | Always set this flag in your Helm values file and apply via `helm upgrade` — direct ConfigMap edits are overwritten on redeploy or pod restart |
 
 ## Related Topics[​](#related-topics "Direct link to Related Topics")
 
