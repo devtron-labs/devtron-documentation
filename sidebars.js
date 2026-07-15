@@ -526,6 +526,7 @@ const sidebars = {
             'user-guide/global-configurations/authorization/api-tokens',
           ],
         },
+        'user-guide/global-configurations/show-only-permitted-pipelines',
       ],
     },
 
