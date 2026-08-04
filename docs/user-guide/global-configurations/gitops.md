@@ -204,9 +204,6 @@ Here, you get 2 options:
 
 :::
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/configurations/gitops/bitbucket-cloud.jpg)
-<center>Figure 8: Entering Details of Bitbucket Cloud</center>
-
 Fill the following mandatory fields:
 
 | Field | Description |
@@ -214,8 +211,39 @@ Fill the following mandatory fields:
 | **Bitbucket Host** | Shows the URL of Bitbucket Cloud, e.g., https://bitbucket.org/ |
 | **Bitbucket Workspace ID** | Enter the Bitbucket workspace ID. <br/>If you do not have one, refer [Bitbucket Workspace ID](#creating-workspace-in-bitbucket)|
 | **Bitbucket Project Key** | Enter the Bitbucket project key. <br/>If you do not have one, refer [Bitbucket Project Key](https://support.atlassian.com/bitbucket-cloud/docs/group-repositories-into-projects/). <br/>Note: If the project is not provided, the repository is automatically assigned to the oldest project in the workspace. |
-| **Bitbucket Username*** | Provide the username of your Bitbucket account |
-| **Personal Access Token** | Provide your personal access token (PAT). It is used as an alternate password to authenticate your Bitbucket Cloud account. <br/>If you do not have one, create a Bitbucket Cloud PAT [here](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/). <br/><br/> **Access Required**: <br/> `repo` - Full control of repositories (Read, Write, Admin, Delete) access. |
+| **Git access credentials** | Based on the authentication methods choose one from below <br/> <ul><li>[App password](#app-password)</li> <li>[Access token](#access-token)</li> <li>[API token](#api-token)</li></ul> |
+
+##### App password
+
+:::warning Deprecated
+This method of authentication will be deprecated completely by July 28, 2026. Use [API token](#api-token)
+
+Refer [deprecation notice](https://community.atlassian.com/forums/Bitbucket-articles/Deprecation-notice-Bitbucket-Cloud-app-password-brownout/ba-p/3237429)
+:::
+
+![](https://cdn.devtron.ai/images/bitbucket_app_password.png)
+
+| Field | Description |
+| --- | --- |
+| **Bitbucket username** | Bitbucket username |
+| **Password** | Password |
+
+##### Access token
+
+![](https://cdn.devtron.ai/images/bitbucket_access_token.png)
+
+| Field | Description |
+| --- | --- |
+| **Bearer token** | Access token. Refer [here](https://developer.atlassian.com/cloud/bitbucket/rest/intro/#access-tokens) to learn more about access tokens <br/><br/>  Access Required - Full control of repositories (Read, Write, Admin, Delete) access. |
+
+##### API token
+
+![](https://cdn.devtron.ai/images/bitbucket_api_token.png)
+
+| Field | Description |
+| --- | --- |
+| **Email** | Bitbucket email |
+| **Token** | API token. If you do not have one, refer [here](https://support.atlassian.com/bitbucket-cloud/docs/create-an-api-token/) <br/><br/>  Access Required - Full control of repositories (Read, Write, Admin, Delete) access. |
 
 #### Bitbucket Data Center
 
