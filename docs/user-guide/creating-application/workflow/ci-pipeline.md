@@ -817,6 +817,19 @@ You have the option to ignore cache while triggering a build (regardless of the 
 If the caching flags in **Global Settings** are set to false, ignoring cache becomes the default behavior even if you don't select the 'Ignore Cache' checkbox during trigger.
 :::
 
+#### Caching for Multi-Architecture Builds
+
+When you build for multiple [target platforms](../../creating-application/docker-build-configuration.md#set-target-platform-for-the-build) (multi-architecture builds), Devtron uses BuildX and, when caching is enabled, maintains a **separate build cache per target architecture** so that each platform's layers are reused across builds.
+
+Super-admins can tune multi-architecture build caching using the following additional flags in the `orchestrator-cm` ConfigMap:
+
+| Flag | Default | Description |
+|:---|:---|:---|
+| `BUILDX_CACHE_MODE_MIN` | `false` | Controls the BuildX cache mode. When `false`, mode `max` is used — all intermediate layers are cached for maximum reuse, at the cost of a larger cache. When `true`, mode `min` is used — only the final exported layers are cached, resulting in a smaller cache. |
+| `ASYNC_BUILDX_CACHE_EXPORT` | `false` | When `true`, the BuildX cache is exported **asynchronously after** the build completes, which can reduce build time. This applies only when using a multi-node BuildX Kubernetes driver. |
+
+After updating these flags, restart the orchestrator deployment for the changes to take effect.
+
 ###  Override Build Configuration
 
 **Override Options** in **Build Stage** lets you override **Build Configurations** for each workflow of the same application. You can configure overrides in the build stage of each workflow.
