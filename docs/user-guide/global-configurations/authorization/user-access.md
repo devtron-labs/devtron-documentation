@@ -188,12 +188,62 @@ There are three role-based access levels for Helm Apps:
 | **Admin**         | ✅      | ✅        | ✅        | ✅        | ✅         |
 | **Super Admin**   | ✅      | ✅        | ✅        | ✅        | ✅         |
 
+### ArgoCD Apps permissions
+
+Here you can grant your user the permissions for ArgoCD apps deployed outside Devtron.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-access/helm-apps.jpg) <!-- TODO update link -->
+<center>Figure 12: Granting ArgoCD Apps Permissions</center>
+
+| Field | Description |
+| --- | --- |
+| **Environment or Cluster/Namespace** | Select a specific environment from the dropdown list.<br/>**Note**: If you select `All existing + future environments in cluster`, then the user will get access to all the current environments including any new environment which gets associated with the application later. |
+| **Application**  | Select a specific argo application or all argo apps from the dropdown list corresponding to your selected environments.<br/>**Note**: If `All applications` is selected, the user will have access to all current and future applications associated with the environment.  |
+| **Permission**  | Available Permissions:<ul><li>`View only`</li> <li>`Admin`</li></ul> [Click here](#roles-available-for-argocd-apps) to learn more about the permission you wish to assign the user.  |
+| **Status**  | Read: [Making Users Active/Inactive](#at-direct-permissions-level) <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>   |
+
+#### Roles available for ArgoCD Apps
+
+1. **View only**: Users with this role can only view ArgoCD applications and their configurations but cannot make any modifications.
+2. **Admin**: Users with this role have full access to ArgoCD applications, including the ability to create, manage, and delete applications.
+
+| Role              | View    | Edit      | Delete    |
+| :---:             |  :---:  |   :---:   |   :---:   |
+| **View only**     | ✅      | ❌        | ❌         |
+| **Admin**         | ✅      | ✅        | ✅         |
+| **Super Admin**   | ✅      | ✅        | ✅         |
+
+### FluxCD Apps permissions
+
+Here you can grant your user the permissions for FluxCD apps deployed outside Devtron.
+
+![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-access/helm-apps.jpg) <!-- TODO update link -->
+<center>Figure 13: Granting FluxCD Apps Permissions</center>
+
+| Field | Description |
+| --- | --- |
+| **Environment or Cluster/Namespace** | Select a specific environment from the dropdown list.<br/>**Note**: If you select `All existing + future environments in cluster`, then the user will get access to all the current environments including any new environment which gets associated with the application later. |
+| **Application**  | Select a specific flux application or all flux apps from the dropdown list corresponding to your selected environments.<br/>**Note**: If `All applications` is selected, the user will have access to all current and future applications associated with the environment.  |
+| **Permission**  | Available Permissions:<ul><li>`View only`</li> <li>`Admin`</li></ul> [Click here](#roles-available-for-argocd-apps) to learn more about the permission you wish to assign the user.  |
+| **Status**  | Read: [Making Users Active/Inactive](#at-direct-permissions-level) <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>   |
+
+#### Roles available for FluxCD Apps
+
+1. **View only**: Users with this role can only view FluxCD applications and their configurations but cannot make any modifications.
+2. **Admin**: Users with this role have full access to FluxCD applications, including the ability to create, manage, and delete applications.
+
+| Role              | View    | Edit      | Delete    |
+| :---:             |  :---:  |   :---:   |   :---:   |
+| **View only**     | ✅      | ❌        | ❌         |
+| **Admin**         | ✅      | ✅        | ✅         |
+| **Super Admin**   | ✅      | ✅        | ✅         |
+
 ### Jobs permissions
 
 Here you can grant your user the permissions to access the jobs created in Devtron.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-access/jobs.jpg)
-<center>Figure 12: Granting Jobs Permissions</center>
+<center>Figure 14: Granting Jobs Permissions</center>
 
 | Field | Description |
 | --- | --- |
@@ -232,11 +282,11 @@ Here you can provide permission to view, inspect, manage, and delete resources i
 To grant Kubernetes resource permission, click **Add permission**.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-access/k8s-resources-1.jpg)
-<center>Figure 13a: Adding Permissions for Kubernetes Resources</center>
+<center>Figure 15a: Adding Permissions for Kubernetes Resources</center>
 
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-access/k8s-resources-2.jpg)
-<center>Figure 13b: Granting Permissions for Kubernetes Resources</center>
+<center>Figure 15b: Granting Permissions for Kubernetes Resources</center>
 
 | Field | Description |
 | --- | --- |
@@ -270,7 +320,7 @@ The 'Chart Groups' tab will be available only if the [CI/CD module](../../integr
 Here you can grant your user the permissions for accessing Chart Groups. Note that you can only give users the permission to either create chart groups or edit them, but not both.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-access/chart-groups.jpg)
-<center>Figure 14: Granting Chart Group Permissions</center>
+<center>Figure 16: Granting Chart Group Permissions</center>
 
 | Action | Permissions |
 | :---   | :---         |
@@ -303,7 +353,7 @@ Only a [Super Admin](#grant-super-admin-permission) can enable the **Can manage 
 :::
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-access/cmafar-highlighted.jpg)
-<center>Figure 15: 'Can manage access for all roles' Toggle</center>
+<center>Figure 17: 'Can manage access for all roles' Toggle</center>
 
 By enabling the **Can manage access for all roles** toggle, you can grant a user the permission to manage access for all roles across Devtron apps, Helm Apps, Jobs, Kubernetes Resources, and Chart Groups. However, they cannot create new users. 
 
@@ -322,7 +372,7 @@ Only [Super-Admins](#grant-super-admin-permission) can grant an **Access Manager
 :::
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-access/access-manager-highlighted.jpg)
-<center>Figure 16: Access Manager</center>
+<center>Figure 18: Access Manager</center>
 
 Enabling **Access Manager** for a user allows that user to further grant or change permissions of existing users.
 
@@ -389,7 +439,7 @@ The following permissions are currently available in the Access Manager role:
 When working with multiple collaborators in Devtron, you may need to deactivate users who no longer require access and reactivate them when needed. This applies to users of Devtron Apps, Helm Apps, Jobs, and Kubernetes Resources.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-access/active-inactive.jpg)
-<center>Figure 17: Active/Inactive Options</center>
+<center>Figure 19: Active/Inactive Options</center>
 
 You can manage a user's active status at three levels:
 * [User-level](#at-user-level)
@@ -400,7 +450,7 @@ You can manage a user's active status at three levels:
 ### At User level
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-access/user-level.jpg)
-<center>Figure 18: Active/Inactive User</center>
+<center>Figure 20: Active/Inactive User</center>
 
 * **Active/Activate** - Use this option to activate a deactivated user while retaining their previous roles and permissions.
 * **Inactive/Inactivate** - Use this option to deactivate an existing active user and save the changes. If the user has an ongoing session, they will be logged out permanently on their next action or refresh.
@@ -409,7 +459,7 @@ You can manage a user's active status at three levels:
 ### At Permission Group level
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-access/permission-group-level.jpg)
-<center>Figure 19: Active/Inactive User from Permission Group</center>
+<center>Figure 21: Active/Inactive User from Permission Group</center>
 
 * **Active/Activate** - Use this option to allow permissions from the group to take effect for the user.
 * **Inactive/Inactivate** - Use this option to prevent permissions from the group from taking effect for the user. However, they can still log in/log out of Devtron if [active at the user-level](#at-user-level).
@@ -418,7 +468,7 @@ You can manage a user's active status at three levels:
 ### At Direct Permissions level
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-access/direct-permissions-level.jpg)
-<center>Figure 20: Active/Inactive User for Project Access</center>
+<center>Figure 22: Active/Inactive User for Project Access</center>
 
 * **Active/Activate** - Use this option to grant the project/resource access to the user. 
 * **Inactive/Inactivate** - Use this option to revoke the project/resource access from the user. **Note**: The user will still be able to log in/log out of Devtron if [active at user-level](#at-user-level).
@@ -440,7 +490,7 @@ Direct user permissions cannot be edited if you're using [LDAP](./sso/ldap.md)/[
 You can edit the user permissions by clicking the edit icon. Click **Save** after editing the permissions.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-access/editing-permissions.gif)
-<center>Figure 21: Editing User Permissions</center>
+<center>Figure 23: Editing User Permissions</center>
 
 ---
 
@@ -456,7 +506,7 @@ You may download the user data of current users and deleted users in a CSV forma
 * Timestamps for User Addition, Updation, and Deletion
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-permissions/export-users-csv-v2.gif)
-<center>Figure 22: Exporting User Data</center>
+<center>Figure 24: Exporting User Data</center>
 
 ---
 
@@ -470,6 +520,6 @@ You may download the user data of current users and deleted users in a CSV forma
 If you want to delete a user, click **Delete**.
 
 ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-access/delete-user.jpg)
-<center>Figure 23: Deleting a User</center>
+<center>Figure 25: Deleting a User</center>
 
 This will remove the user from the system along with all the permissions granted earlier. The user will no longer be able to log in to Devtron unless added again.
