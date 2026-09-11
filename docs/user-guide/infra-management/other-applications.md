@@ -76,7 +76,7 @@ The cluster in which Argo CD apps exist should be added in **Global Configuratio
 
 > **`ENABLE_EXTERNAL_ARGO_CD: "true"`**
 
-Refer [RBAC for ArgoCD apps](../global-configurations/authorization/user-access.md#argocd-apps-permissions)
+Refer [RBAC for ArgoCD apps](../global-configurations/authorization/user-access.md#argo-apps-permissions)
 
 ### Enabling ArgoCD App Listing (Deprecated)
 
@@ -129,7 +129,7 @@ The cluster in which Flux CD apps exist should be added in **Global Configuratio
 
 > **`FEATURE_EXTERNAL_FLUX_CD_ENABLE: "true"`**
 
-Refer [RBAC for FluxCD apps](../global-configurations/authorization/user-access.md#fluxcd-apps-permissions)
+Refer [RBAC for FluxCD apps](../global-configurations/authorization/user-access.md#flux-apps-permissions)
 
 ### Enabling FluxCD App Listing (Deprecated)
 

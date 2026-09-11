@@ -188,21 +188,21 @@ There are three role-based access levels for Helm Apps:
 | **Admin**         | ✅      | ✅        | ✅        | ✅        | ✅         |
 | **Super Admin**   | ✅      | ✅        | ✅        | ✅        | ✅         |
 
-### ArgoCD Apps permissions
+### Argo Apps permissions
 
 Here you can grant your user the permissions for ArgoCD apps deployed outside Devtron.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-access/helm-apps.jpg) <!-- TODO update link -->
-<center>Figure 12: Granting ArgoCD Apps Permissions</center>
+![](https://cdn.devtron.ai/images/argo-apps-rbac.png)
+<center>Figure 12: Granting Argo Apps Permissions</center>
 
 | Field | Description |
 | --- | --- |
 | **Environment or Cluster/Namespace** | Select a specific environment from the dropdown list.<br/>**Note**: If you select `All existing + future environments in cluster`, then the user will get access to all the current environments including any new environment which gets associated with the application later. |
 | **Application**  | Select a specific argo application or all argo apps from the dropdown list corresponding to your selected environments.<br/>**Note**: If `All applications` is selected, the user will have access to all current and future applications associated with the environment.  |
-| **Permission**  | Available Permissions:<ul><li>`View only`</li> <li>`Admin`</li></ul> [Click here](#roles-available-for-argocd-apps) to learn more about the permission you wish to assign the user.  |
+| **Permission**  | Available Permissions:<ul><li>`View only`</li> <li>`Admin`</li></ul> [Click here](#roles-available-for-argo-apps) to learn more about the permission you wish to assign the user.  |
 | **Status**  | Read: [Making Users Active/Inactive](#at-direct-permissions-level) <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>   |
 
-#### Roles available for ArgoCD Apps
+#### Roles available for Argo Apps
 
 1. **View only**: Users with this role can only view ArgoCD applications and their configurations but cannot make any modifications.
 2. **Admin**: Users with this role have full access to ArgoCD applications, including the ability to create, manage, and delete applications.
@@ -213,21 +213,21 @@ Here you can grant your user the permissions for ArgoCD apps deployed outside De
 | **Admin**         | ✅      | ✅        | ✅         |
 | **Super Admin**   | ✅      | ✅        | ✅         |
 
-### FluxCD Apps permissions
+### Flux Apps permissions
 
 Here you can grant your user the permissions for FluxCD apps deployed outside Devtron.
 
-![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/global-configurations/user-access/helm-apps.jpg) <!-- TODO update link -->
-<center>Figure 13: Granting FluxCD Apps Permissions</center>
+![](https://cdn.devtron.ai/images/flux-apps-rbac.png)
+<center>Figure 13: Granting Flux Apps Permissions</center>
 
 | Field | Description |
 | --- | --- |
 | **Environment or Cluster/Namespace** | Select a specific environment from the dropdown list.<br/>**Note**: If you select `All existing + future environments in cluster`, then the user will get access to all the current environments including any new environment which gets associated with the application later. |
 | **Application**  | Select a specific flux application or all flux apps from the dropdown list corresponding to your selected environments.<br/>**Note**: If `All applications` is selected, the user will have access to all current and future applications associated with the environment.  |
-| **Permission**  | Available Permissions:<ul><li>`View only`</li> <li>`Admin`</li></ul> [Click here](#roles-available-for-argocd-apps) to learn more about the permission you wish to assign the user.  |
+| **Permission**  | Available Permissions:<ul><li>`View only`</li> <li>`Admin`</li></ul> [Click here](#roles-available-for-flux-apps) to learn more about the permission you wish to assign the user.  |
 | **Status**  | Read: [Making Users Active/Inactive](#at-direct-permissions-level) <a href="https://devtron.ai/pricing"><img src="https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/elements/EnterpriseTag.svg" className="enterprise-badge-img" /></a>   |
 
-#### Roles available for FluxCD Apps
+#### Roles available for Flux Apps
 
 1. **View only**: Users with this role can only view FluxCD applications and their configurations but cannot make any modifications.
 2. **Admin**: Users with this role have full access to FluxCD applications, including the ability to create, manage, and delete applications.
