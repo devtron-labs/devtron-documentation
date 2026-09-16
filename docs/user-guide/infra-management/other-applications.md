@@ -72,11 +72,13 @@ Devtron also bridges the gap for ArgoCD users by providing additional features a
 ### Prerequisite
 The cluster in which Argo CD apps exist should be added in **Global Configurations** → **Clusters and Environments**
 
-### Feature Flag
+### Feature Flag (Deprecated)
 
 > **`ENABLE_EXTERNAL_ARGO_CD: "true"`**
 
-### Enabling ArgoCD App Listing
+Refer [RBAC for ArgoCD apps](../global-configurations/authorization/user-access.md#argo-apps-permissions)
+
+### Enabling ArgoCD App Listing (Deprecated)
 
 <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/4KyYnsAEpqo" title="Enabling External ArgoCD Listing" frameborder="0" allow="fullscreen"></iframe></div>
 
@@ -123,11 +125,13 @@ Flux CD doesn't have any official dashboard; however, Devtron supports the listi
 ### Prerequisite
 The cluster in which Flux CD apps exist should be added in **Global Configurations** → **Clusters and Environments**
 
-### Feature Flag
+### Feature Flag (Deprecated)
 
 > **`FEATURE_EXTERNAL_FLUX_CD_ENABLE: "true"`**
 
-### Enabling FluxCD App Listing
+Refer [RBAC for FluxCD apps](../global-configurations/authorization/user-access.md#flux-apps-permissions)
+
+### Enabling FluxCD App Listing (Deprecated)
 
 :::info Tip
 You may refer the steps mentioned in the [Enabling ArgoCD App Listing](#enabling-argocd-app-listing) section since the procedure is similar. 
