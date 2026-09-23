@@ -119,7 +119,7 @@ However, by specifying a start date and an end date (as shown below), your deplo
 After clicking **Done**, you can use the **+ Add duration** button to add more than one duration (for e.g., one monthly and one weekly) in a given deployment window.
 :::
 
-6. You can also determine the users who can take actions (say deployment) even when restrictions are in place. These can be super-admins, specific users, both, or none.
+6. You can also determine the users who can take actions (say deployment) even when restrictions are in place. These can be super-admins, specific users, user groups or none.
 
     ![](https://devtron-public-asset.s3.us-east-2.amazonaws.com/images/devtron-v2/app-management/policies/deployment-window/user-selection.jpg)
     <center>Figure 10: Selecting Unrestricted Users</center>
