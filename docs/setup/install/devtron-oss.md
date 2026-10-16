@@ -27,8 +27,30 @@ Begin with the **Minimal** version. You can always install CI/CD and GitOps inte
 * [Helm v3.8+ installed](https://helm.sh/docs/intro/install/)
 * For production cases, fulfill the [Infrastructure Recommendations](prod-infra.md)
 
-:::warning Cluster created on AWS? Is your EKS version 1.23 or above?
-Install ['AWS EBS CSI' driver](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html) using the following command:
+### Verify Persistent Storage
+
+Before installing Devtron, verify that your cluster has a working storage provisioner and a suitable StorageClass for its PersistentVolumeClaims (PVCs):
+
+```bash
+kubectl get storageclass
+```
+
+A default StorageClass has `(default)` next to its name. If there is no suitable default, create or select a StorageClass for your cluster, then add `--set global.storageClass=<storage-class-name>` to your chosen Helm command in [Step 2](#step-2-choose-an-installation-option). Replace `<storage-class-name>` with the existing class name, such as `local-path` or `gp3`. This selects storage for Devtron without changing the cluster-wide default. See [Set StorageClass for Devtron Microservices](installation-configuration.md#set-storageclass-for-devtron-microservices) for more details.
+
+:::warning Storage Must Be Configured Before Installation
+Without a suitable default StorageClass or an explicitly selected class backed by a working provisioner, Devtron's PVCs can remain `Pending`, preventing installation from completing. Creating a StorageClass requires cluster-level permissions; ask your cluster administrator if needed.
+:::
+
+:::info Using K3s?
+[K3s ships with Rancher's Local Path Provisioner](https://docs.k3s.io/add-ons/storage) and a default `local-path` StorageClass. You normally do not need to install another local-path provisioner.
+
+If the packaged `local-storage` component was [disabled](https://docs.k3s.io/installation/packaged-components#disabling-manifests) or removed, restore it or configure another suitable provisioner and StorageClass before installing Devtron. Local-path volumes store data on individual nodes; choose storage appropriate for your availability and durability requirements.
+:::
+
+:::warning Using Amazon EKS?
+For standard EKS clusters using EBS volumes on EC2 nodes, configure the [Amazon EBS CSI driver](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html) and its required IAM permissions. AWS recommends the EKS managed add-on. If the driver is already installed, use that installation rather than installing a second copy with Helm.
+
+For a self-managed Helm installation, first follow the upstream [driver permissions setup](https://github.com/kubernetes-sigs/aws-ebs-csi-driver/blob/master/docs/install.md#set-up-driver-permissions). Associate the IAM role with the controller service account using EKS Pod Identity or configure IAM Roles for Service Accounts (IRSA). The Helm command below does not create that IAM role or association; supply the service-account configuration required by your chosen method.
 
 ```bash
 helm repo add aws-ebs-csi-driver https://kubernetes-sigs.github.io/aws-ebs-csi-driver
@@ -36,14 +58,43 @@ helm repo update
 helm upgrade --install aws-ebs-csi-driver \
 --namespace kube-system aws-ebs-csi-driver/aws-ebs-csi-driver
 ```
-:::
 
-:::warning Using K3s?
-K3s does not include a default storage provisioner, so before you run Helm install in [Step 2](devtron-oss.md#step-2-choose-an-installation-option), apply the Rancher local-path-provisioner to enable dynamic storage:
+Installing the driver with the [Helm chart defaults](https://github.com/kubernetes-sigs/aws-ebs-csi-driver/blob/master/charts/aws-ebs-csi-driver/values.yaml) does not create a StorageClass (`storageClasses: []`, `defaultStorageClass.enabled: false`). Starting with EKS 1.30, newly created clusters no longer mark the supplied `gp2` StorageClass as default; see the Kubernetes 1.30 release notes in the [Amazon EKS User Guide](https://docs.aws.amazon.com/pdfs/eks/latest/userguide/eks-ug.pdf). Check your cluster's actual configuration with `kubectl get storageclass`.
+
+If no suitable class exists, save this example as `gp3-storageclass.yaml` for the standard EBS CSI driver:
+
+```yaml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: gp3
+provisioner: ebs.csi.aws.com
+parameters:
+  type: gp3
+volumeBindingMode: WaitForFirstConsumer
+allowVolumeExpansion: true
+reclaimPolicy: Delete
+```
+
+Apply it, then verify the class:
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
+kubectl apply -f gp3-storageclass.yaml
+kubectl get storageclass gp3
 ```
+
+Add `--set global.storageClass=gp3` to your chosen Devtron installation command. Alternatively, if the cluster has no default and you want `gp3` to be the default for all workloads, run:
+
+```bash
+kubectl annotate storageclass gp3 storageclass.kubernetes.io/is-default-class=true --overwrite
+kubectl get storageclass
+```
+
+Keep only one default StorageClass; follow Kubernetes guidance when [changing an existing default](https://kubernetes.io/docs/tasks/administer-cluster/change-default-storage-class/). The example uses `reclaimPolicy: Delete`, so deleting a bound PVC also deletes its backing volume. `WaitForFirstConsumer` delays provisioning until a consuming Pod can be scheduled, so a PVC may initially be `Pending` even with correct storage configuration.
+:::
+
+:::info EKS Auto Mode and Fargate
+EKS Auto Mode manages EBS storage without a separate EBS CSI controller installation, but you must still create a StorageClass using `ebs.csi.eks.amazonaws.com`. Follow the [Auto Mode StorageClass instructions](https://docs.aws.amazon.com/eks/latest/userguide/create-storage-class.html), including the node topology settings, instead of the standard-driver example above. Select that class with `global.storageClass` or make it the default. EBS volumes cannot be mounted by Fargate Pods.
 :::
 
 :::info Want to Customize the Installation?
