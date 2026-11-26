@@ -462,6 +462,7 @@ const sidebars = {
       items: [
         'user-guide/ai-recommendations/notifications',
         'user-guide/ai-recommendations/runbook',
+        'user-guide/ai-recommendations/mcp-server',
       ],
     },
 
